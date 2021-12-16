@@ -907,7 +907,7 @@ exports[`DateInput controlled format inline 1`] = `
             class="c11"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="c12"
               type="button"
             >
@@ -925,7 +925,7 @@ exports[`DateInput controlled format inline 1`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="c12"
               type="button"
             >
@@ -1776,7 +1776,7 @@ exports[`DateInput controlled format inline 2`] = `
             class="StyledBox-sc-13pk1d4-0 ellHmk"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -1794,7 +1794,7 @@ exports[`DateInput controlled format inline 2`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -3228,7 +3228,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -3246,7 +3246,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -4683,7 +4683,7 @@ exports[`DateInput controlled format inline without timezone 2`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -4701,7 +4701,7 @@ exports[`DateInput controlled format inline without timezone 2`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -7191,7 +7191,7 @@ exports[`DateInput format inline 1`] = `
             class="c11"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="c12"
               type="button"
             >
@@ -7209,7 +7209,7 @@ exports[`DateInput format inline 1`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="c12"
               type="button"
             >
@@ -8373,7 +8373,7 @@ exports[`DateInput inline 1`] = `
           class="c6"
         >
           <button
-            aria-label="June 2020"
+            aria-label="Moved to June 2020"
             class="c7"
             type="button"
           >
@@ -8391,7 +8391,7 @@ exports[`DateInput inline 1`] = `
             </svg>
           </button>
           <button
-            aria-label="August 2020"
+            aria-label="Moved to August 2020"
             class="c7"
             type="button"
           >
@@ -10139,7 +10139,7 @@ exports[`DateInput range format inline 1`] = `
             class="c11"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="c12"
               type="button"
             >
@@ -10157,7 +10157,7 @@ exports[`DateInput range format inline 1`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="c12"
               type="button"
             >
@@ -10179,7 +10179,7 @@ exports[`DateInput range format inline 1`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-02 through 2020-07-07
               "
           class="c13"
@@ -11340,7 +11340,7 @@ exports[`DateInput range inline 1`] = `
           class="c6"
         >
           <button
-            aria-label="June 2020"
+            aria-label="Moved to June 2020"
             class="c7"
             type="button"
           >
@@ -11358,7 +11358,7 @@ exports[`DateInput range inline 1`] = `
             </svg>
           </button>
           <button
-            aria-label="August 2020"
+            aria-label="Moved to August 2020"
             class="c7"
             type="button"
           >
@@ -11380,7 +11380,7 @@ exports[`DateInput range inline 1`] = `
       <div
         aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-02 through 2020-07-07
               "
         class="c9"
@@ -13301,7 +13301,7 @@ exports[`DateInput select format 3`] = `
           class="c7"
         >
           <button
-            aria-label="June 2020"
+            aria-label="Moved to June 2020"
             class="c8"
             type="button"
           >
@@ -13319,7 +13319,7 @@ exports[`DateInput select format 3`] = `
             </svg>
           </button>
           <button
-            aria-label="August 2020"
+            aria-label="Moved to August 2020"
             class="c8"
             type="button"
           >
@@ -14707,7 +14707,7 @@ exports[`DateInput select format inline 1`] = `
             class="c11"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="c12"
               type="button"
             >
@@ -14725,7 +14725,7 @@ exports[`DateInput select format inline 1`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="c12"
               type="button"
             >
@@ -15570,7 +15570,7 @@ exports[`DateInput select format inline 2`] = `
             class="StyledBox-sc-13pk1d4-0 ellHmk"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -15588,7 +15588,7 @@ exports[`DateInput select format inline 2`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -16947,7 +16947,7 @@ exports[`DateInput select format inline 3`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -16965,7 +16965,7 @@ exports[`DateInput select format inline 3`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -18402,7 +18402,7 @@ exports[`DateInput select format inline 4`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -18420,7 +18420,7 @@ exports[`DateInput select format inline 4`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -19797,7 +19797,7 @@ exports[`DateInput select format inline range 1`] = `
             class="c11"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="c12"
               type="button"
             >
@@ -19815,7 +19815,7 @@ exports[`DateInput select format inline range 1`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="c12"
               type="button"
             >
@@ -19837,7 +19837,7 @@ exports[`DateInput select format inline range 1`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-02 through 2020-07-07
               "
           class="c13"
@@ -20661,7 +20661,7 @@ exports[`DateInput select format inline range 2`] = `
             class="StyledBox-sc-13pk1d4-0 ellHmk"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -20679,7 +20679,7 @@ exports[`DateInput select format inline range 2`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -20701,7 +20701,7 @@ exports[`DateInput select format inline range 2`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-10 through 2020-07-10
               "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 bqRhn"
@@ -22057,7 +22057,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -22075,7 +22075,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -22097,7 +22097,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-02 through 2020-07-07
               "
             class="c13"
@@ -23513,7 +23513,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -23531,7 +23531,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -23553,7 +23553,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-10 through 2020-07-10
               "
             class="c13"
@@ -25318,7 +25318,7 @@ exports[`DateInput select format no timezone 3`] = `
           class="c7"
         >
           <button
-            aria-label="June 2020"
+            aria-label="Moved to June 2020"
             class="c8"
             type="button"
           >
@@ -25336,7 +25336,7 @@ exports[`DateInput select format no timezone 3`] = `
             </svg>
           </button>
           <button
-            aria-label="August 2020"
+            aria-label="Moved to August 2020"
             class="c8"
             type="button"
           >
@@ -26530,7 +26530,7 @@ exports[`DateInput select inline 1`] = `
           class="c6"
         >
           <button
-            aria-label="June 2020"
+            aria-label="Moved to June 2020"
             class="c7"
             type="button"
           >
@@ -26548,7 +26548,7 @@ exports[`DateInput select inline 1`] = `
             </svg>
           </button>
           <button
-            aria-label="August 2020"
+            aria-label="Moved to August 2020"
             class="c7"
             type="button"
           >
@@ -27711,7 +27711,7 @@ exports[`DateInput select inline without timezone 1`] = `
           class="c6"
         >
           <button
-            aria-label="June 2020"
+            aria-label="Moved to June 2020"
             class="c7"
             type="button"
           >
@@ -27729,7 +27729,7 @@ exports[`DateInput select inline without timezone 1`] = `
             </svg>
           </button>
           <button
-            aria-label="August 2020"
+            aria-label="Moved to August 2020"
             class="c7"
             type="button"
           >
@@ -29086,7 +29086,7 @@ exports[`DateInput type format inline 1`] = `
             class="c11"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="c12"
               type="button"
             >
@@ -29104,7 +29104,7 @@ exports[`DateInput type format inline 1`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="c12"
               type="button"
             >
@@ -29949,7 +29949,7 @@ exports[`DateInput type format inline 2`] = `
             class="StyledBox-sc-13pk1d4-0 ellHmk"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -29967,7 +29967,7 @@ exports[`DateInput type format inline 2`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -31325,7 +31325,7 @@ exports[`DateInput type format inline partial 1`] = `
             class="c11"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="c12"
               type="button"
             >
@@ -31343,7 +31343,7 @@ exports[`DateInput type format inline partial 1`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="c12"
               type="button"
             >
@@ -32702,7 +32702,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -32720,7 +32720,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -34097,7 +34097,7 @@ exports[`DateInput type format inline range 1`] = `
             class="c11"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="c12"
               type="button"
             >
@@ -34115,7 +34115,7 @@ exports[`DateInput type format inline range 1`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="c12"
               type="button"
             >
@@ -34137,7 +34137,7 @@ exports[`DateInput type format inline range 1`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-02 through 2020-07-07
               "
           class="c13"
@@ -34961,7 +34961,7 @@ exports[`DateInput type format inline range 2`] = `
             class="StyledBox-sc-13pk1d4-0 ellHmk"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -34979,7 +34979,7 @@ exports[`DateInput type format inline range 2`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -35001,7 +35001,7 @@ exports[`DateInput type format inline range 2`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-21 through 2020-07-23
               "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 goAAKK"
@@ -36356,7 +36356,7 @@ exports[`DateInput type format inline range partial 1`] = `
             class="c11"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="c12"
               type="button"
             >
@@ -36374,7 +36374,7 @@ exports[`DateInput type format inline range partial 1`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="c12"
               type="button"
             >
@@ -36396,7 +36396,7 @@ exports[`DateInput type format inline range partial 1`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-02 through 2020-07-07
               "
           class="c13"
@@ -37220,7 +37220,7 @@ exports[`DateInput type format inline range partial 2`] = `
             class="StyledBox-sc-13pk1d4-0 ellHmk"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -37238,7 +37238,7 @@ exports[`DateInput type format inline range partial 2`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -37260,7 +37260,7 @@ exports[`DateInput type format inline range partial 2`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-21 through none
               "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 goAAKK"
@@ -38084,7 +38084,7 @@ exports[`DateInput type format inline range partial 3`] = `
             class="StyledBox-sc-13pk1d4-0 ellHmk"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -38102,7 +38102,7 @@ exports[`DateInput type format inline range partial 3`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -38124,7 +38124,7 @@ exports[`DateInput type format inline range partial 3`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-21 through none
               "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 goAAKK"
@@ -39480,7 +39480,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -39498,7 +39498,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -39520,7 +39520,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-02 through 2020-07-07
               "
             class="c13"
@@ -40859,7 +40859,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -40877,7 +40877,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -40899,7 +40899,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-21 through none
               "
             class="c13"
@@ -42238,7 +42238,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -42256,7 +42256,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -42278,7 +42278,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-21 through none
               "
             class="c13"
@@ -43635,7 +43635,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -43653,7 +43653,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -43675,7 +43675,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-02 through 2020-07-07
               "
             class="c13"
@@ -45032,7 +45032,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -45050,7 +45050,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -45072,7 +45072,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected 
+                Currently selected
   2020-07-21 through 2020-07-23
               "
             class="c13"
@@ -46410,7 +46410,7 @@ exports[`DateInput type format inline short 1`] = `
             class="c11"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="c12"
               type="button"
             >
@@ -46428,7 +46428,7 @@ exports[`DateInput type format inline short 1`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="c12"
               type="button"
             >
@@ -47273,7 +47273,7 @@ exports[`DateInput type format inline short 2`] = `
             class="StyledBox-sc-13pk1d4-0 ellHmk"
           >
             <button
-              aria-label="June 2020"
+              aria-label="Moved to June 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -47291,7 +47291,7 @@ exports[`DateInput type format inline short 2`] = `
               </svg>
             </button>
             <button
-              aria-label="August 2020"
+              aria-label="Moved to August 2020"
               class="StyledButton-sc-323bzc-0 bpsTzm"
               type="button"
             >
@@ -48650,7 +48650,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -48668,7 +48668,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -50028,7 +50028,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -50046,7 +50046,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -51406,7 +51406,7 @@ exports[`DateInput type format inline without timezone 1`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -51424,7 +51424,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
@@ -52784,7 +52784,7 @@ exports[`DateInput type format inline without timezone 2`] = `
               class="c11"
             >
               <button
-                aria-label="June 2020"
+                aria-label="Moved to June 2020"
                 class="c12"
                 type="button"
               >
@@ -52802,7 +52802,7 @@ exports[`DateInput type format inline without timezone 2`] = `
                 </svg>
               </button>
               <button
-                aria-label="August 2020"
+                aria-label="Moved to August 2020"
                 class="c12"
                 type="button"
               >
