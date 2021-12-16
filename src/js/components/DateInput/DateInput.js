@@ -238,7 +238,7 @@ const DateInput = forwardRef(
               }}
             />
             <Button
-              onClick={open ? () => closeCalendar() : () => openCalendar()}
+              onClick={open ? closeCalendar : openCalendar}
               plain
               icon={<CalendarIcon size={iconSize} />}
               margin={{ right: 'small' }}
