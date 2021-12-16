@@ -360,7 +360,7 @@ exports[`Calendar change months 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to November 2019"
+            aria-label="Go to November 2019"
             class="c7"
             type="button"
           >
@@ -378,7 +378,7 @@ exports[`Calendar change months 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to January 2020"
+            aria-label="Go to January 2020"
             class="c7"
             type="button"
           >
@@ -1186,7 +1186,7 @@ exports[`Calendar change months 2`] = `
           class="StyledBox-sc-13pk1d4-0 ellHmk"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="StyledButton-sc-323bzc-0 bpsTzm"
             type="button"
           >
@@ -1204,7 +1204,7 @@ exports[`Calendar change months 2`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="StyledButton-sc-323bzc-0 bpsTzm"
             type="button"
           >
@@ -2737,7 +2737,7 @@ exports[`Calendar children 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -2755,7 +2755,7 @@ exports[`Calendar children 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -3623,7 +3623,7 @@ exports[`Calendar date 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -3641,7 +3641,7 @@ exports[`Calendar date 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -4821,7 +4821,7 @@ exports[`Calendar dates 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -4839,7 +4839,7 @@ exports[`Calendar dates 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -4861,7 +4861,7 @@ exports[`Calendar dates 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 
+                Currently selected
   2020-01-12 ,2020-01-08 through 2020-01-10
               "
         class="c9"
@@ -6020,7 +6020,7 @@ exports[`Calendar daysOfWeek 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -6038,7 +6038,7 @@ exports[`Calendar daysOfWeek 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -6135,7 +6135,7 @@ exports[`Calendar daysOfWeek 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 
+                Currently selected
   2020-01-12 ,2020-01-08 through 2020-01-10
               "
         class="c12"
@@ -7337,7 +7337,7 @@ exports[`Calendar disabled 1`] = `
             class="c6"
           >
             <button
-              aria-label="Moved to December 2019"
+              aria-label="Go to December 2019"
               class="c7"
               type="button"
             >
@@ -7355,7 +7355,7 @@ exports[`Calendar disabled 1`] = `
               </svg>
             </button>
             <button
-              aria-label="Moved to February 2020"
+              aria-label="Go to February 2020"
               class="c7"
               type="button"
             >
@@ -8540,7 +8540,7 @@ exports[`Calendar fill 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -8558,7 +8558,7 @@ exports[`Calendar fill 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -9720,7 +9720,7 @@ exports[`Calendar first day sunday week monday 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -9738,7 +9738,7 @@ exports[`Calendar first day sunday week monday 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to April 2020"
+            aria-label="Go to April 2020"
             class="c7"
             type="button"
           >
@@ -10900,7 +10900,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -10918,7 +10918,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -11719,7 +11719,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -11737,7 +11737,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -14037,7 +14037,7 @@ exports[`Calendar reference 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -14055,7 +14055,7 @@ exports[`Calendar reference 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -15217,7 +15217,7 @@ exports[`Calendar select date 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -15235,7 +15235,7 @@ exports[`Calendar select date 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -16043,7 +16043,7 @@ exports[`Calendar select date 2`] = `
           class="StyledBox-sc-13pk1d4-0 ellHmk"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="StyledButton-sc-323bzc-0 bpsTzm"
             type="button"
           >
@@ -16061,7 +16061,7 @@ exports[`Calendar select date 2`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="StyledButton-sc-323bzc-0 bpsTzm"
             type="button"
           >
@@ -17241,7 +17241,7 @@ exports[`Calendar select dates 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -17259,7 +17259,7 @@ exports[`Calendar select dates 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -17281,7 +17281,7 @@ exports[`Calendar select dates 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 
+                Currently selected
   2020-01-12 ,2020-01-08 through 2020-01-10
               "
         class="c9"
@@ -18068,7 +18068,7 @@ exports[`Calendar select dates 2`] = `
           class="StyledBox-sc-13pk1d4-0 ellHmk"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="StyledButton-sc-323bzc-0 bpsTzm"
             type="button"
           >
@@ -18086,7 +18086,7 @@ exports[`Calendar select dates 2`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="StyledButton-sc-323bzc-0 bpsTzm"
             type="button"
           >
@@ -19248,7 +19248,7 @@ exports[`Calendar showAdjacentDays 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -19266,7 +19266,7 @@ exports[`Calendar showAdjacentDays 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -20067,7 +20067,7 @@ exports[`Calendar showAdjacentDays 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -20085,7 +20085,7 @@ exports[`Calendar showAdjacentDays 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -20775,7 +20775,7 @@ exports[`Calendar showAdjacentDays 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -20793,7 +20793,7 @@ exports[`Calendar showAdjacentDays 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -22146,7 +22146,7 @@ exports[`Calendar size 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -22164,7 +22164,7 @@ exports[`Calendar size 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -22965,7 +22965,7 @@ exports[`Calendar size 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -22983,7 +22983,7 @@ exports[`Calendar size 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >
@@ -23784,7 +23784,7 @@ exports[`Calendar size 1`] = `
           class="c6"
         >
           <button
-            aria-label="Moved to December 2019"
+            aria-label="Go to December 2019"
             class="c7"
             type="button"
           >
@@ -23802,7 +23802,7 @@ exports[`Calendar size 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Moved to February 2020"
+            aria-label="Go to February 2020"
             class="c7"
             type="button"
           >

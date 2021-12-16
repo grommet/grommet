@@ -55,7 +55,7 @@ const activeDates = {
 
 const timeStamp = /T.*/;
 
-const formatSelectedDatesString = (date) => `Currently selected 
+const formatSelectedDatesString = (date) => `Currently selected
   ${date?.map((item) => {
     let dates;
     if (!Array.isArray(item)) {
@@ -685,7 +685,7 @@ const Calendar = forwardRef(
                 changeReference(previousMonth);
                 announce(
                   format({
-                    id: 'calendar.previous',
+                    id: 'calendar.previousMove',
                     messages,
                     values: {
                       date: previousMonth.toLocaleDateString(locale, {
@@ -714,7 +714,7 @@ const Calendar = forwardRef(
                 changeReference(nextMonth);
                 announce(
                   format({
-                    id: 'calendar.next',
+                    id: 'calendar.nextMove',
                     messages,
                     values: {
                       date: nextMonth.toLocaleDateString(locale, {
