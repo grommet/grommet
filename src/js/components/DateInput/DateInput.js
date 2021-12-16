@@ -60,8 +60,7 @@ const DateInput = forwardRef(
       (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
-    const calendarIconRef = useRef();
-    const calendarButtonRef = useRef();
+    const containerRef = useRef();
     const [value, setValue] = useFormInput({
       name,
       value: valueArg,
@@ -195,7 +194,13 @@ const DateInput = forwardRef(
           onEsc={open ? () => closeCalendar() : undefined}
           onSpace={openCalendar}
         >
-          <Box border={!plain} round="xxsmall" direction="row" fill>
+          <Box
+            ref={containerRef}
+            border={!plain}
+            round="xxsmall"
+            direction="row"
+            fill
+          >
             <MaskedInput
               ref={ref}
               id={id}
@@ -235,8 +240,7 @@ const DateInput = forwardRef(
             <Button
               onClick={open ? () => closeCalendar() : () => openCalendar()}
               plain
-              ref={calendarButtonRef}
-              icon={<CalendarIcon ref={calendarIconRef} size={iconSize} />}
+              icon={<CalendarIcon size={iconSize} />}
               margin={{ right: 'small' }}
             />
           </Box>
@@ -265,9 +269,8 @@ const DateInput = forwardRef(
             onEsc={closeCalendar}
             onClickOutside={({ target }) => {
               if (
-                target !== ref.current &&
-                target !== calendarIconRef.current &&
-                target !== calendarButtonRef.current
+                target !== containerRef.current &&
+                !containerRef.current.contains(target)
               ) {
                 closeCalendar();
               }
