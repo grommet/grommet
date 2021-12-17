@@ -1,16 +1,17 @@
-var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "inline", "inputProps", "name", "onChange", "onFocus", "value", "messages"];
+var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "inline", "inputProps", "name", "onChange", "onFocus", "plain", "value", "messages"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useEffect, useMemo, useState, useCallback } from 'react';
+import React, { useRef, forwardRef, useContext, useEffect, useMemo, useState, useCallback } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
 import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
 import { DropButton } from '../DropButton';
@@ -35,6 +36,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       name = _ref.name,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
+      plain = _ref.plain,
       valueArg = _ref.value,
       messages = _ref.messages,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -51,6 +53,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       useFormInput = _useContext2.useFormInput;
 
   var ref = useForwardedRef(refArg);
+  var containerRef = useRef();
 
   var _useFormInput = useFormInput({
     name: name,
@@ -191,16 +194,20 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       return closeCalendar();
     } : undefined,
     onSpace: openCalendar
+  }, /*#__PURE__*/React.createElement(Box, {
+    ref: containerRef,
+    border: !plain,
+    round: "xxsmall",
+    direction: "row",
+    fill: true
   }, /*#__PURE__*/React.createElement(MaskedInput, _extends({
     ref: ref,
     id: id,
     name: name,
-    icon: /*#__PURE__*/React.createElement(CalendarIcon, {
-      size: iconSize
-    }),
     reverse: true,
     disabled: disabled,
-    mask: mask
+    mask: mask,
+    plain: true
   }, inputProps, rest, {
     value: textValue,
     onChange: function onChange(event) {
@@ -226,6 +233,15 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       }));
       if (_onFocus) _onFocus(event);
     }
+  })), /*#__PURE__*/React.createElement(Button, {
+    onClick: open ? closeCalendar : openCalendar,
+    plain: true,
+    icon: /*#__PURE__*/React.createElement(CalendarIcon, {
+      size: iconSize
+    }),
+    margin: {
+      right: 'small'
+    }
   }))));
 
   if (inline) {
@@ -249,7 +265,10 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       onEsc: closeCalendar,
       onClickOutside: function onClickOutside(_ref3) {
         var target = _ref3.target;
-        if (target !== ref.current) closeCalendar();
+
+        if (target !== containerRef.current && !containerRef.current.contains(target)) {
+          closeCalendar();
+        }
       }
     }, dropProps), calendar))];
   }

@@ -17,6 +17,8 @@ var _MessageContext = require("../../contexts/MessageContext");
 
 var _Box = require("../Box");
 
+var _Button = require("../Button");
+
 var _Calendar2 = require("../Calendar");
 
 var _Drop = require("../Drop");
@@ -37,7 +39,7 @@ var _utils3 = require("./utils");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "inline", "inputProps", "name", "onChange", "onFocus", "value", "messages"];
+var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "inline", "inputProps", "name", "onChange", "onFocus", "plain", "value", "messages"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -61,6 +63,7 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       name = _ref.name,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
+      plain = _ref.plain,
       valueArg = _ref.value,
       messages = _ref.messages,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -78,6 +81,7 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       useFormInput = _useContext2.useFormInput;
 
   var ref = (0, _utils.useForwardedRef)(refArg);
+  var containerRef = (0, _react.useRef)();
 
   var _useFormInput = useFormInput({
     name: name,
@@ -219,16 +223,20 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       return closeCalendar();
     } : undefined,
     onSpace: openCalendar
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    ref: containerRef,
+    border: !plain,
+    round: "xxsmall",
+    direction: "row",
+    fill: true
   }, /*#__PURE__*/_react["default"].createElement(_MaskedInput.MaskedInput, _extends({
     ref: ref,
     id: id,
     name: name,
-    icon: /*#__PURE__*/_react["default"].createElement(_Calendar.Calendar, {
-      size: iconSize
-    }),
     reverse: true,
     disabled: disabled,
-    mask: mask
+    mask: mask,
+    plain: true
   }, inputProps, rest, {
     value: textValue,
     onChange: function onChange(event) {
@@ -254,6 +262,15 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       }));
       if (_onFocus) _onFocus(event);
     }
+  })), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+    onClick: open ? closeCalendar : openCalendar,
+    plain: true,
+    icon: /*#__PURE__*/_react["default"].createElement(_Calendar.Calendar, {
+      size: iconSize
+    }),
+    margin: {
+      right: 'small'
+    }
   }))));
 
   if (inline) {
@@ -277,7 +294,10 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       onEsc: closeCalendar,
       onClickOutside: function onClickOutside(_ref3) {
         var target = _ref3.target;
-        if (target !== ref.current) closeCalendar();
+
+        if (target !== containerRef.current && !containerRef.current.contains(target)) {
+          closeCalendar();
+        }
       }
     }, dropProps), calendar))];
   }
