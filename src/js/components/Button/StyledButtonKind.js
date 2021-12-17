@@ -80,13 +80,16 @@ const basicStyle = (props) => css`
 
   // when button has badge, the SVG won't necessarily
   // be the direct descendant
-  ${props.badge
-    ? `
-  svg {
+  ${(props.badge &&
+    `svg {
     vertical-align: bottom;
-  }`
-    : `> svg {
+  }`) ||
+  (props.icon?.props?.size !== 'small' &&
+    `> svg {
     vertical-align: bottom;
+  }`) ||
+  `> svg {
+    vertical-align: center;
   }`}
 `;
 
@@ -211,16 +214,20 @@ const fillStyle = (fillContainer) => {
 
 // The > svg rule is to ensure Buttons with just an icon don't add additional
 // vertical height internally.
-const plainStyle = () => css`
+const plainStyle = (props) => css`
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
   color: inherit;
 
-  > svg {
-    vertical-align: bottom;
-  }
+  ${props.icon?.props?.size === 'small'
+    ? `> svg {
+      vertical-align: center;
+    }`
+    : `> svg {
+      vertical-align: bottom;
+    }`}
 `;
 
 const StyledButtonKind = styled.button.withConfig({
