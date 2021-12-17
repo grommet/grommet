@@ -51,9 +51,6 @@
       }
     ],
     "no-useless-concat": 0,
-    // react/function-component-definition affects 600+ instances. Temporarily disabled.
-    // ToDo: Enable gradually and apply component by component.
-    // https://github.com/grommet/hpe-design-system/issues/2096#issuecomment-987081797
     "react/function-component-definition": 0,
     "react/jsx-curly-newline": 0,
     "react/jsx-filename-extension": 0,

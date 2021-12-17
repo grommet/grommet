@@ -144,7 +144,7 @@ const DateInput = forwardRef(
       />
     );
 
-    const formContext = useMemo(
+    const formContextValue = useMemo(
       () => ({
         useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
       }),
@@ -171,7 +171,7 @@ const DateInput = forwardRef(
       <FormContext.Provider
         key="input"
         // don't let MaskedInput drive the Form
-        value={formContext}
+        value={formContextValue}
       >
         <Keyboard
           onEsc={open ? () => closeCalendar() : undefined}

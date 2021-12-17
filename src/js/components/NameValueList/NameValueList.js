@@ -39,13 +39,13 @@ const NameValueList = forwardRef(
       gap = theme.nameValueList.pair.column.gap;
     }
 
-    const listContext = useMemo(
+    const listContextValue = useMemo(
       () => ({ nameProps, pairProps, valueProps }),
       [nameProps, pairProps, valueProps],
     );
 
     return (
-      <NameValueListContext.Provider value={listContext}>
+      <NameValueListContext.Provider value={listContextValue}>
         <Grid
           as="dl"
           ref={ref}
