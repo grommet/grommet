@@ -7,7 +7,7 @@ const data = [
   '//v2.grommet.io/assets/Wilderpeople_Ricky.jpg',
   '//v2.grommet.io/assets/IMG_4245.jpg',
   '//v2.grommet.io/assets/IMG_4210.jpg',
-  '//v2.grommet.io/assets/IMG_4245.jpg',
+  'https://avatars1.githubusercontent.com/u/14203820?s=280&v=4',
   '//v2.grommet.io/assets/Wilderpeople_Ricky.jpg',
   '//v2.grommet.io/assets/IMG_4245.jpg',
   '//v2.grommet.io/assets/IMG_4210.jpg',
@@ -48,7 +48,7 @@ const View2 = () => {
 export const Multi = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={grommet}>
-  <Carousel controls="arrows">
+  <Carousel>
     <View0 />
     <View1 />
     <View2 />

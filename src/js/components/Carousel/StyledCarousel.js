@@ -1,39 +1,23 @@
 import styled, { css, keyframes } from 'styled-components';
 import { Box } from '../Box';
-import { widthStyle, heightStyle, fillStyle } from '../../utils';
 
 const StyledCarouselContainer = styled(Box)`
   position: relative;
-  display: block;
   overflow: hidden;
-  height: 100%;
-  ${(props) => props.height && heightStyle(props.height, props.theme)}
-  ${(props) => props.width && widthStyle(props.width, props.theme)}
-  ${(props) => props.fillProp && fillStyle(props.fillProp)}
-  ${(props) => props.containerHeight && `height: ${props.containerHeight}px`};
-  ${(props) => props.containerWidth && `width: ${props.containerWidth}px`};
 `;
 
-const StyledCarouselChild = styled.div`
-  position: relative;
-  max-width: 100%;
+const StyledCarouselChild = styled(Box)`
+  visibility: ${(props) =>  props.visibilityProp};
+  position: ${(props) => props.positionProp};
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   ${(props) =>
-    !props.noDimensions &&
-    css`
-      width: 100%;
-      height: 100%;
-    `}
-  float: left;
-  margin-right: -100%;
-  display: ${(props) => props.displayProp};
-  animation: ${(props) =>
     props.animation
-      ? css`
-          ${props.animation}
+      ? css`animation: ${props.animation}
           ${props.animationDuration / 1000}s
-        ease-in-out
-        `
-      : `none`};
+        ease-in-out;`
+      : ``};
   animation-fill-mode: both;
 `;
 
@@ -65,12 +49,12 @@ const slideLeftPrevious = keyframes`
 const slideLeftCurrent = keyframes`
   0% {transform: translateX(100%)}
   100% {transform: translateX(0%)}
-  `;
+`;
 
-export {
-  StyledControl,
+export { 
   StyledCarouselContainer,
   StyledCarouselChild,
+  StyledControl,
   slideLeftCurrent,
   slideLeftPrevious,
   slideRightCurrent,

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { CarouselChildPropTypes } from './propTypes';
+
 import {
   slideLeftCurrent,
   slideLeftPrevious,
@@ -6,62 +8,75 @@ import {
   slideRightPrevious,
   StyledCarouselChild,
 } from './StyledCarousel';
-import { CarouselChildPropTypes } from './propTypes';
+
+import { Box } from '../Box';
 
 const CarouselChild = ({
   animationDuration,
-  noDimensions,
-  children,
+  fill,
   index,
-  current,
-  previous,
+  activeIndex,
+  priorActiveIndex,
   direction,
+  children,
 }) => {
   const [animation, setAnimation] = useState(undefined);
-  const [display, setDisplay] = useState(current === index ? 'block' : 'none');
-
-  // Handles setting the appropriate display and animation for the slide
+  const [visibility, setVisibility] = useState(
+    index === activeIndex ? 'visible' : 'hidden',
+  );
   useEffect(() => {
-    let animationTimer;
-
-    // Previous is only undefined on initialization. This tells the component:
-    // on mount, do not render the first slide with an animation.
-    if (previous === undefined) return animationTimer;
-    if (index !== current && index !== previous) return animationTimer;
-    if (previous === current) return animationTimer;
-
-    if (index === current) {
-      setDisplay('block');
-      if (direction === 'next') setAnimation(slideLeftCurrent);
-      else setAnimation(slideRightCurrent);
-    } else {
-      // Hide non-current children once the animation is complete.
-      // We try to do it a bit before (~100ms) the animation completes
-      // so that when Carousel switches the container back to auto width
-      // there won't be any extra visible children causing the container
-      // to be too big briefly
-      animationTimer = setTimeout(() => {
-        setDisplay('none');
-      }, animationDuration-100);
-      if (direction === 'next') setAnimation(slideLeftPrevious);
-      else setAnimation(slideRightPrevious);
+    let timer;
+    if (index === activeIndex) {
+      if (priorActiveIndex !== undefined) {
+        /**
+         * This check will only be false onMount of the component. It ensures
+         * the initial active slide of the Carousel renders with no animation.
+         */
+       setAnimation(
+         direction === 'left' ? slideLeftCurrent : slideRightCurrent,
+       );
+      }
+      setVisibility('visible');
+    } else if (index === priorActiveIndex) {
+      setAnimation(
+        direction === 'left' ? slideLeftPrevious : slideRightPrevious,
+      );
+      timer = setTimeout(
+        () => setVisibility('hidden'),
+        animationDuration,
+      );
     }
-
-    return () => clearTimeout(animationTimer);
-  }, [current, direction, index, previous, animationDuration]);
+    return () => clearTimeout(timer);
+  }, [
+    activeIndex,
+    priorActiveIndex,
+    index,
+    direction,
+    animationDuration,
+  ]);
+  const position = index === 0 ? 'relative' : 'absolute';
 
   return (
     <StyledCarouselChild
-      animationDuration={animationDuration}
-      noDimensions={noDimensions}
+      fill={fill}
+      visibilityProp={visibility}
+      positionProp={position}
       animation={animation}
-      displayProp={display}
+      animationDuration={animationDuration}
     >
-      {children}
+      <Box fill={fill}>
+        {children}
+      </Box>
     </StyledCarouselChild>
   );
 };
 
 CarouselChild.propTypes = CarouselChildPropTypes;
+
+CarouselChild.defaultProps = {
+  fill: false,
+  play: undefined,
+  priorActiveIndex: undefined,
+};
 
 export { CarouselChild };

@@ -12,7 +12,6 @@ if (process.env.NODE_ENV !== 'production') {
     activeChild: PropTypes.number,
     initialChild: PropTypes.number,
     fill: PropTypes.bool,
-
     wrap: PropTypes.bool,
     controls: PropTypes.oneOfType([
       PropTypes.oneOf(['arrows', 'selectors']),
@@ -30,28 +29,12 @@ let CarouselChildPropType;
 if (process.env.NODE_ENV !== 'production') {
   CarouselChildPropType = {
     animationDuration: PropTypes.number.isRequired,
+    fill: PropTypes.bool,
     index: PropTypes.number.isRequired,
-    current: PropTypes.number.isRequired,
-    noDimensions: PropTypes.bool.isRequired,
-    previous: PropTypes.number,
-    direction: PropTypes.string,
+    activeIndex: PropTypes.number.isRequired,
+    priorActiveIndex: PropTypes.number,
+    direction: PropTypes.oneOf(['left', 'right']),
   };
 }
 export const CarouselChildPropTypes = CarouselChildPropType;
 
-let CarouselControlsPropType;
-if (process.env.NODE_ENV !== 'production') {
-  CarouselControlsPropType = {
-    current: PropTypes.number.isRequired,
-    wrap: PropTypes.bool.isRequired,
-    controls: PropTypes.oneOfType([
-      PropTypes.oneOf(['arrows', 'selectors']),
-      PropTypes.bool,
-    ]).isRequired,
-    numSlides: PropTypes.number.isRequired,
-    onNext: PropTypes.func.isRequired,
-    onPrevious: PropTypes.func.isRequired,
-    onSelectorNavigation: PropTypes.func.isRequired,
-  };
-}
-export const CarouselControlsPropTypes = CarouselControlsPropType;
