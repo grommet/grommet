@@ -9,6 +9,7 @@ import { FormField } from '../../FormField';
 import { Button } from '../../Button';
 import { TextInput } from '../../TextInput';
 import { CheckBox } from '../../CheckBox';
+import { Box } from '../../Box';
 
 describe('Form controlled', () => {
   test('controlled', () => {
@@ -86,7 +87,7 @@ describe('Form controlled', () => {
     const onValidate = jest.fn();
     const errorMessage = 'One uppercase letter';
     const testRules = {
-      regexp: new RegExp('(?=.*?[A-Z])'),
+      regexp: /(?=.*?[A-Z])/,
       message: errorMessage,
       status: 'error',
     };
@@ -127,7 +128,7 @@ describe('Form controlled', () => {
     const onValidate = jest.fn();
     const infoMessage = 'One uppercase letter';
     const testRules = {
-      regexp: new RegExp('(?=.*?[A-Z])'),
+      regexp: /(?=.*?[A-Z])/,
       message: infoMessage,
       status: 'info',
     };
@@ -517,6 +518,207 @@ describe('Form controlled', () => {
       expect.objectContaining({ errors: {}, infos: {} }),
     );
 
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('controlled Array of Form Fields', () => {
+    const onSubmit = jest.fn();
+    const Test = () => {
+      const [value, setValue] = React.useState({
+        phones: [
+          { number: '', ext: '' },
+          { number: '', ext: '' },
+          { number: '', ext: '' },
+        ],
+      });
+      const onChange = (nextValue) => setValue(nextValue);
+      return (
+        <Form value={value} onChange={onChange} onSubmit={onSubmit}>
+          {value.phones.length &&
+            value.phones.map((phone, idx) => (
+              <Box
+                // eslint-disable-next-line react/no-array-index-key
+                key={idx}
+                direction="row"
+                justify="between"
+                align="center"
+              >
+                <FormField name={`phones[${idx}].number`}>
+                  <TextInput
+                    name={`phones[${idx}].number`}
+                    placeholder={`number test input ${idx + 1}`}
+                  />
+                </FormField>
+                <FormField name={`phones[${idx}].ext`}>
+                  <TextInput
+                    name={`phones[${idx}].ext`}
+                    placeholder={`ext test input ${idx + 1}`}
+                  />
+                </FormField>
+              </Box>
+            ))}
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.change(getByPlaceholderText('number test input 2'), {
+      target: { value: '123456789' },
+    });
+    fireEvent.change(getByPlaceholderText('ext test input 3'), {
+      target: { value: '999' },
+    });
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onSubmit).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          phones: [
+            { number: '', ext: '' },
+            { number: '123456789', ext: '' },
+            { number: '', ext: '999' },
+          ],
+        },
+        touched: {
+          'phones[1].number': true,
+          'phones[2].ext': true,
+        },
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('controlled Array of Form Fields onValidate', () => {
+    const onValidate = jest.fn();
+    const Test = () => {
+      const [value, setValue] = React.useState({
+        test: '',
+        phones: [
+          { number: '', ext: '' },
+          { number: '', ext: '' },
+        ],
+      });
+      const onChange = (nextValue) => setValue(nextValue);
+      return (
+        <Form value={value} onChange={onChange} onValidate={onValidate}>
+          {value.phones.length &&
+            value.phones.map((phone, idx) => (
+              <Box
+                // eslint-disable-next-line react/no-array-index-key
+                key={idx}
+                direction="row"
+                justify="between"
+                align="center"
+              >
+                <FormField name={`phones[${idx}].number`} required>
+                  <TextInput
+                    name={`phones[${idx}].number`}
+                    placeholder={`number test input ${idx + 1}`}
+                  />
+                </FormField>
+                <FormField name={`phones[${idx}].ext`}>
+                  <TextInput
+                    name={`phones[${idx}].ext`}
+                    placeholder={`ext test input ${idx + 1}`}
+                  />
+                </FormField>
+              </Box>
+            ))}
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onValidate).toBeCalledWith(
+      expect.objectContaining({
+        errors: {
+          'phones[0].number': 'required',
+          'phones[1].number': 'required',
+        },
+        infos: {},
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('controlled Array of Form Fields onValidate custom error', () => {
+    const onValidate = jest.fn();
+    const errorMessage = 'Only Numbers';
+    const testRules = {
+      regexp: /^[0-9]*$/,
+      message: errorMessage,
+      status: 'error',
+    };
+
+    const Test = () => {
+      const [value, setValue] = React.useState({
+        test: '',
+        phones: [
+          { number: '', ext: '' },
+          { number: '', ext: '' },
+        ],
+      });
+      const onChange = (nextValue) => setValue(nextValue);
+      return (
+        <Form value={value} onChange={onChange} onValidate={onValidate}>
+          {value.phones.length &&
+            value.phones.map((phone, idx) => (
+              <Box
+                // eslint-disable-next-line react/no-array-index-key
+                key={idx}
+                direction="row"
+                justify="between"
+                align="center"
+              >
+                <FormField name={`phones[${idx}].number`} validate={testRules}>
+                  <TextInput
+                    name={`phones[${idx}].number`}
+                    placeholder={`number test input ${idx + 1}`}
+                  />
+                </FormField>
+                <FormField name={`phones[${idx}].ext`}>
+                  <TextInput
+                    name={`phones[${idx}].ext`}
+                    placeholder={`ext test input ${idx + 1}`}
+                  />
+                </FormField>
+              </Box>
+            ))}
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.change(getByPlaceholderText('number test input 2'), {
+      target: { value: 'sadasd' },
+    });
+    fireEvent.click(getByText('Submit'));
+    expect(onValidate).toBeCalledWith(
+      expect.objectContaining({
+        errors: {
+          'phones[1].number': errorMessage,
+        },
+        infos: {},
+      }),
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });

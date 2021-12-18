@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Anchor, Grommet, Nav } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Nav } from 'grommet';
 
 const items = [
   { label: 'Item A', href: '#' },
@@ -11,13 +10,14 @@ const items = [
 ];
 
 const SimpleNav = () => (
-  <Grommet theme={grommet}>
-    <Nav pad="large">
-      {items.map(item => (
-        <Anchor href={item.href} label={item.label} key={item.label} />
-      ))}
-    </Nav>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
+  <Nav pad="large">
+    {items.map((item) => (
+      <Anchor href={item.href} label={item.label} key={item.label} />
+    ))}
+  </Nav>
+  // </Grommet>
 );
 
 export const Simple = () => <SimpleNav />;

@@ -18,6 +18,48 @@ const defaultValidationResults = {
   infos: {},
 };
 
+const stringToArray = (string) => {
+  const match = string?.match(/^(.+)\[([0-9]+)\]\.(.*)$/);
+  if (match) {
+    const [, arrayName, indexOfArray, arrayObjName] = match;
+    return {
+      indexOfArray,
+      arrayName,
+      arrayObjName,
+    };
+  }
+  return undefined;
+};
+
+const getValueForName = (name, value) => {
+  const isArrayField = stringToArray(name);
+  if (isArrayField) {
+    const { indexOfArray, arrayName, arrayObjName } = isArrayField;
+    const obj = value[arrayName]?.[indexOfArray];
+    return arrayObjName ? obj?.[arrayObjName] : obj;
+  }
+  return value[name];
+};
+
+const setValueForName = (name, componentValue, prevValue) => {
+  const nextValue = { ...prevValue };
+  const isArrayField = stringToArray(name);
+  if (isArrayField) {
+    const { indexOfArray, arrayName, arrayObjName } = isArrayField;
+    if (!nextValue[arrayName]) nextValue[arrayName] = [];
+    if (arrayObjName) {
+      if (!nextValue[arrayName][indexOfArray])
+        nextValue[arrayName][indexOfArray] = {
+          [arrayObjName]: componentValue,
+        };
+      nextValue[arrayName][indexOfArray][arrayObjName] = componentValue;
+    } else nextValue[arrayName][indexOfArray] = componentValue;
+  } else {
+    nextValue[name] = componentValue;
+  }
+  return nextValue;
+};
+
 // Validating nameValues with the validator and sending correct messaging
 const validate = (validator, nameValue, formValue, format, messages) => {
   let result;
@@ -37,7 +79,7 @@ const validate = (validator, nameValue, formValue, format, messages) => {
 // Validates particular key in formValue
 const validateName =
   (nameValidators, required) => (name, formValue, format, messages) => {
-    const nameValue = formValue[name];
+    const nameValue = getValueForName(name, formValue);
     let result;
     // ValidateArg is something that gets passed in from a FormField component
     // See 'validate' prop in FormField
@@ -133,7 +175,6 @@ const Form = forwardRef(
     const [validationResults, setValidationResults] = useState(
       defaultValidationResults,
     );
-
     // when onBlur input validation is triggered, we need to complete any
     // potential click events before running the onBlur validation.
     // otherwise, click events like reset, etc. may not be registered.
@@ -154,7 +195,6 @@ const Form = forwardRef(
     const buildValid = useCallback(
       (nextErrors) => {
         let valid = false;
-
         valid = requiredFields.current
           .filter((n) => Object.keys(validations.current).includes(n))
           .every(
@@ -190,8 +230,7 @@ const Form = forwardRef(
     useEffect(() => {
       const validationsForSetFields = Object.entries(
         validations.current,
-      ).filter(([n]) => value[n]);
-
+      ).filter(([n]) => getValueForName(n, value));
       if (validationsForSetFields.length > 0 && validateOn !== 'submit') {
         const [errors, infos] = validateForm(
           validationsForSetFields,
@@ -199,7 +238,6 @@ const Form = forwardRef(
           format,
           messages,
         );
-
         filterErrorValidations(errors);
         filterInfoValidations(infos);
 
@@ -327,155 +365,177 @@ const Form = forwardRef(
     // an initialValue, which will trigger updating the contextValue so
     // they can have access to it.
     //
-    const useFormInput = ({
-      name,
-      value: componentValue,
-      initialValue,
-      validate: validateArg,
-    }) => {
-      const [inputValue, setInputValue] = useState(initialValue);
-      const formValue = name ? value[name] : undefined;
-      // for dynamic forms, we need to track when an input has been added to
-      // the form value. if the input is unmounted, we will delete its key/value
-      // from the form value.
-      const keyCreated = useRef(false);
+    const formContextValue = useMemo(() => {
+      const useFormInput = ({
+        name,
+        value: componentValue,
+        initialValue,
+        validate: validateArg,
+      }) => {
+        const [inputValue, setInputValue] = useState(initialValue);
+        const formValue = name ? getValueForName(name, value) : undefined;
+        // for dynamic forms, we need to track when an input has been added to
+        // the form value. if the input is unmounted, we will delete its
+        // key/value from the form value.
+        const keyCreated = useRef(false);
 
-      // This effect is for pattern #2, where the controlled input
-      // component is driving the value via componentValue.
-      useEffect(() => {
-        if (
-          name && // we have somewhere to put this
-          componentValue !== undefined && // input driving
-          componentValue !== formValue // don't already have it
-        ) {
-          setValueState((prevValue) => {
-            const nextValue = { ...prevValue };
-            nextValue[name] = componentValue;
-            return nextValue;
-          });
-          // don't onChange on programmatic changes
-        }
-      }, [componentValue, formValue, name]);
-
-      // on unmount, if the form is uncontrolled, remove the key/value
-      // from the form value
-      useEffect(
-        () => () => {
-          if (keyCreated.current) {
-            keyCreated.current = false;
-            setValueState((prevValue) => {
-              const nextValue = { ...prevValue };
-              delete nextValue[name];
-              return nextValue;
-            });
+        // This effect is for pattern #2, where the controlled input
+        // component is driving the value via componentValue.
+        useEffect(() => {
+          if (
+            name && // we have somewhere to put this
+            componentValue !== undefined && // input driving
+            componentValue !== formValue // don't already have it
+          ) {
+            setValueState((prevValue) =>
+              setValueForName(name, componentValue, prevValue),
+            );
+            // don't onChange on programmatic changes
           }
-        },
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        [], // only run onmount and unmount
-      );
+        }, [componentValue, formValue, name]);
 
-      useEffect(() => {
-        if (validateArg) {
-          if (!validations.current[name]) {
-            validations.current[name] = {};
-          }
-          validations.current[name].input = validateName(validateArg);
-          return () => delete validations.current[name].input;
-        }
-        return undefined;
-      }, [validateArg, name]);
-
-      let useValue;
-      if (componentValue !== undefined)
-        // input component drives, pattern #2
-        useValue = componentValue;
-      else if (valueProp && name && formValue !== undefined)
-        // form drives, pattern #1
-        useValue = formValue;
-      else if (formValue === undefined && name)
-        // form has reset, so reset input value as well
-        useValue = initialValue;
-      else useValue = inputValue;
-
-      return [
-        useValue,
-        (nextComponentValue) => {
-          if (name) {
-            // we have somewhere to put this
-            const nextTouched = { ...touched };
-            nextTouched[name] = true;
-
-            if (!touched[name]) {
-              // don't update if not needed
-              setTouched(nextTouched);
+        // on unmount, if the form is uncontrolled, remove the key/value
+        // from the form value
+        useEffect(
+          () => () => {
+            if (keyCreated.current) {
+              keyCreated.current = false;
+              setValueState((prevValue) => {
+                const nextValue = { ...prevValue };
+                const isArrayField = stringToArray(name);
+                if (isArrayField) {
+                  const { arrayName } = isArrayField;
+                  delete nextValue[arrayName];
+                } else {
+                  delete nextValue[name];
+                }
+                return nextValue;
+              });
             }
+          },
+          // eslint-disable-next-line react-hooks/exhaustive-deps
+          [], // only run onmount and unmount
+        );
 
-            const nextValue = { ...value };
-            // if nextValue doesn't have a key for name, this must be
-            // uncontrolled form. we will flag this field was added so
-            // we know to remove its value from the form if it is dynamically
-            // removed
-            if (!(name in nextValue)) keyCreated.current = true;
-            nextValue[name] = nextComponentValue;
-
-            setValueState(nextValue);
-            if (onChange) onChange(nextValue, { touched: nextTouched });
+        useEffect(() => {
+          if (validateArg) {
+            if (!validations.current[name]) {
+              validations.current[name] = {};
+            }
+            validations.current[name].input = validateName(validateArg);
+            return () => delete validations.current[name].input;
           }
-          if (initialValue !== undefined) setInputValue(nextComponentValue);
-        },
-      ];
-    };
+          return undefined;
+        }, [validateArg, name]);
 
-    const useFormField = ({
-      error: errorArg,
-      info: infoArg,
-      name,
-      required,
-      disabled,
-      validate: validateArg,
-    }) => {
-      const error = disabled
-        ? undefined
-        : errorArg || validationResults.errors[name];
-      const info = infoArg || validationResults.infos[name];
+        let useValue;
+        if (componentValue !== undefined)
+          // input component drives, pattern #2
+          useValue = componentValue;
+        else if (valueProp && name && formValue !== undefined)
+          // form drives, pattern #1
+          useValue = formValue;
+        else if (formValue === undefined && name)
+          // form has reset, so reset input value as well
+          useValue = initialValue;
+        else useValue = inputValue;
 
-      useEffect(() => {
-        const index = requiredFields.current.indexOf(name);
-        if (required) {
-          if (index === -1) requiredFields.current.push(name);
-        } else if (index !== -1) requiredFields.current.splice(index, 1);
+        return [
+          useValue,
+          (nextComponentValue) => {
+            if (name) {
+              // we have somewhere to put this
+              const nextTouched = { ...touched };
+              nextTouched[name] = true;
 
-        if (validateArg || required) {
-          if (!validations.current[name]) {
-            validations.current[name] = {};
-          }
-          validations.current[name].field = validateName(validateArg, required);
-          return () => delete validations.current[name].field;
-        }
+              if (!touched[name]) {
+                // don't update if not needed
+                setTouched(nextTouched);
+              }
 
-        return undefined;
-      }, [error, name, required, validateArg, disabled]);
-
-      return {
-        error,
-        info,
-        inForm: true,
-        onBlur:
-          validateOn === 'blur'
-            ? () =>
-                setPendingValidation(
-                  pendingValidation ? [...pendingValidation, name] : [name],
-                )
-            : undefined,
-        onChange:
-          validateOn === 'change'
-            ? () =>
-                setPendingValidation(
-                  pendingValidation ? [...pendingValidation, name] : [name],
-                )
-            : undefined,
+              // if nextValue doesn't have a key for name, this must be
+              // uncontrolled form. we will flag this field was added so
+              // we know to remove its value from the form if it is dynamically
+              // removed
+              if (!(name in value)) keyCreated.current = true;
+              const nextValue = setValueForName(
+                name,
+                nextComponentValue,
+                value,
+              );
+              setValueState(nextValue);
+              if (onChange) onChange(nextValue, { touched: nextTouched });
+            }
+            if (initialValue !== undefined) setInputValue(nextComponentValue);
+          },
+        ];
       };
-    };
+
+      const useFormField = ({
+        error: errorArg,
+        info: infoArg,
+        name,
+        required,
+        disabled,
+        validate: validateArg,
+      }) => {
+        const error = disabled
+          ? undefined
+          : errorArg || validationResults.errors[name];
+        const info = infoArg || validationResults.infos[name];
+
+        useEffect(() => {
+          const index = requiredFields.current.indexOf(name);
+          if (required) {
+            if (index === -1) requiredFields.current.push(name);
+          } else if (index !== -1) requiredFields.current.splice(index, 1);
+
+          if (validateArg || required) {
+            if (!validations.current[name]) {
+              validations.current[name] = {};
+            }
+            validations.current[name].field = validateName(
+              validateArg,
+              required,
+            );
+            return () => delete validations.current[name].field;
+          }
+
+          return undefined;
+        }, [error, name, required, validateArg, disabled]);
+
+        return {
+          error,
+          info,
+          inForm: true,
+          onBlur:
+            validateOn === 'blur'
+              ? () =>
+                  setPendingValidation(
+                    pendingValidation ? [...pendingValidation, name] : [name],
+                  )
+              : undefined,
+          onChange:
+            validateOn === 'change'
+              ? () =>
+                  setPendingValidation(
+                    pendingValidation ? [...pendingValidation, name] : [name],
+                  )
+              : undefined,
+        };
+      };
+
+      return { useFormField, useFormInput };
+    }, [
+      onChange,
+      pendingValidation,
+      touched,
+      validateOn,
+      validationResults.errors,
+      validationResults.infos,
+      value,
+      valueProp,
+    ]);
 
     return (
       <form
@@ -531,7 +591,7 @@ const Form = forwardRef(
           }
         }}
       >
-        <FormContext.Provider value={{ useFormField, useFormInput }}>
+        <FormContext.Provider value={formContextValue}>
           {children}
         </FormContext.Provider>
       </form>
