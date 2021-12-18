@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
+import React, { forwardRef, useEffect, useMemo, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import {
@@ -66,10 +60,9 @@ const Grommet = forwardRef((props, ref) => {
     messages: messagesProp,
     ...rest
   } = props;
-
   const { background, dir, themeMode, userAgent } = props;
-
   const [stateResponsive, setResponsive] = useState();
+  const [roots, setRoots] = useState([]);
 
   const theme = useMemo(() => {
     const nextTheme = deepMerge(baseTheme, themeProp || {});
@@ -140,12 +133,15 @@ const Grommet = forwardRef((props, ref) => {
     theme.global.deviceBreakpoints.tablet;
 
   const grommetRef = useForwardedRef(ref);
-  const getRootsContext = useCallback((root) => [root], []);
+
+  useEffect(() => {
+    if (grommetRef.current) setRoots([grommetRef.current]);
+  }, [grommetRef]);
 
   return (
     <ThemeContext.Provider value={theme}>
       <ResponsiveContext.Provider value={responsive}>
-        <RootsContext.Provider value={getRootsContext(grommetRef.current)}>
+        <RootsContext.Provider value={roots}>
           <ContainerTargetContext.Provider value={containerTarget}>
             <OptionsContext.Provider value={options}>
               <MessageContext.Provider value={messages}>
