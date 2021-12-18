@@ -53,7 +53,7 @@ const activeDates = {
   end: 'end',
 };
 
-const timeStamp = new RegExp(/T.*/);
+const timeStamp = /T.*/;
 
 const formatSelectedDatesString = (date) => `Currently selected 
   ${date?.map((item) => {

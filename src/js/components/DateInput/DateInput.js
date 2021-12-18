@@ -166,6 +166,13 @@ const DateInput = forwardRef(
       />
     );
 
+    const formContextValue = useMemo(
+      () => ({
+        useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
+      }),
+      [],
+    );
+
     if (!format) {
       // When no format is specified, we don't give the user a way to type
       if (inline) return calendar;
@@ -186,9 +193,7 @@ const DateInput = forwardRef(
       <FormContext.Provider
         key="input"
         // don't let MaskedInput drive the Form
-        value={{
-          useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
-        }}
+        value={formContextValue}
       >
         <Keyboard
           onEsc={open ? () => closeCalendar() : undefined}
