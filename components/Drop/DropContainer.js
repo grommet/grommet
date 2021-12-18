@@ -331,16 +331,23 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     "data-g-portal-id": portalId
   }, rest), children);
 
-  if (background || theme.global.drop.background) {
-    var dark = (0, _utils.backgroundIsDark)(background || theme.global.drop.background, theme);
+  var themeContextValue = (0, _react.useMemo)(function () {
+    var dark;
 
-    if (dark !== undefined && dark !== theme.dark) {
-      content = /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
-        value: _extends({}, theme, {
-          dark: dark
-        })
-      }, content);
+    if (background || theme.global.drop.background) {
+      dark = (0, _utils.backgroundIsDark)(background || theme.global.drop.background, theme);
     }
+
+    return _extends({}, theme, {
+      dark: dark
+    });
+  }, [background, theme]);
+  var dark = themeContextValue.dark;
+
+  if (dark !== undefined && dark !== theme.dark) {
+    content = /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
+      value: themeContextValue
+    }, content);
   }
 
   return /*#__PURE__*/_react["default"].createElement(_utils.PortalContext.Provider, {

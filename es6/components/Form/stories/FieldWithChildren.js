@@ -2,19 +2,19 @@ import React from 'react';
 import { Box, Button, CheckBoxGroup, Form, FormField, Grommet, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 var passwordRulesStrong = [{
-  regexp: new RegExp('(?=.*?[A-Z])'),
+  regexp: /(?=.*?[A-Z])/,
   message: 'One uppercase letter',
   status: 'error'
 }, {
-  regexp: new RegExp('(?=.*?[a-z])'),
+  regexp: /(?=.*?[a-z])/,
   message: 'One lowercase letter',
   status: 'error'
 }, {
-  regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+  regexp: /(?=.*?[#?!@$ %^&*-])/,
   message: 'One special character',
   status: 'error'
 }, {
-  regexp: new RegExp('.{8,}'),
+  regexp: /.{8,}/,
   message: 'At least 8 characters',
   status: 'error'
 }];

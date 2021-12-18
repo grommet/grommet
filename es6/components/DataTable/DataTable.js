@@ -215,7 +215,7 @@ var DataTable = function DataTable(_ref) {
   useLayoutEffect(function () {
     var _bodyRef$current$pare;
 
-    var nextScrollOffset = ((_bodyRef$current$pare = bodyRef.current.parentElement) == null ? void 0 : _bodyRef$current$pare.clientWidth) - bodyRef.current.clientWidth;
+    var nextScrollOffset = (((_bodyRef$current$pare = bodyRef.current.parentElement) == null ? void 0 : _bodyRef$current$pare.clientWidth) || 0) - bodyRef.current.clientWidth;
     if (nextScrollOffset !== scrollOffset) setScrollOffset(nextScrollOffset);
   });
   useLayoutEffect(function () {

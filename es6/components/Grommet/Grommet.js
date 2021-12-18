@@ -63,6 +63,10 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
       stateResponsive = _useState[0],
       setResponsive = _useState[1];
 
+  var _useState2 = useState([]),
+      roots = _useState2[0],
+      setRoots = _useState2[1];
+
   var theme = useMemo(function () {
     var nextTheme = deepMerge(baseTheme, themeProp || {}); // if user provides specific menu alignment, we don't want
     // the defaults to be included at all (can cause issues with controlMirror)
@@ -113,12 +117,15 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
   }, [theme]);
   var responsive = stateResponsive || deviceResponsive(userAgent, theme) || theme.global.deviceBreakpoints.tablet;
   var grommetRef = useForwardedRef(ref);
+  useEffect(function () {
+    if (grommetRef.current) setRoots([grommetRef.current]);
+  }, [grommetRef]);
   return /*#__PURE__*/React.createElement(ThemeContext.Provider, {
     value: theme
   }, /*#__PURE__*/React.createElement(ResponsiveContext.Provider, {
     value: responsive
   }, /*#__PURE__*/React.createElement(RootsContext.Provider, {
-    value: [grommetRef.current]
+    value: roots
   }, /*#__PURE__*/React.createElement(ContainerTargetContext.Provider, {
     value: containerTarget
   }, /*#__PURE__*/React.createElement(OptionsContext.Provider, {

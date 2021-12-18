@@ -25,7 +25,7 @@ var activeDates = {
   start: 'start',
   end: 'end'
 };
-var timeStamp = new RegExp(/T.*/);
+var timeStamp = /T.*/;
 
 var formatSelectedDatesString = function formatSelectedDatesString(date) {
   return "Currently selected \n  " + (date == null ? void 0 : date.map(function (item) {

@@ -156,7 +156,7 @@ var withinDates = function withinDates(date, dates) {
 exports.withinDates = withinDates;
 
 var getTimestamp = function getTimestamp(date) {
-  return new RegExp(/T.*/).test(date) ? new Date(date).toISOString().split('T')[1] : // for Calendar, explicitly mark that caller has provided
+  return /T.*/.test(date) ? new Date(date).toISOString().split('T')[1] : // for Calendar, explicitly mark that caller has provided
   // value with no timestamp
   false;
 }; // Adjust for differences between timestamp on value and

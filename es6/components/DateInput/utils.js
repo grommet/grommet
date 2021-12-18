@@ -27,27 +27,27 @@ export var formatToSchema = function formatToSchema(format) {
 var masks = {
   m: {
     length: [1, 2],
-    regexp: new RegExp("^[1-9]$|^1[0-2]$")
+    regexp: /^[1-9]$|^1[0-2]$/
   },
   mm: {
     length: [1, 2],
-    regexp: new RegExp("^[0-1]$|^0[1-9]$|^1[0-2]$")
+    regexp: /^[0-1]$|^0[1-9]$|^1[0-2]$/
   },
   d: {
     length: [1, 2],
-    regexp: new RegExp("^[1-9]$|^[1-2][0-9]$|^3[0-1]$")
+    regexp: /^[1-9]$|^[1-2][0-9]$|^3[0-1]$/
   },
   dd: {
     length: [1, 2],
-    regexp: new RegExp("^[0-3]$|^0[1-9]$|^[1-2][0-9]$|^3[0-1]$")
+    regexp: /^[0-3]$|^0[1-9]$|^[1-2][0-9]$|^3[0-1]$/
   },
   yy: {
     length: [1, 2],
-    regexp: new RegExp("^[0-9]{1,2}$")
+    regexp: /^[0-9]{1,2}$/
   },
   yyyy: {
     length: [1, 4],
-    regexp: new RegExp("^[0-9]{1,4}$")
+    regexp: /^[0-9]{1,4}$/
   }
 };
 export var schemaToMask = function schemaToMask(schema) {

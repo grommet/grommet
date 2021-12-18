@@ -4,7 +4,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useCallback, useContext, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -47,16 +47,6 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
     setActiveIndex(propsActiveIndex);
   }
-
-  var activateTab = function activateTab(index) {
-    if (propsActiveIndex === undefined) {
-      setActiveIndex(index);
-    }
-
-    if (onActive) {
-      onActive(index);
-    }
-  };
   /* eslint-disable no-param-reassign */
 
 
@@ -64,17 +54,30 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   delete rest.onActive;
   /* eslint-enable no-param-reassign */
 
+  var getTabsContext = useCallback(function (index) {
+    var activateTab = function activateTab(nextIndex) {
+      if (propsActiveIndex === undefined) {
+        setActiveIndex(nextIndex);
+      }
+
+      if (onActive) {
+        onActive(nextIndex);
+      }
+    };
+
+    return {
+      activeIndex: activeIndex,
+      active: activeIndex === index,
+      onActivate: function onActivate() {
+        return activateTab(index);
+      },
+      setActiveContent: setActiveContent,
+      setActiveTitle: setActiveTitle
+    };
+  }, [activeIndex, onActive, propsActiveIndex]);
   var tabs = React.Children.map(children, function (child, index) {
     return /*#__PURE__*/React.createElement(TabsContext.Provider, {
-      value: {
-        activeIndex: activeIndex,
-        active: activeIndex === index,
-        onActivate: function onActivate() {
-          return activateTab(index);
-        },
-        setActiveContent: setActiveContent,
-        setActiveTitle: setActiveTitle
-      }
+      value: getTabsContext(index)
     }, child ?
     /*#__PURE__*/
     // cloneElement is needed for backward compatibility with custom

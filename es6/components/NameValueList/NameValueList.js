@@ -4,7 +4,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef, useContext, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Grid } from '../Grid';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
@@ -41,12 +41,15 @@ var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
     gap = theme.nameValueList.pair.column.gap;
   }
 
-  return /*#__PURE__*/React.createElement(NameValueListContext.Provider, {
-    value: {
+  var listContextValue = useMemo(function () {
+    return {
       nameProps: nameProps,
       pairProps: pairProps,
       valueProps: valueProps
-    }
+    };
+  }, [nameProps, pairProps, valueProps]);
+  return /*#__PURE__*/React.createElement(NameValueListContext.Provider, {
+    value: listContextValue
   }, /*#__PURE__*/React.createElement(Grid, _extends({
     as: "dl",
     ref: ref,

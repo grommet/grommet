@@ -55,12 +55,15 @@ var NameValueList = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     gap = theme.nameValueList.pair.column.gap;
   }
 
-  return /*#__PURE__*/_react["default"].createElement(_NameValueListContext.NameValueListContext.Provider, {
-    value: {
+  var listContextValue = (0, _react.useMemo)(function () {
+    return {
       nameProps: nameProps,
       pairProps: pairProps,
       valueProps: valueProps
-    }
+    };
+  }, [nameProps, pairProps, valueProps]);
+  return /*#__PURE__*/_react["default"].createElement(_NameValueListContext.NameValueListContext.Provider, {
+    value: listContextValue
   }, /*#__PURE__*/_react["default"].createElement(_Grid.Grid, _extends({
     as: "dl",
     ref: ref,

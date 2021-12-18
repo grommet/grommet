@@ -209,14 +209,19 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }, content);
   }
 
-  if (theme.layer.background) {
+  var themeContextValue = useMemo(function () {
     var dark = backgroundIsDark(theme.layer.background, theme);
+    return _extends({}, theme, {
+      dark: dark
+    });
+  }, [theme]);
+
+  if (theme.layer.background) {
+    var dark = themeContextValue.dark;
 
     if (dark !== undefined && dark !== theme.dark) {
       content = /*#__PURE__*/React.createElement(ThemeContext.Provider, {
-        value: _extends({}, theme, {
-          dark: dark
-        })
+        value: themeContextValue
       }, content);
     }
   }

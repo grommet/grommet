@@ -160,6 +160,14 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   }, _extends({}, calendarProps, {
     timestamp: timestamp
   })));
+  var formContextValue = useMemo(function () {
+    return {
+      useFormInput: function useFormInput(_ref2) {
+        var valueProp = _ref2.value;
+        return [valueProp, function () {}];
+      }
+    };
+  }, []);
 
   if (!format) {
     // When no format is specified, we don't give the user a way to type
@@ -183,12 +191,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   var input = /*#__PURE__*/React.createElement(FormContext.Provider, {
     key: "input" // don't let MaskedInput drive the Form
     ,
-    value: {
-      useFormInput: function useFormInput(_ref2) {
-        var valueProp = _ref2.value;
-        return [valueProp, function () {}];
-      }
-    }
+    value: formContextValue
   }, /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: open ? function () {
       return closeCalendar();

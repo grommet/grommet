@@ -231,14 +231,19 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }, content);
   }
 
-  if (theme.layer.background) {
+  var themeContextValue = (0, _react.useMemo)(function () {
     var dark = (0, _utils.backgroundIsDark)(theme.layer.background, theme);
+    return _extends({}, theme, {
+      dark: dark
+    });
+  }, [theme]);
+
+  if (theme.layer.background) {
+    var dark = themeContextValue.dark;
 
     if (dark !== undefined && dark !== theme.dark) {
       content = /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
-        value: _extends({}, theme, {
-          dark: dark
-        })
+        value: themeContextValue
       }, content);
     }
   }

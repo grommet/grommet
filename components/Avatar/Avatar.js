@@ -42,18 +42,19 @@ var Avatar = function Avatar(_ref) {
 
   var avatarSize = theme.avatar.size[size] || size;
   var avatarTextSize = theme.avatar.text.size[size] || 'large';
-  var avatarProps = {
-    align: align,
-    height: avatarSize,
-    justify: justify,
-    overflow: 'hidden',
-    round: round,
-    width: avatarSize
-  };
-
-  var AvatarChildren = function AvatarChildren() {
+  var avatarProps = (0, _react.useMemo)(function () {
+    return {
+      align: align,
+      height: avatarSize,
+      justify: justify,
+      overflow: 'hidden',
+      round: round,
+      width: avatarSize
+    };
+  }, [align, avatarSize, justify, round]);
+  var AvatarChildren = (0, _react.useCallback)(function () {
     return /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({}, avatarProps, rest), children);
-  };
+  }, [avatarProps, children, rest]);
 
   if (height || width) {
     console.warn('Avatar should use `size` instead of `height` or `width` props');

@@ -4,7 +4,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useContext } from 'react';
+import React, { useCallback, useContext, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { StyledAvatar, StyledAvatarText } from './StyledAvatar';
@@ -28,18 +28,19 @@ var Avatar = function Avatar(_ref) {
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var avatarSize = theme.avatar.size[size] || size;
   var avatarTextSize = theme.avatar.text.size[size] || 'large';
-  var avatarProps = {
-    align: align,
-    height: avatarSize,
-    justify: justify,
-    overflow: 'hidden',
-    round: round,
-    width: avatarSize
-  };
-
-  var AvatarChildren = function AvatarChildren() {
+  var avatarProps = useMemo(function () {
+    return {
+      align: align,
+      height: avatarSize,
+      justify: justify,
+      overflow: 'hidden',
+      round: round,
+      width: avatarSize
+    };
+  }, [align, avatarSize, justify, round]);
+  var AvatarChildren = useCallback(function () {
     return /*#__PURE__*/React.createElement(StyledAvatar, _extends({}, avatarProps, rest), children);
-  };
+  }, [avatarProps, children, rest]);
 
   if (height || width) {
     console.warn('Avatar should use `size` instead of `height` or `width` props');

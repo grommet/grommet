@@ -24,7 +24,8 @@ var _format = function format(options, messages) {
   // this format function to get the grommet messages from
   // their bundles that way and don't need to pass the messages
   // themselves in this property, just the format function.
-  var idParts = ((_options$id = options.id) == null ? void 0 : _options$id.split('.')) || [];
+  var idParts = ((_options$id = options.id) == null ? void 0 : _options$id.split('.')) || []; // eslint-disable-next-line no-unsafe-optional-chaining
+
   var baseId = idParts[(idParts == null ? void 0 : idParts.length) - 1];
   var messageObj = messages;
   idParts.forEach(function (idPart) {

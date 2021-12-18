@@ -4,7 +4,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { Children, forwardRef, useState } from 'react';
+import React, { Children, forwardRef, useCallback, useState } from 'react';
 import { AccordionPropTypes } from './propTypes';
 import { Box } from '../Box';
 import { AccordionContext } from './AccordionContext';
@@ -39,25 +39,34 @@ var Accordion = /*#__PURE__*/forwardRef(function (_ref, ref) {
     setStateActiveIndex(activeIndex);
   }
 
-  var _onPanelChange = function onPanelChange(index) {
-    var nextActiveIndexes = [].concat(activeIndexes || []);
-    var nextActiveIndex = nextActiveIndexes.indexOf(index);
+  var getAccordionContext = useCallback(function (index) {
+    var _onPanelChange = function onPanelChange(nextIndex) {
+      var nextActiveIndexes = [].concat(activeIndexes || []);
+      var nextActiveIndex = nextActiveIndexes.indexOf(nextIndex);
 
-    if (nextActiveIndex > -1) {
-      nextActiveIndexes.splice(nextActiveIndex, 1);
-    } else if (multiple) {
-      nextActiveIndexes.push(index);
-    } else {
-      nextActiveIndexes = [index];
-    }
+      if (nextActiveIndex > -1) {
+        nextActiveIndexes.splice(nextActiveIndex, 1);
+      } else if (multiple) {
+        nextActiveIndexes.push(nextIndex);
+      } else {
+        nextActiveIndexes = [nextIndex];
+      }
 
-    setActiveIndexes(nextActiveIndexes);
+      setActiveIndexes(nextActiveIndexes);
 
-    if (onActive) {
-      onActive(nextActiveIndexes);
-    }
-  };
+      if (onActive) {
+        onActive(nextActiveIndexes);
+      }
+    };
 
+    return {
+      active: activeIndexes.indexOf(index) > -1,
+      animate: animate,
+      onPanelChange: function onPanelChange() {
+        return _onPanelChange(index);
+      }
+    };
+  }, [activeIndexes, animate, multiple, onActive]);
   return /*#__PURE__*/React.createElement(Box, _extends({
     ref: ref,
     role: "tablist"
@@ -67,13 +76,7 @@ var Accordion = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return /*#__PURE__*/React.createElement(AccordionContext.Provider, {
       // eslint-disable-next-line react/no-array-index-key
       key: index,
-      value: {
-        active: activeIndexes.indexOf(index) > -1,
-        animate: animate,
-        onPanelChange: function onPanelChange() {
-          return _onPanelChange(index);
-        }
-      }
+      value: getAccordionContext(index)
     }, child);
   }));
 });

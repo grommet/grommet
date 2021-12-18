@@ -65,16 +65,6 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
     setActiveIndex(propsActiveIndex);
   }
-
-  var activateTab = function activateTab(index) {
-    if (propsActiveIndex === undefined) {
-      setActiveIndex(index);
-    }
-
-    if (onActive) {
-      onActive(index);
-    }
-  };
   /* eslint-disable no-param-reassign */
 
 
@@ -82,17 +72,31 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   delete rest.onActive;
   /* eslint-enable no-param-reassign */
 
+  var getTabsContext = (0, _react.useCallback)(function (index) {
+    var activateTab = function activateTab(nextIndex) {
+      if (propsActiveIndex === undefined) {
+        setActiveIndex(nextIndex);
+      }
+
+      if (onActive) {
+        onActive(nextIndex);
+      }
+    };
+
+    return {
+      activeIndex: activeIndex,
+      active: activeIndex === index,
+      onActivate: function onActivate() {
+        return activateTab(index);
+      },
+      setActiveContent: setActiveContent,
+      setActiveTitle: setActiveTitle
+    };
+  }, [activeIndex, onActive, propsActiveIndex]);
+
   var tabs = _react["default"].Children.map(children, function (child, index) {
     return /*#__PURE__*/_react["default"].createElement(_TabsContext.TabsContext.Provider, {
-      value: {
-        activeIndex: activeIndex,
-        active: activeIndex === index,
-        onActivate: function onActivate() {
-          return activateTab(index);
-        },
-        setActiveContent: setActiveContent,
-        setActiveTitle: setActiveTitle
-      }
+      value: getTabsContext(index)
     }, child ?
     /*#__PURE__*/
     // cloneElement is needed for backward compatibility with custom

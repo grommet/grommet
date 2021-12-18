@@ -12,19 +12,19 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var passwordRulesStrong = [{
-  regexp: new RegExp('(?=.*?[A-Z])'),
+  regexp: /(?=.*?[A-Z])/,
   message: 'One uppercase letter',
   status: 'error'
 }, {
-  regexp: new RegExp('(?=.*?[a-z])'),
+  regexp: /(?=.*?[a-z])/,
   message: 'One lowercase letter',
   status: 'error'
 }, {
-  regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+  regexp: /(?=.*?[#?!@$ %^&*-])/,
   message: 'One special character',
   status: 'error'
 }, {
-  regexp: new RegExp('.{8,}'),
+  regexp: /.{8,}/,
   message: 'At least 8 characters',
   status: 'error'
 }];

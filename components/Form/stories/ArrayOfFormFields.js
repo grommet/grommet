@@ -31,7 +31,7 @@ var ArrayOfFormFields = function ArrayOfFormFields() {
       number: '',
       ext: ''
     };
-    var newPhones = [].concat(values == null ? void 0 : values.phones, [newPhone]);
+    var newPhones = [].concat(values.phones, [newPhone]);
     setValues(_extends({}, values, {
       phones: newPhones
     }));

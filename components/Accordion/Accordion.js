@@ -51,25 +51,34 @@ var Accordion = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     setStateActiveIndex(activeIndex);
   }
 
-  var _onPanelChange = function onPanelChange(index) {
-    var nextActiveIndexes = [].concat(activeIndexes || []);
-    var nextActiveIndex = nextActiveIndexes.indexOf(index);
+  var getAccordionContext = (0, _react.useCallback)(function (index) {
+    var _onPanelChange = function onPanelChange(nextIndex) {
+      var nextActiveIndexes = [].concat(activeIndexes || []);
+      var nextActiveIndex = nextActiveIndexes.indexOf(nextIndex);
 
-    if (nextActiveIndex > -1) {
-      nextActiveIndexes.splice(nextActiveIndex, 1);
-    } else if (multiple) {
-      nextActiveIndexes.push(index);
-    } else {
-      nextActiveIndexes = [index];
-    }
+      if (nextActiveIndex > -1) {
+        nextActiveIndexes.splice(nextActiveIndex, 1);
+      } else if (multiple) {
+        nextActiveIndexes.push(nextIndex);
+      } else {
+        nextActiveIndexes = [nextIndex];
+      }
 
-    setActiveIndexes(nextActiveIndexes);
+      setActiveIndexes(nextActiveIndexes);
 
-    if (onActive) {
-      onActive(nextActiveIndexes);
-    }
-  };
+      if (onActive) {
+        onActive(nextActiveIndexes);
+      }
+    };
 
+    return {
+      active: activeIndexes.indexOf(index) > -1,
+      animate: animate,
+      onPanelChange: function onPanelChange() {
+        return _onPanelChange(index);
+      }
+    };
+  }, [activeIndexes, animate, multiple, onActive]);
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     ref: ref,
     role: "tablist"
@@ -79,13 +88,7 @@ var Accordion = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     return /*#__PURE__*/_react["default"].createElement(_AccordionContext.AccordionContext.Provider, {
       // eslint-disable-next-line react/no-array-index-key
       key: index,
-      value: {
-        active: activeIndexes.indexOf(index) > -1,
-        animate: animate,
-        onPanelChange: function onPanelChange() {
-          return _onPanelChange(index);
-        }
-      }
+      value: getAccordionContext(index)
     }, child);
   }));
 });
