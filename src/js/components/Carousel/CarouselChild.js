@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CarouselChildPropTypes } from './propTypes';
 
-import {
-  slideLeftCurrent,
-  slideLeftPrevious,
-  slideRightCurrent,
-  slideRightPrevious,
-  StyledCarouselChild,
-} from './StyledCarousel';
+import { StyledCarouselChild } from './StyledCarousel';
 
 import { Box } from '../Box';
 
@@ -32,28 +26,19 @@ const CarouselChild = ({
          * This check will only be false onMount of the component. It ensures
          * the initial active slide of the Carousel renders with no animation.
          */
-       setAnimation(
-         direction === 'left' ? slideLeftCurrent : slideRightCurrent,
-       );
+        setAnimation(
+          direction === 'left' ? 'slideLeftCurrent' : 'slideRightCurrent',
+        );
       }
       setVisibility('visible');
     } else if (index === priorActiveIndex) {
       setAnimation(
-        direction === 'left' ? slideLeftPrevious : slideRightPrevious,
+        direction === 'left' ? 'slideLeftPrevious' : 'slideRightPrevious',
       );
-      timer = setTimeout(
-        () => setVisibility('hidden'),
-        animationDuration,
-      );
+      timer = setTimeout(() => setVisibility('hidden'), animationDuration);
     }
     return () => clearTimeout(timer);
-  }, [
-    activeIndex,
-    priorActiveIndex,
-    index,
-    direction,
-    animationDuration,
-  ]);
+  }, [activeIndex, priorActiveIndex, index, direction, animationDuration]);
   const position = index === 0 ? 'relative' : 'absolute';
 
   return (
@@ -61,12 +46,10 @@ const CarouselChild = ({
       fill={fill}
       visibilityProp={visibility}
       positionProp={position}
-      animation={animation}
+      animationType={animation}
       animationDuration={animationDuration}
     >
-      <Box fill={fill}>
-        {children}
-      </Box>
+      <Box fill={fill}>{children}</Box>
     </StyledCarouselChild>
   );
 };
