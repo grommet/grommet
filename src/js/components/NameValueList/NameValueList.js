@@ -26,9 +26,12 @@ const NameValueList = forwardRef(
     const valueWidth = valueProps?.width || theme.nameValueList.value.width;
     const nameWidth = nameProps?.width || theme.nameValueList.name.width;
     if (size === 'small' || layout === 'grid')
-      columns = { count: 'fit', size: ['auto', valueWidth] };
+      columns = {
+        count: 'fit',
+        size: !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth,
+      };
     else if (layout === 'column' && pairProps.direction === 'row')
-      columns = [nameWidth, valueWidth];
+      columns = [nameWidth, ['auto', valueWidth]];
     else columns = [valueWidth];
 
     let { gap } = theme.nameValueList;
