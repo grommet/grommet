@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef, useContext, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Grid } from '../Grid';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
@@ -42,10 +42,13 @@ const NameValueList = forwardRef(
       gap = theme.nameValueList.pair.column.gap;
     }
 
+    const listContextValue = useMemo(
+      () => ({ nameProps, pairProps, valueProps }),
+      [nameProps, pairProps, valueProps],
+    );
+
     return (
-      <NameValueListContext.Provider
-        value={{ nameProps, pairProps, valueProps }}
-      >
+      <NameValueListContext.Provider value={listContextValue}>
         <Grid
           as="dl"
           ref={ref}
