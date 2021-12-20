@@ -17,7 +17,7 @@ const theme = {
   global: {
     font: {
       family: `-apple-system,
-           BlinkMacSystemFont, 
+           BlinkMacSystemFont,
            "Segoe UI"`,
     },
   },
@@ -145,5 +145,5 @@ Clickable.parameters = {
 };
 
 export default {
-  title: 'Layout/Card/Clickable',
+  title: 'Layout/Card/Custom Themed/Clickable',
 };
