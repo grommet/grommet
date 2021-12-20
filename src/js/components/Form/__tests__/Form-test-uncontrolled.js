@@ -214,7 +214,7 @@ describe('Form uncontrolled', () => {
     const onValidate = jest.fn();
     const errorMessage = 'One uppercase letter';
     const testRules = {
-      regexp: new RegExp('(?=.*?[A-Z])'),
+      regexp: /(?=.*?[A-Z])/,
       message: errorMessage,
       status: 'error',
     };
@@ -244,7 +244,7 @@ describe('Form uncontrolled', () => {
     const onValidate = jest.fn();
     const infoMessage = 'One uppercase letter';
     const testRules = {
-      regexp: new RegExp('(?=.*?[A-Z])'),
+      regexp: /(?=.*?[A-Z])/,
       message: infoMessage,
       status: 'info',
     };
@@ -1011,7 +1011,7 @@ describe('Form uncontrolled', () => {
    */
   test('should validate when supplied an object', () => {
     const regexValidation = {
-      regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+      regexp: /(?=.*?[#?!@$ %^&*-])/,
       message: 'At least one special character or space',
       status: 'error',
     };
@@ -1103,12 +1103,12 @@ describe('Form uncontrolled', () => {
   test(`should validate with array of objects and/or functions`, () => {
     const validationArray = [
       {
-        regexp: new RegExp('(?=.*?[0-9])'),
+        regexp: /(?=.*?[0-9])/,
         message: 'At least one number',
         status: 'error',
       },
       {
-        regexp: new RegExp('.{5,}'),
+        regexp: /.{5,}/,
         message: 'At least five characters',
         status: 'error',
       },
@@ -1121,7 +1121,7 @@ describe('Form uncontrolled', () => {
             }
           : undefined,
       {
-        regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+        regexp: /(?=.*?[#?!@$ %^&*-])/,
         message: 'At least one special character or space',
         status: 'error',
       },
