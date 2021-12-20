@@ -37,9 +37,6 @@ var NameValuePair = function NameValuePair(_ref) {
   var direction = pairProps == null ? void 0 : pairProps.direction;
   var column = direction === 'column' || direction === 'column-reverse' || size === 'small';
   var Container = column ? _Box.Box : _react.Fragment;
-  var containerProps = column ? {
-    width: valueProps == null ? void 0 : valueProps.width
-  } : undefined;
   var nameAlign = size !== 'small' ? nameProps == null ? void 0 : nameProps.align : undefined;
   var valueAlign = size !== 'small' ? valueProps == null ? void 0 : valueProps.align : undefined; // using margin to act as gap
   // <dl> elements must only directly contain
@@ -76,7 +73,7 @@ var NameValuePair = function NameValuePair(_ref) {
   }, children);
   var first = direction !== 'column-reverse' ? name : value;
   var second = direction !== 'column-reverse' ? value : name;
-  return /*#__PURE__*/_react["default"].createElement(Container, containerProps, first, second);
+  return /*#__PURE__*/_react["default"].createElement(Container, null, first, second);
 };
 
 exports.NameValuePair = NameValuePair;

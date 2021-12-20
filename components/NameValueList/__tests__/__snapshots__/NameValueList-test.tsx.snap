@@ -581,7 +581,6 @@ exports[`NameValueList should render correct width of value 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 96px;
 }
 
 .c4 {

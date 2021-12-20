@@ -33,8 +33,8 @@ var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var nameWidth = (nameProps == null ? void 0 : nameProps.width) || theme.nameValueList.name.width;
   if (size === 'small' || layout === 'grid') columns = {
     count: 'fit',
-    size: ['auto', valueWidth]
-  };else if (layout === 'column' && pairProps.direction === 'row') columns = [nameWidth, valueWidth];else columns = [valueWidth];
+    size: !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth
+  };else if (layout === 'column' && pairProps.direction === 'row') columns = [nameWidth, ['auto', valueWidth]];else columns = [valueWidth];
   var gap = theme.nameValueList.gap;
 
   if ((pairProps.direction === 'column' || size === 'small') && (_theme$nameValueList$ = theme.nameValueList.pair) != null && (_theme$nameValueList$2 = _theme$nameValueList$.column) != null && _theme$nameValueList$2.gap) {
