@@ -106,6 +106,7 @@ const TextInput = forwardRef(
     const formContext = useContext(FormContext);
     const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
+    const containerRef = useRef();
     const suggestionsRef = useRef();
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
@@ -315,7 +316,14 @@ const TextInput = forwardRef(
           align={dropAlign}
           responsive={false}
           target={dropTarget || inputRef.current}
-          onClickOutside={closeDrop}
+          onClickOutside={({ target }) => {
+            if (
+              target !== containerRef.current &&
+              !containerRef.current.contains(target)
+            ) {
+              closeDrop();
+            }
+          }}
           onEsc={closeDrop}
           {...dropProps}
         >
@@ -409,7 +417,7 @@ const TextInput = forwardRef(
     // primarily for tests.
 
     return (
-      <StyledTextInputContainer plain={plain}>
+      <StyledTextInputContainer ref={containerRef} plain={plain}>
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
