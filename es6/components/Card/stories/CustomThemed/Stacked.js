@@ -3,7 +3,7 @@ import { Avatar, Box, Card, Heading, CardBody, CardHeader, Grid, Grommet, Text, 
 var theme = {
   global: {
     font: {
-      family: "-apple-system,\n         BlinkMacSystemFont, \n         \"Segoe UI\", \n         Roboto"
+      family: "-apple-system,\n         BlinkMacSystemFont,\n         \"Segoe UI\",\n         Roboto"
     }
   },
   heading: {
@@ -79,5 +79,5 @@ export var Stacked = function Stacked() {
   }))));
 };
 export default {
-  title: 'Layout/Card/Stacked'
+  title: 'Layout/Card/Custom Themed/Stacked'
 };

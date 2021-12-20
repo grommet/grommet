@@ -16,42 +16,48 @@ var Controlled = function Controlled() {
       activeSlide = _React$useState[0],
       setActiveSlide = _React$useState[1];
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row",
-    gap: "small",
-    align: "center"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    label: "-",
-    onClick: function onClick() {
-      return setActiveSlide(activeSlide - 1);
-    }
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, activeSlide), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    label: "+",
-    onClick: function onClick() {
-      return setActiveSlide(activeSlide + 1);
-    }
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Carousel, {
-    activeChild: activeSlide,
-    onChild: setActiveSlide
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "xlarge",
-    background: "accent-1"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-    size: "xlarge"
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "xlarge",
-    background: "accent-2"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
-    size: "xlarge"
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "xlarge",
-    background: "accent-3"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
-    size: "xlarge"
-  })))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row",
+      gap: "small",
+      align: "center"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      label: "-",
+      onClick: function onClick() {
+        return setActiveSlide(activeSlide - 1);
+      }
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, activeSlide), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      label: "+",
+      onClick: function onClick() {
+        return setActiveSlide(activeSlide + 1);
+      }
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Carousel, {
+      activeChild: activeSlide,
+      onChild: setActiveSlide
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "xlarge",
+      background: "accent-1"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
+      size: "xlarge"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "xlarge",
+      background: "accent-2"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
+      size: "xlarge"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "xlarge",
+      background: "accent-3"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
+      size: "xlarge"
+    })))) // </Grommet>
+
+  );
 };
 
 exports.Controlled = Controlled;

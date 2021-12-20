@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _Box = require("../../Box");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -37,38 +35,42 @@ var ShowAdjacent = function ShowAdjacent() {
     setDate(nextDate !== date ? nextDate : undefined);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
-    columns: {
-      count: 'fit',
-      size: ['small', 'auto']
-    },
-    gap: "medium"
-  }, /*#__PURE__*/_react["default"].createElement(Container, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    size: "small"
-  }, "showAdjacentDays = false"), /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
-    date: date,
-    onSelect: onSelect,
-    size: "small",
-    bounds: ['2018-09-08', '2020-12-13'],
-    showAdjacentDays: false
-  })), /*#__PURE__*/_react["default"].createElement(Container, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    size: "small"
-  }, "showAdjacentDays = true"), /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
-    date: date,
-    onSelect: onSelect,
-    size: "small",
-    bounds: ['2018-09-08', '2020-12-13']
-  })), /*#__PURE__*/_react["default"].createElement(Container, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    size: "small"
-  }, "showAdjacentDays = \"trim\""), /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
-    date: date,
-    onSelect: onSelect,
-    size: "small",
-    bounds: ['2018-09-08', '2020-12-13'],
-    showAdjacentDays: "trim"
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Grid, {
+      columns: {
+        count: 'fit',
+        size: ['small', 'auto']
+      },
+      gap: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(Container, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      size: "small"
+    }, "showAdjacentDays = false"), /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
+      date: date,
+      onSelect: onSelect,
+      size: "small",
+      bounds: ['2018-09-08', '2020-12-13'],
+      showAdjacentDays: false
+    })), /*#__PURE__*/_react["default"].createElement(Container, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      size: "small"
+    }, "showAdjacentDays = true"), /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
+      date: date,
+      onSelect: onSelect,
+      size: "small",
+      bounds: ['2018-09-08', '2020-12-13']
+    })), /*#__PURE__*/_react["default"].createElement(Container, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      size: "small"
+    }, "showAdjacentDays = \"trim\""), /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
+      date: date,
+      onSelect: onSelect,
+      size: "small",
+      bounds: ['2018-09-08', '2020-12-13'],
+      showAdjacentDays: "trim"
+    }))) // </Grommet>
+
+  );
 };
 
 exports.ShowAdjacent = ShowAdjacent;

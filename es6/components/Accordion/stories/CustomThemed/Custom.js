@@ -11,7 +11,7 @@ import { Accordion, AccordionPanel, Box, Grommet, Text } from 'grommet';
 var customAccordionTheme = {
   global: {
     font: {
-      family: "-apple-system,\n       BlinkMacSystemFont, \n       \"Segoe UI\", \n       Roboto"
+      family: "-apple-system,\n       BlinkMacSystemFont,\n       \"Segoe UI\",\n       Roboto"
     }
   },
   accordion: {
@@ -32,14 +32,7 @@ var customAccordionTheme = {
       expand: AddCircle,
       color: 'hotpink'
     },
-    border: undefined,
-    panel: {// border: {
-      //   side: 'horizontal',
-      //   size: 'medium',
-      //   color: '#DADADA',
-      //   style: 'dotted',
-      // },
-    }
+    border: undefined
   }
 };
 

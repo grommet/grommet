@@ -45,6 +45,6 @@ var CustomSizeCalendar = function CustomSizeCalendar() {
 exports.CustomSizeCalendar = CustomSizeCalendar;
 CustomSizeCalendar.storyName = 'Heading size';
 var _default = {
-  title: "Visualizations/Calendar/Heading size"
+  title: "Visualizations/Calendar/Custom Themed/Heading size"
 };
 exports["default"] = _default;

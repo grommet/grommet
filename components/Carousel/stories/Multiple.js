@@ -51,7 +51,13 @@ var View2 = function View2() {
 };
 
 var Multi = function Multi() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_grommet.Carousel, null, /*#__PURE__*/_react["default"].createElement(View0, null), /*#__PURE__*/_react["default"].createElement(View1, null), /*#__PURE__*/_react["default"].createElement(View2, null)));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Carousel, null, /*#__PURE__*/_react["default"].createElement(View0, null), /*#__PURE__*/_react["default"].createElement(View1, null), /*#__PURE__*/_react["default"].createElement(View2, null))) // </Grommet>
+
+  );
 };
 
 exports.Multi = Multi;

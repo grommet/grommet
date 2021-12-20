@@ -12,7 +12,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var theme = {
   global: {
     font: {
-      family: "-apple-system,\n         BlinkMacSystemFont, \n         \"Segoe UI\", \n         Roboto"
+      family: "-apple-system,\n         BlinkMacSystemFont,\n         \"Segoe UI\",\n         Roboto"
     }
   },
   heading: {
@@ -91,6 +91,6 @@ var Stacked = function Stacked() {
 
 exports.Stacked = Stacked;
 var _default = {
-  title: 'Layout/Card/Stacked'
+  title: 'Layout/Card/Custom Themed/Stacked'
 };
 exports["default"] = _default;

@@ -12,35 +12,41 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var WithClickableChild = function WithClickableChild() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Carousel, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    gap: "medium",
-    pad: "xlarge",
-    background: "background-contrast",
-    direction: "row"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-    size: "xlarge"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    label: "Learn More"
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    gap: "medium",
-    pad: "xlarge",
-    background: "background-contrast",
-    direction: "row"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
-    size: "xlarge"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    label: "Visit"
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "xlarge",
-    background: "accent-3"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
-    size: "xlarge"
-  })))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Carousel, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      align: "center",
+      gap: "medium",
+      pad: "xlarge",
+      background: "background-contrast",
+      direction: "row"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
+      size: "xlarge"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      label: "Learn More"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      align: "center",
+      gap: "medium",
+      pad: "xlarge",
+      background: "background-contrast",
+      direction: "row"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
+      size: "xlarge"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      label: "Visit"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "xlarge",
+      background: "accent-3"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
+      size: "xlarge"
+    })))) // </Grommet>
+
+  );
 };
 
 exports.WithClickableChild = WithClickableChild;
