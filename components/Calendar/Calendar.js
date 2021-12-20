@@ -49,7 +49,7 @@ var activeDates = {
 var timeStamp = /T.*/;
 
 var formatSelectedDatesString = function formatSelectedDatesString(date) {
-  return "Currently selected \n  " + (date == null ? void 0 : date.map(function (item) {
+  return "Currently selected\n  " + (date == null ? void 0 : date.map(function (item) {
     var dates;
 
     if (!Array.isArray(item)) {
@@ -658,9 +658,15 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       direction: "row",
       align: "center"
     }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-      a11yTitle: previousMonth.toLocaleDateString(locale, {
-        month: 'long',
-        year: 'numeric'
+      a11yTitle: format({
+        id: 'calendar.previous',
+        messages: messages,
+        values: {
+          date: previousMonth.toLocaleDateString(locale, {
+            month: 'long',
+            year: 'numeric'
+          })
+        }
       }),
       icon: /*#__PURE__*/_react["default"].createElement(PreviousIcon, {
         size: size !== 'small' ? size : undefined
@@ -669,7 +675,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       onClick: function onClick() {
         changeReference(previousMonth);
         announce(format({
-          id: 'calendar.previous',
+          id: 'calendar.previousMove',
           messages: messages,
           values: {
             date: previousMonth.toLocaleDateString(locale, {
@@ -680,9 +686,15 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
         }));
       }
     }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-      a11yTitle: nextMonth.toLocaleDateString(locale, {
-        month: 'long',
-        year: 'numeric'
+      a11yTitle: format({
+        id: 'calendar.next',
+        messages: messages,
+        values: {
+          date: nextMonth.toLocaleDateString(locale, {
+            month: 'long',
+            year: 'numeric'
+          })
+        }
       }),
       icon: /*#__PURE__*/_react["default"].createElement(NextIcon, {
         size: size !== 'small' ? size : undefined
@@ -691,7 +703,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       onClick: function onClick() {
         changeReference(nextMonth);
         announce(format({
-          id: 'calendar.next',
+          id: 'calendar.nextMove',
           messages: messages,
           values: {
             date: nextMonth.toLocaleDateString(locale, {
@@ -839,7 +851,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
               disabled: dayDisabled && !!dayDisabled,
               onClick: function onClick() {
                 selectDate(dateString);
-                announce("Selected \n                          " + (0, _utils.formatToLocalYYYYMMDD)(dateString), 'assertive'); // Chrome moves the focus indicator to this button. Set
+                announce("Selected\n                          " + (0, _utils.formatToLocalYYYYMMDD)(dateString), 'assertive'); // Chrome moves the focus indicator to this button. Set
                 // the focus to the grid of days instead.
 
                 daysRef.current.focus();
