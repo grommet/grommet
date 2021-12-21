@@ -174,7 +174,9 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [focus, openDrop, showDrop, suggestions, suggestionsAtClose]); // if we have no suggestions, close drop if it's open
 
   (0, _react.useEffect)(function () {
-    if (showDrop && (!suggestions || !suggestions.length)) closeDrop();
+    if (showDrop && (!suggestions || !suggestions.length)) {
+      closeDrop();
+    }
   }, [closeDrop, showDrop, suggestions]);
   var valueSuggestionIndex = (0, _react.useMemo)(function () {
     return suggestions ? suggestions.map(function (suggestion) {
@@ -287,7 +289,13 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       align: dropAlign,
       responsive: false,
       target: dropTarget || inputRef.current,
-      onClickOutside: closeDrop,
+      onClickOutside: function onClickOutside(_ref2) {
+        var target = _ref2.target;
+
+        if (target !== inputRef.current) {
+          closeDrop();
+        }
+      },
       onEsc: closeDrop
     }, dropProps), /*#__PURE__*/_react["default"].createElement(ContainerBox, {
       overflow: "auto",
@@ -413,6 +421,10 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       // will come from this onChange and remove the placeholder
       // so we need to update state to ensure the styled
       // placeholder only appears when there is no value
+      if (suggestions && focus && !showDrop) {
+        openDrop();
+      }
+
       setValue(event.target.value);
       setActiveSuggestionIndex(resetSuggestionIndex);
       if (onChange) onChange(event);
