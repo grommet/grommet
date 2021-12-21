@@ -70,27 +70,19 @@ const padStyle = ({ sizeProp: size, theme, kind }) => {
     : '';
 };
 
-// The > svg rule is to ensure Buttons with just an icon don't add additional
-// vertical height internally.
 const basicStyle = (props) => css`
   border: none;
   ${radiusStyle(props)};
   ${padStyle(props)}
   ${fontStyle(props)}
 
-  // when button has badge, the SVG won't necessarily
-  // be the direct descendant
-  ${(props.badge &&
-    `svg {
-    vertical-align: bottom;
-  }`) ||
-  (props.icon?.props?.size !== 'small' &&
-    `> svg {
-    vertical-align: bottom;
-  }`) ||
-  `> svg {
-    vertical-align: center;
-  }`}
+  ${props.icon &&
+  `
+  > svg {
+    display: flex;
+    align-self: center;
+  }
+  `}
 `;
 
 const getPath = (theme, path) => {
@@ -212,22 +204,12 @@ const fillStyle = (fillContainer) => {
   return undefined;
 };
 
-// The > svg rule is to ensure Buttons with just an icon don't add additional
-// vertical height internally.
-const plainStyle = (props) => css`
+const plainStyle = css`
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
   color: inherit;
-
-  ${props.icon?.props?.size === 'small'
-    ? `> svg {
-      vertical-align: center;
-    }`
-    : `> svg {
-      vertical-align: bottom;
-    }`}
 `;
 
 const StyledButtonKind = styled.button.withConfig({
@@ -247,7 +229,7 @@ const StyledButtonKind = styled.button.withConfig({
   text-transform: none;
 
   ${genericStyles}
-  ${(props) => props.plain && plainStyle(props)}
+  ${(props) => props.plain && plainStyle}
   // set baseline activeStyle for all buttons including plain buttons
   // buttons with kind will have active styling overridden by kindStyle
   // if they have specific state styles
