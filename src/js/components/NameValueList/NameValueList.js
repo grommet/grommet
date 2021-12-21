@@ -31,7 +31,10 @@ const NameValueList = forwardRef(
         size: !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth,
       };
     else if (layout === 'column' && pairProps.direction === 'row')
-      columns = [nameWidth, ['auto', valueWidth]];
+      columns = [
+        nameWidth,
+        !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth,
+      ];
     else columns = [valueWidth];
 
     let { gap } = theme.nameValueList;
