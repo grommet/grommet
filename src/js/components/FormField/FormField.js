@@ -8,7 +8,7 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { containsFocus } from '../../utils/DOM';
+import { shouldKeepFocus } from '../../utils/DOM';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -451,11 +451,7 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
-          if (event.target.type === 'button') {
-            setFocus(false);
-            return;
-          }
-          setFocus(containsFocus(formFieldRef.current));
+          setFocus(shouldKeepFocus());
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {
