@@ -38,7 +38,7 @@ export const CustomValue = () => (
     <Box pad="small" gap="medium">
       <>
         <Text weight="bold" size="3xl">
-          Custom Mult-Line Value
+          Custom Multi-Line Value
         </Text>
         <NameValueList>
           {Object.entries(languageData).map(([name, value]) => {
