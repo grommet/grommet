@@ -451,6 +451,10 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
+          if (event.target.type === 'button') {
+            setFocus(false);
+            return;
+          }
           setFocus(containsFocus(formFieldRef.current));
           if (onFocus) onFocus(event);
         }}
