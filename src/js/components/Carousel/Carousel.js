@@ -177,7 +177,7 @@ const Carousel = ({
       };
     }
     return () => {};
-  }, [activeIndex, play, children, lastIndex, onChildChange]);
+  }, [activeIndex, play, children, lastIndex, onChildChange, wrap]);
 
   // Allow Carousel slides to be controlled outside the component
   useEffect(() => {
