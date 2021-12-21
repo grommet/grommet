@@ -1,31 +1,21 @@
 import React from 'react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
-import { Box, Button, Text } from 'grommet';
-import { Carousel } from '../Carousel';
+
+import { Box, Button, Carousel, Text } from 'grommet';
 
 export const Controlled = () => {
   const [activeSlide, setActiveSlide] = React.useState(0);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={grommet}>
-    <Box align="center" pad="large" gap="small">
-      <Text size="small">{`Active Slide: ${activeSlide}`}</Text>
+    // <Grommet theme={...}>
+    <Box align="center" pad="large">
       <Box direction="row" gap="small" align="center">
-        <Button
-          label="-"
-          onClick={() => {
-            setActiveSlide(activeSlide === 0 ? 0 : activeSlide - 1);
-          }}
-        />
-        <Button
-          label="+"
-          onClick={() => {
-            setActiveSlide(activeSlide === 2 ? 2 : activeSlide + 1);
-          }}
-        />
+        <Button label="-" onClick={() => setActiveSlide(activeSlide - 1)} />
+        <Text>{activeSlide}</Text>
+        <Button label="+" onClick={() => setActiveSlide(activeSlide + 1)} />
       </Box>
-      <Carousel controls={false} activeChild={activeSlide}>
+      <Carousel activeChild={activeSlide} onChild={setActiveSlide}>
         <Box pad="xlarge" background="accent-1">
           <Attraction size="xlarge" />
         </Box>
@@ -40,6 +30,7 @@ export const Controlled = () => {
     // </Grommet>
   );
 };
+
 Controlled.parameters = {
   chromatic: { disable: true },
 };

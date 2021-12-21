@@ -18,8 +18,8 @@ const theme = {
   global: {
     font: {
       family: `-apple-system,
-         BlinkMacSystemFont, 
-         "Segoe UI", 
+         BlinkMacSystemFont,
+         "Segoe UI",
          Roboto`,
     },
   },
@@ -64,9 +64,9 @@ export const Stacked = () => {
           rows="medium"
           columns={{ count: 'fit', size: ['small', 'medium'] }}
         >
-          {data.map(item => (
+          {data.map((item) => (
             <Card width="medium" key={item.location}>
-              {/* Stacked CardBody and CardHeader on top of each other 
+              {/* Stacked CardBody and CardHeader on top of each other
               in that order */}
               <Stack anchor="bottom-left">
                 <CardBody height="medium">
@@ -101,5 +101,5 @@ export const Stacked = () => {
 };
 
 export default {
-  title: 'Layout/Card/Stacked',
+  title: 'Layout/Card/Custom Themed/Stacked',
 };

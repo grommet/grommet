@@ -1,7 +1,6 @@
 import React from 'react';
 import { Attraction, Car, TreeOption, Cloud, Amazon } from 'grommet-icons';
-import { Box, Text } from 'grommet';
-import { Carousel } from '../Carousel';
+import { Box, Carousel, Text } from 'grommet';
 
 export const ControlVariations = () => (
   // Uncomment <Grommet> lines when using outside of storybook

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 
-import { Text, Box } from 'grommet';
-import { Carousel } from '../Carousel';
+import { Box, Carousel, Text } from 'grommet';
 
 export const Autoplay = () => (
   // Uncomment <Grommet> lines when using outside of storybook

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Text, Button, Box } from 'grommet';
-import { Carousel } from '../Carousel';
+import { Box, Button, Carousel, Text } from 'grommet';
 
 export const InteractiveSlides = () => (
   // Uncomment <Grommet> lines when using outside of storybook

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
-import { Box } from 'grommet';
-import { Carousel } from '../Carousel';
+
+import { Box, Carousel } from 'grommet';
 
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
-  // <Grommet theme={grommet}>
+  // <Grommet theme={...}>
   <Box align="center" pad="large">
     <Carousel>
       <Box pad="xlarge" background="accent-1">
