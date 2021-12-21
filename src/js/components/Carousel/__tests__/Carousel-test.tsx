@@ -145,7 +145,7 @@ describe('Carousel', () => {
     jest.useFakeTimers('modern');
     render(
       <Grommet>
-        <Carousel controls={false} play={500}>
+        <Carousel controls={false} play={500} wrap={false}>
           <div>Slide One</div>
           <div>Slide Two</div>
         </Carousel>
@@ -154,7 +154,7 @@ describe('Carousel', () => {
 
     expect(getSlideOne()).toBeVisible();
     await act(async () => {
-      jest.advanceTimersByTime(1200);
+      jest.advanceTimersByTime(600);
     });
     await waitFor(() => {
       expect(getSlideOne()).not.toBeVisible();

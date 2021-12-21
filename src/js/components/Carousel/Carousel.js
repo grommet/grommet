@@ -39,7 +39,7 @@ const Carousel = ({
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const { format } = useContext(MessageContext);
   const timerRef = useRef();
-  
+
   const animationDuration = useMemo(
     () =>
       play && play < theme.carousel.animation.duration
@@ -47,7 +47,7 @@ const Carousel = ({
         : theme.carousel.animation.duration,
     [play, theme.carousel.animation.duration],
   );
-    
+
   const [indexes, setIndexes] = useState({
     activeIndex: activeChild !== undefined ? activeChild : initialChild,
   });
@@ -112,10 +112,13 @@ const Carousel = ({
         setDirection(index > activeIndex ? 'left' : 'right');
         onChildChange(index);
       }
-    }, [activeIndex, inTransition, onChildChange]);
+    },
+    [activeIndex, inTransition, onChildChange],
+  );
 
   const onControlledNavigation = useCallback(() => {
-    if (inTransition ||
+    if (
+      inTransition ||
       activeChild === activeChildState ||
       activeChild === activeIndex ||
       activeChild === undefined ||
@@ -154,7 +157,8 @@ const Carousel = ({
 
   // Handles auto-playing Carousel slides
   useEffect(() => {
-    if (play) {
+    // stop playing if wrap is explicitly false and we're at the end
+    if (play && (wrap !== false || activeIndex < lastIndex)) {
       const timer = setInterval(() => {
         const nextActiveIndex = activeIndex < lastIndex ? activeIndex + 1 : 0;
         setIndexes({
@@ -204,12 +208,10 @@ const Carousel = ({
   const wrappedChildren = Children.map(children, (child, index) => {
     selectors.push(
       <Button
-        a11yTitle={
-          format({
-            id: 'carousel.jump',
-            values: { slide: index + 1 },
-          })
-        }
+        a11yTitle={format({
+          id: 'carousel.jump',
+          values: { slide: index + 1 },
+        })}
         // eslint-disable-next-line react/no-array-index-key
         key={index}
         icon={
