@@ -26,22 +26,22 @@ const Text = forwardRef(
   ) => {
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
-    const updateTip = () => {
-      setTextTruncated(false);
-      if (
-        truncate === 'tip' &&
-        textRef.current &&
-        textRef.current.scrollWidth > textRef.current.offsetWidth
-      ) {
-        setTextTruncated(true);
-      }
-    };
 
     useLayoutEffect(() => {
+      const updateTip = () => {
+        setTextTruncated(false);
+        if (
+          truncate === 'tip' &&
+          textRef.current &&
+          textRef.current.scrollWidth > textRef.current.offsetWidth
+        ) {
+          setTextTruncated(true);
+        }
+      };
       window.addEventListener('resize', updateTip);
       updateTip();
       return () => window.removeEventListener('resize', updateTip);
-    }, []);
+    }, [textRef, truncate]);
 
     const styledTextResult = (
       <StyledText
