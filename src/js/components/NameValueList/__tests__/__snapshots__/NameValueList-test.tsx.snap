@@ -661,7 +661,8 @@ exports[`NameValueList should render correct width of value 1`] = `
 `;
 
 exports[`NameValueList should render correct width of value when value is array 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -719,55 +720,56 @@ exports[`NameValueList should render correct width of value when value is array 
 }
 
 <div
-  class="c0"
->
-  <dl
-    class="c1"
+    class="c0"
   >
-    <div
-      class="c2"
+    <dl
+      class="c1"
     >
-      <dt
-        class="c3"
+      <div
+        class="c2"
       >
-        name
-      </dt>
-      <dd
-        class="c4"
+        <dt
+          class="c3"
+        >
+          name
+        </dt>
+        <dd
+          class="c4"
+        >
+          entry
+        </dd>
+      </div>
+      <div
+        class="c2"
       >
-        entry
-      </dd>
-    </div>
-    <div
-      class="c2"
-    >
-      <dt
-        class="c3"
+        <dt
+          class="c3"
+        >
+          location
+        </dt>
+        <dd
+          class="c4"
+        >
+          San Francisco
+        </dd>
+      </div>
+      <div
+        class="c2"
       >
-        location
-      </dt>
-      <dd
-        class="c4"
-      >
-        San Francisco
-      </dd>
-    </div>
-    <div
-      class="c2"
-    >
-      <dt
-        class="c3"
-      >
-        health
-      </dt>
-      <dd
-        class="c4"
-      >
-        80
-      </dd>
-    </div>
-  </dl>
-</div>
+        <dt
+          class="c3"
+        >
+          health
+        </dt>
+        <dd
+          class="c4"
+        >
+          80
+        </dd>
+      </div>
+    </dl>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`NameValueList should render name/value as a column when pairProps = { direction: 

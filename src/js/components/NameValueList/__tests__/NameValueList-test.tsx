@@ -84,7 +84,7 @@ describe('NameValueList', () => {
   });
 
   test(`should render correct width of value when value is array`, () => {
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <NameValueList valueProps={{ width: 'xsmall' }}>
           {Object.entries(data).map(([name, value]) => (
@@ -96,7 +96,7 @@ describe('NameValueList', () => {
       </Grommet>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test(`should render correct alignment of name`, () => {
