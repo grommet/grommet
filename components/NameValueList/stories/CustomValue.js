@@ -51,7 +51,7 @@ var CustomValue = function CustomValue() {
   }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     weight: "bold",
     size: "3xl"
-  }, "Custom Mult-Line Value"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, null, Object.entries(_data.languageData).map(function (_ref2) {
+  }, "Custom Multi-Line Value"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, null, Object.entries(_data.languageData).map(function (_ref2) {
     var name = _ref2[0],
         value = _ref2[1];
     var icon;

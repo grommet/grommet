@@ -42,7 +42,7 @@ export var CustomValue = function CustomValue() {
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
     weight: "bold",
     size: "3xl"
-  }, "Custom Mult-Line Value"), /*#__PURE__*/React.createElement(NameValueList, null, Object.entries(languageData).map(function (_ref2) {
+  }, "Custom Multi-Line Value"), /*#__PURE__*/React.createElement(NameValueList, null, Object.entries(languageData).map(function (_ref2) {
     var name = _ref2[0],
         value = _ref2[1];
     var icon;

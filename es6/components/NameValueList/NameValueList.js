@@ -34,7 +34,7 @@ var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
   if (size === 'small' || layout === 'grid') columns = {
     count: 'fit',
     size: !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth
-  };else if (layout === 'column' && pairProps.direction === 'row') columns = [nameWidth, ['auto', valueWidth]];else columns = [valueWidth];
+  };else if (layout === 'column' && pairProps.direction === 'row') columns = [nameWidth, !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth];else columns = [valueWidth];
   var gap = theme.nameValueList.gap;
 
   if ((pairProps.direction === 'column' || size === 'small') && (_theme$nameValueList$ = theme.nameValueList.pair) != null && (_theme$nameValueList$2 = _theme$nameValueList$.column) != null && _theme$nameValueList$2.gap) {
