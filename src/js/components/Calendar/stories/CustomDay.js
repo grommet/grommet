@@ -1,26 +1,19 @@
 import React, { useState } from 'react';
 
-import {
-  Box,
-  Calendar,
-  DropButton,
-  Grommet,
-  Heading,
-  Stack,
-  Text,
-} from 'grommet';
+import { Box, Calendar, DropButton, Heading, Stack, Text } from 'grommet';
 import { Notification } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
 
 export const CustomDayCalendar = () => {
   const calendarContent = [7, 8, 9];
   const [selectedDay, setSelectedDay] = useState();
-  const onSelect = value => {
+  const onSelect = (value) => {
     setSelectedDay(value);
   };
 
   return (
-    <Grommet theme={grommet}>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box>
       <Box align="center" pad="large">
         <Heading level={4}>Example without onSelect set</Heading>
         <Calendar date={selectedDay} fill>
@@ -60,14 +53,15 @@ export const CustomDayCalendar = () => {
         <Calendar onSelect={onSelect} date={selectedDay} fill>
           {({ day, isSelected }) => (
             <Box background={isSelected ? 'light-3' : 'white'} border fill>
-              <Box pad="medium" align="center" justify="center" fill>
+              <Box pad="small" align="center" justify="center" fill>
                 <Text size="large">{day}</Text>
               </Box>
             </Box>
           )}
         </Calendar>
       </Box>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 
