@@ -58,16 +58,6 @@ const Carousel = ({
   const { activeIndex, priorActiveIndex } = indexes;
   const lastIndex = Children.count(children) - 1;
 
-  /*
-  if (activeIndex !== activeChild && activeChild !== undefined) {
-    if (activeChild >= 0 && activeChild <= lastIndex) {
-      setIndexes({
-        activeIndex: activeChild,
-        priorActiveIndex: activeIndex,
-      });
-    }
-  }
-*/
   const onChildChange = useCallback(
     (index) => {
       if (onChild) {
