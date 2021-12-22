@@ -327,6 +327,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       hasIcon: !!icon,
       gap: gap,
       hasLabel: !!label,
+      icon: icon,
       fillContainer: fill,
       focus: focus,
       focusIndicator: focusIndicator,

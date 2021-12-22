@@ -60,12 +60,10 @@ var padStyle = function padStyle(_ref) {
   var themeObj = typeof kind === 'object' ? kind : theme.button;
   var pad = padFromTheme(size, theme, themeObj);
   return pad ? (0, _styledComponents.css)(["padding:", " ", ";"], pad.vertical, pad.horizontal) : '';
-}; // The > svg rule is to ensure Buttons with just an icon don't add additional
-// vertical height internally.
-
+};
 
 var basicStyle = function basicStyle(props) {
-  return (0, _styledComponents.css)(["border:none;", ";", " ", " ", ""], radiusStyle(props), padStyle(props), fontStyle(props), props.badge ? "\n  svg {\n    vertical-align: bottom;\n  }" : "> svg {\n    vertical-align: bottom;\n  }");
+  return (0, _styledComponents.css)(["border:none;", ";", " ", " ", ""], radiusStyle(props), padStyle(props), fontStyle(props), props.icon && "\n  > svg {\n    display: flex;\n    align-self: center;\n  }\n  ");
 };
 
 var getPath = function getPath(theme, path) {
@@ -179,13 +177,9 @@ var fillStyle = function fillStyle(fillContainer) {
   }
 
   return undefined;
-}; // The > svg rule is to ensure Buttons with just an icon don't add additional
-// vertical height internally.
-
-
-var plainStyle = function plainStyle() {
-  return (0, _styledComponents.css)(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;> svg{vertical-align:bottom;}"]);
 };
+
+var plainStyle = (0, _styledComponents.css)(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;"]);
 
 var StyledButtonKind = _styledComponents["default"].button.withConfig({
   // don't let kind attribute leak to DOM
@@ -197,7 +191,7 @@ var StyledButtonKind = _styledComponents["default"].button.withConfig({
   displayName: "StyledButtonKind",
   componentId: "sc-1vhfpnt-0"
 })(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", ""], _utils.genericStyles, function (props) {
-  return props.plain && plainStyle(props);
+  return props.plain && plainStyle;
 }, function (props) {
   return !props.disabled && props.active && _utils.activeStyle;
 }, function (props) {

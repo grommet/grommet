@@ -308,6 +308,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       hasIcon: !!icon,
       gap: gap,
       hasLabel: !!label,
+      icon: icon,
       fillContainer: fill,
       focus: focus,
       focusIndicator: focusIndicator,

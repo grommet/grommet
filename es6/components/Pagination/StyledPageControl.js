@@ -19,7 +19,7 @@ var sizeStyle = function sizeStyle(props) {
 export var StyledPaginationButton = styled(Button).withConfig({
   displayName: "StyledPageControl__StyledPaginationButton",
   componentId: "sc-1vlfaez-0"
-})(["> svg{vertical-align:middle;}", ";"], function (props) {
+})(["> svg{margin:0 auto;}", ";"], function (props) {
   return sizeStyle(props).content;
 });
 export var StyledContainer = styled.div.withConfig({
