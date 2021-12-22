@@ -1,7 +1,9 @@
 {
   "calendar": {
-    "previous": "Moved to {date}",
-    "next": "Moved to {date}"
+    "previousMove": "Moved to {date}",
+    "previous": "Go to {date}",
+    "nextMove": "Moved to {date}",
+    "next": "Go to {date}"
   },
   "dateInput": {
     "openCalendar": "Press space to open calendar",
