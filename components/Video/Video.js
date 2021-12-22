@@ -64,8 +64,7 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var alignSelf = _ref.alignSelf,
       autoPlay = _ref.autoPlay,
       children = _ref.children,
-      _ref$controls = _ref.controls,
-      controls = _ref$controls === void 0 ? 'over' : _ref$controls,
+      controlsProp = _ref.controls,
       gridArea = _ref.gridArea,
       loop = _ref.loop,
       margin = _ref.margin,
@@ -130,7 +129,24 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var containerRef = (0, _react.useRef)();
   var scrubberRef = (0, _react.useRef)();
-  var videoRef = (0, _utils.useForwardedRef)(ref); // mute if needed
+  var videoRef = (0, _utils.useForwardedRef)(ref);
+  var controls = (0, _react.useMemo)(function () {
+    var result;
+
+    if (typeof controlsProp === 'string' || typeof controlsProp === 'boolean') {
+      result = {
+        items: ['volume', 'fullScreen'],
+        position: controlsProp
+      };
+    } else {
+      result = {
+        items: (controlsProp == null ? void 0 : controlsProp.items) || ['volume', 'fullScreen'],
+        position: (controlsProp == null ? void 0 : controlsProp.position) || 'over'
+      };
+    }
+
+    return result;
+  }, [controlsProp]); // mute if needed
 
   (0, _react.useEffect)(function () {
     var video = videoRef.current;
@@ -281,8 +297,10 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [videoRef]);
   var controlsElement;
 
-  if (controls) {
-    var over = controls === 'over';
+  if (controls != null && controls.position) {
+    var _controls$items;
+
+    var over = controls.position === 'over';
     var background = over ? theme.video.controls && theme.video.controls.background || {
       color: 'background-back',
       opacity: 'strong',
@@ -311,9 +329,80 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         }
       };
     });
+    var volumeControls = ['volume', 'reduceVolume'].map(function (control) {
+      return {
+        icon: control === 'volume' ? /*#__PURE__*/_react["default"].createElement(Icons.Volume, {
+          color: iconColor
+        }) : /*#__PURE__*/_react["default"].createElement(Icons.ReduceVolume, {
+          color: iconColor
+        }),
+        a11yTitle: format({
+          id: control === 'volume' ? 'video.volumeUp' : 'video.volumeDown',
+          messages: messages
+        }),
+        onClick: function onClick() {
+          if (volume <= 1 - VOLUME_STEP && control === 'volume') {
+            return louder();
+          }
+
+          if (volume >= VOLUME_STEP && control === 'reduceVolume') {
+            return quieter();
+          }
+
+          return undefined;
+        },
+        close: false
+      };
+    });
+    var buttonProps = {
+      captions: captionControls,
+      volume: volumeControls,
+      fullScreen: {
+        icon: /*#__PURE__*/_react["default"].createElement(Icons.FullScreen, {
+          color: iconColor
+        }),
+        a11yTitle: format({
+          id: 'video.fullScreen',
+          messages: messages
+        }),
+        onClick: fullscreen
+      },
+      pause: {
+        icon: /*#__PURE__*/_react["default"].createElement(Icons.Pause, {
+          color: iconColor
+        }),
+        a11yTitle: format({
+          id: 'video.pauseButton',
+          messages: messages
+        }),
+        onClick: playing ? pause : play
+      },
+      play: {
+        icon: /*#__PURE__*/_react["default"].createElement(Icons.Play, {
+          color: iconColor
+        }),
+        a11yTitle: format({
+          id: 'video.playButton',
+          messages: messages
+        }),
+        onClick: playing ? pause : play
+      }
+    };
+    var controlsMenuItems = [];
+    (_controls$items = controls.items) == null ? void 0 : _controls$items.map(function (item) {
+      if (item === 'volume') {
+        volumeControls.map(function (control) {
+          return controlsMenuItems.push(control);
+        });
+        return undefined;
+      }
+
+      if (typeof item === 'string') return controlsMenuItems.push(buttonProps[item]);
+      return controlsMenuItems.push(item);
+    });
     controlsElement = /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideoControls, {
       over: over,
-      active: !hasPlayed || controls === 'below' || over && interacting,
+      active: !hasPlayed || controls.position === 'below' || over && interacting,
       onBlur: function onBlur() {
         if (!(0, _utils.containsFocus)(containerRef.current)) setInteracting(false);
       }
@@ -394,42 +483,13 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           messages: messages
         })
       },
-      items: [{
-        icon: /*#__PURE__*/_react["default"].createElement(Icons.Volume, {
-          color: iconColor,
-          a11yTitle: format({
-            id: 'video.volumeUp',
-            messages: messages
-          })
-        }),
-        onClick: volume <= 1 - VOLUME_STEP ? louder : undefined,
-        close: false
-      }, {
-        icon: /*#__PURE__*/_react["default"].createElement(Icons.ReduceVolume, {
-          color: iconColor,
-          a11yTitle: format({
-            id: 'video.volumeDown',
-            messages: messages
-          })
-        }),
-        onClick: volume >= VOLUME_STEP ? quieter : undefined,
-        close: false
-      }].concat(captionControls, [{
-        icon: /*#__PURE__*/_react["default"].createElement(Icons.FullScreen, {
-          color: iconColor,
-          a11yTitle: format({
-            id: 'video.fullScreen',
-            messages: messages
-          })
-        }),
-        onClick: fullscreen
-      }])
+      items: [].concat(controlsMenuItems)
     })));
   }
 
   var mouseEventListeners;
 
-  if (controls === 'over') {
+  if ((controls == null ? void 0 : controls.position) === 'over') {
     mouseEventListeners = {
       onMouseEnter: function onMouseEnter() {
         return setInteracting(true);
@@ -445,7 +505,7 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var style;
 
-  if (rest.fit === 'contain' && controls === 'over') {
+  if (rest.fit === 'contain' && (controls == null ? void 0 : controls.position) === 'over') {
     // constrain the size to fit the aspect ratio so the controls
     // overlap correctly
     if (width) {
