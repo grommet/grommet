@@ -5,6 +5,8 @@ exports.Text = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
+
 var _StyledText = require("./StyledText");
 
 var _Tip = require("../Tip");
@@ -38,17 +40,23 @@ var Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var _useState = (0, _react.useState)(false),
       textTruncated = _useState[0],
-      setTextTruncated = _useState[1]; // place the text content in a tip if truncate === 'tip'
-  // and the text has been truncated
+      setTextTruncated = _useState[1];
 
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
+    var updateTip = function updateTip() {
+      setTextTruncated(false);
 
-  (0, _react.useEffect)(function () {
-    if (truncate === 'tip') {
-      if (textRef.current && textRef.current.scrollWidth > textRef.current.offsetWidth) {
+      if (truncate === 'tip' && textRef.current && textRef.current.scrollWidth > textRef.current.offsetWidth) {
         setTextTruncated(true);
       }
-    }
-  }, [children, textRef, truncate]);
+    };
+
+    window.addEventListener('resize', updateTip);
+    updateTip();
+    return function () {
+      return window.removeEventListener('resize', updateTip);
+    };
+  }, [textRef, truncate]);
 
   var styledTextResult = /*#__PURE__*/_react["default"].createElement(_StyledText.StyledText, _extends({
     as: !as && tag ? tag : as,
@@ -60,13 +68,19 @@ var Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }), children);
 
   if (tipProp || textTruncated) {
+    // place the text content in a tip if truncate === 'tip'
+    // and the text has been truncated
     if (textTruncated) {
       return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, _extends({
         content: children
       }, tipProp), styledTextResult);
-    }
+    } // place the text content in a tip if truncate !== 'tip'
+    // it displays even if the text has not truncated
 
-    return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, tipProp, styledTextResult);
+
+    if (truncate !== 'tip') {
+      return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, tipProp, styledTextResult);
+    }
   }
 
   return styledTextResult;

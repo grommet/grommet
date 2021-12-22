@@ -4,7 +4,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
 import { useForwardedRef } from '../../utils';
@@ -24,17 +25,23 @@ var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var _useState = useState(false),
       textTruncated = _useState[0],
-      setTextTruncated = _useState[1]; // place the text content in a tip if truncate === 'tip'
-  // and the text has been truncated
+      setTextTruncated = _useState[1];
 
+  useLayoutEffect(function () {
+    var updateTip = function updateTip() {
+      setTextTruncated(false);
 
-  useEffect(function () {
-    if (truncate === 'tip') {
-      if (textRef.current && textRef.current.scrollWidth > textRef.current.offsetWidth) {
+      if (truncate === 'tip' && textRef.current && textRef.current.scrollWidth > textRef.current.offsetWidth) {
         setTextTruncated(true);
       }
-    }
-  }, [children, textRef, truncate]);
+    };
+
+    window.addEventListener('resize', updateTip);
+    updateTip();
+    return function () {
+      return window.removeEventListener('resize', updateTip);
+    };
+  }, [textRef, truncate]);
   var styledTextResult = /*#__PURE__*/React.createElement(StyledText, _extends({
     as: !as && tag ? tag : as,
     colorProp: color,
@@ -45,13 +52,19 @@ var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }), children);
 
   if (tipProp || textTruncated) {
+    // place the text content in a tip if truncate === 'tip'
+    // and the text has been truncated
     if (textTruncated) {
       return /*#__PURE__*/React.createElement(Tip, _extends({
         content: children
       }, tipProp), styledTextResult);
-    }
+    } // place the text content in a tip if truncate !== 'tip'
+    // it displays even if the text has not truncated
 
-    return /*#__PURE__*/React.createElement(Tip, tipProp, styledTextResult);
+
+    if (truncate !== 'tip') {
+      return /*#__PURE__*/React.createElement(Tip, tipProp, styledTextResult);
+    }
   }
 
   return styledTextResult;
