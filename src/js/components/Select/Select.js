@@ -172,7 +172,8 @@ const Select = forwardRef(
     const onRequestClose = useCallback(() => {
       setOpen(false);
       if (onClose) onClose();
-    }, [onClose]);
+      setSearch();
+    }, [onClose, setSearch]);
 
     const triggerChangeEvent = useCallback((nextValue) => {
       // Calling set value function directly on input because React library
