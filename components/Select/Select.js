@@ -207,6 +207,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var onRequestClose = (0, _react.useCallback)(function () {
     setOpen(false);
     if (onClose) onClose();
+    setSearch();
   }, [onClose]);
   var triggerChangeEvent = (0, _react.useCallback)(function (nextValue) {
     // Calling set value function directly on input because React library

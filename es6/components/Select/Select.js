@@ -182,6 +182,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var onRequestClose = useCallback(function () {
     setOpen(false);
     if (onClose) onClose();
+    setSearch();
   }, [onClose]);
   var triggerChangeEvent = useCallback(function (nextValue) {
     // Calling set value function directly on input because React library
