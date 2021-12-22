@@ -173,7 +173,7 @@ const Select = forwardRef(
       setOpen(false);
       if (onClose) onClose();
       setSearch();
-    }, [onClose, setSearch]);
+    }, [onClose]);
 
     const triggerChangeEvent = useCallback((nextValue) => {
       // Calling set value function directly on input because React library
