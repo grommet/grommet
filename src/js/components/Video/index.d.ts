@@ -11,7 +11,21 @@ export interface VideoProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   autoPlay?: boolean;
-  controls?: false | 'over' | 'below';
+  controls?:
+    | false
+    | 'over'
+    | 'below'
+    | {
+        position?: false | 'over' | 'below';
+        items?: [
+          'captions' | 'fullScreen' | 'play' | 'pause' | 'volume',
+          {
+            icon?: React.ReactNode;
+            a11yTitle?: A11yTitleType;
+            onClick?: () => {};
+          },
+        ];
+      };
   fit?: 'cover' | 'contain';
   gridArea?: GridAreaType;
   loop?: boolean;
@@ -27,7 +41,6 @@ export interface VideoProps {
     volumeUp?: string;
     volumeDown?: string;
   };
-
   mute?: boolean;
 }
 

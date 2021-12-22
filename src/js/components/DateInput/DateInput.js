@@ -1,4 +1,5 @@
 import React, {
+  useRef,
   forwardRef,
   useContext,
   useEffect,
@@ -12,6 +13,7 @@ import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
 import { DropButton } from '../DropButton';
@@ -44,6 +46,7 @@ const DateInput = forwardRef(
       name,
       onChange,
       onFocus,
+      plain,
       value: valueArg,
       messages,
       ...rest
@@ -57,6 +60,7 @@ const DateInput = forwardRef(
       (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
+    const containerRef = useRef();
     const [value, setValue] = useFormInput({
       name,
       value: valueArg,
@@ -162,6 +166,13 @@ const DateInput = forwardRef(
       />
     );
 
+    const formContextValue = useMemo(
+      () => ({
+        useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
+      }),
+      [],
+    );
+
     if (!format) {
       // When no format is specified, we don't give the user a way to type
       if (inline) return calendar;
@@ -182,50 +193,62 @@ const DateInput = forwardRef(
       <FormContext.Provider
         key="input"
         // don't let MaskedInput drive the Form
-        value={{
-          useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
-        }}
+        value={formContextValue}
       >
         <Keyboard
           onEsc={open ? () => closeCalendar() : undefined}
           onSpace={openCalendar}
         >
-          <MaskedInput
-            ref={ref}
-            id={id}
-            name={name}
-            icon={<CalendarIcon size={iconSize} />}
-            reverse
-            disabled={disabled}
-            mask={mask}
-            {...inputProps}
-            {...rest}
-            value={textValue}
-            onChange={(event) => {
-              const nextTextValue = event.target.value;
-              setTextValue(nextTextValue);
-              const nextValue = textToValue(
-                nextTextValue,
-                schema,
-                range,
-                timestamp,
-              );
-              // update value even when undefined
-              setValue(nextValue);
-              if (onChange) {
-                event.persist(); // extract from React synthetic event pool
-                const adjustedEvent = event;
-                adjustedEvent.value = nextValue;
-                onChange(adjustedEvent);
-              }
-            }}
-            onFocus={(event) => {
-              announce(
-                formatMessage({ id: 'dateInput.openCalendar', messages }),
-              );
-              if (onFocus) onFocus(event);
-            }}
-          />
+          <Box
+            ref={containerRef}
+            border={!plain}
+            round="xxsmall"
+            direction="row"
+            fill
+          >
+            <MaskedInput
+              ref={ref}
+              id={id}
+              name={name}
+              reverse
+              disabled={disabled}
+              mask={mask}
+              plain
+              {...inputProps}
+              {...rest}
+              value={textValue}
+              onChange={(event) => {
+                const nextTextValue = event.target.value;
+                setTextValue(nextTextValue);
+                const nextValue = textToValue(
+                  nextTextValue,
+                  schema,
+                  range,
+                  timestamp,
+                );
+                // update value even when undefined
+                setValue(nextValue);
+                if (onChange) {
+                  event.persist(); // extract from React synthetic event pool
+                  const adjustedEvent = event;
+                  adjustedEvent.value = nextValue;
+                  onChange(adjustedEvent);
+                }
+              }}
+              onFocus={(event) => {
+                announce(
+                  formatMessage({ id: 'dateInput.openCalendar', messages }),
+                );
+                if (onFocus) onFocus(event);
+              }}
+            />
+            <Button
+              onClick={open ? closeCalendar : openCalendar}
+              plain
+              icon={<CalendarIcon size={iconSize} />}
+              margin={{ right: 'small' }}
+            />
+          </Box>
         </Keyboard>
       </FormContext.Provider>
     );
@@ -250,7 +273,12 @@ const DateInput = forwardRef(
             align={{ top: 'bottom', left: 'left', ...dropProps }}
             onEsc={closeCalendar}
             onClickOutside={({ target }) => {
-              if (target !== ref.current) closeCalendar();
+              if (
+                target !== containerRef.current &&
+                !containerRef.current.contains(target)
+              ) {
+                closeCalendar();
+              }
             }}
             {...dropProps}
           >

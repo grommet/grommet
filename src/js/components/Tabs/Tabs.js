@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useCallback, useContext, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
@@ -34,30 +34,35 @@ const Tabs = forwardRef(
       setActiveIndex(propsActiveIndex);
     }
 
-    const activateTab = (index) => {
-      if (propsActiveIndex === undefined) {
-        setActiveIndex(index);
-      }
-      if (onActive) {
-        onActive(index);
-      }
-    };
-
     /* eslint-disable no-param-reassign */
     delete rest.activeIndex;
     delete rest.onActive;
     /* eslint-enable no-param-reassign */
 
-    const tabs = React.Children.map(children, (child, index) => (
-      <TabsContext.Provider
-        value={{
+    const getTabsContext = useCallback(
+      (index) => {
+        const activateTab = (nextIndex) => {
+          if (propsActiveIndex === undefined) {
+            setActiveIndex(nextIndex);
+          }
+          if (onActive) {
+            onActive(nextIndex);
+          }
+        };
+
+        return {
           activeIndex,
           active: activeIndex === index,
           onActivate: () => activateTab(index),
           setActiveContent,
           setActiveTitle,
-        }}
-      >
+        };
+      },
+      [activeIndex, onActive, propsActiveIndex],
+    );
+
+    const tabs = React.Children.map(children, (child, index) => (
+      <TabsContext.Provider value={getTabsContext(index)}>
         {/* possible to have undefined child. in that case, you can't
         do cloneElement */}
         {child

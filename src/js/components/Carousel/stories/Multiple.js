@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, Carousel, Image } from 'grommet';
+import { Box, Carousel, Image } from 'grommet';
 
 const data = [
   '//v2.grommet.io/assets/IMG_4210.jpg',
@@ -46,13 +46,16 @@ const View2 = () => {
 };
 
 export const Multi = () => (
-  <Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box>
     <Carousel>
       <View0 />
       <View1 />
       <View2 />
     </Carousel>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 export default {
