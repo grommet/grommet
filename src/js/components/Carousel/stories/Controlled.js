@@ -4,7 +4,7 @@ import { Attraction, Car, TreeOption } from 'grommet-icons';
 import { Box, Button, Carousel, Text } from 'grommet';
 
 export const Controlled = () => {
-  const [activeSlide, setActiveSlide] = React.useState(2);
+  const [activeSlide, setActiveSlide] = React.useState(0);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
@@ -30,6 +30,7 @@ export const Controlled = () => {
     // </Grommet>
   );
 };
+
 Controlled.parameters = {
   chromatic: { disable: true },
 };

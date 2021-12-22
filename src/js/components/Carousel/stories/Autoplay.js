@@ -1,13 +1,16 @@
 import React from 'react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 
-import { Box, Carousel } from 'grommet';
+import { Box, Carousel, Text } from 'grommet';
 
-export const NoControls = () => (
+export const Autoplay = () => (
   // Uncomment <Grommet> lines when using outside of storybook
-  // <Grommet theme={...}>
-  <Box align="center" pad="large">
-    <Carousel controls={false} play={1500}>
+  // <Grommet theme={grommet}>
+  <Box gap="medium" align="center" pad="large">
+    <Text size="small">
+      The Carousel slides will transition every 3 seconds
+    </Text>
+    <Carousel controls={false} play={3000}>
       <Box pad="xlarge" background="accent-1">
         <Attraction size="xlarge" />
       </Box>
@@ -22,8 +25,6 @@ export const NoControls = () => (
   // </Grommet>
 );
 
-NoControls.storyName = 'Without controls';
-
 export default {
-  title: 'Media/Carousel/Without controls',
+  title: 'Media/Carousel/Autoplay',
 };
