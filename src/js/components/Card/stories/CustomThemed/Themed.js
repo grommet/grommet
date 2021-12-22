@@ -59,7 +59,7 @@ const theme = {
   global: {
     font: {
       family: `-apple-system,
-         BlinkMacSystemFont, 
+         BlinkMacSystemFont,
          "Segoe UI"`,
     },
     colors: {
@@ -97,7 +97,7 @@ export const Themed = () => (
     <Box pad="large">
       {/* Responsive Grid */}
       <Grid gap="medium" rows="small" columns={{ count: 'fit', size: 'small' }}>
-        {data.map(value => (
+        {data.map((value) => (
           <Card background={value.color} key={value.message}>
             <CardBody pad="small">
               <Identifier
@@ -121,5 +121,5 @@ export const Themed = () => (
 );
 
 export default {
-  title: 'Layout/Card/Themed',
+  title: 'Layout/Card/Custom Themed/Themed',
 };

@@ -90,7 +90,7 @@ const RichAccordion = () => {
           <ThemeContext.Extend value={richAccordionTheme}>
             <Accordion
               multiple
-              onActive={activeIndexes => {
+              onActive={(activeIndexes) => {
                 if (activeIndexes.includes(1)) {
                   // give sometime to emulate an async call
                   setTimeout(() => setHighlightLoaded(true), 1000);
@@ -220,5 +220,5 @@ const RichAccordion = () => {
 export const Rich = () => <RichAccordion />;
 
 export default {
-  title: 'Controls/Accordion/Rich',
+  title: 'Controls/Accordion/Custom Themed/Rich',
 };
