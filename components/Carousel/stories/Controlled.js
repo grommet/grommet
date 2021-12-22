@@ -12,7 +12,7 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Controlled = function Controlled() {
-  var _React$useState = _react["default"].useState(2),
+  var _React$useState = _react["default"].useState(0),
       activeSlide = _React$useState[0],
       setActiveSlide = _React$useState[1];
 

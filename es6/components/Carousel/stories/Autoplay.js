@@ -2,18 +2,21 @@ import React from 'react';
 import { Attraction } from "grommet-icons/es6/icons/Attraction";
 import { Car } from "grommet-icons/es6/icons/Car";
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
-import { Box, Carousel } from 'grommet';
-export var NoControls = function NoControls() {
+import { Box, Carousel, Text } from 'grommet';
+export var Autoplay = function Autoplay() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={...}>
+    // <Grommet theme={grommet}>
     React.createElement(Box, {
+      gap: "medium",
       align: "center",
       pad: "large"
-    }, /*#__PURE__*/React.createElement(Carousel, {
+    }, /*#__PURE__*/React.createElement(Text, {
+      size: "small"
+    }, "The Carousel slides will transition every 3 seconds"), /*#__PURE__*/React.createElement(Carousel, {
       controls: false,
-      play: 1500
+      play: 3000
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "xlarge",
       background: "accent-1"
@@ -33,7 +36,6 @@ export var NoControls = function NoControls() {
 
   );
 };
-NoControls.storyName = 'Without controls';
 export default {
-  title: 'Media/Carousel/Without controls'
+  title: 'Media/Carousel/Autoplay'
 };

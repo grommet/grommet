@@ -4,7 +4,7 @@ import { Car } from "grommet-icons/es6/icons/Car";
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
 import { Box, Button, Carousel, Text } from 'grommet';
 export var Controlled = function Controlled() {
-  var _React$useState = React.useState(2),
+  var _React$useState = React.useState(0),
       activeSlide = _React$useState[0],
       setActiveSlide = _React$useState[1];
 

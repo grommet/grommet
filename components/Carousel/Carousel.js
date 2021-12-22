@@ -11,19 +11,21 @@ var _defaultProps = require("../../default-props");
 
 var _contexts = require("../../contexts");
 
+var _MessageContext = require("../../contexts/MessageContext");
+
 var _Box = require("../Box");
 
 var _Button = require("../Button");
 
 var _Keyboard = require("../Keyboard");
 
-var _Stack = require("../Stack");
+var _StyledCarousel = require("./StyledCarousel");
 
 var _CarouselChild = require("./CarouselChild");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["activeChild", "initialChild", "onChild", "play", "children", "controls", "fill", "onFocus", "onBlur"];
+var _excluded = ["activeChild", "initialChild", "onChild", "play", "children", "controls", "height", "fill", "width", "onFocus", "onBlur", "wrap"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -40,59 +42,131 @@ var Carousel = function Carousel(_ref) {
       play = _ref.play,
       children = _ref.children,
       controls = _ref.controls,
+      height = _ref.height,
       fill = _ref.fill,
-      _onFocus = _ref.onFocus,
-      _onBlur = _ref.onBlur,
+      width = _ref.width,
+      onFocus = _ref.onFocus,
+      onBlur = _ref.onBlur,
+      wrap = _ref.wrap,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = (0, _react.useContext)(_contexts.ThemeContext) || _defaultProps.defaultProps.theme;
 
-  var _useState = (0, _react.useState)(),
-      focus = _useState[0],
-      setFocus = _useState[1];
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+      format = _useContext.format;
 
   var timerRef = (0, _react.useRef)();
+  var animationDuration = (0, _react.useMemo)(function () {
+    return play && play < theme.carousel.animation.duration ? play : theme.carousel.animation.duration;
+  }, [play, theme.carousel.animation.duration]);
 
-  var _useState2 = (0, _react.useState)({
+  var _useState = (0, _react.useState)({
     activeIndex: activeChild !== undefined ? activeChild : initialChild
   }),
-      indexes = _useState2[0],
-      setIndexes = _useState2[1];
+      indexes = _useState[0],
+      setIndexes = _useState[1];
+
+  var _useState2 = (0, _react.useState)(activeChild),
+      activeChildState = _useState2[0],
+      setActiveChildState = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(),
+      direction = _useState3[0],
+      setDirection = _useState3[1];
+
+  var _useState4 = (0, _react.useState)(false),
+      inTransition = _useState4[0],
+      setInTransition = _useState4[1];
 
   var activeIndex = indexes.activeIndex,
       priorActiveIndex = indexes.priorActiveIndex;
   var lastIndex = _react.Children.count(children) - 1;
-
-  if (activeIndex !== activeChild && activeChild !== undefined) {
-    if (activeChild >= 0 && activeChild <= lastIndex) {
-      setIndexes({
-        activeIndex: activeChild,
-        priorActiveIndex: activeIndex
-      });
-    }
-  }
-
   var onChildChange = (0, _react.useCallback)(function (index) {
     if (onChild) {
       onChild(index);
     }
   }, [onChild]);
+  var onRight = (0, _react.useCallback)(function () {
+    if (inTransition) return;
+    clearInterval(timerRef.current);
+    var nextActiveIndex = activeIndex < lastIndex ? activeIndex + 1 : 0;
+    setIndexes({
+      activeIndex: nextActiveIndex,
+      priorActiveIndex: activeIndex
+    });
+    setInTransition(true);
+    setDirection('left');
+    onChildChange(nextActiveIndex);
+  }, [activeIndex, inTransition, lastIndex, onChildChange]);
+  var onLeft = (0, _react.useCallback)(function () {
+    if (inTransition) return;
+    clearInterval(timerRef.current);
+    var nextActiveIndex = activeIndex === 0 ? lastIndex : activeIndex - 1;
+    setIndexes({
+      activeIndex: nextActiveIndex,
+      priorActiveIndex: activeIndex
+    });
+    setInTransition(true);
+    setDirection('right');
+    onChildChange(nextActiveIndex);
+  }, [activeIndex, inTransition, lastIndex, onChildChange]);
+  var onSelect = (0, _react.useCallback)(function (index) {
+    return function () {
+      if (!inTransition && activeIndex !== index) {
+        clearInterval(timerRef.current);
+        setIndexes({
+          activeIndex: index,
+          priorActiveIndex: activeIndex
+        });
+        setInTransition(true);
+        setDirection(index > activeIndex ? 'left' : 'right');
+        onChildChange(index);
+      }
+    };
+  }, [activeIndex, inTransition, onChildChange]);
+  var onControlledNavigation = (0, _react.useCallback)(function () {
+    if (inTransition || activeChild === activeChildState || activeChild === activeIndex || activeChild === undefined || activeChild < 0 || activeChild > lastIndex) return;
+    setDirection(activeChild > activeIndex ? 'left' : 'right');
+    setInTransition(true);
+    setIndexes({
+      activeIndex: activeChild,
+      priorActiveIndex: activeIndex
+    });
+    setActiveChildState(activeChild);
+    onChildChange(activeChild);
+  }, [activeChild, activeChildState, activeIndex, inTransition, lastIndex, onChildChange]);
+  /**
+   * Delays the transitions between Carousel slides. This is needed to
+   * avoid users "spamming" the controls which results in jarring animations
+   * and a bad user experience.
+   */
+
   (0, _react.useEffect)(function () {
-    if (play) {
+    var transitionTimer;
+
+    if (inTransition) {
+      transitionTimer = setTimeout(function () {
+        setInTransition(false);
+      }, animationDuration);
+    }
+
+    return function () {
+      return clearTimeout(transitionTimer);
+    };
+  }, [inTransition, setInTransition, animationDuration]); // Handles auto-playing Carousel slides
+
+  (0, _react.useEffect)(function () {
+    // stop playing if wrap is explicitly false and we're at the end
+    if (play && (wrap !== false || activeIndex < lastIndex)) {
       var timer = setInterval(function () {
-        if (activeIndex < lastIndex) {
-          setIndexes({
-            activeIndex: activeIndex + 1,
-            priorActiveIndex: activeIndex
-          });
-          onChildChange(activeIndex + 1);
-        } else {
-          setIndexes({
-            activeIndex: 0,
-            priorActiveIndex: activeIndex
-          });
-          onChildChange(0);
-        }
+        var nextActiveIndex = activeIndex < lastIndex ? activeIndex + 1 : 0;
+        setIndexes({
+          activeIndex: nextActiveIndex,
+          priorActiveIndex: activeIndex
+        });
+        setInTransition(true);
+        setDirection('left');
+        onChildChange(nextActiveIndex);
       }, play);
       timerRef.current = timer;
       return function () {
@@ -101,47 +175,11 @@ var Carousel = function Carousel(_ref) {
     }
 
     return function () {};
-  }, [activeIndex, play, children, lastIndex, onChildChange]);
+  }, [activeIndex, play, children, lastIndex, onChildChange, wrap]); // Allow Carousel slides to be controlled outside the component
 
-  var onRight = function onRight() {
-    if (activeIndex >= lastIndex) {
-      return;
-    }
-
-    clearInterval(timerRef.current);
-    setIndexes({
-      activeIndex: activeIndex + 1,
-      priorActiveIndex: activeIndex
-    });
-    onChildChange(activeIndex + 1);
-  };
-
-  var onLeft = function onLeft() {
-    if (activeIndex <= 0) {
-      return;
-    }
-
-    clearInterval(timerRef.current);
-    setIndexes({
-      activeIndex: activeIndex - 1,
-      priorActiveIndex: activeIndex
-    });
-    onChildChange(activeIndex - 1);
-  };
-
-  var onSelect = function onSelect(index) {
-    return function () {
-      if (activeIndex !== index) {
-        clearInterval(timerRef.current);
-        setIndexes({
-          activeIndex: index,
-          priorActiveIndex: activeIndex
-        });
-        onChildChange(index);
-      }
-    };
-  };
-
+  (0, _react.useEffect)(function () {
+    onControlledNavigation(activeIndex, activeChild, activeChildState, inTransition);
+  }, [onControlledNavigation, activeIndex, activeChild, activeChildState, inTransition]);
   var showArrows = controls && controls !== 'selectors';
   var showSelectors = controls && controls !== 'arrows';
   var CurrentIcon = theme.carousel.icons.current;
@@ -150,7 +188,12 @@ var Carousel = function Carousel(_ref) {
 
   var wrappedChildren = _react.Children.map(children, function (child, index) {
     selectors.push( /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-      a11yTitle: "Show carousel slide " + (index + 1) // eslint-disable-next-line react/no-array-index-key
+      a11yTitle: format({
+        id: 'carousel.jump',
+        values: {
+          slide: index + 1
+        }
+      }) // eslint-disable-next-line react/no-array-index-key
       ,
       key: index,
       icon: /*#__PURE__*/_react["default"].createElement(CurrentIcon, {
@@ -159,57 +202,66 @@ var Carousel = function Carousel(_ref) {
       onClick: onSelect(index)
     }));
     return /*#__PURE__*/_react["default"].createElement(_CarouselChild.CarouselChild, {
-      fill: fill,
-      play: play,
+      animationDuration: animationDuration,
+      fill: fill || !!height || !!width,
       index: index,
       activeIndex: activeIndex,
-      priorActiveIndex: priorActiveIndex
+      priorActiveIndex: priorActiveIndex,
+      direction: direction
     }, child);
   });
 
   var NextIcon = theme.carousel.icons.next;
   var PreviousIcon = theme.carousel.icons.previous;
-  var nextIconDisabled = activeIndex >= lastIndex;
-  var previousIconDisabled = activeIndex <= 0;
+  var nextIconDisabled = !wrap && activeIndex >= lastIndex;
+  var previousIconDisabled = !wrap && activeIndex <= 0;
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onLeft: onLeft,
     onRight: onRight
-  }, /*#__PURE__*/_react["default"].createElement(_Stack.Stack, _extends({
-    guidingChild: activeIndex,
-    fill: fill
-  }, rest), wrappedChildren, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    tabIndex: "0",
-    focus: focus,
-    onFocus: function onFocus(event) {
-      setFocus(true);
-      if (_onFocus) _onFocus(event);
-    },
-    onBlur: function onBlur(event) {
-      setFocus(false);
-      if (_onBlur) _onBlur(event);
-    },
-    fill: true,
-    direction: "row",
-    justify: "between"
-  }, showArrows && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_StyledCarousel.StyledCarouselContainer, _extends({
+    fill: fill,
+    height: height,
+    width: width
+  }, rest), showArrows && /*#__PURE__*/_react["default"].createElement(_StyledCarousel.StyledControl, {
+    offsetProp: "left",
+    fill: "vertical"
+  }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     fill: "vertical",
     icon: /*#__PURE__*/_react["default"].createElement(PreviousIcon, {
       color: (0, _utils.normalizeColor)(previousIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color, theme)
+    }),
+    a11yTitle: format({
+      id: 'carousel.previous',
+      values: {
+        slide: activeIndex
+      }
     }),
     plain: true,
     disabled: previousIconDisabled,
     onClick: onLeft,
     hoverIndicator: true
-  }), showSelectors && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  })), wrappedChildren, showSelectors && /*#__PURE__*/_react["default"].createElement(_StyledCarousel.StyledControl, {
+    offsetProp: "bottom",
+    fill: "horizontal"
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     justify: "end",
     fill: !showArrows && 'horizontal'
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     direction: "row",
     justify: "center"
-  }, selectors)), showArrows && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+  }, selectors))), showArrows && /*#__PURE__*/_react["default"].createElement(_StyledCarousel.StyledControl, {
+    offsetProp: "right",
+    fill: "vertical"
+  }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     fill: "vertical",
     icon: /*#__PURE__*/_react["default"].createElement(NextIcon, {
       color: (0, _utils.normalizeColor)(nextIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color, theme)
+    }),
+    a11yTitle: format({
+      id: 'carousel.next',
+      values: {
+        slide: activeIndex + 2
+      }
     }),
     plain: true,
     disabled: nextIconDisabled,
