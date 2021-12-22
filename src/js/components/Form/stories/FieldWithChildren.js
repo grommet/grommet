@@ -18,22 +18,22 @@ import { grommet } from 'grommet/themes';
 
 const passwordRulesStrong = [
   {
-    regexp: new RegExp('(?=.*?[A-Z])'),
+    regexp: /(?=.*?[A-Z])/,
     message: 'One uppercase letter',
     status: 'error',
   },
   {
-    regexp: new RegExp('(?=.*?[a-z])'),
+    regexp: /(?=.*?[a-z])/,
     message: 'One lowercase letter',
     status: 'error',
   },
   {
-    regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+    regexp: /(?=.*?[#?!@$ %^&*-])/,
     message: 'One special character',
     status: 'error',
   },
   {
-    regexp: new RegExp('.{8,}'),
+    regexp: /.{8,}/,
     message: 'At least 8 characters',
     status: 'error',
   },
@@ -44,7 +44,7 @@ export const FieldWithChildren = () => (
     <Box fill align="center" justify="center">
       <Box width="medium">
         <Form
-          onReset={event => console.log(event)}
+          onReset={(event) => console.log(event)}
           onSubmit={({ value }) => console.log('Submit', value)}
           onValidate={({ errors, infos }) =>
             console.log('Validate', errors, infos)
