@@ -116,6 +116,7 @@ const TextInput = forwardRef(
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState(false);
+    const [cursor, setCursor] = useState(null);
 
     const handleSuggestionSelect = useMemo(
       () => (onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect),
@@ -176,6 +177,12 @@ const TextInput = forwardRef(
         closeDrop();
       }
     }, [closeDrop, showDrop, suggestions]);
+
+    useEffect(() => {
+      // log inputRef's input type to console
+      if (inputRef.current?.type === 'text')
+        inputRef.current.setSelectionRange(cursor, cursor);
+    }, [inputRef, cursor, value]);
 
     const valueSuggestionIndex = useMemo(
       () =>
@@ -485,6 +492,7 @@ const TextInput = forwardRef(
                     if (suggestions && focus && !showDrop) {
                       openDrop();
                     }
+                    setCursor(event.target.selectionStart);
                     setValue(event.target.value);
                     setActiveSuggestionIndex(resetSuggestionIndex);
                     if (onChange) onChange(event);
