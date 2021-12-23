@@ -25,8 +25,8 @@ var customTheme = {
       size: 'medium'
     },
     pad: {
-      horizontal: 'large',
-      vertical: 'medium'
+      horizontal: 'medium',
+      vertical: 'small'
     },
     round: 'small',
     label: {
@@ -61,11 +61,9 @@ export var Custom = function Custom() {
     width: "medium"
   }, /*#__PURE__*/React.createElement(FileInput, {
     renderFile: function renderFile(file) {
-      return /*#__PURE__*/React.createElement(Box, {
-        direction: "row",
-        gap: "small"
-      }, /*#__PURE__*/React.createElement(Text, {
-        weight: "bold"
+      return /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, {
+        weight: "bold",
+        truncate: true
       }, file.name), /*#__PURE__*/React.createElement(Text, {
         color: "text-weak"
       }, file.size, " bytes"));

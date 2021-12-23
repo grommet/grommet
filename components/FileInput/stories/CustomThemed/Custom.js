@@ -35,8 +35,8 @@ var customTheme = {
       size: 'medium'
     },
     pad: {
-      horizontal: 'large',
-      vertical: 'medium'
+      horizontal: 'medium',
+      vertical: 'small'
     },
     round: 'small',
     label: {
@@ -72,11 +72,9 @@ var Custom = function Custom() {
     width: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, {
     renderFile: function renderFile(file) {
-      return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-        direction: "row",
-        gap: "small"
-      }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-        weight: "bold"
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+        weight: "bold",
+        truncate: true
       }, file.name), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
         color: "text-weak"
       }, file.size, " bytes"));
