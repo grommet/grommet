@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef, useContext, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Grid } from '../Grid';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
@@ -26,9 +26,15 @@ const NameValueList = forwardRef(
     const valueWidth = valueProps?.width || theme.nameValueList.value.width;
     const nameWidth = nameProps?.width || theme.nameValueList.name.width;
     if (size === 'small' || layout === 'grid')
-      columns = { count: 'fit', size: ['auto', valueWidth] };
+      columns = {
+        count: 'fit',
+        size: !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth,
+      };
     else if (layout === 'column' && pairProps.direction === 'row')
-      columns = [nameWidth, valueWidth];
+      columns = [
+        nameWidth,
+        !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth,
+      ];
     else columns = [valueWidth];
 
     let { gap } = theme.nameValueList;
@@ -39,10 +45,13 @@ const NameValueList = forwardRef(
       gap = theme.nameValueList.pair.column.gap;
     }
 
+    const listContextValue = useMemo(
+      () => ({ nameProps, pairProps, valueProps }),
+      [nameProps, pairProps, valueProps],
+    );
+
     return (
-      <NameValueListContext.Provider
-        value={{ nameProps, pairProps, valueProps }}
-      >
+      <NameValueListContext.Provider value={listContextValue}>
         <Grid
           as="dl"
           ref={ref}

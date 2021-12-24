@@ -126,7 +126,7 @@ export const withinDates = (date, dates) => {
 };
 
 export const getTimestamp = (date) =>
-  new RegExp(/T.*/).test(date)
+  /T.*/.test(date)
     ? new Date(date).toISOString().split('T')[1]
     : // for Calendar, explicitly mark that caller has provided
       // value with no timestamp

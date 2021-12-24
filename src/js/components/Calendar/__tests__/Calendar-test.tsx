@@ -248,13 +248,13 @@ describe('Calendar', () => {
       </Grommet>,
     );
     // Change the Calendar from January to December
-    fireEvent.click(getByLabelText('December 2019'));
+    fireEvent.click(getByLabelText('Go to December 2019'));
     act(() => {
       jest.runAllTimers();
     });
     expect(container.firstChild).toMatchSnapshot();
     // Change the Calendar back to January
-    fireEvent.click(getByLabelText('January 2020'));
+    fireEvent.click(getByLabelText('Go to January 2020'));
     act(() => {
       jest.runAllTimers();
     });

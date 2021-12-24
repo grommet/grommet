@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -48,7 +49,7 @@ const Video = forwardRef(
       alignSelf,
       autoPlay,
       children,
-      controls = 'over',
+      controls: controlsProp,
       gridArea,
       loop,
       margin,
@@ -80,6 +81,24 @@ const Video = forwardRef(
     const containerRef = useRef();
     const scrubberRef = useRef();
     const videoRef = useForwardedRef(ref);
+    const controls = useMemo(() => {
+      let result;
+      if (
+        typeof controlsProp === 'string' ||
+        typeof controlsProp === 'boolean'
+      ) {
+        result = {
+          items: ['volume', 'fullScreen'],
+          position: controlsProp,
+        };
+      } else {
+        result = {
+          items: controlsProp?.items || ['volume', 'fullScreen'],
+          position: controlsProp?.position || 'over',
+        };
+      }
+      return result;
+    }, [controlsProp]);
 
     // mute if needed
     useEffect(() => {
@@ -222,8 +241,8 @@ const Video = forwardRef(
     }, [videoRef]);
 
     let controlsElement;
-    if (controls) {
-      const over = controls === 'over';
+    if (controls?.position) {
+      const over = controls.position === 'over';
       const background = over
         ? (theme.video.controls && theme.video.controls.background) || {
             color: 'background-back',
@@ -254,10 +273,76 @@ const Video = forwardRef(
         onClick: () => showCaptions(caption.active ? -1 : 0),
       }));
 
+      const volumeControls = ['volume', 'reduceVolume'].map((control) => ({
+        icon:
+          control === 'volume' ? (
+            <Icons.Volume color={iconColor} />
+          ) : (
+            <Icons.ReduceVolume color={iconColor} />
+          ),
+        a11yTitle: format({
+          id: control === 'volume' ? 'video.volumeUp' : 'video.volumeDown',
+          messages,
+        }),
+        onClick: () => {
+          if (volume <= 1 - VOLUME_STEP && control === 'volume') {
+            return louder();
+          }
+          if (volume >= VOLUME_STEP && control === 'reduceVolume') {
+            return quieter();
+          }
+          return undefined;
+        },
+        close: false,
+      }));
+
+      const buttonProps = {
+        captions: captionControls,
+        volume: volumeControls,
+        fullScreen: {
+          icon: <Icons.FullScreen color={iconColor} />,
+          a11yTitle: format({
+            id: 'video.fullScreen',
+            messages,
+          }),
+          onClick: fullscreen,
+        },
+        pause: {
+          icon: <Icons.Pause color={iconColor} />,
+          a11yTitle: format({
+            id: 'video.pauseButton',
+            messages,
+          }),
+          onClick: playing ? pause : play,
+        },
+        play: {
+          icon: <Icons.Play color={iconColor} />,
+          a11yTitle: format({
+            id: 'video.playButton',
+            messages,
+          }),
+          onClick: playing ? pause : play,
+        },
+      };
+
+      const controlsMenuItems = [];
+
+      controls.items?.map((item) => {
+        if (item === 'volume') {
+          volumeControls.map((control) => controlsMenuItems.push(control));
+          return undefined;
+        }
+        if (typeof item === 'string')
+          return controlsMenuItems.push(buttonProps[item]);
+        return controlsMenuItems.push(item);
+      });
+
       controlsElement = (
         <StyledVideoControls
           over={over}
-          active={!hasPlayed || controls === 'below' || (over && interacting)}
+          active={
+            !hasPlayed || controls.position === 'below' || (over && interacting)
+          }
           onBlur={() => {
             if (!containsFocus(containerRef.current)) setInteracting(false);
           }}
@@ -342,47 +427,7 @@ const Video = forwardRef(
                 openMenu: format({ id: 'video.openMenu', messages }),
                 closeMenu: format({ id: 'video.closeMenu', messages }),
               }}
-              items={[
-                {
-                  icon: (
-                    <Icons.Volume
-                      color={iconColor}
-                      a11yTitle={format({
-                        id: 'video.volumeUp',
-                        messages,
-                      })}
-                    />
-                  ),
-                  onClick: volume <= 1 - VOLUME_STEP ? louder : undefined,
-                  close: false,
-                },
-                {
-                  icon: (
-                    <Icons.ReduceVolume
-                      color={iconColor}
-                      a11yTitle={format({
-                        id: 'video.volumeDown',
-                        messages,
-                      })}
-                    />
-                  ),
-                  onClick: volume >= VOLUME_STEP ? quieter : undefined,
-                  close: false,
-                },
-                ...captionControls,
-                {
-                  icon: (
-                    <Icons.FullScreen
-                      color={iconColor}
-                      a11yTitle={format({
-                        id: 'video.fullScreen',
-                        messages,
-                      })}
-                    />
-                  ),
-                  onClick: fullscreen,
-                },
-              ]}
+              items={[...controlsMenuItems]}
             />
           </Box>
         </StyledVideoControls>
@@ -390,7 +435,7 @@ const Video = forwardRef(
     }
 
     let mouseEventListeners;
-    if (controls === 'over') {
+    if (controls?.position === 'over') {
       mouseEventListeners = {
         onMouseEnter: () => setInteracting(true),
         onMouseMove: () => setInteracting(true),
@@ -399,7 +444,7 @@ const Video = forwardRef(
     }
 
     let style;
-    if (rest.fit === 'contain' && controls === 'over') {
+    if (rest.fit === 'contain' && controls?.position === 'over') {
       // constrain the size to fit the aspect ratio so the controls
       // overlap correctly
       if (width) {
