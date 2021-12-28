@@ -5,9 +5,9 @@ import { deepMerge } from 'grommet/utils';
 
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
-import { columns, data } from './data';
+import { columns, data } from '../data';
 
-const pinnedColumns = columns.map(c => ({ ...c }));
+const pinnedColumns = columns.map((c) => ({ ...c }));
 pinnedColumns[0].pin = true;
 
 const myTheme = deepMerge(grommet, {
@@ -53,5 +53,5 @@ export const Fill = () => (
 Fill.storyName = 'Fill and pin';
 
 export default {
-  title: 'Visualizations/DataTable/Fill and pin',
+  title: 'Visualizations/DataTable/Custom Themed/Fill and pin',
 };

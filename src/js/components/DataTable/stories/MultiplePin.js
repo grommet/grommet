@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, DataTable, Grommet, grommet, Meter, Text } from 'grommet';
+import { Box, DataTable, Meter, Text } from 'grommet';
 
 const data = [
   {
@@ -269,43 +269,44 @@ const handleClickRow = (obj) => {
 };
 
 export const MultiplePins = () => (
-  <Grommet theme={grommet}>
-    <Box align="center">
-      <Box height="medium" width="600px" overflow="auto">
-        <DataTable
-          background={{ pinned: 'pink' }}
-          data={data}
-          columns={[
-            {
-              property: 'id',
-              header: 'Id',
-              primary: true,
-              render: (datum) => datum.id.slice(datum.id.length - 5),
-              pin: true,
-            },
-            {
-              property: 'poolName',
-              header: 'Pool Name',
-              render: ({ poolName }) => <Text truncate>{poolName}</Text>,
-              primary: true,
-              pin: true,
-            },
-            {
-              property: 'groupName',
-              header: 'Group Name',
-              pin: true,
-            },
-            ...columns,
-          ]}
-          fill
-          onClickRow={({ datum }) => handleClickRow(datum)}
-          pin
-          onSelect={() => {}}
-          sortable
-        />
-      </Box>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
+  <Box align="center">
+    <Box height="medium" width="600px" overflow="auto">
+      <DataTable
+        background={{ pinned: 'pink' }}
+        data={data}
+        columns={[
+          {
+            property: 'id',
+            header: 'Id',
+            primary: true,
+            render: (datum) => datum.id.slice(datum.id.length - 5),
+            pin: true,
+          },
+          {
+            property: 'poolName',
+            header: 'Pool Name',
+            render: ({ poolName }) => <Text truncate>{poolName}</Text>,
+            primary: true,
+            pin: true,
+          },
+          {
+            property: 'groupName',
+            header: 'Group Name',
+            pin: true,
+          },
+          ...columns,
+        ]}
+        fill
+        onClickRow={({ datum }) => handleClickRow(datum)}
+        pin
+        onSelect={() => {}}
+        sortable
+      />
     </Box>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 MultiplePins.storyName = 'Multiple pins';
