@@ -277,7 +277,14 @@ const List = React.forwardRef(
                 let boxProps = {};
                 let itemId;
 
-                if (children) {
+                if (children && primaryKey) {
+                  content = children(
+                    item,
+                    index,
+                    onClickItem ? { active: active === index } : undefined,
+                  );
+                  itemId = normalize(item, index, primaryKey);
+                } else if (children) {
                   content = children(
                     item,
                     index,
@@ -285,8 +292,25 @@ const List = React.forwardRef(
                   );
                 } else if (primaryKey) {
                   if (typeof primaryKey === 'function') {
-                    itemId = primaryKey(item, index);
-                    content = itemId;
+                    content = primaryKey(item, index);
+                    if (!content?.key)
+                      console.error(
+                        `You must add key to your element in primaryKey func.`,
+                      );
+                    itemId = content.key;
+                  } else if (
+                    primaryKey.match(/^(.+),(.+)$/) &&
+                    primaryKey.split(',').length === 2
+                  ) {
+                    // index 0 is content
+                    // index 1 is key for ListItem
+                    const value = primaryKey.split(',').map((it) => it.trim());
+                    itemId = normalize(item, index, value[1]);
+                    content = (
+                      <Text key="p" weight="bold">
+                        {normalize(item, index, value[0])}
+                      </Text>
+                    );
                   } else {
                     itemId = normalize(item, index, primaryKey);
                     content = (
@@ -315,11 +339,13 @@ const List = React.forwardRef(
                   }
                 } else if (typeof item === 'object') {
                   content = item[Object.keys(item)[0]];
+                  itemId = content;
                 } else {
                   content = item;
+                  itemId = content;
                 }
 
-                const key = getKey(item, index, itemId);
+                const key = itemId || getKey(item, index, itemId);
 
                 if (action) {
                   content = [
