@@ -5,6 +5,11 @@
     "nextMove": "Moved to {date}",
     "next": "Go to {date}"
   },
+  "carousel": {
+    "previous": "Go to slide {slide}",
+    "next": "Go to slide {slide}",
+    "jump": "Jump to slide {slide}"
+  },
   "dateInput": {
     "openCalendar": "Press space to open calendar",
     "enterCalendar": "Calendar is open, use arrow keys and enter to select a date.",

@@ -20,10 +20,13 @@ const Notification = ({ message, onClose, status, title, toast }) => {
   }, [onClose]);
 
   useEffect(() => {
-    const timer = setTimeout(close, theme.notification.time);
+    const timer = setTimeout(
+      close,
+      theme.notification.toast.time || theme.notification.time,
+    );
 
     return () => clearTimeout(timer);
-  }, [close, theme.notification.time]);
+  }, [close, theme.notification.toast.time, theme.notification.time]);
 
   const { icon: CloseIcon } = theme.notification.close;
   const { icon: StatusIcon, color } = theme.notification[status];
