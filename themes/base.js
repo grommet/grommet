@@ -1204,7 +1204,6 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     notification: {
-      time: 8000,
       container: {
         // any box props
         pad: {
@@ -1225,7 +1224,8 @@ var generate = function generate(baseSpacing, scale) {
         layer: {
           position: 'top',
           margin: 'medium'
-        }
+        },
+        time: 8000
       },
       iconContainer: {
         // any box props

@@ -45,11 +45,11 @@ var Notification = function Notification(_ref) {
     if (onClose) onClose();
   }, [onClose]);
   (0, _react.useEffect)(function () {
-    var timer = setTimeout(close, theme.notification.time);
+    var timer = setTimeout(close, theme.notification.toast.time || theme.notification.time);
     return function () {
       return clearTimeout(timer);
     };
-  }, [close, theme.notification.time]);
+  }, [close, theme.notification.toast.time, theme.notification.time]);
   var CloseIcon = theme.notification.close.icon;
   var _theme$notification$s = theme.notification[status],
       StatusIcon = _theme$notification$s.icon,
