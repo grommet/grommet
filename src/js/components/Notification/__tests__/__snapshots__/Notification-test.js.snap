@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Notification should have no accessibility violations 1`] = `
-.c3 {
+<DocumentFragment>
+  .c3 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -145,8 +146,7 @@ exports[`Notification should have no accessibility violations 1`] = `
   }
 }
 
-<div>
-  <div
+<div
     class="c0"
   >
     <div
@@ -186,11 +186,12 @@ exports[`Notification should have no accessibility violations 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Notification should have no accessibility violations for toast 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -224,10 +225,9 @@ exports[`Notification should have no accessibility violations for toast 1`] = `
 
 }
 
-<div>
-  <div
+<div
     aria-hidden="true"
     class="c0"
   />
-</div>
+</DocumentFragment>
 `;
