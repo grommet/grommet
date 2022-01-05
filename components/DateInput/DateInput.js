@@ -98,8 +98,9 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
   } else if (typeof defaultValue === 'string') {
     timestamp = (0, _utils2.getTimestamp)(defaultValue);
   } else if (Array.isArray(value) && value.length) {
-    timestamp = (0, _utils2.getTimestamp)(value[0]);
-  } else if (typeof value === 'string') {
+    timestamp = (0, _utils2.getTimestamp)(value[0]); // check to see if value is not an empty string
+    // empty string should behave like undefined
+  } else if (typeof value === 'string' && value.length) {
     timestamp = (0, _utils2.getTimestamp)(value);
   } // normalize value based on timestamp vs user's local timezone
 

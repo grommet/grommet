@@ -70,8 +70,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   } else if (typeof defaultValue === 'string') {
     timestamp = getTimestamp(defaultValue);
   } else if (Array.isArray(value) && value.length) {
-    timestamp = getTimestamp(value[0]);
-  } else if (typeof value === 'string') {
+    timestamp = getTimestamp(value[0]); // check to see if value is not an empty string
+    // empty string should behave like undefined
+  } else if (typeof value === 'string' && value.length) {
     timestamp = getTimestamp(value);
   } // normalize value based on timestamp vs user's local timezone
 
