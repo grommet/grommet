@@ -1742,7 +1742,6 @@ Object {
           "textContainer": Object {
             "gap": "medium",
           },
-          "time": 8000,
           "title": Object {
             "weight": "bold",
           },
@@ -1756,6 +1755,7 @@ Object {
               "margin": "medium",
               "position": "top",
             },
+            "time": 8000,
           },
           "undefined": Object {
             "color": "status-unknown",
