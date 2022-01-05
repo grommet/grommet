@@ -323,8 +323,6 @@ export const Show = () => {
   );
 };
 
-Show.storyName = 'Show';
-
 export default {
   title: 'Visualizations/DataTable/Show',
 };

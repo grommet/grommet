@@ -50,6 +50,10 @@ export const Horizontal = () => {
   );
 };
 
+Horizontal.args = {
+  full: true,
+};
+
 Horizontal.parameters = {
   chromatic: { disable: true },
 };
