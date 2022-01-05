@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var amountFormatter = new Intl.NumberFormat('en-US', {
@@ -50,7 +48,7 @@ var columns = [{
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
       values: [{
         value: percent,
-        color: "accent-" + (key % 4 + 1)
+        color: "graph-" + (key % 4 + 1)
       }],
       thickness: "small",
       size: "xxsmall",
@@ -288,23 +286,27 @@ var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
     console.log("InfiniteScroll fires onMore after loading " + step + " items");
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    level: 3
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    gap: "small"
-  }, /*#__PURE__*/_react["default"].createElement("strong", null, "InfiniteScroll embedded in DataTable"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Scroll down to load more data, open console to see loading info"))), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
-    columns: columns,
-    data: DATA,
-    step: step,
-    onMore: function onMore() {
-      return load();
-    }
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: 3
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      gap: "small"
+    }, /*#__PURE__*/_react["default"].createElement("strong", null, "InfiniteScroll embedded in DataTable"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Scroll down to load more data, open console to see loading info"))), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+      columns: columns,
+      data: DATA,
+      step: step,
+      onMore: function onMore() {
+        return load();
+      }
+    })) // </Grommet>
+
+  );
 };
 
 exports.InfiniteScrollDataTable = InfiniteScrollDataTable;

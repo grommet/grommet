@@ -1,8 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { Grommet, Box, DataTable } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable } from 'grommet';
 import { columns } from './data'; // This story uses intentionally-messy values (e.g. mixed case)
 // to demonstrate case-insensitive sorting
 
@@ -81,22 +80,26 @@ export var Sort = function Sort() {
       sort = _React$useState[0],
       setSort = _React$useState[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(DataTable, {
-    columns: columns.map(function (c) {
-      return _extends({}, c, {
-        search: c.property === 'name' || c.property === 'location'
-      });
-    }),
-    data: DATA,
-    sort: sort,
-    onSort: setSort,
-    resizeable: true
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(DataTable, {
+      columns: columns.map(function (c) {
+        return _extends({}, c, {
+          search: c.property === 'name' || c.property === 'location'
+        });
+      }),
+      data: DATA,
+      sort: sort,
+      onSort: setSort,
+      resizeable: true
+    })) // </Grommet>
+
+  );
 };
 export default {
   title: 'Visualizations/DataTable/Sort'

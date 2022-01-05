@@ -307,52 +307,56 @@ var handleClickRow = function handleClickRow(obj) {
 };
 
 var MultiplePins = function MultiplePins() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    height: "medium",
-    width: "600px",
-    overflow: "auto"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
-    background: {
-      pinned: 'pink'
-    },
-    data: data,
-    columns: [{
-      property: 'id',
-      header: 'Id',
-      primary: true,
-      render: function render(datum) {
-        return datum.id.slice(datum.id.length - 5);
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      height: "medium",
+      width: "600px",
+      overflow: "auto"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+      background: {
+        pinned: 'pink'
       },
-      pin: true
-    }, {
-      property: 'poolName',
-      header: 'Pool Name',
-      render: function render(_ref4) {
-        var poolName = _ref4.poolName;
-        return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-          truncate: true
-        }, poolName);
+      data: data,
+      columns: [{
+        property: 'id',
+        header: 'Id',
+        primary: true,
+        render: function render(datum) {
+          return datum.id.slice(datum.id.length - 5);
+        },
+        pin: true
+      }, {
+        property: 'poolName',
+        header: 'Pool Name',
+        render: function render(_ref4) {
+          var poolName = _ref4.poolName;
+          return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+            truncate: true
+          }, poolName);
+        },
+        primary: true,
+        pin: true
+      }, {
+        property: 'groupName',
+        header: 'Group Name',
+        pin: true
+      }].concat(columns),
+      fill: true,
+      onClickRow: function onClickRow(_ref5) {
+        var datum = _ref5.datum;
+        return handleClickRow(datum);
       },
-      primary: true,
-      pin: true
-    }, {
-      property: 'groupName',
-      header: 'Group Name',
-      pin: true
-    }].concat(columns),
-    fill: true,
-    onClickRow: function onClickRow(_ref5) {
-      var datum = _ref5.datum;
-      return handleClickRow(datum);
-    },
-    pin: true,
-    onSelect: function onSelect() {},
-    sortable: true
-  }))));
+      pin: true,
+      onSelect: function onSelect() {},
+      sortable: true
+    }))) // </Grommet>
+
+  );
 };
 
 exports.MultiplePins = MultiplePins;

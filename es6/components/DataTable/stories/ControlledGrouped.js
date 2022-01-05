@@ -1,8 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { useState } from 'react';
-import { Grommet, DataTable } from 'grommet';
-import { grommet } from 'grommet/themes'; // Source code for the data can be found here
+import { DataTable } from 'grommet'; // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
 import { columns, DATA } from './data';
@@ -17,18 +16,22 @@ export var ControlledGroupedDataTable = function ControlledGroupedDataTable() {
       expandedGroups = _useState[0],
       setExpandedGroups = _useState[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(DataTable, {
-    columns: groupColumns,
-    data: DATA,
-    groupBy: {
-      property: 'location',
-      expand: expandedGroups,
-      onExpand: setExpandedGroups
-    },
-    sortable: true
-  }));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(DataTable, {
+      columns: groupColumns,
+      data: DATA,
+      groupBy: {
+        property: 'location',
+        expand: expandedGroups,
+        onExpand: setExpandedGroups
+      },
+      sortable: true
+    }) // </Grommet>
+
+  );
 };
 ControlledGroupedDataTable.storyName = 'Controlled grouped';
 export default {

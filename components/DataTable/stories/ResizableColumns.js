@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var DATA = [{
@@ -74,19 +72,23 @@ var columnsResize = [{
 }];
 
 var ResizableDataTable = function ResizableDataTable() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    level: "3"
-  }, "Table with resizable & column sizes"), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
-    columns: columnsResize,
-    data: DATA,
-    primaryKey: false,
-    resizeable: true
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: "3"
+    }, "Table with resizable & column sizes"), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+      columns: columnsResize,
+      data: DATA,
+      primaryKey: false,
+      resizeable: true
+    })) // </Grommet>
+
+  );
 };
 
 exports.ResizableDataTable = ResizableDataTable;

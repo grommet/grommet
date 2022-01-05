@@ -1,28 +1,17 @@
-"use strict";
-
-exports.__esModule = true;
-exports["default"] = exports.Fill = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _grommet = require("grommet");
-
-var _themes = require("grommet/themes");
-
-var _utils = require("grommet/utils");
-
-var _data = require("./data");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var pinnedColumns = _data.columns.map(function (c) {
+import React from 'react';
+import { Grommet, Box, DataTable } from 'grommet';
+import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils'; // Source code for the data can be found here
+// https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
+
+import { columns, data } from '../data';
+var pinnedColumns = columns.map(function (c) {
   return _extends({}, c);
 });
-
 pinnedColumns[0].pin = true;
-var myTheme = (0, _utils.deepMerge)(_themes.grommet, {
+var myTheme = deepMerge(grommet, {
   table: {
     footer: {
       background: {
@@ -46,16 +35,15 @@ var myTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-
-var Fill = function Fill() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
+export var Fill = function Fill() {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: myTheme,
     full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: "vertical"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+  }, /*#__PURE__*/React.createElement(DataTable, {
     columns: pinnedColumns,
-    data: _data.data,
+    data: data,
     step: 10,
     fill: true,
     pin: true,
@@ -66,10 +54,7 @@ var Fill = function Fill() {
     }
   })));
 };
-
-exports.Fill = Fill;
 Fill.storyName = 'Fill and pin';
-var _default = {
-  title: 'Visualizations/DataTable/Fill and pin'
+export default {
+  title: 'Visualizations/DataTable/Custom Themed/Fill and pin'
 };
-exports["default"] = _default;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, DataTable, Grommet, grommet, Meter, Text } from 'grommet';
+import { Box, DataTable, Meter, Text } from 'grommet';
 var data = [{
   id: 'mjbpiclthh8y',
   poolName: 'Asup-array01-lvs (default)',
@@ -298,52 +298,56 @@ var handleClickRow = function handleClickRow(obj) {
 };
 
 export var MultiplePins = function MultiplePins() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center"
-  }, /*#__PURE__*/React.createElement(Box, {
-    height: "medium",
-    width: "600px",
-    overflow: "auto"
-  }, /*#__PURE__*/React.createElement(DataTable, {
-    background: {
-      pinned: 'pink'
-    },
-    data: data,
-    columns: [{
-      property: 'id',
-      header: 'Id',
-      primary: true,
-      render: function render(datum) {
-        return datum.id.slice(datum.id.length - 5);
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center"
+    }, /*#__PURE__*/React.createElement(Box, {
+      height: "medium",
+      width: "600px",
+      overflow: "auto"
+    }, /*#__PURE__*/React.createElement(DataTable, {
+      background: {
+        pinned: 'pink'
       },
-      pin: true
-    }, {
-      property: 'poolName',
-      header: 'Pool Name',
-      render: function render(_ref4) {
-        var poolName = _ref4.poolName;
-        return /*#__PURE__*/React.createElement(Text, {
-          truncate: true
-        }, poolName);
+      data: data,
+      columns: [{
+        property: 'id',
+        header: 'Id',
+        primary: true,
+        render: function render(datum) {
+          return datum.id.slice(datum.id.length - 5);
+        },
+        pin: true
+      }, {
+        property: 'poolName',
+        header: 'Pool Name',
+        render: function render(_ref4) {
+          var poolName = _ref4.poolName;
+          return /*#__PURE__*/React.createElement(Text, {
+            truncate: true
+          }, poolName);
+        },
+        primary: true,
+        pin: true
+      }, {
+        property: 'groupName',
+        header: 'Group Name',
+        pin: true
+      }].concat(columns),
+      fill: true,
+      onClickRow: function onClickRow(_ref5) {
+        var datum = _ref5.datum;
+        return handleClickRow(datum);
       },
-      primary: true,
-      pin: true
-    }, {
-      property: 'groupName',
-      header: 'Group Name',
-      pin: true
-    }].concat(columns),
-    fill: true,
-    onClickRow: function onClickRow(_ref5) {
-      var datum = _ref5.datum;
-      return handleClickRow(datum);
-    },
-    pin: true,
-    onSelect: function onSelect() {},
-    sortable: true
-  }))));
+      pin: true,
+      onSelect: function onSelect() {},
+      sortable: true
+    }))) // </Grommet>
+
+  );
 };
 MultiplePins.storyName = 'Multiple pins';
 export default {

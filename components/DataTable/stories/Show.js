@@ -1,13 +1,11 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Show = void 0;
+exports["default"] = exports.Show = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
-
-var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -50,7 +48,7 @@ var columns = [{
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
       values: [{
         value: percent,
-        color: "accent-" + (key % 4 + 1)
+        color: "graph-" + (key % 4 + 1)
       }],
       thickness: "small",
       size: "xxsmall",
@@ -283,24 +281,32 @@ var DATA = [{
 
 var Show = function Show() {
   var step = 10;
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    level: 3
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    gap: "small"
-  }, /*#__PURE__*/_react["default"].createElement("strong", null, "DataTable with show"))), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
-    columns: columns,
-    data: DATA,
-    step: step,
-    show: 30,
-    onMore: function onMore() {
-      return console.log('loading more data');
-    }
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: 3
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      gap: "small"
+    }, /*#__PURE__*/_react["default"].createElement("strong", null, "DataTable with show"))), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+      columns: columns,
+      data: DATA,
+      step: step,
+      show: 20,
+      onMore: function onMore() {
+        return console.log('loading more data');
+      }
+    })) // </Grommet>
+
+  );
 };
 
 exports.Show = Show;
+var _default = {
+  title: 'Visualizations/DataTable/Show'
+};
+exports["default"] = _default;

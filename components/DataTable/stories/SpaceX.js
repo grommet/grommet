@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _grommetIcons = require("grommet-icons");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -258,29 +256,33 @@ var SpaceX = function SpaceX() {
 
     fetchData();
   }, [expanded, groups, limit, sort]);
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
-    primaryKey: "id",
-    columns: columns,
-    data: data,
-    sortable: true,
-    replace: true,
-    groupBy: {
-      expandable: expandable,
-      expand: expanded,
-      property: 'rocketId'
-    },
-    onUpdate: function onUpdate(opts) {
-      setExpanded(opts.expanded);
-      setLimit(opts.count);
-      if (opts.sort) setSort(opts.sort);
-    },
-    step: 20
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+      primaryKey: "id",
+      columns: columns,
+      data: data,
+      sortable: true,
+      replace: true,
+      groupBy: {
+        expandable: expandable,
+        expand: expanded,
+        property: 'rocketId'
+      },
+      onUpdate: function onUpdate(opts) {
+        setExpanded(opts.expanded);
+        setLimit(opts.count);
+        if (opts.sort) setSort(opts.sort);
+      },
+      step: 20
+    })) // </Grommet>
+
+  );
 };
 
 exports.SpaceX = SpaceX;

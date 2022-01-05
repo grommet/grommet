@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, DataTable, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Heading } from 'grommet';
 var DATA = [{
   name: 'Alan Josiah Werner Shirleen Foy',
   location: 'Winston Salem',
@@ -131,65 +130,69 @@ var columnsDefault = [{
   align: 'end'
 }];
 export var ColumnSize = function ColumnSize() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: "horizontal",
-    pad: "medium"
-  }, /*#__PURE__*/React.createElement(Heading, {
-    level: "3"
-  }, " Default DataTable"), /*#__PURE__*/React.createElement(DataTable, {
-    columns: columnsDefault,
-    data: DATA,
-    primaryKey: false,
-    border: {
-      color: 'border',
-      side: 'vertical',
-      size: '1px'
-    }
-  })), /*#__PURE__*/React.createElement(Box, {
-    fill: "horizontal",
-    pad: "medium"
-  }, /*#__PURE__*/React.createElement(Heading, {
-    level: "3"
-  }, "Theme Column Sizes"), /*#__PURE__*/React.createElement(DataTable, {
-    columns: columnsThemeSize,
-    data: DATA,
-    primaryKey: false,
-    border: {
-      color: 'border',
-      side: 'vertical',
-      size: '1px'
-    }
-  })), /*#__PURE__*/React.createElement(Box, {
-    fill: "horizontal",
-    pad: "medium"
-  }, /*#__PURE__*/React.createElement(Heading, {
-    level: "3"
-  }, "Absolute Column Sizes"), /*#__PURE__*/React.createElement(DataTable, {
-    columns: columnsAbsoluteSize,
-    data: DATA,
-    primaryKey: false,
-    border: {
-      color: 'border',
-      side: 'vertical',
-      size: '1px'
-    }
-  })), /*#__PURE__*/React.createElement(Box, {
-    fill: "horizontal",
-    pad: "medium"
-  }, /*#__PURE__*/React.createElement(Heading, {
-    level: "3"
-  }, "Relative Column Sizes"), /*#__PURE__*/React.createElement(DataTable, {
-    columns: columnsRelativeSize,
-    data: DATA,
-    primaryKey: false,
-    border: {
-      color: 'border',
-      side: 'vertical',
-      size: '1px'
-    }
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
+      fill: "horizontal",
+      pad: "medium"
+    }, /*#__PURE__*/React.createElement(Heading, {
+      level: "3"
+    }, " Default DataTable"), /*#__PURE__*/React.createElement(DataTable, {
+      columns: columnsDefault,
+      data: DATA,
+      primaryKey: false,
+      border: {
+        color: 'border',
+        side: 'vertical',
+        size: '1px'
+      }
+    })), /*#__PURE__*/React.createElement(Box, {
+      fill: "horizontal",
+      pad: "medium"
+    }, /*#__PURE__*/React.createElement(Heading, {
+      level: "3"
+    }, "Theme Column Sizes"), /*#__PURE__*/React.createElement(DataTable, {
+      columns: columnsThemeSize,
+      data: DATA,
+      primaryKey: false,
+      border: {
+        color: 'border',
+        side: 'vertical',
+        size: '1px'
+      }
+    })), /*#__PURE__*/React.createElement(Box, {
+      fill: "horizontal",
+      pad: "medium"
+    }, /*#__PURE__*/React.createElement(Heading, {
+      level: "3"
+    }, "Absolute Column Sizes"), /*#__PURE__*/React.createElement(DataTable, {
+      columns: columnsAbsoluteSize,
+      data: DATA,
+      primaryKey: false,
+      border: {
+        color: 'border',
+        side: 'vertical',
+        size: '1px'
+      }
+    })), /*#__PURE__*/React.createElement(Box, {
+      fill: "horizontal",
+      pad: "medium"
+    }, /*#__PURE__*/React.createElement(Heading, {
+      level: "3"
+    }, "Relative Column Sizes"), /*#__PURE__*/React.createElement(DataTable, {
+      columns: columnsRelativeSize,
+      data: DATA,
+      primaryKey: false,
+      border: {
+        color: 'border',
+        side: 'vertical',
+        size: '1px'
+      }
+    }))) // </Grommet>
+
+  );
 };
 ColumnSize.storyName = 'Column sizes';
 export default {

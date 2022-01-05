@@ -9,8 +9,6 @@ var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _excluded = ["label", "open", "submenu"];
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -55,80 +53,84 @@ var Nested = function Nested() {
       openMenu2 = _React$useState3[0],
       setOpenMenu2 = _React$useState3[1];
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    width: "small"
-  }, /*#__PURE__*/_react["default"].createElement(MenuButton, {
-    open: openMenu1,
-    label: "Accordion",
-    onClick: function onClick() {
-      var newOpenMenu1 = !openMenu1;
-      setOpenMenu1(newOpenMenu1);
-      setOpenSubmenu1(!newOpenMenu1 ? false : openSubmenu1);
-    }
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Collapsible, {
-    open: openMenu1
-  }, /*#__PURE__*/_react["default"].createElement(MenuButton, {
-    submenu: true,
-    open: openSubmenu1,
-    label: "Accordion Basics",
-    onClick: function onClick() {
-      return setOpenSubmenu1(!openSubmenu1);
-    }
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Collapsible, {
-    open: openSubmenu1
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    hoverIndicator: "background",
-    onClick: function onClick() {
-      return alert('Submenu item 1 selected');
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: {
-      left: 'medium'
-    },
-    direction: "row",
-    align: "center",
-    pad: "xsmall"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    size: "small"
-  }, "Submenu item 1"))), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    hoverIndicator: "background",
-    onClick: function onClick() {
-      return alert('Submenu item 2 selected');
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: {
-      left: 'medium'
-    },
-    direction: "row",
-    align: "center",
-    pad: "xsmall"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    size: "small"
-  }, "Submenu item 2"))))), /*#__PURE__*/_react["default"].createElement(MenuButton, {
-    open: openMenu2,
-    label: "Button",
-    onClick: function onClick() {
-      return setOpenMenu2(!openMenu2);
-    }
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Collapsible, {
-    open: openMenu2
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    hoverIndicator: "background",
-    onClick: function onClick() {
-      return alert('Submenu item 1 selected');
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: {
-      left: 'medium'
-    },
-    direction: "row",
-    align: "center",
-    pad: "xsmall"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    size: "small"
-  }, "Submenu item 1"))))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      width: "small"
+    }, /*#__PURE__*/_react["default"].createElement(MenuButton, {
+      open: openMenu1,
+      label: "Accordion",
+      onClick: function onClick() {
+        var newOpenMenu1 = !openMenu1;
+        setOpenMenu1(newOpenMenu1);
+        setOpenSubmenu1(!newOpenMenu1 ? false : openSubmenu1);
+      }
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Collapsible, {
+      open: openMenu1
+    }, /*#__PURE__*/_react["default"].createElement(MenuButton, {
+      submenu: true,
+      open: openSubmenu1,
+      label: "Accordion Basics",
+      onClick: function onClick() {
+        return setOpenSubmenu1(!openSubmenu1);
+      }
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Collapsible, {
+      open: openSubmenu1
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      hoverIndicator: "background",
+      onClick: function onClick() {
+        return alert('Submenu item 1 selected');
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: {
+        left: 'medium'
+      },
+      direction: "row",
+      align: "center",
+      pad: "xsmall"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      size: "small"
+    }, "Submenu item 1"))), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      hoverIndicator: "background",
+      onClick: function onClick() {
+        return alert('Submenu item 2 selected');
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: {
+        left: 'medium'
+      },
+      direction: "row",
+      align: "center",
+      pad: "xsmall"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      size: "small"
+    }, "Submenu item 2"))))), /*#__PURE__*/_react["default"].createElement(MenuButton, {
+      open: openMenu2,
+      label: "Button",
+      onClick: function onClick() {
+        return setOpenMenu2(!openMenu2);
+      }
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Collapsible, {
+      open: openMenu2
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      hoverIndicator: "background",
+      onClick: function onClick() {
+        return alert('Submenu item 1 selected');
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: {
+        left: 'medium'
+      },
+      direction: "row",
+      align: "center",
+      pad: "xsmall"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      size: "small"
+    }, "Submenu item 1"))))) // </Grommet>
+
+  );
 };
 
 exports.Nested = Nested;

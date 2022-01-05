@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, DataTable, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Heading } from 'grommet';
 var DATA = [{
   location: 'Winston Salem',
   date: '2018-01-09',
@@ -63,19 +62,23 @@ var columnsResize = [{
   align: 'end'
 }];
 export var ResizableDataTable = function ResizableDataTable() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Heading, {
-    level: "3"
-  }, "Table with resizable & column sizes"), /*#__PURE__*/React.createElement(DataTable, {
-    columns: columnsResize,
-    data: DATA,
-    primaryKey: false,
-    resizeable: true
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Heading, {
+      level: "3"
+    }, "Table with resizable & column sizes"), /*#__PURE__*/React.createElement(DataTable, {
+      columns: columnsResize,
+      data: DATA,
+      primaryKey: false,
+      resizeable: true
+    })) // </Grommet>
+
+  );
 };
 ResizableDataTable.storyName = 'Resizable columns';
 export default {

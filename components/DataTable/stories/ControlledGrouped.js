@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _data = require("./data");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -29,18 +27,22 @@ var ControlledGroupedDataTable = function ControlledGroupedDataTable() {
       expandedGroups = _useState[0],
       setExpandedGroups = _useState[1];
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
-    columns: groupColumns,
-    data: _data.DATA,
-    groupBy: {
-      property: 'location',
-      expand: expandedGroups,
-      onExpand: setExpandedGroups
-    },
-    sortable: true
-  }));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.DataTable, {
+      columns: groupColumns,
+      data: _data.DATA,
+      groupBy: {
+        property: 'location',
+        expand: expandedGroups,
+        onExpand: setExpandedGroups
+      },
+      sortable: true
+    }) // </Grommet>
+
+  );
 };
 
 exports.ControlledGroupedDataTable = ControlledGroupedDataTable;

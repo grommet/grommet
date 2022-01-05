@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _data = require("./data");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -305,26 +303,30 @@ var OnUpdateDataTable = function OnUpdateDataTable() {
       onSelect: onGroupSelect
     };
   }, [expand, groupSelected, onGroupSelect]);
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
-    primaryKey: "id",
-    columns: columns,
-    data: data,
-    sortable: true,
-    replace: true,
-    groupBy: groupBy,
-    onSelect: onSelect,
-    onUpdate: function onUpdate(opts) {
-      setExpand(opts.expanded);
-      setData(getData(opts));
-    },
-    select: select,
-    step: step
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+      primaryKey: "id",
+      columns: columns,
+      data: data,
+      sortable: true,
+      replace: true,
+      groupBy: groupBy,
+      onSelect: onSelect,
+      onUpdate: function onUpdate(opts) {
+        setExpand(opts.expanded);
+        setData(getData(opts));
+      },
+      select: select,
+      step: step
+    })) // </Grommet>
+
+  );
 };
 
 exports.OnUpdateDataTable = OnUpdateDataTable;

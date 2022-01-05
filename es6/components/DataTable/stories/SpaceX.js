@@ -3,8 +3,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 import React, { useEffect, useMemo, useState } from 'react';
-import { Grommet, Box, DataTable, Text, Tip } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Text, Tip } from 'grommet';
 import { StatusCritical } from "grommet-icons/es6/icons/StatusCritical";
 var columns = [{
   property: 'name',
@@ -244,29 +243,33 @@ export var SpaceX = function SpaceX() {
 
     fetchData();
   }, [expanded, groups, limit, sort]);
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(DataTable, {
-    primaryKey: "id",
-    columns: columns,
-    data: data,
-    sortable: true,
-    replace: true,
-    groupBy: {
-      expandable: expandable,
-      expand: expanded,
-      property: 'rocketId'
-    },
-    onUpdate: function onUpdate(opts) {
-      setExpanded(opts.expanded);
-      setLimit(opts.count);
-      if (opts.sort) setSort(opts.sort);
-    },
-    step: 20
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(DataTable, {
+      primaryKey: "id",
+      columns: columns,
+      data: data,
+      sortable: true,
+      replace: true,
+      groupBy: {
+        expandable: expandable,
+        expand: expanded,
+        property: 'rocketId'
+      },
+      onUpdate: function onUpdate(opts) {
+        setExpanded(opts.expanded);
+        setLimit(opts.count);
+        if (opts.sort) setSort(opts.sort);
+      },
+      step: 20
+    })) // </Grommet>
+
+  );
 };
 SpaceX.storyName = 'SpaceX Grouped';
 SpaceX.parameters = {

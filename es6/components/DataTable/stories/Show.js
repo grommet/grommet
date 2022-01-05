@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, DataTable, Heading, Meter, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Heading, Meter, Text } from 'grommet';
 var amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'NIS',
@@ -40,7 +39,7 @@ var columns = [{
     }, /*#__PURE__*/React.createElement(Meter, {
       values: [{
         value: percent,
-        color: "accent-" + (key % 4 + 1)
+        color: "graph-" + (key % 4 + 1)
       }],
       thickness: "small",
       size: "xxsmall",
@@ -272,22 +271,29 @@ var DATA = [{
 }];
 export var Show = function Show() {
   var step = 10;
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Heading, {
-    level: 3
-  }, /*#__PURE__*/React.createElement(Box, {
-    gap: "small"
-  }, /*#__PURE__*/React.createElement("strong", null, "DataTable with show"))), /*#__PURE__*/React.createElement(DataTable, {
-    columns: columns,
-    data: DATA,
-    step: step,
-    show: 30,
-    onMore: function onMore() {
-      return console.log('loading more data');
-    }
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Heading, {
+      level: 3
+    }, /*#__PURE__*/React.createElement(Box, {
+      gap: "small"
+    }, /*#__PURE__*/React.createElement("strong", null, "DataTable with show"))), /*#__PURE__*/React.createElement(DataTable, {
+      columns: columns,
+      data: DATA,
+      step: step,
+      show: 20,
+      onMore: function onMore() {
+        return console.log('loading more data');
+      }
+    })) // </Grommet>
+
+  );
+};
+export default {
+  title: 'Visualizations/DataTable/Show'
 };

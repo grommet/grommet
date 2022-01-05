@@ -2,8 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 /* eslint-disable no-param-reassign */
 import React, { useCallback, useMemo, useState } from 'react';
-import { Grommet, Box, DataTable } from 'grommet';
-import { grommet } from 'grommet/themes'; // Source code for the data can be found here
+import { Box, DataTable } from 'grommet'; // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
 import { groupColumns, locations, DATA } from './data'; // The key of the header selection state in groupBy.select
@@ -293,26 +292,30 @@ export var OnUpdateDataTable = function OnUpdateDataTable() {
       onSelect: onGroupSelect
     };
   }, [expand, groupSelected, onGroupSelect]);
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(DataTable, {
-    primaryKey: "id",
-    columns: columns,
-    data: data,
-    sortable: true,
-    replace: true,
-    groupBy: groupBy,
-    onSelect: onSelect,
-    onUpdate: function onUpdate(opts) {
-      setExpand(opts.expanded);
-      setData(getData(opts));
-    },
-    select: select,
-    step: step
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(DataTable, {
+      primaryKey: "id",
+      columns: columns,
+      data: data,
+      sortable: true,
+      replace: true,
+      groupBy: groupBy,
+      onSelect: onSelect,
+      onUpdate: function onUpdate(opts) {
+        setExpand(opts.expanded);
+        setData(getData(opts));
+      },
+      select: select,
+      step: step
+    })) // </Grommet>
+
+  );
 };
 OnUpdateDataTable.storyName = 'OnUpdate';
 export default {

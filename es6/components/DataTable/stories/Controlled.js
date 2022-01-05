@@ -1,8 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { Grommet, Box, DataTable, CheckBox } from 'grommet';
-import { grommet } from 'grommet/themes'; // Source code for the data can be found here
+import { Box, DataTable, CheckBox } from 'grommet'; // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
 import { columns, DATA } from './data';
@@ -34,37 +33,41 @@ export var ControlledDataTable = function ControlledDataTable() {
     }) : []);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "medium"
-  }, /*#__PURE__*/React.createElement(DataTable, {
-    columns: [{
-      property: 'checkbox',
-      render: function render(_ref) {
-        var name = _ref.name;
-        return /*#__PURE__*/React.createElement(CheckBox, {
-          key: name,
-          checked: checked.indexOf(name) !== -1,
-          onChange: function onChange(e) {
-            return onCheck(e, name);
-          }
-        });
-      },
-      header: /*#__PURE__*/React.createElement(CheckBox, {
-        checked: checked.length === DATA.length,
-        indeterminate: checked.length > 0 && checked.length < DATA.length,
-        onChange: onCheckAll
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "medium"
+    }, /*#__PURE__*/React.createElement(DataTable, {
+      columns: [{
+        property: 'checkbox',
+        render: function render(_ref) {
+          var name = _ref.name;
+          return /*#__PURE__*/React.createElement(CheckBox, {
+            key: name,
+            checked: checked.indexOf(name) !== -1,
+            onChange: function onChange(e) {
+              return onCheck(e, name);
+            }
+          });
+        },
+        header: /*#__PURE__*/React.createElement(CheckBox, {
+          checked: checked.length === DATA.length,
+          indeterminate: checked.length > 0 && checked.length < DATA.length,
+          onChange: onCheckAll
+        }),
+        sortable: false
+      }].concat(controlledColumns).map(function (col) {
+        return _extends({}, col);
       }),
-      sortable: false
-    }].concat(controlledColumns).map(function (col) {
-      return _extends({}, col);
-    }),
-    data: DATA,
-    sortable: true,
-    size: "medium"
-  })));
+      data: DATA,
+      sortable: true,
+      size: "medium"
+    })) // </Grommet>
+
+  );
 };
 ControlledDataTable.storyName = 'Controlled';
 export default {

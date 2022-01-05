@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, DataTable, Heading, Meter, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Heading, Meter, Text } from 'grommet';
 var amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'NIS',
@@ -40,7 +39,7 @@ var columns = [{
     }, /*#__PURE__*/React.createElement(Meter, {
       values: [{
         value: percent,
-        color: "accent-" + (key % 4 + 1)
+        color: "graph-" + (key % 4 + 1)
       }],
       thickness: "small",
       size: "xxsmall",
@@ -277,23 +276,27 @@ export var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
     console.log("InfiniteScroll fires onMore after loading " + step + " items");
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Heading, {
-    level: 3
-  }, /*#__PURE__*/React.createElement(Box, {
-    gap: "small"
-  }, /*#__PURE__*/React.createElement("strong", null, "InfiniteScroll embedded in DataTable"), /*#__PURE__*/React.createElement(Text, null, "Scroll down to load more data, open console to see loading info"))), /*#__PURE__*/React.createElement(DataTable, {
-    columns: columns,
-    data: DATA,
-    step: step,
-    onMore: function onMore() {
-      return load();
-    }
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Heading, {
+      level: 3
+    }, /*#__PURE__*/React.createElement(Box, {
+      gap: "small"
+    }, /*#__PURE__*/React.createElement("strong", null, "InfiniteScroll embedded in DataTable"), /*#__PURE__*/React.createElement(Text, null, "Scroll down to load more data, open console to see loading info"))), /*#__PURE__*/React.createElement(DataTable, {
+      columns: columns,
+      data: DATA,
+      step: step,
+      onMore: function onMore() {
+        return load();
+      }
+    })) // </Grommet>
+
+  );
 };
 InfiniteScrollDataTable.storyName = 'Infinite Scroll';
 export default {
