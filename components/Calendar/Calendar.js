@@ -298,8 +298,10 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     if (Array.isArray(dateProp) && dateProp.length) {
       if (Array.isArray(dateProp[0])) {
         timestamp = (0, _utils.getTimestamp)(dateProp[0][0]);
-      } else timestamp = (0, _utils.getTimestamp)(dateProp[0]);
-    } else if (typeof dateProp === 'string') {
+      } else timestamp = (0, _utils.getTimestamp)(dateProp[0]); // check to see if value is not an empty string
+      // empty string should behave like undefined
+
+    } else if (typeof dateProp === 'string' && dateProp.length) {
       timestamp = (0, _utils.getTimestamp)(dateProp);
     } else if (Array.isArray(datesProp) && datesProp.length) {
       if (Array.isArray(datesProp[0])) {

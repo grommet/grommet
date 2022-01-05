@@ -276,8 +276,10 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     if (Array.isArray(dateProp) && dateProp.length) {
       if (Array.isArray(dateProp[0])) {
         timestamp = getTimestamp(dateProp[0][0]);
-      } else timestamp = getTimestamp(dateProp[0]);
-    } else if (typeof dateProp === 'string') {
+      } else timestamp = getTimestamp(dateProp[0]); // check to see if value is not an empty string
+      // empty string should behave like undefined
+
+    } else if (typeof dateProp === 'string' && dateProp.length) {
       timestamp = getTimestamp(dateProp);
     } else if (Array.isArray(datesProp) && datesProp.length) {
       if (Array.isArray(datesProp[0])) {
