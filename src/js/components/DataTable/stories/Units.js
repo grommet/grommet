@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DataTable, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Heading } from 'grommet';
 
 const DATA = [
   {
@@ -40,12 +39,13 @@ const columns = [
 ];
 
 export const UnitsDataTable = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <Heading level="3">Table with units in the heading</Heading>
-      <DataTable columns={columns} data={DATA} primaryKey={false} />
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
+  <Box align="center" pad="large">
+    <Heading level="3">Table with units in the heading</Heading>
+    <DataTable columns={columns} data={DATA} primaryKey={false} />
+  </Box>
+  // </Grommet>
 );
 
 UnitsDataTable.storyName = 'Units';
