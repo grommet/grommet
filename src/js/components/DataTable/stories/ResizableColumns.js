@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DataTable, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Heading } from 'grommet';
 
 const DATA = [
   {
@@ -62,17 +61,18 @@ const columnsResize = [
 ];
 
 export const ResizableDataTable = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <Heading level="3">Table with resizable & column sizes</Heading>
-      <DataTable
-        columns={columnsResize}
-        data={DATA}
-        primaryKey={false}
-        resizeable
-      />
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
+  <Box align="center" pad="large">
+    <Heading level="3">Table with resizable & column sizes</Heading>
+    <DataTable
+      columns={columnsResize}
+      data={DATA}
+      primaryKey={false}
+      resizeable
+    />
+  </Box>
+  // </Grommet>
 );
 
 ResizableDataTable.storyName = 'Resizable columns';

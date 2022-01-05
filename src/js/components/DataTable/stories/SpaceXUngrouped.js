@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Grommet, Box, DataTable, Text, Tip } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Text, Tip } from 'grommet';
 import { StatusCritical } from 'grommet-icons';
 
 const columns = [
@@ -90,23 +89,24 @@ export const SpaceXUngrouped = () => {
   }, [limit, sort]);
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <DataTable
-          primaryKey="id"
-          columns={columns}
-          data={data}
-          sortable
-          replace
-          onUpdate={(opts) => {
-            console.log('onUpdate', opts);
-            setLimit(opts.count);
-            if (opts.sort) setSort(opts.sort);
-          }}
-          step={20}
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <DataTable
+        primaryKey="id"
+        columns={columns}
+        data={data}
+        sortable
+        replace
+        onUpdate={(opts) => {
+          console.log('onUpdate', opts);
+          setLimit(opts.count);
+          if (opts.sort) setSort(opts.sort);
+        }}
+        step={20}
+      />
+    </Box>
+    // </Grommet>
   );
 };
 

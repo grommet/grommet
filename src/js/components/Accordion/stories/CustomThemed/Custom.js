@@ -8,8 +8,8 @@ const customAccordionTheme = {
   global: {
     font: {
       family: `-apple-system,
-       BlinkMacSystemFont, 
-       "Segoe UI", 
+       BlinkMacSystemFont,
+       "Segoe UI",
        Roboto`,
     },
   },
@@ -29,14 +29,6 @@ const customAccordionTheme = {
       color: 'hotpink',
     },
     border: undefined,
-    panel: {
-      // border: {
-      //   side: 'horizontal',
-      //   size: 'medium',
-      //   color: '#DADADA',
-      //   style: 'dotted',
-      // },
-    },
   },
 };
 
