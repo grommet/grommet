@@ -304,7 +304,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         ref: itemRef
       }, /*#__PURE__*/React.createElement(Button, {
         active: activeSuggestionIndex === index,
-        fill: true,
+        fill: "horizontal",
         plain: !child ? undefined : true,
         align: "start",
         kind: !child ? 'option' : undefined,
