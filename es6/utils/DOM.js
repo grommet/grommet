@@ -69,20 +69,30 @@ export var containsFocus = function containsFocus(node) {
   }
 
   return !!element;
-};
+}; // Check if the element.tagName is an input, select or textarea
+
+export var isFocusable = function isFocusable(element) {
+  var tagName = element.tagName.toLowerCase();
+  return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
+}; // Get the first element that can receive focus
+
 export var getFirstFocusableDescendant = function getFirstFocusableDescendant(element) {
   var children = element.getElementsByTagName('*');
 
   for (var i = 0; i < children.length; i += 1) {
     var child = children[i];
-    var tagName = child.tagName.toLowerCase();
 
-    if (tagName === 'input' || tagName === 'select') {
+    if (isFocusable(child)) {
       return child;
     }
   }
 
   return undefined;
+};
+export var shouldKeepFocus = function shouldKeepFocus() {
+  var element = document.activeElement;
+  if (isFocusable(element)) return true;
+  return !!getFirstFocusableDescendant(element);
 };
 export var getNewContainer = function getNewContainer(target, targetChildPosition) {
   if (target === void 0) {

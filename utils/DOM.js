@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.setFocusWithoutScroll = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.getNewContainer = exports.getFirstFocusableDescendant = exports.findVisibleParent = exports.findScrollParents = exports.findScrollParent = exports.containsFocus = void 0;
+exports.shouldKeepFocus = exports.setFocusWithoutScroll = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.isFocusable = exports.getNewContainer = exports.getFirstFocusableDescendant = exports.findVisibleParent = exports.findScrollParents = exports.findScrollParent = exports.containsFocus = void 0;
 
 var findScrollParent = function findScrollParent(element, horizontal) {
   var result;
@@ -80,18 +80,26 @@ var containsFocus = function containsFocus(node) {
   }
 
   return !!element;
-};
+}; // Check if the element.tagName is an input, select or textarea
+
 
 exports.containsFocus = containsFocus;
+
+var isFocusable = function isFocusable(element) {
+  var tagName = element.tagName.toLowerCase();
+  return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
+}; // Get the first element that can receive focus
+
+
+exports.isFocusable = isFocusable;
 
 var getFirstFocusableDescendant = function getFirstFocusableDescendant(element) {
   var children = element.getElementsByTagName('*');
 
   for (var i = 0; i < children.length; i += 1) {
     var child = children[i];
-    var tagName = child.tagName.toLowerCase();
 
-    if (tagName === 'input' || tagName === 'select') {
+    if (isFocusable(child)) {
       return child;
     }
   }
@@ -100,6 +108,14 @@ var getFirstFocusableDescendant = function getFirstFocusableDescendant(element) 
 };
 
 exports.getFirstFocusableDescendant = getFirstFocusableDescendant;
+
+var shouldKeepFocus = function shouldKeepFocus() {
+  var element = document.activeElement;
+  if (isFocusable(element)) return true;
+  return !!getFirstFocusableDescendant(element);
+};
+
+exports.shouldKeepFocus = shouldKeepFocus;
 
 var getNewContainer = function getNewContainer(target, targetChildPosition) {
   if (target === void 0) {

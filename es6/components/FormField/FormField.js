@@ -9,7 +9,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { Children, cloneElement, forwardRef, useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { containsFocus } from '../../utils/DOM';
+import { shouldKeepFocus } from '../../utils/DOM';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -353,7 +353,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, outerProps, {
     style: outerStyle,
     onFocus: function onFocus(event) {
-      setFocus(containsFocus(formFieldRef.current));
+      setFocus(shouldKeepFocus());
       if (_onFocus) _onFocus(event);
     },
     onBlur: function onBlur(event) {
