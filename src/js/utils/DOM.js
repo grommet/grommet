@@ -64,21 +64,13 @@ export const containsFocus = (node) => {
   return !!element;
 };
 
-/**
- * Check if the element.tagName is an input, select or textarea
- * @param {Element} element
- * @returns boolean
- */
+// Check if the element.tagName is an input, select or textarea
 export const isFocusable = (element) => {
   const tagName = element.tagName.toLowerCase();
   return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
 };
 
-/**
- * Get the first element that can receive focus
- * @param {Element} element
- * @returns Element | undefined
- */
+// Get the first element that can receive focus
 export const getFirstFocusableDescendant = (element) => {
   const children = element.getElementsByTagName('*');
   for (let i = 0; i < children.length; i += 1) {
