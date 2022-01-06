@@ -374,11 +374,6 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -613,11 +608,6 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -929,11 +919,6 @@ exports[`TextInput close suggestion drop 2`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -1264,11 +1249,6 @@ exports[`TextInput complex suggestions 2`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -2073,11 +2053,6 @@ exports[`TextInput large drop height 1`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -2293,11 +2268,6 @@ exports[`TextInput medium drop height 1`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -3784,11 +3754,6 @@ exports[`TextInput select suggestion 2`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -4752,11 +4717,6 @@ exports[`TextInput small drop height 1`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -5054,11 +5014,6 @@ exports[`TextInput suggestions 2`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {

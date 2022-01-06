@@ -362,7 +362,7 @@ const TextInput = forwardRef(
                     >
                       <Button
                         active={activeSuggestionIndex === index}
-                        fill
+                        fill="horizontal"
                         plain={!child ? undefined : true}
                         align="start"
                         kind={!child ? 'option' : undefined}
