@@ -214,7 +214,7 @@ describe('Form uncontrolled', () => {
     const onValidate = jest.fn();
     const errorMessage = 'One uppercase letter';
     const testRules = {
-      regexp: new RegExp('(?=.*?[A-Z])'),
+      regexp: /(?=.*?[A-Z])/,
       message: errorMessage,
       status: 'error',
     };
@@ -244,7 +244,7 @@ describe('Form uncontrolled', () => {
     const onValidate = jest.fn();
     const infoMessage = 'One uppercase letter';
     const testRules = {
-      regexp: new RegExp('(?=.*?[A-Z])'),
+      regexp: /(?=.*?[A-Z])/,
       message: infoMessage,
       status: 'info',
     };
