@@ -45,7 +45,7 @@ var stringToArray = function stringToArray(string) {
   return undefined;
 };
 
-var getValueForName = function getValueForName(name, value) {
+var getFieldValue = function getFieldValue(name, value) {
   var isArrayField = stringToArray(name);
 
   if (isArrayField) {
@@ -61,7 +61,7 @@ var getValueForName = function getValueForName(name, value) {
   return value[name];
 };
 
-var setValueForName = function setValueForName(name, componentValue, prevValue) {
+var setFieldValue = function setFieldValue(name, componentValue, prevValue) {
   var nextValue = _extends({}, prevValue);
 
   var isArrayField = stringToArray(name);
@@ -83,25 +83,25 @@ var setValueForName = function setValueForName(name, componentValue, prevValue) 
   }
 
   return nextValue;
-}; // Validating nameValues with the validator and sending correct messaging
+}; // Apply validation rule to field value and send correct messaging.
 
 
-var validate = function validate(validator, nameValue, formValue, format, messages) {
+var validate = function validate(rule, fieldValue, formValue, format, messages) {
   var result;
 
-  if (typeof validator === 'function') {
-    result = validator(nameValue, formValue);
-  } else if (validator.regexp) {
-    if (!validator.regexp.test(nameValue)) {
-      result = validator.message || format({
+  if (typeof rule === 'function') {
+    result = rule(fieldValue, formValue);
+  } else if (rule.regexp) {
+    if (!rule.regexp.test(fieldValue)) {
+      result = rule.message || format({
         id: 'form.invalid',
         messages: messages
       });
 
-      if (validator.status) {
+      if (rule.status) {
         result = {
           message: result,
-          status: validator.status
+          status: rule.status
         };
       }
     }
@@ -111,40 +111,40 @@ var validate = function validate(validator, nameValue, formValue, format, messag
 }; // Validates particular key in formValue
 
 
-var validateName = function validateName(nameValidators, required) {
+var validateName = function validateName(validationRules, required) {
   return function (name, formValue, format, messages) {
-    var nameValue = getValueForName(name, formValue);
-    var result; // ValidateArg is something that gets passed in from a FormField component
+    var fieldValue = getFieldValue(name, formValue);
+    var validationResult; // ValidateArg is something that gets passed in from a FormField component
     // See 'validate' prop in FormField
 
     if (required && ( // false is for CheckBox
-    nameValue === undefined || nameValue === '' || nameValue === false || Array.isArray(nameValue) && !nameValue.length)) {
+    fieldValue === undefined || fieldValue === '' || fieldValue === false || Array.isArray(fieldValue) && !fieldValue.length)) {
       // There is no value at that name, and one is required
-      result = format({
+      validationResult = format({
         id: 'form.required',
         messages: messages
       });
-    } else if (nameValidators) {
-      if (Array.isArray(nameValidators)) {
-        nameValidators.some(function (validator) {
-          result = validate(validator, nameValue, formValue, format, messages);
-          return !!result;
+    } else if (validationRules) {
+      if (Array.isArray(validationRules)) {
+        validationRules.some(function (validator) {
+          validationResult = validate(validator, fieldValue, formValue, format, messages);
+          return !!validationResult;
         });
       } else {
-        result = validate(nameValidators, nameValue, formValue, format, messages);
+        validationResult = validate(validationRules, fieldValue, formValue, format, messages);
       }
     }
 
-    return result;
+    return validationResult;
   };
 }; // validations is an array from Object.entries()
 // Validates all keys in formValue
 
 
-var validateForm = function validateForm(validations, formValue, format, messages, omitValid) {
+var validateForm = function validateForm(validationRules, formValue, format, messages, omitValid) {
   var nextErrors = {};
   var nextInfos = {};
-  validations.forEach(function (_ref) {
+  validationRules.forEach(function (_ref) {
     var name = _ref[0],
         _ref$ = _ref[1],
         field = _ref$.field,
@@ -158,12 +158,12 @@ var validateForm = function validateForm(validations, formValue, format, message
     var result;
 
     if (input) {
-      // input() are validations supplied through useFormInput()
+      // input() a validation function supplied through useFormInput()
       result = input(name, formValue, format, messages);
     }
 
     if (field && !result) {
-      // field() are validations supplied through useFormField()
+      // field() a validation function supplied through useFormField()
       result = field(name, formValue, format, messages);
     } // typeof error === 'object' is implied for both cases of error with
     // a status message and for an error object that is a react node
@@ -235,35 +235,27 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       infos: infosProp
     });
   }, [errorsProp, infosProp]);
-  var validations = (0, _react.useRef)({});
+  var validationRulesRef = (0, _react.useRef)({});
   var requiredFields = (0, _react.useRef)([]);
   var buildValid = (0, _react.useCallback)(function (nextErrors) {
     var valid = false;
     valid = requiredFields.current.filter(function (n) {
-      return Object.keys(validations.current).includes(n);
+      return Object.keys(validationRulesRef.current).includes(n);
     }).every(function (field) {
       return value[field] && (value[field] !== '' || value[field] !== false);
     });
     if (Object.keys(nextErrors).length > 0) valid = false;
     return valid;
-  }, [value]); // Remove any errors that we don't have any validations for anymore.
+  }, [value]); // Only keep validation results for current form fields. In the case of a
+  // dynamic form, a field possessing an error may have been removed from the
+  // form; need to clean up any previous related validation results.
 
-  var filterErrorValidations = function filterErrorValidations(errors) {
-    var nextErrors = errors;
-    return Object.keys(nextErrors).filter(function (n) {
-      return !validations.current[n] || nextErrors[n] === undefined;
+  var filterRemovedFields = function filterRemovedFields(prevValidations) {
+    var nextValidations = prevValidations;
+    return Object.keys(nextValidations).filter(function (n) {
+      return !validationRulesRef.current[n] || nextValidations[n] === undefined;
     }).forEach(function (n) {
-      return delete nextErrors[n];
-    });
-  }; // Remove any infos that we don't have any validations for anymore.
-
-
-  var filterInfoValidations = function filterInfoValidations(infos) {
-    var nextInfos = infos;
-    return Object.keys(nextInfos).filter(function (n) {
-      return !validations.current[n] || nextInfos[n] === undefined;
-    }).forEach(function (n) {
-      return delete nextInfos[n];
+      return delete nextValidations[n];
     });
   }; // On initial mount, when validateOn is change or blur,
   // set validation results for any set fields and calculate whether
@@ -271,9 +263,9 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
 
 
   (0, _react.useEffect)(function () {
-    var validationsForSetFields = Object.entries(validations.current).filter(function (_ref3) {
+    var validationsForSetFields = Object.entries(validationRulesRef.current).filter(function (_ref3) {
       var n = _ref3[0];
-      return getValueForName(n, value);
+      return getFieldValue(n, value);
     });
 
     if (validationsForSetFields.length > 0 && validateOn !== 'submit') {
@@ -281,8 +273,8 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
           errors = _validateForm[0],
           infos = _validateForm[1];
 
-      filterErrorValidations(errors);
-      filterInfoValidations(infos);
+      filterRemovedFields(errors);
+      filterRemovedFields(infos);
       var nextValidationResults = {
         errors: errors,
         infos: infos,
@@ -300,7 +292,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     var timer = setTimeout(function () {
       if (pendingValidation) {
         // run validations on the pending one and any other touched fields
-        var _validateForm2 = validateForm(Object.entries(validations.current).filter(function (_ref4) {
+        var _validateForm2 = validateForm(Object.entries(validationRulesRef.current).filter(function (_ref4) {
           var n = _ref4[0];
           return touched[n] || pendingValidation.includes(n);
         }), value, format, messages),
@@ -315,8 +307,8 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
 
           var nextInfos = _extends({}, prevValidationResults.infos, validatedInfos);
 
-          filterErrorValidations(nextErrors);
-          filterInfoValidations(nextInfos);
+          filterRemovedFields(nextErrors);
+          filterRemovedFields(nextInfos);
           var nextValidationResults = {
             errors: nextErrors,
             infos: nextInfos,
@@ -341,7 +333,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   (0, _react.useEffect)(function () {
     if (validateOn !== 'change') setPendingValidation(undefined);
     setValidationResults(function (prevValidationResults) {
-      var _validateForm3 = validateForm(Object.entries(validations.current).filter(function (_ref5) {
+      var _validateForm3 = validateForm(Object.entries(validationRulesRef.current).filter(function (_ref5) {
         var n = _ref5[0];
         return prevValidationResults.errors[n] || prevValidationResults.infos[n];
       }), value, format, messages),
@@ -397,7 +389,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
           inputValue = _useState5[0],
           setInputValue = _useState5[1];
 
-      var formValue = name ? getValueForName(name, value) : undefined; // for dynamic forms, we need to track when an input has been added to
+      var formValue = name ? getFieldValue(name, value) : undefined; // for dynamic forms, we need to track when an input has been added to
       // the form value. if the input is unmounted, we will delete its
       // key/value from the form value.
 
@@ -410,7 +402,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         componentValue !== formValue // don't already have it
         ) {
           setValueState(function (prevValue) {
-            return setValueForName(name, componentValue, prevValue);
+            return setFieldValue(name, componentValue, prevValue);
           }); // don't onChange on programmatic changes
         }
       }, [componentValue, formValue, name]); // on unmount, if the form is uncontrolled, remove the key/value
@@ -441,13 +433,13 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       );
       (0, _react.useEffect)(function () {
         if (validateArg) {
-          if (!validations.current[name]) {
-            validations.current[name] = {};
+          if (!validationRulesRef.current[name]) {
+            validationRulesRef.current[name] = {};
           }
 
-          validations.current[name].input = validateName(validateArg);
+          validationRulesRef.current[name].input = validateName(validateArg);
           return function () {
-            return delete validations.current[name].input;
+            return delete validationRulesRef.current[name].input;
           };
         }
 
@@ -475,7 +467,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
 
 
           if (!(name in value)) keyCreated.current = true;
-          var nextValue = setValueForName(name, nextComponentValue, value);
+          var nextValue = setFieldValue(name, nextComponentValue, value);
           setValueState(nextValue);
           if (onChange) onChange(nextValue, {
             touched: nextTouched
@@ -503,13 +495,13 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         } else if (index !== -1) requiredFields.current.splice(index, 1);
 
         if (validateArg || required) {
-          if (!validations.current[name]) {
-            validations.current[name] = {};
+          if (!validationRulesRef.current[name]) {
+            validationRulesRef.current[name] = {};
           }
 
-          validations.current[name].field = validateName(validateArg, required);
+          validationRulesRef.current[name].field = validateName(validateArg, required);
           return function () {
-            return delete validations.current[name].field;
+            return delete validationRulesRef.current[name].field;
           };
         }
 
@@ -565,7 +557,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       event.preventDefault();
       setPendingValidation(undefined);
 
-      var _validateForm4 = validateForm(Object.entries(validations.current), value, format, messages, true),
+      var _validateForm4 = validateForm(Object.entries(validationRulesRef.current), value, format, messages, true),
           nextErrors = _validateForm4[0],
           nextInfos = _validateForm4[1];
 
