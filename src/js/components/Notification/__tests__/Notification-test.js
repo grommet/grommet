@@ -4,13 +4,14 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { Grommet, Notification } from '../..';
 
 describe('Notification', () => {
   test('should have no accessibility violations', async () => {
-    const { container } = render(
+    const { container, asFragment } = render(
       <Grommet>
         <Notification title="title" />
       </Grommet>,
@@ -18,11 +19,11 @@ describe('Notification', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should have no accessibility violations for toast', async () => {
-    const { container } = render(
+    const { container, asFragment } = render(
       <Grommet>
         <Notification toast title="title" message="message" />
       </Grommet>,
@@ -30,7 +31,7 @@ describe('Notification', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('onClose', () => {
@@ -41,7 +42,7 @@ describe('Notification', () => {
       </Grommet>,
     );
 
-    fireEvent.click(screen.getByRole('button'));
+    userEvent.click(screen.getByRole('button'));
     expect(onClose).toBeCalled();
   });
 });
