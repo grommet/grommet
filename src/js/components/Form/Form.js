@@ -184,6 +184,9 @@ const Form = forwardRef(
       errors: errorsProp,
       infos: infosProp,
     });
+    // maintain a copy of validationResults in a ref for useEffects
+    // which can't depend on validationResults directly without
+    // causing infinite renders.
     const validationResultsRef = useRef({});
     // Simulated onMount state. Consider Form to be mounted once it has
     // accounted for values originating from controlled inputs (available
@@ -315,6 +318,8 @@ const Form = forwardRef(
     }, [applyValidationRules, pendingValidation, touched, validateOn]);
 
     // Re-run validation rules for all fields with prior errors.
+    // if validate=blur this helps re-validate if there are errors
+    // as the user fixes them (basically act like validate=change for that)
     useEffect(() => {
       const validationRules = Object.entries(validationRulesRef.current);
       if (
@@ -543,7 +548,6 @@ const Form = forwardRef(
           }
           setTouched(defaultTouched);
           setValidationResults(defaultValidationResults);
-
           if (onReset) {
             event.persist(); // extract from React's synthetic event pool
             const adjustedEvent = event;
