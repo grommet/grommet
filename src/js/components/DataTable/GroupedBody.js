@@ -49,15 +49,15 @@ export const GroupedBody = forwardRef(
             primaryKeys && selected
               ? primaryKeys.filter((val) => selected.includes(val))
               : [];
-          
-          isGroupSelected = groupBy.select ?
-            groupBy.select[group.key] === 'all' :
-              (groupSelected.length === group.data.length &&
-              groupSelected.length > 0);
-       
-          const indeterminate = groupBy.select ?
-            groupBy.select[group.key] === 'some' :
-              groupSelected.length > 0 &&
+
+          isGroupSelected = groupBy.select
+            ? groupBy.select[group.key] === 'all'
+            : groupSelected.length === group.data.length &&
+              groupSelected.length > 0;
+
+          const indeterminate = groupBy.select
+            ? groupBy.select[group.key] === 'some'
+            : groupSelected.length > 0 &&
               groupSelected.length < group.data.length;
 
           nextItems.push({
@@ -68,13 +68,13 @@ export const GroupedBody = forwardRef(
             isSelected: isGroupSelected,
             indeterminate,
             onChange: () => {
-              const nextSelected = (isGroupSelected || indeterminate) ?
-                selected.filter((s) => !groupSelected.includes(s)) :
-                [...selected, ...primaryKeys];
+              const nextSelected =
+                isGroupSelected || indeterminate
+                  ? selected.filter((s) => !groupSelected.includes(s))
+                  : [...selected, ...primaryKeys];
               if (groupBy.onSelect) {
                 groupBy.onSelect(nextSelected, group.datum, groupBy.select);
-              }
-              else {
+              } else {
                 onSelect(nextSelected, group.datum);
               }
             },
@@ -99,9 +99,9 @@ export const GroupedBody = forwardRef(
                   : 'body',
               isSelected,
               onChange: () => {
-                const nextSelected = isSelected ?
-                  selected.filter((s) => s !== primaryValue) :
-                  [...selected, primaryValue];
+                const nextSelected = isSelected
+                  ? selected.filter((s) => s !== primaryValue)
+                  : [...selected, primaryValue];
                 onSelect(nextSelected, datum);
               },
             });
@@ -183,8 +183,8 @@ export const GroupedBody = forwardRef(
                 {columns.map((column) => {
                   let scope;
                   if (context === 'groupHeader') {
-                    scope = column.property === groupBy.property ?
-                      'row' : undefined;
+                    scope =
+                      column.property === groupBy.property ? 'row' : undefined;
                   } else {
                     scope = column.primary ? 'row' : undefined;
                   }

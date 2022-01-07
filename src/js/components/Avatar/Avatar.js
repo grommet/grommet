@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useCallback, useContext, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
@@ -20,19 +20,25 @@ const Avatar = ({
   const avatarSize = theme.avatar.size[size] || size;
   const avatarTextSize = theme.avatar.text.size[size] || 'large';
 
-  const avatarProps = {
-    align,
-    height: avatarSize,
-    justify,
-    overflow: 'hidden',
-    round,
-    width: avatarSize,
-  };
+  const avatarProps = useMemo(
+    () => ({
+      align,
+      height: avatarSize,
+      justify,
+      overflow: 'hidden',
+      round,
+      width: avatarSize,
+    }),
+    [align, avatarSize, justify, round],
+  );
 
-  const AvatarChildren = () => (
-    <StyledAvatar {...avatarProps} {...rest}>
-      {children}
-    </StyledAvatar>
+  const AvatarChildren = useCallback(
+    () => (
+      <StyledAvatar {...avatarProps} {...rest}>
+        {children}
+      </StyledAvatar>
+    ),
+    [avatarProps, children, rest],
   );
 
   if (height || width) {

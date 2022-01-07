@@ -8,6 +8,7 @@ import { axe } from 'jest-axe';
 
 import { Grommet } from '../../Grommet';
 import { Anchor } from '..';
+import { Box } from '../../Box';
 
 describe('Anchor', () => {
   test('should have no accessibility violations', async () => {
@@ -74,6 +75,20 @@ describe('Anchor', () => {
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
+  });
+
+  test('shows no error for component used in as prop', () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation();
+    const { container } = render(
+      <Grommet>
+        <Anchor href="#" as={Box} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    expect(errorSpy).not.toHaveBeenCalled();
+
+    errorSpy.mockReset();
+    errorSpy.mockRestore();
   });
 
   test('focus renders', () => {

@@ -374,11 +374,6 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -504,14 +499,14 @@ exports[`TextInput calls onSuggestionsClose 3`] = `""`;
 
 exports[`TextInput calls onSuggestionsClose 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bDhrKg"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jqwtzG"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 cQAfxY"
+      class="StyledTextInput-sc-1x30a0s-0 fRgvvy"
       data-testid="test-input"
       id="item"
       name="item"
@@ -613,11 +608,6 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -929,11 +919,6 @@ exports[`TextInput close suggestion drop 2`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -1059,14 +1044,14 @@ exports[`TextInput close suggestion drop 3`] = `""`;
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bDhrKg"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jqwtzG"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 cQAfxY"
+      class="StyledTextInput-sc-1x30a0s-0 fRgvvy"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1264,11 +1249,6 @@ exports[`TextInput complex suggestions 2`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -1666,14 +1646,14 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bDhrKg"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jqwtzG"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 cQAfxY"
+      class="StyledTextInput-sc-1x30a0s-0 fRgvvy"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2073,11 +2053,6 @@ exports[`TextInput large drop height 1`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -2293,11 +2268,6 @@ exports[`TextInput medium drop height 1`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -3784,11 +3754,6 @@ exports[`TextInput select suggestion 2`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -3914,14 +3879,14 @@ exports[`TextInput select suggestion 3`] = `""`;
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bDhrKg"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jqwtzG"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 hupnZJ"
+      class="StyledTextInput-sc-1x30a0s-0 daLKnP"
       data-testid="test-input"
       id="item"
       name="item"
@@ -4514,14 +4479,14 @@ exports[`TextInput should only show default placeholder when placeholder is a
 exports[`TextInput should only show default placeholder when placeholder is a
   string 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bDhrKg"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jqwtzG"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 cQAfxY"
+      class="StyledTextInput-sc-1x30a0s-0 fRgvvy"
       data-testid="placeholder"
       id="placeholder"
       name="placeholder"
@@ -4752,11 +4717,6 @@ exports[`TextInput small drop height 1`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {
@@ -5054,11 +5014,6 @@ exports[`TextInput suggestions 2`] = `
   padding: 0;
   text-align: inherit;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c5:focus {

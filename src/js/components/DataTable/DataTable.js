@@ -110,7 +110,7 @@ const DataTable = ({
   // Note: onUpdate mode expects the data to be passed
   //   in completely filtered and sorted already.
   const adjustedData = useMemo(
-    () => onUpdate ? data : filterAndSortData(data, filters, onSearch, sort),
+    () => (onUpdate ? data : filterAndSortData(data, filters, onSearch, sort)),
     [data, filters, onSearch, onUpdate, sort],
   );
 
@@ -201,7 +201,8 @@ const DataTable = ({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useLayoutEffect(() => {
     const nextScrollOffset =
-      bodyRef.current.parentElement?.clientWidth - bodyRef.current.clientWidth;
+      (bodyRef.current.parentElement?.clientWidth || 0) -
+      bodyRef.current.clientWidth;
     if (nextScrollOffset !== scrollOffset) setScrollOffset(nextScrollOffset);
   });
 
@@ -403,28 +404,31 @@ const DataTable = ({
               ref={bodyRef}
               cellProps={cellProps.body}
               columns={columns}
-              groupBy={typeof groupBy === 'string' ?
-                { property: groupBy} :
-                groupBy
+              groupBy={
+                typeof groupBy === 'string' ? { property: groupBy } : groupBy
               }
               groups={groups}
               groupState={groupState}
               pinnedOffset={pinnedOffset}
               primaryProperty={primaryProperty}
-              onMore={onUpdate ? () => {
-                if (adjustedData.length === limit) {
-                  const opts = {
-                    expanded: Object.keys(groupState).filter(
-                      (k) => groupState[k].expanded,
-                    ),
-                    count: limit + step,
-                  };
-                  if (sort?.property) opts.sort = sort;
-                  if (showProp) opts.show = showProp;
-                  onUpdate(opts);
-                  setLimit( prev => prev + step);
-                }
-              } : onMore}
+              onMore={
+                onUpdate
+                  ? () => {
+                      if (adjustedData.length === limit) {
+                        const opts = {
+                          expanded: Object.keys(groupState).filter(
+                            (k) => groupState[k].expanded,
+                          ),
+                          count: limit + step,
+                        };
+                        if (sort?.property) opts.sort = sort;
+                        if (showProp) opts.show = showProp;
+                        onUpdate(opts);
+                        setLimit((prev) => prev + step);
+                      }
+                    }
+                  : onMore
+              }
               onSelect={
                 onSelect
                   ? (nextSelected, row) => {
@@ -447,17 +451,21 @@ const DataTable = ({
               cellProps={cellProps.body}
               columns={columns}
               data={!paginate ? adjustedData : items}
-              onMore={onUpdate ? () => {
-                if (adjustedData.length === limit) {
-                  const opts = {
-                    count: limit + step,
-                  };
-                  if (sort?.property) opts.sort = sort;
-                  if (showProp) opts.show = showProp;
-                  onUpdate(opts);
-                  setLimit( prev => prev + step);
-                }
-              } : onMore}
+              onMore={
+                onUpdate
+                  ? () => {
+                      if (adjustedData.length === limit) {
+                        const opts = {
+                          count: limit + step,
+                        };
+                        if (sort?.property) opts.sort = sort;
+                        if (showProp) opts.show = showProp;
+                        onUpdate(opts);
+                        setLimit((prev) => prev + step);
+                      }
+                    }
+                  : onMore
+              }
               replace={replace}
               onClickRow={onClickRow}
               onSelect={

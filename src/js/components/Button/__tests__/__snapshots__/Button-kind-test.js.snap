@@ -82,10 +82,6 @@ exports[`Button kind badge should apply background 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c3 svg {
-  vertical-align: bottom;
-}
-
 .c3:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -250,10 +246,6 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c3 svg {
-  vertical-align: bottom;
 }
 
 .c3:focus {
@@ -421,10 +413,6 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c3 svg {
-  vertical-align: bottom;
 }
 
 .c3:focus {
@@ -598,10 +586,6 @@ exports[`Button kind badge should display number content 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c3 svg {
-  vertical-align: bottom;
 }
 
 .c3:focus {
@@ -786,10 +770,6 @@ exports[`Button kind badge should render custom element 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c3 svg {
-  vertical-align: bottom;
 }
 
 .c3:focus {
@@ -990,8 +970,14 @@ exports[`Button kind badge should render relative to contents when button has no
   transition-timing-function: ease-in-out;
 }
 
-.c1 svg {
-  vertical-align: bottom;
+.c1 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
 }
 
 .c1:focus {
@@ -1120,10 +1106,6 @@ exports[`Button kind border on default button 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -1249,7 +1231,13 @@ exports[`Button kind button icon colors 1`] = `
 }
 
 .c1 > svg {
-  vertical-align: bottom;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
 }
 
 .c1:focus {
@@ -1386,7 +1374,13 @@ exports[`Button kind button with icon and align 1`] = `
 }
 
 .c1 > svg {
-  vertical-align: bottom;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
 }
 
 .c1:focus {
@@ -1491,10 +1485,6 @@ exports[`Button kind default button 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
@@ -1588,10 +1578,6 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -1657,10 +1643,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 hfimml"
+    class="StyledButtonKind-sc-1vhfpnt-0 dldAJJ"
     disabled=""
     type="button"
   >
@@ -1694,10 +1680,6 @@ exports[`Button kind extend on default button 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c1 > svg {
-  vertical-align: bottom;
 }
 
 .c1:focus {
@@ -1794,10 +1776,6 @@ exports[`Button kind fill 1`] = `
   flex: 1 0 auto;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -1864,10 +1842,6 @@ exports[`Button kind fill 1`] = `
   height: 100%;
 }
 
-.c2 > svg {
-  vertical-align: bottom;
-}
-
 .c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -1932,10 +1906,6 @@ exports[`Button kind fill 1`] = `
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   width: 100%;
-}
-
-.c3 > svg {
-  vertical-align: bottom;
 }
 
 .c3:focus {
@@ -2040,10 +2010,6 @@ exports[`Button kind font on button default 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -2132,10 +2098,6 @@ exports[`Button kind font undefined 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -2215,10 +2177,6 @@ exports[`Button kind hover on default button 1`] = `
   padding: 0;
   text-align: inherit;
   color: inherit;
-}
-
-.c1 > svg {
-  vertical-align: bottom;
 }
 
 .c1:hover {
@@ -2316,10 +2274,6 @@ exports[`Button kind hover secondary with color and background 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:hover {
   background-color: orange;
   color: green;
@@ -2389,10 +2343,10 @@ exports[`Button kind hover secondary with color and background 1`] = `
 
 exports[`Button kind hover secondary with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 ebPrUi"
+    class="StyledButtonKind-sc-1vhfpnt-0 clwxKu"
     type="button"
   >
     Button
@@ -2424,10 +2378,6 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c1 > svg {
-  vertical-align: bottom;
 }
 
 .c1:hover {
@@ -2499,10 +2449,10 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 
 exports[`Button kind hoverIndicator with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 gHzxsJ"
+    class="StyledButtonKind-sc-1vhfpnt-0 hzWWZd"
     type="button"
   >
     Button
@@ -2605,7 +2555,13 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 }
 
 .c1 > svg {
-  vertical-align: bottom;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
 }
 
 .c1:focus {
@@ -2691,18 +2647,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 edOFRQ"
+    class="StyledButtonKind-sc-1vhfpnt-0 fxEFiO"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jmQaIj"
+      class="StyledBox-sc-13pk1d4-0 hhpAHF"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-sc-ofa7kd-0 biAetp"
+        class="StyledIcon-sc-ofa7kd-0 gPdjsX"
         viewBox="0 0 24 24"
       >
         <path
@@ -2713,7 +2669,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kxRnaV"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iUEnJr"
       />
       label
     </div>
@@ -2746,10 +2702,6 @@ exports[`Button kind no border on default button 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c1 > svg {
-  vertical-align: bottom;
 }
 
 .c1:focus {
@@ -2842,10 +2794,6 @@ exports[`Button kind no padding on default button 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -2933,10 +2881,6 @@ exports[`Button kind opacity on default button 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c1 > svg {
-  vertical-align: bottom;
 }
 
 .c1:focus {
@@ -3030,10 +2974,6 @@ exports[`Button kind padding on default button 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -3125,10 +3065,6 @@ exports[`Button kind primary button 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -3206,10 +3142,6 @@ exports[`Button kind render of children 1`] = `
   padding: 0;
   text-align: inherit;
   color: inherit;
-}
-
-.c1 > svg {
-  vertical-align: bottom;
 }
 
 .c1:focus {
@@ -3305,10 +3237,6 @@ exports[`Button kind secondary button 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:hover {
   padding: 3px 9px;
   border-style: solid;
@@ -3401,10 +3329,6 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -3468,10 +3392,6 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c2 > svg {
-  vertical-align: bottom;
 }
 
 .c2:focus {
@@ -3539,10 +3459,6 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   transition-timing-function: ease-in-out;
 }
 
-.c3 > svg {
-  vertical-align: bottom;
-}
-
 .c3:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -3606,10 +3522,6 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c4 > svg {
-  vertical-align: bottom;
 }
 
 .c4:focus {
@@ -3716,10 +3628,6 @@ exports[`Button kind size of default button 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c1 > svg {
-  vertical-align: bottom;
 }
 
 .c1:focus {

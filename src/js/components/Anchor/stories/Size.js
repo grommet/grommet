@@ -1,20 +1,17 @@
 import React from 'react';
 
-import { Anchor, Box, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Box } from 'grommet';
 
 const SizeAnchor = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      {['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '10px'].map(
-        (size) => (
-          <Box key={size} margin="small">
-            <Anchor size={size} label={size} href="#" />
-          </Box>
-        ),
-      )}
-    </Box>
-  </Grommet>
+  <Box align="center" pad="large">
+    {['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '10px'].map(
+      (size) => (
+        <Box key={size} margin="small">
+          <Anchor size={size} label={size} href="#" />
+        </Box>
+      ),
+    )}
+  </Box>
 );
 
 export const Size = () => <SizeAnchor />;

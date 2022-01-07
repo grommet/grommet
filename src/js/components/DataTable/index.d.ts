@@ -91,9 +91,9 @@ export interface DataTableProps<TRowType = any> {
         property: string;
         expand: Array<string>;
         expandable: Array<string>;
-        select: { [key: string]: 'all' | 'some' | 'none' },
+        select: { [key: string]: 'all' | 'some' | 'none' };
         onExpand: (expandedKeys: string[]) => void;
-        onSelect: (select: (string | number)[], datum: TRowType) => void
+        onSelect: (select: (string | number)[], datum: TRowType) => void;
       };
   primaryKey?: string | boolean;
   select?: (string | number)[];
@@ -112,7 +112,7 @@ export interface DataTableProps<TRowType = any> {
     expanded?: Array<string>;
     show: number;
     count: number;
-   }) => void;
+  }) => void;
 }
 
 export interface DataTableExtendedProps<TRowType = any>

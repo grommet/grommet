@@ -680,7 +680,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iwMNSr {
+  .Gcwat {
     padding: 6px;
   }
 }"
@@ -1570,7 +1570,13 @@ exports[`Menu custom theme with default button 1`] = `
 }
 
 .c1 > svg {
-  vertical-align: bottom;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
 }
 
 .c1:focus {
@@ -2563,10 +2569,6 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  vertical-align: bottom;
-}
-
 .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -3012,28 +3014,28 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <button
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 kVhqUm"
+    class="StyledButton-sc-323bzc-0 eiEooU"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iwMNSr"
+      class="StyledBox-sc-13pk1d4-0 Gcwat"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 fkNrQP"
+        class="StyledText-sc-1sadyjn-0 gKFELF"
       >
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 dvZAHf"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 knmKel"
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+        class="StyledIcon-sc-ofa7kd-0 kxOTGz"
         viewBox="0 0 24 24"
       >
         <path
@@ -3407,7 +3409,7 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .iwMNSr {
+  .Gcwat {
     padding: 6px;
   }
 }"
@@ -4138,7 +4140,7 @@ exports[`Menu open on up close on esc 2`] = `
 
 exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iwMNSr {
+  .Gcwat {
     padding: 6px;
   }
 }"
@@ -5823,7 +5825,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 
 exports[`Menu with dropAlign bottom renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iwMNSr {
+  .Gcwat {
     padding: 6px;
   }
 }"
@@ -6364,7 +6366,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 exports[`Menu with dropAlign top renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iwMNSr {
+  .Gcwat {
     padding: 6px;
   }
 }"

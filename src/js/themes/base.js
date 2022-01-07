@@ -1081,7 +1081,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     notification: {
-      time: 8000,
       container: {
         // any box props
         pad: { horizontal: 'small', vertical: 'xsmall' },
@@ -1100,6 +1099,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           position: 'top',
           margin: 'medium',
         },
+        time: 8000,
       },
       iconContainer: {
         // any box props
@@ -1481,12 +1481,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       border: true,
       round: 'large',
       // name: undefined,
-      pad: {  
+      pad: {
         horizontal: 'small',
         vertical: 'xsmall',
       },
       remove: {
-        margin: { right: 'xsmall'},
+        margin: { right: 'xsmall' },
       },
       separator: ' : ',
       value: {

@@ -17,7 +17,6 @@ const NameValuePair = ({ children, name: nameProp }) => {
     size === 'small';
 
   const Container = column ? Box : Fragment;
-  const containerProps = column ? { width: valueProps?.width } : undefined;
 
   const nameAlign = size !== 'small' ? nameProps?.align : undefined;
   const valueAlign = size !== 'small' ? valueProps?.align : undefined;
@@ -72,7 +71,7 @@ const NameValuePair = ({ children, name: nameProp }) => {
   const second = direction !== 'column-reverse' ? value : name;
 
   return (
-    <Container {...containerProps}>
+    <Container>
       {first}
       {second}
     </Container>

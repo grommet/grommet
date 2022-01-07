@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.19.1",
+  "version": "2.20.0",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -67,11 +67,11 @@
     "@babel/plugin-proposal-pipeline-operator": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
-    "@storybook/addon-storysource": "^6.3.9",
-    "@storybook/addon-toolbars": "^6.3.11",
-    "@storybook/addons": "^6.3.9",
-    "@storybook/react": "^6.3.9",
-    "@storybook/source-loader": "^6.3.9",
+    "@storybook/addon-storysource": "^6.4.3",
+    "@storybook/addon-toolbars": "^6.4.3",
+    "@storybook/addons": "^6.4.3",
+    "@storybook/react": "^6.4.3",
+    "@storybook/source-loader": "6.3.9",
     "@testing-library/dom": "^8.7.2",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
@@ -96,8 +96,8 @@
     "cross-env": "^7.0.3",
     "del": "^6.0.0",
     "elliptic": "^6.5.4",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb": "^19.0.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.25.3",
@@ -114,7 +114,7 @@
     "jest": "^27.4.0",
     "jest-axe": "^5.0.1",
     "jest-cli": "^27.4.0",
-    "jest-styled-components": "^7.0.5",
+    "jest-styled-components": "7.0.5",
     "jsdom": "^18.1.1",
     "postcss": "^8.4.4",
     "pre-commit": "^1.2.2",
@@ -127,9 +127,9 @@
     "regenerator-runtime": "^0.13.9",
     "require-reload": "^0.2.2",
     "simple-git": "^2.47.1",
-    "styled-components": "^5.3.1",
+    "styled-components": "^5.3.3",
     "tarball-extract": "^0.0.6",
-    "ts-jest": "^27.0.5",
+    "ts-jest": "^27.1.1",
     "ts-loader": "^8.3.0",
     "typescript": "^4.5.2",
     "webpack": "^4.44.2",
@@ -190,7 +190,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "123 kB"
+      "maxSize": "124 kB"
     }
   ],
   "keywords": [

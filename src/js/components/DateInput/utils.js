@@ -1,6 +1,7 @@
 // Converting between Date and String types is handled via a "schema".
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
+import { formatToLocalYYYYMMDD } from '../Calendar/utils';
 
 export const formatToSchema = (format) => {
   if (!format) return undefined;
@@ -23,15 +24,15 @@ export const formatToSchema = (format) => {
 };
 
 const masks = {
-  m: { length: [1, 2], regexp: new RegExp(`^[1-9]$|^1[0-2]$`) },
-  mm: { length: [1, 2], regexp: new RegExp(`^[0-1]$|^0[1-9]$|^1[0-2]$`) },
-  d: { length: [1, 2], regexp: new RegExp(`^[1-9]$|^[1-2][0-9]$|^3[0-1]$`) },
+  m: { length: [1, 2], regexp: /^[1-9]$|^1[0-2]$/ },
+  mm: { length: [1, 2], regexp: /^[0-1]$|^0[1-9]$|^1[0-2]$/ },
+  d: { length: [1, 2], regexp: /^[1-9]$|^[1-2][0-9]$|^3[0-1]$/ },
   dd: {
     length: [1, 2],
-    regexp: new RegExp(`^[0-3]$|^0[1-9]$|^[1-2][0-9]$|^3[0-1]$`),
+    regexp: /^[0-3]$|^0[1-9]$|^[1-2][0-9]$|^3[0-1]$/,
   },
-  yy: { length: [1, 2], regexp: new RegExp(`^[0-9]{1,2}$`) },
-  yyyy: { length: [1, 4], regexp: new RegExp(`^[0-9]{1,4}$`) },
+  yy: { length: [1, 2], regexp: /^[0-9]{1,2}$/ },
+  yyyy: { length: [1, 4], regexp: /^[0-9]{1,4}$/ },
 };
 
 export const schemaToMask = (schema) => {
@@ -116,7 +117,7 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
-export const textToValue = (text, schema, valueProp, range) => {
+export const textToValue = (text, schema, range, timestamp) => {
   if (!text) return range ? [] : undefined;
 
   let result;
@@ -142,15 +143,10 @@ export const textToValue = (text, schema, valueProp, range) => {
 
     let date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
     // match time and timezone of any supplied valueProp
-    if (
-      valueProp &&
-      ((Array.isArray(valueProp) && valueProp[0]) || !Array.isArray(valueProp))
-    ) {
-      const valueDate = new Date(
-        Array.isArray(valueProp) && valueProp.length ? valueProp[0] : valueProp,
-      ).toISOString();
-      date = `${date.split('T')[0]}T${valueDate.split('T')[1]}`;
-    }
+    if (timestamp)
+      date = `${formatToLocalYYYYMMDD(date).split('T')[0]}T${timestamp}`;
+    else date = `${formatToLocalYYYYMMDD(date).split('T')[0]}`;
+
     if (!range) {
       if (!result) result = date;
     } else {

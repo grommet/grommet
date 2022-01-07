@@ -13,7 +13,7 @@ const parseTime = (time, hourLimit) => {
   if (time) {
     let match = DURATION_REGEXP.exec(time);
     if (match) {
-      result.hours = parseFloat(match[2]);
+      result.hours = parseFloat(match[2]) || 0;
       if (hourLimit === 12) {
         result.hours12 = result.hours > 12 ? result.hours - 12 : result.hours;
       }

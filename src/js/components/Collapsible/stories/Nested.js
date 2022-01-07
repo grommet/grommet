@@ -2,8 +2,7 @@ import React from 'react';
 
 import { FormDown, FormNext } from 'grommet-icons';
 
-import { Box, Button, Collapsible, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Collapsible, Text } from 'grommet';
 
 const MenuButton = ({ label, open, submenu, ...rest }) => {
   const Icon = open ? FormDown : FormNext;
@@ -28,61 +27,26 @@ export const Nested = () => {
   const [openMenu2, setOpenMenu2] = React.useState(false);
 
   return (
-    <Grommet theme={grommet}>
-      <Box width="small">
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box width="small">
+      <MenuButton
+        open={openMenu1}
+        label="Accordion"
+        onClick={() => {
+          const newOpenMenu1 = !openMenu1;
+          setOpenMenu1(newOpenMenu1);
+          setOpenSubmenu1(!newOpenMenu1 ? false : openSubmenu1);
+        }}
+      />
+      <Collapsible open={openMenu1}>
         <MenuButton
-          open={openMenu1}
-          label="Accordion"
-          onClick={() => {
-            const newOpenMenu1 = !openMenu1;
-            setOpenMenu1(newOpenMenu1);
-            setOpenSubmenu1(!newOpenMenu1 ? false : openSubmenu1);
-          }}
+          submenu
+          open={openSubmenu1}
+          label="Accordion Basics"
+          onClick={() => setOpenSubmenu1(!openSubmenu1)}
         />
-        <Collapsible open={openMenu1}>
-          <MenuButton
-            submenu
-            open={openSubmenu1}
-            label="Accordion Basics"
-            onClick={() => setOpenSubmenu1(!openSubmenu1)}
-          />
-          <Collapsible open={openSubmenu1}>
-            {/* eslint-disable no-alert */}
-            <Button
-              hoverIndicator="background"
-              onClick={() => alert('Submenu item 1 selected')}
-            >
-              <Box
-                margin={{ left: 'medium' }}
-                direction="row"
-                align="center"
-                pad="xsmall"
-              >
-                <Text size="small">Submenu item 1</Text>
-              </Box>
-            </Button>
-            <Button
-              hoverIndicator="background"
-              onClick={() => alert('Submenu item 2 selected')}
-            >
-              <Box
-                margin={{ left: 'medium' }}
-                direction="row"
-                align="center"
-                pad="xsmall"
-              >
-                <Text size="small">Submenu item 2</Text>
-              </Box>
-            </Button>
-            {/* eslint-enable no-alert */}
-          </Collapsible>
-        </Collapsible>
-        <MenuButton
-          open={openMenu2}
-          label="Button"
-          onClick={() => setOpenMenu2(!openMenu2)}
-        />
-        <Collapsible open={openMenu2}>
+        <Collapsible open={openSubmenu1}>
           {/* eslint-disable no-alert */}
           <Button
             hoverIndicator="background"
@@ -97,10 +61,46 @@ export const Nested = () => {
               <Text size="small">Submenu item 1</Text>
             </Box>
           </Button>
+          <Button
+            hoverIndicator="background"
+            onClick={() => alert('Submenu item 2 selected')}
+          >
+            <Box
+              margin={{ left: 'medium' }}
+              direction="row"
+              align="center"
+              pad="xsmall"
+            >
+              <Text size="small">Submenu item 2</Text>
+            </Box>
+          </Button>
           {/* eslint-enable no-alert */}
         </Collapsible>
-      </Box>
-    </Grommet>
+      </Collapsible>
+      <MenuButton
+        open={openMenu2}
+        label="Button"
+        onClick={() => setOpenMenu2(!openMenu2)}
+      />
+      <Collapsible open={openMenu2}>
+        {/* eslint-disable no-alert */}
+        <Button
+          hoverIndicator="background"
+          onClick={() => alert('Submenu item 1 selected')}
+        >
+          <Box
+            margin={{ left: 'medium' }}
+            direction="row"
+            align="center"
+            pad="xsmall"
+          >
+            <Text size="small">Submenu item 1</Text>
+          </Box>
+        </Button>
+        {/* eslint-enable no-alert */}
+      </Collapsible>
+    </Box>
+    // </Grommet>
   );
 };
 

@@ -31,8 +31,10 @@ import {
   betweenDates,
   daysApart,
   endOfMonth,
+  formatDateToPropStructure,
   formatToLocalYYYYMMDD,
-  localTimezoneToUTC,
+  getTimestamp,
+  normalizeForTimezone,
   startOfMonth,
   subtractDays,
   subtractMonths,
@@ -51,9 +53,9 @@ const activeDates = {
   end: 'end',
 };
 
-const timeStamp = new RegExp(/T.*/);
+const timeStamp = /T.*/;
 
-const formatSelectedDatesString = (date) => `Currently selected 
+const formatSelectedDatesString = (date) => `Currently selected
   ${date?.map((item) => {
     let dates;
     if (!Array.isArray(item)) {
@@ -83,19 +85,36 @@ const getAccessibilityString = (date, dates) => {
   return 'No date selected';
 };
 
-const normalizeForTimezone = (date, refDate) => {
-  if (!date) return undefined;
-  return (
-    !timeStamp.test(refDate || date)
-      ? localTimezoneToUTC(new Date(date))
-      : new Date(date)
-  ).toISOString();
+// function that runs inside the useEffect for date and dates
+const normalizeDate = (dateValue, timestamp) => {
+  if (typeof dateValue === 'string') {
+    return normalizeForTimezone(dateValue, timestamp);
+  }
+  if (Array.isArray(dateValue)) {
+    if (Array.isArray(dateValue[0])) {
+      const [from, to] = dateValue[0].map(
+        (day) => normalizeForTimezone(day, timestamp) || undefined,
+      );
+      return [[from, to]];
+    }
+    const dateArray = [];
+    dateValue.forEach((d) => {
+      if (Array.isArray(d)) {
+        const [from, to] = d.map((day) => normalizeForTimezone(day, timestamp));
+        dateArray.push([from, to]);
+      } else {
+        dateArray.push(normalizeForTimezone(d, timestamp));
+      }
+    });
+    return dateArray;
+  }
+  return undefined;
 };
 
-const normalizeReference = (reference, date, dates) => {
+const normalizeReference = (reference, date, dates, timestamp) => {
   let normalizedReference;
   if (reference) {
-    normalizedReference = new Date(reference);
+    normalizedReference = new Date(normalizeForTimezone(reference, timestamp));
   } else if (date) {
     if (typeof date === 'string') {
       normalizedReference = new Date(date);
@@ -212,6 +231,7 @@ const Calendar = forwardRef(
       reference: referenceProp,
       showAdjacentDays = true,
       size = 'medium',
+      timestamp: timestampProp,
       ...rest
     },
     ref,
@@ -245,70 +265,81 @@ const Calendar = forwardRef(
       if (activeDateProp) setActiveDate(activeDateProp);
     }, [activeDateProp]);
 
-    // function that runs inside the useEffect for date and dates
-    const normalizeDate = (dateValue) => {
-      // convert values to UTC based on if date is string or array
-      if (typeof dateValue === 'string') {
-        return normalizeForTimezone(dateValue);
+    let timestamp = useMemo(() => timestampProp, [timestampProp]);
+    if (timestampProp === undefined) {
+      if (Array.isArray(dateProp) && dateProp.length) {
+        if (Array.isArray(dateProp[0])) {
+          timestamp = getTimestamp(dateProp[0][0]);
+        } else timestamp = getTimestamp(dateProp[0]);
+        // check to see if value is not an empty string
+        // empty string should behave like undefined
+      } else if (typeof dateProp === 'string' && dateProp.length) {
+        timestamp = getTimestamp(dateProp);
+      } else if (Array.isArray(datesProp) && datesProp.length) {
+        if (Array.isArray(datesProp[0])) {
+          timestamp = getTimestamp(datesProp[0][0]);
+        } else timestamp = getTimestamp(datesProp[0]);
+      } else if (typeof datesProp === 'string') {
+        timestamp = getTimestamp(datesProp);
+      } else if (typeof referenceProp === 'string') {
+        timestamp = getTimestamp(referenceProp);
       }
-      if (Array.isArray(dateValue)) {
-        if (Array.isArray(dateValue[0])) {
-          let from;
-          let to;
-          [from, to] = dateValue[0].map((day) =>
-            day ? new Date(day) : undefined,
-          );
-          if (from) from = normalizeForTimezone(from, dateValue[0][0]);
-          if (to) to = normalizeForTimezone(to, dateValue[0][0]);
+    }
 
-          return [[from, to]];
-        }
-        const dateArray = [];
-        dateValue.forEach((d) => {
-          if (Array.isArray(d)) {
-            let from;
-            let to;
-            [from, to] = d.map((day) => new Date(day));
-            from = normalizeForTimezone(from, d[0]);
-            to = normalizeForTimezone(to, d[0]);
-            dateArray.push([from, to]);
-          } else {
-            dateArray.push(normalizeForTimezone(d));
-          }
-        });
-        return dateArray;
-      }
-      return undefined;
-    };
+    const normalizedDate = useMemo(
+      () =>
+        timestampProp === undefined
+          ? normalizeDate(dateProp, timestamp)
+          : dateProp,
+      [dateProp, timestamp, timestampProp],
+    );
+
+    const normalizedDates = useMemo(
+      () =>
+        timestampProp === undefined
+          ? normalizeDate(datesProp, timestamp)
+          : datesProp,
+      [datesProp, timestamp, timestampProp],
+    );
 
     // set date when caller changes it, allows us to change it internally too
-    const [date, setDate] = useState(dateProp);
+    const [date, setDate] = useState(normalizedDate);
     useEffect(() => {
-      setDate(normalizeDate(dateProp));
-    }, [dateProp]);
+      setDate(normalizedDate);
+    }, [normalizedDate]);
 
     // set dates when caller changes it, allows us to change it internally too
-    const [dates, setDates] = useState(datesProp);
+    const [dates, setDates] = useState(normalizedDates);
     useEffect(() => {
-      setDates(normalizeDate(datesProp));
-    }, [datesProp]);
+      setDates(normalizedDates);
+    }, [normalizedDates]);
 
     // set reference based on what the caller passed or date/dates.
     const [reference, setReference] = useState(
-      normalizeReference(referenceProp, date, dates),
+      normalizeReference(
+        referenceProp,
+        normalizedDate,
+        normalizedDates,
+        timestamp,
+      ),
     );
     useEffect(
       () =>
-        setReference(normalizeReference(referenceProp, dateProp, datesProp)),
-      [dateProp, datesProp, referenceProp],
+        setReference(
+          normalizeReference(
+            referenceProp,
+            normalizedDate,
+            normalizedDates,
+            timestamp,
+          ),
+        ),
+      [referenceProp, normalizedDate, normalizedDates, timestamp],
     );
 
     // normalize bounds
-    const [bounds, setBounds] = useState(
-      boundsProp ? boundsProp.map((b) => normalizeForTimezone(b)) : undefined,
-    );
+    const [bounds, setBounds] = useState(boundsProp);
     useEffect(() => {
-      if (boundsProp) setBounds(boundsProp.map((b) => normalizeForTimezone(b)));
+      if (boundsProp) setBounds(boundsProp);
       else setBounds(undefined);
     }, [boundsProp]);
 
@@ -448,6 +479,7 @@ const Calendar = forwardRef(
       },
       [onReference, bounds],
     );
+
     const selectDate = useCallback(
       (selectedDate) => {
         let nextDates;
@@ -455,7 +487,7 @@ const Calendar = forwardRef(
         // output date with no timestamp if that's how user provided it
         let adjustedDate;
         if (!range) {
-          nextDate = selectedDate;
+          nextDate = formatDateToPropStructure(selectedDate, timestamp);
           if (datesProp) {
             datesProp.forEach((d) => {
               if (!timeStamp.test(d)) {
@@ -564,7 +596,9 @@ const Calendar = forwardRef(
 
         setDates(nextDates);
         if (date && typeof date === 'string') {
-          setDate(nextDate);
+          // for internal calculations, adjust based on timestamp
+          // and user's local timezone
+          setDate(normalizeForTimezone(nextDate, timestamp));
         } else if (date && Array.isArray(date)) {
           setDate(nextDates);
         }
@@ -579,8 +613,14 @@ const Calendar = forwardRef(
           ) {
             // return string for backwards compatibility
             [adjustedDates] = nextDates[0].filter((d) => d);
-          } else {
-            adjustedDates = nextDates;
+            adjustedDates = formatDateToPropStructure(adjustedDates, timestamp);
+          } else if (nextDates) {
+            adjustedDates = [
+              [
+                formatDateToPropStructure(nextDates[0][0], timestamp),
+                formatDateToPropStructure(nextDates[0][1], timestamp),
+              ],
+            ];
           }
           onSelect(adjustedDates || adjustedDate || nextDate);
         }
@@ -594,6 +634,7 @@ const Calendar = forwardRef(
         datesProp,
         onSelect,
         range,
+        timestamp,
       ],
     );
 
@@ -630,9 +671,15 @@ const Calendar = forwardRef(
           </Box>
           <Box flex={false} direction="row" align="center">
             <Button
-              a11yTitle={previousMonth.toLocaleDateString(locale, {
-                month: 'long',
-                year: 'numeric',
+              a11yTitle={format({
+                id: 'calendar.previous',
+                messages,
+                values: {
+                  date: previousMonth.toLocaleDateString(locale, {
+                    month: 'long',
+                    year: 'numeric',
+                  }),
+                },
               })}
               icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
               disabled={!betweenDates(previousMonth, bounds)}
@@ -640,7 +687,7 @@ const Calendar = forwardRef(
                 changeReference(previousMonth);
                 announce(
                   format({
-                    id: 'calendar.previous',
+                    id: 'calendar.previousMove',
                     messages,
                     values: {
                       date: previousMonth.toLocaleDateString(locale, {
@@ -653,9 +700,15 @@ const Calendar = forwardRef(
               }}
             />
             <Button
-              a11yTitle={nextMonth.toLocaleDateString(locale, {
-                month: 'long',
-                year: 'numeric',
+              a11yTitle={format({
+                id: 'calendar.next',
+                messages,
+                values: {
+                  date: nextMonth.toLocaleDateString(locale, {
+                    month: 'long',
+                    year: 'numeric',
+                  }),
+                },
               })}
               icon={<NextIcon size={size !== 'small' ? size : undefined} />}
               disabled={!betweenDates(nextMonth, bounds)}
@@ -663,7 +716,7 @@ const Calendar = forwardRef(
                 changeReference(nextMonth);
                 announce(
                   format({
-                    id: 'calendar.next',
+                    id: 'calendar.nextMove',
                     messages,
                     values: {
                       date: nextMonth.toLocaleDateString(locale, {
@@ -825,7 +878,7 @@ const Calendar = forwardRef(
                       onClick: () => {
                         selectDate(dateString);
                         announce(
-                          `Selected 
+                          `Selected
                           ${formatToLocalYYYYMMDD(dateString)}`,
                           'assertive',
                         );
