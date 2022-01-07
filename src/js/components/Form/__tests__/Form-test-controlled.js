@@ -87,7 +87,7 @@ describe('Form controlled', () => {
     const onValidate = jest.fn();
     const errorMessage = 'One uppercase letter';
     const testRules = {
-      regexp: new RegExp('(?=.*?[A-Z])'),
+      regexp: /(?=.*?[A-Z])/,
       message: errorMessage,
       status: 'error',
     };
@@ -128,7 +128,7 @@ describe('Form controlled', () => {
     const onValidate = jest.fn();
     const infoMessage = 'One uppercase letter';
     const testRules = {
-      regexp: new RegExp('(?=.*?[A-Z])'),
+      regexp: /(?=.*?[A-Z])/,
       message: infoMessage,
       status: 'info',
     };
@@ -657,7 +657,7 @@ describe('Form controlled', () => {
     const onValidate = jest.fn();
     const errorMessage = 'Only Numbers';
     const testRules = {
-      regexp: new RegExp('^[0-9]*$'),
+      regexp: /^[0-9]*$/,
       message: errorMessage,
       status: 'error',
     };

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DataTable, CheckBox } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, CheckBox } from 'grommet';
 
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
@@ -28,44 +27,45 @@ export const ControlledDataTable = () => {
     setChecked(event.target.checked ? DATA.map((datum) => datum.name) : []);
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="medium">
-        <DataTable
-          columns={[
-            {
-              property: 'checkbox',
-              render: ({ name }) => (
-                <CheckBox
-                  key={name}
-                  checked={checked.indexOf(name) !== -1}
-                  onChange={(e) => onCheck(e, name)}
-                />
-              ),
-              header: (
-                <CheckBox
-                  checked={checked.length === DATA.length}
-                  indeterminate={
-                    checked.length > 0 && checked.length < DATA.length
-                  }
-                  onChange={onCheckAll}
-                />
-              ),
-              sortable: false,
-            },
-            ...controlledColumns,
-          ].map((col) => ({ ...col }))}
-          data={DATA}
-          sortable
-          rowDetails={(row) => {
-            if (row.name === 'Alan') {
-              return <Box> {row.name} </Box>;
-            }
-            return <Box>Blah {row.name} </Box>;
-          }}
-          size="medium"
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box align="center" pad="medium">
+      <DataTable
+        columns={[
+          {
+            property: 'checkbox',
+            render: ({ name }) => (
+              <CheckBox
+                key={name}
+                checked={checked.indexOf(name) !== -1}
+                onChange={(e) => onCheck(e, name)}
+              />
+            ),
+            header: (
+              <CheckBox
+                checked={checked.length === DATA.length}
+                indeterminate={
+                  checked.length > 0 && checked.length < DATA.length
+                }
+                onChange={onCheckAll}
+              />
+            ),
+            sortable: false,
+          },
+          ...controlledColumns,
+        ].map((col) => ({ ...col }))}
+        data={DATA}
+        sortable
+        rowDetails={(row) => {
+          if (row.name === 'Alan') {
+            return <Box> {row.name} </Box>;
+          }
+          return <Box>Blah {row.name} </Box>;
+        }}
+        size="medium"
+      />
+    </Box>
+    // </Grommet>
   );
 };
 

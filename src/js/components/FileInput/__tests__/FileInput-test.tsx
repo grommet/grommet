@@ -86,7 +86,7 @@ describe('FileInput', () => {
       fileInput: {
         border: {
           color: 'brand',
-          size: 'large'
+          size: 'large',
         },
       },
     };

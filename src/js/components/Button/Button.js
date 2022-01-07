@@ -329,6 +329,7 @@ const Button = forwardRef(
           hasIcon={!!icon}
           gap={gap}
           hasLabel={!!label}
+          icon={icon}
           fillContainer={fill}
           focus={focus}
           focusIndicator={focusIndicator}

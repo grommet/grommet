@@ -6,7 +6,22 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     ...genericProps,
     autoPlay: PropTypes.bool,
-    controls: PropTypes.oneOf([false, 'over', 'below']),
+    controls: PropTypes.oneOfType([
+      PropTypes.oneOf([false, 'over', 'below']),
+      PropTypes.shape({
+        position: PropTypes.oneOf[(false, 'over', 'below')],
+        items: PropTypes.arrayOf(
+          PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.shape({
+              icon: PropTypes.element,
+              a11yTitle: PropTypes.string,
+              onClick: PropTypes.func,
+            }),
+          ]),
+        ),
+      }),
+    ]),
     fit: PropTypes.oneOf(['cover', 'contain']),
     loop: PropTypes.bool,
     mute: PropTypes.bool,

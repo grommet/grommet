@@ -172,6 +172,7 @@ const Select = forwardRef(
     const onRequestClose = useCallback(() => {
       setOpen(false);
       if (onClose) onClose();
+      setSearch();
     }, [onClose]);
 
     const triggerChangeEvent = useCallback((nextValue) => {

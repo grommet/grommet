@@ -60,10 +60,9 @@ const Grommet = forwardRef((props, ref) => {
     messages: messagesProp,
     ...rest
   } = props;
-
   const { background, dir, themeMode, userAgent } = props;
-
   const [stateResponsive, setResponsive] = useState();
+  const [roots, setRoots] = useState([]);
 
   const theme = useMemo(() => {
     const nextTheme = deepMerge(baseTheme, themeProp || {});
@@ -135,10 +134,14 @@ const Grommet = forwardRef((props, ref) => {
 
   const grommetRef = useForwardedRef(ref);
 
+  useEffect(() => {
+    if (grommetRef.current) setRoots([grommetRef.current]);
+  }, [grommetRef]);
+
   return (
     <ThemeContext.Provider value={theme}>
       <ResponsiveContext.Provider value={responsive}>
-        <RootsContext.Provider value={[grommetRef.current]}>
+        <RootsContext.Provider value={roots}>
           <ContainerTargetContext.Provider value={containerTarget}>
             <OptionsContext.Provider value={options}>
               <MessageContext.Provider value={messages}>

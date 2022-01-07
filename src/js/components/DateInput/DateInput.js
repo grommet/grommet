@@ -1,4 +1,5 @@
 import React, {
+  useRef,
   forwardRef,
   useContext,
   useEffect,
@@ -12,6 +13,7 @@ import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
 import { DropButton } from '../DropButton';
@@ -19,6 +21,7 @@ import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
+import { getTimestamp, normalizeForTimezone } from '../Calendar/utils';
 import {
   formatToSchema,
   schemaToMask,
@@ -43,6 +46,7 @@ const DateInput = forwardRef(
       name,
       onChange,
       onFocus,
+      plain,
       value: valueArg,
       messages,
       ...rest
@@ -56,11 +60,28 @@ const DateInput = forwardRef(
       (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
+    const containerRef = useRef();
     const [value, setValue] = useFormInput({
       name,
       value: valueArg,
       initialValue: defaultValue,
     });
+
+    let timestamp;
+    if (Array.isArray(defaultValue) && defaultValue.length) {
+      timestamp = getTimestamp(defaultValue[0]);
+    } else if (typeof defaultValue === 'string') {
+      timestamp = getTimestamp(defaultValue);
+    } else if (Array.isArray(value) && value.length) {
+      timestamp = getTimestamp(value[0]);
+      // check to see if value is not an empty string
+      // empty string should behave like undefined
+    } else if (typeof value === 'string' && value.length) {
+      timestamp = getTimestamp(value);
+    }
+
+    // normalize value based on timestamp vs user's local timezone
+    const normalizedDate = normalizeForTimezone(value, timestamp);
 
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
@@ -73,7 +94,7 @@ const DateInput = forwardRef(
 
     // textValue is only used when a format is provided
     const [textValue, setTextValue] = useState(
-      schema ? valueToText(value, schema) : undefined,
+      schema ? valueToText(normalizedDate, schema) : undefined,
     );
 
     // We need to distinguish between the caller changing a Form value
@@ -84,18 +105,18 @@ const DateInput = forwardRef(
     // matching "06/1/2021".
     useEffect(() => {
       if (schema && value !== undefined) {
-        const nextTextValue = valueToText(value, schema);
+        const nextTextValue = valueToText(normalizedDate, schema);
         if (
           !valuesAreEqual(
-            textToValue(textValue, schema, value, range),
-            textToValue(nextTextValue, schema, value, range),
+            textToValue(textValue, schema, range, timestamp),
+            textToValue(nextTextValue, schema, range, timestamp),
           ) ||
           (textValue === '' && nextTextValue !== '')
         ) {
           setTextValue(nextTextValue);
         }
       }
-    }, [range, schema, textValue, value]);
+    }, [range, schema, textValue, value, normalizedDate, timestamp]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
@@ -115,10 +136,10 @@ const DateInput = forwardRef(
         ref={inline ? ref : undefined}
         id={inline && !format ? id : undefined}
         range={range}
-        date={range ? undefined : value}
+        date={range ? undefined : normalizedDate}
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
-        dates={range && value.length ? [value] : undefined}
+        dates={range && value.length ? [normalizedDate] : undefined}
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
         onSelect={
@@ -131,7 +152,10 @@ const DateInput = forwardRef(
                 // clicking an edge date removes it
                 else if (range) normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
-                if (schema) setTextValue(valueToText(normalizedValue, schema));
+                if (schema)
+                  setTextValue(
+                    valueToText(normalizeForTimezone(normalizedValue), schema),
+                  );
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
@@ -140,8 +164,15 @@ const DateInput = forwardRef(
                 }
               }
         }
-        {...calendarProps}
+        {...{ ...calendarProps, timestamp }}
       />
+    );
+
+    const formContextValue = useMemo(
+      () => ({
+        useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
+      }),
+      [],
     );
 
     if (!format) {
@@ -164,50 +195,62 @@ const DateInput = forwardRef(
       <FormContext.Provider
         key="input"
         // don't let MaskedInput drive the Form
-        value={{
-          useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
-        }}
+        value={formContextValue}
       >
         <Keyboard
           onEsc={open ? () => closeCalendar() : undefined}
           onSpace={openCalendar}
         >
-          <MaskedInput
-            ref={ref}
-            id={id}
-            name={name}
-            icon={<CalendarIcon size={iconSize} />}
-            reverse
-            disabled={disabled}
-            mask={mask}
-            {...inputProps}
-            {...rest}
-            value={textValue}
-            onChange={(event) => {
-              const nextTextValue = event.target.value;
-              setTextValue(nextTextValue);
-              const nextValue = textToValue(
-                nextTextValue,
-                schema,
-                value,
-                range,
-              );
-              // update value even when undefined
-              setValue(nextValue);
-              if (onChange) {
-                event.persist(); // extract from React synthetic event pool
-                const adjustedEvent = event;
-                adjustedEvent.value = nextValue;
-                onChange(adjustedEvent);
-              }
-            }}
-            onFocus={(event) => {
-              announce(
-                formatMessage({ id: 'dateInput.openCalendar', messages }),
-              );
-              if (onFocus) onFocus(event);
-            }}
-          />
+          <Box
+            ref={containerRef}
+            border={!plain}
+            round="xxsmall"
+            direction="row"
+            fill
+          >
+            <MaskedInput
+              ref={ref}
+              id={id}
+              name={name}
+              reverse
+              disabled={disabled}
+              mask={mask}
+              plain
+              {...inputProps}
+              {...rest}
+              value={textValue}
+              onChange={(event) => {
+                const nextTextValue = event.target.value;
+                setTextValue(nextTextValue);
+                const nextValue = textToValue(
+                  nextTextValue,
+                  schema,
+                  range,
+                  timestamp,
+                );
+                // update value even when undefined
+                setValue(nextValue);
+                if (onChange) {
+                  event.persist(); // extract from React synthetic event pool
+                  const adjustedEvent = event;
+                  adjustedEvent.value = nextValue;
+                  onChange(adjustedEvent);
+                }
+              }}
+              onFocus={(event) => {
+                announce(
+                  formatMessage({ id: 'dateInput.openCalendar', messages }),
+                );
+                if (onFocus) onFocus(event);
+              }}
+            />
+            <Button
+              onClick={open ? closeCalendar : openCalendar}
+              plain
+              icon={<CalendarIcon size={iconSize} />}
+              margin={{ right: 'small' }}
+            />
+          </Box>
         </Keyboard>
       </FormContext.Provider>
     );
@@ -232,7 +275,12 @@ const DateInput = forwardRef(
             align={{ top: 'bottom', left: 'left', ...dropProps }}
             onEsc={closeCalendar}
             onClickOutside={({ target }) => {
-              if (target !== ref.current) closeCalendar();
+              if (
+                target !== containerRef.current &&
+                !containerRef.current.contains(target)
+              ) {
+                closeCalendar();
+              }
             }}
             {...dropProps}
           >

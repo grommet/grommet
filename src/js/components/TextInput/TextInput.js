@@ -172,7 +172,9 @@ const TextInput = forwardRef(
 
     // if we have no suggestions, close drop if it's open
     useEffect(() => {
-      if (showDrop && (!suggestions || !suggestions.length)) closeDrop();
+      if (showDrop && (!suggestions || !suggestions.length)) {
+        closeDrop();
+      }
     }, [closeDrop, showDrop, suggestions]);
 
     const valueSuggestionIndex = useMemo(
@@ -313,7 +315,11 @@ const TextInput = forwardRef(
           align={dropAlign}
           responsive={false}
           target={dropTarget || inputRef.current}
-          onClickOutside={closeDrop}
+          onClickOutside={({ target }) => {
+            if (target !== inputRef.current) {
+              closeDrop();
+            }
+          }}
           onEsc={closeDrop}
           {...dropProps}
         >
@@ -356,7 +362,7 @@ const TextInput = forwardRef(
                     >
                       <Button
                         active={activeSuggestionIndex === index}
-                        fill
+                        fill="horizontal"
                         plain={!child ? undefined : true}
                         align="start"
                         kind={!child ? 'option' : undefined}
@@ -476,6 +482,9 @@ const TextInput = forwardRef(
                     // will come from this onChange and remove the placeholder
                     // so we need to update state to ensure the styled
                     // placeholder only appears when there is no value
+                    if (suggestions && focus && !showDrop) {
+                      openDrop();
+                    }
                     setValue(event.target.value);
                     setActiveSuggestionIndex(resetSuggestionIndex);
                     if (onChange) onChange(event);

@@ -1570,7 +1570,13 @@ exports[`Menu custom theme with default button 1`] = `
 }
 
 .c1 > svg {
-  vertical-align: bottom;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
 }
 
 .c1:focus {
@@ -2561,10 +2567,6 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c1 > svg {
-  vertical-align: bottom;
 }
 
 .c1:focus {

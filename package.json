@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.19.1",
+  "version": "2.20.0",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -96,8 +96,8 @@
     "cross-env": "^7.0.3",
     "del": "^6.0.0",
     "elliptic": "^6.5.4",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb": "^19.0.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.25.3",
@@ -190,7 +190,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "123 kB"
+      "maxSize": "124 kB"
     }
   ],
   "keywords": [

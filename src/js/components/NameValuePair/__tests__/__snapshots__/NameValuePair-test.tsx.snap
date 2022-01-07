@@ -261,7 +261,6 @@ exports[`NameValuePair should render value when provided as child of type
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 96px;
 }
 
 .c0 {
