@@ -147,6 +147,7 @@ var FieldBorderPosition = function FieldBorderPosition() {
     gap: "medium"
   }, borderPositions && borderPositions.map(function (example, index) {
     return /*#__PURE__*/_react["default"].createElement(FormExample, {
+      key: example.name,
       borderPosition: example.name,
       theme: example.theme,
       index: index

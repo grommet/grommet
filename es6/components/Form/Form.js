@@ -101,20 +101,18 @@ var validate = function validate(rule, fieldValue, formValue, format, messages) 
 var validateName = function validateName(validationRules, required) {
   return function (name, formValue, format, messages) {
     var fieldValue = getFieldValue(name, formValue);
-    var validationResult; // ValidateArg is something that gets passed in from a FormField component
-    // See 'validate' prop in FormField
+    var validationResult;
 
     if (required && ( // false is for CheckBox
     fieldValue === undefined || fieldValue === '' || fieldValue === false || Array.isArray(fieldValue) && !fieldValue.length)) {
-      // There is no value at that name, and one is required
       validationResult = format({
         id: 'form.required',
         messages: messages
       });
     } else if (validationRules) {
       if (Array.isArray(validationRules)) {
-        validationRules.some(function (validator) {
-          validationResult = validate(validator, fieldValue, formValue, format, messages);
+        validationRules.some(function (rule) {
+          validationResult = validate(rule, fieldValue, formValue, format, messages);
           return !!validationResult;
         });
       } else {
@@ -124,8 +122,7 @@ var validateName = function validateName(validationRules, required) {
 
     return validationResult;
   };
-}; // validations is an array from Object.entries()
-// Validates all keys in formValue
+}; // Validates all keys in formValue
 
 
 var validateForm = function validateForm(validationRules, formValue, format, messages, omitValid) {
@@ -200,28 +197,32 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       touched = _useState2[0],
       setTouched = _useState2[1];
 
-  var _useState3 = useState(defaultValidationResults),
+  var _useState3 = useState({
+    errors: errorsProp,
+    infos: infosProp
+  }),
       validationResults = _useState3[0],
-      setValidationResults = _useState3[1]; // when onBlur input validation is triggered, we need to complete any
-  // potential click events before running the onBlur validation.
-  // otherwise, click events like reset, etc. may not be registered.
-  // for a detailed scenario/discussion,
-  // see: https://github.com/grommet/grommet/issues/4863
-  // the value of pendingValidation is the name of the FormField
-  // awaiting validation.
+      setValidationResults = _useState3[1]; // maintain a copy of validationResults in a ref for useEffects
+  // which can't depend on validationResults directly without
+  // causing infinite renders.
 
 
-  var _useState4 = useState(undefined),
-      pendingValidation = _useState4[0],
-      setPendingValidation = _useState4[1];
+  var validationResultsRef = useRef({}); // Simulated onMount state. Consider Form to be mounted once it has
+  // accounted for values originating from controlled inputs (available
+  // at second rendering).
+
+  var _useState4 = useState('unmounted'),
+      mounted = _useState4[0],
+      setMounted = _useState4[1];
 
   useEffect(function () {
-    setPendingValidation(undefined);
-    setValidationResults({
-      errors: errorsProp,
-      infos: infosProp
-    });
-  }, [errorsProp, infosProp]);
+    if (!mounted) setMounted('mounting');else if (mounted === 'mounting') setMounted('mounted');
+  }, [mounted]); // `pendingValidation` is the name of the FormField awaiting validation.
+
+  var _useState5 = useState(undefined),
+      pendingValidation = _useState5[0],
+      setPendingValidation = _useState5[1];
+
   var validationRulesRef = useRef({});
   var requiredFields = useRef([]);
   var buildValid = useCallback(function (nextErrors) {
@@ -244,95 +245,90 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     }).forEach(function (n) {
       return delete nextValidations[n];
     });
-  }; // On initial mount, when validateOn is change or blur,
-  // set validation results for any set fields and calculate whether
-  // the form is valid overall.
+  };
+
+  var applyValidationRules = useCallback(function (validationRules) {
+    var _validateForm = validateForm(validationRules, value, format, messages),
+        validatedErrors = _validateForm[0],
+        validatedInfos = _validateForm[1];
+
+    setValidationResults(function (prevValidationResults) {
+      // Keep any previous errors and infos for untouched keys,
+      // these may have come from a Submit.
+      var nextErrors = _extends({}, prevValidationResults.errors, validatedErrors);
+
+      var nextInfos = _extends({}, prevValidationResults.infos, validatedInfos); // Remove previous errors and infos for keys no longer in the
+      // form, these may have been fields removed from a dynamic form.
 
 
-  useEffect(function () {
-    var validationsForSetFields = Object.entries(validationRulesRef.current).filter(function (_ref3) {
-      var n = _ref3[0];
-      return getFieldValue(n, value);
-    });
-
-    if (validationsForSetFields.length > 0 && validateOn !== 'submit') {
-      var _validateForm = validateForm(validationsForSetFields, value, format, messages),
-          errors = _validateForm[0],
-          infos = _validateForm[1];
-
-      filterRemovedFields(errors);
-      filterRemovedFields(infos);
+      filterRemovedFields(nextErrors);
+      filterRemovedFields(nextInfos);
       var nextValidationResults = {
-        errors: errors,
-        infos: infos,
-        valid: buildValid(errors)
+        errors: nextErrors,
+        infos: nextInfos
       };
-      if (onValidate) onValidate(nextValidationResults);
-      setValidationResults(nextValidationResults);
-    } // We only want to run this for the value we have on initial mount.
-    // We don't want subsequent changes to the value to re-run this.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  }, []); // Currently, onBlur validation will trigger after a timeout of 120ms.
+      if (onValidate) onValidate(_extends({}, nextValidationResults, {
+        valid: buildValid(nextErrors)
+      }));
+      validationResultsRef.current = nextValidationResults;
+      return nextValidationResults;
+    });
+  }, [buildValid, format, messages, onValidate, value]); // Validate all fields holding values onMount if set to
+  // validate when blur or change.
 
   useEffect(function () {
+    var validationRules = Object.entries(validationRulesRef.current); // Use simulated onMount state to account for values provided by
+    // controlled inputs.
+
+    if (mounted !== 'mounted' && ['blur', 'change'].includes(validateOn) && Object.keys(value).length > 0 && Object.keys(touched).length === 0) {
+      applyValidationRules(validationRules.filter(function (_ref3) {
+        var n = _ref3[0];
+        return value[n];
+      }) // Exlude empty arrays which may be initial values in
+      // an input such as DateInput.
+      .filter(function (_ref4) {
+        var n = _ref4[0];
+        return !(Array.isArray(value[n]) && value[n].length === 0);
+      }));
+    }
+  }, [applyValidationRules, mounted, touched, validateOn, value]); // Run validation against fields with pendingValidations from onBlur
+  // and/or onChange.
+
+  useEffect(function () {
+    var validationRules = Object.entries(validationRulesRef.current);
     var timer = setTimeout(function () {
-      if (pendingValidation) {
-        // run validations on the pending one and any other touched fields
-        var _validateForm2 = validateForm(Object.entries(validationRulesRef.current).filter(function (_ref4) {
-          var n = _ref4[0];
+      if (pendingValidation && ['blur', 'change'].includes(validateOn)) {
+        applyValidationRules(validationRules.filter(function (_ref5) {
+          var n = _ref5[0];
           return touched[n] || pendingValidation.includes(n);
-        }), value, format, messages),
-            validatedErrors = _validateForm2[0],
-            validatedInfos = _validateForm2[1];
-
+        }));
         setPendingValidation(undefined);
-        setValidationResults(function (prevValidationResults) {
-          // keep any previous errors and infos for untouched keys,
-          // these may have come from a submit
-          var nextErrors = _extends({}, prevValidationResults.errors, validatedErrors);
-
-          var nextInfos = _extends({}, prevValidationResults.infos, validatedInfos);
-
-          filterRemovedFields(nextErrors);
-          filterRemovedFields(nextInfos);
-          var nextValidationResults = {
-            errors: nextErrors,
-            infos: nextInfos,
-            valid: buildValid(nextErrors)
-          };
-          if (onValidate) onValidate(nextValidationResults);
-          return nextValidationResults;
-        });
-      } // a timeout is needed to ensure that a click event (like one on a reset
-      // button) completes prior to running the validation. without a timeout,
-      // the blur will always complete and trigger a validation prematurely
-      // The following values have been empirically tested, but 120 was
-      // selected because it is the largest value
+      } // Complete any potential click events before running onBlur validation.
+      // Otherwise, click events like reset, etc. may not be registered. For a
+      // detailed scenario/discussion, see: https://github.com/grommet/grommet/issues/4863
+      // Values empirically tested; 120 was selected because it is the largest
       // Chrome: 100, Safari: 120, Firefox: 80
 
     }, 120);
     return function () {
       return clearTimeout(timer);
     };
-  }, [buildValid, format, messages, pendingValidation, onValidate, touched, value, requiredFields]); // clear any errors when value changes
+  }, [applyValidationRules, pendingValidation, touched, validateOn]); // Re-run validation rules for all fields with prior errors.
+  // if validate=blur this helps re-validate if there are errors
+  // as the user fixes them (basically act like validate=change for that)
 
   useEffect(function () {
-    if (validateOn !== 'change') setPendingValidation(undefined);
-    setValidationResults(function (prevValidationResults) {
-      var _validateForm3 = validateForm(Object.entries(validationRulesRef.current).filter(function (_ref5) {
-        var n = _ref5[0];
-        return prevValidationResults.errors[n] || prevValidationResults.infos[n];
-      }), value, format, messages),
-          nextErrors = _validateForm3[0],
-          nextInfos = _validateForm3[1];
+    var _validationResultsRef;
 
-      return {
-        errors: _extends({}, prevValidationResults.errors, nextErrors),
-        infos: _extends({}, prevValidationResults.infos, nextInfos)
-      };
-    });
-  }, [format, messages, touched, validateOn, value]); // There are three basic patterns of handling form input value state:
+    var validationRules = Object.entries(validationRulesRef.current);
+
+    if ((_validationResultsRef = validationResultsRef.current) != null && _validationResultsRef.errors && Object.keys(validationResultsRef.current.errors).length > 0) {
+      applyValidationRules(validationRules.filter(function (_ref6) {
+        var n = _ref6[0];
+        return touched[n] && validationResultsRef.current.errors[n];
+      }));
+    }
+  }, [applyValidationRules, touched]); // There are three basic patterns of handling form input value state:
   //
   // 1 - form controlled
   //
@@ -366,15 +362,15 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   //
 
   var formContextValue = useMemo(function () {
-    var useFormInput = function useFormInput(_ref6) {
-      var name = _ref6.name,
-          componentValue = _ref6.value,
-          initialValue = _ref6.initialValue,
-          validateArg = _ref6.validate;
+    var useFormInput = function useFormInput(_ref7) {
+      var name = _ref7.name,
+          componentValue = _ref7.value,
+          initialValue = _ref7.initialValue,
+          validateArg = _ref7.validate;
 
-      var _useState5 = useState(initialValue),
-          inputValue = _useState5[0],
-          setInputValue = _useState5[1];
+      var _useState6 = useState(initialValue),
+          inputValue = _useState6[0],
+          setInputValue = _useState6[1];
 
       var formValue = name ? getFieldValue(name, value) : undefined; // for dynamic forms, we need to track when an input has been added to
       // the form value. if the input is unmounted, we will delete its
@@ -417,7 +413,8 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         };
       }, // eslint-disable-next-line react-hooks/exhaustive-deps
       [] // only run onmount and unmount
-      );
+      ); // Create validation rules for fields
+
       useEffect(function () {
         if (validateArg) {
           if (!validationRulesRef.current[name]) {
@@ -465,15 +462,16 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       }];
     };
 
-    var useFormField = function useFormField(_ref7) {
-      var errorArg = _ref7.error,
-          infoArg = _ref7.info,
-          name = _ref7.name,
-          required = _ref7.required,
-          disabled = _ref7.disabled,
-          validateArg = _ref7.validate;
+    var useFormField = function useFormField(_ref8) {
+      var errorArg = _ref8.error,
+          infoArg = _ref8.info,
+          name = _ref8.name,
+          required = _ref8.required,
+          disabled = _ref8.disabled,
+          validateArg = _ref8.validate;
       var error = disabled ? undefined : errorArg || validationResults.errors[name];
-      var info = infoArg || validationResults.infos[name];
+      var info = infoArg || validationResults.infos[name]; // Create validation rules for field
+
       useEffect(function () {
         var index = requiredFields.current.indexOf(name);
 
@@ -544,9 +542,9 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       event.preventDefault();
       setPendingValidation(undefined);
 
-      var _validateForm4 = validateForm(Object.entries(validationRulesRef.current), value, format, messages, true),
-          nextErrors = _validateForm4[0],
-          nextInfos = _validateForm4[1];
+      var _validateForm2 = validateForm(Object.entries(validationRulesRef.current), value, format, messages, true),
+          nextErrors = _validateForm2[0],
+          nextInfos = _validateForm2[1];
 
       setValidationResults(function () {
         var nextValidationResults = {
@@ -556,6 +554,7 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
           valid: buildValid(nextErrors)
         };
         if (onValidate) onValidate(nextValidationResults);
+        validationResultsRef.current = nextValidationResults;
         return nextValidationResults;
       });
 
