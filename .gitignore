@@ -4,6 +4,7 @@ node_modules
 #IDEA
 .idea/**
 .vscode
+*.code-workspace
 
 # testing
 coverage
