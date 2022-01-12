@@ -8,7 +8,7 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { shouldKeepFocus } from '../../utils/DOM';
+import { containsFocus } from '../../utils/DOM';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -262,6 +262,7 @@ const FormField = forwardRef(
     // fileinput handle
     // use fileinput plain use formfield to drive the border
     let isFileInputComponent;
+    let isDateInputComponent;
     if (
       children &&
       Children.forEach(children, (child) => {
@@ -271,6 +272,12 @@ const FormField = forwardRef(
           'FileInput'.indexOf(child.type.displayName) !== -1
         )
           isFileInputComponent = true;
+        if (
+          child &&
+          child.type &&
+          'DateInput'.indexOf(child.type.displayName) !== -1
+        )
+          isDateInputComponent = true;
       })
     );
 
@@ -451,7 +458,17 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
-          setFocus(shouldKeepFocus());
+          setFocus(containsFocus(formFieldRef.current));
+          if (isDateInputComponent) {
+            const formDescendants =
+              formFieldRef.current.getElementsByTagName('*');
+            let buttonChild;
+            for (let i = 0; i < formDescendants.length; i += 1) {
+              const child = formDescendants[i];
+              if (child.tagName.toLowerCase() === 'button') buttonChild = child;
+            }
+            if (buttonChild === document.activeElement) setFocus(false);
+          }
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {
