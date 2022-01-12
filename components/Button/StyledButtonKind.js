@@ -179,7 +179,9 @@ var fillStyle = function fillStyle(fillContainer) {
   return undefined;
 };
 
-var plainStyle = (0, _styledComponents.css)(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;"]);
+var plainStyle = function plainStyle(props) {
+  return (0, _styledComponents.css)(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;", ""], props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n    }\n  ");
+};
 
 var StyledButtonKind = _styledComponents["default"].button.withConfig({
   // don't let kind attribute leak to DOM
@@ -191,7 +193,7 @@ var StyledButtonKind = _styledComponents["default"].button.withConfig({
   displayName: "StyledButtonKind",
   componentId: "sc-1vhfpnt-0"
 })(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", ""], _utils.genericStyles, function (props) {
-  return props.plain && plainStyle;
+  return props.plain && plainStyle(props);
 }, function (props) {
   return !props.disabled && props.active && _utils.activeStyle;
 }, function (props) {
