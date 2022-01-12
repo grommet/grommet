@@ -82,12 +82,6 @@ export const getFirstFocusableDescendant = (element) => {
   return undefined;
 };
 
-export const shouldKeepFocus = () => {
-  const element = document.activeElement;
-  if (isFocusable(element)) return true;
-  return !!getFirstFocusableDescendant(element);
-};
-
 export const getNewContainer = (
   target = document.body,
   targetChildPosition,
