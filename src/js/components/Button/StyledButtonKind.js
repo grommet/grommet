@@ -204,12 +204,19 @@ const fillStyle = (fillContainer) => {
   return undefined;
 };
 
-const plainStyle = css`
+const plainStyle = (props) => css`
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
   color: inherit;
+  ${props.icon &&
+  `
+    > svg {
+      display: flex;
+      align-self: center;
+    }
+  `}
 `;
 
 const StyledButtonKind = styled.button.withConfig({
@@ -229,7 +236,7 @@ const StyledButtonKind = styled.button.withConfig({
   text-transform: none;
 
   ${genericStyles}
-  ${(props) => props.plain && plainStyle}
+  ${(props) => props.plain && plainStyle(props)}
   // set baseline activeStyle for all buttons including plain buttons
   // buttons with kind will have active styling overridden by kindStyle
   // if they have specific state styles
