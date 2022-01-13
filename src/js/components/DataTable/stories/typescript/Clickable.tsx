@@ -145,35 +145,36 @@ export const ClickableDataTable = () => {
   const [clicked, setClicked] = React.useState({});
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <DataTable
-          columns={columns}
-          data={DATA}
-          step={10}
-          onClickRow={(event) => {
-            setShow(true);
-            setClicked(event.datum);
-          }}
-        />
-        {show && (
-          <Layer
-            position="center"
-            onEsc={() => setShow(false)}
-            onClickOutside={() => setShow(false)}
-          >
-            <Box margin="medium">
-              <Text>{clicked && JSON.stringify(clicked, null, 2)}</Text>
-              <Button
-                margin={{ top: 'medium' }}
-                label="close"
-                onClick={() => setShow(false)}
-              />
-            </Box>
-          </Layer>
-        )}
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <DataTable
+        columns={columns}
+        data={DATA}
+        step={10}
+        onClickRow={(event) => {
+          setShow(true);
+          setClicked(event.datum);
+        }}
+      />
+      {show && (
+        <Layer
+          position="center"
+          onEsc={() => setShow(false)}
+          onClickOutside={() => setShow(false)}
+        >
+          <Box margin="medium">
+            <Text>{clicked && JSON.stringify(clicked, null, 2)}</Text>
+            <Button
+              margin={{ top: 'medium' }}
+              label="close"
+              onClick={() => setShow(false)}
+            />
+          </Box>
+        </Layer>
+      )}
+    </Box>
+    // </Grommet>
   );
 };
 

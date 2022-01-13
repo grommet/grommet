@@ -1,7 +1,6 @@
 import React, { ReactText, useState } from 'react';
 
-import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Meter, Text } from 'grommet';
 
 import { ColumnConfig } from '../..';
 
@@ -160,17 +159,18 @@ export const OnSelectDataTable = () => {
   const [select, setSelect] = useState<ReactText[]>([]);
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <DataTable
-          columns={columns}
-          data={DATA}
-          step={10}
-          select={select}
-          onSelect={setSelect}
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <DataTable
+        columns={columns}
+        data={DATA}
+        step={10}
+        select={select}
+        onSelect={setSelect}
+      />
+    </Box>
+    // </Grommet>
   );
 };
 

@@ -74,7 +74,9 @@ const DateInput = forwardRef(
       timestamp = getTimestamp(defaultValue);
     } else if (Array.isArray(value) && value.length) {
       timestamp = getTimestamp(value[0]);
-    } else if (typeof value === 'string') {
+      // check to see if value is not an empty string
+      // empty string should behave like undefined
+    } else if (typeof value === 'string' && value.length) {
       timestamp = getTimestamp(value);
     }
 
