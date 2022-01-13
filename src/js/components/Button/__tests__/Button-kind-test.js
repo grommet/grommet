@@ -619,4 +619,17 @@ describe('Button kind', () => {
     fireEvent.mouseOver(getByText('Button'));
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test(`plain with icon`, () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          button: { default: {} },
+        }}
+      >
+        <Button plain icon={<Add />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
