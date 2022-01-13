@@ -458,8 +458,11 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
-          setFocus(containsFocus(formFieldRef.current));
-          if (isDateInputComponent) {
+          if (!isDateInputComponent) {
+            setFocus(containsFocus(formFieldRef.current));
+          } else {
+            // if FormField contains a DateInput component check if the calendar
+            // button is in focus before assigning focus to the FormField
             const formDescendants =
               formFieldRef.current.getElementsByTagName('*');
             let buttonChild;
@@ -468,6 +471,7 @@ const FormField = forwardRef(
               if (child.tagName.toLowerCase() === 'button') buttonChild = child;
             }
             if (buttonChild === document.activeElement) setFocus(false);
+            else setFocus(containsFocus(formFieldRef.current));
           }
           if (onFocus) onFocus(event);
         }}
