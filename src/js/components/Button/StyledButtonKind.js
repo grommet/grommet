@@ -78,10 +78,11 @@ const basicStyle = (props) => css`
 
   ${props.icon &&
   `
-  > svg {
-    display: flex;
-    align-self: center;
-  }
+    > svg {
+      display: flex;
+      align-self: center;
+      vertical-align: middle;
+    }
   `}
 `;
 
@@ -215,6 +216,7 @@ const plainStyle = (props) => css`
     > svg {
       display: flex;
       align-self: center;
+  vertical-align: middle;
     }
   `}
 `;

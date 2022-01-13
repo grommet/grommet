@@ -978,6 +978,7 @@ exports[`Button kind badge should render relative to contents when button has no
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c1:focus {
@@ -1238,6 +1239,7 @@ exports[`Button kind button icon colors 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c1:focus {
@@ -1381,6 +1383,7 @@ exports[`Button kind button with icon and align 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c1:focus {
@@ -2562,6 +2565,7 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c1:focus {
@@ -2650,7 +2654,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 fxEFiO"
+    class="StyledButtonKind-sc-1vhfpnt-0 evKzRa"
     type="button"
   >
     <div
