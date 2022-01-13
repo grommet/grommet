@@ -216,7 +216,7 @@ const plainStyle = (props) => css`
     > svg {
       display: flex;
       align-self: center;
-  vertical-align: middle;
+      vertical-align: middle;
     }
   `}
 `;
