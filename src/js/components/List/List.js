@@ -22,14 +22,12 @@ const StyledList = styled.ul`
   ${(props) => !props.margin && 'margin: 0;'}
   padding: 0;
   ${genericStyles}
-
   // Customizes to make list have a focus border color of green
   &:focus {
     ${(props) =>
       props.tabIndex >= 0 &&
       focusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
-
   // during the interim state when a user is holding down a click,
   // the individual list item has focus in the DOM until the click
   // completes and focus is placed back on the list container.
@@ -123,6 +121,7 @@ const List = React.forwardRef(
       data,
       defaultItemProps,
       focus,
+      itemKey,
       itemProps,
       onOrder,
       pad,
@@ -277,14 +276,7 @@ const List = React.forwardRef(
                 let boxProps = {};
                 let itemId;
 
-                if (children && primaryKey) {
-                  content = children(
-                    item,
-                    index,
-                    onClickItem ? { active: active === index } : undefined,
-                  );
-                  itemId = normalize(item, index, primaryKey);
-                } else if (children) {
+                if (children) {
                   content = children(
                     item,
                     index,
@@ -292,25 +284,8 @@ const List = React.forwardRef(
                   );
                 } else if (primaryKey) {
                   if (typeof primaryKey === 'function') {
-                    content = primaryKey(item, index);
-                    if (!content?.key)
-                      console.error(
-                        `You must add key to your element in primaryKey func.`,
-                      );
-                    itemId = content.key;
-                  } else if (
-                    primaryKey.match(/^(.+),(.+)$/) &&
-                    primaryKey.split(',').length === 2
-                  ) {
-                    // index 0 is content
-                    // index 1 is key for ListItem
-                    const value = primaryKey.split(',').map((it) => it.trim());
-                    itemId = normalize(item, index, value[1]);
-                    content = (
-                      <Text key="p" weight="bold">
-                        {normalize(item, index, value[0])}
-                      </Text>
-                    );
+                    itemId = primaryKey(item, index);
+                    content = itemId;
                   } else {
                     itemId = normalize(item, index, primaryKey);
                     content = (
@@ -339,10 +314,16 @@ const List = React.forwardRef(
                   }
                 } else if (typeof item === 'object') {
                   content = item[Object.keys(item)[0]];
-                  itemId = content;
                 } else {
                   content = item;
-                  itemId = content;
+                }
+
+                if (itemKey) {
+                  if (typeof itemKey === 'function') {
+                    itemId = itemKey(item);
+                  } else {
+                    itemId = normalize(item, index, itemKey);
+                  }
                 }
 
                 const key = itemId || getKey(item, index, itemId);
