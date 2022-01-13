@@ -52,7 +52,7 @@ var padStyle = function padStyle(_ref) {
 };
 
 var basicStyle = function basicStyle(props) {
-  return css(["border:none;", ";", " ", " ", ""], radiusStyle(props), padStyle(props), fontStyle(props), props.icon && "\n  > svg {\n    display: flex;\n    align-self: center;\n  }\n  ");
+  return css(["border:none;", ";", " ", " ", ""], radiusStyle(props), padStyle(props), fontStyle(props), props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n      vertical-align: middle;\n    }\n  ");
 };
 
 var getPath = function getPath(theme, path) {
@@ -169,7 +169,7 @@ var fillStyle = function fillStyle(fillContainer) {
 };
 
 var plainStyle = function plainStyle(props) {
-  return css(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;", ""], props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n    }\n  ");
+  return css(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;", ""], props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n      vertical-align: middle;\n    }\n  ");
 };
 
 var StyledButtonKind = styled.button.withConfig({
