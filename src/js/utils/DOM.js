@@ -67,7 +67,12 @@ export const containsFocus = (node) => {
 // Check if the element.tagName is an input, select or textarea
 export const isFocusable = (element) => {
   const tagName = element.tagName.toLowerCase();
-  return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
+  return (
+    tagName === 'input' ||
+    tagName === 'select' ||
+    tagName === 'textarea' ||
+    tagName === 'button'
+  );
 };
 
 // Get the first element that can receive focus

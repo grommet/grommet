@@ -8,7 +8,7 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { containsFocus } from '../../utils/DOM';
+import { containsFocus, isFocusable } from '../../utils/DOM';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -262,7 +262,6 @@ const FormField = forwardRef(
     // fileinput handle
     // use fileinput plain use formfield to drive the border
     let isFileInputComponent;
-    let isDateInputComponent;
     if (
       children &&
       Children.forEach(children, (child) => {
@@ -272,14 +271,16 @@ const FormField = forwardRef(
           'FileInput'.indexOf(child.type.displayName) !== -1
         )
           isFileInputComponent = true;
-        if (
-          child &&
-          child.type &&
-          'DateInput'.indexOf(child.type.displayName) !== -1
-        )
-          isDateInputComponent = true;
       })
     );
+
+    if (
+      component &&
+      component.displayName === 'FileInput' &&
+      !isFileInputComponent
+    ) {
+      isFileInputComponent = true;
+    }
 
     if (!themeBorder) {
       contents = (
@@ -458,20 +459,18 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
-          if (!isDateInputComponent) {
-            setFocus(containsFocus(formFieldRef.current));
-          } else {
-            // if FormField contains a DateInput component check if the calendar
-            // button is in focus before assigning focus to the FormField
-            const formDescendants =
-              formFieldRef.current.getElementsByTagName('*');
-            let buttonChild;
-            for (let i = 0; i < formDescendants.length; i += 1) {
-              const child = formDescendants[i];
-              if (child.tagName.toLowerCase() === 'button') buttonChild = child;
+          setFocus(containsFocus(formFieldRef.current));
+          const formDescendants =
+            formFieldRef.current.getElementsByTagName('*');
+          let focusableDescendants = 0;
+          for (let i = 0; i < formDescendants.length; i += 1) {
+            const child = formDescendants[i];
+            if (isFocusable(child)) {
+              focusableDescendants += 1;
             }
-            if (buttonChild === document.activeElement) setFocus(false);
-            else setFocus(containsFocus(formFieldRef.current));
+            if (focusableDescendants >= 2 && child === document.activeElement) {
+              setFocus(false);
+            }
           }
           if (onFocus) onFocus(event);
         }}
