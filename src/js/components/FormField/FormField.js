@@ -468,6 +468,9 @@ const FormField = forwardRef(
             if (isFocusable(child)) {
               focusableDescendants += 1;
             }
+            // FormField descendant could be focusable. If descendant is
+            // active element in DOM, don't show focus on FormField.
+            // e.g. DateInput allows Calendar button to receive focus
             if (focusableDescendants >= 2 && child === document.activeElement) {
               setFocus(false);
             }
