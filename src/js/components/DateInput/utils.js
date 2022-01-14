@@ -176,7 +176,7 @@ export const textToValue = (text, schema, range, timestamp) => {
         // prematurely calculated.
         // ex: 2022/01/0 would reutrn 2021/12/31 in addDate()
         if (parts.d === '0') delete parts.d;
-        index += parts?.d?.length;
+        index += (parts?.d?.length || 0);
       } else if (char === 'y') {
         parts.y = pullDigits(text, index);
         index += parts.y.length;
