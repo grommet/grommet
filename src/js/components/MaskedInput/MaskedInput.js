@@ -72,7 +72,7 @@ const parseValue = (mask, value) => {
 
       maskIndex += 1;
       found = true;
-    } else if (item.options) {
+    } else if (item.options && !item.ignoreOptions) {
       // reverse assuming larger is later
       found = item.options
         .slice(0)
@@ -141,6 +141,7 @@ const parseValue = (mask, value) => {
 const defaultMask = [
   {
     regexp: /[^]*/,
+    onlyOptions: true,
   },
 ];
 
