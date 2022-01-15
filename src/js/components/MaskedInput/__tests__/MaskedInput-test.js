@@ -191,6 +191,55 @@ describe('MaskedInput', () => {
     expect(onChange).toHaveReturnedWith('aa!');
   });
 
+  test('should not enable to type beyond options via keyboard', async () => {
+    const onChange = jest.fn((event) => event.target.value);
+    const { getByTestId, container } = render(
+      <MaskedInput
+        data-testid="test-input"
+        id="item"
+        name="item"
+        mask={[
+          {
+            options: ['aaa', 'aba', 'abb'],
+            regexp: /\w$/,
+          },
+        ]}
+        onChange={onChange}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(getByTestId('test-input'), { target: { value: 'abbb' } });
+
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('abb');
+  });
+
+  test('should enable to type beyond options when ignoreOptions', async () => {
+    const onChange = jest.fn((event) => event.target.value);
+    const { getByTestId, container } = render(
+      <MaskedInput
+        data-testid="test-input"
+        id="item"
+        name="item"
+        mask={[
+          {
+            ignoreOptions: true,
+            options: ['aaa', 'aba', 'abb'],
+            regexp: /\w$/,
+          },
+        ]}
+        onChange={onChange}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(getByTestId('test-input'), { target: { value: 'abbb' } });
+
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('abbb');
+  });
+
   test('Escape events should propagage if there is no drop', () => {
     const callback = jest.fn();
     const { getByTestId } = render(
