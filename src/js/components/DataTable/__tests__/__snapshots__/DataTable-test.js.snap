@@ -20899,6 +20899,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c16:focus {
@@ -21136,6 +21137,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c22:hover {
@@ -23683,6 +23685,7 @@ exports[`DataTable should paginate 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c16:focus {
@@ -23920,6 +23923,7 @@ exports[`DataTable should paginate 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c22:hover {
@@ -26025,6 +26029,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c16:focus {
@@ -26262,6 +26267,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c22:hover {
@@ -27321,6 +27327,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c16:focus {
@@ -27558,6 +27565,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c22:hover {
@@ -30877,7 +30885,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 fhaBsw StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
+              class="StyledButtonKind-sc-1vhfpnt-0 iiMYzM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
               type="button"
             >
               <svg
@@ -30932,7 +30940,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 kwkGFQ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
+              class="StyledButtonKind-sc-1vhfpnt-0 lgFhec StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
               disabled=""
               type="button"
             >
@@ -31211,6 +31219,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c16:focus {
@@ -31448,6 +31457,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c22:hover {
@@ -33552,6 +33562,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c16:hover {
@@ -33794,6 +33805,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c22:focus {
