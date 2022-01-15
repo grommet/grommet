@@ -527,4 +527,36 @@ describe('List onOrder', () => {
     expect(onOrder).toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('itemKey', () => {
+    const { container } = render(
+      <Grommet>
+        <List
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          primaryKey="a"
+          itemKey="b"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('itemKey func', () => {
+    const { container } = render(
+      <Grommet>
+        <List
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          primaryKey="a"
+          itemKey={(item) => `key-${item.b}`}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
