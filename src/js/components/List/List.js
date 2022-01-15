@@ -328,7 +328,7 @@ const List = React.forwardRef(
                   }
                 }
 
-                const key = itemId || getKey(item, index, itemId);
+                const key = itemKey ? itemId : getKey(item, index, itemId);
 
                 if (action) {
                   content = [
