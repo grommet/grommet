@@ -141,7 +141,6 @@ const parseValue = (mask, value) => {
 const defaultMask = [
   {
     regexp: /[^]*/,
-    onlyOptions: true,
   },
 ];
 
