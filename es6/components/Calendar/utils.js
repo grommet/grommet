@@ -130,7 +130,7 @@ export var normalizeForTimezone = function normalizeForTimezone(value, timestamp
 
   if (timestamp && typeof timestamp === 'string') {
     hourDelta = parseInt(timestamp == null ? void 0 : timestamp.split(':')[0], 10);
-    valueOffset = hourDelta * 60 * 1000; // ms
+    valueOffset = hourDelta * 60 * 60 * 1000; // ms
   }
 
   var localOffset = new Date().getTimezoneOffset() * 60 * 1000;
