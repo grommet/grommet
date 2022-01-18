@@ -171,7 +171,12 @@ export const textToValue = (text, schema, range, timestamp) => {
         index += parts.m.length;
       } else if (char === 'd') {
         parts.d = pullDigits(text, index);
-        index += parts.d.length;
+        // when format is something like yyyy/mm/dd,
+        // '0' as incomplete day can cause date to be
+        // prematurely calculated.
+        // ex: 2022/01/0 would reutrn 2021/12/31 in addDate()
+        if (parts.d === '0') delete parts.d;
+        index += (parts?.d?.length || 0);
       } else if (char === 'y') {
         parts.y = pullDigits(text, index);
         index += parts.y.length;
