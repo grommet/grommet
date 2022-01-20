@@ -6,6 +6,7 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
+import userEvent from '@testing-library/user-event';
 
 import { Search } from 'grommet-icons';
 
@@ -193,7 +194,7 @@ describe('MaskedInput', () => {
 
   test('should not enable to type beyond options via keyboard', async () => {
     const onChange = jest.fn((event) => event.target.value);
-    const { getByTestId, container } = render(
+    render(
       <MaskedInput
         data-testid="test-input"
         id="item"
@@ -207,9 +208,8 @@ describe('MaskedInput', () => {
         onChange={onChange}
       />,
     );
-    expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.change(getByTestId('test-input'), { target: { value: 'abbb' } });
+    userEvent.type(screen.getByRole('textbox'), 'abbb');
 
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('abb');
@@ -217,7 +217,7 @@ describe('MaskedInput', () => {
 
   test('should enable to type beyond options when ignoreOptions', async () => {
     const onChange = jest.fn((event) => event.target.value);
-    const { getByTestId, container } = render(
+    render(
       <MaskedInput
         data-testid="test-input"
         id="item"
@@ -232,9 +232,8 @@ describe('MaskedInput', () => {
         onChange={onChange}
       />,
     );
-    expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.change(getByTestId('test-input'), { target: { value: 'abbb' } });
+    userEvent.type(screen.getByRole('textbox'), 'abbb');
 
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('abbb');
