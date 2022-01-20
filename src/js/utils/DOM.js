@@ -71,20 +71,9 @@ export const isFocusable = (element) => {
     tagName === 'input' ||
     tagName === 'select' ||
     tagName === 'textarea' ||
-    tagName === 'button'
+    tagName === 'button' ||
+    element.tabIndex >= 0
   );
-};
-
-// Get the first element that can receive focus
-export const getFirstFocusableDescendant = (element) => {
-  const children = element.getElementsByTagName('*');
-  for (let i = 0; i < children.length; i += 1) {
-    const child = children[i];
-    if (isFocusable(child)) {
-      return child;
-    }
-  }
-  return undefined;
 };
 
 export const getNewContainer = (

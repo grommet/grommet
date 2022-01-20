@@ -462,18 +462,43 @@ const FormField = forwardRef(
           setFocus(containsFocus(formFieldRef.current));
           const formDescendants =
             formFieldRef.current.getElementsByTagName('*');
-          let focusableDescendants = 0;
+          const focusableDescendants = [];
           for (let i = 0; i < formDescendants.length; i += 1) {
             const child = formDescendants[i];
-            if (isFocusable(child)) {
-              focusableDescendants += 1;
+            if (isFocusable(child)) focusableDescendants.push(child);
+
+            let isGrommetInputComponent = false;
+            if (component) {
+              console.log(component.displayName);
             }
-            // FormField descendant could be focusable. If descendant is
-            // active element in DOM, don't show focus on FormField.
-            // e.g. DateInput allows Calendar button to receive focus
-            if (focusableDescendants >= 2 && child === document.activeElement) {
+            if (
+              (children &&
+                children.type &&
+                grommetInputNames.includes(children.type.displayName)) ||
+              (!children &&
+                component &&
+                grommetInputNames.includes(component.displayName)) ||
+              (!children && !component)
+            )
+              isGrommetInputComponent = true;
+
+            /* If the FormField has multiple focusable descendants and it 
+            is a grommet input component we should remove the focus only 
+            when one of the focusable descendants contains focus that is 
+            not the first focusable descendant.
+
+            If the FormField child is not a grommet input component we 
+            should remove focus anytime we have a focusable descendant 
+            that has focus. */
+            if (
+              (focusableDescendants.length >= 2 &&
+                isGrommetInputComponent &&
+                child === document.activeElement) ||
+              (focusableDescendants.length >= 1 &&
+                !isGrommetInputComponent &&
+                focusableDescendants.includes(document.activeElement))
+            )
               setFocus(false);
-            }
           }
           if (onFocus) onFocus(event);
         }}
