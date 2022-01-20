@@ -468,9 +468,6 @@ const FormField = forwardRef(
             if (isFocusable(child)) focusableDescendants.push(child);
 
             let isGrommetInputComponent = false;
-            if (component) {
-              console.log(component.displayName);
-            }
             if (
               (children &&
                 children.type &&
