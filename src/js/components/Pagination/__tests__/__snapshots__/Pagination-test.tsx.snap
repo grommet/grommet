@@ -307,6 +307,7 @@ exports[`Pagination should allow user to control page via state with page +
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
@@ -753,6 +754,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:focus {
@@ -990,6 +992,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c13:hover {
@@ -1569,6 +1572,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:focus {
@@ -1813,6 +1817,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c13:focus {
@@ -2250,6 +2255,7 @@ exports[`Pagination should apply custom theme 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c6:focus {
@@ -2487,6 +2493,7 @@ exports[`Pagination should apply custom theme 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c14:hover {
@@ -2949,6 +2956,7 @@ exports[`Pagination should apply size 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:focus {
@@ -3186,6 +3194,7 @@ exports[`Pagination should apply size 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c13:hover {
@@ -3273,6 +3282,7 @@ exports[`Pagination should apply size 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c16:focus {
@@ -3510,6 +3520,7 @@ exports[`Pagination should apply size 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c22:hover {
@@ -3597,6 +3608,7 @@ exports[`Pagination should apply size 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c24:focus {
@@ -3834,6 +3846,7 @@ exports[`Pagination should apply size 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c30:hover {
@@ -4786,6 +4799,7 @@ exports[`Pagination should change the page on prop change 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
@@ -5231,6 +5245,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
@@ -5473,6 +5488,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c13:focus {
@@ -5879,6 +5895,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:focus {
@@ -6278,6 +6295,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:focus {
@@ -6582,6 +6600,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:focus {
@@ -7019,6 +7038,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:focus {
@@ -7256,6 +7276,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c13:hover {
@@ -7825,6 +7846,7 @@ exports[`Pagination should display next page of results when "next" is
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
@@ -8105,7 +8127,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 fhaBsw StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
+            class="StyledButtonKind-sc-1vhfpnt-0 iiMYzM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
             type="button"
           >
             <svg
@@ -8227,7 +8249,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 fhaBsw StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
+            class="StyledButtonKind-sc-1vhfpnt-0 iiMYzM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
             type="button"
           >
             <svg
@@ -8557,6 +8579,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
@@ -8969,6 +8992,7 @@ exports[`Pagination should display previous page of results when "previous" is
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
@@ -9404,7 +9428,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 fhaBsw StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
+            class="StyledButtonKind-sc-1vhfpnt-0 iiMYzM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
             type="button"
           >
             <svg
@@ -9526,7 +9550,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 fhaBsw StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
+            class="StyledButtonKind-sc-1vhfpnt-0 iiMYzM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
             type="button"
           >
             <svg
@@ -9736,6 +9760,7 @@ exports[`Pagination should display the correct last page based on items length
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:focus {
@@ -9973,6 +9998,7 @@ exports[`Pagination should display the correct last page based on items length
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c13:hover {
@@ -10386,6 +10412,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
@@ -11006,6 +11033,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
@@ -11584,6 +11612,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
@@ -12211,6 +12240,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:focus {
@@ -12448,6 +12478,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c13:hover {
@@ -12868,6 +12899,7 @@ exports[`Pagination should set page to last page if page prop > total possible
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
@@ -13110,6 +13142,7 @@ exports[`Pagination should set page to last page if page prop > total possible
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c13:focus {

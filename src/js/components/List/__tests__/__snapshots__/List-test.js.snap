@@ -2524,6 +2524,7 @@ exports[`List events should apply pagination styling 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c11:focus {
@@ -2761,6 +2762,7 @@ exports[`List events should apply pagination styling 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c17:hover {
@@ -3678,6 +3680,7 @@ exports[`List events should paginate 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c11:focus {
@@ -3915,6 +3918,7 @@ exports[`List events should paginate 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c17:hover {
@@ -4675,6 +4679,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c11:focus {
@@ -4912,6 +4917,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c17:hover {
@@ -5562,6 +5568,7 @@ exports[`List events should render new data when page changes 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c11:focus {
@@ -5799,6 +5806,7 @@ exports[`List events should render new data when page changes 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c17:hover {
@@ -9893,7 +9901,7 @@ exports[`List events should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 fhaBsw StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
+              class="StyledButtonKind-sc-1vhfpnt-0 iiMYzM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
               type="button"
             >
               <svg
@@ -9948,7 +9956,7 @@ exports[`List events should render new data when page changes 2`] = `
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 kwkGFQ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
+              class="StyledButtonKind-sc-1vhfpnt-0 lgFhec StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKykNU"
               disabled=""
               type="button"
             >
@@ -10226,6 +10234,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c11:focus {
@@ -10463,6 +10472,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c17:hover {
@@ -11222,6 +11232,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c11:hover {
@@ -11464,6 +11475,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c17:focus {
