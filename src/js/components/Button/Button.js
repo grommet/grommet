@@ -133,7 +133,7 @@ const Button = forwardRef(
       disabled,
       icon,
       focusIndicator = true,
-      gap = 'small',
+      gap,
       fill, // munged to avoid styled-components putting it in the DOM
       href,
       justify,
