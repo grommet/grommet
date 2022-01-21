@@ -67,13 +67,25 @@ export const containsFocus = (node) => {
 // Check if the element.tagName is an input, select or textarea
 export const isFocusable = (element) => {
   const tagName = element.tagName.toLowerCase();
-  return (
-    tagName === 'input' ||
-    tagName === 'select' ||
-    tagName === 'textarea' ||
-    tagName === 'button' ||
-    element.tabIndex >= 0
-  );
+  return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
+};
+
+// Get the first element that can receive focus
+export const getFirstFocusableDescendant = (element) => {
+  const children = element.getElementsByTagName('*');
+  for (let i = 0; i < children.length; i += 1) {
+    const child = children[i];
+    if (isFocusable(child)) {
+      return child;
+    }
+  }
+  return undefined;
+};
+
+export const shouldKeepFocus = () => {
+  const element = document.activeElement;
+  if (isFocusable(element)) return true;
+  return !!getFirstFocusableDescendant(element);
 };
 
 export const getNewContainer = (

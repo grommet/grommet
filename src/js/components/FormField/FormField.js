@@ -8,7 +8,7 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { containsFocus, isFocusable } from '../../utils/DOM';
+import { containsFocus, shouldKeepFocus } from '../../utils/DOM';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -459,44 +459,7 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
-          setFocus(containsFocus(formFieldRef.current));
-          const formDescendants =
-            formFieldRef.current.getElementsByTagName('*');
-          const focusableDescendants = [];
-          for (let i = 0; i < formDescendants.length; i += 1) {
-            const child = formDescendants[i];
-            if (isFocusable(child)) focusableDescendants.push(child);
-
-            let isGrommetInputComponent = false;
-            if (
-              (children &&
-                children.type &&
-                grommetInputNames.includes(children.type.displayName)) ||
-              (!children &&
-                component &&
-                grommetInputNames.includes(component.displayName)) ||
-              (!children && !component)
-            )
-              isGrommetInputComponent = true;
-
-            /* If the FormField has multiple focusable descendants and it 
-            is a grommet input component we should remove the focus only 
-            when one of the focusable descendants contains focus that is 
-            not the first focusable descendant.
-
-            If the FormField child is not a grommet input component we 
-            should remove focus anytime we have a focusable descendant 
-            that has focus. */
-            if (
-              (focusableDescendants.length >= 2 &&
-                isGrommetInputComponent &&
-                child === document.activeElement) ||
-              (focusableDescendants.length >= 1 &&
-                !isGrommetInputComponent &&
-                focusableDescendants.includes(document.activeElement))
-            )
-              setFocus(false);
-          }
+          setFocus(containsFocus(formFieldRef.current) && shouldKeepFocus());
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {
