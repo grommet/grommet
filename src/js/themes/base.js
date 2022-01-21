@@ -418,6 +418,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
+      // gap: undefined,
       size: {
         small: {
           border: {
