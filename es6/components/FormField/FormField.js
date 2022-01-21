@@ -9,7 +9,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { Children, cloneElement, forwardRef, useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { shouldKeepFocus } from '../../utils/DOM';
+import { containsFocus, shouldKeepFocus } from '../../utils/DOM';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -245,6 +245,10 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     if (child && child.type && 'FileInput'.indexOf(child.type.displayName) !== -1) isFileInputComponent = true;
   })) ;
 
+  if (component && component.displayName === 'FileInput' && !isFileInputComponent) {
+    isFileInputComponent = true;
+  }
+
   if (!themeBorder) {
     contents = /*#__PURE__*/React.createElement(Box, _extends({}, themeContentProps, contentProps), contents);
   }
@@ -353,7 +357,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, outerProps, {
     style: outerStyle,
     onFocus: function onFocus(event) {
-      setFocus(shouldKeepFocus());
+      setFocus(containsFocus(formFieldRef.current) && shouldKeepFocus());
       if (_onFocus) _onFocus(event);
     },
     onBlur: function onBlur(event) {

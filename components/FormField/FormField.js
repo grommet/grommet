@@ -270,6 +270,10 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     if (child && child.type && 'FileInput'.indexOf(child.type.displayName) !== -1) isFileInputComponent = true;
   })) ;
 
+  if (component && component.displayName === 'FileInput' && !isFileInputComponent) {
+    isFileInputComponent = true;
+  }
+
   if (!themeBorder) {
     contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, themeContentProps, contentProps), contents);
   }
@@ -378,7 +382,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   }, outerProps, {
     style: outerStyle,
     onFocus: function onFocus(event) {
-      setFocus((0, _DOM.shouldKeepFocus)());
+      setFocus((0, _DOM.containsFocus)(formFieldRef.current) && (0, _DOM.shouldKeepFocus)());
       if (_onFocus) _onFocus(event);
     },
     onBlur: function onBlur(event) {

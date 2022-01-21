@@ -11,6 +11,8 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
 import { Button } from '../../Button';
 import { DateInput } from '..';
+import { Form } from '../../Form';
+import { FormField } from '../../FormField';
 
 const DATE = '2020-07-02T00:00:00-08:00';
 const DATE_FIRST = '2020-07-01T00:00:00-08:00';
@@ -903,5 +905,23 @@ describe('DateInput', () => {
     expect(
       screen.getByRole('heading', { name: /January 2021/i }),
     ).toBeInTheDocument();
+  });
+
+  test('handle focus in FormField', () => {
+    const onFocus = jest.fn();
+    const { asFragment } = render(
+      <Grommet>
+        <Form>
+          <FormField>
+            <DateInput format="mm/dd/yyyy" onFocus={onFocus} />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+    userEvent.tab();
+    expect(asFragment()).toMatchSnapshot();
+    userEvent.tab();
+    expect(asFragment()).toMatchSnapshot();
+    expect(onFocus).toHaveBeenCalledTimes(1);
   });
 });
