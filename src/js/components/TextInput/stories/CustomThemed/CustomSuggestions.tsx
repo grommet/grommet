@@ -175,5 +175,5 @@ export const CustomSuggestions = () => {
 CustomSuggestions.storyName = 'Custom suggestions';
 
 export default {
-  title: 'Input/TextInput/Custom suggestions',
+  title: 'Input/TextInput/Custom Themed/Custom suggestions',
 };
