@@ -145,7 +145,7 @@ export const normalizeForTimezone = (value, timestamp) => {
   let valueOffset = 0;
   if (timestamp && typeof timestamp === 'string') {
     hourDelta = parseInt(timestamp?.split(':')[0], 10);
-    valueOffset = hourDelta * 60 * 1000; // ms
+    valueOffset = hourDelta * 60 * 60 * 1000; // ms
   }
   const localOffset = new Date().getTimezoneOffset() * 60 * 1000;
 
