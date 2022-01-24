@@ -18,6 +18,7 @@ const TitleAndMessageNotification = () => {
       {visible && (
         <Notification
           toast
+          position="top-right"
           title="Status Title"
           message="Messages should be at max two lines of text."
           onClose={onClose}

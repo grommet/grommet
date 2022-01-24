@@ -10,7 +10,7 @@ import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 
-const Notification = ({ message, onClose, status, title, toast }) => {
+const Notification = ({ message, onClose, position, status, title, toast }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
 
@@ -74,6 +74,7 @@ const Notification = ({ message, onClose, status, title, toast }) => {
         onEsc={onClose}
         responsive
         plain
+        position={position === 'top-right' ? 'top-right' : 'top'}
       >
         {content}
       </Layer>
