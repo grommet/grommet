@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import { Box, Button, Form, FormField, TextInput } from 'grommet';
-// import { grommet } from 'grommet/themes';
 
 const allSuggestions = Array(100)
   .fill()
