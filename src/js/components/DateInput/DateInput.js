@@ -97,6 +97,8 @@ const DateInput = forwardRef(
       schema ? valueToText(normalizedDate, schema) : undefined,
     );
 
+    const { icon, ...restOfInputProps } = inputProps || {};
+
     // We need to distinguish between the caller changing a Form value
     // and the user typing a date that he isn't finished with yet.
     // To handle this, we see if we have a value and the text value
@@ -216,7 +218,7 @@ const DateInput = forwardRef(
               disabled={disabled}
               mask={mask}
               plain
-              {...inputProps}
+              {...restOfInputProps}
               {...rest}
               value={textValue}
               onChange={(event) => {
@@ -247,7 +249,7 @@ const DateInput = forwardRef(
             <Button
               onClick={open ? closeCalendar : openCalendar}
               plain
-              icon={<CalendarIcon size={iconSize} />}
+              icon={icon || <CalendarIcon size={iconSize} />}
               margin={{ right: 'small' }}
             />
           </Box>
