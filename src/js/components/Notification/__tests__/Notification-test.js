@@ -6,10 +6,12 @@ import 'regenerator-runtime/runtime';
 import { axe } from 'jest-axe';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Notification } from '../..';
 
 describe('Notification', () => {
+  beforeEach(createPortal);
   test('should have no accessibility violations', async () => {
     const { container, asFragment } = render(
       <Grommet>
@@ -44,5 +46,16 @@ describe('Notification', () => {
 
     userEvent.click(screen.getByRole('button'));
     expect(onClose).toBeCalled();
+  });
+
+  test(`should apply correct position`, () => {
+    render(
+      <Grommet>
+        <Notification id="position-test" toast title="title" message="message">
+          This is a layer
+        </Notification>
+      </Grommet>,
+    );
+    expectPortal('position-test').toMatchSnapshot();
   });
 });
