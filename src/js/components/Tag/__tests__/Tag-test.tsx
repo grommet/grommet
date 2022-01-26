@@ -72,4 +72,14 @@ describe('Tag', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('size', () => {
+    const { container } = render(
+      <Grommet>
+        <Tag size="small" name="Name" value="Value" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

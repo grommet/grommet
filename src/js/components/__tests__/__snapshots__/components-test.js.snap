@@ -2081,6 +2081,39 @@ Object {
           },
           "round": "large",
           "separator": " : ",
+          "size": Object {
+            "large": Object {
+              "icon": Object {
+                "size": "30px",
+              },
+            },
+            "small": Object {
+              "icon": Object {
+                "size": "18px",
+              },
+              "pad": Object {
+                "horizontal": "small",
+                "vertical": "xxsmall",
+              },
+            },
+            "xlarge": Object {
+              "icon": Object {
+                "size": "36px",
+              },
+              "pad": Object {
+                "horizontal": "medium",
+                "vertical": "xsmall",
+              },
+            },
+            "xsmall": Object {
+              "icon": Object {
+                "size": "small",
+              },
+              "pad": Object {
+                "horizontal": "small",
+              },
+            },
+          },
           "value": Object {
             "weight": 600,
           },
@@ -2358,6 +2391,7 @@ Object {
       "name": [Function],
       "onClick": [Function],
       "onRemove": [Function],
+      "size": [Function],
       "value": [Function],
     },
     "render": [Function],

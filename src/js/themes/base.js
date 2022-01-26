@@ -1489,6 +1489,23 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: { right: 'xsmall' },
       },
       separator: ' : ',
+      size: {
+        xsmall: { 
+          pad: { horizontal: 'small' },
+          icon: { size: 'small'},
+        },
+        small: {
+          pad: { horizontal: 'small', vertical: 'xxsmall'},
+          icon: { size: '18px'},
+        },
+        large: {
+          icon: { size: '30px'},
+        },
+        xlarge: {
+          pad: { horizontal: 'medium', vertical: 'xsmall' },
+          icon: { size: '36px' },
+        },
+      },
       value: {
         weight: 600,
       },
