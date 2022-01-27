@@ -568,20 +568,148 @@ exports[`Tag size 1`] = `
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
   padding-top: 3px;
   padding-bottom: 3px;
 }
 
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  padding-left: 9.600000000000001px;
+  padding-right: 9.600000000000001px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .c3 {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.c4 {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+}
+
+.c6 {
   font-size: 14px;
   line-height: 20px;
 }
 
-.c4 {
+.c7 {
   font-size: 14px;
   line-height: 20px;
+  font-weight: 600;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.c12 {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.c13 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.c15 {
+  font-size: 26px;
+  line-height: 32px;
+}
+
+.c16 {
+  font-size: 26px;
+  line-height: 32px;
   font-weight: 600;
 }
 
@@ -609,8 +737,8 @@ exports[`Tag size 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 
@@ -618,6 +746,62 @@ exports[`Tag size 1`] = `
   .c2 {
     padding-top: 2px;
     padding-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 9.600000000000001px;
+    padding-right: 9.600000000000001px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -646,6 +830,118 @@ exports[`Tag size 1`] = `
         </span>
         <span
           class="c4"
+        >
+          Value
+        </span>
+      </span>
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c5"
+    >
+      <span
+        class="c6"
+      >
+        <span
+          class="c6"
+        >
+           
+          Name
+        </span>
+        <span
+          class="c6"
+        >
+           : 
+        </span>
+        <span
+          class="c7"
+        >
+          Value
+        </span>
+      </span>
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c8"
+    >
+      <span
+        class="c9"
+      >
+        <span
+          class="c9"
+        >
+           
+          Name
+        </span>
+        <span
+          class="c9"
+        >
+           : 
+        </span>
+        <span
+          class="c10"
+        >
+          Value
+        </span>
+      </span>
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c11"
+    >
+      <span
+        class="c12"
+      >
+        <span
+          class="c12"
+        >
+           
+          Name
+        </span>
+        <span
+          class="c12"
+        >
+           : 
+        </span>
+        <span
+          class="c13"
+        >
+          Value
+        </span>
+      </span>
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c14"
+    >
+      <span
+        class="c15"
+      >
+        <span
+          class="c15"
+        >
+           
+          Name
+        </span>
+        <span
+          class="c15"
+        >
+           : 
+        </span>
+        <span
+          class="c16"
         >
           Value
         </span>

@@ -2086,13 +2086,17 @@ Object {
               "icon": Object {
                 "size": "30px",
               },
+              "pad": Object {
+                "horizontal": "16px",
+                "vertical": "xsmall",
+              },
             },
             "small": Object {
               "icon": Object {
                 "size": "18px",
               },
               "pad": Object {
-                "horizontal": "small",
+                "horizontal": "9.600000000000001px",
                 "vertical": "xxsmall",
               },
             },
@@ -2101,16 +2105,17 @@ Object {
                 "size": "36px",
               },
               "pad": Object {
-                "horizontal": "medium",
+                "horizontal": "18px",
                 "vertical": "xsmall",
               },
             },
             "xsmall": Object {
               "icon": Object {
-                "size": "small",
+                "size": "18px",
               },
               "pad": Object {
-                "horizontal": "small",
+                "horizontal": "8px",
+                "vertical": "xxsmall",
               },
             },
           },

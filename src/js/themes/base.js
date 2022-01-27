@@ -1491,19 +1491,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       separator: ' : ',
       size: {
         xsmall: { 
-          pad: { horizontal: 'small' },
-          icon: { size: 'small'},
+          pad: { horizontal: `${baseSpacing / 3}px`, vertical: 'xxsmall' },
+          icon: { size: `${baseSpacing * 0.75}px`},
         },
         small: {
-          pad: { horizontal: 'small', vertical: 'xxsmall'},
-          icon: { size: '18px'},
+          pad: { horizontal: `${baseSpacing * 0.4 }px`, vertical: 'xxsmall'},
+          icon: { size: `${baseSpacing * 0.75}px`},
         },
         large: {
-          icon: { size: '30px'},
+          pad: { horizontal: `${baseSpacing / 3 * 2}px`, vertical: `xsmall`},
+          icon: { size: `${baseSpacing * 1.25}px`},
         },
         xlarge: {
-          pad: { horizontal: 'medium', vertical: 'xsmall' },
-          icon: { size: '36px' },
+          pad: { horizontal: `${baseSpacing * 0.75}px`, vertical: 'xsmall' },
+          icon: { size: `${baseSpacing * 1.5}px` },
         },
       },
       value: {

@@ -76,7 +76,11 @@ describe('Tag', () => {
   test('size', () => {
     const { container } = render(
       <Grommet>
+        <Tag size="xsmall" name="Name" value="Value" />
         <Tag size="small" name="Name" value="Value" />
+        <Tag size="medium" name="Name" value="Value" />
+        <Tag size="large" name="Name" value="Value" />
+        <Tag size="xlarge" name="Name" value="Value" />
       </Grommet>,
     );
 
