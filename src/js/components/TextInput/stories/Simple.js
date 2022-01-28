@@ -1,21 +1,21 @@
 import React from 'react';
 
-import { Box, Grommet, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, TextInput } from 'grommet';
 
 export const Simple = () => {
   const [value, setValue] = React.useState('');
 
-  const onChange = event => setValue(event.target.value);
+  const onChange = (event) => setValue(event.target.value);
 
   return (
-    <Grommet full theme={grommet}>
-      <Box fill align="center" justify="start" pad="large">
-        <Box width="medium">
-          <TextInput value={value} onChange={onChange} />
-        </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box fill align="center" justify="start" pad="large">
+      <Box width="medium">
+        <TextInput value={value} onChange={onChange} />
       </Box>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 
