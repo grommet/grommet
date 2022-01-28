@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { Grommet, Box, Grid } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grid } from 'grommet';
 
 export const Percentages = () => (
-  <Grommet theme={grommet} full>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box height="medium">
     <Grid
       fill
       areas={[
@@ -18,7 +19,8 @@ export const Percentages = () => (
       <Box gridArea="nav" background="brand" />
       <Box gridArea="main" background="brand" />
     </Grid>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 export default {

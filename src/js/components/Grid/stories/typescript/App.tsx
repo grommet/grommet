@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
-import { Grommet, Box, Button, Grid, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Grid, Text } from 'grommet';
 
 export const AppGrid = () => {
   const [sidebar, setSidebar] = useState(true);
 
   return (
-    <Grommet full theme={grommet}>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box>
       {Grid.available ? (
         <Grid
           fill
@@ -58,7 +59,8 @@ export const AppGrid = () => {
       ) : (
         <Text>Grid is not supported by your browser</Text>
       )}
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 
