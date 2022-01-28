@@ -1,4 +1,4 @@
-var _excluded = ["name", "value", "onRemove", "onClick"];
+var _excluded = ["name", "value", "size", "onRemove", "onClick"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -13,8 +13,11 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$tag$size, _theme$tag$size$size, _theme$tag$size2, _theme$tag$size2$size, _theme$tag$size3, _theme$tag$size3$size, _theme$tag$size4, _theme$tag$size4$size;
+
   var name = _ref.name,
       value = _ref.value,
+      size = _ref.size,
       onRemove = _ref.onRemove,
       onClick = _ref.onClick,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -26,15 +29,23 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     align: 'center',
     background: theme.tag.background,
     border: theme.tag.border,
-    round: theme.tag.round
+    round: ((_theme$tag$size = theme.tag.size) == null ? void 0 : (_theme$tag$size$size = _theme$tag$size[size]) == null ? void 0 : _theme$tag$size$size.round) || theme.tag.round
   }, rest);
 
   var contents = /*#__PURE__*/React.createElement(Box, {
     width: {
       min: 'min-content'
     },
-    pad: theme.tag.pad
-  }, /*#__PURE__*/React.createElement(Text, null, name && /*#__PURE__*/React.createElement(Text, theme.tag.name, name), name && value ? theme.tag.separator : '', value && /*#__PURE__*/React.createElement(Text, theme.tag.value, value)));
+    pad: ((_theme$tag$size2 = theme.tag.size) == null ? void 0 : (_theme$tag$size2$size = _theme$tag$size2[size]) == null ? void 0 : _theme$tag$size2$size.pad) || theme.tag.pad
+  }, /*#__PURE__*/React.createElement(Text, {
+    size: size
+  }, name && /*#__PURE__*/React.createElement(Text, _extends({}, theme.tag.name, {
+    size: size
+  }), " ", name), name && value ? /*#__PURE__*/React.createElement(Text, {
+    size: size
+  }, theme.tag.separator) : '', value && /*#__PURE__*/React.createElement(Text, _extends({}, theme.tag.value, {
+    size: size
+  }), value)));
 
   if (onClick && onRemove) {
     console.warn('Tag cannot combine "onClick" and "onRemove".');
@@ -51,8 +62,8 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     plain: true,
     hoverIndicator: true,
     focusIndicator: true,
-    icon: /*#__PURE__*/React.createElement(FormClose, null),
-    round: theme.tag.round
+    icon: /*#__PURE__*/React.createElement(FormClose, (_theme$tag$size3 = theme.tag.size) == null ? void 0 : (_theme$tag$size3$size = _theme$tag$size3[size]) == null ? void 0 : _theme$tag$size3$size.icon),
+    round: ((_theme$tag$size4 = theme.tag.size) == null ? void 0 : (_theme$tag$size4$size = _theme$tag$size4[size]) == null ? void 0 : _theme$tag$size4$size.round) || theme.tag.round
   }, theme.tag.remove))) : /*#__PURE__*/React.createElement(StyledTagButton, _extends({
     flex: false,
     plain: true,
