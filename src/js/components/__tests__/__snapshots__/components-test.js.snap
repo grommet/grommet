@@ -517,6 +517,7 @@ Object {
       "data": [Function],
       "defaultItemProps": [Function],
       "gridArea": [Function],
+      "itemKey": [Function],
       "itemProps": [Function],
       "margin": [Function],
       "onClickItem": [Function],
