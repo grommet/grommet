@@ -1,12 +1,22 @@
 import * as React from 'react';
 
 export type StatusType = 'critical' | 'warning' | 'normal' | 'unknown';
-export type PositionType = 'top' | 'top-right';
+export type NotificationPositionType =
+  | 'bottom'
+  | 'bottom-left'
+  | 'bottom-right'
+  | 'center'
+  | 'hidden'
+  | 'left'
+  | 'right'
+  | 'top'
+  | 'top-left'
+  | 'top-right';
 
 export interface NotificationProps {
   title: string;
   message?: string;
-  position?: PositionType;
+  position?: NotificationPositionType;
   status?: StatusType;
   toast?: boolean;
   onClose?: (...args: any[]) => any;

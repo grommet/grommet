@@ -14,7 +14,7 @@ const Notification = ({
   message,
   onClose,
   id,
-  position,
+  position = 'top',
   status,
   title,
   toast,
@@ -83,7 +83,7 @@ const Notification = ({
         id={id}
         responsive
         plain
-        position={position === 'top-right' ? 'top-right' : 'top'}
+        position={position}
       >
         {content}
       </Layer>

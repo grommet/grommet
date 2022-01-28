@@ -48,14 +48,34 @@ describe('Notification', () => {
     expect(onClose).toBeCalled();
   });
 
-  test(`should apply correct position`, () => {
-    render(
-      <Grommet>
-        <Notification id="position-test" toast title="title" message="message">
-          This is a layer
-        </Notification>
-      </Grommet>,
-    );
-    expectPortal('position-test').toMatchSnapshot();
-  });
+  [
+    'top',
+    'bottom',
+    'left',
+    'right',
+    'start',
+    'end',
+    'center',
+    'top-left',
+    'top-right',
+    'bottom-left',
+    'bottom-right',
+  ].forEach((position) =>
+    test(`position ${position}`, () => {
+      render(
+        <Grommet>
+          <Notification
+            id="position-test"
+            toast
+            position={position}
+            title="title"
+            message="message"
+          >
+            This is a layer
+          </Notification>
+        </Grommet>,
+      );
+      expectPortal('position-test').toMatchSnapshot();
+    }),
+  );
 });
