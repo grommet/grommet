@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Grommet, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, TextInput } from 'grommet';
 var suggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
@@ -23,23 +22,26 @@ export var OnSelect = function OnSelect() {
     }
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    full: true,
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Box, {
-    width: "medium"
-  }, /*#__PURE__*/React.createElement(TextInput, {
-    value: value,
-    onChange: onChange,
-    onSelect: onHighlight,
-    onSuggestionSelect: onSelect,
-    suggestions: suggestions
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Box, {
+      width: "medium"
+    }, /*#__PURE__*/React.createElement(TextInput, {
+      value: value,
+      onChange: onChange,
+      onSelect: onHighlight,
+      onSuggestionSelect: onSelect,
+      suggestions: suggestions
+    }))) // </Grommet>
+
+  );
 };
 OnSelect.storyName = 'onSelect and onSuggestionSelect';
 OnSelect.parameters = {

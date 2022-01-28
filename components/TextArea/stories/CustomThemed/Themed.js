@@ -50,6 +50,6 @@ var Themed = function Themed() {
 
 exports.Themed = Themed;
 var _default = {
-  title: 'Input/TextArea/Themed'
+  title: 'Input/TextArea/Custom Themed/Themed'
 };
 exports["default"] = _default;

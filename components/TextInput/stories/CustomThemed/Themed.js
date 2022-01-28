@@ -85,6 +85,6 @@ var Themed = function Themed() {
 
 exports.Themed = Themed;
 var _default = {
-  title: 'Input/TextInput/Themed'
+  title: 'Input/TextInput/Custom Themed/Themed'
 };
 exports["default"] = _default;

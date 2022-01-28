@@ -71,5 +71,5 @@ export var Themed = function Themed() {
   }))));
 };
 export default {
-  title: 'Input/TextInput/Themed'
+  title: 'Input/TextInput/Custom Themed/Themed'
 };

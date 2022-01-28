@@ -7,8 +7,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React from 'react';
 import { FormClose } from "grommet-icons/es6/icons/FormClose";
-import { Box, Button, Grommet, Keyboard, Text, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Keyboard, Text, TextInput } from 'grommet';
 var allSuggestions = ['sony', 'sonar', 'foo', 'bar'];
 
 var Tag = function Tag(_ref) {
@@ -153,22 +152,25 @@ export var WithTags = function WithTags() {
     }));
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    full: true,
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "small"
-  }, /*#__PURE__*/React.createElement(TagInput, {
-    placeholder: "Search for aliases...",
-    suggestions: suggestions,
-    value: selectedTags,
-    onRemove: onRemoveTag,
-    onAdd: onAddTag,
-    onChange: function onChange(_ref3) {
-      var value = _ref3.target.value;
-      return onFilterSuggestion(value);
-    }
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      pad: "small"
+    }, /*#__PURE__*/React.createElement(TagInput, {
+      placeholder: "Search for aliases...",
+      suggestions: suggestions,
+      value: selectedTags,
+      onRemove: onRemoveTag,
+      onAdd: onAddTag,
+      onChange: function onChange(_ref3) {
+        var value = _ref3.target.value;
+        return onFilterSuggestion(value);
+      }
+    })) // </Grommet>
+
+  );
 };
 WithTags.storyName = 'With tags';
 export default {

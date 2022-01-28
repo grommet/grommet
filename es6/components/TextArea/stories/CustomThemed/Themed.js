@@ -34,5 +34,5 @@ export var Themed = function Themed() {
   })));
 };
 export default {
-  title: 'Input/TextArea/Themed'
+  title: 'Input/TextArea/Custom Themed/Themed'
 };

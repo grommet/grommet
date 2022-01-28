@@ -1,8 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { useState } from 'react';
-import { Box, Grommet, TextArea } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, TextArea } from 'grommet';
 
 var Resize = function Resize(props) {
   var _useState = useState(''),
@@ -13,15 +12,19 @@ var Resize = function Resize(props) {
     return setValue(event.target.value);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(TextArea, _extends({
-    value: value,
-    onChange: onChange
-  }, props))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(TextArea, _extends({
+      value: value,
+      onChange: onChange
+    }, props))) // </Grommet>
+
+  );
 };
 
 export var NonResizable = function NonResizable() {

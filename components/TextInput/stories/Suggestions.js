@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var allSuggestions = Array(100).fill().map(function (_, i) {
@@ -39,22 +37,25 @@ var Suggestions = function Suggestions() {
     setValue(event.suggestion);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    full: true,
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    width: "medium"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-    value: value,
-    onChange: onChange,
-    onSuggestionSelect: onSuggestionSelect,
-    suggestions: suggestions
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      width: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      value: value,
+      onChange: onChange,
+      onSuggestionSelect: onSuggestionSelect,
+      suggestions: suggestions
+    }))) // </Grommet>
+
+  );
 };
 
 exports.Suggestions = Suggestions;

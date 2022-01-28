@@ -1,8 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { useState } from 'react';
-import { Box, Button, Form, FormField, Grommet, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Form, FormField, TextInput } from 'grommet';
 var allSuggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
@@ -38,34 +37,38 @@ export var InsideFormField = function InsideFormField(props) {
     }));
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Form, {
-    onSubmit: function onSubmit(_ref) {
-      var nextValue = _ref.value;
-      console.log(nextValue);
-      setState({
-        value: '',
-        suggestions: allSuggestions
-      });
-    }
-  }, /*#__PURE__*/React.createElement(FormField, _extends({
-    label: "Label",
-    htmlFor: "text-input"
-  }, props), /*#__PURE__*/React.createElement(TextInput, {
-    id: "text-input",
-    placeholder: "placeholder",
-    value: state.value,
-    onChange: onChange,
-    onSelect: onSelect,
-    suggestions: state.suggestions
-  })), /*#__PURE__*/React.createElement(Button, {
-    type: "submit",
-    label: "submit"
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Form, {
+      onSubmit: function onSubmit(_ref) {
+        var nextValue = _ref.value;
+        console.log(nextValue);
+        setState({
+          value: '',
+          suggestions: allSuggestions
+        });
+      }
+    }, /*#__PURE__*/React.createElement(FormField, _extends({
+      label: "Label",
+      htmlFor: "text-input"
+    }, props), /*#__PURE__*/React.createElement(TextInput, {
+      id: "text-input",
+      placeholder: "placeholder",
+      value: state.value,
+      onChange: onChange,
+      onSelect: onSelect,
+      suggestions: state.suggestions
+    })), /*#__PURE__*/React.createElement(Button, {
+      type: "submit",
+      label: "submit"
+    }))) // </Grommet>
+
+  );
 };
 InsideFormField.storyName = 'Inside a FormField';
 export default {

@@ -9,8 +9,6 @@ var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _excluded = ["children", "onRemove"],
     _excluded2 = ["value", "onAdd", "onChange", "onRemove"];
 
@@ -164,22 +162,25 @@ var WithTags = function WithTags() {
     }));
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    full: true,
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "small"
-  }, /*#__PURE__*/_react["default"].createElement(TagInput, {
-    placeholder: "Search for aliases...",
-    suggestions: suggestions,
-    value: selectedTags,
-    onRemove: onRemoveTag,
-    onAdd: onAddTag,
-    onChange: function onChange(_ref3) {
-      var value = _ref3.target.value;
-      return onFilterSuggestion(value);
-    }
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      pad: "small"
+    }, /*#__PURE__*/_react["default"].createElement(TagInput, {
+      placeholder: "Search for aliases...",
+      suggestions: suggestions,
+      value: selectedTags,
+      onRemove: onRemoveTag,
+      onAdd: onAddTag,
+      onChange: function onChange(_ref3) {
+        var value = _ref3.target.value;
+        return onFilterSuggestion(value);
+      }
+    })) // </Grommet>
+
+  );
 };
 
 exports.WithTags = WithTags;
