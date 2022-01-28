@@ -23,7 +23,7 @@ var _utils = require("../../utils");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["action", "as", "background", "border", "children", "data", "defaultItemProps", "focus", "itemProps", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"];
+var _excluded = ["action", "as", "background", "border", "children", "data", "defaultItemProps", "focus", "itemKey", "itemProps", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -135,6 +135,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       data = _ref.data,
       defaultItemProps = _ref.defaultItemProps,
       focus = _ref.focus,
+      itemKey = _ref.itemKey,
       itemProps = _ref.itemProps,
       onOrder = _ref.onOrder,
       pad = _ref.pad,
@@ -315,7 +316,15 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       content = item;
     }
 
-    var key = getKey(item, index, itemId);
+    if (itemKey) {
+      if (typeof itemKey === 'function') {
+        itemId = itemKey(item);
+      } else {
+        itemId = normalize(item, index, itemKey);
+      }
+    }
+
+    var key = itemKey ? itemId : getKey(item, index, itemId);
 
     if (action) {
       content = [/*#__PURE__*/_react["default"].createElement(_Box.Box, {

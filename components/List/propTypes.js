@@ -38,6 +38,7 @@ if (process.env.NODE_ENV !== 'production') {
     data: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({})])),
     children: _propTypes["default"].func,
     defaultItemProps: _propTypes["default"].shape(_propTypes2.BoxPropTypes),
+    itemKey: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
     itemProps: _propTypes["default"].shape({}),
     onMore: _propTypes["default"].func,
     onClickItem: _propTypes["default"].func,

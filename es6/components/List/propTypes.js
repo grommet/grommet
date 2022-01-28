@@ -28,6 +28,7 @@ if (process.env.NODE_ENV !== 'production') {
     data: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})])),
     children: PropTypes.func,
     defaultItemProps: PropTypes.shape(BoxPropTypes),
+    itemKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     itemProps: PropTypes.shape({}),
     onMore: PropTypes.func,
     onClickItem: PropTypes.func,

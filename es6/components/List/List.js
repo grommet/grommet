@@ -1,4 +1,4 @@
-var _excluded = ["action", "as", "background", "border", "children", "data", "defaultItemProps", "focus", "itemProps", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"];
+var _excluded = ["action", "as", "background", "border", "children", "data", "defaultItemProps", "focus", "itemKey", "itemProps", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -115,6 +115,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       data = _ref.data,
       defaultItemProps = _ref.defaultItemProps,
       focus = _ref.focus,
+      itemKey = _ref.itemKey,
       itemProps = _ref.itemProps,
       onOrder = _ref.onOrder,
       pad = _ref.pad,
@@ -295,7 +296,15 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       content = item;
     }
 
-    var key = getKey(item, index, itemId);
+    if (itemKey) {
+      if (typeof itemKey === 'function') {
+        itemId = itemKey(item);
+      } else {
+        itemId = normalize(item, index, itemKey);
+      }
+    }
+
+    var key = itemKey ? itemId : getKey(item, index, itemId);
 
     if (action) {
       content = [/*#__PURE__*/React.createElement(Box, {
