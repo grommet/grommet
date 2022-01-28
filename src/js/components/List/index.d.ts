@@ -46,6 +46,7 @@ export interface ListProps<ListItemType> {
   data?: ListItemType[];
   gridArea?: GridAreaType;
   defaultItemProps?: BoxTypes;
+  itemKey?: string | ((item: ListItemType) => string | number);
   itemProps?: {
     [_: string]: { background?: string; border?: BorderType; pad?: PadType };
   };
