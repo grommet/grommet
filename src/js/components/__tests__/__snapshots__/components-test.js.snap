@@ -517,6 +517,7 @@ Object {
       "data": [Function],
       "defaultItemProps": [Function],
       "gridArea": [Function],
+      "itemKey": [Function],
       "itemProps": [Function],
       "margin": [Function],
       "onClickItem": [Function],
@@ -2081,6 +2082,44 @@ Object {
           },
           "round": "large",
           "separator": " : ",
+          "size": Object {
+            "large": Object {
+              "icon": Object {
+                "size": "30px",
+              },
+              "pad": Object {
+                "horizontal": "16px",
+                "vertical": "xsmall",
+              },
+            },
+            "small": Object {
+              "icon": Object {
+                "size": "18px",
+              },
+              "pad": Object {
+                "horizontal": "9.600000000000001px",
+                "vertical": "xxsmall",
+              },
+            },
+            "xlarge": Object {
+              "icon": Object {
+                "size": "36px",
+              },
+              "pad": Object {
+                "horizontal": "18px",
+                "vertical": "xsmall",
+              },
+            },
+            "xsmall": Object {
+              "icon": Object {
+                "size": "18px",
+              },
+              "pad": Object {
+                "horizontal": "8px",
+                "vertical": "xxsmall",
+              },
+            },
+          },
           "value": Object {
             "weight": 600,
           },
@@ -2358,6 +2397,7 @@ Object {
       "name": [Function],
       "onClick": [Function],
       "onRemove": [Function],
+      "size": [Function],
       "value": [Function],
     },
     "render": [Function],
