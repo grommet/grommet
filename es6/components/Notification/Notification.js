@@ -13,6 +13,9 @@ import { NotificationType } from './propTypes';
 var Notification = function Notification(_ref) {
   var message = _ref.message,
       onClose = _ref.onClose,
+      id = _ref.id,
+      _ref$position = _ref.position,
+      position = _ref$position === void 0 ? 'top' : _ref$position,
       status = _ref.status,
       title = _ref.title,
       toast = _ref.toast;
@@ -59,8 +62,10 @@ var Notification = function Notification(_ref) {
       role: "log",
       modal: false,
       onEsc: onClose,
+      id: id,
       responsive: true,
-      plain: true
+      plain: true,
+      position: position
     }), content);
   }
 
