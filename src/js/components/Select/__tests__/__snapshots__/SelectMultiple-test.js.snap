@@ -219,6 +219,8 @@ exports[`Select Controlled deselect an option 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -485,6 +487,8 @@ exports[`Select Controlled multiple 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -763,6 +767,8 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -1098,13 +1104,16 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="true"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
-        tabindex="-1"
+        role="option"
+        tabindex="0"
         type="button"
       >
         <div
@@ -1118,8 +1127,11 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c9 c10"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1382,6 +1394,8 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -1652,12 +1666,15 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1672,8 +1689,11 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1936,6 +1956,8 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -2206,12 +2228,15 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -2226,8 +2251,11 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -2490,6 +2518,8 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -2760,12 +2790,15 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -2780,8 +2813,11 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -2826,12 +2862,14 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
   >
     <div
       class="SelectContainer__OptionsBox-sc-1wi0ul8-0 jviAPV"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-setsize="2"
         class="StyledButton-sc-323bzc-0 cmzBhQ SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -2846,8 +2884,10 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-setsize="2"
         class="StyledButton-sc-323bzc-0 cmzBhQ SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -3097,6 +3137,8 @@ exports[`Select Controlled multiple values 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -3146,6 +3188,8 @@ exports[`Select Controlled multiple values 1`] = `
 
 exports[`Select Controlled multiple values 2`] = `
 <button
+  aria-expanded="true"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
   id="test-select"
@@ -3412,13 +3456,16 @@ exports[`Select Controlled multiple values 3`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="true"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
-        tabindex="-1"
+        role="option"
+        tabindex="0"
         type="button"
       >
         <div
@@ -3432,9 +3479,12 @@ exports[`Select Controlled multiple values 3`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="true"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
-        tabindex="-1"
+        role="option"
+        tabindex="0"
         type="button"
       >
         <div
@@ -3696,6 +3746,8 @@ exports[`Select Controlled multiple with empty results 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -3966,12 +4018,15 @@ exports[`Select Controlled multiple with empty results 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -3986,8 +4041,11 @@ exports[`Select Controlled multiple with empty results 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -4237,6 +4295,8 @@ exports[`Select Controlled select another option 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -4516,6 +4576,8 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="test"
     class="c1 c2"
     type="button"

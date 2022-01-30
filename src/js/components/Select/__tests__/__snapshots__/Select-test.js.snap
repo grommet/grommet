@@ -219,6 +219,8 @@ exports[`Select 0 value 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -488,12 +490,15 @@ exports[`Select Clear option renders - bottom 1`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -508,8 +513,11 @@ exports[`Select Clear option renders - bottom 1`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -772,12 +780,15 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
     
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -792,8 +803,11 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1047,12 +1061,15 @@ exports[`Select Clear option renders custom label 1`] = `
     
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1067,8 +1084,11 @@ exports[`Select Clear option renders custom label 1`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1322,12 +1342,15 @@ exports[`Select Clear option renders- top 1`] = `
     
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1342,8 +1365,11 @@ exports[`Select Clear option renders- top 1`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1623,6 +1649,8 @@ exports[`Select Search timeout 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="true"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     data-g-tabindex="none"
@@ -1999,6 +2027,8 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="applies-custom-hover-style-id"
@@ -2163,8 +2193,11 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 }
 
 <button
+  aria-posinset="1"
+  aria-selected="false"
+  aria-setsize="3"
   class="c0 c1"
-  role="menuitem"
+  role="option"
   tabindex="-1"
   type="button"
 >
@@ -2399,6 +2432,8 @@ exports[`Select basic 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Select"
   class="c0 c1"
   id="test-select"
@@ -2665,6 +2700,8 @@ exports[`Select complex options and children 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -2714,6 +2751,8 @@ exports[`Select complex options and children 1`] = `
 
 exports[`Select complex options and children 2`] = `
 <button
+  aria-expanded="true"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
   id="test-select"
@@ -2952,12 +2991,15 @@ exports[`Select complex options and children 3`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -2966,8 +3008,11 @@ exports[`Select complex options and children 3`] = `
         </span>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -3253,6 +3298,8 @@ exports[`Select dark 1`] = `
     class="c1"
   >
     <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
       aria-label="Open Drop"
       class="c2 c3"
       type="button"
@@ -3532,6 +3579,8 @@ exports[`Select default value 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -3971,12 +4020,15 @@ exports[`Select default value clear 1`] = `
     </button>
     <div
       class="c7"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c8 c9"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -3991,9 +4043,12 @@ exports[`Select default value clear 1`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="true"
+        aria-setsize="2"
         class="c12 c13"
-        role="menuitem"
-        tabindex="-1"
+        role="option"
+        tabindex="0"
         type="button"
       >
         <div
@@ -4255,6 +4310,8 @@ exports[`Select default value object options 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -4524,6 +4581,8 @@ exports[`Select disabled 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   disabled=""
@@ -4574,6 +4633,8 @@ exports[`Select disabled 1`] = `
 
 exports[`Select disabled 2`] = `
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="StyledButton-sc-323bzc-0 ijdOBy Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
   disabled=""
@@ -4854,6 +4915,8 @@ exports[`Select disabled key 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -5184,13 +5247,16 @@ exports[`Select disabled key 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
         disabled=""
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -5205,8 +5271,11 @@ exports[`Select disabled key 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c9 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -5519,13 +5588,16 @@ exports[`Select disabled option value 1`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
         disabled=""
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -5540,8 +5612,11 @@ exports[`Select disabled option value 1`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c9 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -5910,6 +5985,8 @@ exports[`Select keyboard navigation timeout 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="true"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     data-g-tabindex="none"
@@ -6183,12 +6260,15 @@ exports[`Select large drop container height 1`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -6203,8 +6283,11 @@ exports[`Select large drop container height 1`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -6448,12 +6531,15 @@ exports[`Select medium drop container height 1`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -6468,8 +6554,11 @@ exports[`Select medium drop container height 1`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -6724,6 +6813,8 @@ exports[`Select modifies select control style on open 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-open-id"
@@ -7005,6 +7096,8 @@ exports[`Select onChange with valueKey string 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -7275,12 +7368,15 @@ exports[`Select onChange with valueKey string 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -7295,8 +7391,11 @@ exports[`Select onChange with valueKey string 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -7510,6 +7609,8 @@ exports[`Select onChange with valueLabel 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -7776,12 +7877,15 @@ exports[`Select onChange with valueLabel 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -7796,8 +7900,11 @@ exports[`Select onChange with valueLabel 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -8060,6 +8167,8 @@ exports[`Select onChange without valueKey 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -8330,12 +8439,15 @@ exports[`Select onChange without valueKey 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -8350,8 +8462,11 @@ exports[`Select onChange without valueKey 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -8613,6 +8728,8 @@ exports[`Select prop: onClose 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -8894,6 +9011,8 @@ exports[`Select prop: onClose 2`] = `
   <div />
   <div>
     <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
       aria-label="Open Drop"
       class="c0 c1"
       id="test-select"
@@ -9162,6 +9281,8 @@ exports[`Select prop: onOpen 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -9211,6 +9332,8 @@ exports[`Select prop: onOpen 1`] = `
 
 exports[`Select prop: onOpen 2`] = `
 <button
+  aria-expanded="true"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
   id="test-select"
@@ -9480,12 +9603,15 @@ exports[`Select prop: onOpen 3`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -9500,8 +9626,11 @@ exports[`Select prop: onOpen 3`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -9535,12 +9664,15 @@ exports[`Select prop: onOpen 4`] = `
 exports[`Select prop: onOpen 5`] = `
 <div
   class="SelectContainer__OptionsBox-sc-1wi0ul8-0 jviAPV"
-  role="menubar"
+  role="listbox"
   tabindex="-1"
 >
   <button
+    aria-posinset="0"
+    aria-selected="false"
+    aria-setsize="2"
     class="StyledButton-sc-323bzc-0 cmzBhQ SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
-    role="menuitem"
+    role="option"
     tabindex="-1"
     type="button"
   >
@@ -9555,8 +9687,11 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <button
+    aria-posinset="1"
+    aria-selected="false"
+    aria-setsize="2"
     class="StyledButton-sc-323bzc-0 cmzBhQ SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
-    role="menuitem"
+    role="option"
     tabindex="-1"
     type="button"
   >
@@ -9795,6 +9930,8 @@ exports[`Select renders custom icon 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -10073,6 +10210,8 @@ exports[`Select renders custom up and down icons 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     type="button"
@@ -10124,6 +10263,8 @@ exports[`Select renders custom up and down icons 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <button
+    aria-expanded="true"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
     type="button"
@@ -10439,6 +10580,8 @@ exports[`Select renders default icon 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -10718,6 +10861,8 @@ exports[`Select renders styled select options backwards compatible with legacy
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-options-style-id"
@@ -11001,6 +11146,8 @@ exports[`Select renders styled select options combining select.options.box &&
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-options-style-id"
@@ -11282,6 +11429,8 @@ exports[`Select renders styled select options using select.options.container 1`]
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-options-style-id"
@@ -11490,6 +11639,8 @@ exports[`Select renders without icon 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -11738,6 +11889,8 @@ exports[`Select search 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -12179,12 +12332,15 @@ exports[`Select search 2`] = `
     </div>
     <div
       class="c7"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c8 c9"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -12199,9 +12355,12 @@ exports[`Select search 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="true"
+        aria-setsize="2"
         class="c12 c13"
-        role="menuitem"
-        tabindex="-1"
+        role="option"
+        tabindex="0"
         type="button"
       >
         <div
@@ -12468,6 +12627,8 @@ exports[`Select search and select 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -12844,12 +13005,15 @@ exports[`Select search and select 2`] = `
     </div>
     <div
       class="c7"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c8 c9"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -12864,8 +13028,11 @@ exports[`Select search and select 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c8 c9"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -13133,6 +13300,8 @@ exports[`Select select an object with label key specific with keypress 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -13399,6 +13568,8 @@ exports[`Select select an option 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -13611,6 +13782,8 @@ exports[`Select select an option with complex options 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 "
   id="test-select"
@@ -13873,6 +14046,8 @@ exports[`Select select an option with enter 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -14139,6 +14314,8 @@ exports[`Select select an option with keypress 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -14405,6 +14582,8 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -14684,6 +14863,8 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -14737,6 +14918,8 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
     id="test-select"
@@ -15017,6 +15200,8 @@ exports[`Select selected 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -15297,6 +15482,8 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="test"
     class="c1 c2"
     type="button"
@@ -15341,6 +15528,8 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
     </div>
   </button>
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="test-select"
     class="c1 c2"
     type="button"
@@ -15619,6 +15808,8 @@ exports[`Select should not have accessibility violations 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="test"
     class="c1 c2"
     type="button"
@@ -15886,6 +16077,8 @@ exports[`Select size 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -16154,12 +16347,15 @@ exports[`Select small drop container height 1`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="0"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -16174,8 +16370,11 @@ exports[`Select small drop container height 1`] = `
         </div>
       </button>
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
