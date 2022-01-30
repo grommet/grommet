@@ -41,6 +41,7 @@ const DateInput = forwardRef(
       dropProps, // when inline isn't true
       format,
       id,
+      icon,
       inline = false,
       inputProps, // for MaskedInput, when format is specified
       name,
@@ -97,7 +98,7 @@ const DateInput = forwardRef(
       schema ? valueToText(normalizedDate, schema) : undefined,
     );
 
-    const { icon, ...restOfInputProps } = inputProps || {};
+    const { icon: MaskedInputIcon, ...restOfInputProps } = inputProps || {};
 
     // We need to distinguish between the caller changing a Form value
     // and the user typing a date that he isn't finished with yet.
@@ -187,7 +188,7 @@ const DateInput = forwardRef(
           id={id}
           dropProps={{ align: { top: 'bottom', left: 'left' }, ...dropProps }}
           dropContent={calendar}
-          icon={<CalendarIcon size={iconSize} />}
+          icon={icon || <CalendarIcon size={iconSize} />}
           {...buttonProps}
         />
       );
