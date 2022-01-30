@@ -16,7 +16,7 @@ const customTheme = deepMerge(grommet, {
 export const Themed = () => {
   const [value, setValue] = useState('');
 
-  const onChange = event => setValue(event.target.value);
+  const onChange = (event) => setValue(event.target.value);
 
   return (
     <Grommet theme={customTheme}>
@@ -32,5 +32,5 @@ export const Themed = () => {
 };
 
 export default {
-  title: 'Input/TextArea/Themed',
+  title: 'Input/TextArea/Custom Themed/Themed',
 };

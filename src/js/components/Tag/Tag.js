@@ -11,7 +11,8 @@ import { Text } from '../Text';
 
 import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 
-const Tag = forwardRef(({ name, value, onRemove, onClick, ...rest }, ref) => {
+const Tag = forwardRef(
+  ({ name, value, size, onRemove, onClick, ...rest }, ref) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
   const containerProps = {
@@ -19,15 +20,18 @@ const Tag = forwardRef(({ name, value, onRemove, onClick, ...rest }, ref) => {
     align: 'center',
     background: theme.tag.background,
     border: theme.tag.border,
-    round: theme.tag.round,
+    round: theme.tag.size?.[size]?.round || theme.tag.round,
     ...rest,
   };
   const contents = (
-    <Box width={{ min: 'min-content' }} pad={theme.tag.pad}>
-      <Text>
-        {name && <Text {...theme.tag.name}>{name}</Text>}
-        {name && value ? theme.tag.separator : ''}
-        {value && <Text {...theme.tag.value}>{value}</Text>}
+    <Box
+      width={{ min: 'min-content' }}
+      pad={theme.tag.size?.[size]?.pad || theme.tag.pad}
+    >
+      <Text size={size}>
+        {name && <Text {...theme.tag.name} size={size}> {name}</Text>}
+        {name && value ? <Text size={size}>{theme.tag.separator}</Text> : ''}
+        {value && <Text {...theme.tag.value} size={size}>{value}</Text>}
       </Text>
     </Box>
   );
@@ -50,8 +54,8 @@ const Tag = forwardRef(({ name, value, onRemove, onClick, ...rest }, ref) => {
           plain
           hoverIndicator
           focusIndicator
-          icon={<FormClose />}
-          round={theme.tag.round}
+          icon={<FormClose {...theme.tag.size?.[size]?.icon} />}
+          round={theme.tag.size?.[size]?.round || theme.tag.round}
           {...theme.tag.remove}
         />
       )}

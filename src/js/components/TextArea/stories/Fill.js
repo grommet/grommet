@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Grommet, TextArea } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, TextArea } from 'grommet';
 
 export const Fill = () => {
   const [value, setValue] = useState('');
@@ -9,15 +8,16 @@ export const Fill = () => {
   const onChange = (event) => setValue(event.target.value);
 
   return (
-    <Grommet theme={grommet}>
-      <Box
-        width="large"
-        height="medium"
-        border={{ color: 'brand', size: 'medium' }}
-      >
-        <TextArea value={value} onChange={onChange} fill />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box
+      width="large"
+      height="medium"
+      border={{ color: 'brand', size: 'medium' }}
+    >
+      <TextArea value={value} onChange={onChange} fill />
+    </Box>
+    // </Grommet>
   );
 };
 

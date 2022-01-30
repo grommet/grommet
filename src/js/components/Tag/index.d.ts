@@ -14,6 +14,14 @@ export interface TagProps {
   name?: string;
   onClick?: (...args: any[]) => any;
   onRemove?: (...args: any[]) => any;
+  size?:
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | 'xxlarge'
+  | string;
   value: string | number;
 }
 
