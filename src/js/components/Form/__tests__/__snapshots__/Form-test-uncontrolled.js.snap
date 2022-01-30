@@ -753,6 +753,8 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
         class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="test"
           class="c3 "
           type="button"
@@ -3119,6 +3121,8 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
         class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Open Drop"
           class="c4 "
           id="test-select"
@@ -3355,6 +3359,8 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         class="StyledBox-sc-13pk1d4-0 ctACHi FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Open Drop"
           class="StyledButton-sc-323bzc-0 fhAZId Select__StyledSelectDropButton-sc-17idtfo-2 fJfYtd"
           id="test-select"
