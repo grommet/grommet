@@ -250,7 +250,7 @@ const DateInput = forwardRef(
             <Button
               onClick={open ? closeCalendar : openCalendar}
               plain
-              icon={icon || <CalendarIcon size={iconSize} />}
+              icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
               margin={{ right: 'small' }}
             />
           </Box>
