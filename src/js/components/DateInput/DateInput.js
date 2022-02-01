@@ -98,7 +98,15 @@ const DateInput = forwardRef(
       schema ? valueToText(normalizedDate, schema) : undefined,
     );
 
+    // Setting the icon through `inputProps` is deprecated.
+    // The `icon` prop should be used instead.
     const { icon: MaskedInputIcon, ...restOfInputProps } = inputProps || {};
+    if (MaskedInputIcon) {
+      console.warn(
+        `Customizing the DateInput icon through inputProps is deprecated. 
+Use the icon prop instead.`,
+      );
+    }
 
     // We need to distinguish between the caller changing a Form value
     // and the user typing a date that he isn't finished with yet.
