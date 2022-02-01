@@ -1,17 +1,7 @@
 import * as React from 'react';
+import { LayerPositionType } from '../Layer';
 
 export type StatusType = 'critical' | 'warning' | 'normal' | 'unknown';
-export type PositionType =
-  | 'bottom'
-  | 'bottom-left'
-  | 'bottom-right'
-  | 'center'
-  | 'hidden'
-  | 'left'
-  | 'right'
-  | 'top'
-  | 'top-left'
-  | 'top-right';
 
 export interface NotificationProps {
   title: string;
@@ -20,7 +10,7 @@ export interface NotificationProps {
   toast?:
     | boolean
     | {
-        position?: PositionType;
+        position?: LayerPositionType;
       };
   onClose?: (...args: any[]) => any;
 }
