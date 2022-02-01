@@ -188,7 +188,7 @@ const DateInput = forwardRef(
           id={id}
           dropProps={{ align: { top: 'bottom', left: 'left' }, ...dropProps }}
           dropContent={calendar}
-          icon={icon || <CalendarIcon size={iconSize} />}
+          icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
           {...buttonProps}
         />
       );
