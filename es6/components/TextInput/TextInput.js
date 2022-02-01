@@ -138,7 +138,10 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
     setShowDrop(false);
     if (onSuggestionsClose) onSuggestionsClose();
-  }, [onSuggestionsClose, suggestions]); // Handle scenarios where we have focus, the drop isn't showing,
+  }, [onSuggestionsClose, suggestions]);
+  var clickOutside = useCallback(function (event) {
+    if (event.target !== inputRef.current) closeDrop();
+  }, [inputRef, closeDrop]); // Handle scenarios where we have focus, the drop isn't showing,
   // and the suggestions change. We don't want to open the drop if
   // the drop has been closed by onEsc and the suggestions haven't
   // changed. So, we remember the suggestions we are showing when
@@ -267,13 +270,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       align: dropAlign,
       responsive: false,
       target: dropTarget || inputRef.current,
-      onClickOutside: function onClickOutside(_ref2) {
-        var target = _ref2.target;
-
-        if (target !== inputRef.current) {
-          closeDrop();
-        }
-      },
+      onClickOutside: clickOutside,
       onEsc: closeDrop
     }, dropProps), /*#__PURE__*/React.createElement(ContainerBox, {
       overflow: "auto",
