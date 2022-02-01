@@ -1,4 +1,10 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+  useMemo,
+} from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
@@ -10,17 +16,10 @@ import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 
-const Notification = ({
-  message,
-  onClose,
-  id,
-  position = 'top',
-  status,
-  title,
-  toast,
-}) => {
+const Notification = ({ message, onClose, id, status, title, toast }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
+  const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
 
   const close = useCallback(() => {
     setVisible(false);

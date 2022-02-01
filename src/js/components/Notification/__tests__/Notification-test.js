@@ -60,14 +60,13 @@ describe('Notification', () => {
     'top-right',
     'bottom-left',
     'bottom-right',
-  ].forEach((position) =>
-    test(`position ${position}`, () => {
+  ].forEach((positions) =>
+    test(`position ${positions}`, () => {
       render(
         <Grommet>
           <Notification
             id="position-test"
-            toast
-            position={position}
+            toast={{ position: positions }}
             title="title"
             message="message"
           >

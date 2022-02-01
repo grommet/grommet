@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export type StatusType = 'critical' | 'warning' | 'normal' | 'unknown';
-export type NotificationPositionType =
+export type PositionType =
   | 'bottom'
   | 'bottom-left'
   | 'bottom-right'
@@ -16,9 +16,12 @@ export type NotificationPositionType =
 export interface NotificationProps {
   title: string;
   message?: string;
-  position?: NotificationPositionType;
   status?: StatusType;
-  toast?: boolean;
+  toast?:
+    | boolean
+    | {
+        position?: PositionType;
+      };
   onClose?: (...args: any[]) => any;
 }
 
