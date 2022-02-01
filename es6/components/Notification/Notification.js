@@ -1,6 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -13,6 +13,7 @@ import { NotificationType } from './propTypes';
 var Notification = function Notification(_ref) {
   var message = _ref.message,
       onClose = _ref.onClose,
+      id = _ref.id,
       status = _ref.status,
       title = _ref.title,
       toast = _ref.toast;
@@ -22,6 +23,9 @@ var Notification = function Notification(_ref) {
       visible = _useState[0],
       setVisible = _useState[1];
 
+  var position = useMemo(function () {
+    return toast && (toast == null ? void 0 : toast.position) || 'top';
+  }, [toast]);
   var close = useCallback(function () {
     setVisible(false);
     if (onClose) onClose();
@@ -59,8 +63,10 @@ var Notification = function Notification(_ref) {
       role: "log",
       modal: false,
       onEsc: onClose,
+      id: id,
       responsive: true,
-      plain: true
+      plain: true,
+      position: position
     }), content);
   }
 
