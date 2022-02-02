@@ -151,6 +151,13 @@ const TextInput = forwardRef(
       if (onSuggestionsClose) onSuggestionsClose();
     }, [onSuggestionsClose, suggestions]);
 
+    const clickOutside = useCallback(
+      (event) => {
+        if (event.target !== inputRef.current) closeDrop();
+      },
+      [inputRef, closeDrop],
+    );
+
     // Handle scenarios where we have focus, the drop isn't showing,
     // and the suggestions change. We don't want to open the drop if
     // the drop has been closed by onEsc and the suggestions haven't
@@ -315,11 +322,7 @@ const TextInput = forwardRef(
           align={dropAlign}
           responsive={false}
           target={dropTarget || inputRef.current}
-          onClickOutside={({ target }) => {
-            if (target !== inputRef.current) {
-              closeDrop();
-            }
-          }}
+          onClickOutside={clickOutside}
           onEsc={closeDrop}
           {...dropProps}
         >
