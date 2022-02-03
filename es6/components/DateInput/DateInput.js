@@ -1,4 +1,5 @@
-var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "inline", "inputProps", "name", "onChange", "onFocus", "plain", "value", "messages"];
+var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "icon", "inline", "inputProps", "name", "onChange", "onFocus", "plain", "value", "messages"],
+    _excluded2 = ["icon"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -30,6 +31,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       dropProps = _ref.dropProps,
       format = _ref.format,
       id = _ref.id,
+      icon = _ref.icon,
       _ref$inline = _ref.inline,
       inline = _ref$inline === void 0 ? false : _ref$inline,
       inputProps = _ref.inputProps,
@@ -91,7 +93,17 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
 
   var _useState = useState(schema ? valueToText(normalizedDate, schema) : undefined),
       textValue = _useState[0],
-      setTextValue = _useState[1]; // We need to distinguish between the caller changing a Form value
+      setTextValue = _useState[1]; // Setting the icon through `inputProps` is deprecated.
+  // The `icon` prop should be used instead.
+
+
+  var _ref2 = inputProps || {},
+      MaskedInputIcon = _ref2.icon,
+      restOfInputProps = _objectWithoutPropertiesLoose(_ref2, _excluded2);
+
+  if (MaskedInputIcon) {
+    console.warn("Customizing the DateInput icon through inputProps is deprecated. \nUse the icon prop instead.");
+  } // We need to distinguish between the caller changing a Form value
   // and the user typing a date that he isn't finished with yet.
   // To handle this, we see if we have a value and the text value
   // associated with it doesn't align to it, then we update the text value.
@@ -163,8 +175,8 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   })));
   var formContextValue = useMemo(function () {
     return {
-      useFormInput: function useFormInput(_ref2) {
-        var valueProp = _ref2.value;
+      useFormInput: function useFormInput(_ref3) {
+        var valueProp = _ref3.value;
         return [valueProp, function () {}];
       }
     };
@@ -183,7 +195,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
         }
       }, dropProps),
       dropContent: calendar,
-      icon: /*#__PURE__*/React.createElement(CalendarIcon, {
+      icon: icon || MaskedInputIcon || /*#__PURE__*/React.createElement(CalendarIcon, {
         size: iconSize
       })
     }, buttonProps));
@@ -212,7 +224,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     disabled: disabled,
     mask: mask,
     plain: true
-  }, inputProps, rest, {
+  }, restOfInputProps, rest, {
     value: textValue,
     onChange: function onChange(event) {
       var nextTextValue = event.target.value;
@@ -240,7 +252,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   })), /*#__PURE__*/React.createElement(Button, {
     onClick: open ? closeCalendar : openCalendar,
     plain: true,
-    icon: /*#__PURE__*/React.createElement(CalendarIcon, {
+    icon: icon || MaskedInputIcon || /*#__PURE__*/React.createElement(CalendarIcon, {
       size: iconSize
     }),
     margin: {
@@ -267,8 +279,8 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
         left: 'left'
       }, dropProps),
       onEsc: closeCalendar,
-      onClickOutside: function onClickOutside(_ref3) {
-        var target = _ref3.target;
+      onClickOutside: function onClickOutside(_ref4) {
+        var target = _ref4.target;
 
         if (target !== containerRef.current && !containerRef.current.contains(target)) {
           closeCalendar();

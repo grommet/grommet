@@ -16,6 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
     defaultValue: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].arrayOf(_propTypes["default"].string)]),
     dropProps: _propTypes["default"].shape({}),
     format: _propTypes["default"].string,
+    icon: _propTypes["default"].element,
     id: _propTypes["default"].string,
     inline: _propTypes["default"].bool,
     inputProps: _propTypes["default"].shape({}),

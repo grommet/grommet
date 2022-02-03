@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
     defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
     dropProps: PropTypes.shape({}),
     format: PropTypes.string,
+    icon: PropTypes.element,
     id: PropTypes.string,
     inline: PropTypes.bool,
     inputProps: PropTypes.shape({}),
