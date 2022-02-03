@@ -84,8 +84,13 @@ const DateInput = forwardRef(
     // normalize value based on timestamp vs user's local timezone
     const normalizedDate = normalizeForTimezone(value, timestamp);
 
+    // Check if format is on a range format
+    // 10 characters is the largest non range format (mm/dd/yyyy)
+    // eg. mm-dd-yyyy (non-range) mm/dd/yyyy-mm/dd/yyyy (range)
+    const isFormatRange = format && format.length > 10 && format.includes('-');
+
     // do we expect multiple dates?
-    const range = Array.isArray(value) || (format && format.includes('-'));
+    const range = Array.isArray(value) || isFormatRange;
 
     // parse format and build a formal schema we can use elsewhere
     const schema = useMemo(() => formatToSchema(format), [format]);

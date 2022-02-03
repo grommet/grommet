@@ -932,4 +932,50 @@ describe('DateInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('when  select format is a range and it has more than 10 characters and a "-" separator', () => {
+    const onChange = jest.fn((event) => event.value);
+    const { asFragment, getByText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm-dd-yyyy-mm-dd-yyyy"
+          inline
+          defaultValue={DATES_NOTZ}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.click(getByText('10'));
+    fireEvent.click(getByText('11'));
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith(['2020-07-10', '2020-07-11']);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('when select format is not a range format and it has a "-" but has 10 characters or less', () => {
+    const onChange = jest.fn((event) => event.value);
+    const { asFragment, getByText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm-dd-yyyy"
+          inline
+          defaultValue={DATE_NOTZ}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.click(getByText('10'));
+
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('2020-07-10');
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
