@@ -58,7 +58,7 @@ var Tag = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     size: size
   }, name && /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({}, theme.tag.name, {
     size: size
-  }), " ", name), name && value ? /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+  }), ' ', name), name && value ? /*#__PURE__*/_react["default"].createElement(_Text.Text, {
     size: size
   }, theme.tag.separator) : '', value && /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({}, theme.tag.value, {
     size: size

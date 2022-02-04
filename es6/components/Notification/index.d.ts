@@ -10,6 +10,7 @@ export interface NotificationProps {
   toast?:
     | boolean
     | {
+        autoClose?: boolean;
         position?: LayerPositionType;
       };
   onClose?: (...args: any[]) => any;

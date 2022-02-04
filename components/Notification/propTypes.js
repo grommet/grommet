@@ -14,9 +14,10 @@ if (process.env.NODE_ENV !== 'production') {
     title: _propTypes["default"].string.isRequired,
     message: _propTypes["default"].string,
     status: _propTypes["default"].oneOf(['critical', 'warning', 'normal', 'unknown']),
-    toast: _propTypes["default"].oneOfType([_propTypes["default"].shape({
+    toast: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].shape({
+      autoClose: _propTypes["default"].bool,
       position: _propTypes["default"].oneOf(['bottom', 'bottom-left', 'bottom-right', 'center', 'end', 'hidden', 'left', 'right', 'start', 'top', 'top-left', 'top-right'])
-    }), _propTypes["default"].bool]),
+    })]),
     onClose: _propTypes["default"].func
   };
 }

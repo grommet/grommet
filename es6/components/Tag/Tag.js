@@ -41,7 +41,7 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     size: size
   }, name && /*#__PURE__*/React.createElement(Text, _extends({}, theme.tag.name, {
     size: size
-  }), " ", name), name && value ? /*#__PURE__*/React.createElement(Text, {
+  }), ' ', name), name && value ? /*#__PURE__*/React.createElement(Text, {
     size: size
   }, theme.tag.separator) : '', value && /*#__PURE__*/React.createElement(Text, _extends({}, theme.tag.value, {
     size: size

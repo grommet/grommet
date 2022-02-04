@@ -34,6 +34,7 @@ var Notification = function Notification(_ref) {
       status = _ref.status,
       title = _ref.title,
       toast = _ref.toast;
+  var autoClose = (toast == null ? void 0 : toast.autoClose) === undefined ? true : toast.autoClose;
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -49,11 +50,15 @@ var Notification = function Notification(_ref) {
     if (onClose) onClose();
   }, [onClose]);
   (0, _react.useEffect)(function () {
-    var timer = setTimeout(close, theme.notification.toast.time || theme.notification.time);
-    return function () {
-      return clearTimeout(timer);
-    };
-  }, [close, theme.notification.toast.time, theme.notification.time]);
+    if (autoClose) {
+      var timer = setTimeout(close, theme.notification.toast.time || theme.notification.time);
+      return function () {
+        return clearTimeout(timer);
+      };
+    }
+
+    return undefined;
+  }, [autoClose, close, theme.notification.toast.time, theme.notification.time]);
   var CloseIcon = theme.notification.close.icon;
   var _theme$notification$s = theme.notification[status],
       StatusIcon = _theme$notification$s.icon,
