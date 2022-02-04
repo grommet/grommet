@@ -72,7 +72,7 @@ const parseValue = (mask, value) => {
 
       maskIndex += 1;
       found = true;
-    } else if (item.options && !item.ignoreOptions) {
+    } else if (item.options && item.restrictToOptions) {
       // reverse assuming larger is later
       found = item.options
         .slice(0)

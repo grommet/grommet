@@ -25,7 +25,7 @@ if (process.env.NODE_ENV !== 'production') {
         options: PropTypes.arrayOf(
           PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         ),
-        ignoreOptions: PropTypes.bool,
+        restrictToOptions: PropTypes.bool,
         regexp: PropTypes.shape({}), // RegExp
       }),
     ),

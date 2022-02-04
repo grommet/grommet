@@ -215,7 +215,7 @@ describe('MaskedInput', () => {
     expect(onChange).toHaveReturnedWith('abb');
   });
 
-  test('should enable to type beyond options when ignoreOptions', async () => {
+  test('restrictToOptions=false allows typing beyond options', async () => {
     const onChange = jest.fn((event) => event.target.value);
     render(
       <MaskedInput
@@ -224,7 +224,7 @@ describe('MaskedInput', () => {
         name="item"
         mask={[
           {
-            ignoreOptions: true,
+            restrictToOptions: false,
             options: ['aaa', 'aba', 'abb'],
             regexp: /\w$/,
           },
@@ -239,7 +239,7 @@ describe('MaskedInput', () => {
     expect(onChange).toHaveReturnedWith('abbb');
   });
 
-  test('Escape events should propagage if there is no drop', () => {
+  test('Escape events should propagate if there is no drop', () => {
     const callback = jest.fn();
     const { getByTestId } = render(
       <Grommet>

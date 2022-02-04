@@ -13,7 +13,7 @@ export interface MaskedInputProps {
     length?: number | number[];
     fixed?: string;
     options?: string[] | number[];
-    ignoreOptions?: boolean;
+    restrictToOptions?: boolean;
     regexp?: {};
     placeholder?: string;
   }>;
