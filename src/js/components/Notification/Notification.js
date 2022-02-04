@@ -17,6 +17,7 @@ import { Text } from '../Text';
 import { NotificationType } from './propTypes';
 
 const Notification = ({ message, onClose, id, status, title, toast }) => {
+  const autoClose = toast?.autoClose === undefined ? true : toast.autoClose;
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
@@ -27,13 +28,21 @@ const Notification = ({ message, onClose, id, status, title, toast }) => {
   }, [onClose]);
 
   useEffect(() => {
-    const timer = setTimeout(
-      close,
-      theme.notification.toast.time || theme.notification.time,
-    );
+    if (autoClose) {
+      const timer = setTimeout(
+        close,
+        theme.notification.toast.time || theme.notification.time,
+      );
 
-    return () => clearTimeout(timer);
-  }, [close, theme.notification.toast.time, theme.notification.time]);
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+  }, [
+    autoClose,
+    close,
+    theme.notification.toast.time,
+    theme.notification.time,
+  ]);
 
   const { icon: CloseIcon } = theme.notification.close;
   const { icon: StatusIcon, color } = theme.notification[status];
