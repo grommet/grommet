@@ -1,4 +1,10 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+  useMemo,
+} from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
@@ -10,10 +16,11 @@ import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 
-const Notification = ({ message, onClose, status, title, toast }) => {
+const Notification = ({ message, onClose, id, status, title, toast }) => {
   const autoClose = toast?.autoClose === undefined ? true : toast.autoClose;
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
+  const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
 
   const close = useCallback(() => {
     setVisible(false);
@@ -81,8 +88,10 @@ const Notification = ({ message, onClose, status, title, toast }) => {
         role="log"
         modal={false}
         onEsc={onClose}
+        id={id}
         responsive
         plain
+        position={position}
       >
         {content}
       </Layer>

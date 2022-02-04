@@ -7,10 +7,12 @@ import '@testing-library/jest-dom';
 import { axe } from 'jest-axe';
 import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Notification, Button } from '../..';
 
 describe('Notification', () => {
+  beforeEach(createPortal);
   test('should have no accessibility violations', async () => {
     const { container, asFragment } = render(
       <Grommet>
@@ -46,6 +48,36 @@ describe('Notification', () => {
     userEvent.click(screen.getByRole('button'));
     expect(onClose).toBeCalled();
   });
+
+  [
+    'top',
+    'bottom',
+    'left',
+    'right',
+    'start',
+    'end',
+    'center',
+    'top-left',
+    'top-right',
+    'bottom-left',
+    'bottom-right',
+  ].forEach((positions) =>
+    test(`position ${positions}`, () => {
+      render(
+        <Grommet>
+          <Notification
+            id="position-test"
+            toast={{ position: positions }}
+            title="title"
+            message="message"
+          >
+            This is a layer
+          </Notification>
+        </Grommet>,
+      );
+      expectPortal('position-test').toMatchSnapshot();
+    }),
+  );
 
   test('autoClose true', () => {
     jest.useFakeTimers('modern');

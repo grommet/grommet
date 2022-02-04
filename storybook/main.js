@@ -21,4 +21,8 @@ module.exports = {
     '../src/js/all/**/stories/*.@(ts|tsx|js|jsx)',
     '../src/js/all/stories/typescript/*.tsx',
   ],
+  features: {
+    postcss: false,
+  },
+  staticDirs: ['./public'],
 };

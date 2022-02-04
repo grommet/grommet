@@ -123,6 +123,7 @@ const List = React.forwardRef(
       data,
       defaultItemProps,
       focus,
+      itemKey,
       itemProps,
       onOrder,
       pad,
@@ -319,7 +320,15 @@ const List = React.forwardRef(
                   content = item;
                 }
 
-                const key = getKey(item, index, itemId);
+                if (itemKey) {
+                  if (typeof itemKey === 'function') {
+                    itemId = itemKey(item);
+                  } else {
+                    itemId = normalize(item, index, itemKey);
+                  }
+                }
+
+                const key = itemKey ? itemId : getKey(item, index, itemId);
 
                 if (action) {
                   content = [

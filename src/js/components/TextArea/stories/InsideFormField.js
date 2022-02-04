@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
-import { Box, Button, Form, FormField, Grommet, Text, TextArea } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Form, FormField, Text, TextArea } from 'grommet';
 
 export const InsideFormField = () => {
   const [value, setValue] = useState({ name: '', email: '', value: '' });
 
   return (
-    <Grommet theme={grommet}>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box>
       <Box align="center" pad="large">
         <Text weight="bold">TextArea as component prop of FormField</Text>
         <Form>
@@ -25,7 +26,7 @@ export const InsideFormField = () => {
         <Text weight="bold">TextArea inside FormField</Text>
         <Form
           value={value}
-          onChange={nextValue => setValue(nextValue)}
+          onChange={(nextValue) => setValue(nextValue)}
           onSubmit={() => console.log(value)}
         >
           <FormField name="value" label="FormField label" required>
@@ -34,7 +35,8 @@ export const InsideFormField = () => {
           <Button type="submit" label="submit" />
         </Form>
       </Box>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 
