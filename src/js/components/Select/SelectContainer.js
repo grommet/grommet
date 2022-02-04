@@ -89,6 +89,14 @@ const SelectContainer = forwardRef(
     const [focus, setFocus] = useState(false);
     const searchRef = useRef();
     const optionsRef = useRef();
+
+    useEffect(() => {
+      const optionsNode = optionsRef.current;
+      if (optionsNode.children && optionsNode.children[activeIndex])
+        optionsNode.children[activeIndex].focus();
+      console.log(optionsNode.children[activeIndex]);
+    }, [activeIndex]);
+
     // adjust activeIndex when options change
     useEffect(() => {
       if (activeIndex === -1 && search && optionIndexesInValue.length) {
@@ -106,6 +114,9 @@ const SelectContainer = forwardRef(
           if (searchInput && searchInput.focus) {
             setFocusWithoutScroll(searchInput);
           }
+        } else if (optionsNode && optionsNode.children) {
+          setFocusWithoutScroll(optionsNode.children[0]);
+          setActiveIndex(0);
         } else if (optionsNode) {
           setFocusWithoutScroll(optionsNode);
         }
@@ -221,6 +232,9 @@ const SelectContainer = forwardRef(
             value: nextValue,
             selected: nextSelected,
           });
+          const optionsNode = optionsRef.current;
+          if (optionsNode.children && optionsNode.children[activeIndex])
+            optionsNode.children[activeIndex].focus();
         }
       },
       [multiple, onChange, optionIndexesInValue, options, allOptions, valueKey],
@@ -322,7 +336,114 @@ const SelectContainer = forwardRef(
         }
       : {};
 
+    const itemsTest = options.map((option, index) => {
+      const optionDisabled = isDisabled(index);
+      const optionSelected = isSelected(index);
+      const optionActive = activeIndex === index;
+      // Determine whether the label is done as a child or
+      // as an option Button kind property.
+      let child;
+      let textComponent = false;
+      if (children) {
+        child = children(option, index, options, {
+          active: optionActive,
+          disabled: optionDisabled,
+          selected: optionSelected,
+        });
+        if (
+          typeof child === 'string' ||
+          (child.props &&
+            child.props.children &&
+            typeof child.props.children === 'string')
+        )
+          textComponent = true;
+      } else if (theme.select.options) {
+        child = (
+          <Box {...selectOptionsStyle}>
+            <Text {...theme.select.options.text}>{optionLabel(index)}</Text>
+          </Box>
+        );
+        textComponent = true;
+      }
+
+      return (
+        <SelectOption
+          // focusIndicator={false}
+          // eslint-disable-next-line react/no-array-index-key
+          key={index}
+          // ref={optionRef}
+          tabIndex="-1"
+          role="option"
+          plain={!child ? undefined : true}
+          align="start"
+          kind={!child ? 'option' : undefined}
+          hoverIndicator={!child ? undefined : 'background'}
+          label={!child ? optionLabel(index) : undefined}
+          disabled={optionDisabled || undefined}
+          aria-disabled={optionDisabled || undefined}
+          active={optionActive}
+          selected={optionSelected}
+          option={option}
+          aria-selected={optionSelected}
+          // aria-activedescendant={optionActive}
+          focus={optionActive}
+          onMouseOver={!optionDisabled ? onActiveOption(index) : undefined}
+          onClick={!optionDisabled ? selectOption(index) : undefined}
+          textComponent={textComponent}
+        >
+          {child}
+        </SelectOption>
+      );
+    });
+
     return (
+      // <Keyboard
+      //   onEnter={onSelectOption}
+      //   onUp={onPreviousOption}
+      //   onDown={onNextOption}
+      //   onKeyDown={onKeyDownOption}
+      // >
+      //   <StyledContainer
+      //     ref={ref}
+      //     as={Box}
+      //     id={id ? `${id}__select-drop` : undefined}
+      //     dropHeight={dropHeight}
+      //   >
+      //     {onSearch && (
+      //       <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
+      //         <SelectTextInput
+      //           focusIndicator={!customSearchInput}
+      //           size="small"
+      //           ref={searchRef}
+      //           type="search"
+      //           value={search || ''}
+      //           placeholder={searchPlaceholder}
+      //           onChange={(event) => {
+      //             const nextSearch = event.target.value;
+      //             setSearch(nextSearch);
+      //             setActiveIndex(-1);
+      //             onSearch(nextSearch);
+      //           }}
+      //         />
+      //       </Box>
+      //     )}
+      //     {clear && clear.position !== 'bottom' && value && (
+      //       <ClearButton
+      //         clear={clear}
+      //         name={name}
+      //         onClear={onClear}
+      //         theme={theme}
+      //         setFocus={setFocus}
+      //       />
+      //     )}
+      //     <OptionsBox
+      //       role="listbox"
+      //       id="listbox1"
+      //       // tabIndex="-1"
+      //       ref={optionsRef}
+      //     >
+      //       {itemsTest}
+
       <Keyboard
         onEnter={onSelectOption}
         onUp={onPreviousOption}
@@ -362,7 +483,15 @@ const SelectContainer = forwardRef(
               setFocus={setFocus}
             />
           )}
-          <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
+          <OptionsBox
+            role="listbox"
+            // role="combobox"
+            tabIndex="-1"
+            ref={optionsRef}
+            // aria-activedescendant={optionActive}
+            aria-multiselectable={multiple}
+            // id="listbox1"
+          >
             {options.length > 0 ? (
               <InfiniteScroll
                 items={options}
@@ -402,25 +531,33 @@ const SelectContainer = forwardRef(
                     );
                     textComponent = true;
                   }
-
+                  // console.log(optionSelected);
                   // if we have a child, turn on plain, and hoverIndicator
 
                   return (
                     <SelectOption
+                      // focusIndicator={false}
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
                       ref={optionRef}
                       tabIndex="-1"
-                      role="menuitem"
+                      // tabIndex={optionSelected ? '0' : '-1'}
+                      aria-setsize={options.length}
+                      aria-posinset={index}
+                      role="option"
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
                       hoverIndicator={!child ? undefined : 'background'}
                       label={!child ? optionLabel(index) : undefined}
                       disabled={optionDisabled || undefined}
+                      aria-disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}
                       option={option}
+                      aria-selected={optionSelected}
+                      // aria-activedescendant={optionActive}
+                      // focus={optionActive}
                       onMouseOver={
                         !optionDisabled ? onActiveOption(index) : undefined
                       }
@@ -428,6 +565,27 @@ const SelectContainer = forwardRef(
                         !optionDisabled ? selectOption(index) : undefined
                       }
                       textComponent={textComponent}
+                      // eslint-disable-next-line react/no-array-index-key
+                      // key={index}
+                      // ref={optionRef}
+                      // tabIndex="-1"
+                      // role="menuitem"
+                      // plain={!child ? undefined : true}
+                      // align="start"
+                      // kind={!child ? 'option' : undefined}
+                      // hoverIndicator={!child ? undefined : 'background'}
+                      // label={!child ? optionLabel(index) : undefined}
+                      // disabled={optionDisabled || undefined}
+                      // active={optionActive}
+                      // selected={optionSelected}
+                      // option={option}
+                      // onMouseOver={
+                      //   !optionDisabled ? onActiveOption(index) : undefined
+                      // }
+                      // onClick={
+                      //   !optionDisabled ? selectOption(index) : undefined
+                      // }
+                      // textComponent={textComponent}
                     >
                       {child}
                     </SelectOption>

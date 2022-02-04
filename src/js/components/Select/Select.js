@@ -290,7 +290,19 @@ const Select = forwardRef(
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
           ref={ref}
-          a11yTitle={ariaLabel || a11yTitle}
+          a11yTitle={
+            `${placeholder}${
+              value
+                ? format({
+                    id: 'select.selected',
+                    messages,
+                    values: { currentSelectedValue: value },
+                  })
+                : ''
+            }` ||
+            ariaLabel ||
+            a11yTitle
+          }
           id={id}
           disabled={disabled === true || undefined}
           dropAlign={dropAlign}
@@ -305,6 +317,8 @@ const Select = forwardRef(
           onOpen={onRequestOpen}
           onClose={onRequestClose}
           onClick={onClick}
+          aria-haspopup="listbox"
+          aria-expanded={open}
           dropContent={
             <SelectContainer
               clear={clear}
