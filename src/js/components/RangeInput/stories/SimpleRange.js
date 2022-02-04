@@ -9,7 +9,7 @@ export const Simple = () => {
 
   return (
     <Box align="center" pad="large">
-      <RangeInput valueX={value} onChange={onChange} />
+      <RangeInput value={value} onChange={onChange} />
     </Box>
   );
 };
