@@ -40,7 +40,7 @@ const getBoundColor = (props, bound) => {
 
 const trackColorStyle = (props) => {
   const { max, min } = props;
-  const thumbPosition = `${((props.value - min) / (max - min)) * 100}%`;
+  const thumbPosition = `${(((props.value || 0) - min) / (max - min)) * 100}%`;
   let defaultTrackColor;
 
   // backward compatibility in case no bounds are defined

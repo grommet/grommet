@@ -1,19 +1,16 @@
 import React from 'react';
 
-import { Box, Grommet, RangeInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, RangeInput } from 'grommet';
 
 export const Simple = () => {
   const [value, setValue] = React.useState(5);
 
-  const onChange = event => setValue(event.target.value);
+  const onChange = (event) => setValue(event.target.value);
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <RangeInput value={value} onChange={onChange} />
-      </Box>
-    </Grommet>
+    <Box align="center" pad="large">
+      <RangeInput valueX={value} onChange={onChange} />
+    </Box>
   );
 };
 
