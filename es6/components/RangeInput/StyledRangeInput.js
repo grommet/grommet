@@ -20,7 +20,7 @@ var trackColorStyle = function trackColorStyle(props) {
 
   var max = props.max,
       min = props.min;
-  var thumbPosition = (props.value - min) / (max - min) * 100 + "%";
+  var thumbPosition = ((props.value || 0) - min) / (max - min) * 100 + "%";
   var defaultTrackColor; // backward compatibility in case no bounds are defined
 
   if (props.theme.rangeInput && props.theme.rangeInput.track && !props.theme.rangeInput.track.lower && !props.theme.rangeInput.track.upper) {
