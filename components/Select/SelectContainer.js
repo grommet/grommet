@@ -348,7 +348,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     theme: theme,
     setFocus: setFocus
   }), /*#__PURE__*/_react["default"].createElement(OptionsBox, {
-    role: "menubar",
+    role: "listbox",
     tabIndex: "-1",
     ref: optionsRef
   }, options.length > 0 ? /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
@@ -383,8 +383,11 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     , {
       key: index,
       ref: optionRef,
-      tabIndex: "-1",
-      role: "menuitem",
+      tabIndex: optionSelected ? '0' : '-1',
+      role: "option",
+      "aria-setsize": options.length,
+      "aria-posinset": index,
+      "aria-selected": optionSelected,
       plain: !child ? undefined : true,
       align: "start",
       kind: !child ? 'option' : undefined,

@@ -322,6 +322,8 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, /*#__PURE__*/_react["default"].createElement(StyledSelectDropButton, {
     ref: ref,
     a11yTitle: ariaLabel || a11yTitle,
+    "aria-expanded": Boolean(open),
+    "aria-haspopup": "listbox",
     id: id,
     disabled: disabled === true || undefined,
     dropAlign: dropAlign,
