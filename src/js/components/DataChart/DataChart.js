@@ -522,7 +522,7 @@ const DataChart = forwardRef(
                     {...seriesStyles[pProp]}
                     {...chartProps[i]}
                     {...chartRest}
-                    type={type === 'areas' ? 'area' : 'bars'}
+                    type={type === 'areas' ? 'area' : 'bar'}
                     size={size}
                     pad={pad}
                   />
