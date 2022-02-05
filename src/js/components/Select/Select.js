@@ -291,6 +291,8 @@ const Select = forwardRef(
         <StyledSelectDropButton
           ref={ref}
           a11yTitle={ariaLabel || a11yTitle}
+          aria-expanded={Boolean(open)}
+          aria-haspopup="listbox"
           id={id}
           disabled={disabled === true || undefined}
           dropAlign={dropAlign}
