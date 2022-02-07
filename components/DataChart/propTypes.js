@@ -40,7 +40,7 @@ var chartType = _propTypes["default"].oneOfType([_propTypes["default"].string, _
   point: _generalPropTypes.pointPropType,
   round: _propTypes["default"].bool,
   thickness: thicknessType,
-  type: _propTypes["default"].oneOf(['bar', 'bars', 'line', 'area', 'point'])
+  type: _propTypes["default"].oneOf(['bar', 'bars', 'line', 'area', 'areas', 'point'])
 })]);
 
 var seriesType = _propTypes["default"].oneOfType([_propTypes["default"].string, // property

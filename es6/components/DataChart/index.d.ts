@@ -33,7 +33,7 @@ type ChartType =
           };
       round?: ChartProps['round']; // defaults to undefined
       thickness?: ChartProps['thickness']; // defaults to auto assigned based on available space and amount of data
-      type?: ChartProps['type'] | 'bars'; // defaults to 'bar',
+      type?: ChartProps['type'] | 'bars' | 'areas'; // defaults to 'bar',
     };
 
 type SeriesType =

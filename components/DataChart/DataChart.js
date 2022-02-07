@@ -160,10 +160,11 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
       if (property) {
         if (Array.isArray(property)) {
-          // A range chart or a stacked bar chart have multiple properties.
+          // A range chart or a stacked bar or area chart has multiple
+          // properties.
           // In this case, this returns an array of values,
           // one per property.
-          if (type === 'bars') {
+          if (type === 'bars' || type === 'areas') {
             // Further down, where we render, each property is rendered
             // using a separate Chart component and the values are stacked
             // such that they line up appropriately.
@@ -312,10 +313,13 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     } else steps[1] = 1;
 
     var chartBounds = chartValues.map(function (_, index) {
-      if (charts[index].type === 'bars') {
-        // merge values for bars case
+      var type = charts[index].type;
+
+      if (type === 'bars' || type === 'areas') {
+        // merge values for bars and areas cases
         var mergedValues = chartValues[index][0].slice(0);
-        chartValues[index].slice(1).filter(function (values) {
+        chartValues[index].slice(1) // skip first index as that is the x value
+        .filter(function (values) {
           return values;
         }) // property name isn't valid
         .forEach(function (values) {
@@ -350,10 +354,14 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
 
     return chartValues.map(function (values, index) {
-      var calcValues = charts[index].type === 'bars' ? values[0] : values;
+      var _charts$index = charts[index],
+          thickness = _charts$index.thickness,
+          type = _charts$index.type;
+      var calcValues = type === 'bars' || type === 'areas' ? values[0] : values;
       return (0, _Chart.calcs)(calcValues, {
         bounds: chartBounds[index],
-        steps: steps
+        steps: steps,
+        thickness: thickness
       });
     });
   }, [axis, boundsProp, charts, chartValues, data, granularities]); // normalize how we style data properties for use by Legend and Detail
@@ -559,7 +567,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         y = _ref9.y,
         chartRest = _objectWithoutPropertiesLoose(_ref9, _excluded2);
 
-    if (type === 'bars') {
+    if (type === 'bars' || type === 'areas') {
       // reverse to ensure area Charts are stacked in the right order
       return prop.map(function (cProp, j) {
         var pProp = cProp.property || cProp;
@@ -570,7 +578,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           values: chartValues[i][j] || [],
           overflow: true
         }, seriesStyles[pProp], chartProps[i], chartRest, {
-          type: "bar",
+          type: type === 'areas' ? 'area' : 'bar',
           size: size,
           pad: pad
         }));
