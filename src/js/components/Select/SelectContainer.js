@@ -94,7 +94,6 @@ const SelectContainer = forwardRef(
       const optionsNode = optionsRef.current;
       if (optionsNode.children && optionsNode.children[activeIndex])
         optionsNode.children[activeIndex].focus();
-      console.log(optionsNode.children[activeIndex]);
     }, [activeIndex]);
 
     // adjust activeIndex when options change
