@@ -362,7 +362,7 @@ const SelectContainer = forwardRef(
               setFocus={setFocus}
             />
           )}
-          <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
+          <OptionsBox role="listbox" tabIndex="-1" ref={optionsRef}>
             {options.length > 0 ? (
               <InfiniteScroll
                 items={options}
@@ -410,8 +410,11 @@ const SelectContainer = forwardRef(
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
                       ref={optionRef}
-                      tabIndex="-1"
-                      role="menuitem"
+                      tabIndex={optionSelected ? '0' : '-1'}
+                      role="option"
+                      aria-setsize={options.length}
+                      aria-posinset={index}
+                      aria-selected={optionSelected}
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
