@@ -291,7 +291,8 @@ const Select = forwardRef(
         <StyledSelectDropButton
           ref={ref}
           a11yTitle={
-            `${placeholder}${
+            // let title = ariaLabel || a11yTitle || placeholder || undefined;
+            `${ariaLabel || a11yTitle || placeholder || undefined}${
               value
                 ? format({
                     id: 'select.selected',
@@ -299,10 +300,10 @@ const Select = forwardRef(
                     values: { currentSelectedValue: value },
                   })
                 : ''
-            }` ||
-            ariaLabel ||
-            a11yTitle
+            }`
           }
+          aria-expanded={Boolean(open)}
+          aria-haspopup="listbox"
           id={id}
           disabled={disabled === true || undefined}
           dropAlign={dropAlign}
@@ -317,8 +318,6 @@ const Select = forwardRef(
           onOpen={onRequestOpen}
           onClose={onRequestClose}
           onClick={onClick}
-          aria-haspopup="listbox"
-          aria-expanded={open}
           dropContent={
             <SelectContainer
               clear={clear}
