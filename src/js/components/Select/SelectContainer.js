@@ -113,9 +113,6 @@ const SelectContainer = forwardRef(
           if (searchInput && searchInput.focus) {
             setFocusWithoutScroll(searchInput);
           }
-        } else if (optionsNode && optionsNode.children) {
-          setFocusWithoutScroll(optionsNode.children[0]);
-          setActiveIndex(0);
         } else if (optionsNode) {
           setFocusWithoutScroll(optionsNode);
         }

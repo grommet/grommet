@@ -109,10 +109,11 @@ const DataChart = forwardRef(
         charts.map(({ opacity, property, type }) => {
           if (property) {
             if (Array.isArray(property)) {
-              // A range chart or a stacked bar chart have multiple properties.
+              // A range chart or a stacked bar or area chart has multiple
+              // properties.
               // In this case, this returns an array of values,
               // one per property.
-              if (type === 'bars') {
+              if (type === 'bars' || type === 'areas') {
                 // Further down, where we render, each property is rendered
                 // using a separate Chart component and the values are stacked
                 // such that they line up appropriately.
@@ -256,11 +257,12 @@ const DataChart = forwardRef(
       } else steps[1] = 1;
 
       let chartBounds = chartValues.map((_, index) => {
-        if (charts[index].type === 'bars') {
-          // merge values for bars case
+        const { type } = charts[index];
+        if (type === 'bars' || type === 'areas') {
+          // merge values for bars and areas cases
           let mergedValues = chartValues[index][0].slice(0);
           chartValues[index]
-            .slice(1)
+            .slice(1) // skip first index as that is the x value
             .filter((values) => values) // property name isn't valid
             .forEach((values) => {
               mergedValues = mergedValues.map((__, i) => [
@@ -290,8 +292,14 @@ const DataChart = forwardRef(
       }
 
       return chartValues.map((values, index) => {
-        const calcValues = charts[index].type === 'bars' ? values[0] : values;
-        return calcs(calcValues, { bounds: chartBounds[index], steps });
+        const { thickness, type } = charts[index];
+        const calcValues =
+          type === 'bars' || type === 'areas' ? values[0] : values;
+        return calcs(calcValues, {
+          bounds: chartBounds[index],
+          steps,
+          thickness,
+        });
       });
     }, [axis, boundsProp, charts, chartValues, data, granularities]);
 
@@ -499,7 +507,7 @@ const DataChart = forwardRef(
         {guide && guide.x && <XGuide guide={guide} pad={pad} />}
         {guide && guide.y && <YGuide guide={guide} pad={pad} />}
         {charts.map(({ property: prop, type, x, y, ...chartRest }, i) => {
-          if (type === 'bars') {
+          if (type === 'bars' || type === 'areas') {
             // reverse to ensure area Charts are stacked in the right order
             return prop
               .map((cProp, j) => {
@@ -514,7 +522,7 @@ const DataChart = forwardRef(
                     {...seriesStyles[pProp]}
                     {...chartProps[i]}
                     {...chartRest}
-                    type="bar"
+                    type={type === 'areas' ? 'area' : 'bar'}
                     size={size}
                     pad={pad}
                   />

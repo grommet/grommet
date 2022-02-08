@@ -71,7 +71,7 @@ const chartType = PropTypes.oneOfType([
     point: pointPropType,
     round: PropTypes.bool,
     thickness: thicknessType,
-    type: PropTypes.oneOf(['bar', 'bars', 'line', 'area', 'point']),
+    type: PropTypes.oneOf(['bar', 'bars', 'line', 'area', 'areas', 'point']),
   }),
 ]);
 

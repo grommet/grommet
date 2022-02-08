@@ -11,6 +11,7 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
     dropProps: PropTypes.shape({}),
     format: PropTypes.string,
+    icon: PropTypes.element,
     id: PropTypes.string,
     inline: PropTypes.bool,
     inputProps: PropTypes.shape({}),

@@ -4918,26 +4918,6 @@ exports[`Select disabled key 2`] = `
   cursor: default;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -4979,26 +4959,6 @@ exports[`Select disabled key 2`] = `
 .c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus::-moz-focus-inner {
-  border: 0;
 }
 
 .c9:focus:not(:focus-visible) {
@@ -5082,13 +5042,17 @@ exports[`Select disabled key 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-disabled="true"
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
         disabled=""
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -5103,8 +5067,11 @@ exports[`Select disabled key 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c9 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -7341,7 +7308,7 @@ exports[`Select onChange with valueLabel 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="undefined"
+    aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -9334,12 +9301,15 @@ exports[`Select prop: onOpen 4`] = `
 exports[`Select prop: onOpen 5`] = `
 <div
   class="SelectContainer__OptionsBox-sc-1wi0ul8-0 jviAPV"
-  role="menubar"
+  role="listbox"
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 cmzBhQ SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
-    role="menuitem"
+    aria-posinset="1"
+    aria-selected="false"
+    aria-setsize="2"
+    class="StyledButton-sc-323bzc-0 cOvmzN SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
+    role="option"
     tabindex="-1"
     type="button"
   >
@@ -9354,8 +9324,11 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 cmzBhQ SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
-    role="menuitem"
+    aria-posinset="2"
+    aria-selected="false"
+    aria-setsize="2"
+    class="StyledButton-sc-323bzc-0 cOvmzN SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
+    role="option"
     tabindex="-1"
     type="button"
   >
@@ -9596,7 +9569,7 @@ exports[`Select renders custom icon 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -10246,7 +10219,7 @@ exports[`Select renders default icon 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -11305,7 +11278,7 @@ exports[`Select renders without icon 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -13401,7 +13374,7 @@ exports[`Select select an option with complex options 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="undefined; Selected: [object Object]"
+  aria-label="Open Drop; Selected: [object Object]"
   class="c0 "
   id="test-select"
   type="button"
@@ -15696,7 +15669,7 @@ exports[`Select size 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="undefined; Selected: "
+  aria-label="Open Drop; Selected: "
   class="c0 c1"
   id="test-select"
   type="button"
