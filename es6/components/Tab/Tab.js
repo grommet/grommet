@@ -1,4 +1,4 @@
-var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "onMouseOver", "onMouseOut", "reverse"];
+var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "onMouseOver", "onMouseOut", "reverse", "onClick"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -24,6 +24,7 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onMouseOver = _ref.onMouseOver,
       onMouseOut = _ref.onMouseOut,
       reverse = _ref.reverse,
+      onClick = _ref.onClick,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var _useContext = useContext(TabsContext),
@@ -75,6 +76,10 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
 
     onActivate();
+
+    if (onClick) {
+      onClick(event);
+    }
   };
 
   if (active && disabled) {

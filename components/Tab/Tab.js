@@ -23,7 +23,7 @@ var _StyledTab = require("./StyledTab");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "onMouseOver", "onMouseOut", "reverse"];
+var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "onMouseOver", "onMouseOut", "reverse", "onClick"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -43,6 +43,7 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onMouseOver = _ref.onMouseOver,
       onMouseOut = _ref.onMouseOut,
       reverse = _ref.reverse,
+      onClick = _ref.onClick,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var _useContext = (0, _react.useContext)(_TabsContext.TabsContext),
@@ -94,6 +95,10 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
 
     onActivate();
+
+    if (onClick) {
+      onClick(event);
+    }
   };
 
   if (active && disabled) {
