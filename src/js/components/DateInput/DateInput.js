@@ -67,22 +67,25 @@ const DateInput = forwardRef(
       initialValue: defaultValue,
     });
 
-    let timestamp;
-    if (Array.isArray(defaultValue) && defaultValue.length) {
-      timestamp = getTimestamp(defaultValue[0]);
-    } else if (typeof defaultValue === 'string') {
-      timestamp = getTimestamp(defaultValue);
-    } else if (Array.isArray(value) && value.length) {
-      timestamp = getTimestamp(value[0]);
+    const timestamp = useMemo(() => {
+      if (Array.isArray(defaultValue) && defaultValue.length)
+        return getTimestamp(defaultValue[0]);
+      if (typeof defaultValue === 'string') return getTimestamp(defaultValue);
+      if (Array.isArray(value) && value.length) return getTimestamp(value[0]);
       // check to see if value is not an empty string
       // empty string should behave like undefined
-    } else if (typeof value === 'string' && value.length) {
-      timestamp = getTimestamp(value);
-    }
+      if (typeof value === 'string' && value.length) return getTimestamp(value);
+      return undefined;
+    }, [defaultValue, value]);
+
+    const normalize = useRef(timestamp !== undefined);
 
     // normalize value based on timestamp vs user's local timezone
-    const normalizedDate = normalizeForTimezone(value, timestamp);
-
+    const normalizedDate = normalizeForTimezone(
+      value,
+      timestamp,
+      normalize.current,
+    );
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
 
@@ -106,6 +109,7 @@ const DateInput = forwardRef(
     useEffect(() => {
       if (schema && value !== undefined) {
         const nextTextValue = valueToText(normalizedDate, schema);
+        console.log(textValue, nextTextValue);
         if (
           !valuesAreEqual(
             textToValue(textValue, schema, range, timestamp),
@@ -142,6 +146,7 @@ const DateInput = forwardRef(
         dates={range && value.length ? [normalizedDate] : undefined}
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
+        normalize={normalize.current}
         onSelect={
           disabled
             ? undefined
@@ -154,7 +159,14 @@ const DateInput = forwardRef(
                 else normalizedValue = nextValue;
                 if (schema)
                   setTextValue(
-                    valueToText(normalizeForTimezone(normalizedValue), schema),
+                    valueToText(
+                      normalizeForTimezone(
+                        normalizedValue,
+                        undefined,
+                        normalize.current,
+                      ),
+                      schema,
+                    ),
                   );
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
@@ -227,6 +239,7 @@ const DateInput = forwardRef(
                   schema,
                   range,
                   timestamp,
+                  normalize,
                 );
                 // update value even when undefined
                 setValue(nextValue);

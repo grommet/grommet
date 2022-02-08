@@ -55,31 +55,35 @@ const activeDates = {
 
 const timeStamp = /T.*/;
 
-const formatSelectedDatesString = (date) => `Currently selected
+const formatSelectedDatesString = (date, normalize) => `Currently selected
   ${date?.map((item) => {
     let dates;
     if (!Array.isArray(item)) {
-      dates = `${formatToLocalYYYYMMDD(item)} `;
+      dates = `${formatToLocalYYYYMMDD(item, normalize)} `;
     } else {
       const start =
-        item[0] !== undefined ? formatToLocalYYYYMMDD(item[0]) : 'none';
+        item[0] !== undefined
+          ? formatToLocalYYYYMMDD(item[0], normalize)
+          : 'none';
       const end =
-        item[1] !== undefined ? formatToLocalYYYYMMDD(item[1]) : 'none';
+        item[1] !== undefined
+          ? formatToLocalYYYYMMDD(item[1], normalize)
+          : 'none';
       dates = `${start} through ${end}`;
     }
 
     return dates;
   })}`;
 
-const getAccessibilityString = (date, dates) => {
+const getAccessibilityString = (date, dates, normalize) => {
   if (date && !Array.isArray(date)) {
-    return `Currently selected ${formatToLocalYYYYMMDD(date)};`;
+    return `Currently selected ${formatToLocalYYYYMMDD(date, normalize)};`;
   }
   if (date && Array.isArray(date)) {
-    return formatSelectedDatesString(date);
+    return formatSelectedDatesString(date, normalize);
   }
   if (dates?.length) {
-    return formatSelectedDatesString(dates);
+    return formatSelectedDatesString(dates, normalize);
   }
 
   return 'No date selected';
@@ -225,6 +229,7 @@ const Calendar = forwardRef(
       header,
       locale = 'en-US',
       messages,
+      normalize,
       onReference,
       onSelect,
       range,
@@ -487,11 +492,15 @@ const Calendar = forwardRef(
         // output date with no timestamp if that's how user provided it
         let adjustedDate;
         if (!range) {
-          nextDate = formatDateToPropStructure(selectedDate, timestamp);
+          nextDate = formatDateToPropStructure(
+            selectedDate,
+            timestamp,
+            normalize,
+          );
           if (datesProp) {
             datesProp.forEach((d) => {
               if (!timeStamp.test(d)) {
-                adjustedDate = formatToLocalYYYYMMDD(nextDate);
+                adjustedDate = formatToLocalYYYYMMDD(nextDate, normalize);
                 if (d === adjustedDate) {
                   nextDate = undefined;
                 } else {
@@ -501,7 +510,7 @@ const Calendar = forwardRef(
             });
           } else if (typeof dateProp === 'string') {
             if (!timeStamp.test(dateProp)) {
-              adjustedDate = formatToLocalYYYYMMDD(selectedDate);
+              adjustedDate = formatToLocalYYYYMMDD(selectedDate, normalize);
               if (dateProp === adjustedDate) {
                 nextDate = undefined;
               } else {
@@ -511,7 +520,7 @@ const Calendar = forwardRef(
           } else if (Array.isArray(dateProp)) {
             dateProp.forEach((d) => {
               if (!timeStamp.test(d)) {
-                adjustedDate = formatToLocalYYYYMMDD(nextDate);
+                adjustedDate = formatToLocalYYYYMMDD(nextDate, normalize);
                 if (d === adjustedDate) {
                   nextDate = undefined;
                 } else {
@@ -613,12 +622,24 @@ const Calendar = forwardRef(
           ) {
             // return string for backwards compatibility
             [adjustedDates] = nextDates[0].filter((d) => d);
-            adjustedDates = formatDateToPropStructure(adjustedDates, timestamp);
+            adjustedDates = formatDateToPropStructure(
+              adjustedDates,
+              timestamp,
+              normalize,
+            );
           } else if (nextDates) {
             adjustedDates = [
               [
-                formatDateToPropStructure(nextDates[0][0], timestamp),
-                formatDateToPropStructure(nextDates[0][1], timestamp),
+                formatDateToPropStructure(
+                  nextDates[0][0],
+                  timestamp,
+                  normalize,
+                ),
+                formatDateToPropStructure(
+                  nextDates[0][1],
+                  timestamp,
+                  normalize,
+                ),
               ],
             ];
           }
@@ -632,6 +653,7 @@ const Calendar = forwardRef(
         dateProp,
         dates,
         datesProp,
+        normalize,
         onSelect,
         range,
         timestamp,
@@ -845,7 +867,7 @@ const Calendar = forwardRef(
                 onClick: () => {
                   selectDate(dateString);
                   announce(
-                    `Selected ${formatToLocalYYYYMMDD(dateString)}`,
+                    `Selected ${formatToLocalYYYYMMDD(dateString, normalize)}`,
                     'assertive',
                   );
                   // Chrome moves the focus indicator to this button. Set
@@ -879,7 +901,7 @@ const Calendar = forwardRef(
                         selectDate(dateString);
                         announce(
                           `Selected
-                          ${formatToLocalYYYYMMDD(dateString)}`,
+                          ${formatToLocalYYYYMMDD(dateString, normalize)}`,
                           'assertive',
                         );
                         // Chrome moves the focus indicator to this button. Set
@@ -1004,7 +1026,7 @@ const Calendar = forwardRef(
                   month: 'long',
                   year: 'numeric',
                 })};
-                ${getAccessibilityString(date, dates)}
+                ${getAccessibilityString(date, dates, normalize)}
               `}
               ref={daysRef}
               sizeProp={size}
