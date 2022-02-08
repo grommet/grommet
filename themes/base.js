@@ -495,6 +495,7 @@ var generate = function generate(baseSpacing, scale) {
           }
         }
       },
+      gap: 'small',
       size: {
         small: {
           border: {

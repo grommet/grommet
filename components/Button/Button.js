@@ -138,8 +138,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       icon = _ref.icon,
       _ref$focusIndicator = _ref.focusIndicator,
       focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
-      _ref$gap = _ref.gap,
-      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
+      gap = _ref.gap,
       fill = _ref.fill,
       href = _ref.href,
       justify = _ref.justify,
@@ -284,7 +283,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       direction: "row",
       align: "center",
       justify: justify || (align === 'center' ? 'center' : 'between'),
-      gap: gap,
+      gap: gap || theme.button.gap,
       responsive: false
     }, first, second);
   } else if (typeof children === 'function') {
