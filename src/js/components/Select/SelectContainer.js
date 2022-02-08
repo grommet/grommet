@@ -77,6 +77,7 @@ const SelectContainer = forwardRef(
       search,
       setSearch,
       selected,
+      usingKeyboard,
       value = '',
       valueKey,
       replace = true,
@@ -113,12 +114,17 @@ const SelectContainer = forwardRef(
           if (searchInput && searchInput.focus) {
             setFocusWithoutScroll(searchInput);
           }
+        } else if (optionsNode && optionsNode.children && usingKeyboard) {
+          // if the user is navigating with the keyboard set the
+          // first child as the active index when the drop opens
+          setFocusWithoutScroll(optionsNode.children[0]);
+          setActiveIndex(0);
         } else if (optionsNode) {
           setFocusWithoutScroll(optionsNode);
         }
       }, 100);
       return () => clearTimeout(timer);
-    }, [onSearch]);
+    }, [onSearch, usingKeyboard]);
 
     // clear keyboardNavigation after a while
     useEffect(() => {

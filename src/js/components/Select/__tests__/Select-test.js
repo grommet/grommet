@@ -104,7 +104,7 @@ describe('Select', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
     // advance timers so the select closes
-    jest.advanceTimersByTime(100);
+    act(() => jest.advanceTimersByTime(100));
     // verify that select was closed
     expect(document.activeElement).toMatchSnapshot();
     expect(onClose).toHaveBeenCalledTimes(1);
@@ -376,7 +376,7 @@ describe('Select', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByPlaceholderText('test select'));
-    jest.advanceTimersByTime(200);
+    act(() => jest.advanceTimersByTime(200));
     expectPortal('test-select__drop').toMatchSnapshot();
   });
 

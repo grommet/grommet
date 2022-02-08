@@ -100,6 +100,20 @@ const Select = forwardRef(
     const inputRef = useRef();
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);
+
+    const [usingKeyboard, setUsingKeyboard] = useState();
+
+    const onMouseDown = () => setUsingKeyboard(false);
+    const onKeyPress = () => setUsingKeyboard(true);
+    useEffect(() => {
+      document.addEventListener('mousedown', onMouseDown);
+      document.addEventListener('keydown', onKeyPress);
+      return () => {
+        document.removeEventListener('mousedown', onMouseDown);
+        document.removeEventListener('keydown', onKeyPress);
+      };
+    }, []);
+
     // value is used for what we receive in valueProp and the basis for
     // what we send with onChange
     // When 'valueKey' sets 'reduce', the value(s) here should match
@@ -338,6 +352,7 @@ const Select = forwardRef(
               search={search}
               setSearch={setSearch}
               selected={selected}
+              usingKeyboard={usingKeyboard}
               value={value}
               valueKey={valueKey}
             >
