@@ -101,6 +101,9 @@ const Select = forwardRef(
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);
 
+    // Determine if the Select is opened with the keyboard. If so,
+    // focus should be set on the first option when the drop opens
+    // see set initial focus code in SelectContainer.js
     const [usingKeyboard, setUsingKeyboard] = useState();
 
     const onMouseDown = () => setUsingKeyboard(false);
