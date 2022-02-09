@@ -122,13 +122,36 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
-      format = _useContext.format; // value is used for what we receive in valueProp and the basis for
+      format = _useContext.format; // Determine if the Select is opened with the keyboard. If so,
+  // focus should be set on the first option when the drop opens
+  // see set initial focus code in SelectContainer.js
+
+
+  var _useState = (0, _react.useState)(),
+      usingKeyboard = _useState[0],
+      setUsingKeyboard = _useState[1];
+
+  var onMouseDown = function onMouseDown() {
+    return setUsingKeyboard(false);
+  };
+
+  var onKeyPress = function onKeyPress() {
+    return setUsingKeyboard(true);
+  };
+
+  (0, _react.useEffect)(function () {
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('keydown', onKeyPress);
+    return function () {
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('keydown', onKeyPress);
+    };
+  }, []); // value is used for what we receive in valueProp and the basis for
   // what we send with onChange
   // When 'valueKey' sets 'reduce', the value(s) here should match
   // what the 'valueKey' would return for the corresponding
   // selected option object.
   // Otherwise, the value(s) should match the selected options.
-
 
   var _formContext$useFormI = formContext.useFormInput({
     name: name,
@@ -154,14 +177,14 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     return valueKey && valueKey.reduce ? value : (0, _utils2.applyKey)(value, valueKey);
   }, [value, valueKey]); // search input value
 
-  var _useState = (0, _react.useState)(),
-      search = _useState[0],
-      setSearch = _useState[1]; // All select option indices and values
+  var _useState2 = (0, _react.useState)(),
+      search = _useState2[0],
+      setSearch = _useState2[1]; // All select option indices and values
 
 
-  var _useState2 = (0, _react.useState)(optionsProp),
-      allOptions = _useState2[0],
-      setAllOptions = _useState2[1]; // Track changes to options property, except when options are being
+  var _useState3 = (0, _react.useState)(optionsProp),
+      allOptions = _useState3[0],
+      setAllOptions = _useState3[1]; // Track changes to options property, except when options are being
   // updated due to search activity. Allows option's initial index value
   // to be referenced when filtered by search.
 
@@ -192,9 +215,9 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     return result;
   }, [allOptions, selected, valueKey, valuedValue]);
 
-  var _useState3 = (0, _react.useState)(propOpen),
-      open = _useState3[0],
-      setOpen = _useState3[1];
+  var _useState4 = (0, _react.useState)(propOpen),
+      open = _useState4[0],
+      setOpen = _useState4[1];
 
   (0, _react.useEffect)(function () {
     return setOpen(propOpen);
@@ -321,7 +344,13 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onUp: onRequestOpen
   }, /*#__PURE__*/_react["default"].createElement(StyledSelectDropButton, {
     ref: ref,
-    a11yTitle: ariaLabel || a11yTitle,
+    a11yTitle: "" + (ariaLabel || a11yTitle || placeholder || 'Open Drop') + (value ? format({
+      id: 'select.selected',
+      messages: messages,
+      values: {
+        currentSelectedValue: value
+      }
+    }) : ''),
     "aria-expanded": Boolean(open),
     "aria-haspopup": "listbox",
     id: id,
@@ -360,6 +389,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       search: search,
       setSearch: setSearch,
       selected: selected,
+      usingKeyboard: usingKeyboard,
       value: value,
       valueKey: valueKey
     }, children) // StyledDropButton needs to know if the border should be shown

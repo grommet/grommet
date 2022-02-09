@@ -71,6 +71,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       search = _ref2.search,
       setSearch = _ref2.setSearch,
       selected = _ref2.selected,
+      usingKeyboard = _ref2.usingKeyboard,
       _ref2$value = _ref2.value,
       value = _ref2$value === void 0 ? '' : _ref2$value,
       valueKey = _ref2.valueKey,
@@ -91,7 +92,11 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       setFocus = _useState3[1];
 
   var searchRef = useRef();
-  var optionsRef = useRef(); // adjust activeIndex when options change
+  var optionsRef = useRef();
+  useEffect(function () {
+    var optionsNode = optionsRef.current;
+    if (optionsNode.children && optionsNode.children[activeIndex]) optionsNode.children[activeIndex].focus();
+  }, [activeIndex]); // adjust activeIndex when options change
 
   useEffect(function () {
     if (activeIndex === -1 && search && optionIndexesInValue.length) {
@@ -110,6 +115,11 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         if (searchInput && searchInput.focus) {
           setFocusWithoutScroll(searchInput);
         }
+      } else if (optionsNode && optionsNode.children && usingKeyboard) {
+        // if the user is navigating with the keyboard set the
+        // first child as the active index when the drop opens
+        setFocusWithoutScroll(optionsNode.children[0]);
+        setActiveIndex(0);
       } else if (optionsNode) {
         setFocusWithoutScroll(optionsNode);
       }
@@ -117,7 +127,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     return function () {
       return clearTimeout(timer);
     };
-  }, [onSearch]); // clear keyboardNavigation after a while
+  }, [onSearch, usingKeyboard]); // clear keyboardNavigation after a while
 
   useEffect(function () {
     if (keyboardNavigation) {
@@ -327,7 +337,8 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   }), /*#__PURE__*/React.createElement(OptionsBox, {
     role: "listbox",
     tabIndex: "-1",
-    ref: optionsRef
+    ref: optionsRef,
+    "aria-multiselectable": multiple
   }, options.length > 0 ? /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: options,
     step: theme.select.step,
@@ -363,8 +374,10 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       tabIndex: optionSelected ? '0' : '-1',
       role: "option",
       "aria-setsize": options.length,
-      "aria-posinset": index,
+      "aria-posinset": index + 1,
       "aria-selected": optionSelected,
+      focusIndicator: false,
+      "aria-disabled": optionDisabled || undefined,
       plain: !child ? undefined : true,
       align: "start",
       kind: !child ? 'option' : undefined,
