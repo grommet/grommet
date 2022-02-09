@@ -811,6 +811,7 @@ Object {
           "disabled": Object {
             "opacity": 0.3,
           },
+          "gap": "small",
           "padding": Object {
             "horizontal": "22px",
             "vertical": "4px",
