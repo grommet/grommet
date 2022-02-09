@@ -3123,7 +3123,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Open Drop"
+          aria-label="test select; Selected: small"
           class="c4 "
           id="test-select"
           type="button"
@@ -3361,7 +3361,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Open Drop"
+          aria-label="test select"
           class="StyledButton-sc-323bzc-0 fhAZId Select__StyledSelectDropButton-sc-17idtfo-2 fJfYtd"
           id="test-select"
           type="button"
