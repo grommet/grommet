@@ -84,16 +84,24 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
 
     if (pad) {
       if (pad.horizontal) {
-        var padSize = (0, _utils.parseMetricToNum)(theme.global.edgeSize[pad.horizontal]);
-        result[0] += padSize;
-        result[2] += padSize;
+        var padSize = (0, _utils.parseMetricToNum)(theme.global.edgeSize[pad.horizontal] || pad.horizontal);
+        result[0] = padSize;
+        result[2] = padSize;
       }
 
       if (pad.vertical) {
-        var _padSize = (0, _utils.parseMetricToNum)(theme.global.edgeSize[pad.vertical]);
+        var _padSize = (0, _utils.parseMetricToNum)(theme.global.edgeSize[pad.vertical] || pad.vertical);
 
-        result[1] += _padSize;
-        result[3] += _padSize;
+        result[1] = _padSize;
+        result[3] = _padSize;
+      }
+
+      if (pad.start) {
+        result[0] = (0, _utils.parseMetricToNum)(theme.global.edgeSize[pad.start] || pad.start);
+      }
+
+      if (pad.end) {
+        result[2] = (0, _utils.parseMetricToNum)(theme.global.edgeSize[pad.end] || pad.end);
       }
 
       if (typeof pad === 'string') {

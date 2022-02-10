@@ -35,7 +35,7 @@ var _utils2 = require("./utils");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "gap", "guide", "legend", "pad", "series", "size"],
+var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "gap", "guide", "legend", "offset", "pad", "series", "size"],
     _excluded2 = ["property", "type", "x", "y"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -65,6 +65,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       gap = _ref$gap === void 0 ? 'small' : _ref$gap,
       guideProp = _ref.guide,
       legend = _ref.legend,
+      offset = _ref.offset,
       padProp = _ref.pad,
       seriesProp = _ref.series,
       size = _ref.size,
@@ -451,6 +452,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
     return result;
   }, [axis, granularities, guideProp]); // set the pad to half the thickness, based on the chart types
+  // except when using offset, then add even more horizontal pad
 
   var pad = (0, _react.useMemo)(function () {
     if (padProp !== undefined) return padProp;
@@ -462,7 +464,31 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       if (type && type !== 'bar') result.vertical = _utils2.halfPad[thickness];
     });
     return result;
-  }, [chartProps, charts, padProp]); // The thickness of the Detail segments. We need to convert to numbers
+  }, [chartProps, charts, padProp]); // calculate the thickness in pixels of each chart
+
+  var thicknesses = (0, _react.useMemo)(function () {
+    return offset ? charts.map(function (_, index) {
+      var thickness = chartProps[index].thickness;
+      return (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness);
+    }) : undefined;
+  }, [charts, chartProps, offset, theme]); // calculate the offset for each chart, which is a sum of the thicknesses
+  // that preceded it
+
+  var offsets = (0, _react.useMemo)(function () {
+    return offset ? thicknesses.map(function (t, i) {
+      return thicknesses.slice(0, i).reduce(function (a, b) {
+        return a + b;
+      }, 0);
+    }) : undefined;
+  }, [offset, thicknesses]); // Calculate the total pad we should add to the end of each chart.
+  // We do this to shrink the width of each chart so we can shift them
+  // via `translate` and have them take up the right amount of width.
+
+  var offsetPad = (0, _react.useMemo)(function () {
+    return offset ? thicknesses.reduce(function (a, b) {
+      return a + b;
+    }, 0) + "px" : undefined;
+  }, [offset, thicknesses]); // The thickness of the Detail segments. We need to convert to numbers
   // to be able to compare across charts where some might be using T-shirt
   // labels and others might be pixel values.
 
@@ -567,6 +593,20 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         y = _ref9.y,
         chartRest = _objectWithoutPropertiesLoose(_ref9, _excluded2);
 
+    // When we offset, we increase the padding on the end for all charts
+    // by the same amount and we shift each successive chart to the
+    // right by an offset for that chart. The last chart's right side
+    // will end up aligning with where the charts would have been
+    // had we not padded their ends.
+    var chartPad = offsetPad ? _extends({}, pad, {
+      end: offsetPad
+    }) : pad;
+    var offsetProps = offsetPad ? {
+      style: {
+        transform: "translate(" + offsets[i] + "px, 0px)"
+      }
+    } : {};
+
     if (type === 'bars' || type === 'areas') {
       // reverse to ensure area Charts are stacked in the right order
       return prop.map(function (cProp, j) {
@@ -577,10 +617,10 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           ,
           values: chartValues[i][j] || [],
           overflow: true
-        }, seriesStyles[pProp], chartProps[i], chartRest, {
+        }, seriesStyles[pProp], chartProps[i], chartRest, offsetProps, {
           type: type === 'areas' ? 'area' : 'bar',
           size: size,
-          pad: pad
+          pad: chartPad
         }));
       }).reverse();
     }
@@ -590,10 +630,10 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       key: i,
       values: chartValues[i],
       overflow: true
-    }, seriesStyles[prop], chartProps[i], chartRest, {
+    }, seriesStyles[prop], chartProps[i], chartRest, offsetProps, {
       type: type,
       size: size,
-      pad: pad
+      pad: chartPad
     }));
   }), detail && /*#__PURE__*/_react["default"].createElement(_Detail.Detail, {
     activeProperty: activeProperty,
