@@ -39,6 +39,7 @@ const DataChart = forwardRef(
       gap = 'small',
       guide: guideProp,
       legend,
+      offset,
       pad: padProp,
       series: seriesProp,
       size,
@@ -384,9 +385,11 @@ const DataChart = forwardRef(
     }, [axis, granularities, guideProp]);
 
     // set the pad to half the thickness, based on the chart types
+    // except when using offset, then add even more horizontal pad
     const pad = useMemo(() => {
       if (padProp !== undefined) return padProp;
       const result = {};
+
       charts.forEach(({ type }, index) => {
         const { thickness } = chartProps[index];
         result.horizontal = halfPad[thickness];
@@ -394,6 +397,41 @@ const DataChart = forwardRef(
       });
       return result;
     }, [chartProps, charts, padProp]);
+
+    // calculate the thickness in pixels of each chart
+    const thicknesses = useMemo(
+      () =>
+        offset
+          ? charts.map((_, index) => {
+              const { thickness } = chartProps[index];
+              return parseMetricToNum(
+                theme.global.edgeSize[thickness] || thickness,
+              );
+            })
+          : undefined,
+      [charts, chartProps, offset, theme],
+    );
+
+    // calculate the offset for each chart, which is a sum of the thicknesses
+    // that preceded it
+    const offsets = useMemo(
+      () =>
+        offset
+          ? thicknesses.map((t, i) =>
+              thicknesses.slice(0, i).reduce((a, b) => a + b, 0),
+            )
+          : undefined,
+      [offset, thicknesses],
+    );
+
+    // Calculate the total pad we should add to the end of each chart.
+    // We do this to shrink the width of each chart so we can shift them
+    // via `translate` and have them take up the right amount of width.
+    const offsetPad = useMemo(
+      () =>
+        offset ? `${thicknesses.reduce((a, b) => a + b, 0)}px` : undefined,
+      [offset, thicknesses],
+    );
 
     // The thickness of the Detail segments. We need to convert to numbers
     // to be able to compare across charts where some might be using T-shirt
@@ -507,6 +545,16 @@ const DataChart = forwardRef(
         {guide && guide.x && <XGuide guide={guide} pad={pad} />}
         {guide && guide.y && <YGuide guide={guide} pad={pad} />}
         {charts.map(({ property: prop, type, x, y, ...chartRest }, i) => {
+          // When we offset, we increase the padding on the end for all charts
+          // by the same amount and we shift each successive chart to the
+          // right by an offset for that chart. The last chart's right side
+          // will end up aligning with where the charts would have been
+          // had we not padded their ends.
+          const chartPad = offsetPad ? { ...pad, end: offsetPad } : pad;
+          const offsetProps = offsetPad
+            ? { style: { transform: `translate(${offsets[i]}px, 0px)` } }
+            : {};
+
           if (type === 'bars' || type === 'areas') {
             // reverse to ensure area Charts are stacked in the right order
             return prop
@@ -522,9 +570,10 @@ const DataChart = forwardRef(
                     {...seriesStyles[pProp]}
                     {...chartProps[i]}
                     {...chartRest}
+                    {...offsetProps}
                     type={type === 'areas' ? 'area' : 'bar'}
                     size={size}
-                    pad={pad}
+                    pad={chartPad}
                   />
                 );
               })
@@ -539,9 +588,10 @@ const DataChart = forwardRef(
               {...seriesStyles[prop]}
               {...chartProps[i]}
               {...chartRest}
+              {...offsetProps}
               type={type}
               size={size}
-              pad={pad}
+              pad={chartPad}
             />
           );
         })}
