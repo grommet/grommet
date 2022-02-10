@@ -78,14 +78,11 @@ const DateInput = forwardRef(
       return undefined;
     }, [defaultValue, value]);
 
-    const normalize = useRef(timestamp !== undefined);
+    // whether or not we should normalize the date based on the timestamp
+    const [normalize, setNormalize] = useState(true);
 
     // normalize value based on timestamp vs user's local timezone
-    const normalizedDate = normalizeForTimezone(
-      value,
-      timestamp,
-      normalize.current,
-    );
+    const normalizedDate = normalizeForTimezone(value, timestamp, normalize);
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
 
@@ -109,7 +106,6 @@ const DateInput = forwardRef(
     useEffect(() => {
       if (schema && value !== undefined) {
         const nextTextValue = valueToText(normalizedDate, schema);
-        console.log(textValue, nextTextValue);
         if (
           !valuesAreEqual(
             textToValue(textValue, schema, range, timestamp),
@@ -146,7 +142,7 @@ const DateInput = forwardRef(
         dates={range && value.length ? [normalizedDate] : undefined}
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
-        normalize={normalize.current}
+        normalize={normalize}
         onSelect={
           disabled
             ? undefined
@@ -157,13 +153,18 @@ const DateInput = forwardRef(
                 // clicking an edge date removes it
                 else if (range) normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
+                let nextNormalize = normalize;
+                if (timestamp === undefined) {
+                  nextNormalize = false;
+                  setNormalize(nextNormalize);
+                }
                 if (schema)
                   setTextValue(
                     valueToText(
                       normalizeForTimezone(
                         normalizedValue,
                         undefined,
-                        normalize.current,
+                        nextNormalize,
                       ),
                       schema,
                     ),
@@ -241,6 +242,9 @@ const DateInput = forwardRef(
                   timestamp,
                   normalize,
                 );
+
+                // reset to original state
+                if (nextValue === undefined) setNormalize(true);
                 // update value even when undefined
                 setValue(nextValue);
                 if (onChange) {

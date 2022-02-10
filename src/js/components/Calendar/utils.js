@@ -140,7 +140,9 @@ export const getTimestamp = (date) =>
 // can create undesired results. The standardizes the input value
 // for internal calculations
 // Reference: https://www.ursahealth.com/new-insights/dates-and-timezones-in-javascript
-export const normalizeForTimezone = (value, timestamp, normalize) => {
+
+// default this to true
+export const normalizeForTimezone = (value, timestamp, normalize = true) => {
   let adjustedDate;
   let hourDelta;
   let valueOffset = 0;
