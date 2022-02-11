@@ -167,6 +167,7 @@ const FormField = forwardRef(
       required,
       style,
       validate,
+      validateOn,
       ...rest
     },
     ref,
@@ -186,6 +187,7 @@ const FormField = forwardRef(
       name,
       required,
       validate,
+      validateOn,
     });
     const [focus, setFocus] = useState();
     const formFieldRef = useForwardedRef(ref);
