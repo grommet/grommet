@@ -221,7 +221,7 @@ exports[`Select 0 value 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -389,26 +389,6 @@ exports[`Select Clear option renders - bottom 1`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -494,7 +474,7 @@ exports[`Select Clear option renders - bottom 1`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -513,7 +493,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -670,26 +650,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -784,7 +744,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -803,7 +763,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -959,26 +919,6 @@ exports[`Select Clear option renders custom label 1`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -1065,7 +1005,7 @@ exports[`Select Clear option renders custom label 1`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -1084,7 +1024,7 @@ exports[`Select Clear option renders custom label 1`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -1240,26 +1180,6 @@ exports[`Select Clear option renders- top 1`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -1346,7 +1266,7 @@ exports[`Select Clear option renders- top 1`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -1365,7 +1285,7 @@ exports[`Select Clear option renders- top 1`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -1651,7 +1571,7 @@ exports[`Select Search timeout 1`] = `
   <button
     aria-expanded="true"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="test select"
     class="c1 c2"
     data-g-tabindex="none"
     id="test-select"
@@ -2029,7 +1949,7 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="Select..."
     class="c1 c2"
     id="applies-custom-hover-style-id"
     type="button"
@@ -2124,31 +2044,6 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   color: #000000;
 }
 
-.c0:hover {
-  background-color: lightgreen;
-  color: #7D4CDB;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c0:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -2193,7 +2088,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 }
 
 <button
-  aria-posinset="1"
+  aria-posinset="2"
   aria-selected="false"
   aria-setsize="3"
   class="c0 c1"
@@ -2702,7 +2597,7 @@ exports[`Select complex options and children 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -2753,7 +2648,7 @@ exports[`Select complex options and children 2`] = `
 <button
   aria-expanded="true"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
   id="test-select"
   type="button"
@@ -2896,26 +2791,6 @@ exports[`Select complex options and children 3`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -2995,7 +2870,7 @@ exports[`Select complex options and children 3`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -3008,7 +2883,7 @@ exports[`Select complex options and children 3`] = `
         </span>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -3300,7 +3175,7 @@ exports[`Select dark 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="Open Drop"
+      aria-label="Select"
       class="c2 c3"
       type="button"
     >
@@ -3581,7 +3456,7 @@ exports[`Select default value 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="test select; Selected: two"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -3834,26 +3709,6 @@ exports[`Select default value clear 1`] = `
   color: #000000;
 }
 
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -3890,26 +3745,6 @@ exports[`Select default value clear 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus::-moz-focus-inner {
-  border: 0;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -4024,7 +3859,7 @@ exports[`Select default value clear 1`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c8 c9"
@@ -4043,7 +3878,7 @@ exports[`Select default value clear 1`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
         class="c12 c13"
@@ -4312,7 +4147,7 @@ exports[`Select default value object options 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="test select; Selected: 2"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -4583,7 +4418,7 @@ exports[`Select disabled 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="c0 c1"
   disabled=""
   id="test-select"
@@ -4635,7 +4470,7 @@ exports[`Select disabled 2`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="StyledButton-sc-323bzc-0 ijdOBy Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
   disabled=""
   id="test-select"
@@ -4917,7 +4752,7 @@ exports[`Select disabled key 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -5083,26 +4918,6 @@ exports[`Select disabled key 2`] = `
   cursor: default;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -5144,26 +4959,6 @@ exports[`Select disabled key 2`] = `
 .c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus::-moz-focus-inner {
-  border: 0;
 }
 
 .c9:focus:not(:focus-visible) {
@@ -5251,7 +5046,8 @@ exports[`Select disabled key 2`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-disabled="true"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -5271,7 +5067,7 @@ exports[`Select disabled key 2`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c9 c6"
@@ -5424,26 +5220,6 @@ exports[`Select disabled option value 1`] = `
   cursor: default;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -5485,26 +5261,6 @@ exports[`Select disabled option value 1`] = `
 .c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus::-moz-focus-inner {
-  border: 0;
 }
 
 .c9:focus:not(:focus-visible) {
@@ -5592,7 +5348,8 @@ exports[`Select disabled option value 1`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-disabled="true"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -5612,7 +5369,7 @@ exports[`Select disabled option value 1`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c9 c6"
@@ -5987,7 +5744,7 @@ exports[`Select keyboard navigation timeout 1`] = `
   <button
     aria-expanded="true"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="test select"
     class="c1 c2"
     data-g-tabindex="none"
     id="test-select"
@@ -6159,26 +5916,6 @@ exports[`Select large drop container height 1`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -6264,7 +6001,7 @@ exports[`Select large drop container height 1`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -6283,7 +6020,7 @@ exports[`Select large drop container height 1`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -6430,26 +6167,6 @@ exports[`Select medium drop container height 1`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -6535,7 +6252,7 @@ exports[`Select medium drop container height 1`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -6554,7 +6271,7 @@ exports[`Select medium drop container height 1`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -6815,7 +6532,7 @@ exports[`Select modifies select control style on open 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="Select..."
     class="c1 c2"
     id="test-open-id"
     type="button"
@@ -7098,7 +6815,7 @@ exports[`Select onChange with valueKey string 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -7267,26 +6984,6 @@ exports[`Select onChange with valueKey string 2`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -7372,7 +7069,7 @@ exports[`Select onChange with valueKey string 2`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -7391,7 +7088,7 @@ exports[`Select onChange with valueKey string 2`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -7776,26 +7473,6 @@ exports[`Select onChange with valueLabel 2`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -7881,7 +7558,7 @@ exports[`Select onChange with valueLabel 2`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -7900,7 +7577,7 @@ exports[`Select onChange with valueLabel 2`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -8169,7 +7846,7 @@ exports[`Select onChange without valueKey 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -8338,26 +8015,6 @@ exports[`Select onChange without valueKey 2`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -8443,7 +8100,7 @@ exports[`Select onChange without valueKey 2`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -8462,7 +8119,7 @@ exports[`Select onChange without valueKey 2`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -8730,7 +8387,7 @@ exports[`Select prop: onClose 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -9013,7 +8670,7 @@ exports[`Select prop: onClose 2`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="Open Drop"
+      aria-label="test select"
       class="c0 c1"
       id="test-select"
       type="button"
@@ -9283,7 +8940,7 @@ exports[`Select prop: onOpen 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -9334,7 +8991,7 @@ exports[`Select prop: onOpen 2`] = `
 <button
   aria-expanded="true"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
   id="test-select"
   type="button"
@@ -9502,26 +9159,6 @@ exports[`Select prop: onOpen 3`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -9607,7 +9244,7 @@ exports[`Select prop: onOpen 3`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -9626,7 +9263,7 @@ exports[`Select prop: onOpen 3`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -9668,10 +9305,10 @@ exports[`Select prop: onOpen 5`] = `
   tabindex="-1"
 >
   <button
-    aria-posinset="0"
+    aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 cmzBhQ SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
+    class="StyledButton-sc-323bzc-0 cOvmzN SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
     role="option"
     tabindex="-1"
     type="button"
@@ -9687,10 +9324,10 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <button
-    aria-posinset="1"
+    aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 cmzBhQ SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
+    class="StyledButton-sc-323bzc-0 cOvmzN SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
     role="option"
     tabindex="-1"
     type="button"
@@ -10212,7 +9849,7 @@ exports[`Select renders custom up and down icons 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="Select..."
     class="c1 c2"
     type="button"
   >
@@ -10265,7 +9902,7 @@ exports[`Select renders custom up and down icons 2`] = `
   <button
     aria-expanded="true"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="Select..."
     class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
     type="button"
   >
@@ -10863,7 +10500,7 @@ exports[`Select renders styled select options backwards compatible with legacy
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="Select..."
     class="c1 c2"
     id="test-options-style-id"
     type="button"
@@ -11148,7 +10785,7 @@ exports[`Select renders styled select options combining select.options.box &&
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="Select..."
     class="c1 c2"
     id="test-options-style-id"
     type="button"
@@ -11431,7 +11068,7 @@ exports[`Select renders styled select options using select.options.container 1`]
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="Select..."
     class="c1 c2"
     id="test-options-style-id"
     type="button"
@@ -11891,7 +11528,7 @@ exports[`Select search 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select; Selected: two"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -12077,26 +11714,6 @@ exports[`Select search 2`] = `
   color: #000000;
 }
 
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -12133,26 +11750,6 @@ exports[`Select search 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus::-moz-focus-inner {
-  border: 0;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -12336,7 +11933,7 @@ exports[`Select search 2`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c8 c9"
@@ -12355,7 +11952,7 @@ exports[`Select search 2`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
         class="c12 c13"
@@ -12400,12 +11997,25 @@ exports[`Select search 4`] = `
 `;
 
 exports[`Select search 5`] = `
-<input
-  autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 vgBsu"
-  type="search"
-  value="o"
-/>
+<button
+  aria-posinset="2"
+  aria-selected="true"
+  aria-setsize="2"
+  class="StyledButton-sc-323bzc-0 jXGGBG SelectContainer__SelectOption-sc-1wi0ul8-1 fFhDhl"
+  role="option"
+  tabindex="0"
+  type="button"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 gZcrCV"
+  >
+    <span
+      class="StyledText-sc-1sadyjn-0 grcvBZ"
+    >
+      two
+    </span>
+  </div>
+</button>
 `;
 
 exports[`Select search and select 1`] = `
@@ -12629,7 +12239,7 @@ exports[`Select search and select 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -12815,26 +12425,6 @@ exports[`Select search and select 2`] = `
   color: #000000;
 }
 
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -13009,7 +12599,7 @@ exports[`Select search and select 2`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c8 c9"
@@ -13028,7 +12618,7 @@ exports[`Select search and select 2`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c8 c9"
@@ -13302,7 +12892,7 @@ exports[`Select select an object with label key specific with keypress 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -13570,7 +13160,7 @@ exports[`Select select an option 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -13784,7 +13374,7 @@ exports[`Select select an option with complex options 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="Open Drop; Selected: [object Object]"
   class="c0 "
   id="test-select"
   type="button"
@@ -14048,7 +13638,7 @@ exports[`Select select an option with enter 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -14316,7 +13906,7 @@ exports[`Select select an option with keypress 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -14584,7 +14174,7 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -14865,7 +14455,7 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -14920,7 +14510,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="test select; Selected: two"
     class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
     id="test-select"
     type="button"
@@ -15202,7 +14792,7 @@ exports[`Select selected 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open Drop"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -16079,7 +15669,7 @@ exports[`Select size 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop"
+  aria-label="Open Drop; Selected: "
   class="c0 c1"
   id="test-select"
   type="button"
@@ -16246,26 +15836,6 @@ exports[`Select small drop container height 1`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -16351,7 +15921,7 @@ exports[`Select small drop container height 1`] = `
       tabindex="-1"
     >
       <button
-        aria-posinset="0"
+        aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
@@ -16370,7 +15940,7 @@ exports[`Select small drop container height 1`] = `
         </div>
       </button>
       <button
-        aria-posinset="1"
+        aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
         class="c5 c6"
