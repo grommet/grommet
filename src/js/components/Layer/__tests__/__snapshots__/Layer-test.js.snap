@@ -2261,6 +2261,8 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
       tabindex="-1"
     />
     <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
       aria-label="Open Drop"
       class="c3 c4"
       type="button"

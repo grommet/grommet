@@ -307,4 +307,23 @@ describe('Tabs', () => {
     const extendedTabParentStyle = window.getComputedStyle(extendedTabParent);
     expect(extendedTabParentStyle.padding).toBe('20px');
   });
+
+  test('onClick', () => {
+    const onClick = jest.fn();
+
+    const { getByText, container } = render(
+      <Grommet>
+        <Tabs>
+          <Tab title="Tab 1">
+            Tab body 1
+          </Tab>
+          <Tab title="Tab 2" onClick={onClick}>Tab body 2</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByText('Tab 2'));
+    expect(onClick).toBeCalled();
+  });
 });
