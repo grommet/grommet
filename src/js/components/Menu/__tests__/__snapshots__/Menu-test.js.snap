@@ -606,6 +606,7 @@ exports[`Menu close by clicking outside 2`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
@@ -3322,6 +3323,7 @@ exports[`Menu open and close on click 3`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
@@ -4067,6 +4069,7 @@ exports[`Menu open on up close on esc 2`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
@@ -5752,6 +5755,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
@@ -6293,6 +6297,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
