@@ -77,6 +77,7 @@ const SelectContainer = forwardRef(
       search,
       setSearch,
       selected,
+      usingKeyboard,
       value = '',
       valueKey,
       replace = true,
@@ -89,6 +90,13 @@ const SelectContainer = forwardRef(
     const [focus, setFocus] = useState(false);
     const searchRef = useRef();
     const optionsRef = useRef();
+
+    useEffect(() => {
+      const optionsNode = optionsRef.current;
+      if (optionsNode.children && optionsNode.children[activeIndex])
+        optionsNode.children[activeIndex].focus();
+    }, [activeIndex]);
+
     // adjust activeIndex when options change
     useEffect(() => {
       if (activeIndex === -1 && search && optionIndexesInValue.length) {
@@ -106,12 +114,17 @@ const SelectContainer = forwardRef(
           if (searchInput && searchInput.focus) {
             setFocusWithoutScroll(searchInput);
           }
+        } else if (optionsNode && optionsNode.children && usingKeyboard) {
+          // if the user is navigating with the keyboard set the
+          // first child as the active index when the drop opens
+          setFocusWithoutScroll(optionsNode.children[0]);
+          setActiveIndex(0);
         } else if (optionsNode) {
           setFocusWithoutScroll(optionsNode);
         }
       }, 100);
       return () => clearTimeout(timer);
-    }, [onSearch]);
+    }, [onSearch, usingKeyboard]);
 
     // clear keyboardNavigation after a while
     useEffect(() => {
@@ -362,7 +375,12 @@ const SelectContainer = forwardRef(
               setFocus={setFocus}
             />
           )}
-          <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
+          <OptionsBox
+            role="listbox"
+            tabIndex="-1"
+            ref={optionsRef}
+            aria-multiselectable={multiple}
+          >
             {options.length > 0 ? (
               <InfiniteScroll
                 items={options}
@@ -404,14 +422,18 @@ const SelectContainer = forwardRef(
                   }
 
                   // if we have a child, turn on plain, and hoverIndicator
-
                   return (
                     <SelectOption
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
                       ref={optionRef}
-                      tabIndex="-1"
-                      role="menuitem"
+                      tabIndex={optionSelected ? '0' : '-1'}
+                      role="option"
+                      aria-setsize={options.length}
+                      aria-posinset={index + 1}
+                      aria-selected={optionSelected}
+                      focusIndicator={false}
+                      aria-disabled={optionDisabled || undefined}
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}

@@ -251,6 +251,7 @@ Object {
       "guide": [Function],
       "legend": [Function],
       "margin": [Function],
+      "offset": [Function],
       "pad": [Function],
       "series": [Function],
       "size": [Function],
@@ -811,6 +812,7 @@ Object {
           "disabled": Object {
             "opacity": 0.3,
           },
+          "gap": "small",
           "padding": Object {
             "horizontal": "22px",
             "vertical": "4px",

@@ -42,7 +42,8 @@
     "upper": "Upper Bounds"
   },
   "select": {
-    "multiple": "multiple"
+    "multiple": "multiple",
+    "selected": "; Selected: {currentSelectedValue}"
   },
   "skipLinks": {
     "skipTo": "Skip To:"

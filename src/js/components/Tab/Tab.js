@@ -24,6 +24,7 @@ const Tab = forwardRef(
       onMouseOver,
       onMouseOut,
       reverse,
+      onClick,
       ...rest
     },
     ref,
@@ -75,6 +76,9 @@ const Tab = forwardRef(
         event.preventDefault();
       }
       onActivate();
+      if (onClick) {
+        onClick(event);
+      }
     };
 
     if (active && disabled) {

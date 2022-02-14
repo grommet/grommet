@@ -418,6 +418,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
+      gap: 'small',
       size: {
         small: {
           border: {
@@ -1490,17 +1491,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       separator: ' : ',
       size: {
-        xsmall: { 
+        xsmall: {
           pad: { horizontal: `${baseSpacing / 3}px`, vertical: 'xxsmall' },
-          icon: { size: `${baseSpacing * 0.75}px`},
+          icon: { size: `${baseSpacing * 0.75}px` },
         },
         small: {
-          pad: { horizontal: `${baseSpacing * 0.4 }px`, vertical: 'xxsmall'},
-          icon: { size: `${baseSpacing * 0.75}px`},
+          pad: { horizontal: `${baseSpacing * 0.4}px`, vertical: 'xxsmall' },
+          icon: { size: `${baseSpacing * 0.75}px` },
         },
         large: {
-          pad: { horizontal: `${baseSpacing / 3 * 2}px`, vertical: `xsmall`},
-          icon: { size: `${baseSpacing * 1.25}px`},
+          pad: { horizontal: `${(baseSpacing / 3) * 2}px`, vertical: `xsmall` },
+          icon: { size: `${baseSpacing * 1.25}px` },
         },
         xlarge: {
           pad: { horizontal: `${baseSpacing * 0.75}px`, vertical: 'xsmall' },

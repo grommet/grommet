@@ -160,6 +160,7 @@ interface ButtonType {
       };
     };
   };
+  gap?: GapType;
   border?: {
     color?: ColorType;
     width?: string;

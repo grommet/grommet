@@ -11,13 +11,7 @@ if (process.env.NODE_ENV !== 'production') {
     onClick: PropTypes.func,
     onRemove: PropTypes.func,
     size: PropTypes.oneOfType([
-      PropTypes.oneOf([
-        'xsmall',
-        'small',
-        'medium',
-        'large',
-        'xlarge',
-      ]),
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]),
   };
