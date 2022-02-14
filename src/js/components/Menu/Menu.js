@@ -28,6 +28,7 @@ const ContainerBox = styled(Box)`
     width: 100%;
   }
 
+  /* remove the browser default focus outline */
   :focus {
     outline: none;
   }
