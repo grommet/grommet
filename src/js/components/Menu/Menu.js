@@ -28,6 +28,10 @@ const ContainerBox = styled(Box)`
     width: 100%;
   }
 
+  :focus {
+    outline: none;
+  }
+
   ${(props) => props.theme.menu.extend};
 `;
 
@@ -288,7 +292,6 @@ const Menu = forwardRef((props, ref) => {
     <Keyboard
       onDown={onDropOpen}
       onUp={onDropOpen}
-      onEnter={onSelectMenuItem}
       onSpace={onSelectMenuItem}
       onEsc={onDropClose}
       onTab={onDropClose}

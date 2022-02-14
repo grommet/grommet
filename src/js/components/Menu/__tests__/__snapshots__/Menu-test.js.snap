@@ -560,6 +560,10 @@ exports[`Menu close by clicking outside 2`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
@@ -3277,6 +3281,10 @@ exports[`Menu open and close on click 3`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
@@ -4021,6 +4029,10 @@ exports[`Menu open on up close on esc 2`] = `
 
 .c3 {
   max-height: inherit;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -5709,6 +5721,10 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c8 {
     padding: 6px;
@@ -6249,6 +6265,10 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 .c3 {
   max-height: inherit;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
