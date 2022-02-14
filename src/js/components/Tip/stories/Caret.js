@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { grommet, Box, Button, Grommet, Heading, Text, Tip } from 'grommet';
+import { Box, Button, Heading, Text, Tip } from 'grommet';
 import { Trash } from 'grommet-icons';
 
 const TipContent = ({ message }) => (
@@ -19,24 +19,25 @@ const TipContent = ({ message }) => (
 );
 
 export const Caret = () => (
-  <Grommet full theme={grommet}>
-    <Box align="center" justify="center" background="dark-1" fill gap="large">
-      <Heading textAlign="center" level="1" size="xsmall">
-        Tooltip is styled with a Caret
-      </Heading>
-      <Box>
-        <Box fill direction="row" justify="between">
-          <Tip
-            dropProps={{ align: { left: 'right' } }}
-            content={<TipContent message="Designed with an SVG of Caret" />}
-            plain
-          >
-            <Button icon={<Trash />} plain={false} />
-          </Tip>
-        </Box>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box align="center" justify="center" background="dark-1" fill gap="large">
+    <Heading textAlign="center" level="1" size="xsmall">
+      Tooltip is styled with a Caret
+    </Heading>
+    <Box>
+      <Box fill direction="row" justify="between">
+        <Tip
+          dropProps={{ align: { left: 'right' } }}
+          content={<TipContent message="Designed with an SVG of Caret" />}
+          plain
+        >
+          <Button icon={<Trash />} plain={false} />
+        </Tip>
       </Box>
     </Box>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 Caret.parameters = {
