@@ -100,6 +100,23 @@ const Select = forwardRef(
     const inputRef = useRef();
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);
+
+    // Determine if the Select is opened with the keyboard. If so,
+    // focus should be set on the first option when the drop opens
+    // see set initial focus code in SelectContainer.js
+    const [usingKeyboard, setUsingKeyboard] = useState();
+
+    const onMouseDown = () => setUsingKeyboard(false);
+    const onKeyPress = () => setUsingKeyboard(true);
+    useEffect(() => {
+      document.addEventListener('mousedown', onMouseDown);
+      document.addEventListener('keydown', onKeyPress);
+      return () => {
+        document.removeEventListener('mousedown', onMouseDown);
+        document.removeEventListener('keydown', onKeyPress);
+      };
+    }, []);
+
     // value is used for what we receive in valueProp and the basis for
     // what we send with onChange
     // When 'valueKey' sets 'reduce', the value(s) here should match
@@ -290,7 +307,15 @@ const Select = forwardRef(
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
           ref={ref}
-          a11yTitle={ariaLabel || a11yTitle}
+          a11yTitle={`${ariaLabel || a11yTitle || placeholder || 'Open Drop'}${
+            value
+              ? format({
+                  id: 'select.selected',
+                  messages,
+                  values: { currentSelectedValue: value },
+                })
+              : ''
+          }`}
           aria-expanded={Boolean(open)}
           aria-haspopup="listbox"
           id={id}
@@ -330,6 +355,7 @@ const Select = forwardRef(
               search={search}
               setSearch={setSearch}
               selected={selected}
+              usingKeyboard={usingKeyboard}
               value={value}
               valueKey={valueKey}
             >

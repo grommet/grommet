@@ -251,6 +251,7 @@ Object {
       "guide": [Function],
       "legend": [Function],
       "margin": [Function],
+      "offset": [Function],
       "pad": [Function],
       "series": [Function],
       "size": [Function],
