@@ -39,7 +39,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "Menu__ContainerBox",
   componentId: "sc-17fcys9-0"
-})(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}", ";"], function (props) {
+})(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}:focus{outline:none;}", ";"], function (props) {
   return props.theme.menu.extend;
 });
 /* Notes on keyboard interactivity (based on W3) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
@@ -109,7 +109,8 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       setAlignControlMirror = _useState[1];
 
   var initialAlignTop = alignControlMirror === align.top;
-  var buttonRefs = {};
+  var dropContainerRef = (0, _react.useRef)();
+  var buttonRefs = (0, _react.useRef)([]);
   var constants = (0, _react.useMemo)(function () {
     return {
       none: 'none',
@@ -138,13 +139,28 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var onDropOpen = (0, _react.useCallback)(function () {
     setOpen(true);
   }, []);
+  (0, _react.useEffect)(function () {
+    // need to wait for Drop to be ready
+    var timer = setTimeout(function () {
+      if (isOpen) {
+        var optionsNode = dropContainerRef.current;
+
+        if (optionsNode) {
+          optionsNode.focus();
+        }
+      }
+    }, 100);
+    return function () {
+      return clearTimeout(timer);
+    };
+  }, [isOpen]);
 
   var onSelectMenuItem = function onSelectMenuItem(event) {
     if (isOpen) {
       if (activeItemIndex >= 0) {
         event.preventDefault();
         event.stopPropagation();
-        buttonRefs[activeItemIndex].click();
+        buttonRefs.current[activeItemIndex].click();
       }
     } else {
       onDropOpen();
@@ -179,7 +195,10 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       }
 
       setActiveItemIndex(index);
-      buttonRefs[index].focus();
+
+      if (buttonRefs.current[index]) {
+        buttonRefs.current[index].focus();
+      }
     }
   };
 
@@ -195,7 +214,9 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     } else {
       var index;
 
-      if (activeItemIndex - 1 < 0) {
+      if (activeItemIndex === 'none') {
+        index = items.length - 1;
+      } else if (activeItemIndex - 1 < 0) {
         if (constants.controlTop && activeItemIndex - 1 === controlButtonIndex) {
           index = items.length;
         } else {
@@ -206,7 +227,10 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       }
 
       setActiveItemIndex(index);
-      buttonRefs[index].focus();
+
+      if (buttonRefs.current[index]) {
+        buttonRefs.current[index].focus();
+      }
     }
   };
 
@@ -250,7 +274,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
     ref: function ref(r) {
       // make it accessible at the end of all menu items
-      buttonRefs[items.length] = r;
+      buttonRefs.current[items.length] = r;
     },
     a11yTitle: ariaLabel || a11yTitle || format({
       id: 'menu.closeMenu',
@@ -274,9 +298,8 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   } : content));
 
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
-    onDown: onNextMenuItem,
-    onUp: onPreviousMenuItem,
-    onEnter: onSelectMenuItem,
+    onDown: onDropOpen,
+    onUp: onDropOpen,
     onSpace: onSelectMenuItem,
     onEsc: onDropClose,
     onTab: onDropClose,
@@ -300,8 +323,12 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       onTab: function onTab(event) {
         return event.shiftKey ? onPreviousMenuItem(event) : onNextMenuItem(event);
       },
+      onDown: onNextMenuItem,
+      onUp: onPreviousMenuItem,
       onEnter: onSelectMenuItem
     }, /*#__PURE__*/_react["default"].createElement(ContainerBox, {
+      ref: dropContainerRef,
+      tabIndex: -1,
       background: dropBackground || theme.menu.background
     }, alignControlMirror === 'top' && align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       overflow: "auto"
@@ -324,10 +351,10 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
           flex: false
         }, /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
           ref: function ref(r) {
-            buttonRefs[index] = r;
+            buttonRefs.current[index] = r;
           },
           onFocus: function onFocus() {
-            return setActiveItemIndex(index);
+            setActiveItemIndex(index);
           },
           active: activeItemIndex === index,
           focusIndicator: false,
