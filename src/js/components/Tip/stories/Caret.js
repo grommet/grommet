@@ -40,6 +40,10 @@ export const Caret = () => (
   // </Grommet>
 );
 
+Caret.args = {
+  full: true,
+};
+
 Caret.parameters = {
   chromatic: { disable: true },
 };
