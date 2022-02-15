@@ -1706,6 +1706,12 @@ Object {
           },
         },
         "notification": Object {
+          "banner": Object {
+            "container": Object {
+              "round": "xsmall",
+            },
+            "separator": " - ",
+          },
           "close": Object {
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
@@ -1722,6 +1728,7 @@ Object {
             },
           },
           "critical": Object {
+            "background": "validation-critical",
             "color": "status-critical",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
@@ -1733,10 +1740,19 @@ Object {
               "right": "small",
             },
           },
+          "info": Object {
+            "background": "background-contrast",
+            "color": "text-strong",
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
           "message": Object {
             "margin": "none",
           },
           "normal": Object {
+            "background": "validation-ok",
             "color": "status-ok",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
@@ -1762,6 +1778,7 @@ Object {
             "time": 8000,
           },
           "undefined": Object {
+            "background": "background-contrast",
             "color": "status-unknown",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
@@ -1769,6 +1786,7 @@ Object {
             },
           },
           "unknown": Object {
+            "background": "background-contrast",
             "color": "status-unknown",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
@@ -1776,6 +1794,7 @@ Object {
             },
           },
           "warning": Object {
+            "background": "validation-warning",
             "color": "status-warning",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),

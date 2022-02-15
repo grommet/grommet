@@ -1,5 +1,6 @@
 import { Actions } from 'grommet-icons/icons/Actions';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
+import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
 import { Expand } from 'grommet-icons/icons/Expand';
 import { FormClose } from 'grommet-icons/icons/FormClose';
 import { FormDown } from 'grommet-icons/icons/FormDown';
@@ -1089,6 +1090,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'background-front',
         },
       },
+      banner: {
+        container: {
+          // any box props
+          round: 'xsmall',
+        },
+        separator: ' - ',
+      },
       toast: {
         container: {
           // any box props
@@ -1123,22 +1131,32 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       critical: {
         icon: StatusCriticalSmall,
+        background: 'validation-critical',
         color: 'status-critical',
       },
       warning: {
         icon: StatusWarningSmall,
+        background: 'validation-warning',
         color: 'status-warning',
       },
       normal: {
         icon: StatusGoodSmall,
+        background: 'validation-ok',
         color: 'status-ok',
       },
       unknown: {
         icon: StatusUnknownSmall,
+        background: 'background-contrast',
         color: 'status-unknown',
+      },
+      info: {
+        icon: CircleInformation,
+        background: 'background-contrast',
+        color: 'text-strong',
       },
       undefined: {
         icon: StatusUnknownSmall,
+        background: 'background-contrast',
         color: 'status-unknown',
       },
     },

@@ -16,8 +16,17 @@ import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 
-const Notification = ({ message, onClose, id, status, title, toast }) => {
-  const autoClose = toast?.autoClose === undefined ? true : toast.autoClose;
+const Notification = ({
+  banner,
+  message,
+  onClose,
+  id,
+  status,
+  title,
+  toast,
+}) => {
+  let autoClose = toast?.autoClose === undefined ? true : toast.autoClose;
+  if (banner) autoClose = false;
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
@@ -45,13 +54,35 @@ const Notification = ({ message, onClose, id, status, title, toast }) => {
   ]);
 
   const { icon: CloseIcon } = theme.notification.close;
-  const { icon: StatusIcon, color } = theme.notification[status];
+  const { icon: StatusIcon, background, color } = theme.notification[status];
   const { color: closeIconColor } = theme.notification.close;
+
+  let textContent = (
+    <>
+      <Text {...theme.notification.title}>{title}</Text>
+      {message && (
+        <Paragraph {...theme.notification.message}>{message}</Paragraph>
+      )}
+    </>
+  );
+
+  if (banner)
+    textContent = (
+      // need to figure out text theming here feels weird to automatically
+      // apply message styling
+      <Paragraph {...theme.notification.message} fill>
+        {title}
+        {theme.notification.banner.separator}
+        {message}
+      </Paragraph>
+    );
 
   let content = (
     <Box
       {...theme.notification.container}
+      {...(banner ? { ...theme.notification.banner.container } : {})}
       {...(toast ? { ...theme.notification.toast.container } : {})}
+      background={banner ? background : theme.notification.container.background}
       direction="row"
     >
       <Box {...theme.notification.iconContainer}>
@@ -64,12 +95,7 @@ const Notification = ({ message, onClose, id, status, title, toast }) => {
         justify="between"
         flex
       >
-        <Box>
-          <Text {...theme.notification.title}>{title}</Text>
-          {message && (
-            <Paragraph {...theme.notification.message}>{message}</Paragraph>
-          )}
-        </Box>
+        <Box>{textContent}</Box>
         {onClose && (
           <Button
             icon={<CloseIcon color={closeIconColor} />}

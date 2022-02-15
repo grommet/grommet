@@ -1054,22 +1054,32 @@ export interface ThemeType {
     };
     critical?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
     };
     warning?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
     };
     normal?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
+      color?: ColorType;
+    };
+    info?: {
+      icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
     };
     unknown?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
     };
     undefined?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
     };
   };
