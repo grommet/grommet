@@ -34,7 +34,7 @@ export const StackedAreas = () => (
       ]}
       chart={[
         {
-          property: ['usage', 'bonus'],
+          property: [{ property: 'usage', opacity: 'medium' }, 'bonus'],
           type: 'areas',
           thickness: 'hair',
         },

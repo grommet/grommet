@@ -560,6 +560,8 @@ const DataChart = forwardRef(
             return prop
               .map((cProp, j) => {
                 const pProp = cProp.property || cProp;
+                const propRest = typeof cProp === 'object' ? cProp : {};
+                delete propRest.property;
                 return (
                   <Chart
                     // eslint-disable-next-line react/no-array-index-key
@@ -570,6 +572,7 @@ const DataChart = forwardRef(
                     {...seriesStyles[pProp]}
                     {...chartProps[i]}
                     {...chartRest}
+                    {...propRest}
                     {...offsetProps}
                     type={type === 'areas' ? 'area' : 'bar'}
                     size={size}
