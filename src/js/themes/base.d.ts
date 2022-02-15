@@ -160,6 +160,7 @@ interface ButtonType {
       };
     };
   };
+  gap?: GapType;
   border?: {
     color?: ColorType;
     width?: string;
@@ -1462,7 +1463,7 @@ export interface ThemeType {
   };
   textInput?: {
     extend?: ExtendType;
-    disabled?: OpacityType;
+    disabled?: OpacityType | { opacity: OpacityType };
     container?: {
       extend?: ExtendType;
     };
