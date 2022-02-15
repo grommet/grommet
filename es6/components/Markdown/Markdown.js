@@ -71,13 +71,15 @@ var GrommetMarkdown = /*#__PURE__*/forwardRef(function (_ref, ref) {
       component: TableRow
     }
   }, heading, components, options && options.overrides); // we use Fragment as the wrapper so we can assign the ref with the div
+  // wrapper can still be overridden with the options.
 
   return /*#__PURE__*/React.createElement("div", _extends({
     ref: ref
   }, rest), /*#__PURE__*/React.createElement(Markdown, {
     children: children,
-    options: _extends({}, options, {
-      wrapper: Fragment,
+    options: _extends({
+      wrapper: Fragment
+    }, options, {
       overrides: overrides
     })
   }));
