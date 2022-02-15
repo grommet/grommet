@@ -24,7 +24,14 @@ const computeMidPoint = (fromPoint, toPoint) => [
 ];
 
 const COMMANDS = {
-  curved: (fromPoint, toPoint, offset, anchor) => {
+  curved: (
+    fromPoint,
+    toPoint,
+    offset,
+    anchor,
+    elementPosition,
+    decreaseLineLength,
+  ) => {
     const midPoint = computeMidPoint(fromPoint, toPoint);
     let cmds = `M ${fromPoint[0] + offset},${fromPoint[1] + offset} `;
     if (anchor === 'horizontal') {
@@ -36,13 +43,36 @@ const COMMANDS = {
         `Q ${fromPoint[0] + offset},${midPoint[1] + offset} ` +
         `${midPoint[0] + offset},${midPoint[1] + offset} `;
     }
-    cmds += `T ${toPoint[0] + offset},${toPoint[1] + offset}`;
+    const lineLength = ['top'].includes(elementPosition)
+      ? decreaseLineLength
+      : -decreaseLineLength;
+    cmds += `T ${toPoint[0] + offset},${toPoint[1] + offset + lineLength}`;
     return cmds;
   },
-  direct: (fromPoint, toPoint, offset) =>
-    `M ${fromPoint[0] + offset},${fromPoint[1] + offset} ` +
-    `L ${toPoint[0] + offset},${toPoint[1] + offset}`,
-  rectilinear: (fromPoint, toPoint, offset, anchor) => {
+  direct: (
+    fromPoint,
+    toPoint,
+    offset,
+    anchor,
+    elementPosition,
+    decreaseLineLength,
+  ) => {
+    const lineLength = ['top'].includes(elementPosition)
+      ? decreaseLineLength
+      : -decreaseLineLength;
+    return (
+      `M ${fromPoint[0] + offset},${fromPoint[1] + offset} ` +
+      `L ${toPoint[0] + offset},${toPoint[1] + offset + lineLength}`
+    );
+  },
+  rectilinear: (
+    fromPoint,
+    toPoint,
+    offset,
+    anchor,
+    elementPosition,
+    decreaseLineLength,
+  ) => {
     const midPoint = computeMidPoint(fromPoint, toPoint);
     let cmds = `M ${fromPoint[0] + offset},${fromPoint[1] + offset} `;
     if (anchor === 'horizontal') {
@@ -54,7 +84,10 @@ const COMMANDS = {
         `L ${fromPoint[0] + offset},${midPoint[1] + offset} ` +
         `L ${toPoint[0] + offset},${midPoint[1] + offset} `;
     }
-    cmds += `L ${toPoint[0] + offset},${toPoint[1] + offset}`;
+    const lineLength = ['top'].includes(elementPosition)
+      ? decreaseLineLength
+      : -decreaseLineLength;
+    cmds += `L ${toPoint[0] + offset},${toPoint[1] + offset + lineLength}`;
     return cmds;
   },
 };
@@ -66,7 +99,7 @@ const findTarget = (target) => {
   return target;
 };
 
-const Diagram = forwardRef(({ connections, ...rest }, ref) => {
+const Diagram = forwardRef(({ connections, arrow, ...rest }, ref) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [connectionPoints, setConnectionPoints] = useState();
@@ -190,6 +223,8 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
           round,
           thickness,
           type,
+          elementPosition,
+          decreaseLineLength = 0,
           ...connectionRest
         },
         index,
@@ -209,6 +244,8 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             points[1],
             offsetWidth,
             anchor,
+            elementPosition,
+            decreaseLineLength,
           );
           const strokeWidth = thickness
             ? parseMetricToNum(theme.global.edgeSize[thickness] || thickness)
@@ -234,12 +271,24 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
               strokeLinejoin={round ? 'round' : 'miter'}
               fill="none"
               d={d}
+              markerEnd={`url("#${
+                arrow && arrow.fill ? 'filled' : 'unfilled'
+              }")`}
             />
           );
         }
         return path;
       },
     );
+  }
+
+  let colorName =
+    arrow?.color || (theme.diagram.line && theme.diagram.line.color);
+  if (!colorName) {
+    const colors = Object.keys(theme.global.colors).filter((n) =>
+      n.match(/^graph-[0-9]$/),
+    );
+    colorName = colors[colors.length];
   }
 
   return (
@@ -250,6 +299,49 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
       connections={paths}
       {...rest}
     >
+      <defs>
+        <marker
+          id="filledTwo"
+          markerWidth="10"
+          markerHeight="10"
+          refX="2"
+          refY="6"
+          orient="auto"
+        >
+          <path
+            d="M2,4 L2,8 L5,6 L2,4"
+            fill={normalizeColor(colorName, theme)}
+          />
+        </marker>
+        {arrow &&
+          (arrow.fill ? (
+            <marker
+              id="filled"
+              orient="auto"
+              markerWidth="24"
+              markerHeight="24"
+              refX="0.1"
+              refY="2"
+            >
+              <path d="M0,0 V4 L2,2" fill={normalizeColor(colorName, theme)} />
+            </marker>
+          ) : (
+            <marker
+              id="unfilled"
+              markerWidth="10"
+              markerHeight="10"
+              refX="2"
+              refY="6"
+              orient="auto"
+            >
+              <path
+                d="M1,4 L3,6 L1,8"
+                stroke={normalizeColor(colorName, theme)}
+                fill="none"
+              />
+            </marker>
+          ))}
+      </defs>
       <g>{paths}</g>
     </StyledDiagram>
   );

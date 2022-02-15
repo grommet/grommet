@@ -11,6 +11,7 @@ const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
   toTarget,
   anchor: 'vertical',
   color: 'accent-4',
+  decreaseLineLength: 10,
   thickness: 'xsmall',
   round: true,
   type: 'curved',
@@ -64,9 +65,15 @@ export const Animated = () => {
   const connections = [];
 
   if (draw) {
-    connections.push(connection('4', '1', { anchor: 'vertical' }));
-    connections.push(connection('4', '2', { anchor: 'vertical' }));
-    connections.push(connection('4', '3', { anchor: 'vertical' }));
+    connections.push(
+      connection('4', '1', { anchor: 'vertical', elementPosition: 'top' }),
+    );
+    connections.push(
+      connection('4', '2', { anchor: 'vertical', elementPosition: 'bottom' }),
+    );
+    connections.push(
+      connection('4', '3', { anchor: 'vertical', elementPosition: 'bottom' }),
+    );
   }
 
   return (
@@ -93,6 +100,10 @@ export const Animated = () => {
             <Diagram
               animation={{ type: 'draw', duration: 3000 }}
               connections={connections}
+              arrow={{
+                fill: false,
+                color: 'accent-4',
+              }}
             />
           </Stack>
         </Box>
