@@ -13,6 +13,10 @@ export const Simple = () => (
   //</Grommet>
 );
 
+Simple.args = {
+  full: true,
+};
+
 Simple.parameters = {
   chromatic: { disable: true },
 };

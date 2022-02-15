@@ -94,6 +94,10 @@ export const HeaderActions = () => {
   );
 };
 
+HeaderActions.args = {
+  full: true,
+};
+
 HeaderActions.parameters = {
   chromatic: { disable: true },
 };
