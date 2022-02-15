@@ -149,6 +149,6 @@ ResponsiveTip.parameters = {
   }
 };
 var _default = {
-  title: 'Controls/Tip/Responsive'
+  title: 'Controls/Tip/Custom Themed/Responsive'
 };
 exports["default"] = _default;

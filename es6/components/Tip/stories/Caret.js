@@ -1,5 +1,5 @@
 import React from 'react';
-import { grommet, Box, Button, Grommet, Heading, Text, Tip } from 'grommet';
+import { Box, Button, Heading, Text, Tip } from 'grommet';
 import { Trash } from "grommet-icons/es6/icons/Trash";
 
 var TipContent = function TipContent(_ref) {
@@ -27,37 +27,43 @@ var TipContent = function TipContent(_ref) {
 };
 
 export var Caret = function Caret() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    full: true,
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    justify: "center",
-    background: "dark-1",
-    fill: true,
-    gap: "large"
-  }, /*#__PURE__*/React.createElement(Heading, {
-    textAlign: "center",
-    level: "1",
-    size: "xsmall"
-  }, "Tooltip is styled with a Caret"), /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    direction: "row",
-    justify: "between"
-  }, /*#__PURE__*/React.createElement(Tip, {
-    dropProps: {
-      align: {
-        left: 'right'
-      }
-    },
-    content: /*#__PURE__*/React.createElement(TipContent, {
-      message: "Designed with an SVG of Caret"
-    }),
-    plain: true
-  }, /*#__PURE__*/React.createElement(Button, {
-    icon: /*#__PURE__*/React.createElement(Trash, null),
-    plain: false
-  }))))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      align: "center",
+      justify: "center",
+      background: "dark-1",
+      fill: true,
+      gap: "large"
+    }, /*#__PURE__*/React.createElement(Heading, {
+      textAlign: "center",
+      level: "1",
+      size: "xsmall"
+    }, "Tooltip is styled with a Caret"), /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
+      fill: true,
+      direction: "row",
+      justify: "between"
+    }, /*#__PURE__*/React.createElement(Tip, {
+      dropProps: {
+        align: {
+          left: 'right'
+        }
+      },
+      content: /*#__PURE__*/React.createElement(TipContent, {
+        message: "Designed with an SVG of Caret"
+      }),
+      plain: true
+    }, /*#__PURE__*/React.createElement(Button, {
+      icon: /*#__PURE__*/React.createElement(Trash, null),
+      plain: false
+    }))))) // </Grommet>
+
+  );
+};
+Caret.args = {
+  full: true
 };
 Caret.parameters = {
   chromatic: {

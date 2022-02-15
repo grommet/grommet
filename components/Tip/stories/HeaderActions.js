@@ -47,71 +47,77 @@ var HeaderActions = function HeaderActions() {
     setSelected(undefined);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    full: true,
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    background: "dark-1",
-    gap: "large",
-    height: {
-      min: '100%'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
-    textAlign: "center"
-  }, /*#__PURE__*/_react["default"].createElement("b", null, "Follow"), " the Tips of the Trash & Reload icons for directions. Those Tooltips ", /*#__PURE__*/_react["default"].createElement("b", null, "change"), " according to the actions the user perform on the table. The Table meters are also using the Tip component."), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    gap: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    direction: "row",
-    justify: "between",
-    align: "center"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    level: 2
-  }, " Storage Pools with tooltips"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    gap: "small",
-    direction: "row"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
-    dropProps: {
-      align: {
-        bottom: 'top'
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      background: "dark-1",
+      gap: "large",
+      height: {
+        min: '100%'
       }
-    },
-    content: /*#__PURE__*/_react["default"].createElement(TipContent, {
-      message: !selected ? 'Select a table row to enable' : 'Delete table Row',
-      icon: !selected
-    })
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
-    disabled: !selected,
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Trash, null),
-    onClick: removeRow
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
-    dropProps: {
-      align: {
-        bottom: 'top'
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
+      textAlign: "center"
+    }, /*#__PURE__*/_react["default"].createElement("b", null, "Follow"), " the Tips of the Trash & Reload icons for directions. Those Tooltips ", /*#__PURE__*/_react["default"].createElement("b", null, "change"), " according to the actions the user perform on the table. The Table meters are also using the Tip component."), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      gap: "small"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      fill: true,
+      direction: "row",
+      justify: "between",
+      align: "center"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: 2
+    }, " Storage Pools with tooltips"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      gap: "small",
+      direction: "row"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
+      dropProps: {
+        align: {
+          bottom: 'top'
+        }
+      },
+      content: /*#__PURE__*/_react["default"].createElement(TipContent, {
+        message: !selected ? 'Select a table row to enable' : 'Delete table Row',
+        icon: !selected
+      })
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+      disabled: !selected,
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Trash, null),
+      onClick: removeRow
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
+      dropProps: {
+        align: {
+          bottom: 'top'
+        }
+      },
+      content: /*#__PURE__*/_react["default"].createElement(TipContent, {
+        message: data.length < _data.storageData.length ? 'Reload Data' : 'Delete items before reload action is enabled',
+        icon: !selected
+      })
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Refresh, null),
+      onClick: function onClick() {
+        return setData(_data.storageData);
+      },
+      disabled: data.length === _data.storageData.length
+    })))), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+      columns: _data.storageColumns,
+      data: data,
+      step: 10,
+      onClickRow: function onClickRow(event) {
+        return setSelected(event.datum);
       }
-    },
-    content: /*#__PURE__*/_react["default"].createElement(TipContent, {
-      message: data.length < _data.storageData.length ? 'Reload Data' : 'Delete items before reload action is enabled',
-      icon: !selected
-    })
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Refresh, null),
-    onClick: function onClick() {
-      return setData(_data.storageData);
-    },
-    disabled: data.length === _data.storageData.length
-  })))), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
-    columns: _data.storageColumns,
-    data: data,
-    step: 10,
-    onClickRow: function onClickRow(event) {
-      return setSelected(event.datum);
-    }
-  }))));
+    }))) // </Grommet>
+
+  );
 };
 
 exports.HeaderActions = HeaderActions;
+HeaderActions.args = {
+  full: true
+};
 HeaderActions.parameters = {
   chromatic: {
     disable: true

@@ -36,40 +36,46 @@ var TipContent = function TipContent(_ref) {
 };
 
 var Caret = function Caret() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    full: true,
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    justify: "center",
-    background: "dark-1",
-    fill: true,
-    gap: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    textAlign: "center",
-    level: "1",
-    size: "xsmall"
-  }, "Tooltip is styled with a Caret"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    direction: "row",
-    justify: "between"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
-    dropProps: {
-      align: {
-        left: 'right'
-      }
-    },
-    content: /*#__PURE__*/_react["default"].createElement(TipContent, {
-      message: "Designed with an SVG of Caret"
-    }),
-    plain: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Trash, null),
-    plain: false
-  }))))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      justify: "center",
+      background: "dark-1",
+      fill: true,
+      gap: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      textAlign: "center",
+      level: "1",
+      size: "xsmall"
+    }, "Tooltip is styled with a Caret"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      fill: true,
+      direction: "row",
+      justify: "between"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
+      dropProps: {
+        align: {
+          left: 'right'
+        }
+      },
+      content: /*#__PURE__*/_react["default"].createElement(TipContent, {
+        message: "Designed with an SVG of Caret"
+      }),
+      plain: true
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Trash, null),
+      plain: false
+    }))))) // </Grommet>
+
+  );
 };
 
 exports.Caret = Caret;
+Caret.args = {
+  full: true
+};
 Caret.parameters = {
   chromatic: {
     disable: true

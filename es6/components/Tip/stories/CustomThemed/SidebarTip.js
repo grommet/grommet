@@ -148,5 +148,5 @@ export var SidebarTip = function SidebarTip() {
 };
 SidebarTip.storyName = 'Sidebar';
 export default {
-  title: 'Controls/Tip/Sidebar'
+  title: 'Controls/Tip/Custom Themed/Sidebar'
 };
