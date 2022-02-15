@@ -36,12 +36,12 @@ export const Animated = () => (
   // </Grommet>
 );
 
-Animated.args = {
-  full: true,
-};
-
 Animated.parameters = {
   chromatic: { disable: true },
+};
+
+Animated.args = {
+  full: true,
 };
 
 export default {
