@@ -1090,13 +1090,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'background-front',
         },
       },
-      banner: {
-        container: {
-          // any box props
-          round: 'xsmall',
-        },
-        separator: ' - ',
-      },
+      // separator: undefined,
+      // truncate: undefined,
       toast: {
         container: {
           // any box props
@@ -1109,6 +1104,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           margin: 'medium',
         },
         time: 8000,
+        // title: {
+        //   // any text props
+        // }
+        // message: {
+        //   // any text props
+        // }
       },
       iconContainer: {
         // any box props
@@ -1131,32 +1132,32 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       critical: {
         icon: StatusCriticalSmall,
-        background: 'validation-critical',
+        // background: undefined,
         color: 'status-critical',
       },
       warning: {
         icon: StatusWarningSmall,
-        background: 'validation-warning',
+        // background: undefined,
         color: 'status-warning',
       },
       normal: {
         icon: StatusGoodSmall,
-        background: 'validation-ok',
+        // background: undefined,
         color: 'status-ok',
       },
       unknown: {
         icon: StatusUnknownSmall,
-        background: 'background-contrast',
+        // background: undefined,
         color: 'status-unknown',
       },
       info: {
         icon: CircleInformation,
-        background: 'background-contrast',
+        // background: undefined,
         color: 'text-strong',
       },
       undefined: {
         icon: StatusUnknownSmall,
-        background: 'background-contrast',
+        // background: undefined,
         color: 'status-unknown',
       },
     },

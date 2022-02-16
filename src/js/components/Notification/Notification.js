@@ -1,4 +1,5 @@
 import React, {
+  Fragment,
   useCallback,
   useContext,
   useEffect,
@@ -17,16 +18,15 @@ import { Text } from '../Text';
 import { NotificationType } from './propTypes';
 
 const Notification = ({
-  banner,
-  message,
+  message: messageProp,
   onClose,
   id,
   status,
   title,
   toast,
 }) => {
-  let autoClose = toast?.autoClose === undefined ? true : toast.autoClose;
-  if (banner) autoClose = false;
+  const autoClose =
+    toast && toast?.autoClose === undefined ? true : toast.autoClose;
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
@@ -56,33 +56,37 @@ const Notification = ({
   const { icon: CloseIcon } = theme.notification.close;
   const { icon: StatusIcon, background, color } = theme.notification[status];
   const { color: closeIconColor } = theme.notification.close;
+  const { separator, truncate: themeTruncate } = theme.notification;
 
-  let textContent = (
-    <>
-      <Text {...theme.notification.title}>{title}</Text>
-      {message && (
-        <Paragraph {...theme.notification.message}>{message}</Paragraph>
-      )}
-    </>
-  );
+  const truncate = themeTruncate && !toast;
+  // log for toast, info (anything that isn't critical)
+  // alert for critical / warning
 
-  if (banner)
-    textContent = (
-      // need to figure out text theming here feels weird to automatically
-      // apply message styling
-      <Paragraph {...theme.notification.message} fill>
-        {title}
-        {theme.notification.banner.separator}
-        {message}
-      </Paragraph>
-    );
+  const TextWrapper = truncate ? Text : Fragment;
+  // don't pass truncate to Fragment, unsupported prop
+  const textWrapperProps = truncate ? { truncate } : undefined;
+
+  const MessageWrapper = truncate ? Text : Paragraph;
+  const messageProps = {
+    ...theme.notification.message,
+    ...(toast ? { ...theme.notification.toast.message } : {}),
+    // don't pass truncate to Paragraph, unsupported prop
+    truncate: truncate || undefined,
+  };
+
+  const message = messageProp ? (
+    <MessageWrapper {...messageProps}>{messageProp}</MessageWrapper>
+  ) : null;
 
   let content = (
     <Box
       {...theme.notification.container}
-      {...(banner ? { ...theme.notification.banner.container } : {})}
       {...(toast ? { ...theme.notification.toast.container } : {})}
-      background={banner ? background : theme.notification.container.background}
+      background={
+        !toast && background
+          ? background
+          : theme.notification.container.background
+      }
       direction="row"
     >
       <Box {...theme.notification.iconContainer}>
@@ -95,7 +99,18 @@ const Notification = ({
         justify="between"
         flex
       >
-        <Box>{textContent}</Box>
+        <Box>
+          <TextWrapper {...textWrapperProps}>
+            <Text
+              {...theme.notification.title}
+              {...(toast ? { ...theme.notification.toast.title } : {})}
+            >
+              {title}
+            </Text>
+            {message && separator && !toast && <Text>{separator}</Text>}
+            {message}
+          </TextWrapper>
+        </Box>
         {onClose && (
           <Button
             icon={<CloseIcon color={closeIconColor} />}

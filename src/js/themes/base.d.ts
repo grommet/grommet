@@ -1039,10 +1039,13 @@ export interface ThemeType {
   };
   notification?: {
     container?: BoxProps;
+    separator?: string;
     toast?: {
       container?: BoxProps;
       layer?: LayerProps;
+      message?: TextProps;
       time?: number;
+      title?: TextProps;
     };
     iconContainer?: BoxProps;
     textContainer?: BoxProps;

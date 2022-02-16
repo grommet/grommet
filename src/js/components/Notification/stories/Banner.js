@@ -5,20 +5,69 @@ import {
   NameValueList,
   NameValuePair,
   Notification,
+  Grommet,
   Header,
   Heading,
   Paragraph,
 } from 'grommet';
+import { deepMerge } from 'grommet/utils';
 import { Hpe, AppsRounded } from 'grommet-icons';
+import { hpe } from 'grommet-theme-hpe';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
 import { data } from '../../NameValueList/stories/data';
 
+// demonstrating how we would update the HPE theme while allowing
+// grommet theme to be backwards compatible.
+const customTheme = deepMerge(hpe, {
+  notification: {
+    container: {
+      round: 'xsmall',
+    },
+    textContainer: {
+      direction: 'row',
+      gap: 'xsmall',
+    },
+    toast: {
+      title: {
+        weight: 'bold',
+      },
+    },
+    separator: ' - ',
+    truncate: true,
+    title: {
+      weight: 'normal',
+    },
+    message: {
+      weight: 'normal',
+    },
+    critical: {
+      background: 'validation-critical',
+    },
+    warning: {
+      background: 'validation-warning',
+    },
+    normal: {
+      background: 'validation-ok',
+    },
+    unknown: {
+      background: 'background-contrast',
+    },
+    info: {
+      background: 'background-contrast',
+    },
+    undefined: {
+      background: 'background-contrast',
+    },
+  },
+});
+
 const BannerNotification = () => {
   const [showNotification, setShowNotification] = useState(true);
+  const [showToast, setShowToast] = useState(false);
 
   return (
-    <Box>
+    <Grommet theme={customTheme} full>
       <Header border="bottom" pad={{ horizontal: 'medium', vertical: 'small' }}>
         <Box direction="row" align="center" gap="small">
           <Hpe size="large" color="brand" />
@@ -42,7 +91,6 @@ const BannerNotification = () => {
                   href: 'jfklj',
                 },
               ]}
-              banner
               onClose={() => setShowNotification(false)}
             />
             <Notification
@@ -51,7 +99,6 @@ const BannerNotification = () => {
               message={`Your subscription is expiring in 7 days. Renew your 
               subscription to ensure you don't have any interruptions to your 
               access.`}
-              banner
               onClose={() => setShowNotification(false)}
             />
             <Notification
@@ -59,7 +106,6 @@ const BannerNotification = () => {
               title="Feature Release"
               message={`Updates to this service will be available soon including
                feature a, feature b, and feature c.`}
-              banner
               onClose={() => setShowNotification(false)}
             />
           </Box>
@@ -82,9 +128,17 @@ const BannerNotification = () => {
               </NameValuePair>
             ))}
           </NameValueList>
+          <Button
+            label="Click to show Toast"
+            onClick={() => setShowToast(true)}
+            primary
+          />
         </Box>
       </Box>
-    </Box>
+      {showToast && (
+        <Notification title="Title" message="This is the message." toast />
+      )}
+    </Grommet>
   );
 };
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { LayerPositionType } from '../Layer';
 
-export type StatusType = 'critical' | 'warning' | 'normal' | 'unknown';
+export type StatusType = 'critical' | 'warning' | 'normal' | 'unknown' | 'info';
 
 export interface NotificationProps {
   title: string;
