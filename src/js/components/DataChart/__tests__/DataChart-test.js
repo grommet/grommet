@@ -270,7 +270,15 @@ describe('DataChart', () => {
         <DataChart
           data={data}
           series={['a', 'c']}
-          chart={[{ property: ['a', 'c'], type: 'areas' }]}
+          chart={[
+            {
+              property: [
+                { property: 'a', thickness: 'hair', opacity: 'medium' },
+                'c',
+              ],
+              type: 'areas',
+            },
+          ]}
         />
       </Grommet>,
     );

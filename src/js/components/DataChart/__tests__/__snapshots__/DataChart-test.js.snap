@@ -242,10 +242,11 @@ exports[`DataChart areas 1`] = `
             0
             <g
               fill="#6FFFB0"
+              opacity="0.4"
               stroke="#6FFFB0"
               stroke-linecap="butt"
               stroke-linejoin="miter"
-              stroke-width="96"
+              stroke-width="1"
             >
               <g>
                 <path
