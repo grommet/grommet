@@ -264,6 +264,20 @@ describe('DataChart', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('bars empty', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart
+          data={data}
+          series={['a']}
+          chart={[{ property: [], type: 'bars' }]}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('areas', () => {
     const { container } = render(
       <Grommet>

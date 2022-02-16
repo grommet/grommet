@@ -268,7 +268,7 @@ const DataChart = forwardRef(
         const { type } = charts[index];
         if (stackedChartType[type]) {
           // merge values for bars, areas, and lines cases
-          let mergedValues = chartValues[index][0].slice(0);
+          let mergedValues = chartValues[index]?.[0]?.slice(0) || [];
           chartValues[index]
             .slice(1) // skip first index as that is the x value
             .filter((values) => values) // property name isn't valid
