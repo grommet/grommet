@@ -64,11 +64,11 @@ export const AppGrid = () => {
   );
 };
 
-AppGrid.storyName = 'App';
-
 AppGrid.args = {
   full: true,
 };
+
+AppGrid.storyName = 'App';
 
 export default {
   title: 'Layout/Grid/App',
