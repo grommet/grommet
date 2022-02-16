@@ -34,13 +34,13 @@ export const StackedAreas = () => (
       ]}
       chart={[
         {
-          property: [{ property: 'usage', opacity: 'medium' }, 'bonus'],
+          property: [{ property: 'usage', opacity: 'strong' }, 'bonus'],
           type: 'areas',
           thickness: 'hair',
         },
       ]}
       axis={{ x: { property: 'date', granularity: 'fine' }, y: true }}
-      guide={{ y: true }}
+      guide={{ y: { granularity: 'medium' } }}
       legend
     />
   </Box>

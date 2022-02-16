@@ -72,7 +72,7 @@ const DataChart = forwardRef(
 
     // Normalize chart to an array of objects.
     // Each chart has one or more properties associated with it.
-    // A stacked bar chart has an array of properties.
+    // A stacked bar or area chart has an array of properties.
     // A point chart can have x, y, thickness, and color each driven
     // by a separate property.
     const charts = useMemo(() => {
@@ -560,8 +560,8 @@ const DataChart = forwardRef(
             return prop
               .map((cProp, j) => {
                 const pProp = cProp.property || cProp;
-                const propRest = typeof cProp === 'object' ? cProp : {};
-                delete propRest.property;
+                const { property, ...propRest } =
+                  typeof cProp === 'object' ? cProp : {};
                 return (
                   <Chart
                     // eslint-disable-next-line react/no-array-index-key
