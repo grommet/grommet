@@ -21,6 +21,12 @@ import { YGuide } from './YGuide';
 import { createDateFormat, halfPad, heightYGranularity, points } from './utils';
 import { DataChartPropTypes } from './propTypes';
 
+const stackedChartType = {
+  areas: 'area',
+  bars: 'bar',
+  lines: 'line',
+};
+
 // DataChart takes a generic data array of objects plus as few properties
 // as possible, and creates a Stack of Charts with x and y axes, a legend,
 // and interactive detail.
@@ -114,7 +120,7 @@ const DataChart = forwardRef(
               // properties.
               // In this case, this returns an array of values,
               // one per property.
-              if (type === 'bars' || type === 'areas') {
+              if (stackedChartType[type]) {
                 // Further down, where we render, each property is rendered
                 // using a separate Chart component and the values are stacked
                 // such that they line up appropriately.
@@ -127,6 +133,7 @@ const DataChart = forwardRef(
                   return values.map((v, i) => {
                     const base = totals[i] || 0;
                     totals[i] = base + v;
+                    if (type === 'lines') return [i, base + v];
                     return [i, base, base + v];
                   });
                 });
@@ -259,18 +266,26 @@ const DataChart = forwardRef(
 
       let chartBounds = chartValues.map((_, index) => {
         const { type } = charts[index];
-        if (type === 'bars' || type === 'areas') {
-          // merge values for bars and areas cases
+        if (stackedChartType[type]) {
+          // merge values for bars, areas, and lines cases
           let mergedValues = chartValues[index][0].slice(0);
           chartValues[index]
             .slice(1) // skip first index as that is the x value
             .filter((values) => values) // property name isn't valid
             .forEach((values) => {
-              mergedValues = mergedValues.map((__, i) => [
-                i,
-                Math.min(mergedValues[i][1], values[i][1]),
-                Math.max(mergedValues[i][2], values[i][2]),
-              ]);
+              mergedValues = mergedValues.map((__, i) =>
+                type === 'lines'
+                  ? [
+                      i,
+                      Math.min(mergedValues[i][1], values[i][1]),
+                      Math.max(mergedValues[i][1], values[i][1]),
+                    ]
+                  : [
+                      i,
+                      Math.min(mergedValues[i][1], values[i][1]),
+                      Math.max(mergedValues[i][2], values[i][2]),
+                    ],
+              );
             });
           return calcBounds(mergedValues, { coarseness, steps });
         }
@@ -294,8 +309,7 @@ const DataChart = forwardRef(
 
       return chartValues.map((values, index) => {
         const { thickness, type } = charts[index];
-        const calcValues =
-          type === 'bars' || type === 'areas' ? values[0] : values;
+        const calcValues = stackedChartType[type] ? values[0] : values;
         return calcs(calcValues, {
           bounds: chartBounds[index],
           steps,
@@ -555,7 +569,7 @@ const DataChart = forwardRef(
             ? { style: { transform: `translate(${offsets[i]}px, 0px)` } }
             : {};
 
-          if (type === 'bars' || type === 'areas') {
+          if (stackedChartType[type]) {
             // reverse to ensure area Charts are stacked in the right order
             return prop
               .map((cProp, j) => {
@@ -574,7 +588,7 @@ const DataChart = forwardRef(
                     {...chartRest}
                     {...propRest}
                     {...offsetProps}
-                    type={type === 'areas' ? 'area' : 'bar'}
+                    type={stackedChartType[type] || type}
                     size={size}
                     pad={chartPad}
                   />
@@ -582,6 +596,7 @@ const DataChart = forwardRef(
               })
               .reverse();
           }
+
           return (
             <Chart
               // eslint-disable-next-line react/no-array-index-key
