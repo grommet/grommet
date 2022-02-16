@@ -46,11 +46,16 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-// DataChart takes a generic data array of objects plus as few properties
+var stackedChartType = {
+  areas: 'area',
+  bars: 'bar',
+  lines: 'line'
+}; // DataChart takes a generic data array of objects plus as few properties
 // as possible, and creates a Stack of Charts with x and y axes, a legend,
 // and interactive detail.
 // Much of the code here-in involves the "few properties" aspect where we
 // normalize and automatically handle whatever the caller didn't specify.
+
 var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       _ref$axis = _ref.axis,
@@ -165,7 +170,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           // properties.
           // In this case, this returns an array of values,
           // one per property.
-          if (type === 'bars' || type === 'areas') {
+          if (stackedChartType[type]) {
             // Further down, where we render, each property is rendered
             // using a separate Chart component and the values are stacked
             // such that they line up appropriately.
@@ -179,6 +184,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
               return values.map(function (v, i) {
                 var base = totals[i] || 0;
                 totals[i] = base + v;
+                if (type === 'lines') return [i, base + v];
                 return [i, base, base + v];
               });
             });
@@ -316,8 +322,8 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     var chartBounds = chartValues.map(function (_, index) {
       var type = charts[index].type;
 
-      if (type === 'bars' || type === 'areas') {
-        // merge values for bars and areas cases
+      if (stackedChartType[type]) {
+        // merge values for bars, areas, and lines cases
         var mergedValues = chartValues[index][0].slice(0);
         chartValues[index].slice(1) // skip first index as that is the x value
         .filter(function (values) {
@@ -325,7 +331,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         }) // property name isn't valid
         .forEach(function (values) {
           mergedValues = mergedValues.map(function (__, i) {
-            return [i, Math.min(mergedValues[i][1], values[i][1]), Math.max(mergedValues[i][2], values[i][2])];
+            return type === 'lines' ? [i, Math.min(mergedValues[i][1], values[i][1]), Math.max(mergedValues[i][1], values[i][1])] : [i, Math.min(mergedValues[i][1], values[i][1]), Math.max(mergedValues[i][2], values[i][2])];
           });
         });
         return (0, _Chart.calcBounds)(mergedValues, {
@@ -358,7 +364,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       var _charts$index = charts[index],
           thickness = _charts$index.thickness,
           type = _charts$index.type;
-      var calcValues = type === 'bars' || type === 'areas' ? values[0] : values;
+      var calcValues = stackedChartType[type] ? values[0] : values;
       return (0, _Chart.calcs)(calcValues, {
         bounds: chartBounds[index],
         steps: steps,
@@ -607,7 +613,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       }
     } : {};
 
-    if (type === 'bars' || type === 'areas') {
+    if (stackedChartType[type]) {
       // reverse to ensure area Charts are stacked in the right order
       return prop.map(function (cProp, j) {
         var pProp = cProp.property || cProp;
@@ -618,7 +624,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           values: chartValues[i][j] || [],
           overflow: true
         }, seriesStyles[pProp], chartProps[i], chartRest, offsetProps, {
-          type: type === 'areas' ? 'area' : 'bar',
+          type: stackedChartType[type] || type,
           size: size,
           pad: chartPad
         }));

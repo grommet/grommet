@@ -20,7 +20,12 @@ import { YAxis } from './YAxis';
 import { XGuide } from './XGuide';
 import { YGuide } from './YGuide';
 import { createDateFormat, halfPad, heightYGranularity, points } from './utils';
-import { DataChartPropTypes } from './propTypes'; // DataChart takes a generic data array of objects plus as few properties
+import { DataChartPropTypes } from './propTypes';
+var stackedChartType = {
+  areas: 'area',
+  bars: 'bar',
+  lines: 'line'
+}; // DataChart takes a generic data array of objects plus as few properties
 // as possible, and creates a Stack of Charts with x and y axes, a legend,
 // and interactive detail.
 // Much of the code here-in involves the "few properties" aspect where we
@@ -140,7 +145,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
           // properties.
           // In this case, this returns an array of values,
           // one per property.
-          if (type === 'bars' || type === 'areas') {
+          if (stackedChartType[type]) {
             // Further down, where we render, each property is rendered
             // using a separate Chart component and the values are stacked
             // such that they line up appropriately.
@@ -154,6 +159,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
               return values.map(function (v, i) {
                 var base = totals[i] || 0;
                 totals[i] = base + v;
+                if (type === 'lines') return [i, base + v];
                 return [i, base, base + v];
               });
             });
@@ -291,8 +297,8 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var chartBounds = chartValues.map(function (_, index) {
       var type = charts[index].type;
 
-      if (type === 'bars' || type === 'areas') {
-        // merge values for bars and areas cases
+      if (stackedChartType[type]) {
+        // merge values for bars, areas, and lines cases
         var mergedValues = chartValues[index][0].slice(0);
         chartValues[index].slice(1) // skip first index as that is the x value
         .filter(function (values) {
@@ -300,7 +306,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
         }) // property name isn't valid
         .forEach(function (values) {
           mergedValues = mergedValues.map(function (__, i) {
-            return [i, Math.min(mergedValues[i][1], values[i][1]), Math.max(mergedValues[i][2], values[i][2])];
+            return type === 'lines' ? [i, Math.min(mergedValues[i][1], values[i][1]), Math.max(mergedValues[i][1], values[i][1])] : [i, Math.min(mergedValues[i][1], values[i][1]), Math.max(mergedValues[i][2], values[i][2])];
           });
         });
         return calcBounds(mergedValues, {
@@ -333,7 +339,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       var _charts$index = charts[index],
           thickness = _charts$index.thickness,
           type = _charts$index.type;
-      var calcValues = type === 'bars' || type === 'areas' ? values[0] : values;
+      var calcValues = stackedChartType[type] ? values[0] : values;
       return calcs(calcValues, {
         bounds: chartBounds[index],
         steps: steps,
@@ -581,7 +587,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }
     } : {};
 
-    if (type === 'bars' || type === 'areas') {
+    if (stackedChartType[type]) {
       // reverse to ensure area Charts are stacked in the right order
       return prop.map(function (cProp, j) {
         var pProp = cProp.property || cProp;
@@ -592,7 +598,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
           values: chartValues[i][j] || [],
           overflow: true
         }, seriesStyles[pProp], chartProps[i], chartRest, offsetProps, {
-          type: type === 'areas' ? 'area' : 'bar',
+          type: stackedChartType[type] || type,
           size: size,
           pad: chartPad
         }));

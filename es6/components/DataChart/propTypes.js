@@ -29,7 +29,7 @@ var chartType = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
   point: pointPropType,
   round: PropTypes.bool,
   thickness: thicknessType,
-  type: PropTypes.oneOf(['bar', 'bars', 'line', 'area', 'areas', 'point'])
+  type: PropTypes.oneOf(['bar', 'bars', 'line', 'area', 'areas', 'lines', 'point'])
 })]);
 var seriesType = PropTypes.oneOfType([PropTypes.string, // property
 PropTypes.shape({
