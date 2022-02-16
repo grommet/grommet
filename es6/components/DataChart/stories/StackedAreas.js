@@ -35,7 +35,10 @@ export var StackedAreas = function StackedAreas() {
         }
       }, 'usage', 'bonus'],
       chart: [{
-        property: ['usage', 'bonus'],
+        property: [{
+          property: 'usage',
+          opacity: 'strong'
+        }, 'bonus'],
         type: 'areas',
         thickness: 'hair'
       }],
@@ -47,7 +50,9 @@ export var StackedAreas = function StackedAreas() {
         y: true
       },
       guide: {
-        y: true
+        y: {
+          granularity: 'medium'
+        }
       },
       legend: true
     })) // </Grommet>

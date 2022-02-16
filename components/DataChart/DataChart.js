@@ -36,7 +36,8 @@ var _utils2 = require("./utils");
 var _propTypes = require("./propTypes");
 
 var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "gap", "guide", "legend", "offset", "pad", "series", "size"],
-    _excluded2 = ["property", "type", "x", "y"];
+    _excluded2 = ["property", "type", "x", "y"],
+    _excluded3 = ["property"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -108,7 +109,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     });
   }; // Normalize chart to an array of objects.
   // Each chart has one or more properties associated with it.
-  // A stacked bar chart has an array of properties.
+  // A stacked bar or area chart has an array of properties.
   // A point chart can have x, y, thickness, and color each driven
   // by a separate property.
 
@@ -617,13 +618,18 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       // reverse to ensure area Charts are stacked in the right order
       return prop.map(function (cProp, j) {
         var pProp = cProp.property || cProp;
+
+        var _ref10 = typeof cProp === 'object' ? cProp : {},
+            property = _ref10.property,
+            propRest = _objectWithoutPropertiesLoose(_ref10, _excluded3);
+
         return /*#__PURE__*/_react["default"].createElement(_Chart.Chart // eslint-disable-next-line react/no-array-index-key
         , _extends({
           key: j // when property name isn't valid, send empty array
           ,
           values: chartValues[i][j] || [],
           overflow: true
-        }, seriesStyles[pProp], chartProps[i], chartRest, offsetProps, {
+        }, seriesStyles[pProp], chartProps[i], chartRest, propRest, offsetProps, {
           type: stackedChartType[type] || type,
           size: size,
           pad: chartPad

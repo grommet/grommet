@@ -1,5 +1,6 @@
 var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "gap", "guide", "legend", "offset", "pad", "series", "size"],
-    _excluded2 = ["property", "type", "x", "y"];
+    _excluded2 = ["property", "type", "x", "y"],
+    _excluded3 = ["property"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -83,7 +84,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
   }; // Normalize chart to an array of objects.
   // Each chart has one or more properties associated with it.
-  // A stacked bar chart has an array of properties.
+  // A stacked bar or area chart has an array of properties.
   // A point chart can have x, y, thickness, and color each driven
   // by a separate property.
 
@@ -591,13 +592,18 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       // reverse to ensure area Charts are stacked in the right order
       return prop.map(function (cProp, j) {
         var pProp = cProp.property || cProp;
+
+        var _ref10 = typeof cProp === 'object' ? cProp : {},
+            property = _ref10.property,
+            propRest = _objectWithoutPropertiesLoose(_ref10, _excluded3);
+
         return /*#__PURE__*/React.createElement(Chart // eslint-disable-next-line react/no-array-index-key
         , _extends({
           key: j // when property name isn't valid, send empty array
           ,
           values: chartValues[i][j] || [],
           overflow: true
-        }, seriesStyles[pProp], chartProps[i], chartRest, offsetProps, {
+        }, seriesStyles[pProp], chartProps[i], chartRest, propRest, offsetProps, {
           type: stackedChartType[type] || type,
           size: size,
           pad: chartPad
