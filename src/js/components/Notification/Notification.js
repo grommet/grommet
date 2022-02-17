@@ -140,7 +140,7 @@ const Notification = ({
       // let internal box control pad so clickable region includes pad
       pad={undefined}
       direction="row"
-      gap="small"
+      gap="medium"
     >
       {/* separate from onClose button to avoid nested interactive elements */}
       <IconTextContainer href={href} onClick={onClick}>
@@ -159,6 +159,8 @@ const Notification = ({
         </Box>
       </IconTextContainer>
       {onClose && (
+        // theme.notification.container and textContainer may both have pad,
+        // account for both
         <Box pad={closeButtonPad}>
           <Box {...theme.notification.textContainer}>
             <Button

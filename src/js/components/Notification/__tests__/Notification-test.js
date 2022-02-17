@@ -161,6 +161,8 @@ describe('Notification', () => {
   });
 
   test('custom theme', () => {
+    const onOpen = jest.fn();
+
     const theme = {
       notification: {
         direction: 'row',
@@ -175,8 +177,6 @@ describe('Notification', () => {
       },
     };
 
-    jest.useFakeTimers('modern');
-    const onOpen = jest.fn();
     const Test = () => {
       const [visible, setVisible] = useState(false);
       return (
@@ -196,7 +196,6 @@ describe('Notification', () => {
     const { asFragment } = render(<Test />);
 
     expect(asFragment()).toMatchSnapshot();
-
     userEvent.click(
       screen.getByRole('button', { name: 'Show Toast Notification' }),
     );
