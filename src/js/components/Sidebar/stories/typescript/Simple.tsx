@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Avatar, Button, Box, grommet, Grommet, Nav, Sidebar } from 'grommet';
+import { Avatar, Button, Box, Nav, Sidebar } from 'grommet';
 
 import {
   Analytics,
@@ -43,20 +43,25 @@ const MainNavigation = () => (
 );
 
 export const SidebarIcons = () => (
-  <Grommet theme={grommet} full>
-    <Box direction="row" height={{ min: '100%' }}>
-      <Sidebar
-        background="accent-1"
-        header={<SidebarHeader />}
-        footer={<SidebarFooter />}
-      >
-        <MainNavigation />
-      </Sidebar>
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box direction="row" height={{ min: '100%' }}>
+    <Sidebar
+      background="accent-1"
+      header={<SidebarHeader />}
+      footer={<SidebarFooter />}
+    >
+      <MainNavigation />
+    </Sidebar>
+  </Box>
+  // </Grommet>
 );
 
 SidebarIcons.storyName = 'Icons';
+
+SidebarIcons.args = {
+  full: true,
+};
 
 export default {
   title: 'Layout/Sidebar/Icons',
