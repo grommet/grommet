@@ -1,14 +1,22 @@
 import React from 'react';
+import {
+  Page,
+  Box,
+  Header,
+  Heading,
+  Paragraph,
+  Grid,
+  Card,
+  PageSection,
+} from 'grommet';
 
-import { Page, Box, Header, Heading, Paragraph, Grid, Card } from 'grommet';
-
-export const Simple = () => (
+export const Narrow = () => (
   <>
     <Box background="#35bd55">
       <Heading>Global Header</Heading>
     </Box>
     <Page kind="narrow">
-      {/* <PageSection>
+      <PageSection>
         <Header>
           <Heading>Heading</Heading>
         </Header>
@@ -50,7 +58,7 @@ export const Simple = () => (
           bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim
           faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt.
         </Paragraph>
-      </PageSection> */}
+      </PageSection>
     </Page>
     <Box background="#35bd55">
       <Heading>Global Footer</Heading>
@@ -59,5 +67,5 @@ export const Simple = () => (
 );
 
 export default {
-  title: 'Layout/Page/Simple',
+  title: 'Layout/Page/Narrow',
 };

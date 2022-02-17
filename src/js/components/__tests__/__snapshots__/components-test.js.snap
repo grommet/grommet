@@ -618,6 +618,26 @@ Object {
   "NameValuePair": [Function],
   "Nav": [Function],
   "Notification": [Function],
+  "Page": [Function],
+  "PageContext": Object {
+    "$$typeof": Symbol(react.context),
+    "Consumer": Object {
+      "$$typeof": Symbol(react.context),
+      "_calculateChangedBits": null,
+      "_context": [Circular],
+    },
+    "Provider": Object {
+      "$$typeof": Symbol(react.provider),
+      "_context": [Circular],
+    },
+    "_calculateChangedBits": null,
+    "_currentRenderer": null,
+    "_currentRenderer2": null,
+    "_currentValue": Object {},
+    "_currentValue2": Object {},
+    "_threadCount": 0,
+  },
+  "PageSection": [Function],
   "Pagination": Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
@@ -1780,6 +1800,71 @@ Object {
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
+            },
+          },
+        },
+        "page": Object {
+          "full": Object {
+            "align": "start",
+            "pad": Object {
+              "large": Object {
+                "horizontal": "large",
+                "vertical": "medium",
+              },
+              "medium": Object {
+                "horizontal": "medium",
+                "vertical": "medium",
+              },
+              "small": Object {
+                "horizontal": "large",
+                "vertical": "medium",
+              },
+            },
+            "width": Object {
+              "max": "100%",
+              "min": "336px",
+            },
+          },
+          "narrow": Object {
+            "align": "center",
+            "pad": Object {
+              "large": Object {
+                "horizontal": "large",
+                "vertical": "medium",
+              },
+              "medium": Object {
+                "horizontal": "medium",
+                "vertical": "medium",
+              },
+              "small": Object {
+                "horizontal": "large",
+                "vertical": "medium",
+              },
+            },
+            "width": Object {
+              "max": "large",
+              "min": "336px",
+            },
+          },
+          "wide": Object {
+            "align": "center",
+            "pad": Object {
+              "large": Object {
+                "horizontal": "large",
+                "vertical": "medium",
+              },
+              "medium": Object {
+                "horizontal": "medium",
+                "vertical": "medium",
+              },
+              "small": Object {
+                "horizontal": "large",
+                "vertical": "medium",
+              },
+            },
+            "width": Object {
+              "max": "xxlarge",
+              "min": "336px",
             },
           },
         },

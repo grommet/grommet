@@ -1,2 +1,2 @@
 export { Page } from './Page';
-// export { PageContext } from './PageContext';
+export { PageContext } from './PageContext';

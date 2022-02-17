@@ -1142,6 +1142,44 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'status-unknown',
       },
     },
+    page: {
+      wide: {
+        align: 'center',
+        width: {
+          min: '336px', // 336 + 24 (margin) + 24 (margin) = 384 (e.g. 'medium')
+          max: 'xxlarge', // 1536
+        },
+        pad: {
+          small: { horizontal: 'large', vertical: 'medium' },
+          medium: { horizontal: 'medium', vertical: 'medium' },
+          large: { horizontal: 'large', vertical: 'medium' },
+        },
+      },
+      narrow: {
+        align: 'center',
+        width: {
+          min: '336px', // 336 + 24 (margin) + 24 (margin) = 384 (e.g. 'medium')
+          max: 'large', // 768
+        },
+        pad: {
+          small: { horizontal: 'large', vertical: 'medium' },
+          medium: { horizontal: 'medium', vertical: 'medium' },
+          large: { horizontal: 'large', vertical: 'medium' },
+        },
+      },
+      full: {
+        align: 'start',
+        width: {
+          min: '336px', // 336 + 24 (margin) + 24 (margin) = 384 (e.g. 'medium')
+          max: '100%',
+        },
+        pad: {
+          small: { horizontal: 'large', vertical: 'medium' },
+          medium: { horizontal: 'medium', vertical: 'medium' },
+          large: { horizontal: 'large', vertical: 'medium' },
+        },
+      },
+    },
     pagination: {
       button: {
         active: {
