@@ -324,8 +324,10 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       var type = charts[index].type;
 
       if (stackedChartType[type]) {
+        var _chartValues$index, _chartValues$index$;
+
         // merge values for bars, areas, and lines cases
-        var mergedValues = chartValues[index][0].slice(0);
+        var mergedValues = ((_chartValues$index = chartValues[index]) == null ? void 0 : (_chartValues$index$ = _chartValues$index[0]) == null ? void 0 : _chartValues$index$.slice(0)) || [];
         chartValues[index].slice(1) // skip first index as that is the x value
         .filter(function (values) {
           return values;
