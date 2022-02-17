@@ -285,13 +285,6 @@ exports[`Notification position bottom 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="c7"
-      >
-        <div
-          class="c7"
-        />
-      </div>
     </div>
   </div>
 </div>
@@ -601,13 +594,6 @@ exports[`Notification position bottom-left 1`] = `
             </p>
           </div>
         </div>
-      </div>
-      <div
-        class="c7"
-      >
-        <div
-          class="c7"
-        />
       </div>
     </div>
   </div>
@@ -919,13 +905,6 @@ exports[`Notification position bottom-right 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="c7"
-      >
-        <div
-          class="c7"
-        />
-      </div>
     </div>
   </div>
 </div>
@@ -1235,13 +1214,6 @@ exports[`Notification position center 1`] = `
             </p>
           </div>
         </div>
-      </div>
-      <div
-        class="c7"
-      >
-        <div
-          class="c7"
-        />
       </div>
     </div>
   </div>
@@ -1553,13 +1525,6 @@ exports[`Notification position end 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="c7"
-      >
-        <div
-          class="c7"
-        />
-      </div>
     </div>
   </div>
 </div>
@@ -1869,13 +1834,6 @@ exports[`Notification position left 1`] = `
             </p>
           </div>
         </div>
-      </div>
-      <div
-        class="c7"
-      >
-        <div
-          class="c7"
-        />
       </div>
     </div>
   </div>
@@ -2187,13 +2145,6 @@ exports[`Notification position right 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="c7"
-      >
-        <div
-          class="c7"
-        />
-      </div>
     </div>
   </div>
 </div>
@@ -2503,13 +2454,6 @@ exports[`Notification position start 1`] = `
             </p>
           </div>
         </div>
-      </div>
-      <div
-        class="c7"
-      >
-        <div
-          class="c7"
-        />
       </div>
     </div>
   </div>
@@ -2821,13 +2765,6 @@ exports[`Notification position top 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="c7"
-      >
-        <div
-          class="c7"
-        />
-      </div>
     </div>
   </div>
 </div>
@@ -3137,13 +3074,6 @@ exports[`Notification position top-left 1`] = `
             </p>
           </div>
         </div>
-      </div>
-      <div
-        class="c7"
-      >
-        <div
-          class="c7"
-        />
       </div>
     </div>
   </div>
@@ -3455,13 +3385,6 @@ exports[`Notification position top-right 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="c7"
-      >
-        <div
-          class="c7"
-        />
-      </div>
     </div>
   </div>
 </div>
@@ -3598,12 +3521,6 @@ exports[`Notification should have no accessibility violations 1`] = `
   font-weight: bold;
 }
 
-.c7 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3673,18 +3590,8 @@ exports[`Notification should have no accessibility violations 1`] = `
             >
               title
             </span>
-            <span
-              class="c7"
-            />
           </div>
         </div>
-      </div>
-      <div
-        class="c5"
-      >
-        <div
-          class="c5"
-        />
       </div>
     </div>
   </div>

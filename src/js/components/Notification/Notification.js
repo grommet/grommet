@@ -17,7 +17,7 @@ import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 
-const Wrapper = ({ href, onClick, ...rest }) =>
+const IconTextContainer = ({ href, onClick, ...rest }) =>
   href || onClick ? (
     <Box flex>
       <Button href={href} onClick={onClick} {...rest} />
@@ -56,7 +56,7 @@ const adaptThemeStyle = (value, theme) => {
 };
 
 const Notification = ({
-  message,
+  message: messageProp,
   href,
   onClick,
   onClose,
@@ -97,11 +97,11 @@ const Notification = ({
   const { icon: StatusIcon, background, color } = theme.notification[status];
   const { color: closeIconColor } = theme.notification.close;
 
-  const { direction, truncate } = toast
+  const { direction, truncate, separator } = toast
     ? theme.notification.toast
     : theme.notification;
 
-  const TextWrapper = direction === 'row' ? Text : Box;
+  const TextWrapper = direction === 'row' ? Text : Fragment;
   const textWrapperProps = direction === 'row' ? { truncate } : {};
 
   // notification is built with two child boxes that contain:
@@ -116,6 +116,18 @@ const Notification = ({
   if (onClose) [textPad, closeButtonPad] = adaptThemeStyle(pad, theme);
   else textPad = pad;
 
+  let message;
+  if (messageProp && !truncate && direction !== 'row')
+    message = (
+      <Paragraph {...theme.notification.message}>{messageProp}</Paragraph>
+    );
+  else if (messageProp)
+    message = (
+      <Text {...theme.notification.message} truncate={truncate}>
+        {messageProp}
+      </Text>
+    );
+
   let content = (
     <Box
       {...theme.notification.container}
@@ -128,41 +140,39 @@ const Notification = ({
       // let internal box control pad so clickable region includes pad
       pad={undefined}
       direction="row"
-      gap={onClose ? 'small' : undefined}
+      gap="small"
     >
       {/* separate from onClose button to avoid nested interactive elements */}
-      <Wrapper href={href} onClick={onClick}>
+      <IconTextContainer href={href} onClick={onClick}>
         <Box direction="row" pad={textPad} flex>
           <Box {...theme.notification.iconContainer}>
             <StatusIcon color={color} />
           </Box>
           <Box {...theme.notification.textContainer}>
-            <TextWrapper {...textWrapperProps}>
-              {title && <Text {...theme.notification.title}>{title}</Text>}
-              {message && title && direction === 'row' && <Text> </Text>}
-              {message && !truncate && direction !== 'row' ? (
-                <Paragraph {...theme.notification.message}>{message}</Paragraph>
-              ) : (
-                <Text {...theme.notification.message} truncate={truncate}>
-                  {message}
-                </Text>
-              )}
-            </TextWrapper>
+            <Box>
+              <TextWrapper {...textWrapperProps}>
+                {title && <Text {...theme.notification.title}>{title}</Text>}
+                {message && title && direction === 'row' && separator && (
+                  <Text>{separator}</Text>
+                )}
+                {message}
+              </TextWrapper>
+            </Box>
           </Box>
         </Box>
-      </Wrapper>
-      <Box pad={closeButtonPad}>
-        <Box {...theme.notification.textContainer}>
-          {onClose && (
+      </IconTextContainer>
+      {onClose && (
+        <Box pad={closeButtonPad}>
+          <Box {...theme.notification.textContainer}>
             <Button
               icon={<CloseIcon color={closeIconColor} />}
               onClick={close}
               hoverIndicator
               plain
             />
-          )}
+          </Box>
         </Box>
-      </Box>
+      )}
     </Box>
   );
 

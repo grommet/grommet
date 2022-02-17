@@ -92,9 +92,17 @@ const BannerNotification = () => {
             />
           </Box>
         )}
-        <Box width="large" margin="auto" pad="medium" gap="medium">
-          <Heading margin="none">Page Heading</Heading>
-          <Paragraph margin="none" fill>
+        <Box width="xxlarge" margin="auto" pad="medium" gap="medium">
+          <Header>
+            <Heading margin="none">Page Heading</Heading>
+            <Button
+              alignSelf="start"
+              label="Click to show Toast"
+              onClick={() => setShowToast(true)}
+              primary
+            />
+          </Header>
+          <Paragraph margin="none">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
             aliquet vitae velit non cursus. Aliquam fringilla dapibus elit, non
             fermentum neque tempor non.
@@ -110,11 +118,6 @@ const BannerNotification = () => {
               </NameValuePair>
             ))}
           </NameValueList>
-          <Button
-            label="Click to show Toast"
-            onClick={() => setShowToast(true)}
-            primary
-          />
         </Box>
       </Box>
       {showToast && (

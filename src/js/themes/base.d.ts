@@ -1039,8 +1039,13 @@ export interface ThemeType {
   };
   notification?: {
     container?: BoxProps;
+    direction?: 'column' | 'row';
+    separator?: string;
+    truncate?: boolean;
     toast?: {
       container?: BoxProps;
+      direction?: 'column' | 'row';
+      truncate?: boolean;
       layer?: LayerProps;
       time?: number;
     };
@@ -1054,22 +1059,32 @@ export interface ThemeType {
     };
     critical?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
     };
     warning?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
     };
     normal?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
+      color?: ColorType;
+    };
+    info?: {
+      icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
     };
     unknown?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
     };
     undefined?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
     };
   };

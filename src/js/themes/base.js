@@ -1084,6 +1084,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     notification: {
       direction: 'column',
+      separator: ' ',
       truncate: false,
       container: {
         // any box props
