@@ -9,7 +9,7 @@ var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
-var _theme = require("./theme");
+var _theme = require("../theme");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -233,6 +233,6 @@ var CustomSearch = function CustomSearch() {
 exports.CustomSearch = CustomSearch;
 CustomSearch.storyName = 'Custom search';
 var _default = {
-  title: 'Input/Select/Custom search'
+  title: 'Input/Select/Custom Themed/Custom search'
 };
 exports["default"] = _default;

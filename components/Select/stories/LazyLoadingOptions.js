@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var dummyOptions = Array(2000).fill().map(function (_, i) {
@@ -75,29 +73,33 @@ var LazyLoadingOptions = function LazyLoadingOptions() {
     return setSelected(nextSelected);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
-    multiple: true,
-    closeOnChange: false,
-    placeholder: "select an option...",
-    selected: selected,
-    options: options,
-    dropHeight: "medium",
-    onMore: onMore,
-    onClose: onClose,
-    onChange: onChange
-  }, function (option, index) {
-    return /*#__PURE__*/_react["default"].createElement(Option, {
-      value: option,
-      selected: selected.indexOf(index) !== -1
-    });
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
+      multiple: true,
+      closeOnChange: false,
+      placeholder: "select an option...",
+      selected: selected,
+      options: options,
+      dropHeight: "medium",
+      onMore: onMore,
+      onClose: onClose,
+      onChange: onChange
+    }, function (option, index) {
+      return /*#__PURE__*/_react["default"].createElement(Option, {
+        value: option,
+        selected: selected.indexOf(index) !== -1
+      });
+    })) // </Grommet>
+
+  );
 };
 
 exports.LazyLoadingOptions = LazyLoadingOptions;

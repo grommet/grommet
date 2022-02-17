@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Select } from 'grommet';
 export var Controlled = function Controlled() {
   var options = ['one', 'two'];
 
@@ -12,32 +11,38 @@ export var Controlled = function Controlled() {
       open = _useState2[0],
       setOpen = _useState2[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    full: true,
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large",
-    gap: "small"
-  }, /*#__PURE__*/React.createElement(Button, {
-    onClick: function onClick() {
-      return setOpen(!open);
-    },
-    label: "Control the select"
-  }), /*#__PURE__*/React.createElement(Select, {
-    id: "select",
-    name: "select",
-    placeholder: "Select",
-    open: open,
-    value: value,
-    options: options,
-    onChange: function onChange(_ref) {
-      var option = _ref.option;
-      return setValue(option);
-    }
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large",
+      gap: "small"
+    }, /*#__PURE__*/React.createElement(Button, {
+      onClick: function onClick() {
+        return setOpen(!open);
+      },
+      label: "Control the select"
+    }), /*#__PURE__*/React.createElement(Select, {
+      id: "select",
+      name: "select",
+      placeholder: "Select",
+      open: open,
+      value: value,
+      options: options,
+      onChange: function onChange(_ref) {
+        var option = _ref.option;
+        return setValue(option);
+      }
+    })) // </Grommet>
+
+  );
+};
+Controlled.args = {
+  full: true
 };
 export default {
   title: 'Input/Select/Controlled'

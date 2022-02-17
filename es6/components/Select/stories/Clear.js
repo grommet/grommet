@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Grommet, Select, grommet } from 'grommet';
+import { Box, Select } from 'grommet';
 var options = ['one', 'two', 'three'];
 
 var ClearTop = function ClearTop() {
@@ -26,9 +26,13 @@ var ClearTop = function ClearTop() {
 };
 
 export var Clear = function Clear() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(ClearTop, null));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(ClearTop, null) // </Grommet>
+
+  );
 };
 Clear.parameters = {
   chromatic: {

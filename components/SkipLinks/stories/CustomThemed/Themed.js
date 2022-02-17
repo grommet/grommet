@@ -1,6 +1,15 @@
+"use strict";
+
+exports.__esModule = true;
+exports["default"] = exports.Themed = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _grommet = require("grommet");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 /* eslint-disable jsx-a11y/tabindex-no-positive */
-import React from 'react';
-import { Avatar, Box, Anchor, Footer, Grommet, Header, Nav, Paragraph, SkipLinkTarget, SkipLink, SkipLinks, Heading } from 'grommet';
 var avatarSrc = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 var contentFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna\naliqua. Ut enim ad minim veniam, quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit\nesse cillum dolore eu fugiat nulla pariatur. Excepteur\nsint occaecat cupidatat non proident, sunt in culpa qui\nofficia deserunt mollit anim id est laborum.\n";
 var introContent = "\nThe main content is not usually the first thing on a web page. Keyboard and \nscreen reader users generally must navigate a long list of navigation \nlinks, sub-lists of links, corporate icons, site searches, and other \nelements before ever arriving at the main content. This is particularly \ndifficult for users with some forms of motor disabilities.\nWithout some sort of system for bypassing the long list of links, some users \nare at a huge disadvantage. Consider users with no arm movement, who use \ncomputers by tapping their heads on a switch or that use a stick in their \nmouth to press keyboard keys. Requiring users to perform any action perhaps \n100s of times before reaching the main content is simply unacceptable.\nOf course, sighted people who use their mouse do not have any trouble with \npages such as this. They can almost immediately scan over the page and \nidentify where the main content is. In effect, sighted users have a built-in \n\"skip navigation\" mechanism: their eyes. They can also bypass the many links \nbefore the main content and click directly on the link they want with the mouse.\nThe \"skip navigation\" idea was invented to give screen reader and keyboard \nusers the same capability of going directly to the main content that \nsighted mouse users take for granted.\n";
@@ -8,7 +17,7 @@ var howDoesItWorkContent = "\nTo get the most of Grommet's SkipLinks example, us
 
 var Info = function Info(_ref) {
   var label = _ref.label;
-  return /*#__PURE__*/React.createElement(Paragraph, null, "After choosing the ", label, " option on the SkipLinks layer, the following interactive element will be the next focusable item:");
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "After choosing the ", label, " option on the SkipLinks layer, the following interactive element will be the next focusable item:");
 };
 
 var theme = {
@@ -27,89 +36,93 @@ var theme = {
     }
   }
 };
-export var Themed = function Themed() {
-  return /*#__PURE__*/React.createElement(Grommet, {
+
+var Themed = function Themed() {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme
-  }, /*#__PURE__*/React.createElement(SkipLinks, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLinks, {
     messages: {
       skipTo: undefined
     }
-  }, /*#__PURE__*/React.createElement(SkipLink, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLink, {
     id: "main",
     label: "Main Content"
-  }), /*#__PURE__*/React.createElement(SkipLink, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.SkipLink, {
     id: "footer",
     label: "Footer"
-  })), /*#__PURE__*/React.createElement(Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "large"
-  }, /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "light-4",
     pad: "small",
     fill: "horizontal"
-  }, /*#__PURE__*/React.createElement(Header, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Header, {
     pad: {
       horizontal: 'large'
     }
-  }, /*#__PURE__*/React.createElement(Avatar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     src: avatarSrc
-  }), /*#__PURE__*/React.createElement(Nav, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
     direction: "row"
-  }, /*#__PURE__*/React.createElement(Anchor, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     label: "Home",
     href: "#"
-  }), /*#__PURE__*/React.createElement(Anchor, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     label: "Profile",
     href: "#"
-  }), /*#__PURE__*/React.createElement(Anchor, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     label: "Setting",
     href: "#"
-  })))), /*#__PURE__*/React.createElement(Box, {
+  })))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
       horizontal: 'large'
     }
-  }, /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "medium",
     align: "start"
-  }, /*#__PURE__*/React.createElement(Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 1
-  }, "Themed SkipLinks Example"), /*#__PURE__*/React.createElement(Heading, {
+  }, "Themed SkipLinks Example"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 2
-  }, "Accessibility Overview"), introContent, /*#__PURE__*/React.createElement(Anchor, {
+  }, "Accessibility Overview"), introContent, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     href: "https://webaim.org/techniques/skipnav/",
     label: "Content taken from WebAIM"
-  }), /*#__PURE__*/React.createElement(Heading, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 2
-  }, "How does it work"), howDoesItWorkContent), /*#__PURE__*/React.createElement(Box, {
+  }, "How does it work"), howDoesItWorkContent), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "medium",
     align: "start"
-  }, /*#__PURE__*/React.createElement(SkipLinkTarget, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLinkTarget, {
     id: "main"
-  }), /*#__PURE__*/React.createElement(Heading, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 2
-  }, "Main Content"), /*#__PURE__*/React.createElement(Info, {
+  }, "Main Content"), /*#__PURE__*/_react["default"].createElement(Info, {
     label: "Main Content"
-  }), /*#__PURE__*/React.createElement(Anchor, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     href: "#",
     label: "Interactive Element"
-  }), contentFiller), /*#__PURE__*/React.createElement(Footer, {
+  }), contentFiller), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
     direction: "column",
     align: "start"
-  }, /*#__PURE__*/React.createElement(SkipLinkTarget, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLinkTarget, {
     id: "footer"
-  }), /*#__PURE__*/React.createElement(Heading, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 2
-  }, "Footer"), /*#__PURE__*/React.createElement(Info, {
+  }, "Footer"), /*#__PURE__*/_react["default"].createElement(Info, {
     label: "Footer"
-  }), /*#__PURE__*/React.createElement(Anchor, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     href: "#",
     label: "Interactive Element"
   }), contentFiller))));
 };
+
+exports.Themed = Themed;
 Themed.parameters = {
   chromatic: {
     disable: true
   }
 };
-export default {
-  title: 'Utilities/SkipLinks/Themed'
+var _default = {
+  title: 'Utilities/SkipLinks/Custom Themed/Themed'
 };
+exports["default"] = _default;

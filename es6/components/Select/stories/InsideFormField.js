@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Box, Button, Form, FormField, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Form, FormField, Select } from 'grommet';
 var options = [{
   label: 'option 1',
   value: 1
@@ -19,31 +18,35 @@ export var InsideFormField = function InsideFormField() {
   var onChange = useCallback(function (nextValue) {
     return setValue(nextValue);
   }, []);
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Form, {
-    value: value,
-    onChange: onChange,
-    onSubmit: function onSubmit() {
-      return console.log('Submit', value);
-    }
-  }, /*#__PURE__*/React.createElement(FormField, {
-    label: "Label",
-    name: "select"
-  }, /*#__PURE__*/React.createElement(Select, {
-    name: "select",
-    placeholder: "placeholder",
-    options: options,
-    labelKey: "label",
-    valueKey: "value"
-  })), /*#__PURE__*/React.createElement(Button, {
-    type: "submit",
-    label: "Update",
-    primary: true
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Form, {
+      value: value,
+      onChange: onChange,
+      onSubmit: function onSubmit() {
+        return console.log('Submit', value);
+      }
+    }, /*#__PURE__*/React.createElement(FormField, {
+      label: "Label",
+      name: "select"
+    }, /*#__PURE__*/React.createElement(Select, {
+      name: "select",
+      placeholder: "placeholder",
+      options: options,
+      labelKey: "label",
+      valueKey: "value"
+    })), /*#__PURE__*/React.createElement(Button, {
+      type: "submit",
+      label: "Update",
+      primary: true
+    }))) // </Grommet>
+
+  );
 };
 InsideFormField.storyName = 'Inside a FormField';
 export default {

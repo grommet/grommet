@@ -95,28 +95,34 @@ var MainNavigation = function MainNavigation() {
 };
 
 var Labels = function Labels() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet,
-    full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row",
-    height: {
-      min: '100%'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_Sidebar.Sidebar, {
-    responsive: false,
-    background: "neutral-2",
-    header: /*#__PURE__*/_react["default"].createElement(SidebarHeader, null),
-    footer: /*#__PURE__*/_react["default"].createElement(SidebarFooter, null),
-    pad: {
-      left: 'medium',
-      right: 'large',
-      vertical: 'medium'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(MainNavigation, null))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      direction: "row",
+      height: {
+        min: '100%'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_Sidebar.Sidebar, {
+      responsive: false,
+      background: "neutral-2",
+      header: /*#__PURE__*/_react["default"].createElement(SidebarHeader, null),
+      footer: /*#__PURE__*/_react["default"].createElement(SidebarFooter, null),
+      pad: {
+        left: 'medium',
+        right: 'large',
+        vertical: 'medium'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(MainNavigation, null))) // </Grommet>
+
+  );
 };
 
 exports.Labels = Labels;
+Labels.args = {
+  full: true
+};
 var _default = {
   title: 'Layout/Sidebar/Labels'
 };

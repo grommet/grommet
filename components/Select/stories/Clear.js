@@ -37,9 +37,13 @@ var ClearTop = function ClearTop() {
 };
 
 var Clear = function Clear() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(ClearTop, null));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(ClearTop, null) // </Grommet>
+
+  );
 };
 
 exports.Clear = Clear;

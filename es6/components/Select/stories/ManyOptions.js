@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, CheckBox, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBox, Select } from 'grommet';
 var Option = /*#__PURE__*/React.memo(function (_ref) {
   var value = _ref.value,
       selected = _ref.selected;
@@ -32,56 +31,62 @@ export var ManyOptions = function ManyOptions() {
       options = _React$useState2[0],
       setOptions = _React$useState2[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    full: true,
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Select, {
-    multiple: true,
-    closeOnChange: false,
-    placeholder: "select an option...",
-    selected: selected,
-    options: options,
-    dropHeight: "medium",
-    onClose: function onClose() {
-      return setOptions(options.sort(function (p1, p2) {
-        var p1Exists = selected.includes(p1);
-        var p2Exists = selected.includes(p2);
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Select, {
+      multiple: true,
+      closeOnChange: false,
+      placeholder: "select an option...",
+      selected: selected,
+      options: options,
+      dropHeight: "medium",
+      onClose: function onClose() {
+        return setOptions(options.sort(function (p1, p2) {
+          var p1Exists = selected.includes(p1);
+          var p2Exists = selected.includes(p2);
 
-        if (!p1Exists && p2Exists) {
-          return 1;
-        }
+          if (!p1Exists && p2Exists) {
+            return 1;
+          }
 
-        if (p1Exists && !p2Exists) {
-          return -1;
-        }
+          if (p1Exists && !p2Exists) {
+            return -1;
+          }
 
-        return p1.localeCompare(p2, undefined, {
-          numeric: true,
-          sensitivity: 'base'
-        });
-      }));
-    },
-    onChange: function onChange(_ref2) {
-      var nextSelected = _ref2.selected;
-      setSelected(nextSelected);
-    }
-  }, function (option, index) {
-    return /*#__PURE__*/React.createElement(Option, {
-      value: option,
-      selected: selected.indexOf(index) !== -1
-    });
-  })));
+          return p1.localeCompare(p2, undefined, {
+            numeric: true,
+            sensitivity: 'base'
+          });
+        }));
+      },
+      onChange: function onChange(_ref2) {
+        var nextSelected = _ref2.selected;
+        setSelected(nextSelected);
+      }
+    }, function (option, index) {
+      return /*#__PURE__*/React.createElement(Option, {
+        value: option,
+        selected: selected.indexOf(index) !== -1
+      });
+    })) // </Grommet>
+
+  );
 };
 ManyOptions.storyName = 'Many options';
 ManyOptions.parameters = {
   chromatic: {
     disable: true
   }
+};
+ManyOptions.args = {
+  full: true
 };
 export default {
   title: 'Input/Select/Many options'

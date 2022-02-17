@@ -21,84 +21,88 @@ var Info = function Info(_ref) {
 };
 
 var Simple = function Simple() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLinks, null, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLink, {
-    id: "main",
-    label: "Main Content"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.SkipLink, {
-    id: "footer",
-    label: "Footer"
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    gap: "large",
-    margin: {
-      bottom: 'xlarge'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    background: "light-4",
-    pad: "small",
-    fill: "horizontal"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Header, {
-    pad: {
-      horizontal: 'large'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
-    src: avatarSrc
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
-    direction: "row"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
-    label: "Home",
-    href: "#"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
-    label: "Profile",
-    href: "#"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
-    label: "Setting",
-    href: "#"
-  })))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: {
-      horizontal: 'large'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    gap: "medium",
-    align: "start"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    level: 1
-  }, "SkipLinks Example"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    level: 2
-  }, "Accessibility Overview"), introContent, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
-    href: "https://webaim.org/techniques/skipnav/",
-    label: "Content taken from WebAIM"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    level: 2
-  }, "How does it work"), howDoesItWorkContent), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    gap: "medium",
-    align: "start",
-    margin: {
-      vertical: 'medium'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLinkTarget, {
-    id: "main"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    level: 2
-  }, "Main Content"), /*#__PURE__*/_react["default"].createElement(Info, {
-    label: "Main Content"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
-    href: "#",
-    label: "Interactive Element"
-  }), contentFiller), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    gap: "medium",
-    align: "start"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLinkTarget, {
-    id: "footer"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    level: 2
-  }, "Footer"), /*#__PURE__*/_react["default"].createElement(Info, {
-    label: "Footer"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
-    href: "#",
-    label: "Interactive Element"
-  }), contentFiller))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLinks, null, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLink, {
+      id: "main",
+      label: "Main Content"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.SkipLink, {
+      id: "footer",
+      label: "Footer"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      gap: "large",
+      margin: {
+        bottom: 'xlarge'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      background: "light-4",
+      pad: "small",
+      fill: "horizontal"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Header, {
+      pad: {
+        horizontal: 'large'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
+      src: avatarSrc
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
+      direction: "row"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+      label: "Home",
+      href: "#"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+      label: "Profile",
+      href: "#"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+      label: "Setting",
+      href: "#"
+    })))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: {
+        horizontal: 'large'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      gap: "medium",
+      align: "start"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: 1
+    }, "SkipLinks Example"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: 2
+    }, "Accessibility Overview"), introContent, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+      href: "https://webaim.org/techniques/skipnav/",
+      label: "Content taken from WebAIM"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: 2
+    }, "How does it work"), howDoesItWorkContent), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      gap: "medium",
+      align: "start",
+      margin: {
+        vertical: 'medium'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLinkTarget, {
+      id: "main"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: 2
+    }, "Main Content"), /*#__PURE__*/_react["default"].createElement(Info, {
+      label: "Main Content"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+      href: "#",
+      label: "Interactive Element"
+    }), contentFiller), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      gap: "medium",
+      align: "start"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLinkTarget, {
+      id: "footer"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: 2
+    }, "Footer"), /*#__PURE__*/_react["default"].createElement(Info, {
+      label: "Footer"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+      href: "#",
+      label: "Interactive Element"
+    }), contentFiller)))) // </Grommet>
+
+  );
 };
 
 exports.Simple = Simple;

@@ -5,7 +5,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { Avatar, Button, Box, grommet, Grommet, Nav, Stack, Text } from 'grommet';
+import { Avatar, Button, Box, Nav, Stack, Text } from 'grommet';
 import { Analytics } from "grommet-icons/es6/icons/Analytics";
 import { Chat } from "grommet-icons/es6/icons/Chat";
 import { Clock } from "grommet-icons/es6/icons/Clock";
@@ -91,25 +91,31 @@ var MainNavigation = function MainNavigation() {
 };
 
 export var Labels = function Labels() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
-    height: {
-      min: '100%'
-    }
-  }, /*#__PURE__*/React.createElement(Sidebar, {
-    responsive: false,
-    background: "neutral-2",
-    header: /*#__PURE__*/React.createElement(SidebarHeader, null),
-    footer: /*#__PURE__*/React.createElement(SidebarFooter, null),
-    pad: {
-      left: 'medium',
-      right: 'large',
-      vertical: 'medium'
-    }
-  }, /*#__PURE__*/React.createElement(MainNavigation, null))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      direction: "row",
+      height: {
+        min: '100%'
+      }
+    }, /*#__PURE__*/React.createElement(Sidebar, {
+      responsive: false,
+      background: "neutral-2",
+      header: /*#__PURE__*/React.createElement(SidebarHeader, null),
+      footer: /*#__PURE__*/React.createElement(SidebarFooter, null),
+      pad: {
+        left: 'medium',
+        right: 'large',
+        vertical: 'medium'
+      }
+    }, /*#__PURE__*/React.createElement(MainNavigation, null))) // </Grommet>
+
+  );
+};
+Labels.args = {
+  full: true
 };
 export default {
   title: 'Layout/Sidebar/Labels'

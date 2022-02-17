@@ -31,41 +31,45 @@ var InfiniteScrollInTable = function InfiniteScrollInTable() {
     })));
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "small",
-    basis: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    level: 3
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    gap: "small"
-  }, /*#__PURE__*/_react["default"].createElement("strong", null, "InfiniteScroll embedded in a Table"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Scroll down to load more data, open console to see loading info"))), /*#__PURE__*/_react["default"].createElement(_grommet.Table, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableHeader, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableRow, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, {
-    scope: "col",
-    border: "bottom"
-  }, "Key"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, {
-    scope: "col",
-    border: "bottom"
-  }, "Cartoon"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, {
-    scope: "col",
-    border: "bottom"
-  }, "Movie"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, {
-    scope: "col",
-    border: "bottom"
-  }, "Year"))), /*#__PURE__*/_react["default"].createElement(_grommet.TableBody, null, /*#__PURE__*/_react["default"].createElement(_grommet.InfiniteScroll, {
-    renderMarker: function renderMarker(marker) {
-      return /*#__PURE__*/_react["default"].createElement(_grommet.TableRow, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, marker));
-    },
-    items: results,
-    onMore: function onMore() {
-      return load();
-    },
-    step: step
-  }, function (result) {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.TableRow, {
-      key: result
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, result), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, "cartoon"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, "movie name"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, "year"));
-  })))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      pad: "small",
+      basis: "small"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: 3
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      gap: "small"
+    }, /*#__PURE__*/_react["default"].createElement("strong", null, "InfiniteScroll embedded in a Table"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Scroll down to load more data, open console to see loading info"))), /*#__PURE__*/_react["default"].createElement(_grommet.Table, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableHeader, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableRow, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, {
+      scope: "col",
+      border: "bottom"
+    }, "Key"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, {
+      scope: "col",
+      border: "bottom"
+    }, "Cartoon"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, {
+      scope: "col",
+      border: "bottom"
+    }, "Movie"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, {
+      scope: "col",
+      border: "bottom"
+    }, "Year"))), /*#__PURE__*/_react["default"].createElement(_grommet.TableBody, null, /*#__PURE__*/_react["default"].createElement(_grommet.InfiniteScroll, {
+      renderMarker: function renderMarker(marker) {
+        return /*#__PURE__*/_react["default"].createElement(_grommet.TableRow, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, marker));
+      },
+      items: results,
+      onMore: function onMore() {
+        return load();
+      },
+      step: step
+    }, function (result) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.TableRow, {
+        key: result
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, result), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, "cartoon"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, "movie name"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, "year"));
+    })))) // </Grommet>
+
+  );
 };
 
 exports.InfiniteScrollInTable = InfiniteScrollInTable;

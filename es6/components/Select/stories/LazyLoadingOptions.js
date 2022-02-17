@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, CheckBox, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBox, Select } from 'grommet';
 var dummyOptions = Array(2000).fill().map(function (_, i) {
   return "option " + i;
 }).sort(function (a, b) {
@@ -65,29 +64,33 @@ export var LazyLoadingOptions = function LazyLoadingOptions() {
     return setSelected(nextSelected);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Select, {
-    multiple: true,
-    closeOnChange: false,
-    placeholder: "select an option...",
-    selected: selected,
-    options: options,
-    dropHeight: "medium",
-    onMore: onMore,
-    onClose: onClose,
-    onChange: onChange
-  }, function (option, index) {
-    return /*#__PURE__*/React.createElement(Option, {
-      value: option,
-      selected: selected.indexOf(index) !== -1
-    });
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Select, {
+      multiple: true,
+      closeOnChange: false,
+      placeholder: "select an option...",
+      selected: selected,
+      options: options,
+      dropHeight: "medium",
+      onMore: onMore,
+      onClose: onClose,
+      onChange: onChange
+    }, function (option, index) {
+      return /*#__PURE__*/React.createElement(Option, {
+        value: option,
+        selected: selected.indexOf(index) !== -1
+      });
+    })) // </Grommet>
+
+  );
 };
 LazyLoadingOptions.storyName = 'Lazy loading options';
 LazyLoadingOptions.parameters = {

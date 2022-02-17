@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Select } from 'grommet';
 var objectOptions = [{
   label: 'Male',
   value: 1
@@ -19,29 +18,33 @@ export var ObjectOptions = function ObjectOptions() {
       value = _useState[0],
       setValue = _useState[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Select, {
-    id: "select",
-    name: "select",
-    placeholder: "Select",
-    labelKey: "label",
-    valueKey: {
-      key: 'value',
-      reduce: true
-    },
-    value: value,
-    options: objectOptions,
-    onChange: function onChange(_ref) {
-      var nextValue = _ref.value;
-      return setValue(nextValue);
-    }
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Select, {
+      id: "select",
+      name: "select",
+      placeholder: "Select",
+      labelKey: "label",
+      valueKey: {
+        key: 'value',
+        reduce: true
+      },
+      value: value,
+      options: objectOptions,
+      onChange: function onChange(_ref) {
+        var nextValue = _ref.value;
+        return setValue(nextValue);
+      }
+    })) // </Grommet>
+
+  );
 };
 ObjectOptions.storyName = 'Object options';
 ObjectOptions.parameters = {
