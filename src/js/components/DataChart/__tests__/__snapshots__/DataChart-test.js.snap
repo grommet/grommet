@@ -122,7 +122,8 @@ exports[`DataChart areas 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -151,7 +152,8 @@ exports[`DataChart areas 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
@@ -2463,7 +2465,8 @@ exports[`DataChart bars 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -2492,7 +2495,8 @@ exports[`DataChart bars 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
@@ -2746,7 +2750,8 @@ exports[`DataChart bars colors 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -2775,7 +2780,8 @@ exports[`DataChart bars colors 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
@@ -3002,7 +3008,8 @@ exports[`DataChart bars empty 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c5 {
@@ -3012,7 +3019,8 @@ exports[`DataChart bars empty 1`] = `
 
 @media only screen and (max-width:768px) {
   .c6 {
-    padding: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
@@ -3169,7 +3177,8 @@ exports[`DataChart bars invalid 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -3198,7 +3207,8 @@ exports[`DataChart bars invalid 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
@@ -6635,7 +6645,8 @@ exports[`DataChart lines 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -6664,7 +6675,8 @@ exports[`DataChart lines 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
@@ -7386,7 +7398,6 @@ exports[`DataChart pad 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 12px;
 }
 
 .c10 {
@@ -7422,26 +7433,6 @@ exports[`DataChart pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  max-width: 100%;
-  grid-area: xAxis;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 24px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
@@ -7463,26 +7454,6 @@ exports[`DataChart pad 1`] = `
   justify-content: center;
 }
 
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  grid-area: xAxis;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 48px;
-}
-
 .c8 {
   display: block;
   max-width: 100%;
@@ -7497,24 +7468,6 @@ exports[`DataChart pad 1`] = `
 .c7 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c13 {
-    padding: 24px;
-  }
 }
 
 <div
@@ -7675,7 +7628,7 @@ exports[`DataChart pad 1`] = `
         </div>
       </div>
       <div
-        class="c11"
+        class="c9"
       >
         <div
           class="c2"
@@ -7700,12 +7653,12 @@ exports[`DataChart pad 1`] = `
         class="c3"
       >
         <div
-          class="c12"
+          class="c11"
         >
           2
         </div>
         <div
-          class="c12"
+          class="c11"
         >
           0.8
         </div>
@@ -7760,7 +7713,7 @@ exports[`DataChart pad 1`] = `
         </div>
       </div>
       <div
-        class="c13"
+        class="c9"
       >
         <div
           class="c2"
@@ -8367,26 +8320,6 @@ exports[`DataChart type 1`] = `
   justify-content: center;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  grid-area: xAxis;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 48px;
-}
-
 .c8 {
   display: block;
   max-width: 100%;
@@ -8407,12 +8340,6 @@ exports[`DataChart type 1`] = `
   .c9 {
     padding-left: 24px;
     padding-right: 24px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 24px;
   }
 }
 
@@ -8566,7 +8493,7 @@ exports[`DataChart type 1`] = `
         </div>
       </div>
       <div
-        class="c11"
+        class="c9"
       >
         <div
           class="c2"
@@ -8640,7 +8567,7 @@ exports[`DataChart type 1`] = `
         </div>
       </div>
       <div
-        class="c11"
+        class="c9"
       >
         <div
           class="c2"

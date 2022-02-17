@@ -16,7 +16,13 @@ const XAxis = forwardRef(({ chartProps, pad, renderValue, serie }, ref) => {
       : { width: '1px', overflow: 'visible', align: 'center' };
 
   return (
-    <Box ref={ref} gridArea="xAxis" direction="row" justify="between" pad={pad}>
+    <Box
+      ref={ref}
+      gridArea="xAxis"
+      direction="row"
+      justify="between"
+      pad={pad?.horizontal ? { horizontal: pad.horizontal } : undefined}
+    >
       {axisValues.map((dataIndex, i) => (
         // eslint-disable-next-line react/no-array-index-key
         <Box key={i} {...itemProps}>
