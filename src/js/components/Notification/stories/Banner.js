@@ -27,7 +27,7 @@ const customTheme = deepMerge(hpe, {
       round: 'xsmall',
     },
     toast: {
-      direction: 'row',
+      direction: 'column',
       truncate: false,
     },
     critical: {

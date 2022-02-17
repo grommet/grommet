@@ -1040,7 +1040,6 @@ export interface ThemeType {
   notification?: {
     container?: BoxProps;
     direction?: 'column' | 'row';
-    separator?: string;
     truncate?: boolean;
     toast?: {
       container?: BoxProps;

@@ -269,20 +269,16 @@ exports[`Notification position bottom 1`] = `
         <div
           class="c7"
         >
-          <div
-            class="c7"
+          <span
+            class="c8"
           >
-            <span
-              class="c8"
-            >
-              title
-            </span>
-            <p
-              class="c9"
-            >
-              message
-            </p>
-          </div>
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            message
+          </p>
         </div>
       </div>
     </div>
@@ -579,20 +575,16 @@ exports[`Notification position bottom-left 1`] = `
         <div
           class="c7"
         >
-          <div
-            class="c7"
+          <span
+            class="c8"
           >
-            <span
-              class="c8"
-            >
-              title
-            </span>
-            <p
-              class="c9"
-            >
-              message
-            </p>
-          </div>
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            message
+          </p>
         </div>
       </div>
     </div>
@@ -889,20 +881,16 @@ exports[`Notification position bottom-right 1`] = `
         <div
           class="c7"
         >
-          <div
-            class="c7"
+          <span
+            class="c8"
           >
-            <span
-              class="c8"
-            >
-              title
-            </span>
-            <p
-              class="c9"
-            >
-              message
-            </p>
-          </div>
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            message
+          </p>
         </div>
       </div>
     </div>
@@ -1199,20 +1187,16 @@ exports[`Notification position center 1`] = `
         <div
           class="c7"
         >
-          <div
-            class="c7"
+          <span
+            class="c8"
           >
-            <span
-              class="c8"
-            >
-              title
-            </span>
-            <p
-              class="c9"
-            >
-              message
-            </p>
-          </div>
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            message
+          </p>
         </div>
       </div>
     </div>
@@ -1509,20 +1493,16 @@ exports[`Notification position end 1`] = `
         <div
           class="c7"
         >
-          <div
-            class="c7"
+          <span
+            class="c8"
           >
-            <span
-              class="c8"
-            >
-              title
-            </span>
-            <p
-              class="c9"
-            >
-              message
-            </p>
-          </div>
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            message
+          </p>
         </div>
       </div>
     </div>
@@ -1819,20 +1799,16 @@ exports[`Notification position left 1`] = `
         <div
           class="c7"
         >
-          <div
-            class="c7"
+          <span
+            class="c8"
           >
-            <span
-              class="c8"
-            >
-              title
-            </span>
-            <p
-              class="c9"
-            >
-              message
-            </p>
-          </div>
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            message
+          </p>
         </div>
       </div>
     </div>
@@ -2129,20 +2105,16 @@ exports[`Notification position right 1`] = `
         <div
           class="c7"
         >
-          <div
-            class="c7"
+          <span
+            class="c8"
           >
-            <span
-              class="c8"
-            >
-              title
-            </span>
-            <p
-              class="c9"
-            >
-              message
-            </p>
-          </div>
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            message
+          </p>
         </div>
       </div>
     </div>
@@ -2439,20 +2411,16 @@ exports[`Notification position start 1`] = `
         <div
           class="c7"
         >
-          <div
-            class="c7"
+          <span
+            class="c8"
           >
-            <span
-              class="c8"
-            >
-              title
-            </span>
-            <p
-              class="c9"
-            >
-              message
-            </p>
-          </div>
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            message
+          </p>
         </div>
       </div>
     </div>
@@ -2749,20 +2717,16 @@ exports[`Notification position top 1`] = `
         <div
           class="c7"
         >
-          <div
-            class="c7"
+          <span
+            class="c8"
           >
-            <span
-              class="c8"
-            >
-              title
-            </span>
-            <p
-              class="c9"
-            >
-              message
-            </p>
-          </div>
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            message
+          </p>
         </div>
       </div>
     </div>
@@ -3059,20 +3023,16 @@ exports[`Notification position top-left 1`] = `
         <div
           class="c7"
         >
-          <div
-            class="c7"
+          <span
+            class="c8"
           >
-            <span
-              class="c8"
-            >
-              title
-            </span>
-            <p
-              class="c9"
-            >
-              message
-            </p>
-          </div>
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            message
+          </p>
         </div>
       </div>
     </div>
@@ -3369,20 +3329,16 @@ exports[`Notification position top-right 1`] = `
         <div
           class="c7"
         >
-          <div
-            class="c7"
+          <span
+            class="c8"
           >
-            <span
-              class="c8"
-            >
-              title
-            </span>
-            <p
-              class="c9"
-            >
-              message
-            </p>
-          </div>
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            message
+          </p>
         </div>
       </div>
     </div>
@@ -3582,15 +3538,11 @@ exports[`Notification should have no accessibility violations 1`] = `
         <div
           class="c5"
         >
-          <div
-            class="c5"
+          <span
+            class="c6"
           >
-            <span
-              class="c6"
-            >
-              title
-            </span>
-          </div>
+            title
+          </span>
         </div>
       </div>
     </div>

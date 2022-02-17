@@ -4,8 +4,10 @@ import { LayerPositionType } from '../Layer';
 export type StatusType = 'critical' | 'warning' | 'normal' | 'unknown';
 
 export interface NotificationProps {
+  href?: string;
   title?: string;
   message?: string;
+  onClick?: (...args: any[]) => any;
   status?: StatusType;
   toast?:
     | boolean

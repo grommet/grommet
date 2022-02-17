@@ -1752,7 +1752,6 @@ Object {
               "render": [Function],
             },
           },
-          "separator": " ",
           "textContainer": Object {
             "gap": "medium",
           },

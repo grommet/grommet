@@ -1,4 +1,5 @@
 import { Actions } from 'grommet-icons/icons/Actions';
+import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
 import { FormClose } from 'grommet-icons/icons/FormClose';
@@ -19,7 +20,6 @@ import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
 import { base as iconBase } from 'grommet-icons/themes/base';
 
-import { CircleInformation } from 'grommet-icons';
 import { deepFreeze, deepMerge } from '../utils/object';
 import { parseMetricToNum } from '../utils/mixins';
 
@@ -1084,7 +1084,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     notification: {
       direction: 'column',
-      separator: ' ',
       truncate: false,
       container: {
         // any box props

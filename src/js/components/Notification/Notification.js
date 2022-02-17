@@ -97,7 +97,7 @@ const Notification = ({
   const { icon: StatusIcon, background, color } = theme.notification[status];
   const { color: closeIconColor } = theme.notification.close;
 
-  const { direction, truncate, separator } = toast
+  const { direction, truncate } = toast
     ? theme.notification.toast
     : theme.notification;
 
@@ -149,15 +149,12 @@ const Notification = ({
             <StatusIcon color={color} />
           </Box>
           <Box {...theme.notification.textContainer}>
-            <Box>
-              <TextWrapper {...textWrapperProps}>
-                {title && <Text {...theme.notification.title}>{title}</Text>}
-                {message && title && direction === 'row' && separator && (
-                  <Text>{separator}</Text>
-                )}
-                {message}
-              </TextWrapper>
-            </Box>
+            <TextWrapper {...textWrapperProps}>
+              {title && <Text {...theme.notification.title}>{title}</Text>}
+              {/* space between title and message */}
+              {message && title && direction === 'row' && <Text> </Text>}
+              {message}
+            </TextWrapper>
           </Box>
         </Box>
       </IconTextContainer>
