@@ -4,6 +4,7 @@ import React, {
   useEffect,
   useState,
   useMemo,
+  Fragment,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -16,8 +17,56 @@ import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 
-const Notification = ({ message, onClose, id, status, title, toast }) => {
-  const autoClose = toast?.autoClose === undefined ? true : toast.autoClose;
+const Wrapper = ({ href, onClick, ...rest }) =>
+  href || onClick ? (
+    <Box flex>
+      <Button href={href} onClick={onClick} {...rest} />
+    </Box>
+  ) : (
+    <Fragment {...rest} />
+  );
+
+const adaptThemeStyle = (value, theme) => {
+  let textStyle = value;
+  let closeButtonStyle = value;
+
+  if (typeof value === 'string' && theme.global.edgeSize[value]) {
+    textStyle = {
+      vertical: value,
+      left: value,
+      right: undefined,
+    };
+    closeButtonStyle = { vertical: value, right: value };
+  } else if (typeof pad === 'object') {
+    const { left, right, top, bottom, horizontal, vertical } = value;
+    textStyle = {
+      top: top || vertical,
+      bottom: bottom || vertical,
+      left: left || horizontal,
+      right: undefined,
+    };
+    closeButtonStyle = {
+      top: top || vertical,
+      bottom: bottom || vertical,
+      right: right || horizontal,
+    };
+  }
+
+  return [textStyle, closeButtonStyle];
+};
+
+const Notification = ({
+  message,
+  href,
+  onClick,
+  onClose,
+  id,
+  status,
+  title,
+  toast,
+}) => {
+  const autoClose =
+    toast && toast?.autoClose === undefined ? true : toast.autoClose;
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
@@ -45,38 +94,74 @@ const Notification = ({ message, onClose, id, status, title, toast }) => {
   ]);
 
   const { icon: CloseIcon } = theme.notification.close;
-  const { icon: StatusIcon, color } = theme.notification[status];
+  const { icon: StatusIcon, background, color } = theme.notification[status];
   const { color: closeIconColor } = theme.notification.close;
+
+  const { direction, truncate } = toast
+    ? theme.notification.toast
+    : theme.notification;
+
+  const TextWrapper = direction === 'row' ? Text : Box;
+  const textWrapperProps = direction === 'row' ? { truncate } : {};
+
+  // notification is built with two child boxes that contain:
+  // 1. icon + text (wrapped in button when clickable)
+  // 2. close button
+  // pad needs to be applied to the child boxes to ensure pad is included
+  // in the clickable region, but we don't want to apply extra padding
+  // between the icon + text and the button.
+  const { pad } = theme.notification.container;
+  let textPad;
+  let closeButtonPad;
+  if (onClose) [textPad, closeButtonPad] = adaptThemeStyle(pad, theme);
+  else textPad = pad;
 
   let content = (
     <Box
       {...theme.notification.container}
       {...(toast ? { ...theme.notification.toast.container } : {})}
+      background={
+        !toast && background
+          ? background
+          : theme.notification.container.background
+      }
+      // let internal box control pad so clickable region includes pad
+      pad={undefined}
       direction="row"
+      gap={onClose ? 'small' : undefined}
     >
-      <Box {...theme.notification.iconContainer}>
-        <StatusIcon color={color} />
-      </Box>
-      <Box
-        {...theme.notification.textContainer}
-        align="start"
-        direction="row"
-        justify="between"
-        flex
-      >
-        <Box>
-          <Text {...theme.notification.title}>{title}</Text>
-          {message && (
-            <Paragraph {...theme.notification.message}>{message}</Paragraph>
+      {/* separate from onClose button to avoid nested interactive elements */}
+      <Wrapper href={href} onClick={onClick}>
+        <Box direction="row" pad={textPad} flex>
+          <Box {...theme.notification.iconContainer}>
+            <StatusIcon color={color} />
+          </Box>
+          <Box {...theme.notification.textContainer}>
+            <TextWrapper {...textWrapperProps}>
+              {title && <Text {...theme.notification.title}>{title}</Text>}
+              {message && title && direction === 'row' && <Text> </Text>}
+              {message && !truncate && direction !== 'row' ? (
+                <Paragraph {...theme.notification.message}>{message}</Paragraph>
+              ) : (
+                <Text {...theme.notification.message} truncate={truncate}>
+                  {message}
+                </Text>
+              )}
+            </TextWrapper>
+          </Box>
+        </Box>
+      </Wrapper>
+      <Box pad={closeButtonPad}>
+        <Box {...theme.notification.textContainer}>
+          {onClose && (
+            <Button
+              icon={<CloseIcon color={closeIconColor} />}
+              onClick={close}
+              hoverIndicator
+              plain
+            />
           )}
         </Box>
-        {onClose && (
-          <Button
-            icon={<CloseIcon color={closeIconColor} />}
-            onClick={close}
-            plain
-          />
-        )}
       </Box>
     </Box>
   );

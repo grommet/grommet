@@ -1728,9 +1728,18 @@ Object {
               "render": [Function],
             },
           },
+          "direction": "column",
           "iconContainer": Object {
+            "flex": false,
             "pad": Object {
               "right": "small",
+            },
+          },
+          "info": Object {
+            "color": "text-strong",
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
             },
           },
           "message": Object {
@@ -1761,6 +1770,7 @@ Object {
             },
             "time": 8000,
           },
+          "truncate": false,
           "undefined": Object {
             "color": "status-unknown",
             "icon": Object {

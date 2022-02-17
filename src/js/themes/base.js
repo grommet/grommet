@@ -19,6 +19,7 @@ import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
 import { base as iconBase } from 'grommet-icons/themes/base';
 
+import { CircleInformation } from 'grommet-icons';
 import { deepFreeze, deepMerge } from '../utils/object';
 import { parseMetricToNum } from '../utils/mixins';
 
@@ -1082,6 +1083,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     notification: {
+      direction: 'column',
+      truncate: false,
       container: {
         // any box props
         pad: { horizontal: 'small', vertical: 'xsmall' },
@@ -1090,6 +1093,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       toast: {
+        // direction: undefined,
+        // truncate: undefined,
         container: {
           // any box props
           elevation: 'medium',
@@ -1105,6 +1110,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       iconContainer: {
         // any box props
         pad: { right: 'small' },
+        flex: false,
       },
       textContainer: {
         // any box props
@@ -1123,22 +1129,32 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       critical: {
         icon: StatusCriticalSmall,
+        // background: undefined,
         color: 'status-critical',
       },
       warning: {
         icon: StatusWarningSmall,
+        // background: undefined,
         color: 'status-warning',
       },
       normal: {
         icon: StatusGoodSmall,
+        // background: undefined,
         color: 'status-ok',
+      },
+      info: {
+        icon: CircleInformation,
+        // background: undefined,
+        color: 'text-strong',
       },
       unknown: {
         icon: StatusUnknownSmall,
+        // background: undefined,
         color: 'status-unknown',
       },
       undefined: {
         icon: StatusUnknownSmall,
+        // background: undefined,
         color: 'status-unknown',
       },
     },
