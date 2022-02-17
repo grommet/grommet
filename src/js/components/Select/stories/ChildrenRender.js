@@ -95,12 +95,12 @@ export const Children = () => {
   );
 };
 
-Children.args = {
-  full: true,
-};
-
 Children.parameters = {
   chromatic: { disable: true },
+};
+
+Children.args = {
+  full: true,
 };
 
 export default {
