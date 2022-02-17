@@ -11,6 +11,10 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Notification, Button } from '../..';
 
+const TestNotification = ({ ...rest }) => (
+  <Notification title="title" message="message" {...rest} />
+);
+
 describe('Notification', () => {
   beforeEach(createPortal);
   test('should have no accessibility violations', async () => {
@@ -154,5 +158,72 @@ describe('Notification', () => {
       jest.advanceTimersByTime(9000);
     });
     expect(onClose).not.toHaveBeenCalled();
+  });
+
+  test('custom theme', () => {
+    const theme = {
+      notification: {
+        direction: 'row',
+        truncation: true,
+        container: {
+          pad: 'medium',
+        },
+        toast: {
+          direction: 'column',
+          truncation: false,
+        },
+      },
+    };
+
+    jest.useFakeTimers('modern');
+    const onOpen = jest.fn();
+    const Test = () => {
+      const [visible, setVisible] = useState(false);
+      return (
+        <Grommet theme={theme}>
+          <TestNotification />
+          <Button
+            label="Show Toast Notification"
+            onClick={() => {
+              onOpen();
+              setVisible(true);
+            }}
+          />
+          {visible && <TestNotification toast title="Toast title" />}
+        </Grommet>
+      );
+    };
+    const { asFragment } = render(<Test />);
+
+    expect(asFragment()).toMatchSnapshot();
+
+    userEvent.click(
+      screen.getByRole('button', { name: 'Show Toast Notification' }),
+    );
+    expect(screen.getByText('Toast title')).toBeInTheDocument();
+    expect(onOpen).toHaveBeenCalled();
+  });
+
+  test('onClick', () => {
+    const onClick = jest.fn();
+    render(
+      <Grommet>
+        <TestNotification onClick={onClick} />
+      </Grommet>,
+    );
+
+    userEvent.click(screen.getByRole('button'));
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  test('href', () => {
+    render(
+      <Grommet>
+        <TestNotification href="/notifications" />
+      </Grommet>,
+    );
+
+    const button = screen.getByRole('link');
+    expect(button).toHaveAttribute('href', '/notifications');
   });
 });

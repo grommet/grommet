@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     message: PropTypes.string,
+    href: PropTypes.string,
+    onClick: PropTypes.func,
     status: PropTypes.oneOf(['critical', 'warning', 'normal', 'unknown']),
     toast: PropTypes.oneOfType([
       PropTypes.bool,
