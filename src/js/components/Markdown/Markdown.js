@@ -45,11 +45,12 @@ const GrommetMarkdown = forwardRef(
     );
 
     // we use Fragment as the wrapper so we can assign the ref with the div
+    // wrapper can still be overridden with the options.
     return (
       <div ref={ref} {...rest}>
         <Markdown
           {...{ children }}
-          options={{ ...options, wrapper: Fragment, overrides }}
+          options={{ wrapper: Fragment, ...options,  overrides }}
         />
       </div>
     );

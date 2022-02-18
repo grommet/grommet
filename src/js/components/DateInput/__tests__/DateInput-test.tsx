@@ -6,6 +6,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
+import { Calendar as CalendarIcon } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
@@ -923,5 +924,12 @@ describe('DateInput', () => {
     userEvent.tab();
     expect(asFragment()).toMatchSnapshot();
     expect(onFocus).toHaveBeenCalledTimes(1);
+  });
+
+  test('icon', () => {
+    const { container } = render(
+      <DateInput icon={<CalendarIcon color="red" />} name="item" />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

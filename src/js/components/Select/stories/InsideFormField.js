@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from 'react';
 
-import { Box, Button, Form, FormField, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Form, FormField, Select } from 'grommet';
 
 const options = [
   { label: 'option 1', value: 1 },
@@ -11,29 +10,30 @@ const options = [
 
 export const InsideFormField = () => {
   const [value, setValue] = useState({});
-  const onChange = useCallback(nextValue => setValue(nextValue), []);
+  const onChange = useCallback((nextValue) => setValue(nextValue), []);
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <Form
-          value={value}
-          onChange={onChange}
-          onSubmit={() => console.log('Submit', value)}
-        >
-          <FormField label="Label" name="select">
-            <Select
-              name="select"
-              placeholder="placeholder"
-              options={options}
-              labelKey="label"
-              valueKey="value"
-            />
-          </FormField>
-          <Button type="submit" label="Update" primary />
-        </Form>
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box align="center" pad="large">
+      <Form
+        value={value}
+        onChange={onChange}
+        onSubmit={() => console.log('Submit', value)}
+      >
+        <FormField label="Label" name="select">
+          <Select
+            name="select"
+            placeholder="placeholder"
+            options={options}
+            labelKey="label"
+            valueKey="value"
+          />
+        </FormField>
+        <Button type="submit" label="Update" primary />
+      </Form>
+    </Box>
+    // </Grommet>
   );
 };
 

@@ -160,6 +160,7 @@ interface ButtonType {
       };
     };
   };
+  gap?: GapType;
   border?: {
     color?: ColorType;
     width?: string;
@@ -1364,6 +1365,38 @@ export interface ThemeType {
     pad?: PadType;
     remove?: ButtonType;
     separator?: string;
+    size?: {
+      xsmall?: {
+        pad?: PadType;
+        icon?: {
+          size?: string;
+        };
+      };
+      small?: {
+        pad?: PadType;
+        icon?: {
+          size?: string;
+        };
+      };
+      medium?: {
+        pad?: PadType;
+        icon?: {
+          size?: string;
+        };
+      };
+      large?: {
+        pad?: PadType;
+        icon?: {
+          size?: string;
+        };
+      };
+      xlarge?: {
+        pad?: PadType;
+        icon?: {
+          size?: string;
+        };
+      };
+    };
     value?: TextProps;
   };
   text?: {
@@ -1430,7 +1463,7 @@ export interface ThemeType {
   };
   textInput?: {
     extend?: ExtendType;
-    disabled?: OpacityType;
+    disabled?: OpacityType | { opacity: OpacityType };
     container?: {
       extend?: ExtendType;
     };

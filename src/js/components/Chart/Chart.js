@@ -63,15 +63,27 @@ const Chart = React.forwardRef(
       if (pad) {
         if (pad.horizontal) {
           const padSize = parseMetricToNum(
-            theme.global.edgeSize[pad.horizontal],
+            theme.global.edgeSize[pad.horizontal] || pad.horizontal,
           );
-          result[0] += padSize;
-          result[2] += padSize;
+          result[0] = padSize;
+          result[2] = padSize;
         }
         if (pad.vertical) {
-          const padSize = parseMetricToNum(theme.global.edgeSize[pad.vertical]);
-          result[1] += padSize;
-          result[3] += padSize;
+          const padSize = parseMetricToNum(
+            theme.global.edgeSize[pad.vertical] || pad.vertical,
+          );
+          result[1] = padSize;
+          result[3] = padSize;
+        }
+        if (pad.start) {
+          result[0] = parseMetricToNum(
+            theme.global.edgeSize[pad.start] || pad.start,
+          );
+        }
+        if (pad.end) {
+          result[2] = parseMetricToNum(
+            theme.global.edgeSize[pad.end] || pad.end,
+          );
         }
         if (typeof pad === 'string') {
           const padSize = parseMetricToNum(theme.global.edgeSize[pad]);
