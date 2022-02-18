@@ -927,4 +927,123 @@ describe('Form controlled', () => {
     // lastName should not trigger required validation onMount
     expect(screen.queryAllByText('required')).toHaveLength(0);
   });
+
+  test('validate on mount using FormField - controlled input', () => {
+    const Test = () => {
+      const [firstName, setFirstName] = useState('32434324');
+      const [middleName, setMiddleName] = useState('1');
+      const [lastName, setLastName] = useState('');
+      const [title, setTitle] = useState(1);
+
+      return (
+        <Form>
+          <FormField
+            label="First Name"
+            htmlFor="first-name"
+            name="firstName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (firstName && firstName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            validateOn="blur"
+          >
+            <TextInput
+              id="first-name"
+              name="firstName"
+              value={firstName}
+              onChange={(e) => {
+                setFirstName(e.target.value);
+              }}
+            />
+          </FormField>
+          <FormField
+            label="Middle Name"
+            htmlFor="middle-name"
+            name="middleName"
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (middleName && middleName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            validateOn="change"
+          >
+            <TextInput
+              id="middle-name"
+              name="middleName"
+              value={middleName}
+              onChange={(e) => {
+                setMiddleName(e.target.value);
+              }}
+            />
+          </FormField>
+          <FormField
+            label="Last Name"
+            htmlFor="last-name"
+            name="lastName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (lastName && lastName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            validateOn="submit"
+          >
+            <TextInput
+              id="last-name"
+              name="lastName"
+              value={lastName}
+              onChange={(e) => {
+                setLastName(e.target.value);
+              }}
+            />
+          </FormField>
+          <FormField
+            label="Title"
+            htmlFor="title"
+            name="title"
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (title && title.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            validateOn="blur"
+          >
+            <TextInput
+              id="title"
+              name="title"
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
+            />
+          </FormField>
+        </Form>
+      );
+    };
+
+    render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    // firstName value is incorrect
+    // middleName & title trigger regexp, but not string length validation
+    expect(screen.queryAllByText('invalid')).toHaveLength(3);
+    // lastName should not trigger required validation onMount
+    expect(screen.queryAllByText('required')).toHaveLength(0);
+  });
 });
