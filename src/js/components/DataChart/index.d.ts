@@ -14,7 +14,12 @@ type ChartType =
       property:
         | string
         | string[]
-        | { property?: string; color: string }[]
+        | {
+            property: string;
+            color?: string;
+            opacity?: string;
+            thickness?: string;
+          }[]
         | {
             color?:
               | string
@@ -33,7 +38,7 @@ type ChartType =
           };
       round?: ChartProps['round']; // defaults to undefined
       thickness?: ChartProps['thickness']; // defaults to auto assigned based on available space and amount of data
-      type?: ChartProps['type'] | 'bars' | 'areas'; // defaults to 'bar',
+      type?: ChartProps['type'] | 'bars' | 'areas' | 'lines'; // defaults to 'bar',
     };
 
 type SeriesType =

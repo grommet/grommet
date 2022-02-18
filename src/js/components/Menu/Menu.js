@@ -1,9 +1,11 @@
 import React, {
+  useRef,
   forwardRef,
   useCallback,
   useContext,
   useMemo,
   useState,
+  useEffect,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
@@ -24,6 +26,11 @@ const ContainerBox = styled(Box)`
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     width: 100%;
+  }
+
+  /* remove the browser default focus outline */
+  :focus {
+    outline: none;
   }
 
   ${(props) => props.theme.menu.extend};
@@ -91,7 +98,8 @@ const Menu = forwardRef((props, ref) => {
   const [alignControlMirror, setAlignControlMirror] = useState();
   const initialAlignTop = alignControlMirror === align.top;
 
-  const buttonRefs = {};
+  const dropContainerRef = useRef();
+  const buttonRefs = useRef([]);
   const constants = useMemo(
     () => ({
       none: 'none',
@@ -120,12 +128,25 @@ const Menu = forwardRef((props, ref) => {
     setOpen(true);
   }, []);
 
+  useEffect(() => {
+    // need to wait for Drop to be ready
+    const timer = setTimeout(() => {
+      if (isOpen) {
+        const optionsNode = dropContainerRef.current;
+        if (optionsNode) {
+          optionsNode.focus();
+        }
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [isOpen]);
+
   const onSelectMenuItem = (event) => {
     if (isOpen) {
       if (activeItemIndex >= 0) {
         event.preventDefault();
         event.stopPropagation();
-        buttonRefs[activeItemIndex].click();
+        buttonRefs.current[activeItemIndex].click();
       }
     } else {
       onDropOpen();
@@ -164,7 +185,9 @@ const Menu = forwardRef((props, ref) => {
         index = activeItemIndex + 1;
       }
       setActiveItemIndex(index);
-      buttonRefs[index].focus();
+      if (buttonRefs.current[index]) {
+        buttonRefs.current[index].focus();
+      }
     }
   };
 
@@ -182,7 +205,9 @@ const Menu = forwardRef((props, ref) => {
       onDropClose();
     } else {
       let index;
-      if (activeItemIndex - 1 < 0) {
+      if (activeItemIndex === 'none') {
+        index = items.length - 1;
+      } else if (activeItemIndex - 1 < 0) {
         if (
           constants.controlTop &&
           activeItemIndex - 1 === controlButtonIndex
@@ -195,7 +220,9 @@ const Menu = forwardRef((props, ref) => {
         index = activeItemIndex - 1;
       }
       setActiveItemIndex(index);
-      buttonRefs[index].focus();
+      if (buttonRefs.current[index]) {
+        buttonRefs.current[index].focus();
+      }
     }
   };
 
@@ -239,7 +266,7 @@ const Menu = forwardRef((props, ref) => {
       <Button
         ref={(r) => {
           // make it accessible at the end of all menu items
-          buttonRefs[items.length] = r;
+          buttonRefs.current[items.length] = r;
         }}
         a11yTitle={
           ariaLabel || a11yTitle || format({ id: 'menu.closeMenu', messages })
@@ -264,9 +291,8 @@ const Menu = forwardRef((props, ref) => {
 
   return (
     <Keyboard
-      onDown={onNextMenuItem}
-      onUp={onPreviousMenuItem}
-      onEnter={onSelectMenuItem}
+      onDown={onDropOpen}
+      onUp={onDropOpen}
       onSpace={onSelectMenuItem}
       onEsc={onDropClose}
       onTab={onDropClose}
@@ -292,9 +318,15 @@ const Menu = forwardRef((props, ref) => {
             onTab={(event) =>
               event.shiftKey ? onPreviousMenuItem(event) : onNextMenuItem(event)
             }
+            onDown={onNextMenuItem}
+            onUp={onPreviousMenuItem}
             onEnter={onSelectMenuItem}
           >
-            <ContainerBox background={dropBackground || theme.menu.background}>
+            <ContainerBox
+              ref={dropContainerRef}
+              tabIndex={-1}
+              background={dropBackground || theme.menu.background}
+            >
               {alignControlMirror === 'top' && align.top === 'top'
                 ? controlMirror
                 : undefined}
@@ -322,9 +354,11 @@ const Menu = forwardRef((props, ref) => {
                     <Box key={index} flex={false}>
                       <Button
                         ref={(r) => {
-                          buttonRefs[index] = r;
+                          buttonRefs.current[index] = r;
                         }}
-                        onFocus={() => setActiveItemIndex(index)}
+                        onFocus={() => {
+                          setActiveItemIndex(index);
+                        }}
                         active={activeItemIndex === index}
                         focusIndicator={false}
                         plain={!child ? undefined : true}
