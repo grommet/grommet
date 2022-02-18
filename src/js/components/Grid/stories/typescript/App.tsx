@@ -8,7 +8,7 @@ export const AppGrid = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box>
+    <>
       {Grid.available ? (
         <Grid
           fill
@@ -59,13 +59,9 @@ export const AppGrid = () => {
       ) : (
         <Text>Grid is not supported by your browser</Text>
       )}
-    </Box>
+    </>
     // </Grommet>
   );
-};
-
-AppGrid.args = {
-  full: true,
 };
 
 AppGrid.storyName = 'App';
