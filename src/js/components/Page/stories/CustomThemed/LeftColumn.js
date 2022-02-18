@@ -13,8 +13,8 @@ import {
 
 const customTheme = {
   page: {
-    testKind: {
-      align: 'start',
+    customKind: {
+      alignSelf: 'start',
       width: {
         min: '200px',
         max: '500px',
@@ -33,16 +33,16 @@ export const LeftColumn = () => (
     <Box background="#35bd55">
       <Heading>Global Header</Heading>
     </Box>
-    <Page kind="testKind">
+    <Page kind="customKind">
       <PageSection>
         <Header>
           <Heading>Heading</Heading>
         </Header>
       </PageSection>
       <PageSection full background="pink">
-        Background goes all the way across regardless of Page kind (wide,
-        narrow, or full). This is accomplished by setting the `full` prop on
-        PageContent.
+        Background goes all the way across Page width regardless of Page kind
+        (wide, narrow, full, or custom). This is accomplished by setting the
+        `fullBackground` prop on PageContent.
       </PageSection>
       <PageSection>
         <Paragraph>

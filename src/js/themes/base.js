@@ -1144,7 +1144,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     page: {
       wide: {
-        align: 'center',
+        alignSelf: 'center',
         width: {
           min: '336px', // 336 + 24 (margin) + 24 (margin) = 384 (e.g. 'medium')
           max: 'xxlarge', // 1536
@@ -1156,7 +1156,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       narrow: {
-        align: 'center',
+        alignSelf: 'center',
         width: {
           min: '336px', // 336 + 24 (margin) + 24 (margin) = 384 (e.g. 'medium')
           max: 'large', // 768
@@ -1168,7 +1168,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       full: {
-        align: 'start',
+        alignSelf: 'start',
         width: {
           min: '336px', // 336 + 24 (margin) + 24 (margin) = 384 (e.g. 'medium')
           max: '100%',

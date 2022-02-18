@@ -3,22 +3,17 @@ import { Box } from '../Box';
 import { PageContext } from '../Page';
 import { PageSectionPropTypes } from './propTypes';
 
-const PageSection = ({ background = 'none', children, full, ...rest }) => {
+const PageSection = ({ children, fullBackground, ...rest }) => {
   const { ...pageContext } = useContext(PageContext);
-  if (full) {
-    return (
-      <Box background={background}>
-        <Box {...pageContext} {...rest}>
-          {children}
-        </Box>
-      </Box>
-    );
-  }
-  return (
-    <Box background={background} {...pageContext} {...rest}>
+  const contents = (
+    <Box {...pageContext} {...rest}>
       {children}
     </Box>
   );
+  if (fullBackground) {
+    return <Box background={fullBackground}>{contents}</Box>;
+  }
+  return contents;
 };
 
 PageSection.displayName = 'PageSection';

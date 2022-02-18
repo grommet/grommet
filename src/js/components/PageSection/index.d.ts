@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { BoxProps } from '../Box/index';
+import { BackgroundType } from '../../utils';
 
 export interface PageSectionProps {
-  full?: boolean;
+  fullBackground?: BackgroundType;
 }
 
 export interface PageSectionExtendedProps extends PageSectionProps, BoxProps {}

@@ -11,7 +11,7 @@ const Page = ({ kind, ...rest }) => {
 
   const value = useMemo(
     () => ({
-      alignSelf: theme.page[kind].align,
+      alignSelf: theme.page[kind].alignSelf,
       fill: 'horizontal',
       width: theme.page[kind].width,
       pad: theme.page[kind].pad[size],
@@ -21,11 +21,7 @@ const Page = ({ kind, ...rest }) => {
 
   return (
     <PageContext.Provider value={value}>
-      <Box
-        overflow="horizontal"
-        width={{ min: theme.page[kind].width.min }}
-        {...rest}
-      />
+      <Box width={{ min: theme.page[kind].width.min }} {...rest} />
     </PageContext.Provider>
   );
 };
