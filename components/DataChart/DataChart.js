@@ -561,7 +561,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     ref: xRef,
     axis: axis,
     chartProps: chartProps,
-    data: data,
+    pad: pad,
     renderValue: renderValue,
     serie: axis.x.property && getPropertySeries(axis.x.property)
   }) : null;
@@ -653,6 +653,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     activeProperty: activeProperty,
     axis: axis,
     data: data,
+    pad: pad,
     series: series,
     seriesStyles: seriesStyles,
     renderValue: renderValue,

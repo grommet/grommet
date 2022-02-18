@@ -6,6 +6,7 @@ import { Grid } from '../Grid';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { focusStyle, unfocusStyle } from '../../utils';
+import { halfPad } from './utils';
 import { Swatch } from './Swatch';
 var DetailControl = styled(Box).withConfig({
   displayName: "Detail__DetailControl",
@@ -16,6 +17,7 @@ var Detail = function Detail(_ref) {
   var activeProperty = _ref.activeProperty,
       axis = _ref.axis,
       data = _ref.data,
+      pad = _ref.pad,
       series = _ref.series,
       seriesStyles = _ref.seriesStyles,
       renderValue = _ref.renderValue,
@@ -52,6 +54,11 @@ var Detail = function Detail(_ref) {
     tabIndex: 0,
     direction: "row",
     fill: true,
+    pad: // ensure the hit targets and center lines align with
+    // the data/guide lines
+    (pad == null ? void 0 : pad.horizontal) && halfPad[pad.horizontal] && {
+      horizontal: halfPad[pad.horizontal]
+    } || pad,
     justify: "between",
     responsive: false,
     onFocus: function onFocus() {},
