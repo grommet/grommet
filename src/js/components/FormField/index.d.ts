@@ -33,6 +33,7 @@ export interface FormFieldProps {
           }
         | ((...args: any[]) => any)
       )[];
+  validateOn?: 'blur' | 'submit' | 'change';
 }
 
 type inputProps = Omit<JSX.IntrinsicElements['input'], 'placeholder'>;

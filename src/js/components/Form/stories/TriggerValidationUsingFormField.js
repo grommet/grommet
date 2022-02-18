@@ -1,20 +1,23 @@
 import React from 'react';
 
 import { StatusGood } from 'grommet-icons';
-import { Box, Button, Grommet, Form, FormField } from 'grommet';
+import { Box, Button, Grommet, Form, FormField, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 export const TriggerValidationUsingFormField = () => (
   <Grommet full theme={grommet}>
     <Box fill align="center" justify="center">
       <Box width="medium">
+        <Heading alignSelf="center" level="2">
+          Validate On
+        </Heading>
         <Form
           onReset={(event) => console.log(event)}
           onSubmit={({ value }) => console.log('Submit', value)}
         >
           <FormField
-            label="First Name"
-            name="firstName"
+            label="Blur"
+            name="blur"
             required
             validate={[
               { regexp: /^[a-z]/i },
@@ -39,8 +42,8 @@ export const TriggerValidationUsingFormField = () => (
           />
 
           <FormField
-            label="Last Name"
-            name="lastName"
+            label="Submit"
+            name="submit"
             required
             validate={[
               { regexp: /^[a-z]/i },
@@ -65,13 +68,25 @@ export const TriggerValidationUsingFormField = () => (
           />
 
           <FormField
-            label="Phone Number"
-            name="phoneNumber"
+            label="Change"
+            name="change"
             required
             validate={[
-              { regexp: /^[0-9]*$/ },
-              (number) => {
-                if (number && number.length > 10) return 'Only 10 numbers';
+              { regexp: /^[a-z]/i },
+              (name) => {
+                if (name && name.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+              (name) => {
+                if (name === 'good')
+                  return {
+                    message: (
+                      <Box align="end">
+                        <StatusGood />
+                      </Box>
+                    ),
+                    status: 'info',
+                  };
                 return undefined;
               },
             ]}

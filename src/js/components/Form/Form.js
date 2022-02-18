@@ -183,9 +183,6 @@ const Form = forwardRef(
       [valueProp, valueState],
     );
     const [touched, setTouched] = useState(defaultTouched);
-    const [currentlySelectedElement, setCurrentlySelectedElement] = useState(
-      {},
-    );
     const [validateOn, setValidateOn] = useState(validateOnProp);
     const [validationResults, setValidationResults] = useState({
       errors: errorsProp,
@@ -293,7 +290,7 @@ const Form = forwardRef(
       ) {
         applyValidationRules(
           validationRules
-            .filter(([n]) => getFieldValue(n, value))
+            .filter(([n, v]) => getFieldValue(n, value) && v.validateOn)
             // Exlude empty arrays which may be initial values in
             // an input such as DateInput.
             .filter(
@@ -316,14 +313,13 @@ const Form = forwardRef(
           pendingValidation &&
           (isInstantValidate(validateOn) ||
             validationRules.some(
-              ([name, v]) =>
-                currentlySelectedElement[name] &&
-                isInstantValidate(v.validateOn),
+              ([name, v]) => touched[name] && isInstantValidate(v.validateOn),
             ))
         ) {
           applyValidationRules(
             validationRules.filter(
-              ([n]) => touched[n] || pendingValidation.includes(n),
+              ([n, v]) =>
+                (touched[n] || pendingValidation.includes(n)) && v.validateOn,
             ),
           );
           setPendingValidation(undefined);
@@ -335,13 +331,7 @@ const Form = forwardRef(
         // Chrome: 100, Safari: 120, Firefox: 80
       }, 120);
       return () => clearTimeout(timer);
-    }, [
-      applyValidationRules,
-      currentlySelectedElement,
-      pendingValidation,
-      touched,
-      validateOn,
-    ]);
+    }, [applyValidationRules, pendingValidation, touched, validateOn]);
 
     // Re-run validation rules for all fields with prior errors.
     // if validate=blur this helps re-validate if there are errors
@@ -481,12 +471,6 @@ const Form = forwardRef(
                 setTouched(nextTouched);
               }
 
-              if (!currentlySelectedElement[name]) {
-                setCurrentlySelectedElement({
-                  [name]: true,
-                });
-              }
-
               // if nextValue doesn't have a key for name, this must be
               // uncontrolled form. we will flag this field was added so
               // we know to remove its value from the form if it is dynamically
@@ -578,7 +562,6 @@ const Form = forwardRef(
 
       return { useFormField, useFormInput };
     }, [
-      currentlySelectedElement,
       onChange,
       pendingValidation,
       touched,

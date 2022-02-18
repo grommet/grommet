@@ -400,6 +400,7 @@ Object {
       "pad": [Function],
       "required": [Function],
       "validate": [Function],
+      "validateOn": [Function],
     },
     "render": [Function],
   },
