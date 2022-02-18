@@ -6,6 +6,7 @@ export const Simple = () => {
   const [date, setDate] = useState();
 
   const onSelect = (nextDate) => {
+    console.log(nextDate);
     setDate(nextDate !== date ? nextDate : undefined);
   };
 

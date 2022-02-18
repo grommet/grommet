@@ -141,7 +141,8 @@ export const getTimestamp = (date) =>
 // for internal calculations
 // Reference: https://www.ursahealth.com/new-insights/dates-and-timezones-in-javascript
 
-// default this to true
+// If normalize is false just convert the value toISOString(),
+// valueOffset/localOffset will be 0.
 export const normalizeForTimezone = (value, timestamp, normalize = true) => {
   let adjustedDate;
   let hourDelta;

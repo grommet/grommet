@@ -153,6 +153,9 @@ const DateInput = forwardRef(
                 // clicking an edge date removes it
                 else if (range) normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
+                // timestamp will be undefined if no defaultValue or value have
+                // been passed in, indicating that we should stay local if the
+                // user first picks a date via the Calendar.
                 let nextNormalize = normalize;
                 if (timestamp === undefined) {
                   nextNormalize = false;
@@ -235,12 +238,28 @@ const DateInput = forwardRef(
               onChange={(event) => {
                 const nextTextValue = event.target.value;
                 setTextValue(nextTextValue);
+
+                let localTimestamp;
+                // get the UTC timestamp relative to the user's timezone
+                // once a date it complete
+                if (timestamp === undefined && Date.parse(nextTextValue))
+                  [, localTimestamp] = new Date(nextTextValue)
+                    .toISOString()
+                    .split('T');
+
+                // timestamp will be undefined if no defaultValue or value have
+                // been passed in, indicating that we should stay local
+                let nextNormalize = normalize;
+                if (timestamp === undefined) {
+                  nextNormalize = false;
+                  setNormalize(nextNormalize);
+                }
                 const nextValue = textToValue(
                   nextTextValue,
                   schema,
                   range,
-                  timestamp,
-                  normalize,
+                  timestamp || localTimestamp,
+                  nextNormalize,
                 );
 
                 // reset to original state
