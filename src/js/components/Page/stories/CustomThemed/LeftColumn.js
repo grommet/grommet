@@ -39,7 +39,7 @@ export const LeftColumn = () => (
           <Heading>Heading</Heading>
         </Header>
       </PageSection>
-      <PageSection full background="pink">
+      <PageSection fullBackground="pink">
         Background goes all the way across Page width regardless of Page kind
         (wide, narrow, full, or custom). This is accomplished by setting the
         `fullBackground` prop on PageContent.
