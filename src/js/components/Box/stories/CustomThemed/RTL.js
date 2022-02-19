@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Grommet, Box } from 'grommet';
-import { grommet } from '../../../themes';
+import { grommet } from '../../../../themes';
 
 export const RTLBox = () => (
   <Grommet theme={grommet} dir="rtl">
