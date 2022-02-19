@@ -1,34 +1,34 @@
 import React from 'react';
 import { Attraction } from 'grommet-icons';
 
-import { Grommet, Box, Text } from 'grommet';
-import { grommet } from '../../../themes';
+import { Box, Text } from 'grommet';
 
 export const OnClickBox = () => (
-  <Grommet theme={grommet}>
-    <Box justify="center" align="center" pad="large">
-      {/* eslint-disable no-alert */}
-      <Box
-        border
-        pad="large"
-        align="center"
-        round
-        gap="small"
-        hoverIndicator={{
-          background: {
-            color: 'background-contrast',
-          },
-          elevation: 'medium',
-        }}
-        onClick={() => {
-          alert('clicked');
-        }}
-      >
-        <Attraction size="large" />
-        <Text>Party</Text>
-      </Box>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box justify="center" align="center" pad="large">
+    {/* eslint-disable no-alert */}
+    <Box
+      border
+      pad="large"
+      align="center"
+      round
+      gap="small"
+      hoverIndicator={{
+        background: {
+          color: 'background-contrast',
+        },
+        elevation: 'medium',
+      }}
+      onClick={() => {
+        alert('clicked');
+      }}
+    >
+      <Attraction size="large" />
+      <Text>Party</Text>
     </Box>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 OnClickBox.storyName = 'onClick';

@@ -32,5 +32,5 @@ export const RTLBox = () => (
 RTLBox.storyName = 'RTL';
 
 export default {
-  title: 'Layout/Box/RTL',
+  title: 'Layout/Box/Custom Themed/RTL',
 };
