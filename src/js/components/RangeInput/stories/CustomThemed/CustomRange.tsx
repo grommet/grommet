@@ -34,7 +34,7 @@ const customThemeRangeInput: ThemeType = {
 export const Custom = () => {
   const [value, setValue] = React.useState(0.4);
 
-  const onChange = event => setValue(event.target.value);
+  const onChange = (event) => setValue(event.target.value);
 
   return (
     <Grommet theme={customThemeRangeInput}>
@@ -55,5 +55,5 @@ export const Custom = () => {
 };
 
 export default {
-  title: 'Input/RangeInput/Custom',
+  title: 'Input/RangeInput/Custom Themed/Custom',
 };
