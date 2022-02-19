@@ -260,5 +260,5 @@ export const FieldSpacingOptions = () => (
 FieldSpacingOptions.storyName = 'Field spacing options';
 
 export default {
-  title: 'Input/Form/Field spacing options',
+  title: 'Input/Form/Custom Themed/Field spacing options',
 };

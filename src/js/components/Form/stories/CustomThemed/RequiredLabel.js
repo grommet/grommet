@@ -55,5 +55,5 @@ export const RequiredLabel = () => (
 RequiredLabel.storyName = 'Required label';
 
 export default {
-  title: 'Input/Form/Required label',
+  title: 'Input/Form/Custom Themed/Required label',
 };
