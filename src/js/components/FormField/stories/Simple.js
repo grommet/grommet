@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, FormField, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, FormField, Select } from 'grommet';
 
 const allOptions = Array(100)
   .fill()
@@ -11,19 +10,20 @@ export const Simple = () => {
   const [value, setValue] = useState('');
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <FormField label="Label" htmlFor="select">
-          <Select
-            id="select"
-            placeholder="placeholder"
-            options={allOptions}
-            value={value}
-            onChange={({ option }) => setValue(option)}
-          />
-        </FormField>
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box align="center" pad="large">
+      <FormField label="Label" htmlFor="select">
+        <Select
+          id="select"
+          placeholder="placeholder"
+          options={allOptions}
+          value={value}
+          onChange={({ option }) => setValue(option)}
+        />
+      </FormField>
+    </Box>
+    // </Grommet>
   );
 };
 
