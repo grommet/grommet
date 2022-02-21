@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { FormClose } from 'grommet-icons';
 import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
 // https://github.com/grommet/grommet/blob/master/src/js/components/Select/stories/theme.js
-import { theme as customSearchTheme } from './theme';
+import { theme as customSearchTheme } from '../theme';
 
 const allContentPartners = [
   {
@@ -70,7 +70,7 @@ export const CustomSearch = () => {
 
   useEffect(() => {
     const filterContentPartners = allContentPartners.filter(
-      s => s.name.toLowerCase().indexOf(searchQuery.toLowerCase()) >= 0,
+      (s) => s.name.toLowerCase().indexOf(searchQuery.toLowerCase()) >= 0,
     );
 
     setTimeout(() => {
@@ -83,7 +83,9 @@ export const CustomSearch = () => {
     <Box direction="row" align="center" pad="small" flex={false}>
       <CheckBox
         tabIndex="-1"
-        checked={selectedContentPartners.some(partner => partner.name === name)}
+        checked={selectedContentPartners.some(
+          (partner) => partner.name === name,
+        )}
         label={<Text size="small">{name}</Text>}
         onChange={() => {}}
       />
@@ -117,8 +119,8 @@ export const CustomSearch = () => {
       </Box>
       <Button
         href="#"
-        onFocus={event => event.stopPropagation()}
-        onClick={event => {
+        onFocus={(event) => event.stopPropagation()}
+        onClick={(event) => {
           event.preventDefault();
           event.stopPropagation();
           clearContentPartners();
@@ -132,7 +134,7 @@ export const CustomSearch = () => {
     </Box>
   );
 
-  const sortContentPartners = selectedPartnerNames => (p1, p2) => {
+  const sortContentPartners = (selectedPartnerNames) => (p1, p2) => {
     const p1Exists = selectedPartnerNames.includes(p1.name);
     const p2Exists = selectedPartnerNames.includes(p2.name);
 
@@ -162,7 +164,7 @@ export const CustomSearch = () => {
           value={
             selectedContentPartners.length ? renderContentPartners() : undefined
           }
-          selected={selectedContentPartners.map(option =>
+          selected={selectedContentPartners.map((option) =>
             contentPartners.indexOf(option),
           )}
           options={contentPartners}
@@ -185,7 +187,7 @@ export const CustomSearch = () => {
             setSelectedContentPartners(newSelectedPartners);
             setContentPartners(sortedContentPartners);
           }}
-          onSearch={query => {
+          onSearch={(query) => {
             setSearching(true);
             setSearchQuery(query);
           }}
@@ -200,5 +202,5 @@ export const CustomSearch = () => {
 CustomSearch.storyName = 'Custom search';
 
 export default {
-  title: 'Input/Select/Custom search',
+  title: 'Input/Select/Custom Themed/Custom search',
 };
