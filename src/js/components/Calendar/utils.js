@@ -180,3 +180,40 @@ export const formatDateToPropStructure = (date, timestamp, normalize) => {
   }
   return adjustedDate;
 };
+
+export const getFormattedDate = (
+  nextDate,
+  nextDates,
+  normalize,
+  range,
+  timestamp,
+) => {
+  let adjustedDate;
+  let adjustedDates;
+
+  if (
+    nextDates &&
+    Array.isArray(nextDates[0]) &&
+    (!nextDates[0][0] || !nextDates[0][1]) &&
+    range === true
+  ) {
+    // return string for backwards compatibility
+    [adjustedDates] = nextDates[0].filter((d) => d);
+    adjustedDates = formatDateToPropStructure(
+      adjustedDates,
+      timestamp,
+      normalize,
+    );
+  } else if (nextDates) {
+    adjustedDates = [
+      [
+        formatDateToPropStructure(nextDates[0][0], timestamp, normalize),
+        formatDateToPropStructure(nextDates[0][1], timestamp, normalize),
+      ],
+    ];
+  } else {
+    adjustedDate = formatDateToPropStructure(nextDate, timestamp, normalize);
+  }
+
+  return adjustedDates || adjustedDate;
+};

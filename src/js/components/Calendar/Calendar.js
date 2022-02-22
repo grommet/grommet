@@ -31,8 +31,8 @@ import {
   betweenDates,
   daysApart,
   endOfMonth,
-  formatDateToPropStructure,
   formatToLocalYYYYMMDD,
+  getFormattedDate,
   getTimestamp,
   normalizeForTimezone,
   startOfMonth,
@@ -52,8 +52,6 @@ const activeDates = {
   start: 'start',
   end: 'end',
 };
-
-const timeStamp = /T.*/;
 
 const formatSelectedDatesString = (date, normalize) => `Currently selected
   ${date?.map((item) => {
@@ -586,88 +584,27 @@ const Calendar = forwardRef(
         }
         setActive(new Date(selectedDate));
         if (onSelect) {
-          // output date with no timestamp if that's how user provided it
-          let adjustedDate;
-          let adjustedDates;
-          if (datesProp) {
-            datesProp.forEach((d) => {
-              if (!timeStamp.test(d)) {
-                adjustedDate = formatToLocalYYYYMMDD(nextDate, nextNormalize);
-                if (d === adjustedDate) {
-                  nextDate = undefined;
-                } else {
-                  adjustedDate = undefined;
-                }
-              }
-            });
-          } else if (typeof dateProp === 'string') {
-            if (!timeStamp.test(dateProp)) {
-              adjustedDate = formatToLocalYYYYMMDD(selectedDate, nextNormalize);
-              if (dateProp === adjustedDate) {
-                nextDate = undefined;
-              } else {
-                adjustedDate = undefined;
-              }
-            }
-          } else if (Array.isArray(dateProp)) {
-            dateProp.forEach((d) => {
-              if (!timeStamp.test(d)) {
-                adjustedDate = formatToLocalYYYYMMDD(nextDate, nextNormalize);
-                if (d === adjustedDate) {
-                  nextDate = undefined;
-                } else {
-                  adjustedDate = undefined;
-                }
-              }
-            });
-          } else {
-            adjustedDate = undefined;
-          }
-          if (
-            nextDates &&
-            Array.isArray(nextDates[0]) &&
-            (!nextDates[0][0] || !nextDates[0][1]) &&
-            range === true
-          ) {
-            // return string for backwards compatibility
-            [adjustedDates] = nextDates[0].filter((d) => d);
-            adjustedDates = formatDateToPropStructure(
-              adjustedDates,
-              timestamp,
-              nextNormalize,
-            );
-          } else if (nextDates) {
-            adjustedDates = [
-              [
-                formatDateToPropStructure(
-                  nextDates[0][0],
-                  timestamp,
-                  nextNormalize,
-                ),
-                formatDateToPropStructure(
-                  nextDates[0][1],
-                  timestamp,
-                  nextNormalize,
-                ),
-              ],
-            ];
-          } else {
-            nextDate = formatDateToPropStructure(
-              nextDate,
-              timestamp,
-              nextNormalize,
-            );
-          }
-          onSelect(adjustedDates || adjustedDate || nextDate);
+          // format date/dates to match structure provided by caller
+          // which could take format of:
+          // 1. ISO8601 with a timestamp
+          // 2. ISO8601 without a timestamp
+          // 3. Caller did not provide value/defaultValue, so return date
+          // in ISO8601 with timestamp in UTC relative to user's local timezone
+          const formattedDate = getFormattedDate(
+            nextDate,
+            nextDates,
+            nextNormalize,
+            range,
+            timestamp,
+          );
+          onSelect(formattedDate);
         }
       },
       [
         activeDate,
         activeDateProp,
         date,
-        dateProp,
         dates,
-        datesProp,
         normalize,
         onSelect,
         range,
