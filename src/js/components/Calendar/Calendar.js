@@ -261,6 +261,10 @@ const Calendar = forwardRef(
       };
     }, []);
 
+    // whether or not we should normalize the date based on the timestamp.
+    // will be set to false if the initial timestamp is undefined (meaning
+    // a user did not provide a defaultValue or value). in this case, we
+    // will just rely on the UTC timestamp and don't need to normalize.
     const [normalize, setNormalize] = useState(normalizeProp);
 
     // set activeDate when caller changes it, allows us to change

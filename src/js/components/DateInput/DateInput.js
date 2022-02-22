@@ -79,7 +79,10 @@ const DateInput = forwardRef(
       return undefined;
     }, [defaultValue, value]);
 
-    // whether or not we should normalize the date based on the timestamp
+    // whether or not we should normalize the date based on the timestamp.
+    // will be set to false if the initial timestamp is undefined (meaning
+    // a user did not provide a defaultValue or value). in this case, we
+    // will just rely on the UTC timestamp and don't need to normalize.
     const [normalize, setNormalize] = useState(true);
 
     // normalize value based on timestamp vs user's local timezone
@@ -252,7 +255,7 @@ Use the icon prop instead.`,
 
                 let localTimestamp;
                 // get the UTC timestamp relative to the user's timezone
-                // once a date it complete
+                // once a date is complete
                 if (timestamp === undefined && Date.parse(nextTextValue))
                   [, localTimestamp] = new Date(nextTextValue)
                     .toISOString()
