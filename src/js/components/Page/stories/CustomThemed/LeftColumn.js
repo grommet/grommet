@@ -24,6 +24,7 @@ const customTheme = {
         medium: 'medium',
         large: 'medium',
       },
+      margin: { vertical: 'small', horizontal: 'small' },
     },
   },
 };

@@ -1822,7 +1822,7 @@ Object {
             },
             "width": Object {
               "max": "100%",
-              "min": "336px",
+              "min": "medium",
             },
           },
           "narrow": Object {
@@ -1843,7 +1843,7 @@ Object {
             },
             "width": Object {
               "max": "large",
-              "min": "336px",
+              "min": "medium",
             },
           },
           "wide": Object {
@@ -1864,7 +1864,7 @@ Object {
             },
             "width": Object {
               "max": "xxlarge",
-              "min": "336px",
+              "min": "medium",
             },
           },
         },

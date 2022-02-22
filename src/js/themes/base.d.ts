@@ -1073,6 +1073,19 @@ export interface ThemeType {
       color?: ColorType;
     };
   };
+  page?: {
+    [key: string]: {
+      alignSelf?: AlignContentType;
+      width?:
+        | string
+        | {
+            min: string;
+            max: string;
+          };
+      pad?: string | object;
+      margin?: string | object;
+    };
+  };
   pagination?: {
     button?: ButtonType | string;
     container?: BoxProps | { extend?: ExtendType };

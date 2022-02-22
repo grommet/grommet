@@ -1146,31 +1146,33 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       wide: {
         alignSelf: 'center',
         width: {
-          min: '336px', // 336 + 24 (margin) + 24 (margin) = 384 (e.g. 'medium')
-          max: 'xxlarge', // 1536
+          min: 'medium',
+          max: 'xxlarge',
         },
         pad: {
           small: { horizontal: 'large', vertical: 'medium' },
           medium: { horizontal: 'medium', vertical: 'medium' },
           large: { horizontal: 'large', vertical: 'medium' },
         },
+        // margin: undefined
       },
       narrow: {
         alignSelf: 'center',
         width: {
-          min: '336px', // 336 + 24 (margin) + 24 (margin) = 384 (e.g. 'medium')
-          max: 'large', // 768
+          min: 'medium',
+          max: 'large',
         },
         pad: {
           small: { horizontal: 'large', vertical: 'medium' },
           medium: { horizontal: 'medium', vertical: 'medium' },
           large: { horizontal: 'large', vertical: 'medium' },
         },
+        // margin: undefined
       },
       full: {
         alignSelf: 'start',
         width: {
-          min: '336px', // 336 + 24 (margin) + 24 (margin) = 384 (e.g. 'medium')
+          min: 'medium',
           max: '100%',
         },
         pad: {
@@ -1178,6 +1180,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           medium: { horizontal: 'medium', vertical: 'medium' },
           large: { horizontal: 'large', vertical: 'medium' },
         },
+        // margin: undefined
       },
     },
     pagination: {

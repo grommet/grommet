@@ -40,6 +40,8 @@ export * from './components/Markdown';
 export * from './components/MaskedInput';
 export * from './components/Menu';
 export * from './components/Meter';
+export * from './components/Page';
+export * from './components/PageSection';
 export * from './components/Pagination';
 export * from './components/Paragraph';
 export * from './components/NameValueList';
