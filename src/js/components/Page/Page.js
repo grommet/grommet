@@ -11,11 +11,11 @@ const Page = ({ kind, ...rest }) => {
 
   const value = useMemo(
     () => ({
-      alignSelf: theme.page[kind].alignSelf,
+      alignSelf: theme.page[kind]?.alignSelf,
       fill: 'horizontal',
-      width: theme.page[kind].width,
-      pad: theme.page[kind].pad[size],
-      margin: theme.page[kind].margin[size],
+      width: theme.page[kind]?.width,
+      pad: theme.page[kind]?.pad?.[size],
+      margin: theme.page[kind]?.margin?.[size],
     }),
     [theme, size, kind],
   );
