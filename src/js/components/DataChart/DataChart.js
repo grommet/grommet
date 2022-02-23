@@ -519,7 +519,7 @@ const DataChart = forwardRef(
           ref={xRef}
           axis={axis}
           chartProps={chartProps}
-          data={data}
+          pad={pad}
           renderValue={renderValue}
           serie={axis.x.property && getPropertySeries(axis.x.property)}
         />
@@ -618,6 +618,7 @@ const DataChart = forwardRef(
             activeProperty={activeProperty}
             axis={axis}
             data={data}
+            pad={pad}
             series={series}
             seriesStyles={seriesStyles}
             renderValue={renderValue}
