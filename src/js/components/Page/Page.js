@@ -36,5 +36,8 @@ const Page = ({ kind, ...rest }) => {
 
 Page.displayName = 'Page';
 Page.propTypes = PagePropTypes;
+Page.defaultProps = {
+  kind: 'wide',
+};
 
 export { Page };
