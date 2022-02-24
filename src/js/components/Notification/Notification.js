@@ -17,14 +17,11 @@ import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 
-const IconTextContainer = ({ href, onClick, ...rest }) =>
-  href || onClick ? (
-    <Box flex>
-      <Button href={href} onClick={onClick} {...rest} />
-    </Box>
-  ) : (
-    <Fragment {...rest} />
-  );
+const IconTextButton = ({ href, onClick, ...rest }) => (
+  <Box flex>
+    <Button href={href} onClick={onClick} {...rest} />
+  </Box>
+);
 
 const adaptThemeStyle = (value, theme) => {
   let textStyle = value;
@@ -129,6 +126,30 @@ const Notification = ({
     );
 
   let content = (
+    <Box direction="row" pad={textPad} flex>
+      <Box {...theme.notification.iconContainer}>
+        <StatusIcon color={color} />
+      </Box>
+      <Box {...theme.notification.textContainer}>
+        <TextWrapper {...textWrapperProps}>
+          {title && <Text {...theme.notification.title}>{title}</Text>}
+          {/* space between title and message */}
+          {message && title && direction === 'row' && <Text> </Text>}
+          {message}
+        </TextWrapper>
+      </Box>
+    </Box>
+  );
+
+  // separate from onClose button to avoid nested interactive elements
+  if (onClick || href)
+    content = (
+      <IconTextButton href={href} onClick={onClick}>
+        {content}
+      </IconTextButton>
+    );
+
+  content = (
     <Box
       {...theme.notification.container}
       {...(toast ? { ...theme.notification.toast.container } : {})}
@@ -142,22 +163,7 @@ const Notification = ({
       direction="row"
       gap="small"
     >
-      {/* separate from onClose button to avoid nested interactive elements */}
-      <IconTextContainer href={href} onClick={onClick}>
-        <Box direction="row" pad={textPad} flex>
-          <Box {...theme.notification.iconContainer}>
-            <StatusIcon color={color} />
-          </Box>
-          <Box {...theme.notification.textContainer}>
-            <TextWrapper {...textWrapperProps}>
-              {title && <Text {...theme.notification.title}>{title}</Text>}
-              {/* space between title and message */}
-              {message && title && direction === 'row' && <Text> </Text>}
-              {message}
-            </TextWrapper>
-          </Box>
-        </Box>
-      </IconTextContainer>
+      {content}
       {onClose && (
         // theme.notification.container and textContainer may both have pad,
         // account for both
