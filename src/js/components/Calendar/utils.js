@@ -69,13 +69,14 @@ export const sameDayOrBefore = (date1, date2) =>
 export const daysApart = (date1, date2) =>
   Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
 
-export const formatToLocalYYYYMMDD = (date) => {
+export const formatToLocalYYYYMMDD = (date, normalize) => {
   const adjustedDate = new Date(date);
-  return new Date(
-    adjustedDate.getTime() - adjustedDate.getTimezoneOffset() * 60000,
-  )
-    .toISOString()
-    .split('T')[0];
+  const nextDate = normalize
+    ? new Date(
+        adjustedDate.getTime() - adjustedDate.getTimezoneOffset() * 60000,
+      )
+    : new Date(adjustedDate.getTime());
+  return nextDate.toISOString().split('T')[0];
 };
 // betweenDates takes an array of two elements and checks if the
 // supplied date lies between them, inclusive.
@@ -139,15 +140,21 @@ export const getTimestamp = (date) =>
 // can create undesired results. The standardizes the input value
 // for internal calculations
 // Reference: https://www.ursahealth.com/new-insights/dates-and-timezones-in-javascript
-export const normalizeForTimezone = (value, timestamp) => {
+
+// If normalize is false just convert the value toISOString(),
+// valueOffset/localOffset will be 0.
+export const normalizeForTimezone = (value, timestamp, normalize = true) => {
   let adjustedDate;
   let hourDelta;
   let valueOffset = 0;
-  if (timestamp && typeof timestamp === 'string') {
-    hourDelta = parseInt(timestamp?.split(':')[0], 10);
-    valueOffset = hourDelta * 60 * 60 * 1000; // ms
+  let localOffset = 0;
+  if (normalize) {
+    if (timestamp && typeof timestamp === 'string') {
+      hourDelta = parseInt(timestamp?.split(':')[0], 10);
+      valueOffset = hourDelta * 60 * 60 * 1000; // ms
+    }
+    localOffset = new Date().getTimezoneOffset() * 60 * 1000;
   }
-  const localOffset = new Date().getTimezoneOffset() * 60 * 1000;
 
   adjustedDate =
     value &&
@@ -160,16 +167,53 @@ export const normalizeForTimezone = (value, timestamp) => {
 };
 
 // format the date to align with date format caller passed in
-export const formatDateToPropStructure = (date, timestamp) => {
+export const formatDateToPropStructure = (date, timestamp, normalize) => {
   let adjustedDate;
   if (date) {
-    if (timestamp)
+    if (timestamp) {
       adjustedDate = `${
-        formatToLocalYYYYMMDD(date).split('T')[0]
+        formatToLocalYYYYMMDD(date, normalize).split('T')[0]
       }T${timestamp}`;
-    else if (timestamp === false)
-      [adjustedDate] = formatToLocalYYYYMMDD(date).split('T');
+    } else if (timestamp === false)
+      [adjustedDate] = formatToLocalYYYYMMDD(date, normalize).split('T');
     else adjustedDate = date;
   }
   return adjustedDate;
+};
+
+export const getFormattedDate = (
+  nextDate,
+  nextDates,
+  normalize,
+  range,
+  timestamp,
+) => {
+  let adjustedDate;
+  let adjustedDates;
+
+  if (
+    nextDates &&
+    Array.isArray(nextDates[0]) &&
+    (!nextDates[0][0] || !nextDates[0][1]) &&
+    range === true
+  ) {
+    // return string for backwards compatibility
+    [adjustedDates] = nextDates[0].filter((d) => d);
+    adjustedDates = formatDateToPropStructure(
+      adjustedDates,
+      timestamp,
+      normalize,
+    );
+  } else if (nextDates) {
+    adjustedDates = [
+      [
+        formatDateToPropStructure(nextDates[0][0], timestamp, normalize),
+        formatDateToPropStructure(nextDates[0][1], timestamp, normalize),
+      ],
+    ];
+  } else {
+    adjustedDate = formatDateToPropStructure(nextDate, timestamp, normalize);
+  }
+
+  return adjustedDates || adjustedDate;
 };
