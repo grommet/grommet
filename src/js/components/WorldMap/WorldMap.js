@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react';
 import { ThemeContext } from 'styled-components';
 
-import { Drop } from '../Drop';
+import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 
-import { StyledWorldMap } from './StyledWorldMap';
+import { StyledWorldMap, StyledWorldMapContainer } from './StyledWorldMap';
 import { WorldMapPropTypes } from './propTypes';
 
 // The graphic is drawn as a rectangular grid using coordinates spaced
@@ -498,6 +498,7 @@ const WorldMap = forwardRef(
       hoverColor,
       onSelectPlace,
       places: placesProp,
+      zoom = 1.0,
       ...rest
     },
     ref,
@@ -629,10 +630,21 @@ const WorldMap = forwardRef(
       }
 
       if (content && targets[index]) {
+        const target = targets[index].getBoundingClientRect();
+        const container = containerRef.current.getBoundingClientRect();
+        // TODO: respect align from dropProps
         placesContent.push(
-          <Drop key={key || name} {...dropProps} target={targets[index]}>
+          <Box
+            key={key || name}
+            {...dropProps}
+            style={{
+              position: 'absolute',
+              top: target.top - container.top,
+              left: target.left - container.left,
+            }}
+          >
             {content}
-          </Drop>,
+          </Box>,
         );
       }
 
@@ -693,11 +705,16 @@ const WorldMap = forwardRef(
       );
     }
 
+    const zoomWidthDelta = ((world.width * (1.0 / zoom)) - world.width) / 2.0;
+    const zoomHeightDelta = ((world.height * (1.0 / zoom)) - world.height) / 2.0;
+
     return (
-      <>
+      <StyledWorldMapContainer>
         <StyledWorldMap
           ref={ref}
-          viewBox={`${world.x} ${world.y} ${world.width} ${world.height}`}
+          viewBox={`${world.x + zoomWidthDelta} ${world.y + zoomHeightDelta} ${
+            world.width + zoomWidthDelta
+          } ${world.height + zoomHeightDelta}`}
           preserveAspectRatio="xMinYMin meet"
           fillProp={fill}
           width={world.width}
@@ -712,7 +729,7 @@ const WorldMap = forwardRef(
           {active}
         </StyledWorldMap>
         {placesContent}
-      </>
+      </StyledWorldMapContainer>
     );
   },
 );

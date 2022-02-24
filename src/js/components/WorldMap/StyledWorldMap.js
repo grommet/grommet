@@ -36,4 +36,9 @@ const StyledWorldMap = styled.svg`
 StyledWorldMap.defaultProps = {};
 Object.setPrototypeOf(StyledWorldMap.defaultProps, defaultProps);
 
-export { StyledWorldMap };
+
+const StyledWorldMapContainer = styled.div`
+  position: relative;
+`;
+
+export { StyledWorldMap, StyledWorldMapContainer };
