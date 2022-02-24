@@ -122,27 +122,8 @@ exports[`DataChart areas 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -167,6 +148,13 @@ exports[`DataChart areas 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -261,12 +249,12 @@ exports[`DataChart areas 1`] = `
         class="c10"
       >
         <div
-          class="c11"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c11"
+          class="c2"
         >
           1
         </div>
@@ -392,27 +380,8 @@ exports[`DataChart axis 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -429,6 +398,13 @@ exports[`DataChart axis 1`] = `
 .c7 {
   position: relative;
   display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -507,12 +483,12 @@ exports[`DataChart axis 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -608,12 +584,12 @@ exports[`DataChart axis 1`] = `
       class="c9"
     >
       <div
-        class="c10"
+        class="c2"
       >
         0
       </div>
       <div
-        class="c10"
+        class="c2"
       >
         1
       </div>
@@ -733,12 +709,12 @@ exports[`DataChart axis 1`] = `
       class="c9"
     >
       <div
-        class="c10"
+        class="c2"
       >
         0
       </div>
       <div
-        class="c10"
+        class="c2"
       >
         1
       </div>
@@ -870,6 +846,8 @@ exports[`DataChart axis x granularity 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c6 {
@@ -888,9 +866,8 @@ exports[`DataChart axis x granularity 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  width: 1px;
+  overflow: visible;
 }
 
 .c7 {
@@ -900,18 +877,18 @@ exports[`DataChart axis x granularity 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  grid-area: xAxis;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .c8 {
@@ -921,18 +898,18 @@ exports[`DataChart axis x granularity 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
+  grid-area: xAxis;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .c4 {
@@ -949,6 +926,27 @@ exports[`DataChart axis x granularity 1`] = `
 .c3 {
   position: relative;
   display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
 }
 
 <div
@@ -1079,12 +1077,12 @@ exports[`DataChart axis x granularity 1`] = `
       class="c5"
     >
       <div
-        class="c6"
+        class="c1"
       >
         0
       </div>
       <div
-        class="c6"
+        class="c1"
       >
         1
       </div>
@@ -1316,10 +1314,10 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c5"
+      class="c7"
     >
       <div
-        class="c7"
+        class="c6"
       >
         0
       </div>
@@ -1329,7 +1327,7 @@ exports[`DataChart axis x granularity 1`] = `
         2
       </div>
       <div
-        class="c8"
+        class="c6"
       >
         4
       </div>
@@ -1412,15 +1410,15 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c5"
+      class="c7"
     >
       <div
-        class="c7"
+        class="c1"
       >
         0
       </div>
       <div
-        class="c8"
+        class="c1"
       >
         5
       </div>
@@ -1511,10 +1509,10 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c5"
+      class="c7"
     >
       <div
-        class="c7"
+        class="c6"
       >
         0
       </div>
@@ -1529,7 +1527,7 @@ exports[`DataChart axis x granularity 1`] = `
         4
       </div>
       <div
-        class="c8"
+        class="c6"
       >
         6
       </div>
@@ -1628,15 +1626,15 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c5"
+      class="c7"
     >
       <div
-        class="c7"
+        class="c1"
       >
         0
       </div>
       <div
-        class="c8"
+        class="c1"
       >
         7
       </div>
@@ -1743,10 +1741,10 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c5"
+      class="c7"
     >
       <div
-        class="c7"
+        class="c6"
       >
         0
       </div>
@@ -1766,7 +1764,7 @@ exports[`DataChart axis x granularity 1`] = `
         6
       </div>
       <div
-        class="c8"
+        class="c6"
       >
         8
       </div>
@@ -1881,10 +1879,10 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c5"
+      class="c7"
     >
       <div
-        class="c7"
+        class="c6"
       >
         0
       </div>
@@ -1899,7 +1897,7 @@ exports[`DataChart axis x granularity 1`] = `
         6
       </div>
       <div
-        class="c8"
+        class="c6"
       >
         9
       </div>
@@ -2022,10 +2020,10 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c5"
+      class="c8"
     >
       <div
-        class="c7"
+        class="c6"
       >
         0
       </div>
@@ -2035,7 +2033,7 @@ exports[`DataChart axis x granularity 1`] = `
         5
       </div>
       <div
-        class="c8"
+        class="c6"
       >
         10
       </div>
@@ -2166,15 +2164,15 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c5"
+      class="c8"
     >
       <div
-        class="c7"
+        class="c1"
       >
         0
       </div>
       <div
-        class="c8"
+        class="c1"
       >
         11
       </div>
@@ -2313,10 +2311,10 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c5"
+      class="c8"
     >
       <div
-        class="c7"
+        class="c6"
       >
         0
       </div>
@@ -2336,7 +2334,7 @@ exports[`DataChart axis x granularity 1`] = `
         9
       </div>
       <div
-        class="c8"
+        class="c6"
       >
         12
       </div>
@@ -2467,27 +2465,8 @@ exports[`DataChart bars 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -2512,6 +2491,13 @@ exports[`DataChart bars 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -2627,12 +2613,12 @@ exports[`DataChart bars 1`] = `
         class="c10"
       >
         <div
-          class="c11"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c11"
+          class="c2"
         >
           1
         </div>
@@ -2764,27 +2750,8 @@ exports[`DataChart bars colors 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -2809,6 +2776,13 @@ exports[`DataChart bars colors 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -2924,12 +2898,12 @@ exports[`DataChart bars colors 1`] = `
         class="c10"
       >
         <div
-          class="c11"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c11"
+          class="c2"
         >
           1
         </div>
@@ -3034,11 +3008,20 @@ exports[`DataChart bars empty 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c5 {
   position: relative;
   grid-area: charts;
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -3194,27 +3177,8 @@ exports[`DataChart bars invalid 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -3239,6 +3203,13 @@ exports[`DataChart bars invalid 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -3357,12 +3328,12 @@ exports[`DataChart bars invalid 1`] = `
         class="c10"
       >
         <div
-          class="c11"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c11"
+          class="c2"
         >
           1
         </div>
@@ -3562,48 +3533,8 @@ exports[`DataChart dates 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c13 {
@@ -3639,6 +3570,13 @@ exports[`DataChart dates 1`] = `
 @media only screen and (max-width:768px) {
   .c11 {
     border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
@@ -3762,12 +3700,12 @@ exports[`DataChart dates 1`] = `
         class="c14"
       >
         <div
-          class="c15"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c16"
+          class="c2"
         >
           3
         </div>
@@ -3891,12 +3829,12 @@ exports[`DataChart dates 1`] = `
         class="c14"
       >
         <div
-          class="c15"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c16"
+          class="c2"
         >
           3
         </div>
@@ -4020,12 +3958,12 @@ exports[`DataChart dates 1`] = `
         class="c14"
       >
         <div
-          class="c15"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c16"
+          class="c2"
         >
           3
         </div>
@@ -4149,12 +4087,12 @@ exports[`DataChart dates 1`] = `
         class="c14"
       >
         <div
-          class="c15"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c16"
+          class="c2"
         >
           3
         </div>
@@ -4278,12 +4216,12 @@ exports[`DataChart dates 1`] = `
         class="c14"
       >
         <div
-          class="c15"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c16"
+          class="c2"
         >
           3
         </div>
@@ -4407,12 +4345,12 @@ exports[`DataChart dates 1`] = `
         class="c14"
       >
         <div
-          class="c15"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c16"
+          class="c2"
         >
           3
         </div>
@@ -4538,27 +4476,8 @@ exports[`DataChart default 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -4575,6 +4494,13 @@ exports[`DataChart default 1`] = `
 .c7 {
   position: relative;
   display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -4653,12 +4579,12 @@ exports[`DataChart default 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -4785,6 +4711,8 @@ exports[`DataChart detail 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .c12 {
@@ -4838,27 +4766,8 @@ exports[`DataChart detail 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -4923,6 +4832,13 @@ exports[`DataChart detail 1`] = `
 
 .c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -5024,12 +4940,12 @@ exports[`DataChart detail 1`] = `
         class="c14"
       >
         <div
-          class="c15"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c15"
+          class="c2"
         >
           1
         </div>
@@ -5109,12 +5025,12 @@ exports[`DataChart detail 1`] = `
         class="c14"
       >
         <div
-          class="c15"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c15"
+          class="c2"
         >
           1
         </div>
@@ -5240,27 +5156,8 @@ exports[`DataChart gap 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -5277,6 +5174,13 @@ exports[`DataChart gap 1`] = `
 .c7 {
   position: relative;
   display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -5355,12 +5259,12 @@ exports[`DataChart gap 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -5440,12 +5344,12 @@ exports[`DataChart gap 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -5525,12 +5429,12 @@ exports[`DataChart gap 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -5730,27 +5634,8 @@ exports[`DataChart guide 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c13 {
@@ -5786,6 +5671,13 @@ exports[`DataChart guide 1`] = `
 @media only screen and (max-width:768px) {
   .c11 {
     border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
@@ -5893,12 +5785,12 @@ exports[`DataChart guide 1`] = `
         class="c14"
       >
         <div
-          class="c15"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c15"
+          class="c2"
         >
           1
         </div>
@@ -5978,12 +5870,12 @@ exports[`DataChart guide 1`] = `
         class="c14"
       >
         <div
-          class="c15"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c15"
+          class="c2"
         >
           1
         </div>
@@ -6077,12 +5969,12 @@ exports[`DataChart guide 1`] = `
         class="c14"
       >
         <div
-          class="c15"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c15"
+          class="c2"
         >
           1
         </div>
@@ -6185,12 +6077,12 @@ exports[`DataChart guide 1`] = `
         class="c14"
       >
         <div
-          class="c15"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c15"
+          class="c2"
         >
           1
         </div>
@@ -6316,30 +6208,11 @@ exports[`DataChart legend 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-}
-
-.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6357,7 +6230,7 @@ exports[`DataChart legend 1`] = `
   flex-wrap: wrap;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6379,7 +6252,7 @@ exports[`DataChart legend 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -6405,33 +6278,40 @@ exports[`DataChart legend 1`] = `
   display: block;
 }
 
-.c14 {
+.c13 {
   font-size: 18px;
   line-height: 24px;
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c9 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
     margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c12 {
     width: 3px;
   }
 }
@@ -6515,12 +6395,12 @@ exports[`DataChart legend 1`] = `
           class="c9"
         >
           <div
-            class="c10"
+            class="c1"
           >
             0
           </div>
           <div
-            class="c10"
+            class="c1"
           >
             1
           </div>
@@ -6528,10 +6408,10 @@ exports[`DataChart legend 1`] = `
       </div>
     </div>
     <div
-      class="c11"
+      class="c10"
     >
       <div
-        class="c12"
+        class="c11"
       >
         <svg
           fill="#6FFFB0"
@@ -6545,10 +6425,10 @@ exports[`DataChart legend 1`] = `
           />
         </svg>
         <div
-          class="c13"
+          class="c12"
         />
         <span
-          class="c14"
+          class="c13"
         >
           a
         </span>
@@ -6628,12 +6508,12 @@ exports[`DataChart legend 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c1"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c1"
         >
           1
         </div>
@@ -6765,27 +6645,8 @@ exports[`DataChart lines 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -6810,6 +6671,13 @@ exports[`DataChart lines 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -6909,12 +6777,12 @@ exports[`DataChart lines 1`] = `
         class="c10"
       >
         <div
-          class="c11"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c11"
+          class="c2"
         >
           1
         </div>
@@ -7040,27 +6908,8 @@ exports[`DataChart nothing 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -7077,6 +6926,13 @@ exports[`DataChart nothing 1`] = `
 .c7 {
   position: relative;
   display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -7164,12 +7020,12 @@ exports[`DataChart nothing 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c3"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c3"
         >
           1
         </div>
@@ -7301,27 +7157,8 @@ exports[`DataChart offset 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -7338,6 +7175,13 @@ exports[`DataChart offset 1`] = `
 .c7 {
   position: relative;
   display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -7417,12 +7261,12 @@ exports[`DataChart offset 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -7562,27 +7406,6 @@ exports[`DataChart pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
@@ -7604,7 +7427,7 @@ exports[`DataChart pad 1`] = `
   justify-content: center;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7723,12 +7546,12 @@ exports[`DataChart pad 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -7745,12 +7568,12 @@ exports[`DataChart pad 1`] = `
         class="c3"
       >
         <div
-          class="c11"
+          class="c10"
         >
           2
         </div>
         <div
-          class="c11"
+          class="c10"
         >
           0.8
         </div>
@@ -7808,12 +7631,12 @@ exports[`DataChart pad 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -7830,12 +7653,12 @@ exports[`DataChart pad 1`] = `
         class="c3"
       >
         <div
-          class="c12"
+          class="c11"
         >
           2
         </div>
         <div
-          class="c12"
+          class="c11"
         >
           0.8
         </div>
@@ -7893,12 +7716,12 @@ exports[`DataChart pad 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -8024,27 +7847,8 @@ exports[`DataChart size 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c8 {
@@ -8069,7 +7873,7 @@ exports[`DataChart size 1`] = `
   display: flex;
 }
 
-.c11 {
+.c10 {
   position: relative;
   grid-area: charts;
   width: 100%;
@@ -8084,7 +7888,7 @@ exports[`DataChart size 1`] = `
   display: flex;
 }
 
-.c12 {
+.c11 {
   position: relative;
   grid-area: charts;
 }
@@ -8096,9 +7900,16 @@ exports[`DataChart size 1`] = `
   height: 100%;
 }
 
-.c13 {
+.c12 {
   position: relative;
   display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -8177,12 +7988,12 @@ exports[`DataChart size 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -8218,7 +8029,7 @@ exports[`DataChart size 1`] = `
       class="c2"
     >
       <div
-        class="c11"
+        class="c10"
       >
         <div
           class="c7"
@@ -8262,12 +8073,12 @@ exports[`DataChart size 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -8303,10 +8114,10 @@ exports[`DataChart size 1`] = `
       class="c2"
     >
       <div
-        class="c12"
+        class="c11"
       >
         <div
-          class="c13"
+          class="c12"
         >
           <svg
             class="c8"
@@ -8347,12 +8158,12 @@ exports[`DataChart size 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -8478,30 +8289,11 @@ exports[`DataChart type 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-}
-
-.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8542,6 +8334,13 @@ exports[`DataChart type 1`] = `
 .c7 {
   position: relative;
   display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 <div
@@ -8620,12 +8419,12 @@ exports[`DataChart type 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -8642,12 +8441,12 @@ exports[`DataChart type 1`] = `
         class="c3"
       >
         <div
-          class="c11"
+          class="c10"
         >
           2
         </div>
         <div
-          class="c11"
+          class="c10"
         >
           0.8
         </div>
@@ -8697,12 +8496,12 @@ exports[`DataChart type 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
@@ -8719,12 +8518,12 @@ exports[`DataChart type 1`] = `
         class="c3"
       >
         <div
-          class="c11"
+          class="c10"
         >
           2
         </div>
         <div
-          class="c11"
+          class="c10"
         >
           0.8
         </div>
@@ -8771,12 +8570,12 @@ exports[`DataChart type 1`] = `
         class="c9"
       >
         <div
-          class="c10"
+          class="c2"
         >
           0
         </div>
         <div
-          class="c10"
+          class="c2"
         >
           1
         </div>
