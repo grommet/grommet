@@ -47,5 +47,5 @@ Themed.parameters = {
 };
 
 export default {
-  title: 'Controls/Tip/Themed',
+  title: 'Controls/Tip/Custom Themed/Themed',
 };

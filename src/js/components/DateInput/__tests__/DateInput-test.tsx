@@ -896,7 +896,7 @@ describe('DateInput', () => {
   test('clicking calendar icon should open drop', () => {
     render(
       <Grommet>
-        <DateInput format="m/d/yy" defaultValue="1/1/2021" />
+        <DateInput format="m/d/yy" defaultValue="2021-01-01" />
       </Grommet>,
     );
     expect(

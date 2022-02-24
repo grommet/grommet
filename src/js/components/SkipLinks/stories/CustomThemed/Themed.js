@@ -148,5 +148,5 @@ Themed.parameters = {
 };
 
 export default {
-  title: 'Utilities/SkipLinks/Themed',
+  title: 'Utilities/SkipLinks/Custom Themed/Themed',
 };

@@ -11,7 +11,7 @@ for (let i = 0; i < 7; i += 1) {
   });
 }
 
-export const StackedAreas = () => (
+export const StackedLines = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={grommet}>
   <Box align="center" justify="start" pad="large">
@@ -34,21 +34,22 @@ export const StackedAreas = () => (
       ]}
       chart={[
         {
-          property: [{ property: 'usage', opacity: 'strong' }, 'bonus'],
-          type: 'areas',
-          thickness: 'hair',
+          property: ['usage', 'bonus'],
+          type: 'lines',
+          thickness: 'xsmall',
+          round: true,
         },
       ]}
       axis={{ x: { property: 'date', granularity: 'fine' }, y: true }}
-      guide={{ y: { granularity: 'medium' } }}
+      guide={{ y: true }}
       legend
     />
   </Box>
   // </Grommet>
 );
 
-StackedAreas.storyName = 'Stacked areas';
+StackedLines.storyName = 'Stacked lines';
 
 export default {
-  title: 'Visualizations/DataChart/Stacked areas',
+  title: 'Visualizations/DataChart/Stacked lines',
 };
