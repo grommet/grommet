@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.withinDates = exports.subtractMonths = exports.subtractDays = exports.startOfMonth = exports.sameDayOrBefore = exports.sameDayOrAfter = exports.sameDay = exports.normalizeForTimezone = exports.getTimestamp = exports.formatToLocalYYYYMMDD = exports.formatDateToPropStructure = exports.endOfMonth = exports.daysApart = exports.betweenDates = exports.addMonths = exports.addDays = void 0;
+exports.withinDates = exports.subtractMonths = exports.subtractDays = exports.startOfMonth = exports.sameDayOrBefore = exports.sameDayOrAfter = exports.sameDay = exports.normalizeForTimezone = exports.getTimestamp = exports.getFormattedDate = exports.formatToLocalYYYYMMDD = exports.formatDateToPropStructure = exports.endOfMonth = exports.daysApart = exports.betweenDates = exports.addMonths = exports.addDays = void 0;
 // Utility functions for the Calendar.
 // Just what's needed to avoid having to include a dependency like momentjs.
 var DAY_MILLISECONDS = 24 * 60 * 60 * 1000;
@@ -91,9 +91,10 @@ var daysApart = function daysApart(date1, date2) {
 
 exports.daysApart = daysApart;
 
-var formatToLocalYYYYMMDD = function formatToLocalYYYYMMDD(date) {
+var formatToLocalYYYYMMDD = function formatToLocalYYYYMMDD(date, normalize) {
   var adjustedDate = new Date(date);
-  return new Date(adjustedDate.getTime() - adjustedDate.getTimezoneOffset() * 60000).toISOString().split('T')[0];
+  var nextDate = normalize ? new Date(adjustedDate.getTime() - adjustedDate.getTimezoneOffset() * 60000) : new Date(adjustedDate.getTime());
+  return nextDate.toISOString().split('T')[0];
 }; // betweenDates takes an array of two elements and checks if the
 // supplied date lies between them, inclusive.
 // returns 2 if exact match to one end, 1 if between, undefined otherwise
@@ -166,21 +167,31 @@ var getTimestamp = function getTimestamp(date) {
 // can create undesired results. The standardizes the input value
 // for internal calculations
 // Reference: https://www.ursahealth.com/new-insights/dates-and-timezones-in-javascript
+// If normalize is false just convert the value toISOString(),
+// valueOffset/localOffset will be 0.
 
 
 exports.getTimestamp = getTimestamp;
 
-var normalizeForTimezone = function normalizeForTimezone(value, timestamp) {
+var normalizeForTimezone = function normalizeForTimezone(value, timestamp, normalize) {
+  if (normalize === void 0) {
+    normalize = true;
+  }
+
   var adjustedDate;
   var hourDelta;
   var valueOffset = 0;
+  var localOffset = 0;
 
-  if (timestamp && typeof timestamp === 'string') {
-    hourDelta = parseInt(timestamp == null ? void 0 : timestamp.split(':')[0], 10);
-    valueOffset = hourDelta * 60 * 60 * 1000; // ms
+  if (normalize) {
+    if (timestamp && typeof timestamp === 'string') {
+      hourDelta = parseInt(timestamp == null ? void 0 : timestamp.split(':')[0], 10);
+      valueOffset = hourDelta * 60 * 60 * 1000; // ms
+    }
+
+    localOffset = new Date().getTimezoneOffset() * 60 * 1000;
   }
 
-  var localOffset = new Date().getTimezoneOffset() * 60 * 1000;
   adjustedDate = value && (Array.isArray(value) ? value : [value]).map(function (v) {
     return new Date(new Date(v).getTime() - valueOffset + localOffset).toISOString();
   });
@@ -196,12 +207,14 @@ var normalizeForTimezone = function normalizeForTimezone(value, timestamp) {
 
 exports.normalizeForTimezone = normalizeForTimezone;
 
-var formatDateToPropStructure = function formatDateToPropStructure(date, timestamp) {
+var formatDateToPropStructure = function formatDateToPropStructure(date, timestamp, normalize) {
   var adjustedDate;
 
   if (date) {
-    if (timestamp) adjustedDate = formatToLocalYYYYMMDD(date).split('T')[0] + "T" + timestamp;else if (timestamp === false) {
-      var _formatToLocalYYYYMMD = formatToLocalYYYYMMDD(date).split('T');
+    if (timestamp) {
+      adjustedDate = formatToLocalYYYYMMDD(date, normalize).split('T')[0] + "T" + timestamp;
+    } else if (timestamp === false) {
+      var _formatToLocalYYYYMMD = formatToLocalYYYYMMDD(date, normalize).split('T');
 
       adjustedDate = _formatToLocalYYYYMMD[0];
     } else adjustedDate = date;
@@ -211,3 +224,26 @@ var formatDateToPropStructure = function formatDateToPropStructure(date, timesta
 };
 
 exports.formatDateToPropStructure = formatDateToPropStructure;
+
+var getFormattedDate = function getFormattedDate(nextDate, nextDates, normalize, range, timestamp) {
+  var adjustedDate;
+  var adjustedDates;
+
+  if (nextDates && Array.isArray(nextDates[0]) && (!nextDates[0][0] || !nextDates[0][1]) && range === true) {
+    // return string for backwards compatibility
+    var _nextDates$0$filter = nextDates[0].filter(function (d) {
+      return d;
+    });
+
+    adjustedDates = _nextDates$0$filter[0];
+    adjustedDates = formatDateToPropStructure(adjustedDates, timestamp, normalize);
+  } else if (nextDates) {
+    adjustedDates = [[formatDateToPropStructure(nextDates[0][0], timestamp, normalize), formatDateToPropStructure(nextDates[0][1], timestamp, normalize)]];
+  } else {
+    adjustedDate = formatDateToPropStructure(nextDate, timestamp, normalize);
+  }
+
+  return adjustedDates || adjustedDate;
+};
+
+exports.getFormattedDate = getFormattedDate;

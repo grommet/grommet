@@ -93,21 +93,25 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       value = _useFormInput[0],
       setValue = _useFormInput[1];
 
-  var timestamp;
-
-  if (Array.isArray(defaultValue) && defaultValue.length) {
-    timestamp = (0, _utils2.getTimestamp)(defaultValue[0]);
-  } else if (typeof defaultValue === 'string') {
-    timestamp = (0, _utils2.getTimestamp)(defaultValue);
-  } else if (Array.isArray(value) && value.length) {
-    timestamp = (0, _utils2.getTimestamp)(value[0]); // check to see if value is not an empty string
+  var timestamp = (0, _react.useMemo)(function () {
+    if (Array.isArray(defaultValue) && defaultValue.length) return (0, _utils2.getTimestamp)(defaultValue[0]);
+    if (typeof defaultValue === 'string') return (0, _utils2.getTimestamp)(defaultValue);
+    if (Array.isArray(value) && value.length) return (0, _utils2.getTimestamp)(value[0]); // check to see if value is not an empty string
     // empty string should behave like undefined
-  } else if (typeof value === 'string' && value.length) {
-    timestamp = (0, _utils2.getTimestamp)(value);
-  } // normalize value based on timestamp vs user's local timezone
+
+    if (typeof value === 'string' && value.length) return (0, _utils2.getTimestamp)(value);
+    return undefined;
+  }, [defaultValue, value]); // whether or not we should normalize the date based on the timestamp.
+  // will be set to false if the initial timestamp is undefined (meaning
+  // a user did not provide a defaultValue or value). in this case, we
+  // will just rely on the UTC timestamp and don't need to normalize.
+
+  var _useState = (0, _react.useState)(true),
+      normalize = _useState[0],
+      setNormalize = _useState[1]; // normalize value based on timestamp vs user's local timezone
 
 
-  var normalizedDate = (0, _utils2.normalizeForTimezone)(value, timestamp); // do we expect multiple dates?
+  var normalizedDate = (0, _utils2.normalizeForTimezone)(value, timestamp, normalize); // do we expect multiple dates?
 
   var range = Array.isArray(value) || format && format.includes('-'); // parse format and build a formal schema we can use elsewhere
 
@@ -119,9 +123,9 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     return (0, _utils3.schemaToMask)(schema);
   }, [schema]); // textValue is only used when a format is provided
 
-  var _useState = (0, _react.useState)(schema ? (0, _utils3.valueToText)(normalizedDate, schema) : undefined),
-      textValue = _useState[0],
-      setTextValue = _useState[1]; // Setting the icon through `inputProps` is deprecated.
+  var _useState2 = (0, _react.useState)(schema ? (0, _utils3.valueToText)(normalizedDate, schema) : undefined),
+      textValue = _useState2[0],
+      setTextValue = _useState2[1]; // Setting the icon through `inputProps` is deprecated.
   // The `icon` prop should be used instead.
 
 
@@ -149,9 +153,9 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     }
   }, [range, schema, textValue, value, normalizedDate, timestamp]); // when format and not inline, whether to show the Calendar in a Drop
 
-  var _useState2 = (0, _react.useState)(),
-      open = _useState2[0],
-      setOpen = _useState2[1];
+  var _useState3 = (0, _react.useState)(),
+      open = _useState3[0],
+      setOpen = _useState3[1];
 
   var openCalendar = (0, _react.useCallback)(function () {
     setOpen(true);
@@ -178,15 +182,26 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     dates: range && value.length ? [normalizedDate] : undefined // places focus on days grid when Calendar opens
     ,
     initialFocus: open ? 'days' : undefined,
+    normalize: normalize,
     onSelect: disabled ? undefined : function (nextValue) {
       var normalizedValue;
 
       if (range && Array.isArray(nextValue)) {
         normalizedValue = nextValue[0];
       } // clicking an edge date removes it
-      else if (range) normalizedValue = [nextValue, nextValue];else normalizedValue = nextValue;
+      else if (range) normalizedValue = [nextValue, nextValue];else normalizedValue = nextValue; // timestamp will be undefined if no defaultValue or value have
+      // been passed in, indicating that we should stay local if the
+      // user first picks a date via the Calendar.
 
-      if (schema) setTextValue((0, _utils3.valueToText)((0, _utils2.normalizeForTimezone)(normalizedValue), schema));
+
+      var nextNormalize = normalize;
+
+      if (timestamp === undefined) {
+        nextNormalize = false;
+        setNormalize(nextNormalize);
+      }
+
+      if (schema) setTextValue((0, _utils3.valueToText)((0, _utils2.normalizeForTimezone)(normalizedValue, undefined, nextNormalize), schema));
       setValue(normalizedValue);
       if (_onChange) _onChange({
         value: normalizedValue
@@ -259,7 +274,27 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     onChange: function onChange(event) {
       var nextTextValue = event.target.value;
       setTextValue(nextTextValue);
-      var nextValue = (0, _utils3.textToValue)(nextTextValue, schema, range, timestamp); // update value even when undefined
+      var localTimestamp; // get the UTC timestamp relative to the user's timezone
+      // once a date is complete
+
+      if (timestamp === undefined && Date.parse(nextTextValue)) {
+        var _Date$toISOString$spl = new Date(nextTextValue).toISOString().split('T');
+
+        localTimestamp = _Date$toISOString$spl[1];
+      } // timestamp will be undefined if no defaultValue or value have
+      // been passed in, indicating that we should stay local
+
+
+      var nextNormalize = normalize;
+
+      if (timestamp === undefined) {
+        nextNormalize = false;
+        setNormalize(nextNormalize);
+      }
+
+      var nextValue = (0, _utils3.textToValue)(nextTextValue, schema, range, timestamp || localTimestamp, nextNormalize); // reset to original state
+
+      if (nextValue === undefined) setNormalize(true); // update value even when undefined
 
       setValue(nextValue);
 

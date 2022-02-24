@@ -1,4 +1,4 @@
-var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
+var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "normalize", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
@@ -14,7 +14,7 @@ import { Button } from '../Button';
 import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
 import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
-import { addDays, addMonths, betweenDates, daysApart, endOfMonth, formatDateToPropStructure, formatToLocalYYYYMMDD, getTimestamp, normalizeForTimezone, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
+import { addDays, addMonths, betweenDates, daysApart, endOfMonth, formatToLocalYYYYMMDD, getFormattedDate, getTimestamp, normalizeForTimezone, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
 import { CalendarPropTypes } from './propTypes';
 var headingPadMap = {
   small: 'xsmall',
@@ -25,17 +25,16 @@ var activeDates = {
   start: 'start',
   end: 'end'
 };
-var timeStamp = /T.*/;
 
-var formatSelectedDatesString = function formatSelectedDatesString(date) {
+var formatSelectedDatesString = function formatSelectedDatesString(date, normalize) {
   return "Currently selected\n  " + (date == null ? void 0 : date.map(function (item) {
     var dates;
 
     if (!Array.isArray(item)) {
-      dates = formatToLocalYYYYMMDD(item) + " ";
+      dates = formatToLocalYYYYMMDD(item, normalize) + " ";
     } else {
-      var start = item[0] !== undefined ? formatToLocalYYYYMMDD(item[0]) : 'none';
-      var end = item[1] !== undefined ? formatToLocalYYYYMMDD(item[1]) : 'none';
+      var start = item[0] !== undefined ? formatToLocalYYYYMMDD(item[0], normalize) : 'none';
+      var end = item[1] !== undefined ? formatToLocalYYYYMMDD(item[1], normalize) : 'none';
       dates = start + " through " + end;
     }
 
@@ -43,32 +42,32 @@ var formatSelectedDatesString = function formatSelectedDatesString(date) {
   }));
 };
 
-var getAccessibilityString = function getAccessibilityString(date, dates) {
+var getAccessibilityString = function getAccessibilityString(date, dates, normalize) {
   if (date && !Array.isArray(date)) {
-    return "Currently selected " + formatToLocalYYYYMMDD(date) + ";";
+    return "Currently selected " + formatToLocalYYYYMMDD(date, normalize) + ";";
   }
 
   if (date && Array.isArray(date)) {
-    return formatSelectedDatesString(date);
+    return formatSelectedDatesString(date, normalize);
   }
 
   if (dates != null && dates.length) {
-    return formatSelectedDatesString(dates);
+    return formatSelectedDatesString(dates, normalize);
   }
 
   return 'No date selected';
 }; // function that runs inside the useEffect for date and dates
 
 
-var normalizeDate = function normalizeDate(dateValue, timestamp) {
+var normalizeDate = function normalizeDate(dateValue, timestamp, normalize) {
   if (typeof dateValue === 'string') {
-    return normalizeForTimezone(dateValue, timestamp);
+    return normalizeForTimezone(dateValue, timestamp, normalize);
   }
 
   if (Array.isArray(dateValue)) {
     if (Array.isArray(dateValue[0])) {
       var _dateValue$0$map = dateValue[0].map(function (day) {
-        return normalizeForTimezone(day, timestamp) || undefined;
+        return normalizeForTimezone(day, timestamp, normalize) || undefined;
       }),
           from = _dateValue$0$map[0],
           to = _dateValue$0$map[1];
@@ -80,14 +79,14 @@ var normalizeDate = function normalizeDate(dateValue, timestamp) {
     dateValue.forEach(function (d) {
       if (Array.isArray(d)) {
         var _d$map = d.map(function (day) {
-          return normalizeForTimezone(day, timestamp);
+          return normalizeForTimezone(day, timestamp, normalize);
         }),
             _from = _d$map[0],
             _to = _d$map[1];
 
         dateArray.push([_from, _to]);
       } else {
-        dateArray.push(normalizeForTimezone(d, timestamp));
+        dateArray.push(normalizeForTimezone(d, timestamp, normalize));
       }
     });
     return dateArray;
@@ -220,6 +219,8 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       _ref3$locale = _ref3.locale,
       locale = _ref3$locale === void 0 ? 'en-US' : _ref3$locale,
       messages = _ref3.messages,
+      _ref3$normalize = _ref3.normalize,
+      normalizeProp = _ref3$normalize === void 0 ? true : _ref3$normalize,
       onReference = _ref3.onReference,
       onSelect = _ref3.onSelect,
       range = _ref3.range,
@@ -258,12 +259,20 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       document.removeEventListener('mousedown', onMouseDown);
       document.removeEventListener('mouseup', onMouseUp);
     };
-  }, []); // set activeDate when caller changes it, allows us to change
+  }, []); // whether or not we should normalize the date based on the timestamp.
+  // will be set to false if the initial timestamp is undefined (meaning
+  // a user did not provide a defaultValue or value). in this case, we
+  // will just rely on the UTC timestamp and don't need to normalize.
+
+  var _useState2 = useState(normalizeProp),
+      normalize = _useState2[0],
+      setNormalize = _useState2[1]; // set activeDate when caller changes it, allows us to change
   // it internally too
 
-  var _useState2 = useState(dateProp && typeof dateProp === 'string' && range ? activeDates.end : activeDates.start),
-      activeDate = _useState2[0],
-      setActiveDate = _useState2[1];
+
+  var _useState3 = useState(dateProp && typeof dateProp === 'string' && range ? activeDates.end : activeDates.start),
+      activeDate = _useState3[0],
+      setActiveDate = _useState3[1];
 
   useEffect(function () {
     if (activeDateProp) setActiveDate(activeDateProp);
@@ -293,59 +302,59 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }
 
   var normalizedDate = useMemo(function () {
-    return timestampProp === undefined ? normalizeDate(dateProp, timestamp) : dateProp;
-  }, [dateProp, timestamp, timestampProp]);
+    return timestampProp === undefined ? normalizeDate(dateProp, timestamp, normalize) : dateProp;
+  }, [dateProp, normalize, timestamp, timestampProp]);
   var normalizedDates = useMemo(function () {
-    return timestampProp === undefined ? normalizeDate(datesProp, timestamp) : datesProp;
-  }, [datesProp, timestamp, timestampProp]); // set date when caller changes it, allows us to change it internally too
+    return timestampProp === undefined ? normalizeDate(datesProp, timestamp, normalize) : datesProp;
+  }, [datesProp, normalize, timestamp, timestampProp]); // set date when caller changes it, allows us to change it internally too
 
-  var _useState3 = useState(normalizedDate),
-      date = _useState3[0],
-      setDate = _useState3[1];
+  var _useState4 = useState(normalizedDate),
+      date = _useState4[0],
+      setDate = _useState4[1];
 
   useEffect(function () {
     setDate(normalizedDate);
   }, [normalizedDate]); // set dates when caller changes it, allows us to change it internally too
 
-  var _useState4 = useState(normalizedDates),
-      dates = _useState4[0],
-      setDates = _useState4[1];
+  var _useState5 = useState(normalizedDates),
+      dates = _useState5[0],
+      setDates = _useState5[1];
 
   useEffect(function () {
     setDates(normalizedDates);
   }, [normalizedDates]); // set reference based on what the caller passed or date/dates.
 
-  var _useState5 = useState(normalizeReference(referenceProp, normalizedDate, normalizedDates, timestamp)),
-      reference = _useState5[0],
-      setReference = _useState5[1];
+  var _useState6 = useState(normalizeReference(referenceProp, normalizedDate, normalizedDates, timestamp)),
+      reference = _useState6[0],
+      setReference = _useState6[1];
 
   useEffect(function () {
     return setReference(normalizeReference(referenceProp, normalizedDate, normalizedDates, timestamp));
   }, [referenceProp, normalizedDate, normalizedDates, timestamp]); // normalize bounds
 
-  var _useState6 = useState(boundsProp),
-      bounds = _useState6[0],
-      setBounds = _useState6[1];
+  var _useState7 = useState(boundsProp),
+      bounds = _useState7[0],
+      setBounds = _useState7[1];
 
   useEffect(function () {
     if (boundsProp) setBounds(boundsProp);else setBounds(undefined);
   }, [boundsProp]); // calculate the bounds we display based on the reference
 
-  var _useState7 = useState(buildDisplayBounds(reference, firstDayOfWeek)),
-      displayBounds = _useState7[0],
-      setDisplayBounds = _useState7[1];
-
-  var _useState8 = useState(),
-      targetDisplayBounds = _useState8[0],
-      setTargetDisplayBounds = _useState8[1];
+  var _useState8 = useState(buildDisplayBounds(reference, firstDayOfWeek)),
+      displayBounds = _useState8[0],
+      setDisplayBounds = _useState8[1];
 
   var _useState9 = useState(),
-      slide = _useState9[0],
-      setSlide = _useState9[1];
+      targetDisplayBounds = _useState9[0],
+      setTargetDisplayBounds = _useState9[1];
 
   var _useState10 = useState(),
-      animating = _useState10[0],
-      setAnimating = _useState10[1]; // When the reference changes, we need to update the displayBounds.
+      slide = _useState10[0],
+      setSlide = _useState10[1];
+
+  var _useState11 = useState(),
+      animating = _useState11[0],
+      setAnimating = _useState11[1]; // When the reference changes, we need to update the displayBounds.
   // This is easy when we aren't animating. If we are animating,
   // we temporarily increase the displayBounds to be the union of the old
   // and new ones and set slide to drive the animation. We keep track
@@ -438,13 +447,13 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, [reference]);
   var daysRef = useRef();
 
-  var _useState11 = useState(),
-      focus = _useState11[0],
-      setFocus = _useState11[1];
-
   var _useState12 = useState(),
-      active = _useState12[0],
-      setActive = _useState12[1];
+      focus = _useState12[0],
+      setFocus = _useState12[1];
+
+  var _useState13 = useState(),
+      active = _useState13[0],
+      setActive = _useState13[1];
 
   useEffect(function () {
     if (initialFocus === 'days') daysRef.current.focus();
@@ -457,50 +466,18 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, [onReference, bounds]);
   var selectDate = useCallback(function (selectedDate) {
     var nextDates;
-    var nextDate; // output date with no timestamp if that's how user provided it
+    var nextDate; // timestamp will be undefined if no defaultValue or value have
+    // been passed in, indicating that we should stay local
 
-    var adjustedDate;
+    var nextNormalize = normalize;
+
+    if (timestamp === undefined) {
+      nextNormalize = false;
+      setNormalize(nextNormalize);
+    }
 
     if (!range) {
-      nextDate = formatDateToPropStructure(selectedDate, timestamp);
-
-      if (datesProp) {
-        datesProp.forEach(function (d) {
-          if (!timeStamp.test(d)) {
-            adjustedDate = formatToLocalYYYYMMDD(nextDate);
-
-            if (d === adjustedDate) {
-              nextDate = undefined;
-            } else {
-              adjustedDate = undefined;
-            }
-          }
-        });
-      } else if (typeof dateProp === 'string') {
-        if (!timeStamp.test(dateProp)) {
-          adjustedDate = formatToLocalYYYYMMDD(selectedDate);
-
-          if (dateProp === adjustedDate) {
-            nextDate = undefined;
-          } else {
-            adjustedDate = undefined;
-          }
-        }
-      } else if (Array.isArray(dateProp)) {
-        dateProp.forEach(function (d) {
-          if (!timeStamp.test(d)) {
-            adjustedDate = formatToLocalYYYYMMDD(nextDate);
-
-            if (d === adjustedDate) {
-              nextDate = undefined;
-            } else {
-              adjustedDate = undefined;
-            }
-          }
-        });
-      } else {
-        adjustedDate = undefined;
-      }
+      nextDate = selectedDate;
     } // everything down is a range
     else if (!dates && !Array.isArray(date)) {
       // if user supplies date, convert this into dates
@@ -586,9 +563,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     setDates(nextDates);
 
     if (date && typeof date === 'string') {
-      // for internal calculations, adjust based on timestamp
-      // and user's local timezone
-      setDate(normalizeForTimezone(nextDate, timestamp));
+      setDate(nextDate);
     } else if (date && Array.isArray(date)) {
       setDate(nextDates);
     }
@@ -596,23 +571,16 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     setActive(new Date(selectedDate));
 
     if (onSelect) {
-      var adjustedDates;
-
-      if (nextDates && Array.isArray(nextDates[0]) && (!nextDates[0][0] || !nextDates[0][1]) && range === true) {
-        // return string for backwards compatibility
-        var _nextDates$0$filter = nextDates[0].filter(function (d) {
-          return d;
-        });
-
-        adjustedDates = _nextDates$0$filter[0];
-        adjustedDates = formatDateToPropStructure(adjustedDates, timestamp);
-      } else if (nextDates) {
-        adjustedDates = [[formatDateToPropStructure(nextDates[0][0], timestamp), formatDateToPropStructure(nextDates[0][1], timestamp)]];
-      }
-
-      onSelect(adjustedDates || adjustedDate || nextDate);
+      // format date/dates to match structure provided by caller
+      // which could take format of:
+      // 1. ISO8601 with a timestamp
+      // 2. ISO8601 without a timestamp
+      // 3. Caller did not provide value/defaultValue, so return date
+      // in ISO8601 with timestamp in UTC relative to user's local timezone
+      var formattedDate = getFormattedDate(nextDate, nextDates, nextNormalize, range, timestamp);
+      onSelect(formattedDate);
     }
-  }, [activeDate, activeDateProp, date, dateProp, dates, datesProp, onSelect, range, timestamp]);
+  }, [activeDate, activeDateProp, date, dates, normalize, onSelect, range, timestamp]);
 
   var renderCalendarHeader = function renderCalendarHeader() {
     var PreviousIcon = size === 'small' ? theme.calendar.icons.small.previous : theme.calendar.icons.previous;
@@ -803,7 +771,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
               disabled: dayDisabled && !!dayDisabled,
               onClick: function onClick() {
                 selectDate(dateString);
-                announce("Selected " + formatToLocalYYYYMMDD(dateString), 'assertive'); // Chrome moves the focus indicator to this button. Set
+                announce("Selected " + formatToLocalYYYYMMDD(dateString, normalize), 'assertive'); // Chrome moves the focus indicator to this button. Set
                 // the focus to the grid of days instead.
 
                 daysRef.current.focus();
@@ -831,7 +799,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
               disabled: dayDisabled && !!dayDisabled,
               onClick: function onClick() {
                 selectDate(dateString);
-                announce("Selected\n                          " + formatToLocalYYYYMMDD(dateString), 'assertive'); // Chrome moves the focus indicator to this button. Set
+                announce("Selected\n                          " + formatToLocalYYYYMMDD(dateString, normalize), 'assertive'); // Chrome moves the focus indicator to this button. Set
                 // the focus to the grid of days instead.
 
                 daysRef.current.focus();
@@ -947,7 +915,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     "aria-label": "\n                " + reference.toLocaleDateString(locale, {
       month: 'long',
       year: 'numeric'
-    }) + ";\n                " + getAccessibilityString(date, dates) + "\n              ",
+    }) + ";\n                " + getAccessibilityString(date, dates, normalize) + "\n              ",
     ref: daysRef,
     sizeProp: size,
     fillContainer: fill,

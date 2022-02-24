@@ -137,7 +137,7 @@ var pullDigits = function pullDigits(text, index) {
   return text.slice(index, end);
 };
 
-var textToValue = function textToValue(text, schema, range, timestamp) {
+var textToValue = function textToValue(text, schema, range, timestamp, normalize) {
   if (!text) return range ? [] : undefined;
   var result;
 
@@ -148,7 +148,7 @@ var textToValue = function textToValue(text, schema, range, timestamp) {
     if (!parts.m || !parts.d || !parts.y || parts.y.length < 4 || parts.m.length > 2 || parts.d.length > 2 || parts.m > 12 || parts.d > 31 || (parts.m === "02" || parts.m === "2") && parts.d > (leapYear ? 29 : 28)) return parts;
     var date = new Date(parts.y, parts.m - 1, parts.d).toISOString(); // match time and timezone of any supplied valueProp
 
-    if (timestamp) date = (0, _utils.formatToLocalYYYYMMDD)(date).split('T')[0] + "T" + timestamp;else date = "" + (0, _utils.formatToLocalYYYYMMDD)(date).split('T')[0];
+    if (timestamp) date = (0, _utils.formatToLocalYYYYMMDD)(date, normalize).split('T')[0] + "T" + timestamp;else date = "" + (0, _utils.formatToLocalYYYYMMDD)(date, normalize).split('T')[0];
 
     if (!range) {
       if (!result) result = date;
