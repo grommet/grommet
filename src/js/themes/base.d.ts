@@ -1082,8 +1082,9 @@ export interface ThemeType {
             min: string;
             max: string;
           };
-      pad?: string | object;
-      margin?: string | object;
+      small?: BoxProps;
+      medium?: BoxProps;
+      large?: BoxProps;
     };
   };
   pagination?: {

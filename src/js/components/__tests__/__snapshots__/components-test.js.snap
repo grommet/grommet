@@ -1806,16 +1806,20 @@ Object {
         "page": Object {
           "full": Object {
             "alignSelf": "start",
-            "pad": Object {
-              "large": Object {
+            "large": Object {
+              "pad": Object {
                 "horizontal": "large",
                 "vertical": "medium",
               },
-              "medium": Object {
+            },
+            "medium": Object {
+              "pad": Object {
                 "horizontal": "medium",
                 "vertical": "medium",
               },
-              "small": Object {
+            },
+            "small": Object {
+              "pad": Object {
                 "horizontal": "large",
                 "vertical": "medium",
               },
@@ -1827,16 +1831,21 @@ Object {
           },
           "narrow": Object {
             "alignSelf": "center",
-            "pad": Object {
-              "large": Object {
+            "large": Object {
+              "gap": "large",
+              "pad": Object {
                 "horizontal": "large",
                 "vertical": "medium",
               },
-              "medium": Object {
+            },
+            "medium": Object {
+              "pad": Object {
                 "horizontal": "medium",
                 "vertical": "medium",
               },
-              "small": Object {
+            },
+            "small": Object {
+              "pad": Object {
                 "horizontal": "large",
                 "vertical": "medium",
               },
@@ -1848,16 +1857,20 @@ Object {
           },
           "wide": Object {
             "alignSelf": "center",
-            "pad": Object {
-              "large": Object {
+            "large": Object {
+              "pad": Object {
                 "horizontal": "large",
                 "vertical": "medium",
               },
-              "medium": Object {
+            },
+            "medium": Object {
+              "pad": Object {
                 "horizontal": "medium",
                 "vertical": "medium",
               },
-              "small": Object {
+            },
+            "small": Object {
+              "pad": Object {
                 "horizontal": "large",
                 "vertical": "medium",
               },

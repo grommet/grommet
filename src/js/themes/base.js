@@ -1149,12 +1149,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           min: 'medium',
           max: 'xxlarge',
         },
-        pad: {
-          small: { horizontal: 'large', vertical: 'medium' },
-          medium: { horizontal: 'medium', vertical: 'medium' },
-          large: { horizontal: 'large', vertical: 'medium' },
+        small: {
+          pad: { horizontal: 'large', vertical: 'medium' },
         },
-        // margin: undefined
+        medium: {
+          pad: { horizontal: 'medium', vertical: 'medium' },
+        },
+        large: {
+          pad: { horizontal: 'large', vertical: 'medium' },
+        },
       },
       narrow: {
         alignSelf: 'center',
@@ -1162,12 +1165,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           min: 'medium',
           max: 'large',
         },
-        pad: {
-          small: { horizontal: 'large', vertical: 'medium' },
-          medium: { horizontal: 'medium', vertical: 'medium' },
-          large: { horizontal: 'large', vertical: 'medium' },
+        small: {
+          pad: { horizontal: 'large', vertical: 'medium' },
         },
-        // margin: undefined
+        medium: {
+          pad: { horizontal: 'medium', vertical: 'medium' },
+        },
+        large: {
+          pad: { horizontal: 'large', vertical: 'medium' },
+          gap: 'large',
+        },
       },
       full: {
         alignSelf: 'start',
@@ -1175,12 +1182,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           min: 'medium',
           max: '100%',
         },
-        pad: {
-          small: { horizontal: 'large', vertical: 'medium' },
-          medium: { horizontal: 'medium', vertical: 'medium' },
-          large: { horizontal: 'large', vertical: 'medium' },
+        small: {
+          pad: { horizontal: 'large', vertical: 'medium' },
         },
-        // margin: undefined
+        medium: {
+          pad: { horizontal: 'medium', vertical: 'medium' },
+        },
+        large: {
+          pad: { horizontal: 'large', vertical: 'medium' },
+        },
       },
     },
     pagination: {

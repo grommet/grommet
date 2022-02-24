@@ -1,26 +1,17 @@
 import React from 'react';
-import {
-  Page,
-  Header,
-  Heading,
-  Paragraph,
-  Grid,
-  Card,
-  PageSection,
-} from 'grommet';
+import { Page, Heading, Paragraph, Grid, Card, PageSection } from 'grommet';
 
-export const Narrow = () => (
-  <Page kind="narrow">
+export const Simple = () => (
+  <Page kind="wide">
     <PageSection>
-      <Header>
-        <Heading>Narrow Page</Heading>
-      </Header>
+      <Heading>Wide Page</Heading>
     </PageSection>
-    <PageSection fullBackground="dark-4" background="light-2">
-      <Paragraph>
-        `fullBackground` prop set to light blue and `background` prop set to
-        pink.
-      </Paragraph>
+    <PageSection fullBackground="dark-3">
+      Background goes all the way across regardless of Page kind (wide, narrow,
+      or full). This is accomplished by setting the `fullBackground` prop on
+      PageContent.
+    </PageSection>
+    <PageSection>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo
         gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi
@@ -28,6 +19,9 @@ export const Narrow = () => (
         leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus
         nunc porta egestas. Fusce dapibus lobortis tincidunt.
       </Paragraph>
+    </PageSection>
+    <PageSection background="light-4">
+      Background width is restricted by Page kind (wide, narrow, or full).
       <Grid rows="small" columns={{ count: 'fit', size: 'small' }} gap="small">
         <Card background="white" pad="large">
           Card
@@ -36,6 +30,8 @@ export const Narrow = () => (
           Card
         </Card>
       </Grid>
+    </PageSection>
+    <PageSection>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo
         gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi
@@ -48,5 +44,5 @@ export const Narrow = () => (
 );
 
 export default {
-  title: 'Layout/Page/Narrow',
+  title: 'Layout/Page/Simple',
 };

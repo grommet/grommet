@@ -14,22 +14,14 @@ const Page = ({ kind, ...rest }) => {
       alignSelf: theme.page[kind]?.alignSelf,
       fill: 'horizontal',
       width: theme.page[kind]?.width,
-      pad: theme.page[kind]?.pad?.[size],
-      margin: theme.page[kind]?.margin?.[size],
+      ...theme.page[kind][size],
     }),
     [theme, size, kind],
   );
 
   return (
     <PageContext.Provider value={value}>
-      <Box
-        width={
-          theme.page[kind].width?.min
-            ? { min: theme.page[kind].width?.min }
-            : theme.page[kind].width
-        }
-        {...rest}
-      />
+      <Box {...rest} />
     </PageContext.Provider>
   );
 };

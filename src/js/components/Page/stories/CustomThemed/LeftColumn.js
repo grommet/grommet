@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Page,
-  Box,
   Header,
   Heading,
   Paragraph,
@@ -19,25 +18,28 @@ const customTheme = {
         min: '200px',
         max: '500px',
       },
-      pad: {
-        small: 'medium',
-        medium: 'medium',
-        large: 'medium',
+      small: {
+        pad: 'medium',
+        margin: { vertical: 'small', horizontal: 'small' },
       },
-      margin: { vertical: 'small', horizontal: 'small' },
+      medium: {
+        pad: 'medium',
+        margin: { vertical: 'small', horizontal: 'small' },
+      },
+      large: {
+        pad: 'medium',
+        margin: { vertical: 'small', horizontal: 'small' },
+      },
     },
   },
 };
 
 export const LeftColumn = () => (
   <Grommet theme={customTheme}>
-    <Box background="#35bd55">
-      <Heading>Global Header</Heading>
-    </Box>
     <Page kind="customKind">
       <PageSection>
         <Header>
-          <Heading>Heading</Heading>
+          <Heading>Custom Kind</Heading>
         </Header>
       </PageSection>
       <PageSection fullBackground="pink">
@@ -55,7 +57,9 @@ export const LeftColumn = () => (
         </Paragraph>
       </PageSection>
       <PageSection background="orange">
-        Background width is restricted by Page kind (wide, narrow, or full).
+        <Paragraph>
+          Background width is restricted by Page kind (wide, narrow, or full).
+        </Paragraph>
         <Grid
           rows="small"
           columns={{ count: 'fit', size: 'small' }}
@@ -79,14 +83,11 @@ export const LeftColumn = () => (
         </Paragraph>
       </PageSection>
     </Page>
-    <Box background="#35bd55">
-      <Heading>Global Footer</Heading>
-    </Box>
   </Grommet>
 );
 
 LeftColumn.storyName = 'Left Column';
 
 export default {
-  title: 'Layout/Page/Left Column',
+  title: 'Layout/Page/Custom Themed/Left Column',
 };
