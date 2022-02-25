@@ -117,7 +117,7 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
-export const textToValue = (text, schema, range, timestamp) => {
+export const textToValue = (text, schema, range, timestamp, normalize) => {
   if (!text) return range ? [] : undefined;
 
   let result;
@@ -144,8 +144,10 @@ export const textToValue = (text, schema, range, timestamp) => {
     let date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
     // match time and timezone of any supplied valueProp
     if (timestamp)
-      date = `${formatToLocalYYYYMMDD(date).split('T')[0]}T${timestamp}`;
-    else date = `${formatToLocalYYYYMMDD(date).split('T')[0]}`;
+      date = `${
+        formatToLocalYYYYMMDD(date, normalize).split('T')[0]
+      }T${timestamp}`;
+    else date = `${formatToLocalYYYYMMDD(date, normalize).split('T')[0]}`;
 
     if (!range) {
       if (!result) result = date;

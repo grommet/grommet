@@ -34,10 +34,11 @@ export const GridAreasAlternative = () => (
   // </Grommet>
 );
 
-GridAreasAlternative.storyName = 'Areas prop alternatives';
 GridAreasAlternative.args = {
   full: true,
 };
+
+GridAreasAlternative.storyName = 'Areas prop alternatives';
 
 export default {
   title: 'Layout/Grid/Areas prop alternatives',
