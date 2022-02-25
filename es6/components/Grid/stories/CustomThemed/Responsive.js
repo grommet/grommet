@@ -189,5 +189,5 @@ export var ResponsiveGrid = function ResponsiveGrid() {
 };
 ResponsiveGrid.storyName = 'Responsive grid';
 export default {
-  title: 'Layout/Grid/Responsive grid'
+  title: 'Layout/Grid/Custom Themed/Responsive grid'
 };

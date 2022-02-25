@@ -202,6 +202,6 @@ var ResponsiveGrid = function ResponsiveGrid() {
 exports.ResponsiveGrid = ResponsiveGrid;
 ResponsiveGrid.storyName = 'Responsive grid';
 var _default = {
-  title: 'Layout/Grid/Responsive grid'
+  title: 'Layout/Grid/Custom Themed/Responsive grid'
 };
 exports["default"] = _default;

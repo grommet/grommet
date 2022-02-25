@@ -20,23 +20,27 @@ var cards = Array(20).fill() // eslint-disable-next-line react/no-array-index-ke
 
 var Example = function Example() {
   var size = (0, _react.useContext)(_grommet.ResponsiveContext);
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
-    columns: size !== 'small' ? 'small' : '100%',
-    gap: "small"
-  }, cards.map(function (card, index) {
-    return (
-      /*#__PURE__*/
-      // eslint-disable-next-line react/no-array-index-key
-      _react["default"].createElement(_grommet.Card, {
-        pad: "large",
-        key: index
-      }, card)
-    );
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
+      columns: size !== 'small' ? 'small' : '100%',
+      gap: "small"
+    }, cards.map(function (card, index) {
+      return (
+        /*#__PURE__*/
+        // eslint-disable-next-line react/no-array-index-key
+        _react["default"].createElement(_grommet.Card, {
+          pad: "large",
+          key: index
+        }, card)
+      );
+    }))) // </Grommet>
+
+  );
 };
 
 exports.Example = Example;
