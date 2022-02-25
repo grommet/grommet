@@ -6,7 +6,6 @@ import {
   Form,
   FormField,
   Grid,
-  Grommet,
   RadioButtonGroup,
   RangeInput,
   Select,
@@ -126,25 +125,26 @@ const FormExample = ({ index, borderPosition, theme }) => {
 };
 
 export const FieldBorderPosition = () => (
-  <Grommet theme={grommet}>
-    <Box pad="large">
-      <Grid columns={{ count: 'fit', size: ['auto', 'medium'] }} gap="medium">
-        {borderPositions &&
-          borderPositions.map((example, index) => (
-            <FormExample
-              key={example.name}
-              borderPosition={example.name}
-              theme={example.theme}
-              index={index}
-            />
-          ))}
-      </Grid>
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box pad="large">
+    <Grid columns={{ count: 'fit', size: ['auto', 'medium'] }} gap="medium">
+      {borderPositions &&
+        borderPositions.map((example, index) => (
+          <FormExample
+            key={example.name}
+            borderPosition={example.name}
+            theme={example.theme}
+            index={index}
+          />
+        ))}
+    </Grid>
+  </Box>
+  // </Grommet>
 );
 
 FieldBorderPosition.storyName = 'Field border position';
 
 export default {
-  title: 'Input/Form/Field border position',
+  title: 'Input/Form/Custom Themed/Field border position',
 };

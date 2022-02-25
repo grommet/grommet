@@ -23,6 +23,9 @@ export const NColumnGrid = () => (
 );
 
 NColumnGrid.storyName = 'N-column layout';
+NColumnGrid.args = {
+  full: true,
+};
 
 export default {
   title: 'Layout/Grid/N-column layout',

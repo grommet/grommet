@@ -16,7 +16,7 @@ const customEdge = deepMerge(grommet, {
 
 export const CustomEdgeControl = ({ direction = 'horizontal', ...rest }) => {
   const [range, setRange] = useState([2, 7]);
-  const onChange = values => {
+  const onChange = (values) => {
     setRange(values);
   };
 
@@ -28,7 +28,7 @@ export const CustomEdgeControl = ({ direction = 'horizontal', ...rest }) => {
         </Text>
         <Stack>
           <Box direction="row" justify="between">
-            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(value => (
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((value) => (
               <Box
                 key={value}
                 width="xsmall"
@@ -61,5 +61,5 @@ export const CustomEdgeControl = ({ direction = 'horizontal', ...rest }) => {
 CustomEdgeControl.storyName = 'Custom edge controls';
 
 export default {
-  title: 'Input/RangeSelector/Custom edge controls',
+  title: 'Input/RangeSelector/Custom Themed/Custom edge controls',
 };
