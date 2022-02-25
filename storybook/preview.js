@@ -17,7 +17,7 @@ export const decorators = [
       setState(context.globals.theme);
     }, [context.globals.theme]);
     const full = context.parameters?.args?.full || 'min';
-    const dir = context.parameters?.args.dir;
+    const dir = context.parameters?.args?.dir;
 
     /**
      * This demonstrates that custom themed stories are driven off the "base"
