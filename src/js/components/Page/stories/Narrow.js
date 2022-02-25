@@ -18,8 +18,8 @@ export const Narrow = () => (
     </PageSection>
     <PageSection fullBackground="dark-4" background="light-2">
       <Paragraph>
-        `fullBackground` prop set to light blue and `background` prop set to
-        pink.
+        `fullBackground` prop set to dark-4 and `background` prop set to
+        light-2.
       </Paragraph>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo
