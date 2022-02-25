@@ -89,7 +89,7 @@ const animals = [
 ];
 
 // Create box for each animal
-const listAnimalsBoxes = animals.map(animalName => (
+const listAnimalsBoxes = animals.map((animalName) => (
   <Box
     elevation="large"
     key={animalName}
@@ -110,7 +110,7 @@ const Responsive = ({
   ...props
 }) => (
   <ResponsiveContext.Consumer>
-    {size => {
+    {(size) => {
       // Take into consideration if not array is sent but a simple string
       let columnsVal = columns;
       if (columns) {
@@ -191,5 +191,5 @@ export const ResponsiveGrid = () => (
 ResponsiveGrid.storyName = 'Responsive grid';
 
 export default {
-  title: 'Layout/Grid/Responsive grid',
+  title: 'Layout/Grid/Custom Themed/Responsive grid',
 };
