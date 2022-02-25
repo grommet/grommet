@@ -98,60 +98,64 @@ var ArrayOfFormFields = function ArrayOfFormFields() {
     });
   }
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "medium",
-    width: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
-    value: values,
-    validate: "blur",
-    onReset: function onReset() {
-      setValues({
-        name: '',
-        phones: [{
-          number: '',
-          ext: ''
-        }]
-      });
-    },
-    onChange: handleFormChange,
-    onValidate: function onValidate(validationResults) {
-      console.log('validationResults = ', validationResults);
-    },
-    onSubmit: function onSubmit(event) {
-      console.log('Submit', event.value, event.touched);
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    label: "Name",
-    name: "name",
-    pad: true,
-    required: true,
-    validate: [{
-      regexp: /^[a-zA-Z ]*$/
-    }]
-  }), PhoneNumberGroup, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null),
-    label: "Add Number",
-    plain: true,
-    hoverIndicator: true,
-    onClick: addPhone
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row",
-    justify: "between",
-    margin: {
-      top: 'medium'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    label: "Cancel"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    type: "reset",
-    label: "Reset"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    type: "submit",
-    label: "Submit",
-    primary: true
-  })))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      pad: "medium",
+      width: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
+      value: values,
+      validate: "blur",
+      onReset: function onReset() {
+        setValues({
+          name: '',
+          phones: [{
+            number: '',
+            ext: ''
+          }]
+        });
+      },
+      onChange: handleFormChange,
+      onValidate: function onValidate(validationResults) {
+        console.log('validationResults = ', validationResults);
+      },
+      onSubmit: function onSubmit(event) {
+        console.log('Submit', event.value, event.touched);
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      label: "Name",
+      name: "name",
+      pad: true,
+      required: true,
+      validate: [{
+        regexp: /^[a-zA-Z ]*$/
+      }]
+    }), PhoneNumberGroup, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null),
+      label: "Add Number",
+      plain: true,
+      hoverIndicator: true,
+      onClick: addPhone
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row",
+      justify: "between",
+      margin: {
+        top: 'medium'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      label: "Cancel"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      type: "reset",
+      label: "Reset"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      type: "submit",
+      label: "Submit",
+      primary: true
+    })))) // </Grommet>
+
+  );
 };
 
 exports.ArrayOfFormFields = ArrayOfFormFields;

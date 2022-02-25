@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var MaskedInputForm = function MaskedInputForm() {
@@ -23,36 +21,40 @@ var MaskedInputForm = function MaskedInputForm() {
     setValue(nextValue);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
-    value: value,
-    onChange: onChange,
-    onSubmit: function onSubmit(_ref) {
-      var nextValue = _ref.value;
-      console.log(nextValue);
-      setValue({
-        value: ''
-      });
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    name: "value",
-    label: "url",
-    required: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
-    name: "value",
-    mask: [{
-      fixed: 'https://'
-    }, {
-      regexp: /^.*$/
-    }]
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    type: "submit",
-    label: "submit"
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
+      value: value,
+      onChange: onChange,
+      onSubmit: function onSubmit(_ref) {
+        var nextValue = _ref.value;
+        console.log(nextValue);
+        setValue({
+          value: ''
+        });
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      name: "value",
+      label: "url",
+      required: true
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+      name: "value",
+      mask: [{
+        fixed: 'https://'
+      }, {
+        regexp: /^.*$/
+      }]
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      type: "submit",
+      label: "submit"
+    }))) // </Grommet>
+
+  );
 };
 
 exports.MaskedInputForm = MaskedInputForm;

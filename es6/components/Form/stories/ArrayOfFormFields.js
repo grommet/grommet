@@ -1,7 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { useState } from 'react';
-import { grommet, Box, Form, Grommet, Button, FormField } from 'grommet';
+import { Box, Form, Button, FormField } from 'grommet';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { Trash } from "grommet-icons/es6/icons/Trash";
 export var ArrayOfFormFields = function ArrayOfFormFields() {
@@ -87,60 +87,64 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
     });
   }
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "medium",
-    width: "large"
-  }, /*#__PURE__*/React.createElement(Form, {
-    value: values,
-    validate: "blur",
-    onReset: function onReset() {
-      setValues({
-        name: '',
-        phones: [{
-          number: '',
-          ext: ''
-        }]
-      });
-    },
-    onChange: handleFormChange,
-    onValidate: function onValidate(validationResults) {
-      console.log('validationResults = ', validationResults);
-    },
-    onSubmit: function onSubmit(event) {
-      console.log('Submit', event.value, event.touched);
-    }
-  }, /*#__PURE__*/React.createElement(FormField, {
-    label: "Name",
-    name: "name",
-    pad: true,
-    required: true,
-    validate: [{
-      regexp: /^[a-zA-Z ]*$/
-    }]
-  }), PhoneNumberGroup, /*#__PURE__*/React.createElement(Button, {
-    icon: /*#__PURE__*/React.createElement(Add, null),
-    label: "Add Number",
-    plain: true,
-    hoverIndicator: true,
-    onClick: addPhone
-  }), /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
-    justify: "between",
-    margin: {
-      top: 'medium'
-    }
-  }, /*#__PURE__*/React.createElement(Button, {
-    label: "Cancel"
-  }), /*#__PURE__*/React.createElement(Button, {
-    type: "reset",
-    label: "Reset"
-  }), /*#__PURE__*/React.createElement(Button, {
-    type: "submit",
-    label: "Submit",
-    primary: true
-  })))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      pad: "medium",
+      width: "large"
+    }, /*#__PURE__*/React.createElement(Form, {
+      value: values,
+      validate: "blur",
+      onReset: function onReset() {
+        setValues({
+          name: '',
+          phones: [{
+            number: '',
+            ext: ''
+          }]
+        });
+      },
+      onChange: handleFormChange,
+      onValidate: function onValidate(validationResults) {
+        console.log('validationResults = ', validationResults);
+      },
+      onSubmit: function onSubmit(event) {
+        console.log('Submit', event.value, event.touched);
+      }
+    }, /*#__PURE__*/React.createElement(FormField, {
+      label: "Name",
+      name: "name",
+      pad: true,
+      required: true,
+      validate: [{
+        regexp: /^[a-zA-Z ]*$/
+      }]
+    }), PhoneNumberGroup, /*#__PURE__*/React.createElement(Button, {
+      icon: /*#__PURE__*/React.createElement(Add, null),
+      label: "Add Number",
+      plain: true,
+      hoverIndicator: true,
+      onClick: addPhone
+    }), /*#__PURE__*/React.createElement(Box, {
+      direction: "row",
+      justify: "between",
+      margin: {
+        top: 'medium'
+      }
+    }, /*#__PURE__*/React.createElement(Button, {
+      label: "Cancel"
+    }), /*#__PURE__*/React.createElement(Button, {
+      type: "reset",
+      label: "Reset"
+    }), /*#__PURE__*/React.createElement(Button, {
+      type: "submit",
+      label: "Submit",
+      primary: true
+    })))) // </Grommet>
+
+  );
 };
 export default {
   title: 'Input/Form/Array Of Form Fields'

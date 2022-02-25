@@ -6,8 +6,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { useReducer, useEffect } from 'react';
-import { Grommet, Box, Diagram, Stack, Paragraph } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Diagram, Stack, Paragraph } from 'grommet';
 
 var Node = function Node(_ref) {
   var id = _ref.id,
@@ -78,33 +77,37 @@ export var Progressing = function Progressing() {
     }));
   }
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "start",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Paragraph, null, "Adding and removing nodes with animated connections. The animation 'draw' is applied to the entire diagram, however, the last connection receives its own animation type of 'pulse'."), /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
-    direction: "row"
-  }, topRow.map(function (id) {
-    return /*#__PURE__*/React.createElement(Node, {
-      key: id,
-      id: id
-    });
-  })), /*#__PURE__*/React.createElement(Box, {
-    direction: "row"
-  }, [4, 5].map(function (id) {
-    return /*#__PURE__*/React.createElement(Node, {
-      key: id,
-      id: id,
-      background: "dark-2"
-    });
-  }))), /*#__PURE__*/React.createElement(Diagram, {
-    animation: {
-      type: 'draw',
-      duration: 3000
-    },
-    connections: connections
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      align: "start",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Paragraph, null, "Adding and removing nodes with animated connections. The animation 'draw' is applied to the entire diagram, however, the last connection receives its own animation type of 'pulse'."), /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
+      direction: "row"
+    }, topRow.map(function (id) {
+      return /*#__PURE__*/React.createElement(Node, {
+        key: id,
+        id: id
+      });
+    })), /*#__PURE__*/React.createElement(Box, {
+      direction: "row"
+    }, [4, 5].map(function (id) {
+      return /*#__PURE__*/React.createElement(Node, {
+        key: id,
+        id: id,
+        background: "dark-2"
+      });
+    }))), /*#__PURE__*/React.createElement(Diagram, {
+      animation: {
+        type: 'draw',
+        duration: 3000
+      },
+      connections: connections
+    }))) // </Grommet>
+
+  );
 };
 Progressing.parameters = {
   chromatic: {

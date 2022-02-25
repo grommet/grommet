@@ -5,8 +5,6 @@ exports["default"] = exports.ShowAfter = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _themes = require("grommet/themes");
-
 var _grommet = require("grommet");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -18,20 +16,24 @@ var allItems = Array(240).fill().map(function (_, i) {
 });
 
 var Example = function Example(props) {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.InfiniteScroll, _extends({
-    items: allItems
-  }, props), function (item) {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      key: item,
-      pad: "medium",
-      border: {
-        side: 'bottom'
-      },
-      align: "center"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, item));
-  }));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.InfiniteScroll, _extends({
+      items: allItems
+    }, props), function (item) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+        key: item,
+        pad: "medium",
+        border: {
+          side: 'bottom'
+        },
+        align: "center"
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, item));
+    }) // </Grommet>
+
+  );
 };
 
 var ShowAfter = function ShowAfter() {

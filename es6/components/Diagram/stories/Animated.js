@@ -1,8 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { useReducer, useEffect } from 'react';
-import { Box, Diagram, Grommet, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Diagram, Stack, Text } from 'grommet';
 import { Diamond } from "grommet-icons/es6/icons/Diamond";
 import { data } from './data';
 
@@ -98,45 +97,49 @@ export var Animated = function Animated() {
     }));
   }
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center"
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
-    alignSelf: "center",
-    margin: {
-      bottom: 'large'
-    }
-  }, /*#__PURE__*/React.createElement(Container, {
-    node: data[0],
-    index: 1
-  }), /*#__PURE__*/React.createElement(Box, {
-    pad: "small"
-  }), /*#__PURE__*/React.createElement(Box, {
-    id: "4",
-    width: "xsmall",
-    margin: {
-      bottom: 'large',
-      top: 'xlarge'
-    }
-  })), /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
-    gap: "xlarge"
-  }, [2, 3].map(function (id) {
-    return /*#__PURE__*/React.createElement(Container, {
-      key: id,
-      node: data[id - 1],
-      index: id
-    });
-  }))), /*#__PURE__*/React.createElement(Diagram, {
-    animation: {
-      type: 'draw',
-      duration: 3000
-    },
-    connections: connections
-  })))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      align: "center"
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
+      alignSelf: "center",
+      margin: {
+        bottom: 'large'
+      }
+    }, /*#__PURE__*/React.createElement(Container, {
+      node: data[0],
+      index: 1
+    }), /*#__PURE__*/React.createElement(Box, {
+      pad: "small"
+    }), /*#__PURE__*/React.createElement(Box, {
+      id: "4",
+      width: "xsmall",
+      margin: {
+        bottom: 'large',
+        top: 'xlarge'
+      }
+    })), /*#__PURE__*/React.createElement(Box, {
+      direction: "row",
+      gap: "xlarge"
+    }, [2, 3].map(function (id) {
+      return /*#__PURE__*/React.createElement(Container, {
+        key: id,
+        node: data[id - 1],
+        index: id
+      });
+    }))), /*#__PURE__*/React.createElement(Diagram, {
+      animation: {
+        type: 'draw',
+        duration: 3000
+      },
+      connections: connections
+    })))) // </Grommet>
+
+  );
 };
 export default {
   title: 'Visualizations/Diagram/Animated'

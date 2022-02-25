@@ -39,6 +39,9 @@ var NColumnGrid = function NColumnGrid() {
 
 exports.NColumnGrid = NColumnGrid;
 NColumnGrid.storyName = 'N-column layout';
+NColumnGrid.args = {
+  full: true
+};
 var _default = {
   title: 'Layout/Grid/N-column layout'
 };

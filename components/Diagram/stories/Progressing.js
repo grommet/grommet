@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _excluded = ["id"],
     _excluded2 = ["color"];
 
@@ -90,33 +88,37 @@ var Progressing = function Progressing() {
     }));
   }
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "start",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Adding and removing nodes with animated connections. The animation 'draw' is applied to the entire diagram, however, the last connection receives its own animation type of 'pulse'."), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row"
-  }, topRow.map(function (id) {
-    return /*#__PURE__*/_react["default"].createElement(Node, {
-      key: id,
-      id: id
-    });
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row"
-  }, [4, 5].map(function (id) {
-    return /*#__PURE__*/_react["default"].createElement(Node, {
-      key: id,
-      id: id,
-      background: "dark-2"
-    });
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Diagram, {
-    animation: {
-      type: 'draw',
-      duration: 3000
-    },
-    connections: connections
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "start",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Adding and removing nodes with animated connections. The animation 'draw' is applied to the entire diagram, however, the last connection receives its own animation type of 'pulse'."), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row"
+    }, topRow.map(function (id) {
+      return /*#__PURE__*/_react["default"].createElement(Node, {
+        key: id,
+        id: id
+      });
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row"
+    }, [4, 5].map(function (id) {
+      return /*#__PURE__*/_react["default"].createElement(Node, {
+        key: id,
+        id: id,
+        background: "dark-2"
+      });
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Diagram, {
+      animation: {
+        type: 'draw',
+        duration: 3000
+      },
+      connections: connections
+    }))) // </Grommet>
+
+  );
 };
 
 exports.Progressing = Progressing;

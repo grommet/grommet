@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var allItems = Array(2000).fill().map(function (_, i) {
@@ -16,23 +14,27 @@ var allItems = Array(2000).fill().map(function (_, i) {
 });
 
 var GridInfiniteScroll = function GridInfiniteScroll() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
-    columns: "xsmall",
-    rows: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.InfiniteScroll, {
-    items: allItems,
-    step: 12
-  }, function (item) {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      key: item,
-      as: "article",
-      pad: "xsmall"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
-      src: "https://via.placeholder.com/350x150"
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, item));
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Grid, {
+      columns: "xsmall",
+      rows: "small"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.InfiniteScroll, {
+      items: allItems,
+      step: 12
+    }, function (item) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+        key: item,
+        as: "article",
+        pad: "xsmall"
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
+        src: "https://via.placeholder.com/350x150"
+      }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, item));
+    })) // </Grommet>
+
+  );
 };
 
 exports.GridInfiniteScroll = GridInfiniteScroll;

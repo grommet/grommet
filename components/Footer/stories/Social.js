@@ -38,36 +38,40 @@ var Media = function Media() {
 };
 
 var Social = function Social() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Main, {
-    background: "light-2",
-    elevation: "large",
-    pad: "medium",
-    gap: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    margin: "small",
-    size: "xsmall"
-  }, "Main Content"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    flex: true
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
-    background: "light-4",
-    pad: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    direction: "row",
-    gap: "xsmall"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Grommet, {
-    color: "brand",
-    size: "medium"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    alignSelf: "center",
-    color: "brand",
-    size: "small"
-  }, "Grommet")), /*#__PURE__*/_react["default"].createElement(Media, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    textAlign: "center",
-    size: "xsmall"
-  }, "\xA9Copyright")));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Main, {
+      background: "light-2",
+      elevation: "large",
+      pad: "medium",
+      gap: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      margin: "small",
+      size: "xsmall"
+    }, "Main Content"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      flex: true
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
+      background: "light-4",
+      pad: "small"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      align: "center",
+      direction: "row",
+      gap: "xsmall"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Grommet, {
+      color: "brand",
+      size: "medium"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      alignSelf: "center",
+      color: "brand",
+      size: "small"
+    }, "Grommet")), /*#__PURE__*/_react["default"].createElement(Media, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      textAlign: "center",
+      size: "xsmall"
+    }, "\xA9Copyright"))) // </Grommet>
+
+  );
 };
 
 exports.Social = Social;

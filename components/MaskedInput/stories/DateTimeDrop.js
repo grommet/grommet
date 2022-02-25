@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _grommetIcons = require("grommet-icons");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -103,32 +101,36 @@ var DateTimeDropButton = function DateTimeDropButton() {
     }, 1);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.DropButton, {
-    open: open,
-    onClose: function onClose() {
-      return setOpen(false);
-    },
-    onOpen: function onOpen() {
-      return setOpen(true);
-    },
-    dropContent: /*#__PURE__*/_react["default"].createElement(DropContent, {
-      date: date,
-      time: time,
-      onClose: onClose
-    })
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row",
-    gap: "medium",
-    align: "center",
-    pad: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    color: date ? undefined : 'dark-5'
-  }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/_react["default"].createElement(_grommetIcons.Schedule, null)))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.DropButton, {
+      open: open,
+      onClose: function onClose() {
+        return setOpen(false);
+      },
+      onOpen: function onOpen() {
+        return setOpen(true);
+      },
+      dropContent: /*#__PURE__*/_react["default"].createElement(DropContent, {
+        date: date,
+        time: time,
+        onClose: onClose
+      })
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row",
+      gap: "medium",
+      align: "center",
+      pad: "small"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      color: date ? undefined : 'dark-5'
+    }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/_react["default"].createElement(_grommetIcons.Schedule, null)))) // </Grommet>
+
+  );
 };
 
 exports.DateTimeDropButton = DateTimeDropButton;

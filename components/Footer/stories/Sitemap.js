@@ -42,36 +42,40 @@ var FooterContent = function FooterContent() {
 };
 
 var Sitemap = function Sitemap() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Main, {
-    background: "light-4",
-    elevation: "large",
-    pad: "large",
-    gap: "large",
-    border: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    margin: "small",
-    size: "xsmall"
-  }, "Main Content"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    flex: true
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
-    background: "dark-1",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row-responsive",
-    gap: "xsmall"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    gap: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Grommet, {
-    color: "brand",
-    size: "large"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    alignSelf: "center",
-    color: "brand",
-    weight: "bold"
-  }, "grommet.io"))), /*#__PURE__*/_react["default"].createElement(FooterContent, null)));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Main, {
+      background: "light-4",
+      elevation: "large",
+      pad: "large",
+      gap: "large",
+      border: true
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      margin: "small",
+      size: "xsmall"
+    }, "Main Content"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      flex: true
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
+      background: "dark-1",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row-responsive",
+      gap: "xsmall"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      align: "center",
+      gap: "small"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Grommet, {
+      color: "brand",
+      size: "large"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      alignSelf: "center",
+      color: "brand",
+      weight: "bold"
+    }, "grommet.io"))), /*#__PURE__*/_react["default"].createElement(FooterContent, null))) // </Grommet>
+
+  );
 };
 
 exports.Sitemap = Sitemap;

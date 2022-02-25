@@ -49,38 +49,42 @@ var FooterContent = function FooterContent() {
 };
 
 var DoubleFooter = function DoubleFooter() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Main, {
-    background: "light-4",
-    elevation: "large",
-    pad: "large",
-    border: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    margin: "small",
-    size: "xsmall"
-  }, "Main Content"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    flex: true
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
-    background: "dark-1",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(FooterContent, null)), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
-    background: "dark-2",
-    pad: {
-      horizontal: 'large',
-      vertical: 'small'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row",
-    gap: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Grommet, {
-    color: "brand"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    alignSelf: "center"
-  }, "grommet.io")), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    textAlign: "center",
-    size: "small"
-  }, "\xA9 2019 Copyright")));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Main, {
+      background: "light-4",
+      elevation: "large",
+      pad: "large",
+      border: true
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      margin: "small",
+      size: "xsmall"
+    }, "Main Content"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      flex: true
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
+      background: "dark-1",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(FooterContent, null)), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
+      background: "dark-2",
+      pad: {
+        horizontal: 'large',
+        vertical: 'small'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row",
+      gap: "small"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Grommet, {
+      color: "brand"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      alignSelf: "center"
+    }, "grommet.io")), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      textAlign: "center",
+      size: "small"
+    }, "\xA9 2019 Copyright"))) // </Grommet>
+
+  );
 };
 
 exports.DoubleFooter = DoubleFooter;

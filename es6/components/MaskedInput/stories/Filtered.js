@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Grommet, MaskedInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MaskedInput } from 'grommet';
 var data = {
   Cummings: ['a pretty day', 'i carry your heart with me', 'if you like my poems let them'],
   Chaucer: ["The Knight's Tale", 'The General Prologue', "The Friar's Tale"],
@@ -27,37 +26,43 @@ export var Filtered = function Filtered() {
   poems.forEach(function (p) {
     longestPoemLength = Math.max(longestPoemLength, p.length);
   });
-  return /*#__PURE__*/React.createElement(Grommet, {
-    full: true,
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Box, {
-    width: "medium"
-  }, /*#__PURE__*/React.createElement(MaskedInput, {
-    mask: [{
-      options: poets,
-      placeholder: 'poet'
-    }, {
-      fixed: ':'
-    }, {
-      options: poems,
-      length: longestPoemLength,
-      placeholder: 'poem'
-    }],
-    value: value,
-    onChange: function onChange(event) {
-      return setValue(event.target.value);
-    }
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Box, {
+      width: "medium"
+    }, /*#__PURE__*/React.createElement(MaskedInput, {
+      mask: [{
+        options: poets,
+        placeholder: 'poet'
+      }, {
+        fixed: ':'
+      }, {
+        options: poems,
+        length: longestPoemLength,
+        placeholder: 'poem'
+      }],
+      value: value,
+      onChange: function onChange(event) {
+        return setValue(event.target.value);
+      }
+    }))) // </Grommet>
+
+  );
 };
 Filtered.parameters = {
   chromatic: {
     disable: true
   }
+};
+Filtered.args = {
+  full: true
 };
 export default {
   title: 'Input/MaskedInput/Filtered'

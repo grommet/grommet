@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Button, Grommet, Keyboard, Text, Calendar, MaskedInput, DropButton } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Keyboard, Text, Calendar, MaskedInput, DropButton } from 'grommet';
 import { Schedule } from "grommet-icons/es6/icons/Schedule";
 
 var DropContent = function DropContent(_ref) {
@@ -93,32 +92,36 @@ export var DateTimeDropButton = function DateTimeDropButton() {
     }, 1);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(DropButton, {
-    open: open,
-    onClose: function onClose() {
-      return setOpen(false);
-    },
-    onOpen: function onOpen() {
-      return setOpen(true);
-    },
-    dropContent: /*#__PURE__*/React.createElement(DropContent, {
-      date: date,
-      time: time,
-      onClose: onClose
-    })
-  }, /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
-    gap: "medium",
-    align: "center",
-    pad: "small"
-  }, /*#__PURE__*/React.createElement(Text, {
-    color: date ? undefined : 'dark-5'
-  }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/React.createElement(Schedule, null)))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(DropButton, {
+      open: open,
+      onClose: function onClose() {
+        return setOpen(false);
+      },
+      onOpen: function onOpen() {
+        return setOpen(true);
+      },
+      dropContent: /*#__PURE__*/React.createElement(DropContent, {
+        date: date,
+        time: time,
+        onClose: onClose
+      })
+    }, /*#__PURE__*/React.createElement(Box, {
+      direction: "row",
+      gap: "medium",
+      align: "center",
+      pad: "small"
+    }, /*#__PURE__*/React.createElement(Text, {
+      color: date ? undefined : 'dark-5'
+    }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/React.createElement(Schedule, null)))) // </Grommet>
+
+  );
 };
 DateTimeDropButton.storyName = 'Date time drop';
 export default {

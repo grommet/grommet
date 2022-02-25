@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -25,35 +23,39 @@ var Simple = function Simple(_ref) {
     setRange(values);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: direction === 'vertical' ? 'column' : 'row',
-    justify: "between"
-  }, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (value) {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      key: value,
-      width: "xxsmall",
-      height: "xxsmall",
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
       align: "center",
-      pad: "small",
-      border: false
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      style: {
-        fontFamily: 'monospace'
-      }
-    }, value));
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.RangeSelector, {
-    direction: direction,
-    min: 10,
-    max: 20,
-    size: "full",
-    values: range,
-    onChange: onChange
-  }))));
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: direction === 'vertical' ? 'column' : 'row',
+      justify: "between"
+    }, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (value) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+        key: value,
+        width: "xxsmall",
+        height: "xxsmall",
+        align: "center",
+        pad: "small",
+        border: false
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+        style: {
+          fontFamily: 'monospace'
+        }
+      }, value));
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.RangeSelector, {
+      direction: direction,
+      min: 10,
+      max: 20,
+      size: "full",
+      values: range,
+      onChange: onChange
+    }))) // </Grommet>
+
+  );
 };
 
 exports.Simple = Simple;

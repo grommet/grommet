@@ -1,10 +1,7 @@
 import React from 'react';
-import { Box, Grommet, Heading, Keyboard } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Heading, Keyboard } from 'grommet';
 export var OnDocument = function OnDocument() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Keyboard, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Keyboard, {
     target: "document",
     onEsc: function onEsc() {
       return alert('You pressed Esc!');

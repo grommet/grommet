@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _grommetIcons = require("grommet-icons");
 
 var _data = require("./data");
@@ -111,45 +109,49 @@ var Animated = function Animated() {
     }));
   }
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    alignSelf: "center",
-    margin: {
-      bottom: 'large'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(Container, {
-    node: _data.data[0],
-    index: 1
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "small"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    id: "4",
-    width: "xsmall",
-    margin: {
-      bottom: 'large',
-      top: 'xlarge'
-    }
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row",
-    gap: "xlarge"
-  }, [2, 3].map(function (id) {
-    return /*#__PURE__*/_react["default"].createElement(Container, {
-      key: id,
-      node: _data.data[id - 1],
-      index: id
-    });
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Diagram, {
-    animation: {
-      type: 'draw',
-      duration: 3000
-    },
-    connections: connections
-  })))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      alignSelf: "center",
+      margin: {
+        bottom: 'large'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(Container, {
+      node: _data.data[0],
+      index: 1
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "small"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      id: "4",
+      width: "xsmall",
+      margin: {
+        bottom: 'large',
+        top: 'xlarge'
+      }
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row",
+      gap: "xlarge"
+    }, [2, 3].map(function (id) {
+      return /*#__PURE__*/_react["default"].createElement(Container, {
+        key: id,
+        node: _data.data[id - 1],
+        index: id
+      });
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Diagram, {
+      animation: {
+        type: 'draw',
+        duration: 3000
+      },
+      connections: connections
+    })))) // </Grommet>
+
+  );
 };
 
 exports.Animated = Animated;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { render } from 'react-dom';
-import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, RangeSelector, Stack, Text } from 'grommet';
 var RANGE_MIN = 0;
 var RANGE_MAX = 100;
 
@@ -38,13 +37,17 @@ function Thin(_ref) {
 }
 
 function App() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "small"
-  }, /*#__PURE__*/React.createElement(Thin, {
-    label: "My Range Selector"
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      pad: "small"
+    }, /*#__PURE__*/React.createElement(Thin, {
+      label: "My Range Selector"
+    })) // </Grommet>
+
+  );
 }
 
 render( /*#__PURE__*/React.createElement(App, null), document.getElementById('root'));

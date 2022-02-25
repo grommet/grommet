@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Card, Grid, Grommet, Pagination, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Card, Grid, Pagination, Text } from 'grommet';
 var data = [];
 
 for (var i = 0; i < 95; i += 1) {
@@ -34,36 +33,42 @@ export var PaginatedGrid = function PaginatedGrid() {
     setIndices([startIndex, Math.min(endIndex, data.length)]);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "large",
-    gap: "medium"
-  }, /*#__PURE__*/React.createElement(Box, {
-    height: {
-      min: 'medium'
-    }
-  }, /*#__PURE__*/React.createElement(Grid, {
-    columns: "small",
-    rows: "small",
-    gap: "medium",
-    justify: "center"
-  }, currentData.map(function (datum) {
-    return /*#__PURE__*/React.createElement(CardResult, {
-      item: datum,
-      key: datum.entry
-    });
-  }))), /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    direction: "row",
-    justify: "between"
-  }, /*#__PURE__*/React.createElement(Text, null, "Showing ", indices[0] + 1, " - ", indices[1], " of ", data.length), /*#__PURE__*/React.createElement(Pagination, {
-    numberItems: data.length,
-    onChange: handleChange
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      pad: "large",
+      gap: "medium"
+    }, /*#__PURE__*/React.createElement(Box, {
+      height: {
+        min: 'medium'
+      }
+    }, /*#__PURE__*/React.createElement(Grid, {
+      columns: "small",
+      rows: "small",
+      gap: "medium",
+      justify: "center"
+    }, currentData.map(function (datum) {
+      return /*#__PURE__*/React.createElement(CardResult, {
+        item: datum,
+        key: datum.entry
+      });
+    }))), /*#__PURE__*/React.createElement(Box, {
+      align: "center",
+      direction: "row",
+      justify: "between"
+    }, /*#__PURE__*/React.createElement(Text, null, "Showing ", indices[0] + 1, " - ", indices[1], " of ", data.length), /*#__PURE__*/React.createElement(Pagination, {
+      numberItems: data.length,
+      onChange: handleChange
+    }))) // </Grommet>
+
+  );
 };
 PaginatedGrid.storyName = 'Grid';
+PaginatedGrid.args = {
+  full: true
+};
 export default {
   title: 'Controls/Pagination/Grid'
 };
