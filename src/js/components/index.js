@@ -41,7 +41,7 @@ export * from './MaskedInput';
 export * from './Menu';
 export * from './Meter';
 export * from './Page';
-export * from './PageSection';
+export * from './PageContent';
 export * from './Pagination';
 export * from './Paragraph';
 export * from './NameValuePair';

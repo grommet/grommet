@@ -6,21 +6,17 @@ import {
   Paragraph,
   Grid,
   Card,
-  PageSection,
+  PageContent,
 } from 'grommet';
 
 export const Narrow = () => (
-  <Page kind="narrow">
-    <PageSection>
+  <Page kind="narrow" customizeContent background="dark-4">
+    <PageContent background={{ fill: 'horizontal', color: 'white' }}>
       <Header>
         <Heading>Narrow Page</Heading>
       </Header>
-    </PageSection>
-    <PageSection fullBackground="dark-4" background="light-2">
-      <Paragraph>
-        `fullBackground` prop set to dark-4 and `background` prop set to
-        light-2.
-      </Paragraph>
+    </PageContent>
+    <PageContent background="light-2">
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo
         gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi
@@ -43,7 +39,7 @@ export const Narrow = () => (
         leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus
         nunc porta egestas. Fusce dapibus lobortis tincidunt.
       </Paragraph>
-    </PageSection>
+    </PageContent>
   </Page>
 );
 

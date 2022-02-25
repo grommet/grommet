@@ -6,7 +6,7 @@ import {
   Paragraph,
   Grid,
   Card,
-  PageSection,
+  PageContent,
   Grommet,
 } from 'grommet';
 
@@ -36,18 +36,17 @@ const customTheme = {
 
 export const LeftColumn = () => (
   <Grommet theme={customTheme}>
-    <Page kind="customKind">
-      <PageSection>
+    <Page kind="customKind" customizeContent>
+      <PageContent>
         <Header>
           <Heading>Custom Kind</Heading>
         </Header>
-      </PageSection>
-      <PageSection fullBackground="pink">
+      </PageContent>
+      <PageContent background={{ fill: 'horizontal', color: 'pink' }}>
         Background goes all the way across Page width regardless of Page kind
-        (wide, narrow, full, or custom). This is accomplished by setting the
-        `fullBackground` prop on PageContent.
-      </PageSection>
-      <PageSection>
+        (wide, narrow, full, or custom).
+      </PageContent>
+      <PageContent>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
           commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan
@@ -55,8 +54,8 @@ export const LeftColumn = () => (
           bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim
           faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt.
         </Paragraph>
-      </PageSection>
-      <PageSection background="orange">
+      </PageContent>
+      <PageContent background="orange">
         <Paragraph>
           Background width is restricted by Page kind (wide, narrow, or full).
         </Paragraph>
@@ -72,8 +71,8 @@ export const LeftColumn = () => (
             Card
           </Card>
         </Grid>
-      </PageSection>
-      <PageSection>
+      </PageContent>
+      <PageContent>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
           commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan
@@ -81,7 +80,7 @@ export const LeftColumn = () => (
           bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim
           faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt.
         </Paragraph>
-      </PageSection>
+      </PageContent>
     </Page>
   </Grommet>
 );

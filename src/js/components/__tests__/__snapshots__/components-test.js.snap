@@ -619,6 +619,7 @@ Object {
   "Nav": [Function],
   "Notification": [Function],
   "Page": [Function],
+  "PageContent": [Function],
   "PageContext": Object {
     "$$typeof": Symbol(react.context),
     "Consumer": Object {
@@ -637,7 +638,6 @@ Object {
     "_currentValue2": Object {},
     "_threadCount": 0,
   },
-  "PageSection": [Function],
   "Pagination": Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {

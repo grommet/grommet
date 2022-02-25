@@ -4,14 +4,14 @@ import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Page } from '..';
-import { PageSection } from '../../PageSection';
+import { Paragraph } from '../../Paragraph';
 
 describe('Page', () => {
-  test('default kind with fullBackground', () => {
+  test('default kind', () => {
     const { container } = render(
       <Grommet>
         <Page>
-          <PageSection fullBackground="pink">content</PageSection>
+          <Paragraph>content</Paragraph>
         </Page>
       </Grommet>,
     );
