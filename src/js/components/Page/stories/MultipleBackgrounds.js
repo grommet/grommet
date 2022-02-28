@@ -1,0 +1,56 @@
+import React from 'react';
+import {
+  Page,
+  Header,
+  Heading,
+  Paragraph,
+  Grid,
+  Card,
+  PageContent,
+  Footer,
+} from 'grommet';
+
+export const MultipleBackgrounds = () => (
+  <Page kind="narrow" plain>
+    <PageContent background={{ fill: 'horizontal', color: 'white' }}>
+      <Header>
+        <Heading>Narrow Page</Heading>
+      </Header>
+    </PageContent>
+    <PageContent background={{ fill: 'horizontal', color: 'light-2' }}>
+      <Paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo
+        gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi
+        dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum
+        leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus
+        nunc porta egestas. Fusce dapibus lobortis tincidunt.
+      </Paragraph>
+    </PageContent>
+    <PageContent background={{ fill: 'horizontal', color: 'dark-4' }}>
+      <Grid rows="small" columns={{ count: 'fit', size: 'small' }} gap="small">
+        <Card background="white" pad="large">
+          Card
+        </Card>
+        <Card background="white" pad="large">
+          Card
+        </Card>
+      </Grid>
+    </PageContent>
+    <PageContent background={{ fill: 'horizontal', color: 'light-2' }}>
+      <Paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo
+        gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi
+        dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum
+        leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus
+        nunc porta egestas. Fusce dapibus lobortis tincidunt.
+      </Paragraph>
+    </PageContent>
+    <PageContent background={{ fill: 'horizontal', color: 'white' }}>
+      <Footer>Footer</Footer>
+    </PageContent>
+  </Page>
+);
+
+export default {
+  title: 'Layout/Page/Multiple Backgrounds',
+};

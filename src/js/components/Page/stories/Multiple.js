@@ -1,22 +1,23 @@
 import React from 'react';
 import {
   Page,
+  PageContent,
   Header,
   Heading,
   Paragraph,
   Grid,
   Card,
-  PageContent,
 } from 'grommet';
 
-export const Narrow = () => (
-  <Page kind="narrow" plain background="dark-4">
+export const Multiple = () => (
+  <Page kind="narrow" plain>
     <PageContent background={{ fill: 'horizontal', color: 'white' }}>
       <Header>
-        <Heading>Narrow Page</Heading>
+        <Heading>Page Header</Heading>
       </Header>
     </PageContent>
-    <PageContent background="light-2">
+    <PageContent>
+      <Heading level={2}>Narrow Page</Heading>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo
         gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi
@@ -44,5 +45,5 @@ export const Narrow = () => (
 );
 
 export default {
-  title: 'Layout/Page/Narrow',
+  title: 'Layout/Page/Multiple',
 };
