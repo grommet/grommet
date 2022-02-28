@@ -20,7 +20,7 @@ const Page = ({ children, plain, kind, ...rest }) => {
     [theme, size, kind],
   );
 
-  const content = plain ? children : <PageContent>{children}</PageContent>
+  const content = plain ? children : <PageContent>{children}</PageContent>;
 
   return (
     <PageContext.Provider value={value}>
