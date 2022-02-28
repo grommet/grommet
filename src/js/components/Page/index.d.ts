@@ -2,8 +2,7 @@ import * as React from 'react';
 import { BoxProps } from '../Box/index';
 
 export interface PageProps {
-  contentProps?: BoxProps;
-  customizeContent?: boolean;
+  plain?: boolean;
   kind?: 'wide' | 'narrow' | 'full' | string;
 }
 

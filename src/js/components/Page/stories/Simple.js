@@ -2,7 +2,7 @@ import React from 'react';
 import { Page, Heading, Paragraph, Grid, Card } from 'grommet';
 
 export const Simple = () => (
-  <Page background="dark-4" contentProps={{ background: 'light-3' }}>
+  <Page>
     <Heading>Wide Page</Heading>
     <Paragraph>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo

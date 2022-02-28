@@ -6,7 +6,7 @@ import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { PagePropTypes } from './propTypes';
 import { PageContent } from '../PageContent';
 
-const Page = ({ children, contentProps, customizeContent, kind, ...rest }) => {
+const Page = ({ children, plain, kind, ...rest }) => {
   const size = useContext(ResponsiveContext);
   const theme = useContext(ThemeContext);
 
@@ -20,8 +20,7 @@ const Page = ({ children, contentProps, customizeContent, kind, ...rest }) => {
     [theme, size, kind],
   );
 
-  let content = <PageContent {...contentProps}>{children}</PageContent>;
-  if (customizeContent) content = children;
+  const content = plain ? children : <PageContent>{children}</PageContent>
 
   return (
     <PageContext.Provider value={value}>
@@ -35,7 +34,7 @@ const Page = ({ children, contentProps, customizeContent, kind, ...rest }) => {
 Page.displayName = 'Page';
 Page.propTypes = PagePropTypes;
 Page.defaultProps = {
-  customizeContent: false,
+  plain: false,
   kind: 'wide',
 };
 

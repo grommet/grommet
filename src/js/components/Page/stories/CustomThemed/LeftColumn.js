@@ -36,7 +36,7 @@ const customTheme = {
 
 export const LeftColumn = () => (
   <Grommet theme={customTheme}>
-    <Page kind="customKind" customizeContent>
+    <Page kind="customKind" plain>
       <PageContent>
         <Header>
           <Heading>Custom Kind</Heading>

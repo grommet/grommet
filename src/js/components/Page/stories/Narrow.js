@@ -10,7 +10,7 @@ import {
 } from 'grommet';
 
 export const Narrow = () => (
-  <Page kind="narrow" customizeContent background="dark-4">
+  <Page kind="narrow" plain background="dark-4">
     <PageContent background={{ fill: 'horizontal', color: 'white' }}>
       <Header>
         <Heading>Narrow Page</Heading>
