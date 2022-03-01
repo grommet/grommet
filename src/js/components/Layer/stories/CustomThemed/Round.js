@@ -85,5 +85,5 @@ RoundLayer.parameters = {
 };
 
 export default {
-  title: 'Layout/Layer/Border Radius',
+  title: 'Layout/Layer/Custom Themed/Border Radius',
 };
