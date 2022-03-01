@@ -37,22 +37,13 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
       document.removeEventListener('keydown', onKeyDown);
     };
   }, []);
-  var componentRef = useForwardedRef(tipRef); // In cases the child is a primitive
+  var componentRef = useForwardedRef(tipRef); // Three use case for children
+  // 1. Tip has a single child + it is a React Element => Great!
+  // 2. Tip has a single child +  not React Element =>
+  // span will wrap the child so we can use ref and events.
+  // 3. Tip has more than one child => Abort, display Children.only error 
 
-  var wrapInvalidElement = function wrapInvalidElement() {
-    return (// Handle the use case of a primitive string child
-      // so we'll be able to assign ref and events on the child.
-      ! /*#__PURE__*/React.isValidElement(children) ? /*#__PURE__*/React.createElement("span", null, children) : children
-    );
-  };
-  /* Three use case for children
-    1. Tip has a single child + it is a React Element => Great!
-    2. Tip has a single child +  not React Element => span will wrap the child.
-    3. Tip has more than one child => Abort, display Children.only error 
-  */
-
-
-  var child = Children.count(children) === 1 ? wrapInvalidElement() : Children.only(children);
+  var child = Children.count(children) <= 1 && ! /*#__PURE__*/React.isValidElement(children) && /*#__PURE__*/React.createElement("span", null, children) || Children.only(children);
   var clonedChild = /*#__PURE__*/cloneElement(child, {
     onMouseEnter: function onMouseEnter() {
       return setOver(true);

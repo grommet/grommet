@@ -491,6 +491,24 @@ exports[`Tip should work with a child that isn't a React Element 1`] = `
 </div>
 `;
 
+exports[`Tip shouldn't crash with no children 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <span />
+</div>
+`;
+
 exports[`Tip themed 1`] = `
 .c0 {
   display: -webkit-box;
