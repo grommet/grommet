@@ -61,6 +61,7 @@ const SkipLinks = ({ children, id, messages }) => {
         <Box align="center" gap="medium">
           {Children.map(children, (child, index) =>
             cloneElement(child, {
+              // eslint-disable-next-line react/no-array-index-key
               key: `skip-link-${index}`,
               onClick: removeLayer,
             }),
