@@ -10,7 +10,7 @@ const Page = ({ children, plain, kind, ...rest }) => {
   const size = useContext(ResponsiveContext);
   const theme = useContext(ThemeContext);
 
-  const value = useMemo(
+  const contentValue = useMemo(
     () => ({
       alignSelf: theme.page[kind]?.alignSelf,
       fill: 'horizontal',
@@ -23,7 +23,7 @@ const Page = ({ children, plain, kind, ...rest }) => {
   const content = plain ? children : <PageContent>{children}</PageContent>;
 
   return (
-    <PageContext.Provider value={value}>
+    <PageContext.Provider value={contentValue}>
       <Box fill="horizontal" {...rest}>
         {content}
       </Box>
