@@ -24,7 +24,7 @@ const customTheme = {
     },
     background: '#f2f2f2',
     border: { size: 'medium' },
-    pad: { horizontal: 'large', vertical: 'medium' },
+    pad: { horizontal: 'medium', vertical: 'small' },
     round: 'small',
     label: {
       size: 'large',
@@ -48,8 +48,10 @@ export const Custom = () => (
       <Box width="medium">
         <FileInput
           renderFile={(file) => (
-            <Box direction="row" gap="small">
-              <Text weight="bold">{file.name}</Text>
+            <Box>
+              <Text weight="bold" truncate>
+                {file.name}
+              </Text>
               <Text color="text-weak">{file.size} bytes</Text>
             </Box>
           )}

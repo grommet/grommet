@@ -8,7 +8,7 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { containsFocus } from '../../utils/DOM';
+import { containsFocus, shouldKeepFocus } from '../../utils/DOM';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -274,6 +274,14 @@ const FormField = forwardRef(
       })
     );
 
+    if (
+      component &&
+      component.displayName === 'FileInput' &&
+      !isFileInputComponent
+    ) {
+      isFileInputComponent = true;
+    }
+
     if (!themeBorder) {
       contents = (
         <Box {...themeContentProps} {...contentProps}>
@@ -451,7 +459,7 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
-          setFocus(containsFocus(formFieldRef.current));
+          setFocus(containsFocus(formFieldRef.current) && shouldKeepFocus());
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {

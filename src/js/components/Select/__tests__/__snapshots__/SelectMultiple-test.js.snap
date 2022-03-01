@@ -219,7 +219,9 @@ exports[`Select Controlled deselect an option 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select; Selected: one"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -485,7 +487,9 @@ exports[`Select Controlled multiple 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="Open Drop; Selected: "
   class="c0 c1"
   id="test-select"
   type="button"
@@ -763,7 +767,9 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select; Selected: 1"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -927,26 +933,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   text-align: inherit;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -988,26 +974,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 .c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus::-moz-focus-inner {
-  border: 0;
 }
 
 .c9:focus:not(:focus-visible) {
@@ -1097,14 +1063,18 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-multiselectable="true"
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="true"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
-        tabindex="-1"
+        role="option"
+        tabindex="0"
         type="button"
       >
         <div
@@ -1118,8 +1088,11 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c9 c10"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1143,7 +1116,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 
 exports[`Select Controlled multiple onChange toggle with valueKey reduce 3`] = `
 "@media only screen and (max-width: 768px) {
-  .euhWRA {
+  .gChTae {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1382,7 +1355,9 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -1551,26 +1526,6 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -1651,13 +1606,17 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-multiselectable="true"
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1672,8 +1631,11 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1697,7 +1659,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 
 exports[`Select Controlled multiple onChange with valueKey reduce 3`] = `
 "@media only screen and (max-width: 768px) {
-  .euhWRA {
+  .gChTae {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1936,7 +1898,9 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -2105,26 +2069,6 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -2205,13 +2149,17 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-multiselectable="true"
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -2226,8 +2174,11 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -2251,7 +2202,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 
 exports[`Select Controlled multiple onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .euhWRA {
+  .gChTae {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2490,7 +2441,9 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -2659,26 +2612,6 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -2759,13 +2692,17 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-multiselectable="true"
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -2780,8 +2717,11 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -2805,7 +2745,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .euhWRA {
+  .gChTae {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2814,55 +2754,60 @@ exports[`Select Controlled multiple onChange without valueKey 3`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 bfNlCf StyledDrop-sc-16s5rx8-0 ohXMl"
+  class="StyledBox-sc-13pk1d4-0 boMPMF StyledDrop-sc-16s5rx8-0 fsBPbn"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bULqXT StyledSelect__StyledContainer-sc-znp66n-0 eYDuHC"
+    class="StyledBox-sc-13pk1d4-0 jLMOlN StyledSelect__StyledContainer-sc-znp66n-0 djWBmY"
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__OptionsBox-sc-1wi0ul8-0 dmrrIP"
-      role="menubar"
+      aria-multiselectable="true"
+      class="SelectContainer__OptionsBox-sc-1wi0ul8-0 jviAPV"
+      role="listbox"
       tabindex="-1"
     >
       <button
-        class="StyledButton-sc-323bzc-0 cloiJO SelectContainer__SelectOption-sc-1wi0ul8-1 bIHGwS"
-        role="menuitem"
+        aria-posinset="1"
+        aria-setsize="2"
+        class="StyledButton-sc-323bzc-0 cOvmzN SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
+        role="option"
         tabindex="-1"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hztkmD"
+          class="StyledBox-sc-13pk1d4-0 gZcrCV"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 dbAlhH"
+            class="StyledText-sc-1sadyjn-0 grcvBZ"
           >
             Value1
           </span>
         </div>
       </button>
       <button
-        class="StyledButton-sc-323bzc-0 cloiJO SelectContainer__SelectOption-sc-1wi0ul8-1 bIHGwS"
-        role="menuitem"
+        aria-posinset="2"
+        aria-setsize="2"
+        class="StyledButton-sc-323bzc-0 cOvmzN SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
+        role="option"
         tabindex="-1"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hztkmD"
+          class="StyledBox-sc-13pk1d4-0 gZcrCV"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 dbAlhH"
+            class="StyledText-sc-1sadyjn-0 grcvBZ"
           >
             Value2
           </span>
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 jrrStI"
+        class="StyledBox-sc-13pk1d4-0 lgyURG"
       />
     </div>
   </div>
@@ -2871,7 +2816,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 5`] = `
 "@media only screen and (max-width: 768px) {
-  .euhWRA {
+  .gChTae {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3097,7 +3042,9 @@ exports[`Select Controlled multiple values 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select; Selected: one,two"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -3146,23 +3093,25 @@ exports[`Select Controlled multiple values 1`] = `
 
 exports[`Select Controlled multiple values 2`] = `
 <button
-  aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 kVhqUm Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
+  aria-expanded="true"
+  aria-haspopup="listbox"
+  aria-label="test select; Selected: one,two"
+  class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 duA-dOj"
+    class="StyledBox-sc-13pk1d4-0 bBHevx"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 TORGV"
+      class="StyledBox-sc-13pk1d4-0 gSrxin"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bDhrKg"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jqwtzG"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bKnHfl Select__SelectTextInput-sc-17idtfo-0 fPXvfn"
+          class="StyledTextInput-sc-1x30a0s-0 bmcLpb Select__SelectTextInput-sc-17idtfo-0 ecWLed"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3173,12 +3122,12 @@ exports[`Select Controlled multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 euhWRA"
+      class="StyledBox-sc-13pk1d4-0 gChTae"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+        class="StyledIcon-sc-ofa7kd-0 kxOTGz"
         viewBox="0 0 24 24"
       >
         <path
@@ -3309,26 +3258,6 @@ exports[`Select Controlled multiple values 3`] = `
   text-align: inherit;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -3411,14 +3340,18 @@ exports[`Select Controlled multiple values 3`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-multiselectable="true"
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="true"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
-        tabindex="-1"
+        role="option"
+        tabindex="0"
         type="button"
       >
         <div
@@ -3432,9 +3365,12 @@ exports[`Select Controlled multiple values 3`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="true"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
-        tabindex="-1"
+        role="option"
+        tabindex="0"
         type="button"
       >
         <div
@@ -3457,7 +3393,7 @@ exports[`Select Controlled multiple values 3`] = `
 
 exports[`Select Controlled multiple values 4`] = `
 "@media only screen and (max-width: 768px) {
-  .euhWRA {
+  .gChTae {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3696,7 +3632,9 @@ exports[`Select Controlled multiple with empty results 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select; Selected: "
     class="c1 c2"
     id="test-select"
     type="button"
@@ -3865,26 +3803,6 @@ exports[`Select Controlled multiple with empty results 2`] = `
   color: #000000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -3965,13 +3883,17 @@ exports[`Select Controlled multiple with empty results 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-multiselectable="true"
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -3986,8 +3908,11 @@ exports[`Select Controlled multiple with empty results 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -4011,7 +3936,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
 
 exports[`Select Controlled multiple with empty results 3`] = `
 "@media only screen and (max-width: 768px) {
-  .euhWRA {
+  .gChTae {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4237,7 +4162,9 @@ exports[`Select Controlled select another option 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select; Selected: two"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -4516,6 +4443,8 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="test"
     class="c1 c2"
     type="button"

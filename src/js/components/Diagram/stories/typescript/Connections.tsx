@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Gremlin, IceCream } from 'grommet-icons';
-import { Stack, grommet, Grommet, Box, Diagram } from 'grommet';
+import { Stack, Box, Diagram } from 'grommet';
 
 import { DiagramConnectionAnchor, DiagramConnectionType } from '../../index';
 
@@ -25,19 +25,20 @@ const connections = [connection];
 
 export const Connections = () => {
   return (
-    <Grommet theme={grommet}>
-      <Stack>
-        <Box fill pad="xlarge">
-          <Box align="start">
-            <Gremlin id="gremlin" color="neutral-2" size="xlarge" />
-          </Box>
-          <Box align="end" pad={{ vertical: 'large' }}>
-            <IceCream id="yummy" color="neutral-2" size="xlarge" />
-          </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Stack>
+      <Box fill pad="xlarge">
+        <Box align="start">
+          <Gremlin id="gremlin" color="neutral-2" size="xlarge" />
         </Box>
-        <Diagram connections={connections} />
-      </Stack>
-    </Grommet>
+        <Box align="end" pad={{ vertical: 'large' }}>
+          <IceCream id="yummy" color="neutral-2" size="xlarge" />
+        </Box>
+      </Box>
+      <Diagram connections={connections} />
+    </Stack>
+    // </Grommet>
   );
 };
 

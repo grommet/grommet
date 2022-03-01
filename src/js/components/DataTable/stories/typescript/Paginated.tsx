@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, Grommet, DataTable, Meter, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Meter, Text } from 'grommet';
 
 import { ColumnConfig } from '../..';
 
@@ -143,19 +142,20 @@ const DATA: RowType[] = [
 export const Paginated = () => {
   const [select, setSelect] = React.useState([]);
   return (
-    <Grommet theme={grommet} full>
-      <Box pad="large">
-        <DataTable
-          columns={columns}
-          data={DATA}
-          onSelect={setSelect}
-          select={select}
-          sortable
-          step={3}
-          paginate
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet} full>
+    <Box pad="large">
+      <DataTable
+        columns={columns}
+        data={DATA}
+        onSelect={setSelect}
+        select={select}
+        sortable
+        step={3}
+        paginate
+      />
+    </Box>
+    // </Grommet>
   );
 };
 

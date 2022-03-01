@@ -2,14 +2,12 @@ import React from 'react';
 import {
   Box,
   Button,
-  Grommet,
   Keyboard,
   Text,
   Calendar,
   MaskedInput,
   DropButton,
 } from 'grommet';
-import { grommet } from 'grommet/themes';
 import { Schedule } from 'grommet-icons';
 
 const DropContent = ({ date: initialDate, time: initialTime, onClose }) => {
@@ -28,7 +26,7 @@ const DropContent = ({ date: initialDate, time: initialTime, onClose }) => {
       />
       <Box flex={false} pad="medium" gap="medium">
         <Keyboard
-          onEnter={event => {
+          onEnter={(event) => {
             event.preventDefault(); // so drop doesn't re-open
             close();
           }}
@@ -71,7 +69,7 @@ const DropContent = ({ date: initialDate, time: initialTime, onClose }) => {
             ]}
             value={time || initialTime}
             name="maskedInput"
-            onChange={event => setTime(event.target.value)}
+            onChange={(event) => setTime(event.target.value)}
           />
         </Keyboard>
         <Box flex={false}>
@@ -95,27 +93,26 @@ export const DateTimeDropButton = () => {
   };
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <DropButton
-          open={open}
-          onClose={() => setOpen(false)}
-          onOpen={() => setOpen(true)}
-          dropContent={
-            <DropContent date={date} time={time} onClose={onClose} />
-          }
-        >
-          <Box direction="row" gap="medium" align="center" pad="small">
-            <Text color={date ? undefined : 'dark-5'}>
-              {date
-                ? `${new Date(date).toLocaleDateString()} ${time}`
-                : 'Select date & time'}
-            </Text>
-            <Schedule />
-          </Box>
-        </DropButton>
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box align="center" pad="large">
+      <DropButton
+        open={open}
+        onClose={() => setOpen(false)}
+        onOpen={() => setOpen(true)}
+        dropContent={<DropContent date={date} time={time} onClose={onClose} />}
+      >
+        <Box direction="row" gap="medium" align="center" pad="small">
+          <Text color={date ? undefined : 'dark-5'}>
+            {date
+              ? `${new Date(date).toLocaleDateString()} ${time}`
+              : 'Select date & time'}
+          </Text>
+          <Schedule />
+        </Box>
+      </DropButton>
+    </Box>
+    // </Grommet>
   );
 };
 

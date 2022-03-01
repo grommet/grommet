@@ -1,21 +1,23 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CarouselChildPropTypes } from './propTypes';
 
+import { StyledCarouselChild } from './StyledCarousel';
+
 import { Box } from '../Box';
-import { ThemeContext } from '../../contexts';
-import { defaultProps } from '../../default-props';
 
 const CarouselChild = ({
+  animationDuration,
   fill,
-  play,
   index,
   activeIndex,
   priorActiveIndex,
+  direction,
   children,
 }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
   const [animation, setAnimation] = useState(undefined);
-  const [visibility, setVisibility] = useState('hidden');
+  const [visibility, setVisibility] = useState(
+    index === activeIndex ? 'visible' : 'hidden',
+  );
   useEffect(() => {
     let timer;
     if (index === activeIndex) {
@@ -24,38 +26,31 @@ const CarouselChild = ({
          * This check will only be false onMount of the component. It ensures
          * the initial active slide of the Carousel renders with no animation.
          */
-        setAnimation({
-          type:
-            play || priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
-          size: 'xlarge',
-          duration: theme.carousel.animation.duration,
-        });
+        setAnimation(
+          direction === 'left' ? 'slideLeftCurrent' : 'slideRightCurrent',
+        );
       }
       setVisibility('visible');
     } else if (index === priorActiveIndex) {
-      setAnimation({
-        type: 'fadeOut',
-        duration: theme.carousel.animation.duration,
-      });
-      timer = setTimeout(
-        () => setVisibility('hidden'),
-        theme.carousel.animation.duration,
+      setAnimation(
+        direction === 'left' ? 'slideLeftPrevious' : 'slideRightPrevious',
       );
+      timer = setTimeout(() => setVisibility('hidden'), animationDuration);
     }
     return () => clearTimeout(timer);
-  }, [
-    activeIndex,
-    priorActiveIndex,
-    index,
-    play,
-    theme.carousel.animation.duration,
-  ]);
+  }, [activeIndex, priorActiveIndex, index, direction, animationDuration]);
+  const position = index === 0 ? 'relative' : 'absolute';
+
   return (
-    <Box fill={fill} overflow="hidden" style={{ visibility }}>
-      <Box fill={fill} animation={animation}>
-        {children}
-      </Box>
-    </Box>
+    <StyledCarouselChild
+      fill={fill}
+      visibilityProp={visibility}
+      positionProp={position}
+      animationType={animation}
+      animationDuration={animationDuration}
+    >
+      <Box fill={fill}>{children}</Box>
+    </StyledCarouselChild>
   );
 };
 

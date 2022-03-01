@@ -418,6 +418,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
+      gap: 'small',
       size: {
         small: {
           border: {
@@ -1081,7 +1082,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     notification: {
-      time: 8000,
       container: {
         // any box props
         pad: { horizontal: 'small', vertical: 'xsmall' },
@@ -1100,6 +1100,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           position: 'top',
           margin: 'medium',
         },
+        time: 8000,
       },
       iconContainer: {
         // any box props
@@ -1489,6 +1490,24 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: { right: 'xsmall' },
       },
       separator: ' : ',
+      size: {
+        xsmall: {
+          pad: { horizontal: `${baseSpacing / 3}px`, vertical: 'xxsmall' },
+          icon: { size: `${baseSpacing * 0.75}px` },
+        },
+        small: {
+          pad: { horizontal: `${baseSpacing * 0.4}px`, vertical: 'xxsmall' },
+          icon: { size: `${baseSpacing * 0.75}px` },
+        },
+        large: {
+          pad: { horizontal: `${(baseSpacing / 3) * 2}px`, vertical: `xsmall` },
+          icon: { size: `${baseSpacing * 1.25}px` },
+        },
+        xlarge: {
+          pad: { horizontal: `${baseSpacing * 0.75}px`, vertical: 'xsmall' },
+          icon: { size: `${baseSpacing * 1.5}px` },
+        },
+      },
       value: {
         weight: 600,
       },

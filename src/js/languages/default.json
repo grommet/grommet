@@ -1,7 +1,14 @@
 {
   "calendar": {
-    "previous": "Moved to {date}",
-    "next": "Moved to {date}"
+    "previousMove": "Moved to {date}",
+    "previous": "Go to {date}",
+    "nextMove": "Moved to {date}",
+    "next": "Go to {date}"
+  },
+  "carousel": {
+    "previous": "Go to slide {slide}",
+    "next": "Go to slide {slide}",
+    "jump": "Jump to slide {slide}"
   },
   "dateInput": {
     "openCalendar": "Press space to open calendar",
@@ -35,7 +42,8 @@
     "upper": "Upper Bounds"
   },
   "select": {
-    "multiple": "multiple"
+    "multiple": "multiple",
+    "selected": "; Selected: {currentSelectedValue}"
   },
   "skipLinks": {
     "skipTo": "Skip To:"

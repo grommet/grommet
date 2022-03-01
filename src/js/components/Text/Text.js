@@ -1,4 +1,6 @@
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
+
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
@@ -25,18 +27,21 @@ const Text = forwardRef(
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
 
-    // place the text content in a tip if truncate === 'tip'
-    // and the text has been truncated
-    useEffect(() => {
-      if (truncate === 'tip') {
+    useLayoutEffect(() => {
+      const updateTip = () => {
+        setTextTruncated(false);
         if (
+          truncate === 'tip' &&
           textRef.current &&
           textRef.current.scrollWidth > textRef.current.offsetWidth
         ) {
           setTextTruncated(true);
         }
-      }
-    }, [children, textRef, truncate]);
+      };
+      window.addEventListener('resize', updateTip);
+      updateTip();
+      return () => window.removeEventListener('resize', updateTip);
+    }, [textRef, truncate]);
 
     const styledTextResult = (
       <StyledText
@@ -52,6 +57,8 @@ const Text = forwardRef(
     );
 
     if (tipProp || textTruncated) {
+      // place the text content in a tip if truncate === 'tip'
+      // and the text has been truncated
       if (textTruncated) {
         return (
           <Tip content={children} {...tipProp}>
@@ -59,7 +66,11 @@ const Text = forwardRef(
           </Tip>
         );
       }
-      return <Tip {...tipProp}>{styledTextResult}</Tip>;
+      // place the text content in a tip if truncate !== 'tip'
+      // it displays even if the text has not truncated
+      if (truncate !== 'tip') {
+        return <Tip {...tipProp}>{styledTextResult}</Tip>;
+      }
     }
 
     return styledTextResult;

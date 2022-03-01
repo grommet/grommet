@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Grommet, NameValueList, NameValuePair, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, NameValueList, NameValuePair, Text } from 'grommet';
 import {
   Language,
   StatusCriticalSmall,
@@ -10,7 +9,9 @@ import {
 import { languageData, statusData } from './data';
 
 export const CustomValue = () => (
-  <Grommet theme={grommet}>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box>
     <Box pad="small" gap="medium">
       <>
         <Text weight="bold" size="3xl">
@@ -38,7 +39,7 @@ export const CustomValue = () => (
     <Box pad="small" gap="medium">
       <>
         <Text weight="bold" size="3xl">
-          Custom Mult-Line Value
+          Custom Multi-Line Value
         </Text>
         <NameValueList>
           {Object.entries(languageData).map(([name, value]) => {
@@ -61,7 +62,8 @@ export const CustomValue = () => (
         </NameValueList>
       </>
     </Box>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 export default {

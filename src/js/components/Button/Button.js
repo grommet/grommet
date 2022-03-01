@@ -133,7 +133,7 @@ const Button = forwardRef(
       disabled,
       icon,
       focusIndicator = true,
-      gap = 'small',
+      gap,
       fill, // munged to avoid styled-components putting it in the DOM
       href,
       justify,
@@ -276,7 +276,7 @@ const Button = forwardRef(
           direction="row"
           align="center"
           justify={justify || (align === 'center' ? 'center' : 'between')}
-          gap={gap}
+          gap={gap || theme.button.gap}
           responsive={false}
         >
           {first}
@@ -329,6 +329,7 @@ const Button = forwardRef(
           hasIcon={!!icon}
           gap={gap}
           hasLabel={!!label}
+          icon={icon}
           fillContainer={fill}
           focus={focus}
           focusIndicator={focusIndicator}

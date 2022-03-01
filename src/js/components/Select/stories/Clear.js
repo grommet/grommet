@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Grommet, Select, grommet } from 'grommet';
+import { Box, Select } from 'grommet';
 
 const options = ['one', 'two', 'three'];
 
@@ -21,9 +21,10 @@ const ClearTop = () => {
 };
 
 export const Clear = () => (
-  <Grommet theme={grommet}>
-    <ClearTop />
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <ClearTop />
+  // </Grommet>
 );
 
 Clear.parameters = {

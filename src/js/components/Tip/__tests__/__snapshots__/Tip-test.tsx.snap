@@ -218,10 +218,10 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 
 exports[`Tip focus and blur events on the Tip's child 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <button
-    class="StyledButton-sc-323bzc-0 gduPKA"
+    class="StyledButton-sc-323bzc-0 LnlOO"
     type="button"
   >
     Test Events
@@ -488,6 +488,24 @@ exports[`Tip should work with a child that isn't a React Element 1`] = `
   <span>
     Not React Element
   </span>
+</div>
+`;
+
+exports[`Tip shouldn't crash with no children 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <span />
 </div>
 `;
 

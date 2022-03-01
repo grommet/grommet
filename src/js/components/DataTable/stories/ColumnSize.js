@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DataTable, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Heading } from 'grommet';
 
 const DATA = [
   {
@@ -93,7 +92,9 @@ const columnsDefault = [
 ];
 
 export const ColumnSize = () => (
-  <Grommet theme={grommet}>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
+  <Box>
     <Box fill="horizontal" pad="medium">
       <Heading level="3"> Default DataTable</Heading>
       <DataTable
@@ -149,7 +150,8 @@ export const ColumnSize = () => (
         }}
       />
     </Box>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 ColumnSize.storyName = 'Column sizes';
