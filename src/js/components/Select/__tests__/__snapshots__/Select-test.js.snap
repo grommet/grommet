@@ -3745,6 +3745,8 @@ exports[`Select default value clear 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 .c12:focus:not(:focus-visible) {

@@ -36,12 +36,13 @@ const SelectOption = styled(Button)`
   width: 100%;
 `;
 
-const ClearButton = ({ clear, onClear, name, theme, setFocus }) => {
+const ClearButton = ({ clear, onClear, name, theme, setFocus, innerRef }) => {
   const { label, position } = clear;
   const align = position !== 'bottom' ? 'start' : 'center';
   const buttonLabel = label || `Clear ${name || 'selection'}`;
   return (
     <Button
+      ref={innerRef}
       onClick={onClear}
       onFocus={() => setFocus(true)}
       onBlur={() => setFocus(false)}
@@ -87,15 +88,23 @@ const SelectContainer = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState();
-    const [focus, setFocus] = useState(false);
+    const [focus, setFocus] = useState();
     const searchRef = useRef();
     const optionsRef = useRef();
+    const clearRef = useRef();
 
     useEffect(() => {
       const optionsNode = optionsRef.current;
       if (optionsNode.children && optionsNode.children[activeIndex])
         optionsNode.children[activeIndex].focus();
     }, [activeIndex]);
+
+    // adjust activeIndex when clear button is an option
+    useEffect(() => {
+      if (activeIndex === -1 && clear && optionIndexesInValue.length) {
+        setActiveIndex(optionIndexesInValue[0]);
+      }
+    }, [activeIndex, optionIndexesInValue, clear]);
 
     // adjust activeIndex when options change
     useEffect(() => {
@@ -109,11 +118,14 @@ const SelectContainer = forwardRef(
       // need to wait for Drop to be ready
       const timer = setTimeout(() => {
         const optionsNode = optionsRef.current;
+        const clearButton = clearRef.current;
         if (onSearch) {
           const searchInput = searchRef.current;
           if (searchInput && searchInput.focus) {
             setFocusWithoutScroll(searchInput);
           }
+        } else if (clear && clearButton) {
+          setFocusWithoutScroll(clearButton);
         } else if (optionsNode && optionsNode.children && usingKeyboard) {
           // if the user is navigating with the keyboard set the
           // first child as the active index when the drop opens
@@ -124,7 +136,7 @@ const SelectContainer = forwardRef(
         }
       }, 100);
       return () => clearTimeout(timer);
-    }, [onSearch, usingKeyboard]);
+    }, [onSearch, usingKeyboard, clear]);
 
     // clear keyboardNavigation after a while
     useEffect(() => {
@@ -368,6 +380,7 @@ const SelectContainer = forwardRef(
           )}
           {clear && clear.position !== 'bottom' && value && (
             <ClearButton
+              innerRef={clearRef}
               clear={clear}
               name={name}
               onClear={onClear}
@@ -474,6 +487,7 @@ const SelectContainer = forwardRef(
           </OptionsBox>
           {clear && clear.position === 'bottom' && value && (
             <ClearButton
+              innerRef={clearRef}
               clear={clear}
               name={name}
               onClear={onClear}
