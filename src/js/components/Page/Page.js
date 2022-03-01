@@ -4,9 +4,8 @@ import { Box } from '../Box';
 import { PageContext } from './PageContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { PagePropTypes } from './propTypes';
-import { PageContent } from '../PageContent';
 
-const Page = ({ children, plain, kind, ...rest }) => {
+const Page = ({ kind, ...rest }) => {
   const size = useContext(ResponsiveContext);
   const theme = useContext(ThemeContext);
 
@@ -20,13 +19,9 @@ const Page = ({ children, plain, kind, ...rest }) => {
     [theme, size, kind],
   );
 
-  const content = plain ? children : <PageContent>{children}</PageContent>;
-
   return (
     <PageContext.Provider value={contentValue}>
-      <Box fill="horizontal" {...rest}>
-        {content}
-      </Box>
+      <Box fill="horizontal" {...rest} />
     </PageContext.Provider>
   );
 };
@@ -34,7 +29,6 @@ const Page = ({ children, plain, kind, ...rest }) => {
 Page.displayName = 'Page';
 Page.propTypes = PagePropTypes;
 Page.defaultProps = {
-  plain: false,
   kind: 'wide',
 };
 

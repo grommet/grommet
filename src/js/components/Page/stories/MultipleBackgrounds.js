@@ -11,7 +11,7 @@ import {
 } from 'grommet';
 
 export const MultipleBackgrounds = () => (
-  <Page kind="narrow" plain>
+  <Page kind="narrow">
     <PageContent background={{ fill: 'horizontal', color: 'white' }}>
       <Header>
         <Heading>Narrow Page</Heading>

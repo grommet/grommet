@@ -10,7 +10,7 @@ import {
 } from 'grommet';
 
 export const Multiple = () => (
-  <Page kind="narrow" plain>
+  <Page kind="narrow">
     <PageContent background={{ fill: 'horizontal', color: 'white' }}>
       <Header>
         <Heading>Page Header</Heading>

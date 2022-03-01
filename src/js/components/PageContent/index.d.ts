@@ -1,21 +1,13 @@
 import * as React from 'react';
 import { BoxProps } from '../Box/index';
-import { ColorType } from '../../utils';
+import { BackgroundObject } from '../../utils';
+
+type PageBackground = BackgroundObject & {
+  fill?: 'horizontal';
+};
 
 export interface PageContentProps {
-  background?:
-    | string
-    | {
-        color?: ColorType;
-        dark?: boolean | string;
-        image?: string;
-        position?: string;
-        opacity?: 'weak' | 'medium' | 'strong' | number | boolean;
-        repeat?: 'no-repeat' | 'repeat' | string;
-        size?: 'cover' | 'contain' | string;
-        light?: string;
-        fill?: 'horizontal';
-      };
+  background?: string | PageBackground;
 }
 
 export interface PageContentExtendedProps

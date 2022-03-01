@@ -27,51 +27,9 @@ exports[`Page default kind 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 1536px;
-  min-width: 384px;
-  width: 100%;
-  padding-left: 48px;
-  padding-right: 48px;
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-
-.c3 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
 }
 
 <div
@@ -80,15 +38,11 @@ exports[`Page default kind 1`] = `
   <div
     class="c1"
   >
-    <div
+    <p
       class="c2"
     >
-      <p
-        class="c3"
-      >
-        content
-      </p>
-    </div>
+      content
+    </p>
   </div>
 </div>
 `;

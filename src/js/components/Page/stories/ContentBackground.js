@@ -2,7 +2,7 @@ import React from 'react';
 import { Page, PageContent, Heading, Paragraph, Grid, Card } from 'grommet';
 
 export const ContentBackground = () => (
-  <Page kind="narrow" plain>
+  <Page kind="narrow">
     <PageContent background="light-3">
       <Heading>Narrow Page</Heading>
       <Paragraph>

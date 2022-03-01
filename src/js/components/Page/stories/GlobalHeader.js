@@ -1,63 +1,28 @@
 import React from 'react';
 import {
-  Page,
+  Grommet,
   Header,
+  Page,
+  PageContent,
   Heading,
   Paragraph,
   Grid,
   Card,
-  PageContent,
-  Grommet,
+  Footer,
 } from 'grommet';
 
-const customTheme = {
-  page: {
-    customKind: {
-      alignSelf: 'start',
-      width: {
-        min: '200px',
-        max: '500px',
-      },
-      small: {
-        pad: 'medium',
-        margin: { vertical: 'small', horizontal: 'small' },
-      },
-      medium: {
-        pad: 'medium',
-        margin: { vertical: 'small', horizontal: 'small' },
-      },
-      large: {
-        pad: 'medium',
-        margin: { vertical: 'small', horizontal: 'small' },
-      },
-    },
-  },
-};
-
-export const LeftColumn = () => (
-  <Grommet theme={customTheme}>
-    <Page kind="customKind">
+export const GlobalHeaderFooter = () => (
+  <Grommet background="background-back">
+    <Header pad="small">Global Header</Header>
+    <Page background="background-front" kind="narrow">
       <PageContent>
-        <Header>
-          <Heading>Custom Kind</Heading>
-        </Header>
-      </PageContent>
-      <PageContent background={{ fill: 'horizontal', color: 'pink' }}>
-        Background goes all the way across Page width regardless of Page kind
-        (wide, narrow, full, or custom).
-      </PageContent>
-      <PageContent>
+        <Heading>Narrow Page</Heading>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
           commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan
           nisi dictum quis. Aenean porttitor at mi id semper. Donec mattis
           bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim
           faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt.
-        </Paragraph>
-      </PageContent>
-      <PageContent background="orange">
-        <Paragraph>
-          Background width is restricted by Page kind (wide, narrow, or full).
         </Paragraph>
         <Grid
           rows="small"
@@ -71,8 +36,6 @@ export const LeftColumn = () => (
             Card
           </Card>
         </Grid>
-      </PageContent>
-      <PageContent>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
           commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan
@@ -82,11 +45,12 @@ export const LeftColumn = () => (
         </Paragraph>
       </PageContent>
     </Page>
+    <Footer pad="small">Global Footer</Footer>
   </Grommet>
 );
 
-LeftColumn.storyName = 'Left Column';
+GlobalHeaderFooter.storyName = 'Global Header and Footer';
 
 export default {
-  title: 'Layout/Page/Custom Themed/Left Column',
+  title: 'Layout/Page/Global Header and Footer',
 };
