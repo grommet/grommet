@@ -18,48 +18,52 @@ export var responsiveBorderStyle = function responsiveBorderStyle(data, theme) {
 
   return "border: " + value + ";";
 };
-export var borderStyle = function borderStyle(data, responsive, theme) {
-  var styles = [];
-  var color = normalizeColor(data.color || 'border', theme);
-  var borderSize = data.size || 'xsmall';
-  var style = data.style || 'solid';
-  var side = typeof data === 'string' ? data : data.side || 'all';
-  var value = style + " " + (theme.global.borderSize[borderSize] || borderSize) + " " + color;
-  var responsiveStyle = responsive && responsiveBorderStyle(data, theme);
-  var breakpoint = responsiveStyle && theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
+export var borderStyle = function borderStyle(borderData, responsive, theme) {
+  var borderStyles = [];
+  (Array.isArray(borderData) ? borderData : [borderData]).forEach(function (data) {
+    var styles = [];
+    var color = normalizeColor(data.color || 'border', theme);
+    var borderSize = data.size || 'xsmall';
+    var style = data.style || 'solid';
+    var side = typeof data === 'string' ? data : data.side || 'all';
+    var value = style + " " + (theme.global.borderSize[borderSize] || borderSize) + " " + color;
+    var responsiveStyle = responsive && responsiveBorderStyle(data, theme);
+    var breakpoint = responsiveStyle && theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
 
-  if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
-    styles.push("border-" + side + ": " + value + ";");
+    if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
+      styles.push("border-" + side + ": " + value + ";");
 
-    if (responsiveStyle) {
-      styles.push(breakpointStyle(breakpoint, responsiveStyle));
+      if (responsiveStyle) {
+        styles.push(breakpointStyle(breakpoint, responsiveStyle));
+      }
+    } else if (side === 'end' || side === 'start') {
+      styles.push(css(["border-inline-", ":", ";"], side, value));
+
+      if (responsiveStyle) {
+        styles.push(breakpointStyle(breakpoint, responsiveStyle));
+      }
+    } else if (side === 'vertical') {
+      styles.push(css(["border-left:", ";border-right:", ";"], value, value));
+
+      if (responsiveStyle) {
+        styles.push(breakpointStyle(breakpoint, responsiveStyle));
+      }
+    } else if (side === 'horizontal') {
+      styles.push(css(["border-top:", ";border-bottom:", ";"], value, value));
+
+      if (responsiveStyle) {
+        styles.push(breakpointStyle(breakpoint, responsiveStyle));
+      }
+    } else if (side === 'between') {// no-op
+    } else {
+      styles.push(css(["border:", ";"], value));
+
+      if (responsiveStyle) {
+        styles.push(breakpointStyle(breakpoint, responsiveStyle));
+      }
     }
-  } else if (side === 'end' || side === 'start') {
-    styles.push(css(["border-inline-", ":", ";"], side, value));
 
-    if (responsiveStyle) {
-      styles.push(breakpointStyle(breakpoint, responsiveStyle));
-    }
-  } else if (side === 'vertical') {
-    styles.push(css(["border-left:", ";border-right:", ";"], value, value));
-
-    if (responsiveStyle) {
-      styles.push(breakpointStyle(breakpoint, responsiveStyle));
-    }
-  } else if (side === 'horizontal') {
-    styles.push(css(["border-top:", ";border-bottom:", ";"], value, value));
-
-    if (responsiveStyle) {
-      styles.push(breakpointStyle(breakpoint, responsiveStyle));
-    }
-  } else if (side === 'between') {// no-op
-  } else {
-    styles.push(css(["border:", ";"], value));
-
-    if (responsiveStyle) {
-      styles.push(breakpointStyle(breakpoint, responsiveStyle));
-    }
-  }
-
-  return styles;
+    borderStyles.push(styles);
+  });
+  return borderStyles;
 };

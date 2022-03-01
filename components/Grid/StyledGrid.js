@@ -214,9 +214,7 @@ var StyledGrid = _styledComponents["default"].div.attrs(function (props) {
   displayName: "StyledGrid",
   componentId: "sc-1wofa1l-0"
 })(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
-  return props.border && (Array.isArray(props.border) ? props.border.map(function (border) {
-    return (0, _utils.borderStyle)(border, props.responsive, props.theme);
-  }) : (0, _utils.borderStyle)(props.border, props.responsive, props.theme));
+  return props.border && (0, _utils.borderStyle)(props.border, props.responsive, props.theme);
 }, function (props) {
   return fillStyle(props.fillContainer);
 }, function (props) {

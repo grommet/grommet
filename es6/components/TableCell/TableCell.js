@@ -79,7 +79,7 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
     tableContextTheme = theme.table && theme.table.footer;
   } else {
     tableContextTheme = theme.table && theme.table.body;
-  } // merge tabelContextTheme and rest
+  } // merge tableContextTheme and rest
 
 
   var mergedProps = _extends({}, tableContextTheme, rest);
