@@ -1,21 +1,25 @@
 import React from 'react';
 
-import { Box, Grommet, Layer, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Layer, Text } from 'grommet';
 
 export const PlainLayer = () => (
-  <Grommet theme={grommet} full>
-    <Box fill background="dark-3">
-      <Layer margin="medium" plain>
-        <Box pad="large" border={{ color: 'accent-1', size: 'large' }}>
-          <Text color="accent-2">Text</Text>
-        </Box>
-      </Layer>
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box fill background="dark-3">
+    <Layer margin="medium" plain>
+      <Box pad="large" border={{ color: 'accent-1', size: 'large' }}>
+        <Text color="accent-2">Text</Text>
+      </Box>
+    </Layer>
+  </Box>
+  // </Grommet>
 );
 
 PlainLayer.storyName = 'Plain';
+
+PlainLayer.args = {
+  full: true,
+};
 
 export default {
   title: 'Layout/Layer/Plain',
