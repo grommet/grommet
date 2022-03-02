@@ -161,8 +161,6 @@ describe('Notification', () => {
   });
 
   test('custom theme', () => {
-    const onOpen = jest.fn();
-
     const theme = {
       notification: {
         direction: 'row',
@@ -183,32 +181,16 @@ describe('Notification', () => {
       },
     };
 
-    const Test = () => {
-      const [visible, setVisible] = useState(false);
-      return (
-        <Grommet theme={theme}>
-          <TestNotification status="critical" />
-          <Button
-            label="Show Toast Notification"
-            onClick={() => {
-              onOpen();
-              setVisible(true);
-            }}
-          />
-          {visible && (
-            <TestNotification toast title="Toast title" status="critical" />
-          )}
-        </Grommet>
-      );
-    };
+    const Test = () => (
+      <Grommet theme={theme}>
+        <TestNotification status="critical" />
+        <TestNotification toast title="Toast title" status="critical" />
+      </Grommet>
+    );
     const { asFragment } = render(<Test />);
 
     expect(asFragment()).toMatchSnapshot();
-    userEvent.click(
-      screen.getByRole('button', { name: 'Show Toast Notification' }),
-    );
     expect(screen.getByText('Toast title')).toBeInTheDocument();
-    expect(onOpen).toHaveBeenCalled();
   });
 
   test('actions', () => {

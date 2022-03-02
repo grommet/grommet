@@ -1041,6 +1041,7 @@ export interface ThemeType {
     container?: BoxProps;
     direction?: 'column' | 'row';
     global?: {
+      direction?: 'column' | 'row';
       container?: BoxProps;
     };
     toast?: {
@@ -1061,31 +1062,67 @@ export interface ThemeType {
       icon?: React.ReactNode;
       background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     warning?: {
       icon?: React.ReactNode;
       background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     normal?: {
       icon?: React.ReactNode;
       background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     info?: {
       icon?: React.ReactNode;
       background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     unknown?: {
       icon?: React.ReactNode;
       background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     undefined?: {
       icon?: React.ReactNode;
       background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
   };
   pagination?: {

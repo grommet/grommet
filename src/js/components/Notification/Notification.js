@@ -105,13 +105,13 @@ const Notification = ({
   else direction = theme.notification.direction;
 
   let background;
-  if (kind && theme.notification[status][kind]?.background)
-    background = theme.notification[status][kind]?.background;
-  else if (theme.notification[status].background)
+  if (kind && theme.notification?.[status]?.[kind]?.background)
+    background = theme.notification[status][kind].background;
+  else if (theme.notification?.[status]?.background)
     background = theme.notification[status].background;
   else
     background =
-      theme.notification[kind]?.container?.background ||
+      theme.notification?.[kind]?.container?.background ||
       theme.notification.container.background;
 
   const TextWrapper = direction === 'row' ? Text : Fragment;
