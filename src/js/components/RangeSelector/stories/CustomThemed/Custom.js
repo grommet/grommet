@@ -32,7 +32,7 @@ const customThemeRangeSelector = deepMerge(grommet, {
 
 export const Custom = ({ direction = 'horizontal', ...rest }) => {
   const [range, setRange] = useState([12, 16]);
-  const onChange = values => {
+  const onChange = (values) => {
     setRange(values);
   };
 
@@ -44,7 +44,7 @@ export const Custom = ({ direction = 'horizontal', ...rest }) => {
             direction={direction === 'vertical' ? 'column' : 'row'}
             justify="between"
           >
-            {[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(value => (
+            {[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map((value) => (
               <Box
                 key={value}
                 width="xxsmall"
@@ -74,5 +74,5 @@ export const Custom = ({ direction = 'horizontal', ...rest }) => {
 };
 
 export default {
-  title: 'Input/RangeSelector/Custom',
+  title: 'Input/RangeSelector/Custom Themed/Custom',
 };

@@ -32,5 +32,5 @@ export const Disabled = () => (
 );
 
 export default {
-  title: 'Input/RangeInput/Disabled',
+  title: 'Input/RangeInput/Custom Themed/Disabled',
 };

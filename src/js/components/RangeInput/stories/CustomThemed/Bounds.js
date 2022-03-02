@@ -25,7 +25,7 @@ export const Bounds = () => {
   const [isAddDisabled, setIsAddDisabled] = React.useState();
   const [isSubtractDisabled, setIsSubtractDisabled] = React.useState();
 
-  const onChange = event => setValue(event.target.value);
+  const onChange = (event) => setValue(event.target.value);
   return (
     <Grommet theme={rangeInputTheme}>
       <Box direction="row" align="center" pad="large" gap="small">
@@ -66,5 +66,5 @@ export const Bounds = () => {
 };
 
 export default {
-  title: 'Input/RangeInput/Bounds',
+  title: 'Input/RangeInput/Custom Themed/Bounds',
 };

@@ -61,7 +61,7 @@ export const Custom = () => (
     <Box fill align="center" justify="center">
       <Box width="medium">
         <Form
-          onReset={event => console.log(event)}
+          onReset={(event) => console.log(event)}
           onSubmit={({ value }) => console.log('Submit', value)}
         >
           <FormField label="Name" name="name" required>
@@ -106,5 +106,5 @@ export const Custom = () => (
 );
 
 export default {
-  title: 'Input/Form/Custom',
+  title: 'Input/Form/Custom Themed/Custom',
 };

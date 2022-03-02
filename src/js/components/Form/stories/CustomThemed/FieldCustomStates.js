@@ -135,5 +135,5 @@ export const FieldCustomStates = () => {
 FieldCustomStates.storyName = 'Field custom states';
 
 export default {
-  title: 'Input/Form/Field custom states',
+  title: 'Input/Form/Custom Themed/Field custom states',
 };

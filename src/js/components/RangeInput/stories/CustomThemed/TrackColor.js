@@ -49,5 +49,5 @@ export const TrackColor = () => {
 TrackColor.storyName = 'Track Color';
 
 export default {
-  title: 'Input/RangeInput/Track Color',
+  title: 'Input/RangeInput/Custom Themed/Track Color',
 };
