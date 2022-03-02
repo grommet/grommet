@@ -15,6 +15,8 @@ export const PageNotification = () => {
   const [kind, setKind] = useState('narrow');
 
   return (
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
     <Page pad={{ vertical: 'medium' }} kind={kind} background="background-back">
       <PageContent background="background-front">
         <Box direction="row" justify="between" pad={{ vertical: 'medium' }}>
@@ -76,6 +78,7 @@ export const PageNotification = () => {
         </Paragraph>
       </PageContent>
     </Page>
+    // </Grommet>
   );
 };
 

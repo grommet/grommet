@@ -12,7 +12,9 @@ import {
 } from 'grommet';
 
 export const GlobalHeaderFooter = () => (
-  <Grommet background="background-back">
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <>
     <Header pad="small">Global Header</Header>
     <Page background="background-front" kind="narrow">
       <PageContent>
@@ -46,7 +48,8 @@ export const GlobalHeaderFooter = () => (
       </PageContent>
     </Page>
     <Footer pad="small">Global Footer</Footer>
-  </Grommet>
+  </>
+  // </Grommet>
 );
 
 GlobalHeaderFooter.storyName = 'Global Header and Footer';

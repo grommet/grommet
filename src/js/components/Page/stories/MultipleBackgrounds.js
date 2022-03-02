@@ -11,6 +11,8 @@ import {
 } from 'grommet';
 
 export const MultipleBackgrounds = () => (
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
   <Page kind="narrow">
     <PageContent background={{ fill: 'horizontal', color: 'white' }}>
       <Header>
@@ -49,6 +51,7 @@ export const MultipleBackgrounds = () => (
       <Footer>Footer</Footer>
     </PageContent>
   </Page>
+  // </Grommet>
 );
 
 export default {

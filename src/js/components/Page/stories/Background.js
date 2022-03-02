@@ -2,6 +2,8 @@ import React from 'react';
 import { Page, PageContent, Heading, Paragraph, Grid, Card } from 'grommet';
 
 export const Background = () => (
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
   <Page background="light-3" kind="narrow">
     <PageContent>
       <Heading>Narrow Page</Heading>
@@ -29,6 +31,7 @@ export const Background = () => (
       </Paragraph>
     </PageContent>
   </Page>
+  // </Grommet>
 );
 
 export default {
