@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Grommet,
   Header,
   Page,
   PageContent,
