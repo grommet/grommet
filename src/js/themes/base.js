@@ -1150,13 +1150,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           max: 'xxlarge',
         },
         small: {
-          pad: { horizontal: 'large', vertical: 'medium' },
+          pad: { horizontal: 'large' },
         },
         medium: {
-          pad: { horizontal: 'medium', vertical: 'medium' },
+          pad: { horizontal: 'medium' },
         },
         large: {
-          pad: { horizontal: 'large', vertical: 'medium' },
+          pad: { horizontal: 'large' },
         },
       },
       narrow: {
@@ -1166,14 +1166,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           max: 'large',
         },
         small: {
-          pad: { horizontal: 'large', vertical: 'medium' },
+          pad: { horizontal: 'large' },
         },
         medium: {
-          pad: { horizontal: 'medium', vertical: 'medium' },
+          pad: { horizontal: 'medium' },
         },
         large: {
-          pad: { horizontal: 'large', vertical: 'medium' },
-          gap: 'large',
+          pad: { horizontal: 'large' },
         },
       },
       full: {
@@ -1183,13 +1182,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           max: '100%',
         },
         small: {
-          pad: { horizontal: 'large', vertical: 'medium' },
+          pad: { horizontal: 'large' },
         },
         medium: {
-          pad: { horizontal: 'medium', vertical: 'medium' },
+          pad: { horizontal: 'medium' },
         },
         large: {
-          pad: { horizontal: 'large', vertical: 'medium' },
+          pad: { horizontal: 'large' },
         },
       },
     },

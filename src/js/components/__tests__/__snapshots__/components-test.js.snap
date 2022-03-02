@@ -1809,19 +1809,16 @@ Object {
             "large": Object {
               "pad": Object {
                 "horizontal": "large",
-                "vertical": "medium",
               },
             },
             "medium": Object {
               "pad": Object {
                 "horizontal": "medium",
-                "vertical": "medium",
               },
             },
             "small": Object {
               "pad": Object {
                 "horizontal": "large",
-                "vertical": "medium",
               },
             },
             "width": Object {
@@ -1832,22 +1829,18 @@ Object {
           "narrow": Object {
             "alignSelf": "center",
             "large": Object {
-              "gap": "large",
               "pad": Object {
                 "horizontal": "large",
-                "vertical": "medium",
               },
             },
             "medium": Object {
               "pad": Object {
                 "horizontal": "medium",
-                "vertical": "medium",
               },
             },
             "small": Object {
               "pad": Object {
                 "horizontal": "large",
-                "vertical": "medium",
               },
             },
             "width": Object {
@@ -1860,19 +1853,16 @@ Object {
             "large": Object {
               "pad": Object {
                 "horizontal": "large",
-                "vertical": "medium",
               },
             },
             "medium": Object {
               "pad": Object {
                 "horizontal": "medium",
-                "vertical": "medium",
               },
             },
             "small": Object {
               "pad": Object {
                 "horizontal": "large",
-                "vertical": "medium",
               },
             },
             "width": Object {
