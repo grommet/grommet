@@ -9,6 +9,7 @@ import React, {
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
+import { Anchor } from '../Anchor';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Layer } from '../Layer';
@@ -17,13 +18,8 @@ import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 
-const IconTextButton = ({ href, onClick, ...rest }) => (
-  <Box flex>
-    <Button href={href} onClick={onClick} {...rest} />
-  </Box>
-);
-
 const adaptThemeStyle = (value, theme) => {
+  console.log(value);
   let textStyle = value;
   let closeButtonStyle = value;
 
@@ -34,7 +30,7 @@ const adaptThemeStyle = (value, theme) => {
       right: undefined,
     };
     closeButtonStyle = { vertical: value, right: value };
-  } else if (typeof pad === 'object') {
+  } else if (typeof value === 'object') {
     const { left, right, top, bottom, horizontal, vertical } = value;
     textStyle = {
       top: top || vertical,
@@ -53,11 +49,11 @@ const adaptThemeStyle = (value, theme) => {
 };
 
 const Notification = ({
+  actions: actionsProp,
   message: messageProp,
-  href,
-  onClick,
   onClose,
   id,
+  global,
   status,
   title,
   toast,
@@ -94,76 +90,75 @@ const Notification = ({
   const { icon: StatusIcon, background, color } = theme.notification[status];
   const { color: closeIconColor } = theme.notification.close;
 
-  const { direction, truncate } = toast
-    ? theme.notification.toast
-    : theme.notification;
+  const { direction } = toast ? theme.notification.toast : theme.notification;
 
   const TextWrapper = direction === 'row' ? Text : Fragment;
-  const textWrapperProps = direction === 'row' ? { truncate } : {};
 
   // notification is built with two child boxes that contain:
   // 1. icon + text (wrapped in button when clickable)
   // 2. close button
-  // pad needs to be applied to the child boxes to ensure pad is included
-  // in the clickable region, but we don't want to apply extra padding
-  // between the icon + text and the button.
+  // pad needs to be applied to the child boxes, but we don't want to apply
+  // extra padding between the icon + text and the button.
   const { pad } = theme.notification.container;
   let textPad;
   let closeButtonPad;
   if (onClose) [textPad, closeButtonPad] = adaptThemeStyle(pad, theme);
   else textPad = pad;
 
-  let message;
-  if (messageProp && !truncate && direction !== 'row')
+  let actions;
+  let message = messageProp;
+
+  if (actionsProp)
+    actions = actionsProp.map((action, index) => (
+      <Anchor
+        key={action.label}
+        // create space between first anchor and text content
+        margin={
+          index === 0 && (message || title) ? { left: 'small' } : undefined
+        }
+        {...action}
+      />
+    ));
+
+  const MessageWrapper = direction !== 'row' ? Paragraph : Text;
+  if (message || actions)
     message = (
-      <Paragraph {...theme.notification.message}>{messageProp}</Paragraph>
-    );
-  else if (messageProp)
-    message = (
-      <Text {...theme.notification.message} truncate={truncate}>
-        {messageProp}
-      </Text>
+      <MessageWrapper {...theme.notification.message}>
+        {message}
+        {/* include actions with message so it wraps with message */}
+        {actions}
+      </MessageWrapper>
     );
 
   let content = (
-    <Box direction="row" pad={textPad} flex>
-      <Box {...theme.notification.iconContainer}>
-        <StatusIcon color={color} />
-      </Box>
-      <Box {...theme.notification.textContainer}>
-        <TextWrapper {...textWrapperProps}>
-          {title && <Text {...theme.notification.title}>{title}</Text>}
-          {/* space between title and message */}
-          {message && title && direction === 'row' && <Text> </Text>}
-          {message}
-        </TextWrapper>
-      </Box>
-    </Box>
-  );
-
-  // separate from onClose button to avoid nested interactive elements
-  if (onClick || href)
-    content = (
-      <IconTextButton href={href} onClick={onClick}>
-        {content}
-      </IconTextButton>
-    );
-
-  content = (
     <Box
       {...theme.notification.container}
+      {...(global ? { ...theme.notification.global.container } : {})}
       {...(toast ? { ...theme.notification.toast.container } : {})}
       background={
         !toast && background
           ? background
           : theme.notification.container.background
       }
-      // let internal box control pad so clickable region includes pad
+      // let internal box control pad
       pad={undefined}
       direction="row"
       gap="small"
     >
-      {content}
+      {/* separate from onClose button to allow "onClick" in the future and 
+        avoid nested interactive elements */}
+      <Box direction="row" pad={textPad} flex>
+        <Box {...theme.notification.iconContainer}>
+          <StatusIcon color={color} />
+        </Box>
+        <Box {...theme.notification.textContainer}>
+          <TextWrapper>
+            {title && <Text {...theme.notification.title}>{title}</Text>}
+            {message && title && direction === 'row' && <Text> </Text>}
+            {message}
+          </TextWrapper>
+        </Box>
+      </Box>
       {onClose && (
         // theme.notification.container and textContainer may both have pad,
         // account for both

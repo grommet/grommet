@@ -1040,11 +1040,12 @@ export interface ThemeType {
   notification?: {
     container?: BoxProps;
     direction?: 'column' | 'row';
-    truncate?: boolean;
+    global?: {
+      container?: BoxProps;
+    };
     toast?: {
       container?: BoxProps;
       direction?: 'column' | 'row';
-      truncate?: boolean;
       layer?: LayerProps;
       time?: number;
     };

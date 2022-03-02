@@ -22,13 +22,16 @@ import { data } from '../../NameValueList/stories/data';
 const customTheme = deepMerge(hpe, {
   notification: {
     direction: 'row',
-    truncate: true,
     container: {
       round: 'xsmall',
     },
+    global: {
+      container: {
+        round: 'none',
+      },
+    },
     toast: {
       direction: 'column',
-      truncate: false,
     },
     critical: {
       background: 'validation-critical',
@@ -52,8 +55,8 @@ const customTheme = deepMerge(hpe, {
 });
 
 const BannerNotification = () => {
+  const [showGlobalNotification, setShowGlobalNotification] = useState(true);
   const [showNotification, setShowNotification] = useState(true);
-  const [showToast, setShowToast] = useState(false);
 
   return (
     <Grommet theme={customTheme} full>
@@ -65,43 +68,34 @@ const BannerNotification = () => {
         <Button icon={<AppsRounded />} />
       </Header>
       <Box gap="medium">
-        {showNotification && (
-          <Box pad={{ horizontal: 'medium' }} gap="small">
-            <Notification
-              href="#"
-              status="critical"
-              title="Scheduled Maintenance"
-              message={`Saturday 02/21/2022 at 
-              12:00UTC. This service will be unavailable for approximately 
-              2 hours.`}
-              onClose={() => setShowNotification(false)}
-            />
-            <Notification
-              href="#"
-              status="warning"
-              message={`Your subscription is expiring in 7 days. Renew your 
-              subscription to ensure you don't have any interruptions to your 
-              access.`}
-              onClose={() => setShowNotification(false)}
-            />
-            <Notification
-              status="info"
-              message={`Updates to this service will be available soon including
-               feature a, feature b, and feature c.`}
-              onClose={() => setShowNotification(false)}
-            />
-          </Box>
+        {showGlobalNotification && (
+          <Notification
+            status="warning"
+            message={`Your supscription will expire in 7 days. Renew your 
+            subscription to ensure you don't lose access.`}
+            onClose={() => setShowGlobalNotification(false)}
+            actions={[
+              {
+                href: '#',
+                label: 'Renew Subscription',
+              },
+            ]}
+            global
+          />
         )}
-        <Box width="xxlarge" margin="auto" pad="medium" gap="medium">
+        <Box width="large" margin="auto" pad="medium" gap="medium">
           <Header>
             <Heading margin="none">Page Heading</Heading>
-            <Button
-              alignSelf="start"
-              label="Click to show Toast"
-              onClick={() => setShowToast(true)}
-              primary
-            />
+            <Button alignSelf="start" label="Page-level Action" primary />
           </Header>
+          {showNotification && (
+            <Notification
+              status="critical"
+              message={`You have used 100% of the available space on this 
+              server.`}
+              onClose={() => setShowNotification(false)}
+            />
+          )}
           <Paragraph margin="none">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
             aliquet vitae velit non cursus. Aliquam fringilla dapibus elit, non
@@ -120,13 +114,6 @@ const BannerNotification = () => {
           </NameValueList>
         </Box>
       </Box>
-      {showToast && (
-        <Notification
-          title="Title"
-          message="This is the message."
-          toast={{ autoClose: false }}
-        />
-      )}
     </Grommet>
   );
 };

@@ -1729,6 +1729,9 @@ Object {
             },
           },
           "direction": "column",
+          "global": Object {
+            "container": Object {},
+          },
           "iconContainer": Object {
             "flex": false,
             "pad": Object {
@@ -1770,7 +1773,6 @@ Object {
             },
             "time": 8000,
           },
-          "truncate": false,
           "undefined": Object {
             "color": "status-unknown",
             "icon": Object {

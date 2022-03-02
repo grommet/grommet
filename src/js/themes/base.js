@@ -1084,7 +1084,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     notification: {
       direction: 'column',
-      truncate: false,
       container: {
         // any box props
         pad: { horizontal: 'small', vertical: 'xsmall' },
@@ -1092,9 +1091,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'background-front',
         },
       },
+      global: {
+        container: {
+          // any box props
+        },
+      },
       toast: {
         // direction: undefined,
-        // truncate: undefined,
         container: {
           // any box props
           elevation: 'medium',

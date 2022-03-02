@@ -27,6 +27,12 @@ const StatusNotification = () => (
         status="warning"
         title="Status Title"
         message="This is an example of message text"
+        actions={[
+          {
+            href: '#',
+            label: 'View Details',
+          },
+        ]}
       />
     </Box>
     <Box gap="xsmall">

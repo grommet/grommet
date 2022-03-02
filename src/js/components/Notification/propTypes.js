@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
+import { AnchorPropTypes } from '../Anchor/propTypes';
 
 let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
+    actions: PropTypes.arrayOf(PropTypes.shape(AnchorPropTypes)),
     title: PropTypes.string,
     message: PropTypes.string,
-    href: PropTypes.string,
-    onClick: PropTypes.func,
     status: PropTypes.oneOf(['critical', 'warning', 'normal', 'unknown']),
     toast: PropTypes.oneOfType([
       PropTypes.bool,

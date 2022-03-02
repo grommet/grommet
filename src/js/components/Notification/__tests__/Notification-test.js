@@ -203,26 +203,16 @@ describe('Notification', () => {
     expect(onOpen).toHaveBeenCalled();
   });
 
-  test('onClick', () => {
-    const onClick = jest.fn();
+  test('actions', () => {
     render(
       <Grommet>
-        <TestNotification onClick={onClick} />
+        <TestNotification
+          actions={[{ href: '/some-link', label: 'Renew Subscription' }]}
+        />
       </Grommet>,
     );
 
-    userEvent.click(screen.getByRole('button'));
-    expect(onClick).toHaveBeenCalledTimes(1);
-  });
-
-  test('href', () => {
-    render(
-      <Grommet>
-        <TestNotification href="/notifications" />
-      </Grommet>,
-    );
-
-    const button = screen.getByRole('link');
-    expect(button).toHaveAttribute('href', '/notifications');
+    const link = screen.getByRole('link', { name: 'Renew Subscription' });
+    expect(link).toHaveAttribute('href', '/some-link');
   });
 });
