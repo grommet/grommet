@@ -2353,6 +2353,7 @@ Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
       "align": [Function],
+      "border": [Function],
       "plain": [Function],
       "scope": [Function],
       "size": [Function],
