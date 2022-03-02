@@ -139,7 +139,7 @@ const Notification = ({
         key={action.label}
         // create space between first anchor and text content
         margin={
-          index === 0 && (message || title) ? { left: 'small' } : undefined
+          index === 0 && (message || title) ? { left: 'xsmall' } : undefined
         }
         {...action}
       />
