@@ -1092,8 +1092,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       global: {
+        direction: 'row',
         container: {
           // any box props
+          pad: {
+            horizontal: 'large',
+            vertical: 'xsmall',
+          },
         },
       },
       toast: {
@@ -1134,31 +1139,45 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         icon: StatusCriticalSmall,
         // background: undefined,
         color: 'status-critical',
+        // global: {},
+        // toast: {},
       },
       warning: {
         icon: StatusWarningSmall,
         // background: undefined,
         color: 'status-warning',
+        // global: {},
+        // toast: {},
       },
       normal: {
         icon: StatusGoodSmall,
         // background: undefined,
         color: 'status-ok',
+        // global: {},
+        // toast: {},
       },
       info: {
         icon: CircleInformation,
         // background: undefined,
         color: 'text-strong',
+        // global: {},
+        // toast: {},
       },
       unknown: {
         icon: StatusUnknownSmall,
         // background: undefined,
         color: 'status-unknown',
+        // global: {},
+        // toast: {},
       },
+      // deprecate "undefined" in v3
+      // and if undefined, no icon
       undefined: {
         icon: StatusUnknownSmall,
         // background: undefined,
         color: 'status-unknown',
+        // global: {},
+        // toast: {},
       },
     },
     pagination: {

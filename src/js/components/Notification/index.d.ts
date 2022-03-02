@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { LayerPositionType } from '../Layer';
-
+import { AnchorType } from '..';
 export type StatusType = 'critical' | 'warning' | 'normal' | 'unknown';
 
 export interface NotificationProps {
-  href?: string;
+  actions?: AnchorType[];
   title?: string;
   message?: string;
-  onClick?: (...args: any[]) => any;
   status?: StatusType;
   toast?:
     | boolean

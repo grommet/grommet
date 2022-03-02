@@ -35,21 +35,39 @@ const customTheme = deepMerge(hpe, {
     },
     critical: {
       background: 'validation-critical',
+      toast: {
+        background: 'background-front',
+      },
     },
     warning: {
       background: 'validation-warning',
+      toast: {
+        background: 'background-front',
+      },
     },
     normal: {
       background: 'validation-ok',
+      toast: {
+        background: 'background-front',
+      },
     },
     unknown: {
       background: 'background-contrast',
+      toast: {
+        background: 'background-front',
+      },
     },
     info: {
       background: 'background-contrast',
+      toast: {
+        background: 'background-front',
+      },
     },
     undefined: {
       background: 'background-contrast',
+      toast: {
+        background: 'background-front',
+      },
     },
   },
 });
@@ -60,7 +78,7 @@ const BannerNotification = () => {
 
   return (
     <Grommet theme={customTheme} full>
-      <Header border="bottom" pad={{ horizontal: 'medium', vertical: 'small' }}>
+      <Header border="bottom" pad={{ horizontal: 'large', vertical: 'small' }}>
         <Box direction="row" align="center" gap="small">
           <Hpe size="large" color="brand" />
           <Text>HPE</Text>

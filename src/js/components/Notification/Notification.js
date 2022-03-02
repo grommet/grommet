@@ -90,10 +90,29 @@ const Notification = ({
   ]);
 
   const { icon: CloseIcon } = theme.notification.close;
-  const { icon: StatusIcon, background, color } = theme.notification[status];
+  const { icon: StatusIcon, color } = theme.notification[status];
   const { color: closeIconColor } = theme.notification.close;
 
-  const { direction } = toast ? theme.notification.toast : theme.notification;
+  const kind = useMemo(() => {
+    if (toast) return 'toast';
+    if (global) return 'global';
+    return undefined;
+  }, [global, toast]);
+
+  let direction;
+  if (kind && theme.notification[kind].direction)
+    direction = theme.notification[kind].direction;
+  else direction = theme.notification.direction;
+
+  let background;
+  if (kind && theme.notification[status][kind]?.background)
+    background = theme.notification[status][kind]?.background;
+  else if (theme.notification[status].background)
+    background = theme.notification[status].background;
+  else
+    background =
+      theme.notification[kind]?.container?.background ||
+      theme.notification.container.background;
 
   const TextWrapper = direction === 'row' ? Text : Fragment;
 
@@ -102,7 +121,10 @@ const Notification = ({
   // 2. close button
   // pad needs to be applied to the child boxes, but we don't want to apply
   // extra padding between the icon + text and the button.
-  const { pad } = theme.notification.container;
+  let pad;
+  if (kind && theme.notification[kind].container.pad)
+    pad = theme.notification[kind].container.pad;
+  else pad = theme.notification.container.pad;
   let textPad;
   let closeButtonPad;
   if (onClose) [textPad, closeButtonPad] = adaptThemeStyle(pad, theme);
@@ -123,14 +145,14 @@ const Notification = ({
       />
     ));
 
-  const MessageWrapper = direction !== 'row' ? Paragraph : Text;
+  const Message = direction !== 'row' ? Paragraph : Text;
   if (message || actions)
     message = (
-      <MessageWrapper {...theme.notification.message}>
+      <Message {...theme.notification.message}>
         {message}
         {/* include actions with message so it wraps with message */}
         {actions}
-      </MessageWrapper>
+      </Message>
     );
 
   let content = (
@@ -138,11 +160,7 @@ const Notification = ({
       {...theme.notification.container}
       {...(global ? { ...theme.notification.global.container } : {})}
       {...(toast ? { ...theme.notification.toast.container } : {})}
-      background={
-        !toast && background
-          ? background
-          : theme.notification.container.background
-      }
+      background={background}
       // let internal box control pad
       pad={undefined}
       direction="row"
@@ -157,7 +175,7 @@ const Notification = ({
         <Box {...theme.notification.textContainer}>
           <TextWrapper>
             {title && <Text {...theme.notification.title}>{title}</Text>}
-            {message && title && direction === 'row' && <Text> </Text>}
+            {message && title && direction === 'row' && <>&nbsp;</>}
             {message}
           </TextWrapper>
         </Box>

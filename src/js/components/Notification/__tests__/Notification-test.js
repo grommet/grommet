@@ -215,4 +215,14 @@ describe('Notification', () => {
     const link = screen.getByRole('link', { name: 'Renew Subscription' });
     expect(link).toHaveAttribute('href', '/some-link');
   });
+
+  test('global', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <TestNotification global />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
