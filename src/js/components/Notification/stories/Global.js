@@ -6,20 +6,36 @@ import {
   NameValuePair,
   Notification,
   Grommet,
+  grommet,
   Header,
   Heading,
   Paragraph,
 } from 'grommet';
 import { deepMerge } from 'grommet/utils';
-import { Hpe, AppsRounded } from 'grommet-icons';
-import { hpe } from 'grommet-theme-hpe';
+import { Grommet as GrommetIcon, AppsRounded } from 'grommet-icons';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
 import { data } from '../../NameValueList/stories/data';
 
 // demonstrating how we would update the HPE theme while allowing
 // grommet theme to be backwards compatible.
-const customTheme = deepMerge(hpe, {
+const customTheme = deepMerge(grommet, {
+  global: {
+    colors: {
+      'validation-critical': {
+        light: '#FC61613D',
+        dark: '#C54E4B5C',
+      },
+      'validation-ok': {
+        light: '#17EBA03D',
+        dark: '#00856759',
+      },
+      'validation-warning': {
+        light: '#FFBC443D',
+        dark: '#9B63105C',
+      },
+    },
+  },
   notification: {
     direction: 'row',
     container: {
@@ -72,16 +88,15 @@ const customTheme = deepMerge(hpe, {
   },
 });
 
-const BannerNotification = () => {
+export const Global = () => {
   const [showGlobalNotification, setShowGlobalNotification] = useState(true);
-  const [showNotification, setShowNotification] = useState(true);
 
   return (
-    <Grommet theme={customTheme} full>
+    <Grommet theme={customTheme} full="min">
       <Header border="bottom" pad={{ horizontal: 'large', vertical: 'small' }}>
         <Box direction="row" align="center" gap="small">
-          <Hpe size="large" color="brand" />
-          <Text>HPE</Text>
+          <GrommetIcon size="large" color="plain" />
+          <Text weight="bold">Company Name</Text>
         </Box>
         <Button icon={<AppsRounded />} />
       </Header>
@@ -106,14 +121,6 @@ const BannerNotification = () => {
             <Heading margin="none">Page Heading</Heading>
             <Button alignSelf="start" label="Page-level Action" primary />
           </Header>
-          {showNotification && (
-            <Notification
-              status="critical"
-              message={`You have used 100% of the available space on this 
-              server.`}
-              onClose={() => setShowNotification(false)}
-            />
-          )}
           <Paragraph margin="none">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
             aliquet vitae velit non cursus. Aliquam fringilla dapibus elit, non
@@ -136,8 +143,6 @@ const BannerNotification = () => {
   );
 };
 
-export const Banner = () => <BannerNotification />;
-
 export default {
-  title: 'Visualizations/Notification/Banner',
+  title: 'Visualizations/Notification/Global',
 };
