@@ -174,6 +174,12 @@ describe('Notification', () => {
           direction: 'column',
           truncation: false,
         },
+        critical: {
+          background: 'red',
+          toast: {
+            background: 'background-front',
+          },
+        },
       },
     };
 
@@ -181,7 +187,7 @@ describe('Notification', () => {
       const [visible, setVisible] = useState(false);
       return (
         <Grommet theme={theme}>
-          <TestNotification />
+          <TestNotification status="critical" />
           <Button
             label="Show Toast Notification"
             onClick={() => {
@@ -189,7 +195,9 @@ describe('Notification', () => {
               setVisible(true);
             }}
           />
-          {visible && <TestNotification toast title="Toast title" />}
+          {visible && (
+            <TestNotification toast title="Toast title" status="critical" />
+          )}
         </Grommet>
       );
     };

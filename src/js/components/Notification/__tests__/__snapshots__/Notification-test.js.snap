@@ -9,8 +9,8 @@ exports[`Notification custom theme 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #FF4040;
+  stroke: #FF4040;
 }
 
 .c4 g {
@@ -43,8 +43,7 @@ exports[`Notification custom theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(255,255,255,1);
-  color: #444444;
+  background: red;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -223,18 +222,14 @@ exports[`Notification custom theme 1`] = `
           class="c3"
         >
           <svg
-            aria-label="Status is unknown"
+            aria-label="Status is critical"
             class="c4"
             viewBox="0 0 12 12"
           >
-            <rect
+            <path
+              d="M6.712 1.263a1.005 1.005 0 0 0-1.424 0L1.263 5.288a1.005 1.005 0 0 0 0 1.424l4.025 4.025a1.005 1.005 0 0 0 1.424 0l4.025-4.025a1.005 1.005 0 0 0 0-1.424L6.712 1.263z"
               fill-rule="evenodd"
-              height="10"
-              rx="1"
               stroke="#000"
-              width="10"
-              x="1"
-              y="1"
             />
           </svg>
         </div>
