@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Button, CheckBox, Grid, Grommet, Layer, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, CheckBox, Grid, Layer, Select } from 'grommet';
 var positions = ['left', 'right', 'top', 'bottom', 'center'];
 export var TargetLayer = function TargetLayer() {
   var _React$useState = React.useState(),
@@ -33,76 +32,82 @@ export var TargetLayer = function TargetLayer() {
     return setOpen(undefined);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Grid, {
-    fill: true,
-    columns: [gutter, 'flex', gutter],
-    rows: [gutter, 'flex', gutter],
-    areas: [{
-      name: 'main',
-      start: [1, 1],
-      end: [1, 1]
-    }]
-  }, /*#__PURE__*/React.createElement(Box, {
-    ref: ref,
-    gridArea: "main",
-    fill: true,
-    height: {
-      min: 'small'
-    },
-    align: "center",
-    justify: "center",
-    gap: "medium",
-    background: "brand"
-  }, /*#__PURE__*/React.createElement(Select, {
-    options: positions,
-    value: position,
-    onChange: function onChange(_ref) {
-      var option = _ref.option;
-      return setPosition(option);
-    }
-  }), /*#__PURE__*/React.createElement(CheckBox, {
-    toggle: true,
-    label: "modal",
-    checked: modal,
-    onChange: function onChange() {
-      return setModal(!modal);
-    }
-  }), /*#__PURE__*/React.createElement(Button, {
-    label: "Open",
-    onClick: onOpen
-  }))), /*#__PURE__*/React.createElement(Box, {
-    height: "large"
-  }), open && /*#__PURE__*/React.createElement(Layer, {
-    modal: modal,
-    position: position,
-    target: ref.current,
-    onClickOutside: onClose,
-    onEsc: onClose
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "medium",
-    gap: "small",
-    width: "medium"
-  }, /*#__PURE__*/React.createElement(Button, {
-    label: "Toggle gutter size",
-    onClick: function onClick() {
-      return setGutter(gutter === 'small' ? 'xsmall' : 'small');
-    }
-  }), /*#__PURE__*/React.createElement(Button, {
-    label: "Close",
-    onClick: onClose
-  }), /*#__PURE__*/React.createElement(Select, {
-    options: positions,
-    value: position,
-    onChange: function onChange(_ref2) {
-      var option = _ref2.option;
-      return setPosition(option);
-    }
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Grid, {
+      fill: true,
+      columns: [gutter, 'flex', gutter],
+      rows: [gutter, 'flex', gutter],
+      areas: [{
+        name: 'main',
+        start: [1, 1],
+        end: [1, 1]
+      }]
+    }, /*#__PURE__*/React.createElement(Box, {
+      ref: ref,
+      gridArea: "main",
+      fill: true,
+      height: {
+        min: 'small'
+      },
+      align: "center",
+      justify: "center",
+      gap: "medium",
+      background: "brand"
+    }, /*#__PURE__*/React.createElement(Select, {
+      options: positions,
+      value: position,
+      onChange: function onChange(_ref) {
+        var option = _ref.option;
+        return setPosition(option);
+      }
+    }), /*#__PURE__*/React.createElement(CheckBox, {
+      toggle: true,
+      label: "modal",
+      checked: modal,
+      onChange: function onChange() {
+        return setModal(!modal);
+      }
+    }), /*#__PURE__*/React.createElement(Button, {
+      label: "Open",
+      onClick: onOpen
+    }))), /*#__PURE__*/React.createElement(Box, {
+      height: "large"
+    }), open && /*#__PURE__*/React.createElement(Layer, {
+      modal: modal,
+      position: position,
+      target: ref.current,
+      onClickOutside: onClose,
+      onEsc: onClose
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: "medium",
+      gap: "small",
+      width: "medium"
+    }, /*#__PURE__*/React.createElement(Button, {
+      label: "Toggle gutter size",
+      onClick: function onClick() {
+        return setGutter(gutter === 'small' ? 'xsmall' : 'small');
+      }
+    }), /*#__PURE__*/React.createElement(Button, {
+      label: "Close",
+      onClick: onClose
+    }), /*#__PURE__*/React.createElement(Select, {
+      options: positions,
+      value: position,
+      onChange: function onChange(_ref2) {
+        var option = _ref2.option;
+        return setPosition(option);
+      }
+    })))) // </Grommet>
+
+  );
 };
 TargetLayer.storyName = 'Target';
+TargetLayer.args = {
+  full: true
+};
 export default {
   title: 'Layout/Layer/Target'
 };

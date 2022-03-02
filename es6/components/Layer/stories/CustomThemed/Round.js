@@ -1,21 +1,9 @@
-"use strict";
-
-exports.__esModule = true;
-exports["default"] = exports.RoundLayer = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _grommet = require("grommet");
-
-var _themes = require("grommet/themes");
-
-var _utils = require("grommet/utils");
-
-var _grommetIcons = require("grommet-icons");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
+import React from 'react';
+import { Box, Button, Grommet, Layer, Select, Text } from 'grommet';
+import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
+import { FormClose } from "grommet-icons/es6/icons/FormClose";
+var customTheme = deepMerge(grommet, {
   layer: {
     border: {
       radius: 'large',
@@ -23,17 +11,16 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-
-var RoundLayer = function RoundLayer() {
-  var _React$useState = _react["default"].useState(false),
+export var RoundLayer = function RoundLayer() {
+  var _React$useState = React.useState(false),
       open = _React$useState[0],
       setOpen = _React$useState[1];
 
-  var _React$useState2 = _react["default"].useState(),
+  var _React$useState2 = React.useState(),
       position = _React$useState2[0],
       setPosition = _React$useState2[1];
 
-  var _React$useState3 = _react["default"].useState(),
+  var _React$useState3 = React.useState(),
       full = _React$useState3[0],
       setFull = _React$useState3[1];
 
@@ -45,22 +32,22 @@ var RoundLayer = function RoundLayer() {
     return setOpen(undefined);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme,
     full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center",
     gap: "medium"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     placeholder: "Layer position",
     options: ['bottom', 'bottom-left', 'bottom-right', 'center', 'end', 'hidden', 'right', 'start', 'top', 'top-left', 'top-right'],
     onChange: function onChange(_ref) {
       var option = _ref.option;
       return setPosition(option);
     }
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
+  }), /*#__PURE__*/React.createElement(Select, {
     placeholder: "Full",
     options: [{
       label: 'true',
@@ -83,15 +70,15 @@ var RoundLayer = function RoundLayer() {
       var option = _ref2.option;
       return setFull(option.value);
     }
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     label: "Open layer",
     onClick: onOpen
-  })), open && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
+  })), open && /*#__PURE__*/React.createElement(Layer, {
     full: full,
     position: position,
     onClickOutside: onClose,
     onEsc: onClose
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     gap: "small",
     width: {
@@ -101,21 +88,18 @@ var RoundLayer = function RoundLayer() {
       min: 'small'
     },
     fill: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     alignSelf: "end",
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormClose, null),
+    icon: /*#__PURE__*/React.createElement(FormClose, null),
     onClick: onClose
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Hi, I am a Layer!"))));
+  }), /*#__PURE__*/React.createElement(Text, null, "Hi, I am a Layer!"))));
 };
-
-exports.RoundLayer = RoundLayer;
 RoundLayer.storyName = 'Border Radius';
 RoundLayer.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
-  title: 'Layout/Layer/Border Radius'
+export default {
+  title: 'Layout/Layer/Custom Themed/Border Radius'
 };
-exports["default"] = _default;

@@ -56,7 +56,7 @@ var Tip = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, tipRef) {
   // 1. Tip has a single child + it is a React Element => Great!
   // 2. Tip has a single child +  not React Element =>
   // span will wrap the child so we can use ref and events.
-  // 3. Tip has more than one child => Abort, display Children.only error 
+  // 3. Tip has more than one child => Abort, display Children.only error
 
   var child = _react.Children.count(children) <= 1 && ! /*#__PURE__*/_react["default"].isValidElement(children) && /*#__PURE__*/_react["default"].createElement("span", null, children) || _react.Children.only(children);
 

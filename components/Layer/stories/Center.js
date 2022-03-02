@@ -9,8 +9,6 @@ var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var CenterLayer = function CenterLayer() {
@@ -38,84 +36,82 @@ var CenterLayer = function CenterLayer() {
     return setOpen2(undefined);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    options: {
-      layer: {
-        singleId: true
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Trash, null),
+      label: /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, /*#__PURE__*/_react["default"].createElement("strong", null, "Remove")),
+      onClick: onOpen,
+      plain: true
+    })), open && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
+      id: "hello world",
+      position: "center",
+      onClickOutside: onClose,
+      onEsc: onClose
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "medium",
+      gap: "small",
+      width: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: 3,
+      margin: "none"
+    }, "Confirm"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Are you sure you want to delete?"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      as: "footer",
+      gap: "small",
+      direction: "row",
+      align: "center",
+      justify: "end",
+      pad: {
+        top: 'medium',
+        bottom: 'small'
       }
-    },
-    theme: _themes.grommet,
-    full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    align: "center",
-    justify: "center"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Trash, null),
-    label: /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, /*#__PURE__*/_react["default"].createElement("strong", null, "Remove")),
-    onClick: onOpen,
-    plain: true
-  })), open && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
-    id: "hello world",
-    position: "center",
-    onClickOutside: onClose,
-    onEsc: onClose
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "medium",
-    gap: "small",
-    width: "medium"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    level: 3,
-    margin: "none"
-  }, "Confirm"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Are you sure you want to delete?"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    as: "footer",
-    gap: "small",
-    direction: "row",
-    align: "center",
-    justify: "end",
-    pad: {
-      top: 'medium',
-      bottom: 'small'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    label: "Open 2",
-    onClick: onOpen2,
-    color: "dark-3"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    label: /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      color: "white"
-    }, /*#__PURE__*/_react["default"].createElement("strong", null, "Delete")),
-    onClick: onClose,
-    primary: true,
-    color: "status-critical"
-  })))), open2 && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
-    position: "top",
-    onClickOutside: onClose2,
-    onEsc: onClose2
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "medium",
-    gap: "small",
-    width: "medium"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    level: 3,
-    margin: "none"
-  }, "Confirm 2"), /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
-    options: ['one', 'two', 'three']
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    as: "footer",
-    gap: "small",
-    direction: "row",
-    align: "center",
-    justify: "end",
-    pad: {
-      top: 'medium',
-      bottom: 'small'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    label: "Close",
-    onClick: onClose2,
-    color: "dark-3"
-  })))));
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      label: "Open 2",
+      onClick: onOpen2,
+      color: "dark-3"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      label: /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+        color: "white"
+      }, /*#__PURE__*/_react["default"].createElement("strong", null, "Delete")),
+      onClick: onClose,
+      primary: true,
+      color: "status-critical"
+    })))), open2 && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
+      position: "top",
+      onClickOutside: onClose2,
+      onEsc: onClose2
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "medium",
+      gap: "small",
+      width: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: 3,
+      margin: "none"
+    }, "Confirm 2"), /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
+      options: ['one', 'two', 'three']
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      as: "footer",
+      gap: "small",
+      direction: "row",
+      align: "center",
+      justify: "end",
+      pad: {
+        top: 'medium',
+        bottom: 'small'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      label: "Close",
+      onClick: onClose2,
+      color: "dark-3"
+    }))))) // </Grommet>
+
+  );
 };
 
 exports.CenterLayer = CenterLayer;
@@ -123,6 +119,14 @@ CenterLayer.storyName = 'Center';
 CenterLayer.parameters = {
   chromatic: {
     disable: true
+  }
+};
+CenterLayer.args = {
+  full: true,
+  options: {
+    layer: {
+      singleId: true
+    }
   }
 };
 var _default = {

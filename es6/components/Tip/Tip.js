@@ -41,7 +41,7 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
   // 1. Tip has a single child + it is a React Element => Great!
   // 2. Tip has a single child +  not React Element =>
   // span will wrap the child so we can use ref and events.
-  // 3. Tip has more than one child => Abort, display Children.only error 
+  // 3. Tip has more than one child => Abort, display Children.only error
 
   var child = Children.count(children) <= 1 && ! /*#__PURE__*/React.isValidElement(children) && /*#__PURE__*/React.createElement("span", null, children) || Children.only(children);
   var clonedChild = /*#__PURE__*/cloneElement(child, {

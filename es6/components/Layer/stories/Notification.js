@@ -2,8 +2,7 @@ import React from 'react';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { FormClose } from "grommet-icons/es6/icons/FormClose";
 import { StatusGood } from "grommet-icons/es6/icons/StatusGood";
-import { Box, Button, Grommet, Layer, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Layer, Text } from 'grommet';
 export var NotificationLayer = function NotificationLayer() {
   var _React$useState = React.useState(),
       open = _React$useState[0],
@@ -20,57 +19,63 @@ export var NotificationLayer = function NotificationLayer() {
     return setOpen(undefined);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "center"
-  }, /*#__PURE__*/React.createElement(Button, {
-    icon: /*#__PURE__*/React.createElement(Add, {
-      color: "brand"
-    }),
-    label: /*#__PURE__*/React.createElement(Text, null, /*#__PURE__*/React.createElement("strong", null, "Add")),
-    onClick: onOpen,
-    plain: true
-  })), open && /*#__PURE__*/React.createElement(Layer, {
-    position: "bottom",
-    modal: false,
-    margin: {
-      vertical: 'medium',
-      horizontal: 'small'
-    },
-    onEsc: onClose,
-    responsive: false,
-    plain: true
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    direction: "row",
-    gap: "small",
-    justify: "between",
-    round: "medium",
-    elevation: "medium",
-    pad: {
-      vertical: 'xsmall',
-      horizontal: 'small'
-    },
-    background: "status-ok"
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    direction: "row",
-    gap: "xsmall"
-  }, /*#__PURE__*/React.createElement(StatusGood, null), /*#__PURE__*/React.createElement(Text, null, "A new virtual machine has been successfully added (this Layer will close after 3 seconds)")), /*#__PURE__*/React.createElement(Button, {
-    icon: /*#__PURE__*/React.createElement(FormClose, null),
-    onClick: onClose,
-    plain: true
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
+    }, /*#__PURE__*/React.createElement(Button, {
+      icon: /*#__PURE__*/React.createElement(Add, {
+        color: "brand"
+      }),
+      label: /*#__PURE__*/React.createElement(Text, null, /*#__PURE__*/React.createElement("strong", null, "Add")),
+      onClick: onOpen,
+      plain: true
+    })), open && /*#__PURE__*/React.createElement(Layer, {
+      position: "bottom",
+      modal: false,
+      margin: {
+        vertical: 'medium',
+        horizontal: 'small'
+      },
+      onEsc: onClose,
+      responsive: false,
+      plain: true
+    }, /*#__PURE__*/React.createElement(Box, {
+      align: "center",
+      direction: "row",
+      gap: "small",
+      justify: "between",
+      round: "medium",
+      elevation: "medium",
+      pad: {
+        vertical: 'xsmall',
+        horizontal: 'small'
+      },
+      background: "status-ok"
+    }, /*#__PURE__*/React.createElement(Box, {
+      align: "center",
+      direction: "row",
+      gap: "xsmall"
+    }, /*#__PURE__*/React.createElement(StatusGood, null), /*#__PURE__*/React.createElement(Text, null, "A new virtual machine has been successfully added (this Layer will close after 3 seconds)")), /*#__PURE__*/React.createElement(Button, {
+      icon: /*#__PURE__*/React.createElement(FormClose, null),
+      onClick: onClose,
+      plain: true
+    })))) // </Grommet>
+
+  );
 };
 NotificationLayer.storyName = 'Notification';
 NotificationLayer.parameters = {
   chromatic: {
     disable: true
   }
+};
+NotificationLayer.args = {
+  full: true
 };
 export default {
   title: 'Layout/Layer/Notification'
