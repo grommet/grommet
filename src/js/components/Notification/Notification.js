@@ -6,7 +6,7 @@ import React, {
   useMemo,
   Fragment,
 } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
 import { Anchor } from '../Anchor';
@@ -19,7 +19,6 @@ import { Text } from '../Text';
 import { NotificationType } from './propTypes';
 
 const adaptThemeStyle = (value, theme) => {
-  console.log(value);
   let textStyle = value;
   let closeButtonStyle = value;
 
@@ -47,6 +46,10 @@ const adaptThemeStyle = (value, theme) => {
 
   return [textStyle, closeButtonStyle];
 };
+
+const NotificationAnchor = styled(Anchor)`
+  white-space: nowrap;
+`;
 
 const Notification = ({
   actions: actionsProp,
@@ -110,7 +113,7 @@ const Notification = ({
 
   if (actionsProp)
     actions = actionsProp.map((action, index) => (
-      <Anchor
+      <NotificationAnchor
         key={action.label}
         // create space between first anchor and text content
         margin={
