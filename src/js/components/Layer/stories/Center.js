@@ -2,8 +2,7 @@ import React from 'react';
 
 import { Trash } from 'grommet-icons';
 
-import { Box, Button, Grommet, Heading, Layer, Select, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Heading, Layer, Select, Text } from 'grommet';
 
 export const CenterLayer = () => {
   const [open, setOpen] = React.useState();
@@ -18,7 +17,9 @@ export const CenterLayer = () => {
   const onClose2 = () => setOpen2(undefined);
 
   return (
-    <Grommet options={{ layer: { singleId: true } }} theme={grommet} full>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <>
       <Box fill align="center" justify="center">
         <Button
           icon={<Trash />}
@@ -86,7 +87,8 @@ export const CenterLayer = () => {
           </Box>
         </Layer>
       )}
-    </Grommet>
+    </>
+    // </Grommet>
   );
 };
 
@@ -94,6 +96,15 @@ CenterLayer.storyName = 'Center';
 
 CenterLayer.parameters = {
   chromatic: { disable: true },
+};
+
+CenterLayer.args = {
+  full: true,
+  options: {
+    layer: {
+      singleId: true,
+    },
+  },
 };
 
 export default {

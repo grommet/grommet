@@ -129,6 +129,16 @@ describe('Tip', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test(`shouldn't crash with no children`, () => {
+    const { container } = render(
+      <Grommet>
+        <Tip />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test(`throw error with more than one child`, () => {
     console.error = jest.fn();
     expect(() => {

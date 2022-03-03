@@ -12,7 +12,7 @@ import {
   TextInput,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { deepMerge } from '../../../utils';
+import { deepMerge } from '../../../../utils';
 
 const customTheme = deepMerge(grommet, {
   formField: {
@@ -124,5 +124,5 @@ export const Themed = () => (
 );
 
 export default {
-  title: 'Input/Form/Themed',
+  title: 'Input/Form/Custom Themed/Themed',
 };

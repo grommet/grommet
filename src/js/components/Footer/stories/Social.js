@@ -7,7 +7,7 @@ import {
   Twitter,
 } from 'grommet-icons';
 
-import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
+import { Anchor, Box, Footer, Main, Text } from 'grommet';
 
 const Media = () => (
   <Box direction="row" gap="xxsmall" justify="center">
@@ -30,7 +30,9 @@ const Media = () => (
 );
 
 export const Social = () => (
-  <Grommet theme={grommet}>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box>
     <Main background="light-2" elevation="large" pad="medium" gap="large">
       <Text margin="small" size="xsmall">
         Main Content
@@ -49,7 +51,8 @@ export const Social = () => (
         ©Copyright
       </Text>
     </Footer>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 export default {

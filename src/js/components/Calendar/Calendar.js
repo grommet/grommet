@@ -31,8 +31,8 @@ import {
   betweenDates,
   daysApart,
   endOfMonth,
-  formatDateToPropStructure,
   formatToLocalYYYYMMDD,
+  getFormattedDate,
   getTimestamp,
   normalizeForTimezone,
   startOfMonth,
@@ -53,57 +53,61 @@ const activeDates = {
   end: 'end',
 };
 
-const timeStamp = /T.*/;
-
-const formatSelectedDatesString = (date) => `Currently selected
+const formatSelectedDatesString = (date, normalize) => `Currently selected
   ${date?.map((item) => {
     let dates;
     if (!Array.isArray(item)) {
-      dates = `${formatToLocalYYYYMMDD(item)} `;
+      dates = `${formatToLocalYYYYMMDD(item, normalize)} `;
     } else {
       const start =
-        item[0] !== undefined ? formatToLocalYYYYMMDD(item[0]) : 'none';
+        item[0] !== undefined
+          ? formatToLocalYYYYMMDD(item[0], normalize)
+          : 'none';
       const end =
-        item[1] !== undefined ? formatToLocalYYYYMMDD(item[1]) : 'none';
+        item[1] !== undefined
+          ? formatToLocalYYYYMMDD(item[1], normalize)
+          : 'none';
       dates = `${start} through ${end}`;
     }
 
     return dates;
   })}`;
 
-const getAccessibilityString = (date, dates) => {
+const getAccessibilityString = (date, dates, normalize) => {
   if (date && !Array.isArray(date)) {
-    return `Currently selected ${formatToLocalYYYYMMDD(date)};`;
+    return `Currently selected ${formatToLocalYYYYMMDD(date, normalize)};`;
   }
   if (date && Array.isArray(date)) {
-    return formatSelectedDatesString(date);
+    return formatSelectedDatesString(date, normalize);
   }
   if (dates?.length) {
-    return formatSelectedDatesString(dates);
+    return formatSelectedDatesString(dates, normalize);
   }
 
   return 'No date selected';
 };
 
 // function that runs inside the useEffect for date and dates
-const normalizeDate = (dateValue, timestamp) => {
+const normalizeDate = (dateValue, timestamp, normalize) => {
   if (typeof dateValue === 'string') {
-    return normalizeForTimezone(dateValue, timestamp);
+    return normalizeForTimezone(dateValue, timestamp, normalize);
   }
   if (Array.isArray(dateValue)) {
     if (Array.isArray(dateValue[0])) {
       const [from, to] = dateValue[0].map(
-        (day) => normalizeForTimezone(day, timestamp) || undefined,
+        (day) => normalizeForTimezone(day, timestamp, normalize) || undefined,
       );
       return [[from, to]];
     }
     const dateArray = [];
     dateValue.forEach((d) => {
       if (Array.isArray(d)) {
-        const [from, to] = d.map((day) => normalizeForTimezone(day, timestamp));
+        const [from, to] = d.map((day) =>
+          normalizeForTimezone(day, timestamp, normalize),
+        );
         dateArray.push([from, to]);
       } else {
-        dateArray.push(normalizeForTimezone(d, timestamp));
+        dateArray.push(normalizeForTimezone(d, timestamp, normalize));
       }
     });
     return dateArray;
@@ -225,6 +229,7 @@ const Calendar = forwardRef(
       header,
       locale = 'en-US',
       messages,
+      normalize: normalizeProp = true,
       onReference,
       onSelect,
       range,
@@ -253,6 +258,12 @@ const Calendar = forwardRef(
         document.removeEventListener('mouseup', onMouseUp);
       };
     }, []);
+
+    // whether or not we should normalize the date based on the timestamp.
+    // will be set to false if the initial timestamp is undefined (meaning
+    // a user did not provide a defaultValue or value). in this case, we
+    // will just rely on the UTC timestamp and don't need to normalize.
+    const [normalize, setNormalize] = useState(normalizeProp);
 
     // set activeDate when caller changes it, allows us to change
     // it internally too
@@ -289,17 +300,17 @@ const Calendar = forwardRef(
     const normalizedDate = useMemo(
       () =>
         timestampProp === undefined
-          ? normalizeDate(dateProp, timestamp)
+          ? normalizeDate(dateProp, timestamp, normalize)
           : dateProp,
-      [dateProp, timestamp, timestampProp],
+      [dateProp, normalize, timestamp, timestampProp],
     );
 
     const normalizedDates = useMemo(
       () =>
         timestampProp === undefined
-          ? normalizeDate(datesProp, timestamp)
+          ? normalizeDate(datesProp, timestamp, normalize)
           : datesProp,
-      [datesProp, timestamp, timestampProp],
+      [datesProp, normalize, timestamp, timestampProp],
     );
 
     // set date when caller changes it, allows us to change it internally too
@@ -484,44 +495,15 @@ const Calendar = forwardRef(
       (selectedDate) => {
         let nextDates;
         let nextDate;
-        // output date with no timestamp if that's how user provided it
-        let adjustedDate;
+        // timestamp will be undefined if no defaultValue or value have
+        // been passed in, indicating that we should stay local
+        let nextNormalize = normalize;
+        if (timestamp === undefined) {
+          nextNormalize = false;
+          setNormalize(nextNormalize);
+        }
         if (!range) {
-          nextDate = formatDateToPropStructure(selectedDate, timestamp);
-          if (datesProp) {
-            datesProp.forEach((d) => {
-              if (!timeStamp.test(d)) {
-                adjustedDate = formatToLocalYYYYMMDD(nextDate);
-                if (d === adjustedDate) {
-                  nextDate = undefined;
-                } else {
-                  adjustedDate = undefined;
-                }
-              }
-            });
-          } else if (typeof dateProp === 'string') {
-            if (!timeStamp.test(dateProp)) {
-              adjustedDate = formatToLocalYYYYMMDD(selectedDate);
-              if (dateProp === adjustedDate) {
-                nextDate = undefined;
-              } else {
-                adjustedDate = undefined;
-              }
-            }
-          } else if (Array.isArray(dateProp)) {
-            dateProp.forEach((d) => {
-              if (!timeStamp.test(d)) {
-                adjustedDate = formatToLocalYYYYMMDD(nextDate);
-                if (d === adjustedDate) {
-                  nextDate = undefined;
-                } else {
-                  adjustedDate = undefined;
-                }
-              }
-            });
-          } else {
-            adjustedDate = undefined;
-          }
+          nextDate = selectedDate;
         }
         // everything down is a range
         else if (!dates && !Array.isArray(date)) {
@@ -596,42 +578,34 @@ const Calendar = forwardRef(
 
         setDates(nextDates);
         if (date && typeof date === 'string') {
-          // for internal calculations, adjust based on timestamp
-          // and user's local timezone
-          setDate(normalizeForTimezone(nextDate, timestamp));
+          setDate(nextDate);
         } else if (date && Array.isArray(date)) {
           setDate(nextDates);
         }
         setActive(new Date(selectedDate));
         if (onSelect) {
-          let adjustedDates;
-          if (
-            nextDates &&
-            Array.isArray(nextDates[0]) &&
-            (!nextDates[0][0] || !nextDates[0][1]) &&
-            range === true
-          ) {
-            // return string for backwards compatibility
-            [adjustedDates] = nextDates[0].filter((d) => d);
-            adjustedDates = formatDateToPropStructure(adjustedDates, timestamp);
-          } else if (nextDates) {
-            adjustedDates = [
-              [
-                formatDateToPropStructure(nextDates[0][0], timestamp),
-                formatDateToPropStructure(nextDates[0][1], timestamp),
-              ],
-            ];
-          }
-          onSelect(adjustedDates || adjustedDate || nextDate);
+          // format date/dates to match structure provided by caller
+          // which could take format of:
+          // 1. ISO8601 with a timestamp
+          // 2. ISO8601 without a timestamp
+          // 3. Caller did not provide value/defaultValue, so return date
+          // in ISO8601 with timestamp in UTC relative to user's local timezone
+          const formattedDate = getFormattedDate(
+            nextDate,
+            nextDates,
+            nextNormalize,
+            range,
+            timestamp,
+          );
+          onSelect(formattedDate);
         }
       },
       [
         activeDate,
         activeDateProp,
         date,
-        dateProp,
         dates,
-        datesProp,
+        normalize,
         onSelect,
         range,
         timestamp,
@@ -845,7 +819,7 @@ const Calendar = forwardRef(
                 onClick: () => {
                   selectDate(dateString);
                   announce(
-                    `Selected ${formatToLocalYYYYMMDD(dateString)}`,
+                    `Selected ${formatToLocalYYYYMMDD(dateString, normalize)}`,
                     'assertive',
                   );
                   // Chrome moves the focus indicator to this button. Set
@@ -879,7 +853,7 @@ const Calendar = forwardRef(
                         selectDate(dateString);
                         announce(
                           `Selected
-                          ${formatToLocalYYYYMMDD(dateString)}`,
+                          ${formatToLocalYYYYMMDD(dateString, normalize)}`,
                           'assertive',
                         );
                         // Chrome moves the focus indicator to this button. Set
@@ -1004,7 +978,7 @@ const Calendar = forwardRef(
                   month: 'long',
                   year: 'numeric',
                 })};
-                ${getAccessibilityString(date, dates)}
+                ${getAccessibilityString(date, dates, normalize)}
               `}
               ref={daysRef}
               sizeProp={size}
