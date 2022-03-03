@@ -8,6 +8,7 @@ import {
   Card,
   PageContent,
   Footer,
+  Box,
 } from 'grommet';
 
 export const MultipleBackgrounds = () => (
@@ -29,14 +30,20 @@ export const MultipleBackgrounds = () => (
       </Paragraph>
     </PageContent>
     <PageContent background={{ fill: 'horizontal', color: 'dark-4' }}>
-      <Grid rows="small" columns={{ count: 'fit', size: 'small' }} gap="small">
-        <Card background="white" pad="large">
-          Card
-        </Card>
-        <Card background="white" pad="large">
-          Card
-        </Card>
-      </Grid>
+      <Box pad={{ vertical: 'medium' }}>
+        <Grid
+          rows="small"
+          columns={{ count: 'fit', size: 'small' }}
+          gap="small"
+        >
+          <Card background="white" pad="large">
+            Card
+          </Card>
+          <Card background="white" pad="large">
+            Card
+          </Card>
+        </Grid>
+      </Box>
     </PageContent>
     <PageContent background={{ fill: 'horizontal', color: 'light-2' }}>
       <Paragraph>
@@ -48,7 +55,7 @@ export const MultipleBackgrounds = () => (
       </Paragraph>
     </PageContent>
     <PageContent background={{ fill: 'horizontal', color: 'white' }}>
-      <Footer>Footer</Footer>
+      <Footer pad={{ vertical: 'small' }}>Footer</Footer>
     </PageContent>
   </Page>
   // </Grommet>
