@@ -514,8 +514,8 @@ exports[`Select Clear option renders - bottom 1`] = `
       <div
         class="c9"
       />
+      
     </div>
-    
   </div>
 </div>
 `;
@@ -737,12 +737,12 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
     class="c2 c3"
     id="test-select__select-drop"
   >
-    
     <div
       class="c4"
       role="listbox"
       tabindex="-1"
     >
+      
       <button
         aria-posinset="1"
         aria-selected="false"
@@ -998,12 +998,12 @@ exports[`Select Clear option renders custom label 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
-    
     <div
       class="c4"
       role="listbox"
       tabindex="-1"
     >
+      
       <button
         aria-posinset="1"
         aria-selected="false"
@@ -1259,12 +1259,12 @@ exports[`Select Clear option renders- top 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
-    
     <div
       class="c4"
       role="listbox"
       tabindex="-1"
     >
+      
       <button
         aria-posinset="1"
         aria-selected="false"
@@ -3535,7 +3535,7 @@ exports[`Select default value clear 1`] = `
   flex-direction: column;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3616,7 +3616,7 @@ exports[`Select default value clear 1`] = `
   animation-delay: 0.01s;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   color: #555555;
@@ -3628,7 +3628,7 @@ exports[`Select default value clear 1`] = `
   line-height: 24px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3644,45 +3644,51 @@ exports[`Select default value clear 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3745,8 +3751,6 @@ exports[`Select default value clear 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -3773,7 +3777,7 @@ exports[`Select default value clear 1`] = `
   max-height: inherit;
 }
 
-.c7 {
+.c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
@@ -3800,7 +3804,7 @@ exports[`Select default value clear 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 6px;
   }
 }
@@ -3841,25 +3845,25 @@ exports[`Select default value clear 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
-    <button
-      class="c4"
-      type="button"
-    >
-      <div
-        class="c5"
-      >
-        <span
-          class="c6"
-        >
-          Clear selection
-        </span>
-      </div>
-    </button>
     <div
-      class="c7"
+      class="c4"
       role="listbox"
       tabindex="-1"
     >
+      <button
+        class="c5"
+        type="button"
+      >
+        <div
+          class="c6"
+        >
+          <span
+            class="c7"
+          >
+            Clear selection
+          </span>
+        </div>
+      </button>
       <button
         aria-posinset="1"
         aria-selected="false"
