@@ -74,9 +74,9 @@ var Notification = function Notification(_ref) {
   var position = useMemo(function () {
     return toast && (toast == null ? void 0 : toast.position) || 'top';
   }, [toast]);
-  var close = useCallback(function () {
+  var close = useCallback(function (event) {
     setVisible(false);
-    if (onClose) onClose();
+    if (onClose) onClose(event);
   }, [onClose]);
   useEffect(function () {
     if (autoClose) {

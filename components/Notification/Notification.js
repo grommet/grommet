@@ -93,9 +93,9 @@ var Notification = function Notification(_ref) {
   var position = (0, _react.useMemo)(function () {
     return toast && (toast == null ? void 0 : toast.position) || 'top';
   }, [toast]);
-  var close = (0, _react.useCallback)(function () {
+  var close = (0, _react.useCallback)(function (event) {
     setVisible(false);
-    if (onClose) onClose();
+    if (onClose) onClose(event);
   }, [onClose]);
   (0, _react.useEffect)(function () {
     if (autoClose) {
