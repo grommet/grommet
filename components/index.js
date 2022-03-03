@@ -338,6 +338,22 @@ Object.keys(_Meter).forEach(function (key) {
   exports[key] = _Meter[key];
 });
 
+var _Page = require("./Page");
+
+Object.keys(_Page).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Page[key]) return;
+  exports[key] = _Page[key];
+});
+
+var _PageContent = require("./PageContent");
+
+Object.keys(_PageContent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _PageContent[key]) return;
+  exports[key] = _PageContent[key];
+});
+
 var _Pagination = require("./Pagination");
 
 Object.keys(_Pagination).forEach(function (key) {

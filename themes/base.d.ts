@@ -1125,6 +1125,20 @@ export interface ThemeType {
       };
     };
   };
+  page?: {
+    [key: string]: {
+      alignSelf?: AlignContentType;
+      width?:
+        | string
+        | {
+            min: string;
+            max: string;
+          };
+      small?: BoxProps;
+      medium?: BoxProps;
+      large?: BoxProps;
+    };
+  };
   pagination?: {
     button?: ButtonType | string;
     container?: BoxProps | { extend?: ExtendType };

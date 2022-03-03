@@ -1309,6 +1309,74 @@ var generate = function generate(baseSpacing, scale) {
 
       }
     },
+    page: {
+      wide: {
+        alignSelf: 'center',
+        width: {
+          min: 'medium',
+          max: 'xxlarge'
+        },
+        small: {
+          pad: {
+            horizontal: 'large'
+          }
+        },
+        medium: {
+          pad: {
+            horizontal: 'medium'
+          }
+        },
+        large: {
+          pad: {
+            horizontal: 'large'
+          }
+        }
+      },
+      narrow: {
+        alignSelf: 'center',
+        width: {
+          min: 'medium',
+          max: 'large'
+        },
+        small: {
+          pad: {
+            horizontal: 'large'
+          }
+        },
+        medium: {
+          pad: {
+            horizontal: 'medium'
+          }
+        },
+        large: {
+          pad: {
+            horizontal: 'large'
+          }
+        }
+      },
+      full: {
+        alignSelf: 'start',
+        width: {
+          min: 'medium',
+          max: '100%'
+        },
+        small: {
+          pad: {
+            horizontal: 'large'
+          }
+        },
+        medium: {
+          pad: {
+            horizontal: 'medium'
+          }
+        },
+        large: {
+          pad: {
+            horizontal: 'large'
+          }
+        }
+      }
+    },
     pagination: {
       button: {
         active: {
