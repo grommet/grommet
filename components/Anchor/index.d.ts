@@ -38,6 +38,8 @@ type aProps = Omit<JSX.IntrinsicElements['a'], 'color'>;
 
 export interface AnchorExtendedProps extends AnchorProps, aProps {}
 
+export type AnchorType = AnchorExtendedProps;
+
 declare const Anchor: React.FC<AnchorExtendedProps>;
 
 export { Anchor };

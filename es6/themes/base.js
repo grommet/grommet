@@ -1,6 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { Actions } from 'grommet-icons/icons/Actions';
+import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
 import { FormClose } from 'grommet-icons/icons/FormClose';
@@ -1177,6 +1178,7 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     notification: {
+      direction: 'column',
       container: {
         // any box props
         pad: {
@@ -1187,7 +1189,18 @@ export var generate = function generate(baseSpacing, scale) {
           color: 'background-front'
         }
       },
+      global: {
+        direction: 'row',
+        container: {
+          // any box props
+          pad: {
+            horizontal: 'large',
+            vertical: 'xsmall'
+          }
+        }
+      },
       toast: {
+        // direction: undefined,
         container: {
           // any box props
           elevation: 'medium',
@@ -1204,7 +1217,8 @@ export var generate = function generate(baseSpacing, scale) {
         // any box props
         pad: {
           right: 'small'
-        }
+        },
+        flex: false
       },
       textContainer: {
         // any box props
@@ -1223,23 +1237,47 @@ export var generate = function generate(baseSpacing, scale) {
       },
       critical: {
         icon: StatusCriticalSmall,
-        color: 'status-critical'
+        // background: undefined,
+        color: 'status-critical' // global: {},
+        // toast: {},
+
       },
       warning: {
         icon: StatusWarningSmall,
-        color: 'status-warning'
+        // background: undefined,
+        color: 'status-warning' // global: {},
+        // toast: {},
+
       },
       normal: {
         icon: StatusGoodSmall,
-        color: 'status-ok'
+        // background: undefined,
+        color: 'status-ok' // global: {},
+        // toast: {},
+
+      },
+      info: {
+        icon: CircleInformation,
+        // background: undefined,
+        color: 'text-strong' // global: {},
+        // toast: {},
+
       },
       unknown: {
         icon: StatusUnknownSmall,
-        color: 'status-unknown'
+        // background: undefined,
+        color: 'status-unknown' // global: {},
+        // toast: {},
+
       },
+      // deprecate "undefined" in v3
+      // and if undefined, no icon
       undefined: {
         icon: StatusUnknownSmall,
-        color: 'status-unknown'
+        // background: undefined,
+        color: 'status-unknown' // global: {},
+        // toast: {},
+
       }
     },
     pagination: {

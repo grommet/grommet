@@ -5,6 +5,8 @@ exports.generate = exports.base = void 0;
 
 var _Actions = require("grommet-icons/icons/Actions");
 
+var _CircleInformation = require("grommet-icons/icons/CircleInformation");
+
 var _ClosedCaption = require("grommet-icons/icons/ClosedCaption");
 
 var _Expand = require("grommet-icons/icons/Expand");
@@ -1205,6 +1207,7 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     notification: {
+      direction: 'column',
       container: {
         // any box props
         pad: {
@@ -1215,7 +1218,18 @@ var generate = function generate(baseSpacing, scale) {
           color: 'background-front'
         }
       },
+      global: {
+        direction: 'row',
+        container: {
+          // any box props
+          pad: {
+            horizontal: 'large',
+            vertical: 'xsmall'
+          }
+        }
+      },
       toast: {
+        // direction: undefined,
         container: {
           // any box props
           elevation: 'medium',
@@ -1232,7 +1246,8 @@ var generate = function generate(baseSpacing, scale) {
         // any box props
         pad: {
           right: 'small'
-        }
+        },
+        flex: false
       },
       textContainer: {
         // any box props
@@ -1251,23 +1266,47 @@ var generate = function generate(baseSpacing, scale) {
       },
       critical: {
         icon: _StatusCriticalSmall.StatusCriticalSmall,
-        color: 'status-critical'
+        // background: undefined,
+        color: 'status-critical' // global: {},
+        // toast: {},
+
       },
       warning: {
         icon: _StatusWarningSmall.StatusWarningSmall,
-        color: 'status-warning'
+        // background: undefined,
+        color: 'status-warning' // global: {},
+        // toast: {},
+
       },
       normal: {
         icon: _StatusGoodSmall.StatusGoodSmall,
-        color: 'status-ok'
+        // background: undefined,
+        color: 'status-ok' // global: {},
+        // toast: {},
+
+      },
+      info: {
+        icon: _CircleInformation.CircleInformation,
+        // background: undefined,
+        color: 'text-strong' // global: {},
+        // toast: {},
+
       },
       unknown: {
         icon: _StatusUnknownSmall.StatusUnknownSmall,
-        color: 'status-unknown'
+        // background: undefined,
+        color: 'status-unknown' // global: {},
+        // toast: {},
+
       },
+      // deprecate "undefined" in v3
+      // and if undefined, no icon
       undefined: {
         icon: _StatusUnknownSmall.StatusUnknownSmall,
-        color: 'status-unknown'
+        // background: undefined,
+        color: 'status-unknown' // global: {},
+        // toast: {},
+
       }
     },
     pagination: {

@@ -5,13 +5,16 @@ exports.NotificationType = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
+var _propTypes2 = require("../Anchor/propTypes");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var PropType = {};
 
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
-    title: _propTypes["default"].string.isRequired,
+    actions: _propTypes["default"].arrayOf(_propTypes["default"].shape(_propTypes2.AnchorPropTypes)),
+    title: _propTypes["default"].string,
     message: _propTypes["default"].string,
     status: _propTypes["default"].oneOf(['critical', 'warning', 'normal', 'unknown']),
     toast: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].shape({

@@ -1,8 +1,9 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React, { useCallback, useContext, useEffect, useState, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useCallback, useContext, useEffect, useState, useMemo, Fragment } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
+import { Anchor } from '../Anchor';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Layer } from '../Layer';
@@ -10,14 +11,60 @@ import { Paragraph } from '../Paragraph';
 import { Text } from '../Text';
 import { NotificationType } from './propTypes';
 
+var adaptThemeStyle = function adaptThemeStyle(value, theme) {
+  var textStyle = value;
+  var closeButtonStyle = value;
+
+  if (typeof value === 'string' && theme.global.edgeSize[value]) {
+    textStyle = {
+      vertical: value,
+      left: value,
+      right: undefined
+    };
+    closeButtonStyle = {
+      vertical: value,
+      right: value
+    };
+  } else if (typeof value === 'object') {
+    var left = value.left,
+        right = value.right,
+        top = value.top,
+        bottom = value.bottom,
+        horizontal = value.horizontal,
+        vertical = value.vertical;
+    textStyle = {
+      top: top || vertical,
+      bottom: bottom || vertical,
+      left: left || horizontal,
+      right: undefined
+    };
+    closeButtonStyle = {
+      top: top || vertical,
+      bottom: bottom || vertical,
+      right: right || horizontal
+    };
+  }
+
+  return [textStyle, closeButtonStyle];
+};
+
+var NotificationAnchor = styled(Anchor).withConfig({
+  displayName: "Notification__NotificationAnchor",
+  componentId: "sc-1yq09yz-0"
+})(["white-space:nowrap;"]);
+
 var Notification = function Notification(_ref) {
-  var message = _ref.message,
+  var _theme$notification, _theme$notification$s2, _theme$notification$s3, _theme$notification2, _theme$notification2$, _theme$notification3, _theme$notification3$, _theme$notification3$2;
+
+  var actionsProp = _ref.actions,
+      messageProp = _ref.message,
       onClose = _ref.onClose,
       id = _ref.id,
+      global = _ref.global,
       status = _ref.status,
       title = _ref.title,
       toast = _ref.toast;
-  var autoClose = (toast == null ? void 0 : toast.autoClose) === undefined ? true : toast.autoClose;
+  var autoClose = toast && (toast == null ? void 0 : toast.autoClose) === undefined ? true : toast.autoClose;
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState(true),
@@ -46,22 +93,72 @@ var Notification = function Notification(_ref) {
       StatusIcon = _theme$notification$s.icon,
       color = _theme$notification$s.color;
   var closeIconColor = theme.notification.close.color;
-  var content = /*#__PURE__*/React.createElement(Box, _extends({}, theme.notification.container, toast ? _extends({}, theme.notification.toast.container) : {}, {
-    direction: "row"
-  }), /*#__PURE__*/React.createElement(Box, theme.notification.iconContainer, /*#__PURE__*/React.createElement(StatusIcon, {
-    color: color
-  })), /*#__PURE__*/React.createElement(Box, _extends({}, theme.notification.textContainer, {
-    align: "start",
+  var kind = useMemo(function () {
+    if (toast) return 'toast';
+    if (global) return 'global';
+    return undefined;
+  }, [global, toast]);
+  var direction;
+  if (kind && theme.notification[kind].direction) direction = theme.notification[kind].direction;else direction = theme.notification.direction;
+  var background;
+  if (kind && (_theme$notification = theme.notification) != null && (_theme$notification$s2 = _theme$notification[status]) != null && (_theme$notification$s3 = _theme$notification$s2[kind]) != null && _theme$notification$s3.background) background = theme.notification[status][kind].background;else if ((_theme$notification2 = theme.notification) != null && (_theme$notification2$ = _theme$notification2[status]) != null && _theme$notification2$.background) background = theme.notification[status].background;else background = ((_theme$notification3 = theme.notification) == null ? void 0 : (_theme$notification3$ = _theme$notification3[kind]) == null ? void 0 : (_theme$notification3$2 = _theme$notification3$.container) == null ? void 0 : _theme$notification3$2.background) || theme.notification.container.background;
+  var TextWrapper = direction === 'row' ? Text : Fragment; // notification is built with two child boxes that contain:
+  // 1. icon + text (wrapped in button when clickable)
+  // 2. close button
+  // pad needs to be applied to the child boxes, but we don't want to apply
+  // extra padding between the icon + text and the button.
+
+  var pad;
+  if (kind && theme.notification[kind].container.pad) pad = theme.notification[kind].container.pad;else pad = theme.notification.container.pad;
+  var textPad;
+  var closeButtonPad;
+
+  if (onClose) {
+    var _adaptThemeStyle = adaptThemeStyle(pad, theme);
+
+    textPad = _adaptThemeStyle[0];
+    closeButtonPad = _adaptThemeStyle[1];
+  } else textPad = pad;
+
+  var actions;
+  var message = messageProp;
+  if (actionsProp) actions = actionsProp.map(function (action, index) {
+    return /*#__PURE__*/React.createElement(NotificationAnchor, _extends({
+      key: action.label // create space between first anchor and text content
+      ,
+      margin: index === 0 && (message || title) ? {
+        left: 'xsmall'
+      } : undefined
+    }, action));
+  });
+  var Message = direction !== 'row' ? Paragraph : Text;
+  if (message || actions) message = /*#__PURE__*/React.createElement(Message, theme.notification.message, message, actions);
+  var content = /*#__PURE__*/React.createElement(Box, _extends({}, theme.notification.container, global ? _extends({}, theme.notification.global.container) : {}, toast ? _extends({}, theme.notification.toast.container) : {}, {
+    background: background // let internal box control pad
+    ,
+    pad: undefined,
     direction: "row",
-    justify: "between",
+    gap: "small"
+  }), /*#__PURE__*/React.createElement(Box, {
+    direction: "row",
+    pad: textPad,
     flex: true
-  }), /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, theme.notification.title, title), message && /*#__PURE__*/React.createElement(Paragraph, theme.notification.message, message)), onClose && /*#__PURE__*/React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Box, theme.notification.iconContainer, /*#__PURE__*/React.createElement(StatusIcon, {
+    color: color
+  })), /*#__PURE__*/React.createElement(Box, theme.notification.textContainer, /*#__PURE__*/React.createElement(TextWrapper, null, title && /*#__PURE__*/React.createElement(Text, theme.notification.title, title), message && title && direction === 'row' && /*#__PURE__*/React.createElement(React.Fragment, null, "\xA0"), message))), onClose &&
+  /*#__PURE__*/
+  // theme.notification.container and textContainer may both have pad,
+  // account for both
+  React.createElement(Box, {
+    pad: closeButtonPad
+  }, /*#__PURE__*/React.createElement(Box, theme.notification.textContainer, /*#__PURE__*/React.createElement(Button, {
     icon: /*#__PURE__*/React.createElement(CloseIcon, {
       color: closeIconColor
     }),
     onClick: close,
+    hoverIndicator: true,
     plain: true
-  })));
+  }))));
 
   if (toast) {
     content = visible && /*#__PURE__*/React.createElement(Layer, _extends({}, theme.notification.toast.layer, {
