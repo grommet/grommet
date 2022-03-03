@@ -35,7 +35,7 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   // 1. Tip has a single child + it is a React Element => Great!
   // 2. Tip has a single child +  not React Element =>
   // span will wrap the child so we can use ref and events.
-  // 3. Tip has more than one child => Abort, display Children.only error 
+  // 3. Tip has more than one child => Abort, display Children.only error
   const child =
     (Children.count(children) <= 1 && !React.isValidElement(children) && (
       <span>{children}</span>

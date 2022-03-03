@@ -2,8 +2,7 @@ import React from 'react';
 
 import { Add, FormClose, StatusGood } from 'grommet-icons';
 
-import { Box, Button, Grommet, Layer, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Layer, Text } from 'grommet';
 
 export const NotificationLayer = () => {
   const [open, setOpen] = React.useState();
@@ -18,7 +17,9 @@ export const NotificationLayer = () => {
   const onClose = () => setOpen(undefined);
 
   return (
-    <Grommet theme={grommet} full>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <>
       <Box fill align="center" justify="center">
         <Button
           icon={<Add color="brand" />}
@@ -61,7 +62,8 @@ export const NotificationLayer = () => {
           </Box>
         </Layer>
       )}
-    </Grommet>
+    </>
+    // </Grommet>
   );
 };
 
@@ -69,6 +71,10 @@ NotificationLayer.storyName = 'Notification';
 
 NotificationLayer.parameters = {
   chromatic: { disable: true },
+};
+
+NotificationLayer.args = {
+  full: true,
 };
 
 export default {
