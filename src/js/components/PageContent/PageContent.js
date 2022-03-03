@@ -9,14 +9,14 @@ const PageContent = ({ children, background, ...rest }) => {
   if (background?.fill) {
     return (
       <Box background={background}>
-        <Box {...pageContext} {...rest}>
+        <Box fill="horizontal" {...pageContext} {...rest}>
           {children}
         </Box>
       </Box>
     );
   }
   return (
-    <Box background={background} {...pageContext} {...rest}>
+    <Box fill="horizontal" background={background} {...pageContext} {...rest}>
       {children}
     </Box>
   );

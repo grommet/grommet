@@ -12,7 +12,6 @@ const Page = ({ kind, ...rest }) => {
   const contentValue = useMemo(
     () => ({
       alignSelf: theme.page[kind]?.alignSelf,
-      fill: 'horizontal',
       width: theme.page[kind]?.width,
       ...theme.page[kind][size],
     }),

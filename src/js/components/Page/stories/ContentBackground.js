@@ -34,6 +34,8 @@ export const ContentBackground = () => (
   // </Grommet>
 );
 
+ContentBackground.storyName = 'Content background';
+
 export default {
-  title: 'Layout/Page/Content Background',
+  title: 'Layout/Page/Content background',
 };

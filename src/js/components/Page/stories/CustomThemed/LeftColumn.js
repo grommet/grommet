@@ -85,8 +85,8 @@ export const LeftColumn = () => (
   </Grommet>
 );
 
-LeftColumn.storyName = 'Left Column';
+LeftColumn.storyName = 'Left column';
 
 export default {
-  title: 'Layout/Page/Custom Themed/Left Column',
+  title: 'Layout/Page/Custom Themed/Left column',
 };

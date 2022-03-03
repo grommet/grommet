@@ -9,7 +9,7 @@ import {
   Card,
 } from 'grommet';
 
-export const Multiple = () => (
+export const MultipleContent = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Page kind="narrow">
@@ -47,6 +47,8 @@ export const Multiple = () => (
   // </Grommet>
 );
 
+MultipleContent.storyName = 'Multiple content';
+
 export default {
-  title: 'Layout/Page/Multiple',
+  title: 'Layout/Page/Multiple content',
 };
