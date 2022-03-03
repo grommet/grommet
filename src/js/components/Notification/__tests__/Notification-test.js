@@ -11,6 +11,10 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Notification, Button } from '../..';
 
+const TestNotification = ({ ...rest }) => (
+  <Notification title="title" message="message" {...rest} />
+);
+
 describe('Notification', () => {
   beforeEach(createPortal);
   test('should have no accessibility violations', async () => {
@@ -154,5 +158,61 @@ describe('Notification', () => {
       jest.advanceTimersByTime(9000);
     });
     expect(onClose).not.toHaveBeenCalled();
+  });
+
+  test('custom theme', () => {
+    const theme = {
+      notification: {
+        direction: 'row',
+        truncation: true,
+        container: {
+          pad: 'medium',
+        },
+        toast: {
+          direction: 'column',
+          truncation: false,
+        },
+        critical: {
+          background: 'red',
+          toast: {
+            background: 'background-front',
+          },
+        },
+      },
+    };
+
+    const Test = () => (
+      <Grommet theme={theme}>
+        <TestNotification status="critical" />
+        <TestNotification toast title="Toast title" status="critical" />
+      </Grommet>
+    );
+    const { asFragment } = render(<Test />);
+
+    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByText('Toast title')).toBeInTheDocument();
+  });
+
+  test('actions', () => {
+    render(
+      <Grommet>
+        <TestNotification
+          actions={[{ href: '/some-link', label: 'Renew Subscription' }]}
+        />
+      </Grommet>,
+    );
+
+    const link = screen.getByRole('link', { name: 'Renew Subscription' });
+    expect(link).toHaveAttribute('href', '/some-link');
+  });
+
+  test('global', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <TestNotification global />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });
