@@ -1748,9 +1748,27 @@ Object {
               "render": [Function],
             },
           },
+          "direction": "column",
+          "global": Object {
+            "container": Object {
+              "pad": Object {
+                "horizontal": "large",
+                "vertical": "xsmall",
+              },
+            },
+            "direction": "row",
+          },
           "iconContainer": Object {
+            "flex": false,
             "pad": Object {
               "right": "small",
+            },
+          },
+          "info": Object {
+            "color": "text-strong",
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
             },
           },
           "message": Object {
