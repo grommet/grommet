@@ -2,8 +2,7 @@ import React from 'react';
 
 import { Add } from 'grommet-icons';
 
-import { Box, Button, Grommet, Layer, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Layer, Text } from 'grommet';
 
 export const CornerLayer = () => {
   const [open, setOpen] = React.useState();
@@ -13,7 +12,9 @@ export const CornerLayer = () => {
   const onClose = () => setOpen(undefined);
 
   return (
-    <Grommet theme={grommet} full>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <>
       <Box fill align="center" justify="center">
         <Button
           icon={<Add color="brand" />}
@@ -33,7 +34,8 @@ export const CornerLayer = () => {
           </Box>
         </Layer>
       )}
-    </Grommet>
+    </>
+    // </Grommet>
   );
 };
 
@@ -41,6 +43,10 @@ CornerLayer.storyName = 'Corner';
 
 CornerLayer.parameters = {
   chromatic: { disable: true },
+};
+
+CornerLayer.args = {
+  full: true,
 };
 
 export default {

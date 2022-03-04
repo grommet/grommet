@@ -71,7 +71,15 @@ const chartType = PropTypes.oneOfType([
     point: pointPropType,
     round: PropTypes.bool,
     thickness: thicknessType,
-    type: PropTypes.oneOf(['bar', 'bars', 'line', 'area', 'point']),
+    type: PropTypes.oneOf([
+      'bar',
+      'bars',
+      'line',
+      'area',
+      'areas',
+      'lines',
+      'point',
+    ]),
   }),
 ]);
 
@@ -147,6 +155,7 @@ if (process.env.NODE_ENV !== 'production') {
       }),
     ]),
     legend: PropTypes.bool,
+    offset: PropTypes.bool,
     pad: padPropType,
     series: PropTypes.oneOfType([seriesType, PropTypes.arrayOf(seriesType)]),
     size: PropTypes.oneOfType([

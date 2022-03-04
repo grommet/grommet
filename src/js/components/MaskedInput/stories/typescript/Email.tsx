@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { Box, Grommet, MaskedInput } from 'grommet';
+import { Box, MaskedInput } from 'grommet';
 import { MailOption } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
 
 export const EmailMaskedInput = () => {
   const [value, setValue] = React.useState('');
@@ -25,29 +24,34 @@ export const EmailMaskedInput = () => {
   ];
 
   return (
-    <Grommet full theme={grommet}>
-      <Box fill align="center" justify="start" pad="large">
-        <Box width="medium" gap="medium">
-          <MaskedInput
-            icon={<MailOption />}
-            mask={emailMask}
-            value={value}
-            onChange={event => setValue(event.target.value)}
-          />
-          <MaskedInput
-            reverse
-            icon={<MailOption />}
-            mask={emailMask}
-            value={value}
-            onChange={event => setValue(event.target.value)}
-          />
-        </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box fill align="center" justify="start" pad="large">
+      <Box width="medium" gap="medium">
+        <MaskedInput
+          icon={<MailOption />}
+          mask={emailMask}
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        />
+        <MaskedInput
+          reverse
+          icon={<MailOption />}
+          mask={emailMask}
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        />
       </Box>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 
 EmailMaskedInput.storyName = 'Email with icon';
+
+EmailMaskedInput.args = {
+  full: true,
+};
 
 export default {
   title: 'Input/MaskedInput/Email with icon',

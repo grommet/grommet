@@ -263,4 +263,64 @@ describe('DataChart', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('bars empty', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart
+          data={data}
+          series={['a']}
+          chart={[{ property: [], type: 'bars' }]}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('areas', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart
+          data={data}
+          series={['a', 'c']}
+          chart={[
+            {
+              property: [
+                { property: 'a', thickness: 'hair', opacity: 'medium' },
+                'c',
+              ],
+              type: 'areas',
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('lines', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart
+          data={data}
+          series={['a', 'c']}
+          chart={[{ property: ['a', 'c'], type: 'lines' }]}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('offset', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart data={data} series={['a', 'c']} offset />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

@@ -37,4 +37,3 @@ if (process.env.NODE_ENV !== 'production') {
   };
 }
 export const CarouselChildPropTypes = CarouselChildPropType;
-

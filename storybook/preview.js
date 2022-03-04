@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { hpe } from 'grommet-theme-hpe';
-import { Grommet, grommet, Box, Text } from '../src/js';
 import isChromatic from 'chromatic/isChromatic';
+import { Grommet, grommet, Box, Text } from '../src/js';
 
 const CUSTOM_THEMED = 'Custom Themed';
 const THEMES = {
@@ -17,6 +17,8 @@ export const decorators = [
       setState(context.globals.theme);
     }, [context.globals.theme]);
     const full = context.parameters?.args?.full || 'min';
+    const dir = context.parameters?.args?.dir;
+    const options = context.parameters?.args?.options;
 
     /**
      * This demonstrates that custom themed stories are driven off the "base"
@@ -44,7 +46,7 @@ export const decorators = [
     }
 
     return (
-      <Grommet theme={THEMES[state]} full={full}>
+      <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
         <Story state={THEMES[state]} />
       </Grommet>
     );

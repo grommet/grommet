@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { FormClose } from 'grommet-icons';
-import { Box, Button, Grommet, Keyboard, Text, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Keyboard, Text, TextInput } from 'grommet';
 
 const allSuggestions = ['sony', 'sonar', 'foo', 'bar'];
 
@@ -116,18 +115,19 @@ export const WithTags = () => {
     );
 
   return (
-    <Grommet full theme={grommet}>
-      <Box pad="small">
-        <TagInput
-          placeholder="Search for aliases..."
-          suggestions={suggestions}
-          value={selectedTags}
-          onRemove={onRemoveTag}
-          onAdd={onAddTag}
-          onChange={({ target: { value } }) => onFilterSuggestion(value)}
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box pad="small">
+      <TagInput
+        placeholder="Search for aliases..."
+        suggestions={suggestions}
+        value={selectedTags}
+        onRemove={onRemoveTag}
+        onAdd={onAddTag}
+        onChange={({ target: { value } }) => onFilterSuggestion(value)}
+      />
+    </Box>
+    // </Grommet>
   );
 };
 

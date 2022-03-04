@@ -160,6 +160,7 @@ interface ButtonType {
       };
     };
   };
+  gap?: GapType;
   border?: {
     color?: ColorType;
     width?: string;
@@ -1038,8 +1039,14 @@ export interface ThemeType {
   };
   notification?: {
     container?: BoxProps;
+    direction?: 'column' | 'row';
+    global?: {
+      direction?: 'column' | 'row';
+      container?: BoxProps;
+    };
     toast?: {
       container?: BoxProps;
+      direction?: 'column' | 'row';
       layer?: LayerProps;
       time?: number;
     };
@@ -1053,23 +1060,83 @@ export interface ThemeType {
     };
     critical?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     warning?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     normal?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
+    };
+    info?: {
+      icon?: React.ReactNode;
+      background?: BackgroundType;
+      color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     unknown?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     undefined?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
+    };
+  };
+  page?: {
+    [key: string]: {
+      alignSelf?: AlignContentType;
+      width?:
+        | string
+        | {
+            min: string;
+            max: string;
+          };
+      small?: BoxProps;
+      medium?: BoxProps;
+      large?: BoxProps;
     };
   };
   pagination?: {
@@ -1364,6 +1431,38 @@ export interface ThemeType {
     pad?: PadType;
     remove?: ButtonType;
     separator?: string;
+    size?: {
+      xsmall?: {
+        pad?: PadType;
+        icon?: {
+          size?: string;
+        };
+      };
+      small?: {
+        pad?: PadType;
+        icon?: {
+          size?: string;
+        };
+      };
+      medium?: {
+        pad?: PadType;
+        icon?: {
+          size?: string;
+        };
+      };
+      large?: {
+        pad?: PadType;
+        icon?: {
+          size?: string;
+        };
+      };
+      xlarge?: {
+        pad?: PadType;
+        icon?: {
+          size?: string;
+        };
+      };
+    };
     value?: TextProps;
   };
   text?: {
@@ -1430,7 +1529,7 @@ export interface ThemeType {
   };
   textInput?: {
     extend?: ExtendType;
-    disabled?: OpacityType;
+    disabled?: OpacityType | { opacity: OpacityType };
     container?: {
       extend?: ExtendType;
     };

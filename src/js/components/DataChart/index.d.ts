@@ -14,7 +14,12 @@ type ChartType =
       property:
         | string
         | string[]
-        | { property?: string; color: string }[]
+        | {
+            property: string;
+            color?: string;
+            opacity?: string;
+            thickness?: string;
+          }[]
         | {
             color?:
               | string
@@ -33,7 +38,7 @@ type ChartType =
           };
       round?: ChartProps['round']; // defaults to undefined
       thickness?: ChartProps['thickness']; // defaults to auto assigned based on available space and amount of data
-      type?: ChartProps['type'] | 'bars'; // defaults to 'bar',
+      type?: ChartProps['type'] | 'bars' | 'areas' | 'lines'; // defaults to 'bar',
     };
 
 type SeriesType =
@@ -87,6 +92,9 @@ export interface DataChartProps {
       };
   // legend - when true, { side: 'bottom' }
   legend?: boolean | { side: 'left' | 'right' | 'bottom' };
+  // offset - whether to shift the charts to reveal them all, mostly useful
+  // for bar charts
+  offset?: boolean;
   // pad - padding around the guides/visuals
   // defaults to what's needed based on axis and chart types
   pad?: GridProps['pad'];
