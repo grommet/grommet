@@ -18,6 +18,7 @@ export const decorators = [
     }, [context.globals.theme]);
     const full = context.parameters?.args?.full || 'min';
     const dir = context.parameters?.args?.dir;
+    const options = context.parameters?.args?.options;
 
     /**
      * This demonstrates that custom themed stories are driven off the "base"
@@ -45,7 +46,7 @@ export const decorators = [
     }
 
     return (
-      <Grommet theme={THEMES[state]} full={full} dir={dir}>
+      <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
         <Story state={THEMES[state]} />
       </Grommet>
     );

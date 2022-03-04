@@ -1039,8 +1039,14 @@ export interface ThemeType {
   };
   notification?: {
     container?: BoxProps;
+    direction?: 'column' | 'row';
+    global?: {
+      direction?: 'column' | 'row';
+      container?: BoxProps;
+    };
     toast?: {
       container?: BoxProps;
+      direction?: 'column' | 'row';
       layer?: LayerProps;
       time?: number;
     };
@@ -1054,23 +1060,83 @@ export interface ThemeType {
     };
     critical?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     warning?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     normal?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
+    };
+    info?: {
+      icon?: React.ReactNode;
+      background?: BackgroundType;
+      color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     unknown?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     undefined?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
+    };
+  };
+  page?: {
+    [key: string]: {
+      alignSelf?: AlignContentType;
+      width?:
+        | string
+        | {
+            min: string;
+            max: string;
+          };
+      small?: BoxProps;
+      medium?: BoxProps;
+      large?: BoxProps;
     };
   };
   pagination?: {

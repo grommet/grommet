@@ -618,6 +618,26 @@ Object {
   "NameValuePair": [Function],
   "Nav": [Function],
   "Notification": [Function],
+  "Page": [Function],
+  "PageContent": [Function],
+  "PageContext": Object {
+    "$$typeof": Symbol(react.context),
+    "Consumer": Object {
+      "$$typeof": Symbol(react.context),
+      "_calculateChangedBits": null,
+      "_context": [Circular],
+    },
+    "Provider": Object {
+      "$$typeof": Symbol(react.provider),
+      "_context": [Circular],
+    },
+    "_calculateChangedBits": null,
+    "_currentRenderer": null,
+    "_currentRenderer2": null,
+    "_currentValue": Object {},
+    "_currentValue2": Object {},
+    "_threadCount": 0,
+  },
   "Pagination": Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
@@ -1728,9 +1748,27 @@ Object {
               "render": [Function],
             },
           },
+          "direction": "column",
+          "global": Object {
+            "container": Object {
+              "pad": Object {
+                "horizontal": "large",
+                "vertical": "xsmall",
+              },
+            },
+            "direction": "row",
+          },
           "iconContainer": Object {
+            "flex": false,
             "pad": Object {
               "right": "small",
+            },
+          },
+          "info": Object {
+            "color": "text-strong",
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
             },
           },
           "message": Object {
@@ -1780,6 +1818,74 @@ Object {
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
+            },
+          },
+        },
+        "page": Object {
+          "full": Object {
+            "alignSelf": "start",
+            "large": Object {
+              "pad": Object {
+                "horizontal": "large",
+              },
+            },
+            "medium": Object {
+              "pad": Object {
+                "horizontal": "medium",
+              },
+            },
+            "small": Object {
+              "pad": Object {
+                "horizontal": "large",
+              },
+            },
+            "width": Object {
+              "max": "100%",
+              "min": "medium",
+            },
+          },
+          "narrow": Object {
+            "alignSelf": "center",
+            "large": Object {
+              "pad": Object {
+                "horizontal": "large",
+              },
+            },
+            "medium": Object {
+              "pad": Object {
+                "horizontal": "medium",
+              },
+            },
+            "small": Object {
+              "pad": Object {
+                "horizontal": "large",
+              },
+            },
+            "width": Object {
+              "max": "large",
+              "min": "medium",
+            },
+          },
+          "wide": Object {
+            "alignSelf": "center",
+            "large": Object {
+              "pad": Object {
+                "horizontal": "large",
+              },
+            },
+            "medium": Object {
+              "pad": Object {
+                "horizontal": "medium",
+              },
+            },
+            "small": Object {
+              "pad": Object {
+                "horizontal": "large",
+              },
+            },
+            "width": Object {
+              "max": "xxlarge",
+              "min": "medium",
             },
           },
         },
@@ -2353,6 +2459,7 @@ Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
       "align": [Function],
+      "border": [Function],
       "plain": [Function],
       "scope": [Function],
       "size": [Function],

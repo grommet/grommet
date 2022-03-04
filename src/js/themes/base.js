@@ -1,4 +1,5 @@
 import { Actions } from 'grommet-icons/icons/Actions';
+import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
 import { FormClose } from 'grommet-icons/icons/FormClose';
@@ -1082,6 +1083,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     notification: {
+      direction: 'column',
       container: {
         // any box props
         pad: { horizontal: 'small', vertical: 'xsmall' },
@@ -1089,7 +1091,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'background-front',
         },
       },
+      global: {
+        direction: 'row',
+        container: {
+          // any box props
+          pad: {
+            horizontal: 'large',
+            vertical: 'xsmall',
+          },
+        },
+      },
       toast: {
+        // direction: undefined,
         container: {
           // any box props
           elevation: 'medium',
@@ -1105,6 +1118,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       iconContainer: {
         // any box props
         pad: { right: 'small' },
+        flex: false,
       },
       textContainer: {
         // any box props
@@ -1123,23 +1137,97 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       critical: {
         icon: StatusCriticalSmall,
+        // background: undefined,
         color: 'status-critical',
+        // global: {},
+        // toast: {},
       },
       warning: {
         icon: StatusWarningSmall,
+        // background: undefined,
         color: 'status-warning',
+        // global: {},
+        // toast: {},
       },
       normal: {
         icon: StatusGoodSmall,
+        // background: undefined,
         color: 'status-ok',
+        // global: {},
+        // toast: {},
+      },
+      info: {
+        icon: CircleInformation,
+        // background: undefined,
+        color: 'text-strong',
+        // global: {},
+        // toast: {},
       },
       unknown: {
         icon: StatusUnknownSmall,
+        // background: undefined,
         color: 'status-unknown',
+        // global: {},
+        // toast: {},
       },
+      // deprecate "undefined" in v3
+      // and if undefined, no icon
       undefined: {
         icon: StatusUnknownSmall,
+        // background: undefined,
         color: 'status-unknown',
+        // global: {},
+        // toast: {},
+      },
+    },
+    page: {
+      wide: {
+        alignSelf: 'center',
+        width: {
+          min: 'medium',
+          max: 'xxlarge',
+        },
+        small: {
+          pad: { horizontal: 'large' },
+        },
+        medium: {
+          pad: { horizontal: 'medium' },
+        },
+        large: {
+          pad: { horizontal: 'large' },
+        },
+      },
+      narrow: {
+        alignSelf: 'center',
+        width: {
+          min: 'medium',
+          max: 'large',
+        },
+        small: {
+          pad: { horizontal: 'large' },
+        },
+        medium: {
+          pad: { horizontal: 'medium' },
+        },
+        large: {
+          pad: { horizontal: 'large' },
+        },
+      },
+      full: {
+        alignSelf: 'start',
+        width: {
+          min: 'medium',
+          max: '100%',
+        },
+        small: {
+          pad: { horizontal: 'large' },
+        },
+        medium: {
+          pad: { horizontal: 'medium' },
+        },
+        large: {
+          pad: { horizontal: 'large' },
+        },
       },
     },
     pagination: {
