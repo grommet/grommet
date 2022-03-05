@@ -3343,6 +3343,474 @@ exports[`DataChart bars invalid 1`] = `
 </div>
 `;
 
+exports[`DataChart bounds align 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          240K
+        </div>
+        <div
+          class="c4"
+        >
+          100K
+        </div>
+      </div>
+      <div
+        class="c5"
+        style="height: 0px;"
+      />
+    </div>
+    <div
+      class="c2"
+    >
+      <div
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <svg
+            class="c8"
+            height="192"
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width="384"
+          >
+            0
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,176.76205714285715"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,24.38125714285715"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="c9"
+      >
+        <div
+          class="c2"
+        >
+          0
+        </div>
+        <div
+          class="c2"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataChart bounds explicit 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          100
+        </div>
+        <div
+          class="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="c5"
+        style="height: 0px;"
+      />
+    </div>
+    <div
+      class="c2"
+    >
+      <div
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <svg
+            class="c8"
+            height="192"
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width="384"
+          >
+            0
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,-213141.12"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,-426474.24"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="c9"
+      >
+        <div
+          class="c2"
+        >
+          0
+        </div>
+        <div
+          class="c2"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`DataChart dates 1`] = `
 .c0 {
   font-size: 18px;
@@ -6262,6 +6730,11 @@ exports[`DataChart legend 1`] = `
   width: 6px;
 }
 
+.c13 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c8 {
   display: block;
   max-width: 100%;
@@ -6276,11 +6749,6 @@ exports[`DataChart legend 1`] = `
 .c7 {
   position: relative;
   display: block;
-}
-
-.c13 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 @media only screen and (max-width:768px) {
@@ -7714,6 +8182,553 @@ exports[`DataChart pad 1`] = `
       </div>
       <div
         class="c9"
+      >
+        <div
+          class="c2"
+        >
+          0
+        </div>
+        <div
+          class="c2"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataChart placeholder node 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EDEDED;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+.c9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          100
+        </div>
+        <div
+          class="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="c5"
+        style="height: 0px;"
+      />
+    </div>
+    <div
+      class="c2"
+    >
+      <div
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <svg
+            class="c8"
+            height="192"
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width="384"
+          >
+            0
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
+            />
+          </svg>
+        </div>
+        <div
+          class="c9"
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              no data
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c12"
+      >
+        <div
+          class="c2"
+        >
+          0
+        </div>
+        <div
+          class="c2"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataChart placeholder text 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 48px;
+  margin-right: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(221,221,221,0.5);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #555555;
+}
+
+.c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+.c9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          100
+        </div>
+        <div
+          class="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="c5"
+        style="height: 0px;"
+      />
+    </div>
+    <div
+      class="c2"
+    >
+      <div
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <svg
+            class="c8"
+            height="192"
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width="384"
+          >
+            0
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
+            />
+          </svg>
+        </div>
+        <div
+          class="c9"
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              no data
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c12"
       >
         <div
           class="c2"
