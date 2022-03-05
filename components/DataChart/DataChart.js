@@ -17,6 +17,8 @@ var _Grid = require("../Grid");
 
 var _Stack = require("../Stack");
 
+var _Text = require("../Text");
+
 var _utils = require("../../utils");
 
 var _Detail = require("./Detail");
@@ -35,7 +37,7 @@ var _utils2 = require("./utils");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "gap", "guide", "legend", "offset", "pad", "series", "size"],
+var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "gap", "guide", "legend", "offset", "placeholder", "pad", "series", "size"],
     _excluded2 = ["property", "type", "x", "y"],
     _excluded3 = ["property"];
 
@@ -58,6 +60,8 @@ var stackedChartType = {
 // normalize and automatically handle whatever the caller didn't specify.
 
 var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var _boundsProp$y;
+
   var a11yTitle = _ref.a11yTitle,
       _ref$axis = _ref.axis,
       axisProp = _ref$axis === void 0 ? true : _ref$axis,
@@ -72,6 +76,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       guideProp = _ref.guide,
       legend = _ref.legend,
       offset = _ref.offset,
+      placeholder = _ref.placeholder,
       padProp = _ref.pad,
       seriesProp = _ref.series,
       size = _ref.size,
@@ -363,6 +368,12 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       });
     }
 
+    if (typeof boundsProp === 'object') {
+      if (boundsProp.y) chartBounds = chartBounds.map(function (b) {
+        return [b[0], [].concat(boundsProp.y)];
+      });
+    }
+
     return chartValues.map(function (values, index) {
       var _charts$index = charts[index],
           thickness = _charts$index.thickness,
@@ -560,14 +571,14 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var xAxisElement = axis && axis.x && chartProps.length ? /*#__PURE__*/_react["default"].createElement(_XAxis.XAxis, {
     ref: xRef,
     axis: axis,
-    chartProps: chartProps,
+    values: (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis[0],
     pad: pad,
     renderValue: renderValue,
     serie: axis.x.property && getPropertySeries(axis.x.property)
   }) : null;
-  var yAxisElement = axis && axis.y && chartProps.length ? /*#__PURE__*/_react["default"].createElement(_YAxis.YAxis, {
+  var yAxisElement = axis && axis.y && (chartProps.length || boundsProp != null && boundsProp.y) ? /*#__PURE__*/_react["default"].createElement(_YAxis.YAxis, {
     axis: axis,
-    chartProps: chartProps,
+    values: (boundsProp == null ? void 0 : (_boundsProp$y = boundsProp.y) == null ? void 0 : _boundsProp$y.reverse()) || (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis[1],
     pad: pad,
     renderValue: renderValue,
     serie: axis.y.property && getPropertySeries(axis.y.property)
@@ -649,7 +660,17 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       size: size,
       pad: chartPad
     }));
-  }), detail && /*#__PURE__*/_react["default"].createElement(_Detail.Detail, {
+  }), placeholder && (typeof placeholder === 'string' && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    fill: "vertical",
+    align: "center",
+    justify: "center",
+    background: {
+      color: 'active'
+    },
+    margin: pad
+  }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+    color: "text-weak"
+  }, placeholder)) || placeholder), detail && /*#__PURE__*/_react["default"].createElement(_Detail.Detail, {
     activeProperty: activeProperty,
     axis: axis,
     data: data,

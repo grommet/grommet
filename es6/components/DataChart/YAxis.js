@@ -4,23 +4,20 @@ import { Box } from '../Box';
 import { round } from '../Chart';
 import { doublePad } from './utils';
 var YAxis = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var chartProps = _ref.chartProps,
+  var values = _ref.values,
       pad = _ref.pad,
       renderValue = _ref.renderValue,
       _ref$serie = _ref.serie,
       serie = _ref$serie === void 0 ? {} : _ref$serie;
   var theme = useContext(ThemeContext);
   var render = serie.render,
-      suffix = serie.suffix; // pull the x-axis values from the first chart, all should have the same
-
-  var _axis = (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis,
-      axisValues = _axis[1];
+      suffix = serie.suffix;
   var divideBy;
   var unit;
 
   if (!render && !suffix) {
     // figure out how many digits to show
-    var maxValue = Math.max.apply(Math, axisValues.map(function (v) {
+    var maxValue = Math.max.apply(Math, values.map(function (v) {
       return Math.abs(v);
     }));
 
@@ -42,7 +39,7 @@ var YAxis = /*#__PURE__*/forwardRef(function (_ref, ref) {
     gridArea: "yAxis",
     justify: "between",
     flex: true
-  }, axisValues.map(function (axisValue, i) {
+  }, values.map(function (axisValue, i) {
     var content = renderValue(serie, undefined, axisValue);
 
     if (content === axisValue) {

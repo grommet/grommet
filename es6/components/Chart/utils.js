@@ -3,13 +3,13 @@ export var normalizeValues = function normalizeValues(values) {
     if (value === undefined) return {
       value: [index, undefined]
     };
-    if (typeof value === 'number') return {
-      value: [index, value]
-    };
     if (Array.isArray(value)) return {
       value: value
     };
-    return value;
+    if (typeof value === 'object') return value;
+    return {
+      value: [index, value]
+    };
   });
 };
 export var normalizeBounds = function normalizeBounds(bounds, values) {
