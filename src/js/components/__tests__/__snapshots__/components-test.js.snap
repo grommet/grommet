@@ -253,6 +253,7 @@ Object {
       "margin": [Function],
       "offset": [Function],
       "pad": [Function],
+      "placeholder": [Function],
       "series": [Function],
       "size": [Function],
     },
