@@ -24,6 +24,7 @@ if (process.env.NODE_ENV !== 'production') {
       length: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].arrayOf(_propTypes["default"].number)]),
       fixed: _propTypes["default"].string,
       options: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])),
+      restrictToOptions: _propTypes["default"].bool,
       regexp: _propTypes["default"].shape({}) // RegExp
 
     })),

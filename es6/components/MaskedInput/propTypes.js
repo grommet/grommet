@@ -16,6 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
       length: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]),
       fixed: PropTypes.string,
       options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+      restrictToOptions: PropTypes.bool,
       regexp: PropTypes.shape({}) // RegExp
 
     })),

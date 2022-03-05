@@ -82,7 +82,7 @@ var parseValue = function parseValue(mask, value) {
 
       maskIndex += 1;
       found = true;
-    } else if (item.options) {
+    } else if (item.options && item.restrictToOptions !== false) {
       // reverse assuming larger is later
       found = item.options.slice(0).reverse() // eslint-disable-next-line no-loop-func
       .some(function (option) {
