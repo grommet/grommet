@@ -41,7 +41,7 @@ const ClearButton = ({ clear, onClear, name, theme, innerRef }) => {
   const align = position !== 'bottom' ? 'start' : 'center';
   const buttonLabel = label || `Clear ${name || 'selection'}`;
   return (
-    <Button fill ref={innerRef} onClick={onClear}>
+    <Button fill ref={innerRef} onClick={onClear} focusIndicator={false}>
       <Box {...theme.select.clear.container} align={align}>
         <Text {...theme.select.clear.text}>{buttonLabel}</Text>
       </Box>
