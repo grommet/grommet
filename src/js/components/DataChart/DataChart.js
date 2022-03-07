@@ -633,7 +633,7 @@ const DataChart = forwardRef(
               fill="vertical"
               align="center"
               justify="center"
-              background={{ color: 'active' }}
+              background={{ color: 'background-front', opacity: 'strong' }}
               margin={pad}
             >
               <Text color="text-weak">{placeholder}</Text>
