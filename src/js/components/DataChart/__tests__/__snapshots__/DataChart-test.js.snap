@@ -3967,6 +3967,8 @@ exports[`DataChart dates 1`] = `
   justify-content: space-between;
   padding-left: 48px;
   padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c11 {
@@ -6068,6 +6070,8 @@ exports[`DataChart guide 1`] = `
   justify-content: space-between;
   padding-left: 48px;
   padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c11 {
