@@ -113,6 +113,9 @@ const SelectContainer = forwardRef(
           }
         } else if (clear && clearButton && clearButton.focus) {
           setFocusWithoutScroll(clearButton);
+          if (clear.position === 'bottom') {
+            setActiveIndex(0);
+          }
         } else if (optionsNode && optionsNode.children && usingKeyboard) {
           // if the user is navigating with the keyboard set the
           // first child as the active index when the drop opens
@@ -260,9 +263,15 @@ const SelectContainer = forwardRef(
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
         }
-        if (clear && clearButton && activeIndex === options.length) {
-          setActiveIndex(-1);
+        if (
+          clear &&
+          clear.position === 'bottom' &&
+          clearButton &&
+          nextActiveIndex >= options.length
+        ) {
+          setActiveIndex(options.length + 1);
         }
+        console.log(activeIndex);
       },
       [activeIndex, isDisabled, options, clear],
     );
@@ -279,9 +288,15 @@ const SelectContainer = forwardRef(
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
         }
-        if (clear && clearButton && activeIndex === 0) {
+        if (
+          clear &&
+          clear.position !== 'bottom' &&
+          clearButton &&
+          activeIndex === 0
+        ) {
           setActiveIndex(-1);
         }
+        console.log(activeIndex);
       },
       [activeIndex, isDisabled, clear],
     );
