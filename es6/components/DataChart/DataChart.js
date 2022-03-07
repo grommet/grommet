@@ -552,7 +552,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }) : null;
   var yAxisElement = axis && axis.y && (chartProps.length || boundsProp != null && boundsProp.y) ? /*#__PURE__*/React.createElement(YAxis, {
     axis: axis,
-    values: (boundsProp == null ? void 0 : (_boundsProp$y = boundsProp.y) == null ? void 0 : _boundsProp$y.reverse()) || (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis[1],
+    values: (boundsProp == null ? void 0 : (_boundsProp$y = boundsProp.y) == null ? void 0 : _boundsProp$y.slice(0).reverse()) || (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis[1],
     pad: pad,
     renderValue: renderValue,
     serie: axis.y.property && getPropertySeries(axis.y.property)
