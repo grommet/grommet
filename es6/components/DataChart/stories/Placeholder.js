@@ -21,6 +21,11 @@ export var Placeholder = function Placeholder() {
       bounds: {
         y: [0, 100]
       },
+      guide: {
+        y: {
+          granularity: 'medium'
+        }
+      },
       placeholder: "no data"
     })) // </Grommet>
 

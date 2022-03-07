@@ -638,7 +638,8 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     align: "center",
     justify: "center",
     background: {
-      color: 'active'
+      color: 'background-front',
+      opacity: 'strong'
     },
     margin: pad
   }, /*#__PURE__*/React.createElement(Text, {

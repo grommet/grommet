@@ -665,7 +665,8 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     align: "center",
     justify: "center",
     background: {
-      color: 'active'
+      color: 'background-front',
+      opacity: 'strong'
     },
     margin: pad
   }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
