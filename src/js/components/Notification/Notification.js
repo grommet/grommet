@@ -67,10 +67,13 @@ const Notification = ({
   const [visible, setVisible] = useState(true);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
 
-  const close = useCallback((event) => {
-    setVisible(false);
-    if (onClose) onClose(event);
-  }, [onClose]);
+  const close = useCallback(
+    (event) => {
+      setVisible(false);
+      if (onClose) onClose(event);
+    },
+    [onClose],
+  );
 
   useEffect(() => {
     if (autoClose) {
@@ -137,9 +140,11 @@ const Notification = ({
     actions = actionsProp.map((action, index) => (
       <NotificationAnchor
         key={action.label}
-        // create space between first anchor and text content
+        // create space between first anchor and text content and next anchor
         margin={
-          index === 0 && (message || title) ? { left: 'xsmall' } : undefined
+          index >= 0 && (message || title)
+            ? { horizontal: 'xsmall' }
+            : undefined
         }
         {...action}
       />
