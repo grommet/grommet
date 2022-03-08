@@ -14,7 +14,7 @@ const ClearTop = () => {
         value={value}
         options={options}
         onChange={({ value: nextValue }) => setValue(nextValue)}
-        clear
+        clear={{ position: 'bottom' }}
       />
     </Box>
   );

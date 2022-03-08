@@ -271,8 +271,8 @@ const SelectContainer = forwardRef(
           clearButton &&
           nextActiveIndex >= options.length
         ) {
-          setActiveIndex(options.length);
           setFocusWithoutScroll(clearButton);
+          setActiveIndex(options.length);
         }
       },
       [activeIndex, isDisabled, options, clear],
@@ -298,7 +298,6 @@ const SelectContainer = forwardRef(
         ) {
           setActiveIndex(-1);
         }
-        console.log(activeIndex);
       },
       [activeIndex, isDisabled, clear],
     );
