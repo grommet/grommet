@@ -111,11 +111,13 @@ const SelectContainer = forwardRef(
           if (searchInput && searchInput.focus) {
             setFocusWithoutScroll(searchInput);
           }
-        } else if (clear && clearButton && clearButton.focus) {
+        } else if (
+          clear &&
+          clearButton &&
+          clearButton.focus &&
+          clear.position !== 'bottom'
+        ) {
           setFocusWithoutScroll(clearButton);
-          if (clear.position === 'bottom') {
-            setActiveIndex(0);
-          }
         } else if (optionsNode && optionsNode.children && usingKeyboard) {
           // if the user is navigating with the keyboard set the
           // first child as the active index when the drop opens
@@ -269,9 +271,9 @@ const SelectContainer = forwardRef(
           clearButton &&
           nextActiveIndex >= options.length
         ) {
-          setActiveIndex(options.length + 1);
+          setActiveIndex(options.length);
+          setFocusWithoutScroll(clearButton);
         }
-        console.log(activeIndex);
       },
       [activeIndex, isDisabled, options, clear],
     );
