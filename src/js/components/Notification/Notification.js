@@ -67,10 +67,13 @@ const Notification = ({
   const [visible, setVisible] = useState(true);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
 
-  const close = useCallback((event) => {
-    setVisible(false);
-    if (onClose) onClose(event);
-  }, [onClose]);
+  const close = useCallback(
+    (event) => {
+      setVisible(false);
+      if (onClose) onClose(event);
+    },
+    [onClose],
+  );
 
   useEffect(() => {
     if (autoClose) {
@@ -138,7 +141,6 @@ const Notification = ({
       let margin;
       if (index === 0 && (message || title)) margin = { left: 'xsmall' };
       else if (index > 0) margin = { left: 'xsmall' };
-      else margin = undefined;
       return (
         <NotificationAnchor
           key={action.label}
