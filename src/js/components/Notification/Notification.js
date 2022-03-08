@@ -67,7 +67,6 @@ const Notification = ({
   const [visible, setVisible] = useState(true);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
   
-  
   const close = useCallback((event) => {
     setVisible(false);
     if (onClose) onClose(event);
