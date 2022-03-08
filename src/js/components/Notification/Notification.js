@@ -137,18 +137,20 @@ const Notification = ({
   let message = messageProp;
 
   if (actionsProp)
-    actions = actionsProp.map((action, index) => (
-      <NotificationAnchor
-        key={action.label}
-        // create space between first anchor and text content and next anchor
-        margin={
-          index >= 0 && (message || title)
-            ? { horizontal: 'xsmall' }
-            : undefined
-        }
-        {...action}
-      />
-    ));
+    actions = actionsProp.map((action, index) => {
+      let margin;
+      if (index === 0 && (message || title)) margin = { left: 'xsmall' };
+      else if (index > 0) margin = { left: 'xsmall' };
+      else margin = undefined;
+      return (
+        <NotificationAnchor
+          key={action.label}
+          // create space between first anchor and text content and next anchor
+          margin={margin}
+          {...action}
+        />
+      );
+    });
 
   const Message = direction !== 'row' ? Paragraph : Text;
   if (message || actions)
