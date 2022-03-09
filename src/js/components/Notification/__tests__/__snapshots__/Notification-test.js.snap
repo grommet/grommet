@@ -118,6 +118,12 @@ exports[`Notification custom theme 1`] = `
   line-height: 24px;
 }
 
+.c9 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -191,7 +197,11 @@ exports[`Notification custom theme 1`] = `
             <span
               class="c8"
             >
-              message
+              <span
+                class="c9"
+              >
+                message
+              </span>
             </span>
           </span>
         </div>
@@ -323,6 +333,12 @@ exports[`Notification global 1`] = `
   line-height: 24px;
 }
 
+.c9 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -396,7 +412,11 @@ exports[`Notification global 1`] = `
             <span
               class="c8"
             >
-              message
+              <span
+                class="c9"
+              >
+                message
+              </span>
             </span>
           </span>
         </div>
@@ -518,6 +538,12 @@ exports[`Notification multi actions 1`] = `
 }
 
 .c8 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -526,10 +552,10 @@ exports[`Notification multi actions 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  margin-left: 6px;
+  margin-right: 6px;
 }
 
-.c8:hover {
+.c9:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -551,7 +577,7 @@ exports[`Notification multi actions 1`] = `
   max-width: 432px;
 }
 
-.c9 {
+.c10 {
   white-space: nowrap;
 }
 
@@ -614,19 +640,25 @@ exports[`Notification multi actions 1`] = `
           <p
             class="c7"
           >
-            message
+            <span
+              class="c8"
+            >
+              message
+            </span>
             <a
-              class="c8 c9"
+              class="c9 c10"
               href="/some-link"
             >
               Renew Subscription
             </a>
+             
             <a
-              class="c8 c9"
+              class="c9 c10"
               href="/link"
             >
               View More
             </a>
+             
           </p>
         </div>
       </div>
@@ -746,6 +778,12 @@ exports[`Notification position bottom 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -912,7 +950,11 @@ exports[`Notification position bottom 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -1052,6 +1094,12 @@ exports[`Notification position bottom-left 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -1218,7 +1266,11 @@ exports[`Notification position bottom-left 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -1358,6 +1410,12 @@ exports[`Notification position bottom-right 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -1524,7 +1582,11 @@ exports[`Notification position bottom-right 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -1664,6 +1726,12 @@ exports[`Notification position center 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -1830,7 +1898,11 @@ exports[`Notification position center 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -1970,6 +2042,12 @@ exports[`Notification position end 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -2136,7 +2214,11 @@ exports[`Notification position end 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -2276,6 +2358,12 @@ exports[`Notification position left 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -2442,7 +2530,11 @@ exports[`Notification position left 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -2582,6 +2674,12 @@ exports[`Notification position right 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -2748,7 +2846,11 @@ exports[`Notification position right 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -2888,6 +2990,12 @@ exports[`Notification position start 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -3054,7 +3162,11 @@ exports[`Notification position start 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -3194,6 +3306,12 @@ exports[`Notification position top 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -3360,7 +3478,11 @@ exports[`Notification position top 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -3500,6 +3622,12 @@ exports[`Notification position top-left 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -3666,7 +3794,11 @@ exports[`Notification position top-left 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -3806,6 +3938,12 @@ exports[`Notification position top-right 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -3972,7 +4110,11 @@ exports[`Notification position top-right 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>

@@ -139,15 +139,17 @@ const Notification = ({
   if (actionsProp)
     actions = actionsProp.map((action, index) => {
       let margin;
-      if (index === 0 && (message || title)) margin = { left: 'xsmall' };
-      else if (index > 0) margin = { left: 'xsmall' };
+      if (index === 0 && (message || title)) margin = { right: 'xsmall' };
+      else if (index > 0) margin = { right: 'xsmall' };
       return (
-        <NotificationAnchor
-          key={action.label}
-          // create space between first anchor and text content and next anchor
-          margin={margin}
-          {...action}
-        />
+        <Fragment key={action.label}>
+          <NotificationAnchor
+            // create space between first anchor and
+            // text content and next anchor
+            margin={margin}
+            {...action}
+          />{' '}
+        </Fragment>
       );
     });
 
@@ -155,7 +157,7 @@ const Notification = ({
   if (message || actions)
     message = (
       <Message {...theme.notification.message}>
-        {message}
+        <Text margin={{ right: 'xsmall' }}>{message}</Text>
         {/* include actions with message so it wraps with message */}
         {actions}
       </Message>
