@@ -244,8 +244,7 @@ exports[`Notification global 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(255,255,255,1);
-  color: #444444;
+  background-color: rgba(204,204,204,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;

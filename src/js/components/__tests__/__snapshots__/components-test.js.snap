@@ -1744,6 +1744,12 @@ Object {
           },
           "critical": Object {
             "color": "status-critical",
+            "global": Object {
+              "background": Object {
+                "color": "status-critical",
+                "opacity": "weak",
+              },
+            },
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
@@ -1777,6 +1783,12 @@ Object {
           },
           "normal": Object {
             "color": "status-ok",
+            "global": Object {
+              "background": Object {
+                "color": "status-ok",
+                "opacity": "weak",
+              },
+            },
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
@@ -1809,6 +1821,12 @@ Object {
           },
           "unknown": Object {
             "color": "status-unknown",
+            "global": Object {
+              "background": Object {
+                "color": "status-unknown",
+                "opacity": "weak",
+              },
+            },
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
@@ -1816,6 +1834,12 @@ Object {
           },
           "warning": Object {
             "color": "status-warning",
+            "global": Object {
+              "background": Object {
+                "color": "status-warning",
+                "opacity": "weak",
+              },
+            },
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
