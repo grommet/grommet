@@ -1238,22 +1238,37 @@ export var generate = function generate(baseSpacing, scale) {
       critical: {
         icon: StatusCriticalSmall,
         // background: undefined,
-        color: 'status-critical' // global: {},
-        // toast: {},
+        color: 'status-critical',
+        global: {
+          background: {
+            color: 'status-critical',
+            opacity: 'weak'
+          }
+        } // toast: {},
 
       },
       warning: {
         icon: StatusWarningSmall,
         // background: undefined,
-        color: 'status-warning' // global: {},
-        // toast: {},
+        color: 'status-warning',
+        global: {
+          background: {
+            color: 'status-warning',
+            opacity: 'weak'
+          }
+        } // toast: {},
 
       },
       normal: {
         icon: StatusGoodSmall,
         // background: undefined,
-        color: 'status-ok' // global: {},
-        // toast: {},
+        color: 'status-ok',
+        global: {
+          background: {
+            color: 'status-ok',
+            opacity: 'weak'
+          }
+        } // toast: {},
 
       },
       info: {
@@ -1266,8 +1281,13 @@ export var generate = function generate(baseSpacing, scale) {
       unknown: {
         icon: StatusUnknownSmall,
         // background: undefined,
-        color: 'status-unknown' // global: {},
-        // toast: {},
+        color: 'status-unknown',
+        global: {
+          background: {
+            color: 'status-unknown',
+            opacity: 'weak'
+          }
+        } // toast: {},
 
       },
       // deprecate "undefined" in v3

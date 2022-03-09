@@ -1,90 +1,16 @@
 import React, { useState } from 'react';
-import { Button, NameValueList, NameValuePair, Notification, Grommet, grommet, Header, Heading, Paragraph } from 'grommet';
-import { deepMerge } from 'grommet/utils';
+import { Button, NameValueList, NameValuePair, Notification, Header, Heading, Paragraph } from 'grommet';
 import { Grommet as GrommetIcon } from "grommet-icons/es6/icons/Grommet";
 import { AppsRounded } from "grommet-icons/es6/icons/AppsRounded";
 import { Box } from '../../Box';
 import { Text } from '../../Text';
-import { data } from '../../NameValueList/stories/data'; // demonstrating how we would update the HPE theme while allowing
-// grommet theme to be backwards compatible.
-
-var customTheme = deepMerge(grommet, {
-  global: {
-    colors: {
-      'validation-critical': {
-        light: '#FC61613D',
-        dark: '#C54E4B5C'
-      },
-      'validation-ok': {
-        light: '#17EBA03D',
-        dark: '#00856759'
-      },
-      'validation-warning': {
-        light: '#FFBC443D',
-        dark: '#9B63105C'
-      }
-    }
-  },
-  notification: {
-    direction: 'row',
-    container: {
-      round: 'xsmall'
-    },
-    global: {
-      container: {
-        round: 'none'
-      }
-    },
-    toast: {
-      direction: 'column'
-    },
-    critical: {
-      background: 'validation-critical',
-      toast: {
-        background: 'background-front'
-      }
-    },
-    warning: {
-      background: 'validation-warning',
-      toast: {
-        background: 'background-front'
-      }
-    },
-    normal: {
-      background: 'validation-ok',
-      toast: {
-        background: 'background-front'
-      }
-    },
-    unknown: {
-      background: 'background-contrast',
-      toast: {
-        background: 'background-front'
-      }
-    },
-    info: {
-      background: 'background-contrast',
-      toast: {
-        background: 'background-front'
-      }
-    },
-    undefined: {
-      background: 'background-contrast',
-      toast: {
-        background: 'background-front'
-      }
-    }
-  }
-});
+import { data } from '../../NameValueList/stories/data';
 export var Global = function Global() {
   var _useState = useState(true),
       showGlobalNotification = _useState[0],
       setShowGlobalNotification = _useState[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: customTheme,
-    full: "min"
-  }, /*#__PURE__*/React.createElement(Header, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, {
     border: "bottom",
     pad: {
       horizontal: 'large',

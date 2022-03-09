@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _utils = require("grommet/utils");
-
 var _grommetIcons = require("grommet-icons");
 
 var _Box = require("../../Box");
@@ -21,86 +19,12 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-// demonstrating how we would update the HPE theme while allowing
-// grommet theme to be backwards compatible.
-var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
-  global: {
-    colors: {
-      'validation-critical': {
-        light: '#FC61613D',
-        dark: '#C54E4B5C'
-      },
-      'validation-ok': {
-        light: '#17EBA03D',
-        dark: '#00856759'
-      },
-      'validation-warning': {
-        light: '#FFBC443D',
-        dark: '#9B63105C'
-      }
-    }
-  },
-  notification: {
-    direction: 'row',
-    container: {
-      round: 'xsmall'
-    },
-    global: {
-      container: {
-        round: 'none'
-      }
-    },
-    toast: {
-      direction: 'column'
-    },
-    critical: {
-      background: 'validation-critical',
-      toast: {
-        background: 'background-front'
-      }
-    },
-    warning: {
-      background: 'validation-warning',
-      toast: {
-        background: 'background-front'
-      }
-    },
-    normal: {
-      background: 'validation-ok',
-      toast: {
-        background: 'background-front'
-      }
-    },
-    unknown: {
-      background: 'background-contrast',
-      toast: {
-        background: 'background-front'
-      }
-    },
-    info: {
-      background: 'background-contrast',
-      toast: {
-        background: 'background-front'
-      }
-    },
-    undefined: {
-      background: 'background-contrast',
-      toast: {
-        background: 'background-front'
-      }
-    }
-  }
-});
-
 var Global = function Global() {
   var _useState = (0, _react.useState)(true),
       showGlobalNotification = _useState[0],
       setShowGlobalNotification = _useState[1];
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: customTheme,
-    full: "min"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Header, {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Header, {
     border: "bottom",
     pad: {
       horizontal: 'large',
