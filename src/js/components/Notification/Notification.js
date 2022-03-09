@@ -137,21 +137,17 @@ const Notification = ({
   let message = messageProp;
 
   if (actionsProp)
-    actions = actionsProp.map((action, index) => {
-      let margin;
-      if (index === 0 && (message || title)) margin = { right: 'xsmall' };
-      else if (index > 0) margin = { right: 'xsmall' };
-      return (
-        <Fragment key={action.label}>
-          <NotificationAnchor
-            // create space between first anchor and
-            // text content and next anchor
-            margin={margin}
-            {...action}
-          />{' '}
-        </Fragment>
-      );
-    });
+    actions = actionsProp.map((action) => (
+      <Fragment key={action.label}>
+        <NotificationAnchor
+          // create space between first anchor and
+          // text content and next anchor
+          margin={{ right: 'xsmall' }}
+          {...action}
+          // add a space between anchors to allow for wrapping
+        />{' '}
+      </Fragment>
+    ));
 
   const Message = direction !== 'row' ? Paragraph : Text;
   if (message || actions)
