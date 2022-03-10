@@ -1142,21 +1142,36 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         icon: StatusCriticalSmall,
         // background: undefined,
         color: 'status-critical',
-        // global: {},
+        global: {
+          background: {
+            color: 'status-critical',
+            opacity: 'weak',
+          },
+        },
         // toast: {},
       },
       warning: {
         icon: StatusWarningSmall,
         // background: undefined,
         color: 'status-warning',
-        // global: {},
+        global: {
+          background: {
+            color: 'status-warning',
+            opacity: 'weak',
+          },
+        },
         // toast: {},
       },
       normal: {
         icon: StatusGoodSmall,
         // background: undefined,
         color: 'status-ok',
-        // global: {},
+        global: {
+          background: {
+            color: 'status-ok',
+            opacity: 'weak',
+          },
+        },
         // toast: {},
       },
       info: {
@@ -1170,7 +1185,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         icon: StatusUnknownSmall,
         // background: undefined,
         color: 'status-unknown',
-        // global: {},
+        global: {
+          background: {
+            color: 'status-unknown',
+            opacity: 'weak',
+          },
+        },
         // toast: {},
       },
       // deprecate "undefined" in v3
