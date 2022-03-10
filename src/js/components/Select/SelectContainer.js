@@ -271,8 +271,8 @@ const SelectContainer = forwardRef(
           clearButton &&
           nextActiveIndex >= options.length
         ) {
-          setFocusWithoutScroll(clearButton);
           setActiveIndex(options.length);
+          setFocusWithoutScroll(clearButton);
         }
       },
       [activeIndex, isDisabled, options, clear],
@@ -341,12 +341,12 @@ const SelectContainer = forwardRef(
 
     const onSelectOption = useCallback(
       (event) => {
-        if (activeIndex >= 0) {
+        if (activeIndex >= 0 && activeIndex < options.length) {
           event.preventDefault(); // prevent submitting forms
           selectOption(activeIndex)(event);
         }
       },
-      [activeIndex, selectOption],
+      [activeIndex, selectOption, options],
     );
 
     const customSearchInput = theme.select.searchInput;
