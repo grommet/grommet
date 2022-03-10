@@ -144,6 +144,7 @@ const Notification = ({
           // text content and next anchor
           margin={{ right: 'xsmall' }}
           {...action}
+          {...theme.notification.actions}
           // add a space between anchors to allow for wrapping
         />{' '}
       </Fragment>

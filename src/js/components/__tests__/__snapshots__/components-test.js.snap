@@ -1727,6 +1727,7 @@ Object {
           },
         },
         "notification": Object {
+          "actions": Object {},
           "close": Object {
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
