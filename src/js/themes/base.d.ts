@@ -25,6 +25,7 @@ import {
   AlignContentType,
 } from '../utils';
 
+import { AnchorProps } from '../components/Anchor/index';
 import { BoxProps } from '../components/Box/index';
 import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
@@ -1038,6 +1039,7 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   notification?: {
+    actions?: AnchorProps;
     container?: BoxProps;
     direction?: 'column' | 'row';
     global?: {

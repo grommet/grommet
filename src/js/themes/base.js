@@ -1083,6 +1083,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     notification: {
+      actions: {
+        // any anchor props
+      },
       direction: 'column',
       container: {
         // any box props
