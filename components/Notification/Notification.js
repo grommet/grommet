@@ -141,17 +141,23 @@ var Notification = function Notification(_ref) {
 
   var actions;
   var message = messageProp;
-  if (actionsProp) actions = actionsProp.map(function (action, index) {
-    return /*#__PURE__*/_react["default"].createElement(NotificationAnchor, _extends({
-      key: action.label // create space between first anchor and text content
-      ,
-      margin: index === 0 && (message || title) ? {
-        left: 'xsmall'
-      } : undefined
-    }, action));
+  if (actionsProp) actions = actionsProp.map(function (action) {
+    return /*#__PURE__*/_react["default"].createElement(_react.Fragment, {
+      key: action.label
+    }, /*#__PURE__*/_react["default"].createElement(NotificationAnchor // create space between first anchor and
+    // text content and next anchor
+    , _extends({
+      margin: {
+        right: 'xsmall'
+      }
+    }, action, theme.notification.actions)), ' ');
   });
   var Message = direction !== 'row' ? _Paragraph.Paragraph : _Text.Text;
-  if (message || actions) message = /*#__PURE__*/_react["default"].createElement(Message, theme.notification.message, message, actions);
+  if (message || actions) message = /*#__PURE__*/_react["default"].createElement(Message, theme.notification.message, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+    margin: {
+      right: 'xsmall'
+    }
+  }, message), actions);
 
   var content = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, theme.notification.container, global ? _extends({}, theme.notification.global.container) : {}, toast ? _extends({}, theme.notification.toast.container) : {}, {
     background: background // let internal box control pad

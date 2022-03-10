@@ -1207,6 +1207,8 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     notification: {
+      actions: {// any anchor props
+      },
       direction: 'column',
       container: {
         // any box props

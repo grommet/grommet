@@ -122,17 +122,23 @@ var Notification = function Notification(_ref) {
 
   var actions;
   var message = messageProp;
-  if (actionsProp) actions = actionsProp.map(function (action, index) {
-    return /*#__PURE__*/React.createElement(NotificationAnchor, _extends({
-      key: action.label // create space between first anchor and text content
-      ,
-      margin: index === 0 && (message || title) ? {
-        left: 'xsmall'
-      } : undefined
-    }, action));
+  if (actionsProp) actions = actionsProp.map(function (action) {
+    return /*#__PURE__*/React.createElement(Fragment, {
+      key: action.label
+    }, /*#__PURE__*/React.createElement(NotificationAnchor // create space between first anchor and
+    // text content and next anchor
+    , _extends({
+      margin: {
+        right: 'xsmall'
+      }
+    }, action, theme.notification.actions)), ' ');
   });
   var Message = direction !== 'row' ? Paragraph : Text;
-  if (message || actions) message = /*#__PURE__*/React.createElement(Message, theme.notification.message, message, actions);
+  if (message || actions) message = /*#__PURE__*/React.createElement(Message, theme.notification.message, /*#__PURE__*/React.createElement(Text, {
+    margin: {
+      right: 'xsmall'
+    }
+  }, message), actions);
   var content = /*#__PURE__*/React.createElement(Box, _extends({}, theme.notification.container, global ? _extends({}, theme.notification.global.container) : {}, toast ? _extends({}, theme.notification.toast.container) : {}, {
     background: background // let internal box control pad
     ,
