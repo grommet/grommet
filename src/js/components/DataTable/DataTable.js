@@ -154,8 +154,10 @@ const DataTable = ({
   const headerRef = useRef();
   const bodyRef = useRef();
   const footerRef = useRef();
+  const placeholderRef = useRef();
   const [headerHeight, setHeaderHeight] = useState();
   const [footerHeight, setFooterHeight] = useState();
+  const [minHeight, setMinHeight] = useState();
 
   // offset compensation when body overflows
   const [scrollOffset, setScrollOffset] = useState(0);
@@ -204,6 +206,19 @@ const DataTable = ({
       (bodyRef.current.parentElement?.clientWidth || 0) -
       bodyRef.current.clientWidth;
     if (nextScrollOffset !== scrollOffset) setScrollOffset(nextScrollOffset);
+  });
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useLayoutEffect(() => {
+    if (placeholder && placeholderRef.current) {
+      const nextHeaderHeight = headerRef.current
+        ? headerRef.current.getBoundingClientRect().height : 0;
+      const nextFooterHeight = footerRef.current
+        ? footerRef.current.getBoundingClientRect().height : 0;
+      const nextMinHeight = nextHeaderHeight + nextFooterHeight +
+        placeholderRef.current.getBoundingClientRect().height;
+      if (minHeight !== nextMinHeight) setMinHeight(nextMinHeight);
+    }
   });
 
   useLayoutEffect(() => {
@@ -361,6 +376,7 @@ const DataTable = ({
       <OverflowContainer {...overflowContainerProps}>
         <StyledDataTable
           fillProp={!paginate ? fill : undefined}
+          minHeight={minHeight}
           {...paginatedDataTableProps}
           {...rest}
         >
@@ -478,7 +494,6 @@ const DataTable = ({
               }
               pinnedCellProps={cellProps.pinned}
               pinnedOffset={pinnedOffset}
-              placeholder={placeholder}
               primaryProperty={primaryProperty}
               rowProps={rowProps}
               selected={selected}
@@ -508,7 +523,11 @@ const DataTable = ({
             />
           )}
           {placeholder && (
-            <StyledPlaceholder top={headerHeight} bottom={footerHeight}>
+            <StyledPlaceholder
+              ref={placeholderRef}
+              top={headerHeight}
+              bottom={footerHeight}
+            >
               {typeof placeholder === 'string' ? (
                 <Box
                   background={{ color: 'background-front', opacity: 'strong' }}

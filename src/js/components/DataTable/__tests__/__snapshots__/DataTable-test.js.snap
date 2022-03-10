@@ -2678,7 +2678,7 @@ exports[`DataTable click 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -3425,7 +3425,7 @@ exports[`DataTable custom theme 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -4949,7 +4949,7 @@ exports[`DataTable groupBy 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -6243,7 +6243,7 @@ exports[`DataTable groupBy property 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -6726,7 +6726,7 @@ exports[`DataTable groupBy toggle 2`] = `
     toggle
   </button>
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7315,7 +7315,7 @@ exports[`DataTable groupBy toggle 3`] = `
     toggle
   </button>
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -10604,7 +10604,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -10991,7 +10991,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -11806,7 +11806,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -12262,7 +12262,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -12907,7 +12907,7 @@ exports[`DataTable onSort 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -13555,7 +13555,7 @@ exports[`DataTable onSort external 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -16540,6 +16540,9 @@ exports[`DataTable placeholder 1`] = `
 
 .c11 {
   position: absolute;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
   top: 0px;
   bottom: 0px;
   left: 0;
@@ -16596,7 +16599,6 @@ exports[`DataTable placeholder 1`] = `
     </thead>
     <tbody
       class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
-      placeholder="test placeholder"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -16744,7 +16746,6 @@ exports[`DataTable placeholder 1`] = `
     </thead>
     <tbody
       class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
-      placeholder="[object Object]"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -19790,7 +19791,7 @@ exports[`DataTable search 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -20425,7 +20426,7 @@ exports[`DataTable select 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -29428,7 +29429,7 @@ exports[`DataTable should render new data when page changes 2`] = `
       class="StyledBox-sc-13pk1d4-0 BCyrs"
     >
       <table
-        class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+        class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
       >
         <thead
           class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -37483,7 +37484,7 @@ exports[`DataTable sortable 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+    class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 ivFSRM"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
