@@ -36,18 +36,18 @@ const SelectOption = styled(Button)`
   width: 100%;
 `;
 
-const ClearButton = ({ clear, onClear, name, theme, innerRef }) => {
+const ClearButton = forwardRef(({ clear, onClear, name, theme }, ref) => {
   const { label, position } = clear;
   const align = position !== 'bottom' ? 'start' : 'center';
   const buttonLabel = label || `Clear ${name || 'selection'}`;
   return (
-    <Button fill ref={innerRef} onClick={onClear} focusIndicator={false}>
+    <Button fill ref={ref} onClick={onClear} focusIndicator={false}>
       <Box {...theme.select.clear.container} align={align}>
         <Text {...theme.select.clear.text}>{buttonLabel}</Text>
       </Box>
     </Button>
   );
-};
+},);
 
 const SelectContainer = forwardRef(
   (
@@ -398,7 +398,7 @@ const SelectContainer = forwardRef(
           >
             {clear && clear.position !== 'bottom' && value && (
               <ClearButton
-                innerRef={clearRef}
+                ref={clearRef}
                 clear={clear}
                 name={name}
                 onClear={onClear}
@@ -497,7 +497,7 @@ const SelectContainer = forwardRef(
             )}
             {clear && clear.position === 'bottom' && value && (
               <ClearButton
-                innerRef={clearRef}
+                ref={clearRef}
                 clear={clear}
                 name={name}
                 onClear={onClear}
