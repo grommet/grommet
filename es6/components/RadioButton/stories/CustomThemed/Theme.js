@@ -5,22 +5,22 @@ import { deepMerge } from 'grommet/utils';
 var theme = deepMerge(grommet, {
   radioButton: {
     gap: 'xsmall',
-    size: '18px',
+    size: '25px',
     hover: {
       border: {
-        color: 'dark-3'
+        color: 'neutral-4'
       }
     },
     check: {
       color: {
-        light: 'neutral-1'
+        light: 'neutral-4'
       },
       background: {
-        color: 'brand'
+        color: 'light-1'
       }
     },
     icon: {
-      size: '10px'
+      size: '20px'
     },
     font: {
       weight: 500
