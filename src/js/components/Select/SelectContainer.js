@@ -47,7 +47,7 @@ const ClearButton = forwardRef(({ clear, onClear, name, theme }, ref) => {
       </Box>
     </Button>
   );
-},);
+});
 
 const SelectContainer = forwardRef(
   (
