@@ -3967,6 +3967,8 @@ exports[`DataChart dates 1`] = `
   justify-content: space-between;
   padding-left: 48px;
   padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c11 {
@@ -6068,6 +6070,8 @@ exports[`DataChart guide 1`] = `
   justify-content: space-between;
   padding-left: 48px;
   padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c11 {
@@ -8580,7 +8584,7 @@ exports[`DataChart placeholder text 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(221,221,221,0.5);
+  background-color: rgba(255,255,255,0.8);
   color: #444444;
   min-width: 0;
   min-height: 0;

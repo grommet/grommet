@@ -67,10 +67,13 @@ const Notification = ({
   const [visible, setVisible] = useState(true);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
 
-  const close = useCallback((event) => {
-    setVisible(false);
-    if (onClose) onClose(event);
-  }, [onClose]);
+  const close = useCallback(
+    (event) => {
+      setVisible(false);
+      if (onClose) onClose(event);
+    },
+    [onClose],
+  );
 
   useEffect(() => {
     if (autoClose) {
@@ -134,22 +137,24 @@ const Notification = ({
   let message = messageProp;
 
   if (actionsProp)
-    actions = actionsProp.map((action, index) => (
-      <NotificationAnchor
-        key={action.label}
-        // create space between first anchor and text content
-        margin={
-          index === 0 && (message || title) ? { left: 'xsmall' } : undefined
-        }
-        {...action}
-      />
+    actions = actionsProp.map((action) => (
+      <Fragment key={action.label}>
+        <NotificationAnchor
+          // create space between first anchor and
+          // text content and next anchor
+          margin={{ right: 'xsmall' }}
+          {...action}
+          {...theme.notification.actions}
+          // add a space between anchors to allow for wrapping
+        />{' '}
+      </Fragment>
     ));
 
   const Message = direction !== 'row' ? Paragraph : Text;
   if (message || actions)
     message = (
       <Message {...theme.notification.message}>
-        {message}
+        <Text margin={{ right: 'xsmall' }}>{message}</Text>
         {/* include actions with message so it wraps with message */}
         {actions}
       </Message>

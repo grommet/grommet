@@ -540,7 +540,7 @@ const DataChart = forwardRef(
         <YAxis
           axis={axis}
           values={
-            boundsProp?.y?.reverse() ||
+            boundsProp?.y?.slice(0).reverse() ||
             (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
               .axis[1]
           }
@@ -633,7 +633,7 @@ const DataChart = forwardRef(
               fill="vertical"
               align="center"
               justify="center"
-              background={{ color: 'active' }}
+              background={{ color: 'background-front', opacity: 'strong' }}
               margin={pad}
             >
               <Text color="text-weak">{placeholder}</Text>
