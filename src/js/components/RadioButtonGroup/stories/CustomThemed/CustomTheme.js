@@ -13,25 +13,22 @@ const customTheme = deepMerge(grommet, {
   },
   radioButton: {
     border: {
-      color: 'red',
-      width: '10px',
+      color: 'dark-5',
+      width: '5px',
     },
     container: {
       extend: css`
-        color: red;
+        color: black;
       `,
     },
     hover: {
       border: {
-        color: 'blue',
-      },
-      background: {
-        color: 'accent-4',
+        color: 'dark-2',
       },
     },
-    size: '100px', // affects the size of the outer circle
+    size: '30px', // affects the size of the outer circle
     icon: {
-      size: '20px', // affects the size of the inner circle
+      size: '15px', // affects the size of the inner circle
     },
     check: {
       radius: '20%',

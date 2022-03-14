@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { RadioButtonGroup } from 'grommet';
+import { Box, RadioButtonGroup } from 'grommet';
 
 export const SimpleTS = () => {
   const postMethods = [
@@ -20,12 +20,14 @@ export const SimpleTS = () => {
   const [value, setValue] = useState<string | object>(postMethods[0]);
 
   return (
-    <RadioButtonGroup
-      name="radio"
-      options={postMethods}
-      value={value}
-      onChange={event => setValue(event.target.value)}
-    />
+    <Box align="center" pad="large">
+      <RadioButtonGroup
+        name="radio"
+        options={postMethods}
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+      />
+    </Box>
   );
 };
 
