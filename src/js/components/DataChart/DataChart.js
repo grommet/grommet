@@ -11,6 +11,7 @@ import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
 import { Stack } from '../Stack';
+import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
 import { Detail } from './Detail';
 import { Legend } from './Legend';
@@ -46,6 +47,7 @@ const DataChart = forwardRef(
       guide: guideProp,
       legend,
       offset,
+      placeholder,
       pad: padProp,
       series: seriesProp,
       size,
@@ -307,6 +309,11 @@ const DataChart = forwardRef(
         chartBounds = chartBounds.map(() => alignedBounds);
       }
 
+      if (typeof boundsProp === 'object') {
+        if (boundsProp.y)
+          chartBounds = chartBounds.map((b) => [b[0], [...boundsProp.y]]);
+      }
+
       return chartValues.map((values, index) => {
         const { thickness, type } = charts[index];
         const calcValues = stackedChartType[type] ? values[0] : values;
@@ -518,7 +525,10 @@ const DataChart = forwardRef(
         <XAxis
           ref={xRef}
           axis={axis}
-          chartProps={chartProps}
+          values={
+            (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
+              .axis[0]
+          }
           pad={pad}
           renderValue={renderValue}
           serie={axis.x.property && getPropertySeries(axis.x.property)}
@@ -526,10 +536,14 @@ const DataChart = forwardRef(
       ) : null;
 
     const yAxisElement =
-      axis && axis.y && chartProps.length ? (
+      axis && axis.y && (chartProps.length || boundsProp?.y) ? (
         <YAxis
           axis={axis}
-          chartProps={chartProps}
+          values={
+            boundsProp?.y?.slice(0).reverse() ||
+            (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
+              .axis[1]
+          }
           pad={pad}
           renderValue={renderValue}
           serie={axis.y.property && getPropertySeries(axis.y.property)}
@@ -613,6 +627,19 @@ const DataChart = forwardRef(
             />
           );
         })}
+        {placeholder &&
+          ((typeof placeholder === 'string' && (
+            <Box
+              fill="vertical"
+              align="center"
+              justify="center"
+              background={{ color: 'background-front', opacity: 'strong' }}
+              margin={pad}
+            >
+              <Text color="text-weak">{placeholder}</Text>
+            </Box>
+          )) ||
+            placeholder)}
         {detail && (
           <Detail
             activeProperty={activeProperty}
