@@ -400,7 +400,7 @@ exports[`Calendar change months 1`] = `
       <div
         aria-label="
                 December 2019;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c9"
         role="grid"
@@ -1226,7 +1226,7 @@ exports[`Calendar change months 2`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 goAAKK"
         role="grid"
@@ -1656,7 +1656,7 @@ exports[`Calendar change months 2`] = `
                 type="button"
               >
                 <div
-                  class="c3"
+                  class="c4"
                 >
                   14
                 </div>
@@ -1673,7 +1673,7 @@ exports[`Calendar change months 2`] = `
                 type="button"
               >
                 <div
-                  class="c4"
+                  class="c3"
                 >
                   15
                 </div>
@@ -2777,7 +2777,7 @@ exports[`Calendar children 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c9"
         role="grid"
@@ -3663,7 +3663,7 @@ exports[`Calendar date 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c9"
         role="grid"
@@ -3969,7 +3969,7 @@ exports[`Calendar date 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   14
                 </div>
@@ -3986,7 +3986,7 @@ exports[`Calendar date 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   15
                 </div>
@@ -4862,7 +4862,7 @@ exports[`Calendar dates 1`] = `
         aria-label="
                 January 2020;
                 Currently selected
-  2020-01-12 ,2020-01-08 through 2020-01-10
+  2020-01-11 ,2020-01-07 through 2020-01-09
               "
         class="c9"
         role="grid"
@@ -5044,7 +5044,7 @@ exports[`Calendar dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   7
                 </div>
@@ -5061,7 +5061,7 @@ exports[`Calendar dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   8
                 </div>
@@ -5078,7 +5078,7 @@ exports[`Calendar dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c16"
                 >
                   9
                 </div>
@@ -5095,7 +5095,7 @@ exports[`Calendar dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   10
                 </div>
@@ -5112,7 +5112,7 @@ exports[`Calendar dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   11
                 </div>
@@ -5134,7 +5134,7 @@ exports[`Calendar dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   12
                 </div>
@@ -6136,7 +6136,7 @@ exports[`Calendar daysOfWeek 1`] = `
         aria-label="
                 January 2020;
                 Currently selected
-  2020-01-12 ,2020-01-08 through 2020-01-10
+  2020-01-11 ,2020-01-07 through 2020-01-09
               "
         class="c12"
         role="grid"
@@ -6318,7 +6318,7 @@ exports[`Calendar daysOfWeek 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   7
                 </div>
@@ -6335,7 +6335,7 @@ exports[`Calendar daysOfWeek 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   8
                 </div>
@@ -6352,7 +6352,7 @@ exports[`Calendar daysOfWeek 1`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c16"
                 >
                   9
                 </div>
@@ -6369,7 +6369,7 @@ exports[`Calendar daysOfWeek 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   10
                 </div>
@@ -6386,7 +6386,7 @@ exports[`Calendar daysOfWeek 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   11
                 </div>
@@ -6408,7 +6408,7 @@ exports[`Calendar daysOfWeek 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   12
                 </div>
@@ -7377,7 +7377,7 @@ exports[`Calendar disabled 1`] = `
         <div
           aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
           class="c9"
           role="grid"
@@ -7683,7 +7683,7 @@ exports[`Calendar disabled 1`] = `
                   type="button"
                 >
                   <div
-                    class="c15"
+                    class="c16"
                   >
                     14
                   </div>
@@ -7700,7 +7700,7 @@ exports[`Calendar disabled 1`] = `
                   type="button"
                 >
                   <div
-                    class="c16"
+                    class="c15"
                   >
                     15
                   </div>
@@ -8580,7 +8580,7 @@ exports[`Calendar fill 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c9"
         role="grid"
@@ -8886,7 +8886,7 @@ exports[`Calendar fill 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   14
                 </div>
@@ -8903,7 +8903,7 @@ exports[`Calendar fill 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   15
                 </div>
@@ -9642,9 +9642,6 @@ exports[`Calendar first day sunday week monday 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
 }
 
 .c16 {
@@ -9662,6 +9659,9 @@ exports[`Calendar first day sunday week monday 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c0 {
@@ -9713,14 +9713,14 @@ exports[`Calendar first day sunday week monday 1`] = `
           <h3
             class="c5"
           >
-            March 2020
+            February 2020
           </h3>
         </div>
         <div
           class="c6"
         >
           <button
-            aria-label="Go to February 2020"
+            aria-label="Go to January 2020"
             class="c7"
             type="button"
           >
@@ -9738,7 +9738,7 @@ exports[`Calendar first day sunday week monday 1`] = `
             </svg>
           </button>
           <button
-            aria-label="Go to April 2020"
+            aria-label="Go to March 2020"
             class="c7"
             type="button"
           >
@@ -9759,8 +9759,8 @@ exports[`Calendar first day sunday week monday 1`] = `
       </div>
       <div
         aria-label="
-                March 2020;
-                Currently selected 2020-03-01;
+                February 2020;
+                Currently selected 2020-02-29;
               "
         class="c9"
         role="grid"
@@ -9778,58 +9778,7 @@ exports[`Calendar first day sunday week monday 1`] = `
               role="gridcell"
             >
               <button
-                aria-label="Mon Feb 24 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  24
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Feb 25 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  25
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Feb 26 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  26
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Feb 27 2020"
+                aria-label="Mon Jan 27 2020"
                 class="c13"
                 tabindex="-1"
                 type="button"
@@ -9846,7 +9795,7 @@ exports[`Calendar first day sunday week monday 1`] = `
               role="gridcell"
             >
               <button
-                aria-label="Fri Feb 28 2020"
+                aria-label="Tue Jan 28 2020"
                 class="c13"
                 tabindex="-1"
                 type="button"
@@ -9863,7 +9812,7 @@ exports[`Calendar first day sunday week monday 1`] = `
               role="gridcell"
             >
               <button
-                aria-label="Sat Feb 29 2020"
+                aria-label="Wed Jan 29 2020"
                 class="c13"
                 tabindex="-1"
                 type="button"
@@ -9880,13 +9829,560 @@ exports[`Calendar first day sunday week monday 1`] = `
               role="gridcell"
             >
               <button
-                aria-label="Sun Mar 01 2020"
+                aria-label="Thu Jan 30 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  30
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Fri Jan 31 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  31
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sat Feb 01 2020"
                 class="c13"
                 tabindex="-1"
                 type="button"
               >
                 <div
                   class="c15"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sun Feb 02 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+            role="row"
+          >
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Mon Feb 03 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Tue Feb 04 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Wed Feb 05 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Thu Feb 06 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Fri Feb 07 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sat Feb 08 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sun Feb 09 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+            role="row"
+          >
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Mon Feb 10 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Tue Feb 11 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  11
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Wed Feb 12 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  12
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Thu Feb 13 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  13
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Fri Feb 14 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  14
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sat Feb 15 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  15
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sun Feb 16 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  16
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+            role="row"
+          >
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Mon Feb 17 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  17
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Tue Feb 18 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  18
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Wed Feb 19 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  19
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Thu Feb 20 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  20
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Fri Feb 21 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  21
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sat Feb 22 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  22
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sun Feb 23 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  23
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+            role="row"
+          >
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Mon Feb 24 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  24
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Tue Feb 25 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  25
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Wed Feb 26 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  26
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Thu Feb 27 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  27
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Fri Feb 28 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  28
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sat Feb 29 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c16"
+                >
+                  29
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sun Mar 01 2020"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
                 >
                   1
                 </div>
@@ -9908,7 +10404,7 @@ exports[`Calendar first day sunday week monday 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c14"
                 >
                   2
                 </div>
@@ -9925,7 +10421,7 @@ exports[`Calendar first day sunday week monday 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c14"
                 >
                   3
                 </div>
@@ -9942,7 +10438,7 @@ exports[`Calendar first day sunday week monday 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c14"
                 >
                   4
                 </div>
@@ -9959,7 +10455,7 @@ exports[`Calendar first day sunday week monday 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c14"
                 >
                   5
                 </div>
@@ -9976,7 +10472,7 @@ exports[`Calendar first day sunday week monday 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c14"
                 >
                   6
                 </div>
@@ -9993,7 +10489,7 @@ exports[`Calendar first day sunday week monday 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c14"
                 >
                   7
                 </div>
@@ -10010,505 +10506,9 @@ exports[`Calendar first day sunday week monday 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c14"
                 >
                   8
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c11"
-            role="row"
-          >
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Mar 09 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  9
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Mar 10 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  10
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Mar 11 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  11
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Mar 12 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  12
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Mar 13 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  13
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Mar 14 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Mar 15 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  15
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c11"
-            role="row"
-          >
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Mar 16 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  16
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Mar 17 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  17
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Mar 18 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  18
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Mar 19 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  19
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Mar 20 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  20
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Mar 21 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  21
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Mar 22 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  22
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c11"
-            role="row"
-          >
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Mar 23 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  23
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Mar 24 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  24
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Mar 25 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  25
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Mar 26 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  26
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Mar 27 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  27
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Mar 28 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  28
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Mar 29 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  29
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c11"
-            role="row"
-          >
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Mar 30 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  30
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Mar 31 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  31
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Apr 01 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  1
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Apr 02 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  2
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Apr 03 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  3
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Apr 04 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  4
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Apr 05 2020"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  5
                 </div>
               </button>
             </div>
@@ -10940,7 +10940,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c9"
         role="grid"
@@ -11246,7 +11246,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   14
                 </div>
@@ -11263,7 +11263,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   15
                 </div>
@@ -11759,7 +11759,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c9"
         role="grid"
@@ -12048,7 +12048,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   14
                 </div>
@@ -12065,7 +12065,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   15
                 </div>
@@ -12875,7 +12875,7 @@ exports[`Calendar header 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c7"
         role="grid"
@@ -13198,7 +13198,7 @@ exports[`Calendar header 1`] = `
                 type="button"
               >
                 <div
-                  class="c13"
+                  class="c14"
                 >
                   14
                 </div>
@@ -13216,7 +13216,7 @@ exports[`Calendar header 1`] = `
                 type="button"
               >
                 <div
-                  class="c14"
+                  class="c13"
                 >
                   15
                 </div>
@@ -15257,7 +15257,7 @@ exports[`Calendar select date 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c9"
         role="grid"
@@ -15563,7 +15563,7 @@ exports[`Calendar select date 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   14
                 </div>
@@ -15580,7 +15580,7 @@ exports[`Calendar select date 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   15
                 </div>
@@ -17282,7 +17282,7 @@ exports[`Calendar select dates 1`] = `
         aria-label="
                 January 2020;
                 Currently selected
-  2020-01-12 ,2020-01-08 through 2020-01-10
+  2020-01-11 ,2020-01-07 through 2020-01-09
               "
         class="c9"
         role="grid"
@@ -17464,7 +17464,7 @@ exports[`Calendar select dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   7
                 </div>
@@ -17481,7 +17481,7 @@ exports[`Calendar select dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   8
                 </div>
@@ -17498,7 +17498,7 @@ exports[`Calendar select dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c16"
                 >
                   9
                 </div>
@@ -17515,7 +17515,7 @@ exports[`Calendar select dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   10
                 </div>
@@ -17532,7 +17532,7 @@ exports[`Calendar select dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   11
                 </div>
@@ -17554,7 +17554,7 @@ exports[`Calendar select dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   12
                 </div>
@@ -19288,7 +19288,7 @@ exports[`Calendar showAdjacentDays 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c9"
         role="grid"
@@ -19594,7 +19594,7 @@ exports[`Calendar showAdjacentDays 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   14
                 </div>
@@ -19611,7 +19611,7 @@ exports[`Calendar showAdjacentDays 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   15
                 </div>
@@ -20107,7 +20107,7 @@ exports[`Calendar showAdjacentDays 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c9"
         role="grid"
@@ -20383,7 +20383,7 @@ exports[`Calendar showAdjacentDays 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   14
                 </div>
@@ -20400,7 +20400,7 @@ exports[`Calendar showAdjacentDays 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   15
                 </div>
@@ -20815,7 +20815,7 @@ exports[`Calendar showAdjacentDays 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c9"
         role="grid"
@@ -21121,7 +21121,7 @@ exports[`Calendar showAdjacentDays 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   14
                 </div>
@@ -21138,7 +21138,7 @@ exports[`Calendar showAdjacentDays 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   15
                 </div>
@@ -22186,7 +22186,7 @@ exports[`Calendar size 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c9"
         role="grid"
@@ -22492,7 +22492,7 @@ exports[`Calendar size 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   14
                 </div>
@@ -22509,7 +22509,7 @@ exports[`Calendar size 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   15
                 </div>
@@ -23005,7 +23005,7 @@ exports[`Calendar size 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c20"
         role="grid"
@@ -23311,7 +23311,7 @@ exports[`Calendar size 1`] = `
                 type="button"
               >
                 <div
-                  class="c22"
+                  class="c23"
                 >
                   14
                 </div>
@@ -23328,7 +23328,7 @@ exports[`Calendar size 1`] = `
                 type="button"
               >
                 <div
-                  class="c23"
+                  class="c22"
                 >
                   15
                 </div>
@@ -23824,7 +23824,7 @@ exports[`Calendar size 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected 2020-01-15;
+                Currently selected 2020-01-14;
               "
         class="c28"
         role="grid"
@@ -24130,7 +24130,7 @@ exports[`Calendar size 1`] = `
                 type="button"
               >
                 <div
-                  class="c30"
+                  class="c31"
                 >
                   14
                 </div>
@@ -24147,7 +24147,7 @@ exports[`Calendar size 1`] = `
                 type="button"
               >
                 <div
-                  class="c31"
+                  class="c30"
                 >
                   15
                 </div>

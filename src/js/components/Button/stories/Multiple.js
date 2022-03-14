@@ -11,7 +11,7 @@ export const Multiple = () => (
       <Button
         color="dark-1"
         primary
-        icon={<Add color="accent-1" />}
+        icon={<Add color="brand" />}
         label="Add"
         onClick={() => {}}
       />
