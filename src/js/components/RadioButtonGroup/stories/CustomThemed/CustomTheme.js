@@ -8,7 +8,7 @@ import { css } from 'styled-components';
 const customTheme = deepMerge(grommet, {
   radioButtonGroup: {
     container: {
-      gap: 'xlarge',
+      gap: 'medium',
     },
   },
   radioButton: {

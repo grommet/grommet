@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Box, RadioButtonGroup } from 'grommet';
 
-export const SimpleTS = () => {
+export const Simple = () => {
   const postMethods = [
     { label: 'FTP', value: 'FTP' },
     {
@@ -31,8 +31,6 @@ export const SimpleTS = () => {
   );
 };
 
-SimpleTS.storyName = 'Simple TS';
-
 export default {
-  title: 'Input/RadioButtonGroup/Simple TS',
+  title: 'Input/RadioButtonGroup/Simple',
 };
