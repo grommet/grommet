@@ -23,30 +23,24 @@ var SelectOption = styled(Button).withConfig({
 })(["", " display:block;width:100%;"], function (props) {
   return props.selected && props.textComponent && selectedStyle;
 });
-
-var ClearButton = function ClearButton(_ref) {
+var ClearButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var clear = _ref.clear,
       onClear = _ref.onClear,
       name = _ref.name,
-      theme = _ref.theme,
-      setFocus = _ref.setFocus;
+      theme = _ref.theme;
   var label = clear.label,
       position = clear.position;
   var align = position !== 'bottom' ? 'start' : 'center';
   var buttonLabel = label || "Clear " + (name || 'selection');
   return /*#__PURE__*/React.createElement(Button, {
+    fill: true,
+    ref: ref,
     onClick: onClear,
-    onFocus: function onFocus() {
-      return setFocus(true);
-    },
-    onBlur: function onBlur() {
-      return setFocus(false);
-    }
+    focusIndicator: false
   }, /*#__PURE__*/React.createElement(Box, _extends({}, theme.select.clear.container, {
     align: align
   }), /*#__PURE__*/React.createElement(Text, theme.select.clear.text, buttonLabel)));
-};
-
+});
 var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var clear = _ref2.clear,
       _ref2$children = _ref2.children,
@@ -87,12 +81,9 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       keyboardNavigation = _useState2[0],
       setKeyboardNavigation = _useState2[1];
 
-  var _useState3 = useState(false),
-      focus = _useState3[0],
-      setFocus = _useState3[1];
-
   var searchRef = useRef();
   var optionsRef = useRef();
+  var clearRef = useRef();
   useEffect(function () {
     var optionsNode = optionsRef.current;
     if (optionsNode.children && optionsNode.children[activeIndex]) optionsNode.children[activeIndex].focus();
@@ -108,6 +99,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     // need to wait for Drop to be ready
     var timer = setTimeout(function () {
       var optionsNode = optionsRef.current;
+      var clearButton = clearRef.current;
 
       if (onSearch) {
         var searchInput = searchRef.current;
@@ -115,6 +107,8 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         if (searchInput && searchInput.focus) {
           setFocusWithoutScroll(searchInput);
         }
+      } else if (clear && clearButton && clearButton.focus && clear.position !== 'bottom') {
+        setFocusWithoutScroll(clearButton);
       } else if (optionsNode && optionsNode.children && usingKeyboard) {
         // if the user is navigating with the keyboard set the
         // first child as the active index when the drop opens
@@ -127,7 +121,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     return function () {
       return clearTimeout(timer);
     };
-  }, [onSearch, usingKeyboard]); // clear keyboardNavigation after a while
+  }, [onSearch, usingKeyboard, clear]); // clear keyboardNavigation after a while
 
   useEffect(function () {
     if (keyboardNavigation) {
@@ -239,6 +233,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var onNextOption = useCallback(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;
+    var clearButton = clearRef.current;
 
     while (nextActiveIndex < options.length && isDisabled(nextActiveIndex)) {
       nextActiveIndex += 1;
@@ -248,10 +243,16 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
     }
-  }, [activeIndex, isDisabled, options]);
+
+    if (clear && clear.position === 'bottom' && clearButton && nextActiveIndex >= options.length) {
+      setActiveIndex(options.length);
+      setFocusWithoutScroll(clearButton);
+    }
+  }, [activeIndex, isDisabled, options, clear]);
   var onPreviousOption = useCallback(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex - 1;
+    var clearButton = clearRef.current;
 
     while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
       nextActiveIndex -= 1;
@@ -261,7 +262,11 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
     }
-  }, [activeIndex, isDisabled]);
+
+    if (clear && clear.position !== 'bottom' && clearButton && activeIndex === 0) {
+      setActiveIndex(-1);
+    }
+  }, [activeIndex, isDisabled, clear]);
   var onKeyDownOption = useCallback(function (event) {
     if (!onSearch) {
       var nextActiveIndex = options.findIndex(function (e, index) {
@@ -293,17 +298,18 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     };
   }, [keyboardNavigation]);
   var onSelectOption = useCallback(function (event) {
-    if (activeIndex >= 0 && !focus) {
+    if (activeIndex >= 0 && activeIndex < options.length) {
       event.preventDefault(); // prevent submitting forms
 
       selectOption(activeIndex)(event);
     }
-  }, [activeIndex, selectOption, focus]);
+  }, [activeIndex, selectOption, options]);
   var customSearchInput = theme.select.searchInput;
   var SelectTextInput = customSearchInput || TextInput;
   var selectOptionsStyle = theme.select.options ? _extends({}, theme.select.options.box, theme.select.options.container) : {};
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: onSelectOption,
+    onSpace: onSelectOption,
     onUp: onPreviousOption,
     onDown: onNextOption,
     onKeyDown: onKeyDownOption
@@ -328,18 +334,18 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       setActiveIndex(-1);
       onSearch(nextSearch);
     }
-  })), clear && clear.position !== 'bottom' && value && /*#__PURE__*/React.createElement(ClearButton, {
-    clear: clear,
-    name: name,
-    onClear: onClear,
-    theme: theme,
-    setFocus: setFocus
-  }), /*#__PURE__*/React.createElement(OptionsBox, {
+  })), /*#__PURE__*/React.createElement(OptionsBox, {
     role: "listbox",
     tabIndex: "-1",
     ref: optionsRef,
     "aria-multiselectable": multiple
-  }, options.length > 0 ? /*#__PURE__*/React.createElement(InfiniteScroll, {
+  }, clear && clear.position !== 'bottom' && value && /*#__PURE__*/React.createElement(ClearButton, {
+    ref: clearRef,
+    clear: clear,
+    name: name,
+    onClear: onClear,
+    theme: theme
+  }), options.length > 0 ? /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: options,
     step: theme.select.step,
     onMore: onMore,
@@ -397,12 +403,12 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     role: "menuitem",
     hoverIndicator: "background",
     disabled: true
-  }, /*#__PURE__*/React.createElement(Box, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, theme.select.container.text, emptySearchMessage)))), clear && clear.position === 'bottom' && value && /*#__PURE__*/React.createElement(ClearButton, {
+  }, /*#__PURE__*/React.createElement(Box, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, theme.select.container.text, emptySearchMessage))), clear && clear.position === 'bottom' && value && /*#__PURE__*/React.createElement(ClearButton, {
+    ref: clearRef,
     clear: clear,
     name: name,
     onClear: onClear,
-    theme: theme,
-    setFocus: setFocus
-  })));
+    theme: theme
+  }))));
 });
 export { SelectContainer };
