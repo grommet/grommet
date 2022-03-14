@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import { RadioButtonGroup } from 'grommet';
+import { Box, RadioButtonGroup } from 'grommet';
 
-export const SimpleTS = () => {
+export const Simple = () => {
   const postMethods = [
     { label: 'FTP', value: 'FTP' },
     {
@@ -20,17 +20,17 @@ export const SimpleTS = () => {
   const [value, setValue] = useState<string | object>(postMethods[0]);
 
   return (
-    <RadioButtonGroup
-      name="radio"
-      options={postMethods}
-      value={value}
-      onChange={event => setValue(event.target.value)}
-    />
+    <Box align="center" pad="large">
+      <RadioButtonGroup
+        name="radio"
+        options={postMethods}
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+      />
+    </Box>
   );
 };
 
-SimpleTS.storyName = 'Simple TS';
-
 export default {
-  title: 'Input/RadioButtonGroup/Simple TS',
+  title: 'Input/RadioButtonGroup/Simple',
 };
