@@ -15,7 +15,7 @@ const TestDrop = () => {
         ref={targetRef}
         size="small"
         background="light-2"
-        values={[{ value: 20, color: 'accent-1' }]}
+        values={[{ value: 20, color: 'brand' }]}
       />
       {targetRef.current && (
         <Drop
