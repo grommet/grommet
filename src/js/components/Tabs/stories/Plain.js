@@ -10,17 +10,17 @@ const UncontrolledTabs = ({ plain = false }) => (
   <Box fill>
     <Tabs flex>
       <Tab plain={plain} title="Tab 1">
-        <Box fill pad="large" align="center" background="accent-1">
+        <Box fill pad="large" align="center" background="brand">
           <Attraction size="xlarge" />
         </Box>
       </Tab>
       <Tab plain={plain} title="Tab 2">
-        <Box fill pad="large" align="center" background="accent-2">
+        <Box fill pad="large" align="center" background="light-4">
           <TreeOption size="xlarge" />
         </Box>
       </Tab>
       <Tab plain={plain} title="Tab 3">
-        <Box fill pad="large" align="center" background="accent-3">
+        <Box fill pad="large" align="center" background="dark-3">
           <Car size="xlarge" />
         </Box>
       </Tab>

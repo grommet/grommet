@@ -11,7 +11,7 @@ const RichTabs = () => (
     <Tab
       title={
         <RichTabTitle
-          icon={<CircleInformation color="accent-2" />}
+          icon={<CircleInformation color="brand" />}
           label="Personal Data"
         />
       }
@@ -21,9 +21,7 @@ const RichTabs = () => (
       </FormField>
     </Tab>
     <Tab
-      title={
-        <RichTabTitle icon={<Currency color="neutral-2" />} label="Payment" />
-      }
+      title={<RichTabTitle icon={<Currency color="brand" />} label="Payment" />}
     >
       <FormField label="Card Number">
         <TextInput placeholder="Enter your card number..." />

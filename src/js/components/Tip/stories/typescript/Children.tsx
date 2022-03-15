@@ -1,12 +1,14 @@
 import React from 'react';
 
-import { grommet, Box, Button, Grommet, Text, Tip } from 'grommet';
+import { grommet, Box, Button, Grommet, Heading, Text, Tip } from 'grommet';
 
 export const Children = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box align="center" pad="xlarge" gap="xlarge" fill>
-    <Text>Tooltip will be displayed once hovering on the Tip child</Text>
+  <Box align="center" pad="large" gap="xlarge" fill>
+    <Heading size="xsmall">
+      Tooltip will be displayed once hovering on the Tip child
+    </Heading>
     <Tip
       content={
         <Box align="center">
