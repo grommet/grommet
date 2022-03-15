@@ -10,7 +10,7 @@ const MultipleDrop = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box fill align="center" justify="center">
+    <Box gap="medium" fill align="center" justify="center">
       <DropButton
         label="drop button"
         dropAlign={{ right: 'left' }}
@@ -46,7 +46,11 @@ const MultipleDrop = () => {
       )}
       <Button label="layer" onClick={() => setShowLayer(!showLayer)} />
       {showLayer && (
-        <Layer position="left" modal={false}>
+        <Layer
+          onEsc={() => setShowLayer(!showLayer)}
+          position="left"
+          modal={false}
+        >
           <Box pad="large" border>
             <TextInput
               value=""
