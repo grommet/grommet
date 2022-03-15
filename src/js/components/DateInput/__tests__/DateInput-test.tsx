@@ -900,11 +900,11 @@ describe('DateInput', () => {
       </Grommet>,
     );
     expect(
-      screen.queryByRole('heading', { name: /January 2021/i }),
+      screen.queryByRole('button', { name: /January 2021/i }),
     ).not.toBeInTheDocument();
     userEvent.click(screen.getByRole('button', { name: /Calendar/i }));
     expect(
-      screen.getByRole('heading', { name: /January 2021/i }),
+      screen.getByRole('button', { name: /January 2021/i }),
     ).toBeInTheDocument();
   });
 

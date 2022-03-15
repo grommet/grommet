@@ -136,8 +136,8 @@ export const getTimestamp = (date) =>
 // Checks if daylight savings is in effect for a timezone and date
 // Reference: https://stackoverflow.com/questions/11887934/how-to-check-if-dst-daylight-saving-time-is-in-effect-and-if-so-the-offset
 const inDaylightSavings = (day) => {
-  let jan = new Date(day.getFullYear(), 0, 1).getTimezoneOffset();
-  let jul = new Date(day.getFullYear(), 6, 1).getTimezoneOffset();
+  const jan = new Date(day.getFullYear(), 0, 1).getTimezoneOffset();
+  const jul = new Date(day.getFullYear(), 6, 1).getTimezoneOffset();
   return Math.max(jan, jul) !== day.getTimezoneOffset();
 };
 
@@ -158,8 +158,8 @@ export const normalizeForTimezone = (value, timestamp, normalize = true) => {
   let localOffset = 0;
   if (normalize) {
     if (timestamp && typeof timestamp === 'string') {
-      let day = Array.isArray(value) ? undefined : new Date(value);
-      let today = new Date();
+      const day = Array.isArray(value) ? undefined : new Date(value);
+      const today = new Date();
       if (
         day &&
         !inDaylightSavings(day) &&
