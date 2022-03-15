@@ -9,10 +9,10 @@ export var Simple = function Simple() {
       anchor: "center"
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "large",
-      background: "neutral-1"
+      background: "light-3"
     }), /*#__PURE__*/React.createElement(Box, {
       pad: "small",
-      background: "accent-1"
+      background: "brand"
     })) // </Grommet>
 
   );

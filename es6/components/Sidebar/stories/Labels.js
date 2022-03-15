@@ -57,11 +57,9 @@ var SidebarButton = function SidebarButton(_ref) {
 
 var SidebarFooter = function SidebarFooter() {
   return /*#__PURE__*/React.createElement(Nav, null, /*#__PURE__*/React.createElement(SidebarButton, {
-    icon: /*#__PURE__*/React.createElement(Chat, null),
-    label: "Chat"
+    icon: /*#__PURE__*/React.createElement(Chat, null)
   }), /*#__PURE__*/React.createElement(SidebarButton, {
-    icon: /*#__PURE__*/React.createElement(Help, null),
-    label: "Support"
+    icon: /*#__PURE__*/React.createElement(Help, null)
   }));
 };
 
@@ -102,7 +100,7 @@ export var Labels = function Labels() {
       }
     }, /*#__PURE__*/React.createElement(Sidebar, {
       responsive: false,
-      background: "neutral-2",
+      background: "light-2",
       header: /*#__PURE__*/React.createElement(SidebarHeader, null),
       footer: /*#__PURE__*/React.createElement(SidebarFooter, null),
       pad: {

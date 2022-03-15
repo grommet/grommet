@@ -18,10 +18,10 @@ var Simple = function Simple() {
       anchor: "center"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "large",
-      background: "neutral-1"
+      background: "light-3"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "small",
-      background: "accent-1"
+      background: "brand"
     })) // </Grommet>
 
   );

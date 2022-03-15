@@ -61,11 +61,9 @@ var SidebarButton = function SidebarButton(_ref) {
 
 var SidebarFooter = function SidebarFooter() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Nav, null, /*#__PURE__*/_react["default"].createElement(SidebarButton, {
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Chat, null),
-    label: "Chat"
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Chat, null)
   }), /*#__PURE__*/_react["default"].createElement(SidebarButton, {
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Help, null),
-    label: "Support"
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Help, null)
   }));
 };
 
@@ -106,7 +104,7 @@ var Labels = function Labels() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_Sidebar.Sidebar, {
       responsive: false,
-      background: "neutral-2",
+      background: "light-2",
       header: /*#__PURE__*/_react["default"].createElement(SidebarHeader, null),
       footer: /*#__PURE__*/_react["default"].createElement(SidebarFooter, null),
       pad: {
