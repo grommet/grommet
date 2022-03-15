@@ -305,6 +305,8 @@ const Menu = forwardRef((props, ref) => {
         a11yTitle={
           ariaLabel || a11yTitle || format({ id: 'menu.openMenu', messages })
         }
+        aria-haspopup="menu"
+        aria-expanded={isOpen}
         onAlign={setAlignControlMirror}
         disabled={disabled}
         dropAlign={align}
@@ -330,7 +332,11 @@ const Menu = forwardRef((props, ref) => {
               {alignControlMirror === 'top' && align.top === 'top'
                 ? controlMirror
                 : undefined}
-              <Box overflow="auto">
+              <Box
+                overflow="auto"
+                role="menu"
+                a11yTitle={ariaLabel || a11yTitle}
+              >
                 {items.map((item, index) => {
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.
@@ -351,11 +357,12 @@ const Menu = forwardRef((props, ref) => {
 
                   return (
                     // eslint-disable-next-line react/no-array-index-key
-                    <Box key={index} flex={false}>
+                    <Box key={index} flex={false} role="none">
                       <Button
                         ref={(r) => {
                           buttonRefs.current[index] = r;
                         }}
+                        role="menuitem"
                         onFocus={() => {
                           setActiveItemIndex(index);
                         }}
@@ -390,9 +397,9 @@ const Menu = forwardRef((props, ref) => {
                   );
                 })}
               </Box>
-              {/* 
+              {/*
                 If align.top was defined,
-                don't show controlMirror when window height has shrunk 
+                don't show controlMirror when window height has shrunk
               */}
               {!initialAlignTop &&
               (alignControlMirror === 'bottom' || align.bottom === 'bottom')
