@@ -42,8 +42,8 @@ const SidebarButton = ({ icon, label, ...rest }) => (
 
 const SidebarFooter = () => (
   <Nav>
-    <SidebarButton icon={<Chat />} label="Chat" />
-    <SidebarButton icon={<Help />} label="Support" />
+    <SidebarButton icon={<Chat />} />
+    <SidebarButton icon={<Help />} />
   </Nav>
 );
 
@@ -64,7 +64,7 @@ export const Labels = () => (
   <Box direction="row" height={{ min: '100%' }}>
     <Sidebar
       responsive={false}
-      background="neutral-2"
+      background="light-2"
       header={<SidebarHeader />}
       footer={<SidebarFooter />}
       pad={{ left: 'medium', right: 'large', vertical: 'medium' }}
