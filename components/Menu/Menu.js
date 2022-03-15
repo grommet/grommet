@@ -311,6 +311,8 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       id: 'menu.openMenu',
       messages: messages
     }),
+    "aria-haspopup": "menu",
+    "aria-expanded": isOpen,
     onAlign: setAlignControlMirror,
     disabled: disabled,
     dropAlign: align,
@@ -331,7 +333,9 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       tabIndex: -1,
       background: dropBackground || theme.menu.background
     }, alignControlMirror === 'top' && align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-      overflow: "auto"
+      overflow: "auto",
+      role: "menu",
+      a11yTitle: ariaLabel || a11yTitle
     }, items.map(function (item, index) {
       // Determine whether the label is done as a child or
       // as an option Button kind property.
@@ -348,11 +352,13 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
         // eslint-disable-next-line react/no-array-index-key
         _react["default"].createElement(_Box.Box, {
           key: index,
-          flex: false
+          flex: false,
+          role: "none"
         }, /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
           ref: function ref(r) {
             buttonRefs.current[index] = r;
           },
+          role: "menuitem",
           onFocus: function onFocus() {
             setActiveItemIndex(index);
           },
