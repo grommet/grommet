@@ -3,7 +3,9 @@ import { Gremlin } from "grommet-icons/es6/icons/Gremlin";
 import { Box, DropButton, Text } from 'grommet';
 
 var renderItems = function renderItems() {
-  return /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, null, "hi"), /*#__PURE__*/React.createElement(Text, null, "hi"), /*#__PURE__*/React.createElement(Text, null, "hi"), /*#__PURE__*/React.createElement(Text, null, "hi"));
+  return /*#__PURE__*/React.createElement(Box, {
+    background: "dark-1"
+  }, /*#__PURE__*/React.createElement(Text, null, "hi"), /*#__PURE__*/React.createElement(Text, null, "hi"), /*#__PURE__*/React.createElement(Text, null, "hi"), /*#__PURE__*/React.createElement(Text, null, "hi"));
 };
 
 var MenuItem = function MenuItem() {

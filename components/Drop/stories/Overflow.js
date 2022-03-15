@@ -59,6 +59,7 @@ var OverflowDrop = function OverflowDrop() {
         return setShowCalendar(false);
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "small",
       height: "small"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
       level: 4

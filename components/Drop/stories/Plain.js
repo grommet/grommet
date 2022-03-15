@@ -25,7 +25,7 @@ var PlainDrop = function PlainDrop() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Box, {
-      background: "brand",
+      background: "light-3",
       fill: true,
       align: "center",
       justify: "center"

@@ -49,6 +49,7 @@ var OverflowDrop = function OverflowDrop() {
         return setShowCalendar(false);
       }
     }, /*#__PURE__*/React.createElement(Box, {
+      pad: "small",
       height: "small"
     }, /*#__PURE__*/React.createElement(Heading, {
       level: 4

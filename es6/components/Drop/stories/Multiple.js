@@ -16,6 +16,7 @@ var MultipleDrop = function MultipleDrop() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     React.createElement(Box, {
+      gap: "medium",
       fill: true,
       align: "center",
       justify: "center"
@@ -57,15 +58,25 @@ var MultipleDrop = function MultipleDrop() {
         return setShowLayer(!showLayer);
       }
     }), showLayer && /*#__PURE__*/React.createElement(Layer, {
+      onEsc: function onEsc() {
+        return setShowLayer(!showLayer);
+      },
       position: "left",
       modal: false
     }, /*#__PURE__*/React.createElement(Box, {
+      gap: "small",
       pad: "large",
       border: true
     }, /*#__PURE__*/React.createElement(TextInput, {
       value: "",
       onChange: function onChange() {},
       suggestions: ['one', 'two']
+    }), /*#__PURE__*/React.createElement(Button, {
+      alignSelf: "end",
+      label: "Close Layer",
+      onClick: function onClick() {
+        return setShowLayer(!showLayer);
+      }
     })))) // </Grommet>
 
   );

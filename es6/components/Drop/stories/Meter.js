@@ -25,7 +25,7 @@ var TestDrop = function TestDrop() {
       background: "light-2",
       values: [{
         value: 20,
-        color: 'accent-1'
+        color: 'brand'
       }]
     }), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
       id: "test-drop-with-svg",
