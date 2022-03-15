@@ -15,17 +15,17 @@ const ControlledTabs = () => {
     // <Grommet theme={...}>
     <Tabs activeIndex={index} onActive={onActive}>
       <Tab title="Tab 1">
-        <Box margin="small" pad="large" align="center" background="accent-1">
+        <Box margin="small" pad="large" align="center" background="brand">
           <Attraction size="xlarge" />
         </Box>
       </Tab>
       <Tab title="Tab 2">
-        <Box margin="small" pad="large" align="center" background="accent-2">
+        <Box margin="small" pad="large" align="center" background="light-4">
           <TreeOption size="xlarge" />
         </Box>
       </Tab>
       <Tab title="Tab 3">
-        <Box margin="small" pad="large" align="center" background="accent-3">
+        <Box margin="small" pad="large" align="center" background="dark-3">
           <Car size="xlarge" />
         </Box>
       </Tab>

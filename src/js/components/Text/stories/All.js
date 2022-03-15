@@ -29,6 +29,9 @@ export const All = () => (
         This is a long truncated string of text that is aligned to the end.
       </Text>
     </Box>
+    <Box pad="small">
+      <Text color="brand">Colored Text</Text>
+    </Box>
   </>
 );
 
