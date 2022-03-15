@@ -25,6 +25,7 @@ var Active = function Active() {
 
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    pad: "large",
     align: "center"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     hoverIndicator: "light-1",

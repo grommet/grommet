@@ -27,7 +27,7 @@ var Multiple = function Multiple() {
     color: "dark-1",
     primary: true,
     icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, {
-      color: "accent-1"
+      color: "brand"
     }),
     label: "Add",
     onClick: function onClick() {}

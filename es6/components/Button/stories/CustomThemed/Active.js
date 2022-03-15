@@ -15,6 +15,7 @@ export var Active = function Active() {
 
     }
   }, /*#__PURE__*/React.createElement(Box, {
+    pad: "large",
     align: "center"
   }, /*#__PURE__*/React.createElement(Button, {
     hoverIndicator: "light-1",

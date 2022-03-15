@@ -18,7 +18,7 @@ const customTheme: ThemeType = {
     },
     disabled: {
       color: '#fe2693',
-      opacity: '.1',
+      opacity: '.2',
       border: {
         color: '#000000',
         width: '10px',
