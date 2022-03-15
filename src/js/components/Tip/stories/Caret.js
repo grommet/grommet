@@ -13,7 +13,7 @@ const TipContent = ({ message }) => (
       />
     </svg>
     <Box background="grey" direction="row" pad="small" round="xsmall">
-      <Text color="accent-1">{message}</Text>
+      <Text>{message}</Text>
     </Box>
   </Box>
 );

@@ -467,6 +467,8 @@ exports[`Video Configure Menu Button 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="true"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -952,6 +954,8 @@ exports[`Video End event handler 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -1437,6 +1441,8 @@ exports[`Video Play and Pause event handlers 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -1600,6 +1606,8 @@ exports[`Video Play and Pause event handlers 2`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="StyledButton-sc-323bzc-0 eiEooU"
           type="button"
@@ -2086,6 +2094,8 @@ exports[`Video autoPlay renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -2565,6 +2575,8 @@ exports[`Video controls below renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -3050,6 +3062,8 @@ exports[`Video controls over renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -3535,6 +3549,8 @@ exports[`Video duration event handler 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -4025,6 +4041,8 @@ exports[`Video fit  cover renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -4515,6 +4533,8 @@ exports[`Video fit contain renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -5001,6 +5021,8 @@ exports[`Video loop renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -5486,6 +5508,8 @@ exports[`Video mouse events handlers of controls 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -5607,6 +5631,8 @@ exports[`Video mouse events handlers of controls 2`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="StyledButton-sc-323bzc-0 eiEooU"
           type="button"
@@ -5728,6 +5754,8 @@ exports[`Video mouse events handlers of controls 3`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="StyledButton-sc-323bzc-0 eiEooU"
           type="button"
@@ -6213,6 +6241,8 @@ exports[`Video mute renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -6698,6 +6728,8 @@ exports[`Video renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -7183,6 +7215,8 @@ exports[`Video renders with theme 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -7668,6 +7702,8 @@ exports[`Video scrubber 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -7789,6 +7825,8 @@ exports[`Video scrubber 2`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="StyledButton-sc-323bzc-0 eiEooU"
           type="button"
@@ -8274,6 +8312,8 @@ exports[`Video timeUpdate event handler 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"

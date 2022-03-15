@@ -22,14 +22,14 @@ export const Animated = () => (
       content={
         <Box align="start" margin={{ bottom: 'xlarge' }} pad="xsmall">
           <Circle margin={{ left: 'large' }} pad="small">
-            <Info color="accent-1" />
+            <Info color="brand" />
           </Circle>
           <Circle margin={{ left: 'medium' }} pad="small" />
           <Circle pad="xsmall" />
         </Box>
       }
     >
-      <Button icon={<UserFemale color="accent-1" size="large" />} />
+      <Button icon={<UserFemale color="light-1" size="large" />} />
     </Tip>
     Double animation of 'fadeIn' and 'pulse'
   </Box>
