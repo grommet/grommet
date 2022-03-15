@@ -12,7 +12,7 @@ var RichTabs = function RichTabs() {
     React.createElement(Tabs, null, /*#__PURE__*/React.createElement(Tab, {
       title: /*#__PURE__*/React.createElement(RichTabTitle, {
         icon: /*#__PURE__*/React.createElement(CircleInformation, {
-          color: "accent-2"
+          color: "brand"
         }),
         label: "Personal Data"
       })
@@ -23,7 +23,7 @@ var RichTabs = function RichTabs() {
     }))), /*#__PURE__*/React.createElement(Tab, {
       title: /*#__PURE__*/React.createElement(RichTabTitle, {
         icon: /*#__PURE__*/React.createElement(Currency, {
-          color: "neutral-2"
+          color: "brand"
         }),
         label: "Payment"
       })

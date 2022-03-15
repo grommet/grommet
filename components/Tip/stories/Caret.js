@@ -30,9 +30,7 @@ var TipContent = function TipContent(_ref) {
     direction: "row",
     pad: "small",
     round: "xsmall"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    color: "accent-1"
-  }, message)));
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, message)));
 };
 
 var Caret = function Caret() {

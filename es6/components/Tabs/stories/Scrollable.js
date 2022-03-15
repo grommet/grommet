@@ -18,14 +18,14 @@ var ScrollableTabs = function ScrollableTabs() {
       overflow: "auto",
       pad: "xlarge",
       align: "center",
-      background: "accent-1"
+      background: "light-4"
     }, /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"), /*#__PURE__*/React.createElement(Heading, null, "hello!"))), /*#__PURE__*/React.createElement(Tab, {
       title: "Tab 2"
     }, /*#__PURE__*/React.createElement(Box, {
       margin: "small",
       pad: "large",
       align: "center",
-      background: "accent-2"
+      background: "brand"
     }, /*#__PURE__*/React.createElement(TreeOption, {
       size: "xlarge"
     }))))) // </Grommet>

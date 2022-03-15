@@ -16,7 +16,11 @@ export var All = function All() {
     pad: "small"
   }, /*#__PURE__*/React.createElement(Text, {
     truncate: true
-  }, "This is a long truncated string of text that is aligned to the end.")));
+  }, "This is a long truncated string of text that is aligned to the end.")), /*#__PURE__*/React.createElement(Box, {
+    pad: "small"
+  }, /*#__PURE__*/React.createElement(Text, {
+    color: "brand"
+  }, "Colored Text")));
 };
 export default {
   title: 'Type/Text/All'

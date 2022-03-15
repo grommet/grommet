@@ -21,9 +21,7 @@ var TipContent = function TipContent(_ref) {
     direction: "row",
     pad: "small",
     round: "xsmall"
-  }, /*#__PURE__*/React.createElement(Text, {
-    color: "accent-1"
-  }, message)));
+  }, /*#__PURE__*/React.createElement(Text, null, message)));
 };
 
 export var Caret = function Caret() {

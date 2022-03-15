@@ -21,7 +21,7 @@ var RichTabs = function RichTabs() {
     _react["default"].createElement(_grommet.Tabs, null, /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
       title: /*#__PURE__*/_react["default"].createElement(RichTabTitle, {
         icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.CircleInformation, {
-          color: "accent-2"
+          color: "brand"
         }),
         label: "Personal Data"
       })
@@ -32,7 +32,7 @@ var RichTabs = function RichTabs() {
     }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
       title: /*#__PURE__*/_react["default"].createElement(RichTabTitle, {
         icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Currency, {
-          color: "neutral-2"
+          color: "brand"
         }),
         label: "Payment"
       })

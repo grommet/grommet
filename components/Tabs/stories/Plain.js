@@ -31,7 +31,7 @@ var UncontrolledTabs = function UncontrolledTabs(_ref) {
       fill: true,
       pad: "large",
       align: "center",
-      background: "accent-1"
+      background: "brand"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
     }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
@@ -41,7 +41,7 @@ var UncontrolledTabs = function UncontrolledTabs(_ref) {
       fill: true,
       pad: "large",
       align: "center",
-      background: "accent-2"
+      background: "light-4"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
       size: "xlarge"
     }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
@@ -51,7 +51,7 @@ var UncontrolledTabs = function UncontrolledTabs(_ref) {
       fill: true,
       pad: "large",
       align: "center",
-      background: "accent-3"
+      background: "dark-3"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
     }))))) // </Grommet>

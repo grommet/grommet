@@ -27,14 +27,14 @@ var ScrollableTabs = function ScrollableTabs() {
       overflow: "auto",
       pad: "xlarge",
       align: "center",
-      background: "accent-1"
+      background: "light-4"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "hello!"))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
       title: "Tab 2"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
-      background: "accent-2"
+      background: "brand"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
       size: "xlarge"
     }))))) // </Grommet>

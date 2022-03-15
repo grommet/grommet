@@ -23,7 +23,7 @@ var UncontrolledTabs = function UncontrolledTabs(_ref) {
       fill: true,
       pad: "large",
       align: "center",
-      background: "accent-1"
+      background: "brand"
     }, /*#__PURE__*/React.createElement(Attraction, {
       size: "xlarge"
     }))), /*#__PURE__*/React.createElement(Tab, {
@@ -33,7 +33,7 @@ var UncontrolledTabs = function UncontrolledTabs(_ref) {
       fill: true,
       pad: "large",
       align: "center",
-      background: "accent-2"
+      background: "light-4"
     }, /*#__PURE__*/React.createElement(TreeOption, {
       size: "xlarge"
     }))), /*#__PURE__*/React.createElement(Tab, {
@@ -43,7 +43,7 @@ var UncontrolledTabs = function UncontrolledTabs(_ref) {
       fill: true,
       pad: "large",
       align: "center",
-      background: "accent-3"
+      background: "dark-3"
     }, /*#__PURE__*/React.createElement(Car, {
       size: "xlarge"
     }))))) // </Grommet>

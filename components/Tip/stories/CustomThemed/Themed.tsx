@@ -8,21 +8,18 @@ const customTheme: ThemeType = {
     font: {
       family: `-apple-system, BlinkMacSystemFont`,
     },
-    colors: {
-      text: 'white',
-    },
   },
   tip: {
     drop: {
-      background: { color: 'accent-2', opacity: 0.9 },
+      background: { color: 'light-1' },
       margin: { vertical: 'small' },
-      round: 'medium',
+      round: 'xsmall',
       elevation: 'large',
     },
     content: {
       elevation: 'none',
       background: 'none',
-      pad: 'xsmall',
+      pad: 'small',
     },
   },
 };
