@@ -133,6 +133,14 @@ export const getTimestamp = (date) =>
       // value with no timestamp
       false;
 
+// Checks if daylight savings is in effect for a timezone and date
+// Reference: https://stackoverflow.com/questions/11887934/how-to-check-if-dst-daylight-saving-time-is-in-effect-and-if-so-the-offset
+const inDaylightSavings = (day) => {
+  let jan = new Date(day.getFullYear(), 0, 1).getTimezoneOffset();
+  let jul = new Date(day.getFullYear(), 6, 1).getTimezoneOffset();
+  return Math.max(jan, jul) !== day.getTimezoneOffset();
+};
+
 // Adjust for differences between timestamp on value and
 // local timezone of user. Internal Calendar logic relies
 // on Javascript date contructor which translates the provided
@@ -150,7 +158,17 @@ export const normalizeForTimezone = (value, timestamp, normalize = true) => {
   let localOffset = 0;
   if (normalize) {
     if (timestamp && typeof timestamp === 'string') {
-      hourDelta = parseInt(timestamp?.split(':')[0], 10);
+      let day = Array.isArray(value) ? undefined : new Date(value);
+      let today = new Date();
+      if (
+        day &&
+        !inDaylightSavings(day) &&
+        day.getTimezoneOffset() > today.getTimezoneOffset()
+      ) {
+        hourDelta = parseInt(timestamp?.split(':')[0], 10) - 1;
+      } else {
+        hourDelta = parseInt(timestamp?.split(':')[0], 10);
+      }
       valueOffset = hourDelta * 60 * 60 * 1000; // ms
     }
     localOffset = new Date().getTimezoneOffset() * 60 * 1000;
