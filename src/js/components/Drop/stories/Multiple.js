@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-
 import { Box, Button, Drop, DropButton, Layer, TextInput } from 'grommet';
 
 const MultipleDrop = () => {
@@ -51,11 +50,16 @@ const MultipleDrop = () => {
           position="left"
           modal={false}
         >
-          <Box pad="large" border>
+          <Box gap="small" pad="large" border>
             <TextInput
               value=""
               onChange={() => {}}
               suggestions={['one', 'two']}
+            />
+            <Button
+              alignSelf="end"
+              label="Close Layer"
+              onClick={() => setShowLayer(!showLayer)}
             />
           </Box>
         </Layer>
