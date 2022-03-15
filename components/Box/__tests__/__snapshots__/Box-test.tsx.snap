@@ -3175,6 +3175,23 @@ exports[`Box height 1`] = `
   height: 111px;
 }
 
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: 100%;
+  min-height: 192px;
+  height: 768px;
+}
+
 <div
   class="c0"
 >
@@ -3195,6 +3212,9 @@ exports[`Box height 1`] = `
   />
   <div
     class="c6"
+  />
+  <div
+    class="c7"
   />
 </div>
 `;

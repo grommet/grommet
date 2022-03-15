@@ -524,8 +524,10 @@ exports.widthStyle = widthStyle;
 var heightObjectStyle = function heightObjectStyle(height, theme) {
   var result = [];
   if (height.max) result.push((0, _styledComponents.css)(["max-height:", ";"], getSize(theme, height.max)));
-  if (height.min) result.push((0, _styledComponents.css)(["min-height:", ";"], getSize(theme, height.min)));
+  if (height.min) result.push((0, _styledComponents.css)(["min-height:", ";"], getSize(theme, height.min))); // backwards compatibile
+
   if (height.width) result.push((0, _styledComponents.css)(["height:", ";"], getSize(theme, height.height)));
+  if (height.height) result.push((0, _styledComponents.css)(["height:", ";"], getSize(theme, height.height)));
   return result;
 };
 

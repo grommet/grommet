@@ -475,8 +475,10 @@ export var widthStyle = function widthStyle(width, theme) {
 var heightObjectStyle = function heightObjectStyle(height, theme) {
   var result = [];
   if (height.max) result.push(css(["max-height:", ";"], getSize(theme, height.max)));
-  if (height.min) result.push(css(["min-height:", ";"], getSize(theme, height.min)));
+  if (height.min) result.push(css(["min-height:", ";"], getSize(theme, height.min))); // backwards compatibile
+
   if (height.width) result.push(css(["height:", ";"], getSize(theme, height.height)));
+  if (height.height) result.push(css(["height:", ";"], getSize(theme, height.height)));
   return result;
 };
 
