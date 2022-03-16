@@ -16,6 +16,7 @@ const RangeInput = forwardRef(
     {
       a11yTitle,
       color,
+      focus: focusProp,
       // When in a FormField, focusIndicator = false,
       // so that the FormField has focus style. If RangeInput
       // is not in a FormField, it will have focus.
@@ -33,6 +34,8 @@ const RangeInput = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
+
+    const [focus, setFocus] = useState(focusProp);
 
     const [value, setValue] = formContext.useFormInput({
       name,
@@ -95,14 +98,17 @@ const RangeInput = forwardRef(
         aria-valuenow={value}
         ref={rangeInputRef}
         name={name}
+        focus={focus}
         focus={focusIndicator}
         value={value}
         {...rest}
         color={color}
         onFocus={(event) => {
+          setFocus(true);
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {
+          setFocus(false);
           if (onBlur) onBlur(event);
         }}
         onChange={(event) => {
