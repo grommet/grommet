@@ -4,7 +4,7 @@ import { Gremlin } from 'grommet-icons';
 import { Box, DropButton, Text } from 'grommet';
 
 const renderItems = () => (
-  <Box>
+  <Box background="dark-1">
     <Text>hi</Text>
     <Text>hi</Text>
     <Text>hi</Text>
