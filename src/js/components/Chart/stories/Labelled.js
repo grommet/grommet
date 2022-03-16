@@ -27,8 +27,8 @@ export const LabelledCharts = () => (
   // <Grommet theme={grommet}>
   <Box pad="large" direction="row" gap="medium">
     <LabelledChart label="Exported" value={300} />
-    <LabelledChart label="Usable" value={200} color="status-warning" />
-    <LabelledChart label="Used" value={98.2} color="status-critical" />
+    <LabelledChart label="Usable" value={200} color="graph-1" />
+    <LabelledChart label="Used" value={98.2} color="graph-2" />
   </Box>
   // </Grommet>
 );
