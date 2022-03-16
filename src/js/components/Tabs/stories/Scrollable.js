@@ -14,7 +14,7 @@ const ScrollableTabs = () => (
           overflow="auto"
           pad="xlarge"
           align="center"
-          background="accent-1"
+          background="light-4"
         >
           <Heading>hello!</Heading>
           <Heading>hello!</Heading>
@@ -39,7 +39,7 @@ const ScrollableTabs = () => (
         </Box>
       </Tab>
       <Tab title="Tab 2">
-        <Box margin="small" pad="large" align="center" background="accent-2">
+        <Box margin="small" pad="large" align="center" background="brand">
           <TreeOption size="xlarge" />
         </Box>
       </Tab>
