@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Box, Form, FormField, TextInput } from 'grommet';
+import { Box, Form, FormField, Text, TextInput } from 'grommet';
+import { Alert } from 'grommet-icons';
 
 export const HelpAndError = () => (
   // Uncomment <Grommet> lines when using outside of storybook
@@ -19,6 +20,32 @@ export const HelpAndError = () => (
           value="Value"
           onChange={() => {}}
         />
+      </FormField>
+    </Form>
+    <Form>
+      <FormField
+        label="Label"
+        htmlFor="text-input"
+        help={
+          <Text weight="bold" size="small">
+            Enter HPE email
+          </Text>
+        }
+        error={
+          <Box
+            align="center"
+            gap="small"
+            direction="row"
+            background="background-front"
+          >
+            <Alert />
+            <Text align="center" size="small">
+              Custom Text to call attention to an issue with this field
+            </Text>
+          </Box>
+        }
+      >
+        <TextInput id="email" value="jane@hpe" onChange={() => {}} />
       </FormField>
     </Form>
   </Box>
