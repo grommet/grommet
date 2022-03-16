@@ -25,13 +25,19 @@ var Disabled = function Disabled() {
       vertical: 'small'
     }
   }, " Disabled Individuals"), /*#__PURE__*/_react["default"].createElement(_grommet.CheckBoxGroup, {
+    name: "destinations",
+    valueKey: "id",
+    "aria-labelledby": "drink-formfield-id",
     options: [{
       label: 'Maui',
+      id: '1',
       disabled: true
     }, {
-      label: 'Jerusalem'
+      label: 'Jerusalem',
+      id: '2'
     }, {
       label: 'Wuhan',
+      id: '3',
       disabled: true
     }]
   })));

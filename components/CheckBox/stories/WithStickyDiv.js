@@ -16,7 +16,7 @@ var boxStyle = {
   display: 'block'
 };
 var titleBoxBackground = {
-  color: 'neutral-1'
+  color: 'light-2'
 };
 var titleBoxStyle = {
   position: 'sticky',
