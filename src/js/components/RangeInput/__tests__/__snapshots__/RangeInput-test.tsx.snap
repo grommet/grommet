@@ -75,6 +75,23 @@ exports[`RangeInput onBlur 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb > circle,
+.c1::-moz-range-thumb > ellipse,
+.c1::-moz-range-thumb > line,
+.c1::-moz-range-thumb > path,
+.c1::-moz-range-thumb > polygon,
+.c1::-moz-range-thumb > polyline,
+.c1::-moz-range-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-ms-thumb {
@@ -90,6 +107,23 @@ exports[`RangeInput onBlur 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb > circle,
+.c1::-ms-thumb > ellipse,
+.c1::-ms-thumb > line,
+.c1::-ms-thumb > path,
+.c1::-ms-thumb > polygon,
+.c1::-ms-thumb > polyline,
+.c1::-ms-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:hover::-moz-range-thumb {
@@ -117,6 +151,26 @@ exports[`RangeInput onBlur 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
+}
+
+.c1:focus::-webkit-slider-thumb {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb > circle,
+.c1:focus::-webkit-slider-thumb > ellipse,
+.c1:focus::-webkit-slider-thumb > line,
+.c1:focus::-webkit-slider-thumb > path,
+.c1:focus::-webkit-slider-thumb > polygon,
+.c1:focus::-webkit-slider-thumb > polyline,
+.c1:focus::-webkit-slider-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:focus-visible {
@@ -219,6 +273,23 @@ exports[`RangeInput onChange 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb > circle,
+.c1::-moz-range-thumb > ellipse,
+.c1::-moz-range-thumb > line,
+.c1::-moz-range-thumb > path,
+.c1::-moz-range-thumb > polygon,
+.c1::-moz-range-thumb > polyline,
+.c1::-moz-range-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-ms-thumb {
@@ -234,6 +305,23 @@ exports[`RangeInput onChange 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb > circle,
+.c1::-ms-thumb > ellipse,
+.c1::-ms-thumb > line,
+.c1::-ms-thumb > path,
+.c1::-ms-thumb > polygon,
+.c1::-ms-thumb > polyline,
+.c1::-ms-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:hover::-moz-range-thumb {
@@ -261,6 +349,26 @@ exports[`RangeInput onChange 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
+}
+
+.c1:focus::-webkit-slider-thumb {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb > circle,
+.c1:focus::-webkit-slider-thumb > ellipse,
+.c1:focus::-webkit-slider-thumb > line,
+.c1:focus::-webkit-slider-thumb > path,
+.c1:focus::-webkit-slider-thumb > polygon,
+.c1:focus::-webkit-slider-thumb > polyline,
+.c1:focus::-webkit-slider-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:focus-visible {
@@ -561,6 +669,23 @@ exports[`RangeInput renders 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb > circle,
+.c1::-moz-range-thumb > ellipse,
+.c1::-moz-range-thumb > line,
+.c1::-moz-range-thumb > path,
+.c1::-moz-range-thumb > polygon,
+.c1::-moz-range-thumb > polyline,
+.c1::-moz-range-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-ms-thumb {
@@ -576,6 +701,23 @@ exports[`RangeInput renders 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb > circle,
+.c1::-ms-thumb > ellipse,
+.c1::-ms-thumb > line,
+.c1::-ms-thumb > path,
+.c1::-ms-thumb > polygon,
+.c1::-ms-thumb > polyline,
+.c1::-ms-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:hover::-moz-range-thumb {
@@ -603,6 +745,26 @@ exports[`RangeInput renders 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
+}
+
+.c1:focus::-webkit-slider-thumb {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb > circle,
+.c1:focus::-webkit-slider-thumb > ellipse,
+.c1:focus::-webkit-slider-thumb > line,
+.c1:focus::-webkit-slider-thumb > path,
+.c1:focus::-webkit-slider-thumb > polygon,
+.c1:focus::-webkit-slider-thumb > polyline,
+.c1:focus::-webkit-slider-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:focus-visible {
@@ -705,6 +867,23 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb > circle,
+.c1::-moz-range-thumb > ellipse,
+.c1::-moz-range-thumb > line,
+.c1::-moz-range-thumb > path,
+.c1::-moz-range-thumb > polygon,
+.c1::-moz-range-thumb > polyline,
+.c1::-moz-range-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-ms-thumb {
@@ -720,6 +899,23 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb > circle,
+.c1::-ms-thumb > ellipse,
+.c1::-ms-thumb > line,
+.c1::-ms-thumb > path,
+.c1::-ms-thumb > polygon,
+.c1::-ms-thumb > polyline,
+.c1::-ms-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:hover::-moz-range-thumb {
@@ -747,6 +943,26 @@ exports[`RangeInput should have no accessibility violations 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
+}
+
+.c1:focus::-webkit-slider-thumb {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb > circle,
+.c1:focus::-webkit-slider-thumb > ellipse,
+.c1:focus::-webkit-slider-thumb > line,
+.c1:focus::-webkit-slider-thumb > path,
+.c1:focus::-webkit-slider-thumb > polygon,
+.c1:focus::-webkit-slider-thumb > polyline,
+.c1:focus::-webkit-slider-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:focus-visible {
@@ -850,6 +1066,23 @@ exports[`RangeInput track themed 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb > circle,
+.c1::-moz-range-thumb > ellipse,
+.c1::-moz-range-thumb > line,
+.c1::-moz-range-thumb > path,
+.c1::-moz-range-thumb > polygon,
+.c1::-moz-range-thumb > polyline,
+.c1::-moz-range-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-ms-thumb {
@@ -865,6 +1098,23 @@ exports[`RangeInput track themed 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb > circle,
+.c1::-ms-thumb > ellipse,
+.c1::-ms-thumb > line,
+.c1::-ms-thumb > path,
+.c1::-ms-thumb > polygon,
+.c1::-ms-thumb > polyline,
+.c1::-ms-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:hover::-moz-range-thumb {
@@ -892,6 +1142,26 @@ exports[`RangeInput track themed 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(125,76,219,1);
   border-color: transparent;
+}
+
+.c1:focus::-webkit-slider-thumb {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb > circle,
+.c1:focus::-webkit-slider-thumb > ellipse,
+.c1:focus::-webkit-slider-thumb > line,
+.c1:focus::-webkit-slider-thumb > path,
+.c1:focus::-webkit-slider-thumb > polygon,
+.c1:focus::-webkit-slider-thumb > polyline,
+.c1:focus::-webkit-slider-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:focus-visible {
@@ -994,6 +1264,23 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb > circle,
+.c1::-moz-range-thumb > ellipse,
+.c1::-moz-range-thumb > line,
+.c1::-moz-range-thumb > path,
+.c1::-moz-range-thumb > polygon,
+.c1::-moz-range-thumb > polyline,
+.c1::-moz-range-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-ms-thumb {
@@ -1009,6 +1296,23 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb > circle,
+.c1::-ms-thumb > ellipse,
+.c1::-ms-thumb > line,
+.c1::-ms-thumb > path,
+.c1::-ms-thumb > polygon,
+.c1::-ms-thumb > polyline,
+.c1::-ms-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:hover::-moz-range-thumb {
@@ -1036,6 +1340,26 @@ exports[`RangeInput track themed with color and opacity 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(125,76,219,0.3);
   border-color: transparent;
+}
+
+.c1:focus::-webkit-slider-thumb {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb > circle,
+.c1:focus::-webkit-slider-thumb > ellipse,
+.c1:focus::-webkit-slider-thumb > line,
+.c1:focus::-webkit-slider-thumb > path,
+.c1:focus::-webkit-slider-thumb > polygon,
+.c1:focus::-webkit-slider-thumb > polyline,
+.c1:focus::-webkit-slider-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:focus-visible {
@@ -1138,6 +1462,23 @@ exports[`RangeInput with min and max offset 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb > circle,
+.c1::-moz-range-thumb > ellipse,
+.c1::-moz-range-thumb > line,
+.c1::-moz-range-thumb > path,
+.c1::-moz-range-thumb > polygon,
+.c1::-moz-range-thumb > polyline,
+.c1::-moz-range-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-ms-thumb {
@@ -1153,6 +1494,23 @@ exports[`RangeInput with min and max offset 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb > circle,
+.c1::-ms-thumb > ellipse,
+.c1::-ms-thumb > line,
+.c1::-ms-thumb > path,
+.c1::-ms-thumb > polygon,
+.c1::-ms-thumb > polyline,
+.c1::-ms-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:hover::-moz-range-thumb {
@@ -1180,6 +1538,26 @@ exports[`RangeInput with min and max offset 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
+}
+
+.c1:focus::-webkit-slider-thumb {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb > circle,
+.c1:focus::-webkit-slider-thumb > ellipse,
+.c1:focus::-webkit-slider-thumb > line,
+.c1:focus::-webkit-slider-thumb > path,
+.c1:focus::-webkit-slider-thumb > polygon,
+.c1:focus::-webkit-slider-thumb > polyline,
+.c1:focus::-webkit-slider-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:focus-visible {
@@ -1282,6 +1660,23 @@ exports[`RangeInput with multi color 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb > circle,
+.c1::-moz-range-thumb > ellipse,
+.c1::-moz-range-thumb > line,
+.c1::-moz-range-thumb > path,
+.c1::-moz-range-thumb > polygon,
+.c1::-moz-range-thumb > polyline,
+.c1::-moz-range-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-ms-thumb {
@@ -1297,6 +1692,23 @@ exports[`RangeInput with multi color 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb > circle,
+.c1::-ms-thumb > ellipse,
+.c1::-ms-thumb > line,
+.c1::-ms-thumb > path,
+.c1::-ms-thumb > polygon,
+.c1::-ms-thumb > polyline,
+.c1::-ms-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:hover::-moz-range-thumb {
@@ -1324,6 +1736,26 @@ exports[`RangeInput with multi color 1`] = `
 .c1::-ms-fill-upper {
   background: linear-gradient(to right,rgba(255,0,0,0.5) 0%,rgba(255,0,0,0.5) 22.22222222222222%,rgba(255,255,0,1) 22.22222222222222%,rgba(255,255,0,1) 44.44444444444444%,rgba(0,0,0,0.2) 44.44444444444444%,rgba(0,0,0,0.2));
   border-color: transparent;
+}
+
+.c1:focus::-webkit-slider-thumb {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb > circle,
+.c1:focus::-webkit-slider-thumb > ellipse,
+.c1:focus::-webkit-slider-thumb > line,
+.c1:focus::-webkit-slider-thumb > path,
+.c1:focus::-webkit-slider-thumb > polygon,
+.c1:focus::-webkit-slider-thumb > polyline,
+.c1:focus::-webkit-slider-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:focus-visible {
@@ -1427,6 +1859,23 @@ exports[`RangeInput with single color 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb > circle,
+.c1::-moz-range-thumb > ellipse,
+.c1::-moz-range-thumb > line,
+.c1::-moz-range-thumb > path,
+.c1::-moz-range-thumb > polygon,
+.c1::-moz-range-thumb > polyline,
+.c1::-moz-range-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-ms-thumb {
@@ -1442,6 +1891,23 @@ exports[`RangeInput with single color 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb > circle,
+.c1::-ms-thumb > ellipse,
+.c1::-ms-thumb > line,
+.c1::-ms-thumb > path,
+.c1::-ms-thumb > polygon,
+.c1::-ms-thumb > polyline,
+.c1::-ms-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:hover::-moz-range-thumb {
@@ -1469,6 +1935,26 @@ exports[`RangeInput with single color 1`] = `
 .c1::-ms-fill-upper {
   background: linear-gradient( to right, #81FCED, #81FCED 44.44444444444444%, rgba(0,0,0,0.2) 44.44444444444444%, rgba(0,0,0,0.2) );
   border-color: transparent;
+}
+
+.c1:focus::-webkit-slider-thumb {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb > circle,
+.c1:focus::-webkit-slider-thumb > ellipse,
+.c1:focus::-webkit-slider-thumb > line,
+.c1:focus::-webkit-slider-thumb > path,
+.c1:focus::-webkit-slider-thumb > polygon,
+.c1:focus::-webkit-slider-thumb > polyline,
+.c1:focus::-webkit-slider-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:focus-visible {
