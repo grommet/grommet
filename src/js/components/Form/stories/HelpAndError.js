@@ -27,7 +27,7 @@ export const HelpAndError = () => (
         htmlFor="text-input"
         help={
           <Text weight="lighter" size="small">
-            Enter HPE email
+            Text to help the user know what is possible
           </Text>
         }
         error={
