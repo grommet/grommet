@@ -21,7 +21,7 @@ const MenuWithChildren = (props) => (
           pad="small"
           background={hover && drop ? 'light-2' : undefined}
         >
-          <Text color={color}>{focus ? 'Actions' : 'Actions'}</Text>
+          <Text color={color}>Actions</Text>
           <FormDown color={color} />
         </Box>
       );
