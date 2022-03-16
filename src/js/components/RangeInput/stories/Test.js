@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, FormField, Button, RangeInput } from 'grommet';
+import { Box, FormField, RangeInput } from 'grommet';
 
 export const Test = () => {
   const [value, setValue] = React.useState(5);
