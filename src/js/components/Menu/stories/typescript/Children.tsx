@@ -5,7 +5,6 @@ import { FormDown } from 'grommet-icons';
 
 const MenuWithChildren = (props) => (
   <Menu
-    plain
     items={[
       { label: 'Launch', onClick: () => {} },
       { label: 'Abort', onClick: () => {} },
@@ -33,7 +32,8 @@ const Example = () => (
   <Box
     align="center"
     pad="large"
-    background={{ color: 'dark-2', opacity: 0.7 }}
+    gap="small"
+    background={{ color: 'dark-3', opacity: 0.6 }}
   >
     <MenuWithChildren disabled />
     <MenuWithChildren />
