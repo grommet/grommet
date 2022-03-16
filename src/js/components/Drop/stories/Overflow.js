@@ -37,7 +37,7 @@ const OverflowDrop = () => {
           target={targetRef.current}
           onClose={() => setShowCalendar(false)}
         >
-          <Box height="small">
+          <Box pad="small" height="small">
             <Heading level={4}>Select Start Date</Heading>
             <div style={{ position: 'relative' }}>
               <TextInput
