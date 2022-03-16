@@ -1,14 +1,19 @@
 import React from 'react';
 
-import { Box, Stack } from 'grommet';
+import { Box, Stack, Text } from 'grommet';
+import { Cart } from 'grommet-icons';
 
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Stack anchor="center">
-    <Box pad="large" background="light-3" />
-    <Box pad="small" background="brand" />
-  </Stack>
+  <Box align="center" pad="large">
+    <Stack anchor="top-right">
+      <Cart size="large" />
+      <Box background="orange" pad={{ horizontal: 'small' }} round>
+        <Text size="small">4</Text>
+      </Box>
+    </Stack>
+  </Box>
   // </Grommet>
 );
 
