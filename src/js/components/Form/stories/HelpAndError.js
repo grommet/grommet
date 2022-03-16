@@ -23,11 +23,11 @@ export const HelpAndError = () => (
     </Form>
     <Form>
       <FormField
-        label="Label"
+        label="Email"
         htmlFor="text-input"
         help={
           <Text weight="lighter" size="small">
-            Enter HPE email
+            Text to help the user know what is possible
           </Text>
         }
         error={
