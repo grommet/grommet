@@ -27,18 +27,21 @@ var Autoplay = function Autoplay() {
       play: 3000
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "xlarge",
-      background: "accent-1"
+      background: "pink"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
+      color: "light-2",
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "xlarge",
-      background: "accent-2"
+      background: "purple"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
+      color: "light-2",
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "xlarge",
-      background: "accent-3"
+      background: "teal"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
+      color: "light-2",
       size: "xlarge"
     })))) // </Grommet>
 

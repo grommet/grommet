@@ -44,11 +44,11 @@ export var LabelledCharts = function LabelledCharts() {
     }), /*#__PURE__*/React.createElement(LabelledChart, {
       label: "Usable",
       value: 200,
-      color: "accent-2"
+      color: "graph-1"
     }), /*#__PURE__*/React.createElement(LabelledChart, {
       label: "Used",
       value: 98.2,
-      color: "accent-3"
+      color: "graph-2"
     })) // </Grommet>
 
   );

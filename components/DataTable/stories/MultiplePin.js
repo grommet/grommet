@@ -319,7 +319,7 @@ var MultiplePins = function MultiplePins() {
       overflow: "auto"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       background: {
-        pinned: 'pink'
+        pinned: 'light-2'
       },
       data: data,
       columns: [{

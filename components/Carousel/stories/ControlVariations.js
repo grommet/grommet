@@ -37,7 +37,7 @@ var ControlVariations = function ControlVariations() {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-1"
+      background: "light-1"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -51,14 +51,14 @@ var ControlVariations = function ControlVariations() {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-3"
+      background: "light-3"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-4"
+      background: "brand"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Cloud, {
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -82,7 +82,7 @@ var ControlVariations = function ControlVariations() {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-1"
+      background: "pink"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -96,14 +96,14 @@ var ControlVariations = function ControlVariations() {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-3"
+      background: "light-2"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-4"
+      background: "light-1"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Cloud, {
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -127,7 +127,7 @@ var ControlVariations = function ControlVariations() {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-1"
+      background: "pink"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -141,14 +141,14 @@ var ControlVariations = function ControlVariations() {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-3"
+      background: "light-1"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-4"
+      background: "light-2"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Cloud, {
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {

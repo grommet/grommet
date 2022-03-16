@@ -310,7 +310,7 @@ export var MultiplePins = function MultiplePins() {
       overflow: "auto"
     }, /*#__PURE__*/React.createElement(DataTable, {
       background: {
-        pinned: 'pink'
+        pinned: 'light-2'
       },
       data: data,
       columns: [{

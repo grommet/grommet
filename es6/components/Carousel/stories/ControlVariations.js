@@ -31,7 +31,7 @@ export var ControlVariations = function ControlVariations() {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-1"
+      background: "light-1"
     }, /*#__PURE__*/React.createElement(Attraction, {
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {
@@ -45,14 +45,14 @@ export var ControlVariations = function ControlVariations() {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-3"
+      background: "light-3"
     }, /*#__PURE__*/React.createElement(Car, {
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-4"
+      background: "brand"
     }, /*#__PURE__*/React.createElement(Cloud, {
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {
@@ -76,7 +76,7 @@ export var ControlVariations = function ControlVariations() {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-1"
+      background: "pink"
     }, /*#__PURE__*/React.createElement(Attraction, {
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {
@@ -90,14 +90,14 @@ export var ControlVariations = function ControlVariations() {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-3"
+      background: "light-2"
     }, /*#__PURE__*/React.createElement(Car, {
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-4"
+      background: "light-1"
     }, /*#__PURE__*/React.createElement(Cloud, {
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {
@@ -121,7 +121,7 @@ export var ControlVariations = function ControlVariations() {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-1"
+      background: "pink"
     }, /*#__PURE__*/React.createElement(Attraction, {
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {
@@ -135,14 +135,14 @@ export var ControlVariations = function ControlVariations() {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-3"
+      background: "light-1"
     }, /*#__PURE__*/React.createElement(Car, {
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {
       fill: true,
       align: "center",
       justify: "center",
-      background: "accent-4"
+      background: "light-2"
     }, /*#__PURE__*/React.createElement(Cloud, {
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {

@@ -34,17 +34,17 @@ export var Controlled = function Controlled() {
       onChild: setActiveSlide
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "xlarge",
-      background: "accent-1"
+      background: "light-1"
     }, /*#__PURE__*/React.createElement(Attraction, {
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {
       pad: "xlarge",
-      background: "accent-2"
+      background: "light-2"
     }, /*#__PURE__*/React.createElement(TreeOption, {
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {
       pad: "xlarge",
-      background: "accent-3"
+      background: "light-3"
     }, /*#__PURE__*/React.createElement(Car, {
       size: "xlarge"
     })))) // </Grommet>

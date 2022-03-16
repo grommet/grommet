@@ -19,18 +19,21 @@ export var Autoplay = function Autoplay() {
       play: 3000
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "xlarge",
-      background: "accent-1"
+      background: "pink"
     }, /*#__PURE__*/React.createElement(Attraction, {
+      color: "light-2",
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {
       pad: "xlarge",
-      background: "accent-2"
+      background: "purple"
     }, /*#__PURE__*/React.createElement(TreeOption, {
+      color: "light-2",
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Box, {
       pad: "xlarge",
-      background: "accent-3"
+      background: "teal"
     }, /*#__PURE__*/React.createElement(Car, {
+      color: "light-2",
       size: "xlarge"
     })))) // </Grommet>
 

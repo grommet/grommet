@@ -21,17 +21,17 @@ var Simple = function Simple() {
       pad: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Carousel, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "xlarge",
-      background: "accent-1"
+      background: "light-1"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "xlarge",
-      background: "accent-2"
+      background: "light-2"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "xlarge",
-      background: "accent-3"
+      background: "light-3"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
     })))) // </Grommet>

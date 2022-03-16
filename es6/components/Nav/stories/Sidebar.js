@@ -16,7 +16,7 @@ var SidebarButton = function SidebarButton(_ref) {
   }, rest), function (_ref2) {
     var hover = _ref2.hover;
     return /*#__PURE__*/React.createElement(Box, {
-      background: hover ? 'accent-1' : undefined,
+      background: hover ? 'teal' : undefined,
       pad: {
         horizontal: 'large',
         vertical: 'medium'
@@ -40,11 +40,13 @@ var SidebarNav = function SidebarNav() {
       fill: true,
       direction: "row"
     }, /*#__PURE__*/React.createElement(Nav, {
-      background: "neutral-1"
+      background: "brand"
     }, ['Dashboard', 'Devices', 'Settings'].map(function (label) {
       return /*#__PURE__*/React.createElement(SidebarButton, {
         key: label,
-        label: label,
+        label: /*#__PURE__*/React.createElement(Text, {
+          color: "white"
+        }, label),
         active: label === active,
         onClick: function onClick() {
           return setActive(label);
