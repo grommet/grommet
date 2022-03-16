@@ -639,6 +639,32 @@ describe('Select', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('compact', () => {
+    const onChange = jest.fn();
+    const { getByPlaceholderText, container } = render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={['one', 'two']}
+        onChange={onChange}
+        compact
+        plain
+      />,
+    );
+    const select = getByPlaceholderText('test select');
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    fireEvent.click(
+      document.getElementById('test-select__drop').querySelector('button'),
+    );
+
+    // checks if select has a value assigned to it after option is selected
+    expect(select.value).toEqual('one');
+    // verify that the width of the input has changed
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('modifies select control style on open', () => {
     const customTheme = {
       select: {

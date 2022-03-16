@@ -2399,6 +2399,7 @@ Object {
       "children": [Function],
       "clear": [Function],
       "closeOnChange": [Function],
+      "compact": [Function],
       "defaultValue": [Function],
       "disabled": [Function],
       "disabledKey": [Function],

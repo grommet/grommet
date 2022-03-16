@@ -14,6 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
       }),
     ]),
     closeOnChange: PropTypes.bool,
+    compact: PropTypes.bool,
     defaultValue: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object,

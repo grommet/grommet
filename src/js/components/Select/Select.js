@@ -9,6 +9,7 @@ import React, {
   useEffect,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { controlBorderStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -55,6 +56,7 @@ const Select = forwardRef(
       children,
       clear = false,
       closeOnChange = true,
+      compact,
       defaultValue,
       disabled,
       disabledKey,
@@ -98,6 +100,7 @@ const Select = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const inputRef = useRef();
+    const valueRef = useRef();
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);
 
@@ -303,6 +306,28 @@ const Select = forwardRef(
       theme,
     );
 
+    // This layout effect is only for compact scenarios
+    useLayoutEffect(() => {
+      if (compact && valueRef.current && inputRef.current) {
+        // add a temporary element in the DOM to see how wide the text content
+        // needs to be
+        const tmp = document.createElement('span');
+        const text = document.createTextNode(value || placeholder || ' ');
+        tmp.appendChild(text);
+        // copy certain styles from the input element to ensure we align
+        const computedStyle = window.getComputedStyle(inputRef.current);
+        ['font-size', 'font-family', 'font-weight', 'padding'].forEach(
+          (key) => {
+            tmp.style.setProperty(key, computedStyle.getPropertyValue(key));
+          },
+        );
+        tmp.style.setProperty('white-space', 'nowrap');
+        valueRef.current.appendChild(tmp);
+        inputRef.current.style.width = `${tmp.offsetWidth}px`;
+        valueRef.current.removeChild(tmp);
+      }
+    }, [compact, placeholder, value]);
+
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
@@ -374,7 +399,7 @@ const Select = forwardRef(
             justify="between"
             background={theme.select.background}
           >
-            <Box direction="row" flex basis="auto">
+            <Box ref={valueRef} direction="row" flex basis="auto">
               {selectValue ? (
                 <>
                   {selectValue}
@@ -419,7 +444,7 @@ const Select = forwardRef(
             </Box>
             {SelectIcon && (
               <Box
-                margin={theme.select.icons.margin}
+                margin={compact ? undefined : theme.select.icons.margin}
                 flex={false}
                 style={{ minWidth: 'auto' }}
               >
