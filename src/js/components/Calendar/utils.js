@@ -166,13 +166,13 @@ export const normalizeForTimezone = (value, timestamp, normalize = true) => {
         !inDaylightSavings(day) &&
         day.getTimezoneOffset() > today.getTimezoneOffset()
       ) {
-        hourDelta--;
+        hourDelta -= 1;
       } else if (
         day &&
         inDaylightSavings(day) &&
         day.getTimezoneOffset() < today.getTimezoneOffset()
       ) {
-        hourDelta++;
+        hourDelta += 1;
       }
       valueOffset = hourDelta * 60 * 60 * 1000; // ms
     }
