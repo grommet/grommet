@@ -5,6 +5,7 @@ import { FormDown } from 'grommet-icons';
 
 const MenuWithChildren = (props) => (
   <Menu
+    plain
     items={[
       { label: 'Launch', onClick: () => {} },
       { label: 'Abort', onClick: () => {} },
