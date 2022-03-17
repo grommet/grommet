@@ -191,7 +191,7 @@ const firefoxMicrosoftThumbStyle = css`
   ${rangeThumbStyle} margin-top: 0px;
   height: ${(props) => props.theme.global.spacing};
   width: ${(props) => props.theme.global.spacing};
-  ${(props) => props.focus && focusStyle()}
+  ${(props) => props.focus && props.focusIndicator && focusStyle()}
   ${(props) =>
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
@@ -246,6 +246,16 @@ const StyledRangeInput = styled.input`
             )};
         }
       `}
+    ${(props) =>
+      props.focus &&
+      !props.focusIndicator &&
+      css`
+        box-shadow: 0px 0px 0px 2px
+          ${normalizeColor(
+            props.theme.rangeInput.thumb.color || 'control',
+            props.theme,
+          )};
+      `}
   }
 
   &::-moz-range-track {
@@ -297,7 +307,7 @@ const StyledRangeInput = styled.input`
   }
 
   &:focus::-webkit-slider-thumb {
-    ${(props) => props.focus && focusStyle()}
+    ${(props) => props.focus && props.focusIndicator && focusStyle()}
   }
 
   &:focus-visible {
