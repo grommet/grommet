@@ -13,23 +13,24 @@ const ControlledTabs = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Tabs activeIndex={index} onActive={onActive}>
-      <Tab title="Tab 1">
-        <Box margin="small" pad="large" align="center" background="brand">
-          <Attraction size="xlarge" />
-        </Box>
-      </Tab>
-      <Tab title="Tab 2">
-        <Box margin="small" pad="large" align="center" background="light-4">
-          <TreeOption size="xlarge" />
-        </Box>
-      </Tab>
-      <Tab title="Tab 3">
-        <Box margin="small" pad="large" align="center" background="dark-3">
-          <Car size="xlarge" />
-        </Box>
-      </Tab>
-    </Tabs>
+    <Box align="center" pad="medium">
+      <Tabs activeIndex={index} onActive={onActive} justify="start">
+        <Tab title="General">
+          <Box margin="small" gap="small">
+            User Information
+          </Box>
+        </Tab>
+        <Tab title="Account">
+          <Box margin="small">Account Information</Box>
+        </Tab>
+        <Tab title="Billing">
+          <Box margin="small">Billing Information</Box>
+        </Tab>
+        <Tab title="Notifications">
+          <Box margin="small">Notifications will show here.</Box>
+        </Tab>
+      </Tabs>
+    </Box>
     // </Grommet>
   );
 };
