@@ -1,61 +1,42 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Box, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
-import { CircleInformation } from "grommet-icons/es6/icons/CircleInformation";
+import { Box, Tab, Tabs } from 'grommet';
 import { Currency } from "grommet-icons/es6/icons/Currency";
-
-var RichTabs = function RichTabs() {
+import { HomeRounded } from "grommet-icons/es6/icons/HomeRounded";
+import { Notification } from "grommet-icons/es6/icons/Notification";
+import { User } from "grommet-icons/es6/icons/User";
+export var TabsWithIcons = function TabsWithIcons() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    React.createElement(Tabs, null, /*#__PURE__*/React.createElement(Tab, {
-      title: /*#__PURE__*/React.createElement(RichTabTitle, {
-        icon: /*#__PURE__*/React.createElement(CircleInformation, {
-          color: "brand"
-        }),
-        label: "Personal Data"
-      })
-    }, /*#__PURE__*/React.createElement(FormField, {
-      label: "Name"
-    }, /*#__PURE__*/React.createElement(TextInput, {
-      placeholder: "Enter your name..."
-    }))), /*#__PURE__*/React.createElement(Tab, {
-      title: /*#__PURE__*/React.createElement(RichTabTitle, {
-        icon: /*#__PURE__*/React.createElement(Currency, {
-          color: "brand"
-        }),
-        label: "Payment"
-      })
-    }, /*#__PURE__*/React.createElement(FormField, {
-      label: "Card Number"
-    }, /*#__PURE__*/React.createElement(TextInput, {
-      placeholder: "Enter your card number..."
-    })))) // </Grommet>
+    React.createElement(Box, {
+      align: "center",
+      pad: "medium"
+    }, /*#__PURE__*/React.createElement(Tabs, null, /*#__PURE__*/React.createElement(Tab, {
+      title: "General",
+      icon: /*#__PURE__*/React.createElement(HomeRounded, null)
+    }, /*#__PURE__*/React.createElement(Box, {
+      margin: "small"
+    }, "General Information")), /*#__PURE__*/React.createElement(Tab, {
+      title: "Account",
+      icon: /*#__PURE__*/React.createElement(User, null)
+    }, /*#__PURE__*/React.createElement(Box, {
+      margin: "small"
+    }, "Account Information")), /*#__PURE__*/React.createElement(Tab, {
+      title: "Billing",
+      icon: /*#__PURE__*/React.createElement(Currency, null)
+    }, /*#__PURE__*/React.createElement(Box, {
+      margin: "small"
+    }, "Billing Information")), /*#__PURE__*/React.createElement(Tab, {
+      title: "Notifications",
+      icon: /*#__PURE__*/React.createElement(Notification, null)
+    }, /*#__PURE__*/React.createElement(Box, {
+      margin: "small"
+    }, "Notifications will show here.")))) // </Grommet>
 
   );
 };
-
-var RichTabTitle = function RichTabTitle(_ref) {
-  var icon = _ref.icon,
-      label = _ref.label;
-  return /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
-    align: "center",
-    gap: "xsmall",
-    margin: "xsmall"
-  }, icon, /*#__PURE__*/React.createElement(Text, {
-    size: "small"
-  }, /*#__PURE__*/React.createElement("strong", null, label)));
-};
-
-RichTabTitle.propTypes = {
-  icon: PropTypes.node.isRequired,
-  label: PropTypes.string.isRequired
-};
-export var Rich = function Rich() {
-  return /*#__PURE__*/React.createElement(RichTabs, null);
-};
+TabsWithIcons.storyName = 'Tabs with icons';
 export default {
-  title: 'Controls/Tabs/Rich'
+  title: 'Controls/Tabs/Tabs with icons'
 };

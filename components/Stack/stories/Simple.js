@@ -7,6 +7,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
+var _grommetIcons = require("grommet-icons");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Simple = function Simple() {
@@ -14,15 +16,22 @@ var Simple = function Simple() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    _react["default"].createElement(_grommet.Stack, {
-      anchor: "center"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      pad: "large",
-      background: "light-3"
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
+      anchor: "top-right"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Cart, {
+      size: "large"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      pad: "small",
-      background: "brand"
-    })) // </Grommet>
+      background: "orange",
+      pad: {
+        horizontal: 'xsmall'
+      },
+      round: true
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      size: "small"
+    }, "4")))) // </Grommet>
 
   );
 };

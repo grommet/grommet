@@ -26,7 +26,12 @@ var ResponsiveTabs = function ResponsiveTabs() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    _react["default"].createElement(_grommet.Tabs, {
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      pad: "xlarge"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Tabs, {
+      justify: "start",
+      alignControls: "start",
       activeIndex: index,
       onActive: onActive
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
@@ -119,97 +124,7 @@ var ResponsiveTabs = function ResponsiveTabs() {
       background: "brand"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
-    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-      title: "Tab 11"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "brand"
-    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-      title: "Tab 12"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "light-4"
-    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
-      size: "xlarge"
-    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-      title: "Tab 13"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "dark-3"
-    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
-      size: "xlarge"
-    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-      title: "Tab 14"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "brand"
-    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-      title: "Tab 15"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "light-4"
-    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
-      size: "xlarge"
-    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-      title: "Tab 16"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "dark-3"
-    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
-      size: "xlarge"
-    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-      title: "Tab 17"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "brand"
-    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-      title: "Tab 18"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "light-4"
-    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
-      size: "xlarge"
-    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-      title: "Tab 19"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "dark-3"
-    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
-      size: "xlarge"
-    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-      title: "Tab 20"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "brand"
-    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    })))) // </Grommet>
+    }))))) // </Grommet>
 
   );
 };

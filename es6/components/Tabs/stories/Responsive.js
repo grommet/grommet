@@ -17,7 +17,12 @@ var ResponsiveTabs = function ResponsiveTabs() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    React.createElement(Tabs, {
+    React.createElement(Box, {
+      align: "center",
+      pad: "xlarge"
+    }, /*#__PURE__*/React.createElement(Tabs, {
+      justify: "start",
+      alignControls: "start",
       activeIndex: index,
       onActive: onActive
     }, /*#__PURE__*/React.createElement(Tab, {
@@ -110,97 +115,7 @@ var ResponsiveTabs = function ResponsiveTabs() {
       background: "brand"
     }, /*#__PURE__*/React.createElement(Attraction, {
       size: "xlarge"
-    }))), /*#__PURE__*/React.createElement(Tab, {
-      title: "Tab 11"
-    }, /*#__PURE__*/React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "brand"
-    }, /*#__PURE__*/React.createElement(Attraction, {
-      size: "xlarge"
-    }))), /*#__PURE__*/React.createElement(Tab, {
-      title: "Tab 12"
-    }, /*#__PURE__*/React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "light-4"
-    }, /*#__PURE__*/React.createElement(TreeOption, {
-      size: "xlarge"
-    }))), /*#__PURE__*/React.createElement(Tab, {
-      title: "Tab 13"
-    }, /*#__PURE__*/React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "dark-3"
-    }, /*#__PURE__*/React.createElement(Car, {
-      size: "xlarge"
-    }))), /*#__PURE__*/React.createElement(Tab, {
-      title: "Tab 14"
-    }, /*#__PURE__*/React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "brand"
-    }, /*#__PURE__*/React.createElement(Attraction, {
-      size: "xlarge"
-    }))), /*#__PURE__*/React.createElement(Tab, {
-      title: "Tab 15"
-    }, /*#__PURE__*/React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "light-4"
-    }, /*#__PURE__*/React.createElement(TreeOption, {
-      size: "xlarge"
-    }))), /*#__PURE__*/React.createElement(Tab, {
-      title: "Tab 16"
-    }, /*#__PURE__*/React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "dark-3"
-    }, /*#__PURE__*/React.createElement(Car, {
-      size: "xlarge"
-    }))), /*#__PURE__*/React.createElement(Tab, {
-      title: "Tab 17"
-    }, /*#__PURE__*/React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "brand"
-    }, /*#__PURE__*/React.createElement(Attraction, {
-      size: "xlarge"
-    }))), /*#__PURE__*/React.createElement(Tab, {
-      title: "Tab 18"
-    }, /*#__PURE__*/React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "light-4"
-    }, /*#__PURE__*/React.createElement(TreeOption, {
-      size: "xlarge"
-    }))), /*#__PURE__*/React.createElement(Tab, {
-      title: "Tab 19"
-    }, /*#__PURE__*/React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "dark-3"
-    }, /*#__PURE__*/React.createElement(Car, {
-      size: "xlarge"
-    }))), /*#__PURE__*/React.createElement(Tab, {
-      title: "Tab 20"
-    }, /*#__PURE__*/React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "brand"
-    }, /*#__PURE__*/React.createElement(Attraction, {
-      size: "xlarge"
-    })))) // </Grommet>
+    }))))) // </Grommet>
 
   );
 };
