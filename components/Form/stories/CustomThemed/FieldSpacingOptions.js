@@ -114,13 +114,13 @@ var FieldSpacingOptions = function FieldSpacingOptions() {
     name: "example1",
     placeholder: "Placeholder input prompt"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    htmlFor: "example2-id",
-    name: "example2",
+    htmlFor: "example1-id",
+    name: "example1",
     label: "Field Label for Grouped Input",
     help: "Choose your favorite"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
-    id: "example2-id",
-    name: "example2",
+    id: "example1-id",
+    name: "example1",
     options: ['Eenie', 'Meenie', 'Miney', 'Moe']
   }))))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {

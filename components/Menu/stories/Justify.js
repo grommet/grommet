@@ -18,16 +18,16 @@ var Justify = function Justify() {
     alignSelf: "start",
     label: "Actions",
     items: [{
-      label: 'Hey',
+      label: 'User',
       icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.User, null),
       justify: 'center'
     }, {
-      label: 'Hello',
+      label: 'Users',
       icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.User, null),
       justify: 'end'
     }, {
-      label: 'Hii',
-      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.User, null)
+      label: 'Home',
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Home, null)
     }]
   }));
 };

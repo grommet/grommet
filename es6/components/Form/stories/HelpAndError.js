@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Form, FormField, TextInput } from 'grommet';
+import { Box, Form, FormField, Text, TextInput } from 'grommet';
 export var HelpAndError = function HelpAndError() {
   return (
     /*#__PURE__*/
@@ -17,6 +17,25 @@ export var HelpAndError = function HelpAndError() {
       id: "text-input",
       placeholder: "placeholder",
       value: "Value",
+      onChange: function onChange() {}
+    }))), /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(FormField, {
+      label: "Email",
+      htmlFor: "text-input",
+      help: /*#__PURE__*/React.createElement(Text, {
+        weight: "lighter",
+        size: "small"
+      }, "Text to help the user know what is possible"),
+      error: /*#__PURE__*/React.createElement(Box, {
+        align: "center",
+        background: "background-front"
+      }, /*#__PURE__*/React.createElement(Text, {
+        weight: "bolder",
+        align: "center",
+        size: "small"
+      }, "Custom Text to call attention to an issue with this field"))
+    }, /*#__PURE__*/React.createElement(TextInput, {
+      id: "email",
+      value: "jane@hpe",
       onChange: function onChange() {}
     })))) // </Grommet>
 

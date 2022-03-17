@@ -20,6 +20,7 @@ var SimpleCheckBox = function SimpleCheckBox(_ref) {
   };
 
   return /*#__PURE__*/React.createElement(Box, {
+    gap: "small",
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(CheckBox, _extends({}, rest, {
@@ -28,12 +29,16 @@ var SimpleCheckBox = function SimpleCheckBox(_ref) {
   })));
 };
 
-export var Reverse = function Reverse() {
-  return /*#__PURE__*/React.createElement(SimpleCheckBox, {
-    label: "Choice",
+export var Simple = function Simple() {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SimpleCheckBox, {
+    label: "Reversed Checkbox",
     reverse: true
-  });
+  }), /*#__PURE__*/React.createElement(SimpleCheckBox, {
+    label: "Disabled Checkbox",
+    checked: true,
+    disabled: true
+  }));
 };
 export default {
-  title: 'Input/CheckBox/Reverse'
+  title: 'Input/CheckBox/Simple'
 };

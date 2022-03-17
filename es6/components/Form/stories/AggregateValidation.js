@@ -56,6 +56,12 @@ export var AggregateValidation = function AggregateValidation() {
         top: 'medium'
       }
     }, /*#__PURE__*/React.createElement(Button, {
+      onClick: function onClick() {
+        return setValue({
+          name: '',
+          email: ''
+        });
+      },
       type: "reset",
       label: "Reset"
     }), /*#__PURE__*/React.createElement(Button, {

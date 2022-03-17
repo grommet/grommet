@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.Default = void 0;
+exports["default"] = exports.Simple = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -9,26 +9,35 @@ var _grommet = require("grommet");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var DefaultAnchor = function DefaultAnchor() {
+var SimpleAnchor = function SimpleAnchor() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    gap: "medium",
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     href: "#"
-  }, "Link"));
+  }, "Link"), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    disabled: true,
+    label: "Disabled Anchor"
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
+    margin: "none"
+  }, "This is ", /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    label: "an inline link",
+    href: "#"
+  }), " with surrounding text."));
 };
 
-var Default = function Default() {
-  return /*#__PURE__*/_react["default"].createElement(DefaultAnchor, null);
+var Simple = function Simple() {
+  return /*#__PURE__*/_react["default"].createElement(SimpleAnchor, null);
 };
 
-exports.Default = Default;
-Default.parameters = {
+exports.Simple = Simple;
+Simple.parameters = {
   chromatic: {
     disable: true
   }
 };
 var _default = {
-  title: 'Controls/Anchor/Default'
+  title: 'Controls/Anchor/Simple'
 };
 exports["default"] = _default;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Menu } from 'grommet';
+import { Home } from "grommet-icons/es6/icons/Home";
 import { User } from "grommet-icons/es6/icons/User";
 export var Justify = function Justify() {
   return /*#__PURE__*/React.createElement(Box, {
@@ -8,16 +9,16 @@ export var Justify = function Justify() {
     alignSelf: "start",
     label: "Actions",
     items: [{
-      label: 'Hey',
+      label: 'User',
       icon: /*#__PURE__*/React.createElement(User, null),
       justify: 'center'
     }, {
-      label: 'Hello',
+      label: 'Users',
       icon: /*#__PURE__*/React.createElement(User, null),
       justify: 'end'
     }, {
-      label: 'Hii',
-      icon: /*#__PURE__*/React.createElement(User, null)
+      label: 'Home',
+      icon: /*#__PURE__*/React.createElement(Home, null)
     }]
   }));
 };

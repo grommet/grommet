@@ -27,6 +27,25 @@ var HelpAndError = function HelpAndError() {
       placeholder: "placeholder",
       value: "Value",
       onChange: function onChange() {}
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Form, null, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      label: "Email",
+      htmlFor: "text-input",
+      help: /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+        weight: "lighter",
+        size: "small"
+      }, "Text to help the user know what is possible"),
+      error: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+        align: "center",
+        background: "background-front"
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+        weight: "bolder",
+        align: "center",
+        size: "small"
+      }, "Custom Text to call attention to an issue with this field"))
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      id: "email",
+      value: "jane@hpe",
+      onChange: function onChange() {}
     })))) // </Grommet>
 
   );

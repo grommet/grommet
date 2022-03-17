@@ -65,6 +65,12 @@ var AggregateValidation = function AggregateValidation() {
         top: 'medium'
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      onClick: function onClick() {
+        return setValue({
+          name: '',
+          email: ''
+        });
+      },
       type: "reset",
       label: "Reset"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {

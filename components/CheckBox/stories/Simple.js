@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.Disabled = void 0;
+exports["default"] = exports.Simple = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -30,6 +30,7 @@ var SimpleCheckBox = function SimpleCheckBox(_ref) {
   };
 
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    gap: "small",
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, _extends({}, rest, {
@@ -38,16 +39,19 @@ var SimpleCheckBox = function SimpleCheckBox(_ref) {
   })));
 };
 
-var Disabled = function Disabled() {
-  return /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, {
-    label: "Choice",
+var Simple = function Simple() {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, {
+    label: "Reversed Checkbox",
+    reverse: true
+  }), /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, {
+    label: "Disabled Checkbox",
     checked: true,
     disabled: true
-  });
+  }));
 };
 
-exports.Disabled = Disabled;
+exports.Simple = Simple;
 var _default = {
-  title: 'Input/CheckBox/Disabled'
+  title: 'Input/CheckBox/Simple'
 };
 exports["default"] = _default;
