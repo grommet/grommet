@@ -148,6 +148,14 @@ const disabledRangeInputStyle = (props, context) => css`
   )};`}
 `;
 
+const hoverStyle = (props) => css`
+  box-shadow: 0px 0px 0px 2px
+    ${normalizeColor(
+      props.theme.rangeInput.thumb.color || 'control',
+      props.theme,
+    )};
+`;
+
 const rangeTrackStyle = css`
   box-sizing: border-box;
   width: 100%;
@@ -239,22 +247,14 @@ const StyledRangeInput = styled.input`
       !props.disabled &&
       css`
         &:hover {
-          box-shadow: 0px 0px 0px 2px
-            ${normalizeColor(
-              props.theme.rangeInput.thumb.color || 'control',
-              props.theme,
-            )};
+          ${hoverStyle(props)}
         }
       `}
     ${(props) =>
       props.focus &&
       !props.focusIndicator &&
       css`
-        box-shadow: 0px 0px 0px 2px
-          ${normalizeColor(
-            props.theme.rangeInput.thumb.color || 'control',
-            props.theme,
-          )};
+        ${hoverStyle(props)}
       `}
   }
 
@@ -274,19 +274,11 @@ const StyledRangeInput = styled.input`
     !props.disabled &&
     css`
       &:hover::-moz-range-thumb {
-        box-shadow: 0px 0px 0px 2px
-          ${normalizeColor(
-            props.theme.rangeInput.thumb.color || 'control',
-            props.theme,
-          )};
+        ${hoverStyle(props)}
       }
 
       &:hover::-ms-thumb {
-        box-shadow: 0px 0px 0px 2px
-          ${normalizeColor(
-            props.theme.rangeInput.thumb.color || 'control',
-            props.theme,
-          )};
+        ${hoverStyle(props)}
       }
     `}
 
