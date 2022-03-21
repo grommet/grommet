@@ -1803,6 +1803,7 @@ Object {
           },
           "toast": Object {
             "container": Object {
+              "alignSelf": "center",
               "elevation": "medium",
               "round": "xsmall",
               "width": "medium",
