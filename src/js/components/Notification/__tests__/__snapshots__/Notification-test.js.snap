@@ -708,6 +708,9 @@ exports[`Notification position bottom 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: rgba(255,255,255,1);
   color: #444444;
   min-width: 0;
@@ -1024,6 +1027,9 @@ exports[`Notification position bottom-left 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: rgba(255,255,255,1);
   color: #444444;
   min-width: 0;
@@ -1340,6 +1346,9 @@ exports[`Notification position bottom-right 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: rgba(255,255,255,1);
   color: #444444;
   min-width: 0;
@@ -1656,6 +1665,9 @@ exports[`Notification position center 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: rgba(255,255,255,1);
   color: #444444;
   min-width: 0;
@@ -1972,6 +1984,9 @@ exports[`Notification position end 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: rgba(255,255,255,1);
   color: #444444;
   min-width: 0;
@@ -2288,6 +2303,9 @@ exports[`Notification position left 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: rgba(255,255,255,1);
   color: #444444;
   min-width: 0;
@@ -2604,6 +2622,9 @@ exports[`Notification position right 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: rgba(255,255,255,1);
   color: #444444;
   min-width: 0;
@@ -2920,6 +2941,9 @@ exports[`Notification position start 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: rgba(255,255,255,1);
   color: #444444;
   min-width: 0;
@@ -3236,6 +3260,9 @@ exports[`Notification position top 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: rgba(255,255,255,1);
   color: #444444;
   min-width: 0;
@@ -3552,6 +3579,9 @@ exports[`Notification position top-left 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: rgba(255,255,255,1);
   color: #444444;
   min-width: 0;
@@ -3868,6 +3898,9 @@ exports[`Notification position top-right 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   background-color: rgba(255,255,255,1);
   color: #444444;
   min-width: 0;
