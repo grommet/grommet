@@ -162,17 +162,22 @@ export const normalizeForTimezone = (value, timestamp, normalize = true) => {
     }
     const day = Array.isArray(value) ? undefined : new Date(value);
     const today = new Date();
+    // If one of the days either day or today is in daylight savings and the
+    // other is not the timezoneOffset will be different. If they are both
+    // in or outside of daylight savings the timezoneOffset will be the same.
     if (
       day &&
       !inDaylightSavings(day) &&
       day.getTimezoneOffset() > today.getTimezoneOffset()
     ) {
+      // today is in daylight savings but the selected day is not
       hourDelta -= 1;
     } else if (
       day &&
       inDaylightSavings(day) &&
       day.getTimezoneOffset() < today.getTimezoneOffset()
     ) {
+      // the selected day is in daylight savings but today is not
       hourDelta += 1;
     }
     valueOffset = hourDelta === 0 ? 0 : hourDelta * 60 * 60 * 1000;
