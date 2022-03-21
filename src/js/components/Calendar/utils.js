@@ -153,29 +153,29 @@ const inDaylightSavings = (day) => {
 // valueOffset/localOffset will be 0.
 export const normalizeForTimezone = (value, timestamp, normalize = true) => {
   let adjustedDate;
-  let hourDelta;
+  let hourDelta = 0;
   let valueOffset = 0;
   let localOffset = 0;
   if (normalize) {
     if (timestamp && typeof timestamp === 'string') {
-      const day = Array.isArray(value) ? undefined : new Date(value);
-      const today = new Date();
       hourDelta = parseInt(timestamp?.split(':')[0], 10);
-      if (
-        day &&
-        !inDaylightSavings(day) &&
-        day.getTimezoneOffset() > today.getTimezoneOffset()
-      ) {
-        hourDelta -= 1;
-      } else if (
-        day &&
-        inDaylightSavings(day) &&
-        day.getTimezoneOffset() < today.getTimezoneOffset()
-      ) {
-        hourDelta += 1;
-      }
-      valueOffset = hourDelta * 60 * 60 * 1000; // ms
     }
+    const day = Array.isArray(value) ? undefined : new Date(value);
+    const today = new Date();
+    if (
+      day &&
+      !inDaylightSavings(day) &&
+      day.getTimezoneOffset() > today.getTimezoneOffset()
+    ) {
+      hourDelta -= 1;
+    } else if (
+      day &&
+      inDaylightSavings(day) &&
+      day.getTimezoneOffset() < today.getTimezoneOffset()
+    ) {
+      hourDelta += 1;
+    }
+    valueOffset = hourDelta === 0 ? 0 : hourDelta * 60 * 60 * 1000;
     localOffset = new Date().getTimezoneOffset() * 60 * 1000;
   }
 
