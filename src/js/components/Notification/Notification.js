@@ -15,6 +15,7 @@ import { Button } from '../Button';
 import { Layer } from '../Layer';
 import { Paragraph } from '../Paragraph';
 import { Text } from '../Text';
+import { ResponsiveContext } from '../../contexts';
 
 import { NotificationType } from './propTypes';
 
@@ -63,9 +64,13 @@ const Notification = ({
 }) => {
   const autoClose =
     toast && toast?.autoClose === undefined ? true : toast.autoClose;
+  const size = useContext(ResponsiveContext);
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
-  const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
+
+  const position = useMemo(() => 
+    (size === 'small') ? 'top' : (toast && toast?.position) || 'top', 
+    [size, toast]);
 
   const close = useCallback(
     (event) => {

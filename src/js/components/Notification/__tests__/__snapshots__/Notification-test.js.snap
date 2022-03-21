@@ -831,13 +831,13 @@ exports[`Notification position bottom 1`] = `
   max-height: calc(100% - 24px - 24px);
   max-width: calc(100% - 24px - 24px);
   border-radius: 0;
-  bottom: 24px;
+  top: 24px;
   left: 50%;
   -webkit-transform: translate(-50%,0);
   -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  -webkit-animation: fdqiZe 0.2s ease-in-out forwards;
-  animation: fdqiZe 0.2s ease-in-out forwards;
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
+  animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
 .c2 {
@@ -1150,13 +1150,13 @@ exports[`Notification position bottom-left 1`] = `
   max-height: calc(100% - 24px - 24px);
   max-width: calc(100% - 24px - 24px);
   border-radius: 0;
-  bottom: 24px;
-  left: 24px;
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
-  animation: cQwfQi 0.2s ease-in-out forwards;
+  top: 24px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
+  animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
 .c2 {
@@ -1469,13 +1469,13 @@ exports[`Notification position bottom-right 1`] = `
   max-height: calc(100% - 24px - 24px);
   max-width: calc(100% - 24px - 24px);
   border-radius: 0;
-  bottom: 24px;
-  right: 24px;
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
-  animation: cQwfQi 0.2s ease-in-out forwards;
+  top: 24px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
+  animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
 .c2 {
@@ -1788,13 +1788,13 @@ exports[`Notification position center 1`] = `
   max-height: calc(100% - 24px - 24px);
   max-width: calc(100% - 24px - 24px);
   border-radius: 0;
-  top: 50%;
+  top: 24px;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
-  animation: hWAzxx 0.2s ease-in-out forwards;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
+  animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
 .c2 {
@@ -2107,13 +2107,13 @@ exports[`Notification position end 1`] = `
   max-height: calc(100% - 24px - 24px);
   max-width: calc(100% - 24px - 24px);
   border-radius: 0;
-  inset-inline-end: 24px;
-  top: 50%;
-  -webkit-transform: translate(0,-50%);
-  -ms-transform: translate(0,-50%);
-  transform: translate(0,-50%);
-  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
-  animation: drjPPC 0.2s ease-in-out forwards;
+  top: 24px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
+  animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
 .c2 {
@@ -2426,13 +2426,13 @@ exports[`Notification position left 1`] = `
   max-height: calc(100% - 24px - 24px);
   max-width: calc(100% - 24px - 24px);
   border-radius: 0;
-  left: 24px;
-  top: 50%;
-  -webkit-transform: translate(0,-50%);
-  -ms-transform: translate(0,-50%);
-  transform: translate(0,-50%);
-  -webkit-animation: kPYden 0.2s ease-in-out forwards;
-  animation: kPYden 0.2s ease-in-out forwards;
+  top: 24px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
+  animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
 .c2 {
@@ -2745,13 +2745,13 @@ exports[`Notification position right 1`] = `
   max-height: calc(100% - 24px - 24px);
   max-width: calc(100% - 24px - 24px);
   border-radius: 0;
-  right: 24px;
-  top: 50%;
-  -webkit-transform: translate(0,-50%);
-  -ms-transform: translate(0,-50%);
-  transform: translate(0,-50%);
-  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
-  animation: drjPPC 0.2s ease-in-out forwards;
+  top: 24px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
+  animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
 .c2 {
@@ -3064,13 +3064,13 @@ exports[`Notification position start 1`] = `
   max-height: calc(100% - 24px - 24px);
   max-width: calc(100% - 24px - 24px);
   border-radius: 0;
-  inset-inline-start: 24px;
-  top: 50%;
-  -webkit-transform: translate(0,-50%);
-  -ms-transform: translate(0,-50%);
-  transform: translate(0,-50%);
-  -webkit-animation: kPYden 0.2s ease-in-out forwards;
-  animation: kPYden 0.2s ease-in-out forwards;
+  top: 24px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
+  animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
 .c2 {
@@ -3703,12 +3703,12 @@ exports[`Notification position top-left 1`] = `
   max-width: calc(100% - 24px - 24px);
   border-radius: 0;
   top: 24px;
-  left: 24px;
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
-  animation: ffftsv 0.2s ease-in-out forwards;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
+  animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
 .c2 {
@@ -4022,12 +4022,12 @@ exports[`Notification position top-right 1`] = `
   max-width: calc(100% - 24px - 24px);
   border-radius: 0;
   top: 24px;
-  right: 24px;
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
-  animation: ffftsv 0.2s ease-in-out forwards;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
+  animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
 .c2 {
