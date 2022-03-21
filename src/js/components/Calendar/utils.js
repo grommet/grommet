@@ -160,35 +160,43 @@ export const normalizeForTimezone = (value, timestamp, normalize = true) => {
     if (timestamp && typeof timestamp === 'string') {
       hourDelta = parseInt(timestamp?.split(':')[0], 10);
     }
-    const day = Array.isArray(value) ? undefined : new Date(value);
     const today = new Date();
-    // If one of the days either day or today is in daylight savings and the
-    // other is not the timezoneOffset will be different. If they are both
-    // in or outside of daylight savings the timezoneOffset will be the same.
-    if (
-      day &&
-      !inDaylightSavings(day) &&
-      day.getTimezoneOffset() > today.getTimezoneOffset()
-    ) {
-      // today is in daylight savings but the selected day is not
-      hourDelta -= 1;
-    } else if (
-      day &&
-      inDaylightSavings(day) &&
-      day.getTimezoneOffset() < today.getTimezoneOffset()
-    ) {
-      // the selected day is in daylight savings but today is not
-      hourDelta += 1;
-    }
-    valueOffset = hourDelta === 0 ? 0 : hourDelta * 60 * 60 * 1000;
-    localOffset = new Date().getTimezoneOffset() * 60 * 1000;
+    adjustedDate =
+      value &&
+      (Array.isArray(value) ? value : [value]).map((v) => {
+        const day = new Date(v);
+        // If one of the days either day or today is in daylight savings and the
+        // other is not the timezoneOffset will be different. If they are both
+        // in or out of daylight savings the timezoneOffset will be the same.
+        if (
+          day &&
+          !inDaylightSavings(day) &&
+          day.getTimezoneOffset() > today.getTimezoneOffset()
+        ) {
+          // today is in daylight savings but the selected day is not
+          hourDelta -= 1;
+        } else if (
+          day &&
+          inDaylightSavings(day) &&
+          day.getTimezoneOffset() < today.getTimezoneOffset()
+        ) {
+          // the selected day is in daylight savings but today is not
+          hourDelta += 1;
+        }
+        valueOffset = hourDelta === 0 ? 0 : hourDelta * 60 * 60 * 1000;
+        localOffset = new Date().getTimezoneOffset() * 60 * 1000;
+        return new Date(
+          new Date(v).getTime() - valueOffset + localOffset,
+        ).toISOString();
+      });
+  } else {
+    adjustedDate =
+      value &&
+      (Array.isArray(value) ? value : [value]).map((v) =>
+        new Date(new Date(v).getTime()).toISOString(),
+      );
   }
 
-  adjustedDate =
-    value &&
-    (Array.isArray(value) ? value : [value]).map((v) =>
-      new Date(new Date(v).getTime() - valueOffset + localOffset).toISOString(),
-    );
   if (typeof value === 'string') [adjustedDate] = adjustedDate;
 
   return adjustedDate;
