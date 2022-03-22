@@ -25,6 +25,7 @@ import {
   AlignContentType,
 } from '../utils';
 
+import { AnchorProps } from '../components/Anchor/index';
 import { BoxProps } from '../components/Box/index';
 import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
@@ -1038,9 +1039,16 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   notification?: {
+    actions?: AnchorProps;
     container?: BoxProps;
+    direction?: 'column' | 'row';
+    global?: {
+      direction?: 'column' | 'row';
+      container?: BoxProps;
+    };
     toast?: {
       container?: BoxProps;
+      direction?: 'column' | 'row';
       layer?: LayerProps;
       time?: number;
     };
@@ -1054,23 +1062,83 @@ export interface ThemeType {
     };
     critical?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     warning?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     normal?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
+    };
+    info?: {
+      icon?: React.ReactNode;
+      background?: BackgroundType;
+      color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     unknown?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     undefined?: {
       icon?: React.ReactNode;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
+    };
+  };
+  page?: {
+    [key: string]: {
+      alignSelf?: AlignContentType;
+      width?:
+        | string
+        | {
+            min: string;
+            max: string;
+          };
+      small?: BoxProps;
+      medium?: BoxProps;
+      large?: BoxProps;
     };
   };
   pagination?: {

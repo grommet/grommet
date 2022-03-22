@@ -71,7 +71,11 @@ export interface DataChartProps {
           | string
           | { property?: string; granularity?: GranularityType };
       };
-  bounds?: 'align';
+  bounds?:
+    | 'align'
+    | {
+        y?: number[];
+      };
   // chart - if undefined, { type: 'bar', property: <first series property> }
   chart?: ChartType | ChartType[];
   // data - an array of objects containing data values
@@ -98,6 +102,7 @@ export interface DataChartProps {
   // pad - padding around the guides/visuals
   // defaults to what's needed based on axis and chart types
   pad?: GridProps['pad'];
+  placeholder?: string | React.ReactNode;
   // series - the data item properties and any
   series: SeriesType | SeriesType[];
   margin?: MarginType; // generic

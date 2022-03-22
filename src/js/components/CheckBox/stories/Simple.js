@@ -7,13 +7,18 @@ const SimpleCheckBox = ({ checked: checkedProp, ...rest }) => {
   const onChange = (event) => setChecked(event.target.checked);
 
   return (
-    <Box align="center" pad="large">
+    <Box gap="small" align="center" pad="large">
       <CheckBox {...rest} checked={checked} onChange={onChange} />
     </Box>
   );
 };
 
-export const Simple = () => <SimpleCheckBox label="Choice" />;
+export const Simple = () => (
+  <>
+    <SimpleCheckBox label="Reversed Checkbox" reverse />
+    <SimpleCheckBox label="Disabled Checkbox" checked disabled />
+  </>
+);
 
 export default {
   title: 'Input/CheckBox/Simple',

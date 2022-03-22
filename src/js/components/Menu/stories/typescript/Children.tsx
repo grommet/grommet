@@ -13,7 +13,7 @@ const MenuWithChildren = (props) => (
     {...props}
   >
     {({ disabled, drop, hover, focus }) => {
-      const color = hover && !drop && !disabled ? 'accent-1' : undefined;
+      const color = hover && !drop && !disabled ? 'brand' : undefined;
       return (
         <Box
           direction="row"
@@ -21,7 +21,7 @@ const MenuWithChildren = (props) => (
           pad="small"
           background={hover && drop ? 'light-2' : undefined}
         >
-          <Text color={color}>{focus ? 'actions' : 'Actions'}</Text>
+          <Text color={color}>Actions</Text>
           <FormDown color={color} />
         </Box>
       );
@@ -33,7 +33,8 @@ const Example = () => (
   <Box
     align="center"
     pad="large"
-    background={{ color: 'dark-2', opacity: 0.7 }}
+    gap="small"
+    background={{ color: 'dark-3', opacity: 0.6 }}
   >
     <MenuWithChildren disabled />
     <MenuWithChildren />

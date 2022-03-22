@@ -68,22 +68,25 @@ const DateInput = forwardRef(
       initialValue: defaultValue,
     });
 
-    let timestamp;
-    if (Array.isArray(defaultValue) && defaultValue.length) {
-      timestamp = getTimestamp(defaultValue[0]);
-    } else if (typeof defaultValue === 'string') {
-      timestamp = getTimestamp(defaultValue);
-    } else if (Array.isArray(value) && value.length) {
-      timestamp = getTimestamp(value[0]);
+    const timestamp = useMemo(() => {
+      if (Array.isArray(defaultValue) && defaultValue.length)
+        return getTimestamp(defaultValue[0]);
+      if (typeof defaultValue === 'string') return getTimestamp(defaultValue);
+      if (Array.isArray(value) && value.length) return getTimestamp(value[0]);
       // check to see if value is not an empty string
       // empty string should behave like undefined
-    } else if (typeof value === 'string' && value.length) {
-      timestamp = getTimestamp(value);
-    }
+      if (typeof value === 'string' && value.length) return getTimestamp(value);
+      return undefined;
+    }, [defaultValue, value]);
+
+    // whether or not we should normalize the date based on the timestamp.
+    // will be set to false if the initial timestamp is undefined (meaning
+    // a user did not provide a defaultValue or value). in this case, we
+    // will just rely on the UTC timestamp and don't need to normalize.
+    const [normalize, setNormalize] = useState(true);
 
     // normalize value based on timestamp vs user's local timezone
-    const normalizedDate = normalizeForTimezone(value, timestamp);
-
+    const normalizedDate = normalizeForTimezone(value, timestamp, normalize);
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
 
@@ -153,6 +156,7 @@ Use the icon prop instead.`,
         dates={range && value.length ? [normalizedDate] : undefined}
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
+        normalize={normalize}
         onSelect={
           disabled
             ? undefined
@@ -163,9 +167,24 @@ Use the icon prop instead.`,
                 // clicking an edge date removes it
                 else if (range) normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
+                // timestamp will be undefined if no defaultValue or value have
+                // been passed in, indicating that we should stay local if the
+                // user first picks a date via the Calendar.
+                let nextNormalize = normalize;
+                if (timestamp === undefined) {
+                  nextNormalize = false;
+                  setNormalize(nextNormalize);
+                }
                 if (schema)
                   setTextValue(
-                    valueToText(normalizeForTimezone(normalizedValue), schema),
+                    valueToText(
+                      normalizeForTimezone(
+                        normalizedValue,
+                        undefined,
+                        nextNormalize,
+                      ),
+                      schema,
+                    ),
                   );
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
@@ -233,12 +252,32 @@ Use the icon prop instead.`,
               onChange={(event) => {
                 const nextTextValue = event.target.value;
                 setTextValue(nextTextValue);
+
+                let localTimestamp;
+                // get the UTC timestamp relative to the user's timezone
+                // once a date is complete
+                if (timestamp === undefined && Date.parse(nextTextValue))
+                  [, localTimestamp] = new Date(nextTextValue)
+                    .toISOString()
+                    .split('T');
+
+                // timestamp will be undefined if no defaultValue or value have
+                // been passed in, indicating that we should stay local
+                let nextNormalize = normalize;
+                if (timestamp === undefined) {
+                  nextNormalize = false;
+                  setNormalize(nextNormalize);
+                }
                 const nextValue = textToValue(
                   nextTextValue,
                   schema,
                   range,
-                  timestamp,
+                  timestamp || localTimestamp,
+                  nextNormalize,
                 );
+
+                // reset to original state
+                if (nextValue === undefined) setNormalize(true);
                 // update value even when undefined
                 setValue(nextValue);
                 if (onChange) {

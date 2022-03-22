@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Grommet as GrommetIcon } from 'grommet-icons';
-import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
+import { Anchor, Box, Footer, Main, Text } from 'grommet';
 import { fiveColumns as data } from './data';
 
 const StyledAnchor = styled(Anchor)`
@@ -14,13 +14,13 @@ const FooterAnchor = ({ ...rest }) => (
 );
 
 const FooterContent = () =>
-  data.map(item => (
+  data.map((item) => (
     <Box gap="medium" key={item[0]}>
       <Text weight="bold" size="small">
         {item[0]}
       </Text>
       <Box>
-        {[1, 2, 3, 4].map(i => (
+        {[1, 2, 3, 4].map((i) => (
           <FooterAnchor key={item[i]}>{item[i]}</FooterAnchor>
         ))}
       </Box>
@@ -28,7 +28,9 @@ const FooterContent = () =>
   ));
 
 export const DoubleFooter = () => (
-  <Grommet theme={grommet}>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box>
     <Main background="light-4" elevation="large" pad="large" border>
       <Text margin="small" size="xsmall">
         Main Content
@@ -50,7 +52,8 @@ export const DoubleFooter = () => (
         © 2019 Copyright
       </Text>
     </Footer>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 DoubleFooter.storyName = 'Double footer';

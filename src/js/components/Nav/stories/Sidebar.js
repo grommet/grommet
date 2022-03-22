@@ -6,7 +6,7 @@ const SidebarButton = ({ label, ...rest }) => (
   <Button plain {...rest}>
     {({ hover }) => (
       <Box
-        background={hover ? 'accent-1' : undefined}
+        background={hover ? 'teal' : undefined}
         pad={{ horizontal: 'large', vertical: 'medium' }}
       >
         <Text size="large">{label}</Text>
@@ -21,11 +21,11 @@ const SidebarNav = () => {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={grommet}>
     <Box fill direction="row">
-      <Nav background="neutral-1">
+      <Nav background="brand">
         {['Dashboard', 'Devices', 'Settings'].map((label) => (
           <SidebarButton
             key={label}
-            label={label}
+            label={<Text color="white">{label}</Text>}
             active={label === active}
             onClick={() => setActive(label)}
           />

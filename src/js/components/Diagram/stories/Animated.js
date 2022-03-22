@@ -1,7 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
 
-import { Box, Diagram, Grommet, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Diagram, Stack, Text } from 'grommet';
 import { Diamond } from 'grommet-icons';
 
 import { data } from './data';
@@ -70,34 +69,35 @@ export const Animated = () => {
   }
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center">
-        <Box pad="large">
-          <Stack>
-            <Box>
-              <Box alignSelf="center" margin={{ bottom: 'large' }}>
-                <Container node={data[0]} index={1} />
-                <Box pad="small" />
-                <Box
-                  id="4"
-                  width="xsmall"
-                  margin={{ bottom: 'large', top: 'xlarge' }}
-                />
-              </Box>
-              <Box direction="row" gap="xlarge">
-                {[2, 3].map((id) => (
-                  <Container key={id} node={data[id - 1]} index={id} />
-                ))}
-              </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box align="center">
+      <Box pad="large">
+        <Stack>
+          <Box>
+            <Box alignSelf="center" margin={{ bottom: 'large' }}>
+              <Container node={data[0]} index={1} />
+              <Box pad="small" />
+              <Box
+                id="4"
+                width="xsmall"
+                margin={{ bottom: 'large', top: 'xlarge' }}
+              />
             </Box>
-            <Diagram
-              animation={{ type: 'draw', duration: 3000 }}
-              connections={connections}
-            />
-          </Stack>
-        </Box>
+            <Box direction="row" gap="xlarge">
+              {[2, 3].map((id) => (
+                <Container key={id} node={data[id - 1]} index={id} />
+              ))}
+            </Box>
+          </Box>
+          <Diagram
+            animation={{ type: 'draw', duration: 3000 }}
+            connections={connections}
+          />
+        </Stack>
       </Box>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 
