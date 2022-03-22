@@ -360,7 +360,7 @@ const DataTable = ({
     <Container {...containterProps}>
       <OverflowContainer {...overflowContainerProps}>
         <StyledDataTable
-          fillProp={!paginate ? fill : undefined}
+          fillProp={!paginate ? fill : true}
           {...paginatedDataTableProps}
           {...rest}
         >

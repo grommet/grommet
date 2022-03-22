@@ -21220,6 +21220,8 @@ exports[`DataTable should apply pagination styling 1`] = `
   border-spacing: 0;
   border-collapse: separate;
   height: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .c8:focus {
@@ -23084,6 +23086,8 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
   border-spacing: 0;
   border-collapse: separate;
   height: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .c8:focus {
@@ -23264,6 +23268,8 @@ exports[`DataTable should not show paginate controls when length of data < step 
   border-spacing: 0;
   border-collapse: separate;
   height: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .c8:focus {
@@ -24006,6 +24012,8 @@ exports[`DataTable should paginate 1`] = `
   border-spacing: 0;
   border-collapse: separate;
   height: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .c8:focus {
@@ -26350,6 +26358,8 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   border-spacing: 0;
   border-collapse: separate;
   height: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .c8:focus {
@@ -27648,6 +27658,8 @@ exports[`DataTable should render new data when page changes 1`] = `
   border-spacing: 0;
   border-collapse: separate;
   height: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .c8:focus {
@@ -29428,7 +29440,7 @@ exports[`DataTable should render new data when page changes 2`] = `
       class="StyledBox-sc-13pk1d4-0 BCyrs"
     >
       <table
-        class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 gxHxWr"
+        class="StyledTable-sc-1m3u5g-6 bpywQv StyledDataTable-sc-xrlyjm-0 hJVSAk"
       >
         <thead
           class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -31540,6 +31552,8 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   border-spacing: 0;
   border-collapse: separate;
   height: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .c8:focus {
@@ -33884,6 +33898,8 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   border-spacing: 0;
   border-collapse: separate;
   height: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .c8:focus {
