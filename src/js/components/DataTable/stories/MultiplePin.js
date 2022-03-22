@@ -274,7 +274,7 @@ export const MultiplePins = () => (
   <Box align="center">
     <Box height="medium" width="600px" overflow="auto">
       <DataTable
-        background={{ pinned: 'pink' }}
+        background={{ pinned: 'light-2' }}
         data={data}
         columns={[
           {

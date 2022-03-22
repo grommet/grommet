@@ -8,13 +8,13 @@ export const Simple = () => (
   // <Grommet theme={...}>
   <Box align="center" pad="large">
     <Carousel>
-      <Box pad="xlarge" background="accent-1">
+      <Box pad="xlarge" background="light-1">
         <Attraction size="xlarge" />
       </Box>
-      <Box pad="xlarge" background="accent-2">
+      <Box pad="xlarge" background="light-2">
         <TreeOption size="xlarge" />
       </Box>
-      <Box pad="xlarge" background="accent-3">
+      <Box pad="xlarge" background="light-3">
         <Car size="xlarge" />
       </Box>
     </Carousel>

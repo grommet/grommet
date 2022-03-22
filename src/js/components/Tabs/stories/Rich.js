@@ -1,52 +1,32 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import { Box, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
-import { CircleInformation, Currency } from 'grommet-icons';
+import { Box, Tab, Tabs } from 'grommet';
+import { Currency, HomeRounded, Notification, User } from 'grommet-icons';
 
-const RichTabs = () => (
+export const TabsWithIcons = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Tabs>
-    <Tab
-      title={
-        <RichTabTitle
-          icon={<CircleInformation color="brand" />}
-          label="Personal Data"
-        />
-      }
-    >
-      <FormField label="Name">
-        <TextInput placeholder="Enter your name..." />
-      </FormField>
-    </Tab>
-    <Tab
-      title={<RichTabTitle icon={<Currency color="brand" />} label="Payment" />}
-    >
-      <FormField label="Card Number">
-        <TextInput placeholder="Enter your card number..." />
-      </FormField>
-    </Tab>
-  </Tabs>
+  <Box align="center" pad="medium">
+    <Tabs>
+      <Tab title="General" icon={<HomeRounded />}>
+        <Box margin="small">General Information</Box>
+      </Tab>
+      <Tab title="Account" icon={<User />}>
+        <Box margin="small">Account Information</Box>
+      </Tab>
+      <Tab title="Billing" icon={<Currency />}>
+        <Box margin="small">Billing Information</Box>
+      </Tab>
+      <Tab title="Notifications" icon={<Notification />}>
+        <Box margin="small">Notifications will show here.</Box>
+      </Tab>
+    </Tabs>
+  </Box>
   // </Grommet>
 );
 
-const RichTabTitle = ({ icon, label }) => (
-  <Box direction="row" align="center" gap="xsmall" margin="xsmall">
-    {icon}
-    <Text size="small">
-      <strong>{label}</strong>
-    </Text>
-  </Box>
-);
-
-RichTabTitle.propTypes = {
-  icon: PropTypes.node.isRequired,
-  label: PropTypes.string.isRequired,
-};
-
-export const Rich = () => <RichTabs />;
+TabsWithIcons.storyName = 'Tabs with icons';
 
 export default {
-  title: 'Controls/Tabs/Rich',
+  title: 'Controls/Tabs/Tabs with icons',
 };

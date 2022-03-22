@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Box, Menu } from 'grommet';
-import { User } from 'grommet-icons';
+import { Home, User } from 'grommet-icons';
 
 export const Justify = () => (
   <Box pad="small">
@@ -9,9 +9,9 @@ export const Justify = () => (
       alignSelf="start"
       label="Actions"
       items={[
-        { label: 'Hey', icon: <User />, justify: 'center' },
-        { label: 'Hello', icon: <User />, justify: 'end' },
-        { label: 'Hii', icon: <User /> },
+        { label: 'User', icon: <User />, justify: 'center' },
+        { label: 'Users', icon: <User />, justify: 'end' },
+        { label: 'Home', icon: <Home /> },
       ]}
     />
   </Box>

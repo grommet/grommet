@@ -34,7 +34,11 @@ export const AggregateValidation = () => {
           )}
 
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
-            <Button type="reset" label="Reset" />
+            <Button
+              onClick={() => setValue({ name: '', email: '' })}
+              type="reset"
+              label="Reset"
+            />
             <Button type="submit" label="Update" primary />
           </Box>
         </Form>
