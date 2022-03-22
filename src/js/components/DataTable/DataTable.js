@@ -359,11 +359,7 @@ const DataTable = ({
   return (
     <Container {...containterProps}>
       <OverflowContainer {...overflowContainerProps}>
-        <StyledDataTable
-          fillProp={!paginate ? fill : true}
-          {...paginatedDataTableProps}
-          {...rest}
-        >
+        <StyledDataTable fillProp={fill} {...paginatedDataTableProps} {...rest}>
           <Header
             ref={headerRef}
             cellProps={cellProps.header}

@@ -319,6 +319,7 @@ export const Test = () => {
           sortable
           step={10}
           paginate
+          fill
         />
       </Box>
     </>
