@@ -116,6 +116,13 @@ export var getTimestamp = function getTimestamp(date) {
   return /T.*/.test(date) ? new Date(date).toISOString().split('T')[1] : // for Calendar, explicitly mark that caller has provided
   // value with no timestamp
   false;
+}; // Checks if daylight savings is in effect for a timezone and date
+// Reference: https://stackoverflow.com/questions/11887934/how-to-check-if-dst-daylight-saving-time-is-in-effect-and-if-so-the-offset
+
+var inDaylightSavings = function inDaylightSavings(day) {
+  var jan = new Date(day.getFullYear(), 0, 1).getTimezoneOffset();
+  var july = new Date(day.getFullYear(), 6, 1).getTimezoneOffset();
+  return Math.max(jan, july) !== day.getTimezoneOffset();
 }; // Adjust for differences between timestamp on value and
 // local timezone of user. Internal Calendar logic relies
 // on Javascript date contructor which translates the provided
@@ -126,28 +133,45 @@ export var getTimestamp = function getTimestamp(date) {
 // If normalize is false just convert the value toISOString(),
 // valueOffset/localOffset will be 0.
 
+
 export var normalizeForTimezone = function normalizeForTimezone(value, timestamp, normalize) {
   if (normalize === void 0) {
     normalize = true;
   }
 
   var adjustedDate;
-  var hourDelta;
+  var hourDelta = 0;
   var valueOffset = 0;
   var localOffset = 0;
 
   if (normalize) {
     if (timestamp && typeof timestamp === 'string') {
       hourDelta = parseInt(timestamp == null ? void 0 : timestamp.split(':')[0], 10);
-      valueOffset = hourDelta * 60 * 60 * 1000; // ms
     }
 
-    localOffset = new Date().getTimezoneOffset() * 60 * 1000;
-  }
+    var today = new Date();
+    adjustedDate = value && (Array.isArray(value) ? value : [value]).map(function (v) {
+      var day = new Date(v); // If one of the days either day or today is in daylight savings and the
+      // other is not the timezoneOffset will be different. If they are both
+      // in or out of daylight savings the timezoneOffset will be the same.
 
-  adjustedDate = value && (Array.isArray(value) ? value : [value]).map(function (v) {
-    return new Date(new Date(v).getTime() - valueOffset + localOffset).toISOString();
-  });
+      if (day && !inDaylightSavings(day) && day.getTimezoneOffset() > today.getTimezoneOffset()) {
+        // today is in daylight savings but the selected day is not
+        hourDelta -= 1;
+      } else if (day && inDaylightSavings(day) && day.getTimezoneOffset() < today.getTimezoneOffset()) {
+        // the selected day is in daylight savings but today is not
+        hourDelta += 1;
+      }
+
+      valueOffset = hourDelta === 0 ? 0 : hourDelta * 60 * 60 * 1000;
+      localOffset = new Date().getTimezoneOffset() * 60 * 1000;
+      return new Date(new Date(v).getTime() - valueOffset + localOffset).toISOString();
+    });
+  } else {
+    adjustedDate = value && (Array.isArray(value) ? value : [value]).map(function (v) {
+      return new Date(new Date(v).getTime()).toISOString();
+    });
+  }
 
   if (typeof value === 'string') {
     var _adjustedDate = adjustedDate;
