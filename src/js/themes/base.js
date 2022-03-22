@@ -1111,7 +1111,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           elevation: 'medium',
           round: 'xsmall',
           width: 'medium',
-          alignSelf: 'center',
         },
         layer: {
           position: 'top',
