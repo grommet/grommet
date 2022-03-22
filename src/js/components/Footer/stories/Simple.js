@@ -1,9 +1,11 @@
 import React from 'react';
 
-import { Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
+import { Box, Footer, Main, Text } from 'grommet';
 
 export const Simple = () => (
-  <Grommet theme={grommet}>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box>
     <Main background="light-2" elevation="large" pad="large" gap="large">
       <Text margin="small" size="xsmall">
         Main Content
@@ -15,7 +17,8 @@ export const Simple = () => (
         © 2019 Copyright Grommet
       </Text>
     </Footer>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 export default {

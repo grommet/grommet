@@ -11,6 +11,7 @@ import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
 import { Stack } from '../Stack';
+import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
 import { Detail } from './Detail';
 import { Legend } from './Legend';
@@ -20,6 +21,12 @@ import { XGuide } from './XGuide';
 import { YGuide } from './YGuide';
 import { createDateFormat, halfPad, heightYGranularity, points } from './utils';
 import { DataChartPropTypes } from './propTypes';
+
+const stackedChartType = {
+  areas: 'area',
+  bars: 'bar',
+  lines: 'line',
+};
 
 // DataChart takes a generic data array of objects plus as few properties
 // as possible, and creates a Stack of Charts with x and y axes, a legend,
@@ -40,6 +47,7 @@ const DataChart = forwardRef(
       guide: guideProp,
       legend,
       offset,
+      placeholder,
       pad: padProp,
       series: seriesProp,
       size,
@@ -72,7 +80,7 @@ const DataChart = forwardRef(
 
     // Normalize chart to an array of objects.
     // Each chart has one or more properties associated with it.
-    // A stacked bar chart has an array of properties.
+    // A stacked bar or area chart has an array of properties.
     // A point chart can have x, y, thickness, and color each driven
     // by a separate property.
     const charts = useMemo(() => {
@@ -114,7 +122,7 @@ const DataChart = forwardRef(
               // properties.
               // In this case, this returns an array of values,
               // one per property.
-              if (type === 'bars' || type === 'areas') {
+              if (stackedChartType[type]) {
                 // Further down, where we render, each property is rendered
                 // using a separate Chart component and the values are stacked
                 // such that they line up appropriately.
@@ -127,6 +135,7 @@ const DataChart = forwardRef(
                   return values.map((v, i) => {
                     const base = totals[i] || 0;
                     totals[i] = base + v;
+                    if (type === 'lines') return [i, base + v];
                     return [i, base, base + v];
                   });
                 });
@@ -259,18 +268,26 @@ const DataChart = forwardRef(
 
       let chartBounds = chartValues.map((_, index) => {
         const { type } = charts[index];
-        if (type === 'bars' || type === 'areas') {
-          // merge values for bars and areas cases
-          let mergedValues = chartValues[index][0].slice(0);
+        if (stackedChartType[type]) {
+          // merge values for bars, areas, and lines cases
+          let mergedValues = chartValues[index]?.[0]?.slice(0) || [];
           chartValues[index]
             .slice(1) // skip first index as that is the x value
             .filter((values) => values) // property name isn't valid
             .forEach((values) => {
-              mergedValues = mergedValues.map((__, i) => [
-                i,
-                Math.min(mergedValues[i][1], values[i][1]),
-                Math.max(mergedValues[i][2], values[i][2]),
-              ]);
+              mergedValues = mergedValues.map((__, i) =>
+                type === 'lines'
+                  ? [
+                      i,
+                      Math.min(mergedValues[i][1], values[i][1]),
+                      Math.max(mergedValues[i][1], values[i][1]),
+                    ]
+                  : [
+                      i,
+                      Math.min(mergedValues[i][1], values[i][1]),
+                      Math.max(mergedValues[i][2], values[i][2]),
+                    ],
+              );
             });
           return calcBounds(mergedValues, { coarseness, steps });
         }
@@ -292,10 +309,14 @@ const DataChart = forwardRef(
         chartBounds = chartBounds.map(() => alignedBounds);
       }
 
+      if (typeof boundsProp === 'object') {
+        if (boundsProp.y)
+          chartBounds = chartBounds.map((b) => [b[0], [...boundsProp.y]]);
+      }
+
       return chartValues.map((values, index) => {
         const { thickness, type } = charts[index];
-        const calcValues =
-          type === 'bars' || type === 'areas' ? values[0] : values;
+        const calcValues = stackedChartType[type] ? values[0] : values;
         return calcs(calcValues, {
           bounds: chartBounds[index],
           steps,
@@ -504,18 +525,25 @@ const DataChart = forwardRef(
         <XAxis
           ref={xRef}
           axis={axis}
-          chartProps={chartProps}
-          data={data}
+          values={
+            (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
+              .axis[0]
+          }
+          pad={pad}
           renderValue={renderValue}
           serie={axis.x.property && getPropertySeries(axis.x.property)}
         />
       ) : null;
 
     const yAxisElement =
-      axis && axis.y && chartProps.length ? (
+      axis && axis.y && (chartProps.length || boundsProp?.y) ? (
         <YAxis
           axis={axis}
-          chartProps={chartProps}
+          values={
+            boundsProp?.y?.slice(0).reverse() ||
+            (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
+              .axis[1]
+          }
           pad={pad}
           renderValue={renderValue}
           serie={axis.y.property && getPropertySeries(axis.y.property)}
@@ -555,11 +583,13 @@ const DataChart = forwardRef(
             ? { style: { transform: `translate(${offsets[i]}px, 0px)` } }
             : {};
 
-          if (type === 'bars' || type === 'areas') {
+          if (stackedChartType[type]) {
             // reverse to ensure area Charts are stacked in the right order
             return prop
               .map((cProp, j) => {
                 const pProp = cProp.property || cProp;
+                const { property, ...propRest } =
+                  typeof cProp === 'object' ? cProp : {};
                 return (
                   <Chart
                     // eslint-disable-next-line react/no-array-index-key
@@ -570,8 +600,9 @@ const DataChart = forwardRef(
                     {...seriesStyles[pProp]}
                     {...chartProps[i]}
                     {...chartRest}
+                    {...propRest}
                     {...offsetProps}
-                    type={type === 'areas' ? 'area' : 'bar'}
+                    type={stackedChartType[type] || type}
                     size={size}
                     pad={chartPad}
                   />
@@ -579,6 +610,7 @@ const DataChart = forwardRef(
               })
               .reverse();
           }
+
           return (
             <Chart
               // eslint-disable-next-line react/no-array-index-key
@@ -595,11 +627,25 @@ const DataChart = forwardRef(
             />
           );
         })}
+        {placeholder &&
+          ((typeof placeholder === 'string' && (
+            <Box
+              fill="vertical"
+              align="center"
+              justify="center"
+              background={{ color: 'background-front', opacity: 'strong' }}
+              margin={pad}
+            >
+              <Text color="text-weak">{placeholder}</Text>
+            </Box>
+          )) ||
+            placeholder)}
         {detail && (
           <Detail
             activeProperty={activeProperty}
             axis={axis}
             data={data}
+            pad={pad}
             series={series}
             seriesStyles={seriesStyles}
             renderValue={renderValue}

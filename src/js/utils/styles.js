@@ -840,7 +840,14 @@ const heightObjectStyle = (height, theme) => {
         min-height: ${getSize(theme, height.min)};
       `,
     );
+  // backwards compatibile
   if (height.width)
+    result.push(
+      css`
+        height: ${getSize(theme, height.height)};
+      `,
+    );
+  if (height.height)
     result.push(
       css`
         height: ${getSize(theme, height.height)};

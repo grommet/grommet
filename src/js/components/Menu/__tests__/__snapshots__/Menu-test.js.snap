@@ -123,6 +123,8 @@ exports[`Menu basic 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -302,6 +304,8 @@ exports[`Menu close by clicking outside 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -560,6 +564,10 @@ exports[`Menu close by clicking outside 2`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
@@ -606,6 +614,7 @@ exports[`Menu close by clicking outside 2`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
@@ -644,12 +653,15 @@ exports[`Menu close by clicking outside 2`] = `
     </div>
     <div
       class="c10"
+      role="menu"
     >
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -661,9 +673,11 @@ exports[`Menu close by clicking outside 2`] = `
       </div>
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -843,6 +857,8 @@ exports[`Menu close on tab 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -1034,6 +1050,8 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
     class="c0"
   >
     <button
+      aria-expanded="false"
+      aria-haspopup="menu"
       aria-label="My Menu"
       class="c1"
       type="button"
@@ -1064,6 +1082,8 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
       </div>
     </button>
     <button
+      aria-expanded="false"
+      aria-haspopup="menu"
       aria-label="My Menu 2"
       class="c1"
       type="button"
@@ -1254,6 +1274,8 @@ exports[`Menu custom message 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -1443,6 +1465,8 @@ exports[`Menu custom theme icon color 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     type="button"
@@ -1634,6 +1658,8 @@ exports[`Menu custom theme with default button 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     type="button"
@@ -1821,6 +1847,8 @@ exports[`Menu disabled 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     disabled=""
@@ -2029,6 +2057,8 @@ exports[`Menu gap between icon and label 1`] = `
     class="c0"
   >
     <button
+      aria-expanded="true"
+      aria-haspopup="menu"
       aria-label="Open Menu"
       class="c1"
       type="button"
@@ -2360,6 +2390,8 @@ exports[`Menu justify content 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -2390,6 +2422,8 @@ exports[`Menu justify content 1`] = `
     </div>
   </button>
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -2420,6 +2454,8 @@ exports[`Menu justify content 1`] = `
     </div>
   </button>
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -2450,6 +2486,8 @@ exports[`Menu justify content 1`] = `
     </div>
   </button>
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -2480,6 +2518,8 @@ exports[`Menu justify content 1`] = `
     </div>
   </button>
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -2510,6 +2550,8 @@ exports[`Menu justify content 1`] = `
     </div>
   </button>
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -2624,6 +2666,8 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     type="button"
@@ -2790,6 +2834,8 @@ exports[`Menu navigate through suggestions and select 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -2980,6 +3026,8 @@ exports[`Menu open and close on click 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -3018,6 +3066,8 @@ exports[`Menu open and close on click 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <button
+    aria-expanded="true"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="StyledButton-sc-323bzc-0 eiEooU"
     id="test-menu"
@@ -3276,6 +3326,10 @@ exports[`Menu open and close on click 3`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
@@ -3322,6 +3376,7 @@ exports[`Menu open and close on click 3`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
@@ -3360,12 +3415,15 @@ exports[`Menu open and close on click 3`] = `
     </div>
     <div
       class="c10"
+      role="menu"
     >
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -3377,9 +3435,11 @@ exports[`Menu open and close on click 3`] = `
       </div>
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -3391,10 +3451,12 @@ exports[`Menu open and close on click 3`] = `
       </div>
       <div
         class="c4"
+        role="none"
       >
         <a
           class="c5"
           href="/test"
+          role="menuitem"
         >
           <div
             class="c11"
@@ -3573,6 +3635,8 @@ exports[`Menu open on down close on esc 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -3763,6 +3827,8 @@ exports[`Menu open on up close on esc 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -4021,6 +4087,10 @@ exports[`Menu open on up close on esc 2`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
@@ -4067,6 +4137,7 @@ exports[`Menu open on up close on esc 2`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
@@ -4105,12 +4176,15 @@ exports[`Menu open on up close on esc 2`] = `
     </div>
     <div
       class="c10"
+      role="menu"
     >
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -4122,9 +4196,11 @@ exports[`Menu open on up close on esc 2`] = `
       </div>
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -4317,6 +4393,8 @@ exports[`Menu reverse icon and label 1`] = `
     class="c0"
   >
     <button
+      aria-expanded="true"
+      aria-haspopup="menu"
       aria-label="Open Menu"
       class="c1"
       type="button"
@@ -4507,6 +4585,8 @@ exports[`Menu select an item 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -4697,6 +4777,8 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -4899,6 +4981,8 @@ exports[`Menu should apply themed drop props 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="true"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     type="button"
@@ -5073,6 +5157,8 @@ exports[`Menu should have no accessibility violations 1`] = `
     class="c0"
   >
     <button
+      aria-expanded="false"
+      aria-haspopup="menu"
       aria-label="Open Menu"
       class="c1"
       type="button"
@@ -5258,6 +5344,8 @@ exports[`Menu tab through menu until it closes 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -5448,6 +5536,8 @@ exports[`Menu with dropAlign bottom renders 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -5706,6 +5796,10 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c8 {
     padding: 6px;
@@ -5752,15 +5846,19 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
+      role="menu"
     >
       <div
         class="c5"
+        role="none"
       >
         <button
           class="c6"
+          role="menuitem"
           type="button"
         >
           <div
@@ -5772,9 +5870,11 @@ exports[`Menu with dropAlign bottom renders 2`] = `
       </div>
       <div
         class="c5"
+        role="none"
       >
         <button
           class="c6"
+          role="menuitem"
           type="button"
         >
           <div
@@ -5989,6 +6089,8 @@ exports[`Menu with dropAlign top renders 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -6247,6 +6349,10 @@ exports[`Menu with dropAlign top renders 2`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
@@ -6293,6 +6399,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
@@ -6331,12 +6438,15 @@ exports[`Menu with dropAlign top renders 2`] = `
     </div>
     <div
       class="c10"
+      role="menu"
     >
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -6348,9 +6458,11 @@ exports[`Menu with dropAlign top renders 2`] = `
       </div>
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div

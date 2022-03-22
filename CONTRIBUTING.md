@@ -15,8 +15,6 @@ Grommet is divided into several projects, the following are notable:
   contributions are more than welcome! Be sure to check the [good first issues].
 - [grommet-site] - the Grommet website. Any documentation changes should be made here.
 - [grommet-icons] – iconography for Grommet and React.js.
-- [design-kit] – the Grommet Design Kit provides a set of sticker sheets and
-  templates to help bootstrap your design process.
 
 ## You can Become a Contributor
 

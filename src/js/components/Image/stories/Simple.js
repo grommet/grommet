@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Grommet, Image } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Image } from 'grommet';
 
 export const Simple = () => (
-  <Grommet theme={grommet}>
-    <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
+  // </Grommet>
 );
 
 export default {

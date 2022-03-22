@@ -10,7 +10,7 @@ const PlainDrop = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box background="brand" fill align="center" justify="center">
+    <Box background="light-3" fill align="center" justify="center">
       <Box
         background="dark-3"
         pad="medium"
