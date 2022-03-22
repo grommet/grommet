@@ -63,6 +63,7 @@ const DropContainer = forwardRef(
       [portalContext, portalId],
     );
     const dropRef = useRef();
+
     useEffect(() => {
       const notifyAlign = () => {
         const styleCurrent = (ref || dropRef).current.style;
@@ -292,10 +293,8 @@ const DropContainer = forwardRef(
         }
       };
     }, [
-      align,
       onAlign,
       dropTarget,
-      onClickOutside,
       portalContext,
       portalId,
       ref,
