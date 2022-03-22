@@ -172,7 +172,7 @@ var Notification = function Notification(_ref) {
       modal: false,
       onEsc: onClose,
       id: id,
-      responsive: true,
+      responsive: false,
       plain: true,
       position: position
     }), content);
