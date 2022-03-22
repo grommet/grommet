@@ -15,7 +15,6 @@ import { Button } from '../Button';
 import { Layer } from '../Layer';
 import { Paragraph } from '../Paragraph';
 import { Text } from '../Text';
-import { ResponsiveContext } from '../../contexts';
 
 import { NotificationType } from './propTypes';
 
