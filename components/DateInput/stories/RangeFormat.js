@@ -16,7 +16,8 @@ var RangeFormat = function RangeFormat() {
 
   var onChange = function onChange(event) {
     var nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setValue(nextValue);
   };
 

@@ -51,49 +51,57 @@ var FormatInline = function FormatInline() {
 
   var onChangeEmpty = function onChangeEmpty(event) {
     var nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setEmptyDate(nextValue);
   };
 
   var onChangeTZ = function onChangeTZ(event) {
     var nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDate(nextValue);
   };
 
   var onChangeNoTZ = function onChangeNoTZ(event) {
     var nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDateNoTZ(nextValue);
   };
 
   var onChangeRange = function onChangeRange(event) {
     var nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDateRange(nextValue);
   };
 
   var onChangeRangeNoTZ = function onChangeRangeNoTZ(event) {
     var nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDateRangeNoTZ(nextValue);
   };
 
   var onChangeNoDefault = function onChangeNoDefault(event) {
     var nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDateNoDefault(nextValue);
   };
 
   var onChangeStateDefault = function onChangeStateDefault(event) {
     var nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDateStateDefault(nextValue);
   };
 
   var onChangeStateDefaultNoTZ = function onChangeStateDefaultNoTZ(event) {
     var nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDateStateDefaultNoTZ(nextValue);
   };
 
