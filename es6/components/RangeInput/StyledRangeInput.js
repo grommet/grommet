@@ -84,6 +84,10 @@ var disabledRangeInputStyle = function disabledRangeInputStyle(props, context) {
   return css(["", " ", ""], disabledStyle(props.theme.rangeInput.disabled.opacity), ((_props$theme$rangeInp3 = props.theme.rangeInput.disabled[context]) == null ? void 0 : _props$theme$rangeInp3.color) && "background: " + normalizeColor(props.theme.rangeInput.disabled[context].color, props.theme) + ";");
 };
 
+var hoverStyle = function hoverStyle(props) {
+  return css(["box-shadow:0px 0px 0px 2px ", ";"], normalizeColor(props.theme.rangeInput.thumb.color || 'control', props.theme));
+};
+
 var rangeTrackStyle = css(["box-sizing:border-box;width:100%;height:", ";", ";", " ", ";"], function (props) {
   return props.theme.rangeInput.track.height;
 }, function (props) {
@@ -115,7 +119,7 @@ var firefoxMicrosoftThumbStyle = css(["", " margin-top:0px;height:", ";width:", 
 }, function (props) {
   return props.theme.global.spacing;
 }, function (props) {
-  return props.focus && focusStyle();
+  return props.focus && props.focusIndicator && focusStyle();
 }, function (props) {
   return props.theme.rangeInput && props.theme.rangeInput.thumb && props.theme.rangeInput.thumb.extend;
 });
@@ -124,7 +128,7 @@ var firefoxMicrosoftThumbStyle = css(["", " margin-top:0px;height:", ";width:", 
 var StyledRangeInput = styled.input.withConfig({
   displayName: "StyledRangeInput",
   componentId: "sc-15st9ck-0"
-})(["box-sizing:border-box;position:relative;-webkit-appearance:none;border-color:transparent;height:", ";width:100%;padding:0px;cursor:", ";background:transparent;", " &::-moz-focus-inner{border:none;}&::-moz-focus-outer{border:none;}&::-webkit-slider-runnable-track{", "}&::-webkit-slider-thumb{margin-top:-", "px;", " ", "}&::-moz-range-track{", "}&::-moz-range-thumb{", "}&::-ms-thumb{", "}", " &::-ms-track{", " border-color:transparent;color:transparent;}&::-ms-fill-lower{", ";border-color:transparent;}&::-ms-fill-upper{", ";border-color:transparent;}&:focus::-webkit-slider-thumb{", "}&:focus-visible{outline:0;}&:focus{outline:none;}", ""], function (props) {
+})(["box-sizing:border-box;position:relative;-webkit-appearance:none;border-color:transparent;height:", ";width:100%;padding:0px;cursor:", ";background:transparent;", " &::-moz-focus-inner{border:none;}&::-moz-focus-outer{border:none;}&::-webkit-slider-runnable-track{", "}&::-webkit-slider-thumb{margin-top:-", "px;", " ", " ", "}&::-moz-range-track{", "}&::-moz-range-thumb{", "}&::-ms-thumb{", "}", " &::-ms-track{", " border-color:transparent;color:transparent;}&::-ms-fill-lower{", ";border-color:transparent;}&::-ms-fill-upper{", ";border-color:transparent;}&:focus::-webkit-slider-thumb{", "}&:focus-visible{outline:0;}&:focus{outline:none;}", ""], function (props) {
   return props.theme.global.spacing;
 }, function (props) {
   return props.disabled ? 'default' : 'pointer';
@@ -133,15 +137,17 @@ var StyledRangeInput = styled.input.withConfig({
 }, rangeTrackStyle, function (props) {
   return (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5;
 }, rangeThumbStyle, function (props) {
-  return !props.disabled && css(["&:hover{box-shadow:0px 0px 0px 2px ", ";}"], normalizeColor(props.theme.rangeInput.thumb.color || 'control', props.theme));
+  return !props.disabled && css(["&:hover{", "}"], hoverStyle(props));
+}, function (props) {
+  return props.focus && !props.focusIndicator && css(["", ""], hoverStyle(props));
 }, rangeTrackStyle, firefoxMicrosoftThumbStyle, firefoxMicrosoftThumbStyle, function (props) {
-  return !props.disabled && css(["&:hover::-moz-range-thumb{box-shadow:0px 0px 0px 2px ", ";}&:hover::-ms-thumb{box-shadow:0px 0px 0px 2px ", ";}"], normalizeColor(props.theme.rangeInput.thumb.color || 'control', props.theme), normalizeColor(props.theme.rangeInput.thumb.color || 'control', props.theme));
+  return !props.disabled && css(["&:hover::-moz-range-thumb{", "}&:hover::-ms-thumb{", "}"], hoverStyle(props), hoverStyle(props));
 }, rangeTrackStyle, function (props) {
   return trackColorStyle(props, 'lower');
 }, function (props) {
   return trackColorStyle(props, 'upper');
 }, function (props) {
-  return props.focus && focusStyle();
+  return props.focus && props.focusIndicator && focusStyle();
 }, function (props) {
   return props.theme.rangeInput && props.theme.rangeInput.extend;
 });

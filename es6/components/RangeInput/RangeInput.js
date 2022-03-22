@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "color", "name", "onChange", "onFocus", "onBlur", "value", "step", "min", "max"];
+var _excluded = ["a11yTitle", "color", "focus", "focusIndicator", "name", "onChange", "onFocus", "onBlur", "value", "step", "min", "max"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -12,6 +12,9 @@ import { useForwardedRef } from '../../utils';
 var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       color = _ref.color,
+      focusProp = _ref.focus,
+      _ref$focusIndicator = _ref.focusIndicator,
+      focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
       name = _ref.name,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
@@ -27,16 +30,16 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var formContext = useContext(FormContext);
 
+  var _useState = useState(focusProp),
+      focus = _useState[0],
+      setFocus = _useState[1];
+
   var _formContext$useFormI = formContext.useFormInput({
     name: name,
     value: valueProp
   }),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1];
-
-  var _useState = useState(),
-      focus = _useState[0],
-      setFocus = _useState[1];
 
   var _useState2 = useState({
     x: null,
@@ -111,6 +114,7 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ref: rangeInputRef,
     name: name,
     focus: focus,
+    focusIndicator: focusIndicator,
     value: value
   }, rest, {
     color: color,

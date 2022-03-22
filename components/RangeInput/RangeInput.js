@@ -13,7 +13,7 @@ var _propTypes = require("./propTypes");
 
 var _utils = require("../../utils");
 
-var _excluded = ["a11yTitle", "color", "name", "onChange", "onFocus", "onBlur", "value", "step", "min", "max"];
+var _excluded = ["a11yTitle", "color", "focus", "focusIndicator", "name", "onChange", "onFocus", "onBlur", "value", "step", "min", "max"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -26,6 +26,9 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var RangeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       color = _ref.color,
+      focusProp = _ref.focus,
+      _ref$focusIndicator = _ref.focusIndicator,
+      focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
       name = _ref.name,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
@@ -41,16 +44,16 @@ var RangeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
+  var _useState = (0, _react.useState)(focusProp),
+      focus = _useState[0],
+      setFocus = _useState[1];
+
   var _formContext$useFormI = formContext.useFormInput({
     name: name,
     value: valueProp
   }),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1];
-
-  var _useState = (0, _react.useState)(),
-      focus = _useState[0],
-      setFocus = _useState[1];
 
   var _useState2 = (0, _react.useState)({
     x: null,
@@ -125,6 +128,7 @@ var RangeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     ref: rangeInputRef,
     name: name,
     focus: focus,
+    focusIndicator: focusIndicator,
     value: value
   }, rest, {
     color: color,
