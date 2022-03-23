@@ -579,6 +579,7 @@ describe('Box', () => {
         <Box height="large" />
         <Box height="xlarge" />
         <Box height="111px" />
+        <Box height={{ min: 'small', max: '100%', height: 'large' }} />
       </Grommet>,
     );
 

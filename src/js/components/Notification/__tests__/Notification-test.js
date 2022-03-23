@@ -206,6 +206,24 @@ describe('Notification', () => {
     expect(link).toHaveAttribute('href', '/some-link');
   });
 
+  test('multi actions', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <TestNotification
+          actions={[
+            { href: '/some-link', label: 'Renew Subscription' },
+            {
+              href: '/link',
+              label: 'View More',
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('global', () => {
     const { asFragment } = render(
       <Grommet>

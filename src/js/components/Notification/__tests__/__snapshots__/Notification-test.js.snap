@@ -118,6 +118,12 @@ exports[`Notification custom theme 1`] = `
   line-height: 24px;
 }
 
+.c9 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -138,14 +144,6 @@ exports[`Notification custom theme 1`] = `
   .c3 {
     padding-right: 6px;
   }
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 @media only screen and (max-width:768px) {
@@ -191,7 +189,11 @@ exports[`Notification custom theme 1`] = `
             <span
               class="c8"
             >
-              message
+              <span
+                class="c9"
+              >
+                message
+              </span>
             </span>
           </span>
         </div>
@@ -244,8 +246,7 @@ exports[`Notification global 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(255,255,255,1);
-  color: #444444;
+  background-color: rgba(204,204,204,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -323,6 +324,12 @@ exports[`Notification global 1`] = `
   line-height: 24px;
 }
 
+.c9 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -396,9 +403,254 @@ exports[`Notification global 1`] = `
             <span
               class="c8"
             >
-              message
+              <span
+                class="c9"
+              >
+                message
+              </span>
             </span>
           </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Notification multi actions 1`] = `
+<DocumentFragment>
+  .c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #CCCCCC;
+  stroke: #CCCCCC;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(255,255,255,1);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c8 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.c9:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c7 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+.c10 {
+  white-space: nowrap;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-right: 6px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <svg
+            aria-label="Status is unknown"
+            class="c4"
+            viewBox="0 0 12 12"
+          >
+            <rect
+              fill-rule="evenodd"
+              height="10"
+              rx="1"
+              stroke="#000"
+              width="10"
+              x="1"
+              y="1"
+            />
+          </svg>
+        </div>
+        <div
+          class="c5"
+        >
+          <span
+            class="c6"
+          >
+            title
+          </span>
+          <p
+            class="c7"
+          >
+            <span
+              class="c8"
+            >
+              message
+            </span>
+            <a
+              class="c9 c10"
+              href="/some-link"
+            >
+              Renew Subscription
+            </a>
+             
+            <a
+              class="c9 c10"
+              href="/link"
+            >
+              View More
+            </a>
+             
+          </p>
         </div>
       </div>
     </div>
@@ -519,6 +771,12 @@ exports[`Notification position bottom 1`] = `
   font-weight: bold;
 }
 
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -611,26 +869,6 @@ exports[`Notification position bottom 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -683,7 +921,11 @@ exports[`Notification position bottom 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -825,6 +1067,12 @@ exports[`Notification position bottom-left 1`] = `
   font-weight: bold;
 }
 
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -917,26 +1165,6 @@ exports[`Notification position bottom-left 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -989,7 +1217,11 @@ exports[`Notification position bottom-left 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -1131,6 +1363,12 @@ exports[`Notification position bottom-right 1`] = `
   font-weight: bold;
 }
 
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1223,26 +1461,6 @@ exports[`Notification position bottom-right 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -1295,7 +1513,11 @@ exports[`Notification position bottom-right 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -1437,6 +1659,12 @@ exports[`Notification position center 1`] = `
   font-weight: bold;
 }
 
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1529,26 +1757,6 @@ exports[`Notification position center 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -1601,7 +1809,11 @@ exports[`Notification position center 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -1743,6 +1955,12 @@ exports[`Notification position end 1`] = `
   font-weight: bold;
 }
 
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1835,26 +2053,6 @@ exports[`Notification position end 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -1907,7 +2105,11 @@ exports[`Notification position end 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -2049,6 +2251,12 @@ exports[`Notification position left 1`] = `
   font-weight: bold;
 }
 
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2141,26 +2349,6 @@ exports[`Notification position left 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -2213,7 +2401,11 @@ exports[`Notification position left 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -2355,6 +2547,12 @@ exports[`Notification position right 1`] = `
   font-weight: bold;
 }
 
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2447,26 +2645,6 @@ exports[`Notification position right 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -2519,7 +2697,11 @@ exports[`Notification position right 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -2661,6 +2843,12 @@ exports[`Notification position start 1`] = `
   font-weight: bold;
 }
 
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2753,26 +2941,6 @@ exports[`Notification position start 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -2825,7 +2993,11 @@ exports[`Notification position start 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -2967,6 +3139,12 @@ exports[`Notification position top 1`] = `
   font-weight: bold;
 }
 
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3059,26 +3237,6 @@ exports[`Notification position top 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -3131,7 +3289,11 @@ exports[`Notification position top 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -3273,6 +3435,12 @@ exports[`Notification position top-left 1`] = `
   font-weight: bold;
 }
 
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3365,26 +3533,6 @@ exports[`Notification position top-left 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -3437,7 +3585,11 @@ exports[`Notification position top-left 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -3579,6 +3731,12 @@ exports[`Notification position top-right 1`] = `
   font-weight: bold;
 }
 
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3671,26 +3829,6 @@ exports[`Notification position top-right 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -3743,7 +3881,11 @@ exports[`Notification position top-right 1`] = `
           <p
             class="c9"
           >
-            message
+            <span
+              class="c10"
+            >
+              message
+            </span>
           </p>
         </div>
       </div>
@@ -3984,16 +4126,7 @@ exports[`Notification should have no accessibility violations for toast 1`] = `
 
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 <div
-    aria-hidden="true"
     class="c0"
   />
 </DocumentFragment>
