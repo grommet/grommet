@@ -63,7 +63,7 @@ const DropContainer = forwardRef(
       [portalContext, portalId],
     );
     const dropRef = useRef();
-    const align = useMemo(() => alignProp, []);
+    const align = useMemo(() => alignProp, [alignProp]);
 
     useEffect(() => {
 
