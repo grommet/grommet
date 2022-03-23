@@ -7,7 +7,7 @@ import {
   Paragraph,
   DropButton,
   Button,
-  Markdown
+  Markdown,
 } from "grommet";
 
 const constantAlign = { top: "bottom", left: "right" };
@@ -55,7 +55,7 @@ const ExampleDrop = () => {
         <Markdown>
           The only difference between the two is that the align prop in the
           first is an object that is re-constructed on each render, whereas the
-          second one's align prop is an object that remains the same. I believe
+          second ones align prop is an object that remains the same. I believe
           (although I have not fully confirmed) that this difference is causing
           [this
           useEffect](https://github.com/grommet/grommet/blob/master/src/js/components/Drop/DropContainer.js#L295-L305)
