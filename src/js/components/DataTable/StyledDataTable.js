@@ -23,7 +23,6 @@ const StyledDataTable = styled(Table)`
   border-spacing: 0;
   border-collapse: separate;
   height: auto; /* helps Firefox to get table contents to not overflow */
-  ${(props) => props.minHeight && `min-height: ${props.minHeight}px`}
   ${genericStyles}
   ${(props) => props.fillProp && fillStyle(props.fillProp)}
   ${(props) =>
@@ -184,7 +183,6 @@ Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
 
 const StyledPlaceholder = styled('caption')`
   position: absolute;
-  min-height: fit-content;
   ${(props) => `top: ${props.top || 0}px;`}
   ${(props) => `bottom: ${props.bottom || 0}px;`}
   left: 0;

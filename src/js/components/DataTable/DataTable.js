@@ -154,10 +154,8 @@ const DataTable = ({
   const headerRef = useRef();
   const bodyRef = useRef();
   const footerRef = useRef();
-  const placeholderRef = useRef();
   const [headerHeight, setHeaderHeight] = useState();
   const [footerHeight, setFooterHeight] = useState();
-  const [minHeight, setMinHeight] = useState();
 
   // offset compensation when body overflows
   const [scrollOffset, setScrollOffset] = useState(0);
@@ -206,19 +204,6 @@ const DataTable = ({
       (bodyRef.current.parentElement?.clientWidth || 0) -
       bodyRef.current.clientWidth;
     if (nextScrollOffset !== scrollOffset) setScrollOffset(nextScrollOffset);
-  });
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useLayoutEffect(() => {
-    if (placeholder && placeholderRef.current) {
-      const nextHeaderHeight = headerRef.current
-        ? headerRef.current.getBoundingClientRect().height : 0;
-      const nextFooterHeight = footerRef.current
-        ? footerRef.current.getBoundingClientRect().height : 0;
-      const nextMinHeight = nextHeaderHeight + nextFooterHeight +
-        placeholderRef.current.getBoundingClientRect().height;
-      if (minHeight !== nextMinHeight) setMinHeight(nextMinHeight);
-    }
   });
 
   useLayoutEffect(() => {
@@ -371,12 +356,25 @@ const DataTable = ({
       ? { style: { minWidth: '100%' } }
       : undefined;
 
+  let placeholderContent = placeholder;
+  if (placeholder && typeof placeholder === 'string') {
+    placeholderContent = (
+      <Box
+        background={{ color: 'background-front', opacity: 'strong' }}
+        align="center"
+        justify="center"
+        fill="vertical"
+      >
+        <Text>{placeholder}</Text>
+      </Box>
+    );
+  }
+
   return (
     <Container {...containterProps}>
       <OverflowContainer {...overflowContainerProps}>
         <StyledDataTable
           fillProp={!paginate ? fill : undefined}
-          minHeight={minHeight}
           {...paginatedDataTableProps}
           {...rest}
         >
@@ -505,6 +503,13 @@ const DataTable = ({
               setRowExpand={setRowExpand}
             />
           )}
+          {placeholder && (!items || items.length === 0) && (
+            <tbody>
+              <tr><td colSpan="99">
+                {placeholderContent}
+              </td></tr>
+            </tbody>
+          )}
           {showFooter && (
             <Footer
               ref={footerRef}
@@ -522,24 +527,9 @@ const DataTable = ({
               size={size}
             />
           )}
-          {placeholder && (
-            <StyledPlaceholder
-              ref={placeholderRef}
-              top={headerHeight}
-              bottom={footerHeight}
-            >
-              {typeof placeholder === 'string' ? (
-                <Box
-                  background={{ color: 'background-front', opacity: 'strong' }}
-                  align="center"
-                  justify="center"
-                  fill="vertical"
-                >
-                  <Text>{placeholder}</Text>
-                </Box>
-              ) : (
-                placeholder
-              )}
+          {placeholder && items && items.length > 0 && (
+            <StyledPlaceholder top={headerHeight} bottom={footerHeight}>
+              {placeholderContent}
             </StyledPlaceholder>
           )}
         </StyledDataTable>
