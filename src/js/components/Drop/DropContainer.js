@@ -293,7 +293,6 @@ const DropContainer = forwardRef(
         }
       };
     }, [
-      onAlign,
       dropTarget,
       portalContext,
       portalId,
