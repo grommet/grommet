@@ -278,13 +278,16 @@ const Select = forwardRef(
     // we should use the labelKey function to display the
     // selected value
     const displayLabelKey = useMemo(() => {
+      const optionLabelKey = applyKey(
+        allOptions[optionIndexesInValue[0]],
+        labelKey,
+      );
       if (
         !selectValue &&
         optionIndexesInValue.length === 1 &&
-        typeof applyKey(allOptions[optionIndexesInValue[0]], labelKey) ===
-          'object'
+        typeof optionLabelKey === 'object'
       )
-        return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
+        return optionLabelKey;
       return undefined;
     }, [labelKey, allOptions, optionIndexesInValue, selectValue]);
 
