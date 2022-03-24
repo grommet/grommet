@@ -268,9 +268,7 @@ const Select = forwardRef(
     // element to show, trumps inputValue
     const selectValue = useMemo(() => {
       if (valueLabel instanceof Function) {
-        if (value) {
-          return valueLabel(value);
-        }
+        if (value) return valueLabel(value);
       } else if (valueLabel) return valueLabel;
       else if (React.isValidElement(value)) return value; // deprecated
       return undefined;
