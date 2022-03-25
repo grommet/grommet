@@ -224,7 +224,10 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     onEsc: open ? function () {
       return closeCalendar();
     } : undefined,
-    onSpace: openCalendar
+    onSpace: function onSpace(event) {
+      event.preventDefault();
+      openCalendar();
+    }
   }, /*#__PURE__*/React.createElement(Box, {
     ref: containerRef,
     border: !plain,
