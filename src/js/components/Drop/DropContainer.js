@@ -36,7 +36,7 @@ const defaultPortalContext = [];
 const DropContainer = forwardRef(
   (
     {
-      align: alignProp = defaultAlign,
+      align = defaultAlign,
       background,
       onAlign,
       children,
@@ -63,10 +63,7 @@ const DropContainer = forwardRef(
       [portalContext, portalId],
     );
     const dropRef = useRef();
-    const align = useMemo(() => alignProp, [alignProp]);
-
     useEffect(() => {
-
       const notifyAlign = () => {
         const styleCurrent = (ref || dropRef).current.style;
         const alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
@@ -297,8 +294,8 @@ const DropContainer = forwardRef(
     }, [
       align,
       onAlign,
-      onClickOutside,
       dropTarget,
+      onClickOutside,
       portalContext,
       portalId,
       ref,
