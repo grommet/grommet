@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Gremlin } from 'grommet-icons';
 
 import { Box, DropButton, Text } from 'grommet';
@@ -18,16 +18,23 @@ const MenuItem = () => (
   </Box>
 );
 
-const GremlinDropButton = () => (
-  <DropButton
-    alignSelf="center"
-    margin={{ vertical: 'small' }}
-    dropContent={renderItems()}
-    dropProps={{ align: { top: 'bottom' } }}
-  >
-    <MenuItem />
-  </DropButton>
-);
+const GremlinDropButton = () => {
+  const align = useMemo(() => {
+    const alignProp = { top: 'bottom' };
+    return alignProp;
+  }, []);
+
+  return (
+    <DropButton
+      alignSelf="center"
+      margin={{ vertical: 'small' }}
+      dropContent={renderItems()}
+      dropProps={{ align }}
+    >
+      <MenuItem />
+    </DropButton>
+  );
+};
 
 const MenuDropButton = () => (
   <Box fill>

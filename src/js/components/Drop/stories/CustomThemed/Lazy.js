@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -22,6 +22,23 @@ const LazyDrop = () => {
   const bottomLeftTargetRef = useRef();
   const bottomRightTargetRef = useRef();
 
+  const alignBottomLeft = useMemo(() => {
+    const alignProp = { top: 'bottom', left: 'left' };
+    return alignProp;
+  }, []);
+  const alignTopRight = useMemo(() => {
+    const alignProp = { bottom: 'top', right: 'right' };
+    return alignProp;
+  }, []);
+  const alignTopLeft = useMemo(() => {
+    const alignProp = { bottom: 'top', left: 'left' };
+    return alignProp;
+  }, []);
+  const alignBottomRight = useMemo(() => {
+    const alignProp = { top: 'bottom', right: 'right' };
+    return alignProp;
+  }, []);
+
   useEffect(() => {
     setPad('small');
     setTimeout(() => {
@@ -43,7 +60,7 @@ const LazyDrop = () => {
           </Box>
           {topLeftTargetRef.current && (
             <Drop
-              align={{ top: 'bottom', left: 'left' }}
+              align={alignBottomLeft}
               target={topLeftTargetRef.current}
               responsive
             >
@@ -65,7 +82,7 @@ const LazyDrop = () => {
           </Box>
           {topRightTargetRef.current && (
             <Drop
-              align={{ bottom: 'top', right: 'right' }}
+              align={alignTopRight}
               target={topRightTargetRef.current}
               responsive
             >
@@ -85,7 +102,7 @@ const LazyDrop = () => {
           </Box>
           {bottomLeftTargetRef.current && (
             <Drop
-              align={{ bottom: 'top', left: 'left' }}
+              align={alignTopLeft}
               target={bottomLeftTargetRef.current}
               responsive
             >
@@ -102,7 +119,7 @@ const LazyDrop = () => {
           </Box>
           {bottomRightTargetRef.current && (
             <Drop
-              align={{ top: 'bottom', right: 'right' }}
+              align={alignBottomRight}
               target={bottomRightTargetRef.current}
               responsive
             >

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -21,6 +21,11 @@ const ThemedDrop = () => {
   const [, setShowDrop] = useState(false);
   const targetRef = useRef();
 
+  const align = useMemo(() => {
+    const alignProp = { top: 'bottom', left: 'right' };
+    return alignProp;
+  }, []);
+
   useEffect(() => setShowDrop(true), []);
   return (
     <Grommet theme={customTheme} full>
@@ -35,10 +40,7 @@ const ThemedDrop = () => {
           Box
         </Box>
         {targetRef.current && (
-          <Drop
-            align={{ top: 'bottom', left: 'right' }}
-            target={targetRef.current}
-          >
+          <Drop align={align} target={targetRef.current}>
             <Box pad="small">This Drop uses a custom theme</Box>
           </Drop>
         )}

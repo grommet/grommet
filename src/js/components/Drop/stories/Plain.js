@@ -1,9 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Box, Drop } from 'grommet';
 
 const PlainDrop = () => {
   const targetRef = useRef();
+
+  const align = useMemo(() => {
+    const alignProp = { top: 'bottom', left: 'left' };
+    return alignProp;
+  }, []);
 
   const [, setShowDrop] = useState(false);
   useEffect(() => setShowDrop(true), []);
@@ -21,11 +26,7 @@ const PlainDrop = () => {
         Target
       </Box>
       {targetRef.current && (
-        <Drop
-          plain
-          align={{ top: 'bottom', left: 'left' }}
-          target={targetRef.current}
-        >
+        <Drop plain align={align} target={targetRef.current}>
           <Box pad="large">No background no shadow</Box>
         </Drop>
       )}

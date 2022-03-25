@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Close } from 'grommet-icons';
 
@@ -29,6 +29,11 @@ const SimpleDropButton = () => {
     setOpen(false);
   };
 
+  const align = useMemo(() => {
+    const alignProp = { top: 'bottom' };
+    return alignProp;
+  }, []);
+
   return (
     <Box align="center" pad="large">
       <DropButton
@@ -37,7 +42,7 @@ const SimpleDropButton = () => {
         onOpen={onOpen}
         onClose={onClose}
         dropContent={<DropContent onClose={onClose} />}
-        dropProps={{ align: { top: 'bottom' } }}
+        dropProps={{ align }}
       />
     </Box>
   );

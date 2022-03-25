@@ -1,9 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Box, Drop, Meter } from 'grommet';
 
 const TestDrop = () => {
   const targetRef = useRef();
+
+  const align = useMemo(() => {
+    const alignProp = { top: 'bottom', left: 'left' };
+    return alignProp;
+  }, []);
 
   const [, setShowDrop] = useState(false);
   useEffect(() => setShowDrop(true), []);
@@ -21,7 +26,7 @@ const TestDrop = () => {
         <Drop
           id="test-drop-with-svg"
           plain
-          align={{ top: 'bottom', left: 'left' }}
+          align={align}
           target={targetRef.current}
         >
           <Box pad="large">target is an svg</Box>

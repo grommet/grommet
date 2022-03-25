@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import { Box, Button, Drop, DropButton, Layer, TextInput } from 'grommet';
 
 const MultipleDrop = () => {
@@ -6,13 +6,23 @@ const MultipleDrop = () => {
   const [showLayer, setShowLayer] = useState(false);
   const targetRef = useRef();
 
+  const alignLeft = useMemo(() => {
+    const alignLeftProp = { right: 'left' };
+    return alignLeftProp;
+  }, []);
+
+  const alignRight = useMemo(() => {
+    const alignRightProp = { left: 'right' };
+    return alignRightProp;
+  }, []);
+
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box gap="medium" fill align="center" justify="center">
       <DropButton
         label="drop button"
-        dropAlign={{ right: 'left' }}
+        dropAlign={alignLeft}
         dropContent={
           <Box pad="large">
             <TextInput
@@ -30,7 +40,7 @@ const MultipleDrop = () => {
       />
       {showDrop && (
         <Drop
-          align={{ left: 'right' }}
+          align={alignRight}
           target={targetRef.current}
           onClickOutside={() => setShowDrop(false)}
         >
