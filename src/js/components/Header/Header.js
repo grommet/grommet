@@ -12,7 +12,7 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
     const threshold = 0;
     // number of pixels the document is currently scrolled
     let lastScrollY = window.pageYOffset;
-    // run event listener callback once
+    // run our event listener callback once in each requestAnimationFrame
     let runEventListener = false;
 
     const updateScrollDir = () => {
