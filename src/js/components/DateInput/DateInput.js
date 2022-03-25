@@ -229,7 +229,10 @@ Use the icon prop instead.`,
       >
         <Keyboard
           onEsc={open ? () => closeCalendar() : undefined}
-          onSpace={openCalendar}
+          onSpace={(event) => {
+            event.preventDefault();
+            openCalendar();
+          }}
         >
           <Box
             ref={containerRef}

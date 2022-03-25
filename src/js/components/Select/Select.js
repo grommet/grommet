@@ -267,10 +267,29 @@ const Select = forwardRef(
 
     // element to show, trumps inputValue
     const selectValue = useMemo(() => {
-      if (valueLabel) return valueLabel;
-      if (React.isValidElement(value)) return value; // deprecated
+      if (valueLabel instanceof Function) {
+        if (value) return valueLabel(value);
+      } else if (valueLabel) return valueLabel;
+      else if (React.isValidElement(value)) return value; // deprecated
       return undefined;
     }, [value, valueLabel]);
+
+    // if labelKey is a function and valueLabel is not defined
+    // we should use the labelKey function to display the
+    // selected value
+    const displayLabelKey = useMemo(() => {
+      const optionLabelKey = applyKey(
+        allOptions[optionIndexesInValue[0]],
+        labelKey,
+      );
+      if (
+        !selectValue &&
+        optionIndexesInValue.length === 1 &&
+        typeof optionLabelKey === 'object'
+      )
+        return optionLabelKey;
+      return undefined;
+    }, [labelKey, allOptions, optionIndexesInValue, selectValue]);
 
     // text to show
     // When the options array contains objects, this property indicates how
@@ -375,9 +394,9 @@ const Select = forwardRef(
             background={theme.select.background}
           >
             <Box direction="row" flex basis="auto">
-              {selectValue ? (
+              {selectValue || displayLabelKey ? (
                 <>
-                  {selectValue}
+                  {selectValue || displayLabelKey}
                   <HiddenInput
                     type="text"
                     id={id ? `${id}__input` : undefined}

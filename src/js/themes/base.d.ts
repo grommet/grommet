@@ -1195,6 +1195,7 @@ export interface ThemeType {
       width?: string;
     };
     check?: {
+      color?: ColorType;
       extend?: ExtendType;
       radius?: string;
       background?: {

@@ -65,7 +65,10 @@ const Notification = ({
     toast && toast?.autoClose === undefined ? true : toast.autoClose;
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
-  const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
+
+  const position = useMemo(() => 
+    (toast && toast?.position) || 'top', 
+    [toast]);
 
   const close = useCallback(
     (event) => {
@@ -210,7 +213,7 @@ const Notification = ({
         modal={false}
         onEsc={onClose}
         id={id}
-        responsive
+        responsive={false}
         plain
         position={position}
       >
