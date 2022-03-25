@@ -30,7 +30,7 @@ export interface SelectProps {
   focusIndicator?: boolean;
   icon?: boolean | ((...args: any[]) => any) | React.ReactNode | React.FC;
   id?: string;
-  labelKey?: string | ((...args: any[]) => any);
+  labelKey?: string | ((...args: any[]) => string | React.ReactNode);
   margin?: MarginType;
   messages?: { multiple?: string };
   multiple?: boolean;
@@ -49,11 +49,11 @@ export interface SelectProps {
   selected?: number | number[];
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   value?: string | JSX.Element | object | (string | number | object)[];
-  valueLabel?: React.ReactNode;
+  valueLabel?: React.ReactNode | ((...args: any[]) => string | React.ReactNode);
   valueKey?:
     | string
     | { key: string; reduce?: boolean }
-    | ((...args: any[]) => any);
+    | ((...args: any[]) => string);
   emptySearchMessage?: string | React.ReactNode;
 }
 

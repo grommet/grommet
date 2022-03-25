@@ -287,11 +287,21 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
 
   var selectValue = useMemo(function () {
-    if (valueLabel) return valueLabel;
-    if ( /*#__PURE__*/React.isValidElement(value)) return value; // deprecated
+    if (valueLabel instanceof Function) {
+      if (value) return valueLabel(value);
+    } else if (valueLabel) return valueLabel;else if ( /*#__PURE__*/React.isValidElement(value)) return value; // deprecated
+
 
     return undefined;
-  }, [value, valueLabel]); // text to show
+  }, [value, valueLabel]); // if labelKey is a function and valueLabel is not defined
+  // we should use the labelKey function to display the
+  // selected value
+
+  var displayLabelKey = useMemo(function () {
+    var optionLabelKey = applyKey(allOptions[optionIndexesInValue[0]], labelKey);
+    if (!selectValue && optionIndexesInValue.length === 1 && typeof optionLabelKey === 'object') return optionLabelKey;
+    return undefined;
+  }, [labelKey, allOptions, optionIndexesInValue, selectValue]); // text to show
   // When the options array contains objects, this property indicates how
   // to retrieve the value of each option.
   // If a string is provided, it is used as the key to retrieve a
@@ -383,7 +393,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     direction: "row",
     flex: true,
     basis: "auto"
-  }, selectValue ? /*#__PURE__*/React.createElement(React.Fragment, null, selectValue, /*#__PURE__*/React.createElement(HiddenInput, {
+  }, selectValue || displayLabelKey ? /*#__PURE__*/React.createElement(React.Fragment, null, selectValue || displayLabelKey, /*#__PURE__*/React.createElement(HiddenInput, {
     type: "text",
     id: id ? id + "__input" : undefined,
     value: inputValue,

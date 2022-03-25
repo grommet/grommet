@@ -47,7 +47,7 @@ if (process.env.NODE_ENV !== 'production') {
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.element, // deprecated, use valueLabel
     PropTypes.object, PropTypes.number, PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.number]))]),
-    valueLabel: PropTypes.node,
+    valueLabel: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
     valueKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.shape({
       key: PropTypes.string,
       reduce: PropTypes.bool

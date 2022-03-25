@@ -56,7 +56,7 @@ if (process.env.NODE_ENV !== 'production') {
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
     value: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].element, // deprecated, use valueLabel
     _propTypes["default"].object, _propTypes["default"].number, _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].object, _propTypes["default"].number]))]),
-    valueLabel: _propTypes["default"].node,
+    valueLabel: _propTypes["default"].oneOfType([_propTypes["default"].node, _propTypes["default"].func]),
     valueKey: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func, _propTypes["default"].shape({
       key: _propTypes["default"].string,
       reduce: _propTypes["default"].bool
