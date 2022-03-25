@@ -44,8 +44,6 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
       ticking = false;
     };
 
-    console.log(width, height, right, left);
-
     const onScroll = () => {
       if (!ticking) {
         // perform an animation and requests that the browser
@@ -76,20 +74,17 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
   };
 
   return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-    <>
-      <Box
-        align="center"
-        as="header"
-        direction="row"
-        flex={false}
-        justify="between"
-        gap="medium"
-        style={sticky === 'scrollup' && scrollUp ? stickyStyles : undefined}
-        {...rest}
-        ref={containerRef}
-      />
-    </>
+    <Box
+      align="center"
+      as="header"
+      direction="row"
+      flex={false}
+      justify="between"
+      gap="medium"
+      style={sticky === 'scrollup' && scrollUp ? stickyStyles : undefined}
+      {...rest}
+      ref={containerRef}
+    />
   );
 });
 Header.displayName = 'Header';
