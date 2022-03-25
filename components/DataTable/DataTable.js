@@ -33,6 +33,8 @@ var _StyledDataTable = require("./StyledDataTable");
 
 var _propTypes = require("./propTypes");
 
+var _PlaceholderBody = require("./PlaceholderBody");
+
 var _excluded = ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "onUpdate", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -410,39 +412,21 @@ var DataTable = function DataTable(_ref) {
       minWidth: '100%'
     }
   } : undefined;
-  return /*#__PURE__*/_react["default"].createElement(Container, containterProps, /*#__PURE__*/_react["default"].createElement(OverflowContainer, overflowContainerProps, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTable, _extends({
-    fillProp: !paginate ? fill : undefined
-  }, paginatedDataTableProps, rest), /*#__PURE__*/_react["default"].createElement(_Header.Header, {
-    ref: headerRef,
-    cellProps: cellProps.header,
-    columns: columns,
-    data: adjustedData,
-    fill: fill,
-    filtering: filtering,
-    filters: filters,
-    groupBy: groupBy,
-    groups: groups,
-    groupState: groupState,
-    pin: pin === true || pin === 'header',
-    pinnedOffset: pinnedOffset,
-    selected: selected,
-    size: size,
-    sort: sort,
-    widths: widths,
-    onFiltering: onFiltering,
-    onFilter: onFilter,
-    onResize: resizeable ? onResize : undefined,
-    onSelect: onSelect ? function (nextSelected) {
-      setSelected(nextSelected);
-      if (onSelect) onSelect(nextSelected);
-    } : undefined,
-    onSort: sortable || sortProp || onSortProp ? onSort : undefined,
-    onToggle: onToggleGroups,
-    onWidths: onHeaderWidths,
-    primaryProperty: primaryProperty,
-    scrollOffset: scrollOffset,
-    rowDetails: rowDetails
-  }), groups ? /*#__PURE__*/_react["default"].createElement(_GroupedBody.GroupedBody, {
+  var placeholderContent = placeholder;
+
+  if (placeholder && typeof placeholder === 'string') {
+    placeholderContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      background: {
+        color: 'background-front',
+        opacity: 'strong'
+      },
+      align: "center",
+      justify: "center",
+      fill: "vertical"
+    }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, placeholder));
+  }
+
+  var bodyContent = groups ? /*#__PURE__*/_react["default"].createElement(_GroupedBody.GroupedBody, {
     ref: bodyRef,
     cellProps: cellProps.body,
     columns: columns,
@@ -506,7 +490,6 @@ var DataTable = function DataTable(_ref) {
     } : undefined,
     pinnedCellProps: cellProps.pinned,
     pinnedOffset: pinnedOffset,
-    placeholder: placeholder,
     primaryProperty: primaryProperty,
     rowProps: rowProps,
     selected: selected,
@@ -516,7 +499,44 @@ var DataTable = function DataTable(_ref) {
     rowDetails: rowDetails,
     rowExpand: rowExpand,
     setRowExpand: setRowExpand
-  }), showFooter && /*#__PURE__*/_react["default"].createElement(_Footer.Footer, {
+  });
+  return /*#__PURE__*/_react["default"].createElement(Container, containterProps, /*#__PURE__*/_react["default"].createElement(OverflowContainer, overflowContainerProps, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTable, _extends({
+    fillProp: !paginate ? fill : undefined
+  }, paginatedDataTableProps, rest), /*#__PURE__*/_react["default"].createElement(_Header.Header, {
+    ref: headerRef,
+    cellProps: cellProps.header,
+    columns: columns,
+    data: adjustedData,
+    fill: fill,
+    filtering: filtering,
+    filters: filters,
+    groupBy: groupBy,
+    groups: groups,
+    groupState: groupState,
+    pin: pin === true || pin === 'header',
+    pinnedOffset: pinnedOffset,
+    selected: selected,
+    size: size,
+    sort: sort,
+    widths: widths,
+    onFiltering: onFiltering,
+    onFilter: onFilter,
+    onResize: resizeable ? onResize : undefined,
+    onSelect: onSelect ? function (nextSelected) {
+      setSelected(nextSelected);
+      if (onSelect) onSelect(nextSelected);
+    } : undefined,
+    onSort: sortable || sortProp || onSortProp ? onSort : undefined,
+    onToggle: onToggleGroups,
+    onWidths: onHeaderWidths,
+    primaryProperty: primaryProperty,
+    scrollOffset: scrollOffset,
+    rowDetails: rowDetails
+  }), placeholder && (!items || items.length === 0) ? /*#__PURE__*/_react["default"].createElement(_PlaceholderBody.PlaceholderBody, {
+    ref: bodyRef,
+    columns: columns,
+    onSelect: onSelect
+  }, placeholderContent) : bodyContent, showFooter && /*#__PURE__*/_react["default"].createElement(_Footer.Footer, {
     ref: footerRef,
     cellProps: cellProps.footer,
     columns: columns,
@@ -530,18 +550,10 @@ var DataTable = function DataTable(_ref) {
     scrollOffset: scrollOffset,
     selected: selected,
     size: size
-  }), placeholder && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledPlaceholder, {
+  }), placeholder && items && items.length > 0 && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledPlaceholder, {
     top: headerHeight,
     bottom: footerHeight
-  }, typeof placeholder === 'string' ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    background: {
-      color: 'background-front',
-      opacity: 'strong'
-    },
-    align: "center",
-    justify: "center",
-    fill: "vertical"
-  }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, placeholder)) : placeholder))), paginate && adjustedData.length > step && items && items.length ? /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, _extends({
+  }, placeholderContent))), paginate && adjustedData.length > step && items && items.length ? /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, _extends({
     alignSelf: "end"
   }, paginationProps)) : null);
 };

@@ -19,6 +19,7 @@ import { buildFooterValues, buildGroups, buildGroupState, filterAndSortData, ini
 import { normalizeShow, usePagination } from '../../utils';
 import { StyledContainer, StyledDataTable, StyledPlaceholder } from './StyledDataTable';
 import { DataTablePropTypes } from './propTypes';
+import { PlaceholderBody } from './PlaceholderBody';
 
 function useGroupState(groups, groupBy) {
   var _useState = useState(function () {
@@ -386,39 +387,21 @@ var DataTable = function DataTable(_ref) {
       minWidth: '100%'
     }
   } : undefined;
-  return /*#__PURE__*/React.createElement(Container, containterProps, /*#__PURE__*/React.createElement(OverflowContainer, overflowContainerProps, /*#__PURE__*/React.createElement(StyledDataTable, _extends({
-    fillProp: !paginate ? fill : undefined
-  }, paginatedDataTableProps, rest), /*#__PURE__*/React.createElement(Header, {
-    ref: headerRef,
-    cellProps: cellProps.header,
-    columns: columns,
-    data: adjustedData,
-    fill: fill,
-    filtering: filtering,
-    filters: filters,
-    groupBy: groupBy,
-    groups: groups,
-    groupState: groupState,
-    pin: pin === true || pin === 'header',
-    pinnedOffset: pinnedOffset,
-    selected: selected,
-    size: size,
-    sort: sort,
-    widths: widths,
-    onFiltering: onFiltering,
-    onFilter: onFilter,
-    onResize: resizeable ? onResize : undefined,
-    onSelect: onSelect ? function (nextSelected) {
-      setSelected(nextSelected);
-      if (onSelect) onSelect(nextSelected);
-    } : undefined,
-    onSort: sortable || sortProp || onSortProp ? onSort : undefined,
-    onToggle: onToggleGroups,
-    onWidths: onHeaderWidths,
-    primaryProperty: primaryProperty,
-    scrollOffset: scrollOffset,
-    rowDetails: rowDetails
-  }), groups ? /*#__PURE__*/React.createElement(GroupedBody, {
+  var placeholderContent = placeholder;
+
+  if (placeholder && typeof placeholder === 'string') {
+    placeholderContent = /*#__PURE__*/React.createElement(Box, {
+      background: {
+        color: 'background-front',
+        opacity: 'strong'
+      },
+      align: "center",
+      justify: "center",
+      fill: "vertical"
+    }, /*#__PURE__*/React.createElement(Text, null, placeholder));
+  }
+
+  var bodyContent = groups ? /*#__PURE__*/React.createElement(GroupedBody, {
     ref: bodyRef,
     cellProps: cellProps.body,
     columns: columns,
@@ -482,7 +465,6 @@ var DataTable = function DataTable(_ref) {
     } : undefined,
     pinnedCellProps: cellProps.pinned,
     pinnedOffset: pinnedOffset,
-    placeholder: placeholder,
     primaryProperty: primaryProperty,
     rowProps: rowProps,
     selected: selected,
@@ -492,7 +474,44 @@ var DataTable = function DataTable(_ref) {
     rowDetails: rowDetails,
     rowExpand: rowExpand,
     setRowExpand: setRowExpand
-  }), showFooter && /*#__PURE__*/React.createElement(Footer, {
+  });
+  return /*#__PURE__*/React.createElement(Container, containterProps, /*#__PURE__*/React.createElement(OverflowContainer, overflowContainerProps, /*#__PURE__*/React.createElement(StyledDataTable, _extends({
+    fillProp: !paginate ? fill : undefined
+  }, paginatedDataTableProps, rest), /*#__PURE__*/React.createElement(Header, {
+    ref: headerRef,
+    cellProps: cellProps.header,
+    columns: columns,
+    data: adjustedData,
+    fill: fill,
+    filtering: filtering,
+    filters: filters,
+    groupBy: groupBy,
+    groups: groups,
+    groupState: groupState,
+    pin: pin === true || pin === 'header',
+    pinnedOffset: pinnedOffset,
+    selected: selected,
+    size: size,
+    sort: sort,
+    widths: widths,
+    onFiltering: onFiltering,
+    onFilter: onFilter,
+    onResize: resizeable ? onResize : undefined,
+    onSelect: onSelect ? function (nextSelected) {
+      setSelected(nextSelected);
+      if (onSelect) onSelect(nextSelected);
+    } : undefined,
+    onSort: sortable || sortProp || onSortProp ? onSort : undefined,
+    onToggle: onToggleGroups,
+    onWidths: onHeaderWidths,
+    primaryProperty: primaryProperty,
+    scrollOffset: scrollOffset,
+    rowDetails: rowDetails
+  }), placeholder && (!items || items.length === 0) ? /*#__PURE__*/React.createElement(PlaceholderBody, {
+    ref: bodyRef,
+    columns: columns,
+    onSelect: onSelect
+  }, placeholderContent) : bodyContent, showFooter && /*#__PURE__*/React.createElement(Footer, {
     ref: footerRef,
     cellProps: cellProps.footer,
     columns: columns,
@@ -506,18 +525,10 @@ var DataTable = function DataTable(_ref) {
     scrollOffset: scrollOffset,
     selected: selected,
     size: size
-  }), placeholder && /*#__PURE__*/React.createElement(StyledPlaceholder, {
+  }), placeholder && items && items.length > 0 && /*#__PURE__*/React.createElement(StyledPlaceholder, {
     top: headerHeight,
     bottom: footerHeight
-  }, typeof placeholder === 'string' ? /*#__PURE__*/React.createElement(Box, {
-    background: {
-      color: 'background-front',
-      opacity: 'strong'
-    },
-    align: "center",
-    justify: "center",
-    fill: "vertical"
-  }, /*#__PURE__*/React.createElement(Text, null, placeholder)) : placeholder))), paginate && adjustedData.length > step && items && items.length ? /*#__PURE__*/React.createElement(Pagination, _extends({
+  }, placeholderContent))), paginate && adjustedData.length > step && items && items.length ? /*#__PURE__*/React.createElement(Pagination, _extends({
     alignSelf: "end"
   }, paginationProps)) : null);
 };
