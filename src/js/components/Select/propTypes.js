@@ -106,7 +106,7 @@ if (process.env.NODE_ENV !== 'production') {
         ]),
       ),
     ]),
-    valueLabel: PropTypes.node,
+    valueLabel: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
     valueKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,
