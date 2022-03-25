@@ -274,7 +274,7 @@ const Select = forwardRef(
       return undefined;
     }, [value, valueLabel]);
 
-    // if labelKey is a function and no valueLabel is defined
+    // if labelKey is a function and valueLabel is not defined
     // we should use the labelKey function to display the
     // selected value
     const displayLabelKey = useMemo(() => {
