@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Box, Button, Drop, DropButton, Layer, TextInput } from 'grommet';
 
 const alignRight = { left: 'right' };

@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { Box, Button, Drop, Nav, Text } from 'grommet';
 import { Calculator, Bug, Achievement } from 'grommet-icons';

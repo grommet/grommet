@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Gremlin } from 'grommet-icons';
 
 import { Box, DropButton, Text } from 'grommet';

@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Box, Drop } from 'grommet';
 
@@ -11,7 +11,7 @@ const SimpleDrop = () => {
   useEffect(() => {
     setShowDrop(true);
   }, []);
-  
+
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
