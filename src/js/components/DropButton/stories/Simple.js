@@ -20,6 +20,8 @@ DropContent.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
+const align = { top: 'bottom' };
+
 const SimpleDropButton = () => {
   const [open, setOpen] = React.useState();
   const onOpen = () => {
@@ -28,11 +30,6 @@ const SimpleDropButton = () => {
   const onClose = () => {
     setOpen(false);
   };
-
-  const align = useMemo(() => {
-    const alignProp = { top: 'bottom' };
-    return alignProp;
-  }, []);
 
   return (
     <Box align="center" pad="large">

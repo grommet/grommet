@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -14,6 +14,11 @@ const lazyTheme = deepMerge(grommet, {
 
 const finalLazyPad = 'xlarge';
 
+const alignBottomLeft = { top: 'bottom', left: 'left' };
+const alignTopRight = { bottom: 'top', right: 'right' };
+const alignTopLeft = { bottom: 'top', left: 'left' };
+const alignBottomRight = { top: 'bottom', right: 'right' };
+
 const LazyDrop = () => {
   const [pad, setPad] = useState(null);
 
@@ -21,23 +26,6 @@ const LazyDrop = () => {
   const topRightTargetRef = useRef();
   const bottomLeftTargetRef = useRef();
   const bottomRightTargetRef = useRef();
-
-  const alignBottomLeft = useMemo(() => {
-    const alignProp = { top: 'bottom', left: 'left' };
-    return alignProp;
-  }, []);
-  const alignTopRight = useMemo(() => {
-    const alignProp = { bottom: 'top', right: 'right' };
-    return alignProp;
-  }, []);
-  const alignTopLeft = useMemo(() => {
-    const alignProp = { bottom: 'top', left: 'left' };
-    return alignProp;
-  }, []);
-  const alignBottomRight = useMemo(() => {
-    const alignProp = { top: 'bottom', right: 'right' };
-    return alignProp;
-  }, []);
 
   useEffect(() => {
     setPad('small');

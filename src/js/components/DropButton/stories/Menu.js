@@ -18,23 +18,18 @@ const MenuItem = () => (
   </Box>
 );
 
-const GremlinDropButton = () => {
-  const align = useMemo(() => {
-    const alignProp = { top: 'bottom' };
-    return alignProp;
-  }, []);
+const align = { top: 'bottom' };
 
-  return (
-    <DropButton
-      alignSelf="center"
-      margin={{ vertical: 'small' }}
-      dropContent={renderItems()}
-      dropProps={{ align }}
-    >
-      <MenuItem />
-    </DropButton>
-  );
-};
+const GremlinDropButton = () => (
+  <DropButton
+    alignSelf="center"
+    margin={{ vertical: 'small' }}
+    dropContent={renderItems()}
+    dropProps={{ align }}
+  >
+    <MenuItem />
+  </DropButton>
+);
 
 const MenuDropButton = () => (
   <Box fill>

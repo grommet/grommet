@@ -3,14 +3,11 @@ import React, { useMemo, useRef, useState } from 'react';
 import { Box, Button, Drop, Nav, Text } from 'grommet';
 import { Calculator, Bug, Achievement } from 'grommet-icons';
 
+const align = { left: 'right' };
+
 const TooltipButton = ({ icon, name }) => {
   const [over, setOver] = useState(false);
   const ref = useRef();
-
-  const align = useMemo(() => {
-    const alignProp = { left: 'right' };
-    return alignProp;
-  }, []);
 
   return (
     <Box>

@@ -2,14 +2,11 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Box, Calendar, Drop, Heading, TextInput } from 'grommet';
 
+const align = { top: 'bottom', left: 'left' };
+
 const OverflowDrop = () => {
   const targetRef = useRef();
   const inputRef = useRef();
-
-  const align = useMemo(() => {
-    const alignProp = { top: 'bottom', left: 'left' };
-    return alignProp;
-  }, []);
 
   const [date, setDate] = useState(undefined);
   const [showCalendar, setShowCalendar] = useState(false);

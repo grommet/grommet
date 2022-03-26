@@ -1,14 +1,11 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Box, Drop, Meter } from 'grommet';
 
+const align = { top: 'bottom', left: 'left' };
+
 const TestDrop = () => {
   const targetRef = useRef();
-
-  const align = useMemo(() => {
-    const alignProp = { top: 'bottom', left: 'left' };
-    return alignProp;
-  }, []);
 
   const [, setShowDrop] = useState(false);
   useEffect(() => setShowDrop(true), []);

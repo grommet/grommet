@@ -2,22 +2,15 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Box, Drop } from 'grommet';
 
+const alignBottomLeft = { top: 'bottom', left: 'left' };
+const alignTopLeft = { bottom: 'top', left: 'left' };
+
 const StyledDrop = () => {
   const targetRef = useRef();
 
   const [, setShowDrop] = useState(false);
   useEffect(() => {
     setShowDrop(true);
-  }, []);
-
-  const alignBottomLeft = useMemo(() => {
-    const alignProp = { top: 'bottom', left: 'left' };
-    return alignProp;
-  }, []);
-
-  const alignTopleft = useMemo(() => {
-    const alignProp = { bottom: 'top', left: 'left' };
-    return alignProp;
   }, []);
 
   return (
@@ -44,7 +37,7 @@ const StyledDrop = () => {
             <Box pad="large">Drop Contents with elevation and margin</Box>
           </Drop>
           <Drop
-            align={alignTopleft}
+            align={alignTopLeft}
             target={targetRef.current}
             round="large"
             background="background-contrast"

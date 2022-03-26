@@ -2,6 +2,8 @@ import React, { useMemo, useEffect, useRef, useState } from 'react';
 
 import { Box, Drop } from 'grommet';
 
+const align = { top: 'bottom', left: 'left' };
+
 const SimpleDrop = () => {
   const targetRef = useRef();
 
@@ -9,12 +11,7 @@ const SimpleDrop = () => {
   useEffect(() => {
     setShowDrop(true);
   }, []);
-
-  const align = useMemo(() => {
-    const alignProp = { top: 'bottom', left: 'left' };
-    return alignProp;
-  }, []);
-
+  
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
