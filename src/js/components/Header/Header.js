@@ -32,7 +32,7 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
         height: `${containerRef.current.getBoundingClientRect().height}px`,
         left: `${containerRef.current.getBoundingClientRect().left}px`,
         right: `${containerRef.current.getBoundingClientRect().right}px`,
-        zIndex: `${theme.header.zIndex}`,
+        zIndex: `${theme.header?.sticky?.zIndex}`,
         position: 'fixed',
         top: '0',
       });
@@ -51,7 +51,7 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
     window.addEventListener('scroll', onScroll);
 
     return () => window.removeEventListener('scroll', onScroll);
-  }, [containerRef, scrollUp, theme.header.zIndex]);
+  }, [containerRef, scrollUp, theme.header.sticky.zIndex]);
 
   return (
     <>
