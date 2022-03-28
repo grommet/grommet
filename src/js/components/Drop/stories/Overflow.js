@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { Box, Calendar, Drop, Heading, TextInput } from 'grommet';
 
+const align = { top: 'bottom', left: 'left' };
+
 const OverflowDrop = () => {
   const targetRef = useRef();
   const inputRef = useRef();
@@ -33,7 +35,7 @@ const OverflowDrop = () => {
       {targetRef.current && (
         <Drop
           overflow="unset"
-          align={{ top: 'bottom', left: 'left' }}
+          align={align}
           target={targetRef.current}
           onClose={() => setShowCalendar(false)}
         >

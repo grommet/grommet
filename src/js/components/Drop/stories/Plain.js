@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { Box, Drop } from 'grommet';
 
+const align = { top: 'bottom', left: 'left' };
+
 const PlainDrop = () => {
   const targetRef = useRef();
 
@@ -21,11 +23,7 @@ const PlainDrop = () => {
         Target
       </Box>
       {targetRef.current && (
-        <Drop
-          plain
-          align={{ top: 'bottom', left: 'left' }}
-          target={targetRef.current}
-        >
+        <Drop plain align={align} target={targetRef.current}>
           <Box pad="large">No background no shadow</Box>
         </Drop>
       )}
