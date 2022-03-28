@@ -7,7 +7,6 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
   const theme = useContext(ThemeContext);
   const containerRef = useForwardedRef(ref);
   const [stickyStyles, setStickyStyles] = useState();
-  const [scrollUp, setScrollUp] = useState(false);
 
   useEffect(() => {
     // threshold inital value set to 0
@@ -24,18 +23,20 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
         return;
       }
       if (scrollY === 0) {
-        setScrollUp(false);
         runEventListener = false;
-      } else setScrollUp(scrollY < lastScrollY);
-      setStickyStyles({
-        width: `${containerRef.current.getBoundingClientRect().width}px`,
-        height: `${containerRef.current.getBoundingClientRect().height}px`,
-        left: `${containerRef.current.getBoundingClientRect().left}px`,
-        right: `${containerRef.current.getBoundingClientRect().right}px`,
-        zIndex: `${theme.header?.sticky?.zIndex}`,
-        position: 'fixed',
-        top: '0',
-      });
+        setStickyStyles();
+      }
+      if (scrollY < lastScrollY) {
+        setStickyStyles({
+          width: `${containerRef.current.getBoundingClientRect().width}px`,
+          height: `${containerRef.current.getBoundingClientRect().height}px`,
+          left: `${containerRef.current.getBoundingClientRect().left}px`,
+          right: `${containerRef.current.getBoundingClientRect().right}px`,
+          zIndex: `${theme.header?.sticky?.zIndex}`,
+          position: 'fixed',
+          top: '0',
+        });
+      } else setStickyStyles();
       lastScrollY = scrollY > 0 ? scrollY : 0;
       runEventListener = false;
     };
@@ -51,11 +52,11 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
     window.addEventListener('scroll', onScroll);
 
     return () => window.removeEventListener('scroll', onScroll);
-  }, [containerRef, scrollUp, theme.header.sticky.zIndex]);
+  }, [containerRef, stickyStyles, theme.header?.sticky?.zIndex]);
 
   return (
     <>
-      {sticky === 'scrollup' && scrollUp && (
+      {sticky === 'scrollup' && (
         <Box
           height={stickyStyles && stickyStyles.height}
           width={stickyStyles && stickyStyles.width}
@@ -70,7 +71,7 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
         flex={false}
         justify="between"
         gap="medium"
-        style={sticky === 'scrollup' && scrollUp ? stickyStyles : undefined}
+        style={sticky === 'scrollup' ? stickyStyles : undefined}
         {...rest}
         ref={containerRef}
       />
