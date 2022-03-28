@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Box } from '../Box';
+import React, { useContext, useEffect, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { useForwardedRef } from '../../utils';
+import { Box } from '../Box';
 
 const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
+  const theme = useContext(ThemeContext);
   const containerRef = useForwardedRef(ref);
   const [stickyStyles, setStickyStyles] = useState();
   const [scrollUp, setScrollUp] = useState(false);
@@ -17,7 +19,6 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
 
     const updateScrollDir = () => {
       const scrollY = window.pageYOffset;
-
       if (Math.abs(scrollY - lastScrollY) < threshold) {
         runEventListener = false;
         return;
@@ -31,6 +32,9 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
         height: `${containerRef.current.getBoundingClientRect().height}px`,
         left: `${containerRef.current.getBoundingClientRect().left}px`,
         right: `${containerRef.current.getBoundingClientRect().right}px`,
+        zIndex: `${theme.header.zIndex}`,
+        position: 'fixed',
+        top: '0',
       });
       lastScrollY = scrollY > 0 ? scrollY : 0;
       runEventListener = false;
@@ -47,15 +51,7 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
     window.addEventListener('scroll', onScroll);
 
     return () => window.removeEventListener('scroll', onScroll);
-  }, [containerRef, scrollUp]);
-
-  const stickyStyle = {
-    position: 'fixed',
-    zIndex: '1',
-    top: '0',
-    left: stickyStyles && stickyStyles.left,
-    right: stickyStyles && stickyStyles.right,
-  };
+  }, [containerRef, scrollUp, theme.header.zIndex]);
 
   return (
     <>
@@ -74,7 +70,7 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
         flex={false}
         justify="between"
         gap="medium"
-        style={sticky === 'scrollup' && scrollUp ? stickyStyle : undefined}
+        style={sticky === 'scrollup' && scrollUp ? stickyStyles : undefined}
         {...rest}
         ref={containerRef}
       />

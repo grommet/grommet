@@ -819,6 +819,9 @@ export interface ThemeType {
   grommet?: {
     extend?: ExtendType;
   };
+  header?: {
+    zIndex?: string;
+  };
   heading?: {
     color?: ColorType;
     extend?: ExtendType;
