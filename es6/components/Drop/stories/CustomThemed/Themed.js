@@ -21,6 +21,10 @@ var customTheme = deepMerge(grommet, {
     }
   }
 });
+var align = {
+  top: 'bottom',
+  left: 'right'
+};
 
 var ThemedDrop = function ThemedDrop() {
   var _useState = useState(false),
@@ -44,10 +48,7 @@ var ThemedDrop = function ThemedDrop() {
     justify: "start",
     ref: targetRef
   }, "Box"), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
-    align: {
-      top: 'bottom',
-      left: 'right'
-    },
+    align: align,
     target: targetRef.current
   }, /*#__PURE__*/React.createElement(Box, {
     pad: "small"

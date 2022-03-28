@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Box, Calendar, Drop, Heading, TextInput } from 'grommet';
+var align = {
+  top: 'bottom',
+  left: 'left'
+};
 
 var OverflowDrop = function OverflowDrop() {
   var targetRef = useRef();
@@ -40,10 +44,7 @@ var OverflowDrop = function OverflowDrop() {
       ref: targetRef
     }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
       overflow: "unset",
-      align: {
-        top: 'bottom',
-        left: 'left'
-      },
+      align: align,
       target: targetRef.current,
       onClose: function onClose() {
         return setShowCalendar(false);

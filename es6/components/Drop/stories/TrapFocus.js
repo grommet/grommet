@@ -3,6 +3,9 @@ import { Box, Button, Drop, Nav, Text } from 'grommet';
 import { Calculator } from "grommet-icons/es6/icons/Calculator";
 import { Bug } from "grommet-icons/es6/icons/Bug";
 import { Achievement } from "grommet-icons/es6/icons/Achievement";
+var align = {
+  left: 'right'
+};
 
 var TooltipButton = function TooltipButton(_ref) {
   var icon = _ref.icon,
@@ -35,9 +38,7 @@ var TooltipButton = function TooltipButton(_ref) {
     align: "center"
   }, icon)), ref.current && over && /*#__PURE__*/React.createElement(Drop, {
     plain: true,
-    align: {
-      left: 'right'
-    },
+    align: align,
     target: ref.current,
     margin: {
       horizontal: 'small'

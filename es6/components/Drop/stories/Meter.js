@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Box, Drop, Meter } from 'grommet';
+var align = {
+  top: 'bottom',
+  left: 'left'
+};
 
 var TestDrop = function TestDrop() {
   var targetRef = useRef();
@@ -30,10 +34,7 @@ var TestDrop = function TestDrop() {
     }), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
       id: "test-drop-with-svg",
       plain: true,
-      align: {
-        top: 'bottom',
-        left: 'left'
-      },
+      align: align,
       target: targetRef.current
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "large"

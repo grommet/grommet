@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Box, Drop } from 'grommet';
+var align = {
+  top: 'bottom',
+  left: 'left'
+};
 
 var PlainDrop = function PlainDrop() {
   var targetRef = useRef();
@@ -27,10 +31,7 @@ var PlainDrop = function PlainDrop() {
       ref: targetRef
     }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
       plain: true,
-      align: {
-        top: 'bottom',
-        left: 'left'
-      },
+      align: align,
       target: targetRef.current
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "large"

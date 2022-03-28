@@ -16,6 +16,10 @@ var MenuItem = function MenuItem() {
   }, /*#__PURE__*/React.createElement(Gremlin, null));
 };
 
+var align = {
+  top: 'bottom'
+};
+
 var GremlinDropButton = function GremlinDropButton() {
   return /*#__PURE__*/React.createElement(DropButton, {
     alignSelf: "center",
@@ -24,9 +28,7 @@ var GremlinDropButton = function GremlinDropButton() {
     },
     dropContent: renderItems(),
     dropProps: {
-      align: {
-        top: 'bottom'
-      }
+      align: align
     }
   }, /*#__PURE__*/React.createElement(MenuItem, null));
 };

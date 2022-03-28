@@ -33,6 +33,9 @@ var DropContent = function DropContent(_ref) {
 DropContent.propTypes = {
   onClose: _propTypes["default"].func.isRequired
 };
+var align = {
+  top: 'bottom'
+};
 
 var SimpleDropButton = function SimpleDropButton() {
   var _React$useState = _react["default"].useState(),
@@ -59,9 +62,7 @@ var SimpleDropButton = function SimpleDropButton() {
       onClose: onClose
     }),
     dropProps: {
-      align: {
-        top: 'bottom'
-      }
+      align: align
     }
   }));
 };

@@ -11,6 +11,13 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+var alignRight = {
+  left: 'right'
+};
+var alignLeft = {
+  right: 'left'
+};
+
 var MultipleDrop = function MultipleDrop() {
   var _useState = (0, _react.useState)(false),
       showDrop = _useState[0],
@@ -32,9 +39,7 @@ var MultipleDrop = function MultipleDrop() {
       justify: "center"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DropButton, {
       label: "drop button",
-      dropAlign: {
-        right: 'left'
-      },
+      dropAlign: alignLeft,
       dropContent: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
         pad: "large"
       }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
@@ -49,9 +54,7 @@ var MultipleDrop = function MultipleDrop() {
         return setShowDrop(true);
       }
     }), showDrop && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
-      align: {
-        left: 'right'
-      },
+      align: alignRight,
       target: targetRef.current,
       onClickOutside: function onClickOutside() {
         return setShowDrop(false);

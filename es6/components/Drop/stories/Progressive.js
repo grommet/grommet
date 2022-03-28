@@ -1,5 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { Box, Button, Drop } from 'grommet';
+var align = {
+  top: 'bottom',
+  right: 'right'
+};
 
 var ProgressiveDrop = function ProgressiveDrop() {
   var boxRef = useRef();
@@ -61,10 +65,7 @@ var ProgressiveDrop = function ProgressiveDrop() {
       onEsc: function onEsc() {
         return setOpenInnerDrop(false);
       },
-      align: {
-        top: 'bottom',
-        right: 'right'
-      }
+      align: align
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "large"
     }, /*#__PURE__*/React.createElement(Button, {

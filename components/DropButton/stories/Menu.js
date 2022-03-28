@@ -25,6 +25,10 @@ var MenuItem = function MenuItem() {
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Gremlin, null));
 };
 
+var align = {
+  top: 'bottom'
+};
+
 var GremlinDropButton = function GremlinDropButton() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.DropButton, {
     alignSelf: "center",
@@ -33,9 +37,7 @@ var GremlinDropButton = function GremlinDropButton() {
     },
     dropContent: renderItems(),
     dropProps: {
-      align: {
-        top: 'bottom'
-      }
+      align: align
     }
   }, /*#__PURE__*/_react["default"].createElement(MenuItem, null));
 };

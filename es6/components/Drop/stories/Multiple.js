@@ -1,5 +1,11 @@
 import React, { useRef, useState } from 'react';
 import { Box, Button, Drop, DropButton, Layer, TextInput } from 'grommet';
+var alignRight = {
+  left: 'right'
+};
+var alignLeft = {
+  right: 'left'
+};
 
 var MultipleDrop = function MultipleDrop() {
   var _useState = useState(false),
@@ -22,9 +28,7 @@ var MultipleDrop = function MultipleDrop() {
       justify: "center"
     }, /*#__PURE__*/React.createElement(DropButton, {
       label: "drop button",
-      dropAlign: {
-        right: 'left'
-      },
+      dropAlign: alignLeft,
       dropContent: /*#__PURE__*/React.createElement(Box, {
         pad: "large"
       }, /*#__PURE__*/React.createElement(TextInput, {
@@ -39,9 +43,7 @@ var MultipleDrop = function MultipleDrop() {
         return setShowDrop(true);
       }
     }), showDrop && /*#__PURE__*/React.createElement(Drop, {
-      align: {
-        left: 'right'
-      },
+      align: alignRight,
       target: targetRef.current,
       onClickOutside: function onClickOutside() {
         return setShowDrop(false);

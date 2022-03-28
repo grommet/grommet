@@ -10,6 +10,22 @@ var lazyTheme = deepMerge(grommet, {
   }
 });
 var finalLazyPad = 'xlarge';
+var alignBottomLeft = {
+  top: 'bottom',
+  left: 'left'
+};
+var alignTopRight = {
+  bottom: 'top',
+  right: 'right'
+};
+var alignTopLeft = {
+  bottom: 'top',
+  left: 'left'
+};
+var alignBottomRight = {
+  top: 'bottom',
+  right: 'right'
+};
 
 var LazyDrop = function LazyDrop() {
   var _useState = useState(null),
@@ -46,10 +62,7 @@ var LazyDrop = function LazyDrop() {
     align: "center",
     ref: topLeftTargetRef
   }, "Target"), topLeftTargetRef.current && /*#__PURE__*/React.createElement(Drop, {
-    align: {
-      top: 'bottom',
-      left: 'left'
-    },
+    align: alignBottomLeft,
     target: topLeftTargetRef.current,
     responsive: true
   }, /*#__PURE__*/React.createElement(Box, {
@@ -64,10 +77,7 @@ var LazyDrop = function LazyDrop() {
     align: "center",
     ref: topRightTargetRef
   }, "Target"), topRightTargetRef.current && /*#__PURE__*/React.createElement(Drop, {
-    align: {
-      bottom: 'top',
-      right: 'right'
-    },
+    align: alignTopRight,
     target: topRightTargetRef.current,
     responsive: true
   }, /*#__PURE__*/React.createElement(Box, {
@@ -84,10 +94,7 @@ var LazyDrop = function LazyDrop() {
     pad: "medium",
     ref: bottomLeftTargetRef
   }, "Target"), bottomLeftTargetRef.current && /*#__PURE__*/React.createElement(Drop, {
-    align: {
-      bottom: 'top',
-      left: 'left'
-    },
+    align: alignTopLeft,
     target: bottomLeftTargetRef.current,
     responsive: true
   }, /*#__PURE__*/React.createElement(Box, {
@@ -101,10 +108,7 @@ var LazyDrop = function LazyDrop() {
     pad: "medium",
     ref: bottomRightTargetRef
   }, "Target"), bottomRightTargetRef.current && /*#__PURE__*/React.createElement(Drop, {
-    align: {
-      top: 'bottom',
-      right: 'right'
-    },
+    align: alignBottomRight,
     target: bottomRightTargetRef.current,
     responsive: true
   }, /*#__PURE__*/React.createElement(Box, {

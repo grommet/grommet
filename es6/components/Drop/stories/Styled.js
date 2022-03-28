@@ -1,5 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Box, Drop } from 'grommet';
+var alignBottomLeft = {
+  top: 'bottom',
+  left: 'left'
+};
+var alignTopLeft = {
+  bottom: 'top',
+  left: 'left'
+};
 
 var StyledDrop = function StyledDrop() {
   var targetRef = useRef();
@@ -25,10 +33,7 @@ var StyledDrop = function StyledDrop() {
       justify: "start",
       ref: targetRef
     }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Drop, {
-      align: {
-        top: 'bottom',
-        left: 'left'
-      },
+      align: alignBottomLeft,
       target: targetRef.current,
       elevation: "large",
       margin: {
@@ -37,10 +42,7 @@ var StyledDrop = function StyledDrop() {
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "large"
     }, "Drop Contents with elevation and margin")), /*#__PURE__*/React.createElement(Drop, {
-      align: {
-        bottom: 'top',
-        left: 'left'
-      },
+      align: alignTopLeft,
       target: targetRef.current,
       round: "large",
       background: "background-contrast",

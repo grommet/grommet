@@ -11,6 +11,11 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+var align = {
+  top: 'bottom',
+  right: 'right'
+};
+
 var ProgressiveDrop = function ProgressiveDrop() {
   var boxRef = (0, _react.useRef)();
   var innerBoxRef = (0, _react.useRef)();
@@ -71,10 +76,7 @@ var ProgressiveDrop = function ProgressiveDrop() {
       onEsc: function onEsc() {
         return setOpenInnerDrop(false);
       },
-      align: {
-        top: 'bottom',
-        right: 'right'
-      }
+      align: align
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
