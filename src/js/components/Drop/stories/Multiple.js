@@ -1,6 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { Box, Button, Drop, DropButton, Layer, TextInput } from 'grommet';
 
+const alignRight = { left: 'right' };
+const alignLeft = { right: 'left' };
+
 const MultipleDrop = () => {
   const [showDrop, setShowDrop] = useState(false);
   const [showLayer, setShowLayer] = useState(false);
@@ -12,7 +15,7 @@ const MultipleDrop = () => {
     <Box gap="medium" fill align="center" justify="center">
       <DropButton
         label="drop button"
-        dropAlign={{ right: 'left' }}
+        dropAlign={alignLeft}
         dropContent={
           <Box pad="large">
             <TextInput
@@ -30,7 +33,7 @@ const MultipleDrop = () => {
       />
       {showDrop && (
         <Drop
-          align={{ left: 'right' }}
+          align={alignRight}
           target={targetRef.current}
           onClickOutside={() => setShowDrop(false)}
         >
