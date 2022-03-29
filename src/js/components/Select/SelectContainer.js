@@ -97,13 +97,6 @@ const SelectContainer = forwardRef(
         optionsNode.children[activeIndex].focus();
     }, [activeIndex]);
 
-    // adjust activeIndex when options change
-    useEffect(() => {
-      if (activeIndex === -1 && search && optionIndexesInValue.length) {
-        setActiveIndex(optionIndexesInValue[0]);
-      }
-    }, [activeIndex, optionIndexesInValue, search]);
-
     // set initial focus
     useEffect(() => {
       // need to wait for Drop to be ready
@@ -246,10 +239,23 @@ const SelectContainer = forwardRef(
       [onChange],
     );
 
+    const getActiveIndex = useCallback(
+      () => (optionIndexesInValue?.length ? optionIndexesInValue[0] : -1),
+      [optionIndexesInValue],
+    );
+
     const onNextOption = useCallback(
       (event) => {
         event.preventDefault();
-        let nextActiveIndex = activeIndex + 1;
+        let nextActiveIndex;
+        if (activeIndex >= 0) {
+          nextActiveIndex = activeIndex + 1;
+        } else {
+          const index = getActiveIndex();
+          nextActiveIndex =
+            index >= 0 && index < options.length ? index + 1 : 0;
+        }
+
         while (
           nextActiveIndex < options.length &&
           isDisabled(nextActiveIndex)
@@ -261,13 +267,23 @@ const SelectContainer = forwardRef(
           setKeyboardNavigation(true);
         }
       },
-      [activeIndex, isDisabled, options],
+      [getActiveIndex, activeIndex, isDisabled, options],
     );
 
     const onPreviousOption = useCallback(
       (event) => {
         event.preventDefault();
-        let nextActiveIndex = activeIndex - 1;
+        let nextActiveIndex;
+        if (activeIndex >= 0) {
+          nextActiveIndex = activeIndex - 1;
+        } else {
+          const index = getActiveIndex();
+          nextActiveIndex =
+            index >= 0 && index < options.length
+              ? index - 1
+              : options.length - 1;
+        }
+
         while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
           nextActiveIndex -= 1;
         }
@@ -276,7 +292,7 @@ const SelectContainer = forwardRef(
           setKeyboardNavigation(true);
         }
       },
-      [activeIndex, isDisabled],
+      [activeIndex, getActiveIndex, options.length, isDisabled],
     );
 
     const onKeyDownOption = useCallback(
