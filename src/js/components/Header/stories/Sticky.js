@@ -15,8 +15,8 @@ export const Sticky = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Page kind="narrow">
-    <PageContent background="light-3">
-      <Header sticky="scrollup" background="light-4" pad="small">
+    <PageContent background={{color: "light-3", fill: "horizontal"}}>
+      <Header sticky="scrollup" background="light-4" pad={{vertical: "small"}}>
         <Avatar background="brand">SY</Avatar>
         <Nav direction="row">
           <Anchor label="Home" href="#" />
