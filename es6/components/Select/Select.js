@@ -395,6 +395,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     basis: "auto"
   }, selectValue || displayLabelKey ? /*#__PURE__*/React.createElement(React.Fragment, null, selectValue || displayLabelKey, /*#__PURE__*/React.createElement(HiddenInput, {
     type: "text",
+    name: name,
     id: id ? id + "__input" : undefined,
     value: inputValue,
     ref: inputRef,

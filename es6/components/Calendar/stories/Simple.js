@@ -18,14 +18,6 @@ export var Simple = function Simple() {
       pad: "large"
     }, /*#__PURE__*/React.createElement(Calendar, {
       date: date,
-      onSelect: onSelect,
-      size: "small",
-      bounds: ['2018-09-08', '2020-12-13']
-    })), /*#__PURE__*/React.createElement(Box, {
-      align: "center",
-      pad: "large"
-    }, /*#__PURE__*/React.createElement(Calendar, {
-      date: date,
       daysOfWeek: true,
       onSelect: onSelect,
       size: "small",
