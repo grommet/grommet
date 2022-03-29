@@ -58,7 +58,7 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
     <>
       {sticky === 'scrollup' && (
         <Box
-          height={stickyStyles && stickyStyles.height}
+          height={stickyStyles?.height}
           width={stickyStyles && stickyStyles.width}
         />
       )}
