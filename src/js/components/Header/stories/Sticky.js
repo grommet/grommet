@@ -6,21 +6,35 @@ import {
   Grid,
   Header,
   Nav,
+  Menu,
   Page,
   PageContent,
   Paragraph,
 } from 'grommet';
+import { Power, User } from 'grommet-icons';
 
 export const Sticky = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Page kind="narrow">
-    <PageContent background={{color: "light-3", fill: "horizontal"}}>
-      <Header sticky="scrollup" background="light-4" pad={{vertical: "small"}}>
+  <Page>
+    <PageContent background={{ color: 'light-3', fill: 'horizontal' }}>
+      <Header
+        sticky="scrollup"
+        background="light-4"
+        pad={{ vertical: 'small' }}
+      >
         <Avatar background="brand">SY</Avatar>
-        <Nav direction="row">
+        <Nav align="center" direction="row">
           <Anchor label="Home" href="#" />
-          <Anchor label="Profile" href="#" />
+          <Menu
+            dropProps={{ align: { top: 'bottom', left: 'left' } }}
+            label="Profile"
+            items={[
+              { label: 'Home' },
+              { label: 'Profile', icon: <User />, gap: 'small' },
+              { label: 'Logout', icon: <Power />, reverse: true, gap: 'small' },
+            ]}
+          />
         </Nav>
       </Header>
       <Paragraph>
@@ -73,7 +87,6 @@ export const Sticky = () => (
   </Page>
   // </Grommet>
 );
-
 Sticky.storyName = 'Sticky';
 
 export default {
