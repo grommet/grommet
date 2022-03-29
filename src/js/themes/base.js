@@ -914,7 +914,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     header: {
       sticky: {
-        zIndex: '1000',
+        zIndex: '20',
       },
     },
     heading: {

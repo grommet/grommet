@@ -1486,7 +1486,7 @@ Object {
         "grommet": Object {},
         "header": Object {
           "sticky": Object {
-            "zIndex": "1000",
+            "zIndex": "20",
           },
         },
         "heading": Object {
