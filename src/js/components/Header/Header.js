@@ -57,6 +57,8 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
   return (
     <>
       {sticky === 'scrollup' && (
+        // This Box is needed to push down content
+        // so the content is not cut off by the Sticky Header
         <Box
           height={stickyStyles?.height}
           width={stickyStyles && stickyStyles.width}
