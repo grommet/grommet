@@ -20,8 +20,6 @@ export const Test = () => {
   const [open, setOpen] = useState(false);
   const onOpen = () => setOpen(true);
   const onClose = () => setOpen(undefined);
-  // create temp story with layer
-  // change profile to menu to test
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   return (

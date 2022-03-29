@@ -38,14 +38,12 @@ export const Sticky = () => (
         </Nav>
       </Header>
       <Paragraph>
-        To maximize screen real-estate, the Header on this page scrolls out of view as the user moves down the page. However if the user scrolls upwards, the Header is revealed and fixed atop the window. On long pages this behavior allows easy access to the Header's content, such as navigation or menus, while preventing the Header from obscuring content on mobile devices or in smaller windows.
-      </Paragraph>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo
-        gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi
-        dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum
-        leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus
-        nunc porta egestas. Fusce dapibus lobortis tincidunt.
+        To maximize screen real-estate, the Header on this page scrolls out of
+        view as the user moves down the page. However if the user scrolls
+        upwards, the Header is revealed and fixed atop the window. On long pages
+        this behavior allows easy access to the Headers content, such as
+        navigation or menus, while preventing the Header from obscuring content
+        on mobile devices or in smaller windows.
       </Paragraph>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo
