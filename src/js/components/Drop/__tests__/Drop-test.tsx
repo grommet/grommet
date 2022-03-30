@@ -60,6 +60,49 @@ const TestInput = ({
   );
 };
 
+interface TestButtonProps extends DropExtendedProps {
+  theme?: ThemeType;
+  containerTarget?: HTMLElement;
+  message?: string;
+}
+const TestButton = ({
+  theme,
+  containerTarget,
+  message = 'this is a test',
+  ...rest
+}: TestButtonProps) => {
+  const [showDrop, setShowDrop] = useState<boolean>(false);
+
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    setShowDrop(true);
+  }, []);
+
+  let drop;
+
+  if (showDrop) {
+    drop = (
+      <Drop
+        id="drop-node"
+        container="inline"
+        target={buttonRef.current || undefined}
+        {...rest}
+      >
+        {message}
+      </Drop>
+    );
+  }
+  return (
+    <Grommet theme={theme} containerTarget={containerTarget}>
+      <button ref={buttonRef} data-testid="drop-button" aria-label="test">
+        <span>click</span>
+        {drop}
+      </button>
+    </Grommet>
+  );
+};
+
 describe('Drop', () => {
   test('should have no accessibility violations', async () => {
     window.scrollTo = jest.fn();
@@ -265,4 +308,10 @@ test('custom containerTarget', () => {
   } finally {
     document.body.removeChild(target);
   }
+});
+
+test('inline', () => {
+  window.scrollTo = jest.fn();
+  const { getByTestId } = render(<TestButton />);
+  expect(getByTestId('drop-button')).toMatchSnapshot();
 });
