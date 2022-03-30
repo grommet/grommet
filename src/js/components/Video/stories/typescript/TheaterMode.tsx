@@ -25,6 +25,8 @@ const TheaterMode = (props) => {
               a11yTitle: 'Toggle theater mode',
             },
             'fullScreen',
+            'pause',
+            'play',
           ],
         }}
         {...props}
