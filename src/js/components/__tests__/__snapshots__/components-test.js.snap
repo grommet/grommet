@@ -2629,6 +2629,7 @@ Object {
       "margin": [Function],
       "messages": [Function],
       "mute": [Function],
+      "skipInterval": [Function],
     },
     "render": [Function],
   },

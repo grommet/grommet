@@ -17,6 +17,7 @@ import { Menu } from '../Menu';
 import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
+import { Keyboard } from '../Keyboard';
 import { containsFocus, useForwardedRef } from '../../utils';
 
 import {
@@ -61,6 +62,7 @@ const Video = forwardRef(
       onPlay,
       onTimeUpdate,
       onVolumeChange,
+      skipInterval,
       ...rest
     },
     ref,
@@ -209,6 +211,16 @@ const Video = forwardRef(
       },
       [duration, videoRef],
     );
+
+    const seekForward = useCallback(() => {
+      setInteracting(true);
+      videoRef.current.currentTime += skipInterval || 5;
+    }, [skipInterval, videoRef]);
+
+    const seekBackward = useCallback(() => {
+      setInteracting(true);
+      videoRef.current.currentTime -= skipInterval || 5;
+    }, [skipInterval, videoRef]);
 
     const louder = useCallback(() => {
       videoRef.current.volume += VOLUME_STEP;
@@ -455,53 +467,56 @@ const Video = forwardRef(
     }
 
     return (
-      <StyledVideoContainer
-        ref={containerRef}
-        {...mouseEventListeners}
-        alignSelf={alignSelf}
-        gridArea={gridArea}
-        margin={margin}
-        style={style}
-      >
-        <StyledVideo
-          {...rest}
-          ref={videoRef}
-          onDurationChange={(event) => {
-            const video = videoRef.current;
-            setDuration(video.duration);
-            setPercentagePlayed((video.currentTime / video.duration) * 100);
-            if (onDurationChange) onDurationChange(event);
-          }}
-          onEnded={(event) => {
-            setPlaying(false);
-            if (onEnded) onEnded(event);
-          }}
-          onPause={(event) => {
-            setPlaying(false);
-            if (onPause) onPause(event);
-          }}
-          onPlay={(event) => {
-            setPlaying(true);
-            setHasPlayed(true);
-            if (onPlay) onPlay(event);
-          }}
-          onTimeUpdate={(event) => {
-            const video = videoRef.current;
-            setCurrentTime(video.currentTime);
-            setPercentagePlayed((video.currentTime / video.duration) * 100);
-            if (onTimeUpdate) onTimeUpdate(event);
-          }}
-          onVolumeChange={(event) => {
-            setVolume(videoRef.current.volume);
-            if (onVolumeChange) onVolumeChange(event);
-          }}
-          autoPlay={autoPlay || false}
-          loop={loop || false}
+      <Keyboard onRight={seekForward} onLeft={seekBackward}>
+        <StyledVideoContainer
+          ref={containerRef}
+          {...mouseEventListeners}
+          alignSelf={alignSelf}
+          gridArea={gridArea}
+          margin={margin}
+          style={style}
+          tabIndex="-1"
         >
-          {children}
-        </StyledVideo>
-        {controlsElement}
-      </StyledVideoContainer>
+          <StyledVideo
+            {...rest}
+            ref={videoRef}
+            onDurationChange={(event) => {
+              const video = videoRef.current;
+              setDuration(video.duration);
+              setPercentagePlayed((video.currentTime / video.duration) * 100);
+              if (onDurationChange) onDurationChange(event);
+            }}
+            onEnded={(event) => {
+              setPlaying(false);
+              if (onEnded) onEnded(event);
+            }}
+            onPause={(event) => {
+              setPlaying(false);
+              if (onPause) onPause(event);
+            }}
+            onPlay={(event) => {
+              setPlaying(true);
+              setHasPlayed(true);
+              if (onPlay) onPlay(event);
+            }}
+            onTimeUpdate={(event) => {
+              const video = videoRef.current;
+              setCurrentTime(video.currentTime);
+              setPercentagePlayed((video.currentTime / video.duration) * 100);
+              if (onTimeUpdate) onTimeUpdate(event);
+            }}
+            onVolumeChange={(event) => {
+              setVolume(videoRef.current.volume);
+              if (onVolumeChange) onVolumeChange(event);
+            }}
+            autoPlay={autoPlay || false}
+            loop={loop || false}
+          >
+            {children}
+          </StyledVideo>
+          {controlsElement}
+        </StyledVideoContainer>
+      </Keyboard>
     );
   },
 );

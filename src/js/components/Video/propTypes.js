@@ -36,6 +36,7 @@ if (process.env.NODE_ENV !== 'production') {
       volumeDown: PropTypes.string,
       volumeUp: PropTypes.string,
     }),
+    skipInterval: PropTypes.number,
   };
 }
 export const VideoPropTypes = PropType;
