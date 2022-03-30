@@ -8,6 +8,7 @@ import {
 } from '../../utils';
 
 export interface DropProps {
+  a11yTitle?: string;
   align?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
