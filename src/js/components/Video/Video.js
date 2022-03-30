@@ -313,6 +313,7 @@ const Video = forwardRef(
             id: 'video.pauseButton',
             messages,
           }),
+          disabled: !playing,
           onClick: playing ? pause : play,
         },
         play: {
@@ -321,6 +322,7 @@ const Video = forwardRef(
             id: 'video.playButton',
             messages,
           }),
+          disabled: playing,
           onClick: playing ? pause : play,
         },
       };
