@@ -399,6 +399,7 @@ const Select = forwardRef(
                   {selectValue || displayLabelKey}
                   <HiddenInput
                     type="text"
+                    name={name}
                     id={id ? `${id}__input` : undefined}
                     value={inputValue}
                     ref={inputRef}
