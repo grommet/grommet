@@ -58,8 +58,6 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
     return () => window.removeEventListener('scroll', onScroll);
   }, [containerRef, stickyStyles, theme.header?.sticky?.zIndex]);
 
-  console.log(stickyStyles && stickyStyles.height);
-
   return (
     <>
       {sticky === 'scrollup' && (
