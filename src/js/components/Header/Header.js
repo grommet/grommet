@@ -34,9 +34,13 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
           right: `${containerRef.current.getBoundingClientRect().right}px`,
           zIndex: `${theme.header?.sticky?.zIndex}`,
           position: 'fixed',
+          transition: 'top 0.6s',
           top: '0',
         });
-      } else setStickyStyles(undefined);
+      } else
+        setStickyStyles({
+          top: `-${containerRef.current.getBoundingClientRect().height}px`,
+        });
       lastScrollY = scrollY > 0 ? scrollY : 0;
       runEventListener = false;
     };
@@ -53,6 +57,8 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
 
     return () => window.removeEventListener('scroll', onScroll);
   }, [containerRef, stickyStyles, theme.header?.sticky?.zIndex]);
+
+  console.log(stickyStyles && stickyStyles.height);
 
   return (
     <>
