@@ -98,7 +98,7 @@ export interface DataChartProps {
   legend?: boolean | { side: 'left' | 'right' | 'bottom' };
   // offset - whether to shift the charts to reveal them all, mostly useful
   // for bar charts
-  offset?: boolean;
+  offset?: boolean | { gap?: ChartProps['thickness'] };
   // pad - padding around the guides/visuals
   // defaults to what's needed based on axis and chart types
   pad?: GridProps['pad'];

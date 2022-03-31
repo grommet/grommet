@@ -160,7 +160,10 @@ if (process.env.NODE_ENV !== 'production') {
       }),
     ]),
     legend: PropTypes.bool,
-    offset: PropTypes.bool,
+    offset: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({ gap: thicknessType }),
+    ]),
     pad: padPropType,
     placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     series: PropTypes.oneOfType([seriesType, PropTypes.arrayOf(seriesType)]),
