@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Box, Video } from 'grommet';
 import { Monitor } from 'grommet-icons/icons/Monitor';
 
-const TheaterMode = (props) => {
+const TheaterMode = () => {
   const [theaterMode, setTheaterMode] = useState(false);
 
   return (
@@ -25,9 +25,9 @@ const TheaterMode = (props) => {
               a11yTitle: 'Toggle theater mode',
             },
             'fullScreen',
+            'pause',
           ],
         }}
-        {...props}
       />
     </Box>
   );
