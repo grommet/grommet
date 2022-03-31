@@ -1,4 +1,4 @@
-var _excluded = ["restrictFocus", "target", "trapFocus"];
+var _excluded = ["inline", "restrictFocus", "target", "trapFocus"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -13,7 +13,8 @@ import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { DropPropTypes } from './propTypes';
 var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var restrictFocus = _ref.restrictFocus,
+  var inline = _ref.inline,
+      restrictFocus = _ref.restrictFocus,
       dropTarget = _ref.target,
       _ref$trapFocus = _ref.trapFocus,
       trapFocus = _ref$trapFocus === void 0 ? true : _ref$trapFocus,
@@ -35,8 +36,8 @@ var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var containerTarget = useContext(ContainerTargetContext);
   useEffect(function () {
-    return setDropContainer(getNewContainer(containerTarget));
-  }, [containerTarget]); // just a few things to clean up when the Drop is unmounted
+    return setDropContainer(!inline ? getNewContainer(containerTarget) : undefined);
+  }, [containerTarget, inline]); // just a few things to clean up when the Drop is unmounted
 
   useEffect(function () {
     return function () {
@@ -54,13 +55,16 @@ var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }
     };
   }, [containerTarget, dropContainer, originalFocusedElement, restrictFocus]);
-  return dropContainer ? /*#__PURE__*/createPortal( /*#__PURE__*/React.createElement(DropContainer, _extends({
+  var content = /*#__PURE__*/React.createElement(DropContainer, _extends({
     ref: ref,
     dir: theme && theme.dir,
     dropTarget: dropTarget,
     restrictFocus: restrictFocus,
     trapFocus: trapFocus
-  }, rest)), dropContainer) : null;
+  }, rest));
+  if (inline) return content;
+  if (dropContainer) return /*#__PURE__*/createPortal(content, dropContainer);
+  return null;
 });
 Drop.displayName = 'Drop';
 Drop.propTypes = DropPropTypes;

@@ -27,6 +27,7 @@ if (process.env.NODE_ENV !== 'production') {
     }),
     background: _generalPropTypes.backgroundDoc,
     elevation: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
+    inline: _propTypes["default"].bool,
     margin: _generalPropTypes.marginProp,
     onClickOutside: _propTypes["default"].func,
     onEsc: _propTypes["default"].func,

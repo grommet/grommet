@@ -19,7 +19,7 @@ var _ContainerTargetContext = require("../../contexts/ContainerTargetContext");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["restrictFocus", "target", "trapFocus"];
+var _excluded = ["inline", "restrictFocus", "target", "trapFocus"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -30,7 +30,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Drop = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var restrictFocus = _ref.restrictFocus,
+  var inline = _ref.inline,
+      restrictFocus = _ref.restrictFocus,
       dropTarget = _ref.target,
       _ref$trapFocus = _ref.trapFocus,
       trapFocus = _ref$trapFocus === void 0 ? true : _ref$trapFocus,
@@ -52,8 +53,8 @@ var Drop = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var containerTarget = (0, _react.useContext)(_ContainerTargetContext.ContainerTargetContext);
   (0, _react.useEffect)(function () {
-    return setDropContainer((0, _utils.getNewContainer)(containerTarget));
-  }, [containerTarget]); // just a few things to clean up when the Drop is unmounted
+    return setDropContainer(!inline ? (0, _utils.getNewContainer)(containerTarget) : undefined);
+  }, [containerTarget, inline]); // just a few things to clean up when the Drop is unmounted
 
   (0, _react.useEffect)(function () {
     return function () {
@@ -71,13 +72,18 @@ var Drop = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       }
     };
   }, [containerTarget, dropContainer, originalFocusedElement, restrictFocus]);
-  return dropContainer ? /*#__PURE__*/(0, _reactDom.createPortal)( /*#__PURE__*/_react["default"].createElement(_DropContainer.DropContainer, _extends({
+
+  var content = /*#__PURE__*/_react["default"].createElement(_DropContainer.DropContainer, _extends({
     ref: ref,
     dir: theme && theme.dir,
     dropTarget: dropTarget,
     restrictFocus: restrictFocus,
     trapFocus: trapFocus
-  }, rest)), dropContainer) : null;
+  }, rest));
+
+  if (inline) return content;
+  if (dropContainer) return /*#__PURE__*/(0, _reactDom.createPortal)(content, dropContainer);
+  return null;
 });
 exports.Drop = Drop;
 Drop.displayName = 'Drop';
