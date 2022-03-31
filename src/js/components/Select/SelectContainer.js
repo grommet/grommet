@@ -91,18 +91,25 @@ const SelectContainer = forwardRef(
     const searchRef = useRef();
     const optionsRef = useRef();
 
+    const focusOption = (index) => {
+      const optionsNode = optionsRef.current;
+      const optionNode = optionsNode.children[index];
+      if (optionNode) {
+        optionNode.focus();
+      }
+    };
+
     useEffect(() => {
       const optionsNode = optionsRef.current;
-      if (optionsNode.children && optionsNode.children[activeIndex])
-        optionsNode.children[activeIndex].focus();
+      if (optionsNode.children) focusOption(activeIndex);
     }, [activeIndex]);
 
     // adjust activeIndex when options change
     useEffect(() => {
-      if (activeIndex === -1 && search && optionIndexesInValue.length) {
-        setActiveIndex(optionIndexesInValue[0]);
+      if (activeIndex === -1 && optionIndexesInValue.length) {
+        focusOption(optionIndexesInValue[0]);
       }
-    }, [activeIndex, optionIndexesInValue, search]);
+    }, [activeIndex, optionIndexesInValue]);
 
     // set initial focus
     useEffect(() => {
