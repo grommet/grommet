@@ -332,8 +332,23 @@ exports[`Video Configure Menu Button 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -837,8 +852,23 @@ exports[`Video End event handler 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -1330,8 +1360,23 @@ exports[`Video Play and Pause event handlers 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -1496,7 +1541,7 @@ exports[`Video Play and Pause event handlers 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 jequTA"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bttkjj"
     tabindex="-1"
   >
     <video
@@ -1989,8 +2034,23 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -2481,8 +2541,23 @@ exports[`Video controls below renders 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -2970,8 +3045,23 @@ exports[`Video controls over renders 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -3463,8 +3553,23 @@ exports[`Video duration event handler 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -3961,8 +4066,23 @@ exports[`Video fit  cover renders 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -4459,8 +4579,23 @@ exports[`Video fit contain renders 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -4952,8 +5087,23 @@ exports[`Video loop renders 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -5446,8 +5596,23 @@ exports[`Video mouse events handlers of controls 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -5612,7 +5777,7 @@ exports[`Video mouse events handlers of controls 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 jequTA"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bttkjj"
     tabindex="-1"
   >
     <video
@@ -5736,7 +5901,7 @@ exports[`Video mouse events handlers of controls 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 jequTA"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bttkjj"
     tabindex="-1"
   >
     <video
@@ -6187,8 +6352,23 @@ exports[`Video mute renders 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -6680,8 +6860,23 @@ exports[`Video renders 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -7173,8 +7368,23 @@ exports[`Video renders with theme 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -7666,8 +7876,23 @@ exports[`Video scrubber 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -7832,7 +8057,7 @@ exports[`Video scrubber 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 jequTA"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bttkjj"
     tabindex="-1"
   >
     <video
@@ -8283,8 +8508,23 @@ exports[`Video timeUpdate event handler 1`] = `
 }
 
 .c1:focus {
-  outline-offset: 0px;
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {

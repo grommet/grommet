@@ -2375,6 +2375,7 @@ Object {
           },
           "scrubber": Object {
             "color": "light-4",
+            "interval": 10,
           },
         },
         "worldMap": Object {

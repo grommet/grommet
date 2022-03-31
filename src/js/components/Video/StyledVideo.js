@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles, normalizeColor } from '../../utils';
+import { focusStyle, genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const FIT_MAP = {
@@ -36,12 +36,7 @@ const StyledVideoContainer = styled.div`
   position: relative;
   ${genericStyles};
   &:focus {
-    outline-offset: 0px;
-    outline: ${(props) => {
-      const color = normalizeColor('focus', props.theme);
-      if (color) return `2px solid ${color};`;
-      return ``;
-    }};
+    ${focusStyle()}
   }
 `;
 

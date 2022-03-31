@@ -1682,6 +1682,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // scrubber: { track: { color: undefined } },
       scrubber: {
         color: 'light-4',
+        interval: 10,
       },
     },
     worldMap: {

@@ -214,13 +214,15 @@ const Video = forwardRef(
 
     const seekForward = useCallback(() => {
       setInteracting(true);
-      videoRef.current.currentTime += skipInterval || 5;
-    }, [skipInterval, videoRef]);
+      videoRef.current.currentTime +=
+        skipInterval || theme.video.scrubber.interval;
+    }, [skipInterval, theme.video.scrubber.interval, videoRef]);
 
     const seekBackward = useCallback(() => {
       setInteracting(true);
-      videoRef.current.currentTime -= skipInterval || 5;
-    }, [skipInterval, videoRef]);
+      videoRef.current.currentTime -=
+        skipInterval || theme.video.scrubber.interval;
+    }, [skipInterval, theme.video.scrubber.interval, videoRef]);
 
     const louder = useCallback(() => {
       videoRef.current.volume += VOLUME_STEP;
