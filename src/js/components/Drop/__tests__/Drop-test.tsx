@@ -85,7 +85,7 @@ const TestButton = ({
     drop = (
       <Drop
         id="drop-node"
-        container="inline"
+        inline
         target={buttonRef.current || undefined}
         {...rest}
       >

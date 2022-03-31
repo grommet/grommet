@@ -296,8 +296,8 @@ Object {
     "propTypes": Object {
       "align": [Function],
       "background": [Function],
-      "container": [Function],
       "elevation": [Function],
+      "inline": [Function],
       "margin": [Function],
       "onClickOutside": [Function],
       "onEsc": [Function],

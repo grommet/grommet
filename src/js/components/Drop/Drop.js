@@ -11,7 +11,7 @@ import { DropPropTypes } from './propTypes';
 const Drop = forwardRef(
   (
     {
-      container = 'portal',
+      inline,
       restrictFocus,
       target: dropTarget, // avoid DOM leakage
       trapFocus = true,
@@ -27,9 +27,9 @@ const Drop = forwardRef(
     useEffect(
       () =>
         setDropContainer(
-          container === 'portal' ? getNewContainer(containerTarget) : undefined,
+          !inline ? getNewContainer(containerTarget) : undefined,
         ),
-      [container, containerTarget],
+      [containerTarget, inline],
     );
 
     // just a few things to clean up when the Drop is unmounted
@@ -64,7 +64,7 @@ const Drop = forwardRef(
       />
     );
 
-    if (container === 'inline') return content;
+    if (inline) return content;
 
     if (dropContainer) return createPortal(content, dropContainer);
 

@@ -15,8 +15,8 @@ export interface DropProps {
     left?: 'left' | 'right';
   };
   background?: BackgroundType;
-  container?: 'inline' | 'portal';
   elevation?: ElevationType;
+  inline?: boolean;
   onClickOutside?: React.MouseEventHandler<HTMLDocument>;
   onEsc?: KeyboardType;
   overflow?:

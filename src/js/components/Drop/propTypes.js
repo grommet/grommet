@@ -26,11 +26,11 @@ if (process.env.NODE_ENV !== 'production') {
       left: PropTypes.oneOf(['left', 'right']),
     }),
     background: backgroundDoc,
-    container: PropTypes.oneOf(['inline', 'portal']),
     elevation: PropTypes.oneOfType([
       PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]),
+    inline: PropTypes.bool,
     margin: marginProp,
     onClickOutside: PropTypes.func,
     onEsc: PropTypes.func,
