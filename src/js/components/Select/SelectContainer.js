@@ -89,9 +89,11 @@ const SelectContainer = forwardRef(
 
     const focusOption = (index) => {
       const optionsNode = optionsRef.current;
-      const optionNode = optionsNode.children[index];
-      if (optionNode) {
-        optionNode.focus();
+      if (optionsNode) {
+        const optionNode = optionsNode.children[index];
+        if (optionNode) {
+          optionNode.focus();
+        }
       }
     };
 
