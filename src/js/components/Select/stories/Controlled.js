@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Button, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Select } from 'grommet';
 
 export const Controlled = () => {
   const options = ['one', 'two'];
@@ -9,21 +8,26 @@ export const Controlled = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Grommet full theme={grommet}>
-      <Box fill align="center" justify="start" pad="large" gap="small">
-        <Button onClick={() => setOpen(!open)} label="Control the select" />
-        <Select
-          id="select"
-          name="select"
-          placeholder="Select"
-          open={open}
-          value={value}
-          options={options}
-          onChange={({ option }) => setValue(option)}
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box fill align="center" justify="start" pad="large" gap="small">
+      <Button onClick={() => setOpen(!open)} label="Control the select" />
+      <Select
+        id="select"
+        name="select"
+        placeholder="Select"
+        open={open}
+        value={value}
+        options={options}
+        onChange={({ option }) => setValue(option)}
+      />
+    </Box>
+    // </Grommet>
   );
+};
+
+Controlled.args = {
+  full: true,
 };
 
 export default {

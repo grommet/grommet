@@ -1,7 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
 
-import { Grommet, Box, Diagram, Stack, Paragraph } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Diagram, Stack, Paragraph } from 'grommet';
 
 const Node = ({ id, ...rest }) => (
   <Box
@@ -60,33 +59,34 @@ export const Progressing = () => {
   }
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="start" pad="large">
-        <Paragraph>
-          Adding and removing nodes with animated connections. The animation
-          &apos;draw&apos; is applied to the entire diagram, however, the last
-          connection receives its own animation type of &apos;pulse&apos;.
-        </Paragraph>
-        <Stack>
-          <Box>
-            <Box direction="row">
-              {topRow.map((id) => (
-                <Node key={id} id={id} />
-              ))}
-            </Box>
-            <Box direction="row">
-              {[4, 5].map((id) => (
-                <Node key={id} id={id} background="dark-2" />
-              ))}
-            </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box align="start" pad="large">
+      <Paragraph>
+        Adding and removing nodes with animated connections. The animation
+        &apos;draw&apos; is applied to the entire diagram, however, the last
+        connection receives its own animation type of &apos;pulse&apos;.
+      </Paragraph>
+      <Stack>
+        <Box>
+          <Box direction="row">
+            {topRow.map((id) => (
+              <Node key={id} id={id} />
+            ))}
           </Box>
-          <Diagram
-            animation={{ type: 'draw', duration: 3000 }}
-            connections={connections}
-          />
-        </Stack>
-      </Box>
-    </Grommet>
+          <Box direction="row">
+            {[4, 5].map((id) => (
+              <Node key={id} id={id} background="dark-2" />
+            ))}
+          </Box>
+        </Box>
+        <Diagram
+          animation={{ type: 'draw', duration: 3000 }}
+          connections={connections}
+        />
+      </Stack>
+    </Box>
+    // </Grommet>
   );
 };
 

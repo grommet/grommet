@@ -16596,7 +16596,6 @@ exports[`DataTable placeholder 1`] = `
     </thead>
     <tbody
       class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
-      placeholder="test placeholder"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -16744,7 +16743,6 @@ exports[`DataTable placeholder 1`] = `
     </thead>
     <tbody
       class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
-      placeholder="[object Object]"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -16818,6 +16816,59 @@ exports[`DataTable placeholder 1`] = `
         test placeholder
       </span>
     </caption>
+  </table>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <th
+          class="c3 "
+          scope="col"
+        >
+          <div
+            class="c4"
+          >
+            <span
+              class="c5"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c3 "
+          scope="col"
+        >
+          <div
+            class="c4"
+          >
+            <span
+              class="c5"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          colspan="2"
+        >
+          <span
+            class="c9"
+          >
+            test placeholder
+          </span>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
 `;

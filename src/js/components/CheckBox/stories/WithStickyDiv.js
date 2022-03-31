@@ -6,7 +6,7 @@ const boxStyle = {
   position: 'relative',
   display: 'block',
 };
-const titleBoxBackground = { color: 'neutral-1' };
+const titleBoxBackground = { color: 'light-2' };
 const titleBoxStyle = { position: 'sticky', top: 0 };
 
 const checkboxes = Array(8)

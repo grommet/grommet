@@ -5,7 +5,8 @@ import { Box, Button, DateInput, Form, FormField } from 'grommet';
 export const DateForm = () => {
   const [value, setValue] = React.useState({ value: '' });
   const onChange = (nextValue) => {
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setValue(nextValue);
   };
   return (

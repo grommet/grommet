@@ -36,22 +36,18 @@ const SelectOption = styled(Button)`
   width: 100%;
 `;
 
-const ClearButton = ({ clear, onClear, name, theme, setFocus }) => {
+const ClearButton = forwardRef(({ clear, onClear, name, theme }, ref) => {
   const { label, position } = clear;
   const align = position !== 'bottom' ? 'start' : 'center';
   const buttonLabel = label || `Clear ${name || 'selection'}`;
   return (
-    <Button
-      onClick={onClear}
-      onFocus={() => setFocus(true)}
-      onBlur={() => setFocus(false)}
-    >
+    <Button fill ref={ref} onClick={onClear} focusIndicator={false}>
       <Box {...theme.select.clear.container} align={align}>
         <Text {...theme.select.clear.text}>{buttonLabel}</Text>
       </Box>
     </Button>
   );
-};
+});
 
 const SelectContainer = forwardRef(
   (
@@ -87,9 +83,9 @@ const SelectContainer = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState();
-    const [focus, setFocus] = useState(false);
     const searchRef = useRef();
     const optionsRef = useRef();
+    const clearRef = useRef();
 
     const focusOption = (index) => {
       const optionsNode = optionsRef.current;
@@ -116,11 +112,19 @@ const SelectContainer = forwardRef(
       // need to wait for Drop to be ready
       const timer = setTimeout(() => {
         const optionsNode = optionsRef.current;
+        const clearButton = clearRef.current;
         if (onSearch) {
           const searchInput = searchRef.current;
           if (searchInput && searchInput.focus) {
             setFocusWithoutScroll(searchInput);
           }
+        } else if (
+          clear &&
+          clearButton &&
+          clearButton.focus &&
+          clear.position !== 'bottom'
+        ) {
+          setFocusWithoutScroll(clearButton);
         } else if (optionsNode && optionsNode.children && usingKeyboard) {
           // if the user is navigating with the keyboard set the
           // first child as the active index when the drop opens
@@ -131,7 +135,7 @@ const SelectContainer = forwardRef(
         }
       }, 100);
       return () => clearTimeout(timer);
-    }, [onSearch, usingKeyboard]);
+    }, [onSearch, usingKeyboard, clear]);
 
     // clear keyboardNavigation after a while
     useEffect(() => {
@@ -257,6 +261,7 @@ const SelectContainer = forwardRef(
       (event) => {
         event.preventDefault();
         let nextActiveIndex = activeIndex + 1;
+        const clearButton = clearRef.current;
         while (
           nextActiveIndex < options.length &&
           isDisabled(nextActiveIndex)
@@ -267,14 +272,24 @@ const SelectContainer = forwardRef(
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
         }
+        if (
+          clear &&
+          clear.position === 'bottom' &&
+          clearButton &&
+          nextActiveIndex >= options.length
+        ) {
+          setActiveIndex(options.length);
+          setFocusWithoutScroll(clearButton);
+        }
       },
-      [activeIndex, isDisabled, options],
+      [activeIndex, isDisabled, options, clear],
     );
 
     const onPreviousOption = useCallback(
       (event) => {
         event.preventDefault();
         let nextActiveIndex = activeIndex - 1;
+        const clearButton = clearRef.current;
         while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
           nextActiveIndex -= 1;
         }
@@ -282,8 +297,16 @@ const SelectContainer = forwardRef(
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
         }
+        if (
+          clear &&
+          clear.position !== 'bottom' &&
+          clearButton &&
+          activeIndex === 0
+        ) {
+          setActiveIndex(-1);
+        }
       },
-      [activeIndex, isDisabled],
+      [activeIndex, isDisabled, clear],
     );
 
     const onKeyDownOption = useCallback(
@@ -325,12 +348,12 @@ const SelectContainer = forwardRef(
 
     const onSelectOption = useCallback(
       (event) => {
-        if (activeIndex >= 0 && !focus) {
+        if (activeIndex >= 0 && activeIndex < options.length) {
           event.preventDefault(); // prevent submitting forms
           selectOption(activeIndex)(event);
         }
       },
-      [activeIndex, selectOption, focus],
+      [activeIndex, selectOption, options],
     );
 
     const customSearchInput = theme.select.searchInput;
@@ -345,6 +368,7 @@ const SelectContainer = forwardRef(
     return (
       <Keyboard
         onEnter={onSelectOption}
+        onSpace={onSelectOption}
         onUp={onPreviousOption}
         onDown={onNextOption}
         onKeyDown={onKeyDownOption}
@@ -373,21 +397,21 @@ const SelectContainer = forwardRef(
               />
             </Box>
           )}
-          {clear && clear.position !== 'bottom' && value && (
-            <ClearButton
-              clear={clear}
-              name={name}
-              onClear={onClear}
-              theme={theme}
-              setFocus={setFocus}
-            />
-          )}
           <OptionsBox
             role="listbox"
             tabIndex="-1"
             ref={optionsRef}
             aria-multiselectable={multiple}
           >
+            {clear && clear.position !== 'bottom' && value && (
+              <ClearButton
+                ref={clearRef}
+                clear={clear}
+                name={name}
+                onClear={onClear}
+                theme={theme}
+              />
+            )}
             {options.length > 0 ? (
               <InfiniteScroll
                 items={options}
@@ -478,16 +502,16 @@ const SelectContainer = forwardRef(
                 </Box>
               </SelectOption>
             )}
+            {clear && clear.position === 'bottom' && value && (
+              <ClearButton
+                ref={clearRef}
+                clear={clear}
+                name={name}
+                onClear={onClear}
+                theme={theme}
+              />
+            )}
           </OptionsBox>
-          {clear && clear.position === 'bottom' && value && (
-            <ClearButton
-              clear={clear}
-              name={name}
-              onClear={onClear}
-              theme={theme}
-              setFocus={setFocus}
-            />
-          )}
         </StyledContainer>
       </Keyboard>
     );

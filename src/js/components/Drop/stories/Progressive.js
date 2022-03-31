@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react';
 
 import { Box, Button, Drop } from 'grommet';
 
+const align = { top: 'bottom', right: 'right' };
+
 const ProgressiveDrop = () => {
   const boxRef = useRef();
   const innerBoxRef = useRef();
@@ -44,7 +46,7 @@ const ProgressiveDrop = () => {
               target={innerBoxRef.current}
               onClickOutside={() => setOpenInnerDrop(false)}
               onEsc={() => setOpenInnerDrop(false)}
-              align={{ top: 'bottom', right: 'right' }}
+              align={align}
             >
               <Box pad="large">
                 <Button

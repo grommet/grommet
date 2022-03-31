@@ -1046,6 +1046,13 @@ describe('DataTable', () => {
           ]}
           placeholder={<Text weight="bold">test placeholder</Text>}
         />
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          placeholder={<Text weight="bold">test placeholder</Text>}
+        />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();

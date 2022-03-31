@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { Grommet, Box, Image, Anchor } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Image, Anchor } from 'grommet';
 
 export const Fill = () => (
-  <Grommet theme={grommet}>
-    <Box align="start" gap="small">
-      <Box height="small" width="small" border>
-        <Anchor href="#">
-          <Image fit="cover" fill src="//v2.grommet.io/assets/IMG_4245.jpg" />
-        </Anchor>
-      </Box>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box align="start" gap="small">
+    <Box height="small" width="small" border>
+      <Anchor href="#">
+        <Image fit="cover" fill src="//v2.grommet.io/assets/IMG_4245.jpg" />
+      </Anchor>
     </Box>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 export default {

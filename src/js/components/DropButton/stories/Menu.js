@@ -4,7 +4,7 @@ import { Gremlin } from 'grommet-icons';
 import { Box, DropButton, Text } from 'grommet';
 
 const renderItems = () => (
-  <Box>
+  <Box background="dark-1">
     <Text>hi</Text>
     <Text>hi</Text>
     <Text>hi</Text>
@@ -18,12 +18,14 @@ const MenuItem = () => (
   </Box>
 );
 
+const align = { top: 'bottom' };
+
 const GremlinDropButton = () => (
   <DropButton
     alignSelf="center"
     margin={{ vertical: 'small' }}
     dropContent={renderItems()}
-    dropProps={{ align: { top: 'bottom' } }}
+    dropProps={{ align }}
   >
     <MenuItem />
   </DropButton>

@@ -19,49 +19,57 @@ export const FormatInline = () => {
 
   const onChangeEmpty = (event) => {
     const nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setEmptyDate(nextValue);
   };
 
   const onChangeTZ = (event) => {
     const nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDate(nextValue);
   };
 
   const onChangeNoTZ = (event) => {
     const nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDateNoTZ(nextValue);
   };
 
   const onChangeRange = (event) => {
     const nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDateRange(nextValue);
   };
 
   const onChangeRangeNoTZ = (event) => {
     const nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDateRangeNoTZ(nextValue);
   };
 
   const onChangeNoDefault = (event) => {
     const nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDateNoDefault(nextValue);
   };
 
   const onChangeStateDefault = (event) => {
     const nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDateStateDefault(nextValue);
   };
 
   const onChangeStateDefaultNoTZ = (event) => {
     const nextValue = event.value;
-    console.log('onChange', nextValue);
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
     setDateStateDefaultNoTZ(nextValue);
   };
 
