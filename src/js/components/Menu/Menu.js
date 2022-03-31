@@ -84,7 +84,7 @@ const Menu = forwardRef((props, ref) => {
   // need to destructure the align otherwise it will get passed through
   // to DropButton and override prop values
   const { align: themeDropAlign, ...themeDropProps } = theme.menu.drop;
-  const aria = (dropProps && dropProps?.a11yTitle) || ariaLabel || a11yTitle;
+  const aria = ariaLabel || a11yTitle || (dropProps && dropProps?.a11yTitle);
 
   const align = (dropProps && dropProps.align) || dropAlign || themeDropAlign;
   const controlButtonIndex = useMemo(() => {
