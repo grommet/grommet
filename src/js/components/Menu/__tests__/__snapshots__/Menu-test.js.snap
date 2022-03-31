@@ -57,43 +57,43 @@ exports[`Menu basic 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -238,43 +238,43 @@ exports[`Menu close by clicking outside 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -540,23 +540,23 @@ exports[`Menu close by clicking outside 2`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -791,43 +791,43 @@ exports[`Menu close on tab 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -983,43 +983,43 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1208,43 +1208,43 @@ exports[`Menu custom message 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1399,43 +1399,43 @@ exports[`Menu custom theme icon color 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1781,43 +1781,43 @@ exports[`Menu disabled 1`] = `
   cursor: default;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1974,43 +1974,43 @@ exports[`Menu gap between icon and label 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2294,43 +2294,43 @@ exports[`Menu justify content 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2768,43 +2768,43 @@ exports[`Menu navigate through suggestions and select 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2960,43 +2960,43 @@ exports[`Menu open and close on click 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3069,7 +3069,7 @@ exports[`Menu open and close on click 2`] = `
     aria-expanded="true"
     aria-haspopup="menu"
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 eiEooU"
+    class="StyledButton-sc-323bzc-0 gsQNSg"
     id="test-menu"
     type="button"
   >
@@ -3302,23 +3302,23 @@ exports[`Menu open and close on click 3`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3569,43 +3569,43 @@ exports[`Menu open on down close on esc 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3761,43 +3761,43 @@ exports[`Menu open on up close on esc 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4063,23 +4063,23 @@ exports[`Menu open on up close on esc 2`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4314,43 +4314,43 @@ exports[`Menu reverse icon and label 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4519,43 +4519,43 @@ exports[`Menu select an item 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4711,43 +4711,43 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4903,43 +4903,43 @@ exports[`Menu should apply themed drop props 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5096,43 +5096,43 @@ exports[`Menu should have no accessibility violations 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5278,43 +5278,43 @@ exports[`Menu tab through menu until it closes 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5470,43 +5470,43 @@ exports[`Menu with dropAlign bottom renders 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5772,23 +5772,23 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   color: #000000;
 }
 
-.c6:focus:not(:focus-visible) {
+.c6:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) > circle,
-.c6:focus:not(:focus-visible) > ellipse,
-.c6:focus:not(:focus-visible) > line,
-.c6:focus:not(:focus-visible) > path,
-.c6:focus:not(:focus-visible) > polygon,
-.c6:focus:not(:focus-visible) > polyline,
-.c6:focus:not(:focus-visible) > rect {
+.c6:focus:not(:focus-visible):not(:hover) > circle,
+.c6:focus:not(:focus-visible):not(:hover) > ellipse,
+.c6:focus:not(:focus-visible):not(:hover) > line,
+.c6:focus:not(:focus-visible):not(:hover) > path,
+.c6:focus:not(:focus-visible):not(:hover) > polygon,
+.c6:focus:not(:focus-visible):not(:hover) > polyline,
+.c6:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible)::-moz-focus-inner {
+.c6:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6023,43 +6023,43 @@ exports[`Menu with dropAlign top renders 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6325,23 +6325,23 @@ exports[`Menu with dropAlign top renders 2`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 

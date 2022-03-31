@@ -145,43 +145,43 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   color: #7D4CDB;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -938,43 +938,43 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   color: #000000;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1574,43 +1574,43 @@ exports[`MaskedInput mask 2`] = `
   color: #000000;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2163,43 +2163,43 @@ exports[`MaskedInput option via mouse 2`] = `
   color: #000000;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 

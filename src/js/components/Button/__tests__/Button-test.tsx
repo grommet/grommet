@@ -237,7 +237,7 @@ describe('Button', () => {
     expect(document.body).not.toHaveFocus();
 
     expect(button).toHaveStyleRule('box-shadow', '0 0 2px 2px #6FFFB0', {
-      modifier: ':focus',
+      modifier: ':focus:not(:hover)',
     });
     expect(container.firstChild).toMatchSnapshot();
   });

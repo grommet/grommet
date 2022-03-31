@@ -109,43 +109,43 @@ exports[`Tabs Custom Tab component 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -391,43 +391,43 @@ exports[`Tabs Tab 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -676,43 +676,43 @@ exports[`Tabs alignControls 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -961,43 +961,43 @@ exports[`Tabs change to second tab 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1148,7 +1148,7 @@ exports[`Tabs change to second tab 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 eiEooU"
+        class="StyledButton-sc-323bzc-0 gsQNSg"
         role="tab"
         type="button"
       >
@@ -1165,7 +1165,7 @@ exports[`Tabs change to second tab 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 eiEooU"
+        class="StyledButton-sc-323bzc-0 gsQNSg"
         role="tab"
         type="button"
       >
@@ -1288,43 +1288,43 @@ exports[`Tabs complex title 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1534,43 +1534,43 @@ exports[`Tabs no Tab 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1765,43 +1765,43 @@ exports[`Tabs onClick 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2047,43 +2047,43 @@ exports[`Tabs set on hover 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2234,7 +2234,7 @@ exports[`Tabs set on hover 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 eiEooU"
+        class="StyledButton-sc-323bzc-0 gsQNSg"
         role="tab"
         type="button"
       >
@@ -2251,7 +2251,7 @@ exports[`Tabs set on hover 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 eiEooU"
+        class="StyledButton-sc-323bzc-0 gsQNSg"
         role="tab"
         type="button"
       >
@@ -2291,7 +2291,7 @@ exports[`Tabs set on hover 3`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 eiEooU"
+        class="StyledButton-sc-323bzc-0 gsQNSg"
         role="tab"
         type="button"
       >
@@ -2308,7 +2308,7 @@ exports[`Tabs set on hover 3`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 eiEooU"
+        class="StyledButton-sc-323bzc-0 gsQNSg"
         role="tab"
         type="button"
       >
@@ -2348,7 +2348,7 @@ exports[`Tabs set on hover 4`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 eiEooU"
+        class="StyledButton-sc-323bzc-0 gsQNSg"
         role="tab"
         type="button"
       >
@@ -2365,7 +2365,7 @@ exports[`Tabs set on hover 4`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 eiEooU"
+        class="StyledButton-sc-323bzc-0 gsQNSg"
         role="tab"
         type="button"
       >
@@ -2405,7 +2405,7 @@ exports[`Tabs set on hover 5`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 eiEooU"
+        class="StyledButton-sc-323bzc-0 gsQNSg"
         role="tab"
         type="button"
       >
@@ -2422,7 +2422,7 @@ exports[`Tabs set on hover 5`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 eiEooU"
+        class="StyledButton-sc-323bzc-0 gsQNSg"
         role="tab"
         type="button"
       >
@@ -2531,43 +2531,43 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2794,43 +2794,43 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2854,43 +2854,43 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   cursor: default;
 }
 
-.c7:focus {
+.c7:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus:not(:hover) > circle,
+.c7:focus:not(:hover) > ellipse,
+.c7:focus:not(:hover) > line,
+.c7:focus:not(:hover) > path,
+.c7:focus:not(:hover) > polygon,
+.c7:focus:not(:hover) > polyline,
+.c7:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c7:focus:not(:focus-visible) {
+.c7:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c7:focus:not(:focus-visible):not(:hover) > circle,
+.c7:focus:not(:focus-visible):not(:hover) > ellipse,
+.c7:focus:not(:focus-visible):not(:hover) > line,
+.c7:focus:not(:focus-visible):not(:hover) > path,
+.c7:focus:not(:focus-visible):not(:hover) > polygon,
+.c7:focus:not(:focus-visible):not(:hover) > polyline,
+.c7:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c7:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3467,43 +3467,43 @@ exports[`Tabs should have no accessibility violations 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3649,43 +3649,43 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3845,43 +3845,43 @@ exports[`Tabs should style as disabled 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3905,43 +3905,43 @@ exports[`Tabs should style as disabled 1`] = `
   cursor: default;
 }
 
-.c7:focus {
+.c7:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus:not(:hover) > circle,
+.c7:focus:not(:hover) > ellipse,
+.c7:focus:not(:hover) > line,
+.c7:focus:not(:hover) > path,
+.c7:focus:not(:hover) > polygon,
+.c7:focus:not(:hover) > polyline,
+.c7:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c7:focus:not(:focus-visible) {
+.c7:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c7:focus:not(:focus-visible):not(:hover) > circle,
+.c7:focus:not(:focus-visible):not(:hover) > ellipse,
+.c7:focus:not(:focus-visible):not(:hover) > line,
+.c7:focus:not(:focus-visible):not(:hover) > path,
+.c7:focus:not(:focus-visible):not(:hover) > polygon,
+.c7:focus:not(:focus-visible):not(:hover) > polyline,
+.c7:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c7:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4196,43 +4196,43 @@ exports[`Tabs styled component should change tab color when active 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4527,43 +4527,43 @@ exports[`Tabs with icon + reverse 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 

@@ -3020,43 +3020,43 @@ exports[`DataTable custom theme 1`] = `
   height: 100%;
 }
 
-.c7:focus {
+.c7:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus:not(:hover) > circle,
+.c7:focus:not(:hover) > ellipse,
+.c7:focus:not(:hover) > line,
+.c7:focus:not(:hover) > path,
+.c7:focus:not(:hover) > polygon,
+.c7:focus:not(:hover) > polyline,
+.c7:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c7:focus:not(:focus-visible) {
+.c7:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c7:focus:not(:focus-visible):not(:hover) > circle,
+.c7:focus:not(:focus-visible):not(:hover) > ellipse,
+.c7:focus:not(:focus-visible):not(:hover) > line,
+.c7:focus:not(:focus-visible):not(:hover) > path,
+.c7:focus:not(:focus-visible):not(:hover) > polygon,
+.c7:focus:not(:focus-visible):not(:hover) > polyline,
+.c7:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c7:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3449,7 +3449,7 @@ exports[`DataTable custom theme 2`] = `
               class="StyledBox-sc-13pk1d4-0 dLvCRF"
             >
               <button
-                class="StyledButton-sc-323bzc-0 btgWam Header__StyledHeaderCellButton-sc-1baku5q-0 kmeiPn"
+                class="StyledButton-sc-323bzc-0 laoim Header__StyledHeaderCellButton-sc-1baku5q-0 kmeiPn"
                 type="button"
               >
                 <div
@@ -4620,43 +4620,43 @@ exports[`DataTable groupBy 1`] = `
   color: #000000;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4966,7 +4966,7 @@ exports[`DataTable groupBy 2`] = `
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 fpoetD"
+              class="StyledButton-sc-323bzc-0 uzPlT"
               type="button"
             >
               <div
@@ -5033,7 +5033,7 @@ exports[`DataTable groupBy 2`] = `
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 fpoetD"
+              class="StyledButton-sc-323bzc-0 uzPlT"
               type="button"
             >
               <div
@@ -5089,7 +5089,7 @@ exports[`DataTable groupBy 2`] = `
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 fpoetD"
+              class="StyledButton-sc-323bzc-0 uzPlT"
               type="button"
             >
               <div
@@ -5324,43 +5324,43 @@ exports[`DataTable groupBy expand 1`] = `
   color: #000000;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5914,43 +5914,43 @@ exports[`DataTable groupBy property 1`] = `
   color: #000000;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6260,7 +6260,7 @@ exports[`DataTable groupBy property 2`] = `
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 fpoetD"
+              class="StyledButton-sc-323bzc-0 uzPlT"
               type="button"
             >
               <div
@@ -6327,7 +6327,7 @@ exports[`DataTable groupBy property 2`] = `
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 fpoetD"
+              class="StyledButton-sc-323bzc-0 uzPlT"
               type="button"
             >
               <div
@@ -6383,7 +6383,7 @@ exports[`DataTable groupBy property 2`] = `
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 fpoetD"
+              class="StyledButton-sc-323bzc-0 uzPlT"
               type="button"
             >
               <div
@@ -6839,43 +6839,43 @@ exports[`DataTable groupBy toggle 2`] = `
   color: #000000;
 }
 
-.c2:focus {
+.c2:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus:not(:hover) > circle,
+.c2:focus:not(:hover) > ellipse,
+.c2:focus:not(:hover) > line,
+.c2:focus:not(:hover) > path,
+.c2:focus:not(:hover) > polygon,
+.c2:focus:not(:hover) > polyline,
+.c2:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c2:focus:not(:focus-visible) {
+.c2:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) > circle,
-.c2:focus:not(:focus-visible) > ellipse,
-.c2:focus:not(:focus-visible) > line,
-.c2:focus:not(:focus-visible) > path,
-.c2:focus:not(:focus-visible) > polygon,
-.c2:focus:not(:focus-visible) > polyline,
-.c2:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible):not(:hover) > circle,
+.c2:focus:not(:focus-visible):not(:hover) > ellipse,
+.c2:focus:not(:focus-visible):not(:hover) > line,
+.c2:focus:not(:focus-visible):not(:hover) > path,
+.c2:focus:not(:focus-visible):not(:hover) > polygon,
+.c2:focus:not(:focus-visible):not(:hover) > polyline,
+.c2:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7095,43 +7095,43 @@ exports[`DataTable groupBy toggle 2`] = `
   color: #000000;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7803,43 +7803,43 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   color: #000000;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8685,43 +8685,43 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   color: #000000;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -9415,43 +9415,43 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   color: #000000;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -10125,43 +10125,43 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   color: #000000;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -10621,7 +10621,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 fpoetD"
+              class="StyledButton-sc-323bzc-0 uzPlT"
               type="button"
             >
               <div
@@ -10753,7 +10753,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 fpoetD"
+              class="StyledButton-sc-323bzc-0 uzPlT"
               type="button"
             >
               <div
@@ -10873,7 +10873,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 fpoetD"
+              class="StyledButton-sc-323bzc-0 uzPlT"
               type="button"
             >
               <div
@@ -11008,7 +11008,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 fpoetD"
+              class="StyledButton-sc-323bzc-0 uzPlT"
               type="button"
             >
               <div
@@ -11101,7 +11101,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 fpoetD"
+              class="StyledButton-sc-323bzc-0 uzPlT"
               type="button"
             >
               <div
@@ -11182,7 +11182,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 fpoetD"
+              class="StyledButton-sc-323bzc-0 uzPlT"
               type="button"
             >
               <div
@@ -12648,43 +12648,43 @@ exports[`DataTable onSort 1`] = `
   height: 100%;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -12923,7 +12923,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 dLvCRF"
           >
             <button
-              class="StyledButton-sc-323bzc-0 btgWam Header__StyledHeaderCellButton-sc-1baku5q-0 gDJDvV"
+              class="StyledButton-sc-323bzc-0 laoim Header__StyledHeaderCellButton-sc-1baku5q-0 gDJDvV"
               type="button"
             >
               <div
@@ -13023,7 +13023,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 dLvCRF"
           >
             <button
-              class="StyledButton-sc-323bzc-0 btgWam Header__StyledHeaderCellButton-sc-1baku5q-0 gDJDvV"
+              class="StyledButton-sc-323bzc-0 laoim Header__StyledHeaderCellButton-sc-1baku5q-0 gDJDvV"
               type="button"
             >
               <div
@@ -13275,43 +13275,43 @@ exports[`DataTable onSort external 1`] = `
   height: 100%;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -13571,7 +13571,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 dLvCRF"
           >
             <button
-              class="StyledButton-sc-323bzc-0 btgWam Header__StyledHeaderCellButton-sc-1baku5q-0 gDJDvV"
+              class="StyledButton-sc-323bzc-0 laoim Header__StyledHeaderCellButton-sc-1baku5q-0 gDJDvV"
               type="button"
             >
               <div
@@ -13651,7 +13651,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 dLvCRF"
           >
             <button
-              class="StyledButton-sc-323bzc-0 btgWam Header__StyledHeaderCellButton-sc-1baku5q-0 gDJDvV"
+              class="StyledButton-sc-323bzc-0 laoim Header__StyledHeaderCellButton-sc-1baku5q-0 gDJDvV"
               type="button"
             >
               <div
@@ -18104,43 +18104,43 @@ exports[`DataTable rowDetails 1`] = `
   color: #000000;
 }
 
-.c10:focus {
+.c10:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
+.c10:focus:not(:hover) > circle,
+.c10:focus:not(:hover) > ellipse,
+.c10:focus:not(:hover) > line,
+.c10:focus:not(:hover) > path,
+.c10:focus:not(:hover) > polygon,
+.c10:focus:not(:hover) > polyline,
+.c10:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus::-moz-focus-inner {
+.c10:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible):not(:hover) > circle,
+.c10:focus:not(:focus-visible):not(:hover) > ellipse,
+.c10:focus:not(:focus-visible):not(:hover) > line,
+.c10:focus:not(:focus-visible):not(:hover) > path,
+.c10:focus:not(:focus-visible):not(:hover) > polygon,
+.c10:focus:not(:focus-visible):not(:hover) > polyline,
+.c10:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -18708,43 +18708,43 @@ exports[`DataTable rowDetails condtional 1`] = `
   color: #000000;
 }
 
-.c10:focus {
+.c10:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
+.c10:focus:not(:hover) > circle,
+.c10:focus:not(:hover) > ellipse,
+.c10:focus:not(:hover) > line,
+.c10:focus:not(:hover) > path,
+.c10:focus:not(:hover) > polygon,
+.c10:focus:not(:hover) > polyline,
+.c10:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus::-moz-focus-inner {
+.c10:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible):not(:hover) > circle,
+.c10:focus:not(:focus-visible):not(:hover) > ellipse,
+.c10:focus:not(:focus-visible):not(:hover) > line,
+.c10:focus:not(:focus-visible):not(:hover) > path,
+.c10:focus:not(:focus-visible):not(:hover) > polygon,
+.c10:focus:not(:focus-visible):not(:hover) > polyline,
+.c10:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -19572,43 +19572,43 @@ exports[`DataTable search 1`] = `
   color: #000000;
 }
 
-.c8:focus {
+.c8:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c8:focus:not(:hover) > circle,
+.c8:focus:not(:hover) > ellipse,
+.c8:focus:not(:hover) > line,
+.c8:focus:not(:hover) > path,
+.c8:focus:not(:hover) > polygon,
+.c8:focus:not(:hover) > polyline,
+.c8:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c8:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible):not(:hover) > circle,
+.c8:focus:not(:focus-visible):not(:hover) > ellipse,
+.c8:focus:not(:focus-visible):not(:hover) > line,
+.c8:focus:not(:focus-visible):not(:hover) > path,
+.c8:focus:not(:focus-visible):not(:hover) > polygon,
+.c8:focus:not(:focus-visible):not(:hover) > polyline,
+.c8:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -35632,43 +35632,43 @@ exports[`DataTable sort 1`] = `
   height: 100%;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -36041,43 +36041,43 @@ exports[`DataTable sort external 1`] = `
   height: 100%;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -36450,43 +36450,43 @@ exports[`DataTable sort nested object 1`] = `
   height: 100%;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -36859,43 +36859,43 @@ exports[`DataTable sort nested object with onSort 1`] = `
   height: 100%;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -37224,43 +37224,43 @@ exports[`DataTable sortable 1`] = `
   height: 100%;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -37499,7 +37499,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 dLvCRF"
           >
             <button
-              class="StyledButton-sc-323bzc-0 btgWam Header__StyledHeaderCellButton-sc-1baku5q-0 gDJDvV"
+              class="StyledButton-sc-323bzc-0 laoim Header__StyledHeaderCellButton-sc-1baku5q-0 gDJDvV"
               type="button"
             >
               <div
@@ -37599,7 +37599,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 dLvCRF"
           >
             <button
-              class="StyledButton-sc-323bzc-0 btgWam Header__StyledHeaderCellButton-sc-1baku5q-0 gDJDvV"
+              class="StyledButton-sc-323bzc-0 laoim Header__StyledHeaderCellButton-sc-1baku5q-0 gDJDvV"
               type="button"
             >
               <div

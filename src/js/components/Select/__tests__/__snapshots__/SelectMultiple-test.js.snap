@@ -113,43 +113,43 @@ exports[`Select Controlled deselect an option 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -381,43 +381,43 @@ exports[`Select Controlled multiple 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -648,43 +648,43 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -933,23 +933,23 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   text-align: inherit;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -976,23 +976,23 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   color: #000000;
 }
 
-.c9:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible):not(:hover) > circle,
+.c9:focus:not(:focus-visible):not(:hover) > ellipse,
+.c9:focus:not(:focus-visible):not(:hover) > line,
+.c9:focus:not(:focus-visible):not(:hover) > path,
+.c9:focus:not(:focus-visible):not(:hover) > polygon,
+.c9:focus:not(:focus-visible):not(:hover) > polyline,
+.c9:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1236,43 +1236,43 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1526,23 +1526,23 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1779,43 +1779,43 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2069,23 +2069,23 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2322,43 +2322,43 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2612,23 +2612,23 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2773,7 +2773,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
       <button
         aria-posinset="1"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 cOvmzN SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
+        class="StyledButton-sc-323bzc-0 jEHcxV SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
         role="option"
         tabindex="-1"
         type="button"
@@ -2791,7 +2791,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
       <button
         aria-posinset="2"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 cOvmzN SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
+        class="StyledButton-sc-323bzc-0 jEHcxV SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
         role="option"
         tabindex="-1"
         type="button"
@@ -2936,43 +2936,43 @@ exports[`Select Controlled multiple values 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3096,7 +3096,7 @@ exports[`Select Controlled multiple values 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select; Selected: one,two"
-  class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
+  class="StyledButton-sc-323bzc-0 gsQNSg Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
   id="test-select"
   type="button"
 >
@@ -3258,23 +3258,23 @@ exports[`Select Controlled multiple values 3`] = `
   text-align: inherit;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3513,43 +3513,43 @@ exports[`Select Controlled multiple with empty results 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3803,23 +3803,23 @@ exports[`Select Controlled multiple with empty results 2`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4056,43 +4056,43 @@ exports[`Select Controlled select another option 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4324,43 +4324,43 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 

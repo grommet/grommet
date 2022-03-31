@@ -113,43 +113,43 @@ exports[`Select 0 value 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -389,23 +389,23 @@ exports[`Select Clear option renders - bottom 1`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -650,23 +650,23 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -919,23 +919,23 @@ exports[`Select Clear option renders custom label 1`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1180,23 +1180,23 @@ exports[`Select Clear option renders- top 1`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1433,43 +1433,43 @@ exports[`Select Search timeout 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1828,43 +1828,43 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2044,23 +2044,28 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   color: #000000;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:hover {
+  background-color: lightgreen;
+  color: #7D4CDB;
+}
+
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2221,43 +2226,43 @@ exports[`Select basic 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2489,43 +2494,43 @@ exports[`Select complex options and children 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2649,7 +2654,7 @@ exports[`Select complex options and children 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
+  class="StyledButton-sc-323bzc-0 gsQNSg Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
   id="test-select"
   type="button"
 >
@@ -2791,23 +2796,23 @@ exports[`Select complex options and children 3`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3051,43 +3056,43 @@ exports[`Select dark 1`] = `
   text-align: inherit;
 }
 
-.c2:focus {
+.c2:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus:not(:hover) > circle,
+.c2:focus:not(:hover) > ellipse,
+.c2:focus:not(:hover) > line,
+.c2:focus:not(:hover) > path,
+.c2:focus:not(:hover) > polygon,
+.c2:focus:not(:hover) > polyline,
+.c2:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c2:focus:not(:focus-visible) {
+.c2:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) > circle,
-.c2:focus:not(:focus-visible) > ellipse,
-.c2:focus:not(:focus-visible) > line,
-.c2:focus:not(:focus-visible) > path,
-.c2:focus:not(:focus-visible) > polygon,
-.c2:focus:not(:focus-visible) > polyline,
-.c2:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible):not(:hover) > circle,
+.c2:focus:not(:focus-visible):not(:hover) > ellipse,
+.c2:focus:not(:focus-visible):not(:hover) > line,
+.c2:focus:not(:focus-visible):not(:hover) > path,
+.c2:focus:not(:focus-visible):not(:hover) > polygon,
+.c2:focus:not(:focus-visible):not(:hover) > polyline,
+.c2:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3335,43 +3340,43 @@ exports[`Select default value 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3652,23 +3657,23 @@ exports[`Select default value clear 1`] = `
   flex: 1 0 auto;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3695,23 +3700,23 @@ exports[`Select default value clear 1`] = `
   color: #000000;
 }
 
-.c8:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible):not(:hover) > circle,
+.c8:focus:not(:focus-visible):not(:hover) > ellipse,
+.c8:focus:not(:focus-visible):not(:hover) > line,
+.c8:focus:not(:focus-visible):not(:hover) > path,
+.c8:focus:not(:focus-visible):not(:hover) > polygon,
+.c8:focus:not(:focus-visible):not(:hover) > polyline,
+.c8:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3733,23 +3738,23 @@ exports[`Select default value clear 1`] = `
   text-align: inherit;
 }
 
-.c12:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
+.c12:focus:not(:focus-visible):not(:hover) > circle,
+.c12:focus:not(:focus-visible):not(:hover) > ellipse,
+.c12:focus:not(:focus-visible):not(:hover) > line,
+.c12:focus:not(:focus-visible):not(:hover) > path,
+.c12:focus:not(:focus-visible):not(:hover) > polygon,
+.c12:focus:not(:focus-visible):not(:hover) > polyline,
+.c12:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
+.c12:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4012,43 +4017,43 @@ exports[`Select default value object options 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4296,43 +4301,43 @@ exports[`Select disabled 1`] = `
   cursor: default;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4457,7 +4462,7 @@ exports[`Select disabled 2`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 ijdOBy Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
+  class="StyledButton-sc-323bzc-0 irUKSK Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
   disabled=""
   id="test-select"
   type="button"
@@ -4617,43 +4622,43 @@ exports[`Select disabled key 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4904,23 +4909,23 @@ exports[`Select disabled key 2`] = `
   cursor: default;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4947,23 +4952,23 @@ exports[`Select disabled key 2`] = `
   color: #000000;
 }
 
-.c9:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible):not(:hover) > circle,
+.c9:focus:not(:focus-visible):not(:hover) > ellipse,
+.c9:focus:not(:focus-visible):not(:hover) > line,
+.c9:focus:not(:focus-visible):not(:hover) > path,
+.c9:focus:not(:focus-visible):not(:hover) > polygon,
+.c9:focus:not(:focus-visible):not(:hover) > polyline,
+.c9:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5206,23 +5211,23 @@ exports[`Select disabled option value 1`] = `
   cursor: default;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5249,23 +5254,23 @@ exports[`Select disabled option value 1`] = `
   color: #000000;
 }
 
-.c9:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible):not(:hover) > circle,
+.c9:focus:not(:focus-visible):not(:hover) > ellipse,
+.c9:focus:not(:focus-visible):not(:hover) > line,
+.c9:focus:not(:focus-visible):not(:hover) > path,
+.c9:focus:not(:focus-visible):not(:hover) > polygon,
+.c9:focus:not(:focus-visible):not(:hover) > polyline,
+.c9:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5596,43 +5601,43 @@ exports[`Select keyboard navigation timeout 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5902,23 +5907,23 @@ exports[`Select large drop container height 1`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6153,23 +6158,23 @@ exports[`Select medium drop container height 1`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6396,43 +6401,43 @@ exports[`Select modifies select control style on open 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6680,43 +6685,43 @@ exports[`Select onChange with valueKey string 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6970,23 +6975,23 @@ exports[`Select onChange with valueKey string 2`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7222,43 +7227,43 @@ exports[`Select onChange with valueLabel 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7459,23 +7464,23 @@ exports[`Select onChange with valueLabel 2`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7711,43 +7716,43 @@ exports[`Select onChange without valueKey 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8001,23 +8006,23 @@ exports[`Select onChange without valueKey 2`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8253,43 +8258,43 @@ exports[`Select prop: onClose 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8533,43 +8538,43 @@ exports[`Select prop: onClose 2`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8818,43 +8823,43 @@ exports[`Select prop: onOpen 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8978,7 +8983,7 @@ exports[`Select prop: onOpen 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
+  class="StyledButton-sc-323bzc-0 gsQNSg Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
   id="test-select"
   type="button"
 >
@@ -9145,23 +9150,23 @@ exports[`Select prop: onOpen 3`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -9294,7 +9299,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 cOvmzN SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
+    class="StyledButton-sc-323bzc-0 jEHcxV SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
     role="option"
     tabindex="-1"
     type="button"
@@ -9313,7 +9318,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 cOvmzN SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
+    class="StyledButton-sc-323bzc-0 jEHcxV SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
     role="option"
     tabindex="-1"
     type="button"
@@ -9447,43 +9452,43 @@ exports[`Select renders custom icon 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -9714,43 +9719,43 @@ exports[`Select renders custom up and down icons 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -9889,7 +9894,7 @@ exports[`Select renders custom up and down icons 2`] = `
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
+    class="StyledButton-sc-323bzc-0 gsQNSg Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
     type="button"
   >
     <div
@@ -10097,43 +10102,43 @@ exports[`Select renders default icon 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -10365,43 +10370,43 @@ exports[`Select renders styled select options backwards compatible with legacy
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -10650,43 +10655,43 @@ exports[`Select renders styled select options combining select.options.box &&
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -10933,43 +10938,43 @@ exports[`Select renders styled select options using select.options.container 1`]
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -11163,43 +11168,43 @@ exports[`Select renders without icon 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -11406,43 +11411,43 @@ exports[`Select search 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -11700,23 +11705,23 @@ exports[`Select search 2`] = `
   color: #000000;
 }
 
-.c8:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible):not(:hover) > circle,
+.c8:focus:not(:focus-visible):not(:hover) > ellipse,
+.c8:focus:not(:focus-visible):not(:hover) > line,
+.c8:focus:not(:focus-visible):not(:hover) > path,
+.c8:focus:not(:focus-visible):not(:hover) > polygon,
+.c8:focus:not(:focus-visible):not(:hover) > polyline,
+.c8:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -11738,23 +11743,23 @@ exports[`Select search 2`] = `
   text-align: inherit;
 }
 
-.c12:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
+.c12:focus:not(:focus-visible):not(:hover) > circle,
+.c12:focus:not(:focus-visible):not(:hover) > ellipse,
+.c12:focus:not(:focus-visible):not(:hover) > line,
+.c12:focus:not(:focus-visible):not(:hover) > path,
+.c12:focus:not(:focus-visible):not(:hover) > polygon,
+.c12:focus:not(:focus-visible):not(:hover) > polyline,
+.c12:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
+.c12:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -11987,7 +11992,7 @@ exports[`Select search 5`] = `
   aria-posinset="2"
   aria-selected="true"
   aria-setsize="2"
-  class="StyledButton-sc-323bzc-0 jXGGBG SelectContainer__SelectOption-sc-1wi0ul8-1 fFhDhl"
+  class="StyledButton-sc-323bzc-0 beEhEu SelectContainer__SelectOption-sc-1wi0ul8-1 fFhDhl"
   role="option"
   tabindex="0"
   type="button"
@@ -12117,43 +12122,43 @@ exports[`Select search and select 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -12411,23 +12416,23 @@ exports[`Select search and select 2`] = `
   color: #000000;
 }
 
-.c8:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible):not(:hover) > circle,
+.c8:focus:not(:focus-visible):not(:hover) > ellipse,
+.c8:focus:not(:focus-visible):not(:hover) > line,
+.c8:focus:not(:focus-visible):not(:hover) > path,
+.c8:focus:not(:focus-visible):not(:hover) > polygon,
+.c8:focus:not(:focus-visible):not(:hover) > polyline,
+.c8:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -12770,43 +12775,43 @@ exports[`Select select an object with label key specific with keypress 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -13038,43 +13043,43 @@ exports[`Select select an option 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -13306,43 +13311,43 @@ exports[`Select select an option with complex options 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -13516,43 +13521,43 @@ exports[`Select select an option with enter 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -13784,43 +13789,43 @@ exports[`Select select an option with keypress 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -14052,43 +14057,43 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -14320,43 +14325,43 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -14497,7 +14502,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select; Selected: two"
-    class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
+    class="StyledButton-sc-323bzc-0 gsQNSg Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
     id="test-select"
     type="button"
   >
@@ -14657,43 +14662,43 @@ exports[`Select selected 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -14939,43 +14944,43 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -15265,43 +15270,43 @@ exports[`Select should not have accessibility violations 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -15545,43 +15550,43 @@ exports[`Select size 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -15822,23 +15827,23 @@ exports[`Select small drop container height 1`] = `
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 

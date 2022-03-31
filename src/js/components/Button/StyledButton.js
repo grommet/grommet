@@ -199,7 +199,7 @@ const StyledButton = styled.button`
   ${(props) => !props.plain && basicStyle(props)}
   ${(props) => props.primary && primaryStyle(props)}
 
-  ${(props) => !props.disabled && !props.selected && !props.focus && hoverStyle}
+  ${(props) => !props.disabled && !props.selected && hoverStyle}
 
   ${(props) => !props.disabled && props.active && activeButtonStyle(props)}
   ${(props) =>
@@ -208,11 +208,11 @@ const StyledButton = styled.button`
     props.theme.button.disabled &&
     disabledButtonStyle(props)}
 
-  &:focus {
+  &:focus:not(:hover) {
     ${(props) => (!props.plain || props.focusIndicator) && focusStyle()}
   }
 
-  &:focus:not(:focus-visible) {
+  &:focus:not(:focus-visible):not(:hover) {
     ${unfocusStyle()}
   }
 

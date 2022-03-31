@@ -157,43 +157,43 @@ exports[`Accordion AccordionPanel 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -504,43 +504,43 @@ exports[`Accordion accordion border 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -821,43 +821,43 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1132,43 +1132,43 @@ exports[`Accordion blur styles 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1448,43 +1448,43 @@ exports[`Accordion change active index 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1774,64 +1774,6 @@ exports[`Accordion change active index 2`] = `
   flex-direction: column;
 }
 
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -1850,47 +1792,47 @@ exports[`Accordion change active index 2`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c11 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -1936,7 +1878,7 @@ exports[`Accordion change active index 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     font-size: 16px;
     line-height: 22px;
     max-width: 384px;
@@ -2009,7 +1951,7 @@ exports[`Accordion change active index 2`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c10"
+          class="c3"
           role="tab"
           type="button"
         >
@@ -2020,7 +1962,7 @@ exports[`Accordion change active index 2`] = `
               class="c5"
             >
               <h4
-                class="c11"
+                class="c10"
               >
                 Panel 2
               </h4>
@@ -2211,43 +2153,43 @@ exports[`Accordion change to second Panel 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2570,101 +2512,43 @@ exports[`Accordion change to second Panel 2`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c11 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2675,7 +2559,7 @@ exports[`Accordion change to second Panel 2`] = `
   overflow: hidden;
 }
 
-.c13 {
+.c12 {
   -webkit-transition: max-height 200ms,opacity 200ms;
   transition: max-height 200ms,opacity 200ms;
   opacity: 1;
@@ -2689,7 +2573,7 @@ exports[`Accordion change to second Panel 2`] = `
   font-weight: 600;
 }
 
-.c12 {
+.c11 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -2736,7 +2620,7 @@ exports[`Accordion change to second Panel 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     font-size: 16px;
     line-height: 22px;
     max-width: 384px;
@@ -2805,7 +2689,7 @@ exports[`Accordion change to second Panel 2`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c11"
+          class="c3"
           role="tab"
           style="z-index: 1;"
           type="button"
@@ -2817,7 +2701,7 @@ exports[`Accordion change to second Panel 2`] = `
               class="c5"
             >
               <h4
-                class="c12"
+                class="c11"
               >
                 Panel 2
               </h4>
@@ -2846,7 +2730,7 @@ exports[`Accordion change to second Panel 2`] = `
         >
           <div
             aria-hidden="false"
-            class="c1 c13"
+            class="c1 c12"
             open=""
             style="max-height: 0;"
           >
@@ -3016,43 +2900,43 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3358,101 +3242,43 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3463,7 +3289,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   font-weight: 600;
 }
 
-.c11 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -3510,7 +3336,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     font-size: 16px;
     line-height: 22px;
     max-width: 384px;
@@ -3574,7 +3400,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c10"
+          class="c3"
           role="tab"
           style="z-index: 1;"
           type="button"
@@ -3586,7 +3412,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
               class="c5"
             >
               <h4
-                class="c11"
+                class="c10"
               >
                 Panel 2
               </h4>
@@ -3686,43 +3512,43 @@ exports[`Accordion complex header 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3949,43 +3775,43 @@ exports[`Accordion complex title 1`] = `
   text-align: inherit;
 }
 
-.c4:focus {
+.c4:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c4:focus:not(:hover) > circle,
+.c4:focus:not(:hover) > ellipse,
+.c4:focus:not(:hover) > line,
+.c4:focus:not(:hover) > path,
+.c4:focus:not(:hover) > polygon,
+.c4:focus:not(:hover) > polyline,
+.c4:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c4:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible):not(:hover) > circle,
+.c4:focus:not(:focus-visible):not(:hover) > ellipse,
+.c4:focus:not(:focus-visible):not(:hover) > line,
+.c4:focus:not(:focus-visible):not(:hover) > path,
+.c4:focus:not(:focus-visible):not(:hover) > polygon,
+.c4:focus:not(:focus-visible):not(:hover) > polyline,
+.c4:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4278,43 +4104,43 @@ exports[`Accordion custom accordion 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4588,43 +4414,43 @@ exports[`Accordion focus and hover styles 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4909,43 +4735,43 @@ exports[`Accordion multiple panels 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5251,101 +5077,43 @@ exports[`Accordion multiple panels 2`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5356,7 +5124,7 @@ exports[`Accordion multiple panels 2`] = `
   font-weight: 600;
 }
 
-.c11 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -5403,7 +5171,7 @@ exports[`Accordion multiple panels 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     font-size: 16px;
     line-height: 22px;
     max-width: 384px;
@@ -5467,7 +5235,7 @@ exports[`Accordion multiple panels 2`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c10"
+          class="c3"
           role="tab"
           style="z-index: 1;"
           type="button"
@@ -5479,7 +5247,7 @@ exports[`Accordion multiple panels 2`] = `
               class="c5"
             >
               <h4
-                class="c11"
+                class="c10"
               >
                 Panel 2
               </h4>
@@ -5652,64 +5420,6 @@ exports[`Accordion multiple panels 3`] = `
   flex-direction: column;
 }
 
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -5728,47 +5438,47 @@ exports[`Accordion multiple panels 3`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c11 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -5814,7 +5524,7 @@ exports[`Accordion multiple panels 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     font-size: 16px;
     line-height: 22px;
     max-width: 384px;
@@ -5889,7 +5599,7 @@ exports[`Accordion multiple panels 3`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c10"
+          class="c3"
           role="tab"
           style=""
           type="button"
@@ -5901,7 +5611,7 @@ exports[`Accordion multiple panels 3`] = `
               class="c5"
             >
               <h4
-                class="c11"
+                class="c10"
               >
                 Panel 2
               </h4>
@@ -6092,101 +5802,43 @@ exports[`Accordion multiple panels 4`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6197,7 +5849,7 @@ exports[`Accordion multiple panels 4`] = `
   font-weight: 600;
 }
 
-.c11 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -6244,7 +5896,7 @@ exports[`Accordion multiple panels 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     font-size: 16px;
     line-height: 22px;
     max-width: 384px;
@@ -6311,7 +5963,7 @@ exports[`Accordion multiple panels 4`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c10"
+          class="c3"
           role="tab"
           style="z-index: 1;"
           type="button"
@@ -6323,7 +5975,7 @@ exports[`Accordion multiple panels 4`] = `
               class="c5"
             >
               <h4
-                class="c11"
+                class="c10"
               >
                 Panel 2
               </h4>
@@ -6494,64 +6146,6 @@ exports[`Accordion multiple panels 5`] = `
   flex-direction: column;
 }
 
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -6570,47 +6164,47 @@ exports[`Accordion multiple panels 5`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c11 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -6656,7 +6250,7 @@ exports[`Accordion multiple panels 5`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     font-size: 16px;
     line-height: 22px;
     max-width: 384px;
@@ -6729,7 +6323,7 @@ exports[`Accordion multiple panels 5`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c10"
+          class="c3"
           role="tab"
           style=""
           type="button"
@@ -6741,7 +6335,7 @@ exports[`Accordion multiple panels 5`] = `
               class="c5"
             >
               <h4
-                class="c11"
+                class="c10"
               >
                 Panel 2
               </h4>
@@ -6951,43 +6545,43 @@ exports[`Accordion should have no accessibility violations 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7230,43 +6824,43 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7546,43 +7140,43 @@ exports[`Accordion wrapped panel 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7870,64 +7464,6 @@ exports[`Accordion wrapped panel 2`] = `
   flex-direction: column;
 }
 
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -7946,47 +7482,47 @@ exports[`Accordion wrapped panel 2`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c11 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -8032,7 +7568,7 @@ exports[`Accordion wrapped panel 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     font-size: 16px;
     line-height: 22px;
     max-width: 384px;
@@ -8107,7 +7643,7 @@ exports[`Accordion wrapped panel 2`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c10"
+          class="c3"
           role="tab"
           type="button"
         >
@@ -8118,7 +7654,7 @@ exports[`Accordion wrapped panel 2`] = `
               class="c5"
             >
               <h4
-                class="c11"
+                class="c10"
               >
                 Panel 2
               </h4>

@@ -2049,43 +2049,43 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c3:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus:not(:hover) > circle,
+.c3:focus:not(:hover) > ellipse,
+.c3:focus:not(:hover) > line,
+.c3:focus:not(:hover) > path,
+.c3:focus:not(:hover) > polygon,
+.c3:focus:not(:hover) > polyline,
+.c3:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 

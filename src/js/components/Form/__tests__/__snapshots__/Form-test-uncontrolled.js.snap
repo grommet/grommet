@@ -650,23 +650,23 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   text-align: inherit;
 }
 
-.c3:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible):not(:hover) > circle,
+.c3:focus:not(:focus-visible):not(:hover) > ellipse,
+.c3:focus:not(:focus-visible):not(:hover) > line,
+.c3:focus:not(:focus-visible):not(:hover) > path,
+.c3:focus:not(:focus-visible):not(:hover) > polygon,
+.c3:focus:not(:focus-visible):not(:hover) > polyline,
+.c3:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1118,43 +1118,43 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c11:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c11:focus:not(:hover) > circle,
+.c11:focus:not(:hover) > ellipse,
+.c11:focus:not(:hover) > line,
+.c11:focus:not(:hover) > path,
+.c11:focus:not(:hover) > polygon,
+.c11:focus:not(:hover) > polyline,
+.c11:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c11:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c11:focus:not(:focus-visible):not(:hover) > circle,
+.c11:focus:not(:focus-visible):not(:hover) > ellipse,
+.c11:focus:not(:focus-visible):not(:hover) > line,
+.c11:focus:not(:focus-visible):not(:hover) > path,
+.c11:focus:not(:focus-visible):not(:hover) > polygon,
+.c11:focus:not(:focus-visible):not(:hover) > polyline,
+.c11:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c11:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1357,7 +1357,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 dBcUrk"
+      class="StyledButton-sc-323bzc-0 hkSdsg"
       type="submit"
     >
       Submit
@@ -1552,43 +1552,43 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c11:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c11:focus:not(:hover) > circle,
+.c11:focus:not(:hover) > ellipse,
+.c11:focus:not(:hover) > line,
+.c11:focus:not(:hover) > path,
+.c11:focus:not(:hover) > polygon,
+.c11:focus:not(:hover) > polyline,
+.c11:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c11:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c11:focus:not(:focus-visible):not(:hover) > circle,
+.c11:focus:not(:focus-visible):not(:hover) > ellipse,
+.c11:focus:not(:focus-visible):not(:hover) > line,
+.c11:focus:not(:focus-visible):not(:hover) > path,
+.c11:focus:not(:focus-visible):not(:hover) > polygon,
+.c11:focus:not(:focus-visible):not(:hover) > polyline,
+.c11:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c11:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1969,7 +1969,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 dBcUrk"
+      class="StyledButton-sc-323bzc-0 hkSdsg"
       type="submit"
     >
       Submit
@@ -2032,7 +2032,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 dBcUrk"
+      class="StyledButton-sc-323bzc-0 hkSdsg"
       type="submit"
     >
       Submit
@@ -2876,23 +2876,23 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   text-align: inherit;
 }
 
-.c4:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible):not(:hover) > circle,
+.c4:focus:not(:focus-visible):not(:hover) > ellipse,
+.c4:focus:not(:focus-visible):not(:hover) > line,
+.c4:focus:not(:focus-visible):not(:hover) > path,
+.c4:focus:not(:focus-visible):not(:hover) > polygon,
+.c4:focus:not(:focus-visible):not(:hover) > polyline,
+.c4:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2928,43 +2928,43 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c27:focus {
+.c27:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c27:focus > circle,
-.c27:focus > ellipse,
-.c27:focus > line,
-.c27:focus > path,
-.c27:focus > polygon,
-.c27:focus > polyline,
-.c27:focus > rect {
+.c27:focus:not(:hover) > circle,
+.c27:focus:not(:hover) > ellipse,
+.c27:focus:not(:hover) > line,
+.c27:focus:not(:hover) > path,
+.c27:focus:not(:hover) > polygon,
+.c27:focus:not(:hover) > polyline,
+.c27:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c27:focus::-moz-focus-inner {
+.c27:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c27:focus:not(:focus-visible) {
+.c27:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c27:focus:not(:focus-visible) > circle,
-.c27:focus:not(:focus-visible) > ellipse,
-.c27:focus:not(:focus-visible) > line,
-.c27:focus:not(:focus-visible) > path,
-.c27:focus:not(:focus-visible) > polygon,
-.c27:focus:not(:focus-visible) > polyline,
-.c27:focus:not(:focus-visible) > rect {
+.c27:focus:not(:focus-visible):not(:hover) > circle,
+.c27:focus:not(:focus-visible):not(:hover) > ellipse,
+.c27:focus:not(:focus-visible):not(:hover) > line,
+.c27:focus:not(:focus-visible):not(:hover) > path,
+.c27:focus:not(:focus-visible):not(:hover) > polygon,
+.c27:focus:not(:focus-visible):not(:hover) > polyline,
+.c27:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c27:focus:not(:focus-visible)::-moz-focus-inner {
+.c27:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3362,7 +3362,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-label="test select"
-          class="StyledButton-sc-323bzc-0 fhAZId Select__StyledSelectDropButton-sc-17idtfo-2 fJfYtd"
+          class="StyledButton-sc-323bzc-0 foEeCR Select__StyledSelectDropButton-sc-17idtfo-2 fJfYtd"
           id="test-select"
           type="button"
         >
@@ -3547,7 +3547,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 dBcUrk"
+      class="StyledButton-sc-323bzc-0 hkSdsg"
       type="reset"
     >
       Reset
@@ -3629,43 +3629,43 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3788,7 +3788,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 dBcUrk"
+      class="StyledButton-sc-323bzc-0 hkSdsg"
       type="submit"
     >
       Submit
@@ -3822,7 +3822,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 dBcUrk"
+      class="StyledButton-sc-323bzc-0 hkSdsg"
       type="submit"
     >
       Submit
@@ -3904,43 +3904,43 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4090,7 +4090,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 dBcUrk"
+      class="StyledButton-sc-323bzc-0 hkSdsg"
       type="submit"
     >
       Submit
@@ -4172,43 +4172,43 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4358,7 +4358,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 dBcUrk"
+      class="StyledButton-sc-323bzc-0 hkSdsg"
       type="submit"
     >
       Submit
@@ -4440,43 +4440,43 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4622,7 +4622,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 dBcUrk"
+      class="StyledButton-sc-323bzc-0 hkSdsg"
       type="submit"
     >
       Submit
@@ -4704,43 +4704,43 @@ exports[`Form uncontrolled update 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c5:focus {
+.c5:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:hover) > circle,
+.c5:focus:not(:hover) > ellipse,
+.c5:focus:not(:hover) > line,
+.c5:focus:not(:hover) > path,
+.c5:focus:not(:hover) > polygon,
+.c5:focus:not(:hover) > polyline,
+.c5:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible):not(:hover) > circle,
+.c5:focus:not(:focus-visible):not(:hover) > ellipse,
+.c5:focus:not(:focus-visible):not(:hover) > line,
+.c5:focus:not(:focus-visible):not(:hover) > path,
+.c5:focus:not(:focus-visible):not(:hover) > polygon,
+.c5:focus:not(:focus-visible):not(:hover) > polyline,
+.c5:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 

@@ -30,43 +30,43 @@ exports[`DropButton close by clicking outside 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -123,43 +123,43 @@ exports[`DropButton closed 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -200,43 +200,43 @@ exports[`DropButton disabled 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -280,43 +280,43 @@ exports[`DropButton open and close 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -373,43 +373,43 @@ exports[`DropButton opened 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -456,43 +456,43 @@ exports[`DropButton opened ref 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -553,43 +553,43 @@ exports[`DropButton ref function 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -660,43 +660,43 @@ exports[`DropButton rendersr a11yTitle and aria-label 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:focus {
+.c1:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus:not(:hover) > circle,
+.c1:focus:not(:hover) > ellipse,
+.c1:focus:not(:hover) > line,
+.c1:focus:not(:hover) > path,
+.c1:focus:not(:hover) > polygon,
+.c1:focus:not(:hover) > polyline,
+.c1:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible):not(:hover) > circle,
+.c1:focus:not(:focus-visible):not(:hover) > ellipse,
+.c1:focus:not(:focus-visible):not(:hover) > line,
+.c1:focus:not(:focus-visible):not(:hover) > path,
+.c1:focus:not(:focus-visible):not(:hover) > polygon,
+.c1:focus:not(:focus-visible):not(:hover) > polyline,
+.c1:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
@@ -750,43 +750,43 @@ exports[`DropButton should have no accessibility violations 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c0:focus {
+.c0:focus:not(:hover) {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus:not(:hover) > circle,
+.c0:focus:not(:hover) > ellipse,
+.c0:focus:not(:hover) > line,
+.c0:focus:not(:hover) > path,
+.c0:focus:not(:hover) > polygon,
+.c0:focus:not(:hover) > polyline,
+.c0:focus:not(:hover) > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus:not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c0:focus:not(:focus-visible):not(:hover) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible):not(:hover) > circle,
+.c0:focus:not(:focus-visible):not(:hover) > ellipse,
+.c0:focus:not(:focus-visible):not(:hover) > line,
+.c0:focus:not(:focus-visible):not(:hover) > path,
+.c0:focus:not(:focus-visible):not(:hover) > polygon,
+.c0:focus:not(:focus-visible):not(:hover) > polyline,
+.c0:focus:not(:focus-visible):not(:hover) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible):not(:hover)::-moz-focus-inner {
   border: 0;
 }
 
