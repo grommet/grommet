@@ -26,7 +26,7 @@ export const Test = () => {
     <Page>
       <PageContent background={{ color: 'light-3', fill: 'horizontal' }}>
         <Header
-          sticky="scrollup"
+          sticky={{ type: 'scrollup' }}
           background="light-4"
           pad={{ vertical: 'small' }}
         >

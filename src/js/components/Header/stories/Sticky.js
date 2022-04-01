@@ -17,29 +17,29 @@ export const Sticky = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Page kind="narrow">
-    <Header direction="column" sticky="scrollup" background="light-4">
-      <PageContent>
-        <Header pad={{ vertical: 'small' }}>
-          <Avatar background="brand">SY</Avatar>
-          <Nav align="center" direction="row">
-            <Anchor label="Home" href="#" />
-            <Menu
-              dropProps={{ align: { top: 'bottom', left: 'left' } }}
-              label="Profile"
-              items={[
-                { label: 'Home' },
-                { label: 'Profile', icon: <User />, gap: 'small' },
-                {
-                  label: 'Logout',
-                  icon: <Power />,
-                  reverse: true,
-                  gap: 'small',
-                },
-              ]}
-            />
-          </Nav>
-        </Header>
-      </PageContent>
+    <Header
+      background="light-3"
+      sticky={{ type: 'scrollup', fill: true }}
+      pad={{ vertical: 'small' }}
+    >
+      <Avatar background="brand">SY</Avatar>
+      <Nav align="center" direction="row">
+        <Anchor label="Home" href="#" />
+        <Menu
+          dropProps={{ align: { top: 'bottom', left: 'left' } }}
+          label="Profile"
+          items={[
+            { label: 'Home' },
+            { label: 'Profile', icon: <User />, gap: 'small' },
+            {
+              label: 'Logout',
+              icon: <Power />,
+              reverse: true,
+              gap: 'small',
+            },
+          ]}
+        />
+      </Nav>
     </Header>
     <PageContent>
       <Paragraph>
@@ -84,6 +84,7 @@ export const Sticky = () => (
       </Paragraph>
     </PageContent>
   </Page>
+
   // </Grommet>
 );
 Sticky.storyName = 'Sticky';
