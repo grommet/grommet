@@ -66,7 +66,7 @@ if (process.env.NODE_ENV !== 'production') {
     responsive: _propTypes["default"].bool,
     round: _generalPropTypes.roundPropType,
     tag: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
-    as: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
+    as: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func, _propTypes["default"].elementType]),
     width: _generalPropTypes.widthPropType,
     wrap: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['reverse'])])
   });
