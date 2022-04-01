@@ -17,6 +17,7 @@ export interface DropProps {
   };
   background?: BackgroundType;
   elevation?: ElevationType;
+  inline?: boolean;
   onClickOutside?: React.MouseEventHandler<HTMLDocument>;
   onEsc?: KeyboardType;
   overflow?:
