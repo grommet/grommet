@@ -25,7 +25,6 @@ const TheaterMode = () => {
               a11yTitle: 'Toggle theater mode',
             },
             'fullScreen',
-            'pause',
           ],
         }}
       />
