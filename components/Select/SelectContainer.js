@@ -327,6 +327,13 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
       selectOption(activeIndex)(event);
     }
   }, [activeIndex, selectOption, options]);
+
+  var shouldShowClearButton = function shouldShowClearButton(position) {
+    var hasValue = Boolean(multiple ? value.length : value);
+    var showAtPosition = position === 'bottom' ? (clear == null ? void 0 : clear.position) === 'bottom' : (clear == null ? void 0 : clear.position) !== 'bottom';
+    return clear && hasValue && showAtPosition;
+  };
+
   var customSearchInput = theme.select.searchInput;
   var SelectTextInput = customSearchInput || _TextInput.TextInput;
   var selectOptionsStyle = theme.select.options ? _extends({}, theme.select.options.box, theme.select.options.container) : {};
@@ -362,7 +369,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     tabIndex: "-1",
     ref: optionsRef,
     "aria-multiselectable": multiple
-  }, clear && clear.position !== 'bottom' && value && /*#__PURE__*/_react["default"].createElement(ClearButton, {
+  }, shouldShowClearButton('top') && /*#__PURE__*/_react["default"].createElement(ClearButton, {
     ref: clearRef,
     clear: clear,
     name: name,
@@ -426,7 +433,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     role: "menuitem",
     hoverIndicator: "background",
     disabled: true
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, selectOptionsStyle, /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.select.container.text, emptySearchMessage))), clear && clear.position === 'bottom' && value && /*#__PURE__*/_react["default"].createElement(ClearButton, {
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, selectOptionsStyle, /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.select.container.text, emptySearchMessage))), shouldShowClearButton('bottom') && /*#__PURE__*/_react["default"].createElement(ClearButton, {
     ref: clearRef,
     clear: clear,
     name: name,

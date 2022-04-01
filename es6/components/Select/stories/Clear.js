@@ -14,8 +14,8 @@ var ClearTop = function ClearTop() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(Select, {
     placeholder: "Clear Options",
-    multiple: true,
     value: value,
+    multiple: true,
     options: options,
     onChange: function onChange(_ref) {
       var nextValue = _ref.value;
@@ -25,12 +25,37 @@ var ClearTop = function ClearTop() {
   }));
 };
 
+var ClearBottom = function ClearBottom() {
+  var _useState2 = useState(),
+      value = _useState2[0],
+      setValue = _useState2[1];
+
+  return /*#__PURE__*/React.createElement(Box, {
+    fill: true,
+    align: "center",
+    justify: "start",
+    pad: "large"
+  }, /*#__PURE__*/React.createElement(Select, {
+    placeholder: "Clear Options",
+    value: value,
+    multiple: true,
+    options: options,
+    onChange: function onChange(_ref2) {
+      var nextValue = _ref2.value;
+      return setValue(nextValue);
+    },
+    clear: {
+      position: 'bottom'
+    }
+  }));
+};
+
 export var Clear = function Clear() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    React.createElement(ClearTop, null) // </Grommet>
+    React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ClearTop, null), /*#__PURE__*/React.createElement(ClearBottom, null)) // </Grommet>
 
   );
 };
