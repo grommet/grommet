@@ -17,6 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
               icon: PropTypes.element,
               a11yTitle: PropTypes.string,
               onClick: PropTypes.func,
+              disabled: PropTypes.bool,
             }),
           ]),
         ),
