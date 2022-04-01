@@ -57,7 +57,9 @@ var Offset = function Offset() {
         type: 'bar',
         thickness: 'small'
       }],
-      offset: true,
+      offset: {
+        gap: 'xxsmall'
+      },
       axis: {
         x: {
           property: 'date',
@@ -76,6 +78,9 @@ var Offset = function Offset() {
 
 exports.Offset = Offset;
 Offset.storyName = 'Offset';
+Offset.args = {
+  full: true
+};
 var _default = {
   title: 'Visualizations/DataChart/Offset'
 };

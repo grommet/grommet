@@ -491,24 +491,30 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       var thickness = chartProps[index].thickness;
       return (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness);
     }) : undefined;
-  }, [charts, chartProps, offset, theme]); // calculate the offset for each chart, which is a sum of the thicknesses
-  // that preceded it
+  }, [charts, chartProps, offset, theme]); // normalize any offset gap
+
+  var offsetGap = (0, _react.useMemo)(function () {
+    return (offset == null ? void 0 : offset.gap) && (0, _utils.parseMetricToNum)(theme.global.edgeSize[offset.gap] || offset.gap) || 0;
+  }, [offset, theme]); // calculate the offset for each chart, which is a sum of the thicknesses
+  // any offset gaps that preceded it
 
   var offsets = (0, _react.useMemo)(function () {
-    return offset ? thicknesses.map(function (t, i) {
-      return thicknesses.slice(0, i).reduce(function (a, b) {
-        return a + b;
-      }, 0);
-    }) : undefined;
-  }, [offset, thicknesses]); // Calculate the total pad we should add to the end of each chart.
+    if (offset) {
+      return thicknesses.map(function (t, i) {
+        return thicknesses.slice(0, i).reduce(function (a, b) {
+          return a + b + offsetGap;
+        }, 0);
+      });
+    }
+
+    return undefined;
+  }, [offset, offsetGap, thicknesses]); // Calculate the total pad we should add to the end of each chart.
   // We do this to shrink the width of each chart so we can shift them
   // via `translate` and have them take up the right amount of width.
 
   var offsetPad = (0, _react.useMemo)(function () {
-    return offset ? thicknesses.reduce(function (a, b) {
-      return a + b;
-    }, 0) + "px" : undefined;
-  }, [offset, thicknesses]); // The thickness of the Detail segments. We need to convert to numbers
+    return offsets ? offsets[offsets.length - 1] + thicknesses[thicknesses.length - 1] + "px" : undefined;
+  }, [offsets, thicknesses]); // The thickness of the Detail segments. We need to convert to numbers
   // to be able to compare across charts where some might be using T-shirt
   // labels and others might be pixel values.
 
@@ -572,9 +578,14 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     ref: xRef,
     axis: axis,
     values: (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis[0],
-    pad: pad,
+    pad: offsetPad ? _extends({}, pad, {
+      end: offsetPad
+    }) : pad,
     renderValue: renderValue,
-    serie: axis.x.property && getPropertySeries(axis.x.property)
+    serie: axis.x.property && getPropertySeries(axis.x.property),
+    style: offsetPad ? {
+      transform: "translate(" + offsets[Math.floor(offsets.length / 2)] + "px, 0px)"
+    } : {}
   }) : null;
   var yAxisElement = axis && axis.y && (chartProps.length || boundsProp != null && boundsProp.y) ? /*#__PURE__*/_react["default"].createElement(_YAxis.YAxis, {
     axis: axis,

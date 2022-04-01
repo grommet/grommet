@@ -84,7 +84,9 @@ if (process.env.NODE_ENV !== 'production') {
       })])
     })]),
     legend: _propTypes["default"].bool,
-    offset: _propTypes["default"].bool,
+    offset: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].shape({
+      gap: thicknessType
+    })]),
     pad: _generalPropTypes.padPropType,
     placeholder: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
     series: _propTypes["default"].oneOfType([seriesType, _propTypes["default"].arrayOf(seriesType)]),

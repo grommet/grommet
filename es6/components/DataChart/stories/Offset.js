@@ -48,7 +48,9 @@ export var Offset = function Offset() {
         type: 'bar',
         thickness: 'small'
       }],
-      offset: true,
+      offset: {
+        gap: 'xxsmall'
+      },
       axis: {
         x: {
           property: 'date',
@@ -65,6 +67,9 @@ export var Offset = function Offset() {
   );
 };
 Offset.storyName = 'Offset';
+Offset.args = {
+  full: true
+};
 export default {
   title: 'Visualizations/DataChart/Offset'
 };
