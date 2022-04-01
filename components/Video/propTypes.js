@@ -21,7 +21,8 @@ if (process.env.NODE_ENV !== 'production') {
       items: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
         icon: _propTypes["default"].element,
         a11yTitle: _propTypes["default"].string,
-        onClick: _propTypes["default"].func
+        onClick: _propTypes["default"].func,
+        disabled: _propTypes["default"].bool
       })]))
     })]),
     fit: _propTypes["default"].oneOf(['cover', 'contain']),

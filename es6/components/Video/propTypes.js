@@ -12,7 +12,8 @@ if (process.env.NODE_ENV !== 'production') {
       items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
         icon: PropTypes.element,
         a11yTitle: PropTypes.string,
-        onClick: PropTypes.func
+        onClick: PropTypes.func,
+        disabled: PropTypes.bool
       })]))
     })]),
     fit: PropTypes.oneOf(['cover', 'contain']),

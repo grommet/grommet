@@ -375,7 +375,8 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           id: 'video.pauseButton',
           messages: messages
         }),
-        onClick: playing ? pause : play
+        disabled: !playing,
+        onClick: pause
       },
       play: {
         icon: /*#__PURE__*/_react["default"].createElement(Icons.Play, {
@@ -385,7 +386,8 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           id: 'video.playButton',
           messages: messages
         }),
-        onClick: playing ? pause : play
+        disabled: playing,
+        onClick: play
       }
     };
     var controlsMenuItems = [];
