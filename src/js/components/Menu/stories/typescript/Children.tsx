@@ -10,9 +10,6 @@ const MenuWithChildren = (props) => (
       { label: 'Launch', onClick: () => {} },
       { label: 'Abort', onClick: () => {} },
     ]}
-    dropProps={{
-      a11yTitle: 'Test',
-    }}
     {...props}
   >
     {({ disabled, drop, hover }) => {
