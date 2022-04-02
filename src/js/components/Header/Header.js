@@ -81,7 +81,7 @@ const Header = React.forwardRef(({ sticky, background, ...rest }, ref) => {
             <Box
               align="center"
               direction="row"
-              fill
+              fill="horizontal"
               flex={false}
               justify="between"
               gap="medium"
