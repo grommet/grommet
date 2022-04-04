@@ -24,7 +24,6 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
       }
       if (scrollY === 0) {
         runEventListener = false;
-        setStickyStyles(undefined);
       }
       setStickyStyles({
         width: `${containerRef.current.getBoundingClientRect().width}px`,
