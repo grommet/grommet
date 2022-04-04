@@ -327,7 +327,8 @@ const Video = forwardRef(
             id: 'video.pauseButton',
             messages,
           }),
-          onClick: playing ? pause : play,
+          disabled: !playing,
+          onClick: pause,
         },
         play: {
           icon: <Icons.Play color={iconColor} />,
@@ -335,7 +336,8 @@ const Video = forwardRef(
             id: 'video.playButton',
             messages,
           }),
-          onClick: playing ? pause : play,
+          disabled: playing,
+          onClick: play,
         },
       };
 

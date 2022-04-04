@@ -433,25 +433,37 @@ const DataChart = forwardRef(
       [charts, chartProps, offset, theme],
     );
 
-    // calculate the offset for each chart, which is a sum of the thicknesses
-    // that preceded it
-    const offsets = useMemo(
+    // normalize any offset gap
+    const offsetGap = useMemo(
       () =>
-        offset
-          ? thicknesses.map((t, i) =>
-              thicknesses.slice(0, i).reduce((a, b) => a + b, 0),
-            )
-          : undefined,
-      [offset, thicknesses],
+        (offset?.gap &&
+          parseMetricToNum(theme.global.edgeSize[offset.gap] || offset.gap)) ||
+        0,
+      [offset, theme],
     );
+
+    // calculate the offset for each chart, which is a sum of the thicknesses
+    // any offset gaps that preceded it
+    const offsets = useMemo(() => {
+      if (offset) {
+        return thicknesses.map((t, i) =>
+          thicknesses.slice(0, i).reduce((a, b) => a + b + offsetGap, 0),
+        );
+      }
+      return undefined;
+    }, [offset, offsetGap, thicknesses]);
 
     // Calculate the total pad we should add to the end of each chart.
     // We do this to shrink the width of each chart so we can shift them
     // via `translate` and have them take up the right amount of width.
     const offsetPad = useMemo(
       () =>
-        offset ? `${thicknesses.reduce((a, b) => a + b, 0)}px` : undefined,
-      [offset, thicknesses],
+        offsets
+          ? `${
+              offsets[offsets.length - 1] + thicknesses[thicknesses.length - 1]
+            }px`
+          : undefined,
+      [offsets, thicknesses],
     );
 
     // The thickness of the Detail segments. We need to convert to numbers
@@ -529,9 +541,18 @@ const DataChart = forwardRef(
             (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
               .axis[0]
           }
-          pad={pad}
+          pad={offsetPad ? { ...pad, end: offsetPad } : pad}
           renderValue={renderValue}
           serie={axis.x.property && getPropertySeries(axis.x.property)}
+          style={
+            offsetPad
+              ? {
+                  transform: `translate(${
+                    offsets[Math.floor(offsets.length / 2)]
+                  }px, 0px)`,
+                }
+              : {}
+          }
         />
       ) : null;
 
