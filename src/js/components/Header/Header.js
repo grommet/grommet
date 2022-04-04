@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-import { PageContext } from '../Page';
 import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 
@@ -8,7 +7,6 @@ const Header = React.forwardRef(({ sticky, background, ...rest }, ref) => {
   const theme = useContext(ThemeContext);
   const containerRef = useForwardedRef(ref);
   const [stickyStyles, setStickyStyles] = useState();
-  const { ...pageContext } = useContext(PageContext);
 
   useEffect(() => {
     // threshold inital value set to 0
@@ -61,68 +59,29 @@ const Header = React.forwardRef(({ sticky, background, ...rest }, ref) => {
   }, [containerRef, stickyStyles, theme.header?.sticky?.zIndex]);
 
   if (sticky?.type === 'scrollup') {
-    if (sticky?.fill) {
-      return (
-        <>
-          <Box
-            width={stickyStyles && stickyStyles.width}
-            height={stickyStyles && stickyStyles.height}
-          />
-          <Box
-            align="center"
-            as="header"
-            height={stickyStyles && stickyStyles.height}
-            width={stickyStyles && stickyStyles.width}
-            background={background}
-            style={stickyStyles}
-            {...rest}
-            ref={containerRef}
-          >
-            <Box
-              align="center"
-              direction="row"
-              fill
-              flex={false}
-              justify="between"
-              gap="medium"
-              ref={containerRef}
-              {...rest}
-              {...pageContext}
-            />
-          </Box>
-        </>
-      );
-    }
-    if (!sticky?.fill) {
-      return (
-        <>
-          {sticky?.type === 'scrollup' && (
-            // This Box is needed to push down content
-            // so the content is not cut off by the Sticky Header
-            <Box
-              height={stickyStyles?.height}
-              width={stickyStyles && stickyStyles.width}
-            />
-          )}
-          <Box
-            align="center"
-            as="header"
-            direction="row"
-            height={stickyStyles && stickyStyles.height}
-            width={stickyStyles && stickyStyles.width}
-            flex={false}
-            justify="between"
-            gap="medium"
-            style={sticky?.type === 'scrollup' ? stickyStyles : undefined}
-            ref={containerRef}
-            background={background}
-            {...rest}
-          />
-        </>
-      );
-    }
+    <>
+      {/* This Box is needed to push down content
+       so the content is not cut off by the Sticky Header */}
+      <Box
+        height={stickyStyles?.height}
+        width={stickyStyles && stickyStyles.width}
+      />
+      <Box
+        align="center"
+        as="header"
+        direction="row"
+        height={stickyStyles && stickyStyles.height}
+        width={stickyStyles && stickyStyles.width}
+        flex={false}
+        justify="between"
+        gap="medium"
+        style={sticky?.type === 'scrollup' ? stickyStyles : undefined}
+        ref={containerRef}
+        background={background}
+        {...rest}
+      />
+    </>;
   }
-
   return (
     <Box
       align="center"
