@@ -26,21 +26,19 @@ const Header = React.forwardRef(({ sticky, background, ...rest }, ref) => {
         runEventListener = false;
         setStickyStyles(undefined);
       }
-      if (scrollY < lastScrollY) {
-        setStickyStyles({
-          width: `${containerRef.current.getBoundingClientRect().width}px`,
-          height: `${containerRef.current.getBoundingClientRect().height}px`,
-          left: `${containerRef.current.getBoundingClientRect().left}px`,
-          right: `${containerRef.current.getBoundingClientRect().right}px`,
-          zIndex: `${theme.header?.sticky?.zIndex}`,
-          position: 'fixed',
-          transition: 'top 0.6s',
-          top: '0',
-        });
-      } else
-        setStickyStyles({
-          top: `-${containerRef.current.getBoundingClientRect().height}px`,
-        });
+      setStickyStyles({
+        width: `${containerRef.current.getBoundingClientRect().width}px`,
+        height: `${containerRef.current.getBoundingClientRect().height}px`,
+        left: `${containerRef.current.getBoundingClientRect().left}px`,
+        right: `${containerRef.current.getBoundingClientRect().right}px`,
+        zIndex: `${theme.header?.sticky?.zIndex}`,
+        position: 'fixed',
+        transition: 'top 0.6s',
+        top:
+          scrollY < lastScrollY
+            ? '0'
+            : `-${containerRef.current.getBoundingClientRect().height}px`,
+      });
       lastScrollY = scrollY > 0 ? scrollY : 0;
       runEventListener = false;
     };
@@ -57,6 +55,8 @@ const Header = React.forwardRef(({ sticky, background, ...rest }, ref) => {
 
     return () => window.removeEventListener('scroll', onScroll);
   }, [containerRef, stickyStyles, theme.header?.sticky?.zIndex]);
+
+  console.log(stickyStyles);
 
   return (
     <>
