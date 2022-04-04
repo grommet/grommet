@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
     controls: PropTypes.oneOfType([
       PropTypes.oneOf([false, 'over', 'below']),
       PropTypes.shape({
-        position: PropTypes.oneOf[(false, 'over', 'below')],
+        position: PropTypes.oneOf([false, 'over', 'below']),
         items: PropTypes.arrayOf(
           PropTypes.oneOfType([
             PropTypes.oneOf([
