@@ -123,6 +123,7 @@ const Components = () => {
     </Box>,
     <Box key="input" gap="small">
       <Select
+        dropProps={{ inline: true }}
         placeholder="Select"
         options={['One', 'Two']}
         onChange={() => {}}
