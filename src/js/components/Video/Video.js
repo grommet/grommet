@@ -391,6 +391,7 @@ const Video = forwardRef(
               }
               hoverIndicator="background"
               onClick={playing ? pause : play}
+              onFocus={() => setInteracting(true)}
             />
             <Box direction="row" align="center" flex>
               <Box flex>
@@ -428,6 +429,7 @@ const Video = forwardRef(
                     onMouseMove={scrub}
                     onMouseLeave={() => setScrubTime(undefined)}
                     onClick={seek}
+                    onFocus={() => setInteracting(true)}
                   />
                 </Stack>
               </Box>
@@ -444,6 +446,7 @@ const Video = forwardRef(
                 closeMenu: format({ id: 'video.closeMenu', messages }),
               }}
               items={[...controlsMenuItems]}
+              onFocus={() => setInteracting(true)}
             />
           </Box>
         </StyledVideoControls>
@@ -471,11 +474,7 @@ const Video = forwardRef(
     }
 
     return (
-      <Keyboard
-        onLeft={seekBackward}
-        onRight={seekForward}
-        onTab={() => setInteracting(true)}
-      >
+      <Keyboard onLeft={seekBackward} onRight={seekForward}>
         <StyledVideoContainer
           ref={containerRef}
           {...mouseEventListeners}
