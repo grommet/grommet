@@ -58,14 +58,16 @@ const Header = React.forwardRef(({ sticky, background, ...rest }, ref) => {
     return () => window.removeEventListener('scroll', onScroll);
   }, [containerRef, stickyStyles, theme.header?.sticky?.zIndex]);
 
-  if (sticky?.type === 'scrollup') {
+  return (
     <>
-      {/* This Box is needed to push down content
-       so the content is not cut off by the Sticky Header */}
-      <Box
-        height={stickyStyles?.height}
-        width={stickyStyles && stickyStyles.width}
-      />
+      {sticky === 'scrollup' && (
+        // This Box is needed to push down content
+        // so the content is not cut off by the Sticky Header
+        <Box
+          height={stickyStyles?.height}
+          width={stickyStyles && stickyStyles.width}
+        />
+      )}
       <Box
         align="center"
         as="header"
@@ -75,24 +77,12 @@ const Header = React.forwardRef(({ sticky, background, ...rest }, ref) => {
         flex={false}
         justify="between"
         gap="medium"
-        style={sticky?.type === 'scrollup' ? stickyStyles : undefined}
+        style={sticky === 'scrollup' ? stickyStyles : undefined}
         ref={containerRef}
         background={background}
         {...rest}
       />
-    </>;
-  }
-  return (
-    <Box
-      align="center"
-      as="header"
-      direction="row"
-      flex={false}
-      justify="between"
-      gap="medium"
-      {...rest}
-      ref={containerRef}
-    />
+    </>
   );
 });
 Header.displayName = 'Header';

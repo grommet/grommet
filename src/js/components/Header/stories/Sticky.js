@@ -17,31 +17,31 @@ export const Sticky = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Page kind="narrow">
-    <Header
-      background="light-3"
-      sticky={{ type: 'scrollup', fill: true }}
-      pad={{ vertical: 'small' }}
-    >
-      <Avatar background="brand">SY</Avatar>
-      <Nav align="center" direction="row">
-        <Anchor label="Home" href="#" />
-        <Menu
-          dropProps={{ align: { top: 'bottom', left: 'left' } }}
-          label="Profile"
-          items={[
-            { label: 'Home' },
-            { label: 'Profile', icon: <User />, gap: 'small' },
-            {
-              label: 'Logout',
-              icon: <Power />,
-              reverse: true,
-              gap: 'small',
-            },
-          ]}
-        />
-      </Nav>
-    </Header>
     <PageContent>
+      <Header
+        background="light-3"
+        sticky="scrollup"
+        pad={{ vertical: 'small' }}
+      >
+        <Avatar background="brand">SY</Avatar>
+        <Nav align="center" direction="row">
+          <Anchor label="Home" href="#" />
+          <Menu
+            dropProps={{ align: { top: 'bottom', left: 'left' } }}
+            label="Profile"
+            items={[
+              { label: 'Home' },
+              { label: 'Profile', icon: <User />, gap: 'small' },
+              {
+                label: 'Logout',
+                icon: <Power />,
+                reverse: true,
+                gap: 'small',
+              },
+            ]}
+          />
+        </Nav>
+      </Header>
       <Paragraph>
         To maximize screen real-estate, the Header on this page scrolls out of
         view as the user moves down the page. However if the user scrolls
