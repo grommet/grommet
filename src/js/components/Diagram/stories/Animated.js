@@ -8,9 +8,7 @@ import { data } from './data';
 const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
   fromTarget,
   toTarget,
-  anchor: 'vertical',
   color: 'accent-4',
-  decreaseLineLength: 10,
   thickness: 'xsmall',
   round: true,
   type: 'curved',
@@ -54,24 +52,48 @@ export const Animated = () => {
 
   const [draw, toogleDraw] = useReducer(reducer, true);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      toogleDraw();
-    }, 2000);
-    return () => clearInterval(timer);
-  }, [toogleDraw]);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     toogleDraw();
+  //   }, 2000);
+  //   return () => clearInterval(timer);
+  // }, [toogleDraw]);
 
   const connections = [];
 
   if (draw) {
     connections.push(
-      connection('4', '1', { anchor: 'vertical', elementPosition: 'top' }),
+      connection(
+        { target: '4', anchor: "vertical" },
+        { target: '1', anchor: "vertical" },
+        // '4', '1',
+        {
+          // anchor: 'vertical',
+          arrow: "to"
+        }
+      ),
     );
     connections.push(
-      connection('4', '2', { anchor: 'vertical', elementPosition: 'bottom' }),
+      connection(
+        // '4', '2',
+        { target: '4', anchor: "vertical" },
+        { target: '2', anchor: "vertical" },
+        {
+          // anchor: 'vertical',
+          arrow: "to"
+        }
+      ),
     );
     connections.push(
-      connection('4', '3', { anchor: 'vertical', elementPosition: 'bottom' }),
+      connection(
+        // '4', '3',
+        { target: '4', anchor: "vertical" },
+        { target: '3', anchor: "vertical" },
+        { 
+          // anchor: 'vertical',
+          arrow: "to"
+        }
+      ),
     );
   }
 
@@ -91,7 +113,7 @@ export const Animated = () => {
                 margin={{ bottom: 'large', top: 'xlarge' }}
               />
             </Box>
-            <Box direction="row" gap="xlarge">
+            <Box direction="row" gap="xlarge" marginTop="10px">
               {[2, 3].map((id) => (
                 <Container key={id} node={data[id - 1]} index={id} />
               ))}
@@ -100,10 +122,6 @@ export const Animated = () => {
           <Diagram
             animation={{ type: 'draw', duration: 3000 }}
             connections={connections}
-            arrow={{
-              fill: false,
-              color: 'accent-4',
-            }}
           />
         </Stack>
       </Box>

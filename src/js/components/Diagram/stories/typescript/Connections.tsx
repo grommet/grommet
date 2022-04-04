@@ -13,11 +13,12 @@ const type: DiagramConnectionType = 'curved';
 const connection = {
   id: 'shimi',
   anchor,
+  arrow: true,
   color: 'accent-1',
   thickness: 'xsmall',
   type,
-  toTarget: 'yummy',
-  fromTarget: 'gremlin',
+  toTarget: { target: 'yummy', anchor: 'horizontal' },
+  fromTarget: { target: 'gremlin', anchor: 'horizontal' },
   round: true,
 };
 
