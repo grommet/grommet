@@ -469,7 +469,11 @@ const Video = forwardRef(
     }
 
     return (
-      <Keyboard onRight={seekForward} onLeft={seekBackward}>
+      <Keyboard
+        onLeft={seekBackward}
+        onRight={seekForward}
+        onTab={() => setInteracting(true)}
+      >
         <StyledVideoContainer
           ref={containerRef}
           {...mouseEventListeners}
