@@ -3,7 +3,7 @@ import { ThemeContext } from 'styled-components';
 import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 
-const Header = React.forwardRef(({ sticky, background, ...rest }, ref) => {
+const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
   const theme = useContext(ThemeContext);
   const containerRef = useForwardedRef(ref);
   const [stickyStyles, setStickyStyles] = useState();
@@ -56,31 +56,42 @@ const Header = React.forwardRef(({ sticky, background, ...rest }, ref) => {
     return () => window.removeEventListener('scroll', onScroll);
   }, [containerRef, stickyStyles, theme.header?.sticky?.zIndex]);
 
-  return (
-    <>
-      {sticky === 'scrollup' && (
-        // This Box is needed to push down content
-        // so the content is not cut off by the Sticky Header
+  if (sticky === 'scrollup') {
+    return (
+      <>
+        {/* This Box is needed to push down content
+        so the content is not cut off by the Sticky Header */}
         <Box
           height={stickyStyles?.height}
           width={stickyStyles && stickyStyles.width}
         />
-      )}
-      <Box
-        align="center"
-        as="header"
-        direction="row"
-        height={stickyStyles && stickyStyles.height}
-        width={stickyStyles && stickyStyles.width}
-        flex={false}
-        justify="between"
-        gap="medium"
-        style={sticky === 'scrollup' ? stickyStyles : undefined}
-        ref={containerRef}
-        background={background}
-        {...rest}
-      />
-    </>
+        <Box
+          align="center"
+          as="header"
+          direction="row"
+          height={stickyStyles && stickyStyles.height}
+          width={stickyStyles && stickyStyles.width}
+          flex={false}
+          justify="between"
+          gap="medium"
+          style={stickyStyles}
+          ref={containerRef}
+          {...rest}
+        />
+      </>
+    );
+  }
+  return (
+    <Box
+      align="center"
+      as="header"
+      direction="row"
+      flex={false}
+      justify="between"
+      gap="medium"
+      ref={containerRef}
+      {...rest}
+    />
   );
 });
 Header.displayName = 'Header';
