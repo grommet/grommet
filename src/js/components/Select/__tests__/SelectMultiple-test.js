@@ -121,7 +121,9 @@ describe('Select Controlled', () => {
     expect(onChange).toBeCalledWith(expect.objectContaining({ value: [] }));
   });
 
-  test('deselect all options should remove clear selection', () => {
+  test('deselect all options should remove clear selection', async () => {
+    const user = userEvent.setup();
+
     render(
       <Select
         id="test-select"
@@ -132,14 +134,14 @@ describe('Select Controlled', () => {
       />,
     );
 
-    userEvent.click(screen.getByPlaceholderText('test select'));
-    userEvent.click(screen.getByRole('option', { name: 'one' }));
-    userEvent.click(screen.getByPlaceholderText('test select'));
+    await user.click(screen.getByPlaceholderText('test select'));
+    await user.click(screen.getByRole('option', { name: 'one' }));
+    await user.click(screen.getByPlaceholderText('test select'));
 
     expect(screen.getByText('Clear selection')).toBeInTheDocument();
 
-    userEvent.click(screen.getByRole('option', { name: 'one' }));
-    userEvent.click(screen.getByPlaceholderText('test select'));
+    await user.click(screen.getByRole('option', { name: 'one' }));
+    await user.click(screen.getByPlaceholderText('test select'));
 
     expect(screen.queryByText('Clear selection')).not.toBeInTheDocument();
   });
