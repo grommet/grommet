@@ -43,8 +43,8 @@
     "chromatic": "chromatic -t 9q99in2ygnh"
   },
   "peerDependencies": {
-    "react": "^16.6.1 || ^17.0.0",
-    "react-dom": "^16.6.1 || ^17.0.0",
+    "react": "^16.6.1 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.6.1 || ^17.0.0 || ^18.0.0",
     "styled-components": ">= 5.1"
   },
   "dependencies": {
@@ -120,10 +120,10 @@
     "pre-commit": "^1.2.2",
     "prettier": "^2.5.1",
     "pretty-quick": "^3.1.3",
-    "react": "^17.0.2",
+    "react": "^18.0.0",
     "react-dev-utils": "^12.0.0",
-    "react-dom": "^17.0.2",
-    "react-is": "^17.0.2",
+    "react-dom": "^18.0.0",
+    "react-is": "^18.0.0",
     "regenerator-runtime": "^0.13.9",
     "require-reload": "^0.2.2",
     "simple-git": "^3.2.6",

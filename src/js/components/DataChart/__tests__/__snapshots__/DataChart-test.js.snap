@@ -7210,7 +7210,6 @@ exports[`DataChart lines 1`] = `
                 <path
                   d="M 48,99.5552 L 336,55.1104"
                 />
-                
               </g>
             </g>
           </svg>
@@ -7239,7 +7238,6 @@ exports[`DataChart lines 1`] = `
                 <path
                   d="M 48,143.9996 L 336,143.9992"
                 />
-                
               </g>
             </g>
           </svg>
@@ -9756,7 +9754,6 @@ exports[`DataChart type 1`] = `
                 <path
                   d="M 48,128 L 336,48"
                 />
-                
               </g>
             </g>
           </svg>
