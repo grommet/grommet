@@ -6,6 +6,7 @@ export var Basic = function Basic() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(List, {
+    a11yTitle: "Locations",
     data: locations
   }));
 };

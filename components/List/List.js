@@ -23,7 +23,7 @@ var _utils = require("../../utils");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["action", "as", "background", "border", "children", "data", "defaultItemProps", "focus", "itemKey", "itemProps", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"];
+var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "focus", "itemKey", "itemProps", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -127,7 +127,9 @@ var getItemId = function getItemId(item, index, primaryKey) {
 };
 
 var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
-  var action = _ref.action,
+  var a11yTitle = _ref.a11yTitle,
+      ariaLabel = _ref['aria-label'],
+      action = _ref.action,
       as = _ref.as,
       background = _ref.background,
       border = _ref.border,
@@ -246,6 +248,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       setActive(active >= min ? Math.min(active + 1, max) : min);
     } : undefined
   }, /*#__PURE__*/_react["default"].createElement(StyledList, _extends({
+    "aria-label": ariaLabel || a11yTitle,
     ref: listRef,
     as: as || 'ul',
     itemFocus: itemFocus,

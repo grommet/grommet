@@ -16,6 +16,7 @@ var Basic = function Basic() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
+    a11yTitle: "Locations",
     data: locations
   }));
 };
