@@ -297,6 +297,7 @@ Object {
       "align": [Function],
       "background": [Function],
       "elevation": [Function],
+      "inline": [Function],
       "margin": [Function],
       "onClickOutside": [Function],
       "onEsc": [Function],

@@ -349,6 +349,16 @@ const SelectContainer = forwardRef(
       [activeIndex, selectOption, options],
     );
 
+    const shouldShowClearButton = (position) => {
+      const hasValue = Boolean(multiple ? value.length : value);
+      const showAtPosition =
+        position === 'bottom'
+          ? clear?.position === 'bottom'
+          : clear?.position !== 'bottom';
+
+      return clear && hasValue && showAtPosition;
+    };
+
     const customSearchInput = theme.select.searchInput;
     const SelectTextInput = customSearchInput || TextInput;
     const selectOptionsStyle = theme.select.options
@@ -396,7 +406,7 @@ const SelectContainer = forwardRef(
             ref={optionsRef}
             aria-multiselectable={multiple}
           >
-            {clear && clear.position !== 'bottom' && value && (
+            {shouldShowClearButton('top') && (
               <ClearButton
                 ref={clearRef}
                 clear={clear}
@@ -495,7 +505,7 @@ const SelectContainer = forwardRef(
                 </Box>
               </SelectOption>
             )}
-            {clear && clear.position === 'bottom' && value && (
+            {shouldShowClearButton('bottom') && (
               <ClearButton
                 ref={clearRef}
                 clear={clear}

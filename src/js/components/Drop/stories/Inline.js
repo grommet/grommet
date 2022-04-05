@@ -4,15 +4,19 @@ import { Box, Drop } from 'grommet';
 
 const align = { top: 'bottom', left: 'left' };
 
-const PlainDrop = () => {
+const InlineDrop = () => {
   const targetRef = useRef();
 
+  // trigger re-render so we have the targetRef
   const [, setShowDrop] = useState(false);
-  useEffect(() => setShowDrop(true), []);
+  useEffect(() => {
+    setShowDrop(true);
+  }, []);
+
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box background="light-3" fill align="center" justify="center">
+    <Box fill align="center" justify="center">
       <Box
         background="dark-3"
         pad="medium"
@@ -21,25 +25,25 @@ const PlainDrop = () => {
         ref={targetRef}
       >
         Target
+        {targetRef.current && (
+          <Drop container="inline" align={align} target={targetRef.current}>
+            <Box pad="large">Drop Contents</Box>
+          </Drop>
+        )}
       </Box>
-      {targetRef.current && (
-        <Drop plain align={align} target={targetRef.current}>
-          <Box pad="large">No background no shadow</Box>
-        </Drop>
-      )}
     </Box>
     // </Grommet>
   );
 };
 
-export const Plain = () => <PlainDrop />;
-Plain.parameters = {
+export const Inline = () => <InlineDrop />;
+Inline.parameters = {
   chromatic: { disable: true },
 };
-Plain.args = {
+Inline.args = {
   full: true,
 };
 
 export default {
-  title: 'Controls/Drop/Plain',
+  title: 'Controls/Drop/Inline',
 };

@@ -514,7 +514,6 @@ exports[`Select Clear option renders - bottom 1`] = `
       <div
         class="c9"
       />
-      
     </div>
   </div>
 </div>
@@ -742,7 +741,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
       role="listbox"
       tabindex="-1"
     >
-      
       <button
         aria-posinset="1"
         aria-selected="false"
@@ -1003,7 +1001,6 @@ exports[`Select Clear option renders custom label 1`] = `
       role="listbox"
       tabindex="-1"
     >
-      
       <button
         aria-posinset="1"
         aria-selected="false"
@@ -1264,7 +1261,6 @@ exports[`Select Clear option renders- top 1`] = `
       role="listbox"
       tabindex="-1"
     >
-      
       <button
         aria-posinset="1"
         aria-selected="false"

@@ -150,14 +150,6 @@ exports[`Notification custom theme 1`] = `
 
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 <div
     class="c0"
   >
@@ -877,26 +869,6 @@ exports[`Notification position bottom 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -1190,26 +1162,6 @@ exports[`Notification position bottom-left 1`] = `
 @media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
   }
 }
 
@@ -1509,26 +1461,6 @@ exports[`Notification position bottom-right 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -1822,26 +1754,6 @@ exports[`Notification position center 1`] = `
 @media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
   }
 }
 
@@ -2141,26 +2053,6 @@ exports[`Notification position end 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -2454,26 +2346,6 @@ exports[`Notification position left 1`] = `
 @media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
   }
 }
 
@@ -2773,26 +2645,6 @@ exports[`Notification position right 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -3086,26 +2938,6 @@ exports[`Notification position start 1`] = `
 @media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
   }
 }
 
@@ -3405,26 +3237,6 @@ exports[`Notification position top 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -3721,26 +3533,6 @@ exports[`Notification position top-left 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
   class="c0"
   id="position-test"
@@ -4034,26 +3826,6 @@ exports[`Notification position top-right 1`] = `
 @media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
   }
 }
 
@@ -4354,16 +4126,7 @@ exports[`Notification should have no accessibility violations for toast 1`] = `
 
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 <div
-    aria-hidden="true"
     class="c0"
   />
 </DocumentFragment>

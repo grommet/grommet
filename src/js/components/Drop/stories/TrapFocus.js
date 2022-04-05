@@ -3,6 +3,8 @@ import React, { useRef, useState } from 'react';
 import { Box, Button, Drop, Nav, Text } from 'grommet';
 import { Calculator, Bug, Achievement } from 'grommet-icons';
 
+const align = { left: 'right' };
+
 const TooltipButton = ({ icon, name }) => {
   const [over, setOver] = useState(false);
   const ref = useRef();
@@ -28,7 +30,7 @@ const TooltipButton = ({ icon, name }) => {
       {ref.current && over && (
         <Drop
           plain
-          align={{ left: 'right' }}
+          align={align}
           target={ref.current}
           margin={{ horizontal: 'small' }}
           // trapFocus set to false allows tabbing through the buttons
