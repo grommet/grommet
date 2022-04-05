@@ -51,7 +51,7 @@ export const Offset = () => (
           thickness: 'small',
         },
       ]}
-      offset
+      offset={{ gap: 'xxsmall' }}
       axis={{ x: { property: 'date', granularity: 'fine' }, y: true }}
       guide={{ y: true }}
       legend
@@ -61,6 +61,9 @@ export const Offset = () => (
 );
 
 Offset.storyName = 'Offset';
+Offset.args = {
+  full: true,
+};
 
 export default {
   title: 'Visualizations/DataChart/Offset',
