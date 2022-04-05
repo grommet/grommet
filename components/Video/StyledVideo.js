@@ -39,7 +39,7 @@ Object.setPrototypeOf(StyledVideo.defaultProps, _defaultProps.defaultProps);
 var StyledVideoContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledVideo__StyledVideoContainer",
   componentId: "sc-w4v8h9-1"
-})(["flex:1 1;display:flex;flex-direction:column;overflow:hidden;position:relative;", ";"], _utils.genericStyles);
+})(["flex:1 1;display:flex;flex-direction:column;overflow:hidden;position:relative;", ";&:focus{", "}"], _utils.genericStyles, (0, _utils.focusStyle)());
 
 exports.StyledVideoContainer = StyledVideoContainer;
 StyledVideoContainer.defaultProps = {};

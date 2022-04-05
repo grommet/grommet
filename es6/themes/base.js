@@ -1830,9 +1830,10 @@ export var generate = function generate(baseSpacing, scale) {
         volume: Volume // color: { dark: undefined, light: undefined },
 
       },
-      // scrubber: { track: { color: undefined } },
       scrubber: {
-        color: 'light-4'
+        color: 'light-4',
+        interval: 10 // track: { color: undefined }
+
       }
     },
     worldMap: {

@@ -23,6 +23,8 @@ var _Stack = require("../Stack");
 
 var _Text = require("../Text");
 
+var _Keyboard = require("../Keyboard");
+
 var _utils = require("../../utils");
 
 var _StyledVideo = require("./StyledVideo");
@@ -31,7 +33,7 @@ var _MessageContext = require("../../contexts/MessageContext");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["alignSelf", "autoPlay", "children", "controls", "gridArea", "loop", "margin", "messages", "mute", "onDurationChange", "onEnded", "onPause", "onPlay", "onTimeUpdate", "onVolumeChange"];
+var _excluded = ["alignSelf", "autoPlay", "children", "controls", "gridArea", "loop", "margin", "messages", "mute", "onDurationChange", "onEnded", "onPause", "onPlay", "onTimeUpdate", "onVolumeChange", "skipInterval"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -76,6 +78,7 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       _onPlay = _ref.onPlay,
       _onTimeUpdate = _ref.onTimeUpdate,
       _onVolumeChange = _ref.onVolumeChange,
+      skipInterval = _ref.skipInterval,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
@@ -265,6 +268,14 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       if (duration) videoRef.current.currentTime = duration * percent;
     }
   }, [duration, videoRef]);
+  var seekForward = (0, _react.useCallback)(function () {
+    setInteracting(true);
+    videoRef.current.currentTime += skipInterval || theme.video.scrubber.interval;
+  }, [skipInterval, theme.video.scrubber.interval, videoRef]);
+  var seekBackward = (0, _react.useCallback)(function () {
+    setInteracting(true);
+    videoRef.current.currentTime -= skipInterval || theme.video.scrubber.interval;
+  }, [skipInterval, theme.video.scrubber.interval, videoRef]);
   var louder = (0, _react.useCallback)(function () {
     videoRef.current.volume += VOLUME_STEP;
   }, [videoRef]);
@@ -428,7 +439,10 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         })
       }),
       hoverIndicator: "background",
-      onClick: playing ? pause : play
+      onClick: playing ? pause : play,
+      onFocus: function onFocus() {
+        return setInteracting(true);
+      }
     }), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       align: "center",
@@ -459,7 +473,10 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onMouseLeave: function onMouseLeave() {
         return setScrubTime(undefined);
       },
-      onClick: seek
+      onClick: seek,
+      onFocus: function onFocus() {
+        return setInteracting(true);
+      }
     }))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       pad: {
         horizontal: 'small'
@@ -485,7 +502,10 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           messages: messages
         })
       },
-      items: [].concat(controlsMenuItems)
+      items: [].concat(controlsMenuItems),
+      onFocus: function onFocus() {
+        return setInteracting(true);
+      }
     })));
   }
 
@@ -521,13 +541,17 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   }
 
-  return /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideoContainer, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
+    onLeft: seekBackward,
+    onRight: seekForward
+  }, /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideoContainer, _extends({
     ref: containerRef
   }, mouseEventListeners, {
     alignSelf: alignSelf,
     gridArea: gridArea,
     margin: margin,
-    style: style
+    style: style,
+    tabIndex: "-1"
   }), /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideo, _extends({}, rest, {
     ref: videoRef,
     onDurationChange: function onDurationChange(event) {
@@ -561,7 +585,7 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     },
     autoPlay: autoPlay || false,
     loop: loop || false
-  }), children), controlsElement);
+  }), children), controlsElement));
 });
 exports.Video = Video;
 Video.defaultProps = {};

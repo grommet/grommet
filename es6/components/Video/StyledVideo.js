@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { genericStyles, normalizeColor } from '../../utils';
+import { focusStyle, genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 var FIT_MAP = {
   cover: 'cover',
@@ -24,7 +24,7 @@ Object.setPrototypeOf(StyledVideo.defaultProps, defaultProps);
 var StyledVideoContainer = styled.div.withConfig({
   displayName: "StyledVideo__StyledVideoContainer",
   componentId: "sc-w4v8h9-1"
-})(["flex:1 1;display:flex;flex-direction:column;overflow:hidden;position:relative;", ";"], genericStyles);
+})(["flex:1 1;display:flex;flex-direction:column;overflow:hidden;position:relative;", ";&:focus{", "}"], genericStyles, focusStyle());
 StyledVideoContainer.defaultProps = {};
 Object.setPrototypeOf(StyledVideoContainer.defaultProps, defaultProps); // z-index is for Safari so controls aren't hidden
 

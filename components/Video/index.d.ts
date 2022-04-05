@@ -47,6 +47,7 @@ export interface VideoProps {
     volumeDown?: string;
   };
   mute?: boolean;
+  skipInterval?: number;
 }
 
 export interface VideoExtendedProps

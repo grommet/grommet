@@ -8,8 +8,8 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, genericProps, {
     autoPlay: PropTypes.bool,
     controls: PropTypes.oneOfType([PropTypes.oneOf([false, 'over', 'below']), PropTypes.shape({
-      position: PropTypes.oneOf[(false, 'over', 'below')],
-      items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+      position: PropTypes.oneOf([false, 'over', 'below']),
+      items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.oneOf(['captions', 'fullScreen', 'play', 'pause', 'volume']), PropTypes.shape({
         icon: PropTypes.element,
         a11yTitle: PropTypes.string,
         onClick: PropTypes.func,
@@ -22,14 +22,15 @@ if (process.env.NODE_ENV !== 'production') {
     messages: PropTypes.shape({
       closeMenu: PropTypes.string,
       fullScreen: PropTypes.string,
-      progressMeter: PropTypes.string,
       openMenu: PropTypes.string,
       pauseButton: PropTypes.string,
       playButton: PropTypes.string,
+      progressMeter: PropTypes.string,
       scrubber: PropTypes.string,
       volumeDown: PropTypes.string,
       volumeUp: PropTypes.string
-    })
+    }),
+    skipInterval: PropTypes.number
   });
 }
 

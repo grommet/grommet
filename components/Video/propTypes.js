@@ -17,8 +17,8 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, _generalPropTypes.genericProps, {
     autoPlay: _propTypes["default"].bool,
     controls: _propTypes["default"].oneOfType([_propTypes["default"].oneOf([false, 'over', 'below']), _propTypes["default"].shape({
-      position: _propTypes["default"].oneOf[(false, 'over', 'below')],
-      items: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
+      position: _propTypes["default"].oneOf([false, 'over', 'below']),
+      items: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].oneOf(['captions', 'fullScreen', 'play', 'pause', 'volume']), _propTypes["default"].shape({
         icon: _propTypes["default"].element,
         a11yTitle: _propTypes["default"].string,
         onClick: _propTypes["default"].func,
@@ -31,14 +31,15 @@ if (process.env.NODE_ENV !== 'production') {
     messages: _propTypes["default"].shape({
       closeMenu: _propTypes["default"].string,
       fullScreen: _propTypes["default"].string,
-      progressMeter: _propTypes["default"].string,
       openMenu: _propTypes["default"].string,
       pauseButton: _propTypes["default"].string,
       playButton: _propTypes["default"].string,
+      progressMeter: _propTypes["default"].string,
       scrubber: _propTypes["default"].string,
       volumeDown: _propTypes["default"].string,
       volumeUp: _propTypes["default"].string
-    })
+    }),
+    skipInterval: _propTypes["default"].number
   });
 }
 

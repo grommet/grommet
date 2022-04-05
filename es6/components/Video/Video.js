@@ -1,4 +1,4 @@
-var _excluded = ["alignSelf", "autoPlay", "children", "controls", "gridArea", "loop", "margin", "messages", "mute", "onDurationChange", "onEnded", "onPause", "onPlay", "onTimeUpdate", "onVolumeChange"];
+var _excluded = ["alignSelf", "autoPlay", "children", "controls", "gridArea", "loop", "margin", "messages", "mute", "onDurationChange", "onEnded", "onPause", "onPlay", "onTimeUpdate", "onVolumeChange", "skipInterval"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -14,6 +14,7 @@ import { Menu } from '../Menu';
 import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
+import { Keyboard } from '../Keyboard';
 import { containsFocus, useForwardedRef } from '../../utils';
 import { StyledVideo, StyledVideoContainer, StyledVideoControls, StyledVideoScrubber } from './StyledVideo';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -53,6 +54,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       _onPlay = _ref.onPlay,
       _onTimeUpdate = _ref.onTimeUpdate,
       _onVolumeChange = _ref.onVolumeChange,
+      skipInterval = _ref.skipInterval,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
@@ -242,6 +244,14 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       if (duration) videoRef.current.currentTime = duration * percent;
     }
   }, [duration, videoRef]);
+  var seekForward = useCallback(function () {
+    setInteracting(true);
+    videoRef.current.currentTime += skipInterval || theme.video.scrubber.interval;
+  }, [skipInterval, theme.video.scrubber.interval, videoRef]);
+  var seekBackward = useCallback(function () {
+    setInteracting(true);
+    videoRef.current.currentTime -= skipInterval || theme.video.scrubber.interval;
+  }, [skipInterval, theme.video.scrubber.interval, videoRef]);
   var louder = useCallback(function () {
     videoRef.current.volume += VOLUME_STEP;
   }, [videoRef]);
@@ -405,7 +415,10 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
         })
       }),
       hoverIndicator: "background",
-      onClick: playing ? pause : play
+      onClick: playing ? pause : play,
+      onFocus: function onFocus() {
+        return setInteracting(true);
+      }
     }), /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       align: "center",
@@ -436,7 +449,10 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onMouseLeave: function onMouseLeave() {
         return setScrubTime(undefined);
       },
-      onClick: seek
+      onClick: seek,
+      onFocus: function onFocus() {
+        return setInteracting(true);
+      }
     }))), /*#__PURE__*/React.createElement(Box, {
       pad: {
         horizontal: 'small'
@@ -462,7 +478,10 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
           messages: messages
         })
       },
-      items: [].concat(controlsMenuItems)
+      items: [].concat(controlsMenuItems),
+      onFocus: function onFocus() {
+        return setInteracting(true);
+      }
     })));
   }
 
@@ -498,13 +517,17 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   }
 
-  return /*#__PURE__*/React.createElement(StyledVideoContainer, _extends({
+  return /*#__PURE__*/React.createElement(Keyboard, {
+    onLeft: seekBackward,
+    onRight: seekForward
+  }, /*#__PURE__*/React.createElement(StyledVideoContainer, _extends({
     ref: containerRef
   }, mouseEventListeners, {
     alignSelf: alignSelf,
     gridArea: gridArea,
     margin: margin,
-    style: style
+    style: style,
+    tabIndex: "-1"
   }), /*#__PURE__*/React.createElement(StyledVideo, _extends({}, rest, {
     ref: videoRef,
     onDurationChange: function onDurationChange(event) {
@@ -538,7 +561,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
     },
     autoPlay: autoPlay || false,
     loop: loop || false
-  }), children), controlsElement);
+  }), children), controlsElement));
 });
 Video.defaultProps = {};
 Video.displayName = 'Video';
