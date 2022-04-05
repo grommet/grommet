@@ -9,10 +9,16 @@ if (process.env.NODE_ENV !== 'production') {
     controls: PropTypes.oneOfType([
       PropTypes.oneOf([false, 'over', 'below']),
       PropTypes.shape({
-        position: PropTypes.oneOf[(false, 'over', 'below')],
+        position: PropTypes.oneOf([false, 'over', 'below']),
         items: PropTypes.arrayOf(
           PropTypes.oneOfType([
-            PropTypes.string,
+            PropTypes.oneOf([
+              'captions',
+              'fullScreen',
+              'play',
+              'pause',
+              'volume',
+            ]),
             PropTypes.shape({
               icon: PropTypes.element,
               a11yTitle: PropTypes.string,
@@ -29,14 +35,15 @@ if (process.env.NODE_ENV !== 'production') {
     messages: PropTypes.shape({
       closeMenu: PropTypes.string,
       fullScreen: PropTypes.string,
-      progressMeter: PropTypes.string,
       openMenu: PropTypes.string,
       pauseButton: PropTypes.string,
       playButton: PropTypes.string,
+      progressMeter: PropTypes.string,
       scrubber: PropTypes.string,
       volumeDown: PropTypes.string,
       volumeUp: PropTypes.string,
     }),
+    skipInterval: PropTypes.number,
   };
 }
 export const VideoPropTypes = PropType;
