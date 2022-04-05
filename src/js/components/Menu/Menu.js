@@ -85,7 +85,6 @@ const Menu = forwardRef((props, ref) => {
   // to DropButton and override prop values
   const { align: themeDropAlign, ...themeDropProps } = theme.menu.drop;
   const a11y = ariaLabel || a11yTitle;
-  const dropA11y = dropProps && dropProps?.a11yTitle;
 
   const align = (dropProps && dropProps.align) || dropAlign || themeDropAlign;
   const controlButtonIndex = useMemo(() => {
@@ -330,7 +329,7 @@ const Menu = forwardRef((props, ref) => {
               {alignControlMirror === 'top' && align.top === 'top'
                 ? controlMirror
                 : undefined}
-              <Box overflow="auto" role="menu" a11yTitle={dropA11y || a11y}>
+              <Box overflow="auto" role="menu" a11yTitle={a11y}>
                 {items.map((item, index) => {
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.
