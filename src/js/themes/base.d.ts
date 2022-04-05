@@ -1566,6 +1566,7 @@ export interface ThemeType {
     };
     scrubber?: {
       color?: ColorType;
+      interval: number;
       track?: {
         color?: ColorType;
       };

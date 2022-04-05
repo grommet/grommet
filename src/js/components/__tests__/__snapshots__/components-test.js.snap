@@ -2376,6 +2376,7 @@ Object {
           },
           "scrubber": Object {
             "color": "light-4",
+            "interval": 10,
           },
         },
         "worldMap": Object {
@@ -2630,6 +2631,7 @@ Object {
       "margin": [Function],
       "messages": [Function],
       "mute": [Function],
+      "skipInterval": [Function],
     },
     "render": [Function],
   },
