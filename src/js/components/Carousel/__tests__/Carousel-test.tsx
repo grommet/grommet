@@ -47,6 +47,8 @@ describe('Carousel', () => {
   });
 
   test('arrow navigation: next', async () => {
+    const user = userEvent.setup();
+
     render(
       <Grommet>
         <Carousel controls="arrows">
@@ -62,7 +64,7 @@ describe('Carousel', () => {
      * - Expecting "Slide Two" to be visible
      */
     const nextButton = screen.getByLabelText('Next');
-    userEvent.click(nextButton);
+    await user.click(nextButton);
     await waitFor(() => {
       expect(getSlideOne()).not.toBeVisible();
       expect(getSlideTwo()).toBeVisible();
@@ -70,6 +72,8 @@ describe('Carousel', () => {
   });
 
   test('arrow navigation: previous', async () => {
+    const user = userEvent.setup();
+
     render(
       <Grommet>
         <Carousel initialChild={1} controls="arrows">
@@ -86,7 +90,7 @@ describe('Carousel', () => {
      * - Expecting "Slide One" to be visible
      */
     const previousButton = screen.getByLabelText('Previous');
-    userEvent.click(previousButton);
+    await user.click(previousButton);
     await waitFor(() => {
       expect(getSlideTwo()).not.toBeVisible();
       expect(getSlideOne()).toBeVisible();
@@ -94,6 +98,8 @@ describe('Carousel', () => {
   });
 
   test('selector navigation: forward', async () => {
+    const user = userEvent.setup();
+
     render(
       <Grommet>
         <Carousel controls="selectors">
@@ -110,7 +116,7 @@ describe('Carousel', () => {
      * - Expecting "Slide Three" to be visible
      */
     const thirdSelector = screen.getByLabelText('Jump to slide 3');
-    userEvent.click(thirdSelector);
+    await user.click(thirdSelector);
     await waitFor(() => {
       expect(getSlideOne()).not.toBeVisible();
       expect(getSlideThree()).toBeVisible();
@@ -118,6 +124,8 @@ describe('Carousel', () => {
   });
 
   test('selector navigation: backward', async () => {
+    const user = userEvent.setup();
+
     render(
       <Grommet>
         <Carousel initialChild={2} controls="selectors">
@@ -134,7 +142,7 @@ describe('Carousel', () => {
      * - Expecting "Slide One" to be visible
      */
     const firstSelector = screen.getByLabelText('Jump to slide 1');
-    userEvent.click(firstSelector);
+    await user.click(firstSelector);
     await waitFor(() => {
       expect(getSlideThree()).not.toBeVisible();
       expect(getSlideOne()).toBeVisible();
@@ -226,6 +234,8 @@ describe('Carousel', () => {
   });
 
   test('interactive slide', async () => {
+    const user = userEvent.setup({ delay: null });
+
     const someFunction = jest.fn();
     render(
       <Grommet>
@@ -242,8 +252,7 @@ describe('Carousel', () => {
       </Grommet>,
     );
 
-    const testButton = screen.getByLabelText('Test Button');
-    userEvent.click(testButton);
+    await user.click(screen.getByLabelText('Test Button'));
     expect(someFunction).toHaveBeenCalledTimes(1);
   });
 });
