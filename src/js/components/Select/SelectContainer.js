@@ -476,7 +476,6 @@ const SelectContainer = forwardRef(
                       disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}
-                      option={option}
                       onMouseOver={
                         !optionDisabled ? onActiveOption(index) : undefined
                       }

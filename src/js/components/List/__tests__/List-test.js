@@ -35,14 +35,8 @@ describe('List', () => {
   test('renders a11yTitle and aria-label', () => {
     const { container, getByLabelText } = render(
       <Grommet>
-        <List
-          a11yTitle="test"
-          data={[{ a: 'alpha' }, { a: 'beta' }]}
-        />
-        <List
-          aria-label="test-2"
-          data={[{ a: 'alpha' }, { a: 'beta' }]}
-        />
+        <List a11yTitle="test" data={[{ a: 'alpha' }, { a: 'beta' }]} />
+        <List aria-label="test-2" data={[{ a: 'alpha' }, { a: 'beta' }]} />
       </Grommet>,
     );
     expect(getByLabelText('test')).toBeTruthy();
