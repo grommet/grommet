@@ -4,7 +4,7 @@ import { Box, Video } from 'grommet';
 
 const SimpleVideo = (props) => (
   <Box align="center" pad="large">
-    <Video {...props}>
+    <Video skipInterval={2} {...props}>
       <source src="small.mp4" type="video/mp4" />
       <source
         src="http://techslides.com/demos/sample-videos/small.webm"

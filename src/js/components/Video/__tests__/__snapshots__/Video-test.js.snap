@@ -331,6 +331,26 @@ exports[`Video Configure Menu Button 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -382,6 +402,7 @@ exports[`Video Configure Menu Button 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -830,6 +851,26 @@ exports[`Video End event handler 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -869,6 +910,7 @@ exports[`Video End event handler 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -1317,6 +1359,26 @@ exports[`Video Play and Pause event handlers 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -1356,6 +1418,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -1478,7 +1541,8 @@ exports[`Video Play and Pause event handlers 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bHBrdw"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bttkjj"
+    tabindex="-1"
   >
     <video
       class="StyledVideo-sc-w4v8h9-0 hTmgoS"
@@ -1969,6 +2033,26 @@ exports[`Video autoPlay renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -2008,6 +2092,7 @@ exports[`Video autoPlay renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       autoplay=""
@@ -2455,6 +2540,26 @@ exports[`Video controls below renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -2489,6 +2594,7 @@ exports[`Video controls below renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -2938,6 +3044,26 @@ exports[`Video controls over renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -2977,6 +3103,7 @@ exports[`Video controls over renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -3425,6 +3552,26 @@ exports[`Video duration event handler 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -3464,6 +3611,7 @@ exports[`Video duration event handler 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -3917,6 +4065,26 @@ exports[`Video fit  cover renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -3956,6 +4124,7 @@ exports[`Video fit  cover renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -4409,6 +4578,26 @@ exports[`Video fit contain renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -4448,6 +4637,7 @@ exports[`Video fit contain renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -4896,6 +5086,26 @@ exports[`Video loop renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -4935,6 +5145,7 @@ exports[`Video loop renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -5384,6 +5595,26 @@ exports[`Video mouse events handlers of controls 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -5423,6 +5654,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -5545,7 +5777,8 @@ exports[`Video mouse events handlers of controls 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bHBrdw"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bttkjj"
+    tabindex="-1"
   >
     <video
       class="StyledVideo-sc-w4v8h9-0 hTmgoS"
@@ -5668,7 +5901,8 @@ exports[`Video mouse events handlers of controls 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bHBrdw"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bttkjj"
+    tabindex="-1"
   >
     <video
       class="StyledVideo-sc-w4v8h9-0 hTmgoS"
@@ -6117,6 +6351,26 @@ exports[`Video mute renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -6156,6 +6410,7 @@ exports[`Video mute renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -6604,6 +6859,26 @@ exports[`Video renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -6643,6 +6918,7 @@ exports[`Video renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -7091,6 +7367,26 @@ exports[`Video renders with theme 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -7130,6 +7426,7 @@ exports[`Video renders with theme 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -7578,6 +7875,26 @@ exports[`Video scrubber 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -7617,6 +7934,7 @@ exports[`Video scrubber 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -7739,7 +8057,8 @@ exports[`Video scrubber 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bHBrdw"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bttkjj"
+    tabindex="-1"
   >
     <video
       class="StyledVideo-sc-w4v8h9-0 hTmgoS"
@@ -8188,6 +8507,26 @@ exports[`Video timeUpdate event handler 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -8227,6 +8566,7 @@ exports[`Video timeUpdate event handler 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
