@@ -422,7 +422,6 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
       disabled: optionDisabled || undefined,
       active: optionActive,
       selected: optionSelected,
-      option: option,
       onMouseOver: !optionDisabled ? onActiveOption(index) : undefined,
       onClick: !optionDisabled ? selectOption(index) : undefined,
       textComponent: textComponent

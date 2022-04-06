@@ -127,7 +127,7 @@
     "regenerator-runtime": "^0.13.9",
     "require-reload": "^0.2.2",
     "simple-git": "^3.5.0",
-    "styled-components": "5.3.3",
+    "styled-components": "^5.3.5",
     "tarball-extract": "^0.0.6",
     "ts-jest": "^27.1.4",
     "ts-loader": "^8.3.0",
