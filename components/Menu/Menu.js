@@ -95,6 +95,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       themeDropAlign = _theme$menu$drop.align,
       themeDropProps = _objectWithoutPropertiesLoose(_theme$menu$drop, _excluded2);
 
+  var a11y = ariaLabel || a11yTitle;
   var align = dropProps && dropProps.align || dropAlign || themeDropAlign;
   var controlButtonIndex = (0, _react.useMemo)(function () {
     if (align.top === 'top') return -1;
@@ -276,7 +277,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       // make it accessible at the end of all menu items
       buttonRefs.current[items.length] = r;
     },
-    a11yTitle: ariaLabel || a11yTitle || format({
+    a11yTitle: a11y || format({
       id: 'menu.closeMenu',
       messages: messages
     }),
@@ -307,7 +308,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   }, /*#__PURE__*/_react["default"].createElement(_DropButton.DropButton, _extends({
     ref: ref
   }, rest, buttonProps, {
-    a11yTitle: ariaLabel || a11yTitle || format({
+    a11yTitle: a11y || format({
       id: 'menu.openMenu',
       messages: messages
     }),
@@ -335,7 +336,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     }, alignControlMirror === 'top' && align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       overflow: "auto",
       role: "menu",
-      a11yTitle: ariaLabel || a11yTitle
+      a11yTitle: a11y
     }, items.map(function (item, index) {
       // Determine whether the label is done as a child or
       // as an option Button kind property.

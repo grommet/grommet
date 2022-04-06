@@ -15,6 +15,7 @@ var SimpleMenu = function SimpleMenu() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Menu, {
     dropProps: {
+      a11yTitle: 'Simple drop content',
       align: {
         top: 'bottom',
         left: 'left'

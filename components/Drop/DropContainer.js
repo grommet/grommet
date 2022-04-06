@@ -19,7 +19,7 @@ var _Keyboard = require("../Keyboard");
 
 var _StyledDrop = require("./StyledDrop");
 
-var _excluded = ["align", "background", "onAlign", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch", "trapFocus"];
+var _excluded = ["a11yTitle", "aria-label", "align", "background", "onAlign", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch", "trapFocus"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -45,7 +45,9 @@ var defaultAlign = {
 };
 var defaultPortalContext = [];
 var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _ref$align = _ref.align,
+  var a11yTitle = _ref.a11yTitle,
+      ariaLabel = _ref['aria-label'],
+      _ref$align = _ref.align,
       align = _ref$align === void 0 ? defaultAlign : _ref$align,
       background = _ref.background,
       onAlign = _ref.onAlign,
@@ -319,6 +321,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [ref, restrictFocus]);
 
   var content = /*#__PURE__*/_react["default"].createElement(_StyledDrop.StyledDrop, _extends({
+    "aria-label": a11yTitle || ariaLabel,
     ref: ref || dropRef,
     as: _Box.Box,
     background: background,

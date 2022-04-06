@@ -1,4 +1,4 @@
-var _excluded = ["align", "background", "onAlign", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch", "trapFocus"];
+var _excluded = ["a11yTitle", "aria-label", "align", "background", "onAlign", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch", "trapFocus"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -28,7 +28,9 @@ var defaultAlign = {
 };
 var defaultPortalContext = [];
 var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _ref$align = _ref.align,
+  var a11yTitle = _ref.a11yTitle,
+      ariaLabel = _ref['aria-label'],
+      _ref$align = _ref.align,
       align = _ref$align === void 0 ? defaultAlign : _ref$align,
       background = _ref.background,
       onAlign = _ref.onAlign,
@@ -300,6 +302,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   }, [ref, restrictFocus]);
   var content = /*#__PURE__*/React.createElement(StyledDrop, _extends({
+    "aria-label": a11yTitle || ariaLabel,
     ref: ref || dropRef,
     as: Box,
     background: background,

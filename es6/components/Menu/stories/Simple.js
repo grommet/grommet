@@ -7,6 +7,7 @@ var SimpleMenu = function SimpleMenu() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(Menu, {
     dropProps: {
+      a11yTitle: 'Simple drop content',
       align: {
         top: 'bottom',
         left: 'left'
