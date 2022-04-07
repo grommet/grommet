@@ -121,31 +121,6 @@ describe('Select Controlled', () => {
     expect(onChange).toBeCalledWith(expect.objectContaining({ value: [] }));
   });
 
-  test('deselect all options should remove clear selection', async () => {
-    const user = userEvent.setup();
-
-    render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        multiple
-        options={['one', 'two']}
-        clear
-      />,
-    );
-
-    await user.click(screen.getByPlaceholderText('test select'));
-    await user.click(screen.getByRole('option', { name: 'one' }));
-    await user.click(screen.getByPlaceholderText('test select'));
-
-    expect(screen.getByText('Clear selection')).toBeInTheDocument();
-
-    await user.click(screen.getByRole('option', { name: 'one' }));
-    await user.click(screen.getByPlaceholderText('test select'));
-
-    expect(screen.queryByText('Clear selection')).not.toBeInTheDocument();
-  });
-
   test('multiple onChange without valueKey', () => {
     const onChange = jest.fn();
     const Test = () => {
@@ -536,4 +511,29 @@ describe('Select Controlled', () => {
   });
 
   window.scrollTo.mockRestore();
+});
+
+test('deselect all options should remove clear selection', async () => {
+  const user = userEvent.setup({ delay: null });
+
+  render(
+    <Select
+      id="test-select"
+      placeholder="test select"
+      multiple
+      options={['one', 'two']}
+      clear
+    />,
+  );
+
+  await user.click(screen.getByPlaceholderText('test select'));
+  await user.click(screen.getByRole('option', { name: 'one' }));
+  await user.click(screen.getByPlaceholderText('test select'));
+
+  expect(screen.getByText('Clear selection')).toBeInTheDocument();
+
+  await user.click(screen.getByRole('option', { name: 'one' }));
+  await user.click(screen.getByPlaceholderText('test select'));
+
+  expect(screen.queryByText('Clear selection')).not.toBeInTheDocument();
 });
