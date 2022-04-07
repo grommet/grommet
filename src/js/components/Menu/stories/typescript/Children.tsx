@@ -12,7 +12,7 @@ const MenuWithChildren = (props) => (
     ]}
     {...props}
   >
-    {({ disabled, drop, hover, focus }) => {
+    {({ disabled, drop, hover }) => {
       const color = hover && !drop && !disabled ? 'brand' : undefined;
       return (
         <Box
