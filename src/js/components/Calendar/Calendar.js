@@ -173,12 +173,18 @@ const CalendarDay = ({
   children,
   fill,
   size,
+  focus,
   isInRange,
   isSelected,
   otherMonth,
   buttonProps = {},
 }) => (
-  <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
+  <StyledDayContainer
+    role="gridcell"
+    sizeProp={size}
+    fillContainer={fill}
+    focus={focus}
+  >
     <CalendarDayButton fill={fill} {...buttonProps}>
       <StyledDay
         disabledProp={buttonProps.disabled}
@@ -832,6 +838,7 @@ const Calendar = forwardRef(
               }}
               isInRange={inRange}
               isSelected={selected}
+              focus={!focus && active?.getTime() === day.getTime()}
               otherMonth={day.getMonth() !== reference.getMonth()}
               size={size}
               fill={fill}
@@ -944,6 +951,7 @@ const Calendar = forwardRef(
             onUp={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
+              setFocus(false);
               setActive(addDays(active, -7));
               if (!betweenDates(addDays(active, -7), displayBounds)) {
                 changeReference(addDays(active, -7));
@@ -952,18 +960,21 @@ const Calendar = forwardRef(
             onDown={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
+              setFocus(false);
               setActive(addDays(active, 7));
               if (!betweenDates(addDays(active, 7), displayBounds)) {
                 changeReference(active);
               }
             }}
             onLeft={() => {
+              setFocus(false);
               setActive(addDays(active, -1));
               if (!betweenDates(addDays(active, -1), displayBounds)) {
                 changeReference(active);
               }
             }}
             onRight={() => {
+              setFocus(false);
               setActive(addDays(active, 1));
               if (!betweenDates(addDays(active, 2), displayBounds)) {
                 changeReference(active);
@@ -986,9 +997,11 @@ const Calendar = forwardRef(
               focus={focus}
               onFocus={() => {
                 setFocus(true);
+
                 // caller focused onto Calendar via keyboard
-                if (!mouseDown) {
+                if (!mouseDown && !focus) {
                   setActive(new Date(firstDayInMonth));
+                  setFocus(false);
                 }
               }}
               onBlur={() => {
