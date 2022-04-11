@@ -1,6 +1,7 @@
 export * from './Accordion';
 export * from './AccordionPanel';
 export * from './Anchor';
+export * from './Audio';
 export * from './Avatar';
 export * from './Box';
 export * from './Button';

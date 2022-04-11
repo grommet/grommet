@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { genericStyles } from '../../utils/styles';
+import { normalizeColor } from '../../utils/colors';
 
 const FIT_MAP = {
   cover: 'cover',
@@ -11,18 +12,18 @@ const FIT_MAP = {
 const fitStyle = css`
   flex: 1 1;
   min-height: 0;
-  object-fit: ${props => FIT_MAP[props.fit]};
+  object-fit: ${(props) => FIT_MAP[props.fit]};
 `;
 
 // z-index is for Safari so controls aren't hidden
 const StyledVideo = styled.video`
   max-width: 100%;
   z-index: 1;
-  ${props => props.fit && fitStyle} ::cue {
-    background: ${props => props.theme.video.captions.background};
+  ${(props) => props.fit && fitStyle} ::cue {
+    background: ${(props) => props.theme.video.captions.background};
   }
 
-  ${props => props.theme.video && props.theme.video.extend};
+  ${(props) => props.theme.video && props.theme.video.extend};
 `;
 
 StyledVideo.defaultProps = {};
@@ -51,9 +52,9 @@ const positionStyle = css`
 
 const StyledVideoControls = styled.div`
   flex: 0 0;
-  ${props => props.over && positionStyle} opacity: 0;
+  ${(props) => props.over && positionStyle} opacity: 0;
   transition: opacity 0.3s;
-  ${props => (props.active ? 'opacity: 1;' : 'pointer-events: none')};
+  ${(props) => (props.active ? 'opacity: 1;' : 'pointer-events: none')};
 `;
 
 StyledVideoControls.defaultProps = {};
@@ -63,11 +64,11 @@ const headStyle = css`
   ::after {
     content: '';
     height: 100%;
-    width: ${props => props.theme.global.edgeSize.xsmall};
-    background: ${props =>
+    width: ${(props) => props.theme.global.edgeSize.xsmall};
+    background: ${(props) =>
       normalizeColor(props.theme.video.scrubber.color, props.theme)};
     position: absolute;
-    left: ${props => `${props.value}%`};
+    left: ${(props) => `${props.value}%`};
   }
 `;
 
@@ -75,7 +76,7 @@ const StyledVideoScrubber = styled.div`
   cursor: pointer;
   width: 100%;
   height: 100%;
-  ${props => props.value && headStyle};
+  ${(props) => props.value && headStyle};
 `;
 
 StyledVideoScrubber.defaultProps = {};

@@ -17,7 +17,9 @@ import { Menu } from '../Menu';
 import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
-import { containsFocus, useForwardedRef } from '../../utils';
+import { containsFocus } from '../../utils/DOM';
+import { formatTime } from '../../utils/media';
+import { useForwardedRef } from '../../utils/refs';
 
 import {
   StyledVideo,
@@ -30,19 +32,14 @@ import { VideoPropTypes } from './propTypes';
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
+/*
+  Issues:
+    Double setting button
+    loop, autoPlay
+    controls on docs do not allow object
+    missing a11yTitle
 
-const formatTime = (time) => {
-  let minutes = Math.round(time / 60);
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  let seconds = Math.round(time) % 60;
-  if (seconds < 10) {
-    seconds = `0${seconds}`;
-  }
-  return `${minutes}:${seconds}`;
-};
-
+*/
 const Video = forwardRef(
   (
     {
@@ -80,7 +77,9 @@ const Video = forwardRef(
     const [width, setWidth] = useState();
     const containerRef = useRef();
     const scrubberRef = useRef();
+
     const videoRef = useForwardedRef(ref);
+
     const controls = useMemo(() => {
       let result;
       if (
@@ -182,7 +181,9 @@ const Video = forwardRef(
       }
     }, [captions, height, videoRef, width]);
 
-    const play = useCallback(() => videoRef.current.play(), [videoRef]);
+    const play = useCallback(() => {
+      videoRef.current.play();
+    }, [videoRef]);
 
     const pause = useCallback(() => videoRef.current.pause(), [videoRef]);
 

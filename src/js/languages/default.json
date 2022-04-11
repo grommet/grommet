@@ -1,4 +1,11 @@
 {
+  "audio": {
+    "progressMeter": "audio progress",
+    "scrubber": "scrubber",
+    "pauseButton": "pause",
+    "playButton": "play",
+    "volume": "set volume"
+  },
   "calendar": {
     "previousMove": "Moved to {date}",
     "previous": "Go to {date}",

@@ -18,6 +18,7 @@ import { StatusUnknownSmall } from 'grommet-icons/icons/StatusUnknownSmall';
 import { Subtract } from 'grommet-icons/icons/Subtract';
 import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
+import { VolumeMute } from 'grommet-icons/icons/VolumeMute';
 import { base as iconBase } from 'grommet-icons/themes/base';
 
 import { deepFreeze, deepMerge } from '../utils/object';
@@ -369,6 +370,72 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
       // extend: undefined,
+    },
+    audio: {
+      animation: {
+        open: {
+          type: 'slideLeft',
+          duration: 500,
+          size: 'large',
+        },
+        close: {
+          type: 'slideRight',
+          duration: 500,
+          size: 'large',
+        },
+      },
+      icons: {
+        mute: VolumeMute,
+        pause: Pause,
+        play: Play,
+        volume: Volume,
+        volumeMiddle: VolumeLow,
+        // color: undefined,
+      },
+      controls: {
+        // background: undefined,
+        text: {
+          // color: undefined,
+        },
+        // extend: undefined
+      },
+      drop: {
+        // any props for the volume drop
+        align: { right: 'left' },
+        background: { color: 'transparent' },
+        // background: { color: 'dark-4', opacity: 'strong' },
+        elevation: 'none',
+        // margin: 'none',
+      },
+      // extend: undefined
+      rangeInput: {
+        animation: {
+          type: 'fadeIn',
+          duration: 500,
+          size: 'xlarge',
+        },
+        track: {
+          color: 'accent-2',
+          height: '14px',
+          extend: () => `border-radius: 10px;`,
+          lower: {
+            color: 'graph-0',
+          },
+          upper: {
+            color: 'light-4',
+          },
+        },
+        thumb: {
+          color: 'neutral-2',
+          spacing: '14px',
+        },
+      },
+      scrubber: {
+        color: 'dark-3',
+        head: {
+          color: 'light-4',
+        },
+      },
     },
     avatar: {
       // extend: undefined,
@@ -1679,8 +1746,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         volume: Volume,
         // color: { dark: undefined, light: undefined },
       },
-      // scrubber: { track: { color: undefined } },
       scrubber: {
+        // track: { color: undefined }
         color: 'light-4',
       },
     },
