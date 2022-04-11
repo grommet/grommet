@@ -32,20 +32,18 @@ function Thin({ initialRange = [0, 100], label }) {
   );
 }
 
-function App() {
-  return (
-    // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={...}>
-    <Box pad="small">
-      <Thin label="My Range Selector" />
-    </Box>
-    // </Grommet>
-  );
-}
+export const ThinStory = () => (
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box pad="small">
+    <Thin label="My Range Selector" />
+  </Box>
+  // </Grommet>
+);
 
-render(<App />, document.getElementById('root'));
+// render(<App />, document.getElementById('root'));
 
-export const ThinStory = () => <App />;
+// export const ThinStory = () => <App />;
 
 ThinStory.storyName = 'Thin';
 
