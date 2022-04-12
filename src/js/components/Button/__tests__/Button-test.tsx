@@ -219,7 +219,9 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('focus', () => {
+  test('focus', async () => {
+    const user = userEvent.setup();
+
     const { container } = render(
       <Grommet>
         <Button label="Test focus" onClick={() => {}} />
@@ -231,7 +233,7 @@ describe('Button', () => {
     expect(button).not.toHaveFocus();
     expect(document.body).toHaveFocus();
 
-    userEvent.tab();
+    await user.tab();
 
     expect(button).toHaveFocus();
     expect(document.body).not.toHaveFocus();
