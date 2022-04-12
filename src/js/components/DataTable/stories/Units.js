@@ -83,9 +83,10 @@ const sortableColumns = [
 export const UnitsDataTable = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={grommet}>
-  <Box align="center" gap="medium">
+  <Box align="center">
     <Heading level="3">Table with units in the heading</Heading>
     <DataTable columns={columns} data={DATA} primaryKey={false} />
+    <Heading level="3">Sortable with units in the heading</Heading>
     <DataTable sortable columns={sortableColumns} data={SORTABLE_DATA} />
   </Box>
   // </Grommet>
