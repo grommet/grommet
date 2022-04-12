@@ -39,10 +39,6 @@ export const ThinStory = () => (
   // </Grommet>
 );
 
-// render(<App />, document.getElementById('root'));
-
-// export const ThinStory = () => <App />;
-
 ThinStory.storyName = 'Thin';
 
 export default {
