@@ -6,6 +6,7 @@ const SimpleMenu = () => (
   <Box align="center" pad="large">
     <Menu
       dropProps={{
+        a11yTitle: 'Simple drop content',
         align: { top: 'bottom', left: 'left' },
         elevation: 'xlarge',
       }}

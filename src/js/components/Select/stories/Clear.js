@@ -10,8 +10,8 @@ const ClearTop = () => {
     <Box fill align="center" justify="start" pad="large">
       <Select
         placeholder="Clear Options"
-        multiple
         value={value}
+        multiple
         options={options}
         onChange={({ value: nextValue }) => setValue(nextValue)}
         clear
@@ -20,10 +20,29 @@ const ClearTop = () => {
   );
 };
 
+const ClearBottom = () => {
+  const [value, setValue] = useState();
+  return (
+    <Box fill align="center" justify="start" pad="large">
+      <Select
+        placeholder="Clear Options"
+        value={value}
+        multiple
+        options={options}
+        onChange={({ value: nextValue }) => setValue(nextValue)}
+        clear={{ position: 'bottom' }}
+      />
+    </Box>
+  );
+};
+
 export const Clear = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <ClearTop />
+  <>
+    <ClearTop />
+    <ClearBottom />
+  </>
   // </Grommet>
 );
 

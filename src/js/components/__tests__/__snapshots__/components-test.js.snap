@@ -297,6 +297,7 @@ Object {
       "align": [Function],
       "background": [Function],
       "elevation": [Function],
+      "inline": [Function],
       "margin": [Function],
       "onClickOutside": [Function],
       "onEsc": [Function],
@@ -2375,6 +2376,7 @@ Object {
           },
           "scrubber": Object {
             "color": "light-4",
+            "interval": 10,
           },
         },
         "worldMap": Object {
@@ -2629,6 +2631,7 @@ Object {
       "margin": [Function],
       "messages": [Function],
       "mute": [Function],
+      "skipInterval": [Function],
     },
     "render": [Function],
   },

@@ -115,6 +115,8 @@ const getItemId = (item, index, primaryKey) => {
 const List = React.forwardRef(
   (
     {
+      a11yTitle,
+      'aria-label': ariaLabel,
       action,
       as,
       background,
@@ -242,6 +244,7 @@ const List = React.forwardRef(
           }
         >
           <StyledList
+            aria-label={ariaLabel || a11yTitle}
             ref={listRef}
             as={as || 'ul'}
             itemFocus={itemFocus}

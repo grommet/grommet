@@ -41,7 +41,9 @@ describe('Notification', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('onClose', () => {
+  test('onClose', async () => {
+    const user = userEvent.setup();
+
     const onClose = jest.fn();
     render(
       <Grommet>
@@ -49,7 +51,7 @@ describe('Notification', () => {
       </Grommet>,
     );
 
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(onClose).toBeCalled();
   });
 
@@ -83,7 +85,9 @@ describe('Notification', () => {
     }),
   );
 
-  test('autoClose true', () => {
+  test('autoClose true', async () => {
+    const user = userEvent.setup({ delay: null });
+
     jest.useFakeTimers('modern');
     const onOpen = jest.fn();
     const onClose = jest.fn();
@@ -113,7 +117,7 @@ describe('Notification', () => {
       );
     };
     render(<Test />);
-    userEvent.click(screen.getByRole('button', { name: 'Show Notification' }));
+    await user.click(screen.getByRole('button', { name: 'Show Notification' }));
     expect(screen.getByText('Status Title')).toBeInTheDocument();
     expect(onOpen).toHaveBeenCalled();
     act(() => {
@@ -122,7 +126,9 @@ describe('Notification', () => {
     expect(onClose).toHaveBeenCalled();
   });
 
-  test('autoClose false', () => {
+  test('autoClose false', async () => {
+    const user = userEvent.setup({ delay: null });
+
     jest.useFakeTimers('modern');
     const onOpen = jest.fn();
     const onClose = jest.fn();
@@ -152,7 +158,7 @@ describe('Notification', () => {
       );
     };
     render(<Test />);
-    userEvent.click(screen.getByRole('button', { name: 'Show Notification' }));
+    await user.click(screen.getByRole('button', { name: 'Show Notification' }));
     expect(onOpen).toHaveBeenCalled();
     act(() => {
       jest.advanceTimersByTime(9000);

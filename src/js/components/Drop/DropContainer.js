@@ -36,6 +36,8 @@ const defaultPortalContext = [];
 const DropContainer = forwardRef(
   (
     {
+      a11yTitle,
+      'aria-label': ariaLabel,
       align = defaultAlign,
       background,
       onAlign,
@@ -313,6 +315,7 @@ const DropContainer = forwardRef(
 
     let content = (
       <StyledDrop
+        aria-label={a11yTitle || ariaLabel}
         ref={ref || dropRef}
         as={Box}
         background={background}
