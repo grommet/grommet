@@ -2773,7 +2773,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
       <button
         aria-posinset="1"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 gYfHFH SelectContainer__SelectOption-sc-1wi0ul8-1 hgxEgi"
+        class="StyledButton-sc-323bzc-0 igrvhE SelectContainer__SelectOption-sc-1wi0ul8-1 hgxEgi"
         role="option"
         tabindex="-1"
         type="button"

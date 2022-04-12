@@ -11979,25 +11979,12 @@ exports[`Select search 4`] = `
 `;
 
 exports[`Select search 5`] = `
-<button
-  aria-posinset="2"
-  aria-selected="true"
-  aria-setsize="2"
-  class="StyledButton-sc-323bzc-0 ivBAOA SelectContainer__SelectOption-sc-1wi0ul8-1 klNkVv"
-  role="option"
-  tabindex="0"
-  type="button"
->
-  <div
-    class="StyledBox-sc-13pk1d4-0 ekYZHf"
-  >
-    <span
-      class="StyledText-sc-1sadyjn-0 fuZiZD"
-    >
-      two
-    </span>
-  </div>
-</button>
+<input
+  autocomplete="off"
+  class="StyledTextInput-sc-1x30a0s-0 bUIvzg"
+  type="search"
+  value="o"
+/>
 `;
 
 exports[`Select search and select 1`] = `
