@@ -38088,6 +38088,9 @@ exports[`DataTable units 1`] = `
 }
 
 .c7 {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
   margin-left: 6px;
   font-size: 18px;
   line-height: 24px;
