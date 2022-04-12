@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { AlignType, WidthType } from '../../utils';
+import { GridProps } from '../Grid'
 export interface NameValueListProps {
   align?: AlignType;
   layout?: 'column' | 'grid';
@@ -16,9 +17,9 @@ export interface NameValueListProps {
   };
 }
 export interface NameValueListExtendedProps
-  extends NameValueListProps,
+  extends NameValueListProps, GridProps,
     Omit<JSX.IntrinsicElements['dl'], keyof NameValueListProps> {}
 
-declare const NameValueList: React.FC<NameValueListProps>;
+declare const NameValueList: React.FC<NameValueListExtendedProps>;
 
 export { NameValueList };
