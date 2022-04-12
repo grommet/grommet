@@ -38,12 +38,55 @@ const columns = [
   },
 ];
 
+const SORTABLE_DATA = [
+  {
+    last: 'Lullaby',
+    first: 'Julius',
+    count: '7',
+    percentUsed: '79.3',
+    consumption: '651',
+  },
+  {
+    last: 'Rhodes',
+    first: 'Fender',
+    count: '5',
+    percentUsed: '22.5',
+    consumption: '37',
+  },
+];
+
+const sortableColumns = [
+  {
+    property: 'last',
+    header: 'Last',
+  },
+  {
+    property: 'first',
+    header: 'First',
+  },
+  {
+    property: 'count',
+    header: 'Count',
+  },
+  {
+    property: 'percentUsed',
+    header: 'Percent Used',
+    units: '%',
+  },
+  {
+    property: 'consumption',
+    header: 'Consumption',
+    units: 'TiB',
+  },
+];
+
 export const UnitsDataTable = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={grommet}>
-  <Box align="center" pad="large">
+  <Box align="center" gap="medium">
     <Heading level="3">Table with units in the heading</Heading>
     <DataTable columns={columns} data={DATA} primaryKey={false} />
+    <DataTable sortable columns={sortableColumns} data={SORTABLE_DATA} />
   </Box>
   // </Grommet>
 );

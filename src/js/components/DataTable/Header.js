@@ -278,6 +278,15 @@ const Header = forwardRef(
                 }
               } else content = header;
 
+              if (unitsContent) {
+                content = (
+                  <Box align="baseline" direction="row">
+                    {content}
+                    {unitsContent}
+                  </Box>
+                );
+              }
+
               if (onSort && sortable !== false) {
                 let Icon;
                 if (onSort && sortable !== false) {
@@ -314,14 +323,6 @@ const Header = forwardRef(
                 );
               }
 
-              if (unitsContent) {
-                content = (
-                  <Box align="baseline" direction="row">
-                    {content}
-                    {unitsContent}
-                  </Box>
-                );
-              }
               // content should fill any available space in cell
               content = <Box flex="grow">{content}</Box>;
 
