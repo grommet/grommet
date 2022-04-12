@@ -84,16 +84,29 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var searchRef = useRef();
   var optionsRef = useRef();
   var clearRef = useRef();
+
+  var focusOption = function focusOption(index) {
+    var optionsNode = optionsRef.current;
+
+    if (optionsNode) {
+      var optionNode = optionsNode.children[index];
+
+      if (optionNode) {
+        optionNode.focus();
+      }
+    }
+  };
+
   useEffect(function () {
     var optionsNode = optionsRef.current;
-    if (optionsNode.children && optionsNode.children[activeIndex]) optionsNode.children[activeIndex].focus();
+    if (optionsNode.children) focusOption(activeIndex);
   }, [activeIndex]); // adjust activeIndex when options change
 
   useEffect(function () {
-    if (activeIndex === -1 && search && optionIndexesInValue.length) {
-      setActiveIndex(optionIndexesInValue[0]);
+    if (activeIndex === -1 && optionIndexesInValue.length) {
+      focusOption(optionIndexesInValue[0]);
     }
-  }, [activeIndex, optionIndexesInValue, search]); // set initial focus
+  }, [activeIndex, optionIndexesInValue]); // set initial focus
 
   useEffect(function () {
     // need to wait for Drop to be ready
