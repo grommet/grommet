@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { render } from 'react-dom';
-
 import { Box, RangeSelector, Stack, Text } from 'grommet';
 
 const RANGE_MIN = 0;
