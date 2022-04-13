@@ -280,7 +280,7 @@ const Header = forwardRef(
 
               if (unitsContent) {
                 content = (
-                  <Box align="baseline" direction="row">
+                  <Box justify={align} direction="row">
                     {content}
                     {unitsContent}
                   </Box>
