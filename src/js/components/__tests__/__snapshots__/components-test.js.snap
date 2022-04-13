@@ -1092,6 +1092,7 @@ Object {
           "header": Object {
             "gap": "small",
             "units": Object {
+              "alignSelf": "end",
               "color": "text-xweak",
               "margin": Object {
                 "left": "xsmall",
