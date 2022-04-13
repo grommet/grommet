@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { BoxProps } from '../Box/index';
+import { BoxExtendedProps } from '../Box/index';
 
-declare const Nav: React.FC<BoxProps>;
+declare const Nav: React.FC<BoxExtendedProps>;
 
 export { Nav };

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { AlignType, WidthType } from '../../utils';
 export interface NameValueListProps {
   align?: AlignType;
+  children?: React.ReactNode;
   layout?: 'column' | 'grid';
   nameProps?: {
     align?: AlignType;

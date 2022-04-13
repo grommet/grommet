@@ -4,6 +4,7 @@ import {
   ThemedStyledProps,
 } from 'styled-components';
 import { ReactComponentElement } from 'react';
+import { Icon } from 'grommet-icons';
 
 import {
   BackgroundType,
@@ -1009,8 +1010,8 @@ export interface ThemeType {
       extend?: ExtendType;
     };
     icons?: {
-      down?: React.ReactNode;
-      up?: React.ReactNode;
+      down?: React.ReactNode | Icon;
+      up?: React.ReactNode | Icon;
     };
     extend?: ExtendType;
   };
@@ -1057,11 +1058,11 @@ export interface ThemeType {
     title?: TextProps;
     message?: TextProps;
     close?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
       color?: ColorType;
     };
     critical?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
       global?: {
@@ -1072,7 +1073,7 @@ export interface ThemeType {
       };
     };
     warning?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
       global?: {
@@ -1083,7 +1084,7 @@ export interface ThemeType {
       };
     };
     normal?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
       global?: {
@@ -1094,7 +1095,7 @@ export interface ThemeType {
       };
     };
     info?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
       global?: {
@@ -1105,7 +1106,7 @@ export interface ThemeType {
       };
     };
     unknown?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
       global?: {
@@ -1116,7 +1117,7 @@ export interface ThemeType {
       };
     };
     undefined?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
       global?: {
@@ -1153,8 +1154,8 @@ export interface ThemeType {
     };
     icons?: {
       color?: ColorType;
-      next?: React.ReactNode;
-      previous?: React.ReactNode;
+      next?: React.ReactNode | Icon;
+      previous?: React.ReactNode | Icon;
     };
   };
   paragraph?: {
@@ -1310,8 +1311,8 @@ export interface ThemeType {
     extend?: ExtendType;
     icons?: {
       color?: ColorType;
-      down?: React.ReactNode;
-      up?: React.ReactNode;
+      down?: React.ReactNode | Icon;
+      up?: React.ReactNode | Icon;
       margin?: MarginType;
     };
     options?: {
@@ -1332,7 +1333,7 @@ export interface ThemeType {
       | BoxProps
       | { color?: ColorType }
       | { size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string };
-    icon?: React.ReactNode;
+    icon?: React.ReactNode | Icon;
     size?: {
       xsmall?: string;
       small?: string;
