@@ -18,7 +18,7 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
       // needs to affect the header
       const layer = containerRef.current;
 
-      if (layer && target) {
+      if (layer && target && sticky === 'scrollup') {
         // Get the new Value
         const newValue = target.scrollTop;
         if (threshold - newValue <= 0) {
@@ -46,7 +46,7 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
       window.removeEventListener('resize', updateBounds);
       window.removeEventListener('scroll', updateBounds, true);
     };
-  }, [containerRef]);
+  }, [containerRef, sticky]);
 
   useEffect(() => {
     // threshold inital value set to 0
