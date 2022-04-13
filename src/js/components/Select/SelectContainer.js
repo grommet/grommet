@@ -87,18 +87,27 @@ const SelectContainer = forwardRef(
     const optionsRef = useRef();
     const clearRef = useRef();
 
+    const focusOption = (index) => {
+      const optionsNode = optionsRef.current;
+      if (optionsNode) {
+        const optionNode = optionsNode.children[index];
+        if (optionNode) {
+          optionNode.focus();
+        }
+      }
+    };
+
     useEffect(() => {
       const optionsNode = optionsRef.current;
-      if (optionsNode.children && optionsNode.children[activeIndex])
-        optionsNode.children[activeIndex].focus();
+      if (optionsNode.children) focusOption(activeIndex);
     }, [activeIndex]);
 
     // adjust activeIndex when options change
     useEffect(() => {
-      if (activeIndex === -1 && search && optionIndexesInValue.length) {
-        setActiveIndex(optionIndexesInValue[0]);
+      if (activeIndex === -1 && optionIndexesInValue.length) {
+        focusOption(optionIndexesInValue[0]);
       }
-    }, [activeIndex, optionIndexesInValue, search]);
+    }, [activeIndex, optionIndexesInValue]);
 
     // set initial focus
     useEffect(() => {
@@ -349,6 +358,16 @@ const SelectContainer = forwardRef(
       [activeIndex, selectOption, options],
     );
 
+    const shouldShowClearButton = (position) => {
+      const hasValue = Boolean(multiple ? value.length : value);
+      const showAtPosition =
+        position === 'bottom'
+          ? clear?.position === 'bottom'
+          : clear?.position !== 'bottom';
+
+      return clear && hasValue && showAtPosition;
+    };
+
     const customSearchInput = theme.select.searchInput;
     const SelectTextInput = customSearchInput || TextInput;
     const selectOptionsStyle = theme.select.options
@@ -396,7 +415,7 @@ const SelectContainer = forwardRef(
             ref={optionsRef}
             aria-multiselectable={multiple}
           >
-            {clear && clear.position !== 'bottom' && value && (
+            {shouldShowClearButton('top') && (
               <ClearButton
                 ref={clearRef}
                 clear={clear}
@@ -466,7 +485,6 @@ const SelectContainer = forwardRef(
                       disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}
-                      option={option}
                       onMouseOver={
                         !optionDisabled ? onActiveOption(index) : undefined
                       }
@@ -495,7 +513,7 @@ const SelectContainer = forwardRef(
                 </Box>
               </SelectOption>
             )}
-            {clear && clear.position === 'bottom' && value && (
+            {shouldShowClearButton('bottom') && (
               <ClearButton
                 ref={clearRef}
                 clear={clear}

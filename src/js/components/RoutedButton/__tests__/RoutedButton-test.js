@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { createEvent, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
+import 'regenerator-runtime/runtime';
 
 import { Grommet, RoutedButton } from '../..';
 
@@ -94,7 +95,9 @@ describe('RoutedButton', () => {
     expect(warnSpy).toHaveBeenCalledWith(warning);
   });
 
-  test('RoutedButton skips onClick if right clicked', () => {
+  test('RoutedButton skips onClick if right clicked', async () => {
+    const user = userEvent.setup();
+
     const onClick = jest.fn();
     render(
       <Grommet>
@@ -106,8 +109,10 @@ describe('RoutedButton', () => {
 
     const anchor = screen.getByRole('link');
 
-    userEvent.click(anchor, { ctrlKey: true });
-    userEvent.click(anchor, { metaKey: true });
+    await user.pointer([
+      { target: anchor },
+      { keys: '[MouseRight]', target: anchor },
+    ]);
 
     expect(onClick).not.toHaveBeenCalled();
     expect(warnSpy).toHaveBeenCalledWith(warning);

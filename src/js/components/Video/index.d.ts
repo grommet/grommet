@@ -7,6 +7,18 @@ import {
   Omit,
 } from '../../utils';
 
+type controlsItems =
+  | 'captions'
+  | 'fullScreen'
+  | 'play'
+  | 'pause'
+  | 'volume'
+  | {
+      icon?: React.ReactNode;
+      a11yTitle?: A11yTitleType;
+      onClick?: (...args: any[]) => any;
+    };
+
 export interface VideoProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
@@ -17,14 +29,7 @@ export interface VideoProps {
     | 'below'
     | {
         position?: false | 'over' | 'below';
-        items?: [
-          'captions' | 'fullScreen' | 'play' | 'pause' | 'volume',
-          {
-            icon?: React.ReactNode;
-            a11yTitle?: A11yTitleType;
-            onClick?: () => {};
-          },
-        ];
+        items?: controlsItems[];
       };
   fit?: 'cover' | 'contain';
   gridArea?: GridAreaType;
@@ -42,6 +47,7 @@ export interface VideoProps {
     volumeDown?: string;
   };
   mute?: boolean;
+  skipInterval?: number;
 }
 
 export interface VideoExtendedProps

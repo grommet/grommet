@@ -326,6 +326,20 @@ describe('DataChart', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('offset gap', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart
+          data={data}
+          series={['a', 'c']}
+          offset={{ gap: 'xxsmall' }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('bounds align', () => {
     const { container } = render(
       <Grommet>

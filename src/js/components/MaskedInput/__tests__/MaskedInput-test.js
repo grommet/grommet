@@ -193,6 +193,8 @@ describe('MaskedInput', () => {
   });
 
   test('should not enable to type beyond options via keyboard', async () => {
+    const user = userEvent.setup();
+
     const onChange = jest.fn((event) => event.target.value);
     render(
       <MaskedInput
@@ -209,13 +211,15 @@ describe('MaskedInput', () => {
       />,
     );
 
-    userEvent.type(screen.getByRole('textbox'), 'abbb');
+    await user.type(screen.getByRole('textbox'), 'abbb');
 
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('abb');
   });
 
   test('restrictToOptions=false allows typing beyond options', async () => {
+    const user = userEvent.setup();
+
     const onChange = jest.fn((event) => event.target.value);
     render(
       <MaskedInput
@@ -233,7 +237,7 @@ describe('MaskedInput', () => {
       />,
     );
 
-    userEvent.type(screen.getByRole('textbox'), 'abbb');
+    await user.type(screen.getByRole('textbox'), 'abbb');
 
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('abbb');

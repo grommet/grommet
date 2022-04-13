@@ -84,6 +84,7 @@ const Menu = forwardRef((props, ref) => {
   // need to destructure the align otherwise it will get passed through
   // to DropButton and override prop values
   const { align: themeDropAlign, ...themeDropProps } = theme.menu.drop;
+  const a11y = ariaLabel || a11yTitle;
 
   const align = (dropProps && dropProps.align) || dropAlign || themeDropAlign;
   const controlButtonIndex = useMemo(() => {
@@ -268,9 +269,7 @@ const Menu = forwardRef((props, ref) => {
           // make it accessible at the end of all menu items
           buttonRefs.current[items.length] = r;
         }}
-        a11yTitle={
-          ariaLabel || a11yTitle || format({ id: 'menu.closeMenu', messages })
-        }
+        a11yTitle={a11y || format({ id: 'menu.closeMenu', messages })}
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         hoverIndicator="background"
@@ -302,9 +301,7 @@ const Menu = forwardRef((props, ref) => {
         ref={ref}
         {...rest}
         {...buttonProps}
-        a11yTitle={
-          ariaLabel || a11yTitle || format({ id: 'menu.openMenu', messages })
-        }
+        a11yTitle={a11y || format({ id: 'menu.openMenu', messages })}
         aria-haspopup="menu"
         aria-expanded={isOpen}
         onAlign={setAlignControlMirror}
@@ -332,11 +329,7 @@ const Menu = forwardRef((props, ref) => {
               {alignControlMirror === 'top' && align.top === 'top'
                 ? controlMirror
                 : undefined}
-              <Box
-                overflow="auto"
-                role="menu"
-                a11yTitle={ariaLabel || a11yTitle}
-              >
+              <Box overflow="auto" role="menu" a11yTitle={a11y}>
                 {items.map((item, index) => {
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.

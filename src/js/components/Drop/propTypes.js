@@ -30,6 +30,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]),
+    inline: PropTypes.bool,
     margin: marginProp,
     onClickOutside: PropTypes.func,
     onEsc: PropTypes.func,
