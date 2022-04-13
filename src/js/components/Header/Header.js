@@ -1,12 +1,52 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-import { useForwardedRef } from '../../utils';
+import { findScrollParent, useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 
 const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
   const theme = useContext(ThemeContext);
-  const containerRef = useForwardedRef(ref);
   const [stickyStyles, setStickyStyles] = useState();
+  const containerRef = useForwardedRef(ref);
+  useEffect(() => {
+    // threshold inital value set to 0
+    let threshold = 0;
+    // number of pixels the document is currently scrolled
+    const updateBounds = () => {
+      // target is its scroll parent
+      const target = findScrollParent(containerRef.current);
+      // affects StyledLayer
+      // needs to affect the header
+      const layer = containerRef.current;
+
+      if (layer && target) {
+        // Get the new Value
+        const newValue = target.scrollTop;
+        if (threshold - newValue <= 0) {
+          layer.style.left = '';
+          layer.style.top = '';
+          layer.style.bottom = '';
+          layer.style.width = '';
+        } else if (threshold - newValue > 0) {
+          const targetRect = target.getBoundingClientRect();
+          console.log(targetRect);
+          // ensure that layer moves with the target
+          layer.style.position = 'sticky';
+          layer.style.top = `${targetRect.top}px`;
+        }
+        // Update threshold
+        threshold = newValue;
+      }
+    };
+
+    updateBounds();
+    window.addEventListener('resize', updateBounds);
+    window.addEventListener('scroll', updateBounds, true);
+
+    return () => {
+      window.removeEventListener('resize', updateBounds);
+      window.removeEventListener('scroll', updateBounds, true);
+    };
+  }, [containerRef]);
 
   useEffect(() => {
     // threshold inital value set to 0
@@ -31,7 +71,7 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
         left: `${containerRef.current.getBoundingClientRect().left}px`,
         right: `${containerRef.current.getBoundingClientRect().right}px`,
         zIndex: `${theme.header?.sticky?.zIndex}`,
-        position: 'fixed',
+        position: 'sticky',
         transition: 'top 0.6s',
         top:
           scrollY < lastScrollY
@@ -57,27 +97,19 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
 
   if (sticky === 'scrollup') {
     return (
-      <>
-        {/* This Box is needed to push down content
-        so the content is not cut off by the Sticky Header */}
-        <Box
-          height={stickyStyles?.height}
-          width={stickyStyles && stickyStyles.width}
-        />
-        <Box
-          align="center"
-          as="header"
-          direction="row"
-          height={stickyStyles && stickyStyles.height}
-          width={stickyStyles && stickyStyles.width}
-          flex={false}
-          justify="between"
-          gap="medium"
-          style={stickyStyles}
-          ref={containerRef}
-          {...rest}
-        />
-      </>
+      <Box
+        align="center"
+        as="header"
+        direction="row"
+        height={stickyStyles && stickyStyles.height}
+        width={stickyStyles && stickyStyles.width}
+        flex={false}
+        justify="between"
+        gap="medium"
+        style={stickyStyles}
+        ref={containerRef}
+        {...rest}
+      />
     );
   }
   return (
@@ -93,6 +125,7 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
     />
   );
 });
+
 Header.displayName = 'Header';
 
 export { Header };
