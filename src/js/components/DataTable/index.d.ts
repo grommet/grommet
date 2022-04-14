@@ -85,6 +85,7 @@ export interface DataTableProps<TRowType = any> {
 
   // Data
   data?: TRowType[];
+  disabled?: (string | number)[];
   groupBy?:
     | string
     | {

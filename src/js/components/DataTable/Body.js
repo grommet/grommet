@@ -26,6 +26,7 @@ const Row = memo(
     datum,
     selected,
     onSelect,
+    isDisabled,
     isSelected,
     rowDetails,
     isRowExpanded,
@@ -43,7 +44,7 @@ const Row = memo(
         size={size}
         active={active}
         onClick={
-          onClickRow
+          onClickRow && !isDisabled
             ? (event) => {
                 // extract from React's synthetic event pool
                 event.persist();
@@ -55,7 +56,7 @@ const Row = memo(
             : undefined
         }
         onMouseEnter={
-          onClickRow
+          onClickRow && !isDisabled
             ? () => {
                 setActive(index);
               }
@@ -81,7 +82,7 @@ const Row = memo(
                     isSelected ? 'unselect' : 'select'
                   } ${primaryValue}`}
                   checked={isSelected}
-                  disabled={!onSelect}
+                  disabled={isDisabled || !onSelect}
                   onChange={() => {
                     if (isSelected) {
                       onSelect(selected.filter((s) => s !== primaryValue));
@@ -148,6 +149,7 @@ const Body = forwardRef(
       cellProps: cellPropsProp,
       columns,
       data,
+      disabled,
       onMore,
       replace,
       onClickRow,
@@ -182,7 +184,9 @@ const Body = forwardRef(
               }
             : undefined
         }
+        // TODO: skip disabled
         onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
+        // TODO: skip disabled
         onDown={
           onClickRow && data.length
             ? () => {
@@ -223,6 +227,7 @@ const Body = forwardRef(
                 ? datumValue(datum, primaryProperty)
                 : undefined;
               const isSelected = selected && selected.includes(primaryValue);
+              const isDisabled = disabled && disabled.includes(primaryValue);
               const isRowExpanded = rowExpand && rowExpand.includes(index);
               const cellProps = normalizeRowCellProps(
                 rowProps,
@@ -237,6 +242,7 @@ const Body = forwardRef(
                   rowRef={rowRef}
                   cellProps={cellProps}
                   primaryValue={primaryValue}
+                  isDisabled={isDisabled}
                   isSelected={isSelected}
                   isRowExpanded={isRowExpanded}
                   index={index}

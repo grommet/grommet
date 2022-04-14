@@ -953,6 +953,25 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('disabled', () => {
+    const onSelect = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          primaryKey="a"
+          disabled={['alpha']}
+          select={['beta']}
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByLabelText('select alpha'));
+    expect(onSelect).not.toBeCalled();
+  });
+
   test('custom theme', () => {
     const customTheme = {
       dataTable: {
