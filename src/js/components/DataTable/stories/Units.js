@@ -67,15 +67,18 @@ const sortableColumns = [
   {
     property: 'count',
     header: 'Count',
+    align: 'end',
   },
   {
     property: 'percentUsed',
     header: 'Percent Used',
+    align: 'end',
     units: '%',
   },
   {
     property: 'consumption',
     header: 'Consumption',
+    align: 'end',
     units: 'TiB',
   },
 ];
