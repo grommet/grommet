@@ -1253,6 +1253,37 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
     },
+    pageHeader: {
+      areas: [
+        ['context', 'context'],
+        ['title', 'actions'],
+        ['subtitle', 'empty'],
+      ],
+      gap: { row: 'xsmall', column: 'medium' },
+      subtitle: {
+        // any paragraph props
+        size: 'large',
+        margin: 'none',
+      },
+      title: {
+        // any heading props
+        size: 'small',
+        margin: 'none',
+      },
+      // not definitive column definitions, just exploring
+      small: {
+        columns: [['small', 'flex'], 'auto'],
+        rows: ['auto', 'auto', 'auto'],
+      },
+      medium: {
+        columns: [['medium', 'flex'], 'auto'],
+        rows: ['auto', 'auto', 'auto'],
+      },
+      large: {
+        columns: [['medium', 'flex'], 'auto'],
+        rows: ['auto', 'auto', 'auto'],
+      },
+    },
     pagination: {
       button: {
         active: {

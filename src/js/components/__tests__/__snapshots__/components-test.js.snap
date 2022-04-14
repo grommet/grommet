@@ -640,6 +640,10 @@ Object {
     "_currentValue2": Object {},
     "_threadCount": 0,
   },
+  "PageHeader": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "Pagination": Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
@@ -1914,6 +1918,76 @@ Object {
               "max": "xxlarge",
               "min": "medium",
             },
+          },
+        },
+        "pageHeader": Object {
+          "areas": Array [
+            Array [
+              "context",
+              "context",
+            ],
+            Array [
+              "title",
+              "actions",
+            ],
+            Array [
+              "subtitle",
+              "empty",
+            ],
+          ],
+          "gap": Object {
+            "column": "medium",
+            "row": "xsmall",
+          },
+          "large": Object {
+            "columns": Array [
+              Array [
+                "medium",
+                "flex",
+              ],
+              "auto",
+            ],
+            "rows": Array [
+              "auto",
+              "auto",
+              "auto",
+            ],
+          },
+          "medium": Object {
+            "columns": Array [
+              Array [
+                "medium",
+                "flex",
+              ],
+              "auto",
+            ],
+            "rows": Array [
+              "auto",
+              "auto",
+              "auto",
+            ],
+          },
+          "small": Object {
+            "columns": Array [
+              Array [
+                "small",
+                "flex",
+              ],
+              "auto",
+            ],
+            "rows": Array [
+              "auto",
+              "auto",
+              "auto",
+            ],
+          },
+          "subtitle": Object {
+            "margin": "none",
+            "size": "large",
+          },
+          "title": Object {
+            "margin": "none",
+            "size": "small",
           },
         },
         "pagination": Object {

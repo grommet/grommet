@@ -1,0 +1,14 @@
+import PropTypes from 'prop-types';
+import { genericProps } from '../../utils/general-prop-types';
+
+let PropType = {};
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    ...genericProps,
+    actions: PropTypes.element,
+    context: PropTypes.element,
+    subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  };
+}
+export const PageHeaderPropTypes = PropType;
