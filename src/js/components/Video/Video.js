@@ -161,12 +161,16 @@ const Video = forwardRef(
         const { textTracks } = video;
         if (textTracks.length > 0) {
           if (textTracks.length === 1) {
+            // only on track was provided
             const track = textTracks[0];
             const active = track.mode === 'showing';
             if (!captions || !captions[0] || captions[0].active !== active) {
+              // get label if provided and if the track is active
+              // (currently showing) or not
               setCaptions([{ label: track.label, active }]);
             }
           } else {
+            // multiple tracks provided
             const nextCaptions = [];
             let set = false;
             for (let i = 0; i < textTracks.length; i += 1) {
@@ -290,7 +294,9 @@ const Video = forwardRef(
         a11yTitle: caption.label || 'video.captions',
         onClick: () => {
           showCaptions(caption.active ? -1 : index);
+          // set the currently selected captions to active
           captions[index].active = !captions[index].active;
+          // set other captions to active=false
           for (let i = 0; i < captions.length; i += 1)
             if (i !== index && captions[i].active) captions[i].active = false;
         },
