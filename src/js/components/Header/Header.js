@@ -20,7 +20,6 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
           container.style.top = `-${
             container.getBoundingClientRect().height
           }px`;
-          container.style.position = '';
           container.style.zIndex = '';
         } else if (scrollTop - nextScrollTop > 0) {
           // ensure that container moves with the target

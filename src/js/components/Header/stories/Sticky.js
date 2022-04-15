@@ -53,6 +53,9 @@ export const Sticky = () => {
             />
           </Nav>
         </Header>
+        <Box pad="large" align="center">
+          <Button label="Show me the Layer" onClick={onOpen} primary />
+        </Box>
         <Paragraph>
           To maximize screen real-estate, the Header on this page scrolls out of
           view as the user moves down the page. However if the user scrolls
@@ -98,9 +101,6 @@ export const Sticky = () => {
           faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt.
         </Paragraph>
       </PageContent>
-      <Box pad="large" align="center">
-        <Button label="Show me the Layer" onClick={onOpen} primary />
-      </Box>
       {open && (
         <Layer position="right" onClickOutside={onClose} onEsc={onClose}>
           <Box fill="vertical" overflow="auto">
