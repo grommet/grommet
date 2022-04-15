@@ -112,7 +112,7 @@ export const Sticky = () => {
               <Heading margin="none" level={2} size="small">
                 Add Monitor
               </Heading>
-              <Button icon={<FormClose />} />
+              <Button icon={<FormClose />} onClick={onClose} />
             </Header>
             <Box pad={{ horizontal: 'medium' }}>
               <Paragraph>
