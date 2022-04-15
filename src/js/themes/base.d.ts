@@ -821,7 +821,9 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   header?: {
-    zIndex?: string;
+    sticky?: {
+      zIndex?: string;
+    };
   };
   heading?: {
     color?: ColorType;
