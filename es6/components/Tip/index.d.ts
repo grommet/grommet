@@ -3,6 +3,7 @@ import * as React from 'react';
 import { DropProps } from '../Drop';
 
 export interface TipProps {
+  children?: React.ReactNode;
   content?: React.ReactNode;
   dropProps?: DropProps;
   plain?: boolean;

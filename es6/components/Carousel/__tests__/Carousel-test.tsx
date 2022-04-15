@@ -47,7 +47,8 @@ describe('Carousel', () => {
   });
 
   test('arrow navigation: next', async () => {
-    const user = userEvent.setup();
+    jest.useFakeTimers('modern');
+    const user = userEvent.setup({ delay: null });
 
     render(
       <Grommet>
@@ -63,16 +64,18 @@ describe('Carousel', () => {
      * - Simulating click on the next arrow button
      * - Expecting "Slide Two" to be visible
      */
-    const nextButton = screen.getByLabelText('Next');
+    const nextButton = screen.getByRole('button', { name: /Go to slide 2/i });
     await user.click(nextButton);
-    await waitFor(() => {
-      expect(getSlideOne()).not.toBeVisible();
-      expect(getSlideTwo()).toBeVisible();
+    act(() => {
+      jest.advanceTimersByTime(1000);
     });
+    expect(getSlideOne()).not.toBeVisible();
+    expect(getSlideTwo()).toBeVisible();
   });
 
   test('arrow navigation: previous', async () => {
-    const user = userEvent.setup();
+    jest.useFakeTimers('modern');
+    const user = userEvent.setup({ delay: null });
 
     render(
       <Grommet>
@@ -89,16 +92,20 @@ describe('Carousel', () => {
      * - Simulating click on the previous arrow button
      * - Expecting "Slide One" to be visible
      */
-    const previousButton = screen.getByLabelText('Previous');
-    await user.click(previousButton);
-    await waitFor(() => {
-      expect(getSlideTwo()).not.toBeVisible();
-      expect(getSlideOne()).toBeVisible();
+    const previousButton = screen.getByRole('button', {
+      name: /Go to slide 1/i,
     });
+    await user.click(previousButton);
+    act(() => {
+      jest.advanceTimersByTime(1000);
+    });
+    expect(getSlideTwo()).not.toBeVisible();
+    expect(getSlideOne()).toBeVisible();
   });
 
   test('selector navigation: forward', async () => {
-    const user = userEvent.setup();
+    jest.useFakeTimers('modern');
+    const user = userEvent.setup({ delay: null });
 
     render(
       <Grommet>
@@ -115,16 +122,20 @@ describe('Carousel', () => {
      * - Simulating click on the 3rd selector button
      * - Expecting "Slide Three" to be visible
      */
-    const thirdSelector = screen.getByLabelText('Jump to slide 3');
-    await user.click(thirdSelector);
-    await waitFor(() => {
-      expect(getSlideOne()).not.toBeVisible();
-      expect(getSlideThree()).toBeVisible();
+    const thirdSelector = screen.getByRole('button', {
+      name: /Jump to slide 3/i,
     });
+    await user.click(thirdSelector);
+    act(() => {
+      jest.advanceTimersByTime(1000);
+    });
+    expect(getSlideOne()).not.toBeVisible();
+    expect(getSlideThree()).toBeVisible();
   });
 
   test('selector navigation: backward', async () => {
-    const user = userEvent.setup();
+    jest.useFakeTimers('modern');
+    const user = userEvent.setup({ delay: null });
 
     render(
       <Grommet>
@@ -141,12 +152,15 @@ describe('Carousel', () => {
      * - Simulating click on the 1st selector button
      * - Expecting "Slide One" to be visible
      */
-    const firstSelector = screen.getByLabelText('Jump to slide 1');
-    await user.click(firstSelector);
-    await waitFor(() => {
-      expect(getSlideThree()).not.toBeVisible();
-      expect(getSlideOne()).toBeVisible();
+    const firstSelector = screen.getByRole('button', {
+      name: /Jump to slide 1/i,
     });
+    await user.click(firstSelector);
+    act(() => {
+      jest.advanceTimersByTime(1000);
+    });
+    expect(getSlideThree()).not.toBeVisible();
+    expect(getSlideOne()).toBeVisible();
   });
 
   test('play', async () => {

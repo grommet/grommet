@@ -5,8 +5,6 @@ exports["default"] = exports.ThinStory = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = require("react-dom");
-
 var _grommet = require("grommet");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -48,7 +46,7 @@ function Thin(_ref) {
   }, range[0] + "% - " + range[1] + "%")));
 }
 
-function App() {
+var ThinStory = function ThinStory() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -60,12 +58,6 @@ function App() {
     })) // </Grommet>
 
   );
-}
-
-(0, _reactDom.render)( /*#__PURE__*/_react["default"].createElement(App, null), document.getElementById('root'));
-
-var ThinStory = function ThinStory() {
-  return /*#__PURE__*/_react["default"].createElement(App, null);
 };
 
 exports.ThinStory = ThinStory;

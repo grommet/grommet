@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { render } from 'react-dom';
 import { Box, RangeSelector, Stack, Text } from 'grommet';
 var RANGE_MIN = 0;
 var RANGE_MAX = 100;
@@ -36,7 +35,7 @@ function Thin(_ref) {
   }, range[0] + "% - " + range[1] + "%")));
 }
 
-function App() {
+export var ThinStory = function ThinStory() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -48,11 +47,6 @@ function App() {
     })) // </Grommet>
 
   );
-}
-
-render( /*#__PURE__*/React.createElement(App, null), document.getElementById('root'));
-export var ThinStory = function ThinStory() {
-  return /*#__PURE__*/React.createElement(App, null);
 };
 ThinStory.storyName = 'Thin';
 export default {

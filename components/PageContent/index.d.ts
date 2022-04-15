@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BoxProps } from '../Box/index';
+import { BoxExtendedProps } from '../Box/index';
 import { BackgroundObject } from '../../utils';
 
 type PageBackground = BackgroundObject & {
@@ -12,7 +12,7 @@ export interface PageContentProps {
 
 export interface PageContentExtendedProps
   extends PageContentProps,
-    Omit<BoxProps, 'background'> {}
+    Omit<BoxExtendedProps, 'background'> {}
 
 declare const PageContent: React.FC<PageContentExtendedProps>;
 
