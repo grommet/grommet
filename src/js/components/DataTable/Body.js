@@ -172,25 +172,14 @@ const Body = forwardRef(
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
 
-    const isDisabled = (datum, primaryValueArg) => {
-      if (disabled) {
-        const primaryValue =
-          // list item renderer already has the primaryValue
-          primaryValueArg ??
-          // keyboard handlers don't already have the primaryValue
-          (primaryProperty && datumValue(datum, primaryProperty)) ??
-          undefined;
-        if (primaryValue !== undefined && disabled.includes(primaryValue))
-          return true;
-      }
-      return false;
-    };
-
     return (
       <Keyboard
         onEnter={
           // active is undefined if user never used the keyboard
-          onClickRow && active >= 0 && !isDisabled(data[active])
+          onClickRow &&
+          active >= 0 &&
+          (!disabled ||
+            !disabled.includes(datumValue(data[active], primaryProperty)))
             ? (event) => {
                 event.persist();
                 const adjustedEvent = event;
@@ -234,6 +223,7 @@ const Body = forwardRef(
                 ? datumValue(datum, primaryProperty)
                 : undefined;
               const isSelected = selected && selected.includes(primaryValue);
+              const isDisabled = disabled && disabled.includes(primaryValue);
               const isRowExpanded = rowExpand && rowExpand.includes(index);
               const cellProps = normalizeRowCellProps(
                 rowProps,
@@ -248,7 +238,7 @@ const Body = forwardRef(
                   rowRef={rowRef}
                   cellProps={cellProps}
                   primaryValue={primaryValue}
-                  isDisabled={isDisabled(datum, primaryValue)}
+                  isDisabled={isDisabled}
                   isSelected={isSelected}
                   isRowExpanded={isRowExpanded}
                   index={index}

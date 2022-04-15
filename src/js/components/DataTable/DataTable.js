@@ -476,6 +476,7 @@ const DataTable = ({
             cellProps={cellProps.header}
             columns={columns}
             data={adjustedData}
+            disabled={disabled}
             fill={fill}
             filtering={filtering}
             filters={filters}
