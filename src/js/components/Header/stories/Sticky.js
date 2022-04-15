@@ -27,6 +27,8 @@ export const Sticky = () => {
     // Your submission logic here
   };
   return (
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
     <Page kind="narrow">
       <PageContent>
         <Header
@@ -145,7 +147,6 @@ export const Sticky = () => {
         </Layer>
       )}
     </Page>
-
     // </Grommet>
   );
 };
