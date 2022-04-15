@@ -161,7 +161,7 @@ const Video = forwardRef(
         const { textTracks } = video;
         if (textTracks.length > 0) {
           if (textTracks.length === 1) {
-            // only on track was provided
+            // only one track was provided
             const track = textTracks[0];
             const active = track.mode === 'showing';
             if (!captions || !captions[0] || captions[0].active !== active) {
