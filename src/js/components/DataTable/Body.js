@@ -190,7 +190,7 @@ const Body = forwardRef(
       <Keyboard
         onEnter={
           // active is undefined if user never used the keyboard
-          onClickRow && active >= 0
+          onClickRow && active >= 0 && !isDisabled(data[active])
             ? (event) => {
                 event.persist();
                 const adjustedEvent = event;
@@ -199,33 +199,10 @@ const Body = forwardRef(
               }
             : undefined
         }
-        onUp={
-          onClickRow && active
-            ? () => {
-                let nextActive = active - 1;
-                // skip disabled
-                while (nextActive > 0 && isDisabled(data[nextActive]))
-                  nextActive -= 1;
-                if (nextActive >= 0)
-                  // first might be disabled
-                  setActive(nextActive);
-              }
-            : undefined
-        }
+        onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
         onDown={
           onClickRow && data.length && active < data.length - 1
-            ? () => {
-                let nextActive = (active ?? -1) + 1;
-                // skip disabled
-                while (
-                  nextActive <= data.length - 1 &&
-                  isDisabled(data[nextActive])
-                )
-                  nextActive += 1;
-                if (nextActive <= data.length - 1)
-                  // last might be disabled
-                  setActive(nextActive);
-              }
+            ? () => setActive((active ?? -1) + 1)
             : undefined
         }
       >
