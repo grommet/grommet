@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BoxTypes } from '../Box/index';
+import { BoxExtendedProps } from '../Box';
 
 export interface HeaderProps {
   sticky?: 'scrollup';
