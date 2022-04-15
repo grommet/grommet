@@ -460,7 +460,7 @@ const Video = forwardRef(
                 openMenu: format({ id: 'video.openMenu', messages }),
                 closeMenu: format({ id: 'video.closeMenu', messages }),
               }}
-              items={controlsMenuItems}
+              items={[...controlsMenuItems]}
               onFocus={() => setInteracting(true)}
             />
           </Box>
