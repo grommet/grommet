@@ -687,31 +687,31 @@ describe('Form uncontrolled', () => {
       );
 
     // both fields have required error message
-    getByText('submit').focus();
+    act(() => getByText('submit').focus());
     fireEvent.click(getByText('submit'));
     expect(queryAllByText('required')).toHaveLength(2);
 
     // one fields has required error message
-    getByPlaceholderText('name').focus();
+    act(() => getByPlaceholderText('name').focus());
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'Input has changed' },
     });
-    getByText('submit').focus();
+    act(() => getByText('submit').focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(queryAllByText('required')).toHaveLength(1);
 
     // name field has new error and email field still has required error message
-    getByPlaceholderText('name').focus();
+    act(() => getByPlaceholderText('name').focus());
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'a' },
     });
-    getByText('submit').focus();
+    act(() => getByText('submit').focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(queryByText('required')).toBeTruthy();
     expect(queryByText('must be >1 character')).toBeTruthy();
 
     //  new value in name does not remove the error message in email
-    getByPlaceholderText('name').focus();
+    act(() => getByPlaceholderText('name').focus());
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'abc' },
     });
@@ -1382,8 +1382,8 @@ describe('Form uncontrolled', () => {
     const moodField = getByPlaceholderText('test mood');
 
     // focus in and out of mood, should fail validation
-    moodField.focus();
-    toggleField.focus();
+    act(() => moodField.focus());
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
@@ -1393,18 +1393,18 @@ describe('Form uncontrolled', () => {
     );
 
     // set mood, should pass validation
-    moodField.focus();
+    act(() => moodField.focus());
     fireEvent.change(moodField, { target: { value: 'testy' } });
-    toggleField.focus();
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({ errors: {}, infos: {} }),
     );
 
     // clear mood, should fail validation
-    moodField.focus();
+    act(() => moodField.focus());
     fireEvent.change(moodField, { target: { value: '' } });
-    toggleField.focus();
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
@@ -1416,8 +1416,8 @@ describe('Form uncontrolled', () => {
     // remove mood, should clear validation
     fireEvent.click(toggleField);
 
-    nameField.focus();
-    toggleField.focus();
+    act(() => nameField.focus());
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({ errors: {}, infos: {} }),
@@ -1479,9 +1479,9 @@ describe('Form uncontrolled', () => {
 
     const nameField = getByPlaceholderText('test name');
 
-    nameField.focus();
+    act(() => nameField.focus());
     fireEvent.change(nameField, { target: { value: 'John' } });
-    getByText('Focus out').focus();
+    act(() => getByText('Focus out').focus());
 
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(

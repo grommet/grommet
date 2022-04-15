@@ -27,15 +27,14 @@ test('extends default theme', () => {
 
 test('extends default theme twice', () => {
   extendDefaultTheme({ global: { colors: { brand: '#ff0000' } } });
-  const { container, rerender, unmount } = render(<Box background="brand" />);
+  const { rerender, asFragment } = render(<Box background="brand" />);
 
-  expect(container.firstChild).toMatchSnapshot();
-  unmount();
+  expect(asFragment()).toMatchSnapshot();
 
   extendDefaultTheme({ global: { colors: { brand: '#0000ff' } } });
   rerender(<Box background="brand" />);
 
-  expect(container.firstChild).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('uses Grommet theme instead of default', () => {

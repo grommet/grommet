@@ -45,7 +45,8 @@ exports[`extends default theme 1`] = `
 `;
 
 exports[`extends default theme twice 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -62,12 +63,14 @@ exports[`extends default theme twice 1`] = `
 }
 
 <div
-  class="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;
 
 exports[`extends default theme twice 2`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -84,8 +87,9 @@ exports[`extends default theme twice 2`] = `
 }
 
 <div
-  class="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;
 
 exports[`leverages default theme 1`] = `
