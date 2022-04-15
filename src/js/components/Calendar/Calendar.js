@@ -838,7 +838,11 @@ const Calendar = forwardRef(
               }}
               isInRange={inRange}
               isSelected={selected}
-              focus={!focus && active?.getTime() === day.getTime()}
+              focus={
+                focus !== undefined &&
+                !focus &&
+                active?.getTime() === day.getTime()
+              }
               otherMonth={day.getMonth() !== reference.getMonth()}
               size={size}
               fill={fill}
@@ -1000,8 +1004,8 @@ const Calendar = forwardRef(
 
                 // caller focused onto Calendar via keyboard
                 if (!mouseDown && !focus) {
-                  setActive(new Date(firstDayInMonth));
                   setFocus(false);
+                  setActive(new Date(firstDayInMonth));
                 }
               }}
               onBlur={() => {
