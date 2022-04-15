@@ -287,6 +287,7 @@ const Video = forwardRef(
         ),
         label: caption.label,
         active: caption.active,
+        a11yTitle: caption.label || 'video.captions',
         onClick: () => {
           showCaptions(caption.active ? -1 : index);
           captions[index].active = !captions[index].active;
@@ -459,7 +460,7 @@ const Video = forwardRef(
                 openMenu: format({ id: 'video.openMenu', messages }),
                 closeMenu: format({ id: 'video.closeMenu', messages }),
               }}
-              items={[...controlsMenuItems]}
+              items={controlsMenuItems}
               onFocus={() => setInteracting(true)}
             />
           </Box>
