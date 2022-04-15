@@ -294,11 +294,17 @@ const Video = forwardRef(
         a11yTitle: caption.label || 'video.captions',
         onClick: () => {
           showCaptions(caption.active ? -1 : index);
-          // set the currently selected captions to active
-          captions[index].active = !captions[index].active;
-          // set other captions to active=false
-          for (let i = 0; i < captions.length; i += 1)
-            if (i !== index && captions[i].active) captions[i].active = false;
+          let updatedCaptions = [];
+          for (let i = 0; i < captions.length; i += 1) {
+            updatedCaptions.push(captions[i]);
+            // set other captions to active=false
+            if (i !== index && updatedCaptions[i].active)
+              updatedCaptions[i].active = false;
+            // set the currently selected captions to active
+            else if (i === index)
+              updatedCaptions[i].active = !captions[index].active;
+          }
+          setCaptions(updatedCaptions);
         },
       }));
 
