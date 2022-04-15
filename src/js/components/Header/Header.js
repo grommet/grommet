@@ -30,10 +30,12 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
       }
     };
 
-    updateScrollDir();
-    window.addEventListener('resize', updateScrollDir);
-    window.addEventListener('scroll', updateScrollDir, true);
-
+    if (sticky === 'scrollup') {
+      console.log('hello');
+      updateScrollDir();
+      window.addEventListener('resize', updateScrollDir);
+      window.addEventListener('scroll', updateScrollDir, true);
+    }
     return () => {
       window.removeEventListener('resize', updateScrollDir);
       window.removeEventListener('scroll', updateScrollDir, true);
