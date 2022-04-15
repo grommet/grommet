@@ -172,9 +172,24 @@ const Body = forwardRef(
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
 
+    const isDisabled = (datum, primaryValueArg) => {
+      if (disabled) {
+        const primaryValue =
+          // list item renderer already has the primaryValue
+          primaryValueArg ??
+          // keyboard handlers don't already have the primaryValue
+          (primaryProperty && datumValue(datum, primaryProperty)) ??
+          undefined;
+        if (primaryValue !== undefined && disabled.includes(primaryValue))
+          return true;
+      }
+      return false;
+    };
+
     return (
       <Keyboard
         onEnter={
+          // active is undefined if user never used the keyboard
           onClickRow && active >= 0
             ? (event) => {
                 event.persist();
@@ -184,15 +199,32 @@ const Body = forwardRef(
               }
             : undefined
         }
-        // TODO: skip disabled
-        onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
-        // TODO: skip disabled
-        onDown={
-          onClickRow && data.length
+        onUp={
+          onClickRow && active
             ? () => {
-                setActive(
-                  active >= 0 ? Math.min(active + 1, data.length - 1) : 0,
-                );
+                let nextActive = active - 1;
+                // skip disabled
+                while (nextActive > 0 && isDisabled(data[nextActive]))
+                  nextActive -= 1;
+                if (nextActive >= 0)
+                  // first might be disabled
+                  setActive(nextActive);
+              }
+            : undefined
+        }
+        onDown={
+          onClickRow && data.length && active < data.length - 1
+            ? () => {
+                let nextActive = (active ?? -1) + 1;
+                // skip disabled
+                while (
+                  nextActive <= data.length - 1 &&
+                  isDisabled(data[nextActive])
+                )
+                  nextActive += 1;
+                if (nextActive <= data.length - 1)
+                  // last might be disabled
+                  setActive(nextActive);
               }
             : undefined
         }
@@ -201,9 +233,7 @@ const Body = forwardRef(
           ref={ref}
           size={size}
           tabIndex={onClickRow ? 0 : undefined}
-          onFocus={() =>
-            !active && active !== 0 ? setActive(lastActive) : setActive(active)
-          }
+          onFocus={() => setActive(active ?? lastActive ?? 0)}
           onBlur={() => {
             setLastActive(active);
             setActive(undefined);
@@ -227,7 +257,6 @@ const Body = forwardRef(
                 ? datumValue(datum, primaryProperty)
                 : undefined;
               const isSelected = selected && selected.includes(primaryValue);
-              const isDisabled = disabled && disabled.includes(primaryValue);
               const isRowExpanded = rowExpand && rowExpand.includes(index);
               const cellProps = normalizeRowCellProps(
                 rowProps,
@@ -242,7 +271,7 @@ const Body = forwardRef(
                   rowRef={rowRef}
                   cellProps={cellProps}
                   primaryValue={primaryValue}
-                  isDisabled={isDisabled}
+                  isDisabled={isDisabled(datum, primaryValue)}
                   isSelected={isSelected}
                   isRowExpanded={isRowExpanded}
                   index={index}
