@@ -294,7 +294,7 @@ const Video = forwardRef(
         a11yTitle: caption.label || 'video.captions',
         onClick: () => {
           showCaptions(caption.active ? -1 : index);
-          let updatedCaptions = [];
+          const updatedCaptions = [];
           for (let i = 0; i < captions.length; i += 1) {
             updatedCaptions.push(captions[i]);
             // set other captions to active=false
