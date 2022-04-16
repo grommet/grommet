@@ -31,14 +31,15 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
     };
 
     if (sticky === 'scrollup') {
-      console.log('hello');
       updateScrollDir();
       window.addEventListener('resize', updateScrollDir);
       window.addEventListener('scroll', updateScrollDir, true);
     }
     return () => {
-      window.removeEventListener('resize', updateScrollDir);
-      window.removeEventListener('scroll', updateScrollDir, true);
+      if (sticky === 'scrollup') {
+        window.removeEventListener('resize', updateScrollDir);
+        window.removeEventListener('scroll', updateScrollDir, true);
+      }
     };
   }, [headerRef, sticky, theme.header?.sticky?.zIndex]);
 
