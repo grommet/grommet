@@ -145,7 +145,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
     fill: "none",
     d: "M6,12 L18,12"
   }))));
-  var side = reverse ? 'left' : 'right';
+  var side = !reverse !== !theme.dir ? 'left' : 'right';
   var checkBoxNode = /*#__PURE__*/React.createElement(StyledCheckBox, _extends({
     as: Box,
     align: "center",

@@ -59,8 +59,10 @@ Object.setPrototypeOf(StyledCheckBoxContainer.defaultProps, defaultProps);
 var StyledCheckBoxInput = styled.input.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxInput",
   componentId: "sc-1dbk5ju-2"
-})(["opacity:0;-moz-appearance:none;width:0;height:0;margin:0;", ":checked + span > span{left:calc( ", " - ", " );background:", ";}"], function (props) {
+})(["opacity:0;-moz-appearance:none;width:0;height:0;margin:0;", ":checked + span > span{", ":calc( ", " - ", " );background:", ";}"], function (props) {
   return !props.disabled && 'cursor: pointer;';
+}, function (props) {
+  return !props.theme.dir ? 'left' : 'right';
 }, function (props) {
   return props.theme.checkBox.toggle.size;
 }, function (props) {
@@ -105,8 +107,10 @@ Object.setPrototypeOf(StyledCheckBoxToggle.defaultProps, defaultProps);
 var StyledCheckBoxKnob = styled.span.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxKnob",
   componentId: "sc-1dbk5ju-5"
-})(["box-sizing:border-box;position:relative;display:inherit;top:-", ";left:-", ";transition:all 0.3s;width:", ";height:", ";background:", ";border-radius:", ";", ";"], function (props) {
+})(["box-sizing:border-box;position:relative;display:inherit;top:-", ";", ":-", ";transition:all 0.3s;width:", ";height:", ";background:", ";border-radius:", ";", ";"], function (props) {
   return props.theme.checkBox.border.width;
+}, function (props) {
+  return !props.theme.dir ? 'left' : 'right';
 }, function (props) {
   return props.theme.checkBox.border.width;
 }, function (props) {
