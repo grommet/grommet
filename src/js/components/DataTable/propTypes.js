@@ -164,6 +164,7 @@ if (process.env.NODE_ENV !== 'production') {
     }),
     sortable: PropTypes.bool,
     step: PropTypes.number,
+    verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom']),
   };
 }
 export const DataTablePropTypes = PropType;

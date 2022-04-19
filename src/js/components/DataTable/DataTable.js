@@ -82,6 +82,7 @@ const DataTable = ({
   sortable,
   rowDetails,
   step = 50,
+  verticalAlign,
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -376,9 +377,7 @@ const DataTable = ({
       ref={bodyRef}
       cellProps={cellProps.body}
       columns={columns}
-      groupBy={
-        typeof groupBy === 'string' ? { property: groupBy } : groupBy
-      }
+      groupBy={typeof groupBy === 'string' ? { property: groupBy } : groupBy}
       groups={groups}
       groupState={groupState}
       pinnedOffset={pinnedOffset}
@@ -416,6 +415,7 @@ const DataTable = ({
       selected={selected}
       size={size}
       step={step}
+      verticalAlign={verticalAlign}
     />
   ) : (
     <Body
@@ -459,6 +459,7 @@ const DataTable = ({
       rowDetails={rowDetails}
       rowExpand={rowExpand}
       setRowExpand={setRowExpand}
+      verticalAlign={verticalAlign}
     />
   );
 
@@ -505,16 +506,17 @@ const DataTable = ({
             scrollOffset={scrollOffset}
             rowDetails={rowDetails}
           />
-        
-          {(placeholder && (!items || items.length === 0)) ? (
-            <PlaceholderBody 
+          {placeholder && (!items || items.length === 0) ? (
+            <PlaceholderBody
               ref={bodyRef}
               columns={columns}
               onSelect={onSelect}
             >
               {placeholderContent}
             </PlaceholderBody>
-          ) : bodyContent }
+          ) : (
+            bodyContent
+          )}
           {showFooter && (
             <Footer
               ref={footerRef}

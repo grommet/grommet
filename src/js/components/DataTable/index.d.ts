@@ -113,6 +113,7 @@ export interface DataTableProps<TRowType = any> {
     show: number;
     count: number;
   }) => void;
+  verticalAlign?: 'middle' | 'top' | 'bottom';
 }
 
 export interface DataTableExtendedProps<TRowType = any>

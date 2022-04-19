@@ -1378,4 +1378,24 @@ describe('DataTable', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('verticalAlign', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b.c', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: { c: 1 } },
+            { a: 'two', b: { c: 2 } },
+          ]}
+          verticalAlign="top"
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
