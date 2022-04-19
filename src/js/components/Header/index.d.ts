@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { BoxTypes } from '../Box';
+import { BoxExtendedProps } from '../Box';
 
-declare const Header: React.FC<BoxTypes>;
+declare const Header: React.FC<BoxExtendedProps>;
 
 export { Header };

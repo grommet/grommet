@@ -100,7 +100,6 @@ exports[`Chart animate 1`] = `
         <path
           d="M 384,0 L 0,192"
         />
-        
       </g>
     </g>
   </svg>
@@ -491,7 +490,6 @@ exports[`Chart cap 1`] = `
         <path
           d="M 384,0 L 0,192"
         />
-        
       </g>
     </g>
   </svg>
@@ -2671,7 +2669,6 @@ exports[`Chart type 1`] = `
         <path
           d="M 384,0 L 0,192"
         />
-        
       </g>
     </g>
   </svg>
@@ -2814,7 +2811,6 @@ exports[`Chart undefined values 1`] = `
         <path
           d="M 384,0 L 0,192"
         />
-        
       </g>
     </g>
   </svg>
