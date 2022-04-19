@@ -161,11 +161,16 @@ const Video = forwardRef(
         const { textTracks } = video;
         if (textTracks.length > 0) {
           if (textTracks.length === 1) {
-            const active = textTracks[0].mode === 'showing';
+            // only one track was provided
+            const track = textTracks[0];
+            const active = track.mode === 'showing';
             if (!captions || !captions[0] || captions[0].active !== active) {
-              setCaptions([{ active }]);
+              // get label if provided and if the track is active
+              // (currently showing) or not
+              setCaptions([{ label: track.label, active }]);
             }
           } else {
+            // multiple tracks provided
             const nextCaptions = [];
             let set = false;
             for (let i = 0; i < textTracks.length; i += 1) {
@@ -232,12 +237,14 @@ const Video = forwardRef(
       videoRef.current.volume -= VOLUME_STEP;
     }, [videoRef]);
 
-    const showCaptions = (index) => {
-      const { textTracks } = videoRef.current;
-      for (let i = 0; i < textTracks.length; i += 1) {
-        textTracks[i].mode = i === index ? 'showing' : 'hidden';
-      }
-    };
+    const showCaptions = useCallback(
+      (index) => {
+        const { textTracks } = videoRef.current;
+        for (let i = 0; i < textTracks.length; i += 1)
+          textTracks[i].mode = i === index ? 'showing' : 'hidden';
+      },
+      [videoRef],
+    );
 
     const fullscreen = useCallback(() => {
       const video = videoRef.current;
@@ -278,13 +285,27 @@ const Video = forwardRef(
         Volume: theme.video.icons.volume,
       };
 
-      const captionControls = captions.map((caption) => ({
+      const captionControls = captions.map((caption, index) => ({
         icon: caption.label ? undefined : (
           <Icons.ClosedCaption color={iconColor} />
         ),
         label: caption.label,
         active: caption.active,
-        onClick: () => showCaptions(caption.active ? -1 : 0),
+        a11yTitle: caption.label || 'video.captions',
+        onClick: () => {
+          showCaptions(caption.active ? -1 : index);
+          const updatedCaptions = [];
+          for (let i = 0; i < captions.length; i += 1) {
+            updatedCaptions.push(captions[i]);
+            // set other captions to active=false
+            if (i !== index && updatedCaptions[i].active)
+              updatedCaptions[i].active = false;
+            // set the currently selected captions to active
+            else if (i === index)
+              updatedCaptions[i].active = !captions[index].active;
+          }
+          setCaptions(updatedCaptions);
+        },
       }));
 
       const volumeControls = ['volume', 'reduceVolume'].map((control) => ({
@@ -348,8 +369,14 @@ const Video = forwardRef(
           volumeControls.map((control) => controlsMenuItems.push(control));
           return undefined;
         }
-        if (typeof item === 'string')
+        if (item === 'captions' && typeof buttonProps[item] === 'object') {
+          for (let i = 0; i < buttonProps[item].length; i += 1)
+            controlsMenuItems.push(buttonProps[item][i]);
+          return undefined;
+        }
+        if (typeof item === 'string') {
           return controlsMenuItems.push(buttonProps[item]);
+        }
         return controlsMenuItems.push(item);
       });
 
