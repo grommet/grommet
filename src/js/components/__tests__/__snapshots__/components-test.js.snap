@@ -1485,6 +1485,11 @@ Object {
           "spacing": "24px",
         },
         "grommet": Object {},
+        "header": Object {
+          "sticky": Object {
+            "zIndex": "20",
+          },
+        },
         "heading": Object {
           "font": Object {},
           "level": Object {
