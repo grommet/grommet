@@ -1039,6 +1039,11 @@ var generate = function generate(baseSpacing, scale) {
     },
     grommet: {// extend: undefined
     },
+    header: {
+      sticky: {
+        zIndex: '20'
+      }
+    },
     heading: {
       // color: undefined,
       font: {// family: undefined

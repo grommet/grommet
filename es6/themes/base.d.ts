@@ -820,6 +820,11 @@ export interface ThemeType {
   grommet?: {
     extend?: ExtendType;
   };
+  header?: {
+    sticky?: {
+      zIndex?: string;
+    };
+  };
   heading?: {
     color?: ColorType;
     extend?: ExtendType;
