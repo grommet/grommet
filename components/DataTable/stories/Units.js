@@ -39,6 +39,40 @@ var columns = [{
   align: 'end',
   units: '%'
 }];
+var SORTABLE_DATA = [{
+  last: 'Lullaby',
+  first: 'Julius',
+  count: '7',
+  percentUsed: '79.3',
+  consumption: '651'
+}, {
+  last: 'Rhodes',
+  first: 'Fender',
+  count: '5',
+  percentUsed: '22.5',
+  consumption: '37'
+}];
+var sortableColumns = [{
+  property: 'last',
+  header: 'Last'
+}, {
+  property: 'first',
+  header: 'First'
+}, {
+  property: 'count',
+  header: 'Count',
+  align: 'end'
+}, {
+  property: 'percentUsed',
+  header: 'Percent Used',
+  align: 'end',
+  units: '%'
+}, {
+  property: 'consumption',
+  header: 'Consumption',
+  align: 'end',
+  units: 'TiB'
+}];
 
 var UnitsDataTable = function UnitsDataTable() {
   return (
@@ -46,14 +80,19 @@ var UnitsDataTable = function UnitsDataTable() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={grommet}>
     _react["default"].createElement(_grommet.Box, {
-      align: "center",
-      pad: "large"
+      align: "center"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
       level: "3"
     }, "Table with units in the heading"), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: columns,
       data: DATA,
       primaryKey: false
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      level: "3"
+    }, "Sortable with units in the heading"), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+      sortable: true,
+      columns: sortableColumns,
+      data: SORTABLE_DATA
     })) // </Grommet>
 
   );

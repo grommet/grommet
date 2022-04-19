@@ -863,7 +863,8 @@ export var generate = function generate(baseSpacing, scale) {
           color: 'text-xweak',
           margin: {
             left: 'xsmall'
-          }
+          },
+          alignSelf: 'end'
         }
       },
       icons: {

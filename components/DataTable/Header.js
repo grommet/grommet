@@ -250,6 +250,13 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       }
     } else content = header;
 
+    if (unitsContent) {
+      content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+        justify: align,
+        direction: "row"
+      }, content, unitsContent);
+    }
+
     if (onSort && sortable !== false) {
       var Icon;
 
@@ -275,13 +282,6 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         gap: "xsmall",
         justify: align
       }, content, Icon && /*#__PURE__*/_react["default"].createElement(Icon, null)));
-    }
-
-    if (unitsContent) {
-      content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-        align: "baseline",
-        direction: "row"
-      }, content, unitsContent);
     } // content should fill any available space in cell
 
 

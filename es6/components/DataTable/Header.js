@@ -227,6 +227,13 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       }
     } else content = header;
 
+    if (unitsContent) {
+      content = /*#__PURE__*/React.createElement(Box, {
+        justify: align,
+        direction: "row"
+      }, content, unitsContent);
+    }
+
     if (onSort && sortable !== false) {
       var Icon;
 
@@ -252,13 +259,6 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         gap: "xsmall",
         justify: align
       }, content, Icon && /*#__PURE__*/React.createElement(Icon, null)));
-    }
-
-    if (unitsContent) {
-      content = /*#__PURE__*/React.createElement(Box, {
-        align: "baseline",
-        direction: "row"
-      }, content, unitsContent);
     } // content should fill any available space in cell
 
 
