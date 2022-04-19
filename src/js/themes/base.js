@@ -777,6 +777,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         units: {
           color: 'text-xweak',
           margin: { left: 'xsmall' },
+          alignSelf: 'end',
         },
       },
       icons: {
