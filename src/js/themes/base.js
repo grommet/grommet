@@ -913,6 +913,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     grommet: {
       // extend: undefined
     },
+    header: {
+      sticky: {
+        zIndex: '20',
+      },
+    },
     heading: {
       // color: undefined,
       font: {
