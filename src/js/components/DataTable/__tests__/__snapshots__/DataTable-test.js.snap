@@ -2949,6 +2949,10 @@ exports[`DataTable custom theme 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c29 {
@@ -3145,6 +3149,7 @@ exports[`DataTable custom theme 1`] = `
   text-align: inherit;
   width: 1px;
   overflow: hidden;
+  vertical-align: top;
   text-align: start;
 }
 
@@ -3153,6 +3158,7 @@ exports[`DataTable custom theme 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
+  vertical-align: top;
   text-align: start;
   padding-left: 12px;
   padding-right: 12px;
@@ -3496,7 +3502,7 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hSlrxd"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kgWwZV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 hjkuyf"
@@ -3542,11 +3548,11 @@ exports[`DataTable custom theme 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuDSKl StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hFBlcR StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
           >
             <span
               class="StyledText-sc-1sadyjn-0 cdHUSp"
@@ -3560,7 +3566,7 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hSlrxd"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kgWwZV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 hjkuyf"
@@ -3589,11 +3595,11 @@ exports[`DataTable custom theme 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuDSKl StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hFBlcR StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
           >
             <span
               class="StyledText-sc-1sadyjn-0 cdHUSp"

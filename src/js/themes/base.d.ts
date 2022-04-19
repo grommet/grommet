@@ -659,6 +659,7 @@ export interface ThemeType {
   dataTable?: {
     body?: {
       extend?: ExtendType;
+      verticalAlign?: 'middle' | 'top' | 'bottom';
     };
     container?: BoxProps;
     header?: {

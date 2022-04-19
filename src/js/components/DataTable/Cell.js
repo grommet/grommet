@@ -28,6 +28,7 @@ const Cell = memo(
     pinnedOffset,
     primaryProperty,
     scope,
+    verticalAlign: verticalAlignTheme,
   }) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const value = datumValue(datum, property);
@@ -59,7 +60,7 @@ const Cell = memo(
         {...theme.dataTable[context]}
         align={align}
         context={context}
-        verticalAlign={verticalAlign}
+        verticalAlign={verticalAlign || verticalAlignTheme}
         size={size}
         background={background}
         pinnedOffset={pinnedOffset}

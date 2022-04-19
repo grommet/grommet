@@ -956,6 +956,9 @@ describe('DataTable', () => {
   test('custom theme', () => {
     const customTheme = {
       dataTable: {
+        body: {
+          verticalAlign: 'top',
+        },
         header: {
           background: 'skyblue',
           border: {
