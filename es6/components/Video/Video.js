@@ -191,24 +191,30 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
       if (textTracks.length > 0) {
         if (textTracks.length === 1) {
-          var active = textTracks[0].mode === 'showing';
+          // only one track was provided
+          var track = textTracks[0];
+          var active = track.mode === 'showing';
 
           if (!captions || !captions[0] || captions[0].active !== active) {
+            // get label if provided and if the track is active
+            // (currently showing) or not
             setCaptions([{
+              label: track.label,
               active: active
             }]);
           }
         } else {
+          // multiple tracks provided
           var nextCaptions = [];
           var set = false;
 
           for (var i = 0; i < textTracks.length; i += 1) {
-            var track = textTracks[i];
+            var _track = textTracks[i];
 
-            var _active = track.mode === 'showing';
+            var _active = _track.mode === 'showing';
 
             nextCaptions.push({
-              label: track.label,
+              label: _track.label,
               active: _active
             });
 
@@ -258,15 +264,13 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var quieter = useCallback(function () {
     videoRef.current.volume -= VOLUME_STEP;
   }, [videoRef]);
-
-  var showCaptions = function showCaptions(index) {
+  var showCaptions = useCallback(function (index) {
     var textTracks = videoRef.current.textTracks;
 
     for (var i = 0; i < textTracks.length; i += 1) {
       textTracks[i].mode = i === index ? 'showing' : 'hidden';
     }
-  };
-
+  }, [videoRef]);
   var fullscreen = useCallback(function () {
     var video = videoRef.current;
 
@@ -304,15 +308,26 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       ReduceVolume: theme.video.icons.reduceVolume,
       Volume: theme.video.icons.volume
     };
-    var captionControls = captions.map(function (caption) {
+    var captionControls = captions.map(function (caption, index) {
       return {
         icon: caption.label ? undefined : /*#__PURE__*/React.createElement(Icons.ClosedCaption, {
           color: iconColor
         }),
         label: caption.label,
         active: caption.active,
+        a11yTitle: caption.label || 'video.captions',
         onClick: function onClick() {
-          return showCaptions(caption.active ? -1 : 0);
+          showCaptions(caption.active ? -1 : index);
+          var updatedCaptions = [];
+
+          for (var i = 0; i < captions.length; i += 1) {
+            updatedCaptions.push(captions[i]); // set other captions to active=false
+
+            if (i !== index && updatedCaptions[i].active) updatedCaptions[i].active = false; // set the currently selected captions to active
+            else if (i === index) updatedCaptions[i].active = !captions[index].active;
+          }
+
+          setCaptions(updatedCaptions);
         }
       };
     });
@@ -386,7 +401,18 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
         return undefined;
       }
 
-      if (typeof item === 'string') return controlsMenuItems.push(buttonProps[item]);
+      if (item === 'captions' && typeof buttonProps[item] === 'object') {
+        for (var i = 0; i < buttonProps[item].length; i += 1) {
+          controlsMenuItems.push(buttonProps[item][i]);
+        }
+
+        return undefined;
+      }
+
+      if (typeof item === 'string') {
+        return controlsMenuItems.push(buttonProps[item]);
+      }
+
       return controlsMenuItems.push(item);
     });
     controlsElement = /*#__PURE__*/React.createElement(StyledVideoControls, {
