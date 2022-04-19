@@ -1092,6 +1092,7 @@ Object {
           "header": Object {
             "gap": "small",
             "units": Object {
+              "alignSelf": "end",
               "color": "text-xweak",
               "margin": Object {
                 "left": "xsmall",
@@ -1485,6 +1486,11 @@ Object {
           "spacing": "24px",
         },
         "grommet": Object {},
+        "header": Object {
+          "sticky": Object {
+            "zIndex": "20",
+          },
+        },
         "heading": Object {
           "font": Object {},
           "level": Object {

@@ -164,7 +164,7 @@ const CheckBox = forwardRef(
       </StyledCheckBoxBox>
     );
 
-    const side = reverse ? 'left' : 'right';
+    const side = !reverse !== !theme.dir ? 'left' : 'right';
     const checkBoxNode = (
       <StyledCheckBox
         as={Box}
