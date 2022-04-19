@@ -31,7 +31,6 @@ export const ControlledDataTable = () => {
     // <Grommet theme={grommet}>
     <Box align="center" pad="medium">
       <DataTable
-        verticalAlign="top"
         columns={[
           {
             property: 'checkbox',

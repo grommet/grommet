@@ -32,8 +32,6 @@ export const columns = [
     header: 'Percent Complete',
     render: ({ percent }) => (
       <Box pad={{ vertical: 'xsmall' }}>
-        <Text>hey there</Text>
-        <Text>hey there</Text>
         <Meter values={[{ value: percent }]} thickness="small" size="small" />
       </Box>
     ),
