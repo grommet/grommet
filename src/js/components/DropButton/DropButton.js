@@ -83,6 +83,7 @@ const DropButton = forwardRef(
             target={dropTarget || buttonRef.current}
             onClickOutside={onDropClose}
             onEsc={onDropClose}
+            onFocusOutside={dropProps?.inline ? onDropClose : undefined}
             {...dropProps}
           >
             {dropContent}

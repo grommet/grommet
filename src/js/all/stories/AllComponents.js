@@ -126,31 +126,32 @@ const Components = () => {
         placeholder="Select"
         options={['One', 'Two']}
         onChange={() => {}}
+        dropProps={{ inline: true, trapFocus: false }}
       />
       <CheckBox
         name="check"
         checked={checkBox}
         label="CheckBox"
-        onChange={event => setCheckBox(event.target.checked)}
+        onChange={(event) => setCheckBox(event.target.checked)}
       />
       <CheckBox
         name="toggle"
         toggle
         checked={checkBox}
         label="CheckBox toggle"
-        onChange={event => setCheckBox(event.target.checked)}
+        onChange={(event) => setCheckBox(event.target.checked)}
       />
       <RadioButtonGroup
         name="radio"
         options={['RadioButton 1', 'RadioButton 2']}
         value={radioButton}
-        onChange={event => setRadioButton(event.target.value)}
+        onChange={(event) => setRadioButton(event.target.value)}
       />
       <TextInput
         placeholder="TextInput"
         suggestions={['a', 'b', 'c']}
         value={textInput}
-        onChange={event => setTextInput(event.target.value)}
+        onChange={(event) => setTextInput(event.target.value)}
         onSelect={({ suggestion }) => setTextInput(suggestion)}
       />
       <MaskedInput
@@ -170,13 +171,13 @@ const Components = () => {
           },
         ]}
         value={maskedInput}
-        onChange={event => setMaskedInput(event.target.value)}
+        onChange={(event) => setMaskedInput(event.target.value)}
       />
       <TextArea placeholder="TextArea" />
       <RangeInput value={24} onChange={() => {}} />
       <Stack>
         <Box direction="row" justify="between">
-          {[0, 1, 2, 3].map(value => (
+          {[0, 1, 2, 3].map((value) => (
             <Box key={value} pad="small">
               <Text style={{ fontFamily: 'monospace' }}>{value}</Text>
             </Box>
@@ -190,7 +191,7 @@ const Components = () => {
           size="full"
           round="small"
           values={rangeSelector}
-          onChange={values => setRangeSelector(values)}
+          onChange={(values) => setRangeSelector(values)}
         />
       </Stack>
       <FormField label="FormField">
@@ -228,7 +229,7 @@ const Components = () => {
           { value: 5, color: 'light-4' },
         ]}
       >
-        {value => (
+        {(value) => (
           <Box pad="xsmall" background={value.color} fill>
             <Text size="large">{value.value}</Text>
           </Box>
@@ -237,12 +238,12 @@ const Components = () => {
       <Stack>
         <Box>
           <Box direction="row">
-            {[1, 2].map(id => (
+            {[1, 2].map((id) => (
               <Node key={id} id={id} />
             ))}
           </Box>
           <Box direction="row">
-            {[3, 4].map(id => (
+            {[3, 4].map((id) => (
               <Node key={id} id={id} />
             ))}
           </Box>
@@ -279,7 +280,7 @@ const Components = () => {
       </Accordion>
     </Box>,
     <Box key="tabs">
-      <Tabs activeIndex={tabIndex} onActive={index => setTabIndex(index)}>
+      <Tabs activeIndex={tabIndex} onActive={(index) => setTabIndex(index)}>
         <Tab title="Tab 1">
           <Box pad="small">
             <Text>Tab 1 content</Text>
@@ -327,7 +328,7 @@ const Components = () => {
               size="small"
               options={Object.keys(themes)}
               value={themeName}
-              onChange={event => setThemeName(event.option)}
+              onChange={(event) => setThemeName(event.option)}
             />
           </Box>
           {themeCanMode && (
@@ -347,7 +348,7 @@ const Components = () => {
                 size="small"
                 options={['default', 'dark-1', 'light-1']}
                 value={background}
-                onChange={event => setBackground(event.option)}
+                onChange={(event) => setBackground(event.option)}
               />
             </Box>
           )}
@@ -357,7 +358,9 @@ const Components = () => {
               max={36}
               step={2}
               value={baseSize}
-              onChange={event => setBaseSize(parseInt(event.target.value, 10))}
+              onChange={(event) =>
+                setBaseSize(parseInt(event.target.value, 10))
+              }
             />
           </Box>
           <Text size="small">{`${baseSize}px base spacing`}</Text>

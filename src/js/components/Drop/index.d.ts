@@ -21,6 +21,7 @@ export interface DropProps {
   inline?: boolean;
   onClickOutside?: React.MouseEventHandler<HTMLDocument>;
   onEsc?: KeyboardType;
+  onFocusOutside?: React.FocusEventHandler<HTMLDocument>;
   overflow?:
     | 'auto'
     | 'hidden'
