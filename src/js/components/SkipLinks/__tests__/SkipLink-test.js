@@ -26,11 +26,15 @@ describe('SkipLink', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    document.getElementById('skip-links').querySelector('a').focus();
+    act(() => {
+      document.getElementById('skip-links').querySelector('a').focus();
+    });
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(document.activeElement);
-    document.getElementById('skip-links').querySelector('a').blur();
+    act(() => {
+      document.getElementById('skip-links').querySelector('a').blur();
+    });
 
     act(() => {
       jest.runAllTimers();

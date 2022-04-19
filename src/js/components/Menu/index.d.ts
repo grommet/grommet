@@ -13,6 +13,7 @@ import {
 export interface MenuProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  children?: Function | React.ReactNode;
   disabled?: boolean;
   dropAlign?: {
     top?: 'top' | 'bottom';
@@ -41,7 +42,7 @@ export interface MenuProps {
 
 export interface MenuExtendedProps
   extends MenuProps,
-    Omit<ButtonType, 'icon' | 'size'> {}
+    Omit<ButtonType, 'icon' | 'size' | 'children'> {}
 
 declare const Menu: React.FC<MenuExtendedProps>;
 
