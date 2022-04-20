@@ -59,6 +59,7 @@ const DataTable = ({
   border,
   columns = [],
   data = [],
+  disabled,
   fill,
   groupBy,
   onClickRow, // removing unknown DOM attributes
@@ -376,9 +377,8 @@ const DataTable = ({
       ref={bodyRef}
       cellProps={cellProps.body}
       columns={columns}
-      groupBy={
-        typeof groupBy === 'string' ? { property: groupBy } : groupBy
-      }
+      disabled={disabled}
+      groupBy={typeof groupBy === 'string' ? { property: groupBy } : groupBy}
       groups={groups}
       groupState={groupState}
       pinnedOffset={pinnedOffset}
@@ -423,6 +423,7 @@ const DataTable = ({
       cellProps={cellProps.body}
       columns={columns}
       data={!paginate ? adjustedData : items}
+      disabled={disabled}
       onMore={
         onUpdate
           ? () => {
@@ -475,6 +476,7 @@ const DataTable = ({
             cellProps={cellProps.header}
             columns={columns}
             data={adjustedData}
+            disabled={disabled}
             fill={fill}
             filtering={filtering}
             filters={filters}
@@ -505,16 +507,18 @@ const DataTable = ({
             scrollOffset={scrollOffset}
             rowDetails={rowDetails}
           />
-        
-          {(placeholder && (!items || items.length === 0)) ? (
-            <PlaceholderBody 
+
+          {placeholder && (!items || items.length === 0) ? (
+            <PlaceholderBody
               ref={bodyRef}
               columns={columns}
               onSelect={onSelect}
             >
               {placeholderContent}
             </PlaceholderBody>
-          ) : bodyContent }
+          ) : (
+            bodyContent
+          )}
           {showFooter && (
             <Footer
               ref={footerRef}

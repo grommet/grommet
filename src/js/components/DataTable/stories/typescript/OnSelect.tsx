@@ -166,6 +166,7 @@ export const OnSelectDataTable = () => {
         columns={columns}
         data={DATA}
         step={10}
+        disabled={['Matt']}
         select={select}
         onSelect={setSelect}
       />

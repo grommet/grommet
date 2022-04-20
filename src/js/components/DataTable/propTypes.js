@@ -108,6 +108,9 @@ if (process.env.NODE_ENV !== 'production') {
       }),
     ),
     data: PropTypes.arrayOf(PropTypes.shape({})),
+    disabled: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ),
     fill: PropTypes.oneOfType([
       PropTypes.oneOf(['horizontal', 'vertical']),
       PropTypes.bool,
