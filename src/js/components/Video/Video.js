@@ -70,6 +70,7 @@ const Video = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const { format } = useContext(MessageContext);
     const [captions, setCaptions] = useState([]);
+    const [description, setDescription] = useState();
     const [currentTime, setCurrentTime] = useState();
     const [duration, setDuration] = useState();
     const [percentagePlayed, setPercentagePlayed] = useState();
@@ -121,6 +122,7 @@ const Video = forwardRef(
         setCurrentTime(video.currentTime);
         setPercentagePlayed((video.currentTime / video.duration) * 100);
         setVolume(videoRef.current.volume);
+        console.log(description)
       }
     }, [videoRef]);
 
@@ -283,6 +285,7 @@ const Video = forwardRef(
         Play: theme.video.icons.play,
         ReduceVolume: theme.video.icons.reduceVolume,
         Volume: theme.video.icons.volume,
+        Description: theme.video.icons.description,
       };
 
       const captionControls = captions.map((caption, index) => ({
@@ -360,6 +363,14 @@ const Video = forwardRef(
           disabled: playing,
           onClick: play,
         },
+        description: {
+          icon: <Icons.AssistListening color={iconColor} />,
+          a11yTitle: format({
+            id: 'video.description',
+            messages,
+          }),
+          onClick: openDesc(),
+        },
       };
 
       const controlsMenuItems = [];
@@ -373,6 +384,10 @@ const Video = forwardRef(
           for (let i = 0; i < buttonProps[item].length; i += 1)
             controlsMenuItems.push(buttonProps[item][i]);
           return undefined;
+        }
+        if (item === 'description') {
+          setDescription(controls?.description);
+          return controlsMenuItems.push(buttonProps[item]);
         }
         if (typeof item === 'string') {
           return controlsMenuItems.push(buttonProps[item]);

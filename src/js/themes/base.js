@@ -1683,6 +1683,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         play: Play,
         reduceVolume: VolumeLow,
         volume: Volume,
+        description: AssistListening,
         // color: { dark: undefined, light: undefined },
       },
       scrubber: {

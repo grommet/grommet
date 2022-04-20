@@ -66,6 +66,7 @@
     "pauseButton": "pause",
     "playButton": "play",
     "volumeDown": "volume down",
-    "volumeUp": "volume up"
+    "volumeUp": "volume up",
+    "description": "video audio description"
   }
 }
