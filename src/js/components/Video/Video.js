@@ -10,6 +10,7 @@ import React, {
 import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -68,9 +69,9 @@ const Video = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const announce = useContext(AnnounceContext);
     const { format } = useContext(MessageContext);
     const [captions, setCaptions] = useState([]);
-    const [description, setDescription] = useState();
     const [currentTime, setCurrentTime] = useState();
     const [duration, setDuration] = useState();
     const [percentagePlayed, setPercentagePlayed] = useState();
@@ -78,6 +79,7 @@ const Video = forwardRef(
     const [scrubTime, setScrubTime] = useState();
     const [volume, setVolume] = useState();
     const [hasPlayed, setHasPlayed] = useState(false);
+    const [descriptionVisible, setDescriptionVisible] = useState(false);
     const [interacting, setInteracting] = useState();
     const [height, setHeight] = useState();
     const [width, setWidth] = useState();
@@ -122,7 +124,6 @@ const Video = forwardRef(
         setCurrentTime(video.currentTime);
         setPercentagePlayed((video.currentTime / video.duration) * 100);
         setVolume(videoRef.current.volume);
-        console.log(description)
       }
     }, [videoRef]);
 
@@ -264,6 +265,7 @@ const Video = forwardRef(
     }, [videoRef]);
 
     let controlsElement;
+    let description;
     if (controls?.position) {
       const over = controls.position === 'over';
       const background = over
@@ -294,7 +296,12 @@ const Video = forwardRef(
         ),
         label: caption.label,
         active: caption.active,
-        a11yTitle: caption.label || 'video.captions',
+        a11yTitle:
+          caption.label ||
+          format({
+            id: 'video.captions',
+            messages,
+          }),
         onClick: () => {
           showCaptions(caption.active ? -1 : index);
           const updatedCaptions = [];
@@ -364,12 +371,26 @@ const Video = forwardRef(
           onClick: play,
         },
         description: {
-          icon: <Icons.AssistListening color={iconColor} />,
+          icon: <Icons.Description color={iconColor} />,
           a11yTitle: format({
             id: 'video.description',
             messages,
           }),
-          onClick: openDesc(),
+          onClick: () => {
+            setDescriptionVisible(!descriptionVisible);
+            announce(
+              descriptionVisible
+                ? format({
+                    id: 'video.hideDescription',
+                    messages,
+                  })
+                : format({
+                    id: 'video.showDescription',
+                    messages,
+                  }),
+              'assertive',
+            );
+          },
         },
       };
 
@@ -385,9 +406,9 @@ const Video = forwardRef(
             controlsMenuItems.push(buttonProps[item][i]);
           return undefined;
         }
-        if (item === 'description') {
-          setDescription(controls?.description);
-          return controlsMenuItems.push(buttonProps[item]);
+        if (item?.description) {
+          description = item.description;
+          return controlsMenuItems.push(buttonProps.description);
         }
         if (typeof item === 'string') {
           return controlsMenuItems.push(buttonProps[item]);
@@ -564,6 +585,7 @@ const Video = forwardRef(
             {children}
           </StyledVideo>
           {controlsElement}
+          {descriptionVisible && description}
         </StyledVideoContainer>
       </Keyboard>
     );

@@ -58,6 +58,7 @@
     "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
   },
   "video": {
+    "captions": "closed captions",
     "closeMenu": "close menu",
     "fullScreen": "full screen",
     "progressMeter": "video progress",
@@ -67,6 +68,8 @@
     "playButton": "play",
     "volumeDown": "volume down",
     "volumeUp": "volume up",
-    "description": "video audio description"
+    "description": "video audio description",
+    "showDescription": "Video description opened below video",
+    "hideDescription": "Video description closed"
   }
 }

@@ -6,7 +6,10 @@ export const ControlsBelow = () => (
   <Box align="center" pad="large">
     <Video
       skipInterval={2}
-      controls={{ position: 'below', items: ['captions', { description: 'This is a description.'}] }}
+      controls={{
+        position: 'below',
+        items: ['captions', { description: 'this is a description' }],
+      }}
     >
       <source src="small.mp4" type="video/mp4" />
       <source

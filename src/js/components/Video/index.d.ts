@@ -13,7 +13,9 @@ type controlsItems =
   | 'play'
   | 'pause'
   | 'volume'
-  | { description: string; }
+  | {
+      description: string;
+    }
   | {
       icon?: React.ReactNode;
       a11yTitle?: A11yTitleType;
