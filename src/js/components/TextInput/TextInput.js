@@ -327,6 +327,8 @@ const TextInput = forwardRef(
           {...dropProps}
         >
           <ContainerBox
+            id={`${id}-listbox`}
+            role="listbox"
             overflow="auto"
             dropHeight={dropHeight}
             onMouseMove={() => setMouseMovedSinceLastKey(true)}
@@ -342,6 +344,8 @@ const TextInput = forwardRef(
                 }
               >
                 {(suggestion, index, itemRef) => {
+                  const active = activeSuggestionIndex === index;
+                  const selected = suggestion === value;
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.
                   const renderedLabel = renderLabel(suggestion);
@@ -360,11 +364,14 @@ const TextInput = forwardRef(
 
                   return (
                     <li
+                      id={`${id}-listbox-option-${index}`}
+                      role="option"
+                      aria-selected={selected ? 'true' : undefined}
                       key={`${stringLabel(suggestion)}-${index}`}
                       ref={itemRef}
                     >
                       <Button
-                        active={activeSuggestionIndex === index}
+                        active={active}
                         fill="horizontal"
                         plain={!child ? undefined : true}
                         align="start"
@@ -409,6 +416,24 @@ const TextInput = forwardRef(
       keyboardProps.onDown = openDrop;
     }
 
+    /*
+    If the text input has a list of suggestions, add the WAI-ARIA 1.2
+    combobox role and states.
+    */
+    let comboboxProps = {};
+    let activeOptionID;
+    if (suggestions && suggestions.length > -1) {
+      if (showDrop && activeSuggestionIndex > -1) {
+        activeOptionID = `${id}-listbox-option-${activeSuggestionIndex}`;
+      }
+      comboboxProps = {
+        'aria-activedescendant': activeOptionID,
+        'aria-autocomplete': 'list',
+        'aria-expanded': showDrop ? 'true' : 'false',
+        'aria-controls': showDrop ? `${id}-listbox` : undefined,
+        role: 'combobox',
+      };
+    }
     // For the Keyboard target below, if we have focus,
     // either on the input element or within the drop,
     // then we set the target to the document,
@@ -443,6 +468,7 @@ const TextInput = forwardRef(
             textAlign={textAlign}
             {...rest}
             {...extraProps}
+            {...comboboxProps}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             readOnly={readOnly}
