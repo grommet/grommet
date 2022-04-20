@@ -71,6 +71,7 @@ if (process.env.NODE_ENV !== 'production') {
       verticalAlign: _propTypes["default"].oneOf(['middle', 'top', 'bottom'])
     })),
     data: _propTypes["default"].arrayOf(_propTypes["default"].shape({})),
+    disabled: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])),
     fill: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['horizontal', 'vertical']), _propTypes["default"].bool]),
     groupBy: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
       property: _propTypes["default"].string,

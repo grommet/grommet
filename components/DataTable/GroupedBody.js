@@ -21,7 +21,7 @@ var _TableCell = require("../TableCell");
 
 var _buildState = require("./buildState");
 
-var _excluded = ["cellProps", "columns", "data", "groupBy", "groups", "groupState", "pinnedOffset", "primaryProperty", "onMore", "onSelect", "onToggle", "onUpdate", "replace", "rowProps", "selected", "size", "step"];
+var _excluded = ["cellProps", "columns", "data", "disabled", "groupBy", "groups", "groupState", "pinnedOffset", "primaryProperty", "onMore", "onSelect", "onToggle", "onUpdate", "replace", "rowProps", "selected", "size", "step"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -35,6 +35,7 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var cellPropsProp = _ref.cellProps,
       columns = _ref.columns,
       data = _ref.data,
+      disabled = _ref.disabled,
       groupBy = _ref.groupBy,
       groups = _ref.groups,
       groupState = _ref.groupState,
@@ -62,6 +63,8 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       var memberCount = group.data.length;
       var groupSelected = [];
       var isGroupSelected = false;
+      var groupDisabled = [];
+      var isGroupDisabled = false;
 
       if (memberCount > 1 || onUpdate && group.key) {
         // need a header
@@ -73,11 +76,16 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         }) : [];
         isGroupSelected = groupBy.select ? groupBy.select[group.key] === 'all' : groupSelected.length === group.data.length && groupSelected.length > 0;
         var indeterminate = groupBy.select ? groupBy.select[group.key] === 'some' : groupSelected.length > 0 && groupSelected.length < group.data.length;
+        groupDisabled = primaryKeys && disabled ? primaryKeys.filter(function (val) {
+          return disabled.includes(val);
+        }) : [];
+        isGroupDisabled = groupBy.disable ? groupBy.disable[group.key] === 'all' : groupDisabled.length === group.data.length && groupDisabled.length > 0;
         nextItems.push({
           expanded: expanded,
           key: group.key,
           datum: group.datum,
           context: 'groupHeader',
+          isDisabled: isGroupDisabled,
           isSelected: isGroupSelected,
           indeterminate: indeterminate,
           onChange: function onChange() {
@@ -99,11 +107,13 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         group.data.forEach(function (datum, index) {
           var primaryValue = primaryProperty ? (0, _buildState.datumValue)(datum, primaryProperty) : undefined;
           var isSelected = selected == null ? void 0 : selected.includes(primaryValue);
+          var isDisabled = disabled == null ? void 0 : disabled.includes(primaryValue);
           nextItems.push({
             key: datum[primaryProperty],
             primaryValue: primaryProperty ? (0, _buildState.datumValue)(datum, primaryProperty) : undefined,
             datum: datum,
             context: memberCount > 1 && index === memberCount - 1 ? 'groupEnd' : 'body',
+            isDisabled: isDisabled,
             isSelected: isSelected,
             onChange: function onChange() {
               var nextSelected = isSelected ? selected.filter(function (s) {
@@ -116,7 +126,7 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       }
     });
     return nextItems;
-  }, [groups, groupBy, groupState, primaryProperty, selected, onSelect, onUpdate]);
+  }, [disabled, groups, groupBy, groupState, primaryProperty, selected, onSelect, onUpdate]);
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
     ref: ref,
     size: size
@@ -133,6 +143,7 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         datum = row.datum,
         expanded = row.expanded,
         indeterminate = row.indeterminate,
+        isDisabled = row.isDisabled,
         isSelected = row.isSelected,
         key = row.key,
         onChange = row.onChange,
@@ -152,12 +163,13 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
       background: cellProps.background,
       plain: "noPad",
-      size: "auto"
+      size: "auto",
+      "aria-disabled": isDisabled || !onSelect || undefined
     }, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
       a11yTitle: (isSelected ? 'unselect' : 'select') + " " + (context === 'groupHeader' ? key : primaryValue),
       checked: isSelected,
       indeterminate: indeterminate,
-      disabled: !onSelect,
+      disabled: isDisabled || !onSelect,
       onChange: onChange,
       pad: cellProps.pad
     })), columns.map(function (column) {

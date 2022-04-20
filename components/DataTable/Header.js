@@ -34,7 +34,7 @@ var _styles = require("../../utils/styles");
 var _colors = require("../../utils/colors");
 
 var _excluded = ["background", "border", "color", "font", "gap", "pad", "units"],
-    _excluded2 = ["cellProps", "columns", "data", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths"];
+    _excluded2 = ["cellProps", "columns", "data", "disabled", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -123,6 +123,7 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   var cellProps = _ref2.cellProps,
       columns = _ref2.columns,
       data = _ref2.data,
+      disabled = _ref2.disabled,
       fill = _ref2.fill,
       filtering = _ref2.filtering,
       filters = _ref2.filters,
@@ -171,6 +172,49 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     return cur && groupBy.select[cur] === 'all' ? total + 1 : total;
   }, 0) : 0;
   var totalSelected = ((selected == null ? void 0 : selected.length) || 0) + totalSelectedGroups;
+  var onChangeSelection = (0, _react.useCallback)(function () {
+    var nextSelected;
+    var nextGroupSelected = {}; // Since some rows might be disabled but already selected, we need to
+    // note which rows are enabled when determining how aggregate selection
+    // works.
+
+    var primaryValues = data.map(function (datum) {
+      return (0, _buildState.datumValue)(datum, primaryProperty);
+    }) || []; // enabled includes what can be changed
+
+    var enabled = disabled && primaryValues.filter(function (v) {
+      return !disabled.includes(v);
+    }) || primaryValues; // enabledSelected includes what can be changed and is currently selected
+
+    var enabledSelected = selected && enabled.filter(function (v) {
+      return selected.includes(v);
+    }) || primaryValues;
+    var allSelected = groupBy != null && groupBy.select ? groupBy.select[''] === 'all' : enabledSelected.length === enabled.length;
+
+    if (allSelected) {
+      // if any are disabled and selected, leave those, otherwise clear
+      nextSelected = disabled ? primaryValues.filter(function (v) {
+        return disabled.includes(v) && selected.includes(v);
+      }) : [];
+      nextGroupSelected[''] = 'none';
+    } else {
+      var _groupBy$expandable;
+
+      // if some or none are selected, select all enabled plus all disabled
+      // that are already selected
+      nextSelected = disabled ? primaryValues.filter(function (v) {
+        return !disabled.includes(v) || selected.includes(v);
+      }) : primaryValues;
+      nextGroupSelected[''] = 'all';
+      groupBy == null ? void 0 : (_groupBy$expandable = groupBy.expandable) == null ? void 0 : _groupBy$expandable.forEach(function (key) {
+        nextGroupSelected[key] = 'all';
+      });
+    }
+
+    if (groupBy != null && groupBy.onSelect) {
+      groupBy.onSelect(nextSelected, undefined, nextGroupSelected);
+    } else onSelect(nextSelected);
+  }, [data, disabled, groupBy, onSelect, primaryProperty, selected]);
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableHeader, _extends({
     ref: ref,
     fillProp: fill
@@ -196,31 +240,7 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     a11yTitle: totalSelected === data.length ? 'unselect all' : 'select all',
     checked: groupBy != null && groupBy.select ? groupBy.select[''] === 'all' : totalSelected > 0 && data.length > 0 && totalSelected === data.length,
     indeterminate: groupBy != null && groupBy.select ? groupBy.select[''] === 'some' : totalSelected > 0 && totalSelected < data.length,
-    onChange: function onChange() {
-      var nextSelected;
-      var nextGroupSelected = {};
-      var allSelected = groupBy != null && groupBy.select ? groupBy.select[''] === 'all' : totalSelected === data.length; // if all are selected, clear selection
-
-      if (allSelected) {
-        nextSelected = [];
-        nextGroupSelected[''] = 'none';
-      } else {
-        var _groupBy$expandable;
-
-        // if some or none are selected, select all data
-        nextSelected = data.map(function (datum) {
-          return (0, _buildState.datumValue)(datum, primaryProperty);
-        });
-        nextGroupSelected[''] = 'all';
-        groupBy == null ? void 0 : (_groupBy$expandable = groupBy.expandable) == null ? void 0 : _groupBy$expandable.forEach(function (key) {
-          nextGroupSelected[key] = 'all';
-        });
-      }
-
-      if (groupBy != null && groupBy.onSelect) {
-        groupBy.onSelect(nextSelected, undefined, nextGroupSelected);
-      } else onSelect(nextSelected);
-    },
+    onChange: onChangeSelection,
     pad: cellProps.pad
   })), rowDetails && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
     size: "xxsmall",

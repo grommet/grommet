@@ -35,7 +35,7 @@ var _propTypes = require("./propTypes");
 
 var _PlaceholderBody = require("./PlaceholderBody");
 
-var _excluded = ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "onUpdate", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step"];
+var _excluded = ["background", "border", "columns", "data", "disabled", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "onUpdate", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -82,6 +82,7 @@ var DataTable = function DataTable(_ref) {
       columns = _ref$columns === void 0 ? [] : _ref$columns,
       _ref$data = _ref.data,
       data = _ref$data === void 0 ? [] : _ref$data,
+      disabled = _ref.disabled,
       fill = _ref.fill,
       groupBy = _ref.groupBy,
       onClickRow = _ref.onClickRow,
@@ -430,6 +431,7 @@ var DataTable = function DataTable(_ref) {
     ref: bodyRef,
     cellProps: cellProps.body,
     columns: columns,
+    disabled: disabled,
     groupBy: typeof groupBy === 'string' ? {
       property: groupBy
     } : groupBy,
@@ -469,6 +471,7 @@ var DataTable = function DataTable(_ref) {
     cellProps: cellProps.body,
     columns: columns,
     data: !paginate ? adjustedData : items,
+    disabled: disabled,
     onMore: onUpdate ? function () {
       if (adjustedData.length === limit) {
         var opts = {
@@ -507,6 +510,7 @@ var DataTable = function DataTable(_ref) {
     cellProps: cellProps.header,
     columns: columns,
     data: adjustedData,
+    disabled: disabled,
     fill: fill,
     filtering: filtering,
     filters: filters,

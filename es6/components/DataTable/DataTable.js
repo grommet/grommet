@@ -1,4 +1,4 @@
-var _excluded = ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "onUpdate", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step"];
+var _excluded = ["background", "border", "columns", "data", "disabled", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "onUpdate", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -58,6 +58,7 @@ var DataTable = function DataTable(_ref) {
       columns = _ref$columns === void 0 ? [] : _ref$columns,
       _ref$data = _ref.data,
       data = _ref$data === void 0 ? [] : _ref$data,
+      disabled = _ref.disabled,
       fill = _ref.fill,
       groupBy = _ref.groupBy,
       onClickRow = _ref.onClickRow,
@@ -405,6 +406,7 @@ var DataTable = function DataTable(_ref) {
     ref: bodyRef,
     cellProps: cellProps.body,
     columns: columns,
+    disabled: disabled,
     groupBy: typeof groupBy === 'string' ? {
       property: groupBy
     } : groupBy,
@@ -444,6 +446,7 @@ var DataTable = function DataTable(_ref) {
     cellProps: cellProps.body,
     columns: columns,
     data: !paginate ? adjustedData : items,
+    disabled: disabled,
     onMore: onUpdate ? function () {
       if (adjustedData.length === limit) {
         var opts = {
@@ -482,6 +485,7 @@ var DataTable = function DataTable(_ref) {
     cellProps: cellProps.header,
     columns: columns,
     data: adjustedData,
+    disabled: disabled,
     fill: fill,
     filtering: filtering,
     filters: filters,

@@ -1,4 +1,4 @@
-var _excluded = ["align", "background", "border", "children", "className", "colSpan", "onWidth", "pad", "plain", "rowSpan", "scope", "size", "verticalAlign"];
+var _excluded = ["align", "aria-disabled", "background", "border", "children", "className", "colSpan", "onWidth", "pad", "plain", "rowSpan", "scope", "size", "verticalAlign"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -20,6 +20,7 @@ var verticalAlignToJustify = {
 };
 var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var align = _ref.align,
+      ariaDisabled = _ref['aria-disabled'],
       background = _ref.background,
       border = _ref.border,
       children = _ref.children,
@@ -86,16 +87,18 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   Object.keys(mergedProps).forEach(function (key) {
     if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
-  }); // split out background, border, and pad
+  }); // split out background, border, pad, and aria-disabled
 
   var cellProps = {
     align: align || mergedProps.align || undefined,
+    'aria-disabled': ariaDisabled || undefined,
     background: background || mergedProps.background || undefined,
     border: border || mergedProps.border || undefined,
     pad: plain !== 'noPad' ? pad || mergedProps.pad || undefined : undefined,
     verticalAlign: verticalAlign || mergedProps.verticalAlign || undefined
   };
   delete mergedProps.align;
+  delete mergedProps.ariaDisabled;
   delete mergedProps.background;
   delete mergedProps.border;
   delete mergedProps.pad;

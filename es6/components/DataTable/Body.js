@@ -1,4 +1,4 @@
-var _excluded = ["cellProps", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pinnedOffset", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"];
+var _excluded = ["cellProps", "columns", "data", "disabled", "onMore", "replace", "onClickRow", "onSelect", "pinnedOffset", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -28,6 +28,7 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       datum = _ref.datum,
       selected = _ref.selected,
       onSelect = _ref.onSelect,
+      isDisabled = _ref.isDisabled,
       isSelected = _ref.isSelected,
       rowDetails = _ref.rowDetails,
       isRowExpanded = _ref.isRowExpanded,
@@ -42,7 +43,8 @@ var Row = /*#__PURE__*/memo(function (_ref) {
     ref: rowRef,
     size: size,
     active: active,
-    onClick: onClickRow ? function (event) {
+    "aria-disabled": onClickRow && isDisabled || undefined,
+    onClick: onClickRow && !isDisabled ? function (event) {
       // extract from React's synthetic event pool
       event.persist();
       var adjustedEvent = event;
@@ -50,7 +52,7 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       adjustedEvent.index = index;
       onClickRow(adjustedEvent);
     } : undefined,
-    onMouseEnter: onClickRow ? function () {
+    onMouseEnter: onClickRow && !isDisabled ? function () {
       setActive(index);
     } : undefined,
     onMouseLeave: onClickRow ? function () {
@@ -59,6 +61,7 @@ var Row = /*#__PURE__*/memo(function (_ref) {
   }, (selected || onSelect) && /*#__PURE__*/React.createElement(Cell, {
     background: (pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect) && cellProps.pinned.background || cellProps.background,
     pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect,
+    "aria-disabled": isDisabled || !onSelect || undefined,
     column: {
       pin: Boolean(pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect),
       plain: 'noPad',
@@ -67,7 +70,7 @@ var Row = /*#__PURE__*/memo(function (_ref) {
         return /*#__PURE__*/React.createElement(CheckBox, {
           a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
           checked: isSelected,
-          disabled: !onSelect,
+          disabled: isDisabled || !onSelect,
           onChange: function onChange() {
             if (isSelected) {
               onSelect(selected.filter(function (s) {
@@ -115,6 +118,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var cellPropsProp = _ref2.cellProps,
       columns = _ref2.columns,
       data = _ref2.data,
+      disabled = _ref2.disabled,
       onMore = _ref2.onMore,
       replace = _ref2.replace,
       onClickRow = _ref2.onClickRow,
@@ -142,7 +146,8 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       setLastActive = _React$useState2[1];
 
   return /*#__PURE__*/React.createElement(Keyboard, {
-    onEnter: onClickRow && active >= 0 ? function (event) {
+    onEnter: // active is undefined if user never used the keyboard
+    onClickRow && active >= 0 && (!disabled || !disabled.includes(datumValue(data[active], primaryProperty))) ? function (event) {
       event.persist();
       var adjustedEvent = event;
       adjustedEvent.datum = data[active];
@@ -151,15 +156,17 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     onUp: onClickRow && active ? function () {
       return setActive(active - 1);
     } : undefined,
-    onDown: onClickRow && data.length ? function () {
-      setActive(active >= 0 ? Math.min(active + 1, data.length - 1) : 0);
+    onDown: onClickRow && data.length && active < data.length - 1 ? function () {
+      return setActive((active != null ? active : -1) + 1);
     } : undefined
   }, /*#__PURE__*/React.createElement(StyledDataTableBody, _extends({
     ref: ref,
     size: size,
     tabIndex: onClickRow ? 0 : undefined,
     onFocus: function onFocus() {
-      return !active && active !== 0 ? setActive(lastActive) : setActive(active);
+      var _ref3;
+
+      return setActive((_ref3 = active != null ? active : lastActive) != null ? _ref3 : 0);
     },
     onBlur: function onBlur() {
       setLastActive(active);
@@ -177,6 +184,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   }, function (datum, index, rowRef) {
     var primaryValue = primaryProperty ? datumValue(datum, primaryProperty) : undefined;
     var isSelected = selected && selected.includes(primaryValue);
+    var isDisabled = disabled && disabled.includes(primaryValue);
     var isRowExpanded = rowExpand && rowExpand.includes(index);
     var cellProps = normalizeRowCellProps(rowProps, cellPropsProp, primaryValue, index);
     return /*#__PURE__*/React.createElement(Row, {
@@ -185,6 +193,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       rowRef: rowRef,
       cellProps: cellProps,
       primaryValue: primaryValue,
+      isDisabled: isDisabled,
       isSelected: isSelected,
       isRowExpanded: isRowExpanded,
       index: index,

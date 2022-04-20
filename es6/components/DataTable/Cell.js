@@ -1,4 +1,8 @@
+var _excluded = ["background", "border", "column", "datum", "pad", "pin", "pinnedOffset", "primaryProperty", "scope"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { memo, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
@@ -24,7 +28,9 @@ var Cell = /*#__PURE__*/memo(function (_ref) {
       cellPin = _ref.pin,
       pinnedOffset = _ref.pinnedOffset,
       primaryProperty = _ref.primaryProperty,
-      scope = _ref.scope;
+      scope = _ref.scope,
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var value = datumValue(datum, property);
   var context = useContext(TableContext);
@@ -58,7 +64,7 @@ var Cell = /*#__PURE__*/memo(function (_ref) {
     pad: pad,
     pin: pin,
     plain: plain ? 'noPad' : undefined
-  }), content);
+  }, rest), content);
 });
 Cell.displayName = 'Cell';
 Cell.defaultProps = {};
