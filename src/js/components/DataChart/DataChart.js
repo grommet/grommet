@@ -192,7 +192,7 @@ const DataChart = forwardRef(
       else if (steps % 2 === 0) medium = 3;
       else medium = 2;
       return {
-        x: { coarse: 2, fine: data.length, medium },
+        x: { coarse: Math.min(data.length, 2), fine: data.length, medium },
         y: {
           ...(heightYGranularity[(size && size.height) || 'small'] || {
             fine: 5,
