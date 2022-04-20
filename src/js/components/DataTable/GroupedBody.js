@@ -185,6 +185,7 @@ export const GroupedBody = forwardRef(
                     background={cellProps.background}
                     plain="noPad"
                     size="auto"
+                    aria-disabled={isDisabled || !onSelect || undefined}
                   >
                     <CheckBox
                       a11yTitle={`${isSelected ? 'unselect' : 'select'} ${

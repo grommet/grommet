@@ -28,6 +28,7 @@ const Cell = memo(
     pinnedOffset,
     primaryProperty,
     scope,
+    ...rest
   }) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const value = datumValue(datum, property);
@@ -67,6 +68,7 @@ const Cell = memo(
         pad={pad}
         pin={pin}
         plain={plain ? 'noPad' : undefined}
+        {...rest}
       >
         {content}
       </StyledDataTableCell>

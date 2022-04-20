@@ -43,6 +43,7 @@ const Row = memo(
         ref={rowRef}
         size={size}
         active={active}
+        aria-disabled={(onClickRow && isDisabled) || undefined}
         onClick={
           onClickRow && !isDisabled
             ? (event) => {
@@ -72,6 +73,7 @@ const Row = memo(
               cellProps.background
             }
             pinnedOffset={pinnedOffset?._grommetDataTableSelect}
+            aria-disabled={isDisabled || !onSelect || undefined}
             column={{
               pin: Boolean(pinnedOffset?._grommetDataTableSelect),
               plain: 'noPad',
