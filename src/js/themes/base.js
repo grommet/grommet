@@ -727,7 +727,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     dataTable: {
       // body: {
-      //   // extend: undefined,
+      //   extend: undefined,
       // },
       pinned: {
         // body: {
