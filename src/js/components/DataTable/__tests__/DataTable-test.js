@@ -561,6 +561,26 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('disabled click', () => {
+    const onClickRow = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          disabled={['alpha']}
+          onClickRow={onClickRow}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('beta'));
+    expect(onClickRow).toBeCalledWith(
+      expect.objectContaining({ datum: { a: 'beta' } }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('background', () => {
     const { container } = render(
       <Grommet>
@@ -951,6 +971,25 @@ describe('DataTable', () => {
       undefined,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('disabled select', () => {
+    const onSelect = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          primaryKey="a"
+          disabled={['alpha']}
+          select={['beta']}
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByLabelText('select alpha'));
+    expect(onSelect).not.toBeCalled();
   });
 
   test('custom theme', () => {

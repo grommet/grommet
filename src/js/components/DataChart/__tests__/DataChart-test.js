@@ -48,6 +48,23 @@ describe('DataChart', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('single', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart
+          data={[data[0]]}
+          series={['d', 'a']}
+          axis={{
+            x: { property: 'd' },
+            y: { property: 'a' },
+          }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('gap', () => {
     const { container } = render(
       <Grommet>
