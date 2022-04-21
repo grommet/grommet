@@ -2883,6 +2883,10 @@ exports[`DataTable custom theme 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c22 {
@@ -2934,6 +2938,20 @@ exports[`DataTable custom theme 1`] = `
 }
 
 .c28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c29 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3204,7 +3222,7 @@ exports[`DataTable custom theme 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c28 {
+  .c29 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
@@ -3341,7 +3359,7 @@ exports[`DataTable custom theme 1`] = `
           scope="row"
         >
           <div
-            class="c20"
+            class="c28"
           >
             <span
               class="c10"
@@ -3377,7 +3395,7 @@ exports[`DataTable custom theme 1`] = `
                   type="checkbox"
                 />
                 <div
-                  class="c28 "
+                  class="c29 "
                   disabled=""
                 />
               </div>
@@ -3389,7 +3407,7 @@ exports[`DataTable custom theme 1`] = `
           scope="row"
         >
           <div
-            class="c20"
+            class="c28"
           >
             <span
               class="c10"
@@ -3484,7 +3502,7 @@ exports[`DataTable custom theme 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -3549,7 +3567,7 @@ exports[`DataTable custom theme 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -3875,6 +3893,10 @@ exports[`DataTable disabled select 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c6 {
@@ -3942,7 +3964,21 @@ exports[`DataTable disabled select 1`] = `
   flex: 1 0 auto;
 }
 
-.c20 {
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3973,7 +4009,7 @@ exports[`DataTable disabled select 1`] = `
   line-height: 24px;
 }
 
-.c19 {
+.c20 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -4149,7 +4185,7 @@ exports[`DataTable disabled select 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c21 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -4266,10 +4302,10 @@ exports[`DataTable disabled select 1`] = `
           scope="row"
         >
           <div
-            class="c4"
+            class="c19"
           >
             <span
-              class="c19"
+              class="c20"
             >
               alpha
             </span>
@@ -4299,7 +4335,7 @@ exports[`DataTable disabled select 1`] = `
                   type="checkbox"
                 />
                 <div
-                  class="c20 "
+                  class="c21 "
                 >
                   <svg
                     class="c10"
@@ -4321,10 +4357,10 @@ exports[`DataTable disabled select 1`] = `
           scope="row"
         >
           <div
-            class="c4"
+            class="c19"
           >
             <span
-              class="c19"
+              class="c20"
             >
               beta
             </span>
@@ -8324,7 +8360,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   stroke: none;
 }
 
-.c23 {
+.c24 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -8335,25 +8371,25 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   stroke: #666666;
 }
 
-.c23 g {
+.c24 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill="none"] {
+.c24 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
+.c24 *[stroke*="#"],
+.c24 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
+.c24 *[fill-rule],
+.c24 *[FILL-RULE],
+.c24 *[fill*="#"],
+.c24 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -8422,6 +8458,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c11 {
@@ -8489,7 +8529,21 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   flex: 1 0 auto;
 }
 
-.c26 {
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8515,7 +8569,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border-radius: 4px;
 }
 
-.c25 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8733,7 +8787,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding-bottom: 6px;
 }
 
-.c24 {
+.c25 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8787,7 +8841,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 @media only screen and (max-width:768px) {
-  .c26 {
+  .c27 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -8986,7 +9040,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           scope="row"
         >
           <div
-            class="c9"
+            class="c23"
           >
             <span
               class="c18"
@@ -8999,7 +9053,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c9"
+            class="c23"
           />
         </td>
       </tr>
@@ -9018,7 +9072,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             >
               <svg
                 aria-hidden="true"
-                class="c23"
+                class="c24"
                 viewBox="0 0 24 24"
               />
             </div>
@@ -9054,7 +9108,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c9"
+            class="c23"
           >
             <span
               class="c18"
@@ -9067,7 +9121,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c9"
+            class="c23"
           >
             <span
               class="c18"
@@ -9081,10 +9135,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c24"
+          class="c25"
         >
           <div
-            class="c25"
+            class="c26"
             style="height: 0px;"
           >
             <div
@@ -9092,7 +9146,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             >
               <svg
                 aria-hidden="true"
-                class="c23"
+                class="c24"
                 viewBox="0 0 24 24"
               />
             </div>
@@ -9118,7 +9172,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                   type="checkbox"
                 />
                 <div
-                  class="c26 "
+                  class="c27 "
                 >
                   <svg
                     class="c15"
@@ -9139,7 +9193,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c9"
+            class="c23"
           >
             <span
               class="c18"
@@ -9152,7 +9206,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c9"
+            class="c23"
           >
             <span
               class="c18"
@@ -9226,7 +9280,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           scope="row"
         >
           <div
-            class="c9"
+            class="c23"
           >
             <span
               class="c18"
@@ -9239,7 +9293,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c9"
+            class="c23"
           />
         </td>
       </tr>
@@ -9348,6 +9402,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c11 {
@@ -9413,6 +9471,20 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c18 {
@@ -9850,7 +9922,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           scope="row"
         >
           <div
-            class="c9"
+            class="c23"
           >
             <span
               class="c18"
@@ -9863,7 +9935,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c9"
+            class="c23"
           />
         </td>
       </tr>
@@ -9931,7 +10003,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           scope="row"
         >
           <div
-            class="c9"
+            class="c23"
           >
             <span
               class="c18"
@@ -9944,7 +10016,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c9"
+            class="c23"
           />
         </td>
       </tr>
@@ -10052,6 +10124,10 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c11 {
@@ -10117,6 +10193,20 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+}
+
+.c24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c22 {
@@ -10586,7 +10676,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           scope="row"
         >
           <div
-            class="c9"
+            class="c24"
           >
             <span
               class="c18"
@@ -10599,7 +10689,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           class="c23 "
         >
           <div
-            class="c9"
+            class="c24"
           />
         </td>
       </tr>
@@ -10667,7 +10757,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           scope="row"
         >
           <div
-            class="c9"
+            class="c24"
           >
             <span
               class="c18"
@@ -10680,7 +10770,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           class="c23 "
         >
           <div
-            class="c9"
+            class="c24"
           />
         </td>
       </tr>
@@ -10788,6 +10878,10 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c11 {
@@ -10853,6 +10947,20 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c17 {
@@ -11260,7 +11368,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           scope="row"
         >
           <div
-            class="c9"
+            class="c22"
           >
             <span
               class="c17"
@@ -11273,7 +11381,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           class="c21 "
         >
           <div
-            class="c9"
+            class="c22"
           />
         </td>
       </tr>
@@ -11341,7 +11449,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           scope="row"
         >
           <div
-            class="c9"
+            class="c22"
           >
             <span
               class="c17"
@@ -11354,7 +11462,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           class="c21 "
         >
           <div
-            class="c9"
+            class="c22"
           />
         </td>
       </tr>
@@ -11412,7 +11520,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -11543,7 +11651,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -11663,7 +11771,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -11799,7 +11907,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -11891,7 +11999,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -11972,7 +12080,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -12043,6 +12151,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c6 {
@@ -12110,12 +12222,26 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   flex: 1 0 auto;
 }
 
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c12 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c16 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -12350,7 +12476,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           class="c15 "
         >
           <div
-            class="c4"
+            class="c16"
           >
             <span
               class="c12"
@@ -12364,10 +12490,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           scope="row"
         >
           <div
-            class="c4"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               1.1
             </span>
@@ -12406,7 +12532,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           class="c15 "
         >
           <div
-            class="c4"
+            class="c16"
           >
             <span
               class="c12"
@@ -12420,10 +12546,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           scope="row"
         >
           <div
-            class="c4"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               1.2
             </span>
@@ -12462,7 +12588,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           class="c15 "
         >
           <div
-            class="c4"
+            class="c16"
           >
             <span
               class="c12"
@@ -12476,10 +12602,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           scope="row"
         >
           <div
-            class="c4"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               2.1
             </span>
@@ -12518,7 +12644,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           class="c15 "
         >
           <div
-            class="c4"
+            class="c16"
           >
             <span
               class="c12"
@@ -12532,10 +12658,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           scope="row"
         >
           <div
-            class="c4"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               2.2
             </span>
@@ -12565,7 +12691,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -12657,7 +12783,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -12744,7 +12870,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -12831,7 +12957,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -12918,7 +13044,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -13021,7 +13147,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -13082,7 +13208,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -13138,7 +13264,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -13194,7 +13320,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -13250,7 +13376,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -20784,6 +20910,10 @@ exports[`DataTable select 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c6 {
@@ -20877,12 +21007,26 @@ exports[`DataTable select 1`] = `
   border-radius: 4px;
 }
 
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c13 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -21141,10 +21285,10 @@ exports[`DataTable select 1`] = `
           scope="row"
         >
           <div
-            class="c4"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             >
               alpha
             </span>
@@ -21184,10 +21328,10 @@ exports[`DataTable select 1`] = `
           scope="row"
         >
           <div
-            class="c4"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             >
               beta
             </span>
@@ -21217,7 +21361,7 @@ exports[`DataTable select 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -21295,7 +21439,7 @@ exports[`DataTable select 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
@@ -21350,7 +21494,7 @@ exports[`DataTable select 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iNDmPr"
+            class="StyledBox-sc-13pk1d4-0 hjkuyf"
             style="height: 0px;"
           >
             <label
