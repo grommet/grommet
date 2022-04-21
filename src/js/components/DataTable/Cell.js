@@ -19,7 +19,7 @@ const Cell = memo(
       footer,
       property,
       render,
-      verticalAlign: columnVerticalAlign,
+      verticalAlign: columnVerticalAlign, // deprecate in v3
       size,
     },
     datum,
