@@ -127,7 +127,7 @@ const TableCell = forwardRef(
       // for the child contents to be able to fill the
       // TableCell
       content = (
-        <Box ref={containerRef} justify="center">
+        <Box ref={containerRef} justify={verticalAlignToJustify[verticalAlign]}>
           {children}
         </Box>
       );

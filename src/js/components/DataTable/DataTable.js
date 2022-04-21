@@ -415,7 +415,9 @@ const DataTable = ({
       selected={selected}
       size={size}
       step={step}
-      verticalAlign={verticalAlign}
+      verticalAlign={
+        typeof verticalAlign === 'string' ? verticalAlign : verticalAlign?.body
+      }
     />
   ) : (
     <Body
@@ -459,7 +461,9 @@ const DataTable = ({
       rowDetails={rowDetails}
       rowExpand={rowExpand}
       setRowExpand={setRowExpand}
-      verticalAlign={verticalAlign}
+      verticalAlign={
+        typeof verticalAlign === 'string' ? verticalAlign : verticalAlign?.body
+      }
     />
   );
 
@@ -505,6 +509,11 @@ const DataTable = ({
             primaryProperty={primaryProperty}
             scrollOffset={scrollOffset}
             rowDetails={rowDetails}
+            verticalAlign={
+              typeof verticalAlign === 'string'
+                ? verticalAlign
+                : verticalAlign?.header
+            }
           />
           {placeholder && (!items || items.length === 0) ? (
             <PlaceholderBody
@@ -532,6 +541,11 @@ const DataTable = ({
               scrollOffset={scrollOffset}
               selected={selected}
               size={size}
+              verticalAlign={
+                typeof verticalAlign === 'string'
+                  ? verticalAlign
+                  : verticalAlign?.footer
+              }
             />
           )}
           {placeholder && items && items.length > 0 && (

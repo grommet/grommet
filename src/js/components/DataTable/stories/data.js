@@ -18,7 +18,6 @@ export const columns = [
   {
     property: 'location',
     header: 'Location',
-    verticalAlign: 'center',
   },
   {
     property: 'date',

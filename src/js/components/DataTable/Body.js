@@ -36,7 +36,6 @@ const Row = memo(
     pinnedOffset,
     primaryProperty,
     data,
-    theme,
     verticalAlign,
   }) => (
     <>
@@ -93,7 +92,7 @@ const Row = memo(
                 />
               ),
             }}
-            verticalAlign={verticalAlign || theme.dataTable.body?.verticalAlign}
+            verticalAlign={verticalAlign}
           />
         )}
 
@@ -109,7 +108,7 @@ const Row = memo(
               }
             }}
             pad={cellProps.pad}
-            verticalAlign={verticalAlign || theme.dataTable.body?.verticalAlign}
+            verticalAlign={verticalAlign}
           />
         )}
         {columns.map((column) => (
@@ -131,7 +130,7 @@ const Row = memo(
                 ? 'row'
                 : undefined
             }
-            verticalAlign={verticalAlign || theme.dataTable.body?.verticalAlign}
+            verticalAlign={verticalAlign}
           />
         ))}
       </StyledDataTableRow>

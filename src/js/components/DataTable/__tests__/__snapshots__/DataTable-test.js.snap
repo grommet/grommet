@@ -2883,10 +2883,6 @@ exports[`DataTable custom theme 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .c22 {
@@ -2938,24 +2934,6 @@ exports[`DataTable custom theme 1`] = `
 }
 
 .c28 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c29 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3149,7 +3127,6 @@ exports[`DataTable custom theme 1`] = `
   text-align: inherit;
   width: 1px;
   overflow: hidden;
-  vertical-align: top;
   text-align: start;
 }
 
@@ -3158,7 +3135,6 @@ exports[`DataTable custom theme 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  vertical-align: top;
   text-align: start;
   padding-left: 12px;
   padding-right: 12px;
@@ -3228,7 +3204,7 @@ exports[`DataTable custom theme 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c29 {
+  .c28 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
@@ -3364,7 +3340,7 @@ exports[`DataTable custom theme 1`] = `
           scope="row"
         >
           <div
-            class="c28"
+            class="c20"
           >
             <span
               class="c10"
@@ -3399,7 +3375,7 @@ exports[`DataTable custom theme 1`] = `
                   type="checkbox"
                 />
                 <div
-                  class="c29 "
+                  class="c28 "
                   disabled=""
                 />
               </div>
@@ -3411,7 +3387,7 @@ exports[`DataTable custom theme 1`] = `
           scope="row"
         >
           <div
-            class="c28"
+            class="c20"
           >
             <span
               class="c10"
@@ -3502,10 +3478,10 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hSlrxd"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kgWwZV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -3548,11 +3524,11 @@ exports[`DataTable custom theme 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hFBlcR StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuDSKl StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fErAuK"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
           >
             <span
               class="StyledText-sc-1sadyjn-0 cdHUSp"
@@ -3566,10 +3542,10 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hSlrxd"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kgWwZV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -3595,11 +3571,11 @@ exports[`DataTable custom theme 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hFBlcR StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuDSKl StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fErAuK"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
           >
             <span
               class="StyledText-sc-1sadyjn-0 cdHUSp"
@@ -4531,10 +4507,10 @@ exports[`DataTable groupBy 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c6 {
@@ -4967,7 +4943,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gneEHy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
             style="height: 0px;"
           >
             <button
@@ -5034,7 +5010,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jFDqHE"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
             style="height: 0px;"
           >
             <button
@@ -5090,7 +5066,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jFDqHE"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
             style="height: 0px;"
           >
             <button
@@ -5235,10 +5211,10 @@ exports[`DataTable groupBy expand 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c6 {
@@ -5294,6 +5270,24 @@ exports[`DataTable groupBy expand 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .c10 {
@@ -5660,7 +5654,7 @@ exports[`DataTable groupBy expand 1`] = `
           class="c16"
         >
           <div
-            class="c4"
+            class="c17"
             style="height: 0px;"
           >
             <div
@@ -5825,10 +5819,10 @@ exports[`DataTable groupBy property 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c6 {
@@ -6261,7 +6255,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gneEHy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
             style="height: 0px;"
           >
             <button
@@ -6328,7 +6322,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jFDqHE"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
             style="height: 0px;"
           >
             <button
@@ -6384,7 +6378,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jFDqHE"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
             style="height: 0px;"
           >
             <button
@@ -6786,10 +6780,10 @@ exports[`DataTable groupBy toggle 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c3 {
@@ -7037,10 +7031,10 @@ exports[`DataTable groupBy toggle 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c4 {
@@ -7640,10 +7634,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c6 {
@@ -7670,7 +7664,21 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding-bottom: 6px;
 }
 
-.c10 {
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7692,7 +7700,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   justify-content: center;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7718,7 +7726,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border-radius: 4px;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7735,21 +7743,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   flex: 1 0 auto;
 }
 
-.c22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c25 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7775,7 +7769,25 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border-radius: 4px;
 }
 
-.c17 {
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c18 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -7849,7 +7861,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border: 0;
 }
 
-.c14 {
+.c15 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -7857,7 +7869,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   height: 24px;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7879,12 +7891,12 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   cursor: pointer;
 }
 
-.c9:hover input:not([disabled]) + div,
-.c9:hover input:not([disabled]) + span {
+.c10:hover input:not([disabled]) + div,
+.c10:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c12 {
+.c13 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -7893,12 +7905,12 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   cursor: pointer;
 }
 
-.c12:checked + span > span {
+.c13:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c11 {
+.c12 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -7928,7 +7940,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7941,7 +7953,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding-bottom: 6px;
 }
 
-.c19 {
+.c20 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7953,7 +7965,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   text-align: start;
 }
 
-.c20 {
+.c21 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7963,7 +7975,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   text-align: start;
 }
 
-.c21 {
+.c22 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8000,11 +8012,11 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   height: auto;
 }
 
-.c18:focus {
+.c19:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c18:focus:not(:focus-visible) {
+.c19:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -8023,13 +8035,13 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c14 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c25 {
+  .c26 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -8088,25 +8100,25 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           scope="col"
         >
           <div
-            class="c4"
+            class="c9"
             style="height: 0px;"
           >
             <label
               aria-label="select all"
-              class="c9"
+              class="c10"
             >
               <div
-                class="c10 c11"
+                class="c11 c12"
               >
                 <input
-                  class="c12"
+                  class="c13"
                   type="checkbox"
                 />
                 <div
-                  class="c13 "
+                  class="c14 "
                 >
                   <svg
-                    class="c14"
+                    class="c15"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
                   >
@@ -8121,28 +8133,28 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </th>
         <th
-          class="c15 "
+          class="c16 "
           scope="col"
         >
           <div
-            class="c16"
+            class="c17"
           >
             <span
-              class="c17"
+              class="c18"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="c15 "
+          class="c16 "
           scope="col"
         >
           <div
-            class="c16"
+            class="c17"
           >
             <span
-              class="c17"
+              class="c18"
             >
               B
             </span>
@@ -8151,13 +8163,13 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c18"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c19"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c19"
+          class="c20"
         >
           <div
             class="c4"
@@ -8188,28 +8200,28 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c20"
+          class="c21"
         >
           <div
-            class="c4"
+            class="c9"
             style="height: 0px;"
           >
             <label
               aria-label="select one"
-              class="c9"
+              class="c10"
             >
               <div
-                class="c10 c11"
+                class="c11 c12"
               >
                 <input
-                  class="c12"
+                  class="c13"
                   type="checkbox"
                 />
                 <div
-                  class="c13 "
+                  class="c14 "
                 >
                   <svg
-                    class="c14"
+                    class="c15"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
                   >
@@ -8224,24 +8236,24 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <th
-          class="c21 "
+          class="c22 "
           scope="row"
         >
           <div
-            class="c22"
+            class="c9"
           >
             <span
-              class="c17"
+              class="c18"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c21 "
+          class="c22 "
         >
           <div
-            class="c22"
+            class="c9"
           />
         </td>
       </tr>
@@ -8249,7 +8261,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c19"
+          class="c20"
         >
           <div
             class="c4"
@@ -8267,52 +8279,52 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c20"
+          class="c21"
         >
           <div
-            class="c4"
+            class="c9"
             style="height: 0px;"
           >
             <label
               aria-label="select 1.1"
-              class="c9"
+              class="c10"
             >
               <div
-                class="c10 c11"
+                class="c11 c12"
               >
                 <input
                   checked=""
-                  class="c12"
+                  class="c13"
                   type="checkbox"
                 />
                 <div
-                  class="c13 "
+                  class="c14 "
                 />
               </div>
             </label>
           </div>
         </td>
         <td
-          class="c21 "
+          class="c22 "
         >
           <div
-            class="c22"
+            class="c9"
           >
             <span
-              class="c17"
+              class="c18"
             >
               one
             </span>
           </div>
         </td>
         <td
-          class="c21 "
+          class="c22 "
         >
           <div
-            class="c22"
+            class="c9"
           >
             <span
-              class="c17"
+              class="c18"
             >
               1.1
             </span>
@@ -8326,7 +8338,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c24"
         >
           <div
-            class="c4"
+            class="c25"
             style="height: 0px;"
           >
             <div
@@ -8341,29 +8353,29 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c20"
+          class="c21"
         >
           <div
-            class="c4"
+            class="c9"
             style="height: 0px;"
           >
             <label
               aria-label="unselect 1.2"
-              class="c9"
+              class="c10"
             >
               <div
-                class="c10 c11"
+                class="c11 c12"
               >
                 <input
                   checked=""
-                  class="c12"
+                  class="c13"
                   type="checkbox"
                 />
                 <div
-                  class="c25 "
+                  class="c26 "
                 >
                   <svg
-                    class="c14"
+                    class="c15"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
                   >
@@ -8378,26 +8390,26 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c21 "
+          class="c22 "
         >
           <div
-            class="c22"
+            class="c9"
           >
             <span
-              class="c17"
+              class="c18"
             >
               one
             </span>
           </div>
         </td>
         <td
-          class="c21 "
+          class="c22 "
         >
           <div
-            class="c22"
+            class="c9"
           >
             <span
-              class="c17"
+              class="c18"
             >
               1.2
             </span>
@@ -8408,7 +8420,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c19"
+          class="c20"
         >
           <div
             class="c4"
@@ -8439,49 +8451,49 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c20"
+          class="c21"
         >
           <div
-            class="c4"
+            class="c9"
             style="height: 0px;"
           >
             <label
               aria-label="select two"
-              class="c9"
+              class="c10"
             >
               <div
-                class="c10 c11"
+                class="c11 c12"
               >
                 <input
-                  class="c12"
+                  class="c13"
                   type="checkbox"
                 />
                 <div
-                  class="c13 "
+                  class="c14 "
                 />
               </div>
             </label>
           </div>
         </td>
         <th
-          class="c21 "
+          class="c22 "
           scope="row"
         >
           <div
-            class="c22"
+            class="c9"
           >
             <span
-              class="c17"
+              class="c18"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c21 "
+          class="c22 "
         >
           <div
-            class="c22"
+            class="c9"
           />
         </td>
       </tr>
@@ -8548,10 +8560,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c6 {
@@ -8578,7 +8590,21 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding-bottom: 6px;
 }
 
-.c10 {
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8600,7 +8626,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   justify-content: center;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8626,7 +8652,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border-radius: 4px;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8643,21 +8669,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   flex: 1 0 auto;
 }
 
-.c22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -8731,7 +8743,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border: 0;
 }
 
-.c14 {
+.c15 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -8739,7 +8751,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   height: 24px;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8761,12 +8773,12 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   cursor: pointer;
 }
 
-.c9:hover input:not([disabled]) + div,
-.c9:hover input:not([disabled]) + span {
+.c10:hover input:not([disabled]) + div,
+.c10:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c12 {
+.c13 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -8775,12 +8787,12 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   cursor: pointer;
 }
 
-.c12:checked + span > span {
+.c13:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c11 {
+.c12 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -8810,7 +8822,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8823,7 +8835,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding-bottom: 6px;
 }
 
-.c19 {
+.c20 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8835,7 +8847,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   text-align: start;
 }
 
-.c20 {
+.c21 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8845,7 +8857,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   text-align: start;
 }
 
-.c21 {
+.c22 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8870,11 +8882,11 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   height: auto;
 }
 
-.c18:focus {
+.c19:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c18:focus:not(:focus-visible) {
+.c19:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -8893,7 +8905,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c14 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
@@ -8952,25 +8964,25 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           scope="col"
         >
           <div
-            class="c4"
+            class="c9"
             style="height: 0px;"
           >
             <label
               aria-label="select all"
-              class="c9"
+              class="c10"
             >
               <div
-                class="c10 c11"
+                class="c11 c12"
               >
                 <input
-                  class="c12"
+                  class="c13"
                   type="checkbox"
                 />
                 <div
-                  class="c13 "
+                  class="c14 "
                 >
                   <svg
-                    class="c14"
+                    class="c15"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
                   >
@@ -8985,28 +8997,28 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </th>
         <th
-          class="c15 "
+          class="c16 "
           scope="col"
         >
           <div
-            class="c16"
+            class="c17"
           >
             <span
-              class="c17"
+              class="c18"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="c15 "
+          class="c16 "
           scope="col"
         >
           <div
-            class="c16"
+            class="c17"
           >
             <span
-              class="c17"
+              class="c18"
             >
               B
             </span>
@@ -9015,13 +9027,13 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c18"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c19"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c19"
+          class="c20"
         >
           <div
             class="c4"
@@ -9052,28 +9064,28 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c20"
+          class="c21"
         >
           <div
-            class="c4"
+            class="c9"
             style="height: 0px;"
           >
             <label
               aria-label="select one"
-              class="c9"
+              class="c10"
             >
               <div
-                class="c10 c11"
+                class="c11 c12"
               >
                 <input
-                  class="c12"
+                  class="c13"
                   type="checkbox"
                 />
                 <div
-                  class="c13 "
+                  class="c14 "
                 >
                   <svg
-                    class="c14"
+                    class="c15"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
                   >
@@ -9088,24 +9100,24 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <th
-          class="c21 "
+          class="c22 "
           scope="row"
         >
           <div
-            class="c22"
+            class="c9"
           >
             <span
-              class="c17"
+              class="c18"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c21 "
+          class="c22 "
         >
           <div
-            class="c22"
+            class="c9"
           />
         </td>
       </tr>
@@ -9113,7 +9125,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c19"
+          class="c20"
         >
           <div
             class="c4"
@@ -9144,49 +9156,49 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c20"
+          class="c21"
         >
           <div
-            class="c4"
+            class="c9"
             style="height: 0px;"
           >
             <label
               aria-label="select two"
-              class="c9"
+              class="c10"
             >
               <div
-                class="c10 c11"
+                class="c11 c12"
               >
                 <input
-                  class="c12"
+                  class="c13"
                   type="checkbox"
                 />
                 <div
-                  class="c13 "
+                  class="c14 "
                 />
               </div>
             </label>
           </div>
         </td>
         <th
-          class="c21 "
+          class="c22 "
           scope="row"
         >
           <div
-            class="c22"
+            class="c9"
           >
             <span
-              class="c17"
+              class="c18"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c21 "
+          class="c22 "
         >
           <div
-            class="c22"
+            class="c9"
           />
         </td>
       </tr>
@@ -9252,10 +9264,10 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c6 {
@@ -9282,7 +9294,21 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   padding-bottom: 6px;
 }
 
-.c10 {
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9304,7 +9330,743 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   justify-content: center;
 }
 
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+
+.c10:hover input:not([disabled]) + div,
+.c10:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
 .c13 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c13:checked + span > span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c12 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 1px;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+}
+
+.c16 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c20 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+}
+
+.c21 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 1px;
+  overflow: hidden;
+  text-align: start;
+}
+
+.c23 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+  height: auto;
+}
+
+.c19:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c22 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c3"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-label="expand"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="select all"
+              class="c10"
+            >
+              <div
+                class="c11 c12"
+              >
+                <input
+                  class="c13"
+                  type="checkbox"
+                />
+                <div
+                  class="c14 "
+                >
+                  <svg
+                    class="c15"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,12 L18,12"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </label>
+          </div>
+        </th>
+        <th
+          class="c16 "
+          scope="col"
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c18"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c16 "
+          scope="col"
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c18"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c19"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c20"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-label="expand"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <td
+          class="c21"
+        >
+          <div
+            class="c9"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="unselect one"
+              class="c10"
+            >
+              <div
+                class="c11 c12"
+              >
+                <input
+                  class="c13"
+                  type="checkbox"
+                />
+                <div
+                  class="c22 "
+                >
+                  <svg
+                    class="c15"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </label>
+          </div>
+        </td>
+        <th
+          class="c23 "
+          scope="row"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c18"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c23 "
+        >
+          <div
+            class="c9"
+          />
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c20"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-label="expand"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <td
+          class="c21"
+        >
+          <div
+            class="c9"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="select two"
+              class="c10"
+            >
+              <div
+                class="c11 c12"
+              >
+                <input
+                  class="c13"
+                  type="checkbox"
+                />
+                <div
+                  class="c14 "
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <th
+          class="c23 "
+          scope="row"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c18"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c23 "
+        >
+          <div
+            class="c9"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: rgba(0,0,0,0.33);
+  stroke: rgba(0,0,0,0.33);
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9345,46 +10107,6 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: solid 2px #7D4CDB;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 4px;
 }
 
 .c17 {
@@ -9461,15 +10183,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   border: 0;
 }
 
-.c14 {
-  box-sizing: border-box;
-  stroke-width: 4px;
-  stroke: #7D4CDB;
-  width: 24px;
-  height: 24px;
-}
-
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9491,12 +10205,12 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   cursor: pointer;
 }
 
-.c9:hover input:not([disabled]) + div,
-.c9:hover input:not([disabled]) + span {
+.c10:hover input:not([disabled]) + div,
+.c10:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c12 {
+.c13 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -9505,12 +10219,12 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   cursor: pointer;
 }
 
-.c12:checked + span > span {
+.c13:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c11 {
+.c12 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -9575,7 +10289,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   text-align: start;
 }
 
-.c22 {
+.c21 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -9623,14 +10337,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c14 {
     border: solid 2px rgba(0,0,0,0.15);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c21 {
-    border: solid 2px #7D4CDB;
   }
 }
 
@@ -9688,34 +10396,23 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           scope="col"
         >
           <div
-            class="c4"
+            class="c9"
             style="height: 0px;"
           >
             <label
               aria-label="select all"
-              class="c9"
+              class="c10"
             >
               <div
-                class="c10 c11"
+                class="c11 c12"
               >
                 <input
-                  class="c12"
+                  class="c13"
                   type="checkbox"
                 />
                 <div
-                  class="c13 "
-                >
-                  <svg
-                    class="c14"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M6,12 L18,12"
-                      fill="none"
-                    />
-                  </svg>
-                </div>
+                  class="c14 "
+                />
               </div>
             </label>
           </div>
@@ -9791,44 +10488,33 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           class="c20"
         >
           <div
-            class="c4"
+            class="c9"
             style="height: 0px;"
           >
             <label
-              aria-label="unselect one"
-              class="c9"
+              aria-label="select one"
+              class="c10"
             >
               <div
-                class="c10 c11"
+                class="c11 c12"
               >
                 <input
-                  class="c12"
+                  class="c13"
                   type="checkbox"
                 />
                 <div
-                  class="c21 "
-                >
-                  <svg
-                    class="c14"
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M6,11.3 L10.3,16 L18,6.2"
-                      fill="none"
-                    />
-                  </svg>
-                </div>
+                  class="c14 "
+                />
               </div>
             </label>
           </div>
         </td>
         <th
-          class="c22 "
+          class="c21 "
           scope="row"
         >
           <div
-            class="c23"
+            class="c9"
           >
             <span
               class="c17"
@@ -9838,10 +10524,10 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           </div>
         </th>
         <td
-          class="c22 "
+          class="c21 "
         >
           <div
-            class="c23"
+            class="c9"
           />
         </td>
       </tr>
@@ -9883,33 +10569,33 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           class="c20"
         >
           <div
-            class="c4"
+            class="c9"
             style="height: 0px;"
           >
             <label
               aria-label="select two"
-              class="c9"
+              class="c10"
             >
               <div
-                class="c10 c11"
+                class="c11 c12"
               >
                 <input
-                  class="c12"
+                  class="c13"
                   type="checkbox"
                 />
                 <div
-                  class="c13 "
+                  class="c14 "
                 />
               </div>
             </label>
           </div>
         </td>
         <th
-          class="c22 "
+          class="c21 "
           scope="row"
         >
           <div
-            class="c23"
+            class="c9"
           >
             <span
               class="c17"
@@ -9919,684 +10605,10 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           </div>
         </th>
         <td
-          class="c22 "
+          class="c21 "
         >
           <div
-            class="c23"
-          />
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`] = `
-.c7 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 4px;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c16 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c5 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c5:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  cursor: pointer;
-}
-
-.c9:hover input:not([disabled]) + div,
-.c9:hover input:not([disabled]) + span {
-  border-color: #000000;
-}
-
-.c12 {
-  opacity: 0;
-  -moz-appearance: none;
-  width: 0;
-  height: 0;
-  margin: 0;
-  cursor: pointer;
-}
-
-.c12:checked + span > span {
-  left: calc( 48px - 24px );
-  background: #7D4CDB;
-}
-
-.c11 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c3 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  width: 48px;
-  max-width: 48px;
-  overflow: hidden;
-  vertical-align: top;
-  text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-}
-
-.c8 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  width: 1px;
-  overflow: hidden;
-  text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-}
-
-.c14 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c18 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  width: 48px;
-  max-width: 48px;
-  overflow: hidden;
-  vertical-align: top;
-  text-align: start;
-}
-
-.c19 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  width: 1px;
-  overflow: hidden;
-  text-align: start;
-}
-
-.c20 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c1 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c2 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-  height: auto;
-}
-
-.c17:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c17:focus:not(:focus-visible) {
-  outline: none;
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c13 {
-    border: solid 2px rgba(0,0,0,0.15);
-  }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
-<div
-  class="c0"
->
-  <table
-    class="c1 c2"
-  >
-    <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      >
-        <td
-          class="c3"
-        >
-          <div
-            class="c4"
-            style="height: 0px;"
-          >
-            <button
-              aria-label="expand"
-              class="c5"
-              type="button"
-            >
-              <div
-                class="c6"
-              >
-                <svg
-                  aria-label="FormDown"
-                  class="c7"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m18 9-6 6-6-6"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-        </td>
-        <th
-          class="c8 "
-          scope="col"
-        >
-          <div
-            class="c4"
-            style="height: 0px;"
-          >
-            <label
-              aria-label="select all"
-              class="c9"
-            >
-              <div
-                class="c10 c11"
-              >
-                <input
-                  class="c12"
-                  type="checkbox"
-                />
-                <div
-                  class="c13 "
-                />
-              </div>
-            </label>
-          </div>
-        </th>
-        <th
-          class="c14 "
-          scope="col"
-        >
-          <div
-            class="c15"
-          >
-            <span
-              class="c16"
-            >
-              A
-            </span>
-          </div>
-        </th>
-        <th
-          class="c14 "
-          scope="col"
-        >
-          <div
-            class="c15"
-          >
-            <span
-              class="c16"
-            >
-              B
-            </span>
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      >
-        <td
-          class="c18"
-        >
-          <div
-            class="c4"
-            style="height: 0px;"
-          >
-            <button
-              aria-label="expand"
-              class="c5"
-              type="button"
-            >
-              <div
-                class="c6"
-              >
-                <svg
-                  aria-label="FormDown"
-                  class="c7"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m18 9-6 6-6-6"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-        </td>
-        <td
-          class="c19"
-        >
-          <div
-            class="c4"
-            style="height: 0px;"
-          >
-            <label
-              aria-label="select one"
-              class="c9"
-            >
-              <div
-                class="c10 c11"
-              >
-                <input
-                  class="c12"
-                  type="checkbox"
-                />
-                <div
-                  class="c13 "
-                />
-              </div>
-            </label>
-          </div>
-        </td>
-        <th
-          class="c20 "
-          scope="row"
-        >
-          <div
-            class="c21"
-          >
-            <span
-              class="c16"
-            >
-              one
-            </span>
-          </div>
-        </th>
-        <td
-          class="c20 "
-        >
-          <div
-            class="c21"
-          />
-        </td>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      >
-        <td
-          class="c18"
-        >
-          <div
-            class="c4"
-            style="height: 0px;"
-          >
-            <button
-              aria-label="expand"
-              class="c5"
-              type="button"
-            >
-              <div
-                class="c6"
-              >
-                <svg
-                  aria-label="FormDown"
-                  class="c7"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m18 9-6 6-6-6"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-        </td>
-        <td
-          class="c19"
-        >
-          <div
-            class="c4"
-            style="height: 0px;"
-          >
-            <label
-              aria-label="select two"
-              class="c9"
-            >
-              <div
-                class="c10 c11"
-              >
-                <input
-                  class="c12"
-                  type="checkbox"
-                />
-                <div
-                  class="c13 "
-                />
-              </div>
-            </label>
-          </div>
-        </td>
-        <th
-          class="c20 "
-          scope="row"
-        >
-          <div
-            class="c21"
-          >
-            <span
-              class="c16"
-            >
-              two
-            </span>
-          </div>
-        </th>
-        <td
-          class="c20 "
-        >
-          <div
-            class="c21"
+            class="c9"
           />
         </td>
       </tr>
@@ -10622,7 +10634,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gneEHy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
             style="height: 0px;"
           >
             <button
@@ -10654,7 +10666,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -10754,7 +10766,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jFDqHE"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
             style="height: 0px;"
           >
             <button
@@ -10785,7 +10797,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -10874,7 +10886,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jFDqHE"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
             style="height: 0px;"
           >
             <button
@@ -10905,7 +10917,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -11009,7 +11021,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gneEHy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
             style="height: 0px;"
           >
             <button
@@ -11041,7 +11053,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -11102,7 +11114,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jFDqHE"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
             style="height: 0px;"
           >
             <button
@@ -11133,7 +11145,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -11183,7 +11195,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jFDqHE"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 fErAuK"
             style="height: 0px;"
           >
             <button
@@ -11214,7 +11226,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -11285,10 +11297,6 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .c6 {
@@ -11356,26 +11364,12 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   flex: 1 0 auto;
 }
 
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c12 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c17 {
+.c16 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -11610,7 +11604,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           class="c15 "
         >
           <div
-            class="c16"
+            class="c4"
           >
             <span
               class="c12"
@@ -11624,10 +11618,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           scope="row"
         >
           <div
-            class="c16"
+            class="c4"
           >
             <span
-              class="c17"
+              class="c16"
             >
               1.1
             </span>
@@ -11666,7 +11660,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           class="c15 "
         >
           <div
-            class="c16"
+            class="c4"
           >
             <span
               class="c12"
@@ -11680,10 +11674,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           scope="row"
         >
           <div
-            class="c16"
+            class="c4"
           >
             <span
-              class="c17"
+              class="c16"
             >
               1.2
             </span>
@@ -11722,7 +11716,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           class="c15 "
         >
           <div
-            class="c16"
+            class="c4"
           >
             <span
               class="c12"
@@ -11736,10 +11730,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           scope="row"
         >
           <div
-            class="c16"
+            class="c4"
           >
             <span
-              class="c17"
+              class="c16"
             >
               2.1
             </span>
@@ -11778,7 +11772,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           class="c15 "
         >
           <div
-            class="c16"
+            class="c4"
           >
             <span
               class="c12"
@@ -11792,10 +11786,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           scope="row"
         >
           <div
-            class="c16"
+            class="c4"
           >
             <span
-              class="c17"
+              class="c16"
             >
               2.2
             </span>
@@ -11825,7 +11819,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -11917,7 +11911,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -12004,7 +11998,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -12091,7 +12085,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -12178,7 +12172,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -12281,7 +12275,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -12342,7 +12336,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -12398,7 +12392,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -12454,7 +12448,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -12510,7 +12504,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -18077,10 +18071,10 @@ exports[`DataTable rowDetails 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c11 {
@@ -18681,10 +18675,10 @@ exports[`DataTable rowDetails condtional 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c11 {
@@ -20044,10 +20038,6 @@ exports[`DataTable select 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .c6 {
@@ -20141,26 +20131,12 @@ exports[`DataTable select 1`] = `
   border-radius: 4px;
 }
 
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c13 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c19 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -20419,10 +20395,10 @@ exports[`DataTable select 1`] = `
           scope="row"
         >
           <div
-            class="c18"
+            class="c4"
           >
             <span
-              class="c19"
+              class="c18"
             >
               alpha
             </span>
@@ -20462,10 +20438,10 @@ exports[`DataTable select 1`] = `
           scope="row"
         >
           <div
-            class="c18"
+            class="c4"
           >
             <span
-              class="c19"
+              class="c18"
             >
               beta
             </span>
@@ -20495,7 +20471,7 @@ exports[`DataTable select 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -20573,7 +20549,7 @@ exports[`DataTable select 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -20628,7 +20604,7 @@ exports[`DataTable select 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bdGeWZ StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hjkuyf"
+            class="StyledBox-sc-13pk1d4-0 iNDmPr"
             style="height: 0px;"
           >
             <label
@@ -38382,6 +38358,7 @@ exports[`DataTable verticalAlign 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
+  vertical-align: top;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
@@ -38397,6 +38374,84 @@ exports[`DataTable verticalAlign 1`] = `
   text-align: inherit;
   vertical-align: top;
   text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 96px;
+  max-width: 96px;
+  overflow: hidden;
+  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 96px;
+  max-width: 96px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 96px;
+  max-width: 96px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: top;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -38538,6 +38593,128 @@ exports[`DataTable verticalAlign 1`] = `
           </td>
         </tr>
       </tbody>
+    </table>
+    <table
+      class="c1 c2"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c10 "
+            scope="col"
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c5"
+              >
+                A
+              </span>
+            </div>
+          </th>
+          <th
+            class="c11 "
+            scope="col"
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c5"
+              >
+                B
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c12 "
+            scope="row"
+          >
+            <div
+              class="c8"
+            />
+          </th>
+          <td
+            class="c7 "
+          >
+            <div
+              class="c8"
+            >
+              <span
+                class="c5"
+              >
+                1
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c12 "
+            scope="row"
+          >
+            <div
+              class="c8"
+            />
+          </th>
+          <td
+            class="c7 "
+          >
+            <div
+              class="c8"
+            >
+              <span
+                class="c5"
+              >
+                2
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot
+        class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2"
+        >
+          <td
+            class="c13 "
+          >
+            <div
+              class="c8"
+            >
+              <span
+                class="c9"
+              >
+                This is a long footer that wraps
+              </span>
+            </div>
+          </td>
+          <td
+            class="c14 "
+          >
+            <div
+              class="c8"
+            />
+          </td>
+        </tr>
+      </tfoot>
     </table>
   </div>
 </DocumentFragment>

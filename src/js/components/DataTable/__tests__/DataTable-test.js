@@ -956,9 +956,6 @@ describe('DataTable', () => {
   test('custom theme', () => {
     const customTheme = {
       dataTable: {
-        body: {
-          verticalAlign: 'top',
-        },
         header: {
           background: 'skyblue',
           border: {
@@ -1392,6 +1389,26 @@ describe('DataTable', () => {
             { a: 'two', b: { c: 2 } },
           ]}
           verticalAlign="top"
+        />
+        <DataTable
+          columns={[
+            {
+              property: 'This is a long header that wraps',
+              header: 'A',
+              footer: 'This is a long footer that wraps',
+              size: 'xsmall',
+            },
+            { property: 'b.c', header: 'B' },
+          ]}
+          data={[
+            { a: 'this is long data that might wrap also', b: { c: 1 } },
+            { a: 'two', b: { c: 2 } },
+          ]}
+          verticalAlign={{
+            header: 'bottom',
+            body: 'top',
+            footer: 'top',
+          }}
         />
       </Grommet>,
     );

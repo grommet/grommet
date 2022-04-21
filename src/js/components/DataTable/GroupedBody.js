@@ -1,6 +1,5 @@
-import React, { forwardRef, useContext, useMemo } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 
-import { ThemeContext } from 'styled-components';
 import { Cell } from './Cell';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
@@ -30,11 +29,11 @@ export const GroupedBody = forwardRef(
       selected,
       size,
       step,
+      verticalAlign,
       ...rest
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
     const items = useMemo(() => {
       const nextItems = [];
       groups.forEach((group) => {
@@ -163,14 +162,14 @@ export const GroupedBody = forwardRef(
                     context === 'groupHeader' ? onToggle(key) : undefined
                   }
                   expanded={expanded}
-                  verticalAlign={theme.dataTable.body?.verticalAlign}
+                  verticalAlign={verticalAlign}
                 />
                 {(selected || onSelect) && (
                   <TableCell
                     background={cellProps.background}
                     plain="noPad"
                     size="auto"
-                    verticalAlign={theme.dataTable.body?.verticalAlign}
+                    verticalAlign={verticalAlign}
                   >
                     <CheckBox
                       a11yTitle={`${isSelected ? 'unselect' : 'select'} ${
@@ -207,7 +206,7 @@ export const GroupedBody = forwardRef(
                         pinnedOffset &&
                         pinnedOffset[column.property]
                       }
-                      verticalAlign={theme.dataTable.body?.verticalAlign}
+                      verticalAlign={verticalAlign}
                     />
                   );
                 })}

@@ -4,6 +4,7 @@ import { genericProps } from '../../utils/general-prop-types';
 const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 const parts = ['header', 'body', 'footer'];
+const verticalAlign = ['bottom', 'middle', 'top'];
 
 const padShapeSides = {};
 sides.forEach((side) => {
@@ -164,7 +165,14 @@ if (process.env.NODE_ENV !== 'production') {
     }),
     sortable: PropTypes.bool,
     step: PropTypes.number,
-    verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom']),
+    verticalAlign: PropTypes.oneOfType([
+      PropTypes.oneOf(verticalAlign),
+      PropTypes.shape({
+        header: PropTypes.oneOf(verticalAlign),
+        body: PropTypes.oneOf(verticalAlign),
+        footer: PropTypes.oneOf(verticalAlign),
+      }),
+    ]),
   };
 }
 export const DataTablePropTypes = PropType;
