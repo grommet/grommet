@@ -202,6 +202,7 @@ const Body = forwardRef(
             }
           }
         }}
+        // The WCAG recommendation for checkboxes is to select them with "Space"
         onSpace={() => {
           if (
             onClickRow &&
