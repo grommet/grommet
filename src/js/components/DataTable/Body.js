@@ -55,7 +55,7 @@ const Row = memo(
               adjustedEvent.index = index;
               onClickRow(adjustedEvent);
             }
-            if (typeof onClickRow === 'string') {
+            if (onClickRow === 'onSelect') {
               if (isSelected) {
                 onSelect(selected.filter((s) => s !== primaryValue));
               } else onSelect([...selected, primaryValue]);
@@ -77,7 +77,7 @@ const Row = memo(
               size: 'auto',
               render: () => (
                 <CheckBox
-                  tabIndex={typeof onClickRow === 'string' ? -1 : undefined}
+                  tabIndex={onClickRow === 'onSelect' ? -1 : undefined}
                   a11yTitle={`${
                     isSelected ? 'unselect' : 'select'
                   } ${primaryValue}`}
