@@ -45,34 +45,30 @@ const Row = memo(
         size={size}
         active={active}
         aria-disabled={(onClickRow && isDisabled) || undefined}
-        onClick={
-          onClickRow && !isDisabled
-            ? (event) => {
-                // extract from React's synthetic event pool
-                event.persist();
-                const adjustedEvent = event;
-                adjustedEvent.datum = datum;
-                adjustedEvent.index = index;
-                onClickRow(adjustedEvent);
-              }
-            : undefined
-        }
+        onClick={(event) => {
+          if (onClickRow && !isDisabled) {
+            if (typeof onClickRow === 'function') {
+              // extract from React's synthetic event pool
+              event.persist();
+              const adjustedEvent = event;
+              adjustedEvent.datum = datum;
+              adjustedEvent.index = index;
+              onClickRow(adjustedEvent);
+            }
+            if (typeof onClickRow === 'string') {
+              if (isSelected) {
+                onSelect(selected.filter((s) => s !== primaryValue));
+              } else onSelect([...selected, primaryValue]);
+            }
+          }
+        }}
         onMouseEnter={
-          onClickRow && !isDisabled
-            ? () => {
-                setActive(index);
-              }
-            : undefined
+          onClickRow && !isDisabled ? () => setActive(index) : undefined
         }
         onMouseLeave={onClickRow ? () => setActive(undefined) : undefined}
       >
         {(selected || onSelect) && (
           <Cell
-            background={
-              (pinnedOffset?._grommetDataTableSelect &&
-                cellProps.pinned.background) ||
-              cellProps.background
-            }
             pinnedOffset={pinnedOffset?._grommetDataTableSelect}
             aria-disabled={isDisabled || !onSelect || undefined}
             column={{
@@ -81,6 +77,7 @@ const Row = memo(
               size: 'auto',
               render: () => (
                 <CheckBox
+                  tabIndex={typeof onClickRow === 'string' ? -1 : undefined}
                   a11yTitle={`${
                     isSelected ? 'unselect' : 'select'
                   } ${primaryValue}`}
@@ -181,20 +178,25 @@ const Body = forwardRef(
 
     return (
       <Keyboard
-        onEnter={
-          // active is undefined if user never used the keyboard
-          onClickRow &&
-          active >= 0 &&
-          (!disabled ||
-            !disabled.includes(datumValue(data[active], primaryProperty)))
-            ? (event) => {
-                event.persist();
-                const adjustedEvent = event;
-                adjustedEvent.datum = data[active];
-                onClickRow(adjustedEvent);
-              }
-            : undefined
-        }
+        onEnter={(event) => {
+          if (
+            (onClickRow && active >= 0 && !disabled) ||
+            !disabled.includes(datumValue(data[active], primaryProperty))
+          ) {
+            if (typeof onClickRow === 'function') {
+              event.persist();
+              const adjustedEvent = event;
+              adjustedEvent.datum = data[active];
+              onClickRow(adjustedEvent);
+            }
+            if (onClickRow === 'onSelect') {
+              const primaryValue = data[active]?.[primaryProperty];
+              if (selected && selected.includes(primaryValue)) {
+                onSelect(selected.filter((s) => s !== primaryValue));
+              } else onSelect([...selected, primaryValue]);
+            }
+          }
+        }}
         onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
         onDown={
           onClickRow && data.length && active < data.length - 1

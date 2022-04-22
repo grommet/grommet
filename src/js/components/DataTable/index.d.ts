@@ -105,7 +105,9 @@ export interface DataTableProps<TRowType = any> {
   step?: number;
 
   // Events
-  onClickRow?: (event: MouseClick<TRowType> | KeyPress<TRowType>) => void;
+  onClickRow?:
+    | 'onSelect'
+    | ((event: MouseClick<TRowType> | KeyPress<TRowType>) => void);
   onMore?: () => void;
   onSearch?: (search: string) => void;
   onSelect?: (select: (string | number)[], datum: TRowType) => void;
