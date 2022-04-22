@@ -5,6 +5,7 @@ import { genericProps } from '../../utils/general-prop-types';
 var sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 var parts = ['header', 'body', 'footer'];
+var verticalAlign = ['bottom', 'middle', 'top'];
 var padShapeSides = {};
 sides.forEach(function (side) {
   padShapeSides[side] = PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]);
@@ -98,7 +99,12 @@ if (process.env.NODE_ENV !== 'production') {
       property: PropTypes.string.isRequired
     }),
     sortable: PropTypes.bool,
-    step: PropTypes.number
+    step: PropTypes.number,
+    verticalAlign: PropTypes.oneOfType([PropTypes.oneOf(verticalAlign), PropTypes.shape({
+      header: PropTypes.oneOf(verticalAlign),
+      body: PropTypes.oneOf(verticalAlign),
+      footer: PropTypes.oneOf(verticalAlign)
+    })])
   });
 }
 

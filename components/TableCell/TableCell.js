@@ -130,7 +130,7 @@ var TableCell = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     // TableCell
     content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       ref: containerRef,
-      justify: "center"
+      justify: verticalAlign ? verticalAlignToJustify[verticalAlign] : 'center'
     }, children);
   } // construct a new theme object in case we have a background that wants
   // to change the background color context

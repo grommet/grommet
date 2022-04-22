@@ -1,4 +1,4 @@
-var _excluded = ["cellProps", "columns", "data", "disabled", "onMore", "replace", "onClickRow", "onSelect", "pinnedOffset", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"];
+var _excluded = ["cellProps", "columns", "data", "disabled", "onMore", "replace", "onClickRow", "onSelect", "pinnedOffset", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand", "verticalAlign"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -38,7 +38,8 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       columns = _ref.columns,
       pinnedOffset = _ref.pinnedOffset,
       primaryProperty = _ref.primaryProperty,
-      data = _ref.data;
+      data = _ref.data,
+      verticalAlign = _ref.verticalAlign;
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(StyledDataTableRow, {
     ref: rowRef,
     size: size,
@@ -81,7 +82,8 @@ var Row = /*#__PURE__*/memo(function (_ref) {
           pad: cellProps.pad
         });
       }
-    }
+    },
+    verticalAlign: verticalAlign
   }), rowDetails && /*#__PURE__*/React.createElement(ExpanderCell, {
     context: isRowExpanded ? 'groupHeader' : 'body',
     expanded: isRowExpanded,
@@ -94,7 +96,8 @@ var Row = /*#__PURE__*/memo(function (_ref) {
         setRowExpand([].concat(rowExpand, [index]));
       }
     },
-    pad: cellProps.pad
+    pad: cellProps.pad,
+    verticalAlign: verticalAlign
   }), columns.map(function (column) {
     return /*#__PURE__*/React.createElement(Cell, {
       key: column.property,
@@ -106,7 +109,8 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       pad: column.pin && cellProps.pinned.pad || cellProps.pad,
       pinnedOffset: pinnedOffset && pinnedOffset[column.property],
       primaryProperty: primaryProperty,
-      scope: column.primary || column.property === primaryProperty ? 'row' : undefined
+      scope: column.primary || column.property === primaryProperty ? 'row' : undefined,
+      verticalAlign: verticalAlign
     });
   })), rowDetails && isRowExpanded && /*#__PURE__*/React.createElement(StyledDataTableRow, {
     key: index.toString() + "_expand"
@@ -133,6 +137,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       step = _ref2.step,
       rowExpand = _ref2.rowExpand,
       setRowExpand = _ref2.setRowExpand,
+      verticalAlign = _ref2.verticalAlign,
       rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
@@ -211,7 +216,8 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       rowProps: rowProps,
       data: data,
       theme: theme,
-      pinnedOffset: pinnedOffset
+      pinnedOffset: pinnedOffset,
+      verticalAlign: verticalAlign
     });
   })));
 });

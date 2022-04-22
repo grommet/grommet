@@ -15,7 +15,7 @@ var _Cell = require("./Cell");
 
 var _StyledDataTable = require("./StyledDataTable");
 
-var _excluded = ["cellProps", "columns", "fill", "footerValues", "groups", "onSelect", "pin", "pinnedOffset", "primaryProperty", "selected"];
+var _excluded = ["cellProps", "columns", "fill", "footerValues", "groups", "onSelect", "pin", "pinnedOffset", "primaryProperty", "selected", "verticalAlign"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -36,6 +36,7 @@ var Footer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       pinnedOffset = _ref.pinnedOffset,
       primaryProperty = _ref.primaryProperty,
       selected = _ref.selected,
+      verticalAlign = _ref.verticalAlign,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var pin = pinProp ? ['bottom'] : [];
@@ -53,7 +54,8 @@ var Footer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, {
     background: cellProps.background,
     context: "footer",
-    pin: pin
+    pin: pin,
+    verticalAlign: verticalAlign
   }), columns.map(function (column) {
     var cellPin = [].concat(pin);
     if (column.pin) cellPin.push('left');
@@ -67,7 +69,8 @@ var Footer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       pad: column.pin && cellProps.pinned.pad || cellProps.pad,
       pin: pin.length ? pin : undefined,
       pinnedOffset: pinnedOffset && pinnedOffset[column.property],
-      primaryProperty: primaryProperty
+      primaryProperty: primaryProperty,
+      verticalAlign: verticalAlign
     });
   })));
 });

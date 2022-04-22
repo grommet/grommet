@@ -14,6 +14,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 var parts = ['header', 'body', 'footer'];
+var verticalAlign = ['bottom', 'middle', 'top'];
 var padShapeSides = {};
 sides.forEach(function (side) {
   padShapeSides[side] = _propTypes["default"].oneOfType([_propTypes["default"].oneOf(sizes), _propTypes["default"].string]);
@@ -107,7 +108,12 @@ if (process.env.NODE_ENV !== 'production') {
       property: _propTypes["default"].string.isRequired
     }),
     sortable: _propTypes["default"].bool,
-    step: _propTypes["default"].number
+    step: _propTypes["default"].number,
+    verticalAlign: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(verticalAlign), _propTypes["default"].shape({
+      header: _propTypes["default"].oneOf(verticalAlign),
+      body: _propTypes["default"].oneOf(verticalAlign),
+      footer: _propTypes["default"].oneOf(verticalAlign)
+    })])
   });
 }
 

@@ -34,7 +34,7 @@ var _styles = require("../../utils/styles");
 var _colors = require("../../utils/colors");
 
 var _excluded = ["background", "border", "color", "font", "gap", "pad", "units"],
-    _excluded2 = ["cellProps", "columns", "data", "disabled", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths"];
+    _excluded2 = ["cellProps", "columns", "data", "disabled", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths", "verticalAlign"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -144,6 +144,7 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       rowDetails = _ref2.rowDetails,
       sort = _ref2.sort,
       widths = _ref2.widths,
+      verticalAlign = _ref2.verticalAlign,
       rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
@@ -235,7 +236,8 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     context: "header",
     scope: "col",
     pin: selectPin,
-    pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect
+    pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect,
+    verticalAlign: verticalAlign
   }, onSelect && /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
     a11yTitle: totalSelected === data.length ? 'unselect all' : 'select all',
     checked: groupBy != null && groupBy.select ? groupBy.select[''] === 'all' : totalSelected > 0 && data.length > 0 && totalSelected === data.length,
@@ -253,7 +255,7 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         columnPin = _ref3.pin,
         search = _ref3.search,
         sortable = _ref3.sortable,
-        verticalAlign = _ref3.verticalAlign,
+        columnVerticalAlign = _ref3.verticalAlign,
         size = _ref3.size,
         units = _ref3.units;
     var content;
@@ -344,7 +346,7 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       key: property,
       align: align,
       context: "header",
-      verticalAlign: verticalAlign,
+      verticalAlign: verticalAlign || columnVerticalAlign,
       background: cellProps.background,
       border: cellProps.border,
       onWidth: updateWidths // if sortable, pad will be included in the button styling

@@ -21,7 +21,7 @@ var _TableCell = require("../TableCell");
 
 var _buildState = require("./buildState");
 
-var _excluded = ["cellProps", "columns", "data", "disabled", "groupBy", "groups", "groupState", "pinnedOffset", "primaryProperty", "onMore", "onSelect", "onToggle", "onUpdate", "replace", "rowProps", "selected", "size", "step"];
+var _excluded = ["cellProps", "columns", "data", "disabled", "groupBy", "groups", "groupState", "pinnedOffset", "primaryProperty", "onMore", "onSelect", "onToggle", "onUpdate", "replace", "rowProps", "selected", "size", "step", "verticalAlign"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -50,6 +50,7 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       selected = _ref.selected,
       size = _ref.size,
       step = _ref.step,
+      verticalAlign = _ref.verticalAlign,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var items = (0, _react.useMemo)(function () {
@@ -159,11 +160,13 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       context: context,
       pad: cellProps.pad,
       onToggle: context === 'groupHeader' ? onToggle(key) : undefined,
-      expanded: expanded
+      expanded: expanded,
+      verticalAlign: verticalAlign
     }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
       background: cellProps.background,
       plain: "noPad",
       size: "auto",
+      verticalAlign: verticalAlign,
       "aria-disabled": isDisabled || !onSelect || undefined
     }, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
       a11yTitle: (isSelected ? 'unselect' : 'select') + " " + (context === 'groupHeader' ? key : primaryValue),
@@ -190,7 +193,8 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         datum: datum,
         pad: cellProps.pad,
         scope: scope,
-        pinnedOffset: context === 'groupHeader' && pinnedOffset && pinnedOffset[column.property]
+        pinnedOffset: context === 'groupHeader' && pinnedOffset && pinnedOffset[column.property],
+        verticalAlign: verticalAlign
       });
     }));
   }));

@@ -1,4 +1,4 @@
-var _excluded = ["background", "border", "columns", "data", "disabled", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "onUpdate", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step"];
+var _excluded = ["background", "border", "columns", "data", "disabled", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "onUpdate", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step", "verticalAlign"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -83,6 +83,7 @@ var DataTable = function DataTable(_ref) {
       rowDetails = _ref.rowDetails,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? 50 : _ref$step,
+      verticalAlign = _ref.verticalAlign,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme; // property name of the primary property
@@ -440,7 +441,8 @@ var DataTable = function DataTable(_ref) {
     rowProps: rowProps,
     selected: selected,
     size: size,
-    step: step
+    step: step,
+    verticalAlign: typeof verticalAlign === 'string' ? verticalAlign : verticalAlign == null ? void 0 : verticalAlign.body
   }) : /*#__PURE__*/React.createElement(Body, {
     ref: bodyRef,
     cellProps: cellProps.body,
@@ -476,7 +478,8 @@ var DataTable = function DataTable(_ref) {
     step: step,
     rowDetails: rowDetails,
     rowExpand: rowExpand,
-    setRowExpand: setRowExpand
+    setRowExpand: setRowExpand,
+    verticalAlign: typeof verticalAlign === 'string' ? verticalAlign : verticalAlign == null ? void 0 : verticalAlign.body
   });
   return /*#__PURE__*/React.createElement(Container, containterProps, /*#__PURE__*/React.createElement(OverflowContainer, overflowContainerProps, /*#__PURE__*/React.createElement(StyledDataTable, _extends({
     fillProp: !paginate ? fill : undefined
@@ -510,7 +513,8 @@ var DataTable = function DataTable(_ref) {
     onWidths: onHeaderWidths,
     primaryProperty: primaryProperty,
     scrollOffset: scrollOffset,
-    rowDetails: rowDetails
+    rowDetails: rowDetails,
+    verticalAlign: typeof verticalAlign === 'string' ? verticalAlign : verticalAlign == null ? void 0 : verticalAlign.header
   }), placeholder && (!items || items.length === 0) ? /*#__PURE__*/React.createElement(PlaceholderBody, {
     ref: bodyRef,
     columns: columns,
@@ -528,7 +532,8 @@ var DataTable = function DataTable(_ref) {
     primaryProperty: primaryProperty,
     scrollOffset: scrollOffset,
     selected: selected,
-    size: size
+    size: size,
+    verticalAlign: typeof verticalAlign === 'string' ? verticalAlign : verticalAlign == null ? void 0 : verticalAlign.footer
   }), placeholder && items && items.length > 0 && /*#__PURE__*/React.createElement(StyledPlaceholder, {
     top: headerHeight,
     bottom: footerHeight

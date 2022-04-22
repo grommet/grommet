@@ -17,7 +17,7 @@ var _buildState = require("./buildState");
 
 var _TableContext = require("../Table/TableContext");
 
-var _excluded = ["background", "border", "column", "datum", "pad", "pin", "pinnedOffset", "primaryProperty", "scope"];
+var _excluded = ["background", "border", "column", "datum", "pad", "pin", "pinnedOffset", "primaryProperty", "scope", "verticalAlign"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -37,7 +37,7 @@ var Cell = /*#__PURE__*/(0, _react.memo)(function (_ref) {
       footer = _ref$column.footer,
       property = _ref$column.property,
       render = _ref$column.render,
-      verticalAlign = _ref$column.verticalAlign,
+      columnVerticalAlign = _ref$column.verticalAlign,
       size = _ref$column.size,
       datum = _ref.datum,
       pad = _ref.pad,
@@ -45,6 +45,7 @@ var Cell = /*#__PURE__*/(0, _react.memo)(function (_ref) {
       pinnedOffset = _ref.pinnedOffset,
       primaryProperty = _ref.primaryProperty,
       scope = _ref.scope,
+      verticalAlign = _ref.verticalAlign,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
@@ -73,7 +74,7 @@ var Cell = /*#__PURE__*/(0, _react.memo)(function (_ref) {
   }, theme.dataTable[context], {
     align: align,
     context: context,
-    verticalAlign: verticalAlign,
+    verticalAlign: verticalAlign || columnVerticalAlign,
     size: size,
     background: background,
     pinnedOffset: pinnedOffset,
