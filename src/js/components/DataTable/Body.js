@@ -202,6 +202,21 @@ const Body = forwardRef(
             }
           }
         }}
+        onSpace={() => {
+          if (
+            onClickRow &&
+            active >= 0 &&
+            (!disabled ||
+              !disabled.includes(datumValue(data[active], primaryProperty)))
+          ) {
+            if (onClickRow === 'onSelect') {
+              const primaryValue = data[active]?.[primaryProperty];
+              if (selected && selected.includes(primaryValue)) {
+                onSelect(selected.filter((s) => s !== primaryValue));
+              } else onSelect([...selected, primaryValue]);
+            }
+          }
+        }}
         onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
         onDown={
           onClickRow && data.length && active < data.length - 1
