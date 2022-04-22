@@ -82,7 +82,7 @@ exports[`DataTable !primaryKey 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -334,7 +334,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c7:focus {
@@ -564,7 +564,7 @@ exports[`DataTable aggregate 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -822,7 +822,7 @@ exports[`DataTable aggregate with nested object 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -1188,7 +1188,7 @@ exports[`DataTable background 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -1701,7 +1701,7 @@ exports[`DataTable basic 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -1932,7 +1932,7 @@ exports[`DataTable border 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -2579,7 +2579,7 @@ exports[`DataTable click 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c7 {
@@ -2678,7 +2678,7 @@ exports[`DataTable click 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -2796,6 +2796,7 @@ exports[`DataTable custom theme 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  height: 100%;
 }
 
 .c9 {
@@ -3182,7 +3183,7 @@ exports[`DataTable custom theme 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c18:focus {
@@ -3427,7 +3428,7 @@ exports[`DataTable custom theme 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -3448,7 +3449,7 @@ exports[`DataTable custom theme 2`] = `
             style="position: relative;"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 fqUnkf"
+              class="StyledBox-sc-13pk1d4-0 eUIwDt"
             >
               <button
                 class="StyledButton-sc-323bzc-0 iIPNKk Header__StyledHeaderCellButton-sc-1baku5q-0 brJnFl"
@@ -3700,7 +3701,7 @@ exports[`DataTable disabled click 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c10 {
@@ -3800,7 +3801,7 @@ exports[`DataTable disabled click 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -4167,7 +4168,7 @@ exports[`DataTable disabled select 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c14:focus {
@@ -4393,7 +4394,7 @@ exports[`DataTable empty 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c3:focus {
@@ -4531,7 +4532,7 @@ exports[`DataTable fill 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
   width: 100%;
   height: 100%;
 }
@@ -4540,7 +4541,7 @@ exports[`DataTable fill 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
   width: 100%;
 }
 
@@ -4548,7 +4549,7 @@ exports[`DataTable fill 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
   height: 100%;
 }
 
@@ -5075,7 +5076,7 @@ exports[`DataTable footer 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -5484,7 +5485,7 @@ exports[`DataTable groupBy 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c11:focus {
@@ -5713,7 +5714,7 @@ exports[`DataTable groupBy 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -6200,7 +6201,7 @@ exports[`DataTable groupBy expand 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c11:focus {
@@ -6778,7 +6779,7 @@ exports[`DataTable groupBy property 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c11:focus {
@@ -7007,7 +7008,7 @@ exports[`DataTable groupBy property 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7284,7 +7285,7 @@ exports[`DataTable groupBy toggle 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -7490,7 +7491,7 @@ exports[`DataTable groupBy toggle 2`] = `
     toggle
   </button>
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -8079,7 +8080,7 @@ exports[`DataTable groupBy toggle 3`] = `
     toggle
   </button>
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -8755,7 +8756,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c18:focus {
@@ -9625,7 +9626,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c18:focus {
@@ -10355,7 +10356,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c18:focus {
@@ -11057,7 +11058,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c17:focus {
@@ -11368,7 +11369,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -11755,7 +11756,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -12242,7 +12243,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c13:focus {
@@ -12570,7 +12571,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -13026,7 +13027,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -13348,6 +13349,7 @@ exports[`DataTable onSort 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  height: 100%;
 }
 
 .c7 {
@@ -13484,7 +13486,7 @@ exports[`DataTable onSort 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c9:focus {
@@ -13671,7 +13673,7 @@ exports[`DataTable onSort 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -13684,7 +13686,7 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fqUnkf"
+            class="StyledBox-sc-13pk1d4-0 eUIwDt"
           >
             <button
               class="StyledButton-sc-323bzc-0 iIPNKk Header__StyledHeaderCellButton-sc-1baku5q-0 jdyvfX"
@@ -13784,7 +13786,7 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fqUnkf"
+            class="StyledBox-sc-13pk1d4-0 eUIwDt"
           >
             <button
               class="StyledButton-sc-323bzc-0 iIPNKk Header__StyledHeaderCellButton-sc-1baku5q-0 jdyvfX"
@@ -13965,6 +13967,7 @@ exports[`DataTable onSort external 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  height: 100%;
 }
 
 .c7 {
@@ -14111,7 +14114,7 @@ exports[`DataTable onSort external 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c11:focus {
@@ -14319,7 +14322,7 @@ exports[`DataTable onSort external 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -14332,7 +14335,7 @@ exports[`DataTable onSort external 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fqUnkf"
+            class="StyledBox-sc-13pk1d4-0 eUIwDt"
           >
             <button
               class="StyledButton-sc-323bzc-0 iIPNKk Header__StyledHeaderCellButton-sc-1baku5q-0 jdyvfX"
@@ -14412,7 +14415,7 @@ exports[`DataTable onSort external 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fqUnkf"
+            class="StyledBox-sc-13pk1d4-0 eUIwDt"
           >
             <button
               class="StyledButton-sc-323bzc-0 iIPNKk Header__StyledHeaderCellButton-sc-1baku5q-0 jdyvfX"
@@ -14676,7 +14679,7 @@ exports[`DataTable pad 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -15189,7 +15192,7 @@ exports[`DataTable paths 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -15462,7 +15465,7 @@ exports[`DataTable pin + background 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c8:focus {
@@ -16114,7 +16117,7 @@ exports[`DataTable pin + background context 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c9:focus {
@@ -16696,7 +16699,7 @@ exports[`DataTable pin 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c8:focus {
@@ -17291,7 +17294,7 @@ exports[`DataTable placeholder 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -17725,7 +17728,7 @@ exports[`DataTable primaryKey 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -17979,7 +17982,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c7:focus {
@@ -18214,7 +18217,7 @@ exports[`DataTable replace 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -18559,7 +18562,7 @@ exports[`DataTable resizeable 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c15:focus {
@@ -19019,7 +19022,7 @@ exports[`DataTable rowDetails 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c7:focus {
@@ -19623,7 +19626,7 @@ exports[`DataTable rowDetails condtional 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c7:focus {
@@ -20085,7 +20088,7 @@ exports[`DataTable rowProps 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c6:focus {
@@ -20462,7 +20465,7 @@ exports[`DataTable search 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c10:focus {
@@ -20605,7 +20608,7 @@ exports[`DataTable search 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -21035,7 +21038,7 @@ exports[`DataTable select 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c14:focus {
@@ -21240,7 +21243,7 @@ exports[`DataTable select 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -22034,7 +22037,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c8:focus {
@@ -23898,7 +23901,7 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c8:focus {
@@ -24078,7 +24081,7 @@ exports[`DataTable should not show paginate controls when length of data < step 
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c8:focus {
@@ -24820,7 +24823,7 @@ exports[`DataTable should paginate 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c8:focus {
@@ -27164,7 +27167,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c8:focus {
@@ -28462,7 +28465,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c8:focus {
@@ -30243,7 +30246,7 @@ exports[`DataTable should render new data when page changes 2`] = `
       class="StyledBox-sc-13pk1d4-0 iZicmW"
     >
       <table
-        class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+        class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
       >
         <thead
           class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -32354,7 +32357,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c8:focus {
@@ -34698,7 +34701,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c8:focus {
@@ -36373,6 +36376,7 @@ exports[`DataTable sort 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  height: 100%;
 }
 
 .c7 {
@@ -36519,7 +36523,7 @@ exports[`DataTable sort 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c11:focus {
@@ -36782,6 +36786,7 @@ exports[`DataTable sort external 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  height: 100%;
 }
 
 .c7 {
@@ -36928,7 +36933,7 @@ exports[`DataTable sort external 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c11:focus {
@@ -37191,6 +37196,7 @@ exports[`DataTable sort nested object 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  height: 100%;
 }
 
 .c7 {
@@ -37337,7 +37343,7 @@ exports[`DataTable sort nested object 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c11:focus {
@@ -37600,6 +37606,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  height: 100%;
 }
 
 .c7 {
@@ -37746,7 +37753,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c11:focus {
@@ -37975,6 +37982,7 @@ exports[`DataTable sortable 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  height: 100%;
 }
 
 .c7 {
@@ -38111,7 +38119,7 @@ exports[`DataTable sortable 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c9:focus {
@@ -38298,7 +38306,7 @@ exports[`DataTable sortable 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 eXMpft"
+    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -38311,7 +38319,7 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fqUnkf"
+            class="StyledBox-sc-13pk1d4-0 eUIwDt"
           >
             <button
               class="StyledButton-sc-323bzc-0 iIPNKk Header__StyledHeaderCellButton-sc-1baku5q-0 jdyvfX"
@@ -38411,7 +38419,7 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fqUnkf"
+            class="StyledBox-sc-13pk1d4-0 eUIwDt"
           >
             <button
               class="StyledButton-sc-323bzc-0 iIPNKk Header__StyledHeaderCellButton-sc-1baku5q-0 jdyvfX"
@@ -38657,7 +38665,7 @@ exports[`DataTable themeColumnSizes 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c7:focus {
@@ -38911,7 +38919,7 @@ exports[`DataTable units 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto;
+  height: 100%;
 }
 
 .c8:focus {
