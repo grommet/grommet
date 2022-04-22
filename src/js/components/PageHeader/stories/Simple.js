@@ -15,24 +15,21 @@ import { More } from 'grommet-icons';
 const actions = [
   {
     label: 'Primary Action',
-    primary: true,
   },
   {
     label: 'Some Action',
-    secondary: true,
   },
   {
     label: 'Other Action',
-    secondary: true,
   },
   {
     label: 'Another Action',
-    secondary: true,
   },
 ];
 
 export const Simple = () => {
   const size = useContext(ResponsiveContext);
+
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
@@ -46,16 +43,23 @@ export const Simple = () => {
           layout priority. In this case, we never want to let the 
           title/subtitle get below a certain width."
           actions={
-            size !== 'small' ? (
-              <Box direction="row" gap="small" align="center">
-                <Button label="Add Item" primary />
-                <Button label="Some Action" secondary />
-                <Button label="Other Action" secondary />
-                <Button label="One More Action" secondary />
-              </Box>
-            ) : (
-              <Menu items={actions} icon={<More />} />
-            )
+            <Box direction="row" gap="small" align="center">
+              {size !== 'small' ? (
+                actions.map((action) => (
+                  <Button
+                    {...action}
+                    primary={action.label === 'Primary Action'}
+                    secondary={action.label !== 'Primary Action'}
+                  />
+                ))
+              ) : (
+                <Menu
+                  dropAlign={{ top: 'bottom', right: 'right' }}
+                  items={actions}
+                  icon={<More />}
+                />
+              )}
+            </Box>
           }
           context={<Anchor label="Parent Page" />}
         />

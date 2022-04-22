@@ -1265,29 +1265,32 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         ['title', 'actions'],
         ['subtitle', 'empty'],
       ],
-      gap: { row: 'xsmall', column: 'medium' },
       subtitle: {
         // any paragraph props
         size: 'large',
         margin: 'none',
+        fill: true,
       },
       title: {
         // any heading props
         size: 'small',
         margin: 'none',
+        fill: true,
       },
-      // not definitive column definitions, just exploring
       small: {
         columns: [['small', 'flex'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
+        gap: { row: 'xsmall', column: 'large' },
       },
       medium: {
-        columns: [['medium', 'flex'], 'auto'],
+        columns: [['medium', 'large'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
+        gap: { row: 'xsmall', column: 'medium' },
       },
       large: {
-        columns: [['medium', 'flex'], 'auto'],
+        columns: [['medium', 'large'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
+        gap: { row: 'xsmall', column: 'large' },
       },
     },
     pagination: {

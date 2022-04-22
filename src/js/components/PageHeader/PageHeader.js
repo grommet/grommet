@@ -8,10 +8,6 @@ import { Grid } from '../Grid';
 import { Paragraph } from '../Paragraph';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 
-// QUESTIONS:
-// 1. do we want the heading / paragraph to fill or let them wrap?
-// 2. should the rest go on the header or the grid?
-
 const defaultAreas = ['actions', 'context', 'subtitle', 'title', 'empty'];
 
 const getCustomAreas = (theme) => {
@@ -40,7 +36,7 @@ const PageHeader = forwardRef(
           columns={theme.pageHeader[size].columns}
           rows={theme.pageHeader[size].rows}
           areas={theme.pageHeader.areas}
-          gap={theme.pageHeader.gap}
+          gap={theme.pageHeader[size].gap}
           fill="horizontal"
         >
           <Box align="start" gridArea="context">
@@ -48,9 +44,7 @@ const PageHeader = forwardRef(
           </Box>
           <Box gridArea="title">
             {typeof title === 'string' ? (
-              <Heading level={1} {...theme.pageHeader.title}>
-                {title}
-              </Heading>
+              <Heading {...theme.pageHeader.title}>{title}</Heading>
             ) : (
               title
             )}
@@ -62,7 +56,7 @@ const PageHeader = forwardRef(
               subtitle
             )}
           </Box>
-          <Box align="start" gridArea="actions">
+          <Box align="end" gridArea="actions">
             {actions}
           </Box>
           <Box gridArea="empty" />

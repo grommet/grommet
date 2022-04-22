@@ -1941,18 +1941,18 @@ Object {
               "empty",
             ],
           ],
-          "gap": Object {
-            "column": "medium",
-            "row": "xsmall",
-          },
           "large": Object {
             "columns": Array [
               Array [
                 "medium",
-                "flex",
+                "large",
               ],
               "auto",
             ],
+            "gap": Object {
+              "column": "large",
+              "row": "xsmall",
+            },
             "rows": Array [
               "auto",
               "auto",
@@ -1963,10 +1963,14 @@ Object {
             "columns": Array [
               Array [
                 "medium",
-                "flex",
+                "large",
               ],
               "auto",
             ],
+            "gap": Object {
+              "column": "medium",
+              "row": "xsmall",
+            },
             "rows": Array [
               "auto",
               "auto",
@@ -1981,6 +1985,10 @@ Object {
               ],
               "auto",
             ],
+            "gap": Object {
+              "column": "large",
+              "row": "xsmall",
+            },
             "rows": Array [
               "auto",
               "auto",
@@ -1988,10 +1996,12 @@ Object {
             ],
           },
           "subtitle": Object {
+            "fill": true,
             "margin": "none",
             "size": "large",
           },
           "title": Object {
+            "fill": true,
             "margin": "none",
             "size": "small",
           },
