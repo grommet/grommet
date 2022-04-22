@@ -346,7 +346,10 @@ const Header = forwardRef(
 
               // content should fill any available space in cell
               content = (
-                <Box flex="grow" fill={onSort ? 'vertical' : false}>
+                <Box
+                  flex="grow"
+                  fill={onSort && sortable !== false ? 'vertical' : false}
+                >
                   {content}
                 </Box>
               );
