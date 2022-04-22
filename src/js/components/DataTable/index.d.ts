@@ -36,6 +36,8 @@ export type MouseClick<TRowType> = React.MouseEvent<HTMLTableRowElement> & {
 
 export type KeyPress<TRowType> = React.KeyboardEvent & { datum: TRowType };
 
+type VerticalAlignType = 'middle' | 'top' | 'bottom';
+
 export interface ColumnConfig<TRowType> {
   align?: 'center' | 'start' | 'end';
   aggregate?: 'avg' | 'max' | 'min' | 'sum';
@@ -51,7 +53,7 @@ export interface ColumnConfig<TRowType> {
   sortable?: boolean;
   size?: ColumnSizeType | string;
   units?: string;
-  verticalAlign?: 'middle' | 'top' | 'bottom';
+  verticalAlign?: VerticalAlignType;
 }
 
 export interface DataTableProps<TRowType = any> {
@@ -85,6 +87,7 @@ export interface DataTableProps<TRowType = any> {
 
   // Data
   data?: TRowType[];
+  disabled?: (string | number)[];
   groupBy?:
     | string
     | {
@@ -113,6 +116,13 @@ export interface DataTableProps<TRowType = any> {
     show: number;
     count: number;
   }) => void;
+  verticalAlign?:
+    | VerticalAlignType
+    | {
+        header?: VerticalAlignType;
+        body?: VerticalAlignType;
+        footer?: VerticalAlignType;
+      };
 }
 
 export interface DataTableExtendedProps<TRowType = any>

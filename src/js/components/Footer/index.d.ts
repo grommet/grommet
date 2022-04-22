@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { BoxProps } from '../Box/index';
+import { BoxExtendedProps } from '../Box/index';
 
-declare const Footer: React.FC<BoxProps>;
+declare const Footer: React.FC<BoxExtendedProps>;
 
 export { Footer };

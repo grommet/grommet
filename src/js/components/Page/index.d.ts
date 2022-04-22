@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { BoxProps } from '../Box/index';
+import { BoxExtendedProps } from '../Box/index';
 
 export interface PageProps {
   kind?: 'wide' | 'narrow' | 'full' | string;
 }
 
-export interface PageExtendedProps extends PageProps, BoxProps {}
+export interface PageExtendedProps extends PageProps, BoxExtendedProps {}
 
 declare const Page: React.FC<PageExtendedProps>;
 

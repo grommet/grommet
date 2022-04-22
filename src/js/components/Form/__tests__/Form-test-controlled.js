@@ -473,8 +473,10 @@ describe('Form controlled', () => {
     const moodField = getByPlaceholderText('test mood');
 
     // focus in and out of mood, should fail validation
-    moodField.focus();
-    toggleField.focus();
+    act(() => {
+      moodField.focus();
+      toggleField.focus();
+    });
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
@@ -484,18 +486,18 @@ describe('Form controlled', () => {
     );
 
     // set mood, should pass validation
-    moodField.focus();
+    act(() => moodField.focus());
     fireEvent.change(moodField, { target: { value: 'testy' } });
-    toggleField.focus();
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({ errors: {}, infos: {} }),
     );
 
     // clear mood, should fail validation
-    moodField.focus();
+    act(() => moodField.focus());
     fireEvent.change(moodField, { target: { value: '' } });
-    toggleField.focus();
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
@@ -507,8 +509,8 @@ describe('Form controlled', () => {
     // remove mood, should clear validation
     fireEvent.click(toggleField);
 
-    nameField.focus();
-    toggleField.focus();
+    act(() => nameField.focus());
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({ errors: {}, infos: {} }),

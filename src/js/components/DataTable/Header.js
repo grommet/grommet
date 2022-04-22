@@ -107,6 +107,7 @@ const Header = forwardRef(
       cellProps,
       columns,
       data,
+      disabled,
       fill,
       filtering,
       filters,
@@ -127,6 +128,7 @@ const Header = forwardRef(
       rowDetails,
       sort,
       widths,
+      verticalAlign,
       ...rest
     },
     ref,
@@ -161,6 +163,54 @@ const Header = forwardRef(
       : 0;
     const totalSelected = (selected?.length || 0) + totalSelectedGroups;
 
+    const onChangeSelection = useCallback(() => {
+      let nextSelected;
+      const nextGroupSelected = {};
+
+      // Since some rows might be disabled but already selected, we need to
+      // note which rows are enabled when determining how aggregate selection
+      // works.
+      const primaryValues =
+        data.map((datum) => datumValue(datum, primaryProperty)) || [];
+      // enabled includes what can be changed
+      const enabled =
+        (disabled && primaryValues.filter((v) => !disabled.includes(v))) ||
+        primaryValues;
+      // enabledSelected includes what can be changed and is currently selected
+      const enabledSelected =
+        (selected && enabled.filter((v) => selected.includes(v))) ||
+        primaryValues;
+
+      const allSelected = groupBy?.select
+        ? groupBy.select[''] === 'all'
+        : enabledSelected.length === enabled.length;
+
+      if (allSelected) {
+        // if any are disabled and selected, leave those, otherwise clear
+        nextSelected = disabled
+          ? primaryValues.filter(
+              (v) => disabled.includes(v) && selected.includes(v),
+            )
+          : [];
+        nextGroupSelected[''] = 'none';
+      } else {
+        // if some or none are selected, select all enabled plus all disabled
+        // that are already selected
+        nextSelected = disabled
+          ? primaryValues.filter(
+              (v) => !disabled.includes(v) || selected.includes(v),
+            )
+          : primaryValues;
+        nextGroupSelected[''] = 'all';
+        groupBy?.expandable?.forEach((key) => {
+          nextGroupSelected[key] = 'all';
+        });
+      }
+      if (groupBy?.onSelect) {
+        groupBy.onSelect(nextSelected, undefined, nextGroupSelected);
+      } else onSelect(nextSelected);
+    }, [data, disabled, groupBy, onSelect, primaryProperty, selected]);
+
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
         <StyledDataTableRow>
@@ -188,6 +238,7 @@ const Header = forwardRef(
               scope="col"
               pin={selectPin}
               pinnedOffset={pinnedOffset?._grommetDataTableSelect}
+              verticalAlign={verticalAlign}
             >
               {onSelect && (
                 <CheckBox
@@ -208,35 +259,7 @@ const Header = forwardRef(
                       ? groupBy.select[''] === 'some'
                       : totalSelected > 0 && totalSelected < data.length
                   }
-                  onChange={() => {
-                    let nextSelected;
-                    const nextGroupSelected = {};
-                    const allSelected = groupBy?.select
-                      ? groupBy.select[''] === 'all'
-                      : totalSelected === data.length;
-
-                    // if all are selected, clear selection
-                    if (allSelected) {
-                      nextSelected = [];
-                      nextGroupSelected[''] = 'none';
-                    } else {
-                      // if some or none are selected, select all data
-                      nextSelected = data.map((datum) =>
-                        datumValue(datum, primaryProperty),
-                      );
-                      nextGroupSelected[''] = 'all';
-                      groupBy?.expandable?.forEach((key) => {
-                        nextGroupSelected[key] = 'all';
-                      });
-                    }
-                    if (groupBy?.onSelect) {
-                      groupBy.onSelect(
-                        nextSelected,
-                        undefined,
-                        nextGroupSelected,
-                      );
-                    } else onSelect(nextSelected);
-                  }}
+                  onChange={onChangeSelection}
                   pad={cellProps.pad}
                 />
               )}
@@ -251,7 +274,7 @@ const Header = forwardRef(
               pin: columnPin,
               search,
               sortable,
-              verticalAlign,
+              verticalAlign: columnVerticalAlign, // depcrecate in v3
               size,
               units,
             }) => {
@@ -277,6 +300,15 @@ const Header = forwardRef(
                   );
                 }
               } else content = header;
+
+              if (unitsContent) {
+                content = (
+                  <Box justify={align} direction="row">
+                    {content}
+                    {unitsContent}
+                  </Box>
+                );
+              }
 
               if (onSort && sortable !== false) {
                 let Icon;
@@ -314,14 +346,6 @@ const Header = forwardRef(
                 );
               }
 
-              if (unitsContent) {
-                content = (
-                  <Box align="baseline" direction="row">
-                    {content}
-                    {unitsContent}
-                  </Box>
-                );
-              }
               // content should fill any available space in cell
               content = <Box flex="grow">{content}</Box>;
 
@@ -373,7 +397,7 @@ const Header = forwardRef(
                   key={property}
                   align={align}
                   context="header"
-                  verticalAlign={verticalAlign}
+                  verticalAlign={verticalAlign || columnVerticalAlign}
                   background={cellProps.background}
                   border={cellProps.border}
                   onWidth={updateWidths}

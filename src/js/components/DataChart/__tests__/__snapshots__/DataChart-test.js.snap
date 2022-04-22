@@ -7210,7 +7210,6 @@ exports[`DataChart lines 1`] = `
                 <path
                   d="M 48,99.5552 L 336,55.1104"
                 />
-                
               </g>
             </g>
           </svg>
@@ -7239,7 +7238,6 @@ exports[`DataChart lines 1`] = `
                 <path
                   d="M 48,143.9996 L 336,143.9992"
                 />
-                
               </g>
             </g>
           </svg>
@@ -9001,6 +8999,247 @@ exports[`DataChart placeholder text 1`] = `
 </div>
 `;
 
+exports[`DataChart single 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 1px;
+  overflow: visible;
+}
+
+.c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          1
+        </div>
+        <div
+          class="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="c5"
+        style="height: 0px;"
+      />
+    </div>
+    <div
+      class="c2"
+    >
+      <div
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <svg
+            class="c8"
+            height="192"
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width="384"
+          >
+            0
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="c9"
+      >
+        <div
+          class="c10"
+        >
+          2020-06-24
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`DataChart size 1`] = `
 .c0 {
   font-size: 18px;
@@ -9756,7 +9995,6 @@ exports[`DataChart type 1`] = `
                 <path
                   d="M 48,128 L 336,48"
                 />
-                
               </g>
             </g>
           </svg>
