@@ -1414,4 +1414,44 @@ describe('DataTable', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('verticalAlign', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b.c', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: { c: 1 } },
+            { a: 'two', b: { c: 2 } },
+          ]}
+          verticalAlign="top"
+        />
+        <DataTable
+          columns={[
+            {
+              property: 'This is a long header that wraps',
+              header: 'A',
+              footer: 'This is a long footer that wraps',
+              size: 'xsmall',
+            },
+            { property: 'b.c', header: 'B' },
+          ]}
+          data={[
+            { a: 'this is long data that might wrap also', b: { c: 1 } },
+            { a: 'two', b: { c: 2 } },
+          ]}
+          verticalAlign={{
+            header: 'bottom',
+            body: 'top',
+            footer: 'top',
+          }}
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
