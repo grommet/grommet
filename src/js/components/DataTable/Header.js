@@ -128,6 +128,7 @@ const Header = forwardRef(
       rowDetails,
       sort,
       widths,
+      verticalAlign,
       ...rest
     },
     ref,
@@ -237,6 +238,7 @@ const Header = forwardRef(
               scope="col"
               pin={selectPin}
               pinnedOffset={pinnedOffset?._grommetDataTableSelect}
+              verticalAlign={verticalAlign}
             >
               {onSelect && (
                 <CheckBox
@@ -272,7 +274,7 @@ const Header = forwardRef(
               pin: columnPin,
               search,
               sortable,
-              verticalAlign,
+              verticalAlign: columnVerticalAlign, // depcrecate in v3
               size,
               units,
             }) => {
@@ -402,7 +404,7 @@ const Header = forwardRef(
                   key={property}
                   align={align}
                   context="header"
-                  verticalAlign={verticalAlign}
+                  verticalAlign={verticalAlign || columnVerticalAlign}
                   background={cellProps.background}
                   border={cellProps.border}
                   onWidth={updateWidths}

@@ -30,6 +30,7 @@ export const GroupedBody = forwardRef(
       selected,
       size,
       step,
+      verticalAlign,
       ...rest
     },
     ref,
@@ -179,12 +180,14 @@ export const GroupedBody = forwardRef(
                     context === 'groupHeader' ? onToggle(key) : undefined
                   }
                   expanded={expanded}
+                  verticalAlign={verticalAlign}
                 />
                 {(selected || onSelect) && (
                   <TableCell
                     background={cellProps.background}
                     plain="noPad"
                     size="auto"
+                    verticalAlign={verticalAlign}
                     aria-disabled={isDisabled || !onSelect || undefined}
                   >
                     <CheckBox
@@ -222,6 +225,7 @@ export const GroupedBody = forwardRef(
                         pinnedOffset &&
                         pinnedOffset[column.property]
                       }
+                      verticalAlign={verticalAlign}
                     />
                   );
                 })}
