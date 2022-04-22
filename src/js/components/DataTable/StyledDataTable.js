@@ -115,6 +115,7 @@ const StyledDataTableHeader = styled(TableHeader)`
   ${(props) =>
     props.size &&
     `
+    height: fit-content;
     display: table;
     width: calc(100% - ${props.scrollOffset}px);
     table-layout: fixed;
