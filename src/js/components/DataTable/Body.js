@@ -54,8 +54,7 @@ const Row = memo(
               adjustedEvent.datum = datum;
               adjustedEvent.index = index;
               onClickRow(adjustedEvent);
-            }
-            if (onClickRow === 'onSelect') {
+            } else if (onClickRow === 'onSelect') {
               if (isSelected) {
                 onSelect(selected.filter((s) => s !== primaryValue));
               } else onSelect([...selected, primaryValue]);
@@ -70,6 +69,11 @@ const Row = memo(
         {(selected || onSelect) && (
           <Cell
             pinnedOffset={pinnedOffset?._grommetDataTableSelect}
+            background={
+              (pinnedOffset?._grommetDataTableSelect &&
+                cellProps.pinned.background) ||
+              cellProps.background
+            }
             aria-disabled={isDisabled || !onSelect || undefined}
             column={{
               pin: Boolean(pinnedOffset?._grommetDataTableSelect),
@@ -180,16 +184,17 @@ const Body = forwardRef(
       <Keyboard
         onEnter={(event) => {
           if (
-            (onClickRow && active >= 0 && !disabled) ||
-            !disabled.includes(datumValue(data[active], primaryProperty))
+            onClickRow &&
+            active >= 0 &&
+            (!disabled ||
+              !disabled.includes(datumValue(data[active], primaryProperty)))
           ) {
             if (typeof onClickRow === 'function') {
               event.persist();
               const adjustedEvent = event;
               adjustedEvent.datum = data[active];
               onClickRow(adjustedEvent);
-            }
-            if (onClickRow === 'onSelect') {
+            } else if (onClickRow === 'onSelect') {
               const primaryValue = data[active]?.[primaryProperty];
               if (selected && selected.includes(primaryValue)) {
                 onSelect(selected.filter((s) => s !== primaryValue));
