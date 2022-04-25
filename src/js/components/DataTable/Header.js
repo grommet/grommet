@@ -372,6 +372,7 @@ const Header = forwardRef(
                 );
               }
 
+              // content should fill any available space in cell
               content = (
                 <Box flex="grow" fill={onResize ? 'vertical' : false}>
                   {content}
@@ -418,9 +419,6 @@ const Header = forwardRef(
                   </Box>
                 );
               }
-
-              // content should fill any available space in cell
-              // content = <Box flex="grow">{content}</Box>;
 
               const cellPin = [...pin];
               if (columnPin) cellPin.push('left');
