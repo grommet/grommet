@@ -180,42 +180,38 @@ const Body = forwardRef(
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
 
-    const selectCheckBox = () => {
+    const selectRow = () => {
       const primaryValue = data[active]?.[primaryProperty];
       if (selected && selected.includes(primaryValue)) {
         onSelect(selected.filter((s) => s !== primaryValue));
       } else onSelect([...selected, primaryValue]);
     };
 
+    const clickedRow =
+      onClickRow &&
+      active >= 0 &&
+      (!disabled ||
+        !disabled.includes(datumValue(data[active], primaryProperty)));
+
     return (
       <Keyboard
         onEnter={(event) => {
-          if (
-            onClickRow &&
-            active >= 0 &&
-            (!disabled ||
-              !disabled.includes(datumValue(data[active], primaryProperty)))
-          ) {
+          if (clickedRow) {
             if (typeof onClickRow === 'function') {
               event.persist();
               const adjustedEvent = event;
               adjustedEvent.datum = data[active];
               onClickRow(adjustedEvent);
             } else if (onClickRow === 'onSelect') {
-              selectCheckBox();
+              selectRow();
             }
           }
         }}
         // The WCAG recommendation for checkboxes is to select them with "Space"
         onSpace={() => {
-          if (
-            onClickRow &&
-            active >= 0 &&
-            (!disabled ||
-              !disabled.includes(datumValue(data[active], primaryProperty)))
-          ) {
+          if (clickedRow) {
             if (onClickRow === 'onSelect') {
-              selectCheckBox();
+              selectRow();
             }
           }
         }}
