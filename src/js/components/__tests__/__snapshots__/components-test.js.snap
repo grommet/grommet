@@ -1941,7 +1941,32 @@ Object {
               "empty",
             ],
           ],
+          "columns": Array [
+            Array [
+              "medium",
+              "large",
+            ],
+            "auto",
+          ],
+          "gap": Object {
+            "column": "large",
+            "row": "xsmall",
+          },
           "large": Object {
+            "areas": Array [
+              Array [
+                "context",
+                "context",
+              ],
+              Array [
+                "title",
+                "actions",
+              ],
+              Array [
+                "subtitle",
+                "empty",
+              ],
+            ],
             "columns": Array [
               Array [
                 "medium",
@@ -1960,6 +1985,20 @@ Object {
             ],
           },
           "medium": Object {
+            "areas": Array [
+              Array [
+                "context",
+                "context",
+              ],
+              Array [
+                "title",
+                "actions",
+              ],
+              Array [
+                "subtitle",
+                "empty",
+              ],
+            ],
             "columns": Array [
               Array [
                 "medium",
@@ -1977,7 +2016,26 @@ Object {
               "auto",
             ],
           },
+          "rows": Array [
+            "auto",
+            "auto",
+            "auto",
+          ],
           "small": Object {
+            "areas": Array [
+              Array [
+                "context",
+                "context",
+              ],
+              Array [
+                "title",
+                "actions",
+              ],
+              Array [
+                "subtitle",
+                "empty",
+              ],
+            ],
             "columns": Array [
               Array [
                 "small",

@@ -1265,6 +1265,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         ['title', 'actions'],
         ['subtitle', 'empty'],
       ],
+      columns: [['medium', 'large'], 'auto'],
+      rows: ['auto', 'auto', 'auto'],
+      gap: { row: 'xsmall', column: 'large' },
       subtitle: {
         // any paragraph props
         size: 'large',
@@ -1278,16 +1281,31 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         fill: true,
       },
       small: {
+        areas: [
+          ['context', 'context'],
+          ['title', 'actions'],
+          ['subtitle', 'empty'],
+        ],
         columns: [['small', 'flex'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
         gap: { row: 'xsmall', column: 'large' },
       },
       medium: {
+        areas: [
+          ['context', 'context'],
+          ['title', 'actions'],
+          ['subtitle', 'empty'],
+        ],
         columns: [['medium', 'large'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
         gap: { row: 'xsmall', column: 'medium' },
       },
       large: {
+        areas: [
+          ['context', 'context'],
+          ['title', 'actions'],
+          ['subtitle', 'empty'],
+        ],
         columns: [['medium', 'large'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
         gap: { row: 'xsmall', column: 'large' },

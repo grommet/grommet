@@ -10,9 +10,9 @@ import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 
 const defaultAreas = ['actions', 'context', 'subtitle', 'title', 'empty'];
 
-const getCustomAreas = (theme) => {
+const getCustomAreas = (theme, size) => {
   const customAreas = [];
-  theme.pageHeader.areas.forEach((area) => {
+  (theme.pageHeader[size] || theme.pageHeader).areas.forEach((area) => {
     if (Array.isArray(area)) {
       area.forEach((s) => !defaultAreas.includes(s) && customAreas.push(s));
     } else if (!defaultAreas.includes(area)) customAreas.push(area);
@@ -22,22 +22,23 @@ const getCustomAreas = (theme) => {
 };
 
 const PageHeader = forwardRef(
-  ({ title, subtitle, actions, context, ...rest }, ref) => {
+  ({ actions, context, gridProps, subtitle, title, ...rest }, ref) => {
     const theme = useContext(ThemeContext);
     const size = useContext(ResponsiveContext);
 
     // Allow caller to add their own blank areas to the Grid
     // See: Custom story
-    const customAreas = getCustomAreas(theme);
+    const customAreas = getCustomAreas(theme, size);
 
     return (
       <Header ref={ref} {...rest}>
         <Grid
-          columns={theme.pageHeader[size].columns}
-          rows={theme.pageHeader[size].rows}
-          areas={theme.pageHeader.areas}
-          gap={theme.pageHeader[size].gap}
+          columns={(theme.pageHeader[size] || theme.pageHeader).columns}
+          rows={(theme.pageHeader[size] || theme.pageHeader).rows}
+          areas={(theme.pageHeader[size] || theme.pageHeader).areas}
+          gap={(theme.pageHeader[size] || theme.pageHeader).gap}
           fill="horizontal"
+          {...gridProps}
         >
           <Box align="start" gridArea="context">
             {context}
