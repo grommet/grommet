@@ -68,12 +68,12 @@ const Row = memo(
       >
         {(selected || onSelect) && (
           <Cell
-            pinnedOffset={pinnedOffset?._grommetDataTableSelect}
             background={
               (pinnedOffset?._grommetDataTableSelect &&
                 cellProps.pinned.background) ||
               cellProps.background
             }
+            pinnedOffset={pinnedOffset?._grommetDataTableSelect}
             aria-disabled={isDisabled || !onSelect || undefined}
             column={{
               pin: Boolean(pinnedOffset?._grommetDataTableSelect),
@@ -180,6 +180,13 @@ const Body = forwardRef(
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
 
+    const selectCheckBox = () => {
+      const primaryValue = data[active]?.[primaryProperty];
+      if (selected && selected.includes(primaryValue)) {
+        onSelect(selected.filter((s) => s !== primaryValue));
+      } else onSelect([...selected, primaryValue]);
+    };
+
     return (
       <Keyboard
         onEnter={(event) => {
@@ -195,10 +202,7 @@ const Body = forwardRef(
               adjustedEvent.datum = data[active];
               onClickRow(adjustedEvent);
             } else if (onClickRow === 'onSelect') {
-              const primaryValue = data[active]?.[primaryProperty];
-              if (selected && selected.includes(primaryValue)) {
-                onSelect(selected.filter((s) => s !== primaryValue));
-              } else onSelect([...selected, primaryValue]);
+              selectCheckBox();
             }
           }
         }}
@@ -211,10 +215,7 @@ const Body = forwardRef(
               !disabled.includes(datumValue(data[active], primaryProperty)))
           ) {
             if (onClickRow === 'onSelect') {
-              const primaryValue = data[active]?.[primaryProperty];
-              if (selected && selected.includes(primaryValue)) {
-                onSelect(selected.filter((s) => s !== primaryValue));
-              } else onSelect([...selected, primaryValue]);
+              selectCheckBox();
             }
           }
         }}
