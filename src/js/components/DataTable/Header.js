@@ -51,7 +51,7 @@ const separateThemeProps = (theme) => {
 
 // build up CSS from basic to specific based on the supplied sub-object paths.
 // adapted from StyledButtonKind to only include parts relevant for DataTable
-const buttonStyle = ({ pad, theme }) => {
+const buttonStyle = ({ pad, theme, verticalAlign }) => {
   const styles = [];
   const [layoutProps, , iconProps] = separateThemeProps(theme);
 
@@ -85,6 +85,19 @@ const buttonStyle = ({ pad, theme }) => {
           stroke: ${normalizeColor(iconProps.color, theme)};
           fill: ${normalizeColor(iconProps.color, theme)};
         }
+      `,
+    );
+  }
+
+  let align = 'center';
+  if (verticalAlign === 'bottom') align = 'end';
+  if (verticalAlign === 'top') align = 'start';
+
+  if (verticalAlign) {
+    styles.push(
+      css`
+        display: inline-flex;
+        align-items: ${align};
       `,
     );
   }
@@ -310,6 +323,18 @@ const Header = forwardRef(
                 );
               }
 
+              if (verticalAlign || columnVerticalAlign) {
+                const vertical = verticalAlign || columnVerticalAlign;
+                let justify = 'center';
+                if (vertical === 'bottom') justify = 'end';
+                if (vertical === 'top') justify = 'start';
+                content = (
+                  <Box height="100%" justify={justify}>
+                    {content}
+                  </Box>
+                );
+              }
+
               if (onSort && sortable !== false) {
                 let Icon;
                 if (onSort && sortable !== false) {
@@ -332,6 +357,7 @@ const Header = forwardRef(
                     sort={sort}
                     pad={cellProps.pad}
                     sortable
+                    verticalAlign={verticalAlign || columnVerticalAlign}
                   >
                     <Box
                       direction="row"
@@ -345,16 +371,6 @@ const Header = forwardRef(
                   </StyledHeaderCellButton>
                 );
               }
-
-              // content should fill any available space in cell
-              content = (
-                <Box
-                  flex="grow"
-                  fill={onSort && sortable !== false ? 'vertical' : false}
-                >
-                  {content}
-                </Box>
-              );
 
               if (search || onResize) {
                 const resizer = onResize ? (
@@ -396,6 +412,10 @@ const Header = forwardRef(
                   </Box>
                 );
               }
+
+              // content should fill any available space in cell
+              content = <Box flex="grow">{content}</Box>;
+
               const cellPin = [...pin];
               if (columnPin) cellPin.push('left');
 
