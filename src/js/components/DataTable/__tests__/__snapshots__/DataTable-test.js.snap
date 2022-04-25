@@ -2765,23 +2765,6 @@ exports[`DataTable custom theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2796,6 +2779,24 @@ exports[`DataTable custom theme 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  height: 100%;
 }
 
 .c9 {
@@ -3255,10 +3256,10 @@ exports[`DataTable custom theme 1`] = `
         >
           <div
             class="c5"
+            style="position: relative;"
           >
             <div
               class="c6"
-              style="position: relative;"
             >
               <button
                 class="c7 c8"
@@ -3274,26 +3275,26 @@ exports[`DataTable custom theme 1`] = `
                   </span>
                 </div>
               </button>
+            </div>
+            <div
+              class="c11"
+            >
               <div
-                class="c11"
+                class="c12"
               >
                 <div
-                  class="c12"
-                >
-                  <div
-                    class="c13"
-                  />
-                </div>
+                  class="c13"
+                />
+              </div>
+              <div
+                class="c14"
+              >
                 <div
-                  class="c14"
+                  class="c15 c16"
                 >
                   <div
-                    class="c15 c16"
-                  >
-                    <div
-                      class="c17"
-                    />
-                  </div>
+                    class="c17"
+                  />
                 </div>
               </div>
             </div>
@@ -3444,11 +3445,11 @@ exports[`DataTable custom theme 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fqUnkf"
+            class="StyledBox-sc-13pk1d4-0 fMHUIp"
+            style="position: relative;"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 fMHUIp"
-              style="position: relative;"
+              class="StyledBox-sc-13pk1d4-0 eUIwDt"
             >
               <button
                 class="StyledButton-sc-323bzc-0 iIPNKk Header__StyledHeaderCellButton-sc-1baku5q-0 brJnFl"
@@ -3464,26 +3465,26 @@ exports[`DataTable custom theme 2`] = `
                   </span>
                 </div>
               </button>
+            </div>
+            <div
+              class="StyledStack-sc-ajspsk-0 DIRUt"
+            >
               <div
-                class="StyledStack-sc-ajspsk-0 DIRUt"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bBReQo"
               >
                 <div
-                  class="StyledStack__StyledStackLayer-sc-ajspsk-1 bBReQo"
-                >
-                  <div
-                    class="StyledBox-sc-13pk1d4-0 cxMCmj"
-                  />
-                </div>
+                  class="StyledBox-sc-13pk1d4-0 cxMCmj"
+                />
+              </div>
+              <div
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 sanMr"
+              >
                 <div
-                  class="StyledStack__StyledStackLayer-sc-ajspsk-1 sanMr"
+                  class="StyledBox-sc-13pk1d4-0 dbtwtd Resizer__InteractionBox-sc-8l808w-0 hCPcHP"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 dbtwtd Resizer__InteractionBox-sc-8l808w-0 hCPcHP"
-                  >
-                    <div
-                      class="StyledBox-sc-13pk1d4-0 claeHG"
-                    />
-                  </div>
+                    class="StyledBox-sc-13pk1d4-0 claeHG"
+                  />
                 </div>
               </div>
             </div>
@@ -18480,23 +18481,6 @@ exports[`DataTable resizeable 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -18511,6 +18495,24 @@ exports[`DataTable resizeable 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  height: 100%;
 }
 
 .c10 {
@@ -18715,39 +18717,39 @@ exports[`DataTable resizeable 1`] = `
         >
           <div
             class="c4"
+            style="position: relative;"
           >
             <div
               class="c5"
-              style="position: relative;"
             >
               <span
                 class="c6"
               >
                 A
               </span>
+            </div>
+            <div
+              class="c7"
+            />
+            <div
+              class="c8"
+            >
               <div
-                class="c7"
-              />
-              <div
-                class="c8"
+                class="c9"
               >
                 <div
-                  class="c9"
-                >
-                  <div
-                    class="c10"
-                  />
-                </div>
+                  class="c10"
+                />
+              </div>
+              <div
+                class="c11"
+              >
                 <div
-                  class="c11"
+                  class="c12 c13"
                 >
                   <div
-                    class="c12 c13"
-                  >
-                    <div
-                      class="c14"
-                    />
-                  </div>
+                    class="c14"
+                  />
                 </div>
               </div>
             </div>
@@ -18759,39 +18761,39 @@ exports[`DataTable resizeable 1`] = `
         >
           <div
             class="c4"
+            style="position: relative;"
           >
             <div
               class="c5"
-              style="position: relative;"
             >
               <span
                 class="c6"
               >
                 B
               </span>
+            </div>
+            <div
+              class="c7"
+            />
+            <div
+              class="c8"
+            >
               <div
-                class="c7"
-              />
-              <div
-                class="c8"
+                class="c9"
               >
                 <div
-                  class="c9"
-                >
-                  <div
-                    class="c10"
-                  />
-                </div>
+                  class="c10"
+                />
+              </div>
+              <div
+                class="c11"
+              >
                 <div
-                  class="c11"
+                  class="c12 c13"
                 >
                   <div
-                    class="c12 c13"
-                  >
-                    <div
-                      class="c14"
-                    />
-                  </div>
+                    class="c14"
+                  />
                 </div>
               </div>
             </div>
@@ -20402,23 +20404,6 @@ exports[`DataTable search 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -20433,6 +20418,23 @@ exports[`DataTable search 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .c12 {
@@ -20620,28 +20622,28 @@ exports[`DataTable search 1`] = `
               >
                 A
               </span>
-              <div
-                class="c7"
-              />
-              <button
-                aria-label="Open search by a"
-                class="c8"
-                type="button"
-              >
-                <svg
-                  aria-label="FormSearch"
-                  class="c9"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.8 13.8 18 18l-4.2-4.2zM10.5 15a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </button>
             </div>
+            <div
+              class="c7"
+            />
+            <button
+              aria-label="Open search by a"
+              class="c8"
+              type="button"
+            >
+              <svg
+                aria-label="FormSearch"
+                class="c9"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M13.8 13.8 18 18l-4.2-4.2zM10.5 15a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
           </div>
         </th>
       </tr>
@@ -20726,20 +20728,21 @@ exports[`DataTable search 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fqUnkf"
+            class="StyledBox-sc-13pk1d4-0 fMHUIp"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 fMHUIp"
+              class="StyledBox-sc-13pk1d4-0 fqUnkf"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 hpCRgD"
               >
                 A
               </span>
-              <div
-                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbllaT"
-              />
-              .c0 {
+            </div>
+            <div
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbllaT"
+            />
+            .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -20842,19 +20845,18 @@ exports[`DataTable search 2`] = `
 }
 
 <div
-                class="c0"
+              class="c0"
+            >
+              <div
+                class="c1"
               >
-                <div
-                  class="c1"
-                >
-                  <input
-                    aria-label="Search by a"
-                    autocomplete="off"
-                    class="c2"
-                    name="search-a"
-                    value="["
-                  />
-                </div>
+                <input
+                  aria-label="Search by a"
+                  autocomplete="off"
+                  class="c2"
+                  name="search-a"
+                  value="["
+                />
               </div>
             </div>
           </div>

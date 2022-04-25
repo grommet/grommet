@@ -372,6 +372,12 @@ const Header = forwardRef(
                 );
               }
 
+              content = (
+                <Box flex="grow" fill={onResize ? 'vertical' : false}>
+                  {content}
+                </Box>
+              );
+
               if (search || onResize) {
                 const resizer = onResize ? (
                   <Resizer property={property} onResize={onResize} />
@@ -414,7 +420,7 @@ const Header = forwardRef(
               }
 
               // content should fill any available space in cell
-              content = <Box flex="grow">{content}</Box>;
+              // content = <Box flex="grow">{content}</Box>;
 
               const cellPin = [...pin];
               if (columnPin) cellPin.push('left');
