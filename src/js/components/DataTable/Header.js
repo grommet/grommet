@@ -419,7 +419,6 @@ const Header = forwardRef(
                   </Box>
                 );
               }
-
               const cellPin = [...pin];
               if (columnPin) cellPin.push('left');
 
