@@ -13,7 +13,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { CheckBox } from '../CheckBox';
-import { TableCell } from '../TableCell';
+import { TableCell, verticalAlignToJustify } from '../TableCell/TableCell';
 import { Text } from '../Text';
 
 import { Resizer } from './Resizer';
@@ -325,11 +325,8 @@ const Header = forwardRef(
 
               if (verticalAlign || columnVerticalAlign) {
                 const vertical = verticalAlign || columnVerticalAlign;
-                let justify = 'center';
-                if (vertical === 'bottom') justify = 'end';
-                if (vertical === 'top') justify = 'start';
                 content = (
-                  <Box height="100%" justify={justify}>
+                  <Box height="100%" justify={verticalAlignToJustify[vertical]}>
                     {content}
                   </Box>
                 );
@@ -373,8 +370,12 @@ const Header = forwardRef(
               }
 
               // content should fill any available space in cell
+              // If `onResize` or `search` is true we need to explicitly set
+              // fill because later if either of these props is true content
+              // will be wrapped with an additional Box, preventing this Box
+              // from automatically filling the vertical space.
               content = (
-                <Box flex="grow" fill={onResize ? 'vertical' : false}>
+                <Box flex="grow" fill={onResize || search ? 'vertical' : false}>
                   {content}
                 </Box>
               );

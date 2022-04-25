@@ -20435,6 +20435,7 @@ exports[`DataTable search 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  height: 100%;
 }
 
 .c12 {
@@ -20731,7 +20732,7 @@ exports[`DataTable search 2`] = `
             class="StyledBox-sc-13pk1d4-0 fMHUIp"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 fqUnkf"
+              class="StyledBox-sc-13pk1d4-0 eUIwDt"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 hpCRgD"
