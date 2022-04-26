@@ -55,7 +55,7 @@ var ClearButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var align = position !== 'bottom' ? 'start' : 'center';
   var buttonLabel = label || "Clear " + (name || 'selection');
   return /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    fill: true,
+    fill: "horizontal",
     ref: ref,
     onClick: onClear,
     focusIndicator: false
