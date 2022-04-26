@@ -107,29 +107,17 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
   var searchRef = (0, _react.useRef)();
   var optionsRef = (0, _react.useRef)();
   var clearRef = (0, _react.useRef)();
-
-  var focusOption = function focusOption(index) {
+  (0, _react.useEffect)(function () {
     var optionsNode = optionsRef.current;
 
-    if (optionsNode) {
+    if (optionsNode.children) {
+      var clearButton = clearRef.current;
+      var index = activeIndex;
+      if (clear && clear.position !== 'bottom' && clearButton) index += 1;
       var optionNode = optionsNode.children[index];
-
-      if (optionNode) {
-        optionNode.focus();
-      }
+      if (optionNode) optionNode.focus();
     }
-  };
-
-  (0, _react.useEffect)(function () {
-    var optionsNode = optionsRef.current;
-    if (optionsNode.children) focusOption(activeIndex);
-  }, [activeIndex]); // adjust activeIndex when options change
-
-  (0, _react.useEffect)(function () {
-    if (activeIndex === -1 && optionIndexesInValue.length) {
-      focusOption(optionIndexesInValue[0]);
-    }
-  }, [activeIndex, optionIndexesInValue]); // set initial focus
+  }, [activeIndex, clear]); // set initial focus
 
   (0, _react.useEffect)(function () {
     // need to wait for Drop to be ready
