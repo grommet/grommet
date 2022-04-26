@@ -6,6 +6,7 @@ import {
   MarginType,
 } from '../../utils';
 
+import { GridProps } from '../Grid';
 export interface PageHeaderProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
@@ -13,6 +14,7 @@ export interface PageHeaderProps {
   margin?: MarginType;
   actions?: JSX.Element;
   context?: JSX.Element;
+  gridProps?: GridProps;
   subtitle?: string | JSX.Element;
   title?: string | JSX.Element;
 }

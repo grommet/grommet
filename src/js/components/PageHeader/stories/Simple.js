@@ -36,6 +36,13 @@ export const Simple = () => {
     <Page>
       <PageContent>
         <PageHeader
+          gridProps={{
+            areas: [
+              ['special', 'context'],
+              ['title', 'actions'],
+              ['subtitle', 'empty'],
+            ],
+          }}
           title="Page title that is really long so we can test the wrapping 
           behavior."
           subtitle="The theme is setting the min-width for the columns at 
@@ -62,7 +69,9 @@ export const Simple = () => {
             </Box>
           }
           context={<Anchor label="Parent Page" />}
-        />
+        >
+          <Box gridArea="special">hey there i am a child</Box>
+        </PageHeader>
       </PageContent>
     </Page>
     // </Grommet>

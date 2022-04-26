@@ -10,25 +10,30 @@ import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 
 const defaultAreas = ['actions', 'context', 'subtitle', 'title', 'empty'];
 
-const getCustomAreas = (theme, size) => {
-  const customAreas = [];
+const getCustomThemeAreas = (theme, size) => {
+  const customThemeAreas = [];
   (theme.pageHeader[size] || theme.pageHeader).areas.forEach((area) => {
     if (Array.isArray(area)) {
-      area.forEach((s) => !defaultAreas.includes(s) && customAreas.push(s));
-    } else if (!defaultAreas.includes(area)) customAreas.push(area);
+      area.forEach(
+        (s) => !defaultAreas.includes(s) && customThemeAreas.push(s),
+      );
+    } else if (!defaultAreas.includes(area)) customThemeAreas.push(area);
   });
 
-  return customAreas;
+  return customThemeAreas;
 };
 
 const PageHeader = forwardRef(
-  ({ actions, context, gridProps, subtitle, title, ...rest }, ref) => {
+  (
+    { actions, children, context, gridProps, subtitle, title, ...rest },
+    ref,
+  ) => {
     const theme = useContext(ThemeContext);
     const size = useContext(ResponsiveContext);
 
     // Allow caller to add their own blank areas to the Grid
     // See: Custom story
-    const customAreas = getCustomAreas(theme, size);
+    const customThemeAreas = getCustomThemeAreas(theme, size);
 
     return (
       <Header ref={ref} {...rest}>
@@ -61,11 +66,12 @@ const PageHeader = forwardRef(
             {actions}
           </Box>
           <Box gridArea="empty" />
-          {customAreas &&
-            customAreas.map((area, index) => (
+          {customThemeAreas &&
+            customThemeAreas.map((area, index) => (
               // eslint-disable-next-line react/no-array-index-key
               <Box key={index} gridArea={area} />
             ))}
+          {children}
         </Grid>
       </Header>
     );
