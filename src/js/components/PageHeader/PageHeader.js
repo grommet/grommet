@@ -8,7 +8,7 @@ import { Grid } from '../Grid';
 import { Paragraph } from '../Paragraph';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 
-const defaultAreas = ['actions', 'context', 'subtitle', 'title', 'empty'];
+const defaultAreas = ['actions', 'context', 'subtitle', 'title'];
 
 const getCustomThemeAreas = (theme, size) => {
   const customThemeAreas = [];
@@ -35,19 +35,23 @@ const PageHeader = forwardRef(
     // See: Custom story
     const customThemeAreas = getCustomThemeAreas(theme, size);
 
+    const { areas, columns, gap, rows } =
+      theme.pageHeader[size] || theme.pageHeader.medium;
+
     return (
-      <Header ref={ref} {...rest}>
+      <Header ref={ref} direction="column" gap="none" {...rest}>
         <Grid
-          columns={(theme.pageHeader[size] || theme.pageHeader).columns}
-          rows={(theme.pageHeader[size] || theme.pageHeader).rows}
-          areas={(theme.pageHeader[size] || theme.pageHeader).areas}
-          gap={(theme.pageHeader[size] || theme.pageHeader).gap}
+          columns={columns}
+          rows={rows}
+          areas={areas}
+          gap={gap}
           fill="horizontal"
-          {...(gridProps[size] || gridProps)}
+          {...gridProps}
         >
-          <Box align="start" gridArea="context">
+          <Box gridArea="context" align="start">
             {context}
           </Box>
+
           <Box gridArea="title">
             {typeof title === 'string' ? (
               <Heading {...theme.pageHeader.title}>{title}</Heading>
@@ -62,17 +66,17 @@ const PageHeader = forwardRef(
               subtitle
             )}
           </Box>
-          <Box align="end" gridArea="actions">
+
+          <Box gridArea="actions" align="end">
             {actions}
           </Box>
-          <Box gridArea="empty" />
           {customThemeAreas &&
             customThemeAreas.map((area, index) => (
               // eslint-disable-next-line react/no-array-index-key
               <Box key={index} gridArea={area} />
             ))}
-          {children}
         </Grid>
+        {children}
       </Header>
     );
   },

@@ -1927,31 +1927,6 @@ Object {
           },
         },
         "pageHeader": Object {
-          "areas": Array [
-            Array [
-              "context",
-              "context",
-            ],
-            Array [
-              "title",
-              "actions",
-            ],
-            Array [
-              "subtitle",
-              "empty",
-            ],
-          ],
-          "columns": Array [
-            Array [
-              "medium",
-              "large",
-            ],
-            "auto",
-          ],
-          "gap": Object {
-            "column": "large",
-            "row": "xsmall",
-          },
           "large": Object {
             "areas": Array [
               Array [
@@ -1964,7 +1939,7 @@ Object {
               ],
               Array [
                 "subtitle",
-                "empty",
+                "actions",
               ],
             ],
             "columns": Array [
@@ -1996,7 +1971,7 @@ Object {
               ],
               Array [
                 "subtitle",
-                "empty",
+                "actions",
               ],
             ],
             "columns": Array [
@@ -2016,11 +1991,6 @@ Object {
               "auto",
             ],
           },
-          "rows": Array [
-            "auto",
-            "auto",
-            "auto",
-          ],
           "small": Object {
             "areas": Array [
               Array [
@@ -2033,7 +2003,7 @@ Object {
               ],
               Array [
                 "subtitle",
-                "empty",
+                "actions",
               ],
             ],
             "columns": Array [
@@ -2056,7 +2026,6 @@ Object {
           "subtitle": Object {
             "fill": true,
             "margin": "none",
-            "size": "large",
           },
           "title": Object {
             "fill": true,

@@ -1260,17 +1260,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     pageHeader: {
-      areas: [
-        ['context', 'context'],
-        ['title', 'actions'],
-        ['subtitle', 'empty'],
-      ],
-      columns: [['medium', 'large'], 'auto'],
-      rows: ['auto', 'auto', 'auto'],
-      gap: { row: 'xsmall', column: 'large' },
       subtitle: {
         // any paragraph props
-        size: 'large',
         margin: 'none',
         fill: true,
       },
@@ -1284,7 +1275,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         areas: [
           ['context', 'context'],
           ['title', 'actions'],
-          ['subtitle', 'empty'],
+          ['subtitle', 'actions'],
         ],
         columns: [['small', 'flex'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
@@ -1294,7 +1285,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         areas: [
           ['context', 'context'],
           ['title', 'actions'],
-          ['subtitle', 'empty'],
+          ['subtitle', 'actions'],
         ],
         columns: [['medium', 'large'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
@@ -1304,7 +1295,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         areas: [
           ['context', 'context'],
           ['title', 'actions'],
-          ['subtitle', 'empty'],
+          ['subtitle', 'actions'],
         ],
         columns: [['medium', 'large'], 'auto'],
         rows: ['auto', 'auto', 'auto'],

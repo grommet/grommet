@@ -2,14 +2,14 @@ import React from 'react';
 
 import {
   Anchor,
-  Box,
   Button,
+  NameValueList,
+  NameValuePair,
   PageHeader,
   Page,
   PageContent,
   Text,
 } from 'grommet';
-import { FormPrevious } from 'grommet-icons';
 
 export const Children = () => (
   // Uncomment <Grommet> lines when using outside of storybook
@@ -17,39 +17,34 @@ export const Children = () => (
   <Page>
     <PageContent>
       <PageHeader
-        gridProps={{
-          areas: [
-            ['context', 'context'],
-            ['pretitle', 'empty-1'],
-            ['title', 'actions'],
-            ['subtitle', 'empty'],
-          ],
-          rows: ['auto', 'auto', 'auto', 'auto'],
-          small: {
-            areas: [
-              ['context', 'context'],
-              ['title', 'actions'],
-              ['pretitle', 'empty'],
-              ['subtitle', 'empty'],
-            ],
-          },
-        }}
         title="Grommet"
         subtitle={`Grommet helps you build responsive and accessible 
           mobile-first projects for the web with an easy to use component 
           library.`}
         actions={<Button label="Get Started" primary />}
-        context={
-          <Anchor label="Back to All Libraries" icon={<FormPrevious />} />
-        }
+        context={<Anchor label="Open Source" />}
       >
-        <Box gridArea="pretitle">
-          <Text size="small">Open-source</Text>
-        </Box>
+        <ContextualInfo />
       </PageHeader>
     </PageContent>
   </Page>
   // </Grommet>
+);
+
+const ContextualInfo = () => (
+  <NameValueList
+    layout="grid"
+    pairProps={{ direction: 'column' }}
+    valueProps={{ width: 'small' }}
+    pad={{ vertical: 'small' }}
+  >
+    <NameValuePair name={<Text size="small">Latest Version</Text>}>
+      2.22.0
+    </NameValuePair>
+    <NameValuePair name={<Text size="small">Published</Text>}>
+      25 days ago
+    </NameValuePair>
+  </NameValueList>
 );
 
 export default {

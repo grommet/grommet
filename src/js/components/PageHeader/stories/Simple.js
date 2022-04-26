@@ -14,16 +14,13 @@ import { More } from 'grommet-icons';
 
 const actions = [
   {
-    label: 'Primary Action',
+    label: 'Follow',
   },
   {
-    label: 'Some Action',
+    label: 'File Issue',
   },
   {
-    label: 'Other Action',
-  },
-  {
-    label: 'Another Action',
+    label: 'Get Started',
   },
 ];
 
@@ -36,27 +33,18 @@ export const Simple = () => {
     <Page>
       <PageContent>
         <PageHeader
-          gridProps={{
-            areas: [
-              ['special', 'context'],
-              ['title', 'actions'],
-              ['subtitle', 'empty'],
-            ],
-          }}
-          title="Page title that is really long so we can test the wrapping 
-          behavior."
-          subtitle="The theme is setting the min-width for the columns at 
-          various breakpoints. This gives the caller control about what gets 
-          layout priority. In this case, we never want to let the 
-          title/subtitle get below a certain width."
+          title="Grommet"
+          subtitle={`Grommet helps you build responsive and accessible 
+          mobile-first projects for the web with an easy to use component 
+          library.`}
           actions={
             <Box direction="row" gap="small" align="center">
               {size !== 'small' ? (
                 actions.map((action) => (
                   <Button
                     {...action}
-                    primary={action.label === 'Primary Action'}
-                    secondary={action.label !== 'Primary Action'}
+                    primary={action.label === 'Get Started'}
+                    secondary={action.label !== 'Get Started'}
                   />
                 ))
               ) : (
@@ -69,9 +57,7 @@ export const Simple = () => {
             </Box>
           }
           context={<Anchor label="Parent Page" />}
-        >
-          <Box gridArea="special">hey there i am a child</Box>
-        </PageHeader>
+        />
       </PageContent>
     </Page>
     // </Grommet>
