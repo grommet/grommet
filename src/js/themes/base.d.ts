@@ -33,6 +33,9 @@ import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
 import { LayerPositionType, LayerProps } from '../components/Layer';
 import { DropProps } from '../components/Drop';
+import { AreasType, GridColumnsType, GridGapType, GridSizeType } from '../components/Grid';
+import { HeadingProps } from '../components/Heading';
+import { ParagraphProps } from '../components/Paragraph';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
@@ -1145,6 +1148,28 @@ export interface ThemeType {
       small?: BoxProps;
       medium?: BoxProps;
       large?: BoxProps;
+    };
+  };
+  pageHeader?: {
+    subtitle?: ParagraphProps;
+    title?: HeadingProps;
+    small?: {
+      areas?: AreasType;
+      columns: GridColumnsType;
+      rows?: GridSizeType;
+      gap?: GridGapType;
+    };
+    medium?: {
+      areas?: AreasType;
+      columns: GridColumnsType;
+      rows?: GridSizeType;
+      gap?: GridGapType;
+    };
+    large?: {
+      areas?: AreasType;
+      columns: GridColumnsType;
+      rows?: GridSizeType;
+      gap?: GridGapType;
     };
   };
   pagination?: {
