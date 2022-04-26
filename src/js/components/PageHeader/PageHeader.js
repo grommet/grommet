@@ -43,7 +43,7 @@ const PageHeader = forwardRef(
           areas={(theme.pageHeader[size] || theme.pageHeader).areas}
           gap={(theme.pageHeader[size] || theme.pageHeader).gap}
           fill="horizontal"
-          {...gridProps}
+          {...(gridProps[size] || gridProps)}
         >
           <Box align="start" gridArea="context">
             {context}

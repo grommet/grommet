@@ -25,6 +25,14 @@ export const Children = () => (
             ['subtitle', 'empty'],
           ],
           rows: ['auto', 'auto', 'auto', 'auto'],
+          small: {
+            areas: [
+              ['context', 'context'],
+              ['title', 'actions'],
+              ['pretitle', 'empty'],
+              ['subtitle', 'empty'],
+            ],
+          },
         }}
         title="Grommet"
         subtitle={`Grommet helps you build responsive and accessible 
