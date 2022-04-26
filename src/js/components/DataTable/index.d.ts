@@ -106,7 +106,7 @@ export interface DataTableProps<TRowType = any> {
 
   // Events
   onClickRow?:
-    | 'onSelect'
+    | 'select'
     | ((event: MouseClick<TRowType> | KeyPress<TRowType>) => void);
   onMore?: () => void;
   onSearch?: (search: string) => void;

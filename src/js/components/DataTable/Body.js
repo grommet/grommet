@@ -45,22 +45,26 @@ const Row = memo(
         size={size}
         active={active}
         aria-disabled={(onClickRow && isDisabled) || undefined}
-        onClick={(event) => {
-          if (onClickRow && !isDisabled) {
-            if (typeof onClickRow === 'function') {
-              // extract from React's synthetic event pool
-              event.persist();
-              const adjustedEvent = event;
-              adjustedEvent.datum = datum;
-              adjustedEvent.index = index;
-              onClickRow(adjustedEvent);
-            } else if (onClickRow === 'onSelect') {
-              if (isSelected) {
-                onSelect(selected.filter((s) => s !== primaryValue));
-              } else onSelect([...selected, primaryValue]);
-            }
-          }
-        }}
+        onClick={
+          onClickRow
+            ? (event) => {
+                if (onClickRow && !isDisabled) {
+                  if (typeof onClickRow === 'function') {
+                    // extract from React's synthetic event pool
+                    event.persist();
+                    const adjustedEvent = event;
+                    adjustedEvent.datum = datum;
+                    adjustedEvent.index = index;
+                    onClickRow(adjustedEvent);
+                  } else if (onClickRow === 'select') {
+                    if (isSelected) {
+                      onSelect(selected.filter((s) => s !== primaryValue));
+                    } else onSelect([...selected, primaryValue]);
+                  }
+                }
+              }
+            : undefined
+        }
         onMouseEnter={
           onClickRow && !isDisabled ? () => setActive(index) : undefined
         }
@@ -81,7 +85,7 @@ const Row = memo(
               size: 'auto',
               render: () => (
                 <CheckBox
-                  tabIndex={onClickRow === 'onSelect' ? -1 : undefined}
+                  tabIndex={onClickRow === 'select' ? -1 : undefined}
                   a11yTitle={`${
                     isSelected ? 'unselect' : 'select'
                   } ${primaryValue}`}
@@ -195,22 +199,26 @@ const Body = forwardRef(
 
     return (
       <Keyboard
-        onEnter={(event) => {
-          if (clickedRow) {
-            if (typeof onClickRow === 'function') {
-              event.persist();
-              const adjustedEvent = event;
-              adjustedEvent.datum = data[active];
-              onClickRow(adjustedEvent);
-            } else if (onClickRow === 'onSelect') {
-              selectRow();
-            }
-          }
-        }}
+        onEnter={
+          clickedRow
+            ? (event) => {
+                if (clickedRow) {
+                  if (typeof onClickRow === 'function') {
+                    event.persist();
+                    const adjustedEvent = event;
+                    adjustedEvent.datum = data[active];
+                    onClickRow(adjustedEvent);
+                  } else if (onClickRow === 'select') {
+                    selectRow();
+                  }
+                }
+              }
+            : undefined
+        }
         // The WCAG recommendation for checkboxes is to select them with "Space"
         onSpace={() => {
           if (clickedRow) {
-            if (onClickRow === 'onSelect') {
+            if (onClickRow === 'select') {
               selectRow();
             }
           }

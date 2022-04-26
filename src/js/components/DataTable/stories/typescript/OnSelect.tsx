@@ -161,7 +161,7 @@ export const OnSelectDataTable = () => {
         step={10}
         disabled={['Matt']}
         select={select}
-        onClickRow="onSelect"
+        onClickRow="select"
         onSelect={setSelect}
       />
     </Box>
