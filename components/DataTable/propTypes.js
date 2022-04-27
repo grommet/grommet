@@ -82,7 +82,7 @@ if (process.env.NODE_ENV !== 'production') {
       onExpand: _propTypes["default"].func,
       onSelect: _propTypes["default"].func
     })]),
-    onClickRow: _propTypes["default"].func,
+    onClickRow: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].oneOf(['select'])]),
     rowDetails: _propTypes["default"].func,
     onMore: _propTypes["default"].func,
     onSearch: _propTypes["default"].func,

@@ -65,16 +65,26 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
     size: size,
     active: active,
     "aria-disabled": onClickRow && isDisabled || undefined,
-    onClick: onClickRow && !isDisabled ? function (event) {
-      // extract from React's synthetic event pool
-      event.persist();
-      var adjustedEvent = event;
-      adjustedEvent.datum = datum;
-      adjustedEvent.index = index;
-      onClickRow(adjustedEvent);
+    onClick: onClickRow ? function (event) {
+      if (onClickRow && !isDisabled) {
+        if (typeof onClickRow === 'function') {
+          // extract from React's synthetic event pool
+          event.persist();
+          var adjustedEvent = event;
+          adjustedEvent.datum = datum;
+          adjustedEvent.index = index;
+          onClickRow(adjustedEvent);
+        } else if (onClickRow === 'select') {
+          if (isSelected) {
+            onSelect(selected.filter(function (s) {
+              return s !== primaryValue;
+            }));
+          } else onSelect([].concat(selected, [primaryValue]));
+        }
+      }
     } : undefined,
     onMouseEnter: onClickRow && !isDisabled ? function () {
-      setActive(index);
+      return setActive(index);
     } : undefined,
     onMouseLeave: onClickRow ? function () {
       return setActive(undefined);
@@ -89,6 +99,7 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
       size: 'auto',
       render: function render() {
         return /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
+          tabIndex: onClickRow === 'select' ? -1 : undefined,
           a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
           checked: isSelected,
           disabled: isDisabled || !onSelect,
@@ -170,14 +181,40 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       lastActive = _React$useState2[0],
       setLastActive = _React$useState2[1];
 
+  var selectRow = function selectRow() {
+    var _data$active;
+
+    var primaryValue = (_data$active = data[active]) == null ? void 0 : _data$active[primaryProperty];
+
+    if (selected && selected.includes(primaryValue)) {
+      onSelect(selected.filter(function (s) {
+        return s !== primaryValue;
+      }));
+    } else onSelect([].concat(selected, [primaryValue]));
+  };
+
+  var clickableRow = onClickRow && active >= 0 && (!disabled || !disabled.includes((0, _buildState.datumValue)(data[active], primaryProperty)));
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
-    onEnter: // active is undefined if user never used the keyboard
-    onClickRow && active >= 0 && (!disabled || !disabled.includes((0, _buildState.datumValue)(data[active], primaryProperty))) ? function (event) {
-      event.persist();
-      var adjustedEvent = event;
-      adjustedEvent.datum = data[active];
-      onClickRow(adjustedEvent);
-    } : undefined,
+    onEnter: clickableRow ? function (event) {
+      if (clickableRow) {
+        if (typeof onClickRow === 'function') {
+          event.persist();
+          var adjustedEvent = event;
+          adjustedEvent.datum = data[active];
+          onClickRow(adjustedEvent);
+        } else if (onClickRow === 'select') {
+          selectRow();
+        }
+      }
+    } : undefined // The WCAG recommendation for checkboxes is to select them with "Space"
+    ,
+    onSpace: function onSpace() {
+      if (clickableRow) {
+        if (onClickRow === 'select') {
+          selectRow();
+        }
+      }
+    },
     onUp: onClickRow && active ? function () {
       return setActive(active - 1);
     } : undefined,
