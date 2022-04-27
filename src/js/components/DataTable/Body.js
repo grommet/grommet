@@ -191,7 +191,7 @@ const Body = forwardRef(
       } else onSelect([...selected, primaryValue]);
     };
 
-    const clickedRow =
+    const clickableRow =
       onClickRow &&
       active >= 0 &&
       (!disabled ||
@@ -200,9 +200,9 @@ const Body = forwardRef(
     return (
       <Keyboard
         onEnter={
-          clickedRow
+          clickableRow
             ? (event) => {
-                if (clickedRow) {
+                if (clickableRow) {
                   if (typeof onClickRow === 'function') {
                     event.persist();
                     const adjustedEvent = event;
@@ -217,7 +217,7 @@ const Body = forwardRef(
         }
         // The WCAG recommendation for checkboxes is to select them with "Space"
         onSpace={() => {
-          if (clickedRow) {
+          if (clickableRow) {
             if (onClickRow === 'select') {
               selectRow();
             }
