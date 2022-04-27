@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.TableCell = void 0;
+exports.verticalAlignToJustify = exports.TableCell = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -36,6 +36,7 @@ var verticalAlignToJustify = {
   top: 'start',
   bottom: 'end'
 };
+exports.verticalAlignToJustify = verticalAlignToJustify;
 var TableCell = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var align = _ref.align,
       ariaDisabled = _ref['aria-disabled'],

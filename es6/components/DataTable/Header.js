@@ -12,7 +12,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { CheckBox } from '../CheckBox';
-import { TableCell } from '../TableCell';
+import { TableCell, verticalAlignToJustify } from '../TableCell/TableCell';
 import { Text } from '../Text';
 import { Resizer } from './Resizer';
 import { Searcher } from './Searcher';
@@ -51,7 +51,8 @@ var separateThemeProps = function separateThemeProps(theme) {
 
 var buttonStyle = function buttonStyle(_ref) {
   var pad = _ref.pad,
-      theme = _ref.theme;
+      theme = _ref.theme,
+      verticalAlign = _ref.verticalAlign;
   var styles = [];
 
   var _separateThemeProps = separateThemeProps(theme),
@@ -78,6 +79,14 @@ var buttonStyle = function buttonStyle(_ref) {
 
   if (iconProps.color) {
     styles.push(css(["svg{stroke:", ";fill:", ";}"], normalizeColor(iconProps.color, theme), normalizeColor(iconProps.color, theme)));
+  }
+
+  var align = 'center';
+  if (verticalAlign === 'bottom') align = 'end';
+  if (verticalAlign === 'top') align = 'start';
+
+  if (verticalAlign) {
+    styles.push(css(["display:inline-flex;align-items:", ";"], align));
   }
 
   return styles;
@@ -256,6 +265,14 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       }, content, unitsContent);
     }
 
+    if (verticalAlign || columnVerticalAlign) {
+      var vertical = verticalAlign || columnVerticalAlign;
+      content = /*#__PURE__*/React.createElement(Box, {
+        height: "100%",
+        justify: verticalAlignToJustify[vertical]
+      }, content);
+    }
+
     if (onSort && sortable !== false) {
       var Icon;
 
@@ -274,7 +291,8 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         onClick: onSort(property),
         sort: sort,
         pad: cellProps.pad,
-        sortable: true
+        sortable: true,
+        verticalAlign: verticalAlign || columnVerticalAlign
       }, /*#__PURE__*/React.createElement(Box, {
         direction: "row",
         align: "center",
@@ -282,10 +300,15 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         justify: align
       }, content, Icon && /*#__PURE__*/React.createElement(Icon, null)));
     } // content should fill any available space in cell
+    // If `onResize` or `search` is true we need to explicitly set
+    // fill because later if either of these props is true content
+    // will be wrapped with an additional Box, preventing this Box
+    // from automatically filling the vertical space.
 
 
     content = /*#__PURE__*/React.createElement(Box, {
-      flex: "grow"
+      flex: "grow",
+      fill: onResize || search ? 'vertical' : false
     }, content);
 
     if (search || onResize) {

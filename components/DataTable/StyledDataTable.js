@@ -31,7 +31,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 var StyledDataTable = (0, _styledComponents["default"])(_Table.Table).withConfig({
   displayName: "StyledDataTable",
   componentId: "sc-xrlyjm-0"
-})(["position:relative;border-spacing:0;border-collapse:separate;height:auto;", " ", " ", ";"], _utils.genericStyles, function (props) {
+})(["position:relative;border-spacing:0;border-collapse:separate;height:100%;", " ", " ", ";"], _utils.genericStyles, function (props) {
   return props.fillProp && (0, _utils.fillStyle)(props.fillProp);
 }, function (props) {
   return props.theme.dataTable && props.theme.dataTable.body && props.theme.dataTable.body.extend;
@@ -87,7 +87,7 @@ var StyledDataTableHeader = (0, _styledComponents["default"])(_TableHeader.Table
   displayName: "StyledDataTable__StyledDataTableHeader",
   componentId: "sc-xrlyjm-4"
 })(["", ""], function (props) {
-  return props.size && "\n    display: table;\n    width: calc(100% - " + props.scrollOffset + "px);\n    table-layout: fixed;\n  ";
+  return props.size && "\n    height: fit-content;\n    display: table;\n    width: calc(100% - " + props.scrollOffset + "px);\n    table-layout: fixed;\n  ";
 });
 exports.StyledDataTableHeader = StyledDataTableHeader;
 StyledDataTableHeader.defaultProps = {};

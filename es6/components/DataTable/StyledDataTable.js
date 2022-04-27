@@ -12,7 +12,7 @@ import { TableFooter } from '../TableFooter'; // border-collapse: separate is ne
 var StyledDataTable = styled(Table).withConfig({
   displayName: "StyledDataTable",
   componentId: "sc-xrlyjm-0"
-})(["position:relative;border-spacing:0;border-collapse:separate;height:auto;", " ", " ", ";"], genericStyles, function (props) {
+})(["position:relative;border-spacing:0;border-collapse:separate;height:100%;", " ", " ", ";"], genericStyles, function (props) {
   return props.fillProp && fillStyle(props.fillProp);
 }, function (props) {
   return props.theme.dataTable && props.theme.dataTable.body && props.theme.dataTable.body.extend;
@@ -64,7 +64,7 @@ var StyledDataTableHeader = styled(TableHeader).withConfig({
   displayName: "StyledDataTable__StyledDataTableHeader",
   componentId: "sc-xrlyjm-4"
 })(["", ""], function (props) {
-  return props.size && "\n    display: table;\n    width: calc(100% - " + props.scrollOffset + "px);\n    table-layout: fixed;\n  ";
+  return props.size && "\n    height: fit-content;\n    display: table;\n    width: calc(100% - " + props.scrollOffset + "px);\n    table-layout: fixed;\n  ";
 });
 StyledDataTableHeader.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableHeader.defaultProps, defaultProps);
