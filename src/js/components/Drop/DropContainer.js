@@ -30,6 +30,36 @@ const preventLayerClose = (event) => {
   }
 };
 
+// `.offsetParent` reports `null` for fixed elements, while absolute elements
+// return the containing block
+const getContainingBlock = element => {
+  let currentNode = element?.offsetParent;
+  const isFirefox = window.navigator.userAgent
+    .toLowerCase()
+    .includes('firefox');
+  while (
+    currentNode instanceof window.HTMLElement &&
+    !['html', 'body'].includes(currentNode.nodeName.toLowerCase())
+    ) {
+    const css = window.getComputedStyle(currentNode);
+
+    // covers the most common CSS properties that create a containing block.
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#identifying_the_containing_block
+    if (
+      css.transform !== 'none' ||
+      css.perspective !== 'none' ||
+      css.contain === 'paint' ||
+      ['transform', 'perspective'].includes(css.willChange) ||
+      (isFirefox && css.willChange === 'filter') ||
+      (isFirefox && (css.filter ? css.filter !== 'none' : false))
+    ) {
+      return currentNode;
+    }
+    currentNode = currentNode.parentNode;
+  }
+  return null;
+};
+
 const defaultAlign = { top: 'top', left: 'left' };
 const defaultPortalContext = [];
 
@@ -211,7 +241,20 @@ const DropContainer = forwardRef(
               maxHeight = windowHeight - top;
             }
           }
-          container.style.left = `${left}px`;
+
+          // return the containing block for absolute elements or `null`
+          // for fixed elements
+          const containingBlock = getContainingBlock(target);
+
+          // compute viewport offsets
+          const viewportOffsetLeft =
+            containingBlock?.getBoundingClientRect()?.left ?? 0;
+          const viewportOffsetTop =
+            containingBlock?.getBoundingClientRect()?.top ?? 0;
+          const viewportOffsetBottom =
+            containingBlock?.getBoundingClientRect()?.bottom ?? windowHeight;
+
+          container.style.left = `${left - viewportOffsetLeft}px`;
           if (stretch) {
             // offset width by 0.1 to avoid a bug in ie11 that
             // unnecessarily wraps the text if width is the same
@@ -221,10 +264,10 @@ const DropContainer = forwardRef(
           // the (position:absolute + scrollTop)
           // is presenting issues with desktop scroll flickering
           if (top !== '') {
-            container.style.top = `${top}px`;
+            container.style.top = `${top - viewportOffsetTop}px`;
           }
           if (bottom !== '') {
-            container.style.bottom = `${windowHeight - bottom}px`;
+            container.style.bottom = `${viewportOffsetBottom - bottom}px`;
           }
           if (!preserveHeight) {
             if (theme.drop && theme.drop.maxHeight) {
