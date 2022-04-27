@@ -1004,13 +1004,11 @@ export interface ThemeType {
     container?: BoxProps;
     item?: {
       background?: BackgroundType;
-      border?:
-        | string
-        | {
-            side?: string;
-            color?: ColorType;
-            size?: string;
-          };
+      border?: BorderType;
+      disabled?: {
+        color?: ColorType;
+        cursor?: string;
+      };
       pad?: PadType;
       extend?: ExtendType;
     };

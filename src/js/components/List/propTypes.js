@@ -59,6 +59,7 @@ if (process.env.NODE_ENV !== 'production') {
     ),
     children: PropTypes.func,
     defaultItemProps: PropTypes.shape(BoxPropTypes),
+    disabled: PropTypes.arrayOf(PropTypes.number),
     itemKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     itemProps: PropTypes.shape({}),
     onMore: PropTypes.func,

@@ -10,6 +10,7 @@ import { Text } from '../Text';
 import {
   focusStyle,
   genericStyles,
+  normalizeColor,
   normalizeShow,
   unfocusStyle,
   useForwardedRef,
@@ -42,8 +43,8 @@ const StyledList = styled.ul`
 `;
 
 const StyledItem = styled(Box)`
-  ${(props) => props.onClick && `cursor: pointer;`}
-  ${(props) => props.draggable && `cursor: move;`}
+  ${(props) => props.onClick && !props.disabled && `cursor: pointer;`}
+  ${(props) => props.draggable && !props.disabled && `cursor: move;`}
   // during the interim state when a user is holding down a click,
   // the individual list item has focus in the DOM until the click
   // completes and focus is placed back on the list container.
@@ -52,6 +53,17 @@ const StyledItem = styled(Box)`
   &:focus {
     ${unfocusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
+  ${(props) => {
+    let disabledStyle;
+    if (props.disabled && props.theme.list?.item?.disabled) {
+      const { color, cursor } = props.theme.list.item.disabled;
+      disabledStyle = {
+        color: normalizeColor(color, props.theme),
+        cursor,
+      };
+    }
+    return disabledStyle;
+  }}
   ${(props) =>
     props.theme.list && props.theme.list.item && props.theme.list.item.extend}
 `;
@@ -124,6 +136,7 @@ const List = React.forwardRef(
       children,
       data,
       defaultItemProps,
+      disabled: disabledItems,
       focus,
       itemKey,
       itemProps,
@@ -501,6 +514,8 @@ const List = React.forwardRef(
                   boxProps = { ...boxProps, ...itemProps[index] };
                 }
 
+                const disabled = disabledItems?.includes(index);
+
                 return (
                   <StyledItem
                     key={key}
@@ -509,6 +524,7 @@ const List = React.forwardRef(
                     pad={pad || theme.list.item.pad}
                     background={adjustedBackground}
                     border={adjustedBorder}
+                    disabled={disabled}
                     {...defaultItemProps}
                     {...boxProps}
                     {...clickProps}
