@@ -3640,7 +3640,7 @@ exports[`DataTable disabled click 1`] = `
   flex: 1 0 auto;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3659,7 +3659,7 @@ exports[`DataTable disabled click 1`] = `
   line-height: 24px;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -3678,7 +3678,7 @@ exports[`DataTable disabled click 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3703,7 +3703,7 @@ exports[`DataTable disabled click 1`] = `
   height: auto;
 }
 
-.c10 {
+.c7 {
   cursor: pointer;
 }
 
@@ -3755,17 +3755,17 @@ exports[`DataTable disabled click 1`] = `
     >
       <tr
         aria-disabled="true"
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
       >
         <th
-          class="c7 "
+          class="c8 "
           scope="row"
         >
           <div
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               alpha
             </span>
@@ -3773,17 +3773,17 @@ exports[`DataTable disabled click 1`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
       >
         <th
-          class="c7 "
+          class="c8 "
           scope="row"
         >
           <div
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               beta
             </span>
@@ -3830,7 +3830,7 @@ exports[`DataTable disabled click 2`] = `
     >
       <tr
         aria-disabled="true"
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hSlrxd"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jTRQxd"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuDSKl StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 dsFDzi"
