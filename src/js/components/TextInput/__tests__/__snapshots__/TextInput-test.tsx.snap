@@ -471,12 +471,11 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
     <ol
       class="c4"
     >
-      <li
-        id="item-listbox-option-0"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-0"
+          role="option"
           type="button"
         >
           <div
@@ -486,12 +485,11 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
           </div>
         </button>
       </li>
-      <li
-        id="item-listbox-option-1"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-1"
+          role="option"
           type="button"
         >
           <div
@@ -716,12 +714,11 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
     <ol
       class="c4"
     >
-      <li
-        id="item-listbox-option-0"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-0"
+          role="option"
           type="button"
         >
           <div
@@ -731,12 +728,11 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
           </div>
         </button>
       </li>
-      <li
-        id="item-listbox-option-1"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-1"
+          role="option"
           type="button"
         >
           <div
@@ -1038,12 +1034,11 @@ exports[`TextInput close suggestion drop 2`] = `
     <ol
       class="c4"
     >
-      <li
-        id="item-listbox-option-0"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-0"
+          role="option"
           type="button"
         >
           <div
@@ -1053,12 +1048,11 @@ exports[`TextInput close suggestion drop 2`] = `
           </div>
         </button>
       </li>
-      <li
-        id="item-listbox-option-1"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-1"
+          role="option"
           type="button"
         >
           <div
@@ -1382,12 +1376,11 @@ exports[`TextInput complex suggestions 2`] = `
     <ol
       class="c4"
     >
-      <li
-        id="item-listbox-option-0"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-0"
+          role="option"
           type="button"
         >
           <div
@@ -1397,12 +1390,11 @@ exports[`TextInput complex suggestions 2`] = `
           </div>
         </button>
       </li>
-      <li
-        id="item-listbox-option-1"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-1"
+          role="option"
           type="button"
         >
           <div
@@ -2194,12 +2186,11 @@ exports[`TextInput large drop height 1`] = `
     <ol
       class="c4"
     >
-      <li
-        id="item-listbox-option-0"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-0"
+          role="option"
           type="button"
         >
           <div
@@ -2209,12 +2200,11 @@ exports[`TextInput large drop height 1`] = `
           </div>
         </button>
       </li>
-      <li
-        id="item-listbox-option-1"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-1"
+          role="option"
           type="button"
         >
           <div
@@ -2417,12 +2407,11 @@ exports[`TextInput medium drop height 1`] = `
     <ol
       class="c4"
     >
-      <li
-        id="item-listbox-option-0"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-0"
+          role="option"
           type="button"
         >
           <div
@@ -2432,12 +2421,11 @@ exports[`TextInput medium drop height 1`] = `
           </div>
         </button>
       </li>
-      <li
-        id="item-listbox-option-1"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-1"
+          role="option"
           type="button"
         >
           <div
@@ -3920,12 +3908,11 @@ exports[`TextInput select suggestion 2`] = `
     <ol
       class="c4"
     >
-      <li
-        id="item-listbox-option-0"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-0"
+          role="option"
           type="button"
         >
           <div
@@ -3935,12 +3922,11 @@ exports[`TextInput select suggestion 2`] = `
           </div>
         </button>
       </li>
-      <li
-        id="item-listbox-option-1"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-1"
+          role="option"
           type="button"
         >
           <div
@@ -4897,12 +4883,11 @@ exports[`TextInput small drop height 1`] = `
     <ol
       class="c4"
     >
-      <li
-        id="item-listbox-option-0"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-0"
+          role="option"
           type="button"
         >
           <div
@@ -4912,12 +4897,11 @@ exports[`TextInput small drop height 1`] = `
           </div>
         </button>
       </li>
-      <li
-        id="item-listbox-option-1"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-1"
+          role="option"
           type="button"
         >
           <div
@@ -5205,12 +5189,11 @@ exports[`TextInput suggestions 2`] = `
     <ol
       class="c4"
     >
-      <li
-        id="item-listbox-option-0"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-0"
+          role="option"
           type="button"
         >
           <div
@@ -5220,12 +5203,11 @@ exports[`TextInput suggestions 2`] = `
           </div>
         </button>
       </li>
-      <li
-        id="item-listbox-option-1"
-        role="option"
-      >
+      <li>
         <button
           class="c5"
+          id="item-listbox-option-1"
+          role="option"
           type="button"
         >
           <div

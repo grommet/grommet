@@ -364,13 +364,13 @@ const TextInput = forwardRef(
 
                   return (
                     <li
-                      id={`${id}-listbox-option-${index}`}
-                      role="option"
-                      aria-selected={selected ? 'true' : undefined}
                       key={`${stringLabel(suggestion)}-${index}`}
                       ref={itemRef}
                     >
                       <Button
+                        id={`${id}-listbox-option-${index}`}
+                        role="option"
+                        aria-selected={selected ? 'true' : undefined}
                         active={active}
                         fill="horizontal"
                         plain={!child ? undefined : true}
