@@ -1275,7 +1275,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       title: {
         // any heading props
-        size: 'small',
         margin: 'none',
         fill: true,
       },
