@@ -14,13 +14,13 @@ import { More } from 'grommet-icons';
 
 const actions = [
   {
+    label: 'Get Started',
+  },
+  {
     label: 'Follow',
   },
   {
     label: 'File Issue',
-  },
-  {
-    label: 'Get Started',
   },
 ];
 

@@ -1260,6 +1260,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     pageHeader: {
+      actions: {
+        // any box props
+        align: 'end',
+      },
+      context: {
+        // any box props
+        align: 'start',
+      },
       subtitle: {
         // any paragraph props
         margin: 'none',

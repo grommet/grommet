@@ -8,35 +8,16 @@ import { Grid } from '../Grid';
 import { Paragraph } from '../Paragraph';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 
-const defaultAreas = ['actions', 'context', 'subtitle', 'title'];
-
-const getCustomThemeAreas = (theme, size) => {
-  const customThemeAreas = [];
-  (theme.pageHeader[size] || theme.pageHeader).areas.forEach((area) => {
-    if (Array.isArray(area)) {
-      area.forEach(
-        (s) => !defaultAreas.includes(s) && customThemeAreas.push(s),
-      );
-    } else if (!defaultAreas.includes(area)) customThemeAreas.push(area);
-  });
-
-  return customThemeAreas;
-};
-
 const PageHeader = forwardRef(
   (
     { actions, children, context, gridProps, subtitle, title, ...rest },
     ref,
   ) => {
     const theme = useContext(ThemeContext);
-    const size = useContext(ResponsiveContext);
-
-    // Allow caller to add their own blank areas to the Grid
-    // See: Custom story
-    const customThemeAreas = getCustomThemeAreas(theme, size);
+    const breakpoint = useContext(ResponsiveContext);
 
     const { areas, columns, gap, rows } =
-      theme.pageHeader[size] || theme.pageHeader.medium;
+      theme.pageHeader[breakpoint] || theme.pageHeader.medium;
 
     return (
       <Header ref={ref} direction="column" gap="none" {...rest}>
@@ -48,10 +29,9 @@ const PageHeader = forwardRef(
           fill="horizontal"
           {...gridProps}
         >
-          <Box gridArea="context" align="start">
+          <Box gridArea="context" {...theme.pageHeader.context}>
             {context}
           </Box>
-
           <Box gridArea="title">
             {typeof title === 'string' ? (
               <Heading {...theme.pageHeader.title}>{title}</Heading>
@@ -66,15 +46,9 @@ const PageHeader = forwardRef(
               subtitle
             )}
           </Box>
-
-          <Box gridArea="actions" align="end">
+          <Box gridArea="actions" {...theme.pageHeader.actions}>
             {actions}
           </Box>
-          {customThemeAreas &&
-            customThemeAreas.map((area, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <Box key={index} gridArea={area} />
-            ))}
         </Grid>
         {children}
       </Header>

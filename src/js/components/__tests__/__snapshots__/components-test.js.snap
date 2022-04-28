@@ -1927,6 +1927,12 @@ Object {
           },
         },
         "pageHeader": Object {
+          "actions": Object {
+            "align": "end",
+          },
+          "context": Object {
+            "align": "start",
+          },
           "large": Object {
             "areas": Array [
               Array [

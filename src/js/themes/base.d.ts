@@ -33,7 +33,12 @@ import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
 import { LayerPositionType, LayerProps } from '../components/Layer';
 import { DropProps } from '../components/Drop';
-import { AreasType, GridColumnsType, GridGapType, GridSizeType } from '../components/Grid';
+import {
+  AreasType,
+  GridColumnsType,
+  GridGapType,
+  GridSizeType,
+} from '../components/Grid';
 import { HeadingProps } from '../components/Heading';
 import { ParagraphProps } from '../components/Paragraph';
 
@@ -1151,6 +1156,8 @@ export interface ThemeType {
     };
   };
   pageHeader?: {
+    actions?: BoxProps;
+    context?: BoxProps;
     subtitle?: ParagraphProps;
     title?: HeadingProps;
     small?: {
