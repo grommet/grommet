@@ -30,24 +30,37 @@ const preventLayerClose = (event) => {
   }
 };
 
-// `.offsetParent` reports `null` for fixed elements, while absolute elements
+// Gets the closest ancestor positioned element
+const getParentNode = (element) =>
+  element.offsetParent || element.parentNode || null;
+
 // return the containing block
-const getContainingBlock = element => {
-  let currentNode = element?.offsetParent;
+const getContainingBlock = (element) => {
+  const isIE = window.navigator.userAgent.toLowerCase().includes('trident');
+  if (isIE && element instanceof window.HTMLElement) {
+    // In IE 9, 10 and 11 fixed elements containing block is always established
+    // by the viewport
+    const css = window.getComputedStyle(element);
+    if (css.position === 'fixed') {
+      return null;
+    }
+  }
   const isFirefox = window.navigator.userAgent
     .toLowerCase()
     .includes('firefox');
+  let currentNode = getParentNode(element);
   while (
     currentNode instanceof window.HTMLElement &&
-    !['html', 'body'].includes(currentNode.nodeName.toLowerCase())
-    ) {
+    !['html', 'body'].includes(currentNode.nodeName)
+  ) {
     const css = window.getComputedStyle(currentNode);
-
-    // covers the most common CSS properties that create a containing block.
+    // This is non-exhaustive but covers the most common CSS properties that
+    // create a containing block.
     // https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#identifying_the_containing_block
     if (
       css.transform !== 'none' ||
       css.perspective !== 'none' ||
+      css.backdropFilter !== 'none' ||
       css.contain === 'paint' ||
       ['transform', 'perspective'].includes(css.willChange) ||
       (isFirefox && css.willChange === 'filter') ||
@@ -55,7 +68,7 @@ const getContainingBlock = element => {
     ) {
       return currentNode;
     }
-    currentNode = currentNode.parentNode;
+    currentNode = getParentNode(currentNode);
   }
   return null;
 };
@@ -244,7 +257,7 @@ const DropContainer = forwardRef(
 
           // return the containing block for absolute elements or `null`
           // for fixed elements
-          const containingBlock = getContainingBlock(target);
+          const containingBlock = getContainingBlock(container);
 
           // compute viewport offsets
           const viewportOffsetLeft =
