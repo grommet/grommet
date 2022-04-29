@@ -32,7 +32,7 @@ const preventLayerClose = (event) => {
 
 // Gets the closest ancestor positioned element
 const getParentNode = (element) =>
-  element.offsetParent || element.parentNode || null;
+  element.offsetParent ?? element.parentNode;
 
 // return the containing block
 const getContainingBlock = (element) => {
@@ -51,24 +51,24 @@ const getContainingBlock = (element) => {
   let currentNode = getParentNode(element);
   while (
     currentNode instanceof window.HTMLElement &&
-    !['html', 'body'].includes(currentNode.nodeName)
-  ) {
+    !['html', 'body'].includes(currentNode.nodeName.toLowerCase())
+    ) {
     const css = window.getComputedStyle(currentNode);
     // This is non-exhaustive but covers the most common CSS properties that
     // create a containing block.
     // https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#identifying_the_containing_block
     if (
-      css.transform !== 'none' ||
-      css.perspective !== 'none' ||
-      css.backdropFilter !== 'none' ||
+      (css.transform ? css.transform !== 'none' : false) ||
+      (css.perspective ? css .perspective !== 'none' : false) ||
+      (css.backdropFilter ? css.backdropFilter !== 'none' : false) ||
       css.contain === 'paint' ||
-      ['transform', 'perspective'].includes(css.willChange) ||
-      (isFirefox && css.willChange === 'filter') ||
-      (isFirefox && (css.filter ? css.filter !== 'none' : false))
+      ['transform', 'perspective'].includes(css?.willChange) ||
+      (isFirefox && css?.willChange === 'filter') ||
+      (isFirefox && (css?.filter ? css?.filter !== 'none' : false))
     ) {
       return currentNode;
     }
-    currentNode = getParentNode(currentNode);
+    currentNode = currentNode?.parentNode;
   }
   return null;
 };
@@ -257,15 +257,19 @@ const DropContainer = forwardRef(
 
           // return the containing block for absolute elements or `null`
           // for fixed elements
-          const containingBlock = getContainingBlock(container);
+          const containingBlock = getContainingBlock(target);
+          const containingBlockRect = containingBlock?.getBoundingClientRect();
 
           // compute viewport offsets
           const viewportOffsetLeft =
-            containingBlock?.getBoundingClientRect()?.left ?? 0;
+            containingBlockRect?.left ?? 0;
           const viewportOffsetTop =
-            containingBlock?.getBoundingClientRect()?.top ?? 0;
+            containingBlockRect?.top ?? 0;
           const viewportOffsetBottom =
-            containingBlock?.getBoundingClientRect()?.bottom ?? windowHeight;
+            containingBlockRect?.bottom ?? windowHeight;
+
+          console.log('viewportOffsetBottom: ', viewportOffsetBottom);
+          console.log('windowHeight: ', windowHeight);
 
           container.style.left = `${left - viewportOffsetLeft}px`;
           if (stretch) {
@@ -280,6 +284,7 @@ const DropContainer = forwardRef(
             container.style.top = `${top - viewportOffsetTop}px`;
           }
           if (bottom !== '') {
+            // container.style.bottom = `${viewportOffsetBottom - bottom}px`;
             container.style.bottom = `${viewportOffsetBottom - bottom}px`;
           }
           if (!preserveHeight) {
@@ -379,9 +384,9 @@ const DropContainer = forwardRef(
         elevation={
           !plain
             ? elevation ||
-              theme.global.drop.elevation ||
-              theme.global.drop.shadowSize || // backward compatibility
-              'small'
+            theme.global.drop.elevation ||
+            theme.global.drop.shadowSize || // backward compatibility
+            'small'
             : undefined
         }
         tabIndex="-1"
@@ -428,9 +433,9 @@ const DropContainer = forwardRef(
             onEsc={
               onEsc
                 ? (event) => {
-                    event.stopPropagation();
-                    onEsc(event);
-                  }
+                  event.stopPropagation();
+                  onEsc(event);
+                }
                 : undefined
             }
             onKeyDown={onKeyDown}
