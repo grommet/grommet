@@ -1264,7 +1264,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any box props
         align: 'end',
       },
-      context: {
+      parent: {
         // any box props
         align: 'start',
       },
@@ -1280,7 +1280,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       small: {
         areas: [
-          ['context', 'context'],
+          ['parent', 'null'],
           ['title', 'actions'],
           ['subtitle', 'actions'],
         ],
@@ -1290,7 +1290,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       medium: {
         areas: [
-          ['context', 'context'],
+          ['parent', 'null'],
           ['title', 'actions'],
           ['subtitle', 'actions'],
         ],
@@ -1300,7 +1300,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       large: {
         areas: [
-          ['context', 'context'],
+          ['parent', 'null'],
           ['title', 'actions'],
           ['subtitle', 'actions'],
         ],

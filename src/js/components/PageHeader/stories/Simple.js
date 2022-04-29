@@ -13,7 +13,7 @@ export const Simple = () => (
           mobile-first projects for the web with an easy to use component 
           library.`}
         actions={<Button label="Get Started" primary />}
-        context={<Anchor label="Parent Page" />}
+        parent={<Anchor label="Parent Page" />}
       />
     </PageContent>
   </Page>

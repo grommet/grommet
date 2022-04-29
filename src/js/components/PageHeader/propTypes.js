@@ -7,8 +7,8 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     ...genericProps,
     actions: PropTypes.element,
-    context: PropTypes.element,
     gridProps: GridPropTypes,
+    parent: PropTypes.element,
     subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   };

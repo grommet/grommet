@@ -1157,7 +1157,7 @@ export interface ThemeType {
   };
   pageHeader?: {
     actions?: BoxProps;
-    context?: BoxProps;
+    parent?: BoxProps;
     subtitle?: ParagraphProps;
     title?: HeadingProps;
     small?: {

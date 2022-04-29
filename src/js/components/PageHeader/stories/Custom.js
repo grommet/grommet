@@ -17,7 +17,7 @@ const customTheme = deepMerge(grommet, {
   pageHeader: {
     medium: {
       areas: [
-        ['context', 'context'],
+        ['parent', 'parent'],
         ['title', 'null'],
         ['subtitle', 'null'],
         ['actions', 'actions'],
@@ -38,7 +38,7 @@ export const Custom = () => (
               <Button label="Edit" primary />
             </Box>
           }
-          context={<Anchor icon={<FormPrevious />} label="Settings" />}
+          parent={<Anchor icon={<FormPrevious />} label="Settings" />}
         />
       </PageContent>
     </Page>

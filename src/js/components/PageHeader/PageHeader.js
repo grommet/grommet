@@ -9,10 +9,7 @@ import { Paragraph } from '../Paragraph';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 
 const PageHeader = forwardRef(
-  (
-    { actions, children, context, gridProps, subtitle, title, ...rest },
-    ref,
-  ) => {
+  ({ actions, children, gridProps, parent, subtitle, title, ...rest }, ref) => {
     const theme = useContext(ThemeContext);
     const breakpoint = useContext(ResponsiveContext);
 
@@ -29,8 +26,8 @@ const PageHeader = forwardRef(
           fill="horizontal"
           {...gridProps}
         >
-          <Box gridArea="context" {...theme.pageHeader.context}>
-            {context}
+          <Box gridArea="parent" {...theme.pageHeader.parent}>
+            {parent}
           </Box>
           <Box gridArea="title">
             {typeof title === 'string' ? (

@@ -22,7 +22,7 @@ export const Children = () => (
           mobile-first projects for the web with an easy to use component 
           library.`}
         actions={<Button label="Get Started" primary />}
-        context={<Anchor label="Open Source" />}
+        parent={<Anchor label="Open Source" />}
       >
         <ContextualInfo />
       </PageHeader>

@@ -13,8 +13,8 @@ export interface PageHeaderProps {
   gridArea?: GridAreaType;
   margin?: MarginType;
   actions?: JSX.Element;
-  context?: JSX.Element;
   gridProps?: GridProps;
+  parent?: JSX.Element;
   subtitle?: string | JSX.Element;
   title?: string | JSX.Element;
 }

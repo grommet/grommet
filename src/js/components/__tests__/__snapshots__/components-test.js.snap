@@ -1930,14 +1930,11 @@ Object {
           "actions": Object {
             "align": "end",
           },
-          "context": Object {
-            "align": "start",
-          },
           "large": Object {
             "areas": Array [
               Array [
-                "context",
-                "context",
+                "parent",
+                "null",
               ],
               Array [
                 "title",
@@ -1968,8 +1965,8 @@ Object {
           "medium": Object {
             "areas": Array [
               Array [
-                "context",
-                "context",
+                "parent",
+                "null",
               ],
               Array [
                 "title",
@@ -1997,11 +1994,14 @@ Object {
               "auto",
             ],
           },
+          "parent": Object {
+            "align": "start",
+          },
           "small": Object {
             "areas": Array [
               Array [
-                "context",
-                "context",
+                "parent",
+                "null",
               ],
               Array [
                 "title",
