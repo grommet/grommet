@@ -286,6 +286,13 @@ const SelectContainer = forwardRef(
         event.preventDefault();
         let nextActiveIndex = activeIndex - 1;
         const clearButton = clearRef.current;
+
+        if (nextActiveIndex === -1) {
+          const searchInput = searchRef.current;
+          if (searchInput && searchInput.focus)
+            setFocusWithoutScroll(searchInput);
+        }
+
         while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
           nextActiveIndex -= 1;
         }
