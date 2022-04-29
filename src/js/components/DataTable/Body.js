@@ -46,23 +46,27 @@ const Row = memo(
         active={active}
         aria-disabled={(onClickRow && isDisabled) || undefined}
         onClick={
-          onClickRow && !isDisabled
+          onClickRow
             ? (event) => {
-                // extract from React's synthetic event pool
-                event.persist();
-                const adjustedEvent = event;
-                adjustedEvent.datum = datum;
-                adjustedEvent.index = index;
-                onClickRow(adjustedEvent);
+                if (onClickRow && !isDisabled) {
+                  if (typeof onClickRow === 'function') {
+                    // extract from React's synthetic event pool
+                    event.persist();
+                    const adjustedEvent = event;
+                    adjustedEvent.datum = datum;
+                    adjustedEvent.index = index;
+                    onClickRow(adjustedEvent);
+                  } else if (onClickRow === 'select') {
+                    if (isSelected) {
+                      onSelect(selected.filter((s) => s !== primaryValue));
+                    } else onSelect([...selected, primaryValue]);
+                  }
+                }
               }
             : undefined
         }
         onMouseEnter={
-          onClickRow && !isDisabled
-            ? () => {
-                setActive(index);
-              }
-            : undefined
+          onClickRow && !isDisabled ? () => setActive(index) : undefined
         }
         onMouseLeave={onClickRow ? () => setActive(undefined) : undefined}
       >
@@ -81,6 +85,7 @@ const Row = memo(
               size: 'auto',
               render: () => (
                 <CheckBox
+                  tabIndex={onClickRow === 'select' ? -1 : undefined}
                   a11yTitle={`${
                     isSelected ? 'unselect' : 'select'
                   } ${primaryValue}`}
@@ -179,22 +184,45 @@ const Body = forwardRef(
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
 
+    const selectRow = () => {
+      const primaryValue = data[active]?.[primaryProperty];
+      if (selected && selected.includes(primaryValue)) {
+        onSelect(selected.filter((s) => s !== primaryValue));
+      } else onSelect([...selected, primaryValue]);
+    };
+
+    const clickableRow =
+      onClickRow &&
+      active >= 0 &&
+      (!disabled ||
+        !disabled.includes(datumValue(data[active], primaryProperty)));
+
     return (
       <Keyboard
         onEnter={
-          // active is undefined if user never used the keyboard
-          onClickRow &&
-          active >= 0 &&
-          (!disabled ||
-            !disabled.includes(datumValue(data[active], primaryProperty)))
+          clickableRow
             ? (event) => {
-                event.persist();
-                const adjustedEvent = event;
-                adjustedEvent.datum = data[active];
-                onClickRow(adjustedEvent);
+                if (clickableRow) {
+                  if (typeof onClickRow === 'function') {
+                    event.persist();
+                    const adjustedEvent = event;
+                    adjustedEvent.datum = data[active];
+                    onClickRow(adjustedEvent);
+                  } else if (onClickRow === 'select') {
+                    selectRow();
+                  }
+                }
               }
             : undefined
         }
+        // The WCAG recommendation for checkboxes is to select them with "Space"
+        onSpace={() => {
+          if (clickableRow) {
+            if (onClickRow === 'select') {
+              selectRow();
+            }
+          }
+        }}
         onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
         onDown={
           onClickRow && data.length && active < data.length - 1

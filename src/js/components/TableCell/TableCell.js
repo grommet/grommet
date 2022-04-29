@@ -17,7 +17,7 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 import { TableCellPropTypes } from './propTypes';
 
-const verticalAlignToJustify = {
+export const verticalAlignToJustify = {
   middle: 'center',
   top: 'start',
   bottom: 'end',

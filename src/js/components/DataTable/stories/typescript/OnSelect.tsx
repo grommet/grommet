@@ -25,16 +25,9 @@ const columns: ColumnConfig<RowType>[] = [
     header: 'Location',
     render: (datum) =>
       datum.location ? (
-        <Box
-          pad={{ horizontal: 'small', vertical: 'xsmall' }}
-          onClick={() => {}}
-          hoverIndicator
-          fill
-        >
-          <Text truncate weight="bold">
-            {datum.location}
-          </Text>
-        </Box>
+        <Text truncate weight="bold">
+          {datum.location}
+        </Text>
       ) : undefined,
     plain: true,
   },
@@ -168,6 +161,7 @@ export const OnSelectDataTable = () => {
         step={10}
         disabled={['Matt']}
         select={select}
+        onClickRow="select"
         onSelect={setSelect}
       />
     </Box>

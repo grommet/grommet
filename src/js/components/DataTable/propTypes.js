@@ -127,7 +127,10 @@ if (process.env.NODE_ENV !== 'production') {
         onSelect: PropTypes.func,
       }),
     ]),
-    onClickRow: PropTypes.func,
+    onClickRow: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.oneOf(['select']),
+    ]),
     rowDetails: PropTypes.func,
     onMore: PropTypes.func,
     onSearch: PropTypes.func,
