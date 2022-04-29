@@ -380,9 +380,9 @@ const DropContainer = forwardRef(
         elevation={
           !plain
             ? elevation ||
-            theme.global.drop.elevation ||
-            theme.global.drop.shadowSize || // backward compatibility
-            'small'
+              theme.global.drop.elevation ||
+              theme.global.drop.shadowSize || // backward compatibility
+              'small'
             : undefined
         }
         tabIndex="-1"
@@ -429,9 +429,9 @@ const DropContainer = forwardRef(
             onEsc={
               onEsc
                 ? (event) => {
-                  event.stopPropagation();
-                  onEsc(event);
-                }
+                    event.stopPropagation();
+                    onEsc(event);
+                  }
                 : undefined
             }
             onKeyDown={onKeyDown}
