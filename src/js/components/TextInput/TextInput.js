@@ -370,7 +370,7 @@ const TextInput = forwardRef(
                       <Button
                         id={`${id}-listbox-option-${index}`}
                         role="option"
-                        aria-selected={selected ? 'true' : undefined}
+                        aria-selected={selected ? 'true' : 'false'}
                         active={active}
                         fill="horizontal"
                         plain={!child ? undefined : true}

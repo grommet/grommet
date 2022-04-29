@@ -473,6 +473,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
     >
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-0"
           role="option"
@@ -487,6 +488,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
       </li>
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-1"
           role="option"
@@ -716,6 +718,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
     >
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-0"
           role="option"
@@ -730,6 +733,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
       </li>
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-1"
           role="option"
@@ -1036,6 +1040,7 @@ exports[`TextInput close suggestion drop 2`] = `
     >
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-0"
           role="option"
@@ -1050,6 +1055,7 @@ exports[`TextInput close suggestion drop 2`] = `
       </li>
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-1"
           role="option"
@@ -1378,6 +1384,7 @@ exports[`TextInput complex suggestions 2`] = `
     >
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-0"
           role="option"
@@ -1392,6 +1399,7 @@ exports[`TextInput complex suggestions 2`] = `
       </li>
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-1"
           role="option"
@@ -2188,6 +2196,7 @@ exports[`TextInput large drop height 1`] = `
     >
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-0"
           role="option"
@@ -2202,6 +2211,7 @@ exports[`TextInput large drop height 1`] = `
       </li>
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-1"
           role="option"
@@ -2409,6 +2419,7 @@ exports[`TextInput medium drop height 1`] = `
     >
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-0"
           role="option"
@@ -2423,6 +2434,7 @@ exports[`TextInput medium drop height 1`] = `
       </li>
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-1"
           role="option"
@@ -3910,6 +3922,7 @@ exports[`TextInput select suggestion 2`] = `
     >
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-0"
           role="option"
@@ -3924,6 +3937,7 @@ exports[`TextInput select suggestion 2`] = `
       </li>
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-1"
           role="option"
@@ -4885,6 +4899,7 @@ exports[`TextInput small drop height 1`] = `
     >
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-0"
           role="option"
@@ -4899,6 +4914,7 @@ exports[`TextInput small drop height 1`] = `
       </li>
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-1"
           role="option"
@@ -5191,6 +5207,7 @@ exports[`TextInput suggestions 2`] = `
     >
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-0"
           role="option"
@@ -5205,6 +5222,7 @@ exports[`TextInput suggestions 2`] = `
       </li>
       <li>
         <button
+          aria-selected="false"
           class="c5"
           id="item-listbox-option-1"
           role="option"
