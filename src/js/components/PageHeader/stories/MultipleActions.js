@@ -15,14 +15,38 @@ import { More } from 'grommet-icons';
 const actions = [
   {
     label: 'Get Started',
+    primary: true,
   },
   {
     label: 'Follow',
+    secondary: true,
   },
   {
     label: 'File Issue',
+    secondary: true,
   },
 ];
+
+const controls = {
+  small: (
+    <Menu
+      dropAlign={{ top: 'bottom', right: 'right' }}
+      items={actions.map((action) => ({ label: action.label }))}
+      icon={<More />}
+    />
+  ),
+  medium: (
+    <>
+      <Button {...actions[0]} />
+      <Menu
+        dropAlign={{ top: 'bottom', right: 'right' }}
+        items={actions.slice(1)}
+        icon={<More />}
+      />
+    </>
+  ),
+  large: actions.map((action) => <Button {...action} />),
+};
 
 export const MultipleActions = () => {
   const size = useContext(ResponsiveContext);
@@ -39,21 +63,7 @@ export const MultipleActions = () => {
           library.`}
           actions={
             <Box direction="row" gap="small" align="center">
-              {size !== 'small' ? (
-                actions.map((action) => (
-                  <Button
-                    {...action}
-                    primary={action.label === 'Get Started'}
-                    secondary={action.label !== 'Get Started'}
-                  />
-                ))
-              ) : (
-                <Menu
-                  dropAlign={{ top: 'bottom', right: 'right' }}
-                  items={actions}
-                  icon={<More />}
-                />
-              )}
+              {controls[size]}
             </Box>
           }
           parent={<Anchor label="Parent Page" />}
