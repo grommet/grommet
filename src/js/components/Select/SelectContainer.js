@@ -289,8 +289,10 @@ const SelectContainer = forwardRef(
 
         if (nextActiveIndex === -1) {
           const searchInput = searchRef.current;
-          if (searchInput && searchInput.focus)
+          if (searchInput && searchInput.focus) {
+            setActiveIndex(nextActiveIndex);
             setFocusWithoutScroll(searchInput);
+          }
         }
 
         while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
