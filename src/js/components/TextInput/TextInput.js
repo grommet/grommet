@@ -327,7 +327,7 @@ const TextInput = forwardRef(
           {...dropProps}
         >
           <ContainerBox
-            id={`${id}-listbox`}
+            id={id ? `listbox__${id}` : undefined}
             role="listbox"
             overflow="auto"
             dropHeight={dropHeight}
@@ -368,7 +368,7 @@ const TextInput = forwardRef(
                       ref={itemRef}
                     >
                       <Button
-                        id={`${id}-listbox-option-${index}`}
+                        id={id ? `listbox-option-${index}__${id}` : undefined}
                         role="option"
                         aria-selected={selected ? 'true' : 'false'}
                         active={active}
@@ -422,15 +422,15 @@ const TextInput = forwardRef(
     */
     let comboboxProps = {};
     let activeOptionID;
-    if (suggestions && suggestions.length > -1) {
+    if (id && suggestions?.length > -1) {
       if (showDrop && activeSuggestionIndex > -1) {
-        activeOptionID = `${id}-listbox-option-${activeSuggestionIndex}`;
+        activeOptionID = `listbox-option-${activeSuggestionIndex}__${id}`;
       }
       comboboxProps = {
         'aria-activedescendant': activeOptionID,
         'aria-autocomplete': 'list',
         'aria-expanded': showDrop ? 'true' : 'false',
-        'aria-controls': showDrop ? `${id}-listbox` : undefined,
+        'aria-controls': showDrop ? `listbox__${id}` : undefined,
         role: 'combobox',
       };
     }
