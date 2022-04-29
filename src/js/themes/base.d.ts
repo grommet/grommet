@@ -1162,19 +1162,19 @@ export interface ThemeType {
     title?: HeadingProps;
     small?: {
       areas?: AreasType;
-      columns: GridColumnsType;
+      columns?: GridColumnsType;
       rows?: GridSizeType;
       gap?: GridGapType;
     };
     medium?: {
       areas?: AreasType;
-      columns: GridColumnsType;
+      columns?: GridColumnsType;
       rows?: GridSizeType;
       gap?: GridGapType;
     };
     large?: {
       areas?: AreasType;
-      columns: GridColumnsType;
+      columns?: GridColumnsType;
       rows?: GridSizeType;
       gap?: GridGapType;
     };
