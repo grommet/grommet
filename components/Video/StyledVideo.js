@@ -24,7 +24,7 @@ var fitStyle = (0, _styledComponents.css)(["flex:1 1;min-height:0;object-fit:", 
 var StyledVideo = _styledComponents["default"].video.withConfig({
   displayName: "StyledVideo",
   componentId: "sc-w4v8h9-0"
-})(["max-width:100%;z-index:1;", "::cue{background:", ";}", ";"], function (props) {
+})(["max-width:100%;z-index:1;", " ::cue{background:", ";}", ";"], function (props) {
   return props.fit && fitStyle;
 }, function (props) {
   return props.theme.video.captions.background;
