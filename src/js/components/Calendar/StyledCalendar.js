@@ -43,6 +43,7 @@ const weeksContainerSizeStyle = (props) => {
 };
 const StyledWeeksContainer = styled.div`
   overflow: hidden;
+  outline: none;
   ${(props) => weeksContainerSizeStyle(props)}
   ${(props) => props.focus && !props.plain && focusStyle()};
 `;
@@ -101,6 +102,7 @@ Object.setPrototypeOf(StyledWeek.defaultProps, defaultProps);
 // widths of 7 days to equally fill 100% of the row.
 const StyledDayContainer = styled.div`
   flex: 0 1 auto;
+  ${(props) => props.focus && !props.plain && focusStyle()}
   ${(props) => props.fillContainer && 'width: 14.3%;'}
 `;
 

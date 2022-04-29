@@ -245,6 +245,7 @@ exports[`Calendar change months 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -1228,7 +1229,7 @@ exports[`Calendar change months 2`] = `
                 January 2020;
                 Currently selected 2020-01-15;
               "
-        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
+        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gzjjWj"
         role="grid"
         tabindex="0"
       >
@@ -1240,7 +1241,7 @@ exports[`Calendar change months 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1257,7 +1258,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1274,7 +1275,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1291,7 +1292,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1308,7 +1309,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1325,7 +1326,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1342,7 +1343,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1364,7 +1365,7 @@ exports[`Calendar change months 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1381,7 +1382,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1398,7 +1399,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1415,7 +1416,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1432,7 +1433,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1449,7 +1450,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -1466,7 +1467,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -2645,6 +2646,7 @@ exports[`Calendar children 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 100%;
 }
 
@@ -3488,6 +3490,7 @@ exports[`Calendar date 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -4668,6 +4671,7 @@ exports[`Calendar dates 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -5867,6 +5871,7 @@ exports[`Calendar daysOfWeek 1`] = `
 
 .c12 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -7202,6 +7207,7 @@ exports[`Calendar disabled 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -8393,6 +8399,7 @@ exports[`Calendar fill 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 100%;
 }
 
@@ -9585,6 +9592,7 @@ exports[`Calendar first day sunday week monday 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -10765,6 +10773,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -12721,6 +12730,7 @@ exports[`Calendar header 1`] = `
 
 .c7 {
   overflow: hidden;
+  outline: none;
   height: 164.57142857142856px;
 }
 
@@ -13922,6 +13932,7 @@ exports[`Calendar reference 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -15082,6 +15093,7 @@ exports[`Calendar select date 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -16085,7 +16097,7 @@ exports[`Calendar select date 2`] = `
                 January 2020;
                 Currently selected 2020-01-17;
               "
-        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eIQdmp"
+        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gzjjWj"
         role="grid"
         tabindex="0"
       >
@@ -16097,7 +16109,7 @@ exports[`Calendar select date 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16114,7 +16126,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16131,7 +16143,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16148,7 +16160,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16165,7 +16177,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16182,7 +16194,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16199,7 +16211,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16221,7 +16233,7 @@ exports[`Calendar select date 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16238,7 +16250,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16255,7 +16267,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16272,7 +16284,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16289,7 +16301,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16306,7 +16318,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16323,7 +16335,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16345,7 +16357,7 @@ exports[`Calendar select date 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16362,7 +16374,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16379,7 +16391,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16396,7 +16408,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16413,7 +16425,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16430,7 +16442,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ftGUkA"
               role="gridcell"
             >
               <button
@@ -16447,7 +16459,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16469,7 +16481,7 @@ exports[`Calendar select date 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16486,7 +16498,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16503,7 +16515,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16520,7 +16532,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16537,7 +16549,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16554,7 +16566,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16571,7 +16583,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16593,7 +16605,7 @@ exports[`Calendar select date 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16610,7 +16622,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16627,7 +16639,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16644,7 +16656,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16661,7 +16673,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16678,7 +16690,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16695,7 +16707,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16717,7 +16729,7 @@ exports[`Calendar select date 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16734,7 +16746,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16751,7 +16763,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16768,7 +16780,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16785,7 +16797,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16802,7 +16814,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -16819,7 +16831,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -17088,6 +17100,7 @@ exports[`Calendar select dates 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -18110,7 +18123,7 @@ exports[`Calendar select dates 2`] = `
                 January 2020;
                 No date selected
               "
-        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eIQdmp"
+        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gzjjWj"
         role="grid"
         tabindex="0"
       >
@@ -18122,7 +18135,7 @@ exports[`Calendar select dates 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18139,7 +18152,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18156,7 +18169,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18173,7 +18186,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18190,7 +18203,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18207,7 +18220,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18224,7 +18237,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18246,7 +18259,7 @@ exports[`Calendar select dates 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18263,7 +18276,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18280,7 +18293,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18297,7 +18310,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18314,7 +18327,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18331,7 +18344,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18348,7 +18361,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18370,7 +18383,7 @@ exports[`Calendar select dates 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18387,7 +18400,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18404,7 +18417,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18421,7 +18434,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18438,7 +18451,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18455,7 +18468,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ftGUkA"
               role="gridcell"
             >
               <button
@@ -18472,7 +18485,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18494,7 +18507,7 @@ exports[`Calendar select dates 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18511,7 +18524,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18528,7 +18541,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18545,7 +18558,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18562,7 +18575,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18579,7 +18592,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18596,7 +18609,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18618,7 +18631,7 @@ exports[`Calendar select dates 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18635,7 +18648,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18652,7 +18665,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18669,7 +18682,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18686,7 +18699,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18703,7 +18716,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18720,7 +18733,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18742,7 +18755,7 @@ exports[`Calendar select dates 2`] = `
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18759,7 +18772,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18776,7 +18789,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18793,7 +18806,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18810,7 +18823,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18827,7 +18840,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -18844,7 +18857,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
               role="gridcell"
             >
               <button
@@ -19113,6 +19126,7 @@ exports[`Calendar showAdjacentDays 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -21849,16 +21863,19 @@ exports[`Calendar size 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 164.57142857142856px;
 }
 
 .c20 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
 .c28 {
   overflow: hidden;
+  outline: none;
   height: 658.2857142857142px;
 }
 
