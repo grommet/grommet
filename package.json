@@ -1,6 +1,6 @@
 {
-  "name": "grommet",
-  "version": "2.22.0",
+  "name": "@lcdp/grommet",
+  "version": "2.22.0--fix-drop-container-position",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",

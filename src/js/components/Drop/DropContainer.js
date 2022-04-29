@@ -62,9 +62,9 @@ const getContainingBlock = (element) => {
       (css.perspective ? css .perspective !== 'none' : false) ||
       (css.backdropFilter ? css.backdropFilter !== 'none' : false) ||
       css.contain === 'paint' ||
-      ['transform', 'perspective'].includes(css?.willChange) ||
-      (isFirefox && css?.willChange === 'filter') ||
-      (isFirefox && (css?.filter ? css?.filter !== 'none' : false))
+      ['transform', 'perspective'].includes(css.willChange) ||
+      (isFirefox && css.willChange === 'filter') ||
+      (isFirefox && (css.filter ? css.filter !== 'none' : false))
     ) {
       return currentNode;
     }
@@ -257,7 +257,7 @@ const DropContainer = forwardRef(
 
           // return the containing block for absolute elements or `null`
           // for fixed elements
-          const containingBlock = getContainingBlock(target);
+          const containingBlock = getContainingBlock(container);
           const containingBlockRect = containingBlock?.getBoundingClientRect();
 
           // compute viewport offsets
@@ -267,9 +267,6 @@ const DropContainer = forwardRef(
             containingBlockRect?.top ?? 0;
           const viewportOffsetBottom =
             containingBlockRect?.bottom ?? windowHeight;
-
-          console.log('viewportOffsetBottom: ', viewportOffsetBottom);
-          console.log('windowHeight: ', windowHeight);
 
           container.style.left = `${left - viewportOffsetLeft}px`;
           if (stretch) {
@@ -284,7 +281,6 @@ const DropContainer = forwardRef(
             container.style.top = `${top - viewportOffsetTop}px`;
           }
           if (bottom !== '') {
-            // container.style.bottom = `${viewportOffsetBottom - bottom}px`;
             container.style.bottom = `${viewportOffsetBottom - bottom}px`;
           }
           if (!preserveHeight) {
