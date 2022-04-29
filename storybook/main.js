@@ -9,6 +9,7 @@ module.exports = {
         },
       },
     },
+    '@storybook/addon-a11y',
   ],
   stories: [
     '../src/js/components/**/stories/typescript/*.tsx',
