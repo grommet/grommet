@@ -2036,7 +2036,6 @@ Object {
           "title": Object {
             "fill": true,
             "margin": "none",
-            "size": "small",
           },
         },
         "pagination": Object {

@@ -1,68 +1,24 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import {
-  Anchor,
-  Box,
-  Button,
-  Menu,
-  PageHeader,
-  Page,
-  PageContent,
-  ResponsiveContext,
-} from 'grommet';
-import { More } from 'grommet-icons';
+import { Anchor, Button, PageHeader, Page, PageContent } from 'grommet';
 
-const actions = [
-  {
-    label: 'Get Started',
-  },
-  {
-    label: 'Follow',
-  },
-  {
-    label: 'File Issue',
-  },
-];
-
-export const Simple = () => {
-  const size = useContext(ResponsiveContext);
-
-  return (
-    // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={...}>
-    <Page>
-      <PageContent>
-        <PageHeader
-          title="Grommet"
-          subtitle={`Grommet helps you build responsive and accessible 
+export const Simple = () => (
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Page>
+    <PageContent>
+      <PageHeader
+        title="Grommet"
+        subtitle={`Grommet helps you build responsive and accessible 
           mobile-first projects for the web with an easy to use component 
           library.`}
-          actions={
-            <Box direction="row" gap="small" align="center">
-              {size !== 'small' ? (
-                actions.map((action) => (
-                  <Button
-                    {...action}
-                    primary={action.label === 'Get Started'}
-                    secondary={action.label !== 'Get Started'}
-                  />
-                ))
-              ) : (
-                <Menu
-                  dropAlign={{ top: 'bottom', right: 'right' }}
-                  items={actions}
-                  icon={<More />}
-                />
-              )}
-            </Box>
-          }
-          context={<Anchor label="Parent Page" />}
-        />
-      </PageContent>
-    </Page>
-    // </Grommet>
-  );
-};
+        actions={<Button label="Get Started" primary />}
+        context={<Anchor label="Parent Page" />}
+      />
+    </PageContent>
+  </Page>
+  // </Grommet>
+);
 
 export default {
   title: 'Layout/PageHeader/Simple',
