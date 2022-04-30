@@ -29,7 +29,7 @@ var HelpAndError = function HelpAndError() {
       onChange: function onChange() {}
     }))), /*#__PURE__*/_react["default"].createElement(_grommet.Form, null, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Email",
-      htmlFor: "text-input",
+      htmlFor: "email",
       help: /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
         weight: "lighter",
         size: "small"

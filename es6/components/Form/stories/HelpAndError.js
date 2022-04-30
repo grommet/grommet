@@ -20,7 +20,7 @@ export var HelpAndError = function HelpAndError() {
       onChange: function onChange() {}
     }))), /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(FormField, {
       label: "Email",
-      htmlFor: "text-input",
+      htmlFor: "email",
       help: /*#__PURE__*/React.createElement(Text, {
         weight: "lighter",
         size: "small"
