@@ -127,6 +127,10 @@ const List = React.forwardRef(
       focus,
       itemKey,
       itemProps,
+      onActive,
+      onClickItem,
+      onKeyDown,
+      onMore,
       onOrder,
       pad,
       paginate,
@@ -134,8 +138,6 @@ const List = React.forwardRef(
       secondaryKey,
       show: showProp,
       step = paginate ? 50 : undefined,
-      onClickItem,
-      onMore,
       ...rest
     },
     ref,
@@ -151,8 +153,15 @@ const List = React.forwardRef(
     // If onOrder is not defined but onClickItem is (e.g. the
     // List items are likely selectable), active will be the
     // index of the item which is currently active.
-    const [active, setActive] = useState();
+    const [active, setActiveState] = useState();
     const [lastActive, setLastActive] = useState();
+    const setActive = (nextActive) => {
+      setActiveState(nextActive);
+      // we occasionally call setActive with undefined when it already is so,
+      // no need to call onActive in that case
+      if (onActive && onClickItem && nextActive !== active)
+        onActive(nextActive);
+    };
     const [itemFocus, setItemFocus] = useState();
     const [dragging, setDragging] = useState();
 
@@ -242,6 +251,7 @@ const List = React.forwardRef(
                 }
               : undefined
           }
+          onKeyDown={onKeyDown}
         >
           <StyledList
             aria-label={ariaLabel || a11yTitle}
