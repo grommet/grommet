@@ -213,9 +213,7 @@ const List = React.forwardRef(
       <Container {...containterProps}>
         <Keyboard
           onEnter={
-            (onClickItem || onOrder) &&
-            active >= 0 &&
-            !disabledItems?.includes(active)
+            (onClickItem || onOrder) && active >= 0
               ? (event) => {
                   if (onOrder) {
                     const index = Math.trunc(active / 2);
@@ -230,7 +228,7 @@ const List = React.forwardRef(
                       onOrder(reorder(data, index, index - 1));
                       setActive(Math.max(active - 2, 1));
                     }
-                  } else {
+                  } else if (onClickItem && !disabledItems?.includes(active)) {
                     event.persist();
                     const adjustedEvent = event;
                     adjustedEvent.item = data[active];
