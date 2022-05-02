@@ -43,8 +43,8 @@ const StyledList = styled.ul`
 `;
 
 const StyledItem = styled(Box)`
-  ${(props) => props.onClick && !props.disabled && `cursor: pointer;`}
-  ${(props) => props.draggable && !props.disabled && `cursor: move;`}
+  ${(props) => props.onClick && !props.isDisabled && `cursor: pointer;`}
+  ${(props) => props.draggable && !props.isDisabled && `cursor: move;`}
   // during the interim state when a user is holding down a click,
   // the individual list item has focus in the DOM until the click
   // completes and focus is placed back on the list container.
@@ -55,7 +55,7 @@ const StyledItem = styled(Box)`
   }
   ${(props) => {
     let disabledStyle;
-    if (props.disabled && props.theme.list?.item?.disabled) {
+    if (props.isDisabled && props.theme.list?.item?.disabled) {
       const { color, cursor } = props.theme.list.item.disabled;
       disabledStyle = {
         color: normalizeColor(color, props.theme),
@@ -213,7 +213,9 @@ const List = React.forwardRef(
       <Container {...containterProps}>
         <Keyboard
           onEnter={
-            (onClickItem || onOrder) && active >= 0
+            (onClickItem || onOrder) &&
+            active >= 0 &&
+            !disabledItems?.includes(active)
               ? (event) => {
                   if (onOrder) {
                     const index = Math.trunc(active / 2);
@@ -345,6 +347,7 @@ const List = React.forwardRef(
                 }
 
                 const key = itemKey ? itemId : getKey(item, index, itemId);
+                const isDisabled = disabledItems?.includes(index);
 
                 if (action) {
                   content = [
@@ -383,15 +386,20 @@ const List = React.forwardRef(
                     tabIndex: -1,
                     active: active === index,
                     onClick: (event) => {
-                      // extract from React's synthetic event pool
-                      event.persist();
-                      const adjustedEvent = event;
-                      adjustedEvent.item = item;
-                      adjustedEvent.index = index;
-                      onClickItem(adjustedEvent);
-                      // put focus on the List container to meet WCAG
-                      // accessibility guidelines that focus remains on `ul`
-                      listRef.current.focus();
+                      // Only prevent event when disabled. We still want screen
+                      // readers to be aware that an option exists, but is in a
+                      // disabled state.
+                      if (!isDisabled) {
+                        // extract from React's synthetic event pool
+                        event.persist();
+                        const adjustedEvent = event;
+                        adjustedEvent.item = item;
+                        adjustedEvent.index = index;
+                        onClickItem(adjustedEvent);
+                        // put focus on the List container to meet WCAG
+                        // accessibility guidelines that focus remains on `ul`
+                        listRef.current.focus();
+                      }
                     },
                     onMouseOver: () => setActive(index),
                     onMouseOut: () => setActive(undefined),
@@ -514,17 +522,16 @@ const List = React.forwardRef(
                   boxProps = { ...boxProps, ...itemProps[index] };
                 }
 
-                const disabled = disabledItems?.includes(index);
-
                 return (
                   <StyledItem
                     key={key}
                     tag="li"
-                    flex={false}
-                    pad={pad || theme.list.item.pad}
+                    aria-disabled={isDisabled}
                     background={adjustedBackground}
                     border={adjustedBorder}
-                    disabled={disabled}
+                    isDisabled={isDisabled}
+                    flex={false}
+                    pad={pad || theme.list.item.pad}
                     {...defaultItemProps}
                     {...boxProps}
                     {...clickProps}
