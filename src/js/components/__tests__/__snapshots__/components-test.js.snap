@@ -524,6 +524,7 @@ Object {
       "itemKey": [Function],
       "itemProps": [Function],
       "margin": [Function],
+      "onActive": [Function],
       "onClickItem": [Function],
       "onMore": [Function],
       "onOrder": [Function],
