@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "focus", "itemKey", "itemProps", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"];
+var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -119,6 +119,10 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       focus = _ref.focus,
       itemKey = _ref.itemKey,
       itemProps = _ref.itemProps,
+      onActive = _ref.onActive,
+      onClickItem = _ref.onClickItem,
+      onKeyDown = _ref.onKeyDown,
+      onMore = _ref.onMore,
       onOrder = _ref.onOrder,
       pad = _ref.pad,
       paginate = _ref.paginate,
@@ -127,8 +131,6 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       showProp = _ref.show,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? paginate ? 50 : undefined : _ref$step,
-      onClickItem = _ref.onClickItem,
-      onMore = _ref.onMore,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var listRef = useForwardedRef(ref);
@@ -148,6 +150,13 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var _useState2 = useState(),
       lastActive = _useState2[0],
       setLastActive = _useState2[1];
+
+  var updateActive = function updateActive(nextActive) {
+    setActive(nextActive); // we occasionally call updateActive with undefined when it already is so,
+    // no need to call onActive in that case
+
+    if (onActive && onClickItem && nextActive !== active) onActive(nextActive);
+  };
 
   var _useState3 = useState(),
       itemFocus = _useState3[0],
@@ -205,10 +214,10 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
 
         if (active % 2) {
           onOrder(reorder(data, index, index + 1));
-          setActive(Math.min(active + 2, data.length * 2 - 2));
+          updateActive(Math.min(active + 2, data.length * 2 - 2));
         } else {
           onOrder(reorder(data, index, index - 1));
-          setActive(Math.max(active - 2, 1));
+          updateActive(Math.max(active - 2, 1));
         }
       } else {
         event.persist();
@@ -220,13 +229,14 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     } : undefined,
     onUp: (onClickItem || onOrder) && active ? function () {
       var min = onOrder ? 1 : 0;
-      setActive(Math.max(active - 1, min));
+      updateActive(Math.max(active - 1, min));
     } : undefined,
     onDown: (onClickItem || onOrder) && data && data.length ? function () {
       var min = onOrder ? 1 : 0;
       var max = onOrder ? data.length * 2 - 2 : data.length - 1;
-      setActive(active >= min ? Math.min(active + 1, max) : min);
-    } : undefined
+      updateActive(active >= min ? Math.min(active + 1, max) : min);
+    } : undefined,
+    onKeyDown: onKeyDown
   }, /*#__PURE__*/React.createElement(StyledList, _extends({
     "aria-label": ariaLabel || a11yTitle,
     ref: listRef,
@@ -238,12 +248,12 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         // Checks for active variable to stop bug where activeStyle
         // gets applied to lastActive instead of the item the user
         // is currently clicking on
-        !active && active !== 0 ? setActive(lastActive) : setActive(active)
+        !active && active !== 0 ? updateActive(lastActive) : updateActive(active)
       );
     },
     onBlur: function onBlur() {
       setLastActive(active);
-      setActive(undefined);
+      updateActive(undefined);
     }
   }, ariaProps, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: !paginate ? orderingData || data : items,
@@ -355,17 +365,17 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           listRef.current.focus();
         },
         onMouseOver: function onMouseOver() {
-          return setActive(index);
+          return updateActive(index);
         },
         onMouseOut: function onMouseOut() {
-          return setActive(undefined);
+          return updateActive(undefined);
         },
         onFocus: function onFocus() {
-          setActive(index);
+          updateActive(index);
           setItemFocus(true);
         },
         onBlur: function onBlur() {
-          setActive(undefined);
+          updateActive(undefined);
           setItemFocus(false);
         }
       };
@@ -384,7 +394,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
 
           event.dataTransfer.effectAllowed = 'move';
           setDragging(index);
-          setActive(undefined);
+          updateActive(undefined);
         },
         onDragEnd: function onDragEnd() {
           setDragging(undefined);
@@ -429,17 +439,17 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         },
         tabIndex: -1,
         onMouseOver: function onMouseOver() {
-          return setActive(index * 2);
+          return updateActive(index * 2);
         },
         onMouseOut: function onMouseOut() {
-          return setActive(undefined);
+          return updateActive(undefined);
         },
         onFocus: function onFocus() {
-          setActive(index * 2);
+          updateActive(index * 2);
           setItemFocus(true);
         },
         onBlur: function onBlur() {
-          setActive(undefined);
+          updateActive(undefined);
           setItemFocus(false);
         }
       }), /*#__PURE__*/React.createElement(Button, {
@@ -456,17 +466,17 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         },
         tabIndex: -1,
         onMouseOver: function onMouseOver() {
-          return setActive(index * 2 + 1);
+          return updateActive(index * 2 + 1);
         },
         onMouseOut: function onMouseOut() {
-          return setActive(undefined);
+          return updateActive(undefined);
         },
         onFocus: function onFocus() {
-          setActive(index * 2 + 1);
+          updateActive(index * 2 + 1);
           setItemFocus(true);
         },
         onBlur: function onBlur() {
-          setActive(undefined);
+          updateActive(undefined);
           setItemFocus(false);
         }
       }));
