@@ -354,6 +354,14 @@ Object.keys(_PageContent).forEach(function (key) {
   exports[key] = _PageContent[key];
 });
 
+var _PageHeader = require("./PageHeader");
+
+Object.keys(_PageHeader).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _PageHeader[key]) return;
+  exports[key] = _PageHeader[key];
+});
+
 var _Pagination = require("./Pagination");
 
 Object.keys(_Pagination).forEach(function (key) {

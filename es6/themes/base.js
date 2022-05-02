@@ -1376,6 +1376,53 @@ export var generate = function generate(baseSpacing, scale) {
         }
       }
     },
+    pageHeader: {
+      actions: {
+        // any box props
+        align: 'end'
+      },
+      parent: {
+        // any box props
+        align: 'start'
+      },
+      subtitle: {
+        // any paragraph props
+        margin: 'none',
+        fill: true
+      },
+      title: {
+        // any heading props
+        margin: 'none',
+        fill: true
+      },
+      small: {
+        areas: [['parent', 'null'], ['title', 'actions'], ['subtitle', 'actions']],
+        columns: [['small', 'flex'], 'auto'],
+        rows: ['auto', 'auto', 'auto'],
+        gap: {
+          row: 'xsmall',
+          column: 'large'
+        }
+      },
+      medium: {
+        areas: [['parent', 'null'], ['title', 'actions'], ['subtitle', 'actions']],
+        columns: [['medium', 'large'], 'auto'],
+        rows: ['auto', 'auto', 'auto'],
+        gap: {
+          row: 'xsmall',
+          column: 'medium'
+        }
+      },
+      large: {
+        areas: [['parent', 'null'], ['title', 'actions'], ['subtitle', 'actions']],
+        columns: [['medium', 'large'], 'auto'],
+        rows: ['auto', 'auto', 'auto'],
+        gap: {
+          row: 'xsmall',
+          column: 'large'
+        }
+      }
+    },
     pagination: {
       button: {
         active: {
