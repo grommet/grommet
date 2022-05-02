@@ -52,14 +52,14 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
       setOver(false);
     },
     onFocus: () => {
+      if (child.props?.onFocus) child.props.onFocus();
       if (usingKeyboard) {
-        if (child.props?.onFocus) child.props.onFocus();
         setOver(true);
       }
     },
     onBlur: () => {
+      if (child.props?.onBlur) child.props.onBlur();
       if (usingKeyboard) {
-        if (child.props?.onBlur) child.props.onBlur();
         setOver(false);
       }
     },
