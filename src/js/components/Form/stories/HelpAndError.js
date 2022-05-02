@@ -24,7 +24,7 @@ export const HelpAndError = () => (
     <Form>
       <FormField
         label="Email"
-        htmlFor="text-input"
+        htmlFor="email"
         help={
           <Text weight="lighter" size="small">
             Text to help the user know what is possible

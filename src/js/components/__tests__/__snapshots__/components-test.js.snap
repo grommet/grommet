@@ -641,6 +641,10 @@ Object {
     "_globalName": null,
     "_threadCount": 0,
   },
+  "PageHeader": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "Pagination": Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
@@ -1921,6 +1925,118 @@ Object {
               "max": "xxlarge",
               "min": "medium",
             },
+          },
+        },
+        "pageHeader": Object {
+          "actions": Object {
+            "align": "end",
+          },
+          "large": Object {
+            "areas": Array [
+              Array [
+                "parent",
+                "null",
+              ],
+              Array [
+                "title",
+                "actions",
+              ],
+              Array [
+                "subtitle",
+                "actions",
+              ],
+            ],
+            "columns": Array [
+              Array [
+                "medium",
+                "large",
+              ],
+              "auto",
+            ],
+            "gap": Object {
+              "column": "large",
+              "row": "xsmall",
+            },
+            "rows": Array [
+              "auto",
+              "auto",
+              "auto",
+            ],
+          },
+          "medium": Object {
+            "areas": Array [
+              Array [
+                "parent",
+                "null",
+              ],
+              Array [
+                "title",
+                "actions",
+              ],
+              Array [
+                "subtitle",
+                "actions",
+              ],
+            ],
+            "columns": Array [
+              Array [
+                "medium",
+                "large",
+              ],
+              "auto",
+            ],
+            "gap": Object {
+              "column": "medium",
+              "row": "xsmall",
+            },
+            "rows": Array [
+              "auto",
+              "auto",
+              "auto",
+            ],
+          },
+          "parent": Object {
+            "align": "start",
+          },
+          "small": Object {
+            "areas": Array [
+              Array [
+                "parent",
+                "null",
+              ],
+              Array [
+                "title",
+                "actions",
+              ],
+              Array [
+                "subtitle",
+                "actions",
+              ],
+            ],
+            "columns": Array [
+              Array [
+                "small",
+                "flex",
+              ],
+              "auto",
+            ],
+            "gap": Object {
+              "column": "large",
+              "row": "xsmall",
+            },
+            "rows": Array [
+              "auto",
+              "auto",
+              "auto",
+            ],
+          },
+          "subtitle": Object {
+            "fill": true,
+            "margin": "none",
+          },
+          "title": Object {
+            "fill": true,
+            "margin": "none",
           },
         },
         "pagination": Object {
