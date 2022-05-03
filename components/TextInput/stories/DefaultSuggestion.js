@@ -38,6 +38,7 @@ var DefaultSuggestion = function DefaultSuggestion() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       width: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      id: "grommet-text-combobox-default-suggestion",
       value: value,
       onChange: onChange,
       onSelect: onSelect,

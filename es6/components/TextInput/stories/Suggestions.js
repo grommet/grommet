@@ -39,6 +39,7 @@ export var Suggestions = function Suggestions() {
     }, /*#__PURE__*/React.createElement(Box, {
       width: "medium"
     }, /*#__PURE__*/React.createElement(TextInput, {
+      id: "grommet-text-combobox",
       value: value,
       onChange: onChange,
       onSuggestionSelect: onSuggestionSelect,

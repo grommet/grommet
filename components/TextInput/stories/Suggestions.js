@@ -49,6 +49,7 @@ var Suggestions = function Suggestions() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       width: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      id: "grommet-text-combobox",
       value: value,
       onChange: onChange,
       onSuggestionSelect: onSuggestionSelect,

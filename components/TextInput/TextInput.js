@@ -295,6 +295,8 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onClickOutside: clickOutside,
       onEsc: closeDrop
     }, dropProps), /*#__PURE__*/_react["default"].createElement(ContainerBox, {
+      id: id ? "listbox__" + id : undefined,
+      role: "listbox",
       overflow: "auto",
       dropHeight: dropHeight,
       onMouseMove: function onMouseMove() {
@@ -307,8 +309,10 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       step: theme.select.step,
       show: activeSuggestionIndex !== -1 ? activeSuggestionIndex : undefined
     }, function (suggestion, index, itemRef) {
-      // Determine whether the label is done as a child or
+      var active = activeSuggestionIndex === index;
+      var selected = suggestion === value; // Determine whether the label is done as a child or
       // as an option Button kind property.
+
       var renderedLabel = renderLabel(suggestion);
       var child;
       if (typeof renderedLabel !== 'string') // must be an element rendered by suggestions.label
@@ -322,7 +326,10 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         key: stringLabel(suggestion) + "-" + index,
         ref: itemRef
       }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-        active: activeSuggestionIndex === index,
+        id: id ? "listbox-option-" + index + "__" + id : undefined,
+        role: "option",
+        "aria-selected": selected ? 'true' : 'false',
+        active: active,
         fill: "horizontal",
         plain: !child ? undefined : true,
         align: "start",
@@ -354,6 +361,28 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     keyboardProps.onTab = closeDrop;
   } else if (suggestions && suggestions.length > 0) {
     keyboardProps.onDown = openDrop;
+  }
+  /*
+  If the text input has a list of suggestions, add the WAI-ARIA 1.2
+  combobox role and states.
+  */
+
+
+  var comboboxProps = {};
+  var activeOptionID;
+
+  if (id && (suggestions == null ? void 0 : suggestions.length) > -1) {
+    if (showDrop && activeSuggestionIndex > -1) {
+      activeOptionID = "listbox-option-" + activeSuggestionIndex + "__" + id;
+    }
+
+    comboboxProps = {
+      'aria-activedescendant': activeOptionID,
+      'aria-autocomplete': 'list',
+      'aria-expanded': showDrop ? 'true' : 'false',
+      'aria-controls': showDrop ? "listbox__" + id : undefined,
+      role: 'combobox'
+    };
   } // For the Keyboard target below, if we have focus,
   // either on the input element or within the drop,
   // then we set the target to the document,
@@ -381,7 +410,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     focus: focus,
     focusIndicator: focusIndicator,
     textAlign: textAlign
-  }, rest, extraProps, {
+  }, rest, extraProps, comboboxProps, {
     defaultValue: renderLabel(defaultValue),
     value: renderLabel(value),
     readOnly: readOnly,
