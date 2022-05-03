@@ -30,6 +30,7 @@ export const Suggestions = () => {
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <TextInput
+          id="grommet-text-combobox"
           value={value}
           onChange={onChange}
           onSuggestionSelect={onSuggestionSelect}

@@ -41,7 +41,12 @@ const ClearButton = forwardRef(({ clear, onClear, name, theme }, ref) => {
   const align = position !== 'bottom' ? 'start' : 'center';
   const buttonLabel = label || `Clear ${name || 'selection'}`;
   return (
-    <Button fill ref={ref} onClick={onClear} focusIndicator={false}>
+    <Button
+      fill="horizontal"
+      ref={ref}
+      onClick={onClear}
+      focusIndicator={false}
+    >
       <Box {...theme.select.clear.container} align={align}>
         <Text {...theme.select.clear.text}>{buttonLabel}</Text>
       </Box>
@@ -281,6 +286,15 @@ const SelectContainer = forwardRef(
         event.preventDefault();
         let nextActiveIndex = activeIndex - 1;
         const clearButton = clearRef.current;
+
+        if (nextActiveIndex === -1) {
+          const searchInput = searchRef.current;
+          if (searchInput && searchInput.focus) {
+            setActiveIndex(nextActiveIndex);
+            setFocusWithoutScroll(searchInput);
+          }
+        }
+
         while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
           nextActiveIndex -= 1;
         }
