@@ -267,16 +267,19 @@ describe('List', () => {
 });
 
 describe('List events', () => {
+  let onActive;
   let onClickItem;
   let App;
 
   beforeEach(() => {
+    onActive = jest.fn();
     onClickItem = jest.fn();
     App = () => (
       <Grommet>
         <List
           data={[{ a: 'alpha' }, { a: 'beta' }]}
           onClickItem={onClickItem}
+          onActive={onActive}
         />
       </Grommet>
     );
@@ -293,6 +296,7 @@ describe('List events', () => {
       keyCode: 13,
       which: 13,
     });
+    expect(onActive).toHaveBeenCalledTimes(1);
     // Reported bug: onEnter calls onClickItem twice instead of once.
     // Issue #4173. Once fixed it should be
     // `expect(onClickItem).toHaveBeenCalledTimes(2);`
@@ -312,6 +316,7 @@ describe('List events', () => {
       which: 38,
     });
     expect(onClickItem).toHaveBeenCalledTimes(1);
+    expect(onActive).toHaveBeenCalledTimes(2);
     // Focus on beta while `active` is on alpha
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -327,6 +332,7 @@ describe('List events', () => {
       which: 40,
     });
     expect(onClickItem).toHaveBeenCalledTimes(1);
+    expect(onActive).toHaveBeenCalledTimes(2);
     // Focus on alpha while `active` is on beta
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -342,6 +348,7 @@ describe('List events', () => {
       which: 40,
     });
     expect(onClickItem).toHaveBeenCalledTimes(1);
+    expect(onActive).toHaveBeenCalledTimes(1);
     // Both focus and active should be placed on 'beta'
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -368,6 +375,7 @@ describe('List events', () => {
     // Focus on beta while `active` is not on beta
     expect(container.firstChild).toMatchSnapshot();
     expect(onClickItem).toBeCalledTimes(0);
+    expect(onActive).toHaveBeenCalledTimes(2);
   });
 
   test('should paginate', () => {
