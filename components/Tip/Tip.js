@@ -61,17 +61,29 @@ var Tip = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, tipRef) {
   var child = _react.Children.count(children) <= 1 && ! /*#__PURE__*/_react["default"].isValidElement(children) && /*#__PURE__*/_react["default"].createElement("span", null, children) || _react.Children.only(children);
 
   var clonedChild = /*#__PURE__*/(0, _react.cloneElement)(child, {
-    onMouseEnter: function onMouseEnter() {
-      return setOver(true);
+    onMouseEnter: function onMouseEnter(event) {
+      var _child$props;
+
+      setOver(true);
+      if ((_child$props = child.props) != null && _child$props.onMouseEnter) child.props.onMouseEnter(event);
     },
-    onMouseLeave: function onMouseLeave() {
-      return setOver(false);
+    onMouseLeave: function onMouseLeave(event) {
+      var _child$props2;
+
+      setOver(false);
+      if ((_child$props2 = child.props) != null && _child$props2.onMouseLeave) child.props.onMouseLeave(event);
     },
-    onFocus: function onFocus() {
+    onFocus: function onFocus(event) {
+      var _child$props3;
+
       if (usingKeyboard) setOver(true);
+      if ((_child$props3 = child.props) != null && _child$props3.onFocus) child.props.onFocus(event);
     },
-    onBlur: function onBlur() {
+    onBlur: function onBlur(event) {
+      var _child$props4;
+
       if (usingKeyboard) setOver(false);
+      if ((_child$props4 = child.props) != null && _child$props4.onBlur) child.props.onBlur(event);
     },
     key: 'tip-child',
     ref: function ref(node) {
