@@ -228,7 +228,14 @@ const List = React.forwardRef(
                       onOrder(reorder(data, index, index - 1));
                       setActive(Math.max(active - 2, 1));
                     }
-                  } else if (onClickItem && !disabledItems?.includes(active)) {
+                  } else if (
+                    onClickItem &&
+                    !disabledItems?.includes(
+                      typeof itemKey === 'function'
+                        ? itemKey(data[active])
+                        : data[active][itemKey],
+                    )
+                  ) {
                     event.persist();
                     const adjustedEvent = event;
                     adjustedEvent.item = data[active];
@@ -345,7 +352,17 @@ const List = React.forwardRef(
                 }
 
                 const key = itemKey ? itemId : getKey(item, index, itemId);
-                const isDisabled = disabledItems?.includes(index);
+
+                let isDisabled;
+                if (disabledItems) {
+                  if (typeof item === 'object' && !itemKey) {
+                    console.error(
+                      // eslint-disable-next-line max-len
+                      `Warning: Missing prop itemKey. Prop disabled requires itemKey to be specified when data is of type 'object'.`,
+                    );
+                  }
+                  isDisabled = disabledItems?.includes(key);
+                }
 
                 if (action) {
                   content = [
