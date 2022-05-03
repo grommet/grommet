@@ -5,6 +5,7 @@ import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import userEvent from '@testing-library/user-event';
 
 import { Box } from '../../Box';
 import { Button } from '../../Button';
@@ -166,5 +167,34 @@ describe('Tip', () => {
     }).toThrow(
       `React.Children.only expected to receive a single React element child.`,
     );
+  });
+
+  test(`call child mouse and focus functions`, async () => {
+    const user = userEvent.setup();
+    const onMouseEnter = jest.fn();
+    const onMouseLeave = jest.fn();
+    const onFocus = jest.fn();
+    const onBlur = jest.fn();
+    render(
+      <Grommet>
+        <Tip content="tip info">
+          <Button
+            label="Button label"
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            onFocus={onFocus}
+            onBlur={onBlur}
+          />
+        </Tip>
+      </Grommet>,
+    );
+    await user.hover(screen.getByText('Button label'));
+    expect(onMouseEnter).toHaveBeenCalledTimes(1);
+    await user.unhover(screen.getByText('Button label'));
+    expect(onMouseLeave).toHaveBeenCalledTimes(1);
+    await user.tab();
+    expect(onFocus).toHaveBeenCalledTimes(1);
+    await user.tab();
+    expect(onBlur).toHaveBeenCalledTimes(1);
   });
 });
