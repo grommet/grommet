@@ -43,21 +43,21 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
     Children.only(children);
 
   const clonedChild = cloneElement(child, {
-    onMouseEnter: () => {
-      if (child.props?.onMouseEnter) child.props.onMouseEnter();
+    onMouseEnter: (event) => {
       setOver(true);
+      if (child.props?.onMouseEnter) child.props.onMouseEnter(event);
     },
-    onMouseLeave: () => {
-      if (child.props?.onMouseLeave) child.props.onMouseLeave();
+    onMouseLeave: (event) => {
       setOver(false);
+      if (child.props?.onMouseLeave) child.props.onMouseLeave(event);
     },
-    onFocus: () => {
-      if (child.props?.onFocus) child.props.onFocus();
+    onFocus: (event) => {
       if (usingKeyboard) setOver(true);
+      if (child.props?.onFocus) child.props.onFocus(event);
     },
-    onBlur: () => {
-      if (child.props?.onBlur) child.props.onBlur();
+    onBlur: (event) => {
       if (usingKeyboard) setOver(false);
+      if (child.props?.onBlur) child.props.onBlur(event);
     },
     key: 'tip-child',
     ref: (node) => {
