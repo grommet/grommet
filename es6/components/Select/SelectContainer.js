@@ -255,6 +255,15 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     var nextActiveIndex = activeIndex - 1;
     var clearButton = clearRef.current;
 
+    if (nextActiveIndex === -1) {
+      var searchInput = searchRef.current;
+
+      if (searchInput && searchInput.focus) {
+        setActiveIndex(nextActiveIndex);
+        setFocusWithoutScroll(searchInput);
+      }
+    }
+
     while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
       nextActiveIndex -= 1;
     }
