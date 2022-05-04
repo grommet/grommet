@@ -41,7 +41,12 @@ const ClearButton = forwardRef(({ clear, onClear, name, theme }, ref) => {
   const align = position !== 'bottom' ? 'start' : 'center';
   const buttonLabel = label || `Clear ${name || 'selection'}`;
   return (
-    <Button fill ref={ref} onClick={onClear} focusIndicator={false}>
+    <Button
+      fill="horizontal"
+      ref={ref}
+      onClick={onClear}
+      focusIndicator={false}
+    >
       <Box {...theme.select.clear.container} align={align}>
         <Text {...theme.select.clear.text}>{buttonLabel}</Text>
       </Box>
@@ -87,27 +92,16 @@ const SelectContainer = forwardRef(
     const optionsRef = useRef();
     const clearRef = useRef();
 
-    const focusOption = (index) => {
+    useEffect(() => {
       const optionsNode = optionsRef.current;
-      if (optionsNode) {
+      if (optionsNode.children) {
+        const clearButton = clearRef.current;
+        let index = activeIndex;
+        if (clear && clear.position !== 'bottom' && clearButton) index += 1;
         const optionNode = optionsNode.children[index];
-        if (optionNode) {
-          optionNode.focus();
-        }
+        if (optionNode) optionNode.focus();
       }
-    };
-
-    useEffect(() => {
-      const optionsNode = optionsRef.current;
-      if (optionsNode.children) focusOption(activeIndex);
-    }, [activeIndex]);
-
-    // adjust activeIndex when options change
-    useEffect(() => {
-      if (activeIndex === -1 && optionIndexesInValue.length) {
-        focusOption(optionIndexesInValue[0]);
-      }
-    }, [activeIndex, optionIndexesInValue]);
+    }, [activeIndex, clear]);
 
     // set initial focus
     useEffect(() => {
@@ -292,6 +286,15 @@ const SelectContainer = forwardRef(
         event.preventDefault();
         let nextActiveIndex = activeIndex - 1;
         const clearButton = clearRef.current;
+
+        if (nextActiveIndex === -1) {
+          const searchInput = searchRef.current;
+          if (searchInput && searchInput.focus) {
+            setActiveIndex(nextActiveIndex);
+            setFocusWithoutScroll(searchInput);
+          }
+        }
+
         while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
           nextActiveIndex -= 1;
         }

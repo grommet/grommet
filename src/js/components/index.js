@@ -42,6 +42,7 @@ export * from './Menu';
 export * from './Meter';
 export * from './Page';
 export * from './PageContent';
+export * from './PageHeader';
 export * from './Pagination';
 export * from './Paragraph';
 export * from './NameValuePair';
