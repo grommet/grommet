@@ -17,7 +17,7 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 import { TableCellPropTypes } from './propTypes';
 
-const verticalAlignToJustify = {
+export const verticalAlignToJustify = {
   middle: 'center',
   top: 'start',
   bottom: 'end',
@@ -27,6 +27,7 @@ const TableCell = forwardRef(
   (
     {
       align,
+      'aria-disabled': ariaDisabled,
       background,
       border,
       children,
@@ -107,15 +108,17 @@ const TableCell = forwardRef(
     Object.keys(mergedProps).forEach((key) => {
       if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
     });
-    // split out background, border, and pad
+    // split out background, border, pad, and aria-disabled
     const cellProps = {
       align: align || mergedProps.align || undefined,
+      'aria-disabled': ariaDisabled || undefined,
       background: background || mergedProps.background || undefined,
       border: border || mergedProps.border || undefined,
       pad: plain !== 'noPad' ? pad || mergedProps.pad || undefined : undefined,
       verticalAlign: verticalAlign || mergedProps.verticalAlign || undefined,
     };
     delete mergedProps.align;
+    delete mergedProps.ariaDisabled;
     delete mergedProps.background;
     delete mergedProps.border;
     delete mergedProps.pad;
@@ -127,7 +130,12 @@ const TableCell = forwardRef(
       // for the child contents to be able to fill the
       // TableCell
       content = (
-        <Box ref={containerRef} justify="center">
+        <Box
+          ref={containerRef}
+          justify={
+            verticalAlign ? verticalAlignToJustify[verticalAlign] : 'center'
+          }
+        >
           {children}
         </Box>
       );

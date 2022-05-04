@@ -59,6 +59,7 @@ const DataTable = ({
   border,
   columns = [],
   data = [],
+  disabled,
   fill,
   groupBy,
   onClickRow, // removing unknown DOM attributes
@@ -82,6 +83,7 @@ const DataTable = ({
   sortable,
   rowDetails,
   step = 50,
+  verticalAlign,
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -376,9 +378,8 @@ const DataTable = ({
       ref={bodyRef}
       cellProps={cellProps.body}
       columns={columns}
-      groupBy={
-        typeof groupBy === 'string' ? { property: groupBy } : groupBy
-      }
+      disabled={disabled}
+      groupBy={typeof groupBy === 'string' ? { property: groupBy } : groupBy}
       groups={groups}
       groupState={groupState}
       pinnedOffset={pinnedOffset}
@@ -416,6 +417,9 @@ const DataTable = ({
       selected={selected}
       size={size}
       step={step}
+      verticalAlign={
+        typeof verticalAlign === 'string' ? verticalAlign : verticalAlign?.body
+      }
     />
   ) : (
     <Body
@@ -423,6 +427,7 @@ const DataTable = ({
       cellProps={cellProps.body}
       columns={columns}
       data={!paginate ? adjustedData : items}
+      disabled={disabled}
       onMore={
         onUpdate
           ? () => {
@@ -459,6 +464,9 @@ const DataTable = ({
       rowDetails={rowDetails}
       rowExpand={rowExpand}
       setRowExpand={setRowExpand}
+      verticalAlign={
+        typeof verticalAlign === 'string' ? verticalAlign : verticalAlign?.body
+      }
     />
   );
 
@@ -475,6 +483,7 @@ const DataTable = ({
             cellProps={cellProps.header}
             columns={columns}
             data={adjustedData}
+            disabled={disabled}
             fill={fill}
             filtering={filtering}
             filters={filters}
@@ -504,17 +513,23 @@ const DataTable = ({
             primaryProperty={primaryProperty}
             scrollOffset={scrollOffset}
             rowDetails={rowDetails}
+            verticalAlign={
+              typeof verticalAlign === 'string'
+                ? verticalAlign
+                : verticalAlign?.header
+            }
           />
-        
-          {(placeholder && (!items || items.length === 0)) ? (
-            <PlaceholderBody 
+          {placeholder && (!items || items.length === 0) ? (
+            <PlaceholderBody
               ref={bodyRef}
               columns={columns}
               onSelect={onSelect}
             >
               {placeholderContent}
             </PlaceholderBody>
-          ) : bodyContent }
+          ) : (
+            bodyContent
+          )}
           {showFooter && (
             <Footer
               ref={footerRef}
@@ -530,6 +545,11 @@ const DataTable = ({
               scrollOffset={scrollOffset}
               selected={selected}
               size={size}
+              verticalAlign={
+                typeof verticalAlign === 'string'
+                  ? verticalAlign
+                  : verticalAlign?.footer
+              }
             />
           )}
           {placeholder && items && items.length > 0 && (
