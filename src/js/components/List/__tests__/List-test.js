@@ -568,9 +568,9 @@ describe('List disabled', () => {
         <List data={locations} disabled={disabledLocations} />
       </Grommet>
     );
-    const { container } = render(<App />);
+    const { asFragment } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Should render aria-disabled="true"', () => {
@@ -607,9 +607,9 @@ describe('List disabled', () => {
         <List data={typeObjects} disabled={disabledLocations} itemKey="city" />
       </Grommet>
     );
-    const { container } = render(<App />);
+    const { asFragment } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Should apply disabled styling to items when data are children', () => {
@@ -624,9 +624,9 @@ describe('List disabled', () => {
         </List>
       </Grommet>
     );
-    const { container } = render(<App />);
+    const { asFragment } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Disabled items should not call onClickItem with mouse', async () => {
@@ -758,15 +758,15 @@ describe('List disabled', () => {
       );
     };
 
-    const { container } = render(<App />);
+    const { asFragment } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
 
     const disabledItem = screen.getByRole('button', {
       name: '2 Fort Collins move up',
     });
     await user.click(disabledItem);
     expect(onOrder).toHaveBeenCalled();
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
