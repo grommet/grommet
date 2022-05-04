@@ -4545,7 +4545,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
             class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 kkBhYd"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
               name="toggle"
               type="checkbox"
             />
