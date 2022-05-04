@@ -327,7 +327,7 @@ const Video = forwardRef(
       const descriptionControls = {
         icon: <Icons.Description color={iconColor} />,
         a11yTitle: format({
-          id: 'video.descriptions',
+          id: 'video.audioDescriptions',
           messages,
         }),
         active: announcing,
