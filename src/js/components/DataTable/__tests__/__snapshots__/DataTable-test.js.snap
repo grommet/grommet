@@ -2630,7 +2630,7 @@ exports[`DataTable click 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -3374,7 +3374,7 @@ exports[`DataTable custom theme 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -3463,7 +3463,7 @@ exports[`DataTable custom theme 2`] = `
               >
                 <input
                   checked=""
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cgrsMd"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 izuNoZ"
                   disabled=""
                   type="checkbox"
                 />
@@ -3527,7 +3527,7 @@ exports[`DataTable custom theme 2`] = `
                 disabled=""
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cgrsMd"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 izuNoZ"
                   disabled=""
                   type="checkbox"
                 />
@@ -3741,7 +3741,7 @@ exports[`DataTable disabled click 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -5624,7 +5624,7 @@ exports[`DataTable groupBy 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -6924,7 +6924,7 @@ exports[`DataTable groupBy property 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7401,7 +7401,7 @@ exports[`DataTable groupBy toggle 2`] = `
     toggle
   </button>
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7982,7 +7982,7 @@ exports[`DataTable groupBy toggle 3`] = `
     toggle
   </button>
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -11333,7 +11333,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -11388,7 +11388,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -11515,7 +11515,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -11631,7 +11631,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -11708,7 +11708,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -11763,7 +11763,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -11855,7 +11855,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -11936,7 +11936,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -12517,7 +12517,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -12541,7 +12541,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -12629,7 +12629,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -12712,7 +12712,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -12795,7 +12795,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -12878,7 +12878,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -12953,7 +12953,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -12977,7 +12977,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -13038,7 +13038,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -13094,7 +13094,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -13150,7 +13150,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -13206,7 +13206,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -13592,7 +13592,7 @@ exports[`DataTable onSort 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -14226,7 +14226,7 @@ exports[`DataTable onSort external 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -20426,7 +20426,7 @@ exports[`DataTable search 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -21051,7 +21051,7 @@ exports[`DataTable select 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -21075,7 +21075,7 @@ exports[`DataTable select 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -21150,7 +21150,7 @@ exports[`DataTable select 2`] = `
               >
                 <input
                   checked=""
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -21204,7 +21204,7 @@ exports[`DataTable select 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
                 <div
@@ -30010,7 +30010,7 @@ exports[`DataTable should render new data when page changes 2`] = `
       class="StyledBox-sc-13pk1d4-0 iZicmW"
     >
       <table
-        class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+        class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
       >
         <thead
           class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -38023,7 +38023,7 @@ exports[`DataTable sortable 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
