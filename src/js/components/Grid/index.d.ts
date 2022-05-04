@@ -41,23 +41,17 @@ export type GridColumnsType =
       count?: 'fit' | 'fill' | number;
       size?: GridSizeType;
     };
-
-export type GridGapType = GapType | { row?: GapType; column?: GapType };
-
-export type AreasType =
-  | { name?: string; start?: number[]; end?: number[] }[]
-  | string[][];
 export interface GridProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   align?: AlignType;
   alignContent?: AlignContentType;
-  areas?: AreasType;
+  areas?: { name?: string; start?: number[]; end?: number[] }[] | string[][];
   as?: PolymorphicType;
   border?: BorderType;
   columns?: GridColumnsType;
   fill?: FillType;
-  gap?: GridGapType;
+  gap?: GapType | { row?: GapType; column?: GapType };
   gridArea?: GridAreaType;
   height?: HeightType;
   justify?: 'start' | 'center' | 'end' | 'stretch';
