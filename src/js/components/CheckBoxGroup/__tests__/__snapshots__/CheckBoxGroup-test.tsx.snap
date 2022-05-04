@@ -71,7 +71,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
         disabled=""
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cgrsMd"
           disabled=""
           type="checkbox"
         />
@@ -97,7 +97,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
         disabled=""
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cgrsMd"
           disabled=""
           type="checkbox"
         />
@@ -125,7 +125,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
         disabled=""
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cgrsMd"
           disabled=""
           type="checkbox"
         />
@@ -153,7 +153,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
         disabled=""
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cgrsMd"
           disabled=""
           type="checkbox"
         />
@@ -543,7 +543,7 @@ exports[`CheckBoxGroup options renders 1`] = `
         class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cgrsMd"
           type="checkbox"
         />
         <div
