@@ -44,9 +44,7 @@ export type GridColumnsType =
 
 export type GridGapType = GapType | { row?: GapType; column?: GapType };
 
-export type AreasType =
-  | { name?: string; start?: number[]; end?: number[] }[]
-  | string[][];
+export type AreasType = { name?: string; start?: number[]; end?: number[] }[] | string[][];
 export interface GridProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
