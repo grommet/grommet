@@ -543,7 +543,7 @@ exports[`CheckBoxGroup options renders 1`] = `
         class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cgrsMd"
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
           type="checkbox"
         />
         <div
