@@ -9,13 +9,11 @@ import {
 
 type controlsItems =
   | 'captions'
+  | 'descriptions'
   | 'fullScreen'
   | 'play'
   | 'pause'
   | 'volume'
-  | {
-      description: string;
-    }
   | {
       icon?: React.ReactNode;
       a11yTitle?: A11yTitleType;

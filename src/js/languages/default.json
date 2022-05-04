@@ -60,6 +60,7 @@
   "video": {
     "captions": "closed captions",
     "closeMenu": "close menu",
+    "descriptions": "video audio description",
     "fullScreen": "full screen",
     "progressMeter": "video progress",
     "scrubber": "scrubber",

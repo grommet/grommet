@@ -8,7 +8,7 @@ export const ControlsBelow = () => (
       skipInterval={2}
       controls={{
         position: 'below',
-        items: ['captions', { description: 'this is a description' }],
+        items: ['captions', 'descriptions'],
       }}
     >
       <source src="small.mp4" type="video/mp4" />
@@ -24,7 +24,8 @@ export const ControlsBelow = () => (
         src="http://techslides.com/demos/sample-videos/small.3gp"
         type="video/3gp"
       />
-      <track kind="subtitles" srcLang="en" src="small-en.vtt" />
+      <track kind="captions" srcLang="en" src="small-en.vtt" />
+      <track kind="descriptions" srcLang="en" src="small-en-description.vtt" />
     </Video>
   </Box>
 );

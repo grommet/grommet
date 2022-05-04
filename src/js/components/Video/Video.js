@@ -69,17 +69,17 @@ const Video = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const announce = useContext(AnnounceContext);
     const { format } = useContext(MessageContext);
+    const announce = useContext(AnnounceContext);
     const [captions, setCaptions] = useState([]);
     const [currentTime, setCurrentTime] = useState();
     const [duration, setDuration] = useState();
     const [percentagePlayed, setPercentagePlayed] = useState();
     const [playing, setPlaying] = useState(false);
+    const [announcing, setAnnouncing] = useState(false);
     const [scrubTime, setScrubTime] = useState();
     const [volume, setVolume] = useState();
     const [hasPlayed, setHasPlayed] = useState(false);
-    const [descriptionVisible, setDescriptionVisible] = useState(false);
     const [interacting, setInteracting] = useState();
     const [height, setHeight] = useState();
     const [width, setWidth] = useState();
@@ -162,27 +162,34 @@ const Video = forwardRef(
 
         // remember the state of the text tracks for subsequent rendering
         const { textTracks } = video;
-        if (textTracks.length > 0) {
-          if (textTracks.length === 1) {
-            // only one track was provided
-            const track = textTracks[0];
-            const active = track.mode === 'showing';
-            if (!captions || !captions[0] || captions[0].active !== active) {
-              // get label if provided and if the track is active
-              // (currently showing) or not
-              setCaptions([{ label: track.label, active }]);
+        const nextCaptions = [];
+        let set = false;
+        // iterate through all of the tracks provided
+        for (let i = 0; i < textTracks.length; i += 1) {
+          const track = textTracks[i];
+          const active = track.mode === 'showing';
+
+          // track is an audio description
+          if (track.kind === 'descriptions') {
+            if (announcing) {
+              video.ontimeupdate = () => {
+                for (let j = 0; j < track.cues.length; j += 1) {
+                  const inBound =
+                    video.currentTime > track?.cues[j]?.startTime &&
+                    video.currentTime < track?.cues[j]?.endTime;
+                  if (inBound) {
+                    announce(track?.cues[j]?.text, 'assertive');
+                  }
+                }
+              };
             }
-          } else {
-            // multiple tracks provided
-            const nextCaptions = [];
-            let set = false;
-            for (let i = 0; i < textTracks.length; i += 1) {
-              const track = textTracks[i];
-              const active = track.mode === 'showing';
-              nextCaptions.push({ label: track.label, active });
-              if (!captions || !captions[i] || captions[i].active !== active) {
-                set = true;
-              }
+          }
+
+          // otherwise treat as captions
+          else {
+            nextCaptions.push({ label: track.label, active });
+            if (!captions || !captions[i] || captions[i].active !== active) {
+              set = true;
             }
             if (set) {
               setCaptions(nextCaptions);
@@ -190,7 +197,7 @@ const Video = forwardRef(
           }
         }
       }
-    }, [captions, height, videoRef, width]);
+    }, [announcing, captions, height, videoRef, width]);
 
     const play = useCallback(() => videoRef.current.play(), [videoRef]);
 
@@ -265,7 +272,6 @@ const Video = forwardRef(
     }, [videoRef]);
 
     let controlsElement;
-    let description;
     if (controls?.position) {
       const over = controls.position === 'over';
       const background = over
@@ -318,6 +324,16 @@ const Video = forwardRef(
         },
       }));
 
+      const descriptionControls = {
+        icon: <Icons.Description color={iconColor} />,
+        a11yTitle: format({
+          id: 'video.descriptions',
+          messages,
+        }),
+        active: announcing,
+        onClick: () => setAnnouncing(!announcing),
+      };
+
       const volumeControls = ['volume', 'reduceVolume'].map((control) => ({
         icon:
           control === 'volume' ? (
@@ -343,6 +359,7 @@ const Video = forwardRef(
 
       const buttonProps = {
         captions: captionControls,
+        descriptions: descriptionControls,
         volume: volumeControls,
         fullScreen: {
           icon: <Icons.FullScreen color={iconColor} />,
@@ -370,28 +387,6 @@ const Video = forwardRef(
           disabled: playing,
           onClick: play,
         },
-        description: {
-          icon: <Icons.Description color={iconColor} />,
-          a11yTitle: format({
-            id: 'video.description',
-            messages,
-          }),
-          onClick: () => {
-            setDescriptionVisible(!descriptionVisible);
-            announce(
-              descriptionVisible
-                ? format({
-                    id: 'video.hideDescription',
-                    messages,
-                  })
-                : format({
-                    id: 'video.showDescription',
-                    messages,
-                  }),
-              'assertive',
-            );
-          },
-        },
       };
 
       const controlsMenuItems = [];
@@ -406,9 +401,9 @@ const Video = forwardRef(
             controlsMenuItems.push(buttonProps[item][i]);
           return undefined;
         }
-        if (item?.description) {
-          description = item.description;
-          return controlsMenuItems.push(buttonProps.description);
+        if (item === 'descriptions') {
+          controlsMenuItems.push(buttonProps[item]);
+          return undefined;
         }
         if (typeof item === 'string') {
           return controlsMenuItems.push(buttonProps[item]);
@@ -585,7 +580,6 @@ const Video = forwardRef(
             {children}
           </StyledVideo>
           {controlsElement}
-          {descriptionVisible && description}
         </StyledVideoContainer>
       </Keyboard>
     );
