@@ -1217,6 +1217,1540 @@ exports[`List defaultItemProps 1`] = `
 </div>
 `;
 
+exports[`List disabled Disabled items should be allowed to be re-ordered 1`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c5 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c10:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: move;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c12 {
+  color: #CCCCCC;
+  cursor: default;
+}
+
+.c12:focus {
+  outline: none;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    width: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      aria-disabled="false"
+      class="c2 c3"
+      draggable="true"
+    >
+      <span
+        class="c4"
+      >
+        1
+      </span>
+      <div
+        class="c5"
+      />
+      <div
+        class="c6"
+      >
+        Boise
+      </div>
+      <div
+        class="c5"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="1 Boise move up"
+          class="c8"
+          disabled=""
+          id="BoiseMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 Boise move down"
+          class="c10"
+          id="BoiseMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      aria-disabled="true"
+      class="c11 c12"
+      draggable="true"
+    >
+      <span
+        class="c4"
+      >
+        2
+      </span>
+      <div
+        class="c5"
+      />
+      <div
+        class="c6"
+      >
+        Fort Collins
+      </div>
+      <div
+        class="c5"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="2 Fort Collins move up"
+          class="c10"
+          id="Fort CollinsMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 Fort Collins move down"
+          class="c10"
+          id="Fort CollinsMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      aria-disabled="false"
+      class="c11 c3"
+      draggable="true"
+    >
+      <span
+        class="c4"
+      >
+        3
+      </span>
+      <div
+        class="c5"
+      />
+      <div
+        class="c6"
+      >
+        Los Gatos
+      </div>
+      <div
+        class="c5"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="3 Los Gatos move up"
+          class="c10"
+          id="Los GatosMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="3 Los Gatos move down"
+          class="c10"
+          id="Los GatosMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      aria-disabled="true"
+      class="c11 c12"
+      draggable="true"
+    >
+      <span
+        class="c4"
+      >
+        4
+      </span>
+      <div
+        class="c5"
+      />
+      <div
+        class="c6"
+      >
+        Palo Alto
+      </div>
+      <div
+        class="c5"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="4 Palo Alto move up"
+          class="c10"
+          id="Palo AltoMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="4 Palo Alto move down"
+          class="c10"
+          id="Palo AltoMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      aria-disabled="false"
+      class="c11 c3"
+      draggable="true"
+    >
+      <span
+        class="c4"
+      >
+        5
+      </span>
+      <div
+        class="c5"
+      />
+      <div
+        class="c6"
+      >
+        San Francisco
+      </div>
+      <div
+        class="c5"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="5 San Francisco move up"
+          class="c10"
+          id="San FranciscoMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="5 San Francisco move down"
+          class="c8"
+          disabled=""
+          id="San FranciscoMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+>
+  <ul
+    aria-activedescendant="BoiseMoveUp"
+    class="List__StyledList-sc-130gdqg-0 brCKrn"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      aria-disabled="true"
+      class="StyledBox-sc-13pk1d4-0 iXlbIb List__StyledItem-sc-130gdqg-1 dgWNaR"
+      draggable="true"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 hpCRgD"
+      >
+        1
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gJrKvj"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGMroR"
+      >
+        Fort Collins
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gJrKvj"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jzytPN"
+      >
+        <button
+          aria-label="1 Fort Collins move up"
+          class="StyledButton-sc-323bzc-0 hlexgX"
+          disabled=""
+          id="Fort CollinsMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKhdEN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 Fort Collins move down"
+          class="StyledButton-sc-323bzc-0 gefOBp"
+          id="Fort CollinsMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKhdEN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      aria-disabled="false"
+      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 hXXDEw"
+      draggable="true"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 hpCRgD"
+      >
+        2
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gJrKvj"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGMroR"
+      >
+        Boise
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gJrKvj"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jzytPN"
+      >
+        <button
+          aria-label="2 Boise move up"
+          class="StyledButton-sc-323bzc-0 kOPa-dp"
+          id="BoiseMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKhdEN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 Boise move down"
+          class="StyledButton-sc-323bzc-0 gefOBp"
+          id="BoiseMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKhdEN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      aria-disabled="false"
+      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 hXXDEw"
+      draggable="true"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 hpCRgD"
+      >
+        3
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gJrKvj"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGMroR"
+      >
+        Los Gatos
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gJrKvj"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jzytPN"
+      >
+        <button
+          aria-label="3 Los Gatos move up"
+          class="StyledButton-sc-323bzc-0 gefOBp"
+          id="Los GatosMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKhdEN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="3 Los Gatos move down"
+          class="StyledButton-sc-323bzc-0 gefOBp"
+          id="Los GatosMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKhdEN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      aria-disabled="true"
+      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 dgWNaR"
+      draggable="true"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 hpCRgD"
+      >
+        4
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gJrKvj"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGMroR"
+      >
+        Palo Alto
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gJrKvj"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jzytPN"
+      >
+        <button
+          aria-label="4 Palo Alto move up"
+          class="StyledButton-sc-323bzc-0 gefOBp"
+          id="Palo AltoMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKhdEN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="4 Palo Alto move down"
+          class="StyledButton-sc-323bzc-0 gefOBp"
+          id="Palo AltoMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKhdEN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      aria-disabled="false"
+      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 hXXDEw"
+      draggable="true"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 hpCRgD"
+      >
+        5
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gJrKvj"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGMroR"
+      >
+        San Francisco
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gJrKvj"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jzytPN"
+      >
+        <button
+          aria-label="5 San Francisco move up"
+          class="StyledButton-sc-323bzc-0 gefOBp"
+          id="San FranciscoMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKhdEN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="5 San Francisco move down"
+          class="StyledButton-sc-323bzc-0 hlexgX"
+          disabled=""
+          id="San FranciscoMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKhdEN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List disabled Should apply disabled styling to items 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c5 {
+  color: #CCCCCC;
+  cursor: default;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    role="list"
+  >
+    <li
+      aria-disabled="false"
+      class="c2 c3"
+    >
+      Boise
+    </li>
+    <li
+      aria-disabled="true"
+      class="c4 c5"
+    >
+      Fort Collins
+    </li>
+    <li
+      aria-disabled="false"
+      class="c4 c3"
+    >
+      Los Gatos
+    </li>
+    <li
+      aria-disabled="true"
+      class="c4 c5"
+    >
+      Palo Alto
+    </li>
+    <li
+      aria-disabled="false"
+      class="c4 c3"
+    >
+      San Francisco
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List disabled Should apply disabled styling to items when data are children 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c7 {
+  color: #CCCCCC;
+  cursor: default;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    role="list"
+  >
+    <li
+      aria-disabled="false"
+      class="c2 c3"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          Boise
+        </span>
+      </div>
+    </li>
+    <li
+      aria-disabled="true"
+      class="c6 c7"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          Fort Collins
+        </span>
+      </div>
+    </li>
+    <li
+      aria-disabled="false"
+      class="c6 c3"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          Los Gatos
+        </span>
+      </div>
+    </li>
+    <li
+      aria-disabled="true"
+      class="c6 c7"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          Palo Alto
+        </span>
+      </div>
+    </li>
+    <li
+      aria-disabled="false"
+      class="c6 c3"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          San Francisco
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List disabled Should apply disabled styling to items when data are objects 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c5 {
+  color: #CCCCCC;
+  cursor: default;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    role="list"
+  >
+    <li
+      aria-disabled="false"
+      class="c2 c3"
+    >
+      Boise
+    </li>
+    <li
+      aria-disabled="true"
+      class="c4 c5"
+    >
+      Fort Collins
+    </li>
+    <li
+      aria-disabled="false"
+      class="c4 c3"
+    >
+      Los Gatos
+    </li>
+    <li
+      aria-disabled="true"
+      class="c4 c5"
+    >
+      Palo Alto
+    </li>
+    <li
+      aria-disabled="false"
+      class="c4 c3"
+    >
+      San Francisco
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`List empty 1`] = `
 .c0 {
   font-size: 18px;
