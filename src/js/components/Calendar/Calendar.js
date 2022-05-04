@@ -296,6 +296,7 @@ const Calendar = forwardRef(
         timestamp = getTimestamp(referenceProp);
       }
     }
+    const initialTimestamp = useRef(timestamp);
 
     const normalizedDate = useMemo(
       () =>
@@ -590,12 +591,38 @@ const Calendar = forwardRef(
           // 2. ISO8601 without a timestamp
           // 3. Caller did not provide value/defaultValue, so return date
           // in ISO8601 with timestamp in UTC relative to user's local timezone
+
+          // if the original state of the calendar had an undefined timezone,
+          // then the caller selected a date in daylight savings time (DST),
+          // then the caller selceted a date in standard time (ST), it's
+          // possible for the calendar to be one day because off.
+          // this ensures that the correct offset for the selected date is
+          // used.
+          let nextTimestamp;
+          if (initialTimestamp.current === undefined) {
+            if (
+              nextDates &&
+              Array.isArray(nextDates[0]) &&
+              (!nextDates[0][0] || !nextDates[0][1]) &&
+              range === true
+            ) {
+              // return string for backwards compatibility
+              nextTimestamp = getTimestamp(
+                new Date(nextDates[0].filter((d) => d)[0]),
+              );
+            } else if (nextDates) {
+              nextTimestamp = getTimestamp(new Date(nextDates[0][0]));
+            } else {
+              nextTimestamp = getTimestamp(new Date(nextDate));
+            }
+          } else nextTimestamp = timestamp;
+
           const formattedDate = getFormattedDate(
             nextDate,
             nextDates,
             nextNormalize,
             range,
-            timestamp,
+            nextTimestamp,
           );
           onSelect(formattedDate);
         }
