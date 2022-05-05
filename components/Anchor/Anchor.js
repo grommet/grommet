@@ -33,8 +33,7 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       children = _ref.children,
       color = _ref.color,
       disabled = _ref.disabled,
-      _ref$gap = _ref.gap,
-      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
+      gap = _ref.gap,
       href = _ref.href,
       icon = _ref.icon,
       label = _ref.label,
@@ -88,7 +87,7 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     as: "span",
     direction: "row",
     align: "center",
-    gap: gap,
+    gap: gap || theme.anchor.gap,
     responsive: false,
     style: {
       display: 'inline-flex'

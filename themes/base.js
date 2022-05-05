@@ -420,6 +420,7 @@ var generate = function generate(baseSpacing, scale) {
         dark: 'accent-1',
         light: 'brand'
       },
+      gap: 'small',
       hover: {
         textDecoration: 'underline' // fontWeight: undefined,
         // extend: undefined,
