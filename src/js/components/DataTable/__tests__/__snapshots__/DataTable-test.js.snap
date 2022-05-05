@@ -93,12 +93,6 @@ exports[`DataTable !primaryKey 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -345,12 +339,6 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -573,12 +561,6 @@ exports[`DataTable aggregate 1`] = `
 
 .c6:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -831,12 +813,6 @@ exports[`DataTable aggregate with nested object 1`] = `
 
 .c6:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -1197,12 +1173,6 @@ exports[`DataTable background 1`] = `
 
 .c6:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -1712,12 +1682,6 @@ exports[`DataTable basic 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -1941,12 +1905,6 @@ exports[`DataTable border 1`] = `
 
 .c6:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -2594,12 +2552,6 @@ exports[`DataTable click 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -2678,7 +2630,7 @@ exports[`DataTable click 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -3228,12 +3180,6 @@ exports[`DataTable custom theme 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -3428,7 +3374,7 @@ exports[`DataTable custom theme 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -3716,12 +3662,6 @@ exports[`DataTable disabled click 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -3801,7 +3741,7 @@ exports[`DataTable disabled click 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -4191,12 +4131,6 @@ exports[`DataTable disabled select 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -4405,12 +4339,6 @@ exports[`DataTable empty 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -4559,12 +4487,6 @@ exports[`DataTable fill 1`] = `
 
 .c6:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -5087,12 +5009,6 @@ exports[`DataTable footer 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -5510,12 +5426,6 @@ exports[`DataTable groupBy 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -5714,7 +5624,7 @@ exports[`DataTable groupBy 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -6241,12 +6151,6 @@ exports[`DataTable groupBy expand 1`] = `
   .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
-  }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
   }
 }
 
@@ -6822,12 +6726,6 @@ exports[`DataTable groupBy property 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -7026,7 +6924,7 @@ exports[`DataTable groupBy property 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7314,12 +7212,6 @@ exports[`DataTable groupBy toggle 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -7509,7 +7401,7 @@ exports[`DataTable groupBy toggle 2`] = `
     toggle
   </button>
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7687,10 +7579,6 @@ exports[`DataTable groupBy toggle 2`] = `
     padding-top: 3px;
     padding-bottom: 3px;
   }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-
 }
 
 <td
@@ -7964,10 +7852,6 @@ exports[`DataTable groupBy toggle 2`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-
-}
-
 <tbody
       class="StyledTable__StyledTableBody-sc-1m3u5g-3 c0"
     >
@@ -8098,7 +7982,7 @@ exports[`DataTable groupBy toggle 3`] = `
     toggle
   </button>
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -8186,10 +8070,6 @@ exports[`DataTable groupBy toggle 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
 
 }
 
@@ -8844,12 +8724,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 @media only screen and (max-width:768px) {
   .c27 {
     border: solid 2px #7D4CDB;
-  }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
   }
 }
 
@@ -9729,12 +9603,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -10483,12 +10351,6 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -11197,12 +11059,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -11477,7 +11333,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -11559,10 +11415,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
 
 }
 
@@ -11693,10 +11545,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
 
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-
-}
-
 <svg
                     class="c0"
                     preserveAspectRatio="xMidYMid meet"
@@ -11813,10 +11661,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
 
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-
-}
-
 <svg
                     class="c0"
                     preserveAspectRatio="xMidYMid meet"
@@ -11864,7 +11708,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -12368,12 +12212,6 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -12679,7 +12517,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -12722,10 +12560,6 @@ exports[`DataTable onSelect select/unselect all 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
 
 }
 
@@ -12817,10 +12651,6 @@ exports[`DataTable onSelect select/unselect all 2`] = `
 
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-
-}
-
 <svg
                     class="c0"
                     preserveAspectRatio="xMidYMid meet"
@@ -12901,10 +12731,6 @@ exports[`DataTable onSelect select/unselect all 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
 
 }
 
@@ -12991,10 +12817,6 @@ exports[`DataTable onSelect select/unselect all 2`] = `
 
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-
-}
-
 <svg
                     class="c0"
                     preserveAspectRatio="xMidYMid meet"
@@ -13078,10 +12900,6 @@ exports[`DataTable onSelect select/unselect all 2`] = `
 
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-
-}
-
 <svg
                     class="c0"
                     preserveAspectRatio="xMidYMid meet"
@@ -13135,7 +12953,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -13608,12 +13426,6 @@ exports[`DataTable onSort 1`] = `
   padding: 6px 12px;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -13780,7 +13592,7 @@ exports[`DataTable onSort 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -13823,10 +13635,6 @@ exports[`DataTable onSort 2`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-
-}
-
 <div
                   class="c0"
                 />
@@ -13865,10 +13673,6 @@ exports[`DataTable onSort 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
 
 }
 
@@ -14241,12 +14045,6 @@ exports[`DataTable onSort external 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -14428,7 +14226,7 @@ exports[`DataTable onSort external 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -14493,10 +14291,6 @@ exports[`DataTable onSort external 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
 
 }
 
@@ -14794,12 +14588,6 @@ exports[`DataTable pad 1`] = `
 
 .c6:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -15309,12 +15097,6 @@ exports[`DataTable paths 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -15624,12 +15406,6 @@ exports[`DataTable pin + background 1`] = `
   position: sticky;
   bottom: 0;
   z-index: 1;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -16278,12 +16054,6 @@ exports[`DataTable pin + background context 1`] = `
   z-index: 1;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -16860,12 +16630,6 @@ exports[`DataTable pin 1`] = `
   z-index: 1;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -17419,12 +17183,6 @@ exports[`DataTable placeholder 1`] = `
   right: 0;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -17845,12 +17603,6 @@ exports[`DataTable primaryKey 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -18099,12 +17851,6 @@ exports[`DataTable relativeColumnSizes 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -18332,12 +18078,6 @@ exports[`DataTable replace 1`] = `
 
 .c6:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -18690,12 +18430,6 @@ exports[`DataTable resizeable 1`] = `
 @media only screen and (max-width:768px) {
   .c7 {
     width: 6px;
-  }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
   }
 }
 
@@ -19151,12 +18885,6 @@ exports[`DataTable rowDetails 1`] = `
   .c11 {
     padding-top: 3px;
     padding-bottom: 3px;
-  }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
   }
 }
 
@@ -19758,12 +19486,6 @@ exports[`DataTable rowDetails condtional 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -20206,12 +19928,6 @@ exports[`DataTable rowProps 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -20590,12 +20306,6 @@ exports[`DataTable search 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -20716,7 +20426,7 @@ exports[`DataTable search 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -20838,10 +20548,6 @@ exports[`DataTable search 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
 
 }
 
@@ -21169,12 +20875,6 @@ exports[`DataTable select 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -21351,7 +21051,7 @@ exports[`DataTable select 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -21394,10 +21094,6 @@ exports[`DataTable select 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
 
 }
 
@@ -21527,10 +21223,6 @@ exports[`DataTable select 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
 
 }
 
@@ -22210,12 +21902,6 @@ exports[`DataTable should apply pagination styling 1`] = `
 @media only screen and (max-width:768px) {
   .c19 {
     width: 2px;
-  }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c3 {
-    table-layout: fixed;
   }
 }
 
@@ -24020,12 +23706,6 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c3 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -24198,12 +23878,6 @@ exports[`DataTable should not show paginate controls when length of data < step 
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c3 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -24990,12 +24664,6 @@ exports[`DataTable should paginate 1`] = `
 @media only screen and (max-width:768px) {
   .c19 {
     width: 2px;
-  }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c3 {
-    table-layout: fixed;
   }
 }
 
@@ -27337,12 +27005,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c3 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -28632,12 +28294,6 @@ exports[`DataTable should render new data when page changes 1`] = `
 @media only screen and (max-width:768px) {
   .c19 {
     width: 2px;
-  }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c3 {
-    table-layout: fixed;
   }
 }
 
@@ -30354,7 +30010,7 @@ exports[`DataTable should render new data when page changes 2`] = `
       class="StyledBox-sc-13pk1d4-0 iZicmW"
     >
       <table
-        class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+        class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
       >
         <thead
           class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -32524,12 +32180,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 @media only screen and (max-width:768px) {
   .c19 {
     width: 2px;
-  }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c3 {
-    table-layout: fixed;
   }
 }
 
@@ -34871,12 +34521,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c3 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -36651,12 +36295,6 @@ exports[`DataTable sort 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -37057,12 +36695,6 @@ exports[`DataTable sort external 1`] = `
 @media only screen and (max-width:768px) {
   .c9 {
     width: 3px;
-  }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
   }
 }
 
@@ -37469,12 +37101,6 @@ exports[`DataTable sort nested object 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -37878,12 +37504,6 @@ exports[`DataTable sort nested object with onSort 1`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -38237,12 +37857,6 @@ exports[`DataTable sortable 1`] = `
   padding: 6px 12px;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -38409,7 +38023,7 @@ exports[`DataTable sortable 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 ciKqQZ StyledDataTable-sc-xrlyjm-0 hmFzTO"
+    class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -38452,10 +38066,6 @@ exports[`DataTable sortable 2`] = `
   }
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-
-}
-
 <div
                   class="c0"
                 />
@@ -38494,10 +38104,6 @@ exports[`DataTable sortable 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
 
 }
 
@@ -38779,12 +38385,6 @@ exports[`DataTable themeColumnSizes 1`] = `
   outline: none;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -39031,12 +38631,6 @@ exports[`DataTable units 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -39408,12 +39002,6 @@ exports[`DataTable verticalAlign 1`] = `
 
 .c7:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
