@@ -34,6 +34,7 @@ if (process.env.NODE_ENV !== 'production') {
     margin: marginProp,
     onClickOutside: PropTypes.func,
     onEsc: PropTypes.func,
+    onFocusOutside: PropTypes.func,
     overflow: dropOverflowPropTypes,
     plain: PropTypes.bool,
     responsive: PropTypes.bool,

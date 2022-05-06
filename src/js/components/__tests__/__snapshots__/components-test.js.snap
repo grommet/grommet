@@ -301,6 +301,7 @@ Object {
       "margin": [Function],
       "onClickOutside": [Function],
       "onEsc": [Function],
+      "onFocusOutside": [Function],
       "overflow": [Function],
       "plain": [Function],
       "responsive": [Function],
