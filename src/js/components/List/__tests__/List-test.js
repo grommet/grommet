@@ -585,7 +585,6 @@ describe('List disabled', () => {
     expect(allItems).toHaveLength(locations.length);
     let disabledCount = 0;
     allItems.forEach((item) => {
-      expect(item).toHaveAttribute('aria-disabled');
       if (item.getAttribute('aria-disabled') === 'true') {
         disabledCount += 1;
       }

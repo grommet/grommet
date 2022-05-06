@@ -1484,6 +1484,10 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 1`] = `
   outline: none;
 }
 
+.c12:hover {
+  background-color: unset;
+}
+
 @media only screen and (max-width:768px) {
   .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
@@ -1540,7 +1544,6 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 1`] = `
       tabindex="0"
     >
       <li
-        aria-disabled="false"
         class="c2 c3"
         draggable="true"
       >
@@ -1673,7 +1676,6 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 1`] = `
         </div>
       </li>
       <li
-        aria-disabled="false"
         class="c11 c3"
         draggable="true"
       >
@@ -1805,7 +1807,6 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 1`] = `
         </div>
       </li>
       <li
-        aria-disabled="false"
         class="c11 c3"
         draggable="true"
       >
@@ -2191,6 +2192,10 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
   outline: none;
 }
 
+.c3:hover {
+  background-color: unset;
+}
+
 @media only screen and (max-width:768px) {
   .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
@@ -2315,7 +2320,6 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
         </div>
       </li>
       <li
-        aria-disabled="false"
         class="c11 c12"
         draggable="true"
       >
@@ -2381,7 +2385,6 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
         </div>
       </li>
       <li
-        aria-disabled="false"
         class="c11 c12"
         draggable="true"
       >
@@ -2513,7 +2516,6 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
         </div>
       </li>
       <li
-        aria-disabled="false"
         class="c11 c12"
         draggable="true"
       >
@@ -2660,6 +2662,10 @@ exports[`List disabled Should apply disabled styling to items 1`] = `
   outline: none;
 }
 
+.c5:hover {
+  background-color: unset;
+}
+
 @media only screen and (max-width:768px) {
   .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
@@ -2709,7 +2715,6 @@ exports[`List disabled Should apply disabled styling to items 1`] = `
       role="list"
     >
       <li
-        aria-disabled="false"
         class="c2 c3"
       >
         Boise
@@ -2721,7 +2726,6 @@ exports[`List disabled Should apply disabled styling to items 1`] = `
         Fort Collins
       </li>
       <li
-        aria-disabled="false"
         class="c4 c3"
       >
         Los Gatos
@@ -2733,7 +2737,6 @@ exports[`List disabled Should apply disabled styling to items 1`] = `
         Palo Alto
       </li>
       <li
-        aria-disabled="false"
         class="c4 c3"
       >
         San Francisco
@@ -2839,6 +2842,10 @@ exports[`List disabled Should apply disabled styling to items when data are chil
   outline: none;
 }
 
+.c7:hover {
+  background-color: unset;
+}
+
 @media only screen and (max-width:768px) {
   .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
@@ -2888,7 +2895,6 @@ exports[`List disabled Should apply disabled styling to items when data are chil
       role="list"
     >
       <li
-        aria-disabled="false"
         class="c2 c3"
       >
         <div
@@ -2916,7 +2922,6 @@ exports[`List disabled Should apply disabled styling to items when data are chil
         </div>
       </li>
       <li
-        aria-disabled="false"
         class="c6 c3"
       >
         <div
@@ -2944,7 +2949,6 @@ exports[`List disabled Should apply disabled styling to items when data are chil
         </div>
       </li>
       <li
-        aria-disabled="false"
         class="c6 c3"
       >
         <div
@@ -3038,6 +3042,10 @@ exports[`List disabled Should apply disabled styling to items when data are obje
   outline: none;
 }
 
+.c5:hover {
+  background-color: unset;
+}
+
 @media only screen and (max-width:768px) {
   .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
@@ -3087,7 +3095,6 @@ exports[`List disabled Should apply disabled styling to items when data are obje
       role="list"
     >
       <li
-        aria-disabled="false"
         class="c2 c3"
       >
         Boise
@@ -3099,7 +3106,6 @@ exports[`List disabled Should apply disabled styling to items when data are obje
         Fort Collins
       </li>
       <li
-        aria-disabled="false"
         class="c4 c3"
       >
         Los Gatos
@@ -3111,7 +3117,6 @@ exports[`List disabled Should apply disabled styling to items when data are obje
         Palo Alto
       </li>
       <li
-        aria-disabled="false"
         class="c4 c3"
       >
         San Francisco
@@ -3800,14 +3805,14 @@ exports[`List events Enter key 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gzaPzH List__StyledItem-sc-130gdqg-1 eJOyNi"
+      class="StyledBox-sc-13pk1d4-0 gzaPzH List__StyledItem-sc-130gdqg-1 gjXAtT"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 bciCRZ List__StyledItem-sc-130gdqg-1 eJOyNi"
+      class="StyledBox-sc-13pk1d4-0 bciCRZ List__StyledItem-sc-130gdqg-1 gjXAtT"
       role="option"
       tabindex="-1"
     >
@@ -3971,14 +3976,14 @@ exports[`List events focus and blur 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gzaPzH List__StyledItem-sc-130gdqg-1 eJOyNi"
+      class="StyledBox-sc-13pk1d4-0 gzaPzH List__StyledItem-sc-130gdqg-1 gjXAtT"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 cNwKVJ List__StyledItem-sc-130gdqg-1 eJOyNi"
+      class="StyledBox-sc-13pk1d4-0 cNwKVJ List__StyledItem-sc-130gdqg-1 gjXAtT"
       role="option"
       tabindex="-1"
     >
@@ -4156,14 +4161,14 @@ exports[`List events mouse events 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gzaPzH List__StyledItem-sc-130gdqg-1 eJOyNi"
+      class="StyledBox-sc-13pk1d4-0 gzaPzH List__StyledItem-sc-130gdqg-1 gjXAtT"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 cNwKVJ List__StyledItem-sc-130gdqg-1 eJOyNi"
+      class="StyledBox-sc-13pk1d4-0 cNwKVJ List__StyledItem-sc-130gdqg-1 gjXAtT"
       role="option"
       tabindex="-1"
     >
@@ -14389,14 +14394,14 @@ exports[`List onClickItem 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gzaPzH List__StyledItem-sc-130gdqg-1 eJOyNi"
+      class="StyledBox-sc-13pk1d4-0 gzaPzH List__StyledItem-sc-130gdqg-1 gjXAtT"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 cNwKVJ List__StyledItem-sc-130gdqg-1 eJOyNi"
+      class="StyledBox-sc-13pk1d4-0 cNwKVJ List__StyledItem-sc-130gdqg-1 gjXAtT"
       role="option"
       tabindex="-1"
     >
@@ -14879,7 +14884,7 @@ exports[`List onOrder Keyboard move down 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 iXlbIb List__StyledItem-sc-130gdqg-1 hXXDEw"
+      class="StyledBox-sc-13pk1d4-0 iXlbIb List__StyledItem-sc-130gdqg-1 fWhDed"
       draggable="true"
     >
       <span
@@ -14949,7 +14954,7 @@ exports[`List onOrder Keyboard move down 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 hXXDEw"
+      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 fWhDed"
       draggable="true"
     >
       <span
@@ -15033,7 +15038,7 @@ exports[`List onOrder Keyboard move down 3`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 iXlbIb List__StyledItem-sc-130gdqg-1 hXXDEw"
+      class="StyledBox-sc-13pk1d4-0 iXlbIb List__StyledItem-sc-130gdqg-1 fWhDed"
       draggable="true"
     >
       <span
@@ -15103,7 +15108,7 @@ exports[`List onOrder Keyboard move down 3`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 hXXDEw"
+      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 fWhDed"
       draggable="true"
     >
       <span
@@ -15649,7 +15654,7 @@ exports[`List onOrder Keyboard move up 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 iXlbIb List__StyledItem-sc-130gdqg-1 hXXDEw"
+      class="StyledBox-sc-13pk1d4-0 iXlbIb List__StyledItem-sc-130gdqg-1 fWhDed"
       draggable="true"
     >
       <span
@@ -15719,7 +15724,7 @@ exports[`List onOrder Keyboard move up 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 hXXDEw"
+      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 fWhDed"
       draggable="true"
     >
       <span
@@ -15803,7 +15808,7 @@ exports[`List onOrder Keyboard move up 3`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 iXlbIb List__StyledItem-sc-130gdqg-1 hXXDEw"
+      class="StyledBox-sc-13pk1d4-0 iXlbIb List__StyledItem-sc-130gdqg-1 fWhDed"
       draggable="true"
     >
       <span
@@ -15873,7 +15878,7 @@ exports[`List onOrder Keyboard move up 3`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 hXXDEw"
+      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 fWhDed"
       draggable="true"
     >
       <span
@@ -16418,7 +16423,7 @@ exports[`List onOrder Mouse move down 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 iXlbIb List__StyledItem-sc-130gdqg-1 hXXDEw"
+      class="StyledBox-sc-13pk1d4-0 iXlbIb List__StyledItem-sc-130gdqg-1 fWhDed"
       draggable="true"
     >
       <span
@@ -16488,7 +16493,7 @@ exports[`List onOrder Mouse move down 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 hXXDEw"
+      class="StyledBox-sc-13pk1d4-0 hJOwDp List__StyledItem-sc-130gdqg-1 fWhDed"
       draggable="true"
     >
       <span

@@ -64,6 +64,9 @@ const StyledItem = styled(Box)`
     }
     return disabledStyle;
   }}
+  &:hover {
+    ${(props) => props.isDisabled && `background-color: unset;`}
+  }
   ${(props) =>
     props.theme.list && props.theme.list.item && props.theme.list.item.extend}
 `;
@@ -238,13 +241,14 @@ const List = React.forwardRef(
                       updateActive(Math.max(active - 2, 1));
                     }
                   } else if (
-                    onClickItem &&
-                    !disabledItems?.includes(
+                    disabledItems?.includes(
                       typeof itemKey === 'function'
                         ? itemKey(data[active])
-                        : data[active][itemKey],
+                        : data[active],
                     )
                   ) {
+                    event.preventDefault();
+                  } else if (onClickItem) {
                     event.persist();
                     const adjustedEvent = event;
                     adjustedEvent.item = data[active];
@@ -414,7 +418,9 @@ const List = React.forwardRef(
                       // Only prevent event when disabled. We still want screen
                       // readers to be aware that an option exists, but is in a
                       // disabled state.
-                      if (!isDisabled) {
+                      if (isDisabled) {
+                        event.preventDefault();
+                      } else {
                         // extract from React's synthetic event pool
                         event.persist();
                         const adjustedEvent = event;
@@ -543,6 +549,19 @@ const List = React.forwardRef(
                   content = <Box flex>{content}</Box>;
                 }
 
+                let itemAriaProps;
+                if (isDisabled) {
+                  itemAriaProps = {
+                    'aria-disabled': true,
+                  };
+                  if (onClickItem) {
+                    itemAriaProps = {
+                      ...itemAriaProps,
+                      'aria-selected': false,
+                    };
+                  }
+                }
+
                 if (itemProps && itemProps[index]) {
                   boxProps = { ...boxProps, ...itemProps[index] };
                 }
@@ -551,7 +570,6 @@ const List = React.forwardRef(
                   <StyledItem
                     key={key}
                     tag="li"
-                    aria-disabled={isDisabled}
                     background={adjustedBackground}
                     border={adjustedBorder}
                     isDisabled={isDisabled}
@@ -561,6 +579,7 @@ const List = React.forwardRef(
                     {...boxProps}
                     {...clickProps}
                     {...orderProps}
+                    {...itemAriaProps}
                   >
                     {onOrder && <Text>{index + 1}</Text>}
                     {content}
