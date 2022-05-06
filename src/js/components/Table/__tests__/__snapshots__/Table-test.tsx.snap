@@ -21,12 +21,6 @@ exports[`Table caption renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -59,12 +53,6 @@ exports[`Table renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -89,12 +77,6 @@ exports[`TableBody renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -167,12 +149,6 @@ exports[`TableCell border renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -228,12 +204,6 @@ exports[`TableCell plain renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -310,12 +280,6 @@ exports[`TableCell renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -401,12 +365,6 @@ exports[`TableCell scope renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -595,12 +553,6 @@ exports[`TableCell size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -744,12 +696,6 @@ exports[`TableCell verticalAlign renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -794,12 +740,6 @@ exports[`TableFooter renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -830,12 +770,6 @@ exports[`TableHeader renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -864,12 +798,6 @@ exports[`TableRow renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div

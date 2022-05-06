@@ -198,7 +198,8 @@ describe('Anchor', () => {
 
   test('gap renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={{ anchor: { gap: 'xsmall' } }}>
+        <Anchor icon={<svg />} label="Theme Gap" href="#" />
         <Anchor icon={<svg />} label="Small Gap" href="#" gap="small" />
         <Anchor icon={<svg />} label="Medium Gap" href="#" gap="medium" />
         <Anchor icon={<svg />} label="Large Gap" href="#" gap="large" />

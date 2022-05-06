@@ -445,6 +445,7 @@ export interface ThemeType {
     color?: ColorType;
     extend?: ExtendType<PropsOf<typeof Anchor>>;
     fontWeight?: number;
+    gap?: GapType;
     hover?: {
       extend?: ExtendType<PropsOf<typeof Anchor>>;
       textDecoration?: string;

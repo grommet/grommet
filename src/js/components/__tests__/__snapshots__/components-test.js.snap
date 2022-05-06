@@ -781,6 +781,7 @@ Object {
             "light": "brand",
           },
           "fontWeight": 600,
+          "gap": "small",
           "hover": Object {
             "textDecoration": "underline",
           },
