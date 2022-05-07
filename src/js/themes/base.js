@@ -364,6 +364,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         dark: 'accent-1',
         light: 'brand',
       },
+      gap: 'small',
       hover: {
         textDecoration: 'underline',
         // fontWeight: undefined,

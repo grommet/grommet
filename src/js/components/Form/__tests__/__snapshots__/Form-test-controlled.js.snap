@@ -223,7 +223,7 @@ exports[`Form controlled controlled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="test"
             placeholder="test input"
             value="v"
@@ -257,7 +257,7 @@ exports[`Form controlled controlled 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="test"
             placeholder="test input"
             value="v"
@@ -630,7 +630,7 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[0].number"
               placeholder="number test input 1"
               value=""
@@ -649,7 +649,7 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[0].ext"
               placeholder="ext test input 1"
               value=""
@@ -672,7 +672,7 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[1].number"
               placeholder="number test input 2"
               value="123456789"
@@ -691,7 +691,7 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[1].ext"
               placeholder="ext test input 2"
               value=""
@@ -714,7 +714,7 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[2].number"
               placeholder="number test input 3"
               value=""
@@ -733,7 +733,7 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[2].ext"
               placeholder="ext test input 3"
               value="999"
@@ -771,7 +771,7 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[0].number"
               placeholder="number test input 1"
               value=""
@@ -790,7 +790,7 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[0].ext"
               placeholder="ext test input 1"
               value=""
@@ -813,7 +813,7 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[1].number"
               placeholder="number test input 2"
               value="123456789"
@@ -832,7 +832,7 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[1].ext"
               placeholder="ext test input 2"
               value=""
@@ -855,7 +855,7 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[2].number"
               placeholder="number test input 3"
               value=""
@@ -874,7 +874,7 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[2].ext"
               placeholder="ext test input 3"
               value="999"
@@ -1206,7 +1206,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[0].number"
               placeholder="number test input 1"
               value=""
@@ -1252,7 +1252,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[0].ext"
               placeholder="ext test input 1"
               value=""
@@ -1275,7 +1275,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[1].number"
               placeholder="number test input 2"
               value=""
@@ -1321,7 +1321,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[1].ext"
               placeholder="ext test input 2"
               value=""
@@ -1653,7 +1653,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[0].number"
               placeholder="number test input 1"
               value=""
@@ -1672,7 +1672,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[0].ext"
               placeholder="ext test input 1"
               value=""
@@ -1695,7 +1695,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[1].number"
               placeholder="number test input 2"
               value="sadasd"
@@ -1741,7 +1741,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+              class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
               name="phones[1].ext"
               placeholder="ext test input 2"
               value=""
@@ -2004,7 +2004,7 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             id="test"
             name="test"
             value="v"
@@ -2044,7 +2044,7 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             id="test"
             name="test"
             value="v"
@@ -2285,7 +2285,7 @@ exports[`Form controlled controlled input 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="test"
             placeholder="test input"
             value="v"
@@ -2319,7 +2319,7 @@ exports[`Form controlled controlled input 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="test"
             placeholder="test input"
             value="v"
@@ -2560,7 +2560,7 @@ exports[`Form controlled controlled input lazy 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="test"
             placeholder="test input"
             value="v"
@@ -2594,7 +2594,7 @@ exports[`Form controlled controlled input lazy 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="test"
             placeholder="test input"
             value="v"
@@ -2835,7 +2835,7 @@ exports[`Form controlled controlled lazy 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="test"
             placeholder="test input"
             value="v"
@@ -2869,7 +2869,7 @@ exports[`Form controlled controlled lazy 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="test"
             placeholder="test input"
             value="v"
@@ -3317,7 +3317,7 @@ exports[`Form controlled controlled onValidate 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="test"
             placeholder="test input"
             value=""
@@ -3585,7 +3585,7 @@ exports[`Form controlled controlled onValidate custom error 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="test"
             placeholder="test input"
             value=""
@@ -3853,7 +3853,7 @@ exports[`Form controlled controlled onValidate custom info 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="test"
             placeholder="test input"
             value=""
@@ -4283,7 +4283,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="name"
             placeholder="test name"
             value=""
@@ -4305,7 +4305,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
             class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
               name="toggle"
               type="checkbox"
             />
@@ -4523,7 +4523,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kkBhYd"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt"
             name="name"
             placeholder="test name"
             value=""
@@ -4545,7 +4545,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
             class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fNxRHh"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
               name="toggle"
               type="checkbox"
             />
