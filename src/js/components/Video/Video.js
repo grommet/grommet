@@ -76,7 +76,8 @@ const Video = forwardRef(
     const [duration, setDuration] = useState();
     const [percentagePlayed, setPercentagePlayed] = useState();
     const [playing, setPlaying] = useState(false);
-    const [announcing, setAnnouncing] = useState(false);
+    const [announceAudioDescription, setAnnounceAudioDescription] =
+      useState(false);
     const [scrubTime, setScrubTime] = useState();
     const [volume, setVolume] = useState();
     const [hasPlayed, setHasPlayed] = useState(false);
@@ -137,6 +138,9 @@ const Video = forwardRef(
       return () => clearTimeout(timer);
     }, [interacting]);
 
+    // track which audio description track is active
+    const [activeTrack, setActiveTrack] = useState();
+
     useLayoutEffect(() => {
       const video = videoRef.current;
       if (video) {
@@ -169,17 +173,30 @@ const Video = forwardRef(
           const track = textTracks[i];
           const active = track.mode === 'showing';
 
+          const getActiveTrack = (currentVideoTime) => {
+            let nextActiveTrack;
+            for (let j = 0; j < track.cues.length; j += 1) {
+              if (
+                currentVideoTime > track?.cues[j]?.startTime &&
+                currentVideoTime < track?.cues[j]?.endTime
+              ) {
+                nextActiveTrack = track?.cues[j]?.text;
+              }
+            }
+
+            return nextActiveTrack;
+          };
+
           // track is an audio description
           if (track.kind === 'descriptions') {
-            if (announcing) {
+            if (announceAudioDescription) {
               video.ontimeupdate = () => {
-                for (let j = 0; j < track.cues.length; j += 1) {
-                  const inBound =
-                    video.currentTime > track?.cues[j]?.startTime &&
-                    video.currentTime < track?.cues[j]?.endTime;
-                  if (inBound) {
-                    announce(track?.cues[j]?.text, 'assertive');
+                const nextActiveTrack = getActiveTrack(video.currentTime);
+                if (activeTrack !== nextActiveTrack) {
+                  if (nextActiveTrack) {
+                    announce(nextActiveTrack, 'assertive');
                   }
+                  setActiveTrack(nextActiveTrack);
                 }
               };
             }
@@ -197,7 +214,15 @@ const Video = forwardRef(
           }
         }
       }
-    }, [announcing, captions, height, videoRef, width]);
+    }, [
+      activeTrack,
+      announce,
+      announceAudioDescription,
+      captions,
+      height,
+      videoRef,
+      width,
+    ]);
 
     const play = useCallback(() => videoRef.current.play(), [videoRef]);
 
@@ -330,8 +355,8 @@ const Video = forwardRef(
           id: 'video.audioDescriptions',
           messages,
         }),
-        active: announcing,
-        onClick: () => setAnnouncing(!announcing),
+        active: announceAudioDescription,
+        onClick: () => setAnnounceAudioDescription(!announceAudioDescription),
       };
 
       const volumeControls = ['volume', 'reduceVolume'].map((control) => ({
