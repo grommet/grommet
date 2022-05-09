@@ -45,6 +45,7 @@ export interface ListProps<ListItemType> {
   border?: BorderType;
   children?: React.ReactNode;
   data?: ListItemType[];
+  disabled?: string[];
   gridArea?: GridAreaType;
   defaultItemProps?: BoxTypes;
   itemKey?: string | ((item: ListItemType) => string | number);

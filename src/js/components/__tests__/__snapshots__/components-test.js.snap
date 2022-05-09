@@ -520,6 +520,7 @@ Object {
       "children": [Function],
       "data": [Function],
       "defaultItemProps": [Function],
+      "disabled": [Function],
       "gridArea": [Function],
       "itemKey": [Function],
       "itemProps": [Function],
@@ -1683,6 +1684,10 @@ Object {
           },
           "item": Object {
             "border": "horizontal",
+            "disabled": Object {
+              "color": "status-disabled",
+              "cursor": "default",
+            },
             "pad": Object {
               "horizontal": "medium",
               "vertical": "small",
