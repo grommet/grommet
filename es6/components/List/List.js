@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step"];
+var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -12,7 +12,7 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Pagination } from '../Pagination';
 import { Text } from '../Text';
-import { focusStyle, genericStyles, normalizeShow, unfocusStyle, useForwardedRef, usePagination } from '../../utils';
+import { focusStyle, genericStyles, normalizeColor, normalizeShow, unfocusStyle, useForwardedRef, usePagination } from '../../utils';
 import { ListPropTypes } from './propTypes';
 var StyledList = styled.ul.withConfig({
   displayName: "List__StyledList",
@@ -35,14 +35,32 @@ var StyledList = styled.ul.withConfig({
 var StyledItem = styled(Box).withConfig({
   displayName: "List__StyledItem",
   componentId: "sc-130gdqg-1"
-})(["", " ", " &:focus{", "}", ""], function (props) {
-  return props.onClick && "cursor: pointer;";
+})(["", " ", " &:focus{", "}", " &:hover{", "}", ""], function (props) {
+  return props.onClick && !props.isDisabled && "cursor: pointer;";
 }, function (props) {
-  return props.draggable && "cursor: move;";
+  return props.draggable && !props.isDisabled && "cursor: move;";
 }, unfocusStyle({
   forceOutline: true,
   skipSvgChildren: true
 }), function (props) {
+  var _props$theme$list, _props$theme$list$ite;
+
+  var disabledStyle;
+
+  if (props.isDisabled && (_props$theme$list = props.theme.list) != null && (_props$theme$list$ite = _props$theme$list.item) != null && _props$theme$list$ite.disabled) {
+    var _props$theme$list$ite2 = props.theme.list.item.disabled,
+        color = _props$theme$list$ite2.color,
+        cursor = _props$theme$list$ite2.cursor;
+    disabledStyle = {
+      color: normalizeColor(color, props.theme),
+      cursor: cursor
+    };
+  }
+
+  return disabledStyle;
+}, function (props) {
+  return props.isDisabled && "background-color: unset;";
+}, function (props) {
   return props.theme.list && props.theme.list.item && props.theme.list.item.extend;
 }); // when paginated, this wraps the data table and pagination component
 
@@ -116,6 +134,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       children = _ref.children,
       data = _ref.data,
       defaultItemProps = _ref.defaultItemProps,
+      disabledItems = _ref.disabled,
       focus = _ref.focus,
       itemKey = _ref.itemKey,
       itemProps = _ref.itemProps,
@@ -219,7 +238,9 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           onOrder(reorder(data, index, index - 1));
           updateActive(Math.max(active - 2, 1));
         }
-      } else {
+      } else if (disabledItems != null && disabledItems.includes(typeof itemKey === 'function' ? itemKey(data[active]) : data[active])) {
+        event.preventDefault();
+      } else if (onClickItem) {
         event.persist();
         var adjustedEvent = event;
         adjustedEvent.item = data[active];
@@ -318,6 +339,16 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     }
 
     var key = itemKey ? itemId : getKey(item, index, itemId);
+    var isDisabled;
+
+    if (disabledItems) {
+      if (typeof item === 'object' && !itemKey) {
+        console.error( // eslint-disable-next-line max-len
+        "Warning: Missing prop itemKey. Prop disabled requires itemKey to be specified when data is of type 'object'.");
+      }
+
+      isDisabled = disabledItems == null ? void 0 : disabledItems.includes(key);
+    }
 
     if (action) {
       content = [/*#__PURE__*/React.createElement(Box, {
@@ -354,15 +385,22 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         tabIndex: -1,
         active: active === index,
         onClick: function onClick(event) {
-          // extract from React's synthetic event pool
-          event.persist();
-          var adjustedEvent = event;
-          adjustedEvent.item = item;
-          adjustedEvent.index = index;
-          onClickItem(adjustedEvent); // put focus on the List container to meet WCAG
-          // accessibility guidelines that focus remains on `ul`
+          // Only prevent event when disabled. We still want screen
+          // readers to be aware that an option exists, but is in a
+          // disabled state.
+          if (isDisabled) {
+            event.preventDefault();
+          } else {
+            // extract from React's synthetic event pool
+            event.persist();
+            var adjustedEvent = event;
+            adjustedEvent.item = item;
+            adjustedEvent.index = index;
+            onClickItem(adjustedEvent); // put focus on the List container to meet WCAG
+            // accessibility guidelines that focus remains on `ul`
 
-          listRef.current.focus();
+            listRef.current.focus();
+          }
         },
         onMouseOver: function onMouseOver() {
           return updateActive(index);
@@ -490,6 +528,20 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       }, content);
     }
 
+    var itemAriaProps;
+
+    if (isDisabled) {
+      itemAriaProps = {
+        'aria-disabled': true
+      };
+
+      if (onClickItem) {
+        itemAriaProps = _extends({}, itemAriaProps, {
+          'aria-selected': false
+        });
+      }
+    }
+
     if (itemProps && itemProps[index]) {
       boxProps = _extends({}, boxProps, itemProps[index]);
     }
@@ -497,11 +549,12 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     return /*#__PURE__*/React.createElement(StyledItem, _extends({
       key: key,
       tag: "li",
-      flex: false,
-      pad: pad || theme.list.item.pad,
       background: adjustedBackground,
-      border: adjustedBorder
-    }, defaultItemProps, boxProps, clickProps, orderProps), onOrder && /*#__PURE__*/React.createElement(Text, null, index + 1), content, orderControls);
+      border: adjustedBorder,
+      isDisabled: isDisabled,
+      flex: false,
+      pad: pad || theme.list.item.pad
+    }, defaultItemProps, boxProps, clickProps, orderProps, itemAriaProps), onOrder && /*#__PURE__*/React.createElement(Text, null, index + 1), content, orderControls);
   }))), paginate && data.length > step && items && items.length ? /*#__PURE__*/React.createElement(Pagination, _extends({
     alignSelf: "end"
   }, paginationProps)) : null);

@@ -1111,6 +1111,10 @@ export var generate = function generate(baseSpacing, scale) {
       item: {
         // background: undefined,
         border: 'horizontal',
+        disabled: {
+          color: 'status-disabled',
+          cursor: 'default'
+        },
         pad: {
           horizontal: 'medium',
           vertical: 'small'
