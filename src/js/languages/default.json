@@ -69,8 +69,6 @@
     "playButton": "play",
     "volumeDown": "volume down",
     "volumeUp": "volume up",
-    "description": "video audio description",
-    "showDescription": "Video description opened below video",
-    "hideDescription": "Video description closed"
+    "description": "video audio description"
   }
 }
