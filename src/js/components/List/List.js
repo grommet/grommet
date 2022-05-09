@@ -10,6 +10,7 @@ import { Text } from '../Text';
 import {
   focusStyle,
   genericStyles,
+  normalizeColor,
   normalizeShow,
   unfocusStyle,
   useForwardedRef,
@@ -42,8 +43,8 @@ const StyledList = styled.ul`
 `;
 
 const StyledItem = styled(Box)`
-  ${(props) => props.onClick && `cursor: pointer;`}
-  ${(props) => props.draggable && `cursor: move;`}
+  ${(props) => props.onClick && !props.isDisabled && `cursor: pointer;`}
+  ${(props) => props.draggable && !props.isDisabled && `cursor: move;`}
   // during the interim state when a user is holding down a click,
   // the individual list item has focus in the DOM until the click
   // completes and focus is placed back on the list container.
@@ -51,6 +52,20 @@ const StyledItem = styled(Box)`
   // as opposed to the item itself.
   &:focus {
     ${unfocusStyle({ forceOutline: true, skipSvgChildren: true })}
+  }
+  ${(props) => {
+    let disabledStyle;
+    if (props.isDisabled && props.theme.list?.item?.disabled) {
+      const { color, cursor } = props.theme.list.item.disabled;
+      disabledStyle = {
+        color: normalizeColor(color, props.theme),
+        cursor,
+      };
+    }
+    return disabledStyle;
+  }}
+  &:hover {
+    ${(props) => props.isDisabled && `background-color: unset;`}
   }
   ${(props) =>
     props.theme.list && props.theme.list.item && props.theme.list.item.extend}
@@ -124,6 +139,7 @@ const List = React.forwardRef(
       children,
       data,
       defaultItemProps,
+      disabled: disabledItems,
       focus,
       itemKey,
       itemProps,
@@ -224,7 +240,15 @@ const List = React.forwardRef(
                       onOrder(reorder(data, index, index - 1));
                       updateActive(Math.max(active - 2, 1));
                     }
-                  } else {
+                  } else if (
+                    disabledItems?.includes(
+                      typeof itemKey === 'function'
+                        ? itemKey(data[active])
+                        : data[active],
+                    )
+                  ) {
+                    event.preventDefault();
+                  } else if (onClickItem) {
                     event.persist();
                     const adjustedEvent = event;
                     adjustedEvent.item = data[active];
@@ -343,6 +367,17 @@ const List = React.forwardRef(
 
                 const key = itemKey ? itemId : getKey(item, index, itemId);
 
+                let isDisabled;
+                if (disabledItems) {
+                  if (typeof item === 'object' && !itemKey) {
+                    console.error(
+                      // eslint-disable-next-line max-len
+                      `Warning: Missing prop itemKey. Prop disabled requires itemKey to be specified when data is of type 'object'.`,
+                    );
+                  }
+                  isDisabled = disabledItems?.includes(key);
+                }
+
                 if (action) {
                   content = [
                     <Box align="start" key={`actionContainer${index}`}>
@@ -380,15 +415,22 @@ const List = React.forwardRef(
                     tabIndex: -1,
                     active: active === index,
                     onClick: (event) => {
-                      // extract from React's synthetic event pool
-                      event.persist();
-                      const adjustedEvent = event;
-                      adjustedEvent.item = item;
-                      adjustedEvent.index = index;
-                      onClickItem(adjustedEvent);
-                      // put focus on the List container to meet WCAG
-                      // accessibility guidelines that focus remains on `ul`
-                      listRef.current.focus();
+                      // Only prevent event when disabled. We still want screen
+                      // readers to be aware that an option exists, but is in a
+                      // disabled state.
+                      if (isDisabled) {
+                        event.preventDefault();
+                      } else {
+                        // extract from React's synthetic event pool
+                        event.persist();
+                        const adjustedEvent = event;
+                        adjustedEvent.item = item;
+                        adjustedEvent.index = index;
+                        onClickItem(adjustedEvent);
+                        // put focus on the List container to meet WCAG
+                        // accessibility guidelines that focus remains on `ul`
+                        listRef.current.focus();
+                      }
                     },
                     onMouseOver: () => updateActive(index),
                     onMouseOut: () => updateActive(undefined),
@@ -507,6 +549,19 @@ const List = React.forwardRef(
                   content = <Box flex>{content}</Box>;
                 }
 
+                let itemAriaProps;
+                if (isDisabled) {
+                  itemAriaProps = {
+                    'aria-disabled': true,
+                  };
+                  if (onClickItem) {
+                    itemAriaProps = {
+                      ...itemAriaProps,
+                      'aria-selected': false,
+                    };
+                  }
+                }
+
                 if (itemProps && itemProps[index]) {
                   boxProps = { ...boxProps, ...itemProps[index] };
                 }
@@ -515,14 +570,16 @@ const List = React.forwardRef(
                   <StyledItem
                     key={key}
                     tag="li"
-                    flex={false}
-                    pad={pad || theme.list.item.pad}
                     background={adjustedBackground}
                     border={adjustedBorder}
+                    isDisabled={isDisabled}
+                    flex={false}
+                    pad={pad || theme.list.item.pad}
                     {...defaultItemProps}
                     {...boxProps}
                     {...clickProps}
                     {...orderProps}
+                    {...itemAriaProps}
                   >
                     {onOrder && <Text>{index + 1}</Text>}
                     {content}
