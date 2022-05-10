@@ -2482,6 +2482,10 @@ Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
             },
+            "description": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
             "fullScreen": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],

@@ -1,4 +1,5 @@
 import { Actions } from 'grommet-icons/icons/Actions';
+import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
@@ -1738,6 +1739,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         play: Play,
         reduceVolume: VolumeLow,
         volume: Volume,
+        description: AssistListening,
         // color: { dark: undefined, light: undefined },
       },
       scrubber: {

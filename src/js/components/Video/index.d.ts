@@ -9,6 +9,7 @@ import {
 
 type controlsItems =
   | 'captions'
+  | 'descriptions'
   | 'fullScreen'
   | 'play'
   | 'pause'

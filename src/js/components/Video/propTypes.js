@@ -14,6 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
           PropTypes.oneOfType([
             PropTypes.oneOf([
               'captions',
+              'descriptions',
               'fullScreen',
               'play',
               'pause',
