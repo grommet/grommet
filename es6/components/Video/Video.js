@@ -8,6 +8,7 @@ import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef,
 import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Menu } from '../Menu';
@@ -62,6 +63,8 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useContext = useContext(MessageContext),
       format = _useContext.format;
 
+  var announce = useContext(AnnounceContext);
+
   var _useState = useState([]),
       captions = _useState[0],
       setCaptions = _useState[1];
@@ -82,29 +85,33 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       playing = _useState5[0],
       setPlaying = _useState5[1];
 
-  var _useState6 = useState(),
-      scrubTime = _useState6[0],
-      setScrubTime = _useState6[1];
+  var _useState6 = useState(false),
+      announceAudioDescription = _useState6[0],
+      setAnnounceAudioDescription = _useState6[1];
 
   var _useState7 = useState(),
-      volume = _useState7[0],
-      setVolume = _useState7[1];
+      scrubTime = _useState7[0],
+      setScrubTime = _useState7[1];
 
-  var _useState8 = useState(false),
-      hasPlayed = _useState8[0],
-      setHasPlayed = _useState8[1];
+  var _useState8 = useState(),
+      volume = _useState8[0],
+      setVolume = _useState8[1];
 
-  var _useState9 = useState(),
-      interacting = _useState9[0],
-      setInteracting = _useState9[1];
+  var _useState9 = useState(false),
+      hasPlayed = _useState9[0],
+      setHasPlayed = _useState9[1];
 
   var _useState10 = useState(),
-      height = _useState10[0],
-      setHeight = _useState10[1];
+      interacting = _useState10[0],
+      setInteracting = _useState10[1];
 
   var _useState11 = useState(),
-      width = _useState11[0],
-      setWidth = _useState11[1];
+      height = _useState11[0],
+      setHeight = _useState11[1];
+
+  var _useState12 = useState(),
+      width = _useState12[0],
+      setWidth = _useState12[1];
 
   var containerRef = useRef();
   var scrubberRef = useRef();
@@ -158,7 +165,12 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return function () {
       return clearTimeout(timer);
     };
-  }, [interacting]);
+  }, [interacting]); // track which audio description track is active
+
+  var _useState13 = useState(),
+      activeTrack = _useState13[0],
+      setActiveTrack = _useState13[1];
+
   useLayoutEffect(function () {
     var video = videoRef.current;
 
@@ -188,48 +200,66 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
 
       var textTracks = video.textTracks;
+      var nextCaptions = [];
+      var set = false; // iterate through all of the tracks provided
 
-      if (textTracks.length > 0) {
-        if (textTracks.length === 1) {
-          // only one track was provided
-          var track = textTracks[0];
-          var active = track.mode === 'showing';
+      var _loop = function _loop(i) {
+        var track = textTracks[i];
+        var active = track.mode === 'showing';
 
-          if (!captions || !captions[0] || captions[0].active !== active) {
-            // get label if provided and if the track is active
-            // (currently showing) or not
-            setCaptions([{
-              label: track.label,
-              active: active
-            }]);
-          }
-        } else {
-          // multiple tracks provided
-          var nextCaptions = [];
-          var set = false;
+        var getActiveTrack = function getActiveTrack(currentVideoTime) {
+          var nextActiveTrack;
 
-          for (var i = 0; i < textTracks.length; i += 1) {
-            var _track = textTracks[i];
+          for (var j = 0; j < track.cues.length; j += 1) {
+            var _track$cues$j, _track$cues$j2;
 
-            var _active = _track.mode === 'showing';
+            if (currentVideoTime > (track == null ? void 0 : (_track$cues$j = track.cues[j]) == null ? void 0 : _track$cues$j.startTime) && currentVideoTime < (track == null ? void 0 : (_track$cues$j2 = track.cues[j]) == null ? void 0 : _track$cues$j2.endTime)) {
+              var _track$cues$j3;
 
-            nextCaptions.push({
-              label: _track.label,
-              active: _active
-            });
-
-            if (!captions || !captions[i] || captions[i].active !== _active) {
-              set = true;
+              nextActiveTrack = track == null ? void 0 : (_track$cues$j3 = track.cues[j]) == null ? void 0 : _track$cues$j3.text;
             }
+          }
+
+          return nextActiveTrack;
+        }; // track is an audio description
+
+
+        if (track.kind === 'descriptions') {
+          if (announceAudioDescription) {
+            video.ontimeupdate = function () {
+              var nextActiveTrack = getActiveTrack(video.currentTime);
+
+              if (activeTrack !== nextActiveTrack) {
+                if (nextActiveTrack) {
+                  announce(nextActiveTrack, 'assertive');
+                }
+
+                setActiveTrack(nextActiveTrack);
+              }
+            };
+          }
+        } // otherwise treat as captions
+        else {
+          nextCaptions.push({
+            label: track.label,
+            active: active
+          });
+
+          if (!captions || !captions[i] || captions[i].active !== active) {
+            set = true;
           }
 
           if (set) {
             setCaptions(nextCaptions);
           }
         }
+      };
+
+      for (var i = 0; i < textTracks.length; i += 1) {
+        _loop(i);
       }
     }
-  }, [captions, height, videoRef, width]);
+  }, [activeTrack, announce, announceAudioDescription, captions, height, videoRef, width]);
   var play = useCallback(function () {
     return videoRef.current.play();
   }, [videoRef]);
@@ -306,7 +336,8 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       Pause: theme.video.icons.pause,
       Play: theme.video.icons.play,
       ReduceVolume: theme.video.icons.reduceVolume,
-      Volume: theme.video.icons.volume
+      Volume: theme.video.icons.volume,
+      Description: theme.video.icons.description
     };
     var captionControls = captions.map(function (caption, index) {
       return {
@@ -315,7 +346,10 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
         }),
         label: caption.label,
         active: caption.active,
-        a11yTitle: caption.label || 'video.captions',
+        a11yTitle: caption.label || format({
+          id: 'video.captions',
+          messages: messages
+        }),
         onClick: function onClick() {
           showCaptions(caption.active ? -1 : index);
           var updatedCaptions = [];
@@ -331,6 +365,19 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
         }
       };
     });
+    var descriptionControls = {
+      icon: /*#__PURE__*/React.createElement(Icons.Description, {
+        color: iconColor
+      }),
+      a11yTitle: format({
+        id: 'video.audioDescriptions',
+        messages: messages
+      }),
+      active: announceAudioDescription,
+      onClick: function onClick() {
+        return setAnnounceAudioDescription(!announceAudioDescription);
+      }
+    };
     var volumeControls = ['volume', 'reduceVolume'].map(function (control) {
       return {
         icon: control === 'volume' ? /*#__PURE__*/React.createElement(Icons.Volume, {
@@ -358,6 +405,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
     var buttonProps = {
       captions: captionControls,
+      descriptions: descriptionControls,
       volume: volumeControls,
       fullScreen: {
         icon: /*#__PURE__*/React.createElement(Icons.FullScreen, {
@@ -406,6 +454,11 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
           controlsMenuItems.push(buttonProps[item][i]);
         }
 
+        return undefined;
+      }
+
+      if (item === 'descriptions') {
+        controlsMenuItems.push(buttonProps[item]);
         return undefined;
       }
 

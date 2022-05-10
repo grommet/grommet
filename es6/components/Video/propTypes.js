@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
     autoPlay: PropTypes.bool,
     controls: PropTypes.oneOfType([PropTypes.oneOf([false, 'over', 'below']), PropTypes.shape({
       position: PropTypes.oneOf([false, 'over', 'below']),
-      items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.oneOf(['captions', 'fullScreen', 'play', 'pause', 'volume']), PropTypes.shape({
+      items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.oneOf(['captions', 'descriptions', 'fullScreen', 'play', 'pause', 'volume']), PropTypes.shape({
         icon: PropTypes.element,
         a11yTitle: PropTypes.string,
         onClick: PropTypes.func,

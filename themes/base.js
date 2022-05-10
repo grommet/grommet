@@ -5,6 +5,8 @@ exports.generate = exports.base = void 0;
 
 var _Actions = require("grommet-icons/icons/Actions");
 
+var _AssistListening = require("grommet-icons/icons/AssistListening");
+
 var _CircleInformation = require("grommet-icons/icons/CircleInformation");
 
 var _ClosedCaption = require("grommet-icons/icons/ClosedCaption");
@@ -1914,7 +1916,8 @@ var generate = function generate(baseSpacing, scale) {
         pause: _Pause.Pause,
         play: _Play.Play,
         reduceVolume: _VolumeLow.VolumeLow,
-        volume: _Volume.Volume // color: { dark: undefined, light: undefined },
+        volume: _Volume.Volume,
+        description: _AssistListening.AssistListening // color: { dark: undefined, light: undefined },
 
       },
       scrubber: {

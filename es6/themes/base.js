@@ -1,6 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { Actions } from 'grommet-icons/icons/Actions';
+import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
@@ -1885,7 +1886,8 @@ export var generate = function generate(baseSpacing, scale) {
         pause: Pause,
         play: Play,
         reduceVolume: VolumeLow,
-        volume: Volume // color: { dark: undefined, light: undefined },
+        volume: Volume,
+        description: AssistListening // color: { dark: undefined, light: undefined },
 
       },
       scrubber: {

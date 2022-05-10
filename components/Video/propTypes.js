@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
     autoPlay: _propTypes["default"].bool,
     controls: _propTypes["default"].oneOfType([_propTypes["default"].oneOf([false, 'over', 'below']), _propTypes["default"].shape({
       position: _propTypes["default"].oneOf([false, 'over', 'below']),
-      items: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].oneOf(['captions', 'fullScreen', 'play', 'pause', 'volume']), _propTypes["default"].shape({
+      items: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].oneOf(['captions', 'descriptions', 'fullScreen', 'play', 'pause', 'volume']), _propTypes["default"].shape({
         icon: _propTypes["default"].element,
         a11yTitle: _propTypes["default"].string,
         onClick: _propTypes["default"].func,
