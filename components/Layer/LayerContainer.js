@@ -17,6 +17,8 @@ var _ResponsiveContext = require("../../contexts/ResponsiveContext");
 
 var _OptionsContext = require("../../contexts/OptionsContext");
 
+var _ContainerTargetContext = require("../../contexts/ContainerTargetContext");
+
 var _utils = require("../../utils");
 
 var _StyledLayer = require("./StyledLayer");
@@ -56,6 +58,8 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       responsive = _ref$responsive === void 0 ? true : _ref$responsive,
       layerTarget = _ref.target,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+
+  var containerTarget = (0, _react.useContext)(_ContainerTargetContext.ContainerTargetContext);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -109,7 +113,7 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     var onClickDocument = function onClickDocument(event) {
       // determine which portal id the target is in, if any
       var clickedPortalId = null;
-      var node = event.target;
+      var node = containerTarget === document.body ? event.target : event == null ? void 0 : event.path[0];
 
       while (clickedPortalId === null && node !== document && node !== null) {
         // check if user click occurred within the layer
@@ -176,7 +180,7 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         document.removeEventListener('mousedown', onClickDocument);
       }
     };
-  }, [layerTarget, onClickOutside, portalContext, portalId]);
+  }, [containerTarget, layerTarget, onClickOutside, portalContext, portalId]);
 
   var content = /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledContainer, _extends({
     ref: ref || containerRef,

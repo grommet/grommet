@@ -6,6 +6,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef, useContext, useEffect, useMemo, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { FocusedContainer } from '../FocusedContainer';
 import { backgroundIsDark, findScrollParents, parseMetricToNum, PortalContext } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -50,6 +51,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       trapFocus = _ref.trapFocus,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
+  var containerTarget = useContext(ContainerTargetContext);
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var portalContext = useContext(PortalContext) || defaultPortalContext;
   var portalId = useMemo(function () {
@@ -260,7 +262,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var onClickDocument = function onClickDocument(event) {
       // determine which portal id the target is in, if any
       var clickedPortalId = null;
-      var node = event.target;
+      var node = containerTarget === document.body ? event.target : event == null ? void 0 : event.path[0];
 
       while (clickedPortalId === null && node !== document) {
         var attr = node.getAttribute('data-g-portal-id');
@@ -295,7 +297,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         document.removeEventListener('mousedown', onClickDocument);
       }
     };
-  }, [align, onAlign, dropTarget, onClickOutside, portalContext, portalId, ref, responsive, restrictFocus, stretch, theme.drop]);
+  }, [align, containerTarget, onAlign, dropTarget, onClickOutside, portalContext, portalId, ref, responsive, restrictFocus, stretch, theme.drop]);
   useEffect(function () {
     if (restrictFocus) {
       (ref || dropRef).current.focus();

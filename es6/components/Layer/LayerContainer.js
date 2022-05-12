@@ -11,6 +11,7 @@ import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { backgroundIsDark, findVisibleParent, PortalContext } from '../../utils';
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 var HiddenAnchor = styled.a.withConfig({
@@ -38,6 +39,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       layerTarget = _ref.target,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
+  var containerTarget = useContext(ContainerTargetContext);
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var size = useContext(ResponsiveContext); // layerOptions was created to preserve backwards compatibility but
   // should not be supported in v3
@@ -89,7 +91,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var onClickDocument = function onClickDocument(event) {
       // determine which portal id the target is in, if any
       var clickedPortalId = null;
-      var node = event.target;
+      var node = containerTarget === document.body ? event.target : event == null ? void 0 : event.path[0];
 
       while (clickedPortalId === null && node !== document && node !== null) {
         // check if user click occurred within the layer
@@ -156,7 +158,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         document.removeEventListener('mousedown', onClickDocument);
       }
     };
-  }, [layerTarget, onClickOutside, portalContext, portalId]);
+  }, [containerTarget, layerTarget, onClickOutside, portalContext, portalId]);
   var content = /*#__PURE__*/React.createElement(StyledContainer, _extends({
     ref: ref || containerRef,
     background: background,

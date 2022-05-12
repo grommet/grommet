@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _ContainerTargetContext = require("../../contexts/ContainerTargetContext");
+
 var _FocusedContainer = require("../FocusedContainer");
 
 var _utils = require("../../utils");
@@ -66,6 +68,8 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       stretch = _ref$stretch === void 0 ? 'width' : _ref$stretch,
       trapFocus = _ref.trapFocus,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+
+  var containerTarget = (0, _react.useContext)(_ContainerTargetContext.ContainerTargetContext);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -278,7 +282,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     var onClickDocument = function onClickDocument(event) {
       // determine which portal id the target is in, if any
       var clickedPortalId = null;
-      var node = event.target;
+      var node = containerTarget === document.body ? event.target : event == null ? void 0 : event.path[0];
 
       while (clickedPortalId === null && node !== document) {
         var attr = node.getAttribute('data-g-portal-id');
@@ -313,7 +317,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         document.removeEventListener('mousedown', onClickDocument);
       }
     };
-  }, [align, onAlign, dropTarget, onClickOutside, portalContext, portalId, ref, responsive, restrictFocus, stretch, theme.drop]);
+  }, [align, containerTarget, onAlign, dropTarget, onClickOutside, portalContext, portalId, ref, responsive, restrictFocus, stretch, theme.drop]);
   (0, _react.useEffect)(function () {
     if (restrictFocus) {
       (ref || dropRef).current.focus();
