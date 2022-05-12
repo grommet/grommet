@@ -665,6 +665,7 @@ exports[`DateInput controlled format inline 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -1818,7 +1819,7 @@ exports[`DateInput controlled format inline 2`] = `
                 July 2020;
                 Currently selected 2020-07-01;
               "
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gzjjWj"
           role="grid"
           tabindex="0"
         >
@@ -1830,7 +1831,7 @@ exports[`DateInput controlled format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -1847,7 +1848,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -1864,7 +1865,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -1881,7 +1882,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -1898,7 +1899,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -1915,7 +1916,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -1932,7 +1933,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -1954,7 +1955,7 @@ exports[`DateInput controlled format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -1971,7 +1972,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -1988,7 +1989,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2005,7 +2006,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2022,7 +2023,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2039,7 +2040,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2056,7 +2057,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2078,7 +2079,7 @@ exports[`DateInput controlled format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2095,7 +2096,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2112,7 +2113,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2129,7 +2130,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2146,7 +2147,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2163,7 +2164,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2180,7 +2181,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2202,7 +2203,7 @@ exports[`DateInput controlled format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2219,7 +2220,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2236,7 +2237,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2253,7 +2254,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2270,7 +2271,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2287,7 +2288,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2304,7 +2305,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2326,7 +2327,7 @@ exports[`DateInput controlled format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2343,7 +2344,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2360,7 +2361,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2377,7 +2378,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2394,7 +2395,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2411,7 +2412,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2428,7 +2429,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2450,7 +2451,7 @@ exports[`DateInput controlled format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2467,7 +2468,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2484,7 +2485,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2501,7 +2502,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2518,7 +2519,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2535,7 +2536,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2552,7 +2553,7 @@ exports[`DateInput controlled format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -2986,6 +2987,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -4439,6 +4441,7 @@ exports[`DateInput controlled format inline without timezone 2`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -6925,6 +6928,7 @@ exports[`DateInput format inline 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -8894,6 +8898,7 @@ exports[`DateInput inline 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -10526,6 +10531,7 @@ exports[`DateInput range format inline 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -11843,6 +11849,7 @@ exports[`DateInput range inline 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -13705,7 +13712,7 @@ exports[`DateInput select format 3`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -13725,43 +13732,43 @@ exports[`DateInput select format 3`] = `
   color: #000000;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c16:focus:not(:focus-visible) {
+.c17:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) > circle,
-.c16:focus:not(:focus-visible) > ellipse,
-.c16:focus:not(:focus-visible) > line,
-.c16:focus:not(:focus-visible) > path,
-.c16:focus:not(:focus-visible) > polygon,
-.c16:focus:not(:focus-visible) > polyline,
-.c16:focus:not(:focus-visible) > rect {
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible)::-moz-focus-inner {
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -13781,24 +13788,8 @@ exports[`DateInput select format 3`] = `
 
 .c10 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10 > circle,
-.c10 > ellipse,
-.c10 > line,
-.c10 > path,
-.c10 > polygon,
-.c10 > polyline,
-.c10 > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10::-moz-focus-inner {
-  border: 0;
 }
 
 .c11 {
@@ -13822,6 +13813,29 @@ exports[`DateInput select format 3`] = `
   flex: 0 1 auto;
 }
 
+.c16 {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16 > circle,
+.c16 > ellipse,
+.c16 > line,
+.c16 > path,
+.c16 > polygon,
+.c16 > polyline,
+.c16 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16::-moz-focus-inner {
+  border: 0;
+}
+
 .c15 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -13840,7 +13854,7 @@ exports[`DateInput select format 3`] = `
   opacity: 0.5;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13857,7 +13871,7 @@ exports[`DateInput select format 3`] = `
   height: 54.857142857142854px;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -14053,17 +14067,17 @@ exports[`DateInput select format 3`] = `
               </button>
             </div>
             <div
-              class="c13"
+              class="c16"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jul 01 2020"
-                class="c16"
+                class="c17"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   1
                 </div>
@@ -14080,7 +14094,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c18"
+                  class="c19"
                 >
                   2
                 </div>
@@ -14097,7 +14111,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   3
                 </div>
@@ -14114,7 +14128,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   4
                 </div>
@@ -14136,7 +14150,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   5
                 </div>
@@ -14153,7 +14167,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   6
                 </div>
@@ -14170,7 +14184,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   7
                 </div>
@@ -14187,7 +14201,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   8
                 </div>
@@ -14204,7 +14218,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   9
                 </div>
@@ -14221,7 +14235,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   10
                 </div>
@@ -14238,7 +14252,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   11
                 </div>
@@ -14260,7 +14274,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   12
                 </div>
@@ -14277,7 +14291,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   13
                 </div>
@@ -14294,7 +14308,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   14
                 </div>
@@ -14311,7 +14325,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   15
                 </div>
@@ -14328,7 +14342,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   16
                 </div>
@@ -14345,7 +14359,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   17
                 </div>
@@ -14362,7 +14376,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   18
                 </div>
@@ -14384,7 +14398,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   19
                 </div>
@@ -14401,7 +14415,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   20
                 </div>
@@ -14418,7 +14432,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   21
                 </div>
@@ -14435,7 +14449,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   22
                 </div>
@@ -14452,7 +14466,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   23
                 </div>
@@ -14469,7 +14483,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   24
                 </div>
@@ -14486,7 +14500,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   25
                 </div>
@@ -14508,7 +14522,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   26
                 </div>
@@ -14525,7 +14539,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   27
                 </div>
@@ -14542,7 +14556,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   28
                 </div>
@@ -14559,7 +14573,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   29
                 </div>
@@ -14576,7 +14590,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   30
                 </div>
@@ -14593,7 +14607,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   31
                 </div>
@@ -15112,6 +15126,7 @@ exports[`DateInput select format inline 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -16259,7 +16274,7 @@ exports[`DateInput select format inline 2`] = `
                 July 2020;
                 Currently selected 2020-07-20;
               "
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eIQdmp"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gzjjWj"
           role="grid"
           tabindex="0"
         >
@@ -16271,7 +16286,7 @@ exports[`DateInput select format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16288,7 +16303,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16305,7 +16320,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16322,7 +16337,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16339,7 +16354,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16356,7 +16371,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16373,7 +16388,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16395,7 +16410,7 @@ exports[`DateInput select format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16412,7 +16427,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16429,7 +16444,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16446,7 +16461,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16463,7 +16478,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16480,7 +16495,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16497,7 +16512,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16519,7 +16534,7 @@ exports[`DateInput select format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16536,7 +16551,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16553,7 +16568,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16570,7 +16585,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16587,7 +16602,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16604,7 +16619,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16621,7 +16636,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16643,7 +16658,7 @@ exports[`DateInput select format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16660,7 +16675,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ftGUkA"
                 role="gridcell"
               >
                 <button
@@ -16677,7 +16692,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16694,7 +16709,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16711,7 +16726,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16728,7 +16743,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16745,7 +16760,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16767,7 +16782,7 @@ exports[`DateInput select format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16784,7 +16799,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16801,7 +16816,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16818,7 +16833,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16835,7 +16850,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16852,7 +16867,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16869,7 +16884,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16891,7 +16906,7 @@ exports[`DateInput select format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16908,7 +16923,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16925,7 +16940,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16942,7 +16957,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16959,7 +16974,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16976,7 +16991,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -16993,7 +17008,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -17352,6 +17367,7 @@ exports[`DateInput select format inline 3`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -18714,7 +18730,7 @@ exports[`DateInput select format inline 4`] = `
   border: 0;
 }
 
-.c20 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -18734,43 +18750,43 @@ exports[`DateInput select format inline 4`] = `
   color: #000000;
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus::-moz-focus-inner {
+.c21:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c20:focus:not(:focus-visible) {
+.c21:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible) > circle,
-.c20:focus:not(:focus-visible) > ellipse,
-.c20:focus:not(:focus-visible) > line,
-.c20:focus:not(:focus-visible) > path,
-.c20:focus:not(:focus-visible) > polygon,
-.c20:focus:not(:focus-visible) > polyline,
-.c20:focus:not(:focus-visible) > rect {
+.c21:focus:not(:focus-visible) > circle,
+.c21:focus:not(:focus-visible) > ellipse,
+.c21:focus:not(:focus-visible) > line,
+.c21:focus:not(:focus-visible) > path,
+.c21:focus:not(:focus-visible) > polygon,
+.c21:focus:not(:focus-visible) > polyline,
+.c21:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible)::-moz-focus-inner {
+.c21:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -18790,24 +18806,8 @@ exports[`DateInput select format inline 4`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13 > circle,
-.c13 > ellipse,
-.c13 > line,
-.c13 > path,
-.c13 > polygon,
-.c13 > polyline,
-.c13 > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13::-moz-focus-inner {
-  border: 0;
 }
 
 .c14 {
@@ -18829,6 +18829,29 @@ exports[`DateInput select format inline 4`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
+}
+
+.c20 {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20 > circle,
+.c20 > ellipse,
+.c20 > line,
+.c20 > path,
+.c20 > polygon,
+.c20 > polyline,
+.c20 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20::-moz-focus-inner {
+  border: 0;
 }
 
 .c18 {
@@ -18866,7 +18889,7 @@ exports[`DateInput select format inline 4`] = `
   height: 54.857142857142854px;
 }
 
-.c21 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19492,17 +19515,17 @@ exports[`DateInput select format inline 4`] = `
                   </button>
                 </div>
                 <div
-                  class="c16"
+                  class="c20"
                   role="gridcell"
                 >
                   <button
                     aria-label="Mon Jul 20 2020"
-                    class="c20"
+                    class="c21"
                     tabindex="-1"
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c22"
                     >
                       20
                     </div>
@@ -20184,6 +20207,7 @@ exports[`DateInput select format inline range 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -21351,7 +21375,7 @@ exports[`DateInput select format inline range 2`] = `
                 Currently selected
   2020-07-10 through 2020-07-10
               "
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eIQdmp"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gzjjWj"
           role="grid"
           tabindex="0"
         >
@@ -21363,7 +21387,7 @@ exports[`DateInput select format inline range 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21380,7 +21404,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21397,7 +21421,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21414,7 +21438,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21431,7 +21455,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21448,7 +21472,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21465,7 +21489,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21487,7 +21511,7 @@ exports[`DateInput select format inline range 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21504,7 +21528,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21521,7 +21545,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21538,7 +21562,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21555,7 +21579,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21572,7 +21596,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ftGUkA"
                 role="gridcell"
               >
                 <button
@@ -21589,7 +21613,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21611,7 +21635,7 @@ exports[`DateInput select format inline range 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21628,7 +21652,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21645,7 +21669,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21662,7 +21686,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21679,7 +21703,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21696,7 +21720,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21713,7 +21737,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21735,7 +21759,7 @@ exports[`DateInput select format inline range 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21752,7 +21776,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21769,7 +21793,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21786,7 +21810,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21803,7 +21827,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21820,7 +21844,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21837,7 +21861,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21859,7 +21883,7 @@ exports[`DateInput select format inline range 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21876,7 +21900,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21893,7 +21917,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21910,7 +21934,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21927,7 +21951,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21944,7 +21968,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21961,7 +21985,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -21983,7 +22007,7 @@ exports[`DateInput select format inline range 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -22000,7 +22024,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -22017,7 +22041,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -22034,7 +22058,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -22051,7 +22075,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -22068,7 +22092,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -22085,7 +22109,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -22444,6 +22468,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -23825,7 +23850,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
   border: 0;
 }
 
-.c20 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -23845,43 +23870,43 @@ exports[`DateInput select format inline range without timezone 2`] = `
   color: #000000;
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus::-moz-focus-inner {
+.c21:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c20:focus:not(:focus-visible) {
+.c21:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible) > circle,
-.c20:focus:not(:focus-visible) > ellipse,
-.c20:focus:not(:focus-visible) > line,
-.c20:focus:not(:focus-visible) > path,
-.c20:focus:not(:focus-visible) > polygon,
-.c20:focus:not(:focus-visible) > polyline,
-.c20:focus:not(:focus-visible) > rect {
+.c21:focus:not(:focus-visible) > circle,
+.c21:focus:not(:focus-visible) > ellipse,
+.c21:focus:not(:focus-visible) > line,
+.c21:focus:not(:focus-visible) > path,
+.c21:focus:not(:focus-visible) > polygon,
+.c21:focus:not(:focus-visible) > polyline,
+.c21:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible)::-moz-focus-inner {
+.c21:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -23901,24 +23926,8 @@ exports[`DateInput select format inline range without timezone 2`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13 > circle,
-.c13 > ellipse,
-.c13 > line,
-.c13 > path,
-.c13 > polygon,
-.c13 > polyline,
-.c13 > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13::-moz-focus-inner {
-  border: 0;
 }
 
 .c14 {
@@ -23940,6 +23949,29 @@ exports[`DateInput select format inline range without timezone 2`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
+}
+
+.c20 {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20 > circle,
+.c20 > ellipse,
+.c20 > line,
+.c20 > path,
+.c20 > polygon,
+.c20 > polyline,
+.c20 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20::-moz-focus-inner {
+  border: 0;
 }
 
 .c18 {
@@ -23977,7 +24009,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
   height: 54.857142857142854px;
 }
 
-.c21 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24424,17 +24456,17 @@ exports[`DateInput select format inline range without timezone 2`] = `
                   </button>
                 </div>
                 <div
-                  class="c16"
+                  class="c20"
                   role="gridcell"
                 >
                   <button
                     aria-label="Fri Jul 10 2020"
-                    class="c20"
+                    class="c21"
                     tabindex="-1"
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c22"
                     >
                       10
                     </div>
@@ -25722,7 +25754,7 @@ exports[`DateInput select format no timezone 3`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -25742,43 +25774,43 @@ exports[`DateInput select format no timezone 3`] = `
   color: #000000;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c16:focus:not(:focus-visible) {
+.c17:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) > circle,
-.c16:focus:not(:focus-visible) > ellipse,
-.c16:focus:not(:focus-visible) > line,
-.c16:focus:not(:focus-visible) > path,
-.c16:focus:not(:focus-visible) > polygon,
-.c16:focus:not(:focus-visible) > polyline,
-.c16:focus:not(:focus-visible) > rect {
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible)::-moz-focus-inner {
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -25798,24 +25830,8 @@ exports[`DateInput select format no timezone 3`] = `
 
 .c10 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10 > circle,
-.c10 > ellipse,
-.c10 > line,
-.c10 > path,
-.c10 > polygon,
-.c10 > polyline,
-.c10 > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10::-moz-focus-inner {
-  border: 0;
 }
 
 .c11 {
@@ -25839,6 +25855,29 @@ exports[`DateInput select format no timezone 3`] = `
   flex: 0 1 auto;
 }
 
+.c16 {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16 > circle,
+.c16 > ellipse,
+.c16 > line,
+.c16 > path,
+.c16 > polygon,
+.c16 > polyline,
+.c16 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16::-moz-focus-inner {
+  border: 0;
+}
+
 .c15 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -25857,7 +25896,7 @@ exports[`DateInput select format no timezone 3`] = `
   opacity: 0.5;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25874,7 +25913,7 @@ exports[`DateInput select format no timezone 3`] = `
   height: 54.857142857142854px;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26070,17 +26109,17 @@ exports[`DateInput select format no timezone 3`] = `
               </button>
             </div>
             <div
-              class="c13"
+              class="c16"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jul 01 2020"
-                class="c16"
+                class="c17"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   1
                 </div>
@@ -26097,7 +26136,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c18"
+                  class="c19"
                 >
                   2
                 </div>
@@ -26114,7 +26153,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   3
                 </div>
@@ -26131,7 +26170,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   4
                 </div>
@@ -26153,7 +26192,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   5
                 </div>
@@ -26170,7 +26209,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   6
                 </div>
@@ -26187,7 +26226,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   7
                 </div>
@@ -26204,7 +26243,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   8
                 </div>
@@ -26221,7 +26260,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   9
                 </div>
@@ -26238,7 +26277,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   10
                 </div>
@@ -26255,7 +26294,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   11
                 </div>
@@ -26277,7 +26316,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   12
                 </div>
@@ -26294,7 +26333,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   13
                 </div>
@@ -26311,7 +26350,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   14
                 </div>
@@ -26328,7 +26367,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   15
                 </div>
@@ -26345,7 +26384,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   16
                 </div>
@@ -26362,7 +26401,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   17
                 </div>
@@ -26379,7 +26418,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   18
                 </div>
@@ -26401,7 +26440,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   19
                 </div>
@@ -26418,7 +26457,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   20
                 </div>
@@ -26435,7 +26474,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   21
                 </div>
@@ -26452,7 +26491,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   22
                 </div>
@@ -26469,7 +26508,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   23
                 </div>
@@ -26486,7 +26525,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   24
                 </div>
@@ -26503,7 +26542,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   25
                 </div>
@@ -26525,7 +26564,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   26
                 </div>
@@ -26542,7 +26581,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   27
                 </div>
@@ -26559,7 +26598,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   28
                 </div>
@@ -26576,7 +26615,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   29
                 </div>
@@ -26593,7 +26632,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   30
                 </div>
@@ -26610,7 +26649,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   31
                 </div>
@@ -27051,6 +27090,7 @@ exports[`DateInput select inline 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -28232,6 +28272,7 @@ exports[`DateInput select inline without timezone 1`] = `
 
 .c9 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -29491,6 +29532,7 @@ exports[`DateInput type format inline 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -30638,7 +30680,7 @@ exports[`DateInput type format inline 2`] = `
                 July 2020;
                 Currently selected 2020-07-21;
               "
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gzjjWj"
           role="grid"
           tabindex="0"
         >
@@ -30650,7 +30692,7 @@ exports[`DateInput type format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30667,7 +30709,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30684,7 +30726,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30701,7 +30743,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30718,7 +30760,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30735,7 +30777,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30752,7 +30794,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30774,7 +30816,7 @@ exports[`DateInput type format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30791,7 +30833,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30808,7 +30850,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30825,7 +30867,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30842,7 +30884,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30859,7 +30901,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30876,7 +30918,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30898,7 +30940,7 @@ exports[`DateInput type format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30915,7 +30957,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30932,7 +30974,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30949,7 +30991,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30966,7 +31008,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -30983,7 +31025,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31000,7 +31042,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31022,7 +31064,7 @@ exports[`DateInput type format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31039,7 +31081,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31056,7 +31098,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31073,7 +31115,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31090,7 +31132,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31107,7 +31149,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31124,7 +31166,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31146,7 +31188,7 @@ exports[`DateInput type format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31163,7 +31205,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31180,7 +31222,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31197,7 +31239,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31214,7 +31256,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31231,7 +31273,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31248,7 +31290,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31270,7 +31312,7 @@ exports[`DateInput type format inline 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31287,7 +31329,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31304,7 +31346,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31321,7 +31363,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31338,7 +31380,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31355,7 +31397,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31372,7 +31414,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -31730,6 +31772,7 @@ exports[`DateInput type format inline partial 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -33107,6 +33150,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -34484,6 +34528,7 @@ exports[`DateInput type format inline range 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -35651,7 +35696,7 @@ exports[`DateInput type format inline range 2`] = `
                 Currently selected
   2020-07-21 through 2020-07-23
               "
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gzjjWj"
           role="grid"
           tabindex="0"
         >
@@ -35663,7 +35708,7 @@ exports[`DateInput type format inline range 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35680,7 +35725,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35697,7 +35742,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35714,7 +35759,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35731,7 +35776,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35748,7 +35793,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35765,7 +35810,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35787,7 +35832,7 @@ exports[`DateInput type format inline range 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35804,7 +35849,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35821,7 +35866,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35838,7 +35883,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35855,7 +35900,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35872,7 +35917,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35889,7 +35934,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35911,7 +35956,7 @@ exports[`DateInput type format inline range 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35928,7 +35973,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35945,7 +35990,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35962,7 +36007,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35979,7 +36024,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -35996,7 +36041,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36013,7 +36058,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36035,7 +36080,7 @@ exports[`DateInput type format inline range 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36052,7 +36097,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36069,7 +36114,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36086,7 +36131,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36103,7 +36148,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36120,7 +36165,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36137,7 +36182,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36159,7 +36204,7 @@ exports[`DateInput type format inline range 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36176,7 +36221,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36193,7 +36238,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36210,7 +36255,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36227,7 +36272,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36244,7 +36289,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36261,7 +36306,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36283,7 +36328,7 @@ exports[`DateInput type format inline range 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36300,7 +36345,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36317,7 +36362,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36334,7 +36379,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36351,7 +36396,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36368,7 +36413,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36385,7 +36430,7 @@ exports[`DateInput type format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -36743,6 +36788,7 @@ exports[`DateInput type format inline range partial 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -37910,7 +37956,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 Currently selected
   2020-07-21 through none
               "
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gzjjWj"
           role="grid"
           tabindex="0"
         >
@@ -37922,7 +37968,7 @@ exports[`DateInput type format inline range partial 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -37939,7 +37985,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -37956,7 +38002,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -37973,7 +38019,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -37990,7 +38036,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38007,7 +38053,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38024,7 +38070,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38046,7 +38092,7 @@ exports[`DateInput type format inline range partial 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38063,7 +38109,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38080,7 +38126,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38097,7 +38143,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38114,7 +38160,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38131,7 +38177,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38148,7 +38194,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38170,7 +38216,7 @@ exports[`DateInput type format inline range partial 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38187,7 +38233,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38204,7 +38250,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38221,7 +38267,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38238,7 +38284,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38255,7 +38301,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38272,7 +38318,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38294,7 +38340,7 @@ exports[`DateInput type format inline range partial 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38311,7 +38357,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38328,7 +38374,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38345,7 +38391,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38362,7 +38408,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38379,7 +38425,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38396,7 +38442,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38418,7 +38464,7 @@ exports[`DateInput type format inline range partial 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38435,7 +38481,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38452,7 +38498,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38469,7 +38515,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38486,7 +38532,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38503,7 +38549,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38520,7 +38566,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38542,7 +38588,7 @@ exports[`DateInput type format inline range partial 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38559,7 +38605,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38576,7 +38622,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38593,7 +38639,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38610,7 +38656,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38627,7 +38673,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38644,7 +38690,7 @@ exports[`DateInput type format inline range partial 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38774,7 +38820,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 Currently selected
   2020-07-21 through none
               "
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gzjjWj"
           role="grid"
           tabindex="0"
         >
@@ -38786,7 +38832,7 @@ exports[`DateInput type format inline range partial 3`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38803,7 +38849,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38820,7 +38866,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38837,7 +38883,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38854,7 +38900,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38871,7 +38917,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38888,7 +38934,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38910,7 +38956,7 @@ exports[`DateInput type format inline range partial 3`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38927,7 +38973,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38944,7 +38990,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38961,7 +39007,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38978,7 +39024,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -38995,7 +39041,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39012,7 +39058,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39034,7 +39080,7 @@ exports[`DateInput type format inline range partial 3`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39051,7 +39097,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39068,7 +39114,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39085,7 +39131,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39102,7 +39148,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39119,7 +39165,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39136,7 +39182,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39158,7 +39204,7 @@ exports[`DateInput type format inline range partial 3`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39175,7 +39221,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39192,7 +39238,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39209,7 +39255,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39226,7 +39272,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39243,7 +39289,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39260,7 +39306,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39282,7 +39328,7 @@ exports[`DateInput type format inline range partial 3`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39299,7 +39345,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39316,7 +39362,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39333,7 +39379,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39350,7 +39396,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39367,7 +39413,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39384,7 +39430,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39406,7 +39452,7 @@ exports[`DateInput type format inline range partial 3`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39423,7 +39469,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39440,7 +39486,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39457,7 +39503,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39474,7 +39520,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39491,7 +39537,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39508,7 +39554,7 @@ exports[`DateInput type format inline range partial 3`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -39867,6 +39913,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -41264,6 +41311,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -42643,6 +42691,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -44022,6 +44071,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -45419,6 +45469,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -46815,6 +46866,7 @@ exports[`DateInput type format inline short 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -47962,7 +48014,7 @@ exports[`DateInput type format inline short 2`] = `
                 July 2020;
                 Currently selected 2020-07-21;
               "
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gzjjWj"
           role="grid"
           tabindex="0"
         >
@@ -47974,7 +48026,7 @@ exports[`DateInput type format inline short 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -47991,7 +48043,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48008,7 +48060,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48025,7 +48077,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48042,7 +48094,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48059,7 +48111,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48076,7 +48128,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48098,7 +48150,7 @@ exports[`DateInput type format inline short 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48115,7 +48167,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48132,7 +48184,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48149,7 +48201,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48166,7 +48218,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48183,7 +48235,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48200,7 +48252,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48222,7 +48274,7 @@ exports[`DateInput type format inline short 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48239,7 +48291,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48256,7 +48308,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48273,7 +48325,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48290,7 +48342,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48307,7 +48359,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48324,7 +48376,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48346,7 +48398,7 @@ exports[`DateInput type format inline short 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48363,7 +48415,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48380,7 +48432,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48397,7 +48449,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48414,7 +48466,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48431,7 +48483,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48448,7 +48500,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48470,7 +48522,7 @@ exports[`DateInput type format inline short 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48487,7 +48539,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48504,7 +48556,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48521,7 +48573,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48538,7 +48590,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48555,7 +48607,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48572,7 +48624,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48594,7 +48646,7 @@ exports[`DateInput type format inline short 2`] = `
               role="row"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48611,7 +48663,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48628,7 +48680,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48645,7 +48697,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48662,7 +48714,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48679,7 +48731,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -48696,7 +48748,7 @@ exports[`DateInput type format inline short 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 iHVqdc"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gFrDip"
                 role="gridcell"
               >
                 <button
@@ -49055,6 +49107,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -50433,6 +50486,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -51811,6 +51865,7 @@ exports[`DateInput type format inline without timezone 1`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
@@ -53189,6 +53244,7 @@ exports[`DateInput type format inline without timezone 2`] = `
 
 .c13 {
   overflow: hidden;
+  outline: none;
   height: 329.1428571428571px;
 }
 
