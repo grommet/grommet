@@ -950,11 +950,11 @@ const Calendar = forwardRef(
             : renderCalendarHeader(previousMonth, nextMonth)}
           {daysOfWeek && renderDaysOfWeek()}
           <Keyboard
-            onEnter={() => {
-              if (active !== undefined) {
-                selectDate(active.toISOString());
-              }
-            }}
+            onEnter={() =>
+              active !== undefined
+                ? selectDate(active.toISOString())
+                : undefined
+            }
             onUp={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
