@@ -40,6 +40,7 @@ export * from './Markdown';
 export * from './MaskedInput';
 export * from './Menu';
 export * from './Meter';
+export * from './PageHeader';
 export * from './Pagination';
 export * from './Paragraph';
 export * from './Nav';
