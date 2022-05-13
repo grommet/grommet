@@ -4,6 +4,7 @@ import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
+import { Keyboard } from '../Keyboard';
 import { TabsContext } from './TabsContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
@@ -27,6 +28,7 @@ const Tabs = forwardRef(
     const { format } = useContext(MessageContext);
     const { activeIndex: propsActiveIndex, onActive } = rest;
     const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);
+    const [focusIndex, setFocusIndex] = useState(activeIndex);
     const [activeContent, setActiveContent] = useState();
     const [activeTitle, setActiveTitle] = useState();
 
@@ -38,6 +40,8 @@ const Tabs = forwardRef(
     delete rest.activeIndex;
     delete rest.onActive;
     /* eslint-enable no-param-reassign */
+
+    const tabRefs = React.Children.map(children, () => React.createRef());
 
     const getTabsContext = useCallback(
       (index) => {
@@ -53,12 +57,13 @@ const Tabs = forwardRef(
         return {
           activeIndex,
           active: activeIndex === index,
+          ref: tabRefs[index],
           onActivate: () => activateTab(index),
           setActiveContent,
           setActiveTitle,
         };
       },
-      [activeIndex, onActive, propsActiveIndex],
+      [activeIndex, onActive, propsActiveIndex, tabRefs],
     );
 
     const tabs = React.Children.map(children, (child, index) => (
@@ -93,37 +98,62 @@ const Tabs = forwardRef(
       messages,
     })}`;
 
+    const onLeft = () => {
+      if (focusIndex !== 0) {
+        tabRefs[focusIndex - 1].current.focus();
+        setFocusIndex(focusIndex - 1);
+      }
+    };
+
+    const onRight = () => {
+      if (focusIndex < tabRefs.length - 1) {
+        tabRefs[focusIndex + 1].current.focus();
+        setFocusIndex(focusIndex + 1);
+      }
+    };
+
+    const onHome = () => {
+      if (focusIndex !== 0 && tabRefs.length > 0) tabRefs[0].current.focus();
+    };
+
+    const onEnd = () => {
+      if (focusIndex !== 0 && tabRefs.length > 0)
+        tabRefs[tabRefs.length - 1].current.focus();
+    };
+
     return (
-      <StyledTabs
-        ref={ref}
-        as={Box}
-        role="tablist"
-        flex={flex}
-        responsive={responsive}
-        {...rest}
-        background={theme.tabs.background}
-      >
-        <StyledTabsHeader
+      <Keyboard onLeft={onLeft} onRight={onRight} onHome={onHome} onEnd={onEnd}>
+        <StyledTabs
+          ref={ref}
           as={Box}
-          direction="row"
-          justify={justify}
-          alignSelf={alignControls}
-          flex={false}
-          wrap
-          background={theme.tabs.header.background}
-          gap={theme.tabs.gap}
-          {...tabsHeaderStyles}
-        >
-          {tabs}
-        </StyledTabsHeader>
-        <StyledTabPanel
+          role="tablist"
           flex={flex}
-          aria-label={tabContentTitle}
-          role="tabpanel"
+          responsive={responsive}
+          {...rest}
+          background={theme.tabs.background}
         >
-          {activeContent}
-        </StyledTabPanel>
-      </StyledTabs>
+          <StyledTabsHeader
+            as={Box}
+            direction="row"
+            justify={justify}
+            alignSelf={alignControls}
+            flex={false}
+            wrap
+            background={theme.tabs.header.background}
+            gap={theme.tabs.gap}
+            {...tabsHeaderStyles}
+          >
+            {tabs}
+          </StyledTabsHeader>
+          <StyledTabPanel
+            flex={flex}
+            aria-label={tabContentTitle}
+            role="tabpanel"
+          >
+            {activeContent}
+          </StyledTabPanel>
+        </StyledTabs>
+      </Keyboard>
     );
   },
 );
