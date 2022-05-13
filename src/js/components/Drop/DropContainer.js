@@ -31,40 +31,27 @@ const preventLayerClose = (event) => {
 };
 
 // Gets the closest ancestor positioned element
-const getParentNode = (element) =>
-  element.offsetParent ?? element.parentNode;
+const getParentNode = (element) => element.offsetParent ?? element.parentNode;
 
 // return the containing block
 const getContainingBlock = (element) => {
-  const isIE = window.navigator.userAgent.toLowerCase().includes('trident');
-  if (isIE && element instanceof window.HTMLElement) {
-    // In IE 9, 10 and 11 fixed elements containing block is always established
-    // by the viewport
-    const css = window.getComputedStyle(element);
-    if (css.position === 'fixed') {
-      return null;
-    }
-  }
-  const isFirefox = window.navigator.userAgent
-    .toLowerCase()
-    .includes('firefox');
   let currentNode = getParentNode(element);
   while (
     currentNode instanceof window.HTMLElement &&
     !['html', 'body'].includes(currentNode.nodeName.toLowerCase())
-    ) {
+  ) {
     const css = window.getComputedStyle(currentNode);
     // This is non-exhaustive but covers the most common CSS properties that
     // create a containing block.
     // https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#identifying_the_containing_block
     if (
       (css.transform ? css.transform !== 'none' : false) ||
-      (css.perspective ? css .perspective !== 'none' : false) ||
+      (css.perspective ? css.perspective !== 'none' : false) ||
       (css.backdropFilter ? css.backdropFilter !== 'none' : false) ||
       css.contain === 'paint' ||
       ['transform', 'perspective'].includes(css.willChange) ||
-      (isFirefox && css.willChange === 'filter') ||
-      (isFirefox && (css.filter ? css.filter !== 'none' : false))
+      css.willChange === 'filter' ||
+      (css.filter ? css.filter !== 'none' : false)
     ) {
       return currentNode;
     }
@@ -261,10 +248,8 @@ const DropContainer = forwardRef(
           const containingBlockRect = containingBlock?.getBoundingClientRect();
 
           // compute viewport offsets
-          const viewportOffsetLeft =
-            containingBlockRect?.left ?? 0;
-          const viewportOffsetTop =
-            containingBlockRect?.top ?? 0;
+          const viewportOffsetLeft = containingBlockRect?.left ?? 0;
+          const viewportOffsetTop = containingBlockRect?.top ?? 0;
           const viewportOffsetBottom =
             containingBlockRect?.bottom ?? windowHeight;
 
