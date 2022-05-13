@@ -14,6 +14,7 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     actions: _propTypes["default"].arrayOf(_propTypes["default"].shape(_propTypes2.AnchorPropTypes)),
+    global: _propTypes["default"].bool,
     title: _propTypes["default"].string,
     message: _propTypes["default"].string,
     status: _propTypes["default"].oneOf(['critical', 'warning', 'normal', 'unknown']),

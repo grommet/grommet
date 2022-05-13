@@ -5,6 +5,7 @@ export type StatusType = 'critical' | 'warning' | 'normal' | 'unknown';
 
 export interface NotificationProps {
   actions?: AnchorType[];
+  global?: boolean;
   title?: string;
   message?: string;
   status?: StatusType;
