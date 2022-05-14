@@ -4,6 +4,7 @@ import {
   ThemedStyledProps,
 } from 'styled-components';
 import { ReactComponentElement } from 'react';
+import { Icon } from 'grommet-icons';
 
 import {
   BackgroundType,
@@ -25,12 +26,21 @@ import {
   AlignContentType,
 } from '../utils';
 
+import { AnchorProps } from '../components/Anchor/index';
 import { BoxProps } from '../components/Box/index';
 import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
 import { LayerPositionType, LayerProps } from '../components/Layer';
 import { DropProps } from '../components/Drop';
+import {
+  AreasType,
+  GridColumnsType,
+  GridGapType,
+  GridSizeType,
+} from '../components/Grid';
+import { HeadingProps } from '../components/Heading';
+import { ParagraphProps } from '../components/Paragraph';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
@@ -435,6 +445,7 @@ export interface ThemeType {
     color?: ColorType;
     extend?: ExtendType<PropsOf<typeof Anchor>>;
     fontWeight?: number;
+    gap?: GapType;
     hover?: {
       extend?: ExtendType<PropsOf<typeof Anchor>>;
       textDecoration?: string;
@@ -818,6 +829,11 @@ export interface ThemeType {
   grommet?: {
     extend?: ExtendType;
   };
+  header?: {
+    sticky?: {
+      zIndex?: string;
+    };
+  };
   heading?: {
     color?: ColorType;
     extend?: ExtendType;
@@ -997,19 +1013,17 @@ export interface ThemeType {
     container?: BoxProps;
     item?: {
       background?: BackgroundType;
-      border?:
-        | string
-        | {
-            side?: string;
-            color?: ColorType;
-            size?: string;
-          };
+      border?: BorderType;
+      disabled?: {
+        color?: ColorType;
+        cursor?: string;
+      };
       pad?: PadType;
       extend?: ExtendType;
     };
     icons?: {
-      down?: React.ReactNode;
-      up?: React.ReactNode;
+      down?: React.ReactNode | Icon;
+      up?: React.ReactNode | Icon;
     };
     extend?: ExtendType;
   };
@@ -1038,9 +1052,16 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   notification?: {
+    actions?: AnchorProps;
     container?: BoxProps;
+    direction?: 'column' | 'row';
+    global?: {
+      direction?: 'column' | 'row';
+      container?: BoxProps;
+    };
     toast?: {
       container?: BoxProps;
+      direction?: 'column' | 'row';
       layer?: LayerProps;
       time?: number;
     };
@@ -1049,28 +1070,112 @@ export interface ThemeType {
     title?: TextProps;
     message?: TextProps;
     close?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
       color?: ColorType;
     };
     critical?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     warning?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     normal?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
+    };
+    info?: {
+      icon?: React.ReactNode | Icon;
+      background?: BackgroundType;
+      color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     unknown?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
     };
     undefined?: {
-      icon?: React.ReactNode;
+      icon?: React.ReactNode | Icon;
+      background?: BackgroundType;
       color?: ColorType;
+      global?: {
+        background?: BackgroundType;
+      };
+      toast?: {
+        background?: BackgroundType;
+      };
+    };
+  };
+  page?: {
+    [key: string]: {
+      alignSelf?: AlignContentType;
+      width?:
+        | string
+        | {
+            min: string;
+            max: string;
+          };
+      small?: BoxProps;
+      medium?: BoxProps;
+      large?: BoxProps;
+    };
+  };
+  pageHeader?: {
+    actions?: BoxProps;
+    parent?: BoxProps;
+    subtitle?: ParagraphProps;
+    title?: HeadingProps;
+    small?: {
+      areas?: AreasType;
+      columns?: GridColumnsType;
+      rows?: GridSizeType;
+      gap?: GridGapType;
+    };
+    medium?: {
+      areas?: AreasType;
+      columns?: GridColumnsType;
+      rows?: GridSizeType;
+      gap?: GridGapType;
+    };
+    large?: {
+      areas?: AreasType;
+      columns?: GridColumnsType;
+      rows?: GridSizeType;
+      gap?: GridGapType;
     };
   };
   pagination?: {
@@ -1085,8 +1190,8 @@ export interface ThemeType {
     };
     icons?: {
       color?: ColorType;
-      next?: React.ReactNode;
-      previous?: React.ReactNode;
+      next?: React.ReactNode | Icon;
+      previous?: React.ReactNode | Icon;
     };
   };
   paragraph?: {
@@ -1127,6 +1232,7 @@ export interface ThemeType {
       width?: string;
     };
     check?: {
+      color?: ColorType;
       extend?: ExtendType;
       radius?: string;
       background?: {
@@ -1241,8 +1347,8 @@ export interface ThemeType {
     extend?: ExtendType;
     icons?: {
       color?: ColorType;
-      down?: React.ReactNode;
-      up?: React.ReactNode;
+      down?: React.ReactNode | Icon;
+      up?: React.ReactNode | Icon;
       margin?: MarginType;
     };
     options?: {
@@ -1263,7 +1369,7 @@ export interface ThemeType {
       | BoxProps
       | { color?: ColorType }
       | { size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string };
-    icon?: React.ReactNode;
+    icon?: React.ReactNode | Icon;
     size?: {
       xsmall?: string;
       small?: string;
@@ -1497,6 +1603,7 @@ export interface ThemeType {
     };
     scrubber?: {
       color?: ColorType;
+      interval: number;
       track?: {
         color?: ColorType;
       };

@@ -13,7 +13,7 @@ export const Active = () => (
       button: { default: {} }, // enabling kind button functionality
     }}
   >
-    <Box align="center">
+    <Box pad="large" align="center">
       <Button hoverIndicator="light-1" onClick={() => {}} active>
         {/*  When kind Button include children, it is treated as plain */}
         <Box pad="small" direction="row" align="center" gap="small">

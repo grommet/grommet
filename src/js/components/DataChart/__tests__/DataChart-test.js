@@ -3,6 +3,8 @@ import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
+import { Box } from '../../Box';
+import { Text } from '../../Text';
 import { DataChart } from '..';
 
 const data = [
@@ -40,6 +42,23 @@ describe('DataChart', () => {
         <DataChart data={data} series={[{ property: 'a' }, {}]} />
         <DataChart data={data} chart={[]} />
         <DataChart data={data} chart={[{}]} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('single', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart
+          data={[data[0]]}
+          series={['d', 'a']}
+          axis={{
+            x: { property: 'd' },
+            y: { property: 'a' },
+          }}
+        />
       </Grommet>,
     );
 
@@ -318,6 +337,74 @@ describe('DataChart', () => {
     const { container } = render(
       <Grommet>
         <DataChart data={data} series={['a', 'c']} offset />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('offset gap', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart
+          data={data}
+          series={['a', 'c']}
+          offset={{ gap: 'xxsmall' }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('bounds align', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart data={data} series={['a', 'c']} bounds="align" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('bounds explicit', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart data={data} series={['a', 'c']} bounds={{ y: [0, 100] }} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('placeholder text', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart
+          data={data.map(({ d }) => ({ d }))} // date only
+          series={['d', 'a']}
+          bounds={{ y: [0, 100] }}
+          placeholder="no data"
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('placeholder node', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart
+          data={data.map(({ d }) => ({ d }))} // date only
+          series={['d', 'a']}
+          bounds={{ y: [0, 100] }}
+          placeholder={
+            <Box fill background="light-3" align="center" justify="center">
+              <Text>no data</Text>
+            </Box>
+          }
+        />
       </Grommet>,
     );
 

@@ -1,9 +1,11 @@
 import React from 'react';
-import { act, render, fireEvent } from '@testing-library/react';
+import { act, render, fireEvent, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
+import '@testing-library/jest-dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -22,13 +24,13 @@ describe('Select Controlled', () => {
     );
     const results = await axe(container, {
       rules: {
-        /* This rule is flagged because Select is built using a 
-        TextInput within a DropButton. According to Dequeue and 
-        WCAG 4.1.2 "interactive controls must not have focusable 
+        /* This rule is flagged because Select is built using a
+        TextInput within a DropButton. According to Dequeue and
+        WCAG 4.1.2 "interactive controls must not have focusable
         descendants". Jest-axe is assuming that the input is focusable
-        and since the input is a descendant of the button the rule is 
-        flagged. However, the TextInput is built so that it is read 
-        only and cannot receive focus. Select is accessible 
+        and since the input is a descendant of the button the rule is
+        flagged. However, the TextInput is built so that it is read
+        only and cannot receive focus. Select is accessible
         according to the WCAG specification, but jest-axe is flagging
         it so we are disabling this rule. */
         'nested-interactive': { enabled: false },
@@ -117,6 +119,31 @@ describe('Select Controlled', () => {
       document.getElementById('test-select__drop').querySelector('button'),
     );
     expect(onChange).toBeCalledWith(expect.objectContaining({ value: [] }));
+  });
+
+  test('deselect all options should remove clear selection', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        multiple
+        options={['one', 'two']}
+        clear
+      />,
+    );
+
+    await user.click(screen.getByPlaceholderText('test select'));
+    await user.click(screen.getByRole('option', { name: 'one' }));
+    await user.click(screen.getByPlaceholderText('test select'));
+
+    expect(screen.getByText('Clear selection')).toBeInTheDocument();
+
+    await user.click(screen.getByRole('option', { name: 'one' }));
+    await user.click(screen.getByPlaceholderText('test select'));
+
+    expect(screen.queryByText('Clear selection')).not.toBeInTheDocument();
   });
 
   test('multiple onChange without valueKey', () => {

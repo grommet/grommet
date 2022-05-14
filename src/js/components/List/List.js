@@ -10,6 +10,7 @@ import { Text } from '../Text';
 import {
   focusStyle,
   genericStyles,
+  normalizeColor,
   normalizeShow,
   unfocusStyle,
   useForwardedRef,
@@ -42,8 +43,8 @@ const StyledList = styled.ul`
 `;
 
 const StyledItem = styled(Box)`
-  ${(props) => props.onClick && `cursor: pointer;`}
-  ${(props) => props.draggable && `cursor: move;`}
+  ${(props) => props.onClick && !props.isDisabled && `cursor: pointer;`}
+  ${(props) => props.draggable && !props.isDisabled && `cursor: move;`}
   // during the interim state when a user is holding down a click,
   // the individual list item has focus in the DOM until the click
   // completes and focus is placed back on the list container.
@@ -51,6 +52,20 @@ const StyledItem = styled(Box)`
   // as opposed to the item itself.
   &:focus {
     ${unfocusStyle({ forceOutline: true, skipSvgChildren: true })}
+  }
+  ${(props) => {
+    let disabledStyle;
+    if (props.isDisabled && props.theme.list?.item?.disabled) {
+      const { color, cursor } = props.theme.list.item.disabled;
+      disabledStyle = {
+        color: normalizeColor(color, props.theme),
+        cursor,
+      };
+    }
+    return disabledStyle;
+  }}
+  &:hover {
+    ${(props) => props.isDisabled && `background-color: unset;`}
   }
   ${(props) =>
     props.theme.list && props.theme.list.item && props.theme.list.item.extend}
@@ -115,6 +130,8 @@ const getItemId = (item, index, primaryKey) => {
 const List = React.forwardRef(
   (
     {
+      a11yTitle,
+      'aria-label': ariaLabel,
       action,
       as,
       background,
@@ -122,9 +139,14 @@ const List = React.forwardRef(
       children,
       data,
       defaultItemProps,
+      disabled: disabledItems,
       focus,
       itemKey,
       itemProps,
+      onActive,
+      onClickItem,
+      onKeyDown,
+      onMore,
       onOrder,
       pad,
       paginate,
@@ -132,8 +154,6 @@ const List = React.forwardRef(
       secondaryKey,
       show: showProp,
       step = paginate ? 50 : undefined,
-      onClickItem,
-      onMore,
       ...rest
     },
     ref,
@@ -151,6 +171,13 @@ const List = React.forwardRef(
     // index of the item which is currently active.
     const [active, setActive] = useState();
     const [lastActive, setLastActive] = useState();
+    const updateActive = (nextActive) => {
+      setActive(nextActive);
+      // we occasionally call updateActive with undefined when it already is so,
+      // no need to call onActive in that case
+      if (onActive && onClickItem && nextActive !== active)
+        onActive(nextActive);
+    };
     const [itemFocus, setItemFocus] = useState();
     const [dragging, setDragging] = useState();
 
@@ -208,12 +235,20 @@ const List = React.forwardRef(
                     // even though it moved up or down.
                     if (active % 2) {
                       onOrder(reorder(data, index, index + 1));
-                      setActive(Math.min(active + 2, data.length * 2 - 2));
+                      updateActive(Math.min(active + 2, data.length * 2 - 2));
                     } else {
                       onOrder(reorder(data, index, index - 1));
-                      setActive(Math.max(active - 2, 1));
+                      updateActive(Math.max(active - 2, 1));
                     }
-                  } else {
+                  } else if (
+                    disabledItems?.includes(
+                      typeof itemKey === 'function'
+                        ? itemKey(data[active])
+                        : data[active],
+                    )
+                  ) {
+                    event.preventDefault();
+                  } else if (onClickItem) {
                     event.persist();
                     const adjustedEvent = event;
                     adjustedEvent.item = data[active];
@@ -227,7 +262,7 @@ const List = React.forwardRef(
             (onClickItem || onOrder) && active
               ? () => {
                   const min = onOrder ? 1 : 0;
-                  setActive(Math.max(active - 1, min));
+                  updateActive(Math.max(active - 1, min));
                 }
               : undefined
           }
@@ -236,12 +271,14 @@ const List = React.forwardRef(
               ? () => {
                   const min = onOrder ? 1 : 0;
                   const max = onOrder ? data.length * 2 - 2 : data.length - 1;
-                  setActive(active >= min ? Math.min(active + 1, max) : min);
+                  updateActive(active >= min ? Math.min(active + 1, max) : min);
                 }
               : undefined
           }
+          onKeyDown={onKeyDown}
         >
           <StyledList
+            aria-label={ariaLabel || a11yTitle}
             ref={listRef}
             as={as || 'ul'}
             itemFocus={itemFocus}
@@ -252,12 +289,12 @@ const List = React.forwardRef(
               // gets applied to lastActive instead of the item the user
               // is currently clicking on
               !active && active !== 0
-                ? setActive(lastActive)
-                : setActive(active)
+                ? updateActive(lastActive)
+                : updateActive(active)
             }
             onBlur={() => {
               setLastActive(active);
-              setActive(undefined);
+              updateActive(undefined);
             }}
             {...ariaProps}
             {...rest}
@@ -330,6 +367,17 @@ const List = React.forwardRef(
 
                 const key = itemKey ? itemId : getKey(item, index, itemId);
 
+                let isDisabled;
+                if (disabledItems) {
+                  if (typeof item === 'object' && !itemKey) {
+                    console.error(
+                      // eslint-disable-next-line max-len
+                      `Warning: Missing prop itemKey. Prop disabled requires itemKey to be specified when data is of type 'object'.`,
+                    );
+                  }
+                  isDisabled = disabledItems?.includes(key);
+                }
+
                 if (action) {
                   content = [
                     <Box align="start" key={`actionContainer${index}`}>
@@ -367,24 +415,31 @@ const List = React.forwardRef(
                     tabIndex: -1,
                     active: active === index,
                     onClick: (event) => {
-                      // extract from React's synthetic event pool
-                      event.persist();
-                      const adjustedEvent = event;
-                      adjustedEvent.item = item;
-                      adjustedEvent.index = index;
-                      onClickItem(adjustedEvent);
-                      // put focus on the List container to meet WCAG
-                      // accessibility guidelines that focus remains on `ul`
-                      listRef.current.focus();
+                      // Only prevent event when disabled. We still want screen
+                      // readers to be aware that an option exists, but is in a
+                      // disabled state.
+                      if (isDisabled) {
+                        event.preventDefault();
+                      } else {
+                        // extract from React's synthetic event pool
+                        event.persist();
+                        const adjustedEvent = event;
+                        adjustedEvent.item = item;
+                        adjustedEvent.index = index;
+                        onClickItem(adjustedEvent);
+                        // put focus on the List container to meet WCAG
+                        // accessibility guidelines that focus remains on `ul`
+                        listRef.current.focus();
+                      }
                     },
-                    onMouseOver: () => setActive(index),
-                    onMouseOut: () => setActive(undefined),
+                    onMouseOver: () => updateActive(index),
+                    onMouseOut: () => updateActive(undefined),
                     onFocus: () => {
-                      setActive(index);
+                      updateActive(index);
                       setItemFocus(true);
                     },
                     onBlur: () => {
-                      setActive(undefined);
+                      updateActive(undefined);
                       setItemFocus(false);
                     },
                   };
@@ -402,7 +457,7 @@ const List = React.forwardRef(
                       // eslint-disable-next-line no-param-reassign
                       event.dataTransfer.effectAllowed = 'move';
                       setDragging(index);
-                      setActive(undefined);
+                      updateActive(undefined);
                     },
                     onDragEnd: () => {
                       setDragging(undefined);
@@ -446,14 +501,14 @@ const List = React.forwardRef(
                           onOrder(reorder(data, index, index - 1));
                         }}
                         tabIndex={-1}
-                        onMouseOver={() => setActive(index * 2)}
-                        onMouseOut={() => setActive(undefined)}
+                        onMouseOver={() => updateActive(index * 2)}
+                        onMouseOut={() => updateActive(undefined)}
                         onFocus={() => {
-                          setActive(index * 2);
+                          updateActive(index * 2);
                           setItemFocus(true);
                         }}
                         onBlur={() => {
-                          setActive(undefined);
+                          updateActive(undefined);
                           setItemFocus(false);
                         }}
                       />
@@ -470,14 +525,14 @@ const List = React.forwardRef(
                           onOrder(reorder(data, index, index + 1));
                         }}
                         tabIndex={-1}
-                        onMouseOver={() => setActive(index * 2 + 1)}
-                        onMouseOut={() => setActive(undefined)}
+                        onMouseOver={() => updateActive(index * 2 + 1)}
+                        onMouseOut={() => updateActive(undefined)}
                         onFocus={() => {
-                          setActive(index * 2 + 1);
+                          updateActive(index * 2 + 1);
                           setItemFocus(true);
                         }}
                         onBlur={() => {
-                          setActive(undefined);
+                          updateActive(undefined);
                           setItemFocus(false);
                         }}
                       />
@@ -494,6 +549,19 @@ const List = React.forwardRef(
                   content = <Box flex>{content}</Box>;
                 }
 
+                let itemAriaProps;
+                if (isDisabled) {
+                  itemAriaProps = {
+                    'aria-disabled': true,
+                  };
+                  if (onClickItem) {
+                    itemAriaProps = {
+                      ...itemAriaProps,
+                      'aria-selected': false,
+                    };
+                  }
+                }
+
                 if (itemProps && itemProps[index]) {
                   boxProps = { ...boxProps, ...itemProps[index] };
                 }
@@ -502,14 +570,16 @@ const List = React.forwardRef(
                   <StyledItem
                     key={key}
                     tag="li"
-                    flex={false}
-                    pad={pad || theme.list.item.pad}
                     background={adjustedBackground}
                     border={adjustedBorder}
+                    isDisabled={isDisabled}
+                    flex={false}
+                    pad={pad || theme.list.item.pad}
                     {...defaultItemProps}
                     {...boxProps}
                     {...clickProps}
                     {...orderProps}
+                    {...itemAriaProps}
                   >
                     {onOrder && <Text>{index + 1}</Text>}
                     {content}

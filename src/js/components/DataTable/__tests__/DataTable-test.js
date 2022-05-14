@@ -561,6 +561,26 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('disabled click', () => {
+    const onClickRow = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          disabled={['alpha']}
+          onClickRow={onClickRow}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('beta'));
+    expect(onClickRow).toBeCalledWith(
+      expect.objectContaining({ datum: { a: 'beta' } }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('background', () => {
     const { container } = render(
       <Grommet>
@@ -953,6 +973,25 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('disabled select', () => {
+    const onSelect = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          primaryKey="a"
+          disabled={['alpha']}
+          select={['beta']}
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByLabelText('select alpha'));
+    expect(onSelect).not.toBeCalled();
+  });
+
   test('custom theme', () => {
     const customTheme = {
       dataTable: {
@@ -1043,6 +1082,13 @@ describe('DataTable', () => {
           data={[
             { a: 'one', b: 1 },
             { a: 'two', b: 2 },
+          ]}
+          placeholder={<Text weight="bold">test placeholder</Text>}
+        />
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
           ]}
           placeholder={<Text weight="bold">test placeholder</Text>}
         />
@@ -1367,5 +1413,45 @@ describe('DataTable', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('verticalAlign', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b.c', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: { c: 1 } },
+            { a: 'two', b: { c: 2 } },
+          ]}
+          verticalAlign="top"
+        />
+        <DataTable
+          columns={[
+            {
+              property: 'This is a long header that wraps',
+              header: 'A',
+              footer: 'This is a long footer that wraps',
+              size: 'xsmall',
+            },
+            { property: 'b.c', header: 'B' },
+          ]}
+          data={[
+            { a: 'this is long data that might wrap also', b: { c: 1 } },
+            { a: 'two', b: { c: 2 } },
+          ]}
+          verticalAlign={{
+            header: 'bottom',
+            body: 'top',
+            footer: 'top',
+          }}
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

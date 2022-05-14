@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { Box, Drop, Meter } from 'grommet';
 
+const align = { top: 'bottom', left: 'left' };
+
 const TestDrop = () => {
   const targetRef = useRef();
 
@@ -15,13 +17,13 @@ const TestDrop = () => {
         ref={targetRef}
         size="small"
         background="light-2"
-        values={[{ value: 20, color: 'accent-1' }]}
+        values={[{ value: 20, color: 'brand' }]}
       />
       {targetRef.current && (
         <Drop
           id="test-drop-with-svg"
           plain
-          align={{ top: 'bottom', left: 'left' }}
+          align={align}
           target={targetRef.current}
         >
           <Box pad="large">target is an svg</Box>

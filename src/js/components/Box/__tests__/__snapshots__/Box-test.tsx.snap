@@ -1076,7 +1076,75 @@ exports[`Box animation 1`] = `
 </div>
 `;
 
-exports[`Box as 1`] = `
+exports[`Box as component 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+  class="c0"
+>
+  <header
+    class="c1"
+  />
+</div>
+`;
+
+exports[`Box as function 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+  class="c0"
+>
+  <header
+    class="c1"
+  />
+</div>
+`;
+
+exports[`Box as string 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3175,6 +3243,23 @@ exports[`Box height 1`] = `
   height: 111px;
 }
 
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: 100%;
+  min-height: 192px;
+  height: 768px;
+}
+
 <div
   class="c0"
 >
@@ -3195,6 +3280,9 @@ exports[`Box height 1`] = `
   />
   <div
     class="c6"
+  />
+  <div
+    class="c7"
   />
 </div>
 `;

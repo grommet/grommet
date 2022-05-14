@@ -14,6 +14,11 @@ const lazyTheme = deepMerge(grommet, {
 
 const finalLazyPad = 'xlarge';
 
+const alignBottomLeft = { top: 'bottom', left: 'left' };
+const alignTopRight = { bottom: 'top', right: 'right' };
+const alignTopLeft = { bottom: 'top', left: 'left' };
+const alignBottomRight = { top: 'bottom', right: 'right' };
+
 const LazyDrop = () => {
   const [pad, setPad] = useState(null);
 
@@ -43,7 +48,7 @@ const LazyDrop = () => {
           </Box>
           {topLeftTargetRef.current && (
             <Drop
-              align={{ top: 'bottom', left: 'left' }}
+              align={alignBottomLeft}
               target={topLeftTargetRef.current}
               responsive
             >
@@ -65,7 +70,7 @@ const LazyDrop = () => {
           </Box>
           {topRightTargetRef.current && (
             <Drop
-              align={{ bottom: 'top', right: 'right' }}
+              align={alignTopRight}
               target={topRightTargetRef.current}
               responsive
             >
@@ -85,7 +90,7 @@ const LazyDrop = () => {
           </Box>
           {bottomLeftTargetRef.current && (
             <Drop
-              align={{ bottom: 'top', left: 'left' }}
+              align={alignTopLeft}
               target={bottomLeftTargetRef.current}
               responsive
             >
@@ -102,7 +107,7 @@ const LazyDrop = () => {
           </Box>
           {bottomRightTargetRef.current && (
             <Drop
-              align={{ top: 'bottom', right: 'right' }}
+              align={alignBottomRight}
               target={bottomRightTargetRef.current}
               responsive
             >

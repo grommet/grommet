@@ -192,7 +192,9 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('dates initialized with empty array', () => {
+  test('dates initialized with empty array', async () => {
+    const user = userEvent.setup();
+
     const onChange = jest.fn((event) => event.value);
 
     const { getByText } = render(
@@ -209,7 +211,7 @@ describe('DateInput', () => {
         />
       </Grommet>,
     );
-    userEvent.click(getByText('20'));
+    await user.click(getByText('20'));
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith([
       `2020-07-20T08:00:00.000Z`,
@@ -243,7 +245,9 @@ describe('DateInput', () => {
     expect(document.getElementById('item__drop')).not.toBeNull();
   });
 
-  test('click', () => {
+  test('click', async () => {
+    const user = userEvent.setup();
+
     const { getByPlaceholderText } = render(
       <Grommet>
         <DateInput
@@ -256,7 +260,7 @@ describe('DateInput', () => {
       </Grommet>,
     );
 
-    userEvent.click(getByPlaceholderText('mm/dd/yyyy'));
+    await user.click(getByPlaceholderText('mm/dd/yyyy'));
     expect(document.getElementById('item__drop')).toBeNull();
   });
 
@@ -893,22 +897,26 @@ describe('DateInput', () => {
     expect(container.children).toMatchSnapshot();
   });
 
-  test('clicking calendar icon should open drop', () => {
+  test('clicking calendar icon should open drop', async () => {
+    const user = userEvent.setup();
+
     render(
       <Grommet>
-        <DateInput format="m/d/yy" defaultValue="1/1/2021" />
+        <DateInput format="m/d/yy" defaultValue="2021-01-01" />
       </Grommet>,
     );
     expect(
       screen.queryByRole('heading', { name: /January 2021/i }),
     ).not.toBeInTheDocument();
-    userEvent.click(screen.getByRole('button', { name: /Calendar/i }));
+    await user.click(screen.getByRole('button', { name: /Calendar/i }));
     expect(
       screen.getByRole('heading', { name: /January 2021/i }),
     ).toBeInTheDocument();
   });
 
-  test('handle focus in FormField', () => {
+  test('handle focus in FormField', async () => {
+    const user = userEvent.setup();
+
     const onFocus = jest.fn();
     const { asFragment } = render(
       <Grommet>
@@ -919,9 +927,9 @@ describe('DateInput', () => {
         </Form>
       </Grommet>,
     );
-    userEvent.tab();
+    await user.tab();
     expect(asFragment()).toMatchSnapshot();
-    userEvent.tab();
+    await user.tab();
     expect(asFragment()).toMatchSnapshot();
     expect(onFocus).toHaveBeenCalledTimes(1);
   });

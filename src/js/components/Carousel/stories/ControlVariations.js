@@ -18,16 +18,16 @@ export const ControlVariations = () => (
         Continuous slides with both arrow and selector controls
       </Text>
       <Carousel wrap height="medium" width="medium">
-        <Box fill align="center" justify="center" background="accent-1">
+        <Box fill align="center" justify="center" background="light-1">
           <Attraction size="xlarge" />
         </Box>
         <Box fill align="center" justify="center" background="black">
           <TreeOption size="xlarge" />
         </Box>
-        <Box fill align="center" justify="center" background="accent-3">
+        <Box fill align="center" justify="center" background="light-3">
           <Car size="xlarge" />
         </Box>
-        <Box fill align="center" justify="center" background="accent-4">
+        <Box fill align="center" justify="center" background="brand">
           <Cloud size="xlarge" />
         </Box>
         <Box fill align="center" justify="center">
@@ -43,16 +43,16 @@ export const ControlVariations = () => (
         initialChild={2}
         controls="selectors"
       >
-        <Box fill align="center" justify="center" background="accent-1">
+        <Box fill align="center" justify="center" background="pink">
           <Attraction size="xlarge" />
         </Box>
         <Box fill align="center" justify="center" background="black">
           <TreeOption size="xlarge" />
         </Box>
-        <Box fill align="center" justify="center" background="accent-3">
+        <Box fill align="center" justify="center" background="light-2">
           <Car size="xlarge" />
         </Box>
-        <Box fill align="center" justify="center" background="accent-4">
+        <Box fill align="center" justify="center" background="light-1">
           <Cloud size="xlarge" />
         </Box>
         <Box fill align="center" justify="center">
@@ -68,16 +68,16 @@ export const ControlVariations = () => (
         controls="arrows"
         initialChild={3}
       >
-        <Box fill align="center" justify="center" background="accent-1">
+        <Box fill align="center" justify="center" background="pink">
           <Attraction size="xlarge" />
         </Box>
         <Box fill align="center" justify="center" background="black">
           <TreeOption size="xlarge" />
         </Box>
-        <Box fill align="center" justify="center" background="accent-3">
+        <Box fill align="center" justify="center" background="light-1">
           <Car size="xlarge" />
         </Box>
-        <Box fill align="center" justify="center" background="accent-4">
+        <Box fill align="center" justify="center" background="light-2">
           <Cloud size="xlarge" />
         </Box>
         <Box fill align="center" justify="center">

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, InfiniteScroll, Text } from 'grommet';
 
 const allItems = Array(2000)
   .fill()
@@ -14,14 +13,15 @@ const MyItem = ({ item }) => (
   </Box>
 );
 
-export const ClassChildrenInfiniteScroll = props => (
-  <Grommet theme={grommet}>
-    <Box>
-      <InfiniteScroll items={allItems} {...props}>
-        {item => <MyItem key={item} item={item} />}
-      </InfiniteScroll>
-    </Box>
-  </Grommet>
+export const ClassChildrenInfiniteScroll = (props) => (
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box>
+    <InfiniteScroll items={allItems} {...props}>
+      {(item) => <MyItem key={item} item={item} />}
+    </InfiniteScroll>
+  </Box>
+  // </Grommet>
 );
 
 ClassChildrenInfiniteScroll.storyName = 'Class children';

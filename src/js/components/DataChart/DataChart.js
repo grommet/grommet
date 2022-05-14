@@ -11,6 +11,7 @@ import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
 import { Stack } from '../Stack';
+import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
 import { Detail } from './Detail';
 import { Legend } from './Legend';
@@ -46,6 +47,7 @@ const DataChart = forwardRef(
       guide: guideProp,
       legend,
       offset,
+      placeholder,
       pad: padProp,
       series: seriesProp,
       size,
@@ -190,7 +192,7 @@ const DataChart = forwardRef(
       else if (steps % 2 === 0) medium = 3;
       else medium = 2;
       return {
-        x: { coarse: 2, fine: data.length, medium },
+        x: { coarse: Math.min(data.length, 2), fine: data.length, medium },
         y: {
           ...(heightYGranularity[(size && size.height) || 'small'] || {
             fine: 5,
@@ -305,6 +307,11 @@ const DataChart = forwardRef(
           alignedBounds[1][1] = Math.max(alignedBounds[1][1], bounds[1][1]);
         });
         chartBounds = chartBounds.map(() => alignedBounds);
+      }
+
+      if (typeof boundsProp === 'object') {
+        if (boundsProp.y)
+          chartBounds = chartBounds.map((b) => [b[0], [...boundsProp.y]]);
       }
 
       return chartValues.map((values, index) => {
@@ -426,25 +433,37 @@ const DataChart = forwardRef(
       [charts, chartProps, offset, theme],
     );
 
-    // calculate the offset for each chart, which is a sum of the thicknesses
-    // that preceded it
-    const offsets = useMemo(
+    // normalize any offset gap
+    const offsetGap = useMemo(
       () =>
-        offset
-          ? thicknesses.map((t, i) =>
-              thicknesses.slice(0, i).reduce((a, b) => a + b, 0),
-            )
-          : undefined,
-      [offset, thicknesses],
+        (offset?.gap &&
+          parseMetricToNum(theme.global.edgeSize[offset.gap] || offset.gap)) ||
+        0,
+      [offset, theme],
     );
+
+    // calculate the offset for each chart, which is a sum of the thicknesses
+    // any offset gaps that preceded it
+    const offsets = useMemo(() => {
+      if (offset) {
+        return thicknesses.map((t, i) =>
+          thicknesses.slice(0, i).reduce((a, b) => a + b + offsetGap, 0),
+        );
+      }
+      return undefined;
+    }, [offset, offsetGap, thicknesses]);
 
     // Calculate the total pad we should add to the end of each chart.
     // We do this to shrink the width of each chart so we can shift them
     // via `translate` and have them take up the right amount of width.
     const offsetPad = useMemo(
       () =>
-        offset ? `${thicknesses.reduce((a, b) => a + b, 0)}px` : undefined,
-      [offset, thicknesses],
+        offsets
+          ? `${
+              offsets[offsets.length - 1] + thicknesses[thicknesses.length - 1]
+            }px`
+          : undefined,
+      [offsets, thicknesses],
     );
 
     // The thickness of the Detail segments. We need to convert to numbers
@@ -518,18 +537,34 @@ const DataChart = forwardRef(
         <XAxis
           ref={xRef}
           axis={axis}
-          chartProps={chartProps}
-          data={data}
+          values={
+            (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
+              .axis[0]
+          }
+          pad={offsetPad ? { ...pad, end: offsetPad } : pad}
           renderValue={renderValue}
           serie={axis.x.property && getPropertySeries(axis.x.property)}
+          style={
+            offsetPad
+              ? {
+                  transform: `translate(${
+                    offsets[Math.floor(offsets.length / 2)]
+                  }px, 0px)`,
+                }
+              : {}
+          }
         />
       ) : null;
 
     const yAxisElement =
-      axis && axis.y && chartProps.length ? (
+      axis && axis.y && (chartProps.length || boundsProp?.y) ? (
         <YAxis
           axis={axis}
-          chartProps={chartProps}
+          values={
+            boundsProp?.y?.slice(0).reverse() ||
+            (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
+              .axis[1]
+          }
           pad={pad}
           renderValue={renderValue}
           serie={axis.y.property && getPropertySeries(axis.y.property)}
@@ -613,11 +648,25 @@ const DataChart = forwardRef(
             />
           );
         })}
+        {placeholder &&
+          ((typeof placeholder === 'string' && (
+            <Box
+              fill="vertical"
+              align="center"
+              justify="center"
+              background={{ color: 'background-front', opacity: 'strong' }}
+              margin={pad}
+            >
+              <Text color="text-weak">{placeholder}</Text>
+            </Box>
+          )) ||
+            placeholder)}
         {detail && (
           <Detail
             activeProperty={activeProperty}
             axis={axis}
             data={data}
+            pad={pad}
             series={series}
             seriesStyles={seriesStyles}
             renderValue={renderValue}

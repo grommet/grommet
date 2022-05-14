@@ -253,6 +253,7 @@ Object {
       "margin": [Function],
       "offset": [Function],
       "pad": [Function],
+      "placeholder": [Function],
       "series": [Function],
       "size": [Function],
     },
@@ -296,6 +297,7 @@ Object {
       "align": [Function],
       "background": [Function],
       "elevation": [Function],
+      "inline": [Function],
       "margin": [Function],
       "onClickOutside": [Function],
       "onEsc": [Function],
@@ -363,14 +365,12 @@ Object {
     "$$typeof": Symbol(react.context),
     "Consumer": Object {
       "$$typeof": Symbol(react.context),
-      "_calculateChangedBits": null,
       "_context": [Circular],
     },
     "Provider": Object {
       "$$typeof": Symbol(react.provider),
       "_context": [Circular],
     },
-    "_calculateChangedBits": null,
     "_currentRenderer": null,
     "_currentRenderer2": null,
     "_currentValue": Object {
@@ -381,6 +381,8 @@ Object {
       "useFormField": [Function],
       "useFormInput": [Function],
     },
+    "_defaultValue": null,
+    "_globalName": null,
     "_threadCount": 0,
   },
   "FormField": Object {
@@ -519,10 +521,12 @@ Object {
       "children": [Function],
       "data": [Function],
       "defaultItemProps": [Function],
+      "disabled": [Function],
       "gridArea": [Function],
       "itemKey": [Function],
       "itemProps": [Function],
       "margin": [Function],
+      "onActive": [Function],
       "onClickItem": [Function],
       "onMore": [Function],
       "onOrder": [Function],
@@ -619,6 +623,30 @@ Object {
   "NameValuePair": [Function],
   "Nav": [Function],
   "Notification": [Function],
+  "Page": [Function],
+  "PageContent": [Function],
+  "PageContext": Object {
+    "$$typeof": Symbol(react.context),
+    "Consumer": Object {
+      "$$typeof": Symbol(react.context),
+      "_context": [Circular],
+    },
+    "Provider": Object {
+      "$$typeof": Symbol(react.provider),
+      "_context": [Circular],
+    },
+    "_currentRenderer": null,
+    "_currentRenderer2": null,
+    "_currentValue": Object {},
+    "_currentValue2": Object {},
+    "_defaultValue": null,
+    "_globalName": null,
+    "_threadCount": 0,
+  },
+  "PageHeader": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "Pagination": Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
@@ -754,6 +782,7 @@ Object {
             "light": "brand",
           },
           "fontWeight": 600,
+          "gap": "small",
           "hover": Object {
             "textDecoration": "underline",
           },
@@ -1071,6 +1100,7 @@ Object {
           "header": Object {
             "gap": "small",
             "units": Object {
+              "alignSelf": "end",
               "color": "text-xweak",
               "margin": Object {
                 "left": "xsmall",
@@ -1464,6 +1494,11 @@ Object {
           "spacing": "24px",
         },
         "grommet": Object {},
+        "header": Object {
+          "sticky": Object {
+            "zIndex": "20",
+          },
+        },
         "heading": Object {
           "font": Object {},
           "level": Object {
@@ -1650,6 +1685,10 @@ Object {
           },
           "item": Object {
             "border": "horizontal",
+            "disabled": Object {
+              "color": "status-disabled",
+              "cursor": "default",
+            },
             "pad": Object {
               "horizontal": "medium",
               "vertical": "small",
@@ -1707,6 +1746,7 @@ Object {
           },
         },
         "notification": Object {
+          "actions": Object {},
           "close": Object {
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
@@ -1724,14 +1764,38 @@ Object {
           },
           "critical": Object {
             "color": "status-critical",
+            "global": Object {
+              "background": Object {
+                "color": "status-critical",
+                "opacity": "weak",
+              },
+            },
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
             },
           },
+          "direction": "column",
+          "global": Object {
+            "container": Object {
+              "pad": Object {
+                "horizontal": "large",
+                "vertical": "xsmall",
+              },
+            },
+            "direction": "row",
+          },
           "iconContainer": Object {
+            "flex": false,
             "pad": Object {
               "right": "small",
+            },
+          },
+          "info": Object {
+            "color": "text-strong",
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
             },
           },
           "message": Object {
@@ -1739,6 +1803,12 @@ Object {
           },
           "normal": Object {
             "color": "status-ok",
+            "global": Object {
+              "background": Object {
+                "color": "status-ok",
+                "opacity": "weak",
+              },
+            },
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
@@ -1771,6 +1841,12 @@ Object {
           },
           "unknown": Object {
             "color": "status-unknown",
+            "global": Object {
+              "background": Object {
+                "color": "status-unknown",
+                "opacity": "weak",
+              },
+            },
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
@@ -1778,10 +1854,196 @@ Object {
           },
           "warning": Object {
             "color": "status-warning",
+            "global": Object {
+              "background": Object {
+                "color": "status-warning",
+                "opacity": "weak",
+              },
+            },
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
             },
+          },
+        },
+        "page": Object {
+          "full": Object {
+            "alignSelf": "start",
+            "large": Object {
+              "pad": Object {
+                "horizontal": "large",
+              },
+            },
+            "medium": Object {
+              "pad": Object {
+                "horizontal": "medium",
+              },
+            },
+            "small": Object {
+              "pad": Object {
+                "horizontal": "large",
+              },
+            },
+            "width": Object {
+              "max": "100%",
+              "min": "medium",
+            },
+          },
+          "narrow": Object {
+            "alignSelf": "center",
+            "large": Object {
+              "pad": Object {
+                "horizontal": "large",
+              },
+            },
+            "medium": Object {
+              "pad": Object {
+                "horizontal": "medium",
+              },
+            },
+            "small": Object {
+              "pad": Object {
+                "horizontal": "large",
+              },
+            },
+            "width": Object {
+              "max": "large",
+              "min": "medium",
+            },
+          },
+          "wide": Object {
+            "alignSelf": "center",
+            "large": Object {
+              "pad": Object {
+                "horizontal": "large",
+              },
+            },
+            "medium": Object {
+              "pad": Object {
+                "horizontal": "medium",
+              },
+            },
+            "small": Object {
+              "pad": Object {
+                "horizontal": "large",
+              },
+            },
+            "width": Object {
+              "max": "xxlarge",
+              "min": "medium",
+            },
+          },
+        },
+        "pageHeader": Object {
+          "actions": Object {
+            "align": "end",
+          },
+          "large": Object {
+            "areas": Array [
+              Array [
+                "parent",
+                "null",
+              ],
+              Array [
+                "title",
+                "actions",
+              ],
+              Array [
+                "subtitle",
+                "actions",
+              ],
+            ],
+            "columns": Array [
+              Array [
+                "medium",
+                "large",
+              ],
+              "auto",
+            ],
+            "gap": Object {
+              "column": "large",
+              "row": "xsmall",
+            },
+            "rows": Array [
+              "auto",
+              "auto",
+              "auto",
+            ],
+          },
+          "medium": Object {
+            "areas": Array [
+              Array [
+                "parent",
+                "null",
+              ],
+              Array [
+                "title",
+                "actions",
+              ],
+              Array [
+                "subtitle",
+                "actions",
+              ],
+            ],
+            "columns": Array [
+              Array [
+                "medium",
+                "large",
+              ],
+              "auto",
+            ],
+            "gap": Object {
+              "column": "medium",
+              "row": "xsmall",
+            },
+            "rows": Array [
+              "auto",
+              "auto",
+              "auto",
+            ],
+          },
+          "parent": Object {
+            "align": "start",
+          },
+          "small": Object {
+            "areas": Array [
+              Array [
+                "parent",
+                "null",
+              ],
+              Array [
+                "title",
+                "actions",
+              ],
+              Array [
+                "subtitle",
+                "actions",
+              ],
+            ],
+            "columns": Array [
+              Array [
+                "small",
+                "flex",
+              ],
+              "auto",
+            ],
+            "gap": Object {
+              "column": "large",
+              "row": "xsmall",
+            },
+            "rows": Array [
+              "auto",
+              "auto",
+              "auto",
+            ],
+          },
+          "subtitle": Object {
+            "fill": true,
+            "margin": "none",
+          },
+          "title": Object {
+            "fill": true,
+            "margin": "none",
           },
         },
         "pagination": Object {
@@ -2221,6 +2483,10 @@ Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
             },
+            "description": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
             "fullScreen": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
@@ -2244,6 +2510,7 @@ Object {
           },
           "scrubber": Object {
             "color": "light-4",
+            "interval": 10,
           },
         },
         "worldMap": Object {
@@ -2354,6 +2621,7 @@ Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
       "align": [Function],
+      "border": [Function],
       "plain": [Function],
       "scope": [Function],
       "size": [Function],
@@ -2497,6 +2765,7 @@ Object {
       "margin": [Function],
       "messages": [Function],
       "mute": [Function],
+      "skipInterval": [Function],
     },
     "render": [Function],
   },

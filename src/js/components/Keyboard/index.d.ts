@@ -2,6 +2,7 @@ import * as React from 'react';
 import { KeyboardType } from '../../utils';
 
 export interface KeyboardProps {
+  children?: React.ReactNode;
   target?: 'component' | 'document';
   onBackspace?: KeyboardType;
   onComma?: KeyboardType;

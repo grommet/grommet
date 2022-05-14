@@ -11,6 +11,10 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Notification, Button } from '../..';
 
+const TestNotification = ({ ...rest }) => (
+  <Notification title="title" message="message" {...rest} />
+);
+
 describe('Notification', () => {
   beforeEach(createPortal);
   test('should have no accessibility violations', async () => {
@@ -37,7 +41,9 @@ describe('Notification', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('onClose', () => {
+  test('onClose', async () => {
+    const user = userEvent.setup();
+
     const onClose = jest.fn();
     render(
       <Grommet>
@@ -45,7 +51,7 @@ describe('Notification', () => {
       </Grommet>,
     );
 
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(onClose).toBeCalled();
   });
 
@@ -79,7 +85,9 @@ describe('Notification', () => {
     }),
   );
 
-  test('autoClose true', () => {
+  test('autoClose true', async () => {
+    const user = userEvent.setup({ delay: null });
+
     jest.useFakeTimers('modern');
     const onOpen = jest.fn();
     const onClose = jest.fn();
@@ -109,7 +117,7 @@ describe('Notification', () => {
       );
     };
     render(<Test />);
-    userEvent.click(screen.getByRole('button', { name: 'Show Notification' }));
+    await user.click(screen.getByRole('button', { name: 'Show Notification' }));
     expect(screen.getByText('Status Title')).toBeInTheDocument();
     expect(onOpen).toHaveBeenCalled();
     act(() => {
@@ -118,7 +126,9 @@ describe('Notification', () => {
     expect(onClose).toHaveBeenCalled();
   });
 
-  test('autoClose false', () => {
+  test('autoClose false', async () => {
+    const user = userEvent.setup({ delay: null });
+
     jest.useFakeTimers('modern');
     const onOpen = jest.fn();
     const onClose = jest.fn();
@@ -148,11 +158,85 @@ describe('Notification', () => {
       );
     };
     render(<Test />);
-    userEvent.click(screen.getByRole('button', { name: 'Show Notification' }));
+    await user.click(screen.getByRole('button', { name: 'Show Notification' }));
     expect(onOpen).toHaveBeenCalled();
     act(() => {
       jest.advanceTimersByTime(9000);
     });
     expect(onClose).not.toHaveBeenCalled();
+  });
+
+  test('custom theme', () => {
+    const theme = {
+      notification: {
+        direction: 'row',
+        truncation: true,
+        container: {
+          pad: 'medium',
+        },
+        toast: {
+          direction: 'column',
+          truncation: false,
+        },
+        critical: {
+          background: 'red',
+          toast: {
+            background: 'background-front',
+          },
+        },
+      },
+    };
+
+    const Test = () => (
+      <Grommet theme={theme}>
+        <TestNotification status="critical" />
+        <TestNotification toast title="Toast title" status="critical" />
+      </Grommet>
+    );
+    const { asFragment } = render(<Test />);
+
+    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByText('Toast title')).toBeInTheDocument();
+  });
+
+  test('actions', () => {
+    render(
+      <Grommet>
+        <TestNotification
+          actions={[{ href: '/some-link', label: 'Renew Subscription' }]}
+        />
+      </Grommet>,
+    );
+
+    const link = screen.getByRole('link', { name: 'Renew Subscription' });
+    expect(link).toHaveAttribute('href', '/some-link');
+  });
+
+  test('multi actions', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <TestNotification
+          actions={[
+            { href: '/some-link', label: 'Renew Subscription' },
+            {
+              href: '/link',
+              label: 'View More',
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('global', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <TestNotification global />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

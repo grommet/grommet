@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { Grommet, Box, Image } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Image } from 'grommet';
 
 export const Opacity = () => (
-  <Grommet theme={grommet}>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box>
     <Box gap="small" direction="row">
       <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
       <Image opacity="strong" src="//v2.grommet.io/assets/IMG_4245.jpg" />
@@ -20,7 +21,8 @@ export const Opacity = () => (
     <Box gap="small" direction="row">
       <Image opacity="0.6" src="//v2.grommet.io/assets/IMG_4245.jpg" />
     </Box>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 export default {

@@ -16,6 +16,11 @@ const RangeInput = forwardRef(
     {
       a11yTitle,
       color,
+      focus: focusProp,
+      // When in a FormField, focusIndicator = false,
+      // so that the FormField has focus style. If RangeInput
+      // is not in a FormField, it will have focus.
+      focusIndicator = true,
       name,
       onChange,
       onFocus,
@@ -29,13 +34,13 @@ const RangeInput = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
+    const [focus, setFocus] = useState(focusProp);
 
     const [value, setValue] = formContext.useFormInput({
       name,
       value: valueProp,
     });
 
-    const [focus, setFocus] = useState();
     const [scroll, setScroll] = useState({
       x: null,
       y: null,
@@ -93,6 +98,7 @@ const RangeInput = forwardRef(
         ref={rangeInputRef}
         name={name}
         focus={focus}
+        focusIndicator={focusIndicator}
         value={value}
         {...rest}
         color={color}

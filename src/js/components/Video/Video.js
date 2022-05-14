@@ -10,6 +10,7 @@ import React, {
 import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -17,6 +18,7 @@ import { Menu } from '../Menu';
 import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
+import { Keyboard } from '../Keyboard';
 import { containsFocus, useForwardedRef } from '../../utils';
 
 import {
@@ -61,17 +63,21 @@ const Video = forwardRef(
       onPlay,
       onTimeUpdate,
       onVolumeChange,
+      skipInterval,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const { format } = useContext(MessageContext);
+    const announce = useContext(AnnounceContext);
     const [captions, setCaptions] = useState([]);
     const [currentTime, setCurrentTime] = useState();
     const [duration, setDuration] = useState();
     const [percentagePlayed, setPercentagePlayed] = useState();
     const [playing, setPlaying] = useState(false);
+    const [announceAudioDescription, setAnnounceAudioDescription] =
+      useState(false);
     const [scrubTime, setScrubTime] = useState();
     const [volume, setVolume] = useState();
     const [hasPlayed, setHasPlayed] = useState(false);
@@ -132,6 +138,9 @@ const Video = forwardRef(
       return () => clearTimeout(timer);
     }, [interacting]);
 
+    // track which audio description track is active
+    const [activeTrack, setActiveTrack] = useState();
+
     useLayoutEffect(() => {
       const video = videoRef.current;
       if (video) {
@@ -157,22 +166,47 @@ const Video = forwardRef(
 
         // remember the state of the text tracks for subsequent rendering
         const { textTracks } = video;
-        if (textTracks.length > 0) {
-          if (textTracks.length === 1) {
-            const active = textTracks[0].mode === 'showing';
-            if (!captions || !captions[0] || captions[0].active !== active) {
-              setCaptions([{ active }]);
-            }
-          } else {
-            const nextCaptions = [];
-            let set = false;
-            for (let i = 0; i < textTracks.length; i += 1) {
-              const track = textTracks[i];
-              const active = track.mode === 'showing';
-              nextCaptions.push({ label: track.label, active });
-              if (!captions || !captions[i] || captions[i].active !== active) {
-                set = true;
+        const nextCaptions = [];
+        let set = false;
+        // iterate through all of the tracks provided
+        for (let i = 0; i < textTracks.length; i += 1) {
+          const track = textTracks[i];
+          const active = track.mode === 'showing';
+
+          const getActiveTrack = (currentVideoTime) => {
+            let nextActiveTrack;
+            for (let j = 0; j < track.cues.length; j += 1) {
+              if (
+                currentVideoTime > track?.cues[j]?.startTime &&
+                currentVideoTime < track?.cues[j]?.endTime
+              ) {
+                nextActiveTrack = track?.cues[j]?.text;
               }
+            }
+
+            return nextActiveTrack;
+          };
+
+          // track is an audio description
+          if (track.kind === 'descriptions') {
+            if (announceAudioDescription) {
+              video.ontimeupdate = () => {
+                const nextActiveTrack = getActiveTrack(video.currentTime);
+                if (activeTrack !== nextActiveTrack) {
+                  if (nextActiveTrack) {
+                    announce(nextActiveTrack, 'assertive');
+                  }
+                  setActiveTrack(nextActiveTrack);
+                }
+              };
+            }
+          }
+
+          // otherwise treat as captions
+          else {
+            nextCaptions.push({ label: track.label, active });
+            if (!captions || !captions[i] || captions[i].active !== active) {
+              set = true;
             }
             if (set) {
               setCaptions(nextCaptions);
@@ -180,7 +214,15 @@ const Video = forwardRef(
           }
         }
       }
-    }, [captions, height, videoRef, width]);
+    }, [
+      activeTrack,
+      announce,
+      announceAudioDescription,
+      captions,
+      height,
+      videoRef,
+      width,
+    ]);
 
     const play = useCallback(() => videoRef.current.play(), [videoRef]);
 
@@ -210,6 +252,18 @@ const Video = forwardRef(
       [duration, videoRef],
     );
 
+    const seekForward = useCallback(() => {
+      setInteracting(true);
+      videoRef.current.currentTime +=
+        skipInterval || theme.video.scrubber.interval;
+    }, [skipInterval, theme.video.scrubber.interval, videoRef]);
+
+    const seekBackward = useCallback(() => {
+      setInteracting(true);
+      videoRef.current.currentTime -=
+        skipInterval || theme.video.scrubber.interval;
+    }, [skipInterval, theme.video.scrubber.interval, videoRef]);
+
     const louder = useCallback(() => {
       videoRef.current.volume += VOLUME_STEP;
     }, [videoRef]);
@@ -218,12 +272,14 @@ const Video = forwardRef(
       videoRef.current.volume -= VOLUME_STEP;
     }, [videoRef]);
 
-    const showCaptions = (index) => {
-      const { textTracks } = videoRef.current;
-      for (let i = 0; i < textTracks.length; i += 1) {
-        textTracks[i].mode = i === index ? 'showing' : 'hidden';
-      }
-    };
+    const showCaptions = useCallback(
+      (index) => {
+        const { textTracks } = videoRef.current;
+        for (let i = 0; i < textTracks.length; i += 1)
+          textTracks[i].mode = i === index ? 'showing' : 'hidden';
+      },
+      [videoRef],
+    );
 
     const fullscreen = useCallback(() => {
       const video = videoRef.current;
@@ -262,16 +318,46 @@ const Video = forwardRef(
         Play: theme.video.icons.play,
         ReduceVolume: theme.video.icons.reduceVolume,
         Volume: theme.video.icons.volume,
+        Description: theme.video.icons.description,
       };
 
-      const captionControls = captions.map((caption) => ({
+      const captionControls = captions.map((caption, index) => ({
         icon: caption.label ? undefined : (
           <Icons.ClosedCaption color={iconColor} />
         ),
         label: caption.label,
         active: caption.active,
-        onClick: () => showCaptions(caption.active ? -1 : 0),
+        a11yTitle:
+          caption.label ||
+          format({
+            id: 'video.captions',
+            messages,
+          }),
+        onClick: () => {
+          showCaptions(caption.active ? -1 : index);
+          const updatedCaptions = [];
+          for (let i = 0; i < captions.length; i += 1) {
+            updatedCaptions.push(captions[i]);
+            // set other captions to active=false
+            if (i !== index && updatedCaptions[i].active)
+              updatedCaptions[i].active = false;
+            // set the currently selected captions to active
+            else if (i === index)
+              updatedCaptions[i].active = !captions[index].active;
+          }
+          setCaptions(updatedCaptions);
+        },
       }));
+
+      const descriptionControls = {
+        icon: <Icons.Description color={iconColor} />,
+        a11yTitle: format({
+          id: 'video.audioDescriptions',
+          messages,
+        }),
+        active: announceAudioDescription,
+        onClick: () => setAnnounceAudioDescription(!announceAudioDescription),
+      };
 
       const volumeControls = ['volume', 'reduceVolume'].map((control) => ({
         icon:
@@ -298,6 +384,7 @@ const Video = forwardRef(
 
       const buttonProps = {
         captions: captionControls,
+        descriptions: descriptionControls,
         volume: volumeControls,
         fullScreen: {
           icon: <Icons.FullScreen color={iconColor} />,
@@ -313,7 +400,8 @@ const Video = forwardRef(
             id: 'video.pauseButton',
             messages,
           }),
-          onClick: playing ? pause : play,
+          disabled: !playing,
+          onClick: pause,
         },
         play: {
           icon: <Icons.Play color={iconColor} />,
@@ -321,7 +409,8 @@ const Video = forwardRef(
             id: 'video.playButton',
             messages,
           }),
-          onClick: playing ? pause : play,
+          disabled: playing,
+          onClick: play,
         },
       };
 
@@ -332,8 +421,18 @@ const Video = forwardRef(
           volumeControls.map((control) => controlsMenuItems.push(control));
           return undefined;
         }
-        if (typeof item === 'string')
+        if (item === 'captions' && typeof buttonProps[item] === 'object') {
+          for (let i = 0; i < buttonProps[item].length; i += 1)
+            controlsMenuItems.push(buttonProps[item][i]);
+          return undefined;
+        }
+        if (item === 'descriptions') {
+          controlsMenuItems.push(buttonProps[item]);
+          return undefined;
+        }
+        if (typeof item === 'string') {
           return controlsMenuItems.push(buttonProps[item]);
+        }
         return controlsMenuItems.push(item);
       });
 
@@ -375,6 +474,7 @@ const Video = forwardRef(
               }
               hoverIndicator="background"
               onClick={playing ? pause : play}
+              onFocus={() => setInteracting(true)}
             />
             <Box direction="row" align="center" flex>
               <Box flex>
@@ -412,6 +512,7 @@ const Video = forwardRef(
                     onMouseMove={scrub}
                     onMouseLeave={() => setScrubTime(undefined)}
                     onClick={seek}
+                    onFocus={() => setInteracting(true)}
                   />
                 </Stack>
               </Box>
@@ -428,6 +529,7 @@ const Video = forwardRef(
                 closeMenu: format({ id: 'video.closeMenu', messages }),
               }}
               items={[...controlsMenuItems]}
+              onFocus={() => setInteracting(true)}
             />
           </Box>
         </StyledVideoControls>
@@ -455,53 +557,56 @@ const Video = forwardRef(
     }
 
     return (
-      <StyledVideoContainer
-        ref={containerRef}
-        {...mouseEventListeners}
-        alignSelf={alignSelf}
-        gridArea={gridArea}
-        margin={margin}
-        style={style}
-      >
-        <StyledVideo
-          {...rest}
-          ref={videoRef}
-          onDurationChange={(event) => {
-            const video = videoRef.current;
-            setDuration(video.duration);
-            setPercentagePlayed((video.currentTime / video.duration) * 100);
-            if (onDurationChange) onDurationChange(event);
-          }}
-          onEnded={(event) => {
-            setPlaying(false);
-            if (onEnded) onEnded(event);
-          }}
-          onPause={(event) => {
-            setPlaying(false);
-            if (onPause) onPause(event);
-          }}
-          onPlay={(event) => {
-            setPlaying(true);
-            setHasPlayed(true);
-            if (onPlay) onPlay(event);
-          }}
-          onTimeUpdate={(event) => {
-            const video = videoRef.current;
-            setCurrentTime(video.currentTime);
-            setPercentagePlayed((video.currentTime / video.duration) * 100);
-            if (onTimeUpdate) onTimeUpdate(event);
-          }}
-          onVolumeChange={(event) => {
-            setVolume(videoRef.current.volume);
-            if (onVolumeChange) onVolumeChange(event);
-          }}
-          autoPlay={autoPlay || false}
-          loop={loop || false}
+      <Keyboard onLeft={seekBackward} onRight={seekForward}>
+        <StyledVideoContainer
+          ref={containerRef}
+          {...mouseEventListeners}
+          alignSelf={alignSelf}
+          gridArea={gridArea}
+          margin={margin}
+          style={style}
+          tabIndex="-1"
         >
-          {children}
-        </StyledVideo>
-        {controlsElement}
-      </StyledVideoContainer>
+          <StyledVideo
+            {...rest}
+            ref={videoRef}
+            onDurationChange={(event) => {
+              const video = videoRef.current;
+              setDuration(video.duration);
+              setPercentagePlayed((video.currentTime / video.duration) * 100);
+              if (onDurationChange) onDurationChange(event);
+            }}
+            onEnded={(event) => {
+              setPlaying(false);
+              if (onEnded) onEnded(event);
+            }}
+            onPause={(event) => {
+              setPlaying(false);
+              if (onPause) onPause(event);
+            }}
+            onPlay={(event) => {
+              setPlaying(true);
+              setHasPlayed(true);
+              if (onPlay) onPlay(event);
+            }}
+            onTimeUpdate={(event) => {
+              const video = videoRef.current;
+              setCurrentTime(video.currentTime);
+              setPercentagePlayed((video.currentTime / video.duration) * 100);
+              if (onTimeUpdate) onTimeUpdate(event);
+            }}
+            onVolumeChange={(event) => {
+              setVolume(videoRef.current.volume);
+              if (onVolumeChange) onVolumeChange(event);
+            }}
+            autoPlay={autoPlay || false}
+            loop={loop || false}
+          >
+            {children}
+          </StyledVideo>
+          {controlsElement}
+        </StyledVideoContainer>
+      </Keyboard>
     );
   },
 );

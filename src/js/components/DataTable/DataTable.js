@@ -35,6 +35,7 @@ import {
   StyledPlaceholder,
 } from './StyledDataTable';
 import { DataTablePropTypes } from './propTypes';
+import { PlaceholderBody } from './PlaceholderBody';
 
 function useGroupState(groups, groupBy) {
   const [groupState, setGroupState] = useState(() =>
@@ -58,6 +59,7 @@ const DataTable = ({
   border,
   columns = [],
   data = [],
+  disabled,
   fill,
   groupBy,
   onClickRow, // removing unknown DOM attributes
@@ -81,6 +83,7 @@ const DataTable = ({
   sortable,
   rowDetails,
   step = 50,
+  verticalAlign,
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -356,6 +359,117 @@ const DataTable = ({
       ? { style: { minWidth: '100%' } }
       : undefined;
 
+  let placeholderContent = placeholder;
+  if (placeholder && typeof placeholder === 'string') {
+    placeholderContent = (
+      <Box
+        background={{ color: 'background-front', opacity: 'strong' }}
+        align="center"
+        justify="center"
+        fill="vertical"
+      >
+        <Text>{placeholder}</Text>
+      </Box>
+    );
+  }
+
+  const bodyContent = groups ? (
+    <GroupedBody
+      ref={bodyRef}
+      cellProps={cellProps.body}
+      columns={columns}
+      disabled={disabled}
+      groupBy={typeof groupBy === 'string' ? { property: groupBy } : groupBy}
+      groups={groups}
+      groupState={groupState}
+      pinnedOffset={pinnedOffset}
+      primaryProperty={primaryProperty}
+      onMore={
+        onUpdate
+          ? () => {
+              if (adjustedData.length === limit) {
+                const opts = {
+                  expanded: Object.keys(groupState).filter(
+                    (k) => groupState[k].expanded,
+                  ),
+                  count: limit + step,
+                };
+                if (sort?.property) opts.sort = sort;
+                if (showProp) opts.show = showProp;
+                onUpdate(opts);
+                setLimit((prev) => prev + step);
+              }
+            }
+          : onMore
+      }
+      onSelect={
+        onSelect
+          ? (nextSelected, row) => {
+              setSelected(nextSelected);
+              if (onSelect) onSelect(nextSelected, row);
+            }
+          : undefined
+      }
+      onToggle={onToggleGroup}
+      onUpdate={onUpdate}
+      replace={replace}
+      rowProps={rowProps}
+      selected={selected}
+      size={size}
+      step={step}
+      verticalAlign={
+        typeof verticalAlign === 'string' ? verticalAlign : verticalAlign?.body
+      }
+    />
+  ) : (
+    <Body
+      ref={bodyRef}
+      cellProps={cellProps.body}
+      columns={columns}
+      data={!paginate ? adjustedData : items}
+      disabled={disabled}
+      onMore={
+        onUpdate
+          ? () => {
+              if (adjustedData.length === limit) {
+                const opts = {
+                  count: limit + step,
+                };
+                if (sort?.property) opts.sort = sort;
+                if (showProp) opts.show = showProp;
+                onUpdate(opts);
+                setLimit((prev) => prev + step);
+              }
+            }
+          : onMore
+      }
+      replace={replace}
+      onClickRow={onClickRow}
+      onSelect={
+        onSelect
+          ? (nextSelected, row) => {
+              setSelected(nextSelected);
+              if (onSelect) onSelect(nextSelected, row);
+            }
+          : undefined
+      }
+      pinnedCellProps={cellProps.pinned}
+      pinnedOffset={pinnedOffset}
+      primaryProperty={primaryProperty}
+      rowProps={rowProps}
+      selected={selected}
+      show={!paginate ? showProp : undefined}
+      size={size}
+      step={step}
+      rowDetails={rowDetails}
+      rowExpand={rowExpand}
+      setRowExpand={setRowExpand}
+      verticalAlign={
+        typeof verticalAlign === 'string' ? verticalAlign : verticalAlign?.body
+      }
+    />
+  );
+
   return (
     <Container {...containterProps}>
       <OverflowContainer {...overflowContainerProps}>
@@ -369,6 +483,7 @@ const DataTable = ({
             cellProps={cellProps.header}
             columns={columns}
             data={adjustedData}
+            disabled={disabled}
             fill={fill}
             filtering={filtering}
             filters={filters}
@@ -398,97 +513,22 @@ const DataTable = ({
             primaryProperty={primaryProperty}
             scrollOffset={scrollOffset}
             rowDetails={rowDetails}
+            verticalAlign={
+              typeof verticalAlign === 'string'
+                ? verticalAlign
+                : verticalAlign?.header
+            }
           />
-          {groups ? (
-            <GroupedBody
+          {placeholder && (!items || items.length === 0) ? (
+            <PlaceholderBody
               ref={bodyRef}
-              cellProps={cellProps.body}
               columns={columns}
-              groupBy={
-                typeof groupBy === 'string' ? { property: groupBy } : groupBy
-              }
-              groups={groups}
-              groupState={groupState}
-              pinnedOffset={pinnedOffset}
-              primaryProperty={primaryProperty}
-              onMore={
-                onUpdate
-                  ? () => {
-                      if (adjustedData.length === limit) {
-                        const opts = {
-                          expanded: Object.keys(groupState).filter(
-                            (k) => groupState[k].expanded,
-                          ),
-                          count: limit + step,
-                        };
-                        if (sort?.property) opts.sort = sort;
-                        if (showProp) opts.show = showProp;
-                        onUpdate(opts);
-                        setLimit((prev) => prev + step);
-                      }
-                    }
-                  : onMore
-              }
-              onSelect={
-                onSelect
-                  ? (nextSelected, row) => {
-                      setSelected(nextSelected);
-                      if (onSelect) onSelect(nextSelected, row);
-                    }
-                  : undefined
-              }
-              onToggle={onToggleGroup}
-              onUpdate={onUpdate}
-              replace={replace}
-              rowProps={rowProps}
-              selected={selected}
-              size={size}
-              step={step}
-            />
+              onSelect={onSelect}
+            >
+              {placeholderContent}
+            </PlaceholderBody>
           ) : (
-            <Body
-              ref={bodyRef}
-              cellProps={cellProps.body}
-              columns={columns}
-              data={!paginate ? adjustedData : items}
-              onMore={
-                onUpdate
-                  ? () => {
-                      if (adjustedData.length === limit) {
-                        const opts = {
-                          count: limit + step,
-                        };
-                        if (sort?.property) opts.sort = sort;
-                        if (showProp) opts.show = showProp;
-                        onUpdate(opts);
-                        setLimit((prev) => prev + step);
-                      }
-                    }
-                  : onMore
-              }
-              replace={replace}
-              onClickRow={onClickRow}
-              onSelect={
-                onSelect
-                  ? (nextSelected, row) => {
-                      setSelected(nextSelected);
-                      if (onSelect) onSelect(nextSelected, row);
-                    }
-                  : undefined
-              }
-              pinnedCellProps={cellProps.pinned}
-              pinnedOffset={pinnedOffset}
-              placeholder={placeholder}
-              primaryProperty={primaryProperty}
-              rowProps={rowProps}
-              selected={selected}
-              show={!paginate ? showProp : undefined}
-              size={size}
-              step={step}
-              rowDetails={rowDetails}
-              rowExpand={rowExpand}
-              setRowExpand={setRowExpand}
-            />
+            bodyContent
           )}
           {showFooter && (
             <Footer
@@ -505,22 +545,16 @@ const DataTable = ({
               scrollOffset={scrollOffset}
               selected={selected}
               size={size}
+              verticalAlign={
+                typeof verticalAlign === 'string'
+                  ? verticalAlign
+                  : verticalAlign?.footer
+              }
             />
           )}
-          {placeholder && (
+          {placeholder && items && items.length > 0 && (
             <StyledPlaceholder top={headerHeight} bottom={footerHeight}>
-              {typeof placeholder === 'string' ? (
-                <Box
-                  background={{ color: 'background-front', opacity: 'strong' }}
-                  align="center"
-                  justify="center"
-                  fill="vertical"
-                >
-                  <Text>{placeholder}</Text>
-                </Box>
-              ) : (
-                placeholder
-              )}
+              {placeholderContent}
             </StyledPlaceholder>
           )}
         </StyledDataTable>

@@ -22,8 +22,7 @@ const StyledDataTable = styled(Table)`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto; /* helps Firefox to get table contents to not overflow */
-
+  height: 100%;
   ${genericStyles}
   ${(props) => props.fillProp && fillStyle(props.fillProp)}
   ${(props) =>
@@ -116,6 +115,7 @@ const StyledDataTableHeader = styled(TableHeader)`
   ${(props) =>
     props.size &&
     `
+    height: fit-content;
     display: table;
     width: calc(100% - ${props.scrollOffset}px);
     table-layout: fixed;

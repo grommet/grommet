@@ -486,10 +486,35 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('as', () => {
+  test('as string', () => {
     const { container } = render(
       <Grommet>
         <Box as="header" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('as function', () => {
+    const { container } = render(
+      <Grommet>
+        <Box as={(props) => <header className={props.className} />} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('as component', () => {
+    class Header extends React.Component<any> {
+      render() {
+        return <header className={this.props.className} />;
+      }
+    }
+    const { container } = render(
+      <Grommet>
+        <Box as={Header} />
       </Grommet>,
     );
 
@@ -579,6 +604,7 @@ describe('Box', () => {
         <Box height="large" />
         <Box height="xlarge" />
         <Box height="111px" />
+        <Box height={{ min: 'small', max: '100%', height: 'large' }} />
       </Grommet>,
     );
 

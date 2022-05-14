@@ -36,7 +36,10 @@ export interface FormFieldProps {
   validateOn?: 'blur' | 'submit' | 'change';
 }
 
-type inputProps = Omit<JSX.IntrinsicElements['input'], 'placeholder'>;
+type inputProps = Omit<
+  JSX.IntrinsicElements['input'],
+  'placeholder' | 'required'
+>;
 
 export interface FormFieldExtendedProps extends FormFieldProps, inputProps {}
 
