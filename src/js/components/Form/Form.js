@@ -312,9 +312,7 @@ const Form = forwardRef(
         if (
           pendingValidation &&
           (isInstantValidate(validateOn) ||
-            validationRules.some(
-              ([name, v]) => touched[name] && isInstantValidate(v.validateOn),
-            ))
+            validationRules.some(([, v]) => isInstantValidate(v.validateOn)))
         ) {
           applyValidationRules(
             validationRules.filter(
