@@ -1277,7 +1277,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       subtitle: {
         // any paragraph props
         margin: 'none',
-        fill: true,
       },
       title: {
         // any heading props
@@ -1286,7 +1285,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       small: {
         areas: [
-          ['parent', 'null'],
+          ['parent', 'parent'],
           ['title', 'actions'],
           ['subtitle', 'actions'],
         ],
@@ -1296,21 +1295,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       medium: {
         areas: [
-          ['parent', 'null'],
+          ['parent', 'parent'],
           ['title', 'actions'],
           ['subtitle', 'actions'],
         ],
-        columns: [['medium', 'large'], 'auto'],
+        columns: [['medium', 'flex'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
         gap: { row: 'xsmall', column: 'medium' },
       },
       large: {
         areas: [
-          ['parent', 'null'],
+          ['parent', 'parent'],
           ['title', 'actions'],
           ['subtitle', 'actions'],
         ],
-        columns: [['medium', 'large'], 'auto'],
+        columns: [['medium', 'flex'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
         gap: { row: 'xsmall', column: 'large' },
       },
