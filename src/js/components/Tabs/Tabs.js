@@ -141,6 +141,7 @@ const Tabs = forwardRef(
             wrap
             background={theme.tabs.header.background}
             gap={theme.tabs.gap}
+            onBlur={() => setFocusIndex(activeIndex)}
             {...tabsHeaderStyles}
           >
             {tabs}
