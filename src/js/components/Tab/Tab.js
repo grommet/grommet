@@ -61,6 +61,22 @@ const Tab = ({
     }
   };
 
+  if (!plain) {
+    if (typeof title !== 'string') {
+      normalizedTitle = title;
+    } else if (active) {
+      normalizedTitle = <Text {...theme.tab.active}>{title}</Text>;
+    } else if (disabled && theme.tab.disabled) {
+      normalizedTitle = <Text {...theme.tab.disabled}>{title}</Text>;
+    } else {
+      normalizedTitle = (
+        <Text color={over ? theme.tab.hover.color : theme.tab.color}>
+          {title}
+        </Text>
+      );
+    }
+  }
+
   const onClickTab = (event) => {
     if (event) {
       event.preventDefault();
@@ -183,6 +199,9 @@ const Tab = ({
         plain={plain}
         {...withIconStyles}
         {...tabStyles}
+        style={{
+          whiteSpace: 'nowrap',
+        }}
       >
         {first}
         {second}

@@ -1,10 +1,19 @@
-import React, { forwardRef, useCallback, useContext, useState } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+} from 'react';
+import { Previous, Next } from 'grommet-icons';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
+import { Button } from '../Button';
 import { TabsContext } from './TabsContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
@@ -31,6 +40,7 @@ const Tabs = forwardRef(
     const [focusIndex, setFocusIndex] = useState(activeIndex);
     const [activeContent, setActiveContent] = useState();
     const [activeTitle, setActiveTitle] = useState();
+    const targetRef = useRef();
 
     if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
       setActiveIndex(propsActiveIndex);
@@ -42,6 +52,41 @@ const Tabs = forwardRef(
     /* eslint-enable no-param-reassign */
 
     const tabRefs = React.Children.map(children, () => React.createRef());
+
+    const [containerSize, setContainerSize] = useState([0, 0]);
+    const [overflow, setOverflow] = useState();
+
+    useEffect(() => {
+      if (targetRef.current) {
+        const containerNode = targetRef.current;
+        if (containerNode) {
+          const { parentNode } = containerNode;
+          if (parentNode) {
+            const rect = parentNode.getBoundingClientRect();
+            if (
+              rect.width !== containerSize[0] ||
+              rect.height !== containerSize[1]
+            ) {
+              setContainerSize([rect.width, rect.height]);
+            }
+          }
+        }
+      }
+    }, [targetRef, containerSize]);
+
+    useEffect(() => {
+      // check if tabs are overflowing
+      const onResize = () => {
+        if (targetRef.current.scrollWidth > targetRef.current.offsetWidth) {
+          setOverflow(true);
+        } else setOverflow(false);
+      };
+      window.addEventListener('resize', onResize);
+      onResize();
+      return () => {
+        window.removeEventListener('resize', onResize);
+      };
+    }, [containerSize]);
 
     const getTabsContext = useCallback(
       (index) => {
@@ -132,19 +177,40 @@ const Tabs = forwardRef(
           {...rest}
           background={theme.tabs.background}
         >
-          <StyledTabsHeader
-            as={Box}
-            direction="row"
-            justify={justify}
-            alignSelf={alignControls}
-            flex={false}
-            wrap
-            background={theme.tabs.header.background}
-            gap={theme.tabs.gap}
-            {...tabsHeaderStyles}
-          >
-            {tabs}
-          </StyledTabsHeader>
+          <Box direction="row">
+            {overflow && (
+              <Button
+                icon={<Previous />}
+                onClick={() => {
+                  targetRef.current.scrollLeft -= 80;
+                }}
+              />
+            )}
+            <StyledTabsHeader
+              ref={targetRef}
+              as={Box}
+              direction="row"
+              justify={justify}
+              alignSelf={alignControls}
+              flex
+              overflow="hidden"
+              background={theme.tabs.header.background}
+              gap={theme.tabs.gap}
+              {...tabsHeaderStyles}
+              // style={{ padding: '2px', margin: '-2px' }}
+            >
+              {tabs}
+            </StyledTabsHeader>
+            {overflow && (
+              <Button
+                icon={<Next />}
+                onClick={() => {
+                  targetRef.current.scrollLeft += 80;
+                }}
+              />
+            )}
+          </Box>
+
           <StyledTabPanel
             flex={flex}
             aria-label={tabContentTitle}

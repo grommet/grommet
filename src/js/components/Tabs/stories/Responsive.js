@@ -18,7 +18,7 @@ const ResponsiveTabs = () => {
         activeIndex={index}
         onActive={onActive}
       >
-        <Tab title="Tab 1">
+        <Tab title="Really long tab title">
           <Box margin="small" pad="large" align="center" background="brand">
             <Attraction size="xlarge" />
           </Box>
