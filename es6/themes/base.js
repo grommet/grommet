@@ -1393,8 +1393,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       subtitle: {
         // any paragraph props
-        margin: 'none',
-        fill: true
+        margin: 'none'
       },
       title: {
         // any heading props
@@ -1402,7 +1401,7 @@ export var generate = function generate(baseSpacing, scale) {
         fill: true
       },
       small: {
-        areas: [['parent', 'null'], ['title', 'actions'], ['subtitle', 'actions']],
+        areas: [['parent', 'parent'], ['title', 'actions'], ['subtitle', 'actions']],
         columns: [['small', 'flex'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
         gap: {
@@ -1411,8 +1410,8 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       medium: {
-        areas: [['parent', 'null'], ['title', 'actions'], ['subtitle', 'actions']],
-        columns: [['medium', 'large'], 'auto'],
+        areas: [['parent', 'parent'], ['title', 'actions'], ['subtitle', 'actions']],
+        columns: [['medium', 'flex'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
         gap: {
           row: 'xsmall',
@@ -1420,8 +1419,8 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       large: {
-        areas: [['parent', 'null'], ['title', 'actions'], ['subtitle', 'actions']],
-        columns: [['medium', 'large'], 'auto'],
+        areas: [['parent', 'parent'], ['title', 'actions'], ['subtitle', 'actions']],
+        columns: [['medium', 'flex'], 'auto'],
         rows: ['auto', 'auto', 'auto'],
         gap: {
           row: 'xsmall',
