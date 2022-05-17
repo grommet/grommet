@@ -191,7 +191,7 @@ const Tab = ({
       // ensure focus outline is not covered by hover styling
       // of adjacent tabs
       style={focus && { zIndex: 1 }}
-      tabIndex={active ? 0 : -1}
+      tabIndex={focus || active ? 0 : -1}
     >
       <StyledTab
         as={Box}

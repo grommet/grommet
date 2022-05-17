@@ -196,6 +196,7 @@ const Tabs = forwardRef(
               overflow="hidden"
               background={theme.tabs.header.background}
               gap={theme.tabs.gap}
+              onBlur={() => setFocusIndex(activeIndex)}
               {...tabsHeaderStyles}
               // style={{ padding: '2px', margin: '-2px' }}
             >
