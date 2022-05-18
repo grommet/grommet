@@ -245,7 +245,8 @@ const FileInput = forwardRef(
       /* eslint-disable no-undef */
       const dt = new DataTransfer();
       const curFiles = inputRef.current.files;
-      if (index === 'all') inputRef.current.value = '';
+      if (index === 'all' || nextFiles.length === 0)
+        inputRef.current.value = '';
       for (let i = 0; i < curFiles.length; i += 1) {
         const curfile = curFiles[i];
         if (index !== i) dt.items.add(curfile);
@@ -263,7 +264,6 @@ const FileInput = forwardRef(
         inputRef.current.dispatchEvent(event);
         onChange(event, { files: nextFiles });
       }
-      if (nextFiles.length === 0) inputRef.current.value = '';
       inputRef.current.focus();
     };
 
