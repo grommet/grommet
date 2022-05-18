@@ -205,7 +205,7 @@ exports[`PageHeader basic 1`] = `
   display: grid;
   box-sizing: border-box;
   width: 100%;
-  grid-template-areas: "parent null" "title actions" "subtitle actions";
+  grid-template-areas: "parent parent" "title actions" "subtitle actions";
   grid-template-columns: minmax(192px,1fr) auto;
   grid-gap: 6px 48px;
   grid-template-rows: auto auto auto;
@@ -215,7 +215,7 @@ exports[`PageHeader basic 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  max-width: none;
+  max-width: 432px;
 }
 
 @media only screen and (max-width:768px) {
@@ -496,7 +496,7 @@ exports[`PageHeader children 1`] = `
   display: grid;
   box-sizing: border-box;
   width: 100%;
-  grid-template-areas: "parent null" "title actions" "subtitle actions";
+  grid-template-areas: "parent parent" "title actions" "subtitle actions";
   grid-template-columns: minmax(192px,1fr) auto;
   grid-gap: 6px 48px;
   grid-template-rows: auto auto auto;
@@ -506,7 +506,7 @@ exports[`PageHeader children 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  max-width: none;
+  max-width: 432px;
 }
 
 @media only screen and (max-width:768px) {
@@ -804,7 +804,7 @@ exports[`PageHeader custom theme 1`] = `
   display: grid;
   box-sizing: border-box;
   width: 100%;
-  grid-template-areas: "parent null" "title actions" "subtitle actions";
+  grid-template-areas: "parent parent" "title actions" "subtitle actions";
   grid-template-columns: minmax(192px,1fr) auto;
   grid-gap: 6px 48px;
   grid-template-rows: auto auto auto;
@@ -814,7 +814,7 @@ exports[`PageHeader custom theme 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  max-width: none;
+  max-width: 432px;
 }
 
 @media only screen and (max-width:768px) {
