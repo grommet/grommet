@@ -11,6 +11,7 @@ export const Multiple = () => (
         }}
         onChange={(event, { files }) => {
           console.log(event);
+          console.log(event.target.files);
           for (let i = 0; i < files.length; i += 1) {
             const file = files[i];
             console.log(file.name);
