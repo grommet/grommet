@@ -1941,7 +1941,7 @@ Object {
             "areas": Array [
               Array [
                 "parent",
-                "null",
+                "parent",
               ],
               Array [
                 "title",
@@ -1955,7 +1955,7 @@ Object {
             "columns": Array [
               Array [
                 "medium",
-                "large",
+                "flex",
               ],
               "auto",
             ],
@@ -1973,7 +1973,7 @@ Object {
             "areas": Array [
               Array [
                 "parent",
-                "null",
+                "parent",
               ],
               Array [
                 "title",
@@ -1987,7 +1987,7 @@ Object {
             "columns": Array [
               Array [
                 "medium",
-                "large",
+                "flex",
               ],
               "auto",
             ],
@@ -2008,7 +2008,7 @@ Object {
             "areas": Array [
               Array [
                 "parent",
-                "null",
+                "parent",
               ],
               Array [
                 "title",
@@ -2037,7 +2037,6 @@ Object {
             ],
           },
           "subtitle": Object {
-            "fill": true,
             "margin": "none",
           },
           "title": Object {
@@ -2479,6 +2478,10 @@ Object {
               "render": [Function],
             },
             "configure": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "description": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
             },
