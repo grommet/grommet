@@ -2643,6 +2643,7 @@ Object {
       "margin": [Function],
       "messages": [Function],
       "onActive": [Function],
+      "scroll": [Function],
     },
     "render": [Function],
   },

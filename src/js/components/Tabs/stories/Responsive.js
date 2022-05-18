@@ -13,12 +13,13 @@ const ResponsiveTabs = () => {
     // <Grommet theme={...}>
     <Box align="center" pad="xlarge">
       <Tabs
+        scroll={{ interval: 2 }}
         justify="start"
         alignControls="start"
         activeIndex={index}
         onActive={onActive}
       >
-        <Tab title="Really long tab title">
+        <Tab title="Tab 1">
           <Box margin="small" pad="large" align="center" background="brand">
             <Attraction size="xlarge" />
           </Box>
@@ -66,6 +67,16 @@ const ResponsiveTabs = () => {
         <Tab title="Tab 10">
           <Box margin="small" pad="large" align="center" background="brand">
             <Attraction size="xlarge" />
+          </Box>
+        </Tab>
+        <Tab title="Tab 11">
+          <Box margin="small" pad="large" align="center" background="light-4">
+            <TreeOption size="xlarge" />
+          </Box>
+        </Tab>
+        <Tab title="Tab 12">
+          <Box margin="small" pad="large" align="center" background="dark-3">
+            <Car size="xlarge" />
           </Box>
         </Tab>
       </Tabs>

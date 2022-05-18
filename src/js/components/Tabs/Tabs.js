@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import { Previous, Next } from 'grommet-icons';
 import { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { defaultProps } from '../../default-props';
 
@@ -29,6 +30,7 @@ const Tabs = forwardRef(
       justify = 'center',
       messages,
       responsive = true,
+      scroll,
       ...rest
     },
     ref,
@@ -40,6 +42,9 @@ const Tabs = forwardRef(
     const [focusIndex, setFocusIndex] = useState(activeIndex);
     const [activeContent, setActiveContent] = useState();
     const [activeTitle, setActiveTitle] = useState();
+    const [disableLeftArrow, setDisableLeftArrow] = useState();
+    const [disableRightArrow, setDisableRightArrow] = useState();
+    const [overflow, setOverflow] = useState(undefined);
     const targetRef = useRef();
 
     if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
@@ -53,40 +58,71 @@ const Tabs = forwardRef(
 
     const tabRefs = React.Children.map(children, () => React.createRef());
 
-    const [containerSize, setContainerSize] = useState([0, 0]);
-    const [overflow, setOverflow] = useState();
+    // check if tab is in view
+    function isVisible(element) {
+      const tabRect = element?.getBoundingClientRect();
+      const headerRect = targetRef.current?.getBoundingClientRect();
+      return (
+        tabRect.left >= headerRect.left - 1 &&
+        tabRect.right <= headerRect.right + 1
+      );
+    }
 
-    useEffect(() => {
-      if (targetRef.current) {
-        const containerNode = targetRef.current;
-        if (containerNode) {
-          const { parentNode } = containerNode;
-          if (parentNode) {
-            const rect = parentNode.getBoundingClientRect();
-            if (
-              rect.width !== containerSize[0] ||
-              rect.height !== containerSize[1]
-            ) {
-              setContainerSize([rect.width, rect.height]);
-            }
-          }
+    const updateArrowState = useCallback(() => {
+      setDisableLeftArrow(isVisible(tabRefs[0].current));
+      setDisableRightArrow(isVisible(tabRefs[tabRefs.length - 1].current));
+    }, [tabRefs]);
+
+    useLayoutEffect(() => {
+      if (scroll && overflow) {
+        if (!isVisible(tabRefs[activeIndex].current)) {
+          // if the active tab isn't visible scroll to it
+          tabRefs[activeIndex].current.scrollIntoView();
+          updateArrowState();
         }
       }
-    }, [targetRef, containerSize]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [activeIndex, overflow, scroll]);
 
     useEffect(() => {
-      // check if tabs are overflowing
-      const onResize = () => {
-        if (targetRef.current.scrollWidth > targetRef.current.offsetWidth) {
-          setOverflow(true);
-        } else setOverflow(false);
-      };
-      window.addEventListener('resize', onResize);
-      onResize();
-      return () => {
-        window.removeEventListener('resize', onResize);
-      };
-    }, [containerSize]);
+      // if the focus index is changing make sure the previous and next arrows
+      // are in sync
+      if (scroll && overflow && focusIndex) updateArrowState();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [focusIndex, overflow, scroll]);
+
+    useLayoutEffect(() => {
+      if (scroll) {
+        const onResize = () => {
+          // check if tabs are overflowing
+          if (targetRef.current.scrollWidth > targetRef.current.offsetWidth) {
+            setOverflow(true);
+          } else setOverflow(false);
+          updateArrowState();
+        };
+
+        if (
+          overflow === undefined ||
+          disableLeftArrow === undefined ||
+          disableRightArrow === undefined
+        ) {
+          onResize();
+        }
+        window.addEventListener('resize', onResize);
+        return () => {
+          window.removeEventListener('resize', onResize);
+        };
+      }
+      return () => {};
+    }, [
+      scroll,
+      tabRefs,
+      targetRef,
+      disableLeftArrow,
+      disableRightArrow,
+      overflow,
+      updateArrowState,
+    ]);
 
     const getTabsContext = useCallback(
       (index) => {
@@ -177,12 +213,40 @@ const Tabs = forwardRef(
           {...rest}
           background={theme.tabs.background}
         >
-          <Box direction="row">
-            {overflow && (
+          <Box direction={overflow && scroll ? 'row' : 'column'}>
+            {overflow && scroll && (
               <Button
+                a11yTitle="Previous Tab"
                 icon={<Previous />}
+                disabled={disableLeftArrow}
                 onClick={() => {
-                  targetRef.current.scrollLeft -= 80;
+                  let scrolledToIndex;
+                  for (let i = 0; i < tabRefs.length - 1; i += 1) {
+                    if (
+                      !isVisible(tabRefs[i].current) &&
+                      isVisible(tabRefs[i + 1].current)
+                    ) {
+                      if (scroll && scroll.interval) {
+                        i =
+                          i - (scroll.interval - 1) >= 0
+                            ? i - (scroll.interval - 1)
+                            : 0;
+                      }
+                      scrolledToIndex = i;
+                      tabRefs[i].current.scrollIntoView({ behavior: 'smooth' });
+                      break;
+                    }
+                  }
+
+                  setDisableRightArrow(false);
+                  if (scrolledToIndex === 0) {
+                    // wait for scroll animation to finish
+                    const timer = setTimeout(() => {
+                      setDisableLeftArrow(isVisible(tabRefs[0].current));
+                    }, 500);
+                    return () => clearTimeout(timer);
+                  }
+                  return () => {};
                 }}
               />
             )}
@@ -192,21 +256,54 @@ const Tabs = forwardRef(
               direction="row"
               justify={justify}
               alignSelf={alignControls}
-              flex
-              overflow="hidden"
+              flex={!!scroll}
+              wrap={!scroll}
+              overflow={scroll ? 'hidden' : 'visible'}
               background={theme.tabs.header.background}
               gap={theme.tabs.gap}
               onBlur={() => setFocusIndex(activeIndex)}
               {...tabsHeaderStyles}
-              // style={{ padding: '2px', margin: '-2px' }}
             >
               {tabs}
             </StyledTabsHeader>
-            {overflow && (
+            {overflow && scroll && (
               <Button
+                a11yTitle="Next Tab"
                 icon={<Next />}
+                disabled={disableRightArrow}
                 onClick={() => {
-                  targetRef.current.scrollLeft += 80;
+                  let scrolledToIndex = 0;
+                  for (let i = tabRefs.length - 1; i > 0; i -= 1) {
+                    if (
+                      !isVisible(tabRefs[i].current) &&
+                      isVisible(tabRefs[i - 1].current)
+                    ) {
+                      if (scroll && scroll.interval) {
+                        i =
+                          i + (scroll.interval - 1) < tabRefs.length
+                            ? i + (scroll.interval - 1)
+                            : tabRefs.length - 1;
+                      }
+                      scrolledToIndex = i;
+                      tabRefs[i].current.scrollIntoView({ behavior: 'smooth' });
+                      break;
+                    }
+                  }
+
+                  setDisableLeftArrow(false);
+                  if (scrolledToIndex === tabRefs.length - 1) {
+                    // wait for scroll animation to finish
+                    const timer = setTimeout(
+                      () => {
+                        setDisableRightArrow(
+                          isVisible(tabRefs[tabRefs.length - 1].current),
+                        );
+                      },
+                      500, // Empirically determined.
+                    );
+                    return () => clearTimeout(timer);
+                  }
+                  return () => {};
                 }}
               />
             )}
