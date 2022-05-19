@@ -6,7 +6,8 @@ import React, {
   useEffect,
   useRef,
 } from 'react';
-import { Previous, Next } from 'grommet-icons';
+import { Previous } from 'grommet-icons/icons/Previous';
+import { Next } from 'grommet-icons/icons/Next';
 import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
