@@ -171,7 +171,7 @@
       "global": {
         "branches": 76.3,
         "functions": 88,
-        "lines": 87.9,
+        "lines": 87.6,
         "statements": 86.9
       }
     },
@@ -191,7 +191,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "131 kB"
+      "maxSize": "132 kB"
     }
   ],
   "keywords": [
