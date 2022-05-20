@@ -19,7 +19,7 @@ if (process.env.NODE_ENV !== 'production') {
     onActive: PropTypes.func,
     scroll: PropTypes.oneOfType([
       PropTypes.shape({
-        interval: PropTypes.number,
+        step: PropTypes.number,
       }),
       PropTypes.bool,
     ]),

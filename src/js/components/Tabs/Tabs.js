@@ -46,7 +46,7 @@ const Tabs = forwardRef(
     const [disableLeftArrow, setDisableLeftArrow] = useState();
     const [disableRightArrow, setDisableRightArrow] = useState();
     const [overflow, setOverflow] = useState(undefined);
-    const targetRef = useRef();
+    const headerRef = useRef();
 
     if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
       setActiveIndex(propsActiveIndex);
@@ -60,14 +60,19 @@ const Tabs = forwardRef(
     const tabRefs = React.Children.map(children, () => React.createRef());
 
     // check if tab is in view
-    function isVisible(element) {
+    const isVisible = (element) => {
       const tabRect = element?.getBoundingClientRect();
-      const headerRect = targetRef.current?.getBoundingClientRect();
-      return (
-        tabRect.left >= headerRect.left - 1 &&
-        tabRect.right <= headerRect.right + 1
-      );
-    }
+      const headerRect = headerRef.current?.getBoundingClientRect();
+      if (tabRect && headerRect)
+        // the -1 and +1 allow a little leniency when calculating if a tab is
+        // in view. Without the -1 and +1 a tab could be fully in view but
+        // isVisible will return false.
+        return (
+          tabRect.left >= headerRect.left - 1 &&
+          tabRect.right <= headerRect.right + 1
+        );
+      return undefined;
+    };
 
     const updateArrowState = useCallback(() => {
       setDisableLeftArrow(isVisible(tabRefs[0].current));
@@ -96,7 +101,7 @@ const Tabs = forwardRef(
       if (scroll) {
         const onResize = () => {
           // check if tabs are overflowing
-          if (targetRef.current.scrollWidth > targetRef.current.offsetWidth) {
+          if (headerRef.current.scrollWidth > headerRef.current.offsetWidth) {
             setOverflow(true);
           } else setOverflow(false);
           updateArrowState();
@@ -118,7 +123,7 @@ const Tabs = forwardRef(
     }, [
       scroll,
       tabRefs,
-      targetRef,
+      headerRef,
       disableLeftArrow,
       disableRightArrow,
       overflow,
@@ -195,12 +200,17 @@ const Tabs = forwardRef(
     };
 
     const onHome = () => {
-      if (focusIndex !== 0 && tabRefs.length > 0) tabRefs[0].current.focus();
+      if (focusIndex !== 0 && tabRefs.length > 0) {
+        tabRefs[0].current.focus();
+        setFocusIndex(0);
+      }
     };
 
     const onEnd = () => {
-      if (focusIndex !== 0 && tabRefs.length > 0)
+      if (focusIndex !== 0 && tabRefs.length > 0) {
         tabRefs[tabRefs.length - 1].current.focus();
+        setFocusIndex(tabRefs.length - 1);
+      }
     };
 
     return (
@@ -220,6 +230,8 @@ const Tabs = forwardRef(
                 a11yTitle="Previous Tab"
                 icon={<Previous />}
                 disabled={disableLeftArrow}
+                // removed from tabIndex, button is redundant for keyboard users
+                tabIndex={-1}
                 onClick={() => {
                   let scrolledToIndex;
                   for (let i = 0; i < tabRefs.length - 1; i += 1) {
@@ -227,12 +239,8 @@ const Tabs = forwardRef(
                       !isVisible(tabRefs[i].current) &&
                       isVisible(tabRefs[i + 1].current)
                     ) {
-                      if (scroll && scroll.interval) {
-                        i =
-                          i - (scroll.interval - 1) >= 0
-                            ? i - (scroll.interval - 1)
-                            : 0;
-                      }
+                      if (scroll && scroll.step)
+                        i = Math.max(i - (scroll.step - 1), 0);
                       scrolledToIndex = i;
                       tabRefs[i].current.scrollIntoView({ behavior: 'smooth' });
                       break;
@@ -242,17 +250,21 @@ const Tabs = forwardRef(
                   setDisableRightArrow(false);
                   if (scrolledToIndex === 0) {
                     // wait for scroll animation to finish
-                    const timer = setTimeout(() => {
-                      setDisableLeftArrow(isVisible(tabRefs[0].current));
+                    const checkVisible = setInterval(() => {
+                      if (isVisible(tabRefs[0].current)) {
+                        setDisableLeftArrow(true);
+                        clearInterval(checkVisible);
+                      }
+                    }, 100);
+                    setTimeout(() => {
+                      clearInterval(checkVisible);
                     }, 500);
-                    return () => clearTimeout(timer);
                   }
-                  return () => {};
                 }}
               />
             )}
             <StyledTabsHeader
-              ref={targetRef}
+              ref={headerRef}
               as={Box}
               direction="row"
               justify={justify}
@@ -272,6 +284,8 @@ const Tabs = forwardRef(
                 a11yTitle="Next Tab"
                 icon={<Next />}
                 disabled={disableRightArrow}
+                // removed from tabIndex, button is redundant for keyboard users
+                tabIndex={-1}
                 onClick={() => {
                   let scrolledToIndex = 0;
                   for (let i = tabRefs.length - 1; i > 0; i -= 1) {
@@ -279,11 +293,8 @@ const Tabs = forwardRef(
                       !isVisible(tabRefs[i].current) &&
                       isVisible(tabRefs[i - 1].current)
                     ) {
-                      if (scroll && scroll.interval) {
-                        i =
-                          i + (scroll.interval - 1) < tabRefs.length
-                            ? i + (scroll.interval - 1)
-                            : tabRefs.length - 1;
+                      if (scroll && scroll.step) {
+                        i = Math.min(i + (scroll.step - 1), tabRefs.length - 1);
                       }
                       scrolledToIndex = i;
                       tabRefs[i].current.scrollIntoView({ behavior: 'smooth' });
@@ -294,17 +305,16 @@ const Tabs = forwardRef(
                   setDisableLeftArrow(false);
                   if (scrolledToIndex === tabRefs.length - 1) {
                     // wait for scroll animation to finish
-                    const timer = setTimeout(
-                      () => {
-                        setDisableRightArrow(
-                          isVisible(tabRefs[tabRefs.length - 1].current),
-                        );
-                      },
-                      500, // Empirically determined.
-                    );
-                    return () => clearTimeout(timer);
+                    const checkVisible = setInterval(() => {
+                      if (isVisible(tabRefs[tabRefs.length - 1].current)) {
+                        setDisableRightArrow(true);
+                        clearInterval(checkVisible);
+                      }
+                    }, 100);
+                    setTimeout(() => {
+                      clearInterval(checkVisible);
+                    }, 500);
                   }
-                  return () => {};
                 }}
               />
             )}
