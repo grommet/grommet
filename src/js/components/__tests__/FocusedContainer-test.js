@@ -6,7 +6,7 @@ import { FocusedContainer } from '../FocusedContainer';
 
 describe('FocusedContainer', () => {
   test('basic', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { container: trapped } = render(
       <div id="focus-trap-test">
         <input id="test" />
@@ -27,7 +27,7 @@ describe('FocusedContainer', () => {
   });
 
   test('restrict scroll', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { container } = render(
       <FocusedContainer id="container" restrictScroll>
         test focused container
@@ -45,7 +45,7 @@ describe('FocusedContainer', () => {
   });
 
   test('blurs', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { container: trapped } = render(
       <div id="focus-trap-test">
         <input id="test" />

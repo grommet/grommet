@@ -421,7 +421,7 @@ describe('Form controlled', () => {
 
   test(`dynamicly removed fields using blur validation
   don't keep validation errors`, () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onValidate = jest.fn();
     const onSubmit = jest.fn();
 

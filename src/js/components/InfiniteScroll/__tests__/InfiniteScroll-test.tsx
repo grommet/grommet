@@ -257,7 +257,7 @@ describe('Number of Items Rendered', () => {
 
 describe('show scenarios', () => {
   test(`When show, show item should be visible in window`, () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     // Mock scrollIntoView since JSDOM doesn't do layout.
     // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
     window.HTMLElement.prototype.scrollIntoView = jest.fn();

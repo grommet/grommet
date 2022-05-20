@@ -506,7 +506,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('validate on change', async () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onChange = jest.fn();
     window.scrollTo = jest.fn();
 
@@ -644,7 +644,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('validate on blur', async () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onFocus = jest.fn();
     const { getByText, getByPlaceholderText, queryAllByText, queryByText } =
       render(
@@ -721,7 +721,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('form validity', async () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     let valid;
     const { getByPlaceholderText, getByText } = render(
       <Grommet>
@@ -1336,7 +1336,7 @@ describe('Form uncontrolled', () => {
 
   test(`dynamicly removed fields using blur validation
   don't keep validation errors`, () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onValidate = jest.fn();
     const onSubmit = jest.fn();
 
@@ -1427,7 +1427,7 @@ describe('Form uncontrolled', () => {
   });
 
   test(`valid flag on component mount`, () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onValidate = jest.fn();
 
     const defaultValue = {
@@ -1494,7 +1494,7 @@ describe('Form uncontrolled', () => {
   });
 
   test(`dynamicly removed fields should be removed from form value`, () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onValidate = jest.fn();
     const onSubmit = jest.fn();
 
