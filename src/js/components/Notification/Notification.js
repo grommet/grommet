@@ -173,6 +173,7 @@ const Notification = ({
       pad={undefined}
       direction="row"
       gap="small"
+      id={toast ? undefined : id}
       {...rest}
     >
       {/* separate from onClose button to allow "onClick" in the future and 
