@@ -62,7 +62,7 @@ describe('Select', () => {
   });
 
   test('prop: onOpen', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onOpen = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -87,7 +87,7 @@ describe('Select', () => {
   });
 
   test('prop: onClose', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onClose = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -124,7 +124,7 @@ describe('Select', () => {
   });
 
   test('search', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onSearch = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -153,7 +153,7 @@ describe('Select', () => {
   });
 
   test('search and select', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onSearch = jest.fn();
     const onChange = jest.fn();
     const Test = () => {
@@ -343,7 +343,7 @@ describe('Select', () => {
   });
 
   test('disabled key', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const Test = () => {
       const [value] = React.useState();
       return (
@@ -1022,7 +1022,7 @@ describe('Select', () => {
   });
 
   test('keyboard navigation timeout', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     // scrollIntoView is not implemented in jsdom, so we need to mock.
     // Select keyboard / keyboard nav timeout uses InfiniteScroll which
     // has scrollIntoView as part of its implementation.
@@ -1052,7 +1052,7 @@ describe('Select', () => {
   });
 
   test('Search timeout', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onSearch = jest.fn();
     const { container, getByPlaceholderText } = render(
       <Grommet>
@@ -1082,7 +1082,7 @@ describe('Select', () => {
   });
 
   test('disabled option value', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { getByPlaceholderText } = render(
       <Grommet>
         <Select
@@ -1298,7 +1298,7 @@ describe('Select', () => {
   });
 
   test('select option by typing should not break if caller passes JSX', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onChange = jest.fn();
 
     const { getByPlaceholderText, container } = render(
