@@ -239,4 +239,16 @@ describe('Notification', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('status', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <TestNotification global status="normal" />
+        <TestNotification global status="warning" />
+        <TestNotification global status="critical" />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
