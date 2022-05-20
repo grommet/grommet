@@ -252,8 +252,6 @@ const FileInput = forwardRef(
         if (index !== i) dt.items.add(curfile);
       }
 
-      // We are using dispatchEvent to align the onChange event from
-      // the input, instead of the onClick event from the remove button.
       const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
         window.HTMLInputElement.prototype,
         'files',
