@@ -252,18 +252,17 @@ const FileInput = forwardRef(
         if (index !== i) dt.items.add(curfile);
       }
 
-      if (onChange) {
-        // We are using dispatchEvent to align the onChange event from
-        // the input, instead of the onClick event from the remove button.
-        const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-          window.HTMLInputElement.prototype,
-          'files',
-        ).set;
-        nativeInputValueSetter.call(inputRef.current, dt.files);
-        const event = new Event('input', { bubbles: true });
-        inputRef.current.dispatchEvent(event);
-        onChange(event, { files: nextFiles });
-      }
+      // We are using dispatchEvent to align the onChange event from
+      // the input, instead of the onClick event from the remove button.
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'files',
+      ).set;
+      nativeInputValueSetter.call(inputRef.current, dt.files);
+      const event = new Event('input', { bubbles: true });
+      inputRef.current.dispatchEvent(event);
+
+      if (onChange) onChange(event, { files: nextFiles });
       inputRef.current.focus();
     };
 
