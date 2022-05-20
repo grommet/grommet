@@ -1,4 +1,8 @@
+var _excluded = ["actions", "message", "onClose", "id", "global", "status", "title", "toast"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { useCallback, useContext, useEffect, useState, useMemo, Fragment } from 'react';
 import styled, { ThemeContext } from 'styled-components';
@@ -54,7 +58,7 @@ var NotificationAnchor = styled(Anchor).withConfig({
 })(["white-space:nowrap;"]);
 
 var Notification = function Notification(_ref) {
-  var _theme$notification, _theme$notification$s2, _theme$notification$s3, _theme$notification2, _theme$notification2$, _theme$notification3, _theme$notification3$, _theme$notification3$2;
+  var _theme$notification, _theme$notification2, _theme$notification2$, _theme$notification2$2, _theme$notification3, _theme$notification3$, _theme$notification4, _theme$notification4$, _theme$notification4$2;
 
   var actionsProp = _ref.actions,
       messageProp = _ref.message,
@@ -63,7 +67,9 @@ var Notification = function Notification(_ref) {
       global = _ref.global,
       status = _ref.status,
       title = _ref.title,
-      toast = _ref.toast;
+      toast = _ref.toast,
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+
   var autoClose = toast && (toast == null ? void 0 : toast.autoClose) === undefined ? true : toast.autoClose;
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -89,9 +95,11 @@ var Notification = function Notification(_ref) {
     return undefined;
   }, [autoClose, close, theme.notification.toast.time, theme.notification.time]);
   var CloseIcon = theme.notification.close.icon;
-  var _theme$notification$s = theme.notification[status],
-      StatusIcon = _theme$notification$s.icon,
-      color = _theme$notification$s.color;
+
+  var _ref2 = ((_theme$notification = theme.notification) == null ? void 0 : _theme$notification[status]) || theme.notification.unknown,
+      StatusIcon = _ref2.icon,
+      color = _ref2.color;
+
   var closeIconColor = theme.notification.close.color;
   var kind = useMemo(function () {
     if (toast) return 'toast';
@@ -101,7 +109,7 @@ var Notification = function Notification(_ref) {
   var direction;
   if (kind && theme.notification[kind].direction) direction = theme.notification[kind].direction;else direction = theme.notification.direction;
   var background;
-  if (kind && (_theme$notification = theme.notification) != null && (_theme$notification$s2 = _theme$notification[status]) != null && (_theme$notification$s3 = _theme$notification$s2[kind]) != null && _theme$notification$s3.background) background = theme.notification[status][kind].background;else if ((_theme$notification2 = theme.notification) != null && (_theme$notification2$ = _theme$notification2[status]) != null && _theme$notification2$.background) background = theme.notification[status].background;else background = ((_theme$notification3 = theme.notification) == null ? void 0 : (_theme$notification3$ = _theme$notification3[kind]) == null ? void 0 : (_theme$notification3$2 = _theme$notification3$.container) == null ? void 0 : _theme$notification3$2.background) || theme.notification.container.background;
+  if (kind && (_theme$notification2 = theme.notification) != null && (_theme$notification2$ = _theme$notification2[status]) != null && (_theme$notification2$2 = _theme$notification2$[kind]) != null && _theme$notification2$2.background) background = theme.notification[status][kind].background;else if ((_theme$notification3 = theme.notification) != null && (_theme$notification3$ = _theme$notification3[status]) != null && _theme$notification3$.background) background = theme.notification[status].background;else background = ((_theme$notification4 = theme.notification) == null ? void 0 : (_theme$notification4$ = _theme$notification4[kind]) == null ? void 0 : (_theme$notification4$2 = _theme$notification4$.container) == null ? void 0 : _theme$notification4$2.background) || theme.notification.container.background;
   var TextWrapper = direction === 'row' ? Text : Fragment; // notification is built with two child boxes that contain:
   // 1. icon + text (wrapped in button when clickable)
   // 2. close button
@@ -144,8 +152,9 @@ var Notification = function Notification(_ref) {
     ,
     pad: undefined,
     direction: "row",
-    gap: "small"
-  }), /*#__PURE__*/React.createElement(Box, {
+    gap: "small",
+    id: toast ? undefined : id
+  }, rest), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     pad: textPad,
     flex: true
