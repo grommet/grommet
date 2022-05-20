@@ -241,7 +241,7 @@ describe('Calendar', () => {
   });
 
   test('change months', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { container, getByLabelText } = render(
       <Grommet>
         <Calendar date={DATE} />
