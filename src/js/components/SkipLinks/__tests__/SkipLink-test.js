@@ -6,7 +6,7 @@ import { Grommet, SkipLinks, SkipLink, SkipLinkTarget } from '../..';
 
 describe('SkipLink', () => {
   test('basic', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <SkipLinks id="skip-links">
@@ -43,7 +43,7 @@ describe('SkipLink', () => {
   });
 
   test('should allow for single skip link', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <SkipLinks id="skip-links">

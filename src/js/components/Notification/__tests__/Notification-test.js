@@ -88,7 +88,7 @@ describe('Notification', () => {
   test('autoClose true', async () => {
     const user = userEvent.setup({ delay: null });
 
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onOpen = jest.fn();
     const onClose = jest.fn();
     const Test = () => {
@@ -129,7 +129,7 @@ describe('Notification', () => {
   test('autoClose false', async () => {
     const user = userEvent.setup({ delay: null });
 
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onOpen = jest.fn();
     const onClose = jest.fn();
     const Test = () => {
@@ -234,6 +234,18 @@ describe('Notification', () => {
     const { asFragment } = render(
       <Grommet>
         <TestNotification global />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('status', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <TestNotification global status="normal" />
+        <TestNotification global status="warning" />
+        <TestNotification global status="critical" />
       </Grommet>,
     );
 

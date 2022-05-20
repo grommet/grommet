@@ -360,7 +360,7 @@ describe('Select Controlled', () => {
   });
 
   test('should allow multiple selections when using search', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onChange = jest.fn();
     const onSearch = jest.fn();
     const defaultOptions = [
@@ -459,7 +459,7 @@ describe('Select Controlled', () => {
 
   test(`should allow multiple selections when options are
   loaded lazily`, () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onChange = jest.fn();
     const optionsFromServer = [
       {
