@@ -199,7 +199,7 @@ describe('Tip', () => {
     expect(onBlur).toHaveBeenCalledTimes(1);
   });
 
-  test(`child becomes disable while tip is showing`, async () => {
+  test(`child becomes disabled while tip is showing`, async () => {
     const Test = () => {
       const [count, setCount] = useState(0);
       return (
