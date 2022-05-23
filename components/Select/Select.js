@@ -292,8 +292,6 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
       onChange(adjustedEvent);
     }
-
-    setSearch();
   }, [closeOnChange, onChange, onRequestClose, setValue, triggerChangeEvent]);
   var SelectIcon;
 

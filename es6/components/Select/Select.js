@@ -267,8 +267,6 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
       onChange(adjustedEvent);
     }
-
-    setSearch();
   }, [closeOnChange, onChange, onRequestClose, setValue, triggerChangeEvent]);
   var SelectIcon;
 
