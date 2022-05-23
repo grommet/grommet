@@ -22,7 +22,11 @@ export interface FileInputProps {
   };
   multiple?: boolean | { aggregateThreshold?: number; max?: number };
   name?: string;
-  onChange?: (event?: any, { files }?: { files: any }) => void;
+  onChange?: (
+    event?: React.ChangeEvent<HTMLInputElement>,
+    { files }?: { files: object },
+    { target }?: { target: { files: object } },
+  ) => void;
   renderFile?: (...args: any[]) => void;
 }
 
