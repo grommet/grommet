@@ -245,7 +245,6 @@ const Select = forwardRef(
           }
           onChange(adjustedEvent);
         }
-        setSearch();
       },
       [closeOnChange, onChange, onRequestClose, setValue, triggerChangeEvent],
     );
