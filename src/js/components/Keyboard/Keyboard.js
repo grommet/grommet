@@ -7,8 +7,6 @@ const KEYS = {
   13: 'onEnter',
   27: 'onEsc',
   32: 'onSpace',
-  35: 'onEnd',
-  36: 'onHome',
   37: 'onLeft',
   38: 'onUp',
   39: 'onRight',
