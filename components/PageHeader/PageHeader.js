@@ -50,7 +50,8 @@ var PageHeader = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   return /*#__PURE__*/_react["default"].createElement(_Header.Header, _extends({
     ref: ref,
     direction: "column",
-    gap: "none"
+    gap: "none",
+    pad: theme.pageHeader.pad
   }, rest), /*#__PURE__*/_react["default"].createElement(_Grid.Grid, _extends({
     columns: columns,
     rows: rows,

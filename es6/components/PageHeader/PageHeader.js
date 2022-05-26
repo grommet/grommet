@@ -33,7 +33,8 @@ var PageHeader = /*#__PURE__*/forwardRef(function (_ref, ref) {
   return /*#__PURE__*/React.createElement(Header, _extends({
     ref: ref,
     direction: "column",
-    gap: "none"
+    gap: "none",
+    pad: theme.pageHeader.pad
   }, rest), /*#__PURE__*/React.createElement(Grid, _extends({
     columns: columns,
     rows: rows,

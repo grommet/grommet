@@ -1387,6 +1387,10 @@ export var generate = function generate(baseSpacing, scale) {
         // any box props
         align: 'end'
       },
+      pad: {
+        top: 'large',
+        bottom: 'medium'
+      },
       parent: {
         // any box props
         align: 'start'
