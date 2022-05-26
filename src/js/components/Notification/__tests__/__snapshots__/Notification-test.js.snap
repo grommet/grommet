@@ -4131,3 +4131,406 @@ exports[`Notification should have no accessibility violations for toast 1`] = `
   />
 </DocumentFragment>
 `;
+
+exports[`Notification status 1`] = `
+<DocumentFragment>
+  .c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #00C781;
+  stroke: #00C781;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #FFAA15;
+  stroke: #FFAA15;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #FF4040;
+  stroke: #FF4040;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(0,199,129,0.1);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(255,170,21,0.1);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(255,64,64,0.1);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-right: 6px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <svg
+            aria-label="Status is okay"
+            class="c4"
+            viewBox="0 0 12 12"
+          >
+            <circle
+              cx="6"
+              cy="6"
+              fill-rule="evenodd"
+              r="5"
+              stroke="#000"
+            />
+          </svg>
+        </div>
+        <div
+          class="c5"
+        >
+          <span
+            class="c6"
+          >
+            <span
+              class="c7"
+            >
+              title
+            </span>
+             
+            <span
+              class="c8"
+            >
+              <span
+                class="c9"
+              >
+                message
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c10"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <svg
+            aria-label="Status is warning"
+            class="c11"
+            viewBox="0 0 12 12"
+          >
+            <path
+              d="m6 1 5 9H1z"
+              fill-rule="evenodd"
+              stroke="#000"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div
+          class="c5"
+        >
+          <span
+            class="c6"
+          >
+            <span
+              class="c7"
+            >
+              title
+            </span>
+             
+            <span
+              class="c8"
+            >
+              <span
+                class="c9"
+              >
+                message
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c12"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <svg
+            aria-label="Status is critical"
+            class="c13"
+            viewBox="0 0 12 12"
+          >
+            <path
+              d="M6.712 1.263a1.005 1.005 0 0 0-1.424 0L1.263 5.288a1.005 1.005 0 0 0 0 1.424l4.025 4.025a1.005 1.005 0 0 0 1.424 0l4.025-4.025a1.005 1.005 0 0 0 0-1.424L6.712 1.263z"
+              fill-rule="evenodd"
+              stroke="#000"
+            />
+          </svg>
+        </div>
+        <div
+          class="c5"
+        >
+          <span
+            class="c6"
+          >
+            <span
+              class="c7"
+            >
+              title
+            </span>
+             
+            <span
+              class="c8"
+            >
+              <span
+                class="c9"
+              >
+                message
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
