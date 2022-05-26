@@ -103,6 +103,7 @@ exports[`FileInput accept 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
   cursor: pointer;
@@ -140,6 +141,7 @@ exports[`FileInput accept 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
 }
 
@@ -285,6 +287,7 @@ exports[`FileInput background 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
   cursor: pointer;
@@ -322,6 +325,7 @@ exports[`FileInput background 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
 }
 
@@ -464,6 +468,7 @@ exports[`FileInput basic 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
   cursor: pointer;
@@ -501,6 +506,7 @@ exports[`FileInput basic 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
 }
 
@@ -643,6 +649,7 @@ exports[`FileInput border 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
   cursor: pointer;
@@ -680,6 +687,7 @@ exports[`FileInput border 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
 }
 
@@ -822,6 +830,7 @@ exports[`FileInput custom theme input font size 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
   cursor: pointer;
@@ -859,6 +868,7 @@ exports[`FileInput custom theme input font size 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
 }
 
@@ -1000,6 +1010,7 @@ exports[`FileInput disabled 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
 }
@@ -1036,6 +1047,7 @@ exports[`FileInput disabled 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
   opacity: 0.3;
   cursor: default;
@@ -1183,6 +1195,7 @@ exports[`FileInput margin 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
   cursor: pointer;
@@ -1220,6 +1233,7 @@ exports[`FileInput margin 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
 }
 
@@ -1368,6 +1382,7 @@ exports[`FileInput maxSize 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
   cursor: pointer;
@@ -1405,6 +1420,7 @@ exports[`FileInput maxSize 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
 }
 
@@ -1547,6 +1563,7 @@ exports[`FileInput messages 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
   cursor: pointer;
@@ -1584,6 +1601,7 @@ exports[`FileInput messages 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
 }
 
@@ -1726,6 +1744,7 @@ exports[`FileInput multiple 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
   cursor: pointer;
@@ -1763,6 +1782,7 @@ exports[`FileInput multiple 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
 }
 
@@ -1906,6 +1926,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
   cursor: pointer;
@@ -1943,6 +1964,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
 }
 
@@ -2086,6 +2108,7 @@ exports[`FileInput multiple max 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
   cursor: pointer;
@@ -2123,6 +2146,7 @@ exports[`FileInput multiple max 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
 }
 
@@ -2267,6 +2291,7 @@ exports[`FileInput pad 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  font-size: 0;
   opacity: 0;
   border: none;
   cursor: pointer;
@@ -2304,6 +2329,7 @@ exports[`FileInput pad 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: relative;
 }
 

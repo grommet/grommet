@@ -37,6 +37,7 @@ const formatBytes = (size) => {
 // We don't use Stack because of how we need to control the positioning.
 
 const ContentsBox = styled(Box)`
+  cursor: pointer;
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
   ${(props) => props.theme.fileInput && props.theme.fileInput.extend};
