@@ -1270,6 +1270,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any box props
         align: 'end',
       },
+      // pad: undefined,
       parent: {
         // any box props
         align: 'start',

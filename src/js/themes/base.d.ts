@@ -1156,6 +1156,7 @@ export interface ThemeType {
   };
   pageHeader?: {
     actions?: BoxProps;
+    pad?: PadType;
     parent?: BoxProps;
     subtitle?: ParagraphProps;
     title?: HeadingProps;
