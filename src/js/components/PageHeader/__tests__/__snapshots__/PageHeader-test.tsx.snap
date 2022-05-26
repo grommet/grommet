@@ -35,6 +35,8 @@ exports[`PageHeader basic 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-top: 48px;
+  padding-bottom: 24px;
 }
 
 .c3 {
@@ -219,6 +221,18 @@ exports[`PageHeader basic 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c1 {
+    padding-top: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c6 {
     margin: 0px;
   }
@@ -321,6 +335,8 @@ exports[`PageHeader children 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-top: 48px;
+  padding-bottom: 24px;
 }
 
 .c3 {
@@ -510,6 +526,18 @@ exports[`PageHeader children 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c1 {
+    padding-top: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c6 {
     margin: 0px;
   }
@@ -617,6 +645,8 @@ exports[`PageHeader custom theme 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-top: 48px;
+  padding-bottom: 24px;
 }
 
 .c3 {
@@ -815,6 +845,18 @@ exports[`PageHeader custom theme 1`] = `
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding-top: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding-bottom: 12px;
+  }
 }
 
 @media only screen and (max-width:768px) {
