@@ -1158,6 +1158,13 @@ export interface ThemeType {
     actions?: BoxProps;
     pad?: PadType;
     parent?: BoxProps;
+    responsive?: {
+      actions?: BoxProps;
+      areas?: AreasType;
+      columns?: GridColumnsType;
+      rows?: GridSizeType;
+      gap?: GridGapType;
+    };
     subtitle?: ParagraphProps;
     title?: HeadingProps;
     small?: {
