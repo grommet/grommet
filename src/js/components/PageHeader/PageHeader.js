@@ -17,7 +17,13 @@ const PageHeader = forwardRef(
       theme.pageHeader[breakpoint] || theme.pageHeader.medium;
 
     return (
-      <Header ref={ref} direction="column" gap="none" {...rest}>
+      <Header
+        ref={ref}
+        direction="column"
+        gap="none"
+        pad={theme.pageHeader.pad}
+        {...rest}
+      >
         <Grid
           columns={columns}
           rows={rows}

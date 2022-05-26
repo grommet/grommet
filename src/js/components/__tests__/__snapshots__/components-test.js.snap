@@ -2001,6 +2001,10 @@ Object {
               "auto",
             ],
           },
+          "pad": Object {
+            "bottom": "medium",
+            "top": "large",
+          },
           "parent": Object {
             "align": "start",
           },
