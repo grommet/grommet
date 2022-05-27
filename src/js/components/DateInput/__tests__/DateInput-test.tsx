@@ -106,6 +106,21 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('reverse calendar icon', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          reverse
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('inline', () => {
     const { container } = render(
       <Grommet>

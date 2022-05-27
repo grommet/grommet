@@ -48,6 +48,7 @@ const DateInput = forwardRef(
       onChange,
       onFocus,
       plain,
+      reverse = false,
       value: valueArg,
       messages,
       ...rest
@@ -89,6 +90,11 @@ const DateInput = forwardRef(
     const normalizedDate = normalizeForTimezone(value, timestamp, normalize);
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
+
+    const calendarDropdownAlign = {
+      top: 'bottom',
+      ...(reverse ? { right: 'right' } : { left: 'left' }),
+    };
 
     // parse format and build a formal schema we can use elsewhere
     const schema = useMemo(() => formatToSchema(format), [format]);
@@ -213,7 +219,7 @@ Use the icon prop instead.`,
         <DropButton
           ref={ref}
           id={id}
-          dropProps={{ align: { top: 'bottom', left: 'left' }, ...dropProps }}
+          dropProps={{ align: calendarDropdownAlign, ...dropProps }}
           dropContent={calendar}
           icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
           {...buttonProps}
@@ -238,7 +244,7 @@ Use the icon prop instead.`,
             ref={containerRef}
             border={!plain}
             round="xxsmall"
-            direction="row"
+            direction={reverse ? 'row-reverse' : 'row'}
             fill
           >
             <MaskedInput
@@ -301,7 +307,7 @@ Use the icon prop instead.`,
               onClick={open ? closeCalendar : openCalendar}
               plain
               icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
-              margin={{ right: 'small' }}
+              margin={reverse ? { left: 'small' } : { right: 'small' }}
             />
           </Box>
         </Keyboard>
@@ -325,7 +331,7 @@ Use the icon prop instead.`,
             overflow="visible"
             id={id ? `${id}__drop` : undefined}
             target={ref.current}
-            align={{ top: 'bottom', left: 'left', ...dropProps }}
+            align={{ ...calendarDropdownAlign, ...dropProps }}
             onEsc={closeCalendar}
             onClickOutside={({ target }) => {
               if (

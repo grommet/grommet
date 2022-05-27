@@ -15,6 +15,9 @@ export const Format = () => {
       <Box width="medium">
         <DateInput format="m/d/yy" value={value} onChange={onChange} />
       </Box>
+      <Box width="medium" margin={{ vertical: 'medium' }}>
+        <DateInput format="m/d/yy" value={value} reverse onChange={onChange} />
+      </Box>
     </Box>
   );
 };
