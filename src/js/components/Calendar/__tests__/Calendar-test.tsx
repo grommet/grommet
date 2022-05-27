@@ -3,6 +3,7 @@ import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { axe } from 'jest-axe';
 import { fireEvent, render, act } from '@testing-library/react';
@@ -279,6 +280,84 @@ describe('Calendar', () => {
         expect.stringMatching(/^2020-01-20T/),
       ],
     ]);
+  });
+
+  test('disabled previous month button when date is before bounds', () => {
+    const { getByRole } = render(
+      <Grommet>
+        <Calendar
+          date="2019-01-15T00:00:00-08:00"
+          onSelect={jest.fn()}
+          range
+          animate={false}
+          bounds={['2020-01-01', '2020-01-31']}
+        />
+      </Grommet>,
+    );
+
+    expect(getByRole('button', { name: 'Go to December 2018' })).toBeDisabled();
+
+    expect(
+      getByRole('button', { name: 'Go to February 2019' }),
+    ).not.toBeDisabled();
+  });
+
+  test('disabled next month button when date is after bounds', () => {
+    const { getByRole } = render(
+      <Grommet>
+        <Calendar
+          date="2020-02-15T00:00:00-08:00"
+          onSelect={jest.fn()}
+          range
+          animate={false}
+          bounds={['2020-01-01', '2020-01-31']}
+        />
+      </Grommet>,
+    );
+
+    expect(
+      getByRole('button', { name: 'Go to January 2020' }),
+    ).not.toBeDisabled();
+
+    expect(getByRole('button', { name: 'Go to March 2020' })).toBeDisabled();
+  });
+
+  test('change to bounds month when date is before bounds', () => {
+    const onReference = jest.fn();
+    const { getByRole } = render(
+      <Grommet>
+        <Calendar
+          date="2019-01-15T00:00:00-08:00"
+          onReference={onReference}
+          range
+          animate={false}
+          bounds={['2020-01-01', '2020-01-31']}
+        />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByRole('button', { name: 'Go to February 2019' }));
+
+    expect(onReference).toBeCalledWith('2020-01-01T00:00:00.000Z');
+  });
+
+  test('change to bounds month when date is after bounds', () => {
+    const onReference = jest.fn();
+    const { getByRole } = render(
+      <Grommet>
+        <Calendar
+          date="2021-01-15T00:00:00-08:00"
+          onReference={onReference}
+          range
+          animate={false}
+          bounds={['2020-01-01', '2020-01-31']}
+        />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByRole('button', { name: 'Go to December 2020' }));
+
+    expect(onReference).toBeCalledWith('2020-01-31T00:00:00.000Z');
   });
 
   test('select date with range no date set', () => {

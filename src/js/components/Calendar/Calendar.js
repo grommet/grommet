@@ -35,6 +35,8 @@ import {
   getFormattedDate,
   getTimestamp,
   normalizeForTimezone,
+  sameDayOrAfter,
+  sameDayOrBefore,
   startOfMonth,
   subtractDays,
   subtractMonths,
@@ -163,6 +165,22 @@ const buildDisplayBounds = (reference, firstDayOfWeek) => {
 
   const end = addDays(start, 7 * 5 + 7); // 5 weeks to end of week
   return [start, end];
+};
+
+const disabledCalendarPreviousMonthButton = (date, reference, bounds) => {
+  if (!bounds) return false;
+
+  const lastBound = new Date(bounds[1]);
+
+  return !sameDayOrBefore(lastBound, reference) && !betweenDates(date, bounds);
+};
+
+const disabledCalendarNextMonthButton = (date, reference, bounds) => {
+  if (!bounds) return false;
+
+  const firstBound = new Date(bounds[0]);
+
+  return !sameDayOrAfter(firstBound, reference) && !betweenDates(date, bounds);
 };
 
 const millisecondsPerYear = 31557600000;
@@ -612,6 +630,22 @@ const Calendar = forwardRef(
       ],
     );
 
+    const changeCalendarMonth = (messageId, newMonth) => {
+      changeReference(newMonth);
+      announce(
+        format({
+          id: messageId,
+          messages,
+          values: {
+            date: newMonth.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric',
+            }),
+          },
+        }),
+      );
+    };
+
     const renderCalendarHeader = () => {
       const PreviousIcon =
         size === 'small'
@@ -656,21 +690,17 @@ const Calendar = forwardRef(
                 },
               })}
               icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
-              disabled={!betweenDates(previousMonth, bounds)}
+              disabled={disabledCalendarPreviousMonthButton(
+                previousMonth,
+                reference,
+                bounds,
+              )}
               onClick={() => {
-                changeReference(previousMonth);
-                announce(
-                  format({
-                    id: 'calendar.previousMove',
-                    messages,
-                    values: {
-                      date: previousMonth.toLocaleDateString(locale, {
-                        month: 'long',
-                        year: 'numeric',
-                      }),
-                    },
-                  }),
-                );
+                const newMonth = !betweenDates(previousMonth, bounds)
+                  ? new Date(bounds[1])
+                  : previousMonth;
+
+                changeCalendarMonth('calendar.previousMove', newMonth);
               }}
             />
             <Button
@@ -685,21 +715,17 @@ const Calendar = forwardRef(
                 },
               })}
               icon={<NextIcon size={size !== 'small' ? size : undefined} />}
-              disabled={!betweenDates(nextMonth, bounds)}
+              disabled={disabledCalendarNextMonthButton(
+                nextMonth,
+                reference,
+                bounds,
+              )}
               onClick={() => {
-                changeReference(nextMonth);
-                announce(
-                  format({
-                    id: 'calendar.nextMove',
-                    messages,
-                    values: {
-                      date: nextMonth.toLocaleDateString(locale, {
-                        month: 'long',
-                        year: 'numeric',
-                      }),
-                    },
-                  }),
-                );
+                const newMonth = !betweenDates(nextMonth, bounds)
+                  ? new Date(bounds[0])
+                  : nextMonth;
+
+                changeCalendarMonth('calendar.nextMove', newMonth);
               }}
             />
           </Box>
