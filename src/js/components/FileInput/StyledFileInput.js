@@ -23,6 +23,9 @@ const StyledFileInput = styled.input`
     border: none;
     outline: none;
   }
+  &::-webkit-file-upload-button {
+    cursor: pointer;
+  }
 `;
 
 StyledFileInput.defaultProps = {};

@@ -140,6 +140,10 @@ exports[`FileInput accept 1`] = `
   outline: none;
 }
 
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
 .c2 {
   cursor: pointer;
   position: relative;
@@ -324,6 +328,10 @@ exports[`FileInput background 1`] = `
   outline: none;
 }
 
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
 .c2 {
   cursor: pointer;
   position: relative;
@@ -503,6 +511,10 @@ exports[`FileInput basic 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
 }
 
 .c2 {
@@ -686,6 +698,10 @@ exports[`FileInput border 1`] = `
   outline: none;
 }
 
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
 .c2 {
   cursor: pointer;
   position: relative;
@@ -867,6 +883,10 @@ exports[`FileInput custom theme input font size 1`] = `
   outline: none;
 }
 
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
 .c2 {
   cursor: pointer;
   position: relative;
@@ -1044,6 +1064,10 @@ exports[`FileInput disabled 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
 }
 
 .c2 {
@@ -1230,6 +1254,10 @@ exports[`FileInput margin 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
 }
 
 .c2 {
@@ -1419,6 +1447,10 @@ exports[`FileInput maxSize 1`] = `
   outline: none;
 }
 
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
 .c2 {
   cursor: pointer;
   position: relative;
@@ -1600,6 +1632,10 @@ exports[`FileInput messages 1`] = `
   outline: none;
 }
 
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
 .c2 {
   cursor: pointer;
   position: relative;
@@ -1779,6 +1815,10 @@ exports[`FileInput multiple 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
 }
 
 .c2 {
@@ -1963,6 +2003,10 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   outline: none;
 }
 
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
 .c2 {
   cursor: pointer;
   position: relative;
@@ -2143,6 +2187,10 @@ exports[`FileInput multiple max 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
 }
 
 .c2 {
@@ -2326,6 +2374,10 @@ exports[`FileInput pad 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
 }
 
 .c2 {
