@@ -6,7 +6,7 @@ import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 
 import { axe } from 'jest-axe';
-import { fireEvent, render, act } from '@testing-library/react';
+import { fireEvent, render, act, screen } from '@testing-library/react';
 import { FormNextLink, FormPreviousLink } from 'grommet-icons';
 import { Box, Button, Calendar, Grommet, Text, CalendarProps } from '../..';
 
@@ -283,7 +283,7 @@ describe('Calendar', () => {
   });
 
   test('disabled previous month button when date is before bounds', () => {
-    const { getByRole } = render(
+    render(
       <Grommet>
         <Calendar
           date="2019-01-15T00:00:00-08:00"
@@ -295,15 +295,19 @@ describe('Calendar', () => {
       </Grommet>,
     );
 
-    expect(getByRole('button', { name: 'Go to December 2018' })).toBeDisabled();
+    const previousMonthButton = screen.getByRole('button', {
+      name: 'Go to December 2018',
+    });
+    const nextMonthButton = screen.getByRole('button', {
+      name: 'Go to February 2019',
+    });
 
-    expect(
-      getByRole('button', { name: 'Go to February 2019' }),
-    ).not.toBeDisabled();
+    expect(previousMonthButton).toBeDisabled();
+    expect(nextMonthButton).not.toBeDisabled();
   });
 
   test('disabled next month button when date is after bounds', () => {
-    const { getByRole } = render(
+    render(
       <Grommet>
         <Calendar
           date="2020-02-15T00:00:00-08:00"
@@ -315,16 +319,20 @@ describe('Calendar', () => {
       </Grommet>,
     );
 
-    expect(
-      getByRole('button', { name: 'Go to January 2020' }),
-    ).not.toBeDisabled();
+    const previousMonthButton = screen.getByRole('button', {
+      name: 'Go to January 2020',
+    });
+    const nextMonthButton = screen.getByRole('button', {
+      name: 'Go to March 2020',
+    });
 
-    expect(getByRole('button', { name: 'Go to March 2020' })).toBeDisabled();
+    expect(previousMonthButton).not.toBeDisabled();
+    expect(nextMonthButton).toBeDisabled();
   });
 
   test('change to bounds month when date is before bounds', () => {
     const onReference = jest.fn();
-    const { getByRole } = render(
+    render(
       <Grommet>
         <Calendar
           date="2019-01-15T00:00:00-08:00"
@@ -336,14 +344,18 @@ describe('Calendar', () => {
       </Grommet>,
     );
 
-    fireEvent.click(getByRole('button', { name: 'Go to February 2019' }));
+    const nextMonthButton = screen.getByRole('button', {
+      name: 'Go to February 2019',
+    });
+
+    fireEvent.click(nextMonthButton);
 
     expect(onReference).toBeCalledWith('2020-01-01T00:00:00.000Z');
   });
 
   test('change to bounds month when date is after bounds', () => {
     const onReference = jest.fn();
-    const { getByRole } = render(
+    render(
       <Grommet>
         <Calendar
           date="2021-01-15T00:00:00-08:00"
@@ -355,7 +367,11 @@ describe('Calendar', () => {
       </Grommet>,
     );
 
-    fireEvent.click(getByRole('button', { name: 'Go to December 2020' }));
+    const previousMonthButton = screen.getByRole('button', {
+      name: 'Go to December 2020',
+    });
+
+    fireEvent.click(previousMonthButton);
 
     expect(onReference).toBeCalledWith('2020-01-31T00:00:00.000Z');
   });
