@@ -1161,6 +1161,7 @@ export interface ThemeType {
     responsive?: {
       actions?: BoxProps;
       areas?: AreasType;
+      breakpoints?: string[];
       columns?: GridColumnsType;
       rows?: GridSizeType;
       gap?: GridGapType;
