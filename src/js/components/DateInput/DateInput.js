@@ -48,7 +48,7 @@ const DateInput = forwardRef(
       onChange,
       onFocus,
       plain,
-      reverse = false,
+      reverse: reverseProp = false,
       value: valueArg,
       messages,
       ...rest
@@ -91,11 +91,6 @@ const DateInput = forwardRef(
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
 
-    const calendarDropdownAlign = {
-      top: 'bottom',
-      ...(reverse ? { right: 'right' } : { left: 'left' }),
-    };
-
     // parse format and build a formal schema we can use elsewhere
     const schema = useMemo(() => formatToSchema(format), [format]);
 
@@ -116,6 +111,13 @@ const DateInput = forwardRef(
 Use the icon prop instead.`,
       );
     }
+
+    const reverse = reverseProp || restOfInputProps.reverse;
+
+    const calendarDropdownAlign = {
+      top: 'bottom',
+      ...(reverse ? { right: 'right' } : { left: 'left' }),
+    };
 
     // We need to distinguish between the caller changing a Form value
     // and the user typing a date that he isn't finished with yet.
@@ -227,6 +229,15 @@ Use the icon prop instead.`,
       );
     }
 
+    const calendarButton = (
+      <Button
+        onClick={open ? closeCalendar : openCalendar}
+        plain
+        icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
+        margin={reverse ? { left: 'small' } : { right: 'small' }}
+      />
+    );
+
     const input = (
       <FormContext.Provider
         key="input"
@@ -244,9 +255,10 @@ Use the icon prop instead.`,
             ref={containerRef}
             border={!plain}
             round="xxsmall"
-            direction={reverse ? 'row-reverse' : 'row'}
+            direction="row"
             fill
           >
+            {reverse && calendarButton}
             <MaskedInput
               ref={ref}
               id={id}
@@ -303,12 +315,7 @@ Use the icon prop instead.`,
                 if (onFocus) onFocus(event);
               }}
             />
-            <Button
-              onClick={open ? closeCalendar : openCalendar}
-              plain
-              icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
-              margin={reverse ? { left: 'small' } : { right: 'small' }}
-            />
+            {!reverse && calendarButton}
           </Box>
         </Keyboard>
       </FormContext.Provider>

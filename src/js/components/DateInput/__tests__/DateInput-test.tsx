@@ -6,7 +6,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
-import { Calendar as CalendarIcon } from 'grommet-icons';
+import { Calendar as CalendarIcon, Clock as ClockIcon } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
@@ -114,6 +114,68 @@ describe('DateInput', () => {
           name="item"
           format="dd/mm/yyyy"
           reverse
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as false', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          inputProps={{ reverse: false }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as true', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          inputProps={{ reverse: true }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as false with icon', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          icon={<ClockIcon />}
+          inputProps={{ reverse: false }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as true with icon', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          icon={<ClockIcon />}
+          inputProps={{ reverse: true }}
           value={DATES}
         />
       </Grommet>,
