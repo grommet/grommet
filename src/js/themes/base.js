@@ -1049,6 +1049,22 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         // any drop props
       },
+      group: {
+        container: {
+          pad: {
+            vertical: 'xsmall',
+          },
+        },
+        heading: {
+          container: {
+            pad: {
+              horizontal: 'small',
+              bottom: 'xsmall',
+            },
+          },
+          text: { size: 'xsmall' },
+        },
+      },
       icons: {
         down: FormDown,
         // up: undefined,

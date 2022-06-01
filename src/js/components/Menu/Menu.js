@@ -288,6 +288,103 @@ const Menu = forwardRef((props, ref) => {
     </Box>
   );
 
+  const menuItem = (item, index) => {
+    // Determine whether the label is done as a child or
+    // as an option Button kind property.
+    const child = !theme.button.option ? (
+      <Box
+        align="start"
+        pad="small"
+        direction="row"
+        gap={item.gap}
+        justify={item.justify}
+      >
+        {item.reverse && item.label}
+        {item.icon}
+        {!item.reverse && item.label}
+      </Box>
+    ) : undefined;
+
+    // if we have a child, turn on plain, and hoverIndicator
+    return (
+      // eslint-disable-next-line react/no-array-index-key
+      <Box key={index} flex={false} role="none">
+        <Button
+          ref={(r) => {
+            buttonRefs.current[index] = r;
+          }}
+          role="menuitem"
+          onFocus={() => {
+            setActiveItemIndex(index);
+          }}
+          active={activeItemIndex === index}
+          focusIndicator={false}
+          plain={!child ? undefined : true}
+          align="start"
+          justify={item.justify}
+          kind={!child ? 'option' : undefined}
+          hoverIndicator={!child ? undefined : 'background'}
+          {...(!child
+            ? item
+            : {
+                ...item,
+                gap: undefined,
+                icon: undefined,
+                label: undefined,
+                reverse: undefined,
+              })}
+          onClick={(...args) => {
+            if (item.onClick) {
+              item.onClick(...args);
+            }
+            if (item.close !== false) {
+              onDropClose();
+            }
+          }}
+        >
+          {child}
+        </Button>
+      </Box>
+    );
+  };
+
+  let menuContent;
+  if (items.length && Array.isArray(items[0])) {
+    menuContent = items.map((group, i) => {
+      const groupHeading = group.find((item) => item.heading);
+
+      return (
+        <Box
+          {...theme.menu.group?.container}
+          border={
+            i > 0
+              ? { side: 'top', ...theme.menu.group?.container?.border }
+              : undefined
+          }
+        >
+          {groupHeading && (
+            <Box {...theme.menu.group?.heading?.container}>
+              <Text
+                id={groupHeading?.id}
+                // don't have screenreader announce this text element directly
+                // because it will be announced by with aria-labelledby below
+                aria-hidden="true"
+                {...theme.menu.group?.heading?.text}
+              >
+                {groupHeading?.heading}
+              </Text>
+            </Box>
+          )}
+          <Box role="group" aria-labelledby={groupHeading?.id}>
+            {group.map((item, j) =>
+              !item.heading ? menuItem(item, j) : undefined,
+            )}
+          </Box>
+        </Box>
+      );
+    });
+  } else menuContent = items.map((item, index) => menuItem(item, index));
+
   return (
     <Keyboard
       onDown={onDropOpen}
@@ -330,65 +427,7 @@ const Menu = forwardRef((props, ref) => {
                 ? controlMirror
                 : undefined}
               <Box overflow="auto" role="menu" a11yTitle={a11y}>
-                {items.map((item, index) => {
-                  // Determine whether the label is done as a child or
-                  // as an option Button kind property.
-                  const child = !theme.button.option ? (
-                    <Box
-                      align="start"
-                      pad="small"
-                      direction="row"
-                      gap={item.gap}
-                      justify={item.justify}
-                    >
-                      {item.reverse && item.label}
-                      {item.icon}
-                      {!item.reverse && item.label}
-                    </Box>
-                  ) : undefined;
-                  // if we have a child, turn on plain, and hoverIndicator
-
-                  return (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <Box key={index} flex={false} role="none">
-                      <Button
-                        ref={(r) => {
-                          buttonRefs.current[index] = r;
-                        }}
-                        role="menuitem"
-                        onFocus={() => {
-                          setActiveItemIndex(index);
-                        }}
-                        active={activeItemIndex === index}
-                        focusIndicator={false}
-                        plain={!child ? undefined : true}
-                        align="start"
-                        justify={item.justify}
-                        kind={!child ? 'option' : undefined}
-                        hoverIndicator={!child ? undefined : 'background'}
-                        {...(!child
-                          ? item
-                          : {
-                              ...item,
-                              gap: undefined,
-                              icon: undefined,
-                              label: undefined,
-                              reverse: undefined,
-                            })}
-                        onClick={(...args) => {
-                          if (item.onClick) {
-                            item.onClick(...args);
-                          }
-                          if (item.close !== false) {
-                            onDropClose();
-                          }
-                        }}
-                      >
-                        {child}
-                      </Button>
-                    </Box>
-                  );
-                })}
+                {menuContent}
               </Box>
               {/*
                 If align.top was defined,
