@@ -12,7 +12,6 @@ const PageHeader = forwardRef(
   (
     {
       actions,
-      children,
       gridProps: gridPropsProp,
       parent,
       responsive,
@@ -78,7 +77,6 @@ const PageHeader = forwardRef(
             {actions}
           </Box>
         </Grid>
-        {children}
       </Header>
     );
   },
