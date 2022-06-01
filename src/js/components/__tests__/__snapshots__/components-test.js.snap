@@ -2008,6 +2008,37 @@ Object {
           "parent": Object {
             "align": "start",
           },
+          "responsive": Object {
+            "actions": Object {
+              "align": "start",
+              "pad": Object {
+                "top": "small",
+              },
+            },
+            "areas": Array [
+              Array [
+                "parent",
+              ],
+              Array [
+                "title",
+              ],
+              Array [
+                "subtitle",
+              ],
+              Array [
+                "actions",
+              ],
+            ],
+            "breakpoints": Array [
+              "small",
+            ],
+            "columns": Array [
+              "auto",
+            ],
+            "rows": Array [
+              "auto",
+            ],
+          },
           "small": Object {
             "areas": Array [
               Array [
