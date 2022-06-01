@@ -31,7 +31,7 @@ export interface MenuProps {
   dropProps?: DropProps;
   gridArea?: GridAreaType;
   icon?: boolean | React.ReactNode;
-  items: object[] | ({ heading?: string, id?: string} | ButtonProps)[][];
+  items: ButtonProps[] | ({ heading?: string, id?: string} | ButtonProps)[][];
   justifyContent?: JustifyContentType;
   label?: string | React.ReactNode;
   margin?: MarginType;
