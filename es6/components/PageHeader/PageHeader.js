@@ -1,4 +1,4 @@
-var _excluded = ["actions", "children", "gridProps", "parent", "responsive", "subtitle", "title"];
+var _excluded = ["actions", "gridProps", "parent", "responsive", "subtitle", "title"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -14,7 +14,6 @@ import { Paragraph } from '../Paragraph';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 var PageHeader = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var actions = _ref.actions,
-      children = _ref.children,
       gridPropsProp = _ref.gridProps,
       parent = _ref.parent,
       responsive = _ref.responsive,
@@ -58,7 +57,7 @@ var PageHeader = /*#__PURE__*/forwardRef(function (_ref, ref) {
     gridArea: "subtitle"
   }, typeof subtitle === 'string' ? /*#__PURE__*/React.createElement(Paragraph, theme.pageHeader.subtitle, subtitle) : subtitle), /*#__PURE__*/React.createElement(Box, _extends({
     gridArea: "actions"
-  }, actionsProps), actions)), children);
+  }, actionsProps), actions)));
 });
 PageHeader.displayName = 'PageHeader';
 export { PageHeader };

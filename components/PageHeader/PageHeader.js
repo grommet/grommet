@@ -19,7 +19,7 @@ var _Paragraph = require("../Paragraph");
 
 var _ResponsiveContext = require("../../contexts/ResponsiveContext");
 
-var _excluded = ["actions", "children", "gridProps", "parent", "responsive", "subtitle", "title"];
+var _excluded = ["actions", "gridProps", "parent", "responsive", "subtitle", "title"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -31,7 +31,6 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var PageHeader = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var actions = _ref.actions,
-      children = _ref.children,
       gridPropsProp = _ref.gridProps,
       parent = _ref.parent,
       responsive = _ref.responsive,
@@ -75,7 +74,7 @@ var PageHeader = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     gridArea: "subtitle"
   }, typeof subtitle === 'string' ? /*#__PURE__*/_react["default"].createElement(_Paragraph.Paragraph, theme.pageHeader.subtitle, subtitle) : subtitle), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     gridArea: "actions"
-  }, actionsProps), actions)), children);
+  }, actionsProps), actions)));
 });
 exports.PageHeader = PageHeader;
 PageHeader.displayName = 'PageHeader';
