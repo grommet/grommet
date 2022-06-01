@@ -1395,6 +1395,20 @@ export var generate = function generate(baseSpacing, scale) {
         // any box props
         align: 'start'
       },
+      responsive: {
+        actions: {
+          // any box props
+          align: 'start',
+          pad: {
+            top: 'small'
+          }
+        },
+        areas: [['parent'], ['title'], ['subtitle'], ['actions']],
+        breakpoints: ['small'],
+        columns: ['auto'],
+        rows: ['auto'] // gap: undefined,
+
+      },
       subtitle: {
         // any paragraph props
         margin: 'none'

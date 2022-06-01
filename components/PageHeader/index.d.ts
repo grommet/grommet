@@ -16,6 +16,7 @@ export interface PageHeaderProps {
   actions?: JSX.Element;
   gridProps?: GridProps;
   parent?: JSX.Element;
+  responsive?: boolean;
   subtitle?: string | JSX.Element;
   title?: string | JSX.Element;
 }

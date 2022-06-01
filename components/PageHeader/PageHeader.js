@@ -19,7 +19,7 @@ var _Paragraph = require("../Paragraph");
 
 var _ResponsiveContext = require("../../contexts/ResponsiveContext");
 
-var _excluded = ["actions", "children", "gridProps", "parent", "subtitle", "title"];
+var _excluded = ["actions", "children", "gridProps", "parent", "responsive", "subtitle", "title"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -32,8 +32,9 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var PageHeader = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var actions = _ref.actions,
       children = _ref.children,
-      gridProps = _ref.gridProps,
+      gridPropsProp = _ref.gridProps,
       parent = _ref.parent,
+      responsive = _ref.responsive,
       subtitle = _ref.subtitle,
       title = _ref.title,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -41,12 +42,20 @@ var PageHeader = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
   var breakpoint = (0, _react.useContext)(_ResponsiveContext.ResponsiveContext);
 
-  var _ref2 = theme.pageHeader[breakpoint] || theme.pageHeader.medium,
-      areas = _ref2.areas,
-      columns = _ref2.columns,
-      gap = _ref2.gap,
-      rows = _ref2.rows;
+  var actionsProps = _extends({}, theme.pageHeader.actions);
 
+  var gridProps = theme.pageHeader[breakpoint] || theme.pageHeader.medium;
+
+  if (responsive && theme.pageHeader.responsive.breakpoints.includes(breakpoint)) {
+    gridProps = _extends({}, gridProps, theme.pageHeader.responsive);
+    actionsProps = _extends({}, actionsProps, theme.pageHeader.responsive.actions);
+  }
+
+  var _gridProps = gridProps,
+      areas = _gridProps.areas,
+      columns = _gridProps.columns,
+      gap = _gridProps.gap,
+      rows = _gridProps.rows;
   return /*#__PURE__*/_react["default"].createElement(_Header.Header, _extends({
     ref: ref,
     direction: "column",
@@ -58,7 +67,7 @@ var PageHeader = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     areas: areas,
     gap: gap,
     fill: "horizontal"
-  }, gridProps), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
+  }, gridPropsProp), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     gridArea: "parent"
   }, theme.pageHeader.parent), parent), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     gridArea: "title"
@@ -66,7 +75,7 @@ var PageHeader = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     gridArea: "subtitle"
   }, typeof subtitle === 'string' ? /*#__PURE__*/_react["default"].createElement(_Paragraph.Paragraph, theme.pageHeader.subtitle, subtitle) : subtitle), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     gridArea: "actions"
-  }, theme.pageHeader.actions), actions)), children);
+  }, actionsProps), actions)), children);
 });
 exports.PageHeader = PageHeader;
 PageHeader.displayName = 'PageHeader';
