@@ -38,7 +38,7 @@ export const Grouped = () => (
         align: { top: 'bottom', left: 'left' },
         elevation: 'xlarge',
       }}
-      label="Grouped with titles"
+      label="Grouped with headings"
       items={[
         [
           { heading: 'Cloud Consoles', id: 'cloud-consoles' },
