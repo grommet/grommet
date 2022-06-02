@@ -18,7 +18,7 @@ export interface TabsProps {
   margin?: MarginType;
   messages?: { tabContents?: string };
   onActive?: (index: number) => void;
-  scroll?: { step: number } | boolean;
+  step?: number;
 }
 
 type divProps = Omit<JSX.IntrinsicElements['div'], 'children'>;

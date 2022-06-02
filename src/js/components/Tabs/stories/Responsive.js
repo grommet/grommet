@@ -13,7 +13,6 @@ const ResponsiveTabs = () => {
     // <Grommet theme={...}>
     <Box align="center" pad="xlarge">
       <Tabs
-        scroll={{ step: 2 }}
         justify="start"
         alignControls="start"
         activeIndex={index}

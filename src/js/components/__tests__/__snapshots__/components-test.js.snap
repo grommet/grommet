@@ -2642,7 +2642,7 @@ Object {
       "margin": [Function],
       "messages": [Function],
       "onActive": [Function],
-      "scroll": [Function],
+      "step": [Function],
     },
     "render": [Function],
   },
