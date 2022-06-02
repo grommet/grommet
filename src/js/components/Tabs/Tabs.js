@@ -41,9 +41,16 @@ const Tabs = forwardRef(
     const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);
     const [activeContent, setActiveContent] = useState();
     const [activeTitle, setActiveTitle] = useState();
-    const [disableLeftArrow, setDisableLeftArrow] = useState();
-    const [disableRightArrow, setDisableRightArrow] = useState();
+    const [disableLeftArrow, setDisableLeftArrow] = useState(false);
+    const [disableRightArrow, setDisableRightArrow] = useState(false);
     const [overflow, setOverflow] = useState();
+    const [headerWidth, setHeaderWidth] = useState();
+    const [previousTabs, setPreviousTabs] = useState([]);
+    const [halfStartTab, setHalfStartTab] = useState();
+    const [showingTabs, setShowingTabs] = useState([]);
+    const [halfEndTab, setHalfEndTab] = useState();
+    const [nextTabs, setNextTabs] = useState([]);
+    const [focusIndex, setFocusIndex] = useState(-1);
     const headerRef = useRef();
 
     if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
@@ -56,101 +63,228 @@ const Tabs = forwardRef(
     /* eslint-enable no-param-reassign */
 
     const tabRefs = React.Children.map(children, () => React.createRef());
-    // const [focusIndex, setFocusIndex] = useState();
 
-    // check if tab is in view
-    const isVisible = (element) => {
-      const tabRect = element?.getBoundingClientRect();
-      const headerRect = headerRef.current?.getBoundingClientRect();
-      if (tabRect && headerRect)
-        // the -1 and +1 allow a little leniency when calculating if a tab is
-        // in view. Without the -1 and +1 a tab could be fully in view but
-        // isVisible will return false.
-        return (
-          tabRect.left >= headerRect.left - 1 &&
-          tabRect.right <= headerRect.right + 1
-        );
-      return undefined;
+    const shiftTab = (direction, stepNumber) => {
+      let shiftBy = stepNumber;
+      const previous = [...previousTabs];
+      let halfStart = halfStartTab;
+      const showing = [...showingTabs];
+      let halfEnd = halfEndTab;
+      const next = [...nextTabs];
+
+      const calculateTabsFit = () => {
+        showing.forEach((i) => {
+          if (tabRefs[i]?.current) {
+            tabRefs[i].current.style.display = 'inline';
+            document.getElementById(`container${i}`).style.overflow = 'visible';
+          }
+        });
+        let width = 0;
+        let i = direction === 'previous' ? 0 : showing.length - 1;
+        while (width < headerWidth && i >= 0 && i < showing.length) {
+          const tabRect = tabRefs[showing[i]]?.current.getBoundingClientRect();
+          if (tabRect) {
+            width += tabRect.width;
+            if (width > headerWidth) {
+              if (direction === 'previous') {
+                halfEnd = showing[i];
+                if (i !== showing.length - 1) {
+                  for (let j = i; j > 0; j -= 1) {
+                    next.unshift(showing.pop());
+                  }
+                }
+                halfEnd = showing.pop();
+                if (next.includes(halfEnd)) {
+                  halfEnd = undefined;
+                }
+                i = showing.length;
+              } else {
+                halfStart = showing[i];
+                if (i !== 0) {
+                  for (let j = i; j > 0; j -= 1) {
+                    previous.push(showing.shift());
+                  }
+                }
+                halfStart = showing.shift();
+                if (previous.includes(halfStart)) {
+                  halfStart = undefined;
+                }
+                i = 0;
+              }
+            }
+            i = direction === 'previous' ? i + 1 : i - 1;
+          }
+        }
+      };
+
+      while (shiftBy > 0) {
+        for (let i = 0; i < tabRefs.length; i += 1) {
+          if (tabRefs[i].current) {
+            tabRefs[i].current.style.display = 'inline';
+            document.getElementById(`container${i}`).style.overflow = 'visible';
+          }
+        }
+
+        if (direction === 'previous') {
+          if (halfStart !== undefined) {
+            showing.unshift(halfStart);
+            halfStart = undefined;
+          } else if (halfEnd !== undefined) {
+            next.unshift(halfEnd);
+            halfEnd = undefined;
+            showing.unshift(previous.pop());
+          } else {
+            showing.unshift(previous.pop());
+          }
+        }
+        if (direction === 'next') {
+          if (halfEnd !== undefined) {
+            showing.push(halfEnd);
+            halfEnd = undefined;
+          } else if (halfStart !== undefined) {
+            previous.push(halfStart);
+            halfStart = undefined;
+            showing.push(next.shift());
+          } else {
+            showing.push(next.shift());
+          }
+        }
+        calculateTabsFit();
+        shiftBy -= 1;
+        if (
+          (direction === 'previous' && previous.length === 0) ||
+          (direction === 'next' && next.length === 0)
+        )
+          shiftBy = 0;
+      }
+
+      setPreviousTabs(previous);
+      setHalfStartTab(halfStart);
+      setShowingTabs(showing);
+      setHalfEndTab(halfEnd);
+      setNextTabs(next);
     };
 
-    const updateArrowState = useCallback(() => {
-      setDisableLeftArrow(isVisible(tabRefs[0].current));
-      setDisableRightArrow(isVisible(tabRefs[tabRefs.length - 1].current));
-    }, [tabRefs]);
+    useLayoutEffect(() => {
+      for (let i = 0; i < tabRefs.length; i += 1) {
+        document.getElementById(`container${i}`).style.overflow = 'visible';
+        if (tabRefs[i].current) tabRefs[i].current.style.display = 'inline';
+      }
+      headerRef.current.style.overflow = 'visible';
 
-    useEffect(() => {
-      if (overflow) {
-        if (!isVisible(tabRefs[activeIndex].current)) {
-          // if the active tab isn't visible scroll to it
-          tabRefs[activeIndex].current.scrollIntoView();
-          updateArrowState();
+      const previous = [];
+      let halfStart;
+      const showing = [];
+      let halfEnd;
+      const next = [];
+
+      const headerRect = headerRef.current?.getBoundingClientRect();
+
+      if (headerRect && tabRefs) {
+        let width = 0;
+        for (let i = 0; i < tabRefs.length; i += 1) {
+          if (tabRefs[i].current) {
+            const tabRect = tabRefs[i].current?.getBoundingClientRect();
+            width += tabRect.width;
+            if (width <= headerWidth) {
+              showing.push(i);
+            } else if (tabRect) {
+              if (tabRect.right <= headerRect.left) previous.push(i);
+              else if (tabRect.left >= headerRect.right) next.push(i);
+              else if (tabRect.left > headerRect.left) halfEnd = i;
+              else if (tabRect.right < headerRect.right) halfStart = i;
+            }
+          }
         }
+
+        setPreviousTabs(previous);
+        setHalfStartTab(halfStart);
+        setShowingTabs(showing);
+        setHalfEndTab(halfEnd);
+        setNextTabs(next);
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [overflow, activeIndex]);
+    }, [headerWidth]);
 
-    // useEffect(() => {
-    // // if the focus index is changing make sure the previous and next arrows
-    //   // are in sync
-    //   if (overflow) {
-    //     for (let i = 0; i < tabRefs.length; i += 1) {
-    //       if (tabRefs[i].current === document.activeElement) {
-    //         console.log('YES');
-    //         setFocusIndex(i);
-    //         // tabRefs[i].current.scrollIntoView();
-    //       }
-    //     }
-    //   }
-    // }, [overflow, tabRefs, document.activeElement, updateArrowState]);
+    useEffect(() => {
+      if (showingTabs.length > 0 && !showingTabs.includes(activeIndex)) {
+        if (activeIndex < showingTabs[0]) shiftTab('previous', 1);
+        if (activeIndex > showingTabs[showingTabs.length - 1])
+          shiftTab('next', 1);
+      }
+      setFocusIndex(activeIndex);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [activeIndex]);
 
-    // useEffect(() => {
-    //   if (focusIndex && tabRefs && !isVisible(tabRefs[focusIndex].current)) {
-    //     tabRefs[focusIndex].current.scrollIntoView();
-    //     updateArrowState();
-    //   }
-    // }, [focusIndex, tabRefs, updateArrowState]);
+    useEffect(() => {
+      if (focusIndex === halfEndTab) shiftTab('next', 1);
+      if (focusIndex === halfStartTab) shiftTab('previous', 1);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [focusIndex]);
+
+    useLayoutEffect(() => {
+      for (let i = 0; i < tabRefs.length; i += 1) {
+        if (tabRefs[i].current) {
+          tabRefs[i].current.style.display = 'inline';
+          tabRefs[i].current.style.float = 'left';
+          document.getElementById(`container${i}`).style.overflow = 'visible';
+        }
+      }
+      previousTabs.forEach((i) => {
+        if (tabRefs[i].current) tabRefs[i].current.style.display = 'none';
+      });
+      nextTabs.forEach((i) => {
+        if (tabRefs[i].current) tabRefs[i].current.style.display = 'none';
+      });
+      showingTabs.forEach((i) => {
+        if (tabRefs[i].current) tabRefs[i].current.style.display = 'inline';
+      });
+
+      if (halfEndTab !== undefined && tabRefs[halfEndTab].current) {
+        tabRefs[halfEndTab].current.style.display = 'inline';
+        document.getElementById(`container${halfEndTab}`).style.overflow =
+          'hidden';
+      }
+      if (halfStartTab !== undefined && tabRefs[halfStartTab].current) {
+        document.getElementById(`container${halfStartTab}`).style.overflow =
+          'hidden';
+        tabRefs[halfStartTab].current.style.float = 'right';
+        tabRefs[halfStartTab].current.style.display = 'inline';
+      }
+      setDisableLeftArrow(
+        previousTabs.length === 0 && halfStartTab === undefined,
+      );
+      setDisableRightArrow(nextTabs.length === 0 && halfEndTab === undefined);
+    }, [
+      previousTabs,
+      showingTabs,
+      nextTabs,
+      halfStartTab,
+      halfEndTab,
+      tabRefs,
+    ]);
 
     useLayoutEffect(() => {
       const onResize = () => {
         // check if tabs are overflowing
-        if (headerRef.current.scrollWidth > headerRef.current.offsetWidth) {
+        if (
+          headerRef.current.scrollWidth > headerRef.current.offsetWidth ||
+          previousTabs.length > 0 ||
+          nextTabs.length > 0 ||
+          halfStartTab !== undefined ||
+          halfEndTab !== undefined
+        ) {
           setOverflow(true);
         } else setOverflow(false);
-        updateArrowState();
+
+        const headerRect = headerRef.current?.getBoundingClientRect();
+        setHeaderWidth(headerRect.width);
       };
       onResize();
-      // if (
-      //   overflow === undefined ||
-      //   disableLeftArrow === undefined ||
-      //   disableRightArrow === undefined
-      // ) {
-      //   onResize();
-      // // // setTimeout with a delay of 0 ensures call to onResize runs after
-      //   //   // currently executing code so we get the correct dimensions
-      //   //   if (overflow === undefined) {
-      //   //     setTimeout(() => {
-      //   //       onResize();
-      //   //     }, 0);
-      //   //     // console.log(overflow)
-      //   //   }
-      //   //   if (!isVisible(tabRefs[activeIndex].current)) {
-      //   //     // if the active tab isn't visible scroll to it
-      //   //     tabRefs[activeIndex].current.scrollIntoView();
-      //   //     updateArrowState();
-      //   //   }
-      // }
 
       window.addEventListener('resize', onResize);
       return () => window.removeEventListener('resize', onResize);
-    }, [
-      tabRefs,
-      disableLeftArrow,
-      disableRightArrow,
-      activeIndex,
-      headerRef,
-      overflow,
-      updateArrowState,
-    ]);
+    }, [headerRef, previousTabs, nextTabs, halfEndTab, halfStartTab]);
 
     const getTabsContext = useCallback(
       (index) => {
@@ -166,26 +300,30 @@ const Tabs = forwardRef(
         return {
           activeIndex,
           active: activeIndex === index,
+          index,
           ref: tabRefs[index],
           onActivate: () => activateTab(index),
           setActiveContent,
           setActiveTitle,
+          setFocusIndex,
         };
       },
       [activeIndex, onActive, propsActiveIndex, tabRefs],
     );
 
     const tabs = React.Children.map(children, (child, index) => (
-      <TabsContext.Provider value={getTabsContext(index)}>
-        {/* possible to have undefined child. in that case, you can't
+      <div id={`container${index}`}>
+        <TabsContext.Provider value={getTabsContext(index)}>
+          {/* possible to have undefined child. in that case, you can't
         do cloneElement */}
-        {child
-          ? // cloneElement is needed for backward compatibility with custom
-            // styled components that rely on props.active. We should reassess
-            // if it is still necessary in our next major release.
-            React.cloneElement(child, { active: activeIndex === index })
-          : child}
-      </TabsContext.Provider>
+          {child
+            ? // cloneElement is needed for backward compatibility with custom
+              // styled components that rely on props.active. We should reassess
+              // if it is still necessary in our next major release.
+              React.cloneElement(child, { active: activeIndex === index })
+            : child}
+        </TabsContext.Provider>
+      </div>
     ));
 
     const tabsHeaderStyles = {};
@@ -217,45 +355,15 @@ const Tabs = forwardRef(
         {...rest}
         background={theme.tabs.background}
       >
-        <Box direction={overflow ? 'row' : 'column'}>
+        <Box direction="row" {...tabsHeaderStyles}>
           {overflow && (
             <Button
               a11yTitle="Previous Tab"
               icon={<Previous />}
               disabled={disableLeftArrow}
-              // removed from tabIndex, button is redundant for keyboard users
-              tabIndex={-1}
               onClick={() => {
-                let scrolledToIndex;
-                let i = 0;
-                while (
-                  scrolledToIndex === undefined &&
-                  i < tabRefs.length - 1
-                ) {
-                  if (
-                    !isVisible(tabRefs[i].current) &&
-                    isVisible(tabRefs[i + 1].current)
-                  ) {
-                    if (step) i = Math.max(i - (step - 1), 0);
-                    scrolledToIndex = i;
-                    tabRefs[i].current.scrollIntoView({ behavior: 'smooth' });
-                  }
-                  i += 1;
-                }
-
-                setDisableRightArrow(false);
-                if (scrolledToIndex === 0) {
-                  // wait for scroll animation to finish
-                  const checkVisible = setInterval(() => {
-                    if (isVisible(tabRefs[0].current)) {
-                      setDisableLeftArrow(true);
-                      clearInterval(checkVisible);
-                    }
-                  }, 100);
-                  setTimeout(() => {
-                    clearInterval(checkVisible);
-                  }, 500);
-                }
+                if (step > 1) shiftTab('previous', step);
+                else shiftTab('previous', 1);
               }}
             />
           )}
@@ -267,10 +375,9 @@ const Tabs = forwardRef(
             alignSelf={alignControls}
             flex={!!overflow}
             wrap={false}
-            overflow={overflow ? 'hidden' : 'visible'}
             background={theme.tabs.header.background}
             gap={theme.tabs.gap}
-            {...tabsHeaderStyles}
+            overflow="visible"
           >
             {tabs}
           </StyledTabsHeader>
@@ -279,37 +386,9 @@ const Tabs = forwardRef(
               a11yTitle="Next Tab"
               icon={<Next />}
               disabled={disableRightArrow}
-              // removed from tabIndex, button is redundant for keyboard users
-              tabIndex={-1}
               onClick={() => {
-                let scrolledToIndex;
-                let i = tabRefs.length - 1;
-
-                while (scrolledToIndex === undefined && i > 0) {
-                  if (
-                    !isVisible(tabRefs[i].current) &&
-                    isVisible(tabRefs[i - 1].current)
-                  ) {
-                    if (step) i = Math.min(i + (step - 1), tabRefs.length - 1);
-                    scrolledToIndex = i;
-                    tabRefs[i].current.scrollIntoView({ behavior: 'smooth' });
-                  }
-                  i -= 1;
-                }
-
-                setDisableLeftArrow(false);
-                if (scrolledToIndex === tabRefs.length - 1) {
-                  // wait for scroll animation to finish
-                  const checkVisible = setInterval(() => {
-                    if (isVisible(tabRefs[tabRefs.length - 1].current)) {
-                      setDisableRightArrow(true);
-                      clearInterval(checkVisible);
-                    }
-                  }, 100);
-                  setTimeout(() => {
-                    clearInterval(checkVisible);
-                  }, 500);
-                }
+                if (step > 1) shiftTab('next', step);
+                else shiftTab('next', 1);
               }}
             />
           )}

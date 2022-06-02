@@ -28,10 +28,12 @@ const Tab = ({
   const {
     active,
     activeIndex,
+    index,
     ref,
     onActivate,
     setActiveContent,
     setActiveTitle,
+    setFocusIndex,
   } = useContext(TabsContext);
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [over, setOver] = useState(undefined);
@@ -182,10 +184,12 @@ const Tab = ({
       onMouseOut={onMouseOutTab}
       onFocus={() => {
         setFocus(true);
+        setFocusIndex(index);
         if (onMouseOver) onMouseOver();
       }}
       onBlur={() => {
         setFocus(undefined);
+        setFocusIndex(-1);
         if (onMouseOut) onMouseOut();
       }}
       // ensure focus outline is not covered by hover styling
