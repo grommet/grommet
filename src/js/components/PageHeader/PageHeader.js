@@ -9,22 +9,52 @@ import { Paragraph } from '../Paragraph';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 
 const PageHeader = forwardRef(
-  ({ actions, children, gridProps, parent, subtitle, title, ...rest }, ref) => {
+  (
+    {
+      actions,
+      gridProps: gridPropsProp,
+      parent,
+      responsive,
+      subtitle,
+      title,
+      ...rest
+    },
+    ref,
+  ) => {
     const theme = useContext(ThemeContext);
     const breakpoint = useContext(ResponsiveContext);
 
-    const { areas, columns, gap, rows } =
-      theme.pageHeader[breakpoint] || theme.pageHeader.medium;
+    let actionsProps = { ...theme.pageHeader.actions };
+    let gridProps = theme.pageHeader[breakpoint] || theme.pageHeader.medium;
+
+    if (
+      responsive &&
+      theme.pageHeader.responsive.breakpoints.includes(breakpoint)
+    ) {
+      gridProps = { ...gridProps, ...theme.pageHeader.responsive };
+      actionsProps = {
+        ...actionsProps,
+        ...theme.pageHeader.responsive.actions,
+      };
+    }
+
+    const { areas, columns, gap, rows } = gridProps;
 
     return (
-      <Header ref={ref} direction="column" gap="none" {...rest}>
+      <Header
+        ref={ref}
+        direction="column"
+        gap="none"
+        pad={theme.pageHeader.pad}
+        {...rest}
+      >
         <Grid
           columns={columns}
           rows={rows}
           areas={areas}
           gap={gap}
           fill="horizontal"
-          {...gridProps}
+          {...gridPropsProp}
         >
           <Box gridArea="parent" {...theme.pageHeader.parent}>
             {parent}
@@ -43,11 +73,10 @@ const PageHeader = forwardRef(
               subtitle
             )}
           </Box>
-          <Box gridArea="actions" {...theme.pageHeader.actions}>
+          <Box gridArea="actions" {...actionsProps}>
             {actions}
           </Box>
         </Grid>
-        {children}
       </Header>
     );
   },

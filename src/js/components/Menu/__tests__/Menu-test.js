@@ -1,6 +1,7 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
 import 'jest-axe/extend-expect';
@@ -589,5 +590,29 @@ describe('Menu', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should group items', async () => {
+    const user = userEvent.setup();
+
+    window.scrollTo = jest.fn();
+    const onClick = jest.fn();
+    const { asFragment } = render(
+      <Grommet>
+        <Menu
+          label="Test Menu"
+          items={[
+            [{ label: 'Item 1' }, { label: 'Item 2', onClick }],
+            [{ label: 'Item 3' }],
+          ]}
+          open
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('menuitem', { name: 'Item 2' }));
+    expect(onClick).toBeCalledTimes(1);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

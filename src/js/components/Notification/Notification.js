@@ -60,15 +60,14 @@ const Notification = ({
   status,
   title,
   toast,
+  ...rest
 }) => {
   const autoClose =
     toast && toast?.autoClose === undefined ? true : toast.autoClose;
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
 
-  const position = useMemo(() => 
-    (toast && toast?.position) || 'top', 
-    [toast]);
+  const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
 
   const close = useCallback(
     (event) => {
@@ -96,7 +95,8 @@ const Notification = ({
   ]);
 
   const { icon: CloseIcon } = theme.notification.close;
-  const { icon: StatusIcon, color } = theme.notification[status];
+  const { icon: StatusIcon, color } =
+    theme.notification?.[status] || theme.notification.unknown;
   const { color: closeIconColor } = theme.notification.close;
 
   const kind = useMemo(() => {
@@ -173,6 +173,8 @@ const Notification = ({
       pad={undefined}
       direction="row"
       gap="small"
+      id={toast ? undefined : id}
+      {...rest}
     >
       {/* separate from onClose button to allow "onClick" in the future and 
         avoid nested interactive elements */}

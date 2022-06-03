@@ -2,6 +2,7 @@ import * as React from 'react';
 import { BoxProps } from '../Box/index';
 
 export interface RadioButtonGroupProps {
+  children?: Function;
   disabled?: boolean;
   name: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -22,7 +23,7 @@ export interface RadioButtonGroupProps {
 export interface RadioButtonGroupExtendedProps
   extends RadioButtonGroupProps,
     BoxProps,
-    Omit<JSX.IntrinsicElements['div'], 'onClick' | 'onChange'> {}
+    Omit<JSX.IntrinsicElements['div'], 'children' | 'onClick' | 'onChange'> {}
 
 declare const RadioButtonGroup: React.FC<RadioButtonGroupExtendedProps>;
 

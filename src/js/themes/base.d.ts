@@ -1040,6 +1040,13 @@ export interface ThemeType {
     background?: BackgroundType;
     drop?: DropProps;
     extend?: ExtendType;
+    group?: {
+      container?: BoxProps;
+      separator?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
     icons?: {
       down?: any;
       up?: any;
@@ -1156,7 +1163,16 @@ export interface ThemeType {
   };
   pageHeader?: {
     actions?: BoxProps;
+    pad?: PadType;
     parent?: BoxProps;
+    responsive?: {
+      actions?: BoxProps;
+      areas?: AreasType;
+      breakpoints?: string[];
+      columns?: GridColumnsType;
+      rows?: GridSizeType;
+      gap?: GridGapType;
+    };
     subtitle?: ParagraphProps;
     title?: HeadingProps;
     small?: {

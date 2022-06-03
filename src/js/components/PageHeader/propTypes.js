@@ -9,6 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
     actions: PropTypes.element,
     gridProps: GridPropTypes,
     parent: PropTypes.element,
+    responsive: PropTypes.bool,
     subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   };

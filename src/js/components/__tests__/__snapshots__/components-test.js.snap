@@ -1702,6 +1702,17 @@ Object {
               "top": "top",
             },
           },
+          "group": Object {
+            "container": Object {
+              "pad": Object {
+                "vertical": "xsmall",
+              },
+            },
+            "separator": Object {
+              "color": "border",
+              "size": "xsmall",
+            },
+          },
           "icons": Object {
             "down": Object {
               "$$typeof": Symbol(react.forward_ref),
@@ -2001,8 +2012,43 @@ Object {
               "auto",
             ],
           },
+          "pad": Object {
+            "bottom": "medium",
+            "top": "large",
+          },
           "parent": Object {
             "align": "start",
+          },
+          "responsive": Object {
+            "actions": Object {
+              "align": "start",
+              "pad": Object {
+                "top": "small",
+              },
+            },
+            "areas": Array [
+              Array [
+                "parent",
+              ],
+              Array [
+                "title",
+              ],
+              Array [
+                "subtitle",
+              ],
+              Array [
+                "actions",
+              ],
+            ],
+            "breakpoints": Array [
+              "small",
+            ],
+            "columns": Array [
+              "auto",
+            ],
+            "rows": Array [
+              "auto",
+            ],
           },
           "small": Object {
             "areas": Array [
