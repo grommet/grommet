@@ -1144,6 +1144,17 @@ export var generate = function generate(baseSpacing, scale) {
         } // any drop props
 
       },
+      group: {
+        container: {
+          pad: {
+            vertical: 'xsmall'
+          }
+        },
+        separator: {
+          color: 'border',
+          size: 'xsmall'
+        }
+      },
       icons: {
         down: FormDown // up: undefined,
         // color: { dark: undefined, light: undefined },

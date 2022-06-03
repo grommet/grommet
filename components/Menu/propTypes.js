@@ -33,7 +33,7 @@ if (process.env.NODE_ENV !== 'production') {
     dropProps: _propTypes["default"].object,
     justifyContent: _propTypes["default"].oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']),
     icon: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].node]),
-    items: _propTypes["default"].arrayOf(_propTypes["default"].object).isRequired,
+    items: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].object), _propTypes["default"].arrayOf(_propTypes["default"].arrayOf(_propTypes["default"].object))]).isRequired,
     label: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
     messages: _propTypes["default"].shape({
       closeMenu: _propTypes["default"].string,

@@ -95,13 +95,25 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       themeDropAlign = _theme$menu$drop.align,
       themeDropProps = _objectWithoutPropertiesLoose(_theme$menu$drop, _excluded2);
 
-  var a11y = ariaLabel || a11yTitle;
+  var a11y = ariaLabel || a11yTitle; // total number of menu items
+
+  var itemCount = (0, _react.useMemo)(function () {
+    var count = 0;
+
+    if (items && Array.isArray(items[0])) {
+      items.forEach(function (group) {
+        count += group.length;
+      });
+    } else count = items.length;
+
+    return count;
+  }, [items]);
   var align = dropProps && dropProps.align || dropAlign || themeDropAlign;
   var controlButtonIndex = (0, _react.useMemo)(function () {
     if (align.top === 'top') return -1;
-    if (align.bottom === 'bottom') return items.length;
+    if (align.bottom === 'bottom') return itemCount;
     return undefined;
-  }, [align, items]); // Keeps track of whether menu options should be mirrored
+  }, [align, itemCount]); // Keeps track of whether menu options should be mirrored
   // when there's not enough space below DropButton. This state
   // is modified on /Drop/DropContainer.js.
 
@@ -177,7 +189,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
 
     if (!isOpen) {
       onDropOpen();
-    } else if (isTab(event) && (!constants.controlBottom && activeItemIndex === items.length - 1 || constants.controlBottom && activeItemIndex === controlButtonIndex)) {
+    } else if (isTab(event) && (!constants.controlBottom && activeItemIndex === itemCount - 1 || constants.controlBottom && activeItemIndex === controlButtonIndex)) {
       // User has reached end of the menu, this tab will close
       // the menu drop because there are no more "next items" to access
       onDropClose();
@@ -188,7 +200,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       // In the case the the menu control button is located at the
       // bottom of the menu, it checks if the user has reached the button.
       // Otherwise, it checks if the user is at the last menu item.
-      constants.controlBottom && activeItemIndex === controlButtonIndex || !constants.controlBottom && activeItemIndex === items.length - 1 || activeItemIndex === constants.none) {
+      constants.controlBottom && activeItemIndex === controlButtonIndex || !constants.controlBottom && activeItemIndex === itemCount - 1 || activeItemIndex === constants.none) {
         // place focus on the first menu item
         index = 0;
       } else {
@@ -216,12 +228,12 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       var index;
 
       if (activeItemIndex === 'none') {
-        index = items.length - 1;
+        index = itemCount - 1;
       } else if (activeItemIndex - 1 < 0) {
         if (constants.controlTop && activeItemIndex - 1 === controlButtonIndex) {
-          index = items.length;
+          index = itemCount;
         } else {
-          index = items.length - 1;
+          index = itemCount - 1;
         }
       } else {
         index = activeItemIndex - 1;
@@ -275,7 +287,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
     ref: function ref(r) {
       // make it accessible at the end of all menu items
-      buttonRefs.current[items.length] = r;
+      buttonRefs.current[itemCount] = r;
     },
     a11yTitle: a11y || format({
       id: 'menu.closeMenu',
@@ -297,6 +309,86 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       drop: true
     }));
   } : content));
+
+  var menuItem = function menuItem(item, index) {
+    // Determine whether the label is done as a child or
+    // as an option Button kind property.
+    var child = !theme.button.option ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      align: "start",
+      pad: "small",
+      direction: "row",
+      gap: item.gap,
+      justify: item.justify
+    }, item.reverse && item.label, item.icon, !item.reverse && item.label) : undefined; // if we have a child, turn on plain, and hoverIndicator
+
+    return (
+      /*#__PURE__*/
+      // eslint-disable-next-line react/no-array-index-key
+      _react["default"].createElement(_Box.Box, {
+        key: index,
+        flex: false,
+        role: "none"
+      }, /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
+        ref: function ref(r) {
+          buttonRefs.current[index] = r;
+        },
+        role: "menuitem",
+        onFocus: function onFocus() {
+          setActiveItemIndex(index);
+        },
+        active: activeItemIndex === index,
+        focusIndicator: false,
+        plain: !child ? undefined : true,
+        align: "start",
+        justify: item.justify,
+        kind: !child ? 'option' : undefined,
+        hoverIndicator: !child ? undefined : 'background'
+      }, !child ? item : _extends({}, item, {
+        gap: undefined,
+        icon: undefined,
+        label: undefined,
+        reverse: undefined
+      }), {
+        onClick: function onClick() {
+          if (item.onClick) {
+            item.onClick.apply(item, arguments);
+          }
+
+          if (item.close !== false) {
+            onDropClose();
+          }
+        }
+      }), child))
+    );
+  };
+
+  var menuContent;
+
+  if (itemCount && Array.isArray(items[0])) {
+    var index = 0;
+    menuContent = items.map(function (group, groupIndex) {
+      var _theme$menu$group, _theme$menu$group2, _theme$menu$group2$se, _theme$menu$group3, _theme$menu$group3$se;
+
+      return /*#__PURE__*/_react["default"].createElement(_Box.Box // eslint-disable-next-line react/no-array-index-key
+      , _extends({
+        key: groupIndex
+      }, (_theme$menu$group = theme.menu.group) == null ? void 0 : _theme$menu$group.container, {
+        border: groupIndex > 0 ? {
+          side: 'top',
+          color: (_theme$menu$group2 = theme.menu.group) == null ? void 0 : (_theme$menu$group2$se = _theme$menu$group2.separator) == null ? void 0 : _theme$menu$group2$se.color,
+          size: (_theme$menu$group3 = theme.menu.group) == null ? void 0 : (_theme$menu$group3$se = _theme$menu$group3.separator) == null ? void 0 : _theme$menu$group3$se.size
+        } : undefined
+      }), group.map(function (item) {
+        // item index needs to be its index in the entire menu as if
+        // it were a flat array
+        var currentIndex = index;
+        index += 1;
+        return menuItem(item, currentIndex);
+      }));
+    });
+  } else menuContent = items.map(function (item, index) {
+    return menuItem(item, index);
+  });
 
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onDown: onDropOpen,
@@ -337,57 +429,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       overflow: "auto",
       role: "menu",
       a11yTitle: a11y
-    }, items.map(function (item, index) {
-      // Determine whether the label is done as a child or
-      // as an option Button kind property.
-      var child = !theme.button.option ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-        align: "start",
-        pad: "small",
-        direction: "row",
-        gap: item.gap,
-        justify: item.justify
-      }, item.reverse && item.label, item.icon, !item.reverse && item.label) : undefined; // if we have a child, turn on plain, and hoverIndicator
-
-      return (
-        /*#__PURE__*/
-        // eslint-disable-next-line react/no-array-index-key
-        _react["default"].createElement(_Box.Box, {
-          key: index,
-          flex: false,
-          role: "none"
-        }, /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
-          ref: function ref(r) {
-            buttonRefs.current[index] = r;
-          },
-          role: "menuitem",
-          onFocus: function onFocus() {
-            setActiveItemIndex(index);
-          },
-          active: activeItemIndex === index,
-          focusIndicator: false,
-          plain: !child ? undefined : true,
-          align: "start",
-          justify: item.justify,
-          kind: !child ? 'option' : undefined,
-          hoverIndicator: !child ? undefined : 'background'
-        }, !child ? item : _extends({}, item, {
-          gap: undefined,
-          icon: undefined,
-          label: undefined,
-          reverse: undefined
-        }), {
-          onClick: function onClick() {
-            if (item.onClick) {
-              item.onClick.apply(item, arguments);
-            }
-
-            if (item.close !== false) {
-              onDropClose();
-            }
-          }
-        }), child))
-      );
-    })), !initialAlignTop && (alignControlMirror === 'bottom' || align.bottom === 'bottom') ? controlMirror : undefined))
+    }, menuContent), !initialAlignTop && (alignControlMirror === 'bottom' || align.bottom === 'bottom') ? controlMirror : undefined))
   }), content));
 });
 exports.Menu = Menu;
