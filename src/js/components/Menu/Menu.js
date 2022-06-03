@@ -86,12 +86,24 @@ const Menu = forwardRef((props, ref) => {
   const { align: themeDropAlign, ...themeDropProps } = theme.menu.drop;
   const a11y = ariaLabel || a11yTitle;
 
+  // total number of menu items
+  const itemCount = useMemo(() => {
+    let count = 0;
+    if (items && Array.isArray(items[0])) {
+      items.forEach((group) => {
+        count += group.length;
+      });
+    } else count = items.length;
+
+    return count;
+  }, [items]);
+
   const align = (dropProps && dropProps.align) || dropAlign || themeDropAlign;
   const controlButtonIndex = useMemo(() => {
     if (align.top === 'top') return -1;
-    if (align.bottom === 'bottom') return items.length;
+    if (align.bottom === 'bottom') return itemCount;
     return undefined;
-  }, [align, items]);
+  }, [align, itemCount]);
 
   // Keeps track of whether menu options should be mirrored
   // when there's not enough space below DropButton. This state
@@ -163,7 +175,7 @@ const Menu = forwardRef((props, ref) => {
       onDropOpen();
     } else if (
       isTab(event) &&
-      ((!constants.controlBottom && activeItemIndex === items.length - 1) ||
+      ((!constants.controlBottom && activeItemIndex === itemCount - 1) ||
         (constants.controlBottom && activeItemIndex === controlButtonIndex))
     ) {
       // User has reached end of the menu, this tab will close
@@ -177,7 +189,7 @@ const Menu = forwardRef((props, ref) => {
         // bottom of the menu, it checks if the user has reached the button.
         // Otherwise, it checks if the user is at the last menu item.
         (constants.controlBottom && activeItemIndex === controlButtonIndex) ||
-        (!constants.controlBottom && activeItemIndex === items.length - 1) ||
+        (!constants.controlBottom && activeItemIndex === itemCount - 1) ||
         activeItemIndex === constants.none
       ) {
         // place focus on the first menu item
@@ -207,15 +219,15 @@ const Menu = forwardRef((props, ref) => {
     } else {
       let index;
       if (activeItemIndex === 'none') {
-        index = items.length - 1;
+        index = itemCount - 1;
       } else if (activeItemIndex - 1 < 0) {
         if (
           constants.controlTop &&
           activeItemIndex - 1 === controlButtonIndex
         ) {
-          index = items.length;
+          index = itemCount;
         } else {
-          index = items.length - 1;
+          index = itemCount - 1;
         }
       } else {
         index = activeItemIndex - 1;
@@ -267,7 +279,7 @@ const Menu = forwardRef((props, ref) => {
       <Button
         ref={(r) => {
           // make it accessible at the end of all menu items
-          buttonRefs.current[items.length] = r;
+          buttonRefs.current[itemCount] = r;
         }}
         a11yTitle={a11y || format({ id: 'menu.closeMenu', messages })}
         active={activeItemIndex === controlButtonIndex}
@@ -349,40 +361,29 @@ const Menu = forwardRef((props, ref) => {
   };
 
   let menuContent;
-  if (items.length && Array.isArray(items[0])) {
-    menuContent = items.map((group, i) => {
-      const groupHeading = group.find((item) => item.heading);
-
-      return (
-        <Box
-          {...theme.menu.group?.container}
-          border={
-            i > 0
-              ? { side: 'top', ...theme.menu.group?.container?.border }
-              : undefined
+  if (itemCount && Array.isArray(items[0])) {
+    menuContent = items.map((group, groupIndex) => (
+      <Box
+        // eslint-disable-next-line react/no-array-index-key
+        key={groupIndex}
+        {...theme.menu.group?.container}
+        border={
+          groupIndex > 0
+            ? { side: 'top', ...theme.menu.group?.container?.border }
+            : undefined
+        }
+      >
+        {/* index needs to be its index in the entire menu as if 
+        it were a flat array */}
+        {group.map((item, j) => {
+          let itemIndex = j;
+          for (let k = 0; k < groupIndex; k += 1) {
+            itemIndex += items[k].length;
           }
-        >
-          {groupHeading && (
-            <Box {...theme.menu.group?.heading?.container}>
-              <Text
-                id={groupHeading?.id}
-                // don't have screenreader announce this text element directly
-                // because it will be announced by with aria-labelledby below
-                aria-hidden="true"
-                {...theme.menu.group?.heading?.text}
-              >
-                {groupHeading?.heading}
-              </Text>
-            </Box>
-          )}
-          <Box role="group" aria-labelledby={groupHeading?.id}>
-            {group.map((item, j) =>
-              !item.heading ? menuItem(item, j) : undefined,
-            )}
-          </Box>
-        </Box>
-      );
-    });
+          return menuItem(item, itemIndex);
+        })}
+      </Box>
+    ));
   } else menuContent = items.map((item, index) => menuItem(item, index));
 
   return (

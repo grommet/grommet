@@ -1708,17 +1708,6 @@ Object {
                 "vertical": "xsmall",
               },
             },
-            "heading": Object {
-              "container": Object {
-                "pad": Object {
-                  "bottom": "xsmall",
-                  "horizontal": "small",
-                },
-              },
-              "text": Object {
-                "size": "xsmall",
-              },
-            },
           },
           "icons": Object {
             "down": Object {

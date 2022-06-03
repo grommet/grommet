@@ -1055,15 +1055,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             vertical: 'xsmall',
           },
         },
-        heading: {
-          container: {
-            pad: {
-              horizontal: 'small',
-              bottom: 'xsmall',
-            },
-          },
-          text: { size: 'xsmall' },
-        },
       },
       icons: {
         down: FormDown,
