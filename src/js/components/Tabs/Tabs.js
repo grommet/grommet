@@ -30,7 +30,7 @@ const Tabs = forwardRef(
       justify = 'center',
       messages,
       responsive = true,
-      step,
+      step = 1,
       ...rest
     },
     ref,
@@ -44,6 +44,7 @@ const Tabs = forwardRef(
     const [disableLeftArrow, setDisableLeftArrow] = useState();
     const [disableRightArrow, setDisableRightArrow] = useState();
     const [overflow, setOverflow] = useState();
+    const [focusIndex, setFocusIndex] = useState(-1);
     const headerRef = useRef();
 
     if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
@@ -56,59 +57,94 @@ const Tabs = forwardRef(
     /* eslint-enable no-param-reassign */
 
     const tabRefs = React.Children.map(children, () => React.createRef());
-    // const [focusIndex, setFocusIndex] = useState();
 
     // check if tab is in view
-    const isVisible = (element) => {
-      const tabRect = element?.getBoundingClientRect();
-      const headerRect = headerRef.current?.getBoundingClientRect();
-      if (tabRect && headerRect)
-        // the -1 and +1 allow a little leniency when calculating if a tab is
-        // in view. Without the -1 and +1 a tab could be fully in view but
-        // isVisible will return false.
-        return (
-          tabRect.left >= headerRect.left - 1 &&
-          tabRect.right <= headerRect.right + 1
-        );
-      return undefined;
-    };
+    const isVisible = useCallback(
+      (element) => {
+        if (element) {
+          const tabRect = element.getBoundingClientRect();
+          const headerRect = headerRef.current?.getBoundingClientRect();
+          if (tabRect && headerRect) {
+            // the -1 and +1 allow a little leniency when calculating if a tab
+            // is in view. Without the -1 and +1 a tab could be fully in view
+            // but isVisible will return false.
+            return (
+              tabRect.left >= headerRect.left - 1 &&
+              tabRect.right <= headerRect.right + 1
+            );
+          }
+        }
+        return undefined;
+      },
+      [headerRef],
+    );
 
     const updateArrowState = useCallback(() => {
       setDisableLeftArrow(isVisible(tabRefs[0].current));
       setDisableRightArrow(isVisible(tabRefs[tabRefs.length - 1].current));
-    }, [tabRefs]);
+    }, [tabRefs, isVisible]);
+
+    const moveIntoView = useCallback(
+      (index) => {
+        if (tabRefs[index].current) {
+          const tabRect = tabRefs[index].current.getBoundingClientRect();
+          const headerRect = headerRef.current.getBoundingClientRect();
+          let amountHidden = 0;
+          if (
+            tabRect.left >= headerRect.left &&
+            tabRect.left <= headerRect.right
+          ) {
+            amountHidden = tabRect.width - (headerRect.right - tabRect.left);
+          } else if (
+            tabRect.right >= headerRect.left &&
+            tabRect.right <= headerRect.right
+          ) {
+            amountHidden = tabRect.width - (tabRect.right - headerRect.left);
+            amountHidden = 0 - amountHidden;
+          }
+          headerRef.current.scrollBy({
+            left: amountHidden,
+            behavior: 'smooth',
+          });
+          const checkVisible = setInterval(() => {
+            if (tabRefs[index].current && isVisible(tabRefs[index].current)) {
+              updateArrowState();
+              clearInterval(checkVisible);
+            }
+          }, 50);
+          setTimeout(() => {
+            updateArrowState();
+            clearInterval(checkVisible);
+          }, 300);
+        }
+      },
+      [tabRefs, headerRef, isVisible, updateArrowState],
+    );
 
     useEffect(() => {
-      if (overflow) {
-        if (!isVisible(tabRefs[activeIndex].current)) {
-          // if the active tab isn't visible scroll to it
-          tabRefs[activeIndex].current.scrollIntoView();
-          updateArrowState();
-        }
+      // if the active tab isn't visible scroll to it
+      if (
+        overflow &&
+        tabRefs &&
+        tabRefs[activeIndex].current &&
+        !isVisible(tabRefs[activeIndex].current)
+      ) {
+        moveIntoView(activeIndex);
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [overflow, activeIndex]);
 
-    // useEffect(() => {
-    // // if the focus index is changing make sure the previous and next arrows
-    //   // are in sync
-    //   if (overflow) {
-    //     for (let i = 0; i < tabRefs.length; i += 1) {
-    //       if (tabRefs[i].current === document.activeElement) {
-    //         console.log('YES');
-    //         setFocusIndex(i);
-    //         // tabRefs[i].current.scrollIntoView();
-    //       }
-    //     }
-    //   }
-    // }, [overflow, tabRefs, document.activeElement, updateArrowState]);
-
-    // useEffect(() => {
-    //   if (focusIndex && tabRefs && !isVisible(tabRefs[focusIndex].current)) {
-    //     tabRefs[focusIndex].current.scrollIntoView();
-    //     updateArrowState();
-    //   }
-    // }, [focusIndex, tabRefs, updateArrowState]);
+    useEffect(() => {
+      // if the focus index is changing make sure the previous and next arrows
+      // are in sync
+      if (
+        overflow &&
+        focusIndex !== -1 &&
+        !isVisible(tabRefs[focusIndex].current)
+      ) {
+        moveIntoView(focusIndex);
+      }
+    }, [overflow, tabRefs, focusIndex, isVisible, moveIntoView]);
 
     useLayoutEffect(() => {
       const onResize = () => {
@@ -119,27 +155,6 @@ const Tabs = forwardRef(
         updateArrowState();
       };
       onResize();
-      // if (
-      //   overflow === undefined ||
-      //   disableLeftArrow === undefined ||
-      //   disableRightArrow === undefined
-      // ) {
-      //   onResize();
-      // // // setTimeout with a delay of 0 ensures call to onResize runs after
-      //   //   // currently executing code so we get the correct dimensions
-      //   //   if (overflow === undefined) {
-      //   //     setTimeout(() => {
-      //   //       onResize();
-      //   //     }, 0);
-      //   //     // console.log(overflow)
-      //   //   }
-      //   //   if (!isVisible(tabRefs[activeIndex].current)) {
-      //   //     // if the active tab isn't visible scroll to it
-      //   //     tabRefs[activeIndex].current.scrollIntoView();
-      //   //     updateArrowState();
-      //   //   }
-      // }
-
       window.addEventListener('resize', onResize);
       return () => window.removeEventListener('resize', onResize);
     }, [
@@ -166,10 +181,12 @@ const Tabs = forwardRef(
         return {
           activeIndex,
           active: activeIndex === index,
+          index,
           ref: tabRefs[index],
           onActivate: () => activateTab(index),
           setActiveContent,
           setActiveTitle,
+          setFocusIndex,
         };
       },
       [activeIndex, onActive, propsActiveIndex, tabRefs],
@@ -217,7 +234,7 @@ const Tabs = forwardRef(
         {...rest}
         background={theme.tabs.background}
       >
-        <Box direction={overflow ? 'row' : 'column'}>
+        <Box direction={overflow ? 'row' : 'column'} {...tabsHeaderStyles}>
           {overflow && (
             <Button
               a11yTitle="Previous Tab"
@@ -236,13 +253,37 @@ const Tabs = forwardRef(
                     !isVisible(tabRefs[i].current) &&
                     isVisible(tabRefs[i + 1].current)
                   ) {
-                    if (step) i = Math.max(i - (step - 1), 0);
-                    scrolledToIndex = i;
-                    tabRefs[i].current.scrollIntoView({ behavior: 'smooth' });
+                    const headerRect =
+                      headerRef.current.getBoundingClientRect();
+                    for (let j = 0; j < step; j += 1) {
+                      if (i >= 0) {
+                        const tabRect =
+                          tabRefs[i].current?.getBoundingClientRect();
+                        let amountHidden;
+                        if (
+                          tabRect.right >= headerRect.left - 1 &&
+                          tabRect.right <= headerRect.right + 1
+                        )
+                          amountHidden =
+                            tabRect.width - (tabRect.right - headerRect.left);
+                        else amountHidden = tabRect.width;
+                        amountHidden = 0 - amountHidden;
+                        if (j === step - 1 || i === tabRefs.length - 1)
+                          headerRef.current.scrollBy({
+                            left: amountHidden,
+                            behavior: 'smooth',
+                          });
+                        else
+                          headerRef.current.scrollBy({
+                            left: amountHidden,
+                          });
+                        scrolledToIndex = i;
+                        i -= 1;
+                      }
+                    }
                   }
                   i += 1;
                 }
-
                 setDisableRightArrow(false);
                 if (scrolledToIndex === 0) {
                   // wait for scroll animation to finish
@@ -270,7 +311,8 @@ const Tabs = forwardRef(
             overflow={overflow ? 'hidden' : 'visible'}
             background={theme.tabs.header.background}
             gap={theme.tabs.gap}
-            {...tabsHeaderStyles}
+            pad={overflow ? '2px' : undefined}
+            margin={overflow ? '-2px' : undefined}
           >
             {tabs}
           </StyledTabsHeader>
@@ -290,13 +332,38 @@ const Tabs = forwardRef(
                     !isVisible(tabRefs[i].current) &&
                     isVisible(tabRefs[i - 1].current)
                   ) {
-                    if (step) i = Math.min(i + (step - 1), tabRefs.length - 1);
-                    scrolledToIndex = i;
-                    tabRefs[i].current.scrollIntoView({ behavior: 'smooth' });
+                    const headerRect =
+                      headerRef.current.getBoundingClientRect();
+                    for (let j = 0; j < step; j += 1) {
+                      if (i <= tabRefs.length - 1) {
+                        const tabRect =
+                          tabRefs[i].current?.getBoundingClientRect();
+                        let amountHidden = 0;
+                        if (
+                          tabRect.left >= headerRect.left - 1 &&
+                          tabRect.left <= headerRect.right + 1
+                        ) {
+                          amountHidden =
+                            tabRect.width - (headerRect.right - tabRect.left);
+                        } else {
+                          amountHidden = tabRect.width;
+                        }
+                        if (j === step - 1 || j === tabRefs.length - 1)
+                          headerRef.current.scrollBy({
+                            left: amountHidden,
+                            behavior: 'smooth',
+                          });
+                        else
+                          headerRef.current.scrollBy({
+                            left: amountHidden,
+                          });
+                        scrolledToIndex = i;
+                        i += 1;
+                      }
+                    }
                   }
                   i -= 1;
                 }
-
                 setDisableLeftArrow(false);
                 if (scrolledToIndex === tabRefs.length - 1) {
                   // wait for scroll animation to finish

@@ -17,12 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
       tabContents: PropTypes.string,
     }),
     onActive: PropTypes.func,
-    scroll: PropTypes.oneOfType([
-      PropTypes.shape({
-        step: PropTypes.number,
-      }),
-      PropTypes.bool,
-    ]),
+    step: PropTypes.number,
   };
 }
 export const TabsPropTypes = PropType;
