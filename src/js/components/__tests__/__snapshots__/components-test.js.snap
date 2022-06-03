@@ -1702,6 +1702,17 @@ Object {
               "top": "top",
             },
           },
+          "group": Object {
+            "container": Object {
+              "pad": Object {
+                "vertical": "xsmall",
+              },
+            },
+            "separator": Object {
+              "color": "border",
+              "size": "xsmall",
+            },
+          },
           "icons": Object {
             "down": Object {
               "$$typeof": Symbol(react.forward_ref),

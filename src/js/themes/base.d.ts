@@ -1040,6 +1040,13 @@ export interface ThemeType {
     background?: BackgroundType;
     drop?: DropProps;
     extend?: ExtendType;
+    group?: {
+      container?: BoxProps;
+      separator?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
     icons?: {
       down?: any;
       up?: any;
