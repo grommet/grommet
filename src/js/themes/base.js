@@ -1055,6 +1055,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             vertical: 'xsmall',
           },
         },
+        separator: {
+          color: 'border',
+          size: 'xsmall',
+        },
       },
       icons: {
         down: FormDown,

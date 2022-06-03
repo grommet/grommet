@@ -362,6 +362,7 @@ const Menu = forwardRef((props, ref) => {
 
   let menuContent;
   if (itemCount && Array.isArray(items[0])) {
+    let index = 0;
     menuContent = items.map((group, groupIndex) => (
       <Box
         // eslint-disable-next-line react/no-array-index-key
@@ -369,18 +370,21 @@ const Menu = forwardRef((props, ref) => {
         {...theme.menu.group?.container}
         border={
           groupIndex > 0
-            ? { side: 'top', ...theme.menu.group?.container?.border }
+            ? {
+                side: 'top',
+                color: theme.menu.group?.separator?.color,
+                size: theme.menu.group?.separator?.size,
+              }
             : undefined
         }
       >
-        {/* index needs to be its index in the entire menu as if 
-        it were a flat array */}
-        {group.map((item, j) => {
-          let itemIndex = j;
-          for (let k = 0; k < groupIndex; k += 1) {
-            itemIndex += items[k].length;
-          }
-          return menuItem(item, itemIndex);
+        {group.map((item) => {
+          // item index needs to be its index in the entire menu as if
+          // it were a flat array
+          const currentIndex = index;
+          index += 1;
+
+          return menuItem(item, currentIndex);
         })}
       </Box>
     ));

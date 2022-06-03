@@ -7,7 +7,6 @@ export const Grouped = () => (
   // <Grommet theme={...}>
   <Box align="center" pad="large">
     <Menu
-      open
       dropProps={{
         align: { top: 'bottom', left: 'left' },
         elevation: 'xlarge',

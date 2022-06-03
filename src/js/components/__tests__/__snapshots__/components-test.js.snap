@@ -1708,6 +1708,10 @@ Object {
                 "vertical": "xsmall",
               },
             },
+            "separator": Object {
+              "color": "border",
+              "size": "xsmall",
+            },
           },
           "icons": Object {
             "down": Object {
