@@ -251,8 +251,7 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     });
   } else message = files.length + " items";
 
-  var removeFile = function removeFile(event, index) {
-    event.stopPropagation();
+  var removeFile = function removeFile(index) {
     var nextFiles;
 
     if (index === 'all') {
@@ -262,11 +261,30 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       nextFiles.splice(index, 1);
     }
 
-    setFiles(nextFiles);
+    setFiles(nextFiles); // Need to have a way to track the files other than an array
+    // since inputRef.current.files is a read-only FileList
+    // https://stackoverflow.com/a/64019766
+
+    /* eslint-disable no-undef */
+
+    var dt = new DataTransfer();
+    var curFiles = inputRef.current.files;
+    if (index === 'all' || nextFiles.length === 0) inputRef.current.value = '';
+
+    for (var i = 0; i < curFiles.length; i += 1) {
+      var curfile = curFiles[i];
+      if (index !== i) dt.items.add(curfile);
+    }
+
+    var nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'files').set;
+    nativeInputValueSetter.call(inputRef.current, dt.files);
+    var event = new Event('input', {
+      bubbles: true
+    });
+    inputRef.current.dispatchEvent(event);
     if (_onChange) _onChange(event, {
       files: nextFiles
     });
-    if (nextFiles.length === 0) inputRef.current.value = '';
     inputRef.current.focus();
   };
 
@@ -353,7 +371,7 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           index: 'all'
         });
         setShowRemoveConfirmation(true);
-      } else removeFile(event, 'all');
+      } else removeFile('all');
     }
   }), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onSpace: function onSpace(event) {
@@ -420,7 +438,7 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
             index: index
           });
           setShowRemoveConfirmation(true);
-        } else removeFile(event, index);
+        } else removeFile(index);
       }
     }), files.length === 1 && /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
       onSpace: function onSpace(event) {
@@ -498,7 +516,7 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   }))), showRemoveConfirmation && /*#__PURE__*/_react["default"].createElement(ConfirmRemove, {
     onConfirm: function onConfirm() {
-      removeFile(pendingRemoval.event, pendingRemoval.index);
+      removeFile(pendingRemoval.index);
       setPendingRemoval(defaultPendingRemoval);
       setShowRemoveConfirmation(false);
     },

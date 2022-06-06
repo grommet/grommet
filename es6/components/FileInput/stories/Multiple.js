@@ -15,6 +15,7 @@ export var Multiple = function Multiple() {
     onChange: function onChange(event, _ref) {
       var files = _ref.files;
       console.log(event);
+      console.log(event.target.files);
 
       for (var i = 0; i < files.length; i += 1) {
         var file = files[i];
