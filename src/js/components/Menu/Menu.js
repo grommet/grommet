@@ -86,12 +86,24 @@ const Menu = forwardRef((props, ref) => {
   const { align: themeDropAlign, ...themeDropProps } = theme.menu.drop;
   const a11y = ariaLabel || a11yTitle;
 
+  // total number of menu items
+  const itemCount = useMemo(() => {
+    let count = 0;
+    if (items && Array.isArray(items[0])) {
+      items.forEach((group) => {
+        count += group.length;
+      });
+    } else count = items.length;
+
+    return count;
+  }, [items]);
+
   const align = (dropProps && dropProps.align) || dropAlign || themeDropAlign;
   const controlButtonIndex = useMemo(() => {
     if (align.top === 'top') return -1;
-    if (align.bottom === 'bottom') return items.length;
+    if (align.bottom === 'bottom') return itemCount;
     return undefined;
-  }, [align, items]);
+  }, [align, itemCount]);
 
   // Keeps track of whether menu options should be mirrored
   // when there's not enough space below DropButton. This state
@@ -163,7 +175,7 @@ const Menu = forwardRef((props, ref) => {
       onDropOpen();
     } else if (
       isTab(event) &&
-      ((!constants.controlBottom && activeItemIndex === items.length - 1) ||
+      ((!constants.controlBottom && activeItemIndex === itemCount - 1) ||
         (constants.controlBottom && activeItemIndex === controlButtonIndex))
     ) {
       // User has reached end of the menu, this tab will close
@@ -177,7 +189,7 @@ const Menu = forwardRef((props, ref) => {
         // bottom of the menu, it checks if the user has reached the button.
         // Otherwise, it checks if the user is at the last menu item.
         (constants.controlBottom && activeItemIndex === controlButtonIndex) ||
-        (!constants.controlBottom && activeItemIndex === items.length - 1) ||
+        (!constants.controlBottom && activeItemIndex === itemCount - 1) ||
         activeItemIndex === constants.none
       ) {
         // place focus on the first menu item
@@ -207,15 +219,15 @@ const Menu = forwardRef((props, ref) => {
     } else {
       let index;
       if (activeItemIndex === 'none') {
-        index = items.length - 1;
+        index = itemCount - 1;
       } else if (activeItemIndex - 1 < 0) {
         if (
           constants.controlTop &&
           activeItemIndex - 1 === controlButtonIndex
         ) {
-          index = items.length;
+          index = itemCount;
         } else {
-          index = items.length - 1;
+          index = itemCount - 1;
         }
       } else {
         index = activeItemIndex - 1;
@@ -267,7 +279,7 @@ const Menu = forwardRef((props, ref) => {
       <Button
         ref={(r) => {
           // make it accessible at the end of all menu items
-          buttonRefs.current[items.length] = r;
+          buttonRefs.current[itemCount] = r;
         }}
         a11yTitle={a11y || format({ id: 'menu.closeMenu', messages })}
         active={activeItemIndex === controlButtonIndex}
@@ -287,6 +299,96 @@ const Menu = forwardRef((props, ref) => {
       </Button>
     </Box>
   );
+
+  const menuItem = (item, index) => {
+    // Determine whether the label is done as a child or
+    // as an option Button kind property.
+    const child = !theme.button.option ? (
+      <Box
+        align="start"
+        pad="small"
+        direction="row"
+        gap={item.gap}
+        justify={item.justify}
+      >
+        {item.reverse && item.label}
+        {item.icon}
+        {!item.reverse && item.label}
+      </Box>
+    ) : undefined;
+
+    // if we have a child, turn on plain, and hoverIndicator
+    return (
+      // eslint-disable-next-line react/no-array-index-key
+      <Box key={index} flex={false} role="none">
+        <Button
+          ref={(r) => {
+            buttonRefs.current[index] = r;
+          }}
+          role="menuitem"
+          onFocus={() => {
+            setActiveItemIndex(index);
+          }}
+          active={activeItemIndex === index}
+          focusIndicator={false}
+          plain={!child ? undefined : true}
+          align="start"
+          justify={item.justify}
+          kind={!child ? 'option' : undefined}
+          hoverIndicator={!child ? undefined : 'background'}
+          {...(!child
+            ? item
+            : {
+                ...item,
+                gap: undefined,
+                icon: undefined,
+                label: undefined,
+                reverse: undefined,
+              })}
+          onClick={(...args) => {
+            if (item.onClick) {
+              item.onClick(...args);
+            }
+            if (item.close !== false) {
+              onDropClose();
+            }
+          }}
+        >
+          {child}
+        </Button>
+      </Box>
+    );
+  };
+
+  let menuContent;
+  if (itemCount && Array.isArray(items[0])) {
+    let index = 0;
+    menuContent = items.map((group, groupIndex) => (
+      <Box
+        // eslint-disable-next-line react/no-array-index-key
+        key={groupIndex}
+        {...theme.menu.group?.container}
+        border={
+          groupIndex > 0
+            ? {
+                side: 'top',
+                color: theme.menu.group?.separator?.color,
+                size: theme.menu.group?.separator?.size,
+              }
+            : undefined
+        }
+      >
+        {group.map((item) => {
+          // item index needs to be its index in the entire menu as if
+          // it were a flat array
+          const currentIndex = index;
+          index += 1;
+
+          return menuItem(item, currentIndex);
+        })}
+      </Box>
+    ));
+  } else menuContent = items.map((item, index) => menuItem(item, index));
 
   return (
     <Keyboard
@@ -330,65 +432,7 @@ const Menu = forwardRef((props, ref) => {
                 ? controlMirror
                 : undefined}
               <Box overflow="auto" role="menu" a11yTitle={a11y}>
-                {items.map((item, index) => {
-                  // Determine whether the label is done as a child or
-                  // as an option Button kind property.
-                  const child = !theme.button.option ? (
-                    <Box
-                      align="start"
-                      pad="small"
-                      direction="row"
-                      gap={item.gap}
-                      justify={item.justify}
-                    >
-                      {item.reverse && item.label}
-                      {item.icon}
-                      {!item.reverse && item.label}
-                    </Box>
-                  ) : undefined;
-                  // if we have a child, turn on plain, and hoverIndicator
-
-                  return (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <Box key={index} flex={false} role="none">
-                      <Button
-                        ref={(r) => {
-                          buttonRefs.current[index] = r;
-                        }}
-                        role="menuitem"
-                        onFocus={() => {
-                          setActiveItemIndex(index);
-                        }}
-                        active={activeItemIndex === index}
-                        focusIndicator={false}
-                        plain={!child ? undefined : true}
-                        align="start"
-                        justify={item.justify}
-                        kind={!child ? 'option' : undefined}
-                        hoverIndicator={!child ? undefined : 'background'}
-                        {...(!child
-                          ? item
-                          : {
-                              ...item,
-                              gap: undefined,
-                              icon: undefined,
-                              label: undefined,
-                              reverse: undefined,
-                            })}
-                        onClick={(...args) => {
-                          if (item.onClick) {
-                            item.onClick(...args);
-                          }
-                          if (item.close !== false) {
-                            onDropClose();
-                          }
-                        }}
-                      >
-                        {child}
-                      </Button>
-                    </Box>
-                  );
-                })}
+                {menuContent}
               </Box>
               {/*
                 If align.top was defined,

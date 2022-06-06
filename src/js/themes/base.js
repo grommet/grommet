@@ -1049,6 +1049,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         // any drop props
       },
+      group: {
+        container: {
+          pad: {
+            vertical: 'xsmall',
+          },
+        },
+        separator: {
+          color: 'border',
+          size: 'xsmall',
+        },
+      },
       icons: {
         down: FormDown,
         // up: undefined,
@@ -1270,9 +1281,27 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any box props
         align: 'end',
       },
+      pad: {
+        top: 'large',
+        bottom: 'medium',
+      },
       parent: {
         // any box props
         align: 'start',
+      },
+      responsive: {
+        actions: {
+          // any box props
+          align: 'start',
+          pad: {
+            top: 'small',
+          },
+        },
+        areas: [['parent'], ['title'], ['subtitle'], ['actions']],
+        breakpoints: ['small'],
+        columns: ['auto'],
+        rows: ['auto'],
+        // gap: undefined,
       },
       subtitle: {
         // any paragraph props
