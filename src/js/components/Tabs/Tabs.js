@@ -16,6 +16,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { TabsContext } from './TabsContext';
+import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -30,7 +31,6 @@ const Tabs = forwardRef(
       justify = 'center',
       messages,
       responsive = true,
-      step = 1,
       ...rest
     },
     ref,
@@ -46,6 +46,7 @@ const Tabs = forwardRef(
     const [overflow, setOverflow] = useState();
     const [focusIndex, setFocusIndex] = useState(-1);
     const headerRef = useRef();
+    const size = useContext(ResponsiveContext);
 
     if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
       setActiveIndex(propsActiveIndex);
@@ -106,6 +107,9 @@ const Tabs = forwardRef(
             left: amountHidden,
             behavior: 'smooth',
           });
+          // checks every 50 milliseconds for 300 milliseconds
+          // if the scroll animation has finished. This is a shorter
+          // interval than other checks because we are only moving by 1 tab
           const checkVisible = setInterval(() => {
             if (tabRefs[index].current && isVisible(tabRefs[index].current)) {
               updateArrowState();
@@ -238,7 +242,6 @@ const Tabs = forwardRef(
           {overflow && (
             <Button
               a11yTitle="Previous Tab"
-              icon={<Previous />}
               disabled={disableLeftArrow}
               // removed from tabIndex, button is redundant for keyboard users
               tabIndex={-1}
@@ -255,7 +258,7 @@ const Tabs = forwardRef(
                   ) {
                     const headerRect =
                       headerRef.current.getBoundingClientRect();
-                    for (let j = 0; j < step; j += 1) {
+                    for (let j = 0; j < (theme.tabs.step[size] || 1); j += 1) {
                       if (i >= 0) {
                         const tabRect =
                           tabRefs[i].current?.getBoundingClientRect();
@@ -268,7 +271,7 @@ const Tabs = forwardRef(
                             tabRect.width - (tabRect.right - headerRect.left);
                         else amountHidden = tabRect.width;
                         amountHidden = 0 - amountHidden;
-                        if (j === step - 1 || i === tabRefs.length - 1)
+                        if (j === (theme.tabs.step[size] || 1) - 1 || i === 0)
                           headerRef.current.scrollBy({
                             left: amountHidden,
                             behavior: 'smooth',
@@ -287,6 +290,10 @@ const Tabs = forwardRef(
                 setDisableRightArrow(false);
                 if (scrolledToIndex === 0) {
                   // wait for scroll animation to finish
+                  // checks every 100 milliseconds for 500 milliseconds
+                  // if the scroll animation has finished. Most scroll
+                  // animations will finish in 500 milliseconds unless
+                  // the tab name is very long.
                   const checkVisible = setInterval(() => {
                     if (isVisible(tabRefs[0].current)) {
                       setDisableLeftArrow(true);
@@ -298,7 +305,17 @@ const Tabs = forwardRef(
                   }, 500);
                 }
               }}
-            />
+            >
+              <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
+                <Previous
+                  color={
+                    disableLeftArrow
+                      ? theme.button.disabled.color
+                      : theme.global.colors.text
+                  }
+                />
+              </Box>
+            </Button>
           )}
           <StyledTabsHeader
             ref={headerRef}
@@ -319,7 +336,6 @@ const Tabs = forwardRef(
           {overflow && (
             <Button
               a11yTitle="Next Tab"
-              icon={<Next />}
               disabled={disableRightArrow}
               // removed from tabIndex, button is redundant for keyboard users
               tabIndex={-1}
@@ -334,7 +350,7 @@ const Tabs = forwardRef(
                   ) {
                     const headerRect =
                       headerRef.current.getBoundingClientRect();
-                    for (let j = 0; j < step; j += 1) {
+                    for (let j = 0; j < (theme.tabs.step[size] || 1); j += 1) {
                       if (i <= tabRefs.length - 1) {
                         const tabRect =
                           tabRefs[i].current?.getBoundingClientRect();
@@ -348,7 +364,10 @@ const Tabs = forwardRef(
                         } else {
                           amountHidden = tabRect.width;
                         }
-                        if (j === step - 1 || j === tabRefs.length - 1)
+                        if (
+                          j === (theme.tabs.step[size] || 1) - 1 ||
+                          i === tabRefs.length - 1
+                        )
                           headerRef.current.scrollBy({
                             left: amountHidden,
                             behavior: 'smooth',
@@ -367,6 +386,10 @@ const Tabs = forwardRef(
                 setDisableLeftArrow(false);
                 if (scrolledToIndex === tabRefs.length - 1) {
                   // wait for scroll animation to finish
+                  // checks every 100 milliseconds for 500 milliseconds
+                  // if the scroll animation has finished. Most scroll
+                  // animations will finish in 500 milliseconds unless
+                  // the tab name is very long.
                   const checkVisible = setInterval(() => {
                     if (isVisible(tabRefs[tabRefs.length - 1].current)) {
                       setDisableRightArrow(true);
@@ -378,7 +401,17 @@ const Tabs = forwardRef(
                   }, 500);
                 }
               }}
-            />
+            >
+              <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
+                <Next
+                  color={
+                    disableRightArrow
+                      ? theme.button.disabled.color
+                      : theme.global.colors.text
+                  }
+                />
+              </Box>
+            </Button>
           )}
         </Box>
 

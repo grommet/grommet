@@ -1646,6 +1646,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       panel: {
         // extend: undefined,
       },
+      step: {
+        small: 1,
+        medium: 3,
+        large: 3,
+      },
     },
     table: {
       header: {

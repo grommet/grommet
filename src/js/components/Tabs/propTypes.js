@@ -17,7 +17,6 @@ if (process.env.NODE_ENV !== 'production') {
       tabContents: PropTypes.string,
     }),
     onActive: PropTypes.func,
-    step: PropTypes.number,
   };
 }
 export const TabsPropTypes = PropType;

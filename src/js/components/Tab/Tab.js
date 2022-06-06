@@ -19,6 +19,8 @@ const Tab = ({
   icon,
   plain,
   title,
+  onBlur,
+  onFocus,
   onMouseOver,
   onMouseOut,
   reverse,
@@ -37,7 +39,6 @@ const Tab = ({
   } = useContext(TabsContext);
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [over, setOver] = useState(undefined);
-  const [focus, setFocus] = useState(undefined);
   let normalizedTitle = title;
   const tabStyles = {};
 
@@ -183,18 +184,13 @@ const Tab = ({
       onMouseOver={onMouseOverTab}
       onMouseOut={onMouseOutTab}
       onFocus={() => {
-        setFocus(true);
+        onFocus();
         setFocusIndex(index);
-        if (onMouseOver) onMouseOver();
       }}
       onBlur={() => {
-        setFocus(undefined);
+        onBlur();
         setFocusIndex(-1);
-        if (onMouseOut) onMouseOut();
       }}
-      // ensure focus outline is not covered by hover styling
-      // of adjacent tabs
-      style={focus && { zIndex: 1 }}
     >
       <StyledTab
         as={Box}

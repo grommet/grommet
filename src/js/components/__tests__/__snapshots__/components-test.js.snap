@@ -2378,6 +2378,11 @@ Object {
         "tabs": Object {
           "header": Object {},
           "panel": Object {},
+          "step": Object {
+            "large": 3,
+            "medium": 3,
+            "small": 1,
+          },
         },
         "tag": Object {
           "border": true,
@@ -2688,7 +2693,6 @@ Object {
       "margin": [Function],
       "messages": [Function],
       "onActive": [Function],
-      "step": [Function],
     },
     "render": [Function],
   },
