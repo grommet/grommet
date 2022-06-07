@@ -25,10 +25,23 @@ var Format = function Format() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    width: "medium"
+    width: "medium",
+    margin: {
+      vertical: 'small'
+    }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DateInput, {
     format: "m/d/yy",
     value: value,
+    onChange: onChange
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    width: "medium",
+    margin: {
+      vertical: 'small'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.DateInput, {
+    format: "m/d/yy",
+    value: value,
+    reverse: true,
     onChange: onChange
   })));
 };

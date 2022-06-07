@@ -16,10 +16,23 @@ export var Format = function Format() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Box, {
-    width: "medium"
+    width: "medium",
+    margin: {
+      vertical: 'small'
+    }
   }, /*#__PURE__*/React.createElement(DateInput, {
     format: "m/d/yy",
     value: value,
+    onChange: onChange
+  })), /*#__PURE__*/React.createElement(Box, {
+    width: "medium",
+    margin: {
+      vertical: 'small'
+    }
+  }, /*#__PURE__*/React.createElement(DateInput, {
+    format: "m/d/yy",
+    value: value,
+    reverse: true,
     onChange: onChange
   })));
 };

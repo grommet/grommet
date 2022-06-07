@@ -1,4 +1,4 @@
-var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "icon", "inline", "inputProps", "name", "onChange", "onFocus", "plain", "value", "messages"],
+var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "icon", "inline", "inputProps", "name", "onChange", "onFocus", "plain", "reverse", "value", "messages"],
     _excluded2 = ["icon"];
 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -39,6 +39,8 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
       plain = _ref.plain,
+      _ref$reverse = _ref.reverse,
+      reverseProp = _ref$reverse === void 0 ? false : _ref$reverse,
       valueArg = _ref.value,
       messages = _ref.messages,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -107,13 +109,18 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
 
   if (MaskedInputIcon) {
     console.warn("Customizing the DateInput icon through inputProps is deprecated. \nUse the icon prop instead.");
-  } // We need to distinguish between the caller changing a Form value
+  }
+
+  var reverse = reverseProp || restOfInputProps.reverse;
+  var calendarDropdownAlign = {
+    top: 'bottom',
+    left: 'left'
+  }; // We need to distinguish between the caller changing a Form value
   // and the user typing a date that he isn't finished with yet.
   // To handle this, we see if we have a value and the text value
   // associated with it doesn't align to it, then we update the text value.
   // We compare using textToValue to avoid "06/01/2021" not
   // matching "06/1/2021".
-
 
   useEffect(function () {
     if (schema && value !== undefined) {
@@ -204,10 +211,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       ref: ref,
       id: id,
       dropProps: _extends({
-        align: {
-          top: 'bottom',
-          left: 'left'
-        }
+        align: calendarDropdownAlign
       }, dropProps),
       dropContent: calendar,
       icon: icon || MaskedInputIcon || /*#__PURE__*/React.createElement(CalendarIcon, {
@@ -216,6 +220,18 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     }, buttonProps));
   }
 
+  var calendarButton = /*#__PURE__*/React.createElement(Button, {
+    onClick: open ? closeCalendar : openCalendar,
+    plain: true,
+    icon: icon || MaskedInputIcon || /*#__PURE__*/React.createElement(CalendarIcon, {
+      size: iconSize
+    }),
+    margin: reverse ? {
+      left: 'small'
+    } : {
+      right: 'small'
+    }
+  });
   var input = /*#__PURE__*/React.createElement(FormContext.Provider, {
     key: "input" // don't let MaskedInput drive the Form
     ,
@@ -234,7 +250,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     round: "xxsmall",
     direction: "row",
     fill: true
-  }, /*#__PURE__*/React.createElement(MaskedInput, _extends({
+  }, reverse && calendarButton, /*#__PURE__*/React.createElement(MaskedInput, _extends({
     ref: ref,
     id: id,
     name: name,
@@ -287,16 +303,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       }));
       if (_onFocus) _onFocus(event);
     }
-  })), /*#__PURE__*/React.createElement(Button, {
-    onClick: open ? closeCalendar : openCalendar,
-    plain: true,
-    icon: icon || MaskedInputIcon || /*#__PURE__*/React.createElement(CalendarIcon, {
-      size: iconSize
-    }),
-    margin: {
-      right: 'small'
-    }
-  }))));
+  })), !reverse && calendarButton)));
 
   if (inline) {
     return /*#__PURE__*/React.createElement(Box, null, input, calendar);
@@ -311,11 +318,8 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     }, /*#__PURE__*/React.createElement(Drop, _extends({
       overflow: "visible",
       id: id ? id + "__drop" : undefined,
-      target: ref.current,
-      align: _extends({
-        top: 'bottom',
-        left: 'left'
-      }, dropProps),
+      target: containerRef.current,
+      align: _extends({}, calendarDropdownAlign, dropProps),
       onEsc: closeCalendar,
       onClickOutside: function onClickOutside(_ref4) {
         var target = _ref4.target;

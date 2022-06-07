@@ -19,6 +19,7 @@ if (process.env.NODE_ENV !== 'production') {
     icon: _propTypes["default"].element,
     id: _propTypes["default"].string,
     inline: _propTypes["default"].bool,
+    reverse: _propTypes["default"].bool,
     inputProps: _propTypes["default"].shape({}),
     name: _propTypes["default"].string,
     onChange: _propTypes["default"].func,
