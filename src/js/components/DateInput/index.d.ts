@@ -14,6 +14,7 @@ export interface DateInputProps {
   icon?: JSX.Element;
   id?: string;
   inline?: boolean;
+  reverse?: boolean;
   inputProps?: MaskedInputType;
   messages?: {
     enterCalendar?: string;

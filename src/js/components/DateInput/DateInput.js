@@ -48,6 +48,7 @@ const DateInput = forwardRef(
       onChange,
       onFocus,
       plain,
+      reverse: reverseProp = false,
       value: valueArg,
       messages,
       ...rest
@@ -110,6 +111,10 @@ const DateInput = forwardRef(
 Use the icon prop instead.`,
       );
     }
+
+    const reverse = reverseProp || restOfInputProps.reverse;
+
+    const calendarDropdownAlign = { top: 'bottom', left: 'left' };
 
     // We need to distinguish between the caller changing a Form value
     // and the user typing a date that he isn't finished with yet.
@@ -213,13 +218,22 @@ Use the icon prop instead.`,
         <DropButton
           ref={ref}
           id={id}
-          dropProps={{ align: { top: 'bottom', left: 'left' }, ...dropProps }}
+          dropProps={{ align: calendarDropdownAlign, ...dropProps }}
           dropContent={calendar}
           icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
           {...buttonProps}
         />
       );
     }
+
+    const calendarButton = (
+      <Button
+        onClick={open ? closeCalendar : openCalendar}
+        plain
+        icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
+        margin={reverse ? { left: 'small' } : { right: 'small' }}
+      />
+    );
 
     const input = (
       <FormContext.Provider
@@ -241,6 +255,7 @@ Use the icon prop instead.`,
             direction="row"
             fill
           >
+            {reverse && calendarButton}
             <MaskedInput
               ref={ref}
               id={id}
@@ -297,12 +312,7 @@ Use the icon prop instead.`,
                 if (onFocus) onFocus(event);
               }}
             />
-            <Button
-              onClick={open ? closeCalendar : openCalendar}
-              plain
-              icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
-              margin={{ right: 'small' }}
-            />
+            {!reverse && calendarButton}
           </Box>
         </Keyboard>
       </FormContext.Provider>
@@ -324,8 +334,8 @@ Use the icon prop instead.`,
           <Drop
             overflow="visible"
             id={id ? `${id}__drop` : undefined}
-            target={ref.current}
-            align={{ top: 'bottom', left: 'left', ...dropProps }}
+            target={containerRef.current}
+            align={{ ...calendarDropdownAlign, ...dropProps }}
             onEsc={closeCalendar}
             onClickOutside={({ target }) => {
               if (
