@@ -1652,7 +1652,7 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-a11y@6.5.7":
+"@storybook/addon-a11y@^6.5.7":
   version "6.5.7"
   resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.5.7.tgz#76edaf292b3d2c3ad0e3c48d8d007dcefdad5506"
   integrity sha512-twez2iAnAZH3WTDCN7C7WNbhXP5JJNoev5umjNmmvjirihJH9sLgw35i6sqr1QKc3d0kn6cULw5RU9wDiU+7Bg==
@@ -1674,7 +1674,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-storysource@6.5.7":
+"@storybook/addon-storysource@^6.5.7":
   version "6.5.7"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.5.7.tgz#a60ed17c324caf92b0fbb67626a4bdf8253e86af"
   integrity sha512-4cquq0Oqf9skPdIYkVtO5lAPS7+83TyY4vT52HQ5LSpSekZELQkRxN793jNMQdu2IGQ/l9WqvyzFGaN62bRg7Q==
@@ -1693,7 +1693,7 @@
     react-syntax-highlighter "^15.4.5"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addon-toolbars@6.5.7":
+"@storybook/addon-toolbars@^6.5.7":
   version "6.5.7"
   resolved "https://registry.yarnpkg.com/@storybook/addon-toolbars/-/addon-toolbars-6.5.7.tgz#dc1e730fc1b158dde6aa3b753ff2b4d5e223c3a0"
   integrity sha512-+MUG5t4isQNf+q7BpEsGwuYAvYgs9XTdzzdvL/9jedQ7udJsWmG1q9a6m9+iQGPr/WK+88F2kgSOknpib3J21w==
@@ -1706,7 +1706,7 @@
     core-js "^3.8.2"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addons@6.5.7":
+"@storybook/addons@6.5.7", "@storybook/addons@^6.5.7":
   version "6.5.7"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-6.5.7.tgz#1c7256f696fb572f7c3c7ccbcb94988372b95cee"
   integrity sha512-tUZ2c1uegUcwY31ztNQZGU/HUwAEEGIR8fEOvvO8S0TNQGoo6cwFtZmWBh3mTSRGcmzK2SNBjFHZua5Ee9TefA==
@@ -2173,7 +2173,7 @@
     react-docgen-typescript "^2.1.1"
     tslib "^2.0.0"
 
-"@storybook/react@6.5.7":
+"@storybook/react@^6.5.7":
   version "6.5.7"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-6.5.7.tgz#70224ddd150f31fc1cb0e2f7bf9ba56657f38644"
   integrity sha512-jMY1vk1WL1otEODl5BxD1kSh5Eqg+SvZW5CJ7sS6q53i3teOhaGhugvuSTuV9lnBzLOZu8atIdFL0ewdOkpwsg==
@@ -2231,7 +2231,7 @@
     core-js "^3.6.5"
     find-up "^4.1.0"
 
-"@storybook/source-loader@6.5.7":
+"@storybook/source-loader@6.5.7", "@storybook/source-loader@^6.5.7":
   version "6.5.7"
   resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.5.7.tgz#c77ae805e02ce83975558973fe46b7366f810fb1"
   integrity sha512-nj24TSGdF9J1gD5Fj9Z2hPRAQwqBJoBKD/fmTSFZop0qaJOOyeuxZR5022dQh8UWWoBa3WOQADMTNi5RqQZkiA==
@@ -11640,10 +11640,10 @@ ts-jest@^28.0.4:
     semver "7.x"
     yargs-parser "^20.x"
 
-ts-loader@8.2.0:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-8.2.0.tgz#6a3aeaa378aecda543e2ed2c332d3123841d52e0"
-  integrity sha512-ebXBFrNyMSmbWgjnb3WBloUBK+VSx1xckaXsMXxlZRDqce/OPdYBVN5efB0W3V0defq0Gcy4YuzvPGqRgjj85A==
+ts-loader@^8.4.0:
+  version "8.4.0"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-8.4.0.tgz#e845ea0f38d140bdc3d7d60293ca18d12ff2720f"
+  integrity sha512-6nFY3IZ2//mrPc+ImY3hNWx1vCHyEhl6V+wLmL4CZcm6g1CqX7UKrkc6y0i4FwcfOhxyMPCfaEvh20f4r9GNpw==
   dependencies:
     chalk "^4.1.0"
     enhanced-resolve "^4.0.0"
