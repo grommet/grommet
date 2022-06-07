@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Box, DateInput } from 'grommet';
-import { Clock as ClockIcon } from 'grommet-icons/icons/Clock';
 
 export const Format = () => {
   const [value, setValue] = React.useState('');
@@ -18,24 +17,6 @@ export const Format = () => {
       </Box>
       <Box width="medium" margin={{ vertical: 'small' }}>
         <DateInput format="m/d/yy" value={value} reverse onChange={onChange} />
-      </Box>
-      <Box width="medium" margin={{ vertical: 'small' }}>
-        <DateInput
-          format="m/d/yy"
-          value={value}
-          icon={<ClockIcon />}
-          inputProps={{ reverse: true }}
-          onChange={onChange}
-        />
-      </Box>
-      <Box width="medium" margin={{ vertical: 'small' }}>
-        <DateInput
-          format="m/d/yy"
-          value={value}
-          icon={<ClockIcon />}
-          inputProps={{ reverse: false }}
-          onChange={onChange}
-        />
       </Box>
     </Box>
   );
