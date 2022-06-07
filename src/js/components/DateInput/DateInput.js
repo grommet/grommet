@@ -114,10 +114,7 @@ Use the icon prop instead.`,
 
     const reverse = reverseProp || restOfInputProps.reverse;
 
-    const calendarDropdownAlign = {
-      top: 'bottom',
-      ...(reverse ? { right: 'right' } : { left: 'left' }),
-    };
+    const calendarDropdownAlign = { top: 'bottom', left: 'left' };
 
     // We need to distinguish between the caller changing a Form value
     // and the user typing a date that he isn't finished with yet.
@@ -337,7 +334,7 @@ Use the icon prop instead.`,
           <Drop
             overflow="visible"
             id={id ? `${id}__drop` : undefined}
-            target={ref.current}
+            target={containerRef.current}
             align={{ ...calendarDropdownAlign, ...dropProps }}
             onEsc={closeCalendar}
             onClickOutside={({ target }) => {
