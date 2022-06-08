@@ -14,6 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
     icon: PropTypes.element,
     id: PropTypes.string,
     inline: PropTypes.bool,
+    reverse: PropTypes.bool,
     inputProps: PropTypes.shape({}),
     name: PropTypes.string,
     onChange: PropTypes.func,

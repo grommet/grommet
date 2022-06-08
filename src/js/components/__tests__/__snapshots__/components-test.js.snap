@@ -274,6 +274,7 @@ Object {
       "inputProps": [Function],
       "name": [Function],
       "onChange": [Function],
+      "reverse": [Function],
       "size": [Function],
       "value": [Function],
     },
