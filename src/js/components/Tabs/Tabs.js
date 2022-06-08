@@ -287,23 +287,21 @@ const Tabs = forwardRef(
                   }
                   i += 1;
                 }
-                setDisableRightArrow(false);
-                if (scrolledToIndex === 0) {
-                  // wait for scroll animation to finish
-                  // checks every 100 milliseconds for 500 milliseconds
-                  // if the scroll animation has finished. Most scroll
-                  // animations will finish in 500 milliseconds unless
-                  // the tab name is very long.
-                  const checkVisible = setInterval(() => {
-                    if (isVisible(tabRefs[0].current)) {
-                      setDisableLeftArrow(true);
-                      clearInterval(checkVisible);
-                    }
-                  }, 100);
-                  setTimeout(() => {
+                // wait for scroll animation to finish
+                // checks every 100 milliseconds for 500 milliseconds
+                // if the scroll animation has finished. Most scroll
+                // animations will finish in 500 milliseconds unless
+                // the tab name is very long.
+                const checkVisible = setInterval(() => {
+                  if (isVisible(tabRefs[scrolledToIndex].current)) {
+                    updateArrowState();
                     clearInterval(checkVisible);
-                  }, 500);
-                }
+                  }
+                }, 100);
+                setTimeout(() => {
+                  updateArrowState();
+                  clearInterval(checkVisible);
+                }, 500);
               }}
             >
               <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
@@ -383,23 +381,21 @@ const Tabs = forwardRef(
                   }
                   i -= 1;
                 }
-                setDisableLeftArrow(false);
-                if (scrolledToIndex === tabRefs.length - 1) {
-                  // wait for scroll animation to finish
-                  // checks every 100 milliseconds for 500 milliseconds
-                  // if the scroll animation has finished. Most scroll
-                  // animations will finish in 500 milliseconds unless
-                  // the tab name is very long.
-                  const checkVisible = setInterval(() => {
-                    if (isVisible(tabRefs[tabRefs.length - 1].current)) {
-                      setDisableRightArrow(true);
-                      clearInterval(checkVisible);
-                    }
-                  }, 100);
-                  setTimeout(() => {
+                // wait for scroll animation to finish
+                // checks every 100 milliseconds for 500 milliseconds
+                // if the scroll animation has finished. Most scroll
+                // animations will finish in 500 milliseconds unless
+                // the tab name is very long.
+                const checkVisible = setInterval(() => {
+                  if (isVisible(tabRefs[scrolledToIndex].current)) {
+                    updateArrowState();
                     clearInterval(checkVisible);
-                  }, 500);
-                }
+                  }
+                }, 100);
+                setTimeout(() => {
+                  updateArrowState();
+                  clearInterval(checkVisible);
+                }, 500);
               }}
             >
               <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
