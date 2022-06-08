@@ -184,11 +184,11 @@ const Tab = ({
       onMouseOver={onMouseOverTab}
       onMouseOut={onMouseOutTab}
       onFocus={() => {
-        onFocus();
+        if (onFocus) onFocus();
         setFocusIndex(index);
       }}
       onBlur={() => {
-        onBlur();
+        if (onBlur) onBlur();
         setFocusIndex(-1);
       }}
     >
