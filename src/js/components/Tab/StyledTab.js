@@ -21,7 +21,7 @@ const tabHoverStyle = css`
     ${(props) => props.theme.tab.hover.extend};
   }
   &:focus {
-    z-index: ;
+    z-index: 1;
   }
 `;
 

@@ -168,6 +168,10 @@ exports[`Tabs Custom Tab component 1`] = `
   color: #000000;
 }
 
+.c5:focus {
+  z-index: 1;
+}
+
 .c9 {
   min-height: 0;
 }
@@ -452,6 +456,10 @@ exports[`Tabs Tab 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c9 {
@@ -746,6 +754,10 @@ exports[`Tabs alignControls 1`] = `
   color: #000000;
 }
 
+.c5:focus {
+  z-index: 1;
+}
+
 .c9 {
   min-height: 0;
 }
@@ -1032,6 +1044,10 @@ exports[`Tabs change to second tab 1`] = `
   color: #000000;
 }
 
+.c5:focus {
+  z-index: 1;
+}
+
 .c9 {
   min-height: 0;
 }
@@ -1172,7 +1188,7 @@ exports[`Tabs change to second tab 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 jqyKUN"
+            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 cFqTuo"
             style="white-space: nowrap;"
           >
             <span
@@ -1190,7 +1206,7 @@ exports[`Tabs change to second tab 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 jqyKUN"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
             style="white-space: nowrap;"
           >
             <span
@@ -1367,6 +1383,10 @@ exports[`Tabs complex title 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c7 {
@@ -1619,6 +1639,10 @@ exports[`Tabs no Tab 1`] = `
   color: #000000;
 }
 
+.c5:focus {
+  z-index: 1;
+}
+
 .c6 {
   min-height: 0;
 }
@@ -1851,6 +1875,10 @@ exports[`Tabs onClick 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c9 {
@@ -2139,6 +2167,10 @@ exports[`Tabs set on hover 1`] = `
   color: #000000;
 }
 
+.c5:focus {
+  z-index: 1;
+}
+
 .c9 {
   min-height: 0;
 }
@@ -2279,7 +2311,7 @@ exports[`Tabs set on hover 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 jqyKUN"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
             style="white-space: nowrap;"
           >
             <span
@@ -2297,7 +2329,7 @@ exports[`Tabs set on hover 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 jqyKUN"
+            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 cFqTuo"
             style="white-space: nowrap;"
           >
             <span
@@ -2342,7 +2374,7 @@ exports[`Tabs set on hover 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 jqyKUN"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
             style="white-space: nowrap;"
           >
             <span
@@ -2360,7 +2392,7 @@ exports[`Tabs set on hover 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 jqyKUN"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
             style="white-space: nowrap;"
           >
             <span
@@ -2405,7 +2437,7 @@ exports[`Tabs set on hover 4`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 jqyKUN"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
             style="white-space: nowrap;"
           >
             <span
@@ -2423,7 +2455,7 @@ exports[`Tabs set on hover 4`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 jqyKUN"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
             style="white-space: nowrap;"
           >
             <span
@@ -2468,7 +2500,7 @@ exports[`Tabs set on hover 5`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 jqyKUN"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
             style="white-space: nowrap;"
           >
             <span
@@ -2486,7 +2518,7 @@ exports[`Tabs set on hover 5`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 jqyKUN"
+            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 cFqTuo"
             style="white-space: nowrap;"
           >
             <span
@@ -2660,6 +2692,10 @@ exports[`Tabs should allow to extend tab styles 1`] = `
 
 .c6:hover {
   color: #000000;
+}
+
+.c6:focus {
+  z-index: 1;
 }
 
 .c8 {
@@ -2976,6 +3012,10 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c9 {
@@ -3335,6 +3375,10 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   color: #000000;
 }
 
+.c5:focus {
+  z-index: 1;
+}
+
 .c9 {
   margin-left: 12px;
   margin-right: 12px;
@@ -3597,6 +3641,10 @@ exports[`Tabs should have no accessibility violations 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c6 {
@@ -4043,6 +4091,10 @@ exports[`Tabs should style as disabled 1`] = `
   color: #000000;
 }
 
+.c5:focus {
+  z-index: 1;
+}
+
 .c9 {
   margin-left: 12px;
   margin-right: 12px;
@@ -4336,6 +4388,10 @@ exports[`Tabs styled component should change tab color when active 1`] = `
 
 .c6:hover {
   color: #000000;
+}
+
+.c6:focus {
+  z-index: 1;
 }
 
 .c11 {
@@ -4672,6 +4728,10 @@ exports[`Tabs with icon + reverse 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c10 {

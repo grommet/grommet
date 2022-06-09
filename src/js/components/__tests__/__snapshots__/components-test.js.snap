@@ -2650,7 +2650,18 @@ Object {
     },
     "render": [Function],
   },
-  "Tab": [Function],
+  "Tab": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {},
+    "propTypes": Object {
+      "disabled": [Function],
+      "icon": [Function],
+      "plain": [Function],
+      "reverse": [Function],
+      "title": [Function],
+    },
+    "render": [Function],
+  },
   "Table": [Function],
   "TableBody": Object {
     "$$typeof": Symbol(react.forward_ref),

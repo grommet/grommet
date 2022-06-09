@@ -125,6 +125,82 @@ const Tabs = forwardRef(
       [tabRefs, headerRef, isVisible, updateArrowState],
     );
 
+    const moveMultipleIntoView = (direction) => {
+      const previous = direction === 'previous';
+      let index = direction === 'previous' ? 0 : tabRefs.length - 1;
+      let scrolledToIndex;
+      const headerRect = headerRef.current.getBoundingClientRect();
+
+      while (
+        scrolledToIndex === undefined &&
+        ((previous && index < tabRefs.length - 1) || (!previous && index > 0))
+      ) {
+        if (
+          !isVisible(tabRefs[index].current) &&
+          ((previous && isVisible(tabRefs[index + 1].current)) ||
+            (!previous && isVisible(tabRefs[index - 1].current)))
+        ) {
+          for (let j = 0; j < (theme.tabs.step[size] || 1); j += 1) {
+            if (
+              (previous && index >= 0) ||
+              (!previous && index <= tabRefs.length - 1)
+            ) {
+              const tabRect = tabRefs[index].current?.getBoundingClientRect();
+              let amountHidden = 0;
+              if (
+                previous &&
+                tabRect.right >= headerRect.left - 1 &&
+                tabRect.right <= headerRect.right + 1
+              )
+                amountHidden =
+                  tabRect.width - (tabRect.right - headerRect.left);
+              else if (
+                !previous &&
+                tabRect.left >= headerRect.left - 1 &&
+                tabRect.left <= headerRect.right + 1
+              )
+                amountHidden =
+                  tabRect.width - (headerRect.right - tabRect.left);
+              else amountHidden = tabRect.width;
+              if (previous) amountHidden = 0 - amountHidden;
+              if (
+                j === (theme.tabs.step[size] || 1) - 1 ||
+                (previous && index === 0) ||
+                (!previous && index === tabRefs.length - 1)
+              )
+                headerRef.current.scrollBy({
+                  left: amountHidden,
+                  behavior: 'smooth',
+                });
+              else
+                headerRef.current.scrollBy({
+                  left: amountHidden,
+                });
+              scrolledToIndex = index;
+              index = previous ? index - 1 : index + 1;
+            }
+          }
+        }
+        index = previous ? index + 1 : index - 1;
+      }
+
+      // wait for scroll animation to finish
+      // checks every 100 milliseconds for 500 milliseconds
+      // if the scroll animation has finished. Most scroll
+      // animations will finish in 500 milliseconds unless
+      // the tab name is very long.
+      const checkVisible = setInterval(() => {
+        if (scrolledToIndex && isVisible(tabRefs[scrolledToIndex].current)) {
+          updateArrowState();
+          clearInterval(checkVisible);
+        }
+      }, 100);
+      setTimeout(() => {
+        updateArrowState();
+        clearInterval(checkVisible);
+      }, 500);
+    };
+
     useEffect(() => {
       // if the active tab isn't visible scroll to it
       if (
@@ -245,64 +321,7 @@ const Tabs = forwardRef(
               disabled={disableLeftArrow}
               // removed from tabIndex, button is redundant for keyboard users
               tabIndex={-1}
-              onClick={() => {
-                let scrolledToIndex;
-                let i = 0;
-                while (
-                  scrolledToIndex === undefined &&
-                  i < tabRefs.length - 1
-                ) {
-                  if (
-                    !isVisible(tabRefs[i].current) &&
-                    isVisible(tabRefs[i + 1].current)
-                  ) {
-                    const headerRect =
-                      headerRef.current.getBoundingClientRect();
-                    for (let j = 0; j < (theme.tabs.step[size] || 1); j += 1) {
-                      if (i >= 0) {
-                        const tabRect =
-                          tabRefs[i].current?.getBoundingClientRect();
-                        let amountHidden;
-                        if (
-                          tabRect.right >= headerRect.left - 1 &&
-                          tabRect.right <= headerRect.right + 1
-                        )
-                          amountHidden =
-                            tabRect.width - (tabRect.right - headerRect.left);
-                        else amountHidden = tabRect.width;
-                        amountHidden = 0 - amountHidden;
-                        if (j === (theme.tabs.step[size] || 1) - 1 || i === 0)
-                          headerRef.current.scrollBy({
-                            left: amountHidden,
-                            behavior: 'smooth',
-                          });
-                        else
-                          headerRef.current.scrollBy({
-                            left: amountHidden,
-                          });
-                        scrolledToIndex = i;
-                        i -= 1;
-                      }
-                    }
-                  }
-                  i += 1;
-                }
-                // wait for scroll animation to finish
-                // checks every 100 milliseconds for 500 milliseconds
-                // if the scroll animation has finished. Most scroll
-                // animations will finish in 500 milliseconds unless
-                // the tab name is very long.
-                const checkVisible = setInterval(() => {
-                  if (isVisible(tabRefs[scrolledToIndex].current)) {
-                    updateArrowState();
-                    clearInterval(checkVisible);
-                  }
-                }, 100);
-                setTimeout(() => {
-                  updateArrowState();
-                  clearInterval(checkVisible);
-                }, 500);
-              }}
+              onClick={() => moveMultipleIntoView('previous')}
             >
               <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
                 <Previous
@@ -337,66 +356,7 @@ const Tabs = forwardRef(
               disabled={disableRightArrow}
               // removed from tabIndex, button is redundant for keyboard users
               tabIndex={-1}
-              onClick={() => {
-                let scrolledToIndex;
-                let i = tabRefs.length - 1;
-
-                while (scrolledToIndex === undefined && i > 0) {
-                  if (
-                    !isVisible(tabRefs[i].current) &&
-                    isVisible(tabRefs[i - 1].current)
-                  ) {
-                    const headerRect =
-                      headerRef.current.getBoundingClientRect();
-                    for (let j = 0; j < (theme.tabs.step[size] || 1); j += 1) {
-                      if (i <= tabRefs.length - 1) {
-                        const tabRect =
-                          tabRefs[i].current?.getBoundingClientRect();
-                        let amountHidden = 0;
-                        if (
-                          tabRect.left >= headerRect.left - 1 &&
-                          tabRect.left <= headerRect.right + 1
-                        ) {
-                          amountHidden =
-                            tabRect.width - (headerRect.right - tabRect.left);
-                        } else {
-                          amountHidden = tabRect.width;
-                        }
-                        if (
-                          j === (theme.tabs.step[size] || 1) - 1 ||
-                          i === tabRefs.length - 1
-                        )
-                          headerRef.current.scrollBy({
-                            left: amountHidden,
-                            behavior: 'smooth',
-                          });
-                        else
-                          headerRef.current.scrollBy({
-                            left: amountHidden,
-                          });
-                        scrolledToIndex = i;
-                        i += 1;
-                      }
-                    }
-                  }
-                  i -= 1;
-                }
-                // wait for scroll animation to finish
-                // checks every 100 milliseconds for 500 milliseconds
-                // if the scroll animation has finished. Most scroll
-                // animations will finish in 500 milliseconds unless
-                // the tab name is very long.
-                const checkVisible = setInterval(() => {
-                  if (isVisible(tabRefs[scrolledToIndex].current)) {
-                    updateArrowState();
-                    clearInterval(checkVisible);
-                  }
-                }, 100);
-                setTimeout(() => {
-                  updateArrowState();
-                  clearInterval(checkVisible);
-                }, 500);
-              }}
+              onClick={() => moveMultipleIntoView('next')}
             >
               <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
                 <Next
