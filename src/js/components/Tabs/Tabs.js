@@ -131,7 +131,7 @@ const Tabs = forwardRef(
       [tabRefs, headerRef, isVisible, updateArrowState],
     );
 
-    const moveMultipleIntoView = (direction) => {
+    const moveByArrowKey = (direction) => {
       const previous = direction === 'previous';
       let index = direction === 'previous' ? 0 : tabRefs.length - 1;
       let scrolledToIndex;
@@ -154,15 +154,12 @@ const Tabs = forwardRef(
               scrollToIndex(0);
               scrolledToIndex = 0;
             }
+          } else if (index + moveBy < tabRefs.length) {
+            scrollToIndex(index + moveBy);
+            scrolledToIndex = index + moveBy;
           } else {
-            console.log(index + moveBy);
-            if (index + moveBy < tabRefs.length) {
-              scrollToIndex(index + moveBy);
-              scrolledToIndex = index + moveBy;
-            } else {
-              scrollToIndex(tabRefs.length - 1);
-              scrolledToIndex = tabRefs.length - 1;
-            }
+            scrollToIndex(tabRefs.length - 1);
+            scrolledToIndex = tabRefs.length - 1;
           }
         }
         index = previous ? index + 1 : index - 1;
@@ -287,7 +284,7 @@ const Tabs = forwardRef(
               disabled={disableLeftArrow}
               // removed from tabIndex, button is redundant for keyboard users
               tabIndex={-1}
-              onClick={() => moveMultipleIntoView('previous')}
+              onClick={() => moveByArrowKey('previous')}
             >
               <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
                 <Previous
@@ -322,7 +319,7 @@ const Tabs = forwardRef(
               disabled={disableRightArrow}
               // removed from tabIndex, button is redundant for keyboard users
               tabIndex={-1}
-              onClick={() => moveMultipleIntoView('next')}
+              onClick={() => moveByArrowKey('next')}
             >
               <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
                 <Next
