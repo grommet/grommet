@@ -5,6 +5,7 @@ import React, {
   useState,
   useEffect,
   useRef,
+  useMemo,
 } from 'react';
 import { Previous } from 'grommet-icons/icons/Previous';
 import { Next } from 'grommet-icons/icons/Next';
@@ -57,7 +58,10 @@ const Tabs = forwardRef(
     delete rest.onActive;
     /* eslint-enable no-param-reassign */
 
-    const tabRefs = React.Children.map(children, () => React.createRef());
+    const tabRefs = useMemo(
+      () => React.Children.map(children, () => React.createRef()),
+      [children],
+    );
 
     // check if tab is in view
     const isVisible = useCallback(
@@ -86,7 +90,7 @@ const Tabs = forwardRef(
     }, [tabRefs, isVisible]);
 
     const scrollToIndex = useCallback(
-      (index) => {
+      (index, keyboard) => {
         const tabRect = tabRefs[index].current.getBoundingClientRect();
         const headerRect = headerRef.current.getBoundingClientRect();
         let amountHidden = 0;
@@ -106,6 +110,13 @@ const Tabs = forwardRef(
         } else if (tabRect.right <= headerRect.left) {
           amountHidden = headerRect.left - tabRect.left;
           amountHidden = 0 - amountHidden;
+        }
+        // We are adding or subtracting 2 from amountHidden to
+        // ensure the focusIndicator is visible when navigating
+        // by keyboard
+        if (keyboard) {
+          if (amountHidden < 0) amountHidden -= 2;
+          if (amountHidden > 0) amountHidden += 2;
         }
         headerRef.current.scrollBy({
           left: amountHidden,
@@ -148,17 +159,17 @@ const Tabs = forwardRef(
         ) {
           if (previous) {
             if (index - moveBy >= 0) {
-              scrollToIndex(index - moveBy);
+              scrollToIndex(index - moveBy, false);
               scrolledToIndex = index - moveBy;
             } else {
-              scrollToIndex(0);
+              scrollToIndex(0, false);
               scrolledToIndex = 0;
             }
           } else if (index + moveBy < tabRefs.length) {
-            scrollToIndex(index + moveBy);
+            scrollToIndex(index + moveBy, false);
             scrolledToIndex = index + moveBy;
           } else {
-            scrollToIndex(tabRefs.length - 1);
+            scrollToIndex(tabRefs.length - 1, false);
             scrolledToIndex = tabRefs.length - 1;
           }
         }
@@ -174,7 +185,7 @@ const Tabs = forwardRef(
         tabRefs[activeIndex].current &&
         !isVisible(tabRefs[activeIndex].current)
       )
-        scrollToIndex(activeIndex);
+        scrollToIndex(activeIndex, true);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [overflow, activeIndex]);
 
@@ -186,7 +197,7 @@ const Tabs = forwardRef(
         focusIndex !== -1 &&
         !isVisible(tabRefs[focusIndex].current)
       )
-        scrollToIndex(focusIndex);
+        scrollToIndex(focusIndex, true);
     }, [overflow, tabRefs, focusIndex, isVisible, scrollToIndex]);
 
     useLayoutEffect(() => {

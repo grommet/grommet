@@ -182,30 +182,9 @@ const Tab = forwardRef(
       };
     }
 
-    // assign two refs to the tab component, the ref passed in
-    // through form useContext and the ref from forwardRef.
-    // https://www.davedrinks.coffee/how-do-i-use-two-react-refs/
-    const mergeRefs = (...refs) => {
-      const definedRefs = [];
-      refs.forEach((i) => {
-        if (i !== undefined || i !== null) {
-          definedRefs.push(i);
-        }
-      });
-      if (!definedRefs.length) return null;
-      if (definedRefs.length === 1) return definedRefs[0];
-
-      return (newRef) => {
-        for (let i = 0; i < definedRefs.length; i += 1) {
-          if (typeof definedRefs[i] === 'function') definedRefs[i](newRef);
-          else if (definedRefs[i]) definedRefs[i].current = newRef;
-        }
-      };
-    };
-
     return (
       <Button
-        ref={mergeRefs(ref, callerRef)}
+        ref={callerRef}
         plain
         role="tab"
         aria-selected={active}
@@ -230,6 +209,7 @@ const Tab = forwardRef(
           plain={plain}
           {...withIconStyles}
           {...tabStyles}
+          ref={ref}
           style={{
             whiteSpace: 'nowrap',
           }}
