@@ -85,42 +85,48 @@ const Tabs = forwardRef(
       setDisableRightArrow(isVisible(tabRefs[tabRefs.length - 1].current));
     }, [tabRefs, isVisible]);
 
-    const moveIntoView = useCallback(
+    const scrollToIndex = useCallback(
       (index) => {
-        if (tabRefs[index].current) {
-          const tabRect = tabRefs[index].current.getBoundingClientRect();
-          const headerRect = headerRef.current.getBoundingClientRect();
-          let amountHidden = 0;
-          if (
-            tabRect.left >= headerRect.left &&
-            tabRect.left <= headerRect.right
-          ) {
-            amountHidden = tabRect.width - (headerRect.right - tabRect.left);
-          } else if (
-            tabRect.right >= headerRect.left &&
-            tabRect.right <= headerRect.right
-          ) {
-            amountHidden = tabRect.width - (tabRect.right - headerRect.left);
-            amountHidden = 0 - amountHidden;
-          }
-          headerRef.current.scrollBy({
-            left: amountHidden,
-            behavior: 'smooth',
-          });
-          // checks every 50 milliseconds for 300 milliseconds
-          // if the scroll animation has finished. This is a shorter
-          // interval than other checks because we are only moving by 1 tab
-          const checkVisible = setInterval(() => {
-            if (tabRefs[index].current && isVisible(tabRefs[index].current)) {
-              updateArrowState();
-              clearInterval(checkVisible);
-            }
-          }, 50);
-          setTimeout(() => {
+        const tabRect = tabRefs[index].current.getBoundingClientRect();
+        const headerRect = headerRef.current.getBoundingClientRect();
+        let amountHidden = 0;
+        if (
+          tabRect.left >= headerRect.left &&
+          tabRect.left <= headerRect.right
+        ) {
+          amountHidden = tabRect.width - (headerRect.right - tabRect.left);
+        } else if (
+          tabRect.right >= headerRect.left &&
+          tabRect.right <= headerRect.right
+        ) {
+          amountHidden = tabRect.width - (tabRect.right - headerRect.left);
+          amountHidden = 0 - amountHidden;
+        } else if (tabRect.left >= headerRect.right) {
+          amountHidden = tabRect.right - headerRect.right;
+        } else if (tabRect.right <= headerRect.left) {
+          amountHidden = headerRect.left - tabRect.left;
+          amountHidden = 0 - amountHidden;
+        }
+        headerRef.current.scrollBy({
+          left: amountHidden,
+          behavior: 'smooth',
+        });
+
+        // wait for scroll animation to finish
+        // checks every 50 milliseconds for 1000 milliseconds
+        // if the scroll animation has finished. Most scroll
+        // animations will finish in 1000 milliseconds unless
+        // the tab name is very long.
+        const checkVisible = setInterval(() => {
+          if (tabRefs[index].current && isVisible(tabRefs[index].current)) {
             updateArrowState();
             clearInterval(checkVisible);
-          }, 300);
-        }
+          }
+        }, 50);
+        setTimeout(() => {
+          updateArrowState();
+          clearInterval(checkVisible);
+        }, 1000);
       },
       [tabRefs, headerRef, isVisible, updateArrowState],
     );
@@ -129,7 +135,7 @@ const Tabs = forwardRef(
       const previous = direction === 'previous';
       let index = direction === 'previous' ? 0 : tabRefs.length - 1;
       let scrolledToIndex;
-      const headerRect = headerRef.current.getBoundingClientRect();
+      const moveBy = theme.tabs.step[size] - 1 || 0;
 
       while (
         scrolledToIndex === undefined &&
@@ -140,65 +146,27 @@ const Tabs = forwardRef(
           ((previous && isVisible(tabRefs[index + 1].current)) ||
             (!previous && isVisible(tabRefs[index - 1].current)))
         ) {
-          for (let j = 0; j < (theme.tabs.step[size] || 1); j += 1) {
-            if (
-              (previous && index >= 0) ||
-              (!previous && index <= tabRefs.length - 1)
-            ) {
-              const tabRect = tabRefs[index].current?.getBoundingClientRect();
-              let amountHidden = 0;
-              if (
-                previous &&
-                tabRect.right >= headerRect.left - 1 &&
-                tabRect.right <= headerRect.right + 1
-              )
-                amountHidden =
-                  tabRect.width - (tabRect.right - headerRect.left);
-              else if (
-                !previous &&
-                tabRect.left >= headerRect.left - 1 &&
-                tabRect.left <= headerRect.right + 1
-              )
-                amountHidden =
-                  tabRect.width - (headerRect.right - tabRect.left);
-              else amountHidden = tabRect.width;
-              if (previous) amountHidden = 0 - amountHidden;
-              if (
-                j === (theme.tabs.step[size] || 1) - 1 ||
-                (previous && index === 0) ||
-                (!previous && index === tabRefs.length - 1)
-              )
-                headerRef.current.scrollBy({
-                  left: amountHidden,
-                  behavior: 'smooth',
-                });
-              else
-                headerRef.current.scrollBy({
-                  left: amountHidden,
-                });
-              scrolledToIndex = index;
-              index = previous ? index - 1 : index + 1;
+          if (previous) {
+            if (index - moveBy >= 0) {
+              scrollToIndex(index - moveBy);
+              scrolledToIndex = index - moveBy;
+            } else {
+              scrollToIndex(0);
+              scrolledToIndex = 0;
+            }
+          } else {
+            console.log(index + moveBy);
+            if (index + moveBy < tabRefs.length) {
+              scrollToIndex(index + moveBy);
+              scrolledToIndex = index + moveBy;
+            } else {
+              scrollToIndex(tabRefs.length - 1);
+              scrolledToIndex = tabRefs.length - 1;
             }
           }
         }
         index = previous ? index + 1 : index - 1;
       }
-
-      // wait for scroll animation to finish
-      // checks every 100 milliseconds for 500 milliseconds
-      // if the scroll animation has finished. Most scroll
-      // animations will finish in 500 milliseconds unless
-      // the tab name is very long.
-      const checkVisible = setInterval(() => {
-        if (scrolledToIndex && isVisible(tabRefs[scrolledToIndex].current)) {
-          updateArrowState();
-          clearInterval(checkVisible);
-        }
-      }, 100);
-      setTimeout(() => {
-        updateArrowState();
-        clearInterval(checkVisible);
-      }, 500);
     };
 
     useEffect(() => {
@@ -208,9 +176,8 @@ const Tabs = forwardRef(
         tabRefs &&
         tabRefs[activeIndex].current &&
         !isVisible(tabRefs[activeIndex].current)
-      ) {
-        moveIntoView(activeIndex);
-      }
+      )
+        scrollToIndex(activeIndex);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [overflow, activeIndex]);
 
@@ -221,10 +188,9 @@ const Tabs = forwardRef(
         overflow &&
         focusIndex !== -1 &&
         !isVisible(tabRefs[focusIndex].current)
-      ) {
-        moveIntoView(focusIndex);
-      }
-    }, [overflow, tabRefs, focusIndex, isVisible, moveIntoView]);
+      )
+        scrollToIndex(focusIndex);
+    }, [overflow, tabRefs, focusIndex, isVisible, scrollToIndex]);
 
     useLayoutEffect(() => {
       const onResize = () => {
