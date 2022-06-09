@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, _generalPropTypes.genericProps, {
     children: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].object, _propTypes["default"].node]),
     active: _propTypes["default"].bool,
-    as: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
+    as: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func, _propTypes["default"].elementType]),
     badge: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].element, _propTypes["default"].number, _propTypes["default"].shape({
       background: _generalPropTypes.backgroundPropType,
       max: _propTypes["default"].number,

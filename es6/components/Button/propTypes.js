@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, genericProps, {
     children: PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.node]),
     active: PropTypes.bool,
-    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.elementType]),
     badge: PropTypes.oneOfType([PropTypes.bool, PropTypes.element, PropTypes.number, PropTypes.shape({
       background: backgroundPropType,
       max: PropTypes.number,
