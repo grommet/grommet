@@ -16,7 +16,11 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.node,
     ]),
     active: PropTypes.bool,
-    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    as: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+      PropTypes.elementType,
+    ]),
     badge: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.element,
