@@ -203,10 +203,6 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <button
   class="c0"
   tabindex="-1"
@@ -1009,12 +1005,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   }
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c3 {
-    width: 100%;
-  }
-}
-
 <div
   class="c0 c1"
   data-g-portal-id="0"
@@ -1645,12 +1635,6 @@ exports[`MaskedInput mask 2`] = `
   }
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c3 {
-    width: 100%;
-  }
-}
-
 <div
   class="c0 c1"
   data-g-portal-id="0"
@@ -2231,12 +2215,6 @@ exports[`MaskedInput option via mouse 2`] = `
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c3 {
-    width: 100%;
   }
 }
 

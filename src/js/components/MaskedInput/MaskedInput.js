@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -149,11 +150,6 @@ const ContainerBox = styled(Box)`
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
       : 'max-height: inherit;'};
-
-  /* IE11 hack to get drop contents to not overflow */
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    width: 100%;
-  }
 `;
 
 const dropAlign = { top: 'bottom', left: 'left' };
@@ -191,10 +187,7 @@ const MaskedInput = forwardRef(
       value: valueProp,
     });
 
-    const [valueParts, setValueParts] = useState(parseValue(mask, value));
-    useEffect(() => {
-      setValueParts(parseValue(mask, value));
-    }, [mask, value]);
+    const valueParts = useMemo(() => parseValue(mask, value), [mask, value]);
 
     const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
@@ -271,9 +264,12 @@ const MaskedInput = forwardRef(
         const nextValue = nextValueParts.map((part) => part.part).join('');
 
         if (nextValue !== event.target.value) {
-          // The mask required inserting something, change the input.
+          // The mask adjusted the next value, change the input value.
           // This will re-trigger this callback with the next value
-          setInputValue(nextValue);
+          if (nextValue.length < event.target.value.length)
+            // removed something, restore the prior value
+            setInputValue(value);
+          else setInputValue(nextValue); // added something
         } else if (value !== nextValue) {
           setValue(nextValue);
           if (onChange) onChange(event);
