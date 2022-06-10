@@ -7,7 +7,7 @@ for (var i = 1; i < 8; i += 1) {
   data.push({
     date: "2020-07-" + (i % 30 + 1).toString().padStart(2, 0),
     percent: Math.abs(v * 100),
-    amount: i
+    amount: Math.round(Math.abs(v * 50))
   });
 }
 
@@ -36,10 +36,14 @@ export var Legend = function Legend() {
         label: 'Amount'
       }],
       chart: ['percent', {
+        type: 'line',
         property: 'amount',
-        thickness: 'small'
+        thickness: 'xsmall',
+        dash: true,
+        round: true
       }],
       legend: true,
+      detail: true,
       axis: {
         x: {
           property: 'date',

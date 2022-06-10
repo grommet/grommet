@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.points = exports.heightYGranularity = exports.halfPad = exports.doublePad = exports.createDateFormat = void 0;
+exports.points = exports.largestSize = exports.heightYGranularity = exports.halfPad = exports.doublePad = exports.createDateFormat = void 0;
 var points = ['circle', 'diamond', 'square', 'star', 'triangle', 'triangleDown'];
 exports.points = points;
 var heightYGranularity = {
@@ -47,6 +47,16 @@ var doublePad = {
   xxsmall: 'xsmall'
 };
 exports.doublePad = doublePad;
+var orderedSizes = ['xlarge', 'large', 'medium', 'small', 'xsmall', 'xxsmall', 'hair'];
+
+var largestSize = function largestSize(size1, size2) {
+  if (size1 && !size2) return size1;
+  if (size2 && !size1) return size2;
+  if (orderedSizes.indexOf(size1) < orderedSizes.indexOf(size2)) return size1;
+  return size2;
+};
+
+exports.largestSize = largestSize;
 
 var createDateFormat = function createDateFormat(firstValue, lastValue, full) {
   var dateFormat;

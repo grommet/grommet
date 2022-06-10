@@ -39,6 +39,13 @@ export var doublePad = {
   xsmall: 'small',
   xxsmall: 'xsmall'
 };
+var orderedSizes = ['xlarge', 'large', 'medium', 'small', 'xsmall', 'xxsmall', 'hair'];
+export var largestSize = function largestSize(size1, size2) {
+  if (size1 && !size2) return size1;
+  if (size2 && !size1) return size2;
+  if (orderedSizes.indexOf(size1) < orderedSizes.indexOf(size2)) return size1;
+  return size2;
+};
 export var createDateFormat = function createDateFormat(firstValue, lastValue, full) {
   var dateFormat;
   var startDate = new Date(firstValue);

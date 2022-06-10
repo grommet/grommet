@@ -392,8 +392,10 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
     charts.forEach(function (_ref6, index) {
       var color = _ref6.color,
+          dash = _ref6.dash,
           point = _ref6.point,
           property = _ref6.property,
+          round = _ref6.round,
           thickness = _ref6.thickness,
           type = _ref6.type;
       var calcThickness = chartProps[index].thickness;
@@ -415,6 +417,9 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           if (pColor && !result[p].color) result[p].color = pColor;
           if (point && !result[p].point) result[p].point = point;else if (type === 'point') result[p].point = false;
           if ((thickness || calcThickness) && !result[p].thickness) result[p].thickness = thickness || calcThickness;
+          if (round !== undefined && result[p].round === undefined) result[p].round = round;
+          if (dash !== undefined && result[p].dash === undefined) result[p].dash = dash;
+          if (result[p].type === undefined) result[p].type = type;
         });
       }
     }); // set color for any non-aspect properties we don't have one for yet
@@ -480,8 +485,8 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     charts.forEach(function (_ref7, index) {
       var type = _ref7.type;
       var thickness = chartProps[index].thickness;
-      result.horizontal = _utils2.halfPad[thickness];
-      if (type && type !== 'bar') result.vertical = _utils2.halfPad[thickness];
+      result.horizontal = (0, _utils2.largestSize)(result.horizontal, _utils2.halfPad[thickness]);
+      if (type && type !== 'bar') result.vertical = (0, _utils2.largestSize)(result.vertical, _utils2.halfPad[thickness]);
     });
     return result;
   }, [chartProps, charts, padProp]); // calculate the thickness in pixels of each chart
@@ -686,7 +691,6 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     activeProperty: activeProperty,
     axis: axis,
     data: data,
-    pad: pad,
     series: series,
     seriesStyles: seriesStyles,
     renderValue: renderValue,
