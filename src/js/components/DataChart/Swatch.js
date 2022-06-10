@@ -60,6 +60,9 @@ const Swatch = ({ aspect, color, dash, point, round, thickness, type }) => {
         d = `M 0 0 L ${dim} 0 L ${dim} ${dim} L 0 ${dim} Z`;
       if (d) content = <path d={d} />;
     }
+  } else if (type === 'area') {
+    if (round) content = <circle cx={half} cy={half} r={half} />;
+    else content = <rect x={0} y={0} width={width} height={height} />;
   } else {
     // draw a line oriented based on the type and then match style
     const strokeWidth =
