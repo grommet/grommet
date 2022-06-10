@@ -259,17 +259,28 @@ const MaskedInput = forwardRef(
     // This could be due to a paste or as the user is typing.
     const onChangeInput = useCallback(
       (event) => {
+        const eventValue = event.target.value;
         // Align with the mask.
-        const nextValueParts = parseValue(mask, event.target.value);
+        const nextValueParts = parseValue(mask, eventValue);
         const nextValue = nextValueParts.map((part) => part.part).join('');
 
-        if (nextValue !== event.target.value) {
-          // The mask adjusted the next value, change the input value.
-          // This will re-trigger this callback with the next value
-          if (nextValue.length < event.target.value.length)
-            // removed something, restore the prior value
+        if (nextValue !== eventValue) {
+          // The mask adjusted the next value. If something was added,
+          // the value must be valid. Change the actual input value
+          // to correspond.
+          // This will re-trigger this callback with the next value.
+          if (nextValue.length > eventValue.length) setInputValue(nextValue);
+          // If the nextValue is shorter, something must be invalid.
+          else if (value && eventValue.length < value.length) {
+            // If the user is removing characters, preserve what the
+            // user is working on.
+            setValue(eventValue);
+            if (onChange) onChange(event);
+          } else {
+            // If the user is adding invalid characters, don't allow it.
+            // Revert to the prior value.
             setInputValue(value);
-          else setInputValue(nextValue); // added something
+          }
         } else if (value !== nextValue) {
           setValue(nextValue);
           if (onChange) onChange(event);
