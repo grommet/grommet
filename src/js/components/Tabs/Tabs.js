@@ -53,6 +53,14 @@ const Tabs = forwardRef(
       setActiveIndex(propsActiveIndex);
     }
 
+    // Safari v15.5 has an issue with scrolling when overflow='hidden'
+    // and scroll-behavior='smooth'. For now we are detecting if the browser
+    // is safari to workaround this issue. The issue should be resolved soon
+    // and we can remove this. https://github.com/WebKit/WebKit/pull/1387
+    const isSafari = /^((?!chrome|android).)*safari/i.test(
+      window.navigator.userAgent,
+    );
+
     /* eslint-disable no-param-reassign */
     delete rest.activeIndex;
     delete rest.onActive;
@@ -118,28 +126,38 @@ const Tabs = forwardRef(
           if (amountHidden < 0) amountHidden -= 2;
           if (amountHidden > 0) amountHidden += 2;
         }
-        headerRef.current.scrollBy({
-          left: amountHidden,
-          behavior: 'smooth',
-        });
+        if (isSafari) {
+          headerRef.current.scrollBy({
+            left: amountHidden,
+          });
+        } else {
+          headerRef.current.scrollBy({
+            left: amountHidden,
+            behavior: 'smooth',
+          });
+        }
 
         // wait for scroll animation to finish
         // checks every 50 milliseconds for 1000 milliseconds
         // if the scroll animation has finished. Most scroll
         // animations will finish in 1000 milliseconds unless
         // the tab name is very long.
-        const checkVisible = setInterval(() => {
-          if (tabRefs[index].current && isVisible(tabRefs[index].current)) {
+        if (isSafari) {
+          updateArrowState();
+        } else {
+          const checkVisible = setInterval(() => {
+            if (tabRefs[index].current && isVisible(tabRefs[index].current)) {
+              updateArrowState();
+              clearInterval(checkVisible);
+            }
+          }, 50);
+          setTimeout(() => {
             updateArrowState();
             clearInterval(checkVisible);
-          }
-        }, 50);
-        setTimeout(() => {
-          updateArrowState();
-          clearInterval(checkVisible);
-        }, 1000);
+          }, 1000);
+        }
       },
-      [tabRefs, headerRef, isVisible, updateArrowState],
+      [tabRefs, headerRef, isVisible, updateArrowState, isSafari],
     );
 
     const moveByArrowKey = (direction) => {
@@ -198,6 +216,29 @@ const Tabs = forwardRef(
         !isVisible(tabRefs[focusIndex].current)
       )
         scrollToIndex(focusIndex, true);
+      else if (overflow && focusIndex !== -1) {
+        // If the browser scrolled the focused item into view and
+        // the focusedTab is on the edge of the header container
+        // scroll slightly further to show the focusIndicator
+        const tabRect = tabRefs[focusIndex].current.getBoundingClientRect();
+        const headerRect = headerRef.current.getBoundingClientRect();
+        let amountHidden = 0;
+        if (
+          tabRect.left >= headerRect.left &&
+          tabRect.right <= headerRect.right &&
+          tabRect.right + 2 >= headerRect.right
+        )
+          amountHidden = 2;
+        else if (
+          tabRect.right <= headerRect.right &&
+          tabRect.left >= headerRect.left &&
+          tabRect.left - 2 <= headerRect.left
+        )
+          amountHidden = -2;
+        headerRef.current.scrollBy({
+          left: amountHidden,
+        });
+      }
     }, [overflow, tabRefs, focusIndex, isVisible, scrollToIndex]);
 
     useLayoutEffect(() => {
