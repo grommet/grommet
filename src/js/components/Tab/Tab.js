@@ -11,7 +11,7 @@ import { normalizeColor, useForwardedRef } from '../../utils';
 
 import { StyledTab } from './StyledTab';
 import { TabPropTypes } from './propTypes';
-import useLayoutEffect from '../../utils/use-isomorphic-layout-effect';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 const Tab = forwardRef(
   (
