@@ -155,7 +155,7 @@ var defaultMask = [{
 var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "MaskedInput__ContainerBox",
   componentId: "sc-af8hzu-0"
-})(["", ";@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"], function (props) {
+})(["", ";"], function (props) {
   return props.dropHeight ? (0, _utils.sizeStyle)('max-height', props.dropHeight, props.theme) : 'max-height: inherit;';
 });
 var dropAlign = {
@@ -196,19 +196,15 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1];
 
-  var _useState = (0, _react.useState)(parseValue(mask, value)),
-      valueParts = _useState[0],
-      setValueParts = _useState[1];
-
-  (0, _react.useEffect)(function () {
-    setValueParts(parseValue(mask, value));
+  var valueParts = (0, _react.useMemo)(function () {
+    return parseValue(mask, value);
   }, [mask, value]);
   var inputRef = (0, _utils.useForwardedRef)(ref);
   var dropRef = (0, _react.useRef)(); // Caller's ref, if provided
 
-  var _useState2 = (0, _react.useState)(),
-      dropPropsTarget = _useState2[0],
-      setDropPropsTarget = _useState2[1];
+  var _useState = (0, _react.useState)(),
+      dropPropsTarget = _useState[0],
+      setDropPropsTarget = _useState[1];
 
   (0, _react.useEffect)(function () {
     var nextDropPropsTarget; // If caller provided a ref, set to 'pending' until ref.current is defined
@@ -219,21 +215,21 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   }, [dropProps]);
 
-  var _useState3 = (0, _react.useState)(focusProp),
-      focus = _useState3[0],
-      setFocus = _useState3[1];
+  var _useState2 = (0, _react.useState)(focusProp),
+      focus = _useState2[0],
+      setFocus = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(),
+      activeMaskIndex = _useState3[0],
+      setActiveMaskIndex = _useState3[1];
 
   var _useState4 = (0, _react.useState)(),
-      activeMaskIndex = _useState4[0],
-      setActiveMaskIndex = _useState4[1];
+      activeOptionIndex = _useState4[0],
+      setActiveOptionIndex = _useState4[1];
 
   var _useState5 = (0, _react.useState)(),
-      activeOptionIndex = _useState5[0],
-      setActiveOptionIndex = _useState5[1];
-
-  var _useState6 = (0, _react.useState)(),
-      showDrop = _useState6[0],
-      setShowDrop = _useState6[1];
+      showDrop = _useState5[0],
+      setShowDrop = _useState5[1];
 
   (0, _react.useEffect)(function () {
     if (focus) {
@@ -287,16 +283,29 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [inputRef]); // This could be due to a paste or as the user is typing.
 
   var onChangeInput = (0, _react.useCallback)(function (event) {
-    // Align with the mask.
-    var nextValueParts = parseValue(mask, event.target.value);
+    var eventValue = event.target.value; // Align with the mask.
+
+    var nextValueParts = parseValue(mask, eventValue);
     var nextValue = nextValueParts.map(function (part) {
       return part.part;
     }).join('');
 
-    if (nextValue !== event.target.value) {
-      // The mask required inserting something, change the input.
-      // This will re-trigger this callback with the next value
-      setInputValue(nextValue);
+    if (nextValue !== eventValue) {
+      // The mask adjusted the next value. If something was added,
+      // the value must be valid. Change the actual input value
+      // to correspond.
+      // This will re-trigger this callback with the next value.
+      if (nextValue.length > eventValue.length) setInputValue(nextValue); // If the nextValue is shorter, something must be invalid.
+      else if (value && eventValue.length < value.length) {
+        // If the user is removing characters, preserve what the
+        // user is working on.
+        setValue(eventValue);
+        if (onChange) onChange(event);
+      } else {
+        // If the user is adding invalid characters, don't allow it.
+        // Revert to the prior value.
+        setInputValue(value);
+      }
     } else if (value !== nextValue) {
       setValue(nextValue);
       if (onChange) onChange(event);
