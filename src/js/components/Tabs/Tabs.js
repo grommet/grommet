@@ -277,7 +277,7 @@ const Tabs = forwardRef(
           activeIndex,
           active: activeIndex === index,
           index,
-          ref: tabRefs[index],
+          tabsContextRef: tabRefs[index],
           onActivate: () => activateTab(index),
           setActiveContent,
           setActiveTitle,

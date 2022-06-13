@@ -7,10 +7,11 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import { TabsContext } from '../Tabs/TabsContext';
-import { normalizeColor } from '../../utils';
+import { normalizeColor, useForwardedRef } from '../../utils';
 
 import { StyledTab } from './StyledTab';
 import { TabPropTypes } from './propTypes';
+import useLayoutEffect from '../../utils/use-isomorphic-layout-effect';
 
 const Tab = forwardRef(
   (
@@ -29,13 +30,13 @@ const Tab = forwardRef(
       onClick,
       ...rest
     },
-    callerRef,
+    ref,
   ) => {
     const {
       active,
       activeIndex,
       index,
-      ref,
+      tabsContextRef,
       onActivate,
       setActiveContent,
       setActiveTitle,
@@ -45,6 +46,13 @@ const Tab = forwardRef(
     const [over, setOver] = useState(undefined);
     let normalizedTitle = title;
     const tabStyles = {};
+    const tabRef = useForwardedRef(ref);
+
+    useLayoutEffect(() => {
+      if (tabRef.current) {
+        tabsContextRef.current = tabRef.current;
+      }
+    });
 
     useEffect(() => {
       if (active) {
@@ -184,7 +192,7 @@ const Tab = forwardRef(
 
     return (
       <Button
-        ref={callerRef}
+        ref={tabRef}
         plain
         role="tab"
         aria-selected={active}
@@ -209,7 +217,6 @@ const Tab = forwardRef(
           plain={plain}
           {...withIconStyles}
           {...tabStyles}
-          ref={ref}
           style={{
             whiteSpace: 'nowrap',
           }}
