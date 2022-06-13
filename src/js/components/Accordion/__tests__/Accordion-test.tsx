@@ -14,7 +14,7 @@ const customTheme = {
     heading: { level: '3' },
     hover: {
       background: 'background-contrast',
-    }
+    },
   },
 };
 
@@ -176,7 +176,7 @@ describe('Accordion', () => {
     expect(asFragment()).toMatchSnapshot();
 
     await user.hover(screen.getByRole('tab', { name: 'Panel 1 FormDown' }));
-    expect(asFragment()).toMatchSnapshot()
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('accordion border', () => {
