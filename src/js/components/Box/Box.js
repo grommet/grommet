@@ -85,7 +85,11 @@ const Box = forwardRef(
     }
 
     let contents = children;
-    if (gap && gap !== 'none') {
+    if (
+      gap &&
+      gap !== 'none' &&
+      (border === 'between' || border?.side === 'between')
+    ) {
       const boxAs = !as && tag ? tag : as;
       contents = [];
       let firstIndex;
@@ -143,6 +147,7 @@ const Box = forwardRef(
         elevationProp={elevation}
         fillProp={fill}
         focus={focus}
+        gap={gap}
         kindProp={kind}
         overflowProp={overflow}
         wrapProp={wrap}

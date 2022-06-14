@@ -34,6 +34,15 @@ exports[`Footer default 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-column-gap: 24px;
+  column-gap: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    -webkit-column-gap: 12px;
+    column-gap: 12px;
+  }
 }
 
 <div

@@ -3014,6 +3014,8 @@ exports[`Box gap 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-column-gap: 6px;
+  column-gap: 6px;
 }
 
 .c2 {
@@ -3031,18 +3033,138 @@ exports[`Box gap 1`] = `
 }
 
 .c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 24px;
+  column-gap: 24px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 48px;
+  column-gap: 48px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 80px;
+  column-gap: 80px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 0px;
+  column-gap: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    -webkit-column-gap: 3px;
+    column-gap: 3px;
+  }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    height: 6px;
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    -webkit-column-gap: 12px;
+    column-gap: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    -webkit-column-gap: 24px;
+    column-gap: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    -webkit-column-gap: 0px;
+    column-gap: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    row-gap: 6px;
   }
 }
 
@@ -3057,49 +3179,46 @@ exports[`Box gap 1`] = `
     />
   </div>
   <div
-    class="c1"
+    class="c3"
   >
     <div
       class="c2"
     />
   </div>
   <div
-    class="c1"
+    class="c4"
   >
     <div
       class="c2"
     />
   </div>
   <div
-    class="c1"
+    class="c5"
   >
     <div
       class="c2"
     />
   </div>
   <div
-    class="c1"
+    class="c6"
   >
     <div
       class="c2"
     />
   </div>
   <div
-    class="c1"
+    class="c7"
   >
     <div
       class="c2"
     />
   </div>
   <span
-    class="c2"
+    class="c8"
   >
     <span>
       first
     </span>
-    <span
-      class="c3"
-    />
     <span>
       second
     </span>

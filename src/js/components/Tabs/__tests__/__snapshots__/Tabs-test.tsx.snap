@@ -1139,11 +1139,11 @@ exports[`Tabs change to second tab 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledTabs-sc-a4fwxl-2 eCNyif"
+    class="StyledBox-sc-13pk1d4-0 ffXdkS StyledTabs-sc-a4fwxl-2 eCNyif"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gmjiSl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
+      class="StyledBox-sc-13pk1d4-0 hajGXg StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
     >
       <button
         aria-expanded="false"
@@ -1153,7 +1153,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 emkQWb"
+          class="StyledBox-sc-13pk1d4-0 cJOhsI StyledTab-sc-1nnwnsb-0 emkQWb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kILPEW"
@@ -1170,7 +1170,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+          class="StyledBox-sc-13pk1d4-0 ldnYlE StyledTab-sc-1nnwnsb-0 emkQWb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dtIFvg"
@@ -2225,11 +2225,11 @@ exports[`Tabs set on hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledTabs-sc-a4fwxl-2 eCNyif"
+    class="StyledBox-sc-13pk1d4-0 ffXdkS StyledTabs-sc-a4fwxl-2 eCNyif"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gmjiSl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
+      class="StyledBox-sc-13pk1d4-0 hajGXg StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
     >
       <button
         aria-expanded="true"
@@ -2239,7 +2239,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+          class="StyledBox-sc-13pk1d4-0 ldnYlE StyledTab-sc-1nnwnsb-0 emkQWb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dtIFvg"
@@ -2256,7 +2256,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 emkQWb"
+          class="StyledBox-sc-13pk1d4-0 cJOhsI StyledTab-sc-1nnwnsb-0 emkQWb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kILPEW"
@@ -2282,11 +2282,11 @@ exports[`Tabs set on hover 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledTabs-sc-a4fwxl-2 eCNyif"
+    class="StyledBox-sc-13pk1d4-0 ffXdkS StyledTabs-sc-a4fwxl-2 eCNyif"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gmjiSl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
+      class="StyledBox-sc-13pk1d4-0 hajGXg StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
     >
       <button
         aria-expanded="true"
@@ -2296,7 +2296,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+          class="StyledBox-sc-13pk1d4-0 ldnYlE StyledTab-sc-1nnwnsb-0 emkQWb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dtIFvg"
@@ -2313,7 +2313,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+          class="StyledBox-sc-13pk1d4-0 ldnYlE StyledTab-sc-1nnwnsb-0 emkQWb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 ZVAlE"
@@ -2339,11 +2339,11 @@ exports[`Tabs set on hover 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledTabs-sc-a4fwxl-2 eCNyif"
+    class="StyledBox-sc-13pk1d4-0 ffXdkS StyledTabs-sc-a4fwxl-2 eCNyif"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gmjiSl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
+      class="StyledBox-sc-13pk1d4-0 hajGXg StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
     >
       <button
         aria-expanded="true"
@@ -2353,7 +2353,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+          class="StyledBox-sc-13pk1d4-0 ldnYlE StyledTab-sc-1nnwnsb-0 emkQWb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dtIFvg"
@@ -2370,7 +2370,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+          class="StyledBox-sc-13pk1d4-0 ldnYlE StyledTab-sc-1nnwnsb-0 emkQWb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 ZVAlE"
@@ -2396,11 +2396,11 @@ exports[`Tabs set on hover 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledTabs-sc-a4fwxl-2 eCNyif"
+    class="StyledBox-sc-13pk1d4-0 ffXdkS StyledTabs-sc-a4fwxl-2 eCNyif"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gmjiSl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
+      class="StyledBox-sc-13pk1d4-0 hajGXg StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
     >
       <button
         aria-expanded="true"
@@ -2410,7 +2410,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+          class="StyledBox-sc-13pk1d4-0 ldnYlE StyledTab-sc-1nnwnsb-0 emkQWb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dtIFvg"
@@ -2427,7 +2427,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 emkQWb"
+          class="StyledBox-sc-13pk1d4-0 cJOhsI StyledTab-sc-1nnwnsb-0 emkQWb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kILPEW"
@@ -4457,9 +4457,11 @@ exports[`Tabs with icon + reverse 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   padding-bottom: 6px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4485,25 +4487,17 @@ exports[`Tabs with icon + reverse 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   padding-bottom: 6px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c6 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c7 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c9 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
@@ -4588,7 +4582,7 @@ exports[`Tabs with icon + reverse 1`] = `
   color: #000000;
 }
 
-.c10 {
+.c9 {
   min-height: 0;
 }
 
@@ -4619,34 +4613,42 @@ exports[`Tabs with icon + reverse 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c4 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     border-bottom: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    width: 6px;
+  .c7 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -4673,11 +4675,8 @@ exports[`Tabs with icon + reverse 1`] = `
           <svg
             color="text"
           />
-          <div
-            class="c6"
-          />
           <span
-            class="c7"
+            class="c6"
           >
             Tab 1
           </span>
@@ -4691,16 +4690,13 @@ exports[`Tabs with icon + reverse 1`] = `
         type="button"
       >
         <div
-          class="c8 c5"
+          class="c7 c5"
         >
           <span
-            class="c9"
+            class="c8"
           >
             Tab 2
           </span>
-          <div
-            class="c6"
-          />
           <svg
             color="control"
           />
@@ -4709,7 +4705,7 @@ exports[`Tabs with icon + reverse 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="c10"
+      class="c9"
       role="tabpanel"
     >
       Tab body 1

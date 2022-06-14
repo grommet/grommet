@@ -6698,6 +6698,8 @@ exports[`DataChart legend 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c11 {
@@ -6720,19 +6722,11 @@ exports[`DataChart legend 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  -webkit-column-gap: 6px;
+  column-gap: 6px;
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 6px;
-}
-
-.c13 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -6767,6 +6761,13 @@ exports[`DataChart legend 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c10 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c11 {
     padding-left: 6px;
     padding-right: 6px;
@@ -6781,8 +6782,9 @@ exports[`DataChart legend 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
-    width: 3px;
+  .c11 {
+    -webkit-column-gap: 3px;
+    column-gap: 3px;
   }
 }
 
@@ -6895,11 +6897,8 @@ exports[`DataChart legend 1`] = `
             stroke-width="96"
           />
         </svg>
-        <div
-          class="c12"
-        />
         <span
-          class="c13"
+          class="c12"
         >
           a
         </span>

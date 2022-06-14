@@ -17,6 +17,7 @@ exports[`Sidebar all 1`] = `
   flex-direction: column;
   min-height: 100%;
   padding: 12px;
+  row-gap: 48px;
 }
 
 .c2 {
@@ -47,7 +48,7 @@ exports[`Sidebar all 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64,7 +65,7 @@ exports[`Sidebar all 1`] = `
   flex: 1 1;
 }
 
-.c5 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -90,17 +91,7 @@ exports[`Sidebar all 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 48px;
-}
-
-.c6 {
+.c5 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -125,8 +116,8 @@ exports[`Sidebar all 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    height: 24px;
+  .c1 {
+    row-gap: 24px;
   }
 }
 
@@ -141,20 +132,14 @@ exports[`Sidebar all 1`] = `
     />
     <div
       class="c3"
-    />
-    <div
-      class="c4"
     >
       test all props and children
     </div>
     <div
-      class="c3"
-    />
-    <div
-      class="c5 StyledAvatar-sc-1suyamb-1"
+      class="c4 StyledAvatar-sc-1suyamb-1"
     >
       <span
-        class="c6 "
+        class="c5 "
       >
         SY
       </span>
@@ -178,6 +163,7 @@ exports[`Sidebar children 1`] = `
   flex-direction: column;
   min-height: 100%;
   padding: 12px;
+  row-gap: 48px;
 }
 
 .c2 {
@@ -238,6 +224,12 @@ exports[`Sidebar children 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    row-gap: 24px;
   }
 }
 
@@ -274,6 +266,7 @@ exports[`Sidebar footer 1`] = `
   flex-direction: column;
   min-height: 100%;
   padding: 12px;
+  row-gap: 48px;
 }
 
 .c2 {
@@ -293,7 +286,7 @@ exports[`Sidebar footer 1`] = `
   flex: 1 1;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -321,16 +314,6 @@ exports[`Sidebar footer 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 48px;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -348,8 +331,8 @@ exports[`Sidebar footer 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    height: 24px;
+  .c1 {
+    row-gap: 24px;
   }
 }
 
@@ -363,10 +346,7 @@ exports[`Sidebar footer 1`] = `
       class="c2"
     />
     <div
-      class="c3"
-    />
-    <div
-      class="c4 StyledAvatar-sc-1suyamb-1"
+      class="c3 StyledAvatar-sc-1suyamb-1"
     />
   </div>
 </div>
@@ -387,6 +367,7 @@ exports[`Sidebar header 1`] = `
   flex-direction: column;
   min-height: 100%;
   padding: 12px;
+  row-gap: 48px;
 }
 
 .c2 {
@@ -417,7 +398,7 @@ exports[`Sidebar header 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -432,16 +413,6 @@ exports[`Sidebar header 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-}
-
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 48px;
 }
 
 .c0 {
@@ -461,8 +432,8 @@ exports[`Sidebar header 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    height: 24px;
+  .c1 {
+    row-gap: 24px;
   }
 }
 
@@ -477,9 +448,6 @@ exports[`Sidebar header 1`] = `
     />
     <div
       class="c3"
-    />
-    <div
-      class="c4"
     />
   </div>
 </div>
@@ -500,6 +468,7 @@ exports[`Sidebar renders 1`] = `
   flex-direction: column;
   min-height: 100%;
   padding: 12px;
+  row-gap: 48px;
 }
 
 .c2 {
@@ -532,6 +501,12 @@ exports[`Sidebar renders 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    row-gap: 24px;
   }
 }
 

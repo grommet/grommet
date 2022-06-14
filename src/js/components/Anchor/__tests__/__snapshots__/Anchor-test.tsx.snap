@@ -160,56 +160,88 @@ exports[`Anchor gap renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-column-gap: 6px;
+  column-gap: 6px;
 }
 
 .c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 6px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 24px;
+  column-gap: 24px;
 }
 
 .c5 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 48px;
+  column-gap: 48px;
 }
 
 .c6 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 48px;
-}
-
-.c7 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 5px;
+  column-gap: 5px;
 }
 
 .c1 {
@@ -243,9 +275,6 @@ exports[`Anchor gap renders 1`] = `
         <svg
           color="#7D4CDB"
         />
-        <span
-          class="c3"
-        />
         Theme Gap
       </span>
     </a>
@@ -254,14 +283,11 @@ exports[`Anchor gap renders 1`] = `
       href="#"
     >
       <span
-        class="c2"
+        class="c3"
         style="display: inline-flex;"
       >
         <svg
           color="#7D4CDB"
-        />
-        <span
-          class="c4"
         />
         Small Gap
       </span>
@@ -271,14 +297,11 @@ exports[`Anchor gap renders 1`] = `
       href="#"
     >
       <span
-        class="c2"
+        class="c4"
         style="display: inline-flex;"
       >
         <svg
           color="#7D4CDB"
-        />
-        <span
-          class="c5"
         />
         Medium Gap
       </span>
@@ -288,14 +311,11 @@ exports[`Anchor gap renders 1`] = `
       href="#"
     >
       <span
-        class="c2"
+        class="c5"
         style="display: inline-flex;"
       >
         <svg
           color="#7D4CDB"
-        />
-        <span
-          class="c6"
         />
         Large Gap
       </span>
@@ -305,14 +325,11 @@ exports[`Anchor gap renders 1`] = `
       href="#"
     >
       <span
-        class="c2"
+        class="c6"
         style="display: inline-flex;"
       >
         <svg
           color="#7D4CDB"
-        />
-        <span
-          class="c7"
         />
         5px Gap
       </span>
@@ -348,16 +365,8 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c1 {
@@ -389,9 +398,6 @@ exports[`Anchor icon label renders 1`] = `
       >
         <svg
           color="#7D4CDB"
-        />
-        <span
-          class="c3"
         />
         Test
       </span>
@@ -633,16 +639,8 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c1 {
@@ -673,9 +671,6 @@ exports[`Anchor reverse icon label renders 1`] = `
         style="display: inline-flex;"
       >
         Test
-        <span
-          class="c3"
-        />
         <svg
           color="#7D4CDB"
         />

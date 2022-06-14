@@ -22,16 +22,8 @@ exports[`Menu basic 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -114,8 +106,9 @@ exports[`Menu basic 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -138,9 +131,6 @@ exports[`Menu basic 1`] = `
       >
         Test Menu
       </span>
-      <div
-        class="c4"
-      />
       <svg />
     </div>
   </button>
@@ -148,7 +138,7 @@ exports[`Menu basic 1`] = `
 `;
 
 exports[`Menu close by clicking outside 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -159,25 +149,25 @@ exports[`Menu close by clicking outside 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -203,16 +193,8 @@ exports[`Menu close by clicking outside 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -295,8 +277,9 @@ exports[`Menu close by clicking outside 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -319,12 +302,9 @@ exports[`Menu close by clicking outside 1`] = `
       >
         Test
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -340,7 +320,7 @@ exports[`Menu close by clicking outside 1`] = `
 `;
 
 exports[`Menu close by clicking outside 2`] = `
-.c9 {
+.c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -351,25 +331,25 @@ exports[`Menu close by clicking outside 2`] = `
   stroke: #7D4CDB;
 }
 
-.c9 g {
+.c8 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -395,6 +375,8 @@ exports[`Menu close by clicking outside 2`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c0 {
@@ -427,7 +409,7 @@ exports[`Menu close by clicking outside 2`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -459,7 +441,7 @@ exports[`Menu close by clicking outside 2`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -476,16 +458,6 @@ exports[`Menu close by clicking outside 2`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
-}
-
-.c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c1 {
@@ -575,14 +547,15 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
-    padding: 6px;
+  .c6 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    width: 6px;
+  .c10 {
+    padding: 6px;
   }
 }
 
@@ -633,12 +606,9 @@ exports[`Menu close by clicking outside 2`] = `
           >
             Test
           </span>
-          <div
-            class="c8"
-          />
           <svg
             aria-label="FormDown"
-            class="c9"
+            class="c8"
             viewBox="0 0 24 24"
           >
             <path
@@ -652,7 +622,7 @@ exports[`Menu close by clicking outside 2`] = `
       </button>
     </div>
     <div
-      class="c10"
+      class="c9"
       role="menu"
     >
       <div
@@ -665,7 +635,7 @@ exports[`Menu close by clicking outside 2`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c10"
           >
             Item 1
           </div>
@@ -681,7 +651,7 @@ exports[`Menu close by clicking outside 2`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c10"
           >
             Item 2
           </div>
@@ -694,812 +664,13 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hOAJOL {
+  .jonAAm {
     padding: 6px;
   }
 }"
 `;
 
 exports[`Menu close on tab 1`] = `
-.c5 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c1:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <button
-    aria-expanded="false"
-    aria-haspopup="menu"
-    aria-label="Open Menu"
-    class="c1"
-    id="test-menu"
-    type="button"
-  >
-    <div
-      class="c2"
-    >
-      <span
-        class="c3"
-      >
-        Test
-      </span>
-      <div
-        class="c4"
-      />
-      <svg
-        aria-label="FormDown"
-        class="c5"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Menu custom a11yTitle or aria-label 1`] = `
-.c5 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c1:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
-}
-
-<div>
-  <div
-    class="c0"
-  >
-    <button
-      aria-expanded="false"
-      aria-haspopup="menu"
-      aria-label="My Menu"
-      class="c1"
-      type="button"
-    >
-      <div
-        class="c2"
-      >
-        <span
-          class="c3"
-        >
-          Test Menu
-        </span>
-        <div
-          class="c4"
-        />
-        <svg
-          aria-label="FormDown"
-          class="c5"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m18 9-6 6-6-6"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </button>
-    <button
-      aria-expanded="false"
-      aria-haspopup="menu"
-      aria-label="My Menu 2"
-      class="c1"
-      type="button"
-    >
-      <div
-        class="c2"
-      >
-        <span
-          class="c3"
-        >
-          Test Menu
-        </span>
-        <div
-          class="c4"
-        />
-        <svg
-          aria-label="FormDown"
-          class="c5"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m18 9-6 6-6-6"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Menu custom message 1`] = `
-.c5 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c1:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <button
-    aria-expanded="false"
-    aria-haspopup="menu"
-    aria-label="Abrir Menu"
-    class="c1"
-    type="button"
-  >
-    <div
-      class="c2"
-    >
-      <span
-        class="c3"
-      >
-        Test Menu
-      </span>
-      <div
-        class="c4"
-      />
-      <svg
-        aria-label="FormDown"
-        class="c5"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Menu custom theme icon color 1`] = `
-.c5 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #F08080;
-  stroke: #F08080;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c1:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <button
-    aria-expanded="false"
-    aria-haspopup="menu"
-    aria-label="Open Menu"
-    class="c1"
-    type="button"
-  >
-    <div
-      class="c2"
-    >
-      <span
-        class="c3"
-      >
-        Test Menu
-      </span>
-      <div
-        class="c4"
-      />
-      <svg
-        aria-label="FormDown"
-        class="c5"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Menu custom theme with default button 1`] = `
 .c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1550,20 +721,768 @@ exports[`Menu custom theme with default button 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="menu"
+    aria-label="Open Menu"
+    class="c1"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Test
+      </span>
+      <svg
+        aria-label="FormDown"
+        class="c4"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu custom a11yTitle or aria-label 1`] = `
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="menu"
+      aria-label="My Menu"
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <span
+          class="c3"
+        >
+          Test Menu
+        </span>
+        <svg
+          aria-label="FormDown"
+          class="c4"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </button>
+    <button
+      aria-expanded="false"
+      aria-haspopup="menu"
+      aria-label="My Menu 2"
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <span
+          class="c3"
+        >
+          Test Menu
+        </span>
+        <svg
+          aria-label="FormDown"
+          class="c4"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Menu custom message 1`] = `
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="menu"
+    aria-label="Abrir Menu"
+    class="c1"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Test Menu
+      </span>
+      <svg
+        aria-label="FormDown"
+        class="c4"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu custom theme icon color 1`] = `
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #F08080;
+  stroke: #F08080;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="menu"
+    aria-label="Open Menu"
+    class="c1"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Test Menu
+      </span>
+      <svg
+        aria-label="FormDown"
+        class="c4"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu custom theme with default button 1`] = `
+.c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c1 {
@@ -1668,12 +1587,9 @@ exports[`Menu custom theme with default button 1`] = `
       class="c2"
     >
       Test Menu
-      <div
-        class="c3"
-      />
       <svg
         aria-label="FormDown"
-        class="c4"
+        class="c3"
         viewBox="0 0 24 24"
       >
         <path
@@ -1689,7 +1605,7 @@ exports[`Menu custom theme with default button 1`] = `
 `;
 
 exports[`Menu disabled 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1700,25 +1616,25 @@ exports[`Menu disabled 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1744,16 +1660,8 @@ exports[`Menu disabled 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -1838,8 +1746,9 @@ exports[`Menu disabled 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -1863,12 +1772,9 @@ exports[`Menu disabled 1`] = `
       >
         Test
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -1884,7 +1790,7 @@ exports[`Menu disabled 1`] = `
 `;
 
 exports[`Menu gap between icon and label 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1895,25 +1801,25 @@ exports[`Menu gap between icon and label 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1939,16 +1845,8 @@ exports[`Menu gap between icon and label 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -2031,13 +1929,18 @@ exports[`Menu gap between icon and label 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
 
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
+
 }
 
 @media only screen and (max-width:768px) {
@@ -2071,12 +1974,9 @@ exports[`Menu gap between icon and label 1`] = `
         >
           actions
         </span>
-        <div
-          class="c4"
-        />
         <svg
           aria-label="FormDown"
-          class="c5"
+          class="c4"
           viewBox="0 0 24 24"
         >
           <path
@@ -2093,7 +1993,7 @@ exports[`Menu gap between icon and label 1`] = `
 `;
 
 exports[`Menu justify content 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2104,25 +2004,25 @@ exports[`Menu justify content 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2148,9 +2048,11 @@ exports[`Menu justify content 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2171,9 +2073,11 @@ exports[`Menu justify content 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2194,9 +2098,11 @@ exports[`Menu justify content 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2217,9 +2123,11 @@ exports[`Menu justify content 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2240,9 +2148,11 @@ exports[`Menu justify content 1`] = `
   -ms-flex-pack: space-around;
   justify-content: space-around;
   padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2259,16 +2169,8 @@ exports[`Menu justify content 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -2351,8 +2253,35 @@ exports[`Menu justify content 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -2363,8 +2292,22 @@ exports[`Menu justify content 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c7 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c8 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -2375,14 +2318,9 @@ exports[`Menu justify content 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c9 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -2404,12 +2342,38 @@ exports[`Menu justify content 1`] = `
       >
         start Menu
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+  <button
+    aria-expanded="false"
+    aria-haspopup="menu"
+    aria-label="Abrir Menu"
+    class="c1"
+    type="button"
+  >
+    <div
+      class="c5"
+    >
+      <span
+        class="c3"
+      >
+        center Menu
+      </span>
+      <svg
+        aria-label="FormDown"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -2434,14 +2398,11 @@ exports[`Menu justify content 1`] = `
       <span
         class="c3"
       >
-        center Menu
+        end Menu
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -2466,14 +2427,11 @@ exports[`Menu justify content 1`] = `
       <span
         class="c3"
       >
-        end Menu
+        between Menu
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -2498,14 +2456,11 @@ exports[`Menu justify content 1`] = `
       <span
         class="c3"
       >
-        between Menu
+        around Menu
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -2530,46 +2485,11 @@ exports[`Menu justify content 1`] = `
       <span
         class="c3"
       >
-        around Menu
-      </span>
-      <div
-        class="c4"
-      />
-      <svg
-        aria-label="FormDown"
-        class="c5"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </button>
-  <button
-    aria-expanded="false"
-    aria-haspopup="menu"
-    aria-label="Abrir Menu"
-    class="c1"
-    type="button"
-  >
-    <div
-      class="c10"
-    >
-      <span
-        class="c3"
-      >
         stretch Menu
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -2678,7 +2598,7 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
 `;
 
 exports[`Menu navigate through suggestions and select 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2689,25 +2609,25 @@ exports[`Menu navigate through suggestions and select 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2733,16 +2653,8 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -2825,8 +2737,9 @@ exports[`Menu navigate through suggestions and select 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -2849,12 +2762,9 @@ exports[`Menu navigate through suggestions and select 1`] = `
       >
         Test
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -2870,7 +2780,7 @@ exports[`Menu navigate through suggestions and select 1`] = `
 `;
 
 exports[`Menu open and close on click 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2881,25 +2791,25 @@ exports[`Menu open and close on click 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2925,16 +2835,8 @@ exports[`Menu open and close on click 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -3017,8 +2919,9 @@ exports[`Menu open and close on click 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -3041,12 +2944,9 @@ exports[`Menu open and close on click 1`] = `
       >
         Test
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -3074,16 +2974,13 @@ exports[`Menu open and close on click 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hOAJOL"
+      class="StyledBox-sc-13pk1d4-0 jCKbRs"
     >
       <span
         class="StyledText-sc-1sadyjn-0 hpCRgD"
       >
         Test
       </span>
-      <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbllaT"
-      />
       <svg
         aria-label="FormDown"
         class="StyledIcon-sc-ofa7kd-0 llpfFt"
@@ -3102,7 +2999,7 @@ exports[`Menu open and close on click 2`] = `
 `;
 
 exports[`Menu open and close on click 3`] = `
-.c9 {
+.c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3113,25 +3010,25 @@ exports[`Menu open and close on click 3`] = `
   stroke: #7D4CDB;
 }
 
-.c9 g {
+.c8 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3157,6 +3054,8 @@ exports[`Menu open and close on click 3`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c0 {
@@ -3189,7 +3088,7 @@ exports[`Menu open and close on click 3`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3221,7 +3120,7 @@ exports[`Menu open and close on click 3`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3238,16 +3137,6 @@ exports[`Menu open and close on click 3`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
-}
-
-.c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c1 {
@@ -3337,14 +3226,15 @@ exports[`Menu open and close on click 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
-    padding: 6px;
+  .c6 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    width: 6px;
+  .c10 {
+    padding: 6px;
   }
 }
 
@@ -3395,12 +3285,9 @@ exports[`Menu open and close on click 3`] = `
           >
             Test
           </span>
-          <div
-            class="c8"
-          />
           <svg
             aria-label="FormDown"
-            class="c9"
+            class="c8"
             viewBox="0 0 24 24"
           >
             <path
@@ -3414,7 +3301,7 @@ exports[`Menu open and close on click 3`] = `
       </button>
     </div>
     <div
-      class="c10"
+      class="c9"
       role="menu"
     >
       <div
@@ -3427,7 +3314,7 @@ exports[`Menu open and close on click 3`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c10"
           >
             Item 1
           </div>
@@ -3443,7 +3330,7 @@ exports[`Menu open and close on click 3`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c10"
           >
             Item 2
           </div>
@@ -3459,7 +3346,7 @@ exports[`Menu open and close on click 3`] = `
           role="menuitem"
         >
           <div
-            class="c11"
+            class="c10"
           >
             Item 3
           </div>
@@ -3472,14 +3359,14 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .hOAJOL {
+  .jonAAm {
     padding: 6px;
   }
 }"
 `;
 
 exports[`Menu open on down close on esc 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3490,25 +3377,25 @@ exports[`Menu open on down close on esc 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3534,16 +3421,8 @@ exports[`Menu open on down close on esc 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -3626,8 +3505,9 @@ exports[`Menu open on down close on esc 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -3650,12 +3530,9 @@ exports[`Menu open on down close on esc 1`] = `
       >
         Test
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -3671,7 +3548,7 @@ exports[`Menu open on down close on esc 1`] = `
 `;
 
 exports[`Menu open on up close on esc 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3682,25 +3559,25 @@ exports[`Menu open on up close on esc 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3726,16 +3603,8 @@ exports[`Menu open on up close on esc 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -3818,8 +3687,9 @@ exports[`Menu open on up close on esc 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -3842,12 +3712,9 @@ exports[`Menu open on up close on esc 1`] = `
       >
         Test
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -3863,7 +3730,7 @@ exports[`Menu open on up close on esc 1`] = `
 `;
 
 exports[`Menu open on up close on esc 2`] = `
-.c9 {
+.c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3874,25 +3741,25 @@ exports[`Menu open on up close on esc 2`] = `
   stroke: #7D4CDB;
 }
 
-.c9 g {
+.c8 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3918,6 +3785,8 @@ exports[`Menu open on up close on esc 2`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c0 {
@@ -3950,7 +3819,7 @@ exports[`Menu open on up close on esc 2`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3982,7 +3851,7 @@ exports[`Menu open on up close on esc 2`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3999,16 +3868,6 @@ exports[`Menu open on up close on esc 2`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
-}
-
-.c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c1 {
@@ -4098,14 +3957,15 @@ exports[`Menu open on up close on esc 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
-    padding: 6px;
+  .c6 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    width: 6px;
+  .c10 {
+    padding: 6px;
   }
 }
 
@@ -4156,12 +4016,9 @@ exports[`Menu open on up close on esc 2`] = `
           >
             Test
           </span>
-          <div
-            class="c8"
-          />
           <svg
             aria-label="FormDown"
-            class="c9"
+            class="c8"
             viewBox="0 0 24 24"
           >
             <path
@@ -4175,7 +4032,7 @@ exports[`Menu open on up close on esc 2`] = `
       </button>
     </div>
     <div
-      class="c10"
+      class="c9"
       role="menu"
     >
       <div
@@ -4188,7 +4045,7 @@ exports[`Menu open on up close on esc 2`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c10"
           >
             Item 1
           </div>
@@ -4204,7 +4061,7 @@ exports[`Menu open on up close on esc 2`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c10"
           >
             Item 2
           </div>
@@ -4217,14 +4074,14 @@ exports[`Menu open on up close on esc 2`] = `
 
 exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hOAJOL {
+  .jonAAm {
     padding: 6px;
   }
 }"
 `;
 
 exports[`Menu reverse icon and label 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4235,25 +4092,25 @@ exports[`Menu reverse icon and label 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4279,16 +4136,8 @@ exports[`Menu reverse icon and label 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -4371,13 +4220,14 @@ exports[`Menu reverse icon and label 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -4407,12 +4257,9 @@ exports[`Menu reverse icon and label 1`] = `
         >
           Test Menu
         </span>
-        <div
-          class="c4"
-        />
         <svg
           aria-label="FormDown"
-          class="c5"
+          class="c4"
           viewBox="0 0 24 24"
         >
           <path
@@ -4429,7 +4276,7 @@ exports[`Menu reverse icon and label 1`] = `
 `;
 
 exports[`Menu select an item 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4440,25 +4287,25 @@ exports[`Menu select an item 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4484,16 +4331,8 @@ exports[`Menu select an item 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -4576,8 +4415,9 @@ exports[`Menu select an item 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -4600,12 +4440,9 @@ exports[`Menu select an item 1`] = `
       >
         Test
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -4621,7 +4458,7 @@ exports[`Menu select an item 1`] = `
 `;
 
 exports[`Menu shift + tab through menu until it closes 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4632,25 +4469,25 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4676,16 +4513,8 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -4768,8 +4597,9 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -4792,12 +4622,9 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
       >
         Test
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -4813,7 +4640,7 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
 `;
 
 exports[`Menu should apply themed drop props 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4824,25 +4651,25 @@ exports[`Menu should apply themed drop props 1`] = `
   stroke: #F08080;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4868,16 +4695,8 @@ exports[`Menu should apply themed drop props 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -4960,13 +4779,14 @@ exports[`Menu should apply themed drop props 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -4995,12 +4815,9 @@ exports[`Menu should apply themed drop props 1`] = `
       >
         Test Menu
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -5017,7 +4834,7 @@ exports[`Menu should apply themed drop props 1`] = `
 
 exports[`Menu should group items 1`] = `
 <DocumentFragment>
-  .c5 {
+  .c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5028,25 +4845,25 @@ exports[`Menu should group items 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5072,16 +4889,8 @@ exports[`Menu should group items 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -5164,25 +4973,26 @@ exports[`Menu should group items 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -5211,12 +5021,9 @@ exports[`Menu should group items 1`] = `
         >
           Test Menu
         </span>
-        <div
-          class="c4"
-        />
         <svg
           aria-label="FormDown"
-          class="c5"
+          class="c4"
           viewBox="0 0 24 24"
         >
           <path
@@ -5405,7 +5212,7 @@ exports[`Menu should have no accessibility violations 1`] = `
 `;
 
 exports[`Menu tab through menu until it closes 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5416,25 +5223,25 @@ exports[`Menu tab through menu until it closes 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5460,16 +5267,8 @@ exports[`Menu tab through menu until it closes 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -5552,8 +5351,9 @@ exports[`Menu tab through menu until it closes 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -5576,12 +5376,9 @@ exports[`Menu tab through menu until it closes 1`] = `
       >
         Test
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -5597,7 +5394,7 @@ exports[`Menu tab through menu until it closes 1`] = `
 `;
 
 exports[`Menu with dropAlign bottom renders 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5608,25 +5405,25 @@ exports[`Menu with dropAlign bottom renders 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5652,16 +5449,8 @@ exports[`Menu with dropAlign bottom renders 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -5744,8 +5533,9 @@ exports[`Menu with dropAlign bottom renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -5768,12 +5558,9 @@ exports[`Menu with dropAlign bottom renders 1`] = `
       >
         Test
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -5789,7 +5576,7 @@ exports[`Menu with dropAlign bottom renders 1`] = `
 `;
 
 exports[`Menu with dropAlign bottom renders 2`] = `
-.c11 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5800,25 +5587,25 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   stroke: #7D4CDB;
 }
 
-.c11 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5844,6 +5631,8 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c0 {
@@ -5925,16 +5714,6 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
-}
-
-.c10 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c1 {
@@ -6024,14 +5803,15 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    padding: 6px;
+  .c8 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
-    width: 6px;
+  .c7 {
+    padding: 6px;
   }
 }
 
@@ -6119,12 +5899,9 @@ exports[`Menu with dropAlign bottom renders 2`] = `
           >
             Test
           </span>
-          <div
-            class="c10"
-          />
           <svg
             aria-label="FormDown"
-            class="c11"
+            class="c10"
             viewBox="0 0 24 24"
           >
             <path
@@ -6143,14 +5920,14 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 
 exports[`Menu with dropAlign bottom renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hOAJOL {
+  .jonAAm {
     padding: 6px;
   }
 }"
 `;
 
 exports[`Menu with dropAlign top renders 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -6161,25 +5938,25 @@ exports[`Menu with dropAlign top renders 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -6205,16 +5982,8 @@ exports[`Menu with dropAlign top renders 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c3 {
@@ -6297,8 +6066,9 @@ exports[`Menu with dropAlign top renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -6321,12 +6091,9 @@ exports[`Menu with dropAlign top renders 1`] = `
       >
         Test
       </span>
-      <div
-        class="c4"
-      />
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <path
@@ -6342,7 +6109,7 @@ exports[`Menu with dropAlign top renders 1`] = `
 `;
 
 exports[`Menu with dropAlign top renders 2`] = `
-.c9 {
+.c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -6353,25 +6120,25 @@ exports[`Menu with dropAlign top renders 2`] = `
   stroke: #7D4CDB;
 }
 
-.c9 g {
+.c8 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -6397,6 +6164,8 @@ exports[`Menu with dropAlign top renders 2`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c0 {
@@ -6429,7 +6198,7 @@ exports[`Menu with dropAlign top renders 2`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6461,7 +6230,7 @@ exports[`Menu with dropAlign top renders 2`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6478,16 +6247,6 @@ exports[`Menu with dropAlign top renders 2`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
-}
-
-.c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c1 {
@@ -6577,14 +6336,15 @@ exports[`Menu with dropAlign top renders 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
-    padding: 6px;
+  .c6 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    width: 6px;
+  .c10 {
+    padding: 6px;
   }
 }
 
@@ -6635,12 +6395,9 @@ exports[`Menu with dropAlign top renders 2`] = `
           >
             Test
           </span>
-          <div
-            class="c8"
-          />
           <svg
             aria-label="FormDown"
-            class="c9"
+            class="c8"
             viewBox="0 0 24 24"
           >
             <path
@@ -6654,7 +6411,7 @@ exports[`Menu with dropAlign top renders 2`] = `
       </button>
     </div>
     <div
-      class="c10"
+      class="c9"
       role="menu"
     >
       <div
@@ -6667,7 +6424,7 @@ exports[`Menu with dropAlign top renders 2`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c10"
           >
             Item 1
           </div>
@@ -6683,7 +6440,7 @@ exports[`Menu with dropAlign top renders 2`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c10"
           >
             Item 2
           </div>
@@ -6696,7 +6453,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 exports[`Menu with dropAlign top renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hOAJOL {
+  .jonAAm {
     padding: 6px;
   }
 }"

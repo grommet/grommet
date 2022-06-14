@@ -183,6 +183,10 @@ exports[`SkipLink should allow for single skip link 1`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 <div
   class="c0"
 >

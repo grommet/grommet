@@ -27,6 +27,8 @@ exports[`Distribution gap renders 1`] = `
   -ms-flex: 1 1;
   flex: 1 1;
   overflow: hidden;
+  -webkit-column-gap: 6px;
+  column-gap: 6px;
 }
 
 .c2 {
@@ -49,6 +51,27 @@ exports[`Distribution gap renders 1`] = `
   overflow: hidden;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+  row-gap: 6px;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -69,7 +92,7 @@ exports[`Distribution gap renders 1`] = `
   overflow: hidden;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -89,131 +112,178 @@ exports[`Distribution gap renders 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 6px;
-}
-
-.c5 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 6px;
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: hidden;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 .c7 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+  row-gap: 12px;
 }
 
 .c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: hidden;
+  -webkit-column-gap: 24px;
+  column-gap: 24px;
 }
 
 .c9 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+  row-gap: 24px;
 }
 
 .c10 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: hidden;
+  -webkit-column-gap: 48px;
+  column-gap: 48px;
 }
 
 .c11 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 48px;
-}
-
-.c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+  row-gap: 48px;
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    width: 3px;
+  .c1 {
+    -webkit-column-gap: 3px;
+    column-gap: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    height: 3px;
+  .c3 {
+    row-gap: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c7 {
-    width: 6px;
+    row-gap: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c8 {
-    height: 6px;
+    -webkit-column-gap: 12px;
+    column-gap: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c9 {
-    width: 12px;
+    row-gap: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c10 {
-    height: 12px;
+    -webkit-column-gap: 24px;
+    column-gap: 24px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c11 {
-    width: 24px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    height: 24px;
+    row-gap: 24px;
   }
 }
 
@@ -232,9 +302,6 @@ exports[`Distribution gap renders 1`] = `
     </div>
     <div
       class="c3"
-    />
-    <div
-      class="c2"
     >
       <div
         class="c4"
@@ -245,9 +312,6 @@ exports[`Distribution gap renders 1`] = `
       </div>
       <div
         class="c5"
-      />
-      <div
-        class="c6"
       >
         <span>
           1
@@ -256,7 +320,7 @@ exports[`Distribution gap renders 1`] = `
     </div>
   </div>
   <div
-    class="c1"
+    class="c6"
   >
     <div
       class="c2"
@@ -267,9 +331,6 @@ exports[`Distribution gap renders 1`] = `
     </div>
     <div
       class="c7"
-    />
-    <div
-      class="c2"
     >
       <div
         class="c4"
@@ -279,10 +340,7 @@ exports[`Distribution gap renders 1`] = `
         </span>
       </div>
       <div
-        class="c8"
-      />
-      <div
-        class="c6"
+        class="c5"
       >
         <span>
           1
@@ -291,7 +349,7 @@ exports[`Distribution gap renders 1`] = `
     </div>
   </div>
   <div
-    class="c1"
+    class="c8"
   >
     <div
       class="c2"
@@ -302,9 +360,6 @@ exports[`Distribution gap renders 1`] = `
     </div>
     <div
       class="c9"
-    />
-    <div
-      class="c2"
     >
       <div
         class="c4"
@@ -314,10 +369,7 @@ exports[`Distribution gap renders 1`] = `
         </span>
       </div>
       <div
-        class="c10"
-      />
-      <div
-        class="c6"
+        class="c5"
       >
         <span>
           1
@@ -326,7 +378,7 @@ exports[`Distribution gap renders 1`] = `
     </div>
   </div>
   <div
-    class="c1"
+    class="c10"
   >
     <div
       class="c2"
@@ -337,9 +389,6 @@ exports[`Distribution gap renders 1`] = `
     </div>
     <div
       class="c11"
-    />
-    <div
-      class="c2"
     >
       <div
         class="c4"
@@ -349,10 +398,7 @@ exports[`Distribution gap renders 1`] = `
         </span>
       </div>
       <div
-        class="c12"
-      />
-      <div
-        class="c6"
+        class="c5"
       >
         <span>
           1
@@ -406,6 +452,8 @@ exports[`Distribution undefined value 1`] = `
   -ms-flex: 1 1;
   flex: 1 1;
   overflow: hidden;
+  -webkit-column-gap: 6px;
+  column-gap: 6px;
 }
 
 .c2 {
@@ -428,7 +476,7 @@ exports[`Distribution undefined value 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -448,19 +496,10 @@ exports[`Distribution undefined value 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 6px;
-}
-
 @media only screen and (max-width:768px) {
-  .c3 {
-    width: 3px;
+  .c1 {
+    -webkit-column-gap: 3px;
+    column-gap: 3px;
   }
 }
 
@@ -479,9 +518,6 @@ exports[`Distribution undefined value 1`] = `
     </div>
     <div
       class="c3"
-    />
-    <div
-      class="c4"
     >
       <span />
     </div>
@@ -516,6 +552,8 @@ exports[`Distribution values renders 1`] = `
   -ms-flex: 1 1;
   flex: 1 1;
   overflow: hidden;
+  -webkit-column-gap: 6px;
+  column-gap: 6px;
 }
 
 .c2 {
@@ -538,7 +576,7 @@ exports[`Distribution values renders 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -556,9 +594,10 @@ exports[`Distribution values renders 1`] = `
   -ms-flex-preferred-size: 25%;
   flex-basis: 25%;
   overflow: hidden;
+  row-gap: 6px;
 }
 
-.c5 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -578,7 +617,7 @@ exports[`Distribution values renders 1`] = `
   overflow: hidden;
 }
 
-.c7 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -596,9 +635,11 @@ exports[`Distribution values renders 1`] = `
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
   overflow: hidden;
+  -webkit-column-gap: 6px;
+  column-gap: 6px;
 }
 
-.c8 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -618,7 +659,7 @@ exports[`Distribution values renders 1`] = `
   overflow: hidden;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -638,35 +679,23 @@ exports[`Distribution values renders 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 6px;
-}
-
-.c6 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 6px;
-}
-
 @media only screen and (max-width:768px) {
-  .c3 {
-    width: 3px;
+  .c1 {
+    -webkit-column-gap: 3px;
+    column-gap: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    height: 3px;
+  .c3 {
+    row-gap: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    -webkit-column-gap: 3px;
+    column-gap: 3px;
   }
 }
 
@@ -685,35 +714,26 @@ exports[`Distribution values renders 1`] = `
     </div>
     <div
       class="c3"
-    />
-    <div
-      class="c4"
     >
       <div
-        class="c5"
+        class="c4"
       >
         <span>
           3
         </span>
       </div>
       <div
-        class="c6"
-      />
-      <div
-        class="c7"
+        class="c5"
       >
         <div
-          class="c8"
+          class="c6"
         >
           <span>
             2
           </span>
         </div>
         <div
-          class="c3"
-        />
-        <div
-          class="c9"
+          class="c7"
         >
           <span>
             1

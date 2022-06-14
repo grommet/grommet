@@ -37,6 +37,7 @@ exports[`PageHeader basic 1`] = `
   justify-content: space-between;
   padding-top: 48px;
   padding-bottom: 24px;
+  row-gap: 0px;
 }
 
 .c3 {
@@ -233,6 +234,12 @@ exports[`PageHeader basic 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c1 {
+    row-gap: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c6 {
     margin: 0px;
   }
@@ -337,6 +344,7 @@ exports[`PageHeader custom theme 1`] = `
   justify-content: space-between;
   padding-top: 48px;
   padding-bottom: 24px;
+  row-gap: 0px;
 }
 
 .c3 {
@@ -546,6 +554,12 @@ exports[`PageHeader custom theme 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     padding-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    row-gap: 0px;
   }
 }
 
