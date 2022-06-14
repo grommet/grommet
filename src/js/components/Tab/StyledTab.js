@@ -26,6 +26,7 @@ const tabHoverStyle = css`
 `;
 
 const StyledTab = styled.div`
+  white-space: nowrap;
   ${genericStyles}
   ${(props) =>
     !props.plain && !props.disabled && props.theme.tab.hover && tabHoverStyle}

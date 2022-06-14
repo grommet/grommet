@@ -36,7 +36,7 @@ const Tab = forwardRef(
       active,
       activeIndex,
       index,
-      tabsContextRef,
+      ref: tabsContextRef,
       onActivate,
       setActiveContent,
       setActiveTitle,
@@ -217,9 +217,6 @@ const Tab = forwardRef(
           plain={plain}
           {...withIconStyles}
           {...tabStyles}
-          style={{
-            whiteSpace: 'nowrap',
-          }}
         >
           {first}
           {second}

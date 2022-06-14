@@ -73,9 +73,9 @@ const Tabs = forwardRef(
 
     // check if tab is in view
     const isVisible = useCallback(
-      (element) => {
-        if (element) {
-          const tabRect = element.getBoundingClientRect();
+      (index) => {
+        if (tabRefs[index].current) {
+          const tabRect = tabRefs[index].current.getBoundingClientRect();
           const headerRect = headerRef.current?.getBoundingClientRect();
           if (tabRect && headerRect) {
             // the -1 and +1 allow a little leniency when calculating if a tab
@@ -89,15 +89,15 @@ const Tabs = forwardRef(
         }
         return undefined;
       },
-      [headerRef],
+      [headerRef, tabRefs],
     );
 
     const updateArrowState = useCallback(() => {
-      setDisableLeftArrow(isVisible(tabRefs[0].current));
-      setDisableRightArrow(isVisible(tabRefs[tabRefs.length - 1].current));
+      setDisableLeftArrow(isVisible(0));
+      setDisableRightArrow(isVisible(tabRefs.length - 1));
     }, [tabRefs, isVisible]);
 
-    const scrollToIndex = useCallback(
+    const scrollTo = useCallback(
       (index, keyboard) => {
         const tabRect = tabRefs[index].current.getBoundingClientRect();
         const headerRect = headerRef.current.getBoundingClientRect();
@@ -146,7 +146,7 @@ const Tabs = forwardRef(
           updateArrowState();
         } else {
           const checkVisible = setInterval(() => {
-            if (tabRefs[index].current && isVisible(tabRefs[index].current)) {
+            if (tabRefs[index].current && isVisible(index)) {
               updateArrowState();
               clearInterval(checkVisible);
             }
@@ -171,23 +171,23 @@ const Tabs = forwardRef(
         ((previous && index < tabRefs.length - 1) || (!previous && index > 0))
       ) {
         if (
-          !isVisible(tabRefs[index].current) &&
-          ((previous && isVisible(tabRefs[index + 1].current)) ||
-            (!previous && isVisible(tabRefs[index - 1].current)))
+          !isVisible(index) &&
+          ((previous && isVisible(index + 1)) ||
+            (!previous && isVisible(index - 1)))
         ) {
           if (previous) {
             if (index - moveBy >= 0) {
-              scrollToIndex(index - moveBy, false);
+              scrollTo(index - moveBy, false);
               scrolledToIndex = index - moveBy;
             } else {
-              scrollToIndex(0, false);
+              scrollTo(0, false);
               scrolledToIndex = 0;
             }
           } else if (index + moveBy < tabRefs.length) {
-            scrollToIndex(index + moveBy, false);
+            scrollTo(index + moveBy, false);
             scrolledToIndex = index + moveBy;
           } else {
-            scrollToIndex(tabRefs.length - 1, false);
+            scrollTo(tabRefs.length - 1, false);
             scrolledToIndex = tabRefs.length - 1;
           }
         }
@@ -201,21 +201,16 @@ const Tabs = forwardRef(
         overflow &&
         tabRefs &&
         tabRefs[activeIndex].current &&
-        !isVisible(tabRefs[activeIndex].current)
+        !isVisible(activeIndex)
       )
-        scrollToIndex(activeIndex, true);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [overflow, activeIndex]);
+        scrollTo(activeIndex, true);
+    }, [overflow, activeIndex, tabRefs, isVisible, scrollTo]);
 
     useEffect(() => {
       // if the focus index is changing make sure the previous and next arrows
       // are in sync
-      if (
-        overflow &&
-        focusIndex !== -1 &&
-        !isVisible(tabRefs[focusIndex].current)
-      )
-        scrollToIndex(focusIndex, true);
+      if (overflow && focusIndex !== -1 && !isVisible(focusIndex))
+        scrollTo(focusIndex, true);
       else if (overflow && focusIndex !== -1) {
         // If the browser scrolled the focused item into view and
         // the focusedTab is on the edge of the header container
@@ -239,7 +234,7 @@ const Tabs = forwardRef(
           left: amountHidden,
         });
       }
-    }, [overflow, tabRefs, focusIndex, isVisible, scrollToIndex]);
+    }, [overflow, tabRefs, focusIndex, isVisible, scrollTo]);
 
     useLayoutEffect(() => {
       const onResize = () => {
@@ -277,7 +272,7 @@ const Tabs = forwardRef(
           activeIndex,
           active: activeIndex === index,
           index,
-          tabsContextRef: tabRefs[index],
+          ref: tabRefs[index],
           onActivate: () => activateTab(index),
           setActiveContent,
           setActiveTitle,

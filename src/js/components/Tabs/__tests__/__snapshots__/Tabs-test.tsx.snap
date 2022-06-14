@@ -158,6 +158,7 @@ exports[`Tabs Custom Tab component 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -250,7 +251,6 @@ exports[`Tabs Custom Tab component 1`] = `
         >
           <div
             class="c4 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c6"
@@ -268,7 +268,6 @@ exports[`Tabs Custom Tab component 1`] = `
         >
           <div
             class="c7 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c8"
@@ -448,6 +447,7 @@ exports[`Tabs Tab 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -540,7 +540,6 @@ exports[`Tabs Tab 1`] = `
         >
           <div
             class="c4 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c6"
@@ -558,7 +557,6 @@ exports[`Tabs Tab 1`] = `
         >
           <div
             class="c7 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c8"
@@ -744,6 +742,7 @@ exports[`Tabs alignControls 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -836,7 +835,6 @@ exports[`Tabs alignControls 1`] = `
         >
           <div
             class="c4 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c6"
@@ -854,7 +852,6 @@ exports[`Tabs alignControls 1`] = `
         >
           <div
             class="c7 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c8"
@@ -1034,6 +1031,7 @@ exports[`Tabs change to second tab 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -1126,7 +1124,6 @@ exports[`Tabs change to second tab 1`] = `
         >
           <div
             class="c4 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c6"
@@ -1144,7 +1141,6 @@ exports[`Tabs change to second tab 1`] = `
         >
           <div
             class="c7 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c8"
@@ -1188,8 +1184,7 @@ exports[`Tabs change to second tab 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 cFqTuo"
-            style="white-space: nowrap;"
+            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
             <span
               class="StyledText-sc-1sadyjn-0 kILPEW"
@@ -1206,8 +1201,7 @@ exports[`Tabs change to second tab 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
-            style="white-space: nowrap;"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
             <span
               class="StyledText-sc-1sadyjn-0 dtIFvg"
@@ -1375,6 +1369,7 @@ exports[`Tabs complex title 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -1467,7 +1462,6 @@ exports[`Tabs complex title 1`] = `
         >
           <div
             class="c4 c5"
-            style="white-space: nowrap;"
           >
             <div>
               Tab 1
@@ -1483,7 +1477,6 @@ exports[`Tabs complex title 1`] = `
         >
           <div
             class="c6 c5"
-            style="white-space: nowrap;"
           >
             <div>
               Tab 2
@@ -1629,6 +1622,7 @@ exports[`Tabs no Tab 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -1695,7 +1689,6 @@ exports[`Tabs no Tab 1`] = `
         >
           <div
             class="c4 c5"
-            style="white-space: nowrap;"
           />
         </button>
       </div>
@@ -1867,6 +1860,7 @@ exports[`Tabs onClick 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -1959,7 +1953,6 @@ exports[`Tabs onClick 1`] = `
         >
           <div
             class="c4 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c6"
@@ -1977,7 +1970,6 @@ exports[`Tabs onClick 1`] = `
         >
           <div
             class="c7 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c8"
@@ -2157,6 +2149,7 @@ exports[`Tabs set on hover 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -2249,7 +2242,6 @@ exports[`Tabs set on hover 1`] = `
         >
           <div
             class="c4 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c6"
@@ -2267,7 +2259,6 @@ exports[`Tabs set on hover 1`] = `
         >
           <div
             class="c7 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c8"
@@ -2311,8 +2302,7 @@ exports[`Tabs set on hover 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
-            style="white-space: nowrap;"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
             <span
               class="StyledText-sc-1sadyjn-0 dtIFvg"
@@ -2329,8 +2319,7 @@ exports[`Tabs set on hover 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 cFqTuo"
-            style="white-space: nowrap;"
+            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
             <span
               class="StyledText-sc-1sadyjn-0 kILPEW"
@@ -2374,8 +2363,7 @@ exports[`Tabs set on hover 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
-            style="white-space: nowrap;"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
             <span
               class="StyledText-sc-1sadyjn-0 dtIFvg"
@@ -2392,8 +2380,7 @@ exports[`Tabs set on hover 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
-            style="white-space: nowrap;"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
             <span
               class="StyledText-sc-1sadyjn-0 ZVAlE"
@@ -2437,8 +2424,7 @@ exports[`Tabs set on hover 4`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
-            style="white-space: nowrap;"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
             <span
               class="StyledText-sc-1sadyjn-0 dtIFvg"
@@ -2455,8 +2441,7 @@ exports[`Tabs set on hover 4`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
-            style="white-space: nowrap;"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
             <span
               class="StyledText-sc-1sadyjn-0 ZVAlE"
@@ -2500,8 +2485,7 @@ exports[`Tabs set on hover 5`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 cFqTuo"
-            style="white-space: nowrap;"
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
             <span
               class="StyledText-sc-1sadyjn-0 dtIFvg"
@@ -2518,8 +2502,7 @@ exports[`Tabs set on hover 5`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 cFqTuo"
-            style="white-space: nowrap;"
+            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
             <span
               class="StyledText-sc-1sadyjn-0 kILPEW"
@@ -2673,6 +2656,7 @@ exports[`Tabs should allow to extend tab styles 1`] = `
 }
 
 .c4 {
+  white-space: nowrap;
   color: red;
   padding: 20px;
   box-shadow: rgba(0,0,0,0.25) 0px 54px 55px,rgba(0,0,0,0.12) 0px -12px 30px,rgba(0,0,0,0.12) 0px 4px 6px,rgba(0,0,0,0.17) 0px 12px 13px,rgba(0,0,0,0.09) 0px -3px 5px;
@@ -2680,6 +2664,7 @@ exports[`Tabs should allow to extend tab styles 1`] = `
 }
 
 .c6 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -2750,7 +2735,6 @@ exports[`Tabs should allow to extend tab styles 1`] = `
         >
           <div
             class="c1 c4"
-            style="white-space: nowrap;"
           >
             Title 1
           </div>
@@ -2764,7 +2748,6 @@ exports[`Tabs should allow to extend tab styles 1`] = `
         >
           <div
             class="c5 c6"
-            style="white-space: nowrap;"
           >
             <span
               class="c7"
@@ -3004,6 +2987,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -3019,6 +3003,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
 }
 
 .c9 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -3104,7 +3089,6 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
         >
           <div
             class="c4 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c6"
@@ -3124,7 +3108,6 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
           <div
             class="c8 c9"
             disabled=""
-            style="white-space: nowrap;"
           >
             <span
               class="c10"
@@ -3365,6 +3348,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -3380,6 +3364,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
 }
 
 .c9 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -3465,7 +3450,6 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
         >
           <div
             class="c4 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c6"
@@ -3485,7 +3469,6 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
           <div
             class="c8 c9"
             disabled=""
-            style="white-space: nowrap;"
           >
             <span
               class="c10"
@@ -3633,6 +3616,7 @@ exports[`Tabs should have no accessibility violations 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -3701,7 +3685,6 @@ exports[`Tabs should have no accessibility violations 1`] = `
           >
             <div
               class="c4 c5"
-              style="white-space: nowrap;"
             />
           </button>
         </div>
@@ -3822,6 +3805,10 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
 }
 
 .c4 {
+  white-space: nowrap;
+}
+
+.c5 {
   min-height: 0;
 }
 
@@ -3846,8 +3833,7 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
           type="button"
         >
           <div
-            class="c1 "
-            style="white-space: nowrap;"
+            class="c1 c4"
           >
             Title 1
           </div>
@@ -3856,7 +3842,7 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
     </div>
     <div
       aria-label="Title 1 Tab Contents"
-      class="c4"
+      class="c5"
       role="tabpanel"
     />
   </div>
@@ -4081,6 +4067,7 @@ exports[`Tabs should style as disabled 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -4096,6 +4083,7 @@ exports[`Tabs should style as disabled 1`] = `
 }
 
 .c9 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -4180,7 +4168,6 @@ exports[`Tabs should style as disabled 1`] = `
         >
           <div
             class="c4 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c6"
@@ -4200,7 +4187,6 @@ exports[`Tabs should style as disabled 1`] = `
           <div
             class="c8 c9"
             disabled=""
-            style="white-space: nowrap;"
           >
             <span
               class="c10"
@@ -4380,6 +4366,7 @@ exports[`Tabs styled component should change tab color when active 1`] = `
 }
 
 .c6 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -4480,7 +4467,6 @@ exports[`Tabs styled component should change tab color when active 1`] = `
         >
           <div
             class="c5 c6"
-            style="white-space: nowrap;"
           >
             <span
               class="c7"
@@ -4498,7 +4484,6 @@ exports[`Tabs styled component should change tab color when active 1`] = `
         >
           <div
             class="c9 c6"
-            style="white-space: nowrap;"
           >
             <span
               class="c10"
@@ -4516,7 +4501,6 @@ exports[`Tabs styled component should change tab color when active 1`] = `
         >
           <div
             class="c5 c6"
-            style="white-space: nowrap;"
           >
             <span
               class="c7"
@@ -4720,6 +4704,7 @@ exports[`Tabs with icon + reverse 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -4818,7 +4803,6 @@ exports[`Tabs with icon + reverse 1`] = `
         >
           <div
             class="c4 c5"
-            style="white-space: nowrap;"
           >
             <svg
               color="text"
@@ -4842,7 +4826,6 @@ exports[`Tabs with icon + reverse 1`] = `
         >
           <div
             class="c8 c5"
-            style="white-space: nowrap;"
           >
             <span
               class="c9"
