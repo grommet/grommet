@@ -430,6 +430,7 @@ export interface ThemeType {
       margin?: MarginType;
     };
     hover?: {
+      background?: BackgroundType;
       color?: ColorType; // deprecated
       heading?: {
         color?: ColorType;

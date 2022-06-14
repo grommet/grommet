@@ -12,6 +12,9 @@ import { Accordion, AccordionPanel, Box, Grommet } from '../..';
 const customTheme = {
   accordion: {
     heading: { level: '3' },
+    hover: {
+      background: 'background-contrast',
+    },
   },
 };
 
@@ -160,7 +163,9 @@ describe('Accordion', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('custom accordion', () => {
+  test('custom accordion', async () => {
+    const user = userEvent.setup();
+
     const { asFragment } = render(
       <Grommet theme={customTheme}>
         <Accordion>
@@ -168,6 +173,9 @@ describe('Accordion', () => {
         </Accordion>
       </Grommet>,
     );
+    expect(asFragment()).toMatchSnapshot();
+
+    await user.hover(screen.getByRole('tab', { name: 'Panel 1 FormDown' }));
     expect(asFragment()).toMatchSnapshot();
   });
 

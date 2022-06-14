@@ -98,6 +98,7 @@ var AccordionPanel = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     "aria-expanded": active,
     plain: theme.button["default"] ? true : undefined,
     onClick: onPanelChange,
+    hoverIndicator: theme.accordion.hover.background,
     onMouseOver: function onMouseOver(event) {
       setHover(headingColor);
       if (_onMouseOver) _onMouseOver(event);

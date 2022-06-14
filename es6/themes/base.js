@@ -367,6 +367,7 @@ export var generate = function generate(baseSpacing, scale) {
 
       },
       hover: {
+        // background: undefined,
         color: {
           dark: 'light-4',
           light: 'dark-3'

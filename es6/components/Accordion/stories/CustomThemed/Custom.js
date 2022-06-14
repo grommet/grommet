@@ -25,7 +25,8 @@ var customAccordionTheme = {
     hover: {
       heading: {
         color: 'accent-2'
-      }
+      },
+      background: 'background-contrast'
     },
     icons: {
       collapse: SubtractCircle,
