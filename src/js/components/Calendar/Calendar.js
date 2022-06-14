@@ -499,15 +499,38 @@ const Calendar = forwardRef(
       if (initialFocus === 'days') daysRef.current.focus();
     }, [initialFocus]);
 
+    const handleReference = useCallback(
+      (nextReference) => {
+        setReference(nextReference);
+        if (onReference) onReference(nextReference.toISOString());
+      },
+      [onReference],
+    );
+
     const changeReference = useCallback(
       (nextReference) => {
-        if (betweenDates(nextReference, bounds)) {
-          setReference(nextReference);
-          if (onReference) onReference(nextReference.toISOString());
-        }
+        if (betweenDates(nextReference, bounds)) handleReference(nextReference);
       },
-      [onReference, bounds],
+      [handleReference, bounds],
     );
+
+    const changeCalendarMonth = (messageId, newMonth) => {
+      if (!betweenDates(newMonth, bounds)) handleReference(newMonth);
+      else changeReference(newMonth);
+
+      announce(
+        format({
+          id: messageId,
+          messages,
+          values: {
+            date: newMonth.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric',
+            }),
+          },
+        }),
+      );
+    };
 
     const selectDate = useCallback(
       (selectedDate) => {
@@ -630,22 +653,6 @@ const Calendar = forwardRef(
       ],
     );
 
-    const changeCalendarMonth = (messageId, newMonth) => {
-      changeReference(newMonth);
-      announce(
-        format({
-          id: messageId,
-          messages,
-          values: {
-            date: newMonth.toLocaleDateString(locale, {
-              month: 'long',
-              year: 'numeric',
-            }),
-          },
-        }),
-      );
-    };
-
     const renderCalendarHeader = () => {
       const PreviousIcon =
         size === 'small'
@@ -695,13 +702,9 @@ const Calendar = forwardRef(
                 reference,
                 bounds,
               )}
-              onClick={() => {
-                const newMonth = !betweenDates(previousMonth, bounds)
-                  ? new Date(bounds[1])
-                  : previousMonth;
-
-                changeCalendarMonth('calendar.previousMove', newMonth);
-              }}
+              onClick={() =>
+                changeCalendarMonth('calendar.previousMove', previousMonth)
+              }
             />
             <Button
               a11yTitle={format({
@@ -720,13 +723,9 @@ const Calendar = forwardRef(
                 reference,
                 bounds,
               )}
-              onClick={() => {
-                const newMonth = !betweenDates(nextMonth, bounds)
-                  ? new Date(bounds[0])
-                  : nextMonth;
-
-                changeCalendarMonth('calendar.nextMove', newMonth);
-              }}
+              onClick={() =>
+                changeCalendarMonth('calendar.nextMove', nextMonth)
+              }
             />
           </Box>
         </Box>

@@ -330,7 +330,7 @@ describe('Calendar', () => {
     expect(nextMonthButton).toBeDisabled();
   });
 
-  test('change to bounds month when date is before bounds', () => {
+  test('change to next month when date is before bounds', () => {
     const onReference = jest.fn();
     render(
       <Grommet>
@@ -350,10 +350,10 @@ describe('Calendar', () => {
 
     fireEvent.click(nextMonthButton);
 
-    expect(onReference).toBeCalledWith('2020-01-01T00:00:00.000Z');
+    expect(onReference).toBeCalledWith('2019-02-01T03:00:00.000Z');
   });
 
-  test('change to bounds month when date is after bounds', () => {
+  test('change to next month when date is after bounds', () => {
     const onReference = jest.fn();
     render(
       <Grommet>
@@ -373,7 +373,7 @@ describe('Calendar', () => {
 
     fireEvent.click(previousMonthButton);
 
-    expect(onReference).toBeCalledWith('2020-01-31T00:00:00.000Z');
+    expect(onReference).toBeCalledWith('2020-12-31T03:00:00.000Z');
   });
 
   test('select date with range no date set', () => {
