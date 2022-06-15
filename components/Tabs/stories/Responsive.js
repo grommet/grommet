@@ -124,6 +124,24 @@ var ResponsiveTabs = function ResponsiveTabs() {
       background: "brand"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 11"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "light-4"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 12"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "dark-3"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
+      size: "xlarge"
     }))))) // </Grommet>
 
   );

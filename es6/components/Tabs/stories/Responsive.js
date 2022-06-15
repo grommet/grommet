@@ -115,6 +115,24 @@ var ResponsiveTabs = function ResponsiveTabs() {
       background: "brand"
     }, /*#__PURE__*/React.createElement(Attraction, {
       size: "xlarge"
+    }))), /*#__PURE__*/React.createElement(Tab, {
+      title: "Tab 11"
+    }, /*#__PURE__*/React.createElement(Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "light-4"
+    }, /*#__PURE__*/React.createElement(TreeOption, {
+      size: "xlarge"
+    }))), /*#__PURE__*/React.createElement(Tab, {
+      title: "Tab 12"
+    }, /*#__PURE__*/React.createElement(Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "dark-3"
+    }, /*#__PURE__*/React.createElement(Car, {
+      size: "xlarge"
     }))))) // </Grommet>
 
   );

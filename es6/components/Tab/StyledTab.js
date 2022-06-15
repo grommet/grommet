@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
-var tabHoverStyle = css(["&:hover{", " ", " ", ";}"], function (props) {
+var tabHoverStyle = css(["&:hover{", " ", " ", ";}&:focus{z-index:1;}"], function (props) {
   return props.theme.tab.hover.background && css(["background:", ";"], normalizeColor(props.theme.tab.hover.background, props.theme));
 }, function (props) {
   return props.theme.tab.hover.color && css(["color:", ";"], normalizeColor(props.theme.tab.hover.color, props.theme));
@@ -11,7 +11,7 @@ var tabHoverStyle = css(["&:hover{", " ", " ", ";}"], function (props) {
 var StyledTab = styled.div.withConfig({
   displayName: "StyledTab",
   componentId: "sc-1nnwnsb-0"
-})(["", " ", " ", " ", ""], genericStyles, function (props) {
+})(["white-space:nowrap;", " ", " ", " ", ""], genericStyles, function (props) {
   return !props.plain && !props.disabled && props.theme.tab.hover && tabHoverStyle;
 }, function (props) {
   return props.disabled && props.theme.tab.disabled;

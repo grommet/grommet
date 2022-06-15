@@ -1788,6 +1788,11 @@ var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
       },
       panel: {// extend: undefined,
+      },
+      step: {
+        small: 1,
+        medium: 3,
+        large: 3
       }
     },
     table: {

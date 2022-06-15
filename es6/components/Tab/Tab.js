@@ -1,4 +1,4 @@
-var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "onMouseOver", "onMouseOut", "reverse", "onClick"];
+var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "onBlur", "onFocus", "onMouseOver", "onMouseOut", "reverse", "onClick"];
 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -11,9 +11,10 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import { TabsContext } from '../Tabs/TabsContext';
-import { normalizeColor } from '../../utils';
+import { normalizeColor, useForwardedRef } from '../../utils';
 import { StyledTab } from './StyledTab';
 import { TabPropTypes } from './propTypes';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var activeProp = _ref.active,
       disabled = _ref.disabled,
@@ -21,6 +22,8 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
       icon = _ref.icon,
       plain = _ref.plain,
       title = _ref.title,
+      _onBlur = _ref.onBlur,
+      _onFocus = _ref.onFocus,
       onMouseOver = _ref.onMouseOver,
       onMouseOut = _ref.onMouseOut,
       reverse = _ref.reverse,
@@ -30,9 +33,12 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useContext = useContext(TabsContext),
       active = _useContext.active,
       activeIndex = _useContext.activeIndex,
+      index = _useContext.index,
+      tabsContextRef = _useContext.ref,
       onActivate = _useContext.onActivate,
       setActiveContent = _useContext.setActiveContent,
-      setActiveTitle = _useContext.setActiveTitle;
+      setActiveTitle = _useContext.setActiveTitle,
+      setFocusIndex = _useContext.setFocusIndex;
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -40,12 +46,14 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
       over = _useState[0],
       setOver = _useState[1];
 
-  var _useState2 = useState(undefined),
-      focus = _useState2[0],
-      setFocus = _useState2[1];
-
   var normalizedTitle = title;
   var tabStyles = {};
+  var tabRef = useForwardedRef(ref);
+  useLayoutEffect(function () {
+    if (tabRef.current) {
+      tabsContextRef.current = tabRef.current;
+    }
+  });
   useEffect(function () {
     if (active) {
       setActiveContent(children);
@@ -69,6 +77,20 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onMouseOut(event);
     }
   };
+
+  if (!plain) {
+    if (typeof title !== 'string') {
+      normalizedTitle = title;
+    } else if (active) {
+      normalizedTitle = /*#__PURE__*/React.createElement(Text, theme.tab.active, title);
+    } else if (disabled && theme.tab.disabled) {
+      normalizedTitle = /*#__PURE__*/React.createElement(Text, theme.tab.disabled, title);
+    } else {
+      normalizedTitle = /*#__PURE__*/React.createElement(Text, {
+        color: over ? theme.tab.hover.color : theme.tab.color
+      }, title);
+    }
+  }
 
   var onClickTab = function onClickTab(event) {
     if (event) {
@@ -159,7 +181,7 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }
 
   return /*#__PURE__*/React.createElement(Button, _extends({
-    ref: ref,
+    ref: tabRef,
     plain: true,
     role: "tab",
     "aria-selected": active,
@@ -170,17 +192,12 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onMouseOver: onMouseOverTab,
     onMouseOut: onMouseOutTab,
     onFocus: function onFocus() {
-      setFocus(true);
-      if (onMouseOver) onMouseOver();
+      if (_onFocus) _onFocus();
+      setFocusIndex(index);
     },
     onBlur: function onBlur() {
-      setFocus(undefined);
-      if (onMouseOut) onMouseOut();
-    } // ensure focus outline is not covered by hover styling
-    // of adjacent tabs
-    ,
-    style: focus && {
-      zIndex: 1
+      if (_onBlur) _onBlur();
+      setFocusIndex(-1);
     }
   }), /*#__PURE__*/React.createElement(StyledTab, _extends({
     as: Box,

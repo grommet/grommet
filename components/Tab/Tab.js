@@ -23,7 +23,9 @@ var _StyledTab = require("./StyledTab");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "onMouseOver", "onMouseOut", "reverse", "onClick"];
+var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
+
+var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "onBlur", "onFocus", "onMouseOver", "onMouseOut", "reverse", "onClick"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -40,6 +42,8 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       icon = _ref.icon,
       plain = _ref.plain,
       title = _ref.title,
+      _onBlur = _ref.onBlur,
+      _onFocus = _ref.onFocus,
       onMouseOver = _ref.onMouseOver,
       onMouseOut = _ref.onMouseOut,
       reverse = _ref.reverse,
@@ -49,9 +53,12 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _useContext = (0, _react.useContext)(_TabsContext.TabsContext),
       active = _useContext.active,
       activeIndex = _useContext.activeIndex,
+      index = _useContext.index,
+      tabsContextRef = _useContext.ref,
       onActivate = _useContext.onActivate,
       setActiveContent = _useContext.setActiveContent,
-      setActiveTitle = _useContext.setActiveTitle;
+      setActiveTitle = _useContext.setActiveTitle,
+      setFocusIndex = _useContext.setFocusIndex;
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -59,12 +66,14 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       over = _useState[0],
       setOver = _useState[1];
 
-  var _useState2 = (0, _react.useState)(undefined),
-      focus = _useState2[0],
-      setFocus = _useState2[1];
-
   var normalizedTitle = title;
   var tabStyles = {};
+  var tabRef = (0, _utils.useForwardedRef)(ref);
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
+    if (tabRef.current) {
+      tabsContextRef.current = tabRef.current;
+    }
+  });
   (0, _react.useEffect)(function () {
     if (active) {
       setActiveContent(children);
@@ -88,6 +97,20 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onMouseOut(event);
     }
   };
+
+  if (!plain) {
+    if (typeof title !== 'string') {
+      normalizedTitle = title;
+    } else if (active) {
+      normalizedTitle = /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.tab.active, title);
+    } else if (disabled && theme.tab.disabled) {
+      normalizedTitle = /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.tab.disabled, title);
+    } else {
+      normalizedTitle = /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+        color: over ? theme.tab.hover.color : theme.tab.color
+      }, title);
+    }
+  }
 
   var onClickTab = function onClickTab(event) {
     if (event) {
@@ -178,7 +201,7 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }
 
   return /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
-    ref: ref,
+    ref: tabRef,
     plain: true,
     role: "tab",
     "aria-selected": active,
@@ -189,17 +212,12 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onMouseOver: onMouseOverTab,
     onMouseOut: onMouseOutTab,
     onFocus: function onFocus() {
-      setFocus(true);
-      if (onMouseOver) onMouseOver();
+      if (_onFocus) _onFocus();
+      setFocusIndex(index);
     },
     onBlur: function onBlur() {
-      setFocus(undefined);
-      if (onMouseOut) onMouseOut();
-    } // ensure focus outline is not covered by hover styling
-    // of adjacent tabs
-    ,
-    style: focus && {
-      zIndex: 1
+      if (_onBlur) _onBlur();
+      setFocusIndex(-1);
     }
   }), /*#__PURE__*/_react["default"].createElement(_StyledTab.StyledTab, _extends({
     as: _Box.Box,
