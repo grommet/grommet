@@ -8,19 +8,22 @@ const FooterAnchor = ({ ...rest }) => (
   <Anchor href="/" size="small" color="white" {...rest} />
 );
 
-const FooterContent = () =>
-  data.map((item) => (
-    <Box gap="medium" key={item[0]}>
-      <Text weight="bold" size="small">
-        {item[0]}
-      </Text>
-      <Box>
-        {[1, 2, 3].map((i) => (
-          <FooterAnchor key={item[i]}>{item[i]}</FooterAnchor>
-        ))}
+const FooterContent = () => (
+  <Box direction="row-responsive" gap="xlarge">
+    {data.map((item) => (
+      <Box gap="medium" key={item[0]}>
+        <Text weight="bold" size="small">
+          {item[0]}
+        </Text>
+        <Box>
+          {[1, 2, 3].map((i) => (
+            <FooterAnchor key={item[i]}>{item[i]}</FooterAnchor>
+          ))}
+        </Box>
       </Box>
-    </Box>
-  ));
+    ))}
+  </Box>
+);
 
 export const Sitemap = () => (
   // Uncomment <Grommet> lines when using outside of storybook
