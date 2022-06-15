@@ -57,9 +57,10 @@ const Tabs = forwardRef(
     // and scroll-behavior='smooth'. For now we are detecting if the browser
     // is safari to workaround this issue. The issue should be resolved soon
     // and we can remove this. https://github.com/WebKit/WebKit/pull/1387
-    const isSafari = /^((?!chrome|android).)*safari/i.test(
-      window.navigator.userAgent,
-    );
+    const isSafari =
+      typeof window !== 'undefined'
+        ? /^((?!chrome|android).)*safari/i.test(window.navigator.userAgent)
+        : true;
 
     /* eslint-disable no-param-reassign */
     delete rest.activeIndex;
