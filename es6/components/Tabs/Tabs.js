@@ -76,7 +76,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // and we can remove this. https://github.com/WebKit/WebKit/pull/1387
 
 
-  var isSafari = /^((?!chrome|android).)*safari/i.test(window.navigator.userAgent);
+  var isSafari = typeof window !== 'undefined' ? /^((?!chrome|android).)*safari/i.test(window.navigator.userAgent) : true;
   /* eslint-disable no-param-reassign */
 
   delete rest.activeIndex;
