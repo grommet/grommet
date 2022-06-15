@@ -515,8 +515,7 @@ const Calendar = forwardRef(
     );
 
     const changeCalendarMonth = (messageId, newMonth) => {
-      if (!betweenDates(newMonth, bounds)) handleReference(newMonth);
-      else changeReference(newMonth);
+      handleReference(newMonth);
 
       announce(
         format({
