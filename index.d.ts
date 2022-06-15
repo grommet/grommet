@@ -42,6 +42,7 @@ export * from './components/Menu';
 export * from './components/Meter';
 export * from './components/Page';
 export * from './components/PageContent';
+export * from './components/PageHeader';
 export * from './components/Pagination';
 export * from './components/Paragraph';
 export * from './components/NameValueList';
