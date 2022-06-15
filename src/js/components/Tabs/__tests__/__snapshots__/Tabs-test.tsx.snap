@@ -34,9 +34,7 @@ exports[`Tabs Custom Tab component 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -160,6 +158,7 @@ exports[`Tabs Custom Tab component 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -168,6 +167,10 @@ exports[`Tabs Custom Tab component 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c9 {
@@ -234,42 +237,46 @@ exports[`Tabs Custom Tab component 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c6"
+          <div
+            class="c4 c5"
           >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c3"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c7 c5"
+            <span
+              class="c6"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c8"
+          <div
+            class="c7 c5"
           >
-            Tab 2
-          </span>
-        </div>
-      </button>
+            <span
+              class="c8"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
@@ -316,9 +323,7 @@ exports[`Tabs Tab 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -442,6 +447,7 @@ exports[`Tabs Tab 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -450,6 +456,10 @@ exports[`Tabs Tab 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c9 {
@@ -516,42 +526,46 @@ exports[`Tabs Tab 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c6"
+          <div
+            class="c4 c5"
           >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c3"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c7 c5"
+            <span
+              class="c6"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c8"
+          <div
+            class="c7 c5"
           >
-            Tab 2
-          </span>
-        </div>
-      </button>
+            <span
+              class="c8"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
@@ -601,9 +615,7 @@ exports[`Tabs alignControls 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -730,6 +742,7 @@ exports[`Tabs alignControls 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -738,6 +751,10 @@ exports[`Tabs alignControls 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c9 {
@@ -804,42 +821,46 @@ exports[`Tabs alignControls 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c6"
+          <div
+            class="c4 c5"
           >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c3"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c7 c5"
+            <span
+              class="c6"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c8"
+          <div
+            class="c7 c5"
           >
-            Tab 2
-          </span>
-        </div>
-      </button>
+            <span
+              class="c8"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
@@ -886,9 +907,7 @@ exports[`Tabs change to second tab 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -1012,6 +1031,7 @@ exports[`Tabs change to second tab 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -1020,6 +1040,10 @@ exports[`Tabs change to second tab 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c9 {
@@ -1086,42 +1110,46 @@ exports[`Tabs change to second tab 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c6"
+          <div
+            class="c4 c5"
           >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c3"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c7 c5"
+            <span
+              class="c6"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c8"
+          <div
+            class="c7 c5"
           >
-            Tab 2
-          </span>
-        </div>
-      </button>
+            <span
+              class="c8"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
@@ -1143,42 +1171,46 @@ exports[`Tabs change to second tab 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gmjiSl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
+      class="StyledBox-sc-13pk1d4-0 iNDmPr"
     >
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="StyledButton-sc-323bzc-0 iqZbKa"
-        role="tab"
-        type="button"
+      <div
+        class="StyledBox-sc-13pk1d4-0 bTwWAl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 emkQWb"
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
+          role="tab"
+          type="button"
         >
-          <span
-            class="StyledText-sc-1sadyjn-0 kILPEW"
+          <div
+            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="StyledButton-sc-323bzc-0 iqZbKa"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+            <span
+              class="StyledText-sc-1sadyjn-0 kILPEW"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
+          role="tab"
+          type="button"
         >
-          <span
-            class="StyledText-sc-1sadyjn-0 dtIFvg"
+          <div
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
-            Tab 2
-          </span>
-        </div>
-      </button>
+            <span
+              class="StyledText-sc-1sadyjn-0 dtIFvg"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Tab 2 Tab Contents"
@@ -1225,9 +1257,7 @@ exports[`Tabs complex title 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -1339,6 +1369,7 @@ exports[`Tabs complex title 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -1347,6 +1378,10 @@ exports[`Tabs complex title 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c7 {
@@ -1413,38 +1448,42 @@ exports[`Tabs complex title 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <div>
-            Tab 1
+          <div
+            class="c4 c5"
+          >
+            <div>
+              Tab 1
+            </div>
           </div>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c3"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c6 c5"
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <div>
-            Tab 2
+          <div
+            class="c6 c5"
+          >
+            <div>
+              Tab 2
+            </div>
           </div>
-        </div>
-      </button>
+        </button>
+      </div>
     </div>
     <div
       aria-label="1 Tab Contents"
@@ -1491,9 +1530,7 @@ exports[`Tabs no Tab 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -1585,6 +1622,7 @@ exports[`Tabs no Tab 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -1593,6 +1631,10 @@ exports[`Tabs no Tab 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c6 {
@@ -1633,19 +1675,23 @@ exports[`Tabs no Tab 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c4 c5"
-        />
-      </button>
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
+        >
+          <div
+            class="c4 c5"
+          />
+        </button>
+      </div>
     </div>
     <div
       aria-label="1 Tab Contents"
@@ -1690,9 +1736,7 @@ exports[`Tabs onClick 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -1816,6 +1860,7 @@ exports[`Tabs onClick 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -1824,6 +1869,10 @@ exports[`Tabs onClick 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c9 {
@@ -1890,42 +1939,46 @@ exports[`Tabs onClick 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c6"
+          <div
+            class="c4 c5"
           >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c3"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c7 c5"
+            <span
+              class="c6"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c8"
+          <div
+            class="c7 c5"
           >
-            Tab 2
-          </span>
-        </div>
-      </button>
+            <span
+              class="c8"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
@@ -1972,9 +2025,7 @@ exports[`Tabs set on hover 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -2098,6 +2149,7 @@ exports[`Tabs set on hover 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -2106,6 +2158,10 @@ exports[`Tabs set on hover 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c9 {
@@ -2172,42 +2228,46 @@ exports[`Tabs set on hover 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c6"
+          <div
+            class="c4 c5"
           >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c3"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c7 c5"
+            <span
+              class="c6"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c8"
+          <div
+            class="c7 c5"
           >
-            Tab 2
-          </span>
-        </div>
-      </button>
+            <span
+              class="c8"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
@@ -2229,42 +2289,46 @@ exports[`Tabs set on hover 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gmjiSl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
+      class="StyledBox-sc-13pk1d4-0 iNDmPr"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="StyledButton-sc-323bzc-0 iqZbKa"
-        role="tab"
-        type="button"
+      <div
+        class="StyledBox-sc-13pk1d4-0 bTwWAl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
+          role="tab"
+          type="button"
         >
-          <span
-            class="StyledText-sc-1sadyjn-0 dtIFvg"
+          <div
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="StyledButton-sc-323bzc-0 iqZbKa"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 emkQWb"
+            <span
+              class="StyledText-sc-1sadyjn-0 dtIFvg"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
+          role="tab"
+          type="button"
         >
-          <span
-            class="StyledText-sc-1sadyjn-0 kILPEW"
+          <div
+            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
-            Tab 2
-          </span>
-        </div>
-      </button>
+            <span
+              class="StyledText-sc-1sadyjn-0 kILPEW"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
@@ -2286,42 +2350,46 @@ exports[`Tabs set on hover 3`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gmjiSl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
+      class="StyledBox-sc-13pk1d4-0 iNDmPr"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="StyledButton-sc-323bzc-0 iqZbKa"
-        role="tab"
-        type="button"
+      <div
+        class="StyledBox-sc-13pk1d4-0 bTwWAl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
+          role="tab"
+          type="button"
         >
-          <span
-            class="StyledText-sc-1sadyjn-0 dtIFvg"
+          <div
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="StyledButton-sc-323bzc-0 iqZbKa"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+            <span
+              class="StyledText-sc-1sadyjn-0 dtIFvg"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
+          role="tab"
+          type="button"
         >
-          <span
-            class="StyledText-sc-1sadyjn-0 ZVAlE"
+          <div
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
-            Tab 2
-          </span>
-        </div>
-      </button>
+            <span
+              class="StyledText-sc-1sadyjn-0 ZVAlE"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
@@ -2343,42 +2411,46 @@ exports[`Tabs set on hover 4`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gmjiSl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
+      class="StyledBox-sc-13pk1d4-0 iNDmPr"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="StyledButton-sc-323bzc-0 iqZbKa"
-        role="tab"
-        type="button"
+      <div
+        class="StyledBox-sc-13pk1d4-0 bTwWAl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
+          role="tab"
+          type="button"
         >
-          <span
-            class="StyledText-sc-1sadyjn-0 dtIFvg"
+          <div
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="StyledButton-sc-323bzc-0 iqZbKa"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+            <span
+              class="StyledText-sc-1sadyjn-0 dtIFvg"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
+          role="tab"
+          type="button"
         >
-          <span
-            class="StyledText-sc-1sadyjn-0 ZVAlE"
+          <div
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
-            Tab 2
-          </span>
-        </div>
-      </button>
+            <span
+              class="StyledText-sc-1sadyjn-0 ZVAlE"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
@@ -2400,42 +2472,46 @@ exports[`Tabs set on hover 5`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gmjiSl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
+      class="StyledBox-sc-13pk1d4-0 iNDmPr"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="StyledButton-sc-323bzc-0 iqZbKa"
-        role="tab"
-        type="button"
+      <div
+        class="StyledBox-sc-13pk1d4-0 bTwWAl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 emkQWb"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
+          role="tab"
+          type="button"
         >
-          <span
-            class="StyledText-sc-1sadyjn-0 dtIFvg"
+          <div
+            class="StyledBox-sc-13pk1d4-0 ijizuB StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="StyledButton-sc-323bzc-0 iqZbKa"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 emkQWb"
+            <span
+              class="StyledText-sc-1sadyjn-0 dtIFvg"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
+          role="tab"
+          type="button"
         >
-          <span
-            class="StyledText-sc-1sadyjn-0 kILPEW"
+          <div
+            class="StyledBox-sc-13pk1d4-0 jqBVkd StyledTab-sc-1nnwnsb-0 gJKIzG"
           >
-            Tab 2
-          </span>
-        </div>
-      </button>
+            <span
+              class="StyledText-sc-1sadyjn-0 kILPEW"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
@@ -2482,9 +2558,7 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c5 {
@@ -2582,6 +2656,7 @@ exports[`Tabs should allow to extend tab styles 1`] = `
 }
 
 .c4 {
+  white-space: nowrap;
   color: red;
   padding: 20px;
   box-shadow: rgba(0,0,0,0.25) 0px 54px 55px,rgba(0,0,0,0.12) 0px -12px 30px,rgba(0,0,0,0.12) 0px 4px 6px,rgba(0,0,0,0.17) 0px 12px 13px,rgba(0,0,0,0.09) 0px -3px 5px;
@@ -2589,6 +2664,7 @@ exports[`Tabs should allow to extend tab styles 1`] = `
 }
 
 .c6 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -2601,6 +2677,10 @@ exports[`Tabs should allow to extend tab styles 1`] = `
 
 .c6:hover {
   color: #000000;
+}
+
+.c6:focus {
+  z-index: 1;
 }
 
 .c8 {
@@ -2641,38 +2721,42 @@ exports[`Tabs should allow to extend tab styles 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c1 c4"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          Title 1
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c3"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c5 c6"
-        >
-          <span
-            class="c7"
+          <div
+            class="c1 c4"
           >
-            Title 2
-          </span>
-        </div>
-      </button>
+            Title 1
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
+        >
+          <div
+            class="c5 c6"
+          >
+            <span
+              class="c7"
+            >
+              Title 2
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Title 1 Tab Contents"
@@ -2719,9 +2803,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -2905,6 +2987,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -2915,7 +2998,12 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   color: #000000;
 }
 
+.c5:focus {
+  z-index: 1;
+}
+
 .c9 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -2987,44 +3075,48 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c6"
+          <div
+            class="c4 c5"
           >
-            Enabled Tab
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c7"
-        disabled=""
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c8 c9"
+            <span
+              class="c6"
+            >
+              Enabled Tab
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c7"
           disabled=""
+          role="tab"
+          type="button"
         >
-          <span
-            class="c10"
+          <div
+            class="c8 c9"
+            disabled=""
           >
-            Disabled Tab
-          </span>
-        </div>
-      </button>
+            <span
+              class="c10"
+            >
+              Disabled Tab
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Enabled Tab Tab Contents"
@@ -3072,9 +3164,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -3258,6 +3348,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -3268,7 +3359,12 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   color: #000000;
 }
 
+.c5:focus {
+  z-index: 1;
+}
+
 .c9 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -3340,44 +3436,48 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c6"
+          <div
+            class="c4 c5"
           >
-            Enabled Tab
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c7"
-        disabled=""
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c8 c9"
+            <span
+              class="c6"
+            >
+              Enabled Tab
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c7"
           disabled=""
+          role="tab"
+          type="button"
         >
-          <span
-            class="c10"
+          <div
+            class="c8 c9"
+            disabled=""
           >
-            Disabled Tab
-          </span>
-        </div>
-      </button>
+            <span
+              class="c10"
+            >
+              Disabled Tab
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Enabled Tab Tab Contents"
@@ -3424,9 +3524,7 @@ exports[`Tabs should have no accessibility violations 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -3518,6 +3616,7 @@ exports[`Tabs should have no accessibility violations 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -3526,6 +3625,10 @@ exports[`Tabs should have no accessibility violations 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c6 {
@@ -3567,20 +3670,24 @@ exports[`Tabs should have no accessibility violations 1`] = `
       role="tablist"
     >
       <div
-        class="c2 "
+        class="c1"
       >
-        <button
-          aria-expanded="true"
-          aria-label="test"
-          aria-selected="true"
-          class="c3"
-          role="tab"
-          type="button"
+        <div
+          class="c2 "
         >
-          <div
-            class="c4 c5"
-          />
-        </button>
+          <button
+            aria-expanded="true"
+            aria-label="test"
+            aria-selected="true"
+            class="c3"
+            role="tab"
+            type="button"
+          >
+            <div
+              class="c4 c5"
+            />
+          </button>
+        </div>
       </div>
       <div
         aria-label="1 Tab Contents"
@@ -3626,9 +3733,7 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c3 {
@@ -3700,6 +3805,10 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
 }
 
 .c4 {
+  white-space: nowrap;
+}
+
+.c5 {
   min-height: 0;
 }
 
@@ -3711,25 +3820,29 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c1 "
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          Title 1
-        </div>
-      </button>
+          <div
+            class="c1 c4"
+          >
+            Title 1
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Title 1 Tab Contents"
-      class="c4"
+      class="c5"
       role="tabpanel"
     />
   </div>
@@ -3770,9 +3883,7 @@ exports[`Tabs should style as disabled 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -3956,6 +4067,7 @@ exports[`Tabs should style as disabled 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -3966,7 +4078,12 @@ exports[`Tabs should style as disabled 1`] = `
   color: #000000;
 }
 
+.c5:focus {
+  z-index: 1;
+}
+
 .c9 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -4037,44 +4154,48 @@ exports[`Tabs should style as disabled 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c6"
+          <div
+            class="c4 c5"
           >
-            Enabled Tab
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c7"
-        disabled=""
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c8 c9"
+            <span
+              class="c6"
+            >
+              Enabled Tab
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c7"
           disabled=""
+          role="tab"
+          type="button"
         >
-          <span
-            class="c10"
+          <div
+            class="c8 c9"
+            disabled=""
           >
-            Disabled Tab
-          </span>
-        </div>
-      </button>
+            <span
+              class="c10"
+            >
+              Disabled Tab
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Enabled Tab Tab Contents"
@@ -4121,9 +4242,7 @@ exports[`Tabs styled component should change tab color when active 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c9 {
@@ -4247,6 +4366,7 @@ exports[`Tabs styled component should change tab color when active 1`] = `
 }
 
 .c6 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -4255,6 +4375,10 @@ exports[`Tabs styled component should change tab color when active 1`] = `
 
 .c6:hover {
   color: #000000;
+}
+
+.c6:focus {
+  z-index: 1;
 }
 
 .c11 {
@@ -4329,59 +4453,63 @@ exports[`Tabs styled component should change tab color when active 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c3 c4"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c5 c6"
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3 c4"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c7"
+          <div
+            class="c5 c6"
           >
-            About
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3 c8"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c9 c6"
+            <span
+              class="c7"
+            >
+              About
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3 c8"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c10"
+          <div
+            class="c9 c6"
           >
-            Activity
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c3 c4"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c5 c6"
+            <span
+              class="c10"
+            >
+              Activity
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3 c4"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c7"
+          <div
+            class="c5 c6"
           >
-            Stickers
-          </span>
-        </div>
-      </button>
+            <span
+              class="c7"
+            >
+              Stickers
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Activity Tab Contents"
@@ -4426,9 +4554,7 @@ exports[`Tabs with icon + reverse 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .c4 {
@@ -4578,6 +4704,7 @@ exports[`Tabs with icon + reverse 1`] = `
 }
 
 .c5 {
+  white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -4586,6 +4713,10 @@ exports[`Tabs with icon + reverse 1`] = `
 
 .c5:hover {
   color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
 }
 
 .c10 {
@@ -4658,54 +4789,58 @@ exports[`Tabs with icon + reverse 1`] = `
     role="tablist"
   >
     <div
-      class="c2 "
+      class="c1"
     >
-      <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="c3"
-        role="tab"
-        type="button"
+      <div
+        class="c2 "
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <svg
-            color="text"
-          />
           <div
-            class="c6"
-          />
-          <span
-            class="c7"
+            class="c4 c5"
           >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="c3"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="c8 c5"
+            <svg
+              color="text"
+            />
+            <div
+              class="c6"
+            />
+            <span
+              class="c7"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
         >
-          <span
-            class="c9"
-          >
-            Tab 2
-          </span>
           <div
-            class="c6"
-          />
-          <svg
-            color="control"
-          />
-        </div>
-      </button>
+            class="c8 c5"
+          >
+            <span
+              class="c9"
+            >
+              Tab 2
+            </span>
+            <div
+              class="c6"
+            />
+            <svg
+              color="control"
+            />
+          </div>
+        </button>
+      </div>
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
