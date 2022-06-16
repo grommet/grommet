@@ -394,6 +394,9 @@ const SelectContainer = forwardRef(
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
         >
+          <Box flex={false} pad={{ horizontal: 'small', top: 'xsmall' }}>
+            <Text>Select up to 10</Text>
+          </Box>
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
               <SelectTextInput
@@ -412,6 +415,54 @@ const SelectContainer = forwardRef(
               />
             </Box>
           )}
+          <Box
+            pad={{ horizontal: 'small', top: 'small', bottom: 'medium' }}
+            direction="row"
+            justify="between"
+          >
+            <Box alignSelf="center">
+              {value.length === 0 ? (
+                <Text>0 selected</Text>
+              ) : (
+                <Text>
+                  {value.length} selected of {options.length}
+                </Text>
+              )}
+            </Box>
+            <Box>
+              {value.length === 0 ? (
+                <Button
+                  plain
+                  onClick={(event) => {
+                    if (onChange) {
+                      onChange(event, {
+                        option: options,
+                        value: allOptions,
+                        selected: allOptions,
+                      });
+                    }
+                  }}
+                >
+                  <Text weight="bold">Select All</Text>
+                </Button>
+              ) : (
+                <Button
+                  plain
+                  onClick={(event) => {
+                    if (onChange) {
+                      onChange(event, {
+                        option: options,
+                        value: [],
+                        selected: [],
+                      });
+                    }
+                  }}
+                >
+                  <Text weight="bold">Clear All</Text>
+                </Button>
+              )}
+            </Box>
+          </Box>
           <OptionsBox
             role="listbox"
             tabIndex="-1"

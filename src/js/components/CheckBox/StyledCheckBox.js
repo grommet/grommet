@@ -89,7 +89,6 @@ const StyledCheckBoxContainer = styled.label`
       !props.disabled && props.theme.checkBox.hover?.background?.color,
       props.theme,
     )};`}
-  ${(props) => props.theme.checkBox.extend}
 `;
 
 StyledCheckBoxContainer.defaultProps = {};
