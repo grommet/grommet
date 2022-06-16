@@ -430,6 +430,7 @@ export interface ThemeType {
       margin?: MarginType;
     };
     hover?: {
+      background?: BackgroundType;
       color?: ColorType; // deprecated
       heading?: {
         color?: ColorType;
@@ -1444,6 +1445,11 @@ export interface ThemeType {
     };
     panel?: {
       extend?: ExtendType;
+    };
+    step?: {
+      small?: number;
+      medium?: number;
+      large?: number;
     };
   };
   table?: {

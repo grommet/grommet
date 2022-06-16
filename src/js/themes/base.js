@@ -346,6 +346,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // margin: undefined
       },
       hover: {
+        // background: undefined,
         color: { dark: 'light-4', light: 'dark-3' }, // deprecated
         heading: {
           color: { dark: 'light-4', light: 'dark-3' },
@@ -1645,6 +1646,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       panel: {
         // extend: undefined,
+      },
+      step: {
+        small: 1,
+        medium: 3,
+        large: 3,
       },
     },
     table: {

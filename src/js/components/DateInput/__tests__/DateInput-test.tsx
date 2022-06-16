@@ -762,10 +762,9 @@ describe('DateInput', () => {
     fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
       target: { value: '07//2020-07/27/2021' },
     });
-    expect(onChange).toHaveNthReturnedWith(3, []);
     // cannot check snapshot here as it will be relative to the current date
 
-    expect(onChange).toHaveBeenCalledTimes(3);
+    expect(onChange).toHaveBeenCalledTimes(2);
   });
 
   test('type format inline range partial without timezone', () => {
@@ -799,10 +798,9 @@ describe('DateInput', () => {
     fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
       target: { value: '07//2020-07/27/2021' },
     });
-    expect(onChange).toHaveNthReturnedWith(3, []);
     // cannot check snapshot here as it will be relative to the current date
 
-    expect(onChange).toHaveBeenCalledTimes(3);
+    expect(onChange).toHaveBeenCalledTimes(2);
   });
 
   test('controlled format inline', () => {

@@ -5181,8 +5181,6 @@ exports[`DataChart detail 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 24px;
-  padding-right: 24px;
 }
 
 .c12 {
@@ -6886,14 +6884,15 @@ exports[`DataChart legend 1`] = `
         class="c11"
       >
         <svg
-          fill="#6FFFB0"
+          fill="none"
           height="12"
-          stroke="none"
+          stroke="#6FFFB0"
           viewBox="0 0 96 12"
           width="96"
         >
           <path
-            d="M 0 0 L 96 0 L 96 12 L 0 12 Z"
+            d="M 48 0 L 48 12"
+            stroke-width="96"
           />
         </svg>
         <div
