@@ -234,7 +234,7 @@ const Body = forwardRef(
           ref={ref}
           size={size}
           tabIndex={onClickRow ? 0 : undefined}
-          onFocus={() => setActive(active ?? lastActive ?? 0)}
+          onFocus={() => setActive(active ?? lastActive ?? undefined)}
           onBlur={() => {
             setLastActive(active);
             setActive(undefined);
