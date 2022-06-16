@@ -79,18 +79,6 @@ const Tabs = forwardRef(
           const tabRect = tabRefs[index].current.getBoundingClientRect();
           const headerRect = headerRef.current?.getBoundingClientRect();
           if (tabRect && headerRect) {
-            if (
-              (tabRect.left >= headerRect.left &&
-                tabRect.right <= headerRect.right &&
-                tabRect.right + 2 >= headerRect.right &&
-                index !== tabRefs.length - 1) ||
-              (tabRect.right <= headerRect.right &&
-                tabRect.left >= headerRect.left &&
-                tabRect.left - 2 <= headerRect.left &&
-                index !== 0)
-            )
-              return false;
-
             // the -1 and +1 allow a little leniency when calculating if a tab
             // is in view. Without the -1 and +1 a tab could be fully in view
             // but isVisible will return false.
@@ -136,20 +124,8 @@ const Tabs = forwardRef(
         // ensure the focusIndicator is visible when navigating
         // by keyboard
         if (keyboard) {
-          if (
-            amountHidden <= -1 ||
-            (tabRect.right <= headerRect.right &&
-              tabRect.left >= headerRect.left &&
-              tabRect.left - 2 <= headerRect.left)
-          )
-            amountHidden -= 2;
-          else if (
-            amountHidden >= 1 ||
-            (tabRect.left >= headerRect.left &&
-              tabRect.right <= headerRect.right &&
-              tabRect.right + 2 >= headerRect.right)
-          )
-            amountHidden += 2;
+          if (amountHidden < 0) amountHidden -= 2;
+          if (amountHidden > 0) amountHidden += 2;
         }
         if (isSafari) {
           headerRef.current.scrollBy({
@@ -235,6 +211,29 @@ const Tabs = forwardRef(
       // scroll focus item into view if it is not already visible
       if (overflow && focusIndex !== -1 && !isVisible(focusIndex))
         scrollTo(focusIndex, true);
+      else if (overflow && focusIndex !== -1) {
+        // If the browser scrolled the focused item into view and
+        // the focusedTab is on the edge of the header container
+        // scroll slightly further to show the focusIndicator
+        const tabRect = tabRefs[focusIndex].current.getBoundingClientRect();
+        const headerRect = headerRef.current.getBoundingClientRect();
+        let amountHidden = 0;
+        if (
+          tabRect.left >= headerRect.left &&
+          tabRect.right <= headerRect.right &&
+          tabRect.right + 2 >= headerRect.right
+        )
+          amountHidden = 2;
+        else if (
+          tabRect.right <= headerRect.right &&
+          tabRect.left >= headerRect.left &&
+          tabRect.left - 2 <= headerRect.left
+        )
+          amountHidden = -2;
+        headerRef.current.scrollBy({
+          left: amountHidden,
+        });
+      }
     }, [overflow, tabRefs, focusIndex, isVisible, scrollTo]);
 
     useLayoutEffect(() => {
