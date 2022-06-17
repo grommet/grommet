@@ -26,8 +26,10 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
   var strokeWidth = type === 'pie' ? width / 2 : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   var centerX = width / 2;
   var centerY = width / 2;
-  var radius = width / 2 - strokeWidth / 2;
-  var anglePer = (type === 'semicircle' ? 180 : 360) / max;
+  var radius = width / 2 - strokeWidth / 2; // truncate to avoid floating point arithmetic errors
+  // see: https://github.com/grommet/grommet/issues/6190
+
+  var anglePer = Math.floor((type === 'semicircle' ? 180 : 360) / max * 10000) / 10000;
   var someHighlight = (values || []).some(function (v) {
     return v.highlight;
   });
