@@ -1,13 +1,8 @@
 /* eslint-disable no-underscore-dangle */
-import React, {
-  forwardRef,
-  memo,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import React, { forwardRef, memo, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
+import { useKeyboard } from '../../utils';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
@@ -191,18 +186,7 @@ const Body = forwardRef(
     const [lastActive, setLastActive] = React.useState();
 
     // Determine if using a keyboard to cover focus behavior
-    const [usingKeyboard, setUsingKeyboard] = useState();
-
-    const onMouseDown = () => setUsingKeyboard(false);
-    const onKeyPress = () => setUsingKeyboard(true);
-    useEffect(() => {
-      document.addEventListener('mousedown', onMouseDown);
-      document.addEventListener('keydown', onKeyPress);
-      return () => {
-        document.removeEventListener('mousedown', onMouseDown);
-        document.removeEventListener('keydown', onKeyPress);
-      };
-    }, []);
+    const usingKeyboard = useKeyboard();
 
     const onFocusActive =
       active ?? lastActive ?? (usingKeyboard ? 0 : undefined);
