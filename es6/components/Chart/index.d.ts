@@ -98,4 +98,26 @@ export interface ChartProps {
 
 declare const Chart: React.FC<ChartProps>;
 
-export { Chart };
+type Bounds = [[number, number], [number, number]] | [[], []];
+
+interface CalcsResult {
+  axis: [number[], number[]];
+  bounds: Bounds;
+  dimensions: [number, number];
+  pad: string;
+  thickness: string;
+}
+
+interface CalcsOptions {
+  min?: number;
+  max?: number;
+  bounds?: Bounds;
+  thickness?: string;
+}
+
+declare const calcs: (
+  values: number[] | number[][],
+  options?: CalcsOptions,
+) => CalcsResult;
+
+export { Chart, calcs };
