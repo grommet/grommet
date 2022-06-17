@@ -5,7 +5,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 /* eslint-disable no-underscore-dangle */
-import React, { forwardRef, memo, useContext } from 'react';
+import React, { forwardRef, memo, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
@@ -130,6 +130,8 @@ var Row = /*#__PURE__*/memo(function (_ref) {
   }, rowDetails(data[index]))));
 });
 var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
+  var _ref3;
+
   var cellPropsProp = _ref2.cellProps,
       columns = _ref2.columns,
       data = _ref2.data,
@@ -159,7 +161,30 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
 
   var _React$useState2 = React.useState(),
       lastActive = _React$useState2[0],
-      setLastActive = _React$useState2[1];
+      setLastActive = _React$useState2[1]; // Determine if using a keyboard to cover focus behavior
+
+
+  var _useState = useState(),
+      usingKeyboard = _useState[0],
+      setUsingKeyboard = _useState[1];
+
+  var onMouseDown = function onMouseDown() {
+    return setUsingKeyboard(false);
+  };
+
+  var onKeyPress = function onKeyPress() {
+    return setUsingKeyboard(true);
+  };
+
+  useEffect(function () {
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('keydown', onKeyPress);
+    return function () {
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('keydown', onKeyPress);
+    };
+  }, []);
+  var onFocusActive = (_ref3 = active != null ? active : lastActive) != null ? _ref3 : usingKeyboard ? 0 : undefined;
 
   var selectRow = function selectRow() {
     var _data$active;
@@ -206,9 +231,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     size: size,
     tabIndex: onClickRow ? 0 : undefined,
     onFocus: function onFocus() {
-      var _ref3;
-
-      return setActive((_ref3 = active != null ? active : lastActive) != null ? _ref3 : 0);
+      return setActive(onFocusActive);
     },
     onBlur: function onBlur() {
       setLastActive(active);

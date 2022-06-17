@@ -150,6 +150,8 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
   }, rowDetails(data[index]))));
 });
 var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
+  var _ref3;
+
   var cellPropsProp = _ref2.cellProps,
       columns = _ref2.columns,
       data = _ref2.data,
@@ -179,7 +181,30 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
 
   var _React$useState2 = _react["default"].useState(),
       lastActive = _React$useState2[0],
-      setLastActive = _React$useState2[1];
+      setLastActive = _React$useState2[1]; // Determine if using a keyboard to cover focus behavior
+
+
+  var _useState = (0, _react.useState)(),
+      usingKeyboard = _useState[0],
+      setUsingKeyboard = _useState[1];
+
+  var onMouseDown = function onMouseDown() {
+    return setUsingKeyboard(false);
+  };
+
+  var onKeyPress = function onKeyPress() {
+    return setUsingKeyboard(true);
+  };
+
+  (0, _react.useEffect)(function () {
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('keydown', onKeyPress);
+    return function () {
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('keydown', onKeyPress);
+    };
+  }, []);
+  var onFocusActive = (_ref3 = active != null ? active : lastActive) != null ? _ref3 : usingKeyboard ? 0 : undefined;
 
   var selectRow = function selectRow() {
     var _data$active;
@@ -226,9 +251,7 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     size: size,
     tabIndex: onClickRow ? 0 : undefined,
     onFocus: function onFocus() {
-      var _ref3;
-
-      return setActive((_ref3 = active != null ? active : lastActive) != null ? _ref3 : 0);
+      return setActive(onFocusActive);
     },
     onBlur: function onBlur() {
       setLastActive(active);
