@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _utils = require("../../utils");
+
 var _CheckBox = require("../CheckBox");
 
 var _InfiniteScroll = require("../InfiniteScroll");
@@ -184,26 +186,7 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       setLastActive = _React$useState2[1]; // Determine if using a keyboard to cover focus behavior
 
 
-  var _useState = (0, _react.useState)(),
-      usingKeyboard = _useState[0],
-      setUsingKeyboard = _useState[1];
-
-  var onMouseDown = function onMouseDown() {
-    return setUsingKeyboard(false);
-  };
-
-  var onKeyPress = function onKeyPress() {
-    return setUsingKeyboard(true);
-  };
-
-  (0, _react.useEffect)(function () {
-    document.addEventListener('mousedown', onMouseDown);
-    document.addEventListener('keydown', onKeyPress);
-    return function () {
-      document.removeEventListener('mousedown', onMouseDown);
-      document.removeEventListener('keydown', onKeyPress);
-    };
-  }, []);
+  var usingKeyboard = (0, _utils.useKeyboard)();
   var onFocusActive = (_ref3 = active != null ? active : lastActive) != null ? _ref3 : usingKeyboard ? 0 : undefined;
 
   var selectRow = function selectRow() {

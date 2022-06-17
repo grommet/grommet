@@ -105,3 +105,11 @@ Object.keys(_responsive).forEach(function (key) {
   if (key in exports && exports[key] === _responsive[key]) return;
   exports[key] = _responsive[key];
 });
+
+var _useKeyboard = require("./use-keyboard");
+
+Object.keys(_useKeyboard).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _useKeyboard[key]) return;
+  exports[key] = _useKeyboard[key];
+});

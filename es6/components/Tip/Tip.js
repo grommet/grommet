@@ -1,10 +1,10 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React, { Children, cloneElement, forwardRef, useContext, useState, useEffect } from 'react';
+import React, { Children, cloneElement, forwardRef, useContext, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
-import { useForwardedRef } from '../../utils/refs';
+import { useForwardedRef, useKeyboard } from '../../utils';
 import { TipPropTypes } from './propTypes';
 var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
   var children = _ref.children,
@@ -17,26 +17,7 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
       over = _useState[0],
       setOver = _useState[1];
 
-  var _useState2 = useState(),
-      usingKeyboard = _useState2[0],
-      setUsingKeyboard = _useState2[1];
-
-  var onMouseDown = function onMouseDown() {
-    return setUsingKeyboard(false);
-  };
-
-  var onKeyDown = function onKeyDown() {
-    return setUsingKeyboard(true);
-  };
-
-  useEffect(function () {
-    document.addEventListener('mousedown', onMouseDown);
-    document.addEventListener('keydown', onKeyDown);
-    return function () {
-      document.removeEventListener('mousedown', onMouseDown);
-      document.removeEventListener('keydown', onKeyDown);
-    };
-  }, []);
+  var usingKeyboard = useKeyboard();
   var componentRef = useForwardedRef(tipRef); // Three use case for children
   // 1. Tip has a single child + it is a React Element => Great!
   // 2. Tip has a single child +  not React Element =>

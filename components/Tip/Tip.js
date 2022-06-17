@@ -11,7 +11,7 @@ var _Box = require("../Box");
 
 var _Drop = require("../Drop");
 
-var _refs = require("../../utils/refs");
+var _utils = require("../../utils");
 
 var _propTypes = require("./propTypes");
 
@@ -32,27 +32,8 @@ var Tip = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, tipRef) {
       over = _useState[0],
       setOver = _useState[1];
 
-  var _useState2 = (0, _react.useState)(),
-      usingKeyboard = _useState2[0],
-      setUsingKeyboard = _useState2[1];
-
-  var onMouseDown = function onMouseDown() {
-    return setUsingKeyboard(false);
-  };
-
-  var onKeyDown = function onKeyDown() {
-    return setUsingKeyboard(true);
-  };
-
-  (0, _react.useEffect)(function () {
-    document.addEventListener('mousedown', onMouseDown);
-    document.addEventListener('keydown', onKeyDown);
-    return function () {
-      document.removeEventListener('mousedown', onMouseDown);
-      document.removeEventListener('keydown', onKeyDown);
-    };
-  }, []);
-  var componentRef = (0, _refs.useForwardedRef)(tipRef); // Three use case for children
+  var usingKeyboard = (0, _utils.useKeyboard)();
+  var componentRef = (0, _utils.useForwardedRef)(tipRef); // Three use case for children
   // 1. Tip has a single child + it is a React Element => Great!
   // 2. Tip has a single child +  not React Element =>
   // span will wrap the child so we can use ref and events.

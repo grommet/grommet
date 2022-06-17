@@ -6,7 +6,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef, isValidElement, useCallback, useContext, useMemo, useState, useRef, useEffect } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { controlBorderStyle, normalizeColor } from '../../utils';
+import { controlBorderStyle, normalizeColor, useKeyboard } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
@@ -102,26 +102,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // see set initial focus code in SelectContainer.js
 
 
-  var _useState = useState(),
-      usingKeyboard = _useState[0],
-      setUsingKeyboard = _useState[1];
-
-  var onMouseDown = function onMouseDown() {
-    return setUsingKeyboard(false);
-  };
-
-  var onKeyPress = function onKeyPress() {
-    return setUsingKeyboard(true);
-  };
-
-  useEffect(function () {
-    document.addEventListener('mousedown', onMouseDown);
-    document.addEventListener('keydown', onKeyPress);
-    return function () {
-      document.removeEventListener('mousedown', onMouseDown);
-      document.removeEventListener('keydown', onKeyPress);
-    };
-  }, []); // value is used for what we receive in valueProp and the basis for
+  var usingKeyboard = useKeyboard(); // value is used for what we receive in valueProp and the basis for
   // what we send with onChange
   // When 'valueKey' sets 'reduce', the value(s) here should match
   // what the 'valueKey' would return for the corresponding
@@ -152,14 +133,14 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
   }, [value, valueKey]); // search input value
 
-  var _useState2 = useState(),
-      search = _useState2[0],
-      setSearch = _useState2[1]; // All select option indices and values
+  var _useState = useState(),
+      search = _useState[0],
+      setSearch = _useState[1]; // All select option indices and values
 
 
-  var _useState3 = useState(optionsProp),
-      allOptions = _useState3[0],
-      setAllOptions = _useState3[1]; // Track changes to options property, except when options are being
+  var _useState2 = useState(optionsProp),
+      allOptions = _useState2[0],
+      setAllOptions = _useState2[1]; // Track changes to options property, except when options are being
   // updated due to search activity. Allows option's initial index value
   // to be referenced when filtered by search.
 
@@ -190,9 +171,9 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return result;
   }, [allOptions, selected, valueKey, valuedValue]);
 
-  var _useState4 = useState(propOpen),
-      open = _useState4[0],
-      setOpen = _useState4[1];
+  var _useState3 = useState(propOpen),
+      open = _useState3[0],
+      setOpen = _useState3[1];
 
   useEffect(function () {
     return setOpen(propOpen);
