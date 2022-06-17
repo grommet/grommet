@@ -20,7 +20,10 @@ const Circle = forwardRef((props, ref) => {
   const centerX = width / 2;
   const centerY = width / 2;
   const radius = width / 2 - strokeWidth / 2;
-  const anglePer = (type === 'semicircle' ? 180 : 360) / max;
+  // truncate to avoid floating point arithmetic errors
+  // see: https://github.com/grommet/grommet/issues/6190
+  const anglePer =
+    Math.floor(((type === 'semicircle' ? 180 : 360) / max) * 10000) / 10000;
   const someHighlight = (values || []).some((v) => v.highlight);
 
   let startValue = 0;
