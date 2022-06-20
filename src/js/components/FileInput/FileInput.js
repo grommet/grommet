@@ -294,6 +294,7 @@ const FileInput = forwardRef(
                   <Message {...theme.fileInput.message}>{message}</Message>
                   <Keyboard
                     onSpace={(event) => {
+                      event.preventDefault();
                       if (controlRef.current === event.target)
                         inputRef.current.click();
                     }}
