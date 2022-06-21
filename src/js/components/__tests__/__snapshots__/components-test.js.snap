@@ -408,7 +408,6 @@ Object {
   },
   "Grid": Object {
     "$$typeof": Symbol(react.forward_ref),
-    "available": undefined,
     "propTypes": Object {
       "a11yTitle": [Function],
       "align": [Function],
