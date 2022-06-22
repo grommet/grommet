@@ -37,4 +37,6 @@ const Grid = forwardRef((props, ref) => {
 Grid.displayName = 'Grid';
 Grid.propTypes = GridPropTypes;
 
+Grid.available = true;
+
 export { Grid };
