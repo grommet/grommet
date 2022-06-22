@@ -2,13 +2,6 @@ import React, { useState } from 'react';
 
 import { Box, CheckBox, Select, Text } from 'grommet';
 
-// const dummyOptions = Array(20)
-//   .fill()
-//   .map((_, i) => `option ${i}`)
-//   .sort((a, b) =>
-//     a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
-//   );
-
 const dummyOptions = [
   'Azure MAS-TRM:v2019.03',
   'Azure NZISM:v3.2Azure NZISM:v3.2',
@@ -44,14 +37,11 @@ export const MultiSelect = () => {
     <Box fill align="center" pad="large" gap="xlarge">
       <Text>Multi-Select with no selection limit</Text>
       <Select
-        // dropHeight="480px"
-        // dropHeight="xsmall"
         width="medium"
         multiple
         closeOnChange={false}
         placeholder="Select"
         options={options}
-        // dropHeight="medium"
         onSearch={(text) => {
           // The line below escapes regular expression special characters:
           // [ \ ^ $ . | ? * + ( )
@@ -63,23 +53,15 @@ export const MultiSelect = () => {
           const exp = new RegExp(escapedText, 'i');
 
           let next = [...valueMultiple];
-          // // loop through next selected and sort alphabetically
-          // next.sort();
           next = next.filter((o) => exp.test(o));
-          // // remove next selected from options
           let sortedOptions = dummyOptions.filter((i) => {
             return !next.includes(i);
           });
 
           sortedOptions = sortedOptions.filter((o) => exp.test(o));
-          // // sort options alphabetically
-          // sortedOptions.sort();
 
-          // // concat next selected and options
           let sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
-
-          // setOptions(dummyOptions.filter((o) => exp.test(o)));
         }}
         onClose={() =>
           setOptions(
@@ -100,7 +82,7 @@ export const MultiSelect = () => {
             }),
           )
         }
-        onChange={({ value, option }) => {
+        onChange={({ value }) => {
           let next = [...value];
           // loop through next selected and sort alphabetically
           next.sort();
@@ -115,15 +97,7 @@ export const MultiSelect = () => {
           let sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
 
-          // console.log(valueMultiple);
-          // if (next.length < 5) {
           setValueMultiple(value);
-          // option.focus();
-          // console.log(value);
-          // console.log(option);
-
-          // document.getElementById(target.id).focus();
-          // }
         }}
       >
         {(option) => <Option option={option} />}
@@ -133,9 +107,9 @@ export const MultiSelect = () => {
   );
 };
 
-// Search.parameters = {
-//   chromatic: { disable: true },
-// };
+MultiSelect.parameters = {
+  chromatic: { disable: true },
+};
 
 MultiSelect.args = {
   full: true,

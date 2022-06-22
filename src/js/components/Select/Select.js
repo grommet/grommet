@@ -246,25 +246,6 @@ const Select = forwardRef(
           }
           onChange(adjustedEvent);
         }
-        // console.log(nextValue);
-        // function findByText(node, text) {
-        //   if (node.nodeValue == text) {
-        //     return node.parentNode;
-        //   }
-
-        //   for (var i = 0; i < node.childNodes.length; i++) {
-        //     var returnValue = findByText(node.childNodes[i], text);
-        //     if (returnValue != null) {
-        //       return returnValue;
-        //     }
-        //   }
-
-        //   return null;
-        // }
-        // let target = findByText(document, option);
-        // console.log(target);
-        // document.getElementById(target.id).focus();
-        // target.focus();
       },
       [closeOnChange, onChange, onRequestClose, setValue, triggerChangeEvent],
     );
@@ -324,7 +305,6 @@ const Select = forwardRef(
         if (optionIndexesInValue.length === 0) return '';
         if (optionIndexesInValue.length === 1)
           return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
-        // return format({ id: 'select.multiple', messages });
         return `${optionIndexesInValue.length} selected`;
       }
       return undefined;

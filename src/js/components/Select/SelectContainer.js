@@ -230,7 +230,6 @@ const SelectContainer = forwardRef(
                 : allOptions[i],
             );
             nextSelected = nextOptionIndexesInValue;
-            // console.log(nextSelected);
           } else {
             nextValue =
               valueKey && valueKey.reduce
@@ -245,8 +244,6 @@ const SelectContainer = forwardRef(
               selected: nextSelected,
             });
           }
-          // console.log(options);
-          // setActiveIndex(0);
         }
       },
       [multiple, onChange, optionIndexesInValue, options, allOptions, valueKey],
@@ -536,7 +533,7 @@ const SelectContainer = forwardRef(
                   const optionDisabled = isDisabled(index);
                   const optionSelected = isSelected(index);
                   const optionActive = activeIndex === index;
-                  // console.log(option);
+
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.
                   let child;
@@ -569,11 +566,6 @@ const SelectContainer = forwardRef(
                   if (!optionSelected && value.length === 5) {
                     limitDisable = true;
                   }
-                  // let selectedTest = 0;
-                  // for (let i = 0; i < options; i += 1) {
-                  //   if (isSelected(i)) selectedTest += 1;
-                  // }
-                  // console.log(selectedTest);
 
                   // if we have a child, turn on plain, and hoverIndicator
                   return (
@@ -602,13 +594,6 @@ const SelectContainer = forwardRef(
                         !optionDisabled ? onActiveOption(index) : undefined
                       }
                       onClick={
-                        // let selected = 0;
-                        // for (let i = 0; i < options; i += 1) {
-                        //   if (isSelected(i)) selected += 1;
-                        // }
-                        // console.log(selected);
-                        // if (!optionDisabled) selectOption(index)
-                        // console.log(options);
                         !optionDisabled ? selectOption(index) : undefined
                       }
                       textComponent={textComponent}
