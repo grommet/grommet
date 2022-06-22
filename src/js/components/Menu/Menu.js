@@ -368,16 +368,22 @@ const Menu = forwardRef((props, ref) => {
         // eslint-disable-next-line react/no-array-index-key
         key={groupIndex}
         {...theme.menu.group?.container}
-        border={
-          groupIndex > 0
-            ? {
-                side: 'top',
-                color: theme.menu.group?.separator?.color,
-                size: theme.menu.group?.separator?.size,
-              }
-            : undefined
-        }
       >
+        <Box
+          margin={{
+            horizontal: 'small',
+            bottom: index === 0 ? 'none' : 'small',
+          }}
+          border={
+            groupIndex > 0
+              ? {
+                  side: 'top',
+                  color: theme.menu.group?.separator?.color,
+                  size: theme.menu.group?.separator?.size,
+                }
+              : undefined
+          }
+        />
         {group.map((item) => {
           // item index needs to be its index in the entire menu as if
           // it were a flat array
