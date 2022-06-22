@@ -96,7 +96,11 @@ export interface ChartProps {
   )[];
 }
 
-declare const Chart: React.FC<ChartProps>;
+export interface ChartExtendedProps
+  extends ChartProps,
+    Omit<JSX.IntrinsicElements['svg'], keyof ChartProps> {}
+
+declare const Chart: React.FC<ChartExtendedProps>;
 
 type Bounds = [[number, number], [number, number]] | [[], []];
 
