@@ -54,13 +54,11 @@ export const MultiSelect = () => {
 
           let next = [...valueMultiple];
           next = next.filter((o) => exp.test(o));
-          let sortedOptions = dummyOptions.filter((i) => {
-            return !next.includes(i);
-          });
+          let sortedOptions = dummyOptions.filter((i) => !next.includes(i));
 
           sortedOptions = sortedOptions.filter((o) => exp.test(o));
 
-          let sortedAllOptions = next.concat(sortedOptions);
+          const sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
         }}
         onClose={() =>
@@ -87,14 +85,14 @@ export const MultiSelect = () => {
           // loop through next selected and sort alphabetically
           next.sort();
           // remove next selected from options
-          let sortedOptions = options.filter((i) => {
-            return !next.includes(i);
-          });
+          const sortedOptions = options.filter((i) => !next.includes(i));
+
+          next = next.filter((i) => options.includes(i));
           // sort options alphabetically
           sortedOptions.sort();
 
           // concat next selected and options
-          let sortedAllOptions = next.concat(sortedOptions);
+          const sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
 
           setValueMultiple(value);

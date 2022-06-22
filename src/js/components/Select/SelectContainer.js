@@ -424,7 +424,7 @@ const SelectContainer = forwardRef(
                       <Text>0 selected</Text>
                     ) : (
                       <Text>
-                        {value.length} selected of {options.length}
+                        {value.length} selected of {allOptions.length}
                       </Text>
                     )}
                   </Box>
@@ -562,8 +562,12 @@ const SelectContainer = forwardRef(
                     textComponent = true;
                   }
 
-                  let limitDisable;
-                  if (!optionSelected && value.length === 5) {
+                  let limitDisable = false;
+                  if (
+                    limitedSelections &&
+                    !optionSelected &&
+                    value.length === 5
+                  ) {
                     limitDisable = true;
                   }
 
