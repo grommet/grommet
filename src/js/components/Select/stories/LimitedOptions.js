@@ -22,7 +22,7 @@ const dummyOptions = [
   'KStadnyk:v1.0',
 ];
 
-export const MultiSelect = () => {
+export const MultiSelectLimited = () => {
   const [options, setOptions] = useState(dummyOptions);
   const [valueMultiple, setValueMultiple] = useState([]);
 
@@ -42,10 +42,9 @@ export const MultiSelect = () => {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box fill align="center" pad="large" gap="xlarge">
-      <Text>Multi-Select with no selection limit</Text>
+      <Text>Multi-Select with selection limit</Text>
       <Select
-        // dropHeight="480px"
-        // dropHeight="xsmall"
+        limitedSelections
         width="medium"
         multiple
         closeOnChange={false}
@@ -133,14 +132,6 @@ export const MultiSelect = () => {
   );
 };
 
-// Search.parameters = {
-//   chromatic: { disable: true },
-// };
-
-MultiSelect.args = {
-  full: true,
-};
-
 export default {
-  title: 'Input/Select/Multi Select',
+  title: 'Input/Select/Multi Select Limited',
 };

@@ -65,6 +65,7 @@ const SelectContainer = forwardRef(
       emptySearchMessage = 'No matches found',
       id,
       labelKey,
+      limitedSelections,
       multiple,
       name,
       onChange,
@@ -112,7 +113,7 @@ const SelectContainer = forwardRef(
         if (onSearch) {
           const searchInput = searchRef.current;
           if (searchInput && searchInput.focus) {
-            setFocusWithoutScroll(searchInput);
+            // setFocusWithoutScroll(searchInput);
           }
         } else if (
           clear &&
@@ -229,6 +230,7 @@ const SelectContainer = forwardRef(
                 : allOptions[i],
             );
             nextSelected = nextOptionIndexesInValue;
+            // console.log(nextSelected);
           } else {
             nextValue =
               valueKey && valueKey.reduce
@@ -236,11 +238,15 @@ const SelectContainer = forwardRef(
                 : options[index];
             nextSelected = index;
           }
-          onChange(event, {
-            option: options[index],
-            value: nextValue,
-            selected: nextSelected,
-          });
+          if (!limitedSelections || nextSelected.length <= 5) {
+            onChange(event, {
+              option: options[index],
+              value: nextValue,
+              selected: nextSelected,
+            });
+          }
+          // console.log(options);
+          // setActiveIndex(0);
         }
       },
       [multiple, onChange, optionIndexesInValue, options, allOptions, valueKey],
@@ -394,8 +400,40 @@ const SelectContainer = forwardRef(
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
         >
-          <Box flex={false} pad={{ horizontal: 'small', top: 'xsmall' }}>
-            <Text>Select up to 10</Text>
+          <Box
+            direction="row"
+            justify="between"
+            flex={false}
+            pad={{ horizontal: 'small', top: 'xsmall' }}
+          >
+            {limitedSelections ? (
+              <>
+                <Text>Select up to 5</Text>
+                {search !== '' && search !== undefined && (
+                  <Box>
+                    {value.length === 0 ? (
+                      <Text>0 selected</Text>
+                    ) : (
+                      <Text>{value.length} selected of 5</Text>
+                    )}
+                  </Box>
+                )}
+              </>
+            ) : (
+              <>
+                {search !== '' && search !== undefined && (
+                  <Box>
+                    {value.length === 0 ? (
+                      <Text>0 selected</Text>
+                    ) : (
+                      <Text>
+                        {value.length} selected of {options.length}
+                      </Text>
+                    )}
+                  </Box>
+                )}
+              </>
+            )}
           </Box>
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
@@ -415,54 +453,62 @@ const SelectContainer = forwardRef(
               />
             </Box>
           )}
-          <Box
-            pad={{ horizontal: 'small', top: 'small', bottom: 'medium' }}
-            direction="row"
-            justify="between"
-          >
-            <Box alignSelf="center">
-              {value.length === 0 ? (
-                <Text>0 selected</Text>
-              ) : (
-                <Text>
-                  {value.length} selected of {options.length}
-                </Text>
-              )}
+          {(search === '' || search === undefined) && (
+            <Box
+              pad={{ horizontal: 'small', top: 'small', bottom: 'medium' }}
+              direction="row"
+              justify="between"
+            >
+              <Box alignSelf="center">
+                {value.length === 0 ? (
+                  <Text weight="bold">0 selected</Text>
+                ) : limitedSelections ? (
+                  <Text weight="bold">{value.length} selected of 5</Text>
+                ) : (
+                  <Text weight="bold">
+                    {value.length} selected of {options.length}
+                  </Text>
+                )}
+              </Box>
+              <Box>
+                {options.length > 0 && !limitedSelections && (
+                  <>
+                    {value.length === 0 ? (
+                      <Button
+                        plain
+                        onClick={(event) => {
+                          if (onChange) {
+                            onChange(event, {
+                              option: options,
+                              value: allOptions,
+                              selected: allOptions,
+                            });
+                          }
+                        }}
+                      >
+                        <Text weight="bold">Select All</Text>
+                      </Button>
+                    ) : (
+                      <Button
+                        plain
+                        onClick={(event) => {
+                          if (onChange) {
+                            onChange(event, {
+                              option: options,
+                              value: [],
+                              selected: [],
+                            });
+                          }
+                        }}
+                      >
+                        <Text weight="bold">Clear All</Text>
+                      </Button>
+                    )}
+                  </>
+                )}
+              </Box>
             </Box>
-            <Box>
-              {value.length === 0 ? (
-                <Button
-                  plain
-                  onClick={(event) => {
-                    if (onChange) {
-                      onChange(event, {
-                        option: options,
-                        value: allOptions,
-                        selected: allOptions,
-                      });
-                    }
-                  }}
-                >
-                  <Text weight="bold">Select All</Text>
-                </Button>
-              ) : (
-                <Button
-                  plain
-                  onClick={(event) => {
-                    if (onChange) {
-                      onChange(event, {
-                        option: options,
-                        value: [],
-                        selected: [],
-                      });
-                    }
-                  }}
-                >
-                  <Text weight="bold">Clear All</Text>
-                </Button>
-              )}
-            </Box>
-          </Box>
+          )}
           <OptionsBox
             role="listbox"
             tabIndex="-1"
@@ -490,6 +536,7 @@ const SelectContainer = forwardRef(
                   const optionDisabled = isDisabled(index);
                   const optionSelected = isSelected(index);
                   const optionActive = activeIndex === index;
+                  // console.log(option);
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.
                   let child;
@@ -518,6 +565,16 @@ const SelectContainer = forwardRef(
                     textComponent = true;
                   }
 
+                  let limitDisable;
+                  if (!optionSelected && value.length === 5) {
+                    limitDisable = true;
+                  }
+                  // let selectedTest = 0;
+                  // for (let i = 0; i < options; i += 1) {
+                  //   if (isSelected(i)) selectedTest += 1;
+                  // }
+                  // console.log(selectedTest);
+
                   // if we have a child, turn on plain, and hoverIndicator
                   return (
                     <SelectOption
@@ -530,19 +587,28 @@ const SelectContainer = forwardRef(
                       aria-posinset={index + 1}
                       aria-selected={optionSelected}
                       focusIndicator={false}
-                      aria-disabled={optionDisabled || undefined}
+                      aria-disabled={
+                        optionDisabled || limitDisable || undefined
+                      }
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
                       hoverIndicator={!child ? undefined : 'background'}
                       label={!child ? optionLabel(index) : undefined}
-                      disabled={optionDisabled || undefined}
+                      disabled={optionDisabled || limitDisable || undefined}
                       active={optionActive}
                       selected={optionSelected}
                       onMouseOver={
                         !optionDisabled ? onActiveOption(index) : undefined
                       }
                       onClick={
+                        // let selected = 0;
+                        // for (let i = 0; i < options; i += 1) {
+                        //   if (isSelected(i)) selected += 1;
+                        // }
+                        // console.log(selected);
+                        // if (!optionDisabled) selectOption(index)
+                        // console.log(options);
                         !optionDisabled ? selectOption(index) : undefined
                       }
                       textComponent={textComponent}
