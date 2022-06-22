@@ -25,7 +25,6 @@ export interface ChartProps {
         color?: ColorType;
         opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
       };
-  id?: string;
   dash?: boolean;
   gap?: GapType;
   onClick?: (...args: any[]) => any;
