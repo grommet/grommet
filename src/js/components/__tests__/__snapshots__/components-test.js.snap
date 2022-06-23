@@ -1711,6 +1711,9 @@ Object {
             },
             "separator": Object {
               "color": "border",
+              "pad": Object {
+                "horizontal": "small",
+              },
               "size": "xsmall",
             },
           },
