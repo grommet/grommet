@@ -702,30 +702,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     seriesStyles: seriesStyles,
     activeProperty: activeProperty,
     setActiveProperty: setActiveProperty
-  }) : null; // IE11
-
-  if (!_Grid.Grid.available) {
-    var _content = stackElement;
-
-    if (xAxisElement) {
-      _content = /*#__PURE__*/_react["default"].createElement(_Box.Box, null, _content, xAxisElement);
-    }
-
-    if (yAxisElement) {
-      _content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-        direction: "row"
-      }, /*#__PURE__*/_react["default"].createElement(_Box.Box, null, yAxisElement, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-        ref: spacerRef,
-        flex: false
-      })), _content);
-    }
-
-    if (legendElement) {
-      _content = /*#__PURE__*/_react["default"].createElement(_Box.Box, null, _content, legendElement);
-    }
-
-    return _content;
-  }
+  }) : null;
 
   var content = /*#__PURE__*/_react["default"].createElement(_Grid.Grid, _extends({
     ref: ref,

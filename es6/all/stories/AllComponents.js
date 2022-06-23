@@ -425,14 +425,9 @@ var Components = function Components() {
     pad: "medium",
     background: background || theme.global.colors.background,
     overflow: "auto"
-  }, Grid.available ? /*#__PURE__*/React.createElement(Grid, {
+  }, /*#__PURE__*/React.createElement(Grid, {
     columns: "small",
     gap: "medium"
-  }, content) : /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
-    wrap: true,
-    align: "start",
-    gap: "large"
   }, content))));
 };
 

@@ -443,14 +443,9 @@ var Components = function Components() {
     pad: "medium",
     background: background || theme.global.colors.background,
     overflow: "auto"
-  }, _grommet.Grid.available ? /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     columns: "small",
     gap: "medium"
-  }, content) : /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row",
-    wrap: true,
-    align: "start",
-    gap: "large"
   }, content))));
 };
 

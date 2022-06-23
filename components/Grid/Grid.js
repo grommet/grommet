@@ -47,5 +47,7 @@ var Grid = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
 });
 exports.Grid = Grid;
 Grid.displayName = 'Grid';
-Grid.propTypes = _propTypes.GridPropTypes;
-Grid.available = typeof window !== 'undefined' && window.CSS && window.CSS.supports && window.CSS.supports('display', 'grid');
+Grid.propTypes = _propTypes.GridPropTypes; // Defualting to true to support existing code that relies on
+// grid.available to create a fallback option
+
+Grid.available = true;

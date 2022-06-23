@@ -34,6 +34,8 @@ var Grid = /*#__PURE__*/forwardRef(function (props, ref) {
   }, rest));
 });
 Grid.displayName = 'Grid';
-Grid.propTypes = GridPropTypes;
-Grid.available = typeof window !== 'undefined' && window.CSS && window.CSS.supports && window.CSS.supports('display', 'grid');
+Grid.propTypes = GridPropTypes; // Defualting to true to support existing code that relies on
+// grid.available to create a fallback option
+
+Grid.available = true;
 export { Grid };

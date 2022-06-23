@@ -674,31 +674,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     seriesStyles: seriesStyles,
     activeProperty: activeProperty,
     setActiveProperty: setActiveProperty
-  }) : null; // IE11
-
-  if (!Grid.available) {
-    var _content = stackElement;
-
-    if (xAxisElement) {
-      _content = /*#__PURE__*/React.createElement(Box, null, _content, xAxisElement);
-    }
-
-    if (yAxisElement) {
-      _content = /*#__PURE__*/React.createElement(Box, {
-        direction: "row"
-      }, /*#__PURE__*/React.createElement(Box, null, yAxisElement, /*#__PURE__*/React.createElement(Box, {
-        ref: spacerRef,
-        flex: false
-      })), _content);
-    }
-
-    if (legendElement) {
-      _content = /*#__PURE__*/React.createElement(Box, null, _content, legendElement);
-    }
-
-    return _content;
-  }
-
+  }) : null;
   var content = /*#__PURE__*/React.createElement(Grid, _extends({
     ref: ref,
     "aria-label": a11yTitle,
