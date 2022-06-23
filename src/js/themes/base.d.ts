@@ -1446,6 +1446,11 @@ export interface ThemeType {
     panel?: {
       extend?: ExtendType;
     };
+    step?: {
+      small?: number;
+      medium?: number;
+      large?: number;
+    };
   };
   table?: {
     header?: {
