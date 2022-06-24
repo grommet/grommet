@@ -517,7 +517,7 @@ export interface ThemeType {
     };
   };
   card?: {
-    container?: BoxProps;
+    container?: BoxProps | { extend?: ExtendType };
     hover?: {
       container?: {
         elevation?: ElevationType;
