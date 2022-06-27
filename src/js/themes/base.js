@@ -1059,6 +1059,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         separator: {
           color: 'border',
           size: 'xsmall',
+          pad: {
+            horizontal: 'small',
+          },
         },
       },
       icons: {
