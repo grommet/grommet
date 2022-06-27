@@ -698,39 +698,6 @@ const DataChart = forwardRef(
       />
     ) : null;
 
-    // IE11
-    if (!Grid.available) {
-      let content = stackElement;
-      if (xAxisElement) {
-        content = (
-          <Box>
-            {content}
-            {xAxisElement}
-          </Box>
-        );
-      }
-      if (yAxisElement) {
-        content = (
-          <Box direction="row">
-            <Box>
-              {yAxisElement}
-              <Box ref={spacerRef} flex={false} />
-            </Box>
-            {content}
-          </Box>
-        );
-      }
-      if (legendElement) {
-        content = (
-          <Box>
-            {content}
-            {legendElement}
-          </Box>
-        );
-      }
-      return content;
-    }
-
     let content = (
       <Grid
         ref={ref}
