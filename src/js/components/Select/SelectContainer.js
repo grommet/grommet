@@ -396,6 +396,7 @@ const SelectContainer = forwardRef(
           as={Box}
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
+          a11yTitle="Select dropdown"
         >
           <Box
             direction="row"
@@ -434,20 +435,27 @@ const SelectContainer = forwardRef(
           </Box>
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
-              <SelectTextInput
-                focusIndicator={!customSearchInput}
-                size="small"
-                ref={searchRef}
-                type="search"
-                value={search || ''}
-                placeholder={searchPlaceholder}
-                onChange={(event) => {
-                  const nextSearch = event.target.value;
-                  setSearch(nextSearch);
-                  setActiveIndex(-1);
-                  onSearch(nextSearch);
+              <Keyboard
+                onEnter={(event) => {
+                  onNextOption(event);
                 }}
-              />
+              >
+                <SelectTextInput
+                  a11yTitle="Search"
+                  focusIndicator={!customSearchInput}
+                  size="small"
+                  ref={searchRef}
+                  type="search"
+                  value={search || ''}
+                  placeholder={searchPlaceholder}
+                  onChange={(event) => {
+                    const nextSearch = event.target.value;
+                    setSearch(nextSearch);
+                    setActiveIndex(-1);
+                    onSearch(nextSearch);
+                  }}
+                />
+              </Keyboard>
             </Box>
           )}
           {(search === '' || search === undefined) && (
@@ -508,9 +516,10 @@ const SelectContainer = forwardRef(
           )}
           <OptionsBox
             role="listbox"
-            tabIndex="-1"
+            tabIndex="0"
             ref={optionsRef}
             aria-multiselectable={multiple}
+            aria-activedescendant={optionsRef?.current?.children[activeIndex]}
           >
             {shouldShowClearButton('top') && (
               <ClearButton
@@ -579,10 +588,11 @@ const SelectContainer = forwardRef(
                       ref={optionRef}
                       tabIndex={optionSelected ? '0' : '-1'}
                       role="option"
+                      id={`option${index}`}
                       aria-setsize={options.length}
                       aria-posinset={index + 1}
                       aria-selected={optionSelected}
-                      focusIndicator={false}
+                      aria-live={optionSelected ? 'assertive' : 'off'}
                       aria-disabled={
                         optionDisabled || limitDisable || undefined
                       }
@@ -610,10 +620,11 @@ const SelectContainer = forwardRef(
             ) : (
               <SelectOption
                 key="search_empty"
-                tabIndex="-1"
+                tabIndex="0"
                 role="menuitem"
                 hoverIndicator="background"
                 disabled
+                aria-live="polite"
               >
                 <Box {...selectOptionsStyle}>
                   <Text {...theme.select.container.text}>
