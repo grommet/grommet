@@ -347,24 +347,26 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
   if (itemCount && Array.isArray(items[0])) {
     var index = 0;
     menuContent = items.map(function (group, groupIndex) {
-      var _theme$menu$group, _theme$menu$group2, _theme$menu$group2$se, _theme$menu$group3, _theme$menu$group3$se;
+      var _theme$menu$group, _theme$menu$group$sep, _theme$menu$group2, _theme$menu$group2$se, _theme$menu$group3;
 
       return /*#__PURE__*/React.createElement(Box // eslint-disable-next-line react/no-array-index-key
-      , _extends({
+      , {
         key: groupIndex
-      }, (_theme$menu$group = theme.menu.group) == null ? void 0 : _theme$menu$group.container, {
-        border: groupIndex > 0 ? {
+      }, groupIndex > 0 && /*#__PURE__*/React.createElement(Box, {
+        pad: theme.menu.group.separator.pad
+      }, /*#__PURE__*/React.createElement(Box, {
+        border: {
           side: 'top',
-          color: (_theme$menu$group2 = theme.menu.group) == null ? void 0 : (_theme$menu$group2$se = _theme$menu$group2.separator) == null ? void 0 : _theme$menu$group2$se.color,
-          size: (_theme$menu$group3 = theme.menu.group) == null ? void 0 : (_theme$menu$group3$se = _theme$menu$group3.separator) == null ? void 0 : _theme$menu$group3$se.size
-        } : undefined
-      }), group.map(function (item) {
+          color: (_theme$menu$group = theme.menu.group) == null ? void 0 : (_theme$menu$group$sep = _theme$menu$group.separator) == null ? void 0 : _theme$menu$group$sep.color,
+          size: (_theme$menu$group2 = theme.menu.group) == null ? void 0 : (_theme$menu$group2$se = _theme$menu$group2.separator) == null ? void 0 : _theme$menu$group2$se.size
+        }
+      })), /*#__PURE__*/React.createElement(Box, (_theme$menu$group3 = theme.menu.group) == null ? void 0 : _theme$menu$group3.container, group.map(function (item) {
         // item index needs to be its index in the entire menu as if
         // it were a flat array
         var currentIndex = index;
         index += 1;
         return menuItem(item, currentIndex);
-      }));
+      })));
     });
   } else menuContent = items.map(function (item, index) {
     return menuItem(item, index);

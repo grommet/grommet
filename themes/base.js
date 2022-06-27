@@ -1183,7 +1183,10 @@ var generate = function generate(baseSpacing, scale) {
         },
         separator: {
           color: 'border',
-          size: 'xsmall'
+          size: 'xsmall',
+          pad: {
+            horizontal: 'small'
+          }
         }
       },
       icons: {
