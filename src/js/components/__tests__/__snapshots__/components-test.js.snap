@@ -673,6 +673,7 @@ Object {
       "fill": [Function],
       "gridArea": [Function],
       "margin": [Function],
+      "maxLines": [Function],
       "responsive": [Function],
       "size": [Function],
       "textAlign": [Function],
