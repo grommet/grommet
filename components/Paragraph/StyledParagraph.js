@@ -27,10 +27,16 @@ var fontFamily = (0, _styledComponents.css)(["font-family:", ";"], function (pro
   return props.theme.paragraph.font.family;
 });
 
+var maxlinesStyle = function maxlinesStyle(props) {
+  return props.maxLines && (0, _styledComponents.css)(["display:-webkit-box;-webkit-line-clamp:", ";-webkit-box-orient:vertical;overflow:hidden;"], props.maxLines);
+};
+
 var StyledParagraph = _styledComponents["default"].p.withConfig({
   displayName: "StyledParagraph",
   componentId: "sc-tbetod-0"
-})(["", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
+})(["", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
+  return maxlinesStyle(props);
+}, function (props) {
   return sizeStyle(props);
 }, function (props) {
   return props.textAlign && _utils.textAlignStyle;

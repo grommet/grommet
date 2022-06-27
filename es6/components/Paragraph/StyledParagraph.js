@@ -14,10 +14,17 @@ var sizeStyle = function sizeStyle(props) {
 var fontFamily = css(["font-family:", ";"], function (props) {
   return props.theme.paragraph.font.family;
 });
+
+var maxlinesStyle = function maxlinesStyle(props) {
+  return props.maxLines && css(["display:-webkit-box;-webkit-line-clamp:", ";-webkit-box-orient:vertical;overflow:hidden;"], props.maxLines);
+};
+
 var StyledParagraph = styled.p.withConfig({
   displayName: "StyledParagraph",
   componentId: "sc-tbetod-0"
-})(["", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
+  return maxlinesStyle(props);
+}, function (props) {
   return sizeStyle(props);
 }, function (props) {
   return props.textAlign && textAlignStyle;

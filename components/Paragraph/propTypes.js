@@ -17,6 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, _generalPropTypes.genericProps, {
     color: _generalPropTypes.colorPropType,
     fill: _propTypes["default"].bool,
+    maxLines: _propTypes["default"].number,
     responsive: _propTypes["default"].bool,
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['small', 'medium', 'large', 'xlarge', 'xxlarge']), _propTypes["default"].string]),
     textAlign: _propTypes["default"].oneOf(['start', 'center', 'end', 'justify'])
