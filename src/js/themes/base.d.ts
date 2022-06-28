@@ -1046,6 +1046,7 @@ export interface ThemeType {
       separator?: {
         color?: ColorType;
         size?: string;
+        pad?: PadType;
       };
     };
     icons?: {
