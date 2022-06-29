@@ -34,7 +34,7 @@ export const MultiSelectLimited = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box fill align="center" pad="large" gap="xlarge">
+    <Box fill align="center" pad="large" gap="large">
       <Text>Multi-Select with selection limit</Text>
       <Select
         limitedSelections
@@ -81,19 +81,6 @@ export const MultiSelectLimited = () => {
           )
         }
         onChange={({ value }) => {
-          let next = [...value];
-          // loop through next selected and sort alphabetically
-          next.sort();
-          // remove next selected from options
-          const sortedOptions = options.filter((i) => !next.includes(i));
-          
-          next = next.filter((i) => options.includes(i));
-          // sort options alphabetically
-          sortedOptions.sort();
-
-          // concat next selected and options
-          const sortedAllOptions = next.concat(sortedOptions);
-          setOptions(sortedAllOptions);
           setValueMultiple(value);
         }}
       >

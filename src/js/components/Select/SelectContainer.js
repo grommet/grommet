@@ -383,6 +383,18 @@ const SelectContainer = forwardRef(
         }
       : {};
 
+    const getSelectedString = () => {
+      let selected = options.filter((option) =>
+        isSelected(options.indexOf(option)),
+      );
+      let formattedSelected = '';
+      selected.forEach((value, index) => {
+        formattedSelected += value;
+        if (index != selected.length - 1) formattedSelected += ', ';
+      });
+      return formattedSelected;
+    };
+
     return (
       <Keyboard
         onEnter={onSelectOption}
@@ -460,19 +472,35 @@ const SelectContainer = forwardRef(
           )}
           {(search === '' || search === undefined) && (
             <Box
-              pad={{ horizontal: 'small', top: 'small', bottom: 'medium' }}
+              pad={{ horizontal: 'small', top: 'small', bottom: 'small' }}
               direction="row"
               justify="between"
+              border="bottom"
+              margin={{ bottom: 'small' }}
             >
               <Box alignSelf="center">
                 {value.length === 0 ? (
-                  <Text weight="bold">0 selected</Text>
+                  <Text size="small">0 selected</Text>
                 ) : limitedSelections ? (
-                  <Text weight="bold">{value.length} selected of 5</Text>
+                  <>
+                    <Text size="small">{value.length} selected of 5</Text>
+                    <Box width="260px">
+                      <Text size="xsmall" truncate>
+                        {getSelectedString()}
+                      </Text>
+                    </Box>
+                  </>
                 ) : (
-                  <Text weight="bold">
-                    {value.length} selected of {options.length}
-                  </Text>
+                  <>
+                    <Text size="small">
+                      {value.length} selected of {options.length}
+                    </Text>
+                    <Box width="180px">
+                      <Text size="xsmall" truncate="tip">
+                        {getSelectedString()}
+                      </Text>
+                    </Box>
+                  </>
                 )}
               </Box>
               <Box>
@@ -480,7 +508,8 @@ const SelectContainer = forwardRef(
                   <>
                     {value.length === 0 ? (
                       <Button
-                        plain
+                        label="Select All"
+                        secondary
                         onClick={(event) => {
                           if (onChange) {
                             onChange(event, {
@@ -490,12 +519,11 @@ const SelectContainer = forwardRef(
                             });
                           }
                         }}
-                      >
-                        <Text weight="bold">Select All</Text>
-                      </Button>
+                      />
                     ) : (
                       <Button
-                        plain
+                        label="Clear All"
+                        secondary
                         onClick={(event) => {
                           if (onChange) {
                             onChange(event, {
@@ -505,9 +533,7 @@ const SelectContainer = forwardRef(
                             });
                           }
                         }}
-                      >
-                        <Text weight="bold">Clear All</Text>
-                      </Button>
+                      />
                     )}
                   </>
                 )}
