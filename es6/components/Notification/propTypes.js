@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
     global: PropTypes.bool,
     title: PropTypes.string,
     message: PropTypes.string,
-    status: PropTypes.oneOf(['critical', 'warning', 'normal', 'unknown']),
+    status: PropTypes.oneOf(['critical', 'warning', 'normal', 'info', 'unknown']),
     toast: PropTypes.oneOfType([PropTypes.bool, PropTypes.shape({
       autoClose: PropTypes.bool,
       position: PropTypes.oneOf(['bottom', 'bottom-left', 'bottom-right', 'center', 'end', 'hidden', 'left', 'right', 'start', 'top', 'top-left', 'top-right'])

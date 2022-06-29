@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
     global: _propTypes["default"].bool,
     title: _propTypes["default"].string,
     message: _propTypes["default"].string,
-    status: _propTypes["default"].oneOf(['critical', 'warning', 'normal', 'unknown']),
+    status: _propTypes["default"].oneOf(['critical', 'warning', 'normal', 'info', 'unknown']),
     toast: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].shape({
       autoClose: _propTypes["default"].bool,
       position: _propTypes["default"].oneOf(['bottom', 'bottom-left', 'bottom-right', 'center', 'end', 'hidden', 'left', 'right', 'start', 'top', 'top-left', 'top-right'])
