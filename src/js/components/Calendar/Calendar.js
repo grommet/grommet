@@ -680,7 +680,7 @@ const Calendar = forwardRef(
         let selected = false;
         let inRange = false;
 
-        const selectedState = withinDates(day, dateProp || dates);
+        const selectedState = withinDates(day, date || dates);
         if (selectedState === 2) {
           console.log({ dateProp });
           selected = true;
