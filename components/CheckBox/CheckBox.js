@@ -170,7 +170,9 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     align: "center",
     justify: "center",
     margin: label && (_ref2 = {}, _ref2[side] = theme.checkBox.gap || 'small', _ref2)
-  }, themeableProps), /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxInput, _extends({}, rest, {
+  }, themeableProps), /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxInput, _extends({
+    "aria-label": ariaLabel || a11yTitle
+  }, rest, {
     ref: ref,
     type: "checkbox"
   }, (0, _object.removeUndefined)({
@@ -200,7 +202,6 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var first = reverse ? normalizedLabel : checkBoxNode;
   var second = reverse ? checkBoxNode : normalizedLabel;
   return /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxContainer, _extends({
-    "aria-label": ariaLabel || a11yTitle,
     fillProp: fill,
     reverse: reverse
   }, (0, _object.removeUndefined)({
