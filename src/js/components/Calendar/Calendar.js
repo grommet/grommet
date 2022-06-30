@@ -32,9 +32,6 @@ import {
   daysApart,
   endOfMonth,
   formatToLocalYYYYMMDD,
-  getFormattedDate,
-  getTimestamp,
-  normalizeForTimezone,
   startOfMonth,
   subtractDays,
   subtractMonths,
@@ -87,51 +84,24 @@ const getAccessibilityString = (date, dates, normalize) => {
   return 'No date selected';
 };
 
-// function that runs inside the useEffect for date and dates
-const normalizeDate = (dateValue, timestamp, normalize) => {
-  if (typeof dateValue === 'string') {
-    return normalizeForTimezone(dateValue, timestamp, normalize);
-  }
-  if (Array.isArray(dateValue)) {
-    if (Array.isArray(dateValue[0])) {
-      const [from, to] = dateValue[0].map(
-        (day) => normalizeForTimezone(day, timestamp, normalize) || undefined,
-      );
-      return [[from, to]];
-    }
-    const dateArray = [];
-    dateValue.forEach((d) => {
-      if (Array.isArray(d)) {
-        const [from, to] = d.map((day) =>
-          normalizeForTimezone(day, timestamp, normalize),
-        );
-        dateArray.push([from, to]);
-      } else {
-        dateArray.push(normalizeForTimezone(d, timestamp, normalize));
-      }
-    });
-    return dateArray;
-  }
-  return undefined;
-};
-
-const normalizeReference = (reference, date, dates, timestamp) => {
+// reference should also be a date object
+const normalizeReference = (reference, date, dates) => {
   let normalizedReference;
   if (reference) {
-    normalizedReference = new Date(normalizeForTimezone(reference, timestamp));
+    normalizedReference = reference;
   } else if (date) {
-    if (typeof date === 'string') {
-      normalizedReference = new Date(date);
-    } else if (Array.isArray(date)) {
+    if (Array.isArray(date)) {
       if (typeof date[0] === 'string') {
         normalizedReference = new Date(date[0]);
       } else if (Array.isArray(date[0])) {
         normalizedReference = new Date(date[0][0] ? date[0][0] : date[0][1]);
+      } else if (date[0] instanceof Date) {
+        [normalizedReference] = date;
       } else {
         normalizedReference = new Date();
         normalizedReference.setHours(0, 0, 0, 0);
       }
-    }
+    } else normalizedReference = date;
   } else if (dates && dates.length > 0) {
     if (typeof dates[0] === 'string') {
       normalizedReference = new Date(dates[0]);
@@ -149,7 +119,7 @@ const normalizeReference = (reference, date, dates, timestamp) => {
 };
 
 const buildDisplayBounds = (reference, firstDayOfWeek) => {
-  let start = new Date(reference);
+  let start = reference;
   start.setDate(1); // first of month
 
   // In case Sunday is the first day of the month, and the user asked for Monday
@@ -229,7 +199,7 @@ const Calendar = forwardRef(
       header,
       locale = 'en-US',
       messages,
-      normalize: normalizeProp = true,
+      // normalize,
       onReference,
       onSelect,
       range,
@@ -259,12 +229,6 @@ const Calendar = forwardRef(
       };
     }, []);
 
-    // whether or not we should normalize the date based on the timestamp.
-    // will be set to false if the initial timestamp is undefined (meaning
-    // a user did not provide a defaultValue or value). in this case, we
-    // will just rely on the UTC timestamp and don't need to normalize.
-    const [normalize, setNormalize] = useState(normalizeProp);
-
     // set activeDate when caller changes it, allows us to change
     // it internally too
     const [activeDate, setActiveDate] = useState(
@@ -276,76 +240,27 @@ const Calendar = forwardRef(
       if (activeDateProp) setActiveDate(activeDateProp);
     }, [activeDateProp]);
 
-    let timestamp = useMemo(() => timestampProp, [timestampProp]);
-    if (timestampProp === undefined) {
-      if (Array.isArray(dateProp) && dateProp.length) {
-        if (Array.isArray(dateProp[0])) {
-          timestamp = getTimestamp(dateProp[0][0]);
-        } else timestamp = getTimestamp(dateProp[0]);
-        // check to see if value is not an empty string
-        // empty string should behave like undefined
-      } else if (typeof dateProp === 'string' && dateProp.length) {
-        timestamp = getTimestamp(dateProp);
-      } else if (Array.isArray(datesProp) && datesProp.length) {
-        if (Array.isArray(datesProp[0])) {
-          timestamp = getTimestamp(datesProp[0][0]);
-        } else timestamp = getTimestamp(datesProp[0]);
-      } else if (typeof datesProp === 'string') {
-        timestamp = getTimestamp(datesProp);
-      } else if (typeof referenceProp === 'string') {
-        timestamp = getTimestamp(referenceProp);
-      }
-    }
-
-    const normalizedDate = useMemo(
-      () =>
-        timestampProp === undefined
-          ? normalizeDate(dateProp, timestamp, normalize)
-          : dateProp,
-      [dateProp, normalize, timestamp, timestampProp],
-    );
-
-    const normalizedDates = useMemo(
-      () =>
-        timestampProp === undefined
-          ? normalizeDate(datesProp, timestamp, normalize)
-          : datesProp,
-      [datesProp, normalize, timestamp, timestampProp],
-    );
-
     // set date when caller changes it, allows us to change it internally too
-    const [date, setDate] = useState(normalizedDate);
+    const [date, setDate] = useState(dateProp);
     useEffect(() => {
-      setDate(normalizedDate);
-    }, [normalizedDate]);
+      console.log('setting date', dateProp);
+      setDate(dateProp);
+    }, [dateProp]);
+    console.log({ date });
 
     // set dates when caller changes it, allows us to change it internally too
-    const [dates, setDates] = useState(normalizedDates);
+    const [dates, setDates] = useState(datesProp);
     useEffect(() => {
-      setDates(normalizedDates);
-    }, [normalizedDates]);
+      setDates(datesProp);
+    }, [datesProp]);
 
     // set reference based on what the caller passed or date/dates.
     const [reference, setReference] = useState(
-      normalizeReference(
-        referenceProp,
-        normalizedDate,
-        normalizedDates,
-        timestamp,
-      ),
+      normalizeReference(referenceProp, date, dates),
     );
-    useEffect(
-      () =>
-        setReference(
-          normalizeReference(
-            referenceProp,
-            normalizedDate,
-            normalizedDates,
-            timestamp,
-          ),
-        ),
-      [referenceProp, normalizedDate, normalizedDates, timestamp],
-    );
+    useEffect(() => {
+      setReference(normalizeReference(referenceProp, date, dates));
+    }, [referenceProp, date, dates]);
 
     // normalize bounds
     const [bounds, setBounds] = useState(boundsProp);
@@ -495,13 +410,6 @@ const Calendar = forwardRef(
       (selectedDate) => {
         let nextDates;
         let nextDate;
-        // timestamp will be undefined if no defaultValue or value have
-        // been passed in, indicating that we should stay local
-        let nextNormalize = normalize;
-        if (timestamp === undefined) {
-          nextNormalize = false;
-          setNormalize(nextNormalize);
-        }
         if (!range) {
           nextDate = selectedDate;
         }
@@ -509,8 +417,8 @@ const Calendar = forwardRef(
         else if (!dates && !Array.isArray(date)) {
           // if user supplies date, convert this into dates
           if (date) {
-            const priorDate = new Date(date);
-            const selDate = new Date(selectedDate);
+            const priorDate = date;
+            const selDate = selectedDate;
             if (activeDate === activeDates.start) {
               if (selDate.getTime() > priorDate.getTime()) {
                 nextDates = [[selectedDate, undefined]];
@@ -538,8 +446,9 @@ const Calendar = forwardRef(
           if (activeDateProp) setActiveDate(activeDateProp);
         } else if (dates || date) {
           const handleSelection = (dateValue) => {
+            // look back here
             const priorDates = dateValue[0].map((d) => new Date(d));
-            const selDate = new Date(selectedDate);
+            const selDate = selectedDate;
             if (selDate.getTime() === priorDates[0].getTime()) {
               nextDates = [[undefined, dateValue[0][1]]];
               setActiveDate(activeDates.start);
@@ -577,39 +486,18 @@ const Calendar = forwardRef(
         }
 
         setDates(nextDates);
-        if (date && typeof date === 'string') {
+        if (!date || date instanceof Date) {
+          console.log('set date in selectDate', nextDate);
           setDate(nextDate);
         } else if (date && Array.isArray(date)) {
           setDate(nextDates);
         }
-        setActive(new Date(selectedDate));
+        setActive(selectedDate);
         if (onSelect) {
-          // format date/dates to match structure provided by caller
-          // which could take format of:
-          // 1. ISO8601 with a timestamp
-          // 2. ISO8601 without a timestamp
-          // 3. Caller did not provide value/defaultValue, so return date
-          // in ISO8601 with timestamp in UTC relative to user's local timezone
-          const formattedDate = getFormattedDate(
-            nextDate,
-            nextDates,
-            nextNormalize,
-            range,
-            timestamp,
-          );
-          onSelect(formattedDate);
+          onSelect(nextDates || nextDate);
         }
       },
-      [
-        activeDate,
-        activeDateProp,
-        date,
-        dates,
-        normalize,
-        onSelect,
-        range,
-        timestamp,
-      ],
+      [activeDate, activeDateProp, date, dates, onSelect, range],
     );
 
     const renderCalendarHeader = () => {
@@ -787,13 +675,14 @@ const Calendar = forwardRef(
           </StyledDayContainer>,
         );
       } else {
-        const dateString = day.toISOString();
-        // this.dayRefs[dateString] = React.createRef();
+        const dateObject = day;
+        // this.dayRefs[dateObject] = React.createRef();
         let selected = false;
         let inRange = false;
 
-        const selectedState = withinDates(day, date || dates);
+        const selectedState = withinDates(day, dateProp || dates);
         if (selectedState === 2) {
+          console.log({ dateProp });
           selected = true;
         } else if (selectedState === 1) {
           inRange = true;
@@ -805,7 +694,7 @@ const Calendar = forwardRef(
           !dayDisabled &&
           day.getMonth() === reference.getMonth()
         ) {
-          firstDayInMonth = dateString;
+          firstDayInMonth = dateObject;
         }
 
         if (!children) {
@@ -817,17 +706,18 @@ const Calendar = forwardRef(
                 active: active && active.getTime() === day.getTime(),
                 disabled: dayDisabled && !!dayDisabled,
                 onClick: () => {
-                  selectDate(dateString);
+                  selectDate(dateObject);
+                  // TO DO
                   announce(
-                    `Selected ${formatToLocalYYYYMMDD(dateString, normalize)}`,
+                    `Selected ${formatToLocalYYYYMMDD(dateObject)}`,
                     'assertive',
                   );
                   // Chrome moves the focus indicator to this button. Set
                   // the focus to the grid of days instead.
                   daysRef.current.focus();
-                  setActive(new Date(dateString));
+                  setActive(dateObject);
                 },
-                onMouseOver: () => setActive(new Date(dateString)),
+                onMouseOver: () => setActive(dateObject),
                 onMouseOut: () => setActive(undefined),
               }}
               isInRange={inRange}
@@ -850,18 +740,19 @@ const Calendar = forwardRef(
                       active: active && active.getTime() === day.getTime(),
                       disabled: dayDisabled && !!dayDisabled,
                       onClick: () => {
-                        selectDate(dateString);
-                        announce(
-                          `Selected
-                          ${formatToLocalYYYYMMDD(dateString, normalize)}`,
-                          'assertive',
-                        );
+                        selectDate(dateObject);
+                        // announce(
+                        //   `Selected
+                        //   ${formatToLocalYYYYMMDD(dateObject, normalize)}`,
+                        //   'assertive',
+                        // );
+
                         // Chrome moves the focus indicator to this button. Set
                         // the focus to the grid of days instead.
                         daysRef.current.focus();
-                        setActive(new Date(dateString));
+                        setActive(dateObject);
                       },
-                      onMouseOver: () => setActive(new Date(dateString)),
+                      onMouseOver: () => setActive(dateObject),
                       onMouseOut: () => setActive(undefined),
                     }
                   : null
@@ -973,12 +864,13 @@ const Calendar = forwardRef(
             <StyledWeeksContainer
               tabIndex={0}
               role="grid"
+              // TO DO
               aria-label={`
                 ${reference.toLocaleDateString(locale, {
                   month: 'long',
                   year: 'numeric',
                 })};
-                ${getAccessibilityString(date, dates, normalize)}
+                ${getAccessibilityString(date, dates)}
               `}
               ref={daysRef}
               sizeProp={size}
@@ -988,7 +880,7 @@ const Calendar = forwardRef(
                 setFocus(true);
                 // caller focused onto Calendar via keyboard
                 if (!mouseDown) {
-                  setActive(new Date(firstDayInMonth));
+                  // setActive(new Date(firstDayInMonth));
                 }
               }}
               onBlur={() => {

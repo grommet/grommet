@@ -6,6 +6,7 @@ export const Simple = () => {
   const [date, setDate] = useState();
 
   const onSelect = (nextDate) => {
+    console.log('onSelect', nextDate);
     setDate(nextDate !== date ? nextDate : undefined);
   };
 
@@ -18,8 +19,8 @@ export const Simple = () => {
           date={date}
           daysOfWeek
           onSelect={onSelect}
-          size="small"
           bounds={['2020-09-08', '2025-12-13']}
+          // range
         />
       </Box>
     </Box>
