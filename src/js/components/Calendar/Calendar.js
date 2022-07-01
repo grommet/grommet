@@ -31,7 +31,6 @@ import {
   betweenDates,
   daysApart,
   endOfMonth,
-  formatToLocalYYYYMMDD,
   startOfMonth,
   subtractDays,
   subtractMonths,
@@ -50,35 +49,37 @@ const activeDates = {
   end: 'end',
 };
 
-const formatSelectedDatesString = (date, normalize) => `Currently selected
+const getLocaleString = (value, locale) =>
+  value.toLocaleDateString(locale, {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+
+const formatSelectedDatesString = (date, locale) => `Currently selected
   ${date?.map((item) => {
     let dates;
     if (!Array.isArray(item)) {
-      dates = `${formatToLocalYYYYMMDD(item, normalize)} `;
+      dates = `${getLocaleString(item, locale)} `;
     } else {
       const start =
-        item[0] !== undefined
-          ? formatToLocalYYYYMMDD(item[0], normalize)
-          : 'none';
+        item[0] !== undefined ? getLocaleString(item[0], locale) : 'none';
       const end =
-        item[1] !== undefined
-          ? formatToLocalYYYYMMDD(item[1], normalize)
-          : 'none';
+        item[1] !== undefined ? getLocaleString(item[1], locale) : 'none';
       dates = `${start} through ${end}`;
     }
-
     return dates;
   })}`;
 
-const getAccessibilityString = (date, dates, normalize) => {
+const getAccessibilityString = (date, dates, locale) => {
   if (date && !Array.isArray(date)) {
-    return `Currently selected ${formatToLocalYYYYMMDD(date, normalize)};`;
+    return `Currently selected ${getLocaleString(date, locale)};`;
   }
   if (date && Array.isArray(date)) {
-    return formatSelectedDatesString(date, normalize);
+    return formatSelectedDatesString(date, locale);
   }
   if (dates?.length) {
-    return formatSelectedDatesString(dates, normalize);
+    return formatSelectedDatesString(dates, locale);
   }
 
   return 'No date selected';
@@ -707,9 +708,8 @@ const Calendar = forwardRef(
                 disabled: dayDisabled && !!dayDisabled,
                 onClick: () => {
                   selectDate(dateObject);
-                  // TO DO
                   announce(
-                    `Selected ${formatToLocalYYYYMMDD(dateObject)}`,
+                    `Selected ${getLocaleString(dateObject, locale)}`,
                     'assertive',
                   );
                   // Chrome moves the focus indicator to this button. Set
@@ -741,12 +741,10 @@ const Calendar = forwardRef(
                       disabled: dayDisabled && !!dayDisabled,
                       onClick: () => {
                         selectDate(dateObject);
-                        // TO DO
-                        // announce(
-                        //   `Selected
-                        //   ${formatToLocalYYYYMMDD(dateObject, normalize)}`,
-                        //   'assertive',
-                        // );
+                        announce(
+                          `Selected ${getLocaleString(dateObject, locale)}`,
+                          'assertive',
+                        );
 
                         // Chrome moves the focus indicator to this button. Set
                         // the focus to the grid of days instead.
@@ -871,7 +869,7 @@ const Calendar = forwardRef(
                   month: 'long',
                   year: 'numeric',
                 })};
-                ${getAccessibilityString(date, dates)}
+                ${getAccessibilityString(date, dates, locale)}
               `}
               ref={daysRef}
               sizeProp={size}
