@@ -84,42 +84,43 @@ const getAccessibilityString = (date, dates, normalize) => {
   return 'No date selected';
 };
 
-// reference should also be a date object
-const normalizeReference = (reference, date, dates) => {
-  let normalizedReference;
+// TO DO is this logic strange? if reference is set,
+// then date updates via a fetch,
+// the active date doesn't come into view.
+// this happens on master as well.
+const getReference = (reference, date, dates) => {
+  let nextReference;
   if (reference) {
-    normalizedReference = reference;
+    nextReference = reference;
   } else if (date) {
     if (Array.isArray(date)) {
-      if (typeof date[0] === 'string') {
-        normalizedReference = new Date(date[0]);
+      if (date[0] instanceof Date) {
+        [nextReference] = date;
       } else if (Array.isArray(date[0])) {
-        normalizedReference = new Date(date[0][0] ? date[0][0] : date[0][1]);
-      } else if (date[0] instanceof Date) {
-        [normalizedReference] = date;
+        nextReference = date[0][0] ? date[0][0] : date[0][1];
       } else {
-        normalizedReference = new Date();
-        normalizedReference.setHours(0, 0, 0, 0);
+        nextReference = new Date();
+        nextReference.setHours(0, 0, 0, 0);
       }
-    } else normalizedReference = date;
+    } else nextReference = date;
   } else if (dates && dates.length > 0) {
-    if (typeof dates[0] === 'string') {
-      normalizedReference = new Date(dates[0]);
+    if (dates[0] instanceof Date) {
+      [nextReference] = dates;
     } else if (Array.isArray(dates[0])) {
-      normalizedReference = new Date(dates[0][0] ? dates[0][0] : dates[0][1]);
+      nextReference = dates[0][0] ? dates[0][0] : dates[0][1];
     } else {
-      normalizedReference = new Date();
-      normalizedReference.setHours(0, 0, 0, 0);
+      nextReference = new Date();
+      nextReference.setHours(0, 0, 0, 0);
     }
   } else {
-    normalizedReference = new Date();
-    normalizedReference.setHours(0, 0, 0, 0);
+    nextReference = new Date();
+    nextReference.setHours(0, 0, 0, 0);
   }
-  return normalizedReference;
+  return nextReference;
 };
 
 const buildDisplayBounds = (reference, firstDayOfWeek) => {
-  let start = reference;
+  let start = new Date(reference);
   start.setDate(1); // first of month
 
   // In case Sunday is the first day of the month, and the user asked for Monday
@@ -199,7 +200,6 @@ const Calendar = forwardRef(
       header,
       locale = 'en-US',
       messages,
-      // normalize,
       onReference,
       onSelect,
       range,
@@ -241,12 +241,35 @@ const Calendar = forwardRef(
     }, [activeDateProp]);
 
     const [date, setDate] = useState(dateProp);
+    useEffect(() => {
+      setDate(dateProp);
+    }, [dateProp]);
 
     const [dates, setDates] = useState(datesProp);
+    useEffect(() => {
+      setDates(datesProp);
+    }, [datesProp]);
 
     const [reference, setReference] = useState(
-      normalizeReference(referenceProp, date, dates),
+      getReference(
+        typeof referenceProp === 'string'
+          ? new Date(referenceProp)
+          : referenceProp,
+        date,
+        dates,
+      ),
     );
+    useEffect(() => {
+      setReference(
+        getReference(
+          typeof referenceProp === 'string'
+            ? new Date(referenceProp)
+            : referenceProp,
+          date,
+          dates,
+        ),
+      );
+    }, [referenceProp, date, dates]);
 
     // normalize bounds
     const [bounds, setBounds] = useState(boundsProp);
@@ -725,6 +748,7 @@ const Calendar = forwardRef(
                       disabled: dayDisabled && !!dayDisabled,
                       onClick: () => {
                         selectDate(dateObject);
+                        // TO DO
                         // announce(
                         //   `Selected
                         //   ${formatToLocalYYYYMMDD(dateObject, normalize)}`,

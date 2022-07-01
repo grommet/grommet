@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Box, Calendar } from 'grommet';
 
 export const Simple = () => {
   const [date, setDate] = useState();
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setDate(new Date('2022-04-14T08:00:00Z'));
+  //   }, 1000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const onSelect = (nextDate) => {
     console.log('onSelect', nextDate);
