@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { Box, Calendar } from 'grommet';
 
 export const Simple = () => {
-  const [date, setDate] = useState();
+  const [date, setDate] = useState('2022-04-14');
+  // const [date, setDate] = useState(new Date('2022-04-14'));
   // useEffect(() => {
   //   const timer = setTimeout(() => {
   //     setDate(new Date('2022-04-14T08:00:00Z'));

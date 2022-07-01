@@ -84,6 +84,17 @@ const getAccessibilityString = (date, dates, normalize) => {
   return 'No date selected';
 };
 
+// normalize dates as Date objects
+const normalizeDate = (date) => {
+  let result;
+  if (typeof date === 'string') {
+    result = new Date(date);
+  } else if (date instanceof Date) {
+    result = date;
+  }
+  return result;
+};
+
 const getReference = (reference, date, dates) => {
   let nextReference;
   if (date) {
@@ -236,9 +247,9 @@ const Calendar = forwardRef(
       if (activeDateProp) setActiveDate(activeDateProp);
     }, [activeDateProp]);
 
-    const [date, setDate] = useState(dateProp);
+    const [date, setDate] = useState(normalizeDate(dateProp));
     useEffect(() => {
-      setDate(dateProp);
+      setDate(normalizeDate(dateProp));
     }, [dateProp]);
 
     const [dates, setDates] = useState(datesProp);
@@ -247,24 +258,10 @@ const Calendar = forwardRef(
     }, [datesProp]);
 
     const [reference, setReference] = useState(
-      getReference(
-        typeof referenceProp === 'string'
-          ? new Date(referenceProp)
-          : referenceProp,
-        date,
-        dates,
-      ),
+      getReference(normalizeDate(referenceProp), date, dates),
     );
     useEffect(() => {
-      setReference(
-        getReference(
-          typeof referenceProp === 'string'
-            ? new Date(referenceProp)
-            : referenceProp,
-          date,
-          dates,
-        ),
-      );
+      setReference(getReference(normalizeDate(referenceProp), date, dates));
     }, [referenceProp, date, dates]);
 
     // normalize bounds
