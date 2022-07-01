@@ -9,7 +9,7 @@ var _StyledImage = require("./StyledImage");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["a11yTitle", "fallback", "onError", "opacity", "fill", "src"];
+var _excluded = ["a11yTitle", "fallback", "onError", "onLoad", "opacity", "fill", "src"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -23,6 +23,7 @@ var Image = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       fallback = _ref.fallback,
       onError = _ref.onError,
+      onLoad = _ref.onLoad,
       opacity = _ref.opacity,
       fill = _ref.fill,
       src = _ref.src,
@@ -42,7 +43,8 @@ var Image = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   };
 
-  var handleOnLoad = function handleOnLoad() {
+  var handleOnLoad = function handleOnLoad(event) {
+    if (onLoad) onLoad(event);
     setFallbackInUse(false);
   };
 

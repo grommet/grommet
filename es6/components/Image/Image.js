@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "fallback", "onError", "opacity", "fill", "src"];
+var _excluded = ["a11yTitle", "fallback", "onError", "onLoad", "opacity", "fill", "src"];
 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -11,6 +11,7 @@ var Image = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       fallback = _ref.fallback,
       onError = _ref.onError,
+      onLoad = _ref.onLoad,
       opacity = _ref.opacity,
       fill = _ref.fill,
       src = _ref.src,
@@ -30,7 +31,8 @@ var Image = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   };
 
-  var handleOnLoad = function handleOnLoad() {
+  var handleOnLoad = function handleOnLoad(event) {
+    if (onLoad) onLoad(event);
     setFallbackInUse(false);
   };
 
