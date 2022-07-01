@@ -827,9 +827,7 @@ const Calendar = forwardRef(
           {daysOfWeek && renderDaysOfWeek()}
           <Keyboard
             onEnter={() =>
-              active !== undefined
-                ? selectDate(active.toISOString())
-                : undefined
+              active !== undefined ? selectDate(active) : undefined
             }
             onUp={(event) => {
               event.preventDefault();
@@ -863,7 +861,6 @@ const Calendar = forwardRef(
             <StyledWeeksContainer
               tabIndex={0}
               role="grid"
-              // TO DO
               aria-label={`
                 ${reference.toLocaleDateString(locale, {
                   month: 'long',
@@ -879,7 +876,7 @@ const Calendar = forwardRef(
                 setFocus(true);
                 // caller focused onto Calendar via keyboard
                 if (!mouseDown) {
-                  // setActive(new Date(firstDayInMonth));
+                  setActive(new Date(firstDayInMonth));
                 }
               }}
               onBlur={() => {
