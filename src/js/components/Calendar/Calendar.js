@@ -84,15 +84,9 @@ const getAccessibilityString = (date, dates, normalize) => {
   return 'No date selected';
 };
 
-// TO DO is this logic strange? if reference is set,
-// then date updates via a fetch,
-// the active date doesn't come into view.
-// this happens on master as well.
 const getReference = (reference, date, dates) => {
   let nextReference;
-  if (reference) {
-    nextReference = reference;
-  } else if (date) {
+  if (date) {
     if (Array.isArray(date)) {
       if (date[0] instanceof Date) {
         [nextReference] = date;
@@ -112,6 +106,8 @@ const getReference = (reference, date, dates) => {
       nextReference = new Date();
       nextReference.setHours(0, 0, 0, 0);
     }
+  } else if (reference) {
+    nextReference = reference;
   } else {
     nextReference = new Date();
     nextReference.setHours(0, 0, 0, 0);
