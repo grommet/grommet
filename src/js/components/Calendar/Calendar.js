@@ -240,27 +240,13 @@ const Calendar = forwardRef(
       if (activeDateProp) setActiveDate(activeDateProp);
     }, [activeDateProp]);
 
-    // set date when caller changes it, allows us to change it internally too
     const [date, setDate] = useState(dateProp);
-    useEffect(() => {
-      console.log('setting date', dateProp);
-      setDate(dateProp);
-    }, [dateProp]);
-    console.log({ date });
 
-    // set dates when caller changes it, allows us to change it internally too
     const [dates, setDates] = useState(datesProp);
-    useEffect(() => {
-      setDates(datesProp);
-    }, [datesProp]);
 
-    // set reference based on what the caller passed or date/dates.
     const [reference, setReference] = useState(
       normalizeReference(referenceProp, date, dates),
     );
-    useEffect(() => {
-      setReference(normalizeReference(referenceProp, date, dates));
-    }, [referenceProp, date, dates]);
 
     // normalize bounds
     const [bounds, setBounds] = useState(boundsProp);
@@ -446,7 +432,7 @@ const Calendar = forwardRef(
           if (activeDateProp) setActiveDate(activeDateProp);
         } else if (dates || date) {
           const handleSelection = (dateValue) => {
-            // look back here
+            // look back here, could likely remove Date constructor
             const priorDates = dateValue[0].map((d) => new Date(d));
             const selDate = selectedDate;
             if (selDate.getTime() === priorDates[0].getTime()) {
@@ -487,7 +473,6 @@ const Calendar = forwardRef(
 
         setDates(nextDates);
         if (!date || date instanceof Date) {
-          console.log('set date in selectDate', nextDate);
           setDate(nextDate);
         } else if (date && Array.isArray(date)) {
           setDate(nextDates);
@@ -682,7 +667,6 @@ const Calendar = forwardRef(
 
         const selectedState = withinDates(day, date || dates);
         if (selectedState === 2) {
-          console.log({ dateProp });
           selected = true;
         } else if (selectedState === 1) {
           inRange = true;
