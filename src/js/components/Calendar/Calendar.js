@@ -50,7 +50,7 @@ const activeDates = {
 };
 
 const getLocaleString = (value, locale) =>
-  value.toLocaleDateString(locale, {
+  value?.toLocaleDateString(locale, {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
@@ -89,11 +89,21 @@ const getAccessibilityString = (date, dates, locale) => {
 const normalizeDate = (date) => {
   let result;
   if (typeof date === 'string') {
-    result = new Date(date);
+    result = date.length ? new Date(date) : undefined;
   } else if (date instanceof Date) {
     result = date;
   }
   return result;
+};
+
+const normalizeDatesProp = (dates) => {
+  if (dates?.length) {
+    if (Array.isArray(dates[0])) {
+      return [dates[0].map((d) => normalizeDate(d))];
+    }
+    return dates.map((d) => normalizeDate(d));
+  }
+  return undefined;
 };
 
 const getReference = (reference, date, dates) => {
@@ -253,9 +263,9 @@ const Calendar = forwardRef(
       setDate(normalizeDate(dateProp));
     }, [dateProp]);
 
-    const [dates, setDates] = useState(datesProp?.map((d) => normalizeDate(d)));
+    const [dates, setDates] = useState(normalizeDatesProp(datesProp));
     useEffect(() => {
-      setDates(datesProp?.map((d) => normalizeDate(d)));
+      setDates(normalizeDatesProp(datesProp));
     }, [datesProp]);
 
     const [reference, setReference] = useState(

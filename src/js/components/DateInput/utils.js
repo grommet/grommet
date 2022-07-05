@@ -1,8 +1,6 @@
 // Converting between Date and String types is handled via a "schema".
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
-import { formatToLocalYYYYMMDD } from '../Calendar/utils';
-
 export const formatToSchema = (format) => {
   if (!format) return undefined;
   const result = [];
@@ -117,7 +115,7 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
-export const textToValue = (text, schema, range, timestamp, normalize) => {
+export const textToValue = (text, schema, range) => {
   if (!text) return range ? [] : undefined;
 
   let result;
@@ -141,13 +139,7 @@ export const textToValue = (text, schema, range, timestamp, normalize) => {
     )
       return parts;
 
-    let date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
-    // match time and timezone of any supplied valueProp
-    if (timestamp)
-      date = `${
-        formatToLocalYYYYMMDD(date, normalize).split('T')[0]
-      }T${timestamp}`;
-    else date = `${formatToLocalYYYYMMDD(date, normalize).split('T')[0]}`;
+    const date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
 
     if (!range) {
       if (!result) result = date;
