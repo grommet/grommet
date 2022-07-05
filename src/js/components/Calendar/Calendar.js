@@ -488,7 +488,7 @@ const Calendar = forwardRef(
           }
         }
 
-        setDates(range ? nextDates : dates.push(nextDate));
+        setDates(nextDates);
         if (!date || date instanceof Date) {
           setDate(nextDate);
         } else if (date && Array.isArray(date)) {
