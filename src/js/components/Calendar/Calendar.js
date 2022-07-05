@@ -253,9 +253,9 @@ const Calendar = forwardRef(
       setDate(normalizeDate(dateProp));
     }, [dateProp]);
 
-    const [dates, setDates] = useState(datesProp);
+    const [dates, setDates] = useState(datesProp?.map((d) => normalizeDate(d)));
     useEffect(() => {
-      setDates(datesProp);
+      setDates(datesProp?.map((d) => normalizeDate(d)));
     }, [datesProp]);
 
     const [reference, setReference] = useState(
@@ -488,7 +488,7 @@ const Calendar = forwardRef(
           }
         }
 
-        setDates(nextDates);
+        setDates(range ? nextDates : dates.push(nextDate));
         if (!date || date instanceof Date) {
           setDate(nextDate);
         } else if (date && Array.isArray(date)) {
@@ -496,7 +496,26 @@ const Calendar = forwardRef(
         }
         setActive(selectedDate);
         if (onSelect) {
-          onSelect(nextDates || nextDate);
+          // return ISO string to align with docs
+          let adjustedDates;
+          let adjustedDate;
+          if (
+            nextDates &&
+            Array.isArray(nextDates[0]) &&
+            (!nextDates[0][0] || !nextDates[0][1]) &&
+            range === true
+          ) {
+            // return string for backwards compatibility
+            [adjustedDates] = nextDates[0].filter((d) => d);
+            adjustedDates = adjustedDates.toISOString();
+          } else if (nextDates) {
+            adjustedDates = [
+              [nextDates[0][0].toISOString(), nextDates[0][1].toISOString()],
+            ];
+          } else {
+            adjustedDate = nextDate.toISOString();
+          }
+          onSelect(adjustedDates || adjustedDate);
         }
       },
       [activeDate, activeDateProp, date, dates, onSelect, range],
