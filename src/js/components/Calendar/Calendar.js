@@ -89,6 +89,7 @@ const getAccessibilityString = (date, dates, locale) => {
 const normalizeDate = (date) => {
   let result;
   if (typeof date === 'string') {
+    // date could be empty string ''
     result = date.length ? new Date(date) : undefined;
   } else if (date instanceof Date) {
     result = date;
