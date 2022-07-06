@@ -88,15 +88,21 @@ const getAccessibilityString = (date, dates, locale) => {
 // normalize dates as Date objects
 const normalizeDate = (date) => {
   let result;
-  if (typeof date === 'string') {
-    // date could be empty string ''
-    result = date.length ? new Date(date) : undefined;
+  // date may be an empty string ''
+  if (typeof date === 'string' && date.length) {
+    const adjustedDate = new Date(date);
+    const offset = adjustedDate.getTimezoneOffset();
+    const hour = adjustedDate.getHours();
+    adjustedDate.setHours(hour, offset);
+    result = adjustedDate;
   } else if (date instanceof Date) {
     result = date;
   }
   return result;
 };
 
+// TODO: can we consolidate this with the normalizeDate function? It'd
+// be nice to have one place where all normalization logic lives.
 const normalizeDatesProp = (dates) => {
   if (dates?.length) {
     if (Array.isArray(dates[0])) {
@@ -500,7 +506,7 @@ const Calendar = forwardRef(
         }
 
         setDates(nextDates);
-        if (!date || date instanceof Date) {
+        if (!dates && (!date || date instanceof Date)) {
           setDate(nextDate);
         } else if (date && Array.isArray(date)) {
           setDate(nextDates);
