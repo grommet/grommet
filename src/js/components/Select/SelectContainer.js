@@ -21,6 +21,7 @@ import { TextInput } from '../TextInput';
 
 import { StyledContainer } from './StyledSelect';
 import { applyKey } from './utils';
+import { Checkmark } from 'grommet-icons/icons/Checkmark';
 
 // position relative is so scroll can be managed correctly
 const OptionsBox = styled.div`
@@ -82,6 +83,7 @@ const SelectContainer = forwardRef(
       usingKeyboard,
       value = '',
       valueKey,
+      variant,
       replace = true,
     },
     ref,
@@ -384,7 +386,7 @@ const SelectContainer = forwardRef(
       : {};
 
     const getSelectedString = () => {
-      let selected = options.filter((option) =>
+      const selected = options.filter((option) =>
         isSelected(options.indexOf(option)),
       );
       let formattedSelected = '';
@@ -394,6 +396,103 @@ const SelectContainer = forwardRef(
       });
       return formattedSelected;
     };
+
+    let variantButtonContent;
+    if (variant === 1) {
+      if (value.length === 0) {
+        variantButtonContent = (
+          <Button
+            // plain
+            icon={<Checkmark size="small" />}
+            label="Select All"
+            onClick={(event) => {
+              if (onChange) {
+                onChange(event, {
+                  option: options,
+                  value: allOptions,
+                  selected: allOptions,
+                });
+              }
+            }}
+          >
+            {/* <Box direction="horizontal" gap="small">
+              <Checkmark size="small" color="black" />
+              <Text weight="bold">Select All</Text>
+            </Box> */}
+          </Button>
+        );
+      } else {
+        variantButtonContent = (
+          <Button
+            label="Clear All"
+            onClick={(event) => {
+              if (onChange) {
+                onChange(event, {
+                  option: options,
+                  value: [],
+                  selected: [],
+                });
+              }
+            }}
+          />
+        );
+      }
+    }
+    if (variant === 2) {
+      if (value.length === 0) {
+        variantButtonContent = (
+          <Box>
+            <Button
+              size="xsmall"
+              label="Select All"
+              secondary
+              onClick={(event) => {
+                if (onChange) {
+                  onChange(event, {
+                    option: options,
+                    value: allOptions,
+                    selected: allOptions,
+                  });
+                }
+              }}
+            />
+          </Box>
+        );
+      } else {
+        variantButtonContent = (
+          <Box direction="horizontal" gap="small">
+            <Button
+              size="xsmall"
+              label="Clear All"
+              secondary
+              onClick={(event) => {
+                if (onChange) {
+                  onChange(event, {
+                    option: options,
+                    value: [],
+                    selected: [],
+                  });
+                }
+              }}
+            />
+            <Button
+              size="xsmall"
+              label="View Selection"
+              primary
+              onClick={(event) => {
+                if (onChange) {
+                  onChange(event, {
+                    option: options,
+                    value: [],
+                    selected: [],
+                  });
+                }
+              }}
+            />
+          </Box>
+        );
+      }
+    }
 
     return (
       <Keyboard
@@ -422,9 +521,9 @@ const SelectContainer = forwardRef(
                 {search !== '' && search !== undefined && (
                   <Box>
                     {value.length === 0 ? (
-                      <Text>0 selected</Text>
+                      <Text size="small">0 selected</Text>
                     ) : (
-                      <Text>{value.length} selected of 5</Text>
+                      <Text size="small">{value.length} selected of 5</Text>
                     )}
                   </Box>
                 )}
@@ -434,9 +533,9 @@ const SelectContainer = forwardRef(
                 {search !== '' && search !== undefined && (
                   <Box>
                     {value.length === 0 ? (
-                      <Text>0 selected</Text>
+                      <Text size="small">0 selected</Text>
                     ) : (
-                      <Text>
+                      <Text size="small">
                         {value.length} selected of {allOptions.length}
                       </Text>
                     )}
@@ -472,71 +571,31 @@ const SelectContainer = forwardRef(
           )}
           {(search === '' || search === undefined) && (
             <Box
-              pad={{ horizontal: 'small', top: 'small', bottom: 'small' }}
-              direction="row"
+              pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
+              direction="row-responsive"
+              // direction={value.length === 0 ? 'row' : 'column'}
               justify="between"
-              border="bottom"
-              margin={{ bottom: 'small' }}
+              gap="small"
+              // wrap
             >
-              <Box alignSelf="center">
+              <Box
+              // pad={{ horizontal: 'small', top: 'small', bottom: 'small' }}
+              alignSelf="center"
+              >
                 {value.length === 0 ? (
                   <Text size="small">0 selected</Text>
                 ) : limitedSelections ? (
-                  <>
-                    <Text size="small">{value.length} selected of 5</Text>
-                    <Box width="260px">
-                      <Text size="xsmall" truncate>
-                        {getSelectedString()}
-                      </Text>
-                    </Box>
-                  </>
+                  <Text size="small">{value.length} selected of 5</Text>
                 ) : (
-                  <>
-                    <Text size="small">
-                      {value.length} selected of {options.length}
-                    </Text>
-                    <Box width="180px">
-                      <Text size="xsmall" truncate="tip">
-                        {getSelectedString()}
-                      </Text>
-                    </Box>
-                  </>
+                  <Text size="small">
+                    {value.length} selected of {options.length}
+                  </Text>
                 )}
               </Box>
               <Box>
-                {options.length > 0 && !limitedSelections && (
-                  <>
-                    {value.length === 0 ? (
-                      <Button
-                        label="Select All"
-                        secondary
-                        onClick={(event) => {
-                          if (onChange) {
-                            onChange(event, {
-                              option: options,
-                              value: allOptions,
-                              selected: allOptions,
-                            });
-                          }
-                        }}
-                      />
-                    ) : (
-                      <Button
-                        label="Clear All"
-                        secondary
-                        onClick={(event) => {
-                          if (onChange) {
-                            onChange(event, {
-                              option: options,
-                              value: [],
-                              selected: [],
-                            });
-                          }
-                        }}
-                      />
-                    )}
-                  </>
-                )}
+                {options.length > 0 &&
+                  !limitedSelections &&
+                  variantButtonContent}
               </Box>
             </Box>
           )}

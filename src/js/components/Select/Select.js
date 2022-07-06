@@ -93,6 +93,7 @@ const Select = forwardRef(
       value: valueProp,
       valueKey,
       valueLabel,
+      variant,
       ...rest
     },
     ref,
@@ -367,6 +368,7 @@ const Select = forwardRef(
               usingKeyboard={usingKeyboard}
               value={value}
               valueKey={valueKey}
+              variant={variant}
             >
               {children}
             </SelectContainer>

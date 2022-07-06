@@ -1,35 +1,35 @@
 import React, { useState } from 'react';
 
-import { Box, CheckBox, Select, Text } from 'grommet';
-
-const dummyOptions = [
-  'Azure MAS-TRM:v2019.03',
-  'Azure NZISM:v3.2Azure NZISM:v3.2',
-  'Azure NIST800-53:R4',
-  'Azure NZISM:v3.3',
-  'Azure IS027001:2013',
-  'Azure PCI-DSS:v3.2.1',
-  'Pavlo DEFAULT:v1',
-  'Azure Security Health Check:v2.0',
-  'Butterfly:v1.0',
-  'KStadnyk:v1.0',
-];
+import { Box, CheckBox, Select, Text, FormField, Form } from 'grommet';
 
 // const dummyOptions = [
-//   'Apple',
-//   'Orange',
-//   'Banana',
-//   'Grape',
-//   'Melon',
-//   'Strawberry',
-//   'Kiwi',
-//   'Mango',
-//   'Raspberry',
-//   'Rhubarb',
+//   'Azure MAS-TRM:v2019.03',
+//   'Azure NZISM:v3.2Azure NZISM:v3.2',
+//   'Azure NIST800-53:R4',
+//   'Azure NZISM:v3.3',
+//   'Azure IS027001:2013',
+//   'Azure PCI-DSS:v3.2.1',
+//   'Pavlo DEFAULT:v1',
+//   'Azure Security Health Check:v2.0',
+//   'Butterfly:v1.0',
+//   'KStadnyk:v1.0',
 // ];
 
+const dummyOptions = [
+  'Apple',
+  'Orange',
+  'Banana',
+  'Grape',
+  'Melon',
+  'Strawberry',
+  'Kiwi',
+  'Mango',
+  'Raspberry',
+  'Rhubarb',
+];
+
 export const MultiSelect = () => {
-  const [options, setOptions] = useState(dummyOptions);
+  const [options, setOptions] = useState(dummyOptions.sort());
   const [valueMultiple, setValueMultiple] = useState([]);
 
   const Option = React.memo(({ option }) => (
@@ -48,9 +48,13 @@ export const MultiSelect = () => {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box fill align="center" pad="large" gap="large">
-      <Text>Multi-Select with no selection limit</Text>
+      <Text>Multi-Select Default Option 2</Text>
+      {/* <Box width="medium">
+        <Form>
+          <FormField> */}
       <Select
         width="medium"
+        variant={2}
         multiple
         closeOnChange={false}
         placeholder="Select"
@@ -74,31 +78,33 @@ export const MultiSelect = () => {
           const sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
         }}
-        onClose={() =>
-          setOptions(
-            options.sort((p1, p2) => {
-              const p1Exists = valueMultiple.includes(p1);
-              const p2Exists = valueMultiple.includes(p2);
+        onClose={() => {
+          console.log(options);
+          let next = [...valueMultiple];
+          // loop through next selected and sort alphabetically
+          next.sort();
+          // remove next selected from options
+          const sortedOptions = options.filter((i) => !next.includes(i));
 
-              if (!p1Exists && p2Exists) {
-                return 1;
-              }
-              if (p1Exists && !p2Exists) {
-                return -1;
-              }
-              return p1.localeCompare(p2, undefined, {
-                numeric: true,
-                sensitivity: 'base',
-              });
-            }),
-          )
-        }
-        onChange={({ value }) => {
+          next = next.filter((i) => options.includes(i));
+          // sort options alphabetically
+          sortedOptions.sort();
+
+          // concat next selected and options
+          const sortedAllOptions = next.concat(sortedOptions);
+          setOptions(sortedAllOptions);
+        }}
+        onChange={({ value, option }) => {
+          console.log('value: ', value);
+          console.log('option: ', option);
           setValueMultiple(value);
         }}
       >
         {(option) => <Option option={option} />}
       </Select>
+      {/* </FormField>
+        </Form>
+      </Box> */}
     </Box>
     // </Grommet>
   );
@@ -112,6 +118,8 @@ MultiSelect.args = {
   full: true,
 };
 
+MultiSelect.storyName = 'Multi Select Option 2';
+
 export default {
-  title: 'Input/Select/Multi Select',
+  title: 'Input/Select/Multi Select Option 2',
 };
