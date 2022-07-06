@@ -30,6 +30,15 @@ import {
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
 
+const getReference = (value) => {
+  let res;
+  if (typeof value === 'string') res = value;
+  else if (Array.isArray(value) && Array.isArray(value[0]))
+    res = value[0].find((date) => date);
+  else if (Array.isArray(value) && value.length) [res] = value;
+  return res ? new Date(res) : undefined;
+};
+
 const DateInput = forwardRef(
   (
     {
@@ -67,6 +76,9 @@ const DateInput = forwardRef(
       value: valueArg,
       initialValue: defaultValue,
     });
+
+    // keep track of timestamp from original date(s)
+    const [reference, setReference] = useState(getReference(value));
 
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
@@ -107,15 +119,15 @@ Use the icon prop instead.`,
         const nextTextValue = valueToText(value, schema);
         if (
           !valuesAreEqual(
-            textToValue(textValue, schema, range),
-            textToValue(nextTextValue, schema, range),
+            textToValue(textValue, schema, range, reference),
+            textToValue(nextTextValue, schema, range, reference),
           ) ||
           (textValue === '' && nextTextValue !== '')
         ) {
           setTextValue(nextTextValue);
         }
       }
-    }, [range, schema, textValue, value]);
+    }, [range, schema, textValue, reference, value]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
@@ -154,6 +166,7 @@ Use the icon prop instead.`,
 
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
+                setReference(getReference(nextValue));
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
                   closeCalendar();
@@ -232,7 +245,14 @@ Use the icon prop instead.`,
               onChange={(event) => {
                 const nextTextValue = event.target.value;
                 setTextValue(nextTextValue);
-                const nextValue = textToValue(nextTextValue, schema, range);
+                const nextValue = textToValue(
+                  nextTextValue,
+                  schema,
+                  range,
+                  reference,
+                );
+                if (nextValue !== undefined)
+                  setReference(getReference(nextValue));
                 // update value even when undefined
                 setValue(nextValue);
                 if (onChange) {

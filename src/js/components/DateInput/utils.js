@@ -115,7 +115,7 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
-export const textToValue = (text, schema, range) => {
+export const textToValue = (text, schema, range, reference) => {
   if (!text) return range ? [] : undefined;
 
   let result;
@@ -139,7 +139,17 @@ export const textToValue = (text, schema, range) => {
     )
       return parts;
 
-    const date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
+    // use time info from reference date
+    const time = reference
+      ? [
+          reference.getHours(),
+          reference.getMinutes(),
+          reference.getSeconds(),
+          reference.getMilliseconds(),
+        ]
+      : null;
+
+    const date = new Date(parts.y, parts.m - 1, parts.d, ...time).toISOString();
 
     if (!range) {
       if (!result) result = date;
