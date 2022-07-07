@@ -466,7 +466,8 @@ const SelectContainer = forwardRef(
             <Button
               size="xsmall"
               label="View All"
-              primary
+              // primary
+              secondary
               onClick={() => {
                 if (viewSelection) {
                   const val = 'reset';
@@ -479,33 +480,21 @@ const SelectContainer = forwardRef(
         );
       } else {
         variantButtonContent = (
-          <Box direction="row" gap="small">
-            <Button
-              size="xsmall"
-              label="Clear All"
-              secondary
-              onClick={(event) => {
-                if (onChange) {
-                  onChange(event, {
-                    option: options,
-                    value: [],
-                    selected: [],
-                  });
-                }
-              }}
-            />
-            <Button
-              size="xsmall"
-              label="View Selected"
-              primary
-              onClick={() => {
-                if (viewSelection) {
-                  viewSelection(value);
-                  setShowingSelected(true);
-                }
-              }}
-            />
-          </Box>
+          // <Box direction="row" gap="small">
+
+          <Button
+            size="xsmall"
+            label="View Selected"
+            // primary
+            secondary
+            onClick={() => {
+              if (viewSelection) {
+                viewSelection(value);
+                setShowingSelected(true);
+              }
+            }}
+          />
+          // </Box>
         );
       }
     }
@@ -551,16 +540,14 @@ const SelectContainer = forwardRef(
                     {value.length === 0 ? (
                       <Text size="small">0 selected</Text>
                     ) : (
-                      <Text size="small">
-                        {value.length} selected of 10
-                      </Text>
+                      <Text size="small">{value.length} selected of 10</Text>
                     )}
                   </Box>
                 )}
               </>
             )}
           </Box>
-          {onSearch && (
+          {onSearch && !showingSelected && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
               <Keyboard
                 onEnter={(event) => {
@@ -604,12 +591,33 @@ const SelectContainer = forwardRef(
                 ) : limitedSelections ? (
                   <Text size="small">{value.length} selected of 5</Text>
                 ) : (
-                  <Text size="small">
-                    {value.length} selected of 10
-                  </Text>
+                  <>
+                    <Text size="small">{value.length} selected of 10</Text>
+                    {variant === 2 && (
+                      <Button
+                        onClick={(event) => {
+                          if (onChange) {
+                            onChange(event, {
+                              option: options,
+                              value: [],
+                              selected: [],
+                            });
+                          }
+                        }}
+                      >
+                        <Text size="small">
+                          <u>Clear All</u>
+                        </Text>
+                      </Button>
+                    )}
+                  </>
                 )}
               </Box>
-              {options.length > 0 && !limitedSelections && variantButtonContent}
+              <Box>
+                {options.length > 0 &&
+                  !limitedSelections &&
+                  variantButtonContent}
+              </Box>
             </Box>
           )}
           <OptionsBox
