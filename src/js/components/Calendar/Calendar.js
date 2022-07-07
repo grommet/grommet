@@ -91,9 +91,13 @@ const normalizeDate = (date) => {
   // date may be an empty string ''
   if (typeof date === 'string' && date.length) {
     const adjustedDate = new Date(date);
-    const offset = adjustedDate.getTimezoneOffset();
-    const hour = adjustedDate.getHours();
-    adjustedDate.setHours(hour, offset);
+    // if time is not specified in ISOstring, normalize to midnight
+    const regex = /T/;
+    if (!regex.test(date)) {
+      const offset = adjustedDate.getTimezoneOffset();
+      const hour = adjustedDate.getHours();
+      adjustedDate.setHours(hour, offset);
+    }
     result = adjustedDate;
   } else if (date instanceof Date) {
     result = date;
@@ -506,7 +510,7 @@ const Calendar = forwardRef(
         }
 
         setDates(nextDates);
-        if (!dates && (!date || date instanceof Date)) {
+        if (!dates && !datesProp && (!date || date instanceof Date)) {
           setDate(nextDate);
         } else if (date && Array.isArray(date)) {
           setDate(nextDates);
