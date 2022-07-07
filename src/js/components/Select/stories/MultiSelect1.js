@@ -76,7 +76,6 @@ export const MultiSelect = () => {
           setOptions(sortedAllOptions);
         }}
         onClose={() => {
-          console.log(options);
           let next = [...valueMultiple];
           // loop through next selected and sort alphabetically
           next.sort();
@@ -92,8 +91,6 @@ export const MultiSelect = () => {
           setOptions(sortedAllOptions);
         }}
         onChange={({ value, option }) => {
-          console.log("value: ", value)
-          console.log("option: ", option)
           setValueMultiple(value);
         }}
       >

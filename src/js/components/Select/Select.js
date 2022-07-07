@@ -94,6 +94,7 @@ const Select = forwardRef(
       valueKey,
       valueLabel,
       variant,
+      viewSelection,
       ...rest
     },
     ref,
@@ -369,6 +370,7 @@ const Select = forwardRef(
               value={value}
               valueKey={valueKey}
               variant={variant}
+              viewSelection={viewSelection}
             >
               {children}
             </SelectContainer>

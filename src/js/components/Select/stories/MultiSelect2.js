@@ -49,10 +49,14 @@ export const MultiSelect = () => {
     // <Grommet theme={...}>
     <Box fill align="center" pad="large" gap="large">
       <Text>Multi-Select Default Option 2</Text>
-      {/* <Box width="medium">
-        <Form>
-          <FormField> */}
       <Select
+        viewSelection={(val) => {
+          if (val === 'reset') {
+            setOptions(dummyOptions);
+          } else {
+            setOptions(val);
+          }
+        }}
         width="medium"
         variant={2}
         multiple
@@ -79,7 +83,6 @@ export const MultiSelect = () => {
           setOptions(sortedAllOptions);
         }}
         onClose={() => {
-          console.log(options);
           let next = [...valueMultiple];
           // loop through next selected and sort alphabetically
           next.sort();
@@ -95,16 +98,11 @@ export const MultiSelect = () => {
           setOptions(sortedAllOptions);
         }}
         onChange={({ value, option }) => {
-          console.log('value: ', value);
-          console.log('option: ', option);
           setValueMultiple(value);
         }}
       >
         {(option) => <Option option={option} />}
       </Select>
-      {/* </FormField>
-        </Form>
-      </Box> */}
     </Box>
     // </Grommet>
   );

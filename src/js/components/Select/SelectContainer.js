@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
+import { Checkmark } from 'grommet-icons/icons/Checkmark';
 import { selectedStyle, setFocusWithoutScroll } from '../../utils';
 
 import { defaultProps } from '../../default-props';
@@ -21,7 +22,6 @@ import { TextInput } from '../TextInput';
 
 import { StyledContainer } from './StyledSelect';
 import { applyKey } from './utils';
-import { Checkmark } from 'grommet-icons/icons/Checkmark';
 
 // position relative is so scroll can be managed correctly
 const OptionsBox = styled.div`
@@ -84,6 +84,7 @@ const SelectContainer = forwardRef(
       value = '',
       valueKey,
       variant,
+      viewSelection,
       replace = true,
     },
     ref,
@@ -94,6 +95,7 @@ const SelectContainer = forwardRef(
     const searchRef = useRef();
     const optionsRef = useRef();
     const clearRef = useRef();
+    const [showingSelected, setShowingSelected] = useState(false);
 
     useEffect(() => {
       const optionsNode = optionsRef.current;
@@ -458,9 +460,26 @@ const SelectContainer = forwardRef(
             />
           </Box>
         );
+      } else if (showingSelected) {
+        variantButtonContent = (
+          <Box direction="row" gap="small">
+            <Button
+              size="xsmall"
+              label="View All"
+              primary
+              onClick={() => {
+                if (viewSelection) {
+                  const val = 'reset';
+                  viewSelection(val);
+                  setShowingSelected(false);
+                }
+              }}
+            />
+          </Box>
+        );
       } else {
         variantButtonContent = (
-          <Box direction="horizontal" gap="small">
+          <Box direction="row" gap="small">
             <Button
               size="xsmall"
               label="Clear All"
@@ -477,15 +496,12 @@ const SelectContainer = forwardRef(
             />
             <Button
               size="xsmall"
-              label="View Selection"
+              label="View Selected"
               primary
-              onClick={(event) => {
-                if (onChange) {
-                  onChange(event, {
-                    option: options,
-                    value: [],
-                    selected: [],
-                  });
+              onClick={() => {
+                if (viewSelection) {
+                  viewSelection(value);
+                  setShowingSelected(true);
                 }
               }}
             />
@@ -536,7 +552,7 @@ const SelectContainer = forwardRef(
                       <Text size="small">0 selected</Text>
                     ) : (
                       <Text size="small">
-                        {value.length} selected of {allOptions.length}
+                        {value.length} selected of 10
                       </Text>
                     )}
                   </Box>
@@ -572,15 +588,16 @@ const SelectContainer = forwardRef(
           {(search === '' || search === undefined) && (
             <Box
               pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
-              direction="row-responsive"
+              // direction="row-responsive"
+              direction="row"
               // direction={value.length === 0 ? 'row' : 'column'}
               justify="between"
               gap="small"
               // wrap
             >
               <Box
-              // pad={{ horizontal: 'small', top: 'small', bottom: 'small' }}
-              alignSelf="center"
+                // pad={{ horizontal: 'small', top: 'small', bottom: 'small' }}
+                alignSelf="center"
               >
                 {value.length === 0 ? (
                   <Text size="small">0 selected</Text>
@@ -588,15 +605,11 @@ const SelectContainer = forwardRef(
                   <Text size="small">{value.length} selected of 5</Text>
                 ) : (
                   <Text size="small">
-                    {value.length} selected of {options.length}
+                    {value.length} selected of 10
                   </Text>
                 )}
               </Box>
-              <Box>
-                {options.length > 0 &&
-                  !limitedSelections &&
-                  variantButtonContent}
-              </Box>
+              {options.length > 0 && !limitedSelections && variantButtonContent}
             </Box>
           )}
           <OptionsBox
@@ -678,6 +691,7 @@ const SelectContainer = forwardRef(
                       aria-posinset={index + 1}
                       aria-selected={optionSelected}
                       aria-live={optionSelected ? 'assertive' : 'off'}
+                      focusIndicator={false}
                       aria-disabled={
                         optionDisabled || limitDisable || undefined
                       }
