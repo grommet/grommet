@@ -134,12 +134,15 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   );
 };
 
-const debounce = (func, wait) => {
+const debounce = (func, wait, fieldRef) => {
   let timeout;
   return function executedFunction(...args) {
     const later = () => {
-      timeout = null;
-      func(...args);
+      if (fieldRef.current) {
+        console.log('function executed');
+        timeout = null;
+        func(...args);
+      }
     };
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
@@ -474,14 +477,19 @@ const FormField = forwardRef(
                 event.persist();
                 if (onChange) onChange(event);
                 if (contextOnChange) {
-                  const debouncedFn = debounce(() => {
-                    contextOnChange(event);
-                    // A half second (500ms) debounce can be a helpful starting
-                    // point. You want to give the user time to fill out a
-                    // field, but capture their attention before they move on
-                    // past it. 2 second (2000ms) might be too long depending
-                    // on how fast people type, and 200ms would be an eye blink
-                  }, 500);
+                  const debouncedFn = debounce(
+                    () => {
+                      contextOnChange(event);
+                      // A half second (500ms) debounce can be a helpful
+                      // starting point. You want to give the user time to
+                      // fill out a field, but capture their attention before
+                      // they move on past it. 2 second (2000ms) might be too
+                      // long depending on how fast people type, and 200ms
+                      // would be an eye blink
+                    },
+                    500,
+                    formFieldRef,
+                  );
                   debouncedFn();
                 }
               }
