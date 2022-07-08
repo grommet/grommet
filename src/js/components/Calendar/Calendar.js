@@ -165,6 +165,21 @@ const buildDisplayBounds = (reference, firstDayOfWeek) => {
   return [start, end];
 };
 
+const getOutputFormat = (dates) => {
+  let date;
+  if (typeof dates === 'string') {
+    date = dates;
+  } else if (Array.isArray(dates)) {
+    [date] = dates;
+  }
+  let result = 'date timezone';
+  const regex = /T/;
+  if (!regex.test(date)) {
+    result = 'no timezone';
+  }
+  return result;
+};
+
 const millisecondsPerYear = 31557600000;
 
 const CalendarDayButton = (props) => <Button tabIndex={-1} plain {...props} />;
@@ -285,6 +300,8 @@ const Calendar = forwardRef(
     useEffect(() => {
       setReference(getReference(normalizeDate(referenceProp), date, dates));
     }, [referenceProp, date, dates]);
+
+    const [outputFormat] = useState(getOutputFormat(datesProp));
 
     // normalize bounds
     const [bounds, setBounds] = useState(boundsProp);
@@ -536,10 +553,23 @@ const Calendar = forwardRef(
           } else {
             adjustedDate = nextDate.toISOString();
           }
+          // transform adjustedDate to match caller's input format
+          if (outputFormat === 'no timezone') {
+            [adjustedDate] = adjustedDate.split('T');
+          }
           onSelect(adjustedDates || adjustedDate);
         }
       },
-      [activeDate, activeDateProp, date, dates, onSelect, range],
+      [
+        activeDate,
+        activeDateProp,
+        date,
+        dates,
+        datesProp,
+        onSelect,
+        outputFormat,
+        range,
+      ],
     );
 
     const renderCalendarHeader = () => {
