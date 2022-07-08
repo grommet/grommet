@@ -139,7 +139,6 @@ const debounce = (func, wait, fieldRef) => {
   return function executedFunction(...args) {
     const later = () => {
       if (fieldRef.current) {
-        console.log('function executed');
         timeout = null;
         func(...args);
       }
