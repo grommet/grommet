@@ -92,8 +92,7 @@ const normalizeDate = (date) => {
   if (typeof date === 'string' && date.length) {
     const adjustedDate = new Date(date);
     // if time is not specified in ISOstring, normalize to midnight
-    const regex = /T/;
-    if (!regex.test(date)) {
+    if (date.indexOf('T')) {
       const offset = adjustedDate.getTimezoneOffset();
       const hour = adjustedDate.getHours();
       adjustedDate.setHours(hour, offset);
@@ -525,9 +524,13 @@ const Calendar = forwardRef(
             handleSelection(date);
           }
         }
-
         setDates(nextDates);
-        if (!dates && !datesProp && (!date || date instanceof Date)) {
+        if (
+          nextDate &&
+          !dates &&
+          !datesProp &&
+          (!date || date instanceof Date)
+        ) {
           setDate(nextDate);
         } else if (date && Array.isArray(date)) {
           setDate(nextDates);
@@ -548,13 +551,15 @@ const Calendar = forwardRef(
             adjustedDates = adjustedDates.toISOString();
           } else if (nextDates) {
             adjustedDates = [
-              [nextDates[0][0].toISOString(), nextDates[0][1].toISOString()],
+              nextDates[0].map((d) =>
+                d instanceof Date ? d.toISOString() : d,
+              ),
             ];
           } else {
             adjustedDate = nextDate.toISOString();
           }
           // transform adjustedDate to match caller's input format
-          if (outputFormat === 'no timezone') {
+          if (adjustedDate && outputFormat === 'no timezone') {
             [adjustedDate] = adjustedDate.split('T');
           }
           onSelect(adjustedDates || adjustedDate);
