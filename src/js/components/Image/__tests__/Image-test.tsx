@@ -97,6 +97,22 @@ test('Image onError', () => {
   expect(onError).toHaveBeenCalledTimes(1);
 });
 
+test('Image onLoad', () => {
+  const onLoad = jest.fn();
+  render(
+    <Grommet>
+      <Image alt="test" onLoad={onLoad} />
+    </Grommet>,
+  );
+
+  expect(onLoad).not.toHaveBeenCalled();
+
+  const image = screen.getByRole('img', { name: 'test' });
+  fireEvent.load(image);
+
+  expect(onLoad).toHaveBeenCalledTimes(1);
+});
+
 test('Image fallback', async () => {
   const user = userEvent.setup();
 
