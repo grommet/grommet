@@ -92,7 +92,7 @@ const normalizeDate = (date) => {
   if (typeof date === 'string' && date.length) {
     const adjustedDate = new Date(date);
     // if time is not specified in ISOstring, normalize to midnight
-    if (date.indexOf('T')) {
+    if (date.indexOf('T') === -1) {
       const offset = adjustedDate.getTimezoneOffset();
       const hour = adjustedDate.getHours();
       adjustedDate.setHours(hour, offset);
@@ -172,8 +172,7 @@ const getOutputFormat = (dates) => {
     [date] = dates;
   }
   let result = 'date timezone';
-  const regex = /T/;
-  if (!regex.test(date)) {
+  if (date?.indexOf('T') === -1) {
     result = 'no timezone';
   }
   return result;
@@ -300,7 +299,12 @@ const Calendar = forwardRef(
       setReference(getReference(normalizeDate(referenceProp), date, dates));
     }, [referenceProp, date, dates]);
 
-    const [outputFormat] = useState(getOutputFormat(datesProp));
+    const [outputFormat, setOutputFormat] = useState(
+      getOutputFormat(dateProp || datesProp),
+    );
+    useEffect(() => {
+      setOutputFormat(getOutputFormat(dateProp || datesProp));
+    }, [dateProp, datesProp]);
 
     // normalize bounds
     const [bounds, setBounds] = useState(boundsProp);
