@@ -486,7 +486,7 @@ const FormField = forwardRef(
                       // long depending on how fast people type, and 200ms
                       // would be an eye blink
                     },
-                    500,
+                    theme.global.debounceDelay,
                     formFieldRef,
                   );
                   debouncedFn();

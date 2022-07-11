@@ -220,7 +220,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       // The time to wait after the user stopped typing, measured in ms.
-      debounceDelay: 300,
+      debounceDelay: 500,
       drop: {
         // intelligentMargin: undefined,
         background: {
