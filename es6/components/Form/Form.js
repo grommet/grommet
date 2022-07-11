@@ -486,7 +486,12 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
 
           validationRulesRef.current[name].field = validateName(validateArg, required);
           return function () {
-            return delete validationRulesRef.current[name].field;
+            delete validationRulesRef.current[name];
+            var requiredFieldIndex = requiredFields.current.indexOf(name);
+
+            if (requiredFieldIndex !== -1) {
+              requiredFields.current.splice(requiredFieldIndex, 1);
+            }
           };
         }
 
