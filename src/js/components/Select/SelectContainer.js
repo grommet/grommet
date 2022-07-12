@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
+import { FormUp } from 'grommet-icons/icons/FormUp';
 import { selectedStyle, setFocusWithoutScroll } from '../../utils';
 
 import { defaultProps } from '../../default-props';
@@ -21,7 +22,6 @@ import { TextInput } from '../TextInput';
 
 import { StyledContainer } from './StyledSelect';
 import { applyKey } from './utils';
-import { FormUp } from 'grommet-icons/icons/FormUp';
 
 // position relative is so scroll can be managed correctly
 const OptionsBox = styled.div`

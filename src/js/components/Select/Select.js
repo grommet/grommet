@@ -317,9 +317,8 @@ const Select = forwardRef(
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
-          align="center"
           direction="row"
-          justify="between"
+          alignContent="start"
           background={theme.select.background}
           ref={selectBoxRef}
         >
@@ -369,6 +368,7 @@ const Select = forwardRef(
           </Box>
 
           <DropButton
+            alignSelf="start"
             ref={ref}
             a11yTitle={`${
               ariaLabel || a11yTitle || placeholder || 'Open Drop'
@@ -390,7 +390,7 @@ const Select = forwardRef(
             dropTarget={selectBoxRef.current}
             // dropTarget={dropTarget}
             open={open}
-            alignSelf={alignSelf}
+            // alignSelf={alignSelf}
             focusIndicator={focusIndicator}
             onFocus={onFocus}
             onBlur={onBlur}
@@ -440,8 +440,9 @@ const Select = forwardRef(
           >
             {SelectIcon && (
               <Box
+                pad={{ top: 'xsmall' }}
+                alignSelf="start"
                 margin={theme.select.icons.margin}
-                flex={false}
                 style={{ minWidth: 'auto' }}
               >
                 {isValidElement(SelectIcon) ? (

@@ -79,7 +79,7 @@ export const MultiSelect = () => {
                             key={i}
                             pad="xsmall"
                             tabIndex="-1"
-                            checked={true}
+                            checked
                             // onChange={(event) => {
                             //   const newValue = valueMultiple.filter(
                             //     (v) => v !== i,
@@ -126,7 +126,7 @@ export const MultiSelect = () => {
                       key={i}
                       pad="xsmall"
                       tabIndex="-1"
-                      checked={true}
+                      checked
                       // onChange={(event) => {
                       //   const newValue = valueMultiple.filter((v) => v !== i);
                       //   setValueMultiple(newValue);
