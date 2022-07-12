@@ -214,8 +214,8 @@ MultiSelect.args = {
   full: true,
 };
 
-MultiSelect.storyName = 'Multi Select Option 1';
+MultiSelect.storyName = 'Multi Select Variant';
 
 export default {
-  title: 'Input/Select/Multi Select Option 1',
+  title: 'Input/Select/Multi Select Variant',
 };
