@@ -21,7 +21,7 @@ import { TextInput } from '../TextInput';
 
 import { StyledContainer } from './StyledSelect';
 import { applyKey } from './utils';
-import { Checkmark } from 'grommet-icons/icons/Checkmark';
+import { FormUp } from 'grommet-icons/icons/FormUp';
 
 // position relative is so scroll can be managed correctly
 const OptionsBox = styled.div`
@@ -70,6 +70,7 @@ const SelectContainer = forwardRef(
       multiple,
       name,
       onChange,
+      onClose,
       onKeyDown,
       onMore,
       onSearch,
@@ -402,8 +403,7 @@ const SelectContainer = forwardRef(
       if (value.length === 0) {
         variantButtonContent = (
           <Button
-            // plain
-            icon={<Checkmark size="small" />}
+            size="small"
             label="Select All"
             onClick={(event) => {
               if (onChange) {
@@ -424,6 +424,7 @@ const SelectContainer = forwardRef(
       } else {
         variantButtonContent = (
           <Button
+            size="small"
             label="Clear All"
             onClick={(event) => {
               if (onChange) {
@@ -515,6 +516,10 @@ const SelectContainer = forwardRef(
             flex={false}
             pad={{ horizontal: 'small', top: 'xsmall' }}
           >
+            <Text size="small">Select</Text>
+            <Button onClick={onClose}>
+              <FormUp />
+            </Button>
             {limitedSelections ? (
               <>
                 <Text>Select up to 5</Text>
@@ -572,16 +577,11 @@ const SelectContainer = forwardRef(
           {(search === '' || search === undefined) && (
             <Box
               pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
-              direction="row-responsive"
-              // direction={value.length === 0 ? 'row' : 'column'}
+              direction="row"
               justify="between"
               gap="small"
-              // wrap
             >
-              <Box
-              // pad={{ horizontal: 'small', top: 'small', bottom: 'small' }}
-              alignSelf="center"
-              >
+              <Box alignSelf="center">
                 {value.length === 0 ? (
                   <Text size="small">0 selected</Text>
                 ) : limitedSelections ? (
