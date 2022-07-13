@@ -769,3 +769,61 @@ describe('List disabled', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
+
+describe('List pinned', () => {
+  const locations = [
+    'Boise',
+    'Fort Collins',
+    'Los Gatos',
+    'Palo Alto',
+    'San Francisco',
+  ];
+  const pinnedLocations = ['Fort Collins', 'Palo Alto'];
+
+  test('Should apply pinned styling to items', () => {
+    const App = () => (
+      <Grommet>
+        <List data={locations} pinned={pinnedLocations} />
+      </Grommet>
+    );
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Should apply pinned styling to items when data are objects', () => {
+    const typeObjects = [
+      { city: 'Boise', state: 'Idaho' },
+      { city: 'Fort Collins', state: 'Colorado' },
+      { city: 'Los Gatos', state: 'California' },
+      { city: 'Palo Alto', state: 'California' },
+      { city: 'San Francisco', state: 'California' },
+    ];
+
+    const App = () => (
+      <Grommet>
+        <List data={typeObjects} pinned={pinnedLocations} itemKey="city" />
+      </Grommet>
+    );
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Should apply pinned styling to items when data are children', () => {
+    const App = () => (
+      <Grommet>
+        <List data={locations} pinned={pinnedLocations}>
+          {(item) => (
+            <Box>
+              <Text weight="bold">{item}</Text>
+            </Box>
+          )}
+        </List>
+      </Grommet>
+    );
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

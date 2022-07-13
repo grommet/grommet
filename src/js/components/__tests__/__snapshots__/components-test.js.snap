@@ -532,6 +532,7 @@ Object {
       "onOrder": [Function],
       "pad": [Function],
       "paginate": [Function],
+      "pinned": [Function],
       "primaryKey": [Function],
       "secondaryKey": [Function],
       "show": [Function],

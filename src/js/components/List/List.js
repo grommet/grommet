@@ -1,5 +1,6 @@
 import React, { Fragment, useContext, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { Pin } from 'grommet-icons';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -150,6 +151,7 @@ const List = React.forwardRef(
       onOrder,
       pad,
       paginate,
+      pinned,
       primaryKey,
       secondaryKey,
       show: showProp,
@@ -378,6 +380,17 @@ const List = React.forwardRef(
                   isDisabled = disabledItems?.includes(key);
                 }
 
+                let isPinned;
+                if (pinned) {
+                  if (typeof item === 'object' && !itemKey) {
+                    console.error(
+                      // eslint-disable-next-line max-len
+                      `Warning: Missing prop itemKey. Prop pin requires itemKey to be specified when data is of type 'object'.`,
+                    );
+                  }
+                  isPinned = pinned?.includes(key);
+                }
+
                 if (action) {
                   content = [
                     <Box align="start" key={`actionContainer${index}`}>
@@ -400,6 +413,8 @@ const List = React.forwardRef(
                 } else if (Array.isArray(adjustedBackground)) {
                   adjustedBackground =
                     adjustedBackground[index % adjustedBackground.length];
+                } else if (isPinned) {
+                  adjustedBackground = 'light-2';
                 }
 
                 let adjustedBorder =
@@ -447,7 +462,7 @@ const List = React.forwardRef(
 
                 let orderProps;
                 let orderControls;
-                if (onOrder) {
+                if (onOrder && !isPinned) {
                   orderProps = {
                     draggable: true,
                     onDragStart: (event) => {
@@ -486,7 +501,7 @@ const List = React.forwardRef(
 
                   const Up = theme.list.icons.up;
                   const Down = theme.list.icons.down;
-                  orderControls = (
+                  orderControls = !isPinned && (
                     <Box direction="row" align="center" justify="end">
                       <Button
                         id={`${key}MoveUp`}
@@ -562,6 +577,24 @@ const List = React.forwardRef(
                   }
                 }
 
+                let displayPinned;
+                if (isPinned) {
+                  boxProps = {
+                    direction: 'row',
+                    align:
+                      (defaultItemProps && defaultItemProps.align) || 'center',
+                    gap: 'medium',
+                  };
+                  displayPinned = (
+                    <Box direction="row" align="center" justify="end">
+                      <Box pad="small">
+                        <Pin viewBox="0 0 28 28" />
+                      </Box>
+                    </Box>
+                  );
+                  content = <Box flex>{content}</Box>;
+                }
+
                 if (itemProps && itemProps[index]) {
                   boxProps = { ...boxProps, ...itemProps[index] };
                 }
@@ -573,6 +606,7 @@ const List = React.forwardRef(
                     background={adjustedBackground}
                     border={adjustedBorder}
                     isDisabled={isDisabled}
+                    isPinned={isPinned}
                     flex={false}
                     pad={pad || theme.list.item.pad}
                     {...defaultItemProps}
@@ -583,6 +617,7 @@ const List = React.forwardRef(
                   >
                     {onOrder && <Text>{index + 1}</Text>}
                     {content}
+                    {displayPinned}
                     {orderControls}
                   </StyledItem>
                 );
