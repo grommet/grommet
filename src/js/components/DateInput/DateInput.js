@@ -29,14 +29,26 @@ import {
   textToValue,
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
+import { getOutputFormat } from '../Calendar/Calendar';
 
 const getReference = (value) => {
+  let adjustedDate;
   let res;
   if (typeof value === 'string') res = value;
   else if (Array.isArray(value) && Array.isArray(value[0]))
     res = value[0].find((date) => date);
   else if (Array.isArray(value) && value.length) [res] = value;
-  return res ? new Date(res) : undefined;
+
+  if (res) {
+    adjustedDate = new Date(res);
+    // if time is not specified in ISOstring, normalize to midnight
+    if (res?.indexOf('T') === -1) {
+      const offset = adjustedDate.getTimezoneOffset();
+      const hour = adjustedDate.getHours();
+      adjustedDate.setHours(hour, offset);
+    }
+  }
+  return adjustedDate;
 };
 
 const DateInput = forwardRef(
@@ -77,11 +89,16 @@ const DateInput = forwardRef(
       initialValue: defaultValue,
     });
 
-    // TO DO know how to output back to user when masked input value changes
-    // const [outputFormat, setOutputFormat] = useState(getOutputFormat(value));
-    // useEffect(() => {
-    //   setOutputFormat(getOutputFormat(value));
-    // }, [value]);
+    const [outputFormat, setOutputFormat] = useState(getOutputFormat(value));
+    useEffect(() => {
+      setOutputFormat((previousFormat) => {
+        const nextFormat = getOutputFormat(value);
+        // when user types, date could become something like 07//2020
+        // and value becomes undefined. don't lose the format from the
+        // previous valid date
+        return previousFormat !== nextFormat ? previousFormat : nextFormat;
+      });
+    }, [value]);
 
     // keep track of timestamp from original date(s)
     const [reference, setReference] = useState(getReference(value));
@@ -256,12 +273,11 @@ Use the icon prop instead.`,
                   schema,
                   range,
                   reference,
+                  outputFormat,
                 );
                 if (nextValue !== undefined)
                   setReference(getReference(nextValue));
                 // update value even when undefined
-                // TO DO if the previous correct value didn't have a timezone,
-                // keep track of that
                 setValue(nextValue);
                 if (onChange) {
                   event.persist(); // extract from React synthetic event pool

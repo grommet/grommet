@@ -42794,7 +42794,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
             aria-label="
                 July 2020;
                 Currently selected
-  2020-07-21 through none
+  July 21, 2020 through none
               "
             class="c13"
             role="grid"
@@ -44173,7 +44173,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
             aria-label="
                 July 2020;
                 Currently selected
-  2020-07-21 through none
+  July 21, 2020 through none
               "
             class="c13"
             role="grid"
@@ -46967,7 +46967,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
             aria-label="
                 July 2020;
                 Currently selected
-  2020-07-21 through 2020-07-23
+  July 21, 2020 through July 23, 2020
               "
             class="c13"
             role="grid"
@@ -51962,7 +51962,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected 2020-07-21;
+                Currently selected July 21, 2020;
               "
             class="c13"
             role="grid"
@@ -54718,7 +54718,7 @@ exports[`DateInput type format inline without timezone 2`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected 2020-07-21;
+                Currently selected July 21, 2020;
               "
             class="c13"
             role="grid"

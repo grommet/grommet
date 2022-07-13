@@ -63,7 +63,6 @@ export const valueToText = (value, schema) => {
     return adjustedDate;
   });
 
-  console.log(dates);
   let dateIndex = 0;
   let parts = {};
   schema.every((part) => {
@@ -124,7 +123,7 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
-export const textToValue = (text, schema, range, reference) => {
+export const textToValue = (text, schema, range, reference, outputFormat) => {
   if (!text) return range ? [] : undefined;
 
   let result;
@@ -158,7 +157,11 @@ export const textToValue = (text, schema, range, reference) => {
         ]
       : null;
 
-    const date = new Date(parts.y, parts.m - 1, parts.d, ...time).toISOString();
+    let date = new Date(parts.y, parts.m - 1, parts.d, ...time).toISOString();
+
+    if (date && outputFormat === 'no timezone') {
+      [date] = date.split('T');
+    }
 
     if (!range) {
       if (!result) result = date;
