@@ -103,8 +103,8 @@ export const withinDates = (date, dates) => {
   if (dates) {
     if (Array.isArray(dates)) {
       dates.some((d) => {
-        if (typeof d === 'string') {
-          if (sameDay(date, new Date(d))) {
+        if (d instanceof Date) {
+          if (sameDay(date, d)) {
             result = 2;
           }
         } else {
@@ -112,7 +112,7 @@ export const withinDates = (date, dates) => {
         }
         return result;
       });
-    } else if (sameDay(date, new Date(dates))) {
+    } else if (sameDay(date, dates)) {
       result = 2;
     }
   }

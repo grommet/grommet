@@ -51,10 +51,19 @@ export const valueToText = (value, schema) => {
   // show the placeholder text
   if (!value || (Array.isArray(value) && !value.length)) return text;
 
-  const dates = (Array.isArray(value) ? value : [value]).map(
-    (v) => new Date(v),
-  );
+  const dates = (Array.isArray(value) ? value : [value]).map((v) => {
+    // TO DO should we extract this to a reusable function?
+    const adjustedDate = new Date(v);
+    // if time is not specified in ISOstring, normalize to midnight
+    if (v.indexOf('T') === -1) {
+      const offset = adjustedDate.getTimezoneOffset();
+      const hour = adjustedDate.getHours();
+      adjustedDate.setHours(hour, offset);
+    }
+    return adjustedDate;
+  });
 
+  console.log(dates);
   let dateIndex = 0;
   let parts = {};
   schema.every((part) => {

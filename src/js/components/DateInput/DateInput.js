@@ -77,6 +77,12 @@ const DateInput = forwardRef(
       initialValue: defaultValue,
     });
 
+    // TO DO know how to output back to user when masked input value changes
+    // const [outputFormat, setOutputFormat] = useState(getOutputFormat(value));
+    // useEffect(() => {
+    //   setOutputFormat(getOutputFormat(value));
+    // }, [value]);
+
     // keep track of timestamp from original date(s)
     const [reference, setReference] = useState(getReference(value));
 
@@ -254,6 +260,8 @@ Use the icon prop instead.`,
                 if (nextValue !== undefined)
                   setReference(getReference(nextValue));
                 // update value even when undefined
+                // TO DO if the previous correct value didn't have a timezone,
+                // keep track of that
                 setValue(nextValue);
                 if (onChange) {
                   event.persist(); // extract from React synthetic event pool

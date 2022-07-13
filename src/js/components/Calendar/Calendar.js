@@ -108,6 +108,7 @@ const normalizeDate = (date) => {
 // be nice to have one place where all normalization logic lives.
 const normalizeDatesProp = (dates) => {
   if (dates?.length) {
+    if (typeof dates === 'string') return normalizeDate(dates);
     if (Array.isArray(dates[0])) {
       return [dates[0].map((d) => normalizeDate(d))];
     }
@@ -160,28 +161,28 @@ const normalizeOutput = (dateValue, outputFormat) => {
   return result;
 };
 
-const getReference = (reference, date, dates) => {
+// format value to [[]] for internal functions
+const normalizeRange = (value) => {
+  let range = value;
+  if (range instanceof Date) range = [[range, undefined]];
+  else if (Array.isArray(range) && !Array.isArray(range[0])) range = [range];
+
+  return range;
+};
+
+const getReference = (reference, value) => {
   let nextReference;
-  if (date) {
-    if (Array.isArray(date)) {
-      if (date[0] instanceof Date) {
-        [nextReference] = date;
-      } else if (Array.isArray(date[0])) {
-        nextReference = date[0][0] ? date[0][0] : date[0][1];
+  if (value) {
+    if (Array.isArray(value)) {
+      if (value[0] instanceof Date) {
+        [nextReference] = value;
+      } else if (Array.isArray(value[0])) {
+        nextReference = value[0][0] ? value[0][0] : value[0][1];
       } else {
         nextReference = new Date();
         nextReference.setHours(0, 0, 0, 0);
       }
-    } else nextReference = date;
-  } else if (dates && dates.length > 0) {
-    if (dates[0] instanceof Date) {
-      [nextReference] = dates;
-    } else if (Array.isArray(dates[0])) {
-      nextReference = dates[0][0] ? dates[0][0] : dates[0][1];
-    } else {
-      nextReference = new Date();
-      nextReference.setHours(0, 0, 0, 0);
-    }
+    } else nextReference = value;
   } else if (reference) {
     nextReference = reference;
   } else {
@@ -208,20 +209,14 @@ const buildDisplayBounds = (reference, firstDayOfWeek) => {
   return [start, end];
 };
 
-const getOutputFormat = (dates) => {
-  let result = 'date timezone';
-  let date;
-
-  if (typeof dates === 'string') {
-    date = dates;
-  } else if (Array.isArray(dates)) {
-    date = getOutputFormat(dates[0]);
+export const getOutputFormat = (dates) => {
+  if (typeof dates === 'string' && dates?.indexOf('T') === -1) {
+    return 'no timezone';
   }
-
-  if (typeof date === 'string' && date?.indexOf('T') === -1) {
-    result = 'no timezone';
+  if (Array.isArray(dates)) {
+    return getOutputFormat(dates[0]);
   }
-  return result;
+  return 'date timezone';
 };
 
 const millisecondsPerYear = 31557600000;
@@ -345,11 +340,11 @@ const Calendar = forwardRef(
     }, [dateProp, datesProp]);
 
     const [reference, setReference] = useState(
-      getReference(normalizeDate(referenceProp), date, dates),
+      getReference(normalizeInput(referenceProp), value),
     );
     useEffect(() => {
-      setReference(getReference(normalizeDate(referenceProp), date, dates));
-    }, [referenceProp, date, dates]);
+      setReference(getReference(normalizeInput(referenceProp), value));
+    }, [referenceProp, value]);
 
     const [outputFormat, setOutputFormat] = useState(
       getOutputFormat(dateProp || datesProp),
@@ -653,30 +648,51 @@ const Calendar = forwardRef(
     const handleRange = useCallback(
       (selectedDate) => {
         let result;
-
-        if (activeDate === 'start') {
-          if (!value[0][1]) {
-            result = [[selectedDate, value[0][1]]];
-          } else if (selectedDate.getTime() < value[0][1].getTime()) {
-            result = [[selectedDate, value[0][1]]];
-          } else if (selectedDate.getTime() >= value[0][1].getTime()) {
-            // if range === true, return string
-            result = [[selectedDate, undefined]];
+        const priorRange = normalizeRange(value);
+        // check if the caller clicked on the start/end of the range
+        // and deselect it in that case
+        if (selectedDate.getTime() === priorRange?.[0]?.[0]?.getTime()) {
+          if (range === true) [[, result]] = priorRange;
+          else result = [[undefined, priorRange[0][1]]];
+          setActiveDate(activeDates.start);
+        } else if (selectedDate.getTime() === priorRange?.[0]?.[1]?.getTime()) {
+          if (range === true) [[result]] = priorRange;
+          else result = [[priorRange[0][0], undefined]];
+          setActiveDate(activeDates.end);
+        } else if (activeDate === activeDates.start) {
+          if (!priorRange) {
+            if (range === true) result = selectedDate;
+            else result = [[selectedDate, undefined]];
+          } else if (!priorRange[0][1]) {
+            if (range === true) result = selectedDate;
+            else result = [[selectedDate, priorRange[0][1]]];
+          } else if (selectedDate.getTime() < priorRange[0][1].getTime()) {
+            result = [[selectedDate, priorRange[0][1]]];
+          } else if (selectedDate.getTime() > priorRange[0][1].getTime()) {
+            if (range === true) {
+              result = selectedDate;
+            } else result = [[selectedDate, undefined]];
           }
-          setActiveDate('end');
-        } else {
-          if (selectedDate.getTime() < value[0][0].getTime()) {
-            result = [[selectedDate, undefined]];
-          } else if (selectedDate.getTime() >= value[0][0].getTime()) {
-            result = [[value[0][0], selectedDate]];
-          }
-          setActiveDate('start');
+          setActiveDate(activeDates.end);
+          // selecting end date
+        } else if (!priorRange) {
+          if (range === true) result = selectedDate;
+          else result = [[undefined, selectedDate]];
+          setActiveDate(activeDates.start);
+        } else if (selectedDate.getTime() < priorRange[0][0].getTime()) {
+          if (range === true) {
+            result = selectedDate;
+          } else result = [[selectedDate, undefined]];
+          setActiveDate(activeDates.end);
+        } else if (selectedDate.getTime() > priorRange[0][0].getTime()) {
+          result = [[priorRange[0][0], selectedDate]];
+          setActiveDate(activeDates.start);
         }
 
         setValue(result);
         return result;
       },
-      [activeDate, value],
+      [activeDate, value, range],
     );
 
     const selectDate = useCallback(
@@ -889,15 +905,18 @@ const Calendar = forwardRef(
         let selected = false;
         let inRange = false;
 
-        // const selectedState = withinDates(day, date || dates);
-        const selectedState = withinDates(day, value);
+        const selectedState = withinDates(
+          day,
+          range ? normalizeRange(value) : value,
+        );
         if (selectedState === 2) {
           selected = true;
         } else if (selectedState === 1) {
           inRange = true;
         }
         const dayDisabled =
-          withinDates(day, disabled) || (bounds && !betweenDates(day, bounds));
+          withinDates(day, normalizeInput(disabled)) ||
+          (bounds && !betweenDates(day, normalizeInput(bounds)));
         if (
           !firstDayInMonth &&
           !dayDisabled &&
