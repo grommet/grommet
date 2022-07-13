@@ -1,3 +1,5 @@
+import { handleOffset } from '../Calendar/utils';
+
 // Converting between Date and String types is handled via a "schema".
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
@@ -160,7 +162,7 @@ export const textToValue = (text, schema, range, reference, outputFormat) => {
     let date = new Date(parts.y, parts.m - 1, parts.d, ...time).toISOString();
 
     if (date && outputFormat === 'no timezone') {
-      [date] = date.split('T');
+      [date] = handleOffset(date).toISOString().split('T');
     }
 
     if (!range) {

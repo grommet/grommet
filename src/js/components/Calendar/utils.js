@@ -187,3 +187,13 @@ export const normalizeForTimezone = (value, timestamp, normalize = true) => {
 
   return adjustedDate;
 };
+
+export const handleOffset = (date) => {
+  const normalizedDate = new Date(date);
+  const offset = normalizedDate.getTimezoneOffset();
+  const hour = normalizedDate.getHours();
+  // add back offset
+  normalizedDate.setHours(hour, offset < 0 ? -offset : offset);
+
+  return normalizedDate;
+};

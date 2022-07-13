@@ -31,6 +31,7 @@ import {
   betweenDates,
   daysApart,
   endOfMonth,
+  handleOffset,
   startOfMonth,
   subtractDays,
   subtractMonths,
@@ -146,7 +147,9 @@ const normalizeOutput = (dateValue, outputFormat) => {
   const normalize = (value) => {
     let normalizedValue = value.toISOString();
     if (normalizedValue && outputFormat === 'no timezone') {
-      [normalizedValue] = normalizedValue.split('T');
+      [normalizedValue] = handleOffset(normalizedValue)
+        .toISOString()
+        .split('T');
     }
     return normalizedValue;
   };
