@@ -45,11 +45,6 @@ const headingPadMap = {
   large: 'medium',
 };
 
-const activeDates = {
-  start: 'start',
-  end: 'end',
-};
-
 const getLocaleString = (value, locale) =>
   value?.toLocaleDateString(locale, {
     month: 'long',
@@ -318,9 +313,7 @@ const Calendar = forwardRef(
     // set activeDate when caller changes it, allows us to change
     // it internally too
     const [activeDate, setActiveDate] = useState(
-      dateProp && typeof dateProp === 'string' && range
-        ? activeDates.end
-        : activeDates.start,
+      dateProp && typeof dateProp === 'string' && range ? 'end' : 'start',
     );
     useEffect(() => {
       if (activeDateProp) setActiveDate(activeDateProp);
@@ -346,7 +339,9 @@ const Calendar = forwardRef(
       getReference(normalizeInput(referenceProp), value),
     );
     useEffect(() => {
-      setReference(getReference(normalizeInput(referenceProp), value));
+      if (value) {
+        setReference(getReference(normalizeInput(referenceProp), value));
+      }
     }, [referenceProp, value]);
 
     const [outputFormat, setOutputFormat] = useState(
@@ -500,198 +495,52 @@ const Calendar = forwardRef(
       [onReference, bounds],
     );
 
-    // const selectDate = useCallback(
-    //   (selectedDate) => {
-    //     console.log('selectedDate:', selectedDate);
-    //     let nextDates;
-    //     let nextDate;
-    //     if (!range) {
-    //       console.log('yo');
-    //       nextDate = selectedDate;
-    //     }
-    //     // everything down is a range
-    //     else if (!dates && !Array.isArray(date)) {
-    //       console.log('mamma');
-    //       // if user supplies date, convert this into dates
-    //       if (date) {
-    //         const priorDate = date;
-    //         const selDate = selectedDate;
-    //         if (activeDate === activeDates.start) {
-    //           if (selDate.getTime() > priorDate.getTime()) {
-    //             nextDates = [[selectedDate, undefined]];
-    //           } else {
-    //             nextDates = [[selectedDate, date]];
-    //           }
-    //           setActiveDate(activeDates.end);
-    //           if (activeDateProp) setActiveDate(activeDateProp);
-    //         } else if (activeDate === activeDates.end) {
-    //           if (selDate.getTime() < priorDate.getTime()) {
-    //             nextDates = [[selectedDate, undefined]];
-    //             setActiveDate(activeDates.end);
-    //           } else {
-    //             nextDates = [[date, selectedDate]];
-    //             setActiveDate(activeDates.start);
-    //           }
-    //           if (activeDateProp) setActiveDate(activeDateProp);
-    //         }
-    //       } else if (activeDate === activeDates.start) {
-    //         nextDates = [[selectedDate, undefined]];
-    //         setActiveDate(activeDates.end);
-    //       } else if (activeDate === activeDates.end) {
-    //         nextDates = [[undefined, selectedDate]];
-    //       }
-    //       if (activeDateProp) setActiveDate(activeDateProp);
-    //     } else if (dates || date) {
-    //       const handleSelection = (dateValue) => {
-    //         console.log(
-    //           '\n',
-    //           'tiger:',
-    //           '\n dateValue',
-    //           dateValue[0][0],
-    //           dateValue[0][1],
-    //           '\n value',
-    //           value[0][0],
-    //           value[0][1],
-    //         );
-    //         // look back here, could likely remove Date constructor
-    //         const priorDates = dateValue[0].map((d) => new Date(d));
-    //         // const priorDates = [...dateValue[0]];
-    //         const selDate = selectedDate;
-    //         if (selDate.getTime() === priorDates[0].getTime()) {
-    //           nextDates = [[undefined, dateValue[0][1]]];
-    //           setActiveDate(activeDates.start);
-    //         } else if (selDate.getTime() === priorDates[1].getTime()) {
-    //           nextDates = [[dateValue[0][0], undefined]];
-    //           setActiveDate(activeDates.end);
-    //           if (activeDateProp) setActiveDate(activeDateProp);
-    //         } else if (activeDate === activeDates.start) {
-    //           if (selDate.getTime() > priorDates[1].getTime()) {
-    //             nextDates = [[selectedDate, undefined]];
-    //           } else {
-    //             nextDates = [[selectedDate, dateValue[0][1]]];
-    //           }
-    //           setActiveDate(activeDates.end);
-    //           if (activeDateProp) setActiveDate(activeDateProp);
-    //         } else if (activeDate === activeDates.end) {
-    //           if (selDate.getTime() < priorDates[0].getTime()) {
-    //             nextDates = [[selectedDate, undefined]];
-    //             setActiveDate(activeDates.end);
-    //           } else {
-    //             nextDates = [[dateValue[0][0], selectedDate]];
-    //             setActiveDate(activeDates.start);
-    //           }
-    //           if (activeDateProp) setActiveDate(activeDateProp);
-    //         }
-    //         // cleanup
-    //         if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
-    //       };
-    //       // // have dates
-    //       // if (dates) {
-    //       //   handleSelection(dates);
-    //       // } else if (date && Array.isArray(date)) {
-    //       //   handleSelection(date);
-    //       // }
-    //       handleSelection(dates || date);
-    //     }
-    //     setDates(nextDates);
-    //     setValue(nextDates);
-    //     if (
-    //       nextDate &&
-    //       !dates &&
-    //       !datesProp &&
-    //       (!date || date instanceof Date)
-    //     ) {
-    //       // setDate(nextDate);
-    //     } else if (date && Array.isArray(date)) {
-    //       // setDate(nextDates);
-    //     }
-    //     // setActive(selectedDate);
-    //     if (onSelect) {
-    //       // return ISO string to align with docs
-    //       let adjustedDates;
-    //       let adjustedDate;
-    //       if (
-    //         nextDates &&
-    //         Array.isArray(nextDates[0]) &&
-    //         (!nextDates[0][0] || !nextDates[0][1]) &&
-    //         range === true
-    //       ) {
-    //         // return string for backwards compatibility
-    //         [adjustedDates] = nextDates[0].filter((d) => d);
-    //         adjustedDates = adjustedDates.toISOString();
-    //       } else if (nextDates) {
-    //         adjustedDates = [
-    //           nextDates[0].map((d) =>
-    //             d instanceof Date ? d.toISOString() : d,
-    //           ),
-    //         ];
-    //       } else {
-    //         adjustedDate = nextDate.toISOString();
-    //       }
-
-    //       // transform adjustedDate to match caller's input format
-    //       if (adjustedDate && outputFormat === 'no timezone') {
-    //         [adjustedDate] = adjustedDate.split('T');
-    //       }
-    //       onSelect(adjustedDates || adjustedDate);
-    //     }
-    //   },
-    //   [
-    //     activeDate,
-    //     activeDateProp,
-    //     date,
-    //     dates,
-    //     datesProp,
-    //     onSelect,
-    //     outputFormat,
-    //     range,
-    //   ],
-    // );
-
     const handleRange = useCallback(
       (selectedDate) => {
         let result;
         const priorRange = normalizeRange(value);
-        // check if the caller clicked on the start/end of the range
-        // and deselect it in that case
+        // deselect when date clicked was the start/end of the range
         if (selectedDate.getTime() === priorRange?.[0]?.[0]?.getTime()) {
-          if (range === true) [[, result]] = priorRange;
-          else result = [[undefined, priorRange[0][1]]];
-          setActiveDate(activeDates.start);
+          result = [[undefined, priorRange[0][1]]];
+          setActiveDate('start');
         } else if (selectedDate.getTime() === priorRange?.[0]?.[1]?.getTime()) {
-          if (range === true) [[result]] = priorRange;
-          else result = [[priorRange[0][0], undefined]];
-          setActiveDate(activeDates.end);
-        } else if (activeDate === activeDates.start) {
+          result = [[priorRange[0][0], undefined]];
+          setActiveDate('end');
+        }
+        // selecting start date
+        else if (activeDate === 'start') {
           if (!priorRange) {
-            if (range === true) result = selectedDate;
-            else result = [[selectedDate, undefined]];
+            result = [[selectedDate, undefined]];
           } else if (!priorRange[0][1]) {
-            if (range === true) result = selectedDate;
-            else result = [[selectedDate, priorRange[0][1]]];
+            result = [[selectedDate, priorRange[0][1]]];
           } else if (selectedDate.getTime() < priorRange[0][1].getTime()) {
             result = [[selectedDate, priorRange[0][1]]];
           } else if (selectedDate.getTime() > priorRange[0][1].getTime()) {
-            if (range === true) {
-              result = selectedDate;
-            } else result = [[selectedDate, undefined]];
+            result = [[selectedDate, undefined]];
           }
-          setActiveDate(activeDates.end);
-          // selecting end date
-        } else if (!priorRange) {
-          if (range === true) result = selectedDate;
-          else result = [[undefined, selectedDate]];
-          setActiveDate(activeDates.start);
+          setActiveDate('end');
+        }
+        // selecting end date
+        else if (!priorRange) {
+          result = [[undefined, selectedDate]];
+          setActiveDate('start');
         } else if (selectedDate.getTime() < priorRange[0][0].getTime()) {
-          if (range === true) {
-            result = selectedDate;
-          } else result = [[selectedDate, undefined]];
-          setActiveDate(activeDates.end);
+          result = [[selectedDate, undefined]];
+          setActiveDate('end');
         } else if (selectedDate.getTime() > priorRange[0][0].getTime()) {
           result = [[priorRange[0][0], selectedDate]];
-          setActiveDate(activeDates.start);
+          setActiveDate('start');
         }
 
+        // If no dates selected, always return undefined; else format
+        // result according to specified range value.
+        if (result[0].includes(undefined)) {
+          if (range === 'array') {
+            result = !result[0][0] && !result[0][1] ? undefined : result;
+          } else {
+            result = result[0].find((d) => d !== undefined);
+          }
+        }
         setValue(result);
         return result;
       },
@@ -702,7 +551,7 @@ const Calendar = forwardRef(
       (selectedDate) => {
         let nextValue;
 
-        if (range || Array.isArray(value[0])) {
+        if (range || Array.isArray(value?.[0])) {
           nextValue = handleRange(selectedDate);
         } else {
           nextValue = selectedDate;
