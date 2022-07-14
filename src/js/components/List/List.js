@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useRef, useState } from 'react';
+import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { Pin } from 'grommet-icons';
 
@@ -87,13 +87,19 @@ const normalize = (item, index, property) => {
   return item[property];
 };
 
-const reorder = (array, source, target) => {
+const reorder = (array, pinnedArray, source, target) => {
   const result = array.slice(0);
   const tmp = result[source];
   if (source < target)
     for (let i = source; i < target; i += 1) result[i] = result[i + 1];
   else for (let i = source; i > target; i -= 1) result[i] = result[i - 1];
   result[target] = tmp;
+
+  if (pinnedArray.data.length > 0) {
+    pinnedArray.data.forEach((pinnedItem, index) => {
+      result.splice(pinnedArray.indexes[index], 0, pinnedItem);
+    });
+  }
   return result;
 };
 
@@ -151,7 +157,7 @@ const List = React.forwardRef(
       onOrder,
       pad,
       paginate,
-      pinned,
+      pinned = [],
       primaryKey,
       secondaryKey,
       show: showProp,
@@ -182,6 +188,28 @@ const List = React.forwardRef(
     };
     const [itemFocus, setItemFocus] = useState();
     const [dragging, setDragging] = useState();
+
+    // store a reference to the pinned and orderable data
+    const [orderableData, pinnedInfo] = useMemo(() => {
+      const orderable = [];
+      const pinnedData = [];
+      const pinnedIndexes = [];
+
+      if (pinned.length === 0)
+        return [data, { data: pinnedData, indexes: pinnedIndexes }];
+
+      data.forEach((item, index) => {
+        const key = typeof item === 'object' ? item[itemKey] : item;
+        if (pinned.includes(key)) {
+          pinnedData.push(item);
+          pinnedIndexes.push(index);
+        } else {
+          orderable.push(item);
+        }
+      });
+
+      return [orderable, { data: pinnedData, indexes: pinnedIndexes }];
+    }, [data, itemKey, pinned]);
 
     const [items, paginationProps] = usePagination({
       data,
@@ -236,10 +264,14 @@ const List = React.forwardRef(
                     // active control will stay on the same item
                     // even though it moved up or down.
                     if (active % 2) {
-                      onOrder(reorder(data, index, index + 1));
+                      onOrder(
+                        reorder(orderableData, pinnedInfo, index, index + 1),
+                      );
                       updateActive(Math.min(active + 2, data.length * 2 - 2));
                     } else {
-                      onOrder(reorder(data, index, index - 1));
+                      onOrder(
+                        reorder(orderableData, pinnedInfo, index, index - 1),
+                      );
                       updateActive(Math.max(active - 2, 1));
                     }
                   } else if (
@@ -369,6 +401,12 @@ const List = React.forwardRef(
 
                 const key = itemKey ? itemId : getKey(item, index, itemId);
 
+                const orderableIndex = orderableData.findIndex((ordItem) => {
+                  const ordItemKey =
+                    typeof ordItem === 'object' ? ordItem[itemKey] : ordItem;
+                  return ordItemKey === key;
+                });
+
                 let isDisabled;
                 if (disabledItems) {
                   if (typeof item === 'object' && !itemKey) {
@@ -381,7 +419,7 @@ const List = React.forwardRef(
                 }
 
                 let isPinned;
-                if (pinned) {
+                if (pinned.length > 0) {
                   if (typeof item === 'object' && !itemKey) {
                     console.error(
                       // eslint-disable-next-line max-len
@@ -485,7 +523,12 @@ const List = React.forwardRef(
                           // eslint-disable-next-line no-param-reassign
                           event.dataTransfer.dropEffect = 'move';
                           setOrderingData(
-                            reorder(orderingData || data, dragging, index),
+                            reorder(
+                              orderingData || orderableData,
+                              pinnedInfo,
+                              dragging,
+                              index,
+                            ),
                           );
                           setDragging(index);
                         }
@@ -509,11 +552,18 @@ const List = React.forwardRef(
                         icon={<Up />}
                         hoverIndicator
                         focusIndicator={false}
-                        disabled={!index}
+                        disabled={!orderableIndex}
                         active={active === index * 2}
                         onClick={(event) => {
                           event.stopPropagation();
-                          onOrder(reorder(data, index, index - 1));
+                          onOrder(
+                            reorder(
+                              orderableData,
+                              pinnedInfo,
+                              orderableIndex,
+                              orderableIndex - 1,
+                            ),
+                          );
                         }}
                         tabIndex={-1}
                         onMouseOver={() => updateActive(index * 2)}
@@ -533,11 +583,18 @@ const List = React.forwardRef(
                         icon={<Down />}
                         hoverIndicator
                         focusIndicator={false}
-                        disabled={index >= data.length - 1}
+                        disabled={orderableIndex >= orderableData.length - 1}
                         active={active === index * 2 + 1}
                         onClick={(event) => {
                           event.stopPropagation();
-                          onOrder(reorder(data, index, index + 1));
+                          onOrder(
+                            reorder(
+                              orderableData,
+                              pinnedInfo,
+                              orderableIndex,
+                              orderableIndex + 1,
+                            ),
+                          );
                         }}
                         tabIndex={-1}
                         onMouseOver={() => updateActive(index * 2 + 1)}

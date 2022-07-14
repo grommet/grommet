@@ -3,14 +3,23 @@ import React, { useState } from 'react';
 import { Box, List } from 'grommet';
 
 const locations = [
+  'Los Angelos',
   'Boise',
   'Fort Collins',
   'Los Gatos',
   'Palo Alto',
+  'Pheonix',
   'San Francisco',
+  'Trenton',
 ];
 
-const pinnedLocations = ['Fort Collins', 'Palo Alto'];
+const pinnedLocations = [
+  'Los Angelos',
+  'Fort Collins',
+  'Palo Alto',
+  'Pheonix',
+  'Trenton',
+];
 
 export const Pinned = () => {
   const [ordered, setOrder] = useState(locations);
