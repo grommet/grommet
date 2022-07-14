@@ -945,10 +945,7 @@ exports[`DateInput controlled format inline 1`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+          aria-label="July 2020; Currently selected July 2, 2020;"
           class="c13"
           role="grid"
           tabindex="0"
@@ -1814,10 +1811,7 @@ exports[`DateInput controlled format inline 2`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected July 1, 2020;
-              "
+          aria-label="July 2020; Currently selected July 1, 2020;"
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
           role="grid"
           tabindex="0"
@@ -3266,10 +3260,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+            aria-label="July 2020; Currently selected July 2, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -4721,10 +4712,7 @@ exports[`DateInput controlled format inline without timezone 2`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected July 1, 2020;
-              "
+            aria-label="July 2020; Currently selected July 1, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -7229,10 +7217,7 @@ exports[`DateInput format inline 1`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+          aria-label="July 2020; Currently selected July 2, 2020;"
           class="c13"
           role="grid"
           tabindex="0"
@@ -9082,10 +9067,7 @@ exports[`DateInput inline 1`] = `
         </div>
       </div>
       <div
-        aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+        aria-label="July 2020; Currently selected July 2, 2020;"
         class="c9"
         role="grid"
         tabindex="0"
@@ -11828,11 +11810,7 @@ exports[`DateInput range format inline 1`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected
-  July 2, 2020 through July 7, 2020
-              "
+          aria-label="July 2020; Currently selected July 2, 2020 through July 7, 2020"
           class="c13"
           role="grid"
           tabindex="0"
@@ -13029,11 +13007,7 @@ exports[`DateInput range inline 1`] = `
         </div>
       </div>
       <div
-        aria-label="
-                July 2020;
-                Currently selected
-  July 2, 2020 through July 7, 2020
-              "
+        aria-label="July 2020; Currently selected July 2, 2020 through July 7, 2020"
         class="c9"
         role="grid"
         tabindex="0"
@@ -15233,10 +15207,7 @@ exports[`DateInput select format 3`] = `
         </div>
       </div>
       <div
-        aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+        aria-label="July 2020; Currently selected July 2, 2020;"
         class="c10"
         role="grid"
         tabindex="0"
@@ -16639,10 +16610,7 @@ exports[`DateInput select format inline 1`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+          aria-label="July 2020; Currently selected July 2, 2020;"
           class="c13"
           role="grid"
           tabindex="0"
@@ -17502,10 +17470,7 @@ exports[`DateInput select format inline 2`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected July 20, 2020;
-              "
+          aria-label="July 2020; Currently selected July 20, 2020;"
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eIQdmp"
           role="grid"
           tabindex="0"
@@ -18879,10 +18844,7 @@ exports[`DateInput select format inline 3`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+            aria-label="July 2020; Currently selected July 2, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -20334,10 +20296,7 @@ exports[`DateInput select format inline 4`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected July 20, 2020;
-              "
+            aria-label="July 2020; Currently selected July 20, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -21729,11 +21688,7 @@ exports[`DateInput select format inline range 1`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected
-  July 2, 2020 through July 7, 2020
-              "
+          aria-label="July 2020; Currently selected July 2, 2020 through July 7, 2020"
           class="c13"
           role="grid"
           tabindex="0"
@@ -22593,11 +22548,7 @@ exports[`DateInput select format inline range 2`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected
-  July 10, 2020 through July 10, 2020
-              "
+          aria-label="July 2020; Currently selected July 10, 2020 through July 10, 2020"
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eIQdmp"
           role="grid"
           tabindex="0"
@@ -23989,11 +23940,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected
-  July 2, 2020 through July 7, 2020
-              "
+            aria-label="July 2020; Currently selected July 2, 2020 through July 7, 2020"
             class="c13"
             role="grid"
             tabindex="0"
@@ -25445,11 +25392,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected
-  July 10, 2020 through July 10, 2020
-              "
+            aria-label="July 2020; Currently selected July 10, 2020 through July 10, 2020"
             class="c13"
             role="grid"
             tabindex="0"
@@ -27250,10 +27193,7 @@ exports[`DateInput select format no timezone 3`] = `
         </div>
       </div>
       <div
-        aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+        aria-label="July 2020; Currently selected July 2, 2020;"
         class="c10"
         role="grid"
         tabindex="0"
@@ -28462,10 +28402,7 @@ exports[`DateInput select inline 1`] = `
         </div>
       </div>
       <div
-        aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+        aria-label="July 2020; Currently selected July 2, 2020;"
         class="c9"
         role="grid"
         tabindex="0"
@@ -29643,10 +29580,7 @@ exports[`DateInput select inline without timezone 1`] = `
         </div>
       </div>
       <div
-        aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+        aria-label="July 2020; Currently selected July 2, 2020;"
         class="c9"
         role="grid"
         tabindex="0"
@@ -31018,10 +30952,7 @@ exports[`DateInput type format inline 1`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+          aria-label="July 2020; Currently selected July 2, 2020;"
           class="c13"
           role="grid"
           tabindex="0"
@@ -31881,10 +31812,7 @@ exports[`DateInput type format inline 2`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected July 21, 2020;
-              "
+          aria-label="July 2020; Currently selected July 21, 2020;"
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
           role="grid"
           tabindex="0"
@@ -33257,10 +33185,7 @@ exports[`DateInput type format inline partial 1`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+          aria-label="July 2020; Currently selected July 2, 2020;"
           class="c13"
           role="grid"
           tabindex="0"
@@ -34634,10 +34559,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+            aria-label="July 2020; Currently selected July 2, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -36029,11 +35951,7 @@ exports[`DateInput type format inline range 1`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected
-  July 2, 2020 through July 7, 2020
-              "
+          aria-label="July 2020; Currently selected July 2, 2020 through July 7, 2020"
           class="c13"
           role="grid"
           tabindex="0"
@@ -36893,11 +36811,7 @@ exports[`DateInput type format inline range 2`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected
-  July 21, 2020 through July 23, 2020
-              "
+          aria-label="July 2020; Currently selected July 21, 2020 through July 23, 2020"
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
           role="grid"
           tabindex="0"
@@ -38288,11 +38202,7 @@ exports[`DateInput type format inline range partial 1`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected
-  July 2, 2020 through July 7, 2020
-              "
+          aria-label="July 2020; Currently selected July 2, 2020 through July 7, 2020"
           class="c13"
           role="grid"
           tabindex="0"
@@ -39152,11 +39062,7 @@ exports[`DateInput type format inline range partial 2`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected
-  July 21, 2020 through none
-              "
+          aria-label="July 2020; Currently selected July 21, 2020 through none"
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
           role="grid"
           tabindex="0"
@@ -40016,11 +39922,7 @@ exports[`DateInput type format inline range partial 3`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected
-  July 21, 2020 through none
-              "
+          aria-label="July 2020; Currently selected July 21, 2020 through none"
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
           role="grid"
           tabindex="0"
@@ -41412,11 +41314,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected
-  July 2, 2020 through July 7, 2020
-              "
+            aria-label="July 2020; Currently selected July 2, 2020 through July 7, 2020"
             class="c13"
             role="grid"
             tabindex="0"
@@ -42791,11 +42689,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected
-  July 21, 2020 through none
-              "
+            aria-label="July 2020; Currently selected July 21, 2020 through none"
             class="c13"
             role="grid"
             tabindex="0"
@@ -44170,11 +44064,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected
-  July 21, 2020 through none
-              "
+            aria-label="July 2020; Currently selected July 21, 2020 through none"
             class="c13"
             role="grid"
             tabindex="0"
@@ -45567,11 +45457,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected
-  July 2, 2020 through July 7, 2020
-              "
+            aria-label="July 2020; Currently selected July 2, 2020 through July 7, 2020"
             class="c13"
             role="grid"
             tabindex="0"
@@ -46964,11 +46850,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected
-  July 21, 2020 through July 23, 2020
-              "
+            aria-label="July 2020; Currently selected July 21, 2020 through July 23, 2020"
             class="c13"
             role="grid"
             tabindex="0"
@@ -48342,10 +48224,7 @@ exports[`DateInput type format inline short 1`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+          aria-label="July 2020; Currently selected July 2, 2020;"
           class="c13"
           role="grid"
           tabindex="0"
@@ -49205,10 +49084,7 @@ exports[`DateInput type format inline short 2`] = `
           </div>
         </div>
         <div
-          aria-label="
-                July 2020;
-                Currently selected July 21, 2020;
-              "
+          aria-label="July 2020; Currently selected July 21, 2020;"
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 Jrjhw"
           role="grid"
           tabindex="0"
@@ -50582,10 +50458,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+            aria-label="July 2020; Currently selected July 2, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -51960,10 +51833,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected July 21, 2020;
-              "
+            aria-label="July 2020; Currently selected July 21, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -53338,10 +53208,7 @@ exports[`DateInput type format inline without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected July 2, 2020;
-              "
+            aria-label="July 2020; Currently selected July 2, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -54716,10 +54583,7 @@ exports[`DateInput type format inline without timezone 2`] = `
             </div>
           </div>
           <div
-            aria-label="
-                July 2020;
-                Currently selected July 21, 2020;
-              "
+            aria-label="July 2020; Currently selected July 21, 2020;"
             class="c13"
             role="grid"
             tabindex="0"

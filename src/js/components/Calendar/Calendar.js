@@ -52,65 +52,29 @@ const getLocaleString = (value, locale) =>
     year: 'numeric',
   });
 
-const formatSelectedDatesString = (date, locale) => `Currently selected
-  ${date?.map((item) => {
-    let dates;
-    if (!Array.isArray(item)) {
-      dates = `${getLocaleString(item, locale)} `;
-    } else {
-      const start =
-        item[0] !== undefined ? getLocaleString(item[0], locale) : 'none';
-      const end =
-        item[1] !== undefined ? getLocaleString(item[1], locale) : 'none';
-      dates = `${start} through ${end}`;
-    }
-    return dates;
-  })}`;
-
-const getAccessibilityString = (date, dates, locale) => {
-  if (date && !Array.isArray(date)) {
-    return `Currently selected ${getLocaleString(date, locale)};`;
-  }
-  if (date && Array.isArray(date)) {
-    return formatSelectedDatesString(date, locale);
-  }
-  if (dates?.length) {
-    return formatSelectedDatesString(dates, locale);
+const currentlySelectedString = (value, locale) => {
+  let selected;
+  if (value instanceof Date) {
+    selected = `Currently selected ${getLocaleString(value, locale)};`;
+  } else if (value?.length) {
+    selected = `Currently selected ${value.map((item) => {
+      let dates;
+      if (!Array.isArray(item)) {
+        dates = `${getLocaleString(item, locale)}`;
+      } else {
+        const start =
+          item[0] !== undefined ? getLocaleString(item[0], locale) : 'none';
+        const end =
+          item[1] !== undefined ? getLocaleString(item[1], locale) : 'none';
+        dates = `${start} through ${end}`;
+      }
+      return dates;
+    })}`;
+  } else {
+    selected = 'No date selected';
   }
 
-  return 'No date selected';
-};
-
-// normalize dates as Date objects
-const normalizeDate = (date) => {
-  let result;
-  // date may be an empty string ''
-  if (typeof date === 'string' && date.length) {
-    const adjustedDate = new Date(date);
-    // if time is not specified in ISOstring, normalize to midnight
-    if (date.indexOf('T') === -1) {
-      const offset = adjustedDate.getTimezoneOffset();
-      const hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset);
-    }
-    result = adjustedDate;
-  } else if (date instanceof Date) {
-    result = date;
-  }
-  return result;
-};
-
-// TODO: can we consolidate this with the normalizeDate function? It'd
-// be nice to have one place where all normalization logic lives.
-const normalizeDatesProp = (dates) => {
-  if (dates?.length) {
-    if (typeof dates === 'string') return normalizeDate(dates);
-    if (Array.isArray(dates[0])) {
-      return [dates[0].map((d) => normalizeDate(d))];
-    }
-    return dates.map((d) => normalizeDate(d));
-  }
-  return undefined;
+  return selected;
 };
 
 // calendar value may be a single date, multiple dates, a range of dates
@@ -318,16 +282,6 @@ const Calendar = forwardRef(
     useEffect(() => {
       if (activeDateProp) setActiveDate(activeDateProp);
     }, [activeDateProp]);
-
-    const [date, setDate] = useState(normalizeDate(dateProp));
-    useEffect(() => {
-      setDate(normalizeDate(dateProp));
-    }, [dateProp]);
-
-    const [dates, setDates] = useState(normalizeDatesProp(datesProp));
-    useEffect(() => {
-      setDates(normalizeDatesProp(datesProp));
-    }, [datesProp]);
 
     const [value, setValue] = useState(normalizeInput(dateProp || datesProp));
     useEffect(() => {
@@ -917,13 +871,10 @@ const Calendar = forwardRef(
             <StyledWeeksContainer
               tabIndex={0}
               role="grid"
-              aria-label={`
-                ${reference.toLocaleDateString(locale, {
-                  month: 'long',
-                  year: 'numeric',
-                })};
-                ${getAccessibilityString(date, dates, locale)}
-              `}
+              aria-label={`${reference.toLocaleDateString(locale, {
+                month: 'long',
+                year: 'numeric',
+              })}; ${currentlySelectedString(value, locale)}`}
               ref={daysRef}
               sizeProp={size}
               fillContainer={fill}
