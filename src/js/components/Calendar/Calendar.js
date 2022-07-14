@@ -124,9 +124,11 @@ const normalizeOutput = (dateValue, outputFormat) => {
 };
 
 // format value to [[]] for internal functions
-const normalizeRange = (value) => {
+const normalizeRange = (value, activeDate) => {
   let range = value;
-  if (range instanceof Date) range = [[range, undefined]];
+  if (range instanceof Date)
+    range =
+      activeDate === 'start' ? [[undefined, range]] : [[range, undefined]];
   else if (Array.isArray(range) && !Array.isArray(range[0])) range = [range];
 
   return range;
@@ -452,7 +454,7 @@ const Calendar = forwardRef(
     const handleRange = useCallback(
       (selectedDate) => {
         let result;
-        const priorRange = normalizeRange(value);
+        const priorRange = normalizeRange(value, activeDate);
         // deselect when date clicked was the start/end of the range
         if (selectedDate.getTime() === priorRange?.[0]?.[0]?.getTime()) {
           result = [[undefined, priorRange[0][1]]];
@@ -713,7 +715,7 @@ const Calendar = forwardRef(
 
         const selectedState = withinDates(
           day,
-          range ? normalizeRange(value) : value,
+          range ? normalizeRange(value, activeDate) : value,
         );
         if (selectedState === 2) {
           selected = true;

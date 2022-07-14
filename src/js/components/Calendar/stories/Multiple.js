@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import { Box, Calendar } from 'grommet';
 
 export const Multiple = () => {
-  // const [dates, setDates] = useState([]);
-  const [dates, setDates] = useState(['2022-07-04']);
+  const [dates, setDates] = useState([]);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
