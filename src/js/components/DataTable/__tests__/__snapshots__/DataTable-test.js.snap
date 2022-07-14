@@ -3263,7 +3263,6 @@ exports[`DataTable custom theme 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="unselect alpha"
               class="c21"
               disabled=""
             >
@@ -3272,6 +3271,7 @@ exports[`DataTable custom theme 1`] = `
                 disabled=""
               >
                 <input
+                  aria-label="unselect alpha"
                   checked=""
                   class="c24"
                   disabled=""
@@ -3328,7 +3328,6 @@ exports[`DataTable custom theme 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select beta"
               class="c21"
               disabled=""
             >
@@ -3337,6 +3336,7 @@ exports[`DataTable custom theme 1`] = `
                 disabled=""
               >
                 <input
+                  aria-label="select beta"
                   class="c24"
                   disabled=""
                   type="checkbox"
@@ -3453,7 +3453,6 @@ exports[`DataTable custom theme 2`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="unselect alpha"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jiVTqJ"
               disabled=""
             >
@@ -3462,6 +3461,7 @@ exports[`DataTable custom theme 2`] = `
                 disabled=""
               >
                 <input
+                  aria-label="unselect alpha"
                   checked=""
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 izuNoZ"
                   disabled=""
@@ -3518,7 +3518,6 @@ exports[`DataTable custom theme 2`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select beta"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jiVTqJ"
               disabled=""
             >
@@ -3527,6 +3526,7 @@ exports[`DataTable custom theme 2`] = `
                 disabled=""
               >
                 <input
+                  aria-label="select beta"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 izuNoZ"
                   disabled=""
                   type="checkbox"
@@ -4152,13 +4152,13 @@ exports[`DataTable disabled select 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select all"
               class="c5"
             >
               <div
                 class="c6 c7"
               >
                 <input
+                  aria-label="select all"
                   class="c8"
                   type="checkbox"
                 />
@@ -4211,7 +4211,6 @@ exports[`DataTable disabled select 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select alpha"
               class="c16"
               disabled=""
             >
@@ -4220,6 +4219,7 @@ exports[`DataTable disabled select 1`] = `
                 disabled=""
               >
                 <input
+                  aria-label="select alpha"
                   class="c17"
                   disabled=""
                   type="checkbox"
@@ -4258,13 +4258,13 @@ exports[`DataTable disabled select 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="unselect beta"
               class="c5"
             >
               <div
                 class="c6 c7"
               >
                 <input
+                  aria-label="unselect beta"
                   checked=""
                   class="c8"
                   type="checkbox"
@@ -8779,13 +8779,13 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <label
-              aria-label="select all"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="select all"
                   class="c13"
                   type="checkbox"
                 />
@@ -8882,13 +8882,13 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <label
-              aria-label="select one"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="select one"
                   class="c13"
                   type="checkbox"
                 />
@@ -8961,13 +8961,13 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <label
-              aria-label="select 1.1"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="select 1.1"
                   checked=""
                   class="c13"
                   type="checkbox"
@@ -9035,13 +9035,13 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <label
-              aria-label="unselect 1.2"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="unselect 1.2"
                   checked=""
                   class="c13"
                   type="checkbox"
@@ -9133,13 +9133,13 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <label
-              aria-label="select two"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="select two"
                   class="c13"
                   type="checkbox"
                 />
@@ -9655,13 +9655,13 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <label
-              aria-label="select all"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="select all"
                   class="c13"
                   type="checkbox"
                 />
@@ -9758,13 +9758,13 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <label
-              aria-label="select one"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="select one"
                   class="c13"
                   type="checkbox"
                 />
@@ -9850,13 +9850,13 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <label
-              aria-label="select two"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="select two"
                   class="c13"
                   type="checkbox"
                 />
@@ -10403,13 +10403,13 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
             style="height: 0px;"
           >
             <label
-              aria-label="select all"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="select all"
                   class="c13"
                   type="checkbox"
                 />
@@ -10506,13 +10506,13 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
             style="height: 0px;"
           >
             <label
-              aria-label="unselect one"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="unselect one"
                   class="c13"
                   type="checkbox"
                 />
@@ -10598,13 +10598,13 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
             style="height: 0px;"
           >
             <label
-              aria-label="select two"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="select two"
                   class="c13"
                   type="checkbox"
                 />
@@ -11111,13 +11111,13 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
             style="height: 0px;"
           >
             <label
-              aria-label="select all"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="select all"
                   class="c13"
                   type="checkbox"
                 />
@@ -11203,13 +11203,13 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
             style="height: 0px;"
           >
             <label
-              aria-label="select one"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="select one"
                   class="c13"
                   type="checkbox"
                 />
@@ -11284,13 +11284,13 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
             style="height: 0px;"
           >
             <label
-              aria-label="select two"
               class="c10"
             >
               <div
                 class="c11 c12"
               >
                 <input
+                  aria-label="select two"
                   class="c13"
                   type="checkbox"
                 />
@@ -11381,13 +11381,13 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <label
-              aria-label="unselect all"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="unselect all"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -11508,13 +11508,13 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <label
-              aria-label="unselect one"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="unselect one"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -11624,13 +11624,13 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <label
-              aria-label="unselect two"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="unselect two"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -11756,13 +11756,13 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <label
-              aria-label="select all"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="select all"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -11848,13 +11848,13 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <label
-              aria-label="select one"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="select one"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -11929,13 +11929,13 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <label
-              aria-label="select two"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="select two"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -12233,13 +12233,13 @@ exports[`DataTable onSelect select/unselect all 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select all"
               class="c5"
             >
               <div
                 class="c6 c7"
               >
                 <input
+                  aria-label="select all"
                   class="c8"
                   type="checkbox"
                 />
@@ -12294,13 +12294,13 @@ exports[`DataTable onSelect select/unselect all 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select 1.1"
               class="c5"
             >
               <div
                 class="c6 c7"
               >
                 <input
+                  aria-label="select 1.1"
                   class="c8"
                   type="checkbox"
                 />
@@ -12350,13 +12350,13 @@ exports[`DataTable onSelect select/unselect all 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select 1.2"
               class="c5"
             >
               <div
                 class="c6 c7"
               >
                 <input
+                  aria-label="select 1.2"
                   class="c8"
                   type="checkbox"
                 />
@@ -12406,13 +12406,13 @@ exports[`DataTable onSelect select/unselect all 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select 2.1"
               class="c5"
             >
               <div
                 class="c6 c7"
               >
                 <input
+                  aria-label="select 2.1"
                   class="c8"
                   type="checkbox"
                 />
@@ -12462,13 +12462,13 @@ exports[`DataTable onSelect select/unselect all 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select 2.2"
               class="c5"
             >
               <div
                 class="c6 c7"
               >
                 <input
+                  aria-label="select 2.2"
                   class="c8"
                   type="checkbox"
                 />
@@ -12534,13 +12534,13 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="unselect all"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="unselect all"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -12622,13 +12622,13 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="unselect 1.1"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="unselect 1.1"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -12705,13 +12705,13 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="unselect 1.2"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="unselect 1.2"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -12788,13 +12788,13 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="unselect 2.1"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="unselect 2.1"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -12871,13 +12871,13 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="unselect 2.2"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="unselect 2.2"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -12970,13 +12970,13 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select all"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="select all"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -13031,13 +13031,13 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select 1.1"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="select 1.1"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -13087,13 +13087,13 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select 1.2"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="select 1.2"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -13143,13 +13143,13 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select 2.1"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="select 2.1"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -13199,13 +13199,13 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select 2.2"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="select 2.2"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -20896,13 +20896,13 @@ exports[`DataTable select 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select all"
               class="c5"
             >
               <div
                 class="c6 c7"
               >
                 <input
+                  aria-label="select all"
                   class="c8"
                   type="checkbox"
                 />
@@ -20954,13 +20954,13 @@ exports[`DataTable select 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="unselect alpha"
               class="c5"
             >
               <div
                 class="c6 c7"
               >
                 <input
+                  aria-label="unselect alpha"
                   checked=""
                   class="c8"
                   type="checkbox"
@@ -21009,13 +21009,13 @@ exports[`DataTable select 1`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="select beta"
               class="c5"
             >
               <div
                 class="c6 c7"
               >
                 <input
+                  aria-label="select beta"
                   class="c8"
                   type="checkbox"
                 />
@@ -21068,13 +21068,13 @@ exports[`DataTable select 2`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="unselect all"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="unselect all"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
@@ -21142,13 +21142,13 @@ exports[`DataTable select 2`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="unselect alpha"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="unselect alpha"
                   checked=""
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
@@ -21197,13 +21197,13 @@ exports[`DataTable select 2`] = `
             style="height: 0px;"
           >
             <label
-              aria-label="unselect beta"
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 krBHJU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 hKKecH StyledCheckBox-sc-1dbk5ju-6 eJWclz"
               >
                 <input
+                  aria-label="unselect beta"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
                   type="checkbox"
                 />
