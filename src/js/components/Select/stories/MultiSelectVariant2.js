@@ -3,19 +3,19 @@ import React, { useState, useEffect } from 'react';
 import { Box, CheckBox, Select, Text, Button } from 'grommet';
 
 const dummyOptions = [
-  'Apple',
-  'Orange',
-  'Banana',
-  'Grape',
-  'Melon',
-  'Strawberry',
-  'Kiwi',
-  'Mango',
-  'Raspberry',
-  'Rhubarb',
+  'Azure MAS-TRM:v2019.03',
+  'Azure NZISM:v3.2Azure NZISM:v3.2',
+  'Azure NIST800-53:R4',
+  'Azure NZISM:v3.3',
+  'Azure IS027001:2013',
+  'Azure PCI-DSS:v3.2.1',
+  'Pavlo DEFAULT:v1',
+  'Azure Security Health Check:v2.0',
+  'Butterfly:v1.0',
+  'KStadnyk:v1.0',
 ];
 
-export const MultiSelect = () => {
+export const MultiSelect2 = () => {
   const [options, setOptions] = useState(dummyOptions.sort());
   const [valueMultiple, setValueMultiple] = useState([]);
   const [intermediateValue, setIntermediateValue] = useState(valueMultiple);
@@ -56,6 +56,11 @@ export const MultiSelect = () => {
                         intermediate.push(i);
                         intermediate.sort();
                         let temp = intermediate.concat(valueMultiple);
+                        console.log(
+                          temp.filter(
+                            (item, pos) => temp.indexOf(item) === pos,
+                          ),
+                        );
                         temp.sort();
                         setValueMultiple(
                           temp.filter(
@@ -182,16 +187,16 @@ export const MultiSelect = () => {
   );
 };
 
-MultiSelect.parameters = {
+MultiSelect2.parameters = {
   chromatic: { disable: true },
 };
 
-MultiSelect.args = {
+MultiSelect2.args = {
   full: true,
 };
 
-MultiSelect.storyName = 'Multi Select Variant';
+MultiSelect2.storyName = 'Multi Select Variant 2';
 
 export default {
-  title: 'Input/Select/Multi Select Variant',
+  title: 'Input/Select/Multi Select Variant 2',
 };

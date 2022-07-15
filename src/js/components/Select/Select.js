@@ -498,7 +498,7 @@ const Select = forwardRef(
                 </Box>
               )}
             </DropButton>
-            {selectValue || displayLabelKey}
+            {!open && (selectValue || displayLabelKey)}
           </Box>
         </StyledSelectDropButton>
       </Keyboard>
