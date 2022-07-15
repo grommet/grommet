@@ -4,6 +4,7 @@ import React, {
   forwardRef,
   useContext,
   useState,
+  useEffect,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -134,20 +135,6 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   );
 };
 
-const debounce = (func, wait, fieldRef) => {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      if (fieldRef.current) {
-        timeout = null;
-        func(...args);
-      }
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-};
-
 const FormField = forwardRef(
   (
     {
@@ -191,10 +178,21 @@ const FormField = forwardRef(
       validate,
     });
     const [focus, setFocus] = useState();
+    const [debounced, setDebounced] = useState();
     const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
+
+    useEffect(() => {
+      let timeout;
+      const later = () => {
+        timeout = null;
+        if (debounced) debounced();
+      };
+      timeout = setTimeout(later, theme.global.debounceDelay);
+      return () => clearTimeout(timeout);
+    }, [debounced, theme.global.debounceDelay]);
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -475,22 +473,7 @@ const FormField = forwardRef(
             ? (event) => {
                 event.persist();
                 if (onChange) onChange(event);
-                if (contextOnChange) {
-                  const debouncedFn = debounce(
-                    () => {
-                      contextOnChange(event);
-                      // A half second (500ms) debounce can be a helpful
-                      // starting point. You want to give the user time to
-                      // fill out a field, but capture their attention before
-                      // they move on past it. 2 second (2000ms) might be too
-                      // long depending on how fast people type, and 200ms
-                      // would be an eye blink
-                    },
-                    theme.global.debounceDelay,
-                    formFieldRef,
-                  );
-                  debouncedFn();
-                }
+                if (contextOnChange) setDebounced(() => contextOnChange);
               }
             : undefined
         }
