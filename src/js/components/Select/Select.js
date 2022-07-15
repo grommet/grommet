@@ -25,7 +25,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
 
 const SelectTextInput = styled(TextInput)`
-  cursor: ${(props) => 'default'};
+  cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
 `;
 
 const HiddenInput = styled.input`
@@ -322,137 +322,184 @@ const Select = forwardRef(
           background={theme.select.background}
           ref={selectBoxRef}
         >
-          <Box direction="row" flex basis="auto">
-            {selectValue || displayLabelKey ? (
-              <>
-                {selectValue || displayLabelKey}
-                <HiddenInput
-                  type="text"
+          <Box direction="column">
+            <DropButton
+              alignSelf="start"
+              ref={ref}
+              a11yTitle={`${
+                ariaLabel || a11yTitle || placeholder || 'Open Drop'
+              }${
+                value
+                  ? format({
+                      id: 'select.selected',
+                      messages,
+                      values: { currentSelectedValue: value },
+                    })
+                  : ''
+              }`}
+              aria-expanded={Boolean(open)}
+              aria-haspopup="listbox"
+              id={id}
+              disabled={disabled === true || undefined}
+              // dropAlign={dropAlign}
+              dropAlign={{ top: 'top', right: 'right', left: 'left' }}
+              dropTarget={selectBoxRef.current}
+              // dropTarget={dropTarget}
+              open={open}
+              // alignSelf={alignSelf}
+              focusIndicator={focusIndicator}
+              onFocus={onFocus}
+              onBlur={onBlur}
+              gridArea={gridArea}
+              margin={margin}
+              onOpen={onRequestOpen}
+              onClose={onRequestClose}
+              onClick={onClick}
+              dropContent={
+                <SelectContainer
+                  limitedSelections={limitedSelections}
+                  clear={clear}
+                  disabled={disabled}
+                  disabledKey={disabledKey}
+                  dropHeight={dropHeight}
+                  emptySearchMessage={emptySearchMessage}
+                  id={id}
+                  labelKey={labelKey}
+                  multiple={multiple}
                   name={name}
-                  id={id ? `${id}__input` : undefined}
-                  value={inputValue}
-                  ref={inputRef}
-                  readOnly
-                />
-              </>
-            ) : (
-              <SelectTextInput
-                a11yTitle={
-                  (ariaLabel || a11yTitle) &&
-                  `${ariaLabel || a11yTitle}${
-                    value && typeof value === 'string' ? `, ${value}` : ''
-                  }`
-                }
-                // When Select is disabled, we want to show a default cursor
-                // but not have disabled styling come from TextInput
-                // Disabled can be a bool or an array of options to disable.
-                // We only want to disable the TextInput if the control
-                // button should be disabled which occurs when disabled
-                // equals true.
-                defaultCursor={disabled === true || undefined}
-                focusIndicator={false}
-                id={id ? `${id}__input` : undefined}
-                name={name}
-                ref={inputRef}
-                {...rest}
-                tabIndex="-1"
-                type="text"
-                placeholder={placeholder}
-                plain
-                readOnly
-                value={inputValue}
-                size={size}
-                theme={theme}
-              />
-            )}
+                  onChange={onSelectChange}
+                  onClose={onRequestClose}
+                  onKeyDown={onKeyDown}
+                  onMore={onMore}
+                  onSearch={onSearch}
+                  options={optionsProp}
+                  allOptions={allOptions}
+                  optionIndexesInValue={optionIndexesInValue}
+                  replace={replace}
+                  searchPlaceholder={searchPlaceholder}
+                  search={search}
+                  setSearch={setSearch}
+                  selected={selected}
+                  usingKeyboard={usingKeyboard}
+                  value={value}
+                  valueKey={valueKey}
+                  variant={variant}
+                >
+                  {children}
+                </SelectContainer>
+              }
+              // StyledDropButton needs to know if the border should be shown
+              callerPlain={plain}
+              plain // Button should be plain
+              dropProps={dropProps}
+              theme={theme}
+            >
+              {selectValue || displayLabelKey ? (
+                <>
+                  <Box direction="row">
+                    <SelectTextInput
+                      a11yTitle={
+                        (ariaLabel || a11yTitle) &&
+                        `${ariaLabel || a11yTitle}${
+                          value && typeof value === 'string' ? `, ${value}` : ''
+                        }`
+                      }
+                      // When Select is disabled, we want to show a default cursor
+                      // but not have disabled styling come from TextInput
+                      // Disabled can be a bool or an array of options to disable.
+                      // We only want to disable the TextInput if the control
+                      // button should be disabled which occurs when disabled
+                      // equals true.
+                      // defaultCursor={disabled === true || undefined}
+                      focusIndicator={false}
+                      id={id ? `${id}__input` : undefined}
+                      name={name}
+                      // ref={inputRef}
+                      {...rest}
+                      tabIndex="-1"
+                      type="text"
+                      placeholder={placeholder}
+                      plain
+                      readOnly
+                      // value={inputValue}
+                      // value="Select Frameworks"
+                      // size={size}
+                      // size="small"
+                      theme={theme}
+                    />
+                    {SelectIcon && (
+                      <Box
+                        pad={{ top: 'xsmall' }}
+                        alignSelf="start"
+                        margin={theme.select.icons.margin}
+                        style={{ minWidth: 'auto' }}
+                      >
+                        {isValidElement(SelectIcon) ? (
+                          SelectIcon
+                        ) : (
+                          <SelectIcon color={iconColor} size={size} />
+                        )}
+                      </Box>
+                    )}
+                  </Box>
+                  <HiddenInput
+                    type="text"
+                    name={name}
+                    id={id ? `${id}__input` : undefined}
+                    value={inputValue}
+                    ref={inputRef}
+                    readOnly
+                  />
+                </>
+              ) : (
+                <Box direction="row">
+                  <SelectTextInput
+                    a11yTitle={
+                      (ariaLabel || a11yTitle) &&
+                      `${ariaLabel || a11yTitle}${
+                        value && typeof value === 'string' ? `, ${value}` : ''
+                      }`
+                    }
+                    // When Select is disabled, we want to show a default cursor
+                    // but not have disabled styling come from TextInput
+                    // Disabled can be a bool or an array of options to disable.
+                    // We only want to disable the TextInput if the control
+                    // button should be disabled which occurs when disabled
+                    // equals true.
+                    defaultCursor={disabled === true || undefined}
+                    focusIndicator={false}
+                    id={id ? `${id}__input` : undefined}
+                    name={name}
+                    ref={inputRef}
+                    {...rest}
+                    tabIndex="-1"
+                    type="text"
+                    placeholder={placeholder}
+                    plain
+                    readOnly
+                    value={inputValue}
+                    size={size}
+                    theme={theme}
+                  />
+                  {SelectIcon && (
+                    <Box
+                      pad={{ top: 'xsmall' }}
+                      alignSelf="start"
+                      margin={theme.select.icons.margin}
+                      style={{ minWidth: 'auto' }}
+                    >
+                      {isValidElement(SelectIcon) ? (
+                        SelectIcon
+                      ) : (
+                        <SelectIcon color={iconColor} size={size} />
+                      )}
+                    </Box>
+                  )}
+                </Box>
+              )}
+            </DropButton>
+            {selectValue || displayLabelKey}
           </Box>
-
-          <DropButton
-            alignSelf="start"
-            ref={ref}
-            a11yTitle={`${
-              ariaLabel || a11yTitle || placeholder || 'Open Drop'
-            }${
-              value
-                ? format({
-                    id: 'select.selected',
-                    messages,
-                    values: { currentSelectedValue: value },
-                  })
-                : ''
-            }`}
-            aria-expanded={Boolean(open)}
-            aria-haspopup="listbox"
-            id={id}
-            disabled={disabled === true || undefined}
-            // dropAlign={dropAlign}
-            dropAlign={{ top: 'top', right: 'right', left: 'left' }}
-            dropTarget={selectBoxRef.current}
-            // dropTarget={dropTarget}
-            open={open}
-            // alignSelf={alignSelf}
-            focusIndicator={focusIndicator}
-            onFocus={onFocus}
-            onBlur={onBlur}
-            gridArea={gridArea}
-            margin={margin}
-            onOpen={onRequestOpen}
-            onClose={onRequestClose}
-            onClick={onClick}
-            dropContent={
-              <SelectContainer
-                limitedSelections={limitedSelections}
-                clear={clear}
-                disabled={disabled}
-                disabledKey={disabledKey}
-                dropHeight={dropHeight}
-                emptySearchMessage={emptySearchMessage}
-                id={id}
-                labelKey={labelKey}
-                multiple={multiple}
-                name={name}
-                onChange={onSelectChange}
-                onClose={onRequestClose}
-                onKeyDown={onKeyDown}
-                onMore={onMore}
-                onSearch={onSearch}
-                options={optionsProp}
-                allOptions={allOptions}
-                optionIndexesInValue={optionIndexesInValue}
-                replace={replace}
-                searchPlaceholder={searchPlaceholder}
-                search={search}
-                setSearch={setSearch}
-                selected={selected}
-                usingKeyboard={usingKeyboard}
-                value={value}
-                valueKey={valueKey}
-                variant={variant}
-              >
-                {children}
-              </SelectContainer>
-            }
-            // StyledDropButton needs to know if the border should be shown
-            callerPlain={plain}
-            plain // Button should be plain
-            dropProps={dropProps}
-            theme={theme}
-          >
-            {SelectIcon && (
-              <Box
-                pad={{ top: 'xsmall' }}
-                alignSelf="start"
-                margin={theme.select.icons.margin}
-                style={{ minWidth: 'auto' }}
-              >
-                {isValidElement(SelectIcon) ? (
-                  SelectIcon
-                ) : (
-                  <SelectIcon color={iconColor} size={size} />
-                )}
-              </Box>
-            )}
-          </DropButton>
         </StyledSelectDropButton>
       </Keyboard>
     );

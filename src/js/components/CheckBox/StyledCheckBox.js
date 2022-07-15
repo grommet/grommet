@@ -25,14 +25,14 @@ const hoverStyle = css`
     border-color: ${(props) =>
       normalizeColor(props.theme.checkBox.hover?.border?.color, props.theme)};
   }
-  :hover {
-    background-color: ${(props) =>
-      normalizeColor(
-        !props.disabled && props.theme.checkBox.hover?.background?.color,
-        props.theme,
-      )};
-  }
 `;
+// :hover {
+//   background-color: ${(props) =>
+//     normalizeColor(
+//       !props.disabled && props.theme.checkBox.hover?.background?.color,
+//       props.theme,
+//     )};
+// }
 
 const StyledCheckBoxIcon = styled.svg`
   box-sizing: border-box;

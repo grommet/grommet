@@ -14,6 +14,7 @@ import { selectedStyle, setFocusWithoutScroll } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
+import { CheckBox } from '../CheckBox';
 import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
@@ -517,10 +518,7 @@ const SelectContainer = forwardRef(
             pad={{ horizontal: 'small', top: 'xsmall' }}
           >
             <Text size="small">Select</Text>
-            <Button onClick={onClose}>
-              <FormUp />
-            </Button>
-            {limitedSelections ? (
+            {limitedSelections && (
               <>
                 <Text>Select up to 5</Text>
                 {search !== '' && search !== undefined && (
@@ -533,21 +531,10 @@ const SelectContainer = forwardRef(
                   </Box>
                 )}
               </>
-            ) : (
-              <>
-                {search !== '' && search !== undefined && (
-                  <Box>
-                    {value.length === 0 ? (
-                      <Text size="small">0 selected</Text>
-                    ) : (
-                      <Text size="small">
-                        {value.length} selected of {allOptions.length}
-                      </Text>
-                    )}
-                  </Box>
-                )}
-              </>
             )}
+            <Button onClick={onClose} a11yTitle="Close Select">
+              <FormUp />
+            </Button>
           </Box>
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
@@ -574,31 +561,30 @@ const SelectContainer = forwardRef(
               </Keyboard>
             </Box>
           )}
-          {(search === '' || search === undefined) && (
-            <Box
-              pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
-              direction="row"
-              justify="between"
-              gap="small"
-            >
-              <Box alignSelf="center">
-                {value.length === 0 ? (
-                  <Text size="small">0 selected</Text>
-                ) : limitedSelections ? (
-                  <Text size="small">{value.length} selected of 5</Text>
-                ) : (
-                  <Text size="small">
-                    {value.length} selected of {options.length}
-                  </Text>
-                )}
-              </Box>
-              <Box>
-                {options.length > 0 &&
-                  !limitedSelections &&
-                  variantButtonContent}
-              </Box>
+          <Box
+            pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
+            direction="row"
+            justify="between"
+            gap="small"
+          >
+            <Box alignSelf="center">
+              {value.length === 0 ? (
+                <Text size="small">0 selected</Text>
+              ) : limitedSelections ? (
+                <Text size="small">{value.length} selected of 5</Text>
+              ) : (
+                <Text size="small">
+                  {value.length} selected of {options.length}
+                </Text>
+              )}
             </Box>
-          )}
+            <Box>
+              {(search === '' || search === undefined) &&
+                options.length > 0 &&
+                !limitedSelections &&
+                variantButtonContent}
+            </Box>
+          </Box>
           <OptionsBox
             role="listbox"
             tabIndex="0"
@@ -655,6 +641,42 @@ const SelectContainer = forwardRef(
                     );
                     textComponent = true;
                   }
+                  if (typeof child === 'object') {
+                    if (search) {
+                      if (
+                        child.props.option.toLowerCase().indexOf(search) >= 0
+                      ) {
+                        let boldIndex = child.props.option
+                          .toLowerCase()
+                          .indexOf(search);
+                        let childBeginning = child.props.option.substring(
+                          0,
+                          boldIndex,
+                        );
+                        let childBold = child.props.option.substring(
+                          boldIndex,
+                          boldIndex + search.length,
+                        );
+                        childBold = <b>{childBold}</b>;
+                        let childEnd = child.props.option.substring(
+                          boldIndex + search.length,
+                        );
+                        child = (
+                          <Box direction="row" align="center">
+                            <CheckBox
+                              pad="xsmall"
+                              tabIndex="-1"
+                              checked={optionSelected}
+                              onChange={() => {}}
+                            />
+                            {childBeginning}
+                            {childBold}
+                            {childEnd}
+                          </Box>
+                        );
+                      }
+                    }
+                  }
 
                   let limitDisable = false;
                   if (
@@ -677,7 +699,7 @@ const SelectContainer = forwardRef(
                       aria-setsize={options.length}
                       aria-posinset={index + 1}
                       aria-selected={optionSelected}
-                      aria-live={optionSelected ? 'assertive' : 'off'}
+                      // aria-live={optionSelected ? 'assertive' : 'off'}
                       aria-disabled={
                         optionDisabled || limitDisable || undefined
                       }

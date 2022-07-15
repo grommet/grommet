@@ -31,6 +31,7 @@ const dummyOptions = [
 export const MultiSelect = () => {
   const [options, setOptions] = useState(dummyOptions.sort());
   const [valueMultiple, setValueMultiple] = useState([]);
+  const [intermediateValue, setIntermediateValue] = useState(valueMultiple);
   const [label, setLabel] = useState(undefined);
   const [open, setOpen] = useState(false);
   const Option = React.memo(({ option }) => (
@@ -46,101 +47,79 @@ export const MultiSelect = () => {
   ));
 
   useEffect(() => {
-    let newLabel;
-    if (valueMultiple.length > 5) {
-      newLabel = (
-        <Box width="small">
-          <>
-            {valueMultiple &&
-              dummyOptions
-                .filter((i) => valueMultiple.indexOf(i) !== -1)
-                .map((i) => {
-                  if (valueMultiple.indexOf(i) < 5)
-                    return (
-                      <Button
-                        onClick={() => {
-                          const newValue = valueMultiple.filter((v) => v !== i);
-                          setValueMultiple(newValue);
-                        }}
-                      >
-                        <Box key={i}>
-                          <CheckBox
-                            fill
-                            flex={false}
-                            label={
-                              <Box
-                                alignSelf="center"
-                                width="100%"
-                                align="start"
-                              >
-                                {i}
-                              </Box>
-                            }
-                            key={i}
-                            pad="xsmall"
-                            tabIndex="-1"
-                            checked
-                            // onChange={(event) => {
-                            //   const newValue = valueMultiple.filter(
-                            //     (v) => v !== i,
-                            //   );
-                            //   setValueMultiple(newValue);
-                            // }}
-                          />
-                        </Box>
-                      </Button>
-                    );
-                })}
-          </>
+    let intermediate = intermediateValue;
+    let newLabel = (
+      <Box width="100%">
+        {valueMultiple &&
+          dummyOptions
+            .filter((i) => valueMultiple.indexOf(i) !== -1)
+            .map((i) => {
+              if (valueMultiple.indexOf(i) < 5) {
+                return (
+                  <Button
+                    plain
+                    hoverIndicator
+                    fill="horizontal"
+                    tabIndex="0"
+                    onClick={() => {
+                      if (intermediate.includes(i)) {
+                        intermediate = intermediate.filter((v) => v !== i);
+                        setIntermediateValue(intermediate);
+                      } else {
+                        intermediate.push(i);
+                        intermediate.sort();
+                        let temp = intermediate.concat(valueMultiple);
+                        setValueMultiple(
+                          temp.filter(
+                            (item, pos) => temp.indexOf(item) === pos,
+                          ),
+                        );
+                      }
+                    }}
+                  >
+                    <Box key={i}>
+                      <CheckBox
+                        label={
+                          <Box alignSelf="center" width="100%" align="start">
+                            {i}
+                          </Box>
+                        }
+                        key={i}
+                        pad="xsmall"
+                        tabIndex="-1"
+                        checked={intermediate.includes(i)}
+                      />
+                    </Box>
+                  </Button>
+                );
+              }
+            })}
+        {valueMultiple.length > 5 && (
           <Box alignSelf="start">
             <Button
-              onClick={() => setOpen(true)}
+              onClick={() => {
+                setValueMultiple(intermediateValue);
+                setOpen(true);
+                let next = [...intermediateValue];
+                next.sort();
+                const sortedOptions = dummyOptions.filter(
+                  (i) => !next.includes(i),
+                );
+                next = next.filter((i) => dummyOptions.includes(i));
+                sortedOptions.sort();
+                const sortedAllOptions = next.concat(sortedOptions);
+                setOptions(sortedAllOptions);
+              }}
               size="small"
               label={`+ ${valueMultiple.length - 5} more`}
             />
           </Box>
-        </Box>
-      );
-    } else {
-      newLabel = (
-        <Box width="small">
-          {valueMultiple &&
-            dummyOptions
-              .filter((i) => valueMultiple.indexOf(i) !== -1)
-              .map((i) => (
-                <Button
-                  onClick={() => {
-                    const newValue = valueMultiple.filter((v) => v !== i);
-                    setValueMultiple(newValue);
-                  }}
-                >
-                  <Box key={i}>
-                    <CheckBox
-                      fill
-                      flex={false}
-                      label={
-                        <Box alignSelf="center" width="100%" align="start">
-                          {i}
-                        </Box>
-                      }
-                      key={i}
-                      pad="xsmall"
-                      tabIndex="-1"
-                      checked
-                      // onChange={(event) => {
-                      //   const newValue = valueMultiple.filter((v) => v !== i);
-                      //   setValueMultiple(newValue);
-                      // }}
-                    />
-                  </Box>
-                </Button>
-              ))}
-        </Box>
-      );
-    }
+        )}
+      </Box>
+    );
     if (valueMultiple.length > 0) setLabel(newLabel);
     else setLabel(undefined);
-  }, [valueMultiple]);
+  }, [valueMultiple, intermediateValue]);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
@@ -176,9 +155,18 @@ export const MultiSelect = () => {
         value={valueMultiple}
         open={open}
         onOpen={() => {
+          setValueMultiple(intermediateValue);
           setOpen(true);
+          let next = [...intermediateValue];
+          next.sort();
+          const sortedOptions = dummyOptions.filter((i) => !next.includes(i));
+          next = next.filter((i) => dummyOptions.includes(i));
+          sortedOptions.sort();
+          const sortedAllOptions = next.concat(sortedOptions);
+          setOptions(sortedAllOptions);
         }}
         onClose={() => {
+          setIntermediateValue(valueMultiple);
           setOpen(false);
           let next = [...valueMultiple];
           // loop through next selected and sort alphabetically
