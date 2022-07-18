@@ -372,6 +372,26 @@ exports[`Video Configure Menu Button 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -892,6 +912,26 @@ exports[`Video End event handler 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -1400,6 +1440,26 @@ exports[`Video Play and Pause event handlers 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -1652,7 +1712,7 @@ exports[`Video Play and Pause event handlers 2`] = `
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ecdYvb"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 bqdDef"
                   role="button"
                   tabindex="0"
                 />
@@ -2072,6 +2132,26 @@ exports[`Video autoPlay renders 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -2574,6 +2654,26 @@ exports[`Video controls below renders 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -3085,6 +3185,26 @@ exports[`Video controls over renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -3591,6 +3711,26 @@ exports[`Video duration event handler 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -4106,6 +4246,26 @@ exports[`Video fit  cover renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -4619,6 +4779,26 @@ exports[`Video fit contain renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -5125,6 +5305,26 @@ exports[`Video loop renders 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -5636,6 +5836,26 @@ exports[`Video mouse events handlers of controls 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -5846,7 +6066,7 @@ exports[`Video mouse events handlers of controls 2`] = `
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ecdYvb"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 bqdDef"
                   role="button"
                   tabindex="0"
                 />
@@ -5970,7 +6190,7 @@ exports[`Video mouse events handlers of controls 3`] = `
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ecdYvb"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 bqdDef"
                   role="button"
                   tabindex="0"
                 />
@@ -6390,6 +6610,26 @@ exports[`Video mute renders 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -6900,6 +7140,26 @@ exports[`Video renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -7406,6 +7666,26 @@ exports[`Video renders with theme 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -7916,6 +8196,26 @@ exports[`Video scrubber 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -8126,7 +8426,7 @@ exports[`Video scrubber 2`] = `
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ecdYvb"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 bqdDef"
                   role="button"
                   tabindex="0"
                 />
@@ -8546,6 +8846,26 @@ exports[`Video timeUpdate event handler 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
