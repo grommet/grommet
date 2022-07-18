@@ -6,7 +6,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { Children, cloneElement, forwardRef, useContext, useState } from 'react';
+import React, { Children, cloneElement, forwardRef, useContext, useState, useEffect } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { containsFocus, shouldKeepFocus } from '../../utils/DOM';
@@ -129,21 +129,22 @@ var Input = function Input(_ref2) {
   }, rest, extraProps));
 };
 
-var debounce = function debounce(func, wait) {
-  var timeout;
-  return function executedFunction() {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+var useDebounce = function useDebounce() {
+  var _useState = useState(),
+      func = _useState[0],
+      setFunc = _useState[1];
 
-    var later = function later() {
-      timeout = null;
-      func.apply(void 0, args);
+  var theme = useContext(ThemeContext) || defaultProps.theme;
+  useEffect(function () {
+    var timer;
+    if (func) timer = setTimeout(function () {
+      return func();
+    }, theme.global.debounceDelay);
+    return function () {
+      return clearTimeout(timer);
     };
-
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
+  }, [func, theme.global.debounceDelay]);
+  return setFunc;
 };
 
 var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
@@ -185,13 +186,14 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       contextOnBlur = _formContext$useFormF.onBlur,
       contextOnChange = _formContext$useFormF.onChange;
 
-  var _useState = useState(),
-      focus = _useState[0],
-      setFocus = _useState[1];
+  var _useState2 = useState(),
+      focus = _useState2[0],
+      setFocus = _useState2[1];
 
   var formFieldRef = useForwardedRef(ref);
   var formFieldTheme = theme.formField;
-  var themeBorder = formFieldTheme.border; // This is here for backwards compatibility. In case the child is a grommet
+  var themeBorder = formFieldTheme.border;
+  var debounce = useDebounce(); // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
   // already set.
 
@@ -368,17 +370,11 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     onChange: contextOnChange || onChange ? function (event) {
       event.persist();
       if (onChange) onChange(event);
-
-      if (contextOnChange) {
-        var debouncedFn = debounce(function () {
-          contextOnChange(event); // A half second (500ms) debounce can be a helpful starting
-          // point. You want to give the user time to fill out a
-          // field, but capture their attention before they move on
-          // past it. 2 second (2000ms) might be too long depending
-          // on how fast people type, and 200ms would be an eye blink
-        }, 500);
-        debouncedFn();
-      }
+      if (contextOnChange) debounce(function () {
+        return function () {
+          return contextOnChange(event);
+        };
+      });
     } : undefined
   }, containerRest), label && component !== CheckBox || help ? /*#__PURE__*/React.createElement(React.Fragment, null, label && component !== CheckBox && /*#__PURE__*/React.createElement(Text, _extends({
     as: "label",

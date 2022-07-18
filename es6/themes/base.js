@@ -236,7 +236,12 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       // The time to wait after the user stopped typing, measured in ms.
-      debounceDelay: 300,
+      // A half second (500ms) debounce can be a helpful starting point.
+      // You want to give the user time to fill out a field, but capture
+      // their attention before they move on past it. 2 second (2000ms)
+      // might be too long depending on how fast people type, and 200ms
+      // would be an eye blink
+      debounceDelay: 500,
       drop: {
         // intelligentMargin: undefined,
         background: {
