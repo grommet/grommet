@@ -975,7 +975,7 @@ describe('DataTable', () => {
 
   test('disabled select', () => {
     const onSelect = jest.fn();
-    const { container, getByLabelText } = render(
+    const { container, getByText } = render(
       <Grommet>
         <DataTable
           columns={[{ property: 'a', header: 'A' }]}
@@ -988,7 +988,7 @@ describe('DataTable', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByLabelText('select alpha'));
+    fireEvent.click(getByText('alpha'));
     expect(onSelect).not.toBeCalled();
   });
 

@@ -667,7 +667,7 @@ describe('Select', () => {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    const selectButton = container.querySelector('Button');
+    const selectButton = document.getElementById('test-open-id');
     let style;
 
     style = window.getComputedStyle(selectButton);
