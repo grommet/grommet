@@ -408,7 +408,7 @@ Object {
   },
   "Grid": Object {
     "$$typeof": Symbol(react.forward_ref),
-    "available": undefined,
+    "available": true,
     "propTypes": Object {
       "a11yTitle": [Function],
       "align": [Function],
@@ -673,6 +673,7 @@ Object {
       "fill": [Function],
       "gridArea": [Function],
       "margin": [Function],
+      "maxLines": [Function],
       "responsive": [Function],
       "size": [Function],
       "textAlign": [Function],
@@ -1711,6 +1712,9 @@ Object {
             },
             "separator": Object {
               "color": "border",
+              "pad": Object {
+                "horizontal": "small",
+              },
               "size": "xsmall",
             },
           },

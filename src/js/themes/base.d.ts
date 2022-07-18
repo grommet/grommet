@@ -242,6 +242,15 @@ interface FormFieldLabelType extends TextProps {
   requiredIndicator?: boolean | JSX.Element | string;
 }
 
+type DigitalTexts =
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | 'xxlarge'
+  | string;
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -626,31 +635,7 @@ export interface ThemeType {
     };
     digital?: {
       text?: {
-        xsmall?: {
-          size?: string;
-          height?: number;
-        };
-        small?: {
-          size?: string;
-          height?: number;
-        };
-        medium?: {
-          size?: string;
-          height?: number;
-        };
-        large?: {
-          size?: string;
-          height?: number;
-        };
-        xlarge?: {
-          size?: string;
-          height?: number;
-        };
-        xxlarge?: {
-          size?: string;
-          height?: number;
-        };
-        [key: string]: {
+        [key in DigitalTexts]: {
           size?: string;
           height?: number;
         };
@@ -1046,6 +1031,7 @@ export interface ThemeType {
       separator?: {
         color?: ColorType;
         size?: string;
+        pad?: PadType;
       };
     };
     icons?: {
