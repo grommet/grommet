@@ -135,6 +135,19 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   );
 };
 
+const useDebounce = () => {
+  const [func, setFunc] = useState();
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+
+  useEffect(() => {
+    let timer;
+    if (func) timer = setTimeout(() => func(), theme.global.debounceDelay);
+    return () => clearTimeout(timer);
+  }, [func, theme.global.debounceDelay]);
+
+  return setFunc;
+};
+
 const FormField = forwardRef(
   (
     {
@@ -182,18 +195,6 @@ const FormField = forwardRef(
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
-
-    const useDebounce = () => {
-      const [func, setFunc] = useState();
-
-      useEffect(() => {
-        let timer;
-        if (func) timer = setTimeout(() => func(), theme.global.debounceDelay);
-        return () => clearTimeout(timer);
-      }, [func]);
-
-      return setFunc;
-    };
     const debounce = useDebounce();
 
     // This is here for backwards compatibility. In case the child is a grommet
