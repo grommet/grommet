@@ -314,6 +314,7 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     justify: "between"
   }, files.length <= aggregateThreshold && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Message, theme.fileInput.message, message), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onSpace: function onSpace(event) {
+      event.preventDefault();
       if (controlRef.current === event.target) inputRef.current.click();
     },
     onEnter: function onEnter(event) {
