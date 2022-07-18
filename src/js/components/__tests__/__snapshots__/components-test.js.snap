@@ -274,6 +274,7 @@ Object {
       "inputProps": [Function],
       "name": [Function],
       "onChange": [Function],
+      "reverse": [Function],
       "size": [Function],
       "value": [Function],
     },
@@ -407,7 +408,7 @@ Object {
   },
   "Grid": Object {
     "$$typeof": Symbol(react.forward_ref),
-    "available": undefined,
+    "available": true,
     "propTypes": Object {
       "a11yTitle": [Function],
       "align": [Function],
@@ -672,6 +673,7 @@ Object {
       "fill": [Function],
       "gridArea": [Function],
       "margin": [Function],
+      "maxLines": [Function],
       "responsive": [Function],
       "size": [Function],
       "textAlign": [Function],
@@ -1702,6 +1704,20 @@ Object {
               "top": "top",
             },
           },
+          "group": Object {
+            "container": Object {
+              "pad": Object {
+                "vertical": "xsmall",
+              },
+            },
+            "separator": Object {
+              "color": "border",
+              "pad": Object {
+                "horizontal": "small",
+              },
+              "size": "xsmall",
+            },
+          },
           "icons": Object {
             "down": Object {
               "$$typeof": Symbol(react.forward_ref),
@@ -2007,6 +2023,37 @@ Object {
           },
           "parent": Object {
             "align": "start",
+          },
+          "responsive": Object {
+            "actions": Object {
+              "align": "start",
+              "pad": Object {
+                "top": "small",
+              },
+            },
+            "areas": Array [
+              Array [
+                "parent",
+              ],
+              Array [
+                "title",
+              ],
+              Array [
+                "subtitle",
+              ],
+              Array [
+                "actions",
+              ],
+            ],
+            "breakpoints": Array [
+              "small",
+            ],
+            "columns": Array [
+              "auto",
+            ],
+            "rows": Array [
+              "auto",
+            ],
           },
           "small": Object {
             "areas": Array [
@@ -2336,6 +2383,11 @@ Object {
         "tabs": Object {
           "header": Object {},
           "panel": Object {},
+          "step": Object {
+            "large": 3,
+            "medium": 3,
+            "small": 1,
+          },
         },
         "tag": Object {
           "border": true,

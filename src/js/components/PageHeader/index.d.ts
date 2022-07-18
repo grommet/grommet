@@ -10,12 +10,12 @@ import { GridProps } from '../Grid';
 export interface PageHeaderProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
-  children?: React.ReactNode;
   gridArea?: GridAreaType;
   margin?: MarginType;
   actions?: JSX.Element;
   gridProps?: GridProps;
   parent?: JSX.Element;
+  responsive?: boolean;
   subtitle?: string | JSX.Element;
   title?: string | JSX.Element;
 }

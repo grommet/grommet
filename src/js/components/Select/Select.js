@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { controlBorderStyle, normalizeColor } from '../../utils';
+import { controlBorderStyle, normalizeColor, useKeyboard } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -104,18 +104,7 @@ const Select = forwardRef(
     // Determine if the Select is opened with the keyboard. If so,
     // focus should be set on the first option when the drop opens
     // see set initial focus code in SelectContainer.js
-    const [usingKeyboard, setUsingKeyboard] = useState();
-
-    const onMouseDown = () => setUsingKeyboard(false);
-    const onKeyPress = () => setUsingKeyboard(true);
-    useEffect(() => {
-      document.addEventListener('mousedown', onMouseDown);
-      document.addEventListener('keydown', onKeyPress);
-      return () => {
-        document.removeEventListener('mousedown', onMouseDown);
-        document.removeEventListener('keydown', onKeyPress);
-      };
-    }, []);
+    const usingKeyboard = useKeyboard();
 
     // value is used for what we receive in valueProp and the basis for
     // what we send with onChange

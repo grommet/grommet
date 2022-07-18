@@ -8,7 +8,7 @@ for (let i = 1; i < 8; i += 1) {
   data.push({
     date: `2020-07-${((i % 30) + 1).toString().padStart(2, 0)}`,
     percent: Math.abs(v * 100),
-    amount: i,
+    amount: Math.round(Math.abs(v * 50)),
   });
 }
 
@@ -30,8 +30,18 @@ export const Legend = () => (
           label: 'Amount',
         },
       ]}
-      chart={['percent', { property: 'amount', thickness: 'small' }]}
+      chart={[
+        'percent',
+        {
+          type: 'line',
+          property: 'amount',
+          thickness: 'xsmall',
+          dash: true,
+          round: true,
+        },
+      ]}
       legend
+      detail
       axis={{ x: { property: 'date', granularity: 'medium' } }}
     />
   </Box>

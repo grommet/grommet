@@ -94,6 +94,7 @@ const AccordionPanel = forwardRef(
           aria-expanded={active}
           plain={theme.button.default ? true : undefined}
           onClick={onPanelChange}
+          hoverIndicator={theme.accordion.hover.background}
           onMouseOver={(event) => {
             setHover(headingColor);
             if (onMouseOver) onMouseOver(event);

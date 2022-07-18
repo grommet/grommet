@@ -497,7 +497,13 @@ const Form = forwardRef(
               validateArg,
               required,
             );
-            return () => delete validationRulesRef.current[name].field;
+            return () => {
+              delete validationRulesRef.current[name];
+              const requiredFieldIndex = requiredFields.current.indexOf(name);
+              if (requiredFieldIndex !== -1) {
+                requiredFields.current.splice(requiredFieldIndex, 1);
+              }
+            };
           }
 
           return undefined;

@@ -6,7 +6,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
-import { Calendar as CalendarIcon } from 'grommet-icons';
+import { Calendar as CalendarIcon, Clock as ClockIcon } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
@@ -101,6 +101,83 @@ describe('DateInput', () => {
     const { container } = render(
       <Grommet>
         <DateInput id="item" name="item" format="mm/dd/yyyy" value={DATE} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('reverse calendar icon', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          reverse
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as false', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          inputProps={{ reverse: false }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as true', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          inputProps={{ reverse: true }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as false with icon', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          icon={<ClockIcon />}
+          inputProps={{ reverse: false }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as true with icon', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          icon={<ClockIcon />}
+          inputProps={{ reverse: true }}
+          value={DATES}
+        />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -685,10 +762,9 @@ describe('DateInput', () => {
     fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
       target: { value: '07//2020-07/27/2021' },
     });
-    expect(onChange).toHaveNthReturnedWith(3, []);
     // cannot check snapshot here as it will be relative to the current date
 
-    expect(onChange).toHaveBeenCalledTimes(3);
+    expect(onChange).toHaveBeenCalledTimes(2);
   });
 
   test('type format inline range partial without timezone', () => {
@@ -722,10 +798,9 @@ describe('DateInput', () => {
     fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
       target: { value: '07//2020-07/27/2021' },
     });
-    expect(onChange).toHaveNthReturnedWith(3, []);
     // cannot check snapshot here as it will be relative to the current date
 
-    expect(onChange).toHaveBeenCalledTimes(3);
+    expect(onChange).toHaveBeenCalledTimes(2);
   });
 
   test('controlled format inline', () => {

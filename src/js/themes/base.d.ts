@@ -242,6 +242,15 @@ interface FormFieldLabelType extends TextProps {
   requiredIndicator?: boolean | JSX.Element | string;
 }
 
+type DigitalTexts =
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | 'xxlarge'
+  | string;
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -430,6 +439,7 @@ export interface ThemeType {
       margin?: MarginType;
     };
     hover?: {
+      background?: BackgroundType;
       color?: ColorType; // deprecated
       heading?: {
         color?: ColorType;
@@ -625,31 +635,7 @@ export interface ThemeType {
     };
     digital?: {
       text?: {
-        xsmall?: {
-          size?: string;
-          height?: number;
-        };
-        small?: {
-          size?: string;
-          height?: number;
-        };
-        medium?: {
-          size?: string;
-          height?: number;
-        };
-        large?: {
-          size?: string;
-          height?: number;
-        };
-        xlarge?: {
-          size?: string;
-          height?: number;
-        };
-        xxlarge?: {
-          size?: string;
-          height?: number;
-        };
-        [key: string]: {
+        [key in DigitalTexts]: {
           size?: string;
           height?: number;
         };
@@ -1040,6 +1026,14 @@ export interface ThemeType {
     background?: BackgroundType;
     drop?: DropProps;
     extend?: ExtendType;
+    group?: {
+      container?: BoxProps;
+      separator?: {
+        color?: ColorType;
+        size?: string;
+        pad?: PadType;
+      };
+    };
     icons?: {
       down?: any;
       up?: any;
@@ -1158,6 +1152,14 @@ export interface ThemeType {
     actions?: BoxProps;
     pad?: PadType;
     parent?: BoxProps;
+    responsive?: {
+      actions?: BoxProps;
+      areas?: AreasType;
+      breakpoints?: string[];
+      columns?: GridColumnsType;
+      rows?: GridSizeType;
+      gap?: GridGapType;
+    };
     subtitle?: ParagraphProps;
     title?: HeadingProps;
     small?: {
@@ -1429,6 +1431,11 @@ export interface ThemeType {
     };
     panel?: {
       extend?: ExtendType;
+    };
+    step?: {
+      small?: number;
+      medium?: number;
+      large?: number;
     };
   };
   table?: {

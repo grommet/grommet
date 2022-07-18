@@ -346,6 +346,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // margin: undefined
       },
       hover: {
+        // background: undefined,
         color: { dark: 'light-4', light: 'dark-3' }, // deprecated
         heading: {
           color: { dark: 'light-4', light: 'dark-3' },
@@ -1049,6 +1050,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         // any drop props
       },
+      group: {
+        container: {
+          pad: {
+            vertical: 'xsmall',
+          },
+        },
+        separator: {
+          color: 'border',
+          size: 'xsmall',
+          pad: {
+            horizontal: 'small',
+          },
+        },
+      },
       icons: {
         down: FormDown,
         // up: undefined,
@@ -1277,6 +1292,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       parent: {
         // any box props
         align: 'start',
+      },
+      responsive: {
+        actions: {
+          // any box props
+          align: 'start',
+          pad: {
+            top: 'small',
+          },
+        },
+        areas: [['parent'], ['title'], ['subtitle'], ['actions']],
+        breakpoints: ['small'],
+        columns: ['auto'],
+        rows: ['auto'],
+        // gap: undefined,
       },
       subtitle: {
         // any paragraph props
@@ -1620,6 +1649,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       panel: {
         // extend: undefined,
+      },
+      step: {
+        small: 1,
+        medium: 3,
+        large: 3,
       },
     },
     table: {
