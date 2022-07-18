@@ -70,9 +70,9 @@ var headStyle = (0, _styledComponents.css)(["::after{content:'';height:100%;widt
 var StyledVideoScrubber = _styledComponents["default"].div.withConfig({
   displayName: "StyledVideo__StyledVideoScrubber",
   componentId: "sc-w4v8h9-3"
-})(["cursor:pointer;width:100%;height:100%;", ";"], function (props) {
+})(["cursor:pointer;width:100%;height:100%;", ";&:focus{", "}"], function (props) {
   return props.value && headStyle;
-});
+}, (0, _utils.focusStyle)());
 
 exports.StyledVideoScrubber = StyledVideoScrubber;
 StyledVideoScrubber.defaultProps = {};

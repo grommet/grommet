@@ -49,9 +49,9 @@ var headStyle = css(["::after{content:'';height:100%;width:", ";background:", ";
 var StyledVideoScrubber = styled.div.withConfig({
   displayName: "StyledVideo__StyledVideoScrubber",
   componentId: "sc-w4v8h9-3"
-})(["cursor:pointer;width:100%;height:100%;", ";"], function (props) {
+})(["cursor:pointer;width:100%;height:100%;", ";&:focus{", "}"], function (props) {
   return props.value && headStyle;
-});
+}, focusStyle());
 StyledVideoScrubber.defaultProps = {};
 Object.setPrototypeOf(StyledVideoScrubber.defaultProps, defaultProps);
 export { StyledVideo, StyledVideoContainer, StyledVideoControls, StyledVideoScrubber };
