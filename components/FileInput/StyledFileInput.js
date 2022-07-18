@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var StyledFileInput = _styledComponents["default"].input.withConfig({
   displayName: "StyledFileInput",
   componentId: "sc-rl7ywv-0"
-})(["position:absolute;height:100%;width:100%;", " opacity:0;border:none;", " ", " &::-moz-focus-inner{border:none;outline:none;}"], _utils.inputStyle, function (props) {
+})(["position:absolute;height:100%;width:100%;", " font-size:0;opacity:0;border:none;", " ", " &::-moz-focus-inner{border:none;outline:none;}&::-webkit-file-upload-button{cursor:pointer;}"], _utils.inputStyle, function (props) {
   return !props.disabled && 'cursor: pointer;';
 }, function (props) {
   return props.rightOffset && "\n    width: calc(100% - " + props.rightOffset + "px);\n    right: " + props.rightOffset + "px;\n    ";

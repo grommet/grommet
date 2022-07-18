@@ -42,7 +42,7 @@ var formatBytes = function formatBytes(size) {
 var ContentsBox = styled(Box).withConfig({
   displayName: "FileInput__ContentsBox",
   componentId: "sc-1jzq7im-0"
-})(["position:relative;", " ", ";", ";", ";"], function (props) {
+})(["cursor:pointer;position:relative;", " ", ";", ";", ";"], function (props) {
   return props.disabled && disabledStyle();
 }, function (props) {
   return props.theme.fileInput && props.theme.fileInput.extend;
