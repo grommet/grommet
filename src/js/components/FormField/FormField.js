@@ -178,21 +178,23 @@ const FormField = forwardRef(
       validate,
     });
     const [focus, setFocus] = useState();
-    const [debounced, setDebounced] = useState();
     const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
 
-    useEffect(() => {
-      let timeout;
-      const later = () => {
-        timeout = null;
-        if (debounced) debounced();
-      };
-      timeout = setTimeout(later, theme.global.debounceDelay);
-      return () => clearTimeout(timeout);
-    }, [debounced, theme.global.debounceDelay]);
+    const useDebounce = () => {
+      const [func, setFunc] = useState();
+
+      useEffect(() => {
+        let timer;
+        if (func) timer = setTimeout(() => func(), theme.global.debounceDelay);
+        return () => clearTimeout(timer);
+      }, [func]);
+
+      return setFunc;
+    };
+    const debounce = useDebounce();
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -473,7 +475,8 @@ const FormField = forwardRef(
             ? (event) => {
                 event.persist();
                 if (onChange) onChange(event);
-                if (contextOnChange) setDebounced(() => contextOnChange);
+                if (contextOnChange)
+                  debounce(() => () => contextOnChange(event));
               }
             : undefined
         }
