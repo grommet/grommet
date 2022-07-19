@@ -4435,8 +4435,6 @@ exports[`DateInput controlled format inline without timezone 2`] = `
 
 .c14 {
   position: relative;
-  -webkit-animation: gGnBir 0.5s forwards;
-  animation: gGnBir 0.5s forwards;
 }
 
 .c15 {
@@ -5460,28 +5458,6 @@ exports[`DateInput controlled format inline without timezone 2`] = `
                       class="c18"
                     >
                       8
-                    </div>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="c15"
-                role="row"
-              >
-                <div
-                  class="c16"
-                  role="gridcell"
-                >
-                  <button
-                    aria-label="Sun Aug 09 2020"
-                    class="c17"
-                    tabindex="-1"
-                    type="button"
-                  >
-                    <div
-                      class="c18"
-                    >
-                      9
                     </div>
                   </button>
                 </div>

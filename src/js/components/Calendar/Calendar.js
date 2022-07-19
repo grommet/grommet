@@ -366,14 +366,22 @@ const Calendar = forwardRef(
     }, [animate, firstDayOfWeek, reference, displayBounds]);
 
     useEffect(() => {
+      // if the reference timezone has changed (e.g., controlled component),
+      // both ends of the displayBounds should inherit that new timestamp
       if (targetDisplayBounds) {
+        if (
+          targetDisplayBounds[0].getTime() < displayBounds[0].getTime() ||
+          targetDisplayBounds[1].getTime() > displayBounds[1].getTime()
+        ) {
+          setDisplayBounds([targetDisplayBounds[0], targetDisplayBounds[1]]);
+        }
         if (targetDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
           // only animate if the duration is within a year
           if (
             displayBounds[0].getTime() - targetDisplayBounds[0].getTime() <
-            millisecondsPerYear
+              millisecondsPerYear &&
+            daysApart(displayBounds[0], targetDisplayBounds[0])
           ) {
-            setDisplayBounds([targetDisplayBounds[0], displayBounds[1]]);
             setSlide({
               direction: 'down',
               weeks: daysApart(displayBounds[0], targetDisplayBounds[0]) / 7,
@@ -385,9 +393,9 @@ const Calendar = forwardRef(
         ) {
           if (
             targetDisplayBounds[1].getTime() - displayBounds[1].getTime() <
-            millisecondsPerYear
+              millisecondsPerYear &&
+            daysApart(targetDisplayBounds[1], displayBounds[1])
           ) {
-            setDisplayBounds([displayBounds[0], targetDisplayBounds[1]]);
             setSlide({
               direction: 'up',
               weeks: daysApart(targetDisplayBounds[1], displayBounds[1]) / 7,
