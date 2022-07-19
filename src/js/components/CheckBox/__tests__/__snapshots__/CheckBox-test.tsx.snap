@@ -1680,13 +1680,13 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   class="c0"
 >
   <label
-    aria-label="Label"
     class="c1"
   >
     <div
       class="c2 c3"
     >
       <input
+        aria-label="Label"
         class="c4"
         type="checkbox"
       />
@@ -1696,13 +1696,13 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
     </div>
   </label>
   <label
-    aria-label="Label-2"
     class="c1"
   >
     <div
       class="c2 c3"
     >
       <input
+        aria-label="Label-2"
         class="c4"
         type="checkbox"
       />
@@ -2171,13 +2171,13 @@ exports[`CheckBox should not have accessibility violations 1`] = `
   class="c0"
 >
   <label
-    aria-label="test"
     class="c1"
   >
     <div
       class="c2 c3"
     >
       <input
+        aria-label="test"
         class="c4"
         type="checkbox"
       />

@@ -21,8 +21,18 @@ const fontFamily = css`
   font-family: ${(props) => props.theme.paragraph.font.family};
 `;
 
+const maxlinesStyle = (props) =>
+  props.maxLines &&
+  css`
+    display: -webkit-box;
+    -webkit-line-clamp: ${props.maxLines};
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  `;
+
 const StyledParagraph = styled.p`
   ${genericStyles}
+  ${(props) => maxlinesStyle(props)}
   ${(props) => sizeStyle(props)}
   ${(props) => props.textAlign && textAlignStyle}
   ${(props) => props.colorProp && colorStyle}
