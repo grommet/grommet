@@ -21,7 +21,6 @@ import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
-import { getTimestamp, normalizeForTimezone } from '../Calendar/utils';
 import {
   formatToSchema,
   schemaToMask,
@@ -30,6 +29,27 @@ import {
   textToValue,
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
+import { getOutputFormat } from '../Calendar/Calendar';
+
+const getReference = (value) => {
+  let adjustedDate;
+  let res;
+  if (typeof value === 'string') res = value;
+  else if (Array.isArray(value) && Array.isArray(value[0]))
+    res = value[0].find((date) => date);
+  else if (Array.isArray(value) && value.length) [res] = value;
+
+  if (res) {
+    adjustedDate = new Date(res);
+    // if time is not specified in ISOstring, normalize to midnight
+    if (res?.indexOf('T') === -1) {
+      const offset = adjustedDate.getTimezoneOffset();
+      const hour = adjustedDate.getHours();
+      adjustedDate.setHours(hour, offset);
+    }
+  }
+  return adjustedDate;
+};
 
 const DateInput = forwardRef(
   (
@@ -69,25 +89,20 @@ const DateInput = forwardRef(
       initialValue: defaultValue,
     });
 
-    const timestamp = useMemo(() => {
-      if (Array.isArray(defaultValue) && defaultValue.length)
-        return getTimestamp(defaultValue[0]);
-      if (typeof defaultValue === 'string') return getTimestamp(defaultValue);
-      if (Array.isArray(value) && value.length) return getTimestamp(value[0]);
-      // check to see if value is not an empty string
-      // empty string should behave like undefined
-      if (typeof value === 'string' && value.length) return getTimestamp(value);
-      return undefined;
-    }, [defaultValue, value]);
+    const [outputFormat, setOutputFormat] = useState(getOutputFormat(value));
+    useEffect(() => {
+      setOutputFormat((previousFormat) => {
+        const nextFormat = getOutputFormat(value);
+        // when user types, date could become something like 07//2020
+        // and value becomes undefined. don't lose the format from the
+        // previous valid date
+        return previousFormat !== nextFormat ? previousFormat : nextFormat;
+      });
+    }, [value]);
 
-    // whether or not we should normalize the date based on the timestamp.
-    // will be set to false if the initial timestamp is undefined (meaning
-    // a user did not provide a defaultValue or value). in this case, we
-    // will just rely on the UTC timestamp and don't need to normalize.
-    const [normalize, setNormalize] = useState(true);
+    // keep track of timestamp from original date(s)
+    const [reference, setReference] = useState(getReference(value));
 
-    // normalize value based on timestamp vs user's local timezone
-    const normalizedDate = normalizeForTimezone(value, timestamp, normalize);
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
 
@@ -99,7 +114,7 @@ const DateInput = forwardRef(
 
     // textValue is only used when a format is provided
     const [textValue, setTextValue] = useState(
-      schema ? valueToText(normalizedDate, schema) : undefined,
+      schema ? valueToText(value, schema) : undefined,
     );
 
     // Setting the icon through `inputProps` is deprecated.
@@ -124,18 +139,18 @@ Use the icon prop instead.`,
     // matching "06/1/2021".
     useEffect(() => {
       if (schema && value !== undefined) {
-        const nextTextValue = valueToText(normalizedDate, schema);
+        const nextTextValue = valueToText(value, schema);
         if (
           !valuesAreEqual(
-            textToValue(textValue, schema, range, timestamp),
-            textToValue(nextTextValue, schema, range, timestamp),
+            textToValue(textValue, schema, range, reference),
+            textToValue(nextTextValue, schema, range, reference),
           ) ||
           (textValue === '' && nextTextValue !== '')
         ) {
           setTextValue(nextTextValue);
         }
       }
-    }, [range, schema, textValue, value, normalizedDate, timestamp]);
+    }, [range, schema, textValue, reference, value]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
@@ -155,13 +170,12 @@ Use the icon prop instead.`,
         ref={inline ? ref : undefined}
         id={inline && !format ? id : undefined}
         range={range}
-        date={range ? undefined : normalizedDate}
+        date={range ? undefined : value}
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
-        dates={range && value.length ? [normalizedDate] : undefined}
+        dates={range && value.length ? [value] : undefined}
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
-        normalize={normalize}
         onSelect={
           disabled
             ? undefined
@@ -172,26 +186,10 @@ Use the icon prop instead.`,
                 // clicking an edge date removes it
                 else if (range) normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
-                // timestamp will be undefined if no defaultValue or value have
-                // been passed in, indicating that we should stay local if the
-                // user first picks a date via the Calendar.
-                let nextNormalize = normalize;
-                if (timestamp === undefined) {
-                  nextNormalize = false;
-                  setNormalize(nextNormalize);
-                }
-                if (schema)
-                  setTextValue(
-                    valueToText(
-                      normalizeForTimezone(
-                        normalizedValue,
-                        undefined,
-                        nextNormalize,
-                      ),
-                      schema,
-                    ),
-                  );
+
+                if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
+                setReference(getReference(nextValue));
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
                   closeCalendar();
@@ -199,7 +197,7 @@ Use the icon prop instead.`,
                 }
               }
         }
-        {...{ ...calendarProps, timestamp }}
+        {...calendarProps}
       />
     );
 
@@ -270,32 +268,15 @@ Use the icon prop instead.`,
               onChange={(event) => {
                 const nextTextValue = event.target.value;
                 setTextValue(nextTextValue);
-
-                let localTimestamp;
-                // get the UTC timestamp relative to the user's timezone
-                // once a date is complete
-                if (timestamp === undefined && Date.parse(nextTextValue))
-                  [, localTimestamp] = new Date(nextTextValue)
-                    .toISOString()
-                    .split('T');
-
-                // timestamp will be undefined if no defaultValue or value have
-                // been passed in, indicating that we should stay local
-                let nextNormalize = normalize;
-                if (timestamp === undefined) {
-                  nextNormalize = false;
-                  setNormalize(nextNormalize);
-                }
                 const nextValue = textToValue(
                   nextTextValue,
                   schema,
                   range,
-                  timestamp || localTimestamp,
-                  nextNormalize,
+                  reference,
+                  outputFormat,
                 );
-
-                // reset to original state
-                if (nextValue === undefined) setNormalize(true);
+                if (nextValue !== undefined)
+                  setReference(getReference(nextValue));
                 // update value even when undefined
                 setValue(nextValue);
                 if (onChange) {
