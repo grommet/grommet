@@ -173,12 +173,18 @@ const CalendarDay = ({
   children,
   fill,
   size,
+  focus,
   isInRange,
   isSelected,
   otherMonth,
   buttonProps = {},
 }) => (
-  <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
+  <StyledDayContainer
+    role="gridcell"
+    sizeProp={size}
+    fillContainer={fill}
+    focus={focus}
+  >
     <CalendarDayButton fill={fill} {...buttonProps}>
       <StyledDay
         disabledProp={buttonProps.disabled}
@@ -248,14 +254,19 @@ const Calendar = forwardRef(
     // when mousedown, we don't want to let Calendar set
     // active date to firstInMonth
     const [mouseDown, setMouseDown] = useState(false);
+    const [mouseOver, setMouseOver] = useState(false);
     const onMouseDown = () => setMouseDown(true);
     const onMouseUp = () => setMouseDown(false);
+    const onMouseOver = () => setMouseOver(true);
+    const onMouseOut = () => setMouseOver(false);
     useEffect(() => {
       document.addEventListener('mousedown', onMouseDown);
       document.addEventListener('mouseup', onMouseUp);
+      document.addEventListener('mouseover', onMouseOver);
       return () => {
         document.removeEventListener('mousedown', onMouseDown);
         document.removeEventListener('mouseup', onMouseUp);
+        document.removeEventListener('mouseout', onMouseOut);
       };
     }, []);
 
@@ -832,6 +843,9 @@ const Calendar = forwardRef(
               }}
               isInRange={inRange}
               isSelected={selected}
+              focus={
+                !focus && !mouseOver && active?.getTime() === day.getTime()
+              }
               otherMonth={day.getMonth() !== reference.getMonth()}
               size={size}
               fill={fill}
@@ -944,6 +958,8 @@ const Calendar = forwardRef(
             onUp={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
+              setFocus(false);
+              setMouseOver(false);
               setActive(addDays(active, -7));
               if (!betweenDates(addDays(active, -7), displayBounds)) {
                 changeReference(addDays(active, -7));
@@ -952,18 +968,24 @@ const Calendar = forwardRef(
             onDown={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
+              setFocus(false);
+              setMouseOver(false);
               setActive(addDays(active, 7));
               if (!betweenDates(addDays(active, 7), displayBounds)) {
                 changeReference(active);
               }
             }}
             onLeft={() => {
+              setFocus(false);
+              setMouseOver(false);
               setActive(addDays(active, -1));
               if (!betweenDates(addDays(active, -1), displayBounds)) {
                 changeReference(active);
               }
             }}
             onRight={() => {
+              setFocus(false);
+              setMouseOver(false);
               setActive(addDays(active, 1));
               if (!betweenDates(addDays(active, 2), displayBounds)) {
                 changeReference(active);
@@ -987,7 +1009,9 @@ const Calendar = forwardRef(
               onFocus={() => {
                 setFocus(true);
                 // caller focused onto Calendar via keyboard
-                if (!mouseDown) {
+                if (!mouseDown && !active && !focus) {
+                  setMouseOver(false);
+                  setFocus(false);
                   setActive(new Date(firstDayInMonth));
                 }
               }}
