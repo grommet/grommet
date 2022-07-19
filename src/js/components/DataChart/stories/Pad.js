@@ -21,6 +21,7 @@ export const Pad = () => (
       pad={{ horizontal: 'xlarge' }}
       data={data}
       series={['percent', {}]}
+      chart={[{ property: 'percent', thickness: 'medium' }]}
     />
   </Box>
   // </Grommet>
