@@ -55,11 +55,6 @@ export var sameDayOrBefore = function sameDayOrBefore(date1, date2) {
 };
 export var daysApart = function daysApart(date1, date2) {
   return Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
-};
-export var formatToLocalYYYYMMDD = function formatToLocalYYYYMMDD(date, normalize) {
-  var adjustedDate = new Date(date);
-  var nextDate = normalize ? new Date(adjustedDate.getTime() - adjustedDate.getTimezoneOffset() * 60000) : new Date(adjustedDate.getTime());
-  return nextDate.toISOString().split('T')[0];
 }; // betweenDates takes an array of two elements and checks if the
 // supplied date lies between them, inclusive.
 // returns 2 if exact match to one end, 1 if between, undefined otherwise
@@ -68,11 +63,11 @@ export var betweenDates = function betweenDates(date, dates) {
   var result;
 
   if (dates) {
-    var _dates$map = dates.map(function (d) {
+    var _ref = Array.isArray(dates) ? dates.map(function (d) {
       return d ? new Date(d) : undefined;
-    }),
-        from = _dates$map[0],
-        to = _dates$map[1];
+    }) : [dates, undefined],
+        from = _ref[0],
+        to = _ref[1];
 
     if (from && sameDay(date, from) || to && sameDay(date, to)) {
       result = 2;
@@ -95,8 +90,8 @@ export var withinDates = function withinDates(date, dates) {
   if (dates) {
     if (Array.isArray(dates)) {
       dates.some(function (d) {
-        if (typeof d === 'string') {
-          if (sameDay(date, new Date(d))) {
+        if (d instanceof Date) {
+          if (sameDay(date, d)) {
             result = 2;
           }
         } else {
@@ -105,114 +100,18 @@ export var withinDates = function withinDates(date, dates) {
 
         return result;
       });
-    } else if (sameDay(date, new Date(dates))) {
+    } else if (sameDay(date, dates)) {
       result = 2;
     }
   }
 
   return result;
 };
-export var getTimestamp = function getTimestamp(date) {
-  return /T.*/.test(date) ? new Date(date).toISOString().split('T')[1] : // for Calendar, explicitly mark that caller has provided
-  // value with no timestamp
-  false;
-}; // Checks if daylight savings is in effect for a timezone and date
-// Reference: https://stackoverflow.com/questions/11887934/how-to-check-if-dst-daylight-saving-time-is-in-effect-and-if-so-the-offset
+export var handleOffset = function handleOffset(date) {
+  var normalizedDate = new Date(date);
+  var offset = normalizedDate.getTimezoneOffset();
+  var hour = normalizedDate.getHours(); // add back offset
 
-var inDaylightSavings = function inDaylightSavings(day) {
-  var jan = new Date(day.getFullYear(), 0, 1).getTimezoneOffset();
-  var july = new Date(day.getFullYear(), 6, 1).getTimezoneOffset();
-  return Math.max(jan, july) !== day.getTimezoneOffset();
-}; // Adjust for differences between timestamp on value and
-// local timezone of user. Internal Calendar logic relies
-// on Javascript date contructor which translates the provided
-// date into the equivalent moment for the user's timezone, which
-// can create undesired results. The standardizes the input value
-// for internal calculations
-// Reference: https://www.ursahealth.com/new-insights/dates-and-timezones-in-javascript
-// If normalize is false just convert the value toISOString(),
-// valueOffset/localOffset will be 0.
-
-
-export var normalizeForTimezone = function normalizeForTimezone(value, timestamp, normalize) {
-  if (normalize === void 0) {
-    normalize = true;
-  }
-
-  var adjustedDate;
-  var hourDelta = 0;
-  var valueOffset = 0;
-  var localOffset = 0;
-
-  if (normalize) {
-    if (timestamp && typeof timestamp === 'string') {
-      hourDelta = parseInt(timestamp == null ? void 0 : timestamp.split(':')[0], 10);
-    }
-
-    var today = new Date();
-    adjustedDate = value && (Array.isArray(value) ? value : [value]).map(function (v) {
-      var day = new Date(v); // If one of the days either day or today is in daylight savings and the
-      // other is not the timezoneOffset will be different. If they are both
-      // in or out of daylight savings the timezoneOffset will be the same.
-
-      if (day && !inDaylightSavings(day) && day.getTimezoneOffset() > today.getTimezoneOffset()) {
-        // today is in daylight savings but the selected day is not
-        hourDelta -= 1;
-      } else if (day && inDaylightSavings(day) && day.getTimezoneOffset() < today.getTimezoneOffset()) {
-        // the selected day is in daylight savings but today is not
-        hourDelta += 1;
-      }
-
-      valueOffset = hourDelta === 0 ? 0 : hourDelta * 60 * 60 * 1000;
-      localOffset = new Date().getTimezoneOffset() * 60 * 1000;
-      return new Date(new Date(v).getTime() - valueOffset + localOffset).toISOString();
-    });
-  } else {
-    adjustedDate = value && (Array.isArray(value) ? value : [value]).map(function (v) {
-      return new Date(new Date(v).getTime()).toISOString();
-    });
-  }
-
-  if (typeof value === 'string') {
-    var _adjustedDate = adjustedDate;
-    adjustedDate = _adjustedDate[0];
-  }
-
-  return adjustedDate;
-}; // format the date to align with date format caller passed in
-
-export var formatDateToPropStructure = function formatDateToPropStructure(date, timestamp, normalize) {
-  var adjustedDate;
-
-  if (date) {
-    if (timestamp) {
-      adjustedDate = formatToLocalYYYYMMDD(date, normalize).split('T')[0] + "T" + timestamp;
-    } else if (timestamp === false) {
-      var _formatToLocalYYYYMMD = formatToLocalYYYYMMDD(date, normalize).split('T');
-
-      adjustedDate = _formatToLocalYYYYMMD[0];
-    } else adjustedDate = date;
-  }
-
-  return adjustedDate;
-};
-export var getFormattedDate = function getFormattedDate(nextDate, nextDates, normalize, range, timestamp) {
-  var adjustedDate;
-  var adjustedDates;
-
-  if (nextDates && Array.isArray(nextDates[0]) && (!nextDates[0][0] || !nextDates[0][1]) && range === true) {
-    // return string for backwards compatibility
-    var _nextDates$0$filter = nextDates[0].filter(function (d) {
-      return d;
-    });
-
-    adjustedDates = _nextDates$0$filter[0];
-    adjustedDates = formatDateToPropStructure(adjustedDates, timestamp, normalize);
-  } else if (nextDates) {
-    adjustedDates = [[formatDateToPropStructure(nextDates[0][0], timestamp, normalize), formatDateToPropStructure(nextDates[0][1], timestamp, normalize)]];
-  } else {
-    adjustedDate = formatDateToPropStructure(nextDate, timestamp, normalize);
-  }
-
-  return adjustedDates || adjustedDate;
+  normalizedDate.setHours(hour, offset < 0 ? -offset : offset);
+  return normalizedDate;
 };

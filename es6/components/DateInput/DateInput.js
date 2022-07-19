@@ -20,9 +20,34 @@ import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
-import { getTimestamp, normalizeForTimezone } from '../Calendar/utils';
 import { formatToSchema, schemaToMask, valuesAreEqual, valueToText, textToValue } from './utils';
 import { DateInputPropTypes } from './propTypes';
+import { getOutputFormat } from '../Calendar/Calendar';
+
+var getReference = function getReference(value) {
+  var adjustedDate;
+  var res;
+  if (typeof value === 'string') res = value;else if (Array.isArray(value) && Array.isArray(value[0])) res = value[0].find(function (date) {
+    return date;
+  });else if (Array.isArray(value) && value.length) {
+    res = value[0];
+  }
+
+  if (res) {
+    var _res;
+
+    adjustedDate = new Date(res); // if time is not specified in ISOstring, normalize to midnight
+
+    if (((_res = res) == null ? void 0 : _res.indexOf('T')) === -1) {
+      var offset = adjustedDate.getTimezoneOffset();
+      var hour = adjustedDate.getHours();
+      adjustedDate.setHours(hour, offset);
+    }
+  }
+
+  return adjustedDate;
+};
+
 var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   var buttonProps = _ref.buttonProps,
       calendarProps = _ref.calendarProps,
@@ -67,25 +92,24 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       value = _useFormInput[0],
       setValue = _useFormInput[1];
 
-  var timestamp = useMemo(function () {
-    if (Array.isArray(defaultValue) && defaultValue.length) return getTimestamp(defaultValue[0]);
-    if (typeof defaultValue === 'string') return getTimestamp(defaultValue);
-    if (Array.isArray(value) && value.length) return getTimestamp(value[0]); // check to see if value is not an empty string
-    // empty string should behave like undefined
+  var _useState = useState(getOutputFormat(value)),
+      outputFormat = _useState[0],
+      setOutputFormat = _useState[1];
 
-    if (typeof value === 'string' && value.length) return getTimestamp(value);
-    return undefined;
-  }, [defaultValue, value]); // whether or not we should normalize the date based on the timestamp.
-  // will be set to false if the initial timestamp is undefined (meaning
-  // a user did not provide a defaultValue or value). in this case, we
-  // will just rely on the UTC timestamp and don't need to normalize.
+  useEffect(function () {
+    setOutputFormat(function (previousFormat) {
+      var nextFormat = getOutputFormat(value); // when user types, date could become something like 07//2020
+      // and value becomes undefined. don't lose the format from the
+      // previous valid date
 
-  var _useState = useState(true),
-      normalize = _useState[0],
-      setNormalize = _useState[1]; // normalize value based on timestamp vs user's local timezone
+      return previousFormat !== nextFormat ? previousFormat : nextFormat;
+    });
+  }, [value]); // keep track of timestamp from original date(s)
 
+  var _useState2 = useState(getReference(value)),
+      reference = _useState2[0],
+      setReference = _useState2[1]; // do we expect multiple dates?
 
-  var normalizedDate = normalizeForTimezone(value, timestamp, normalize); // do we expect multiple dates?
 
   var range = Array.isArray(value) || format && format.includes('-'); // parse format and build a formal schema we can use elsewhere
 
@@ -97,9 +121,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     return schemaToMask(schema);
   }, [schema]); // textValue is only used when a format is provided
 
-  var _useState2 = useState(schema ? valueToText(normalizedDate, schema) : undefined),
-      textValue = _useState2[0],
-      setTextValue = _useState2[1]; // Setting the icon through `inputProps` is deprecated.
+  var _useState3 = useState(schema ? valueToText(value, schema) : undefined),
+      textValue = _useState3[0],
+      setTextValue = _useState3[1]; // Setting the icon through `inputProps` is deprecated.
   // The `icon` prop should be used instead.
 
 
@@ -124,17 +148,17 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
 
   useEffect(function () {
     if (schema && value !== undefined) {
-      var nextTextValue = valueToText(normalizedDate, schema);
+      var nextTextValue = valueToText(value, schema);
 
-      if (!valuesAreEqual(textToValue(textValue, schema, range, timestamp), textToValue(nextTextValue, schema, range, timestamp)) || textValue === '' && nextTextValue !== '') {
+      if (!valuesAreEqual(textToValue(textValue, schema, range, reference), textToValue(nextTextValue, schema, range, reference)) || textValue === '' && nextTextValue !== '') {
         setTextValue(nextTextValue);
       }
     }
-  }, [range, schema, textValue, value, normalizedDate, timestamp]); // when format and not inline, whether to show the Calendar in a Drop
+  }, [range, schema, textValue, reference, value]); // when format and not inline, whether to show the Calendar in a Drop
 
-  var _useState3 = useState(),
-      open = _useState3[0],
-      setOpen = _useState3[1];
+  var _useState4 = useState(),
+      open = _useState4[0],
+      setOpen = _useState4[1];
 
   var openCalendar = useCallback(function () {
     setOpen(true);
@@ -154,33 +178,23 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     ref: inline ? ref : undefined,
     id: inline && !format ? id : undefined,
     range: range,
-    date: range ? undefined : normalizedDate // when caller initializes with empty array, dates should be undefined
+    date: range ? undefined : value // when caller initializes with empty array, dates should be undefined
     // allowing the user to select both begin and end of the range
     ,
-    dates: range && value.length ? [normalizedDate] : undefined // places focus on days grid when Calendar opens
+    dates: range && value.length ? [value] : undefined // places focus on days grid when Calendar opens
     ,
     initialFocus: open ? 'days' : undefined,
-    normalize: normalize,
     onSelect: disabled ? undefined : function (nextValue) {
       var normalizedValue;
 
       if (range && Array.isArray(nextValue)) {
         normalizedValue = nextValue[0];
       } // clicking an edge date removes it
-      else if (range) normalizedValue = [nextValue, nextValue];else normalizedValue = nextValue; // timestamp will be undefined if no defaultValue or value have
-      // been passed in, indicating that we should stay local if the
-      // user first picks a date via the Calendar.
+      else if (range) normalizedValue = [nextValue, nextValue];else normalizedValue = nextValue;
 
-
-      var nextNormalize = normalize;
-
-      if (timestamp === undefined) {
-        nextNormalize = false;
-        setNormalize(nextNormalize);
-      }
-
-      if (schema) setTextValue(valueToText(normalizeForTimezone(normalizedValue, undefined, nextNormalize), schema));
+      if (schema) setTextValue(valueToText(normalizedValue, schema));
       setValue(normalizedValue);
+      setReference(getReference(nextValue));
       if (_onChange) _onChange({
         value: normalizedValue
       });
@@ -192,9 +206,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
         }, 1);
       }
     }
-  }, _extends({}, calendarProps, {
-    timestamp: timestamp
-  })));
+  }, calendarProps));
   var formContextValue = useMemo(function () {
     return {
       useFormInput: function useFormInput(_ref3) {
@@ -263,27 +275,8 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     onChange: function onChange(event) {
       var nextTextValue = event.target.value;
       setTextValue(nextTextValue);
-      var localTimestamp; // get the UTC timestamp relative to the user's timezone
-      // once a date is complete
-
-      if (timestamp === undefined && Date.parse(nextTextValue)) {
-        var _Date$toISOString$spl = new Date(nextTextValue).toISOString().split('T');
-
-        localTimestamp = _Date$toISOString$spl[1];
-      } // timestamp will be undefined if no defaultValue or value have
-      // been passed in, indicating that we should stay local
-
-
-      var nextNormalize = normalize;
-
-      if (timestamp === undefined) {
-        nextNormalize = false;
-        setNormalize(nextNormalize);
-      }
-
-      var nextValue = textToValue(nextTextValue, schema, range, timestamp || localTimestamp, nextNormalize); // reset to original state
-
-      if (nextValue === undefined) setNormalize(true); // update value even when undefined
+      var nextValue = textToValue(nextTextValue, schema, range, reference, outputFormat);
+      if (nextValue !== undefined) setReference(getReference(nextValue)); // update value even when undefined
 
       setValue(nextValue);
 

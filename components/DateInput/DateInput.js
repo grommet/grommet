@@ -33,11 +33,11 @@ var _MaskedInput = require("../MaskedInput");
 
 var _utils = require("../../utils");
 
-var _utils2 = require("../Calendar/utils");
-
-var _utils3 = require("./utils");
+var _utils2 = require("./utils");
 
 var _propTypes = require("./propTypes");
+
+var _Calendar3 = require("../Calendar/Calendar");
 
 var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "icon", "inline", "inputProps", "name", "onChange", "onFocus", "plain", "reverse", "value", "messages"],
     _excluded2 = ["icon"];
@@ -49,6 +49,30 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+var getReference = function getReference(value) {
+  var adjustedDate;
+  var res;
+  if (typeof value === 'string') res = value;else if (Array.isArray(value) && Array.isArray(value[0])) res = value[0].find(function (date) {
+    return date;
+  });else if (Array.isArray(value) && value.length) {
+    res = value[0];
+  }
+
+  if (res) {
+    var _res;
+
+    adjustedDate = new Date(res); // if time is not specified in ISOstring, normalize to midnight
+
+    if (((_res = res) == null ? void 0 : _res.indexOf('T')) === -1) {
+      var offset = adjustedDate.getTimezoneOffset();
+      var hour = adjustedDate.getHours();
+      adjustedDate.setHours(hour, offset);
+    }
+  }
+
+  return adjustedDate;
+};
 
 var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
   var buttonProps = _ref.buttonProps,
@@ -95,39 +119,38 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       value = _useFormInput[0],
       setValue = _useFormInput[1];
 
-  var timestamp = (0, _react.useMemo)(function () {
-    if (Array.isArray(defaultValue) && defaultValue.length) return (0, _utils2.getTimestamp)(defaultValue[0]);
-    if (typeof defaultValue === 'string') return (0, _utils2.getTimestamp)(defaultValue);
-    if (Array.isArray(value) && value.length) return (0, _utils2.getTimestamp)(value[0]); // check to see if value is not an empty string
-    // empty string should behave like undefined
+  var _useState = (0, _react.useState)((0, _Calendar3.getOutputFormat)(value)),
+      outputFormat = _useState[0],
+      setOutputFormat = _useState[1];
 
-    if (typeof value === 'string' && value.length) return (0, _utils2.getTimestamp)(value);
-    return undefined;
-  }, [defaultValue, value]); // whether or not we should normalize the date based on the timestamp.
-  // will be set to false if the initial timestamp is undefined (meaning
-  // a user did not provide a defaultValue or value). in this case, we
-  // will just rely on the UTC timestamp and don't need to normalize.
+  (0, _react.useEffect)(function () {
+    setOutputFormat(function (previousFormat) {
+      var nextFormat = (0, _Calendar3.getOutputFormat)(value); // when user types, date could become something like 07//2020
+      // and value becomes undefined. don't lose the format from the
+      // previous valid date
 
-  var _useState = (0, _react.useState)(true),
-      normalize = _useState[0],
-      setNormalize = _useState[1]; // normalize value based on timestamp vs user's local timezone
+      return previousFormat !== nextFormat ? previousFormat : nextFormat;
+    });
+  }, [value]); // keep track of timestamp from original date(s)
 
+  var _useState2 = (0, _react.useState)(getReference(value)),
+      reference = _useState2[0],
+      setReference = _useState2[1]; // do we expect multiple dates?
 
-  var normalizedDate = (0, _utils2.normalizeForTimezone)(value, timestamp, normalize); // do we expect multiple dates?
 
   var range = Array.isArray(value) || format && format.includes('-'); // parse format and build a formal schema we can use elsewhere
 
   var schema = (0, _react.useMemo)(function () {
-    return (0, _utils3.formatToSchema)(format);
+    return (0, _utils2.formatToSchema)(format);
   }, [format]); // mask is only used when a format is provided
 
   var mask = (0, _react.useMemo)(function () {
-    return (0, _utils3.schemaToMask)(schema);
+    return (0, _utils2.schemaToMask)(schema);
   }, [schema]); // textValue is only used when a format is provided
 
-  var _useState2 = (0, _react.useState)(schema ? (0, _utils3.valueToText)(normalizedDate, schema) : undefined),
-      textValue = _useState2[0],
-      setTextValue = _useState2[1]; // Setting the icon through `inputProps` is deprecated.
+  var _useState3 = (0, _react.useState)(schema ? (0, _utils2.valueToText)(value, schema) : undefined),
+      textValue = _useState3[0],
+      setTextValue = _useState3[1]; // Setting the icon through `inputProps` is deprecated.
   // The `icon` prop should be used instead.
 
 
@@ -152,17 +175,17 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
 
   (0, _react.useEffect)(function () {
     if (schema && value !== undefined) {
-      var nextTextValue = (0, _utils3.valueToText)(normalizedDate, schema);
+      var nextTextValue = (0, _utils2.valueToText)(value, schema);
 
-      if (!(0, _utils3.valuesAreEqual)((0, _utils3.textToValue)(textValue, schema, range, timestamp), (0, _utils3.textToValue)(nextTextValue, schema, range, timestamp)) || textValue === '' && nextTextValue !== '') {
+      if (!(0, _utils2.valuesAreEqual)((0, _utils2.textToValue)(textValue, schema, range, reference), (0, _utils2.textToValue)(nextTextValue, schema, range, reference)) || textValue === '' && nextTextValue !== '') {
         setTextValue(nextTextValue);
       }
     }
-  }, [range, schema, textValue, value, normalizedDate, timestamp]); // when format and not inline, whether to show the Calendar in a Drop
+  }, [range, schema, textValue, reference, value]); // when format and not inline, whether to show the Calendar in a Drop
 
-  var _useState3 = (0, _react.useState)(),
-      open = _useState3[0],
-      setOpen = _useState3[1];
+  var _useState4 = (0, _react.useState)(),
+      open = _useState4[0],
+      setOpen = _useState4[1];
 
   var openCalendar = (0, _react.useCallback)(function () {
     setOpen(true);
@@ -183,33 +206,23 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     ref: inline ? ref : undefined,
     id: inline && !format ? id : undefined,
     range: range,
-    date: range ? undefined : normalizedDate // when caller initializes with empty array, dates should be undefined
+    date: range ? undefined : value // when caller initializes with empty array, dates should be undefined
     // allowing the user to select both begin and end of the range
     ,
-    dates: range && value.length ? [normalizedDate] : undefined // places focus on days grid when Calendar opens
+    dates: range && value.length ? [value] : undefined // places focus on days grid when Calendar opens
     ,
     initialFocus: open ? 'days' : undefined,
-    normalize: normalize,
     onSelect: disabled ? undefined : function (nextValue) {
       var normalizedValue;
 
       if (range && Array.isArray(nextValue)) {
         normalizedValue = nextValue[0];
       } // clicking an edge date removes it
-      else if (range) normalizedValue = [nextValue, nextValue];else normalizedValue = nextValue; // timestamp will be undefined if no defaultValue or value have
-      // been passed in, indicating that we should stay local if the
-      // user first picks a date via the Calendar.
+      else if (range) normalizedValue = [nextValue, nextValue];else normalizedValue = nextValue;
 
-
-      var nextNormalize = normalize;
-
-      if (timestamp === undefined) {
-        nextNormalize = false;
-        setNormalize(nextNormalize);
-      }
-
-      if (schema) setTextValue((0, _utils3.valueToText)((0, _utils2.normalizeForTimezone)(normalizedValue, undefined, nextNormalize), schema));
+      if (schema) setTextValue((0, _utils2.valueToText)(normalizedValue, schema));
       setValue(normalizedValue);
+      setReference(getReference(nextValue));
       if (_onChange) _onChange({
         value: normalizedValue
       });
@@ -221,9 +234,7 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
         }, 1);
       }
     }
-  }, _extends({}, calendarProps, {
-    timestamp: timestamp
-  })));
+  }, calendarProps));
 
   var formContextValue = (0, _react.useMemo)(function () {
     return {
@@ -294,27 +305,8 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     onChange: function onChange(event) {
       var nextTextValue = event.target.value;
       setTextValue(nextTextValue);
-      var localTimestamp; // get the UTC timestamp relative to the user's timezone
-      // once a date is complete
-
-      if (timestamp === undefined && Date.parse(nextTextValue)) {
-        var _Date$toISOString$spl = new Date(nextTextValue).toISOString().split('T');
-
-        localTimestamp = _Date$toISOString$spl[1];
-      } // timestamp will be undefined if no defaultValue or value have
-      // been passed in, indicating that we should stay local
-
-
-      var nextNormalize = normalize;
-
-      if (timestamp === undefined) {
-        nextNormalize = false;
-        setNormalize(nextNormalize);
-      }
-
-      var nextValue = (0, _utils3.textToValue)(nextTextValue, schema, range, timestamp || localTimestamp, nextNormalize); // reset to original state
-
-      if (nextValue === undefined) setNormalize(true); // update value even when undefined
+      var nextValue = (0, _utils2.textToValue)(nextTextValue, schema, range, reference, outputFormat);
+      if (nextValue !== undefined) setReference(getReference(nextValue)); // update value even when undefined
 
       setValue(nextValue);
 

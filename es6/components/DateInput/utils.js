@@ -1,9 +1,15 @@
+function _construct(Parent, args, Class) { if (_isNativeReflectConstruct()) { _construct = Reflect.construct.bind(); } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-// Converting between Date and String types is handled via a "schema".
+import { handleOffset } from '../Calendar/utils'; // Converting between Date and String types is handled via a "schema".
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
-import { formatToLocalYYYYMMDD } from '../Calendar/utils';
+
 export var formatToSchema = function formatToSchema(format) {
   if (!format) return undefined;
   var result = [];
@@ -70,7 +76,16 @@ export var valueToText = function valueToText(value, schema) {
 
   if (!value || Array.isArray(value) && !value.length) return text;
   var dates = (Array.isArray(value) ? value : [value]).map(function (v) {
-    return new Date(v);
+    // TO DO should we extract this to a reusable function?
+    var adjustedDate = new Date(v); // if time is not specified in ISOstring, normalize to midnight
+
+    if (v.indexOf('T') === -1) {
+      var offset = adjustedDate.getTimezoneOffset();
+      var hour = adjustedDate.getHours();
+      adjustedDate.setHours(hour, offset);
+    }
+
+    return adjustedDate;
   });
   var dateIndex = 0;
   var parts = {};
@@ -126,7 +141,7 @@ var pullDigits = function pullDigits(text, index) {
   return text.slice(index, end);
 };
 
-export var textToValue = function textToValue(text, schema, range, timestamp, normalize) {
+export var textToValue = function textToValue(text, schema, range, reference, outputFormat) {
   if (!text) return range ? [] : undefined;
   var result;
 
@@ -134,10 +149,17 @@ export var textToValue = function textToValue(text, schema, range, timestamp, no
     var leapYear = parts.y % 4 === 0 && parts.y % 100 !== 0 || parts.y % 400 === 0; // Do a little sanity checking on the parts first.
     // If not valid, leave as is.
 
-    if (!parts.m || !parts.d || !parts.y || parts.y.length < 4 || parts.m.length > 2 || parts.d.length > 2 || parts.m > 12 || parts.d > 31 || (parts.m === "02" || parts.m === "2") && parts.d > (leapYear ? 29 : 28)) return parts;
-    var date = new Date(parts.y, parts.m - 1, parts.d).toISOString(); // match time and timezone of any supplied valueProp
+    if (!parts.m || !parts.d || !parts.y || parts.y.length < 4 || parts.m.length > 2 || parts.d.length > 2 || parts.m > 12 || parts.d > 31 || (parts.m === "02" || parts.m === "2") && parts.d > (leapYear ? 29 : 28)) return parts; // use time info from reference date
 
-    if (timestamp) date = formatToLocalYYYYMMDD(date, normalize).split('T')[0] + "T" + timestamp;else date = "" + formatToLocalYYYYMMDD(date, normalize).split('T')[0];
+    var time = reference ? [reference.getHours(), reference.getMinutes(), reference.getSeconds(), reference.getMilliseconds()] : null;
+
+    var date = _construct(Date, [parts.y, parts.m - 1, parts.d].concat(time)).toISOString();
+
+    if (date && outputFormat === 'no timezone') {
+      var _handleOffset$toISOSt = handleOffset(date).toISOString().split('T');
+
+      date = _handleOffset$toISOSt[0];
+    }
 
     if (!range) {
       if (!result) result = date;
