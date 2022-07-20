@@ -691,6 +691,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     activeProperty: activeProperty,
     axis: axis,
     data: data,
+    pad: pad,
     series: series,
     seriesStyles: seriesStyles,
     renderValue: renderValue,

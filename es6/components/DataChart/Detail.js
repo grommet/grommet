@@ -1,12 +1,11 @@
-import React, { Fragment, useCallback, useMemo, useRef, useState } from 'react';
-import styled from 'styled-components';
+import React, { Fragment, useCallback, useContext, useMemo, useRef, useState } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Grid } from '../Grid';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle, unfocusStyle } from '../../utils';
-import { halfPad } from './utils';
+import { focusStyle, parseMetricToNum, unfocusStyle } from '../../utils';
 import { Swatch } from './Swatch';
 var DetailControl = styled(Box).withConfig({
   displayName: "Detail__DetailControl",
@@ -17,11 +16,12 @@ var Detail = function Detail(_ref) {
   var activeProperty = _ref.activeProperty,
       axis = _ref.axis,
       data = _ref.data,
-      pad = _ref.pad,
+      padProp = _ref.pad,
       series = _ref.series,
       seriesStyles = _ref.seriesStyles,
       renderValue = _ref.renderValue,
       thickness = _ref.thickness;
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState(),
       detailIndex = _useState[0],
@@ -31,6 +31,20 @@ var Detail = function Detail(_ref) {
   var detailRefs = useMemo(function () {
     return [];
   }, []);
+  var pad = useMemo(function () {
+    // ensure the hit targets and center lines align with
+    // the data/guide lines
+    var horizontal = (padProp == null ? void 0 : padProp.horizontal) || typeof padProp === 'string' && padProp || 0;
+    horizontal = theme.global.edgeSize[horizontal] || horizontal;
+    horizontal = parseMetricToNum(horizontal);
+    var vertical = (padProp == null ? void 0 : padProp.vertical) || typeof padProp === 'string' && padProp || 0;
+    vertical = theme.global.edgeSize[vertical] || vertical;
+    vertical = parseMetricToNum(vertical);
+    return {
+      horizontal: horizontal - parseMetricToNum(thickness) / 2 + "px",
+      vertical: vertical + "px"
+    };
+  }, [padProp, theme.global.edgeSize, thickness]);
   var onMouseLeave = useCallback(function (event) {
     // Only remove detail if the mouse isn't over the active index.
     // This helps distinguish leaving the drop on the edge where it is
@@ -54,11 +68,7 @@ var Detail = function Detail(_ref) {
     tabIndex: 0,
     direction: "row",
     fill: true,
-    pad: // ensure the hit targets and center lines align with
-    // the data/guide lines
-    (pad == null ? void 0 : pad.horizontal) && halfPad[pad.horizontal] && {
-      horizontal: halfPad[pad.horizontal]
-    } || pad,
+    pad: pad,
     justify: "between",
     responsive: false,
     onFocus: function onFocus() {},

@@ -5,7 +5,7 @@ exports.Detail = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _Box = require("../Box");
 
@@ -19,11 +19,7 @@ var _Text = require("../Text");
 
 var _utils = require("../../utils");
 
-var _utils2 = require("./utils");
-
 var _Swatch = require("./Swatch");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -38,11 +34,12 @@ var Detail = function Detail(_ref) {
   var activeProperty = _ref.activeProperty,
       axis = _ref.axis,
       data = _ref.data,
-      pad = _ref.pad,
+      padProp = _ref.pad,
       series = _ref.series,
       seriesStyles = _ref.seriesStyles,
       renderValue = _ref.renderValue,
       thickness = _ref.thickness;
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme;
 
   var _useState = (0, _react.useState)(),
       detailIndex = _useState[0],
@@ -52,6 +49,20 @@ var Detail = function Detail(_ref) {
   var detailRefs = (0, _react.useMemo)(function () {
     return [];
   }, []);
+  var pad = (0, _react.useMemo)(function () {
+    // ensure the hit targets and center lines align with
+    // the data/guide lines
+    var horizontal = (padProp == null ? void 0 : padProp.horizontal) || typeof padProp === 'string' && padProp || 0;
+    horizontal = theme.global.edgeSize[horizontal] || horizontal;
+    horizontal = (0, _utils.parseMetricToNum)(horizontal);
+    var vertical = (padProp == null ? void 0 : padProp.vertical) || typeof padProp === 'string' && padProp || 0;
+    vertical = theme.global.edgeSize[vertical] || vertical;
+    vertical = (0, _utils.parseMetricToNum)(vertical);
+    return {
+      horizontal: horizontal - (0, _utils.parseMetricToNum)(thickness) / 2 + "px",
+      vertical: vertical + "px"
+    };
+  }, [padProp, theme.global.edgeSize, thickness]);
   var onMouseLeave = (0, _react.useCallback)(function (event) {
     // Only remove detail if the mouse isn't over the active index.
     // This helps distinguish leaving the drop on the edge where it is
@@ -75,11 +86,7 @@ var Detail = function Detail(_ref) {
     tabIndex: 0,
     direction: "row",
     fill: true,
-    pad: // ensure the hit targets and center lines align with
-    // the data/guide lines
-    (pad == null ? void 0 : pad.horizontal) && _utils2.halfPad[pad.horizontal] && {
-      horizontal: _utils2.halfPad[pad.horizontal]
-    } || pad,
+    pad: pad,
     justify: "between",
     responsive: false,
     onFocus: function onFocus() {},
