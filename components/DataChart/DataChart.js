@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
-var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
-
 var _Box = require("../Box");
 
 var _Chart = require("../Chart");
@@ -86,11 +84,8 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var _useState = (0, _react.useState)(),
       activeProperty = _useState[0],
-      setActiveProperty = _useState[1]; // refs used for ie11 not having Grid
+      setActiveProperty = _useState[1]; // normalize seriesProp to an array of objects, one per property
 
-
-  var xRef = (0, _react.useRef)();
-  var spacerRef = (0, _react.useRef)(); // normalize seriesProp to an array of objects, one per property
 
   var series = (0, _react.useMemo)(function () {
     if (Array.isArray(seriesProp)) return seriesProp.filter(function (s) {
@@ -547,14 +542,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       }
     });
     return result;
-  }, [axis, data, series]); // for ie11, align the spacer Box height to the x-axis height
-
-  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
-    if (xRef.current && spacerRef.current) {
-      var rect = xRef.current.getBoundingClientRect();
-      spacerRef.current.style.height = rect.height + "px";
-    }
-  }, []);
+  }, [axis, data, series]);
 
   var renderValue = function renderValue(serie, dataIndex, valueArg) {
     var value;
@@ -580,7 +568,6 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
 
   var xAxisElement = axis && axis.x && chartProps.length ? /*#__PURE__*/_react["default"].createElement(_XAxis.XAxis, {
-    ref: xRef,
     axis: axis,
     values: (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis[0],
     pad: offsetPad ? _extends({}, pad, {

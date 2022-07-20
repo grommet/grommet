@@ -6,9 +6,8 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useMemo, useRef, useState } from 'react';
+import React, { forwardRef, useContext, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
@@ -60,11 +59,8 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var _useState = useState(),
       activeProperty = _useState[0],
-      setActiveProperty = _useState[1]; // refs used for ie11 not having Grid
+      setActiveProperty = _useState[1]; // normalize seriesProp to an array of objects, one per property
 
-
-  var xRef = useRef();
-  var spacerRef = useRef(); // normalize seriesProp to an array of objects, one per property
 
   var series = useMemo(function () {
     if (Array.isArray(seriesProp)) return seriesProp.filter(function (s) {
@@ -521,14 +517,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }
     });
     return result;
-  }, [axis, data, series]); // for ie11, align the spacer Box height to the x-axis height
-
-  useLayoutEffect(function () {
-    if (xRef.current && spacerRef.current) {
-      var rect = xRef.current.getBoundingClientRect();
-      spacerRef.current.style.height = rect.height + "px";
-    }
-  }, []);
+  }, [axis, data, series]);
 
   var renderValue = function renderValue(serie, dataIndex, valueArg) {
     var value;
@@ -554,7 +543,6 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
 
   var xAxisElement = axis && axis.x && chartProps.length ? /*#__PURE__*/React.createElement(XAxis, {
-    ref: xRef,
     axis: axis,
     values: (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis[0],
     pad: offsetPad ? _extends({}, pad, {
