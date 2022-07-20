@@ -199,6 +199,31 @@ describe('DataChart', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('detail pad + thickness', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart data={data} series="a" detail />
+        <DataChart data={data} series="a" detail pad="small" />
+        <DataChart
+          data={data}
+          series="a"
+          detail
+          pad={{ horizontal: 'small' }}
+        />
+        <DataChart data={data} series="a" detail pad={{ vertical: 'small' }} />
+        <DataChart
+          data={data}
+          series="a"
+          chart={[{ property: 'a', thickness: 'large' }]}
+          detail
+          pad={{ horizontal: 'xlarge' }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('axis x granularity', () => {
     const { container } = render(
       <Grommet>
