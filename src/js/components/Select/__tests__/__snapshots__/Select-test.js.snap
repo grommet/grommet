@@ -2040,6 +2040,11 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   color: #000000;
 }
 
+.c0:hover {
+  background-color: lightgreen;
+  color: #7D4CDB;
+}
+
 .c0:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;

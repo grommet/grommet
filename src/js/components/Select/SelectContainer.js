@@ -91,17 +91,12 @@ const SelectContainer = forwardRef(
     const searchRef = useRef();
     const optionsRef = useRef();
     const clearRef = useRef();
+    const activeRef = useRef();
 
+    // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {
-      const optionsNode = optionsRef.current;
-      if (optionsNode.children) {
-        const clearButton = clearRef.current;
-        let index = activeIndex;
-        if (clear && clear.position !== 'bottom' && clearButton) index += 1;
-        const optionNode = optionsNode.children[index];
-        if (optionNode) optionNode.focus();
-      }
-    }, [activeIndex, clear]);
+      activeRef.current?.focus();
+    }, []);
 
     // set initial focus
     useEffect(() => {
@@ -472,7 +467,12 @@ const SelectContainer = forwardRef(
                     <SelectOption
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
-                      ref={optionRef}
+                      // merge optionRef and activeRef
+                      ref={(node) => {
+                        // eslint-disable-next-line no-param-reassign
+                        if (optionRef) optionRef.current = node;
+                        if (optionActive) activeRef.current = node;
+                      }}
                       tabIndex={optionSelected ? '0' : '-1'}
                       role="option"
                       aria-setsize={options.length}
