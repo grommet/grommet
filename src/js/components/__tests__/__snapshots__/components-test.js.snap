@@ -673,6 +673,7 @@ Object {
       "fill": [Function],
       "gridArea": [Function],
       "margin": [Function],
+      "maxLines": [Function],
       "responsive": [Function],
       "size": [Function],
       "textAlign": [Function],
@@ -1393,7 +1394,7 @@ Object {
               "opacity": 0.3,
             },
           },
-          "debounceDelay": 300,
+          "debounceDelay": 500,
           "deviceBreakpoints": Object {
             "computer": "large",
             "phone": "small",
@@ -1711,6 +1712,9 @@ Object {
             },
             "separator": Object {
               "color": "border",
+              "pad": Object {
+                "horizontal": "small",
+              },
               "size": "xsmall",
             },
           },
