@@ -292,6 +292,7 @@ const Menu = forwardRef((props, ref) => {
         // go to the first menu item instead.
         tabIndex={activeItemIndex === constants.none ? '-1' : undefined}
         {...buttonProps}
+        {...theme.menu.button}
       >
         {typeof content === 'function'
           ? () => content({ ...props, drop: true })
@@ -353,6 +354,7 @@ const Menu = forwardRef((props, ref) => {
               onDropClose();
             }
           }}
+          {...theme.menu.button}
         >
           {child}
         </Button>

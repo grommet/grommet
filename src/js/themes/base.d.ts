@@ -232,6 +232,7 @@ interface ButtonType {
       };
     };
   };
+  style?: Partial<CSSStyleDeclaration>;
   transition?: {
     timing?: string;
     duration?: number;
@@ -1025,6 +1026,7 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
+    button?: ButtonType;
     drop?: DropProps;
     extend?: ExtendType;
     group?: {
