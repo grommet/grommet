@@ -55,6 +55,8 @@ const Select = forwardRef(
       children,
       clear = false,
       closeOnChange = true,
+      contentAboveSearch,
+      contentBelowSearch,
       defaultValue,
       disabled,
       disabledKey,
@@ -68,7 +70,6 @@ const Select = forwardRef(
       id,
       icon,
       labelKey,
-      limitedSelections = false,
       margin,
       messages,
       multiple,
@@ -93,8 +94,6 @@ const Select = forwardRef(
       value: valueProp,
       valueKey,
       valueLabel,
-      variant,
-      viewSelection,
       ...rest
     },
     ref,
@@ -344,8 +343,9 @@ const Select = forwardRef(
           onClick={onClick}
           dropContent={
             <SelectContainer
-              limitedSelections={limitedSelections}
               clear={clear}
+              contentAboveSearch={contentAboveSearch}
+              contentBelowSearch={contentBelowSearch}
               disabled={disabled}
               disabledKey={disabledKey}
               dropHeight={dropHeight}
@@ -369,8 +369,6 @@ const Select = forwardRef(
               usingKeyboard={usingKeyboard}
               value={value}
               valueKey={valueKey}
-              variant={variant}
-              viewSelection={viewSelection}
             >
               {children}
             </SelectContainer>

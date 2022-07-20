@@ -8,7 +8,6 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { Checkmark } from 'grommet-icons/icons/Checkmark';
 import { selectedStyle, setFocusWithoutScroll } from '../../utils';
 
 import { defaultProps } from '../../default-props';
@@ -59,6 +58,8 @@ const SelectContainer = forwardRef(
   (
     {
       clear,
+      contentAboveSearch,
+      contentBelowSearch,
       children = null,
       disabled,
       disabledKey,
@@ -66,7 +67,6 @@ const SelectContainer = forwardRef(
       emptySearchMessage = 'No matches found',
       id,
       labelKey,
-      limitedSelections,
       multiple,
       name,
       onChange,
@@ -83,8 +83,6 @@ const SelectContainer = forwardRef(
       usingKeyboard,
       value = '',
       valueKey,
-      variant,
-      viewSelection,
       replace = true,
     },
     ref,
@@ -95,7 +93,6 @@ const SelectContainer = forwardRef(
     const searchRef = useRef();
     const optionsRef = useRef();
     const clearRef = useRef();
-    const [showingSelected, setShowingSelected] = useState(false);
 
     useEffect(() => {
       const optionsNode = optionsRef.current;
@@ -241,13 +238,11 @@ const SelectContainer = forwardRef(
                 : options[index];
             nextSelected = index;
           }
-          if (!limitedSelections || nextSelected.length <= 5) {
-            onChange(event, {
-              option: options[index],
-              value: nextValue,
-              selected: nextSelected,
-            });
-          }
+          onChange(event, {
+            option: options[index],
+            value: nextValue,
+            selected: nextSelected,
+          });
         }
       },
       [multiple, onChange, optionIndexesInValue, options, allOptions, valueKey],
@@ -265,12 +260,12 @@ const SelectContainer = forwardRef(
         event.preventDefault();
         let nextActiveIndex = activeIndex + 1;
         const clearButton = clearRef.current;
-        while (
-          nextActiveIndex < options.length &&
-          isDisabled(nextActiveIndex)
-        ) {
-          nextActiveIndex += 1;
-        }
+        // while (
+        //   nextActiveIndex < options.length &&
+        //   isDisabled(nextActiveIndex)
+        // ) {
+        //   nextActiveIndex += 1;
+        // }
         if (nextActiveIndex !== options.length) {
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
@@ -302,9 +297,9 @@ const SelectContainer = forwardRef(
           }
         }
 
-        while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
-          nextActiveIndex -= 1;
-        }
+        // while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
+        //   nextActiveIndex -= 1;
+        // }
         if (nextActiveIndex >= 0) {
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
@@ -333,8 +328,9 @@ const SelectContainer = forwardRef(
             }
             return (
               typeof label === 'string' &&
-              label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
-              !isDisabled(index)
+              label.charAt(0).toLowerCase() === event.key.toLowerCase()
+              // &&
+              // !isDisabled(index)
             );
           });
 
@@ -360,7 +356,11 @@ const SelectContainer = forwardRef(
 
     const onSelectOption = useCallback(
       (event) => {
-        if (activeIndex >= 0 && activeIndex < options.length) {
+        if (
+          !isDisabled(activeIndex) &&
+          activeIndex >= 0 &&
+          activeIndex < options.length
+        ) {
           event.preventDefault(); // prevent submitting forms
           selectOption(activeIndex)(event);
         }
@@ -387,118 +387,6 @@ const SelectContainer = forwardRef(
         }
       : {};
 
-    const getSelectedString = () => {
-      const selected = options.filter((option) =>
-        isSelected(options.indexOf(option)),
-      );
-      let formattedSelected = '';
-      selected.forEach((value, index) => {
-        formattedSelected += value;
-        if (index != selected.length - 1) formattedSelected += ', ';
-      });
-      return formattedSelected;
-    };
-
-    let variantButtonContent;
-    if (variant === 1) {
-      if (value.length === 0) {
-        variantButtonContent = (
-          <Button
-            // plain
-            icon={<Checkmark size="small" />}
-            label="Select All"
-            onClick={(event) => {
-              if (onChange) {
-                onChange(event, {
-                  option: options,
-                  value: allOptions,
-                  selected: allOptions,
-                });
-              }
-            }}
-          >
-            {/* <Box direction="horizontal" gap="small">
-              <Checkmark size="small" color="black" />
-              <Text weight="bold">Select All</Text>
-            </Box> */}
-          </Button>
-        );
-      } else {
-        variantButtonContent = (
-          <Button
-            label="Clear All"
-            onClick={(event) => {
-              if (onChange) {
-                onChange(event, {
-                  option: options,
-                  value: [],
-                  selected: [],
-                });
-              }
-            }}
-          />
-        );
-      }
-    }
-    if (variant === 2) {
-      if (value.length === 0) {
-        variantButtonContent = (
-          <Box>
-            <Button
-              size="xsmall"
-              label="Select All"
-              secondary
-              onClick={(event) => {
-                if (onChange) {
-                  onChange(event, {
-                    option: options,
-                    value: allOptions,
-                    selected: allOptions,
-                  });
-                }
-              }}
-            />
-          </Box>
-        );
-      } else if (showingSelected) {
-        variantButtonContent = (
-          <Box direction="row" gap="small">
-            <Button
-              size="xsmall"
-              label="View All"
-              // primary
-              secondary
-              onClick={() => {
-                if (viewSelection) {
-                  const val = 'reset';
-                  viewSelection(val);
-                  setShowingSelected(false);
-                }
-              }}
-            />
-          </Box>
-        );
-      } else {
-        variantButtonContent = (
-          // <Box direction="row" gap="small">
-
-          <Button
-            size="xsmall"
-            label="View Selected"
-            // primary
-            secondary
-            onClick={() => {
-              if (viewSelection) {
-                viewSelection(value);
-                setShowingSelected(true);
-              }
-            }}
-          />
-          // </Box>
-        );
-      }
-    }
-
     return (
       <Keyboard
         onEnter={onSelectOption}
@@ -514,40 +402,8 @@ const SelectContainer = forwardRef(
           dropHeight={dropHeight}
           a11yTitle="Select dropdown"
         >
-          <Box
-            direction="row"
-            justify="between"
-            flex={false}
-            pad={{ horizontal: 'small', top: 'xsmall' }}
-          >
-            {limitedSelections ? (
-              <>
-                <Text>Select up to 5</Text>
-                {search !== '' && search !== undefined && (
-                  <Box>
-                    {value.length === 0 ? (
-                      <Text size="small">0 selected</Text>
-                    ) : (
-                      <Text size="small">{value.length} selected of 5</Text>
-                    )}
-                  </Box>
-                )}
-              </>
-            ) : (
-              <>
-                {search !== '' && search !== undefined && (
-                  <Box>
-                    {value.length === 0 ? (
-                      <Text size="small">0 selected</Text>
-                    ) : (
-                      <Text size="small">{value.length} selected of 10</Text>
-                    )}
-                  </Box>
-                )}
-              </>
-            )}
-          </Box>
-          {onSearch && !showingSelected && (
+          {contentAboveSearch}
+          {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
               <Keyboard
                 onEnter={(event) => {
@@ -572,54 +428,7 @@ const SelectContainer = forwardRef(
               </Keyboard>
             </Box>
           )}
-          {(search === '' || search === undefined) && (
-            <Box
-              pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
-              // direction="row-responsive"
-              direction="row"
-              // direction={value.length === 0 ? 'row' : 'column'}
-              justify="between"
-              gap="small"
-              // wrap
-            >
-              <Box
-                // pad={{ horizontal: 'small', top: 'small', bottom: 'small' }}
-                alignSelf="center"
-              >
-                {value.length === 0 ? (
-                  <Text size="small">0 selected</Text>
-                ) : limitedSelections ? (
-                  <Text size="small">{value.length} selected of 5</Text>
-                ) : (
-                  <>
-                    <Text size="small">{value.length} selected of 10</Text>
-                    {variant === 2 && (
-                      <Button
-                        onClick={(event) => {
-                          if (onChange) {
-                            onChange(event, {
-                              option: options,
-                              value: [],
-                              selected: [],
-                            });
-                          }
-                        }}
-                      >
-                        <Text size="small">
-                          <u>Clear All</u>
-                        </Text>
-                      </Button>
-                    )}
-                  </>
-                )}
-              </Box>
-              <Box>
-                {options.length > 0 &&
-                  !limitedSelections &&
-                  variantButtonContent}
-              </Box>
-            </Box>
-          )}
+          {contentBelowSearch}
           <OptionsBox
             role="listbox"
             tabIndex="0"
@@ -677,15 +486,6 @@ const SelectContainer = forwardRef(
                     textComponent = true;
                   }
 
-                  let limitDisable = false;
-                  if (
-                    limitedSelections &&
-                    !optionSelected &&
-                    value.length === 5
-                  ) {
-                    limitDisable = true;
-                  }
-
                   // if we have a child, turn on plain, and hoverIndicator
                   return (
                     <SelectOption
@@ -698,17 +498,14 @@ const SelectContainer = forwardRef(
                       aria-setsize={options.length}
                       aria-posinset={index + 1}
                       aria-selected={optionSelected}
-                      aria-live={optionSelected ? 'assertive' : 'off'}
                       focusIndicator={false}
-                      aria-disabled={
-                        optionDisabled || limitDisable || undefined
-                      }
+                      aria-disabled={optionDisabled || undefined}
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
                       hoverIndicator={!child ? undefined : 'background'}
                       label={!child ? optionLabel(index) : undefined}
-                      disabled={optionDisabled || limitDisable || undefined}
+                      // disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}
                       onMouseOver={

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-import { Box, CheckBox, Select, Text } from 'grommet';
+import { Box, CheckBox, Select, Text, Button } from 'grommet';
+
+import { Checkmark } from 'grommet-icons';
 
 // const dummyOptions = [
 //   'Azure MAS-TRM:v2019.03',
@@ -31,6 +33,7 @@ const dummyOptions = [
 export const MultiSelect = () => {
   const [options, setOptions] = useState(dummyOptions.sort());
   const [valueMultiple, setValueMultiple] = useState([]);
+  const [search, setSearch] = useState();
 
   const Option = React.memo(({ option }) => (
     <Box direction="row" align="center">
@@ -48,15 +51,72 @@ export const MultiSelect = () => {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box fill align="center" pad="large" gap="large">
-      <Text>Multi-Select Default Option 1</Text>
+      <Text>Multi-Select Default</Text>
       <Select
-        width="medium"
-        variant={1}
+        contentAboveSearch={
+          <Box
+            direction="row"
+            justify="between"
+            flex={false}
+            pad={{ horizontal: 'small', top: 'xsmall' }}
+          >
+            {search !== '' && search !== undefined && (
+              <Box>
+                {valueMultiple.length === 0 ? (
+                  <Text size="small">0 selected</Text>
+                ) : (
+                  <Text size="small">
+                    {valueMultiple.length} selected of 10
+                  </Text>
+                )}
+              </Box>
+            )}
+          </Box>
+        }
+        contentBelowSearch={
+          (search === '' || search === undefined) && (
+            <Box
+              pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
+              direction="row"
+              justify="between"
+              gap="small"
+            >
+              <Box alignSelf="center">
+                {valueMultiple.length === 0 ? (
+                  <Text size="small">0 selected</Text>
+                ) : (
+                  <Text size="small">
+                    {valueMultiple.length} selected of {dummyOptions.length}
+                  </Text>
+                )}
+              </Box>
+              <Box>
+                {options.length > 0 &&
+                  (valueMultiple.length === 0 ? (
+                    <Button
+                      a11yTitle={`Select all ${dummyOptions.length} options`}
+                      icon={<Checkmark size="small" />}
+                      label="Select All"
+                      onClick={() => setValueMultiple(dummyOptions)}
+                    />
+                  ) : (
+                    <Button
+                      a11yTitle={`${valueMultiple.length} options selected. Clear all?`}
+                      label="Clear All"
+                      onClick={() => setValueMultiple([])}
+                    />
+                  ))}
+              </Box>
+            </Box>
+          )
+        }
+        value={valueMultiple}
         multiple
         closeOnChange={false}
         placeholder="Select"
         options={options}
         onSearch={(text) => {
+          setSearch(text);
           // The line below escapes regular expression special characters:
           // [ \ ^ $ . | ? * + ( )
           const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -90,9 +150,7 @@ export const MultiSelect = () => {
           const sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
         }}
-        onChange={({ value, option }) => {
-          setValueMultiple(value);
-        }}
+        onChange={({ value }) => setValueMultiple(value)}
       >
         {(option) => <Option option={option} />}
       </Select>
@@ -109,8 +167,8 @@ MultiSelect.args = {
   full: true,
 };
 
-MultiSelect.storyName = 'Multi Select Option 1';
+MultiSelect.storyName = 'Multi Select Default';
 
 export default {
-  title: 'Input/Select/Multi Select Option 1',
+  title: 'Input/Select/Multi Select Default',
 };
