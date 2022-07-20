@@ -293,6 +293,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, rest, {
     background: theme.tabs.background
   }), /*#__PURE__*/React.createElement(Box, _extends({
+    flex: false,
     direction: overflow ? 'row' : 'column'
   }, tabsHeaderStyles), overflow && /*#__PURE__*/React.createElement(Button, {
     a11yTitle: "Previous Tab",
@@ -313,7 +314,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ref: headerRef,
     as: Box,
     direction: "row",
-    justify: justify,
+    justify: overflow ? 'start' : justify,
     alignSelf: alignControls,
     flex: !!overflow,
     wrap: false,
