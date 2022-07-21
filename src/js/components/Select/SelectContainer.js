@@ -525,12 +525,12 @@ const SelectContainer = forwardRef(
               <Box alignSelf="center">
                 {value.length === 0 ? (
                   <Text size="small">0 selected</Text>
-                ) : limitedSelections ? (
-                  <Text size="small">{value.length} selected of 5</Text>
-                ) : (
+                ) : search === '' || search === undefined ? (
                   <Text size="small">
                     {value.length} selected of {options.length}
                   </Text>
+                ) : (
+                  <Text size="small">{value.length} selected</Text>
                 )}
               </Box>
               <Box>
