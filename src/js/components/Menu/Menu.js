@@ -291,8 +291,8 @@ const Menu = forwardRef((props, ref) => {
         // be able to receive tab focus because the focus should
         // go to the first menu item instead.
         tabIndex={activeItemIndex === constants.none ? '-1' : undefined}
-        {...buttonProps}
         {...theme.menu.button}
+        {...buttonProps}
       >
         {typeof content === 'function'
           ? () => content({ ...props, drop: true })
@@ -337,6 +337,7 @@ const Menu = forwardRef((props, ref) => {
           justify={item.justify}
           kind={!child ? 'option' : undefined}
           hoverIndicator={!child ? undefined : 'background'}
+          {...theme.menu.button}
           {...(!child
             ? item
             : {
@@ -354,7 +355,6 @@ const Menu = forwardRef((props, ref) => {
               onDropClose();
             }
           }}
-          {...theme.menu.button}
         >
           {child}
         </Button>

@@ -32,7 +32,7 @@ import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
 import { LayerPositionType, LayerProps } from '../components/Layer';
-import { DropProps } from '../components/Drop';
+import { DropProps, DropType } from '../components/Drop';
 import {
   AreasType,
   GridColumnsType,
@@ -1027,7 +1027,7 @@ export interface ThemeType {
   menu?: {
     background?: BackgroundType;
     button?: ButtonType;
-    drop?: DropProps;
+    drop?: DropType;
     extend?: ExtendType;
     group?: {
       container?: BoxProps;
