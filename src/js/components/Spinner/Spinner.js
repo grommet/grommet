@@ -77,19 +77,24 @@ const Spinner = forwardRef(
 
     // check the size of the pad plus border
     let spinnerPadBorder;
-    if (size !== undefined) {
-      spinnerPadBorder =
-        parseMetricToNum(
-          theme?.global?.edgeSize && theme.global.edgeSize[spinnerPad],
-        ) +
-        parseMetricToNum(
-          theme?.global?.edgeSize && theme.global.borderSize[size],
-        );
-    }else spinnerPadBorder = parseMetricToNum(
-      theme?.global?.edgeSize && theme.global.edgeSize[spinnerPad],
-    ) +  parseMetricToNum(
-      theme?.global?.edgeSize && theme.global.borderSize.small,
-    );
+    if (!rest.border) {
+      if (size !== undefined) {
+        spinnerPadBorder =
+          parseMetricToNum(
+            theme?.global?.edgeSize && theme.global.edgeSize[spinnerPad],
+          ) +
+          parseMetricToNum(
+            theme?.global?.edgeSize && theme.global.borderSize[size],
+          );
+      } else
+        spinnerPadBorder =
+          parseMetricToNum(
+            theme?.global?.edgeSize && theme.global.edgeSize[spinnerPad],
+          ) +
+          parseMetricToNum(
+            theme?.global?.edgeSize && theme.global.borderSize.small,
+          );
+    }
 
     // children will take prsecedence over theme attributes
     if (children) {
