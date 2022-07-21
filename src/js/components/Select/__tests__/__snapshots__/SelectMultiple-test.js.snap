@@ -971,11 +971,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   text-align: inherit;
 }
 
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -1521,11 +1516,6 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -2062,11 +2052,6 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus:not(:focus-visible) {
@@ -2607,11 +2592,6 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -2773,7 +2753,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
       <button
         aria-posinset="1"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 gYfHFH SelectContainer__SelectOption-sc-1wi0ul8-1 hgxEgi"
+        class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 hgxEgi"
         role="option"
         tabindex="-1"
         type="button"
@@ -2791,7 +2771,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
       <button
         aria-posinset="2"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 gYfHFH SelectContainer__SelectOption-sc-1wi0ul8-1 hgxEgi"
+        class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 hgxEgi"
         role="option"
         tabindex="-1"
         type="button"
@@ -3796,11 +3776,6 @@ exports[`Select Controlled multiple with empty results 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus:not(:focus-visible) {

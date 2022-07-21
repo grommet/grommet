@@ -16388,7 +16388,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Fri Jan 17 2020"
-                class="StyledButton-sc-323bzc-0 jOLUOa"
+                class="StyledButton-sc-323bzc-0 lbLasy"
                 tabindex="-1"
                 type="button"
               >
@@ -18406,7 +18406,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Fri Jan 17 2020"
-                class="StyledButton-sc-323bzc-0 jOLUOa"
+                class="StyledButton-sc-323bzc-0 lbLasy"
                 tabindex="-1"
                 type="button"
               >

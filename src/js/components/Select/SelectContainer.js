@@ -86,17 +86,21 @@ const SelectContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [activeIndex, setActiveIndex] = useState(-1);
+    const [activeIndex, setActiveIndex] = useState(usingKeyboard ? 0 : -1);
     const [keyboardNavigation, setKeyboardNavigation] = useState();
     const searchRef = useRef();
     const optionsRef = useRef();
     const clearRef = useRef();
     const activeRef = useRef();
 
+    // Only update active suggestion index when the mouse actually moves,
+    // not when suggestions are moving under the mouse.
+    const [mouseMovedSinceLastKey, setMouseMovedSinceLastKey] = useState(true);
+
     // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {
-      activeRef.current?.focus();
-    }, []);
+      if (activeIndex) activeRef.current?.focus();
+    }, [activeIndex]);
 
     // set initial focus
     useEffect(() => {
@@ -116,11 +120,8 @@ const SelectContainer = forwardRef(
           clear.position !== 'bottom'
         ) {
           setFocusWithoutScroll(clearButton);
-        } else if (optionsNode && optionsNode.children && usingKeyboard) {
-          // if the user is navigating with the keyboard set the
-          // first child as the active index when the drop opens
-          setFocusWithoutScroll(optionsNode.children[0]);
-          setActiveIndex(0);
+        } else if (usingKeyboard && activeRef.current) {
+          setFocusWithoutScroll(activeRef.current);
         } else if (optionsNode) {
           setFocusWithoutScroll(optionsNode);
         }
@@ -262,6 +263,7 @@ const SelectContainer = forwardRef(
         if (nextActiveIndex !== options.length) {
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
+          setMouseMovedSinceLastKey(false);
         }
         if (
           clear &&
@@ -296,6 +298,7 @@ const SelectContainer = forwardRef(
         if (nextActiveIndex >= 0) {
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
+          setMouseMovedSinceLastKey(false);
         }
         if (
           clear &&
@@ -330,6 +333,7 @@ const SelectContainer = forwardRef(
             event.preventDefault();
             setActiveIndex(nextActiveIndex);
             setKeyboardNavigation(true);
+            setMouseMovedSinceLastKey(false);
           }
         }
         if (onKeyDown) {
@@ -341,9 +345,11 @@ const SelectContainer = forwardRef(
 
     const onActiveOption = useCallback(
       (index) => () => {
-        if (!keyboardNavigation) setActiveIndex(index);
+        if (!keyboardNavigation && mouseMovedSinceLastKey) {
+          setActiveIndex(index);
+        }
       },
-      [keyboardNavigation],
+      [keyboardNavigation, mouseMovedSinceLastKey],
     );
 
     const onSelectOption = useCallback(
@@ -412,6 +418,7 @@ const SelectContainer = forwardRef(
             tabIndex="-1"
             ref={optionsRef}
             aria-multiselectable={multiple}
+            onMouseMove={() => setMouseMovedSinceLastKey(true)}
           >
             {shouldShowClearButton('top') && (
               <ClearButton
@@ -483,7 +490,9 @@ const SelectContainer = forwardRef(
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
-                      hoverIndicator={!child ? undefined : 'background'}
+                      // applies theme.global.hover.background to the active
+                      // option for mouse and keyboard interactions
+                      activeIndicator={!child ? undefined : 'background'}
                       label={!child ? optionLabel(index) : undefined}
                       disabled={optionDisabled || undefined}
                       active={optionActive}
