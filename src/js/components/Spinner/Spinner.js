@@ -10,6 +10,7 @@ import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 import { SpinnerPropTypes } from './propTypes';
+import { parseMetricToNum } from '../../utils';
 
 const BasicSpinner = ({ ref, size, ...rest }) => (
   <Box height={size} width={size} ref={ref} {...rest} />
@@ -48,6 +49,8 @@ const Spinner = forwardRef(
       ...themeProps
     } = theme.spinner.container;
 
+    const spinnerPad = theme?.spinner?.container?.pad;
+
     const normalizedSize = size || sizeThemeProp;
     const spinnerSize = theme.spinner.size[normalizedSize] || normalizedSize;
 
@@ -55,8 +58,12 @@ const Spinner = forwardRef(
     const Icon = theme.spinner.icon;
 
     const defaultBorder = [
-      { side: 'all', color: 'background-contrast', size },
-      { side: 'top', color, size },
+      {
+        side: 'all',
+        color: 'background-contrast',
+        size: size === undefined ? 'small' : size,
+      },
+      { side: 'top', color, size: size === undefined ? 'small' : size },
     ];
     const spinnerBorder = Array.isArray(borderThemeProp)
       ? borderThemeProp.map((borderSide) => ({
@@ -68,7 +75,23 @@ const Spinner = forwardRef(
         }))
       : borderThemeProp;
 
-    // children will take precedence over theme attributes
+    // check the size of the pad plus border
+    let spinnerPadBorder;
+    if (size !== undefined) {
+      spinnerPadBorder =
+        parseMetricToNum(
+          theme?.global?.edgeSize && theme.global.edgeSize[spinnerPad],
+        ) +
+        parseMetricToNum(
+          theme?.global?.edgeSize && theme.global.borderSize[size],
+        );
+    }else spinnerPadBorder = parseMetricToNum(
+      theme?.global?.edgeSize && theme.global.edgeSize[spinnerPad],
+    ) +  parseMetricToNum(
+      theme?.global?.edgeSize && theme.global.borderSize.small,
+    );
+
+    // children will take prsecedence over theme attributes
     if (children) {
       return (
         <BasicSpinner size={spinnerSize} ref={ref} {...rest}>
@@ -98,6 +121,12 @@ const Spinner = forwardRef(
           typeof borderThemeProp === 'undefined' ? defaultBorder : spinnerBorder
         }
         {...themeProps}
+        // If border plus pad is larger than spinnerSize there should be no pad.
+        pad={
+          spinnerPadBorder * 2 > spinnerSize.replace(/px/, '') * 1
+            ? 'none'
+            : theme.spinner.container.pad
+        }
         {...rest}
       />
     );
