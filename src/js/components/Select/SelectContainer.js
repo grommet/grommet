@@ -387,18 +387,6 @@ const SelectContainer = forwardRef(
         }
       : {};
 
-    const getSelectedString = () => {
-      const selected = options.filter((option) =>
-        isSelected(options.indexOf(option)),
-      );
-      let formattedSelected = '';
-      selected.forEach((value, index) => {
-        formattedSelected += value;
-        if (index != selected.length - 1) formattedSelected += ', ';
-      });
-      return formattedSelected;
-    };
-
     let variantButtonContent;
     if (variant === 1) {
       if (value.length === 0) {
@@ -415,12 +403,7 @@ const SelectContainer = forwardRef(
                 });
               }
             }}
-          >
-            {/* <Box direction="horizontal" gap="small">
-              <Checkmark size="small" color="black" />
-              <Text weight="bold">Select All</Text>
-            </Box> */}
-          </Button>
+          />
         );
       } else {
         variantButtonContent = (
@@ -517,8 +500,8 @@ const SelectContainer = forwardRef(
             flex={false}
             pad={{ horizontal: 'small', top: 'xsmall' }}
           >
-            <Text size="small">Select</Text>
-            {limitedSelections && (
+            {/* <Text size="small">Select</Text> */}
+            {/* {limitedSelections && (
               <>
                 <Text>Select up to 5</Text>
                 {search !== '' && search !== undefined && (
@@ -531,7 +514,32 @@ const SelectContainer = forwardRef(
                   </Box>
                 )}
               </>
-            )}
+            )} */}
+            <Box
+              pad={{ top: 'xsmall', bottom: 'xsmall' }}
+              direction="row"
+              justify="between"
+              gap="small"
+              fill="horizontal"
+            >
+              <Box alignSelf="center">
+                {value.length === 0 ? (
+                  <Text size="small">0 selected</Text>
+                ) : limitedSelections ? (
+                  <Text size="small">{value.length} selected of 5</Text>
+                ) : (
+                  <Text size="small">
+                    {value.length} selected of {options.length}
+                  </Text>
+                )}
+              </Box>
+              <Box>
+                {(search === '' || search === undefined) &&
+                  options.length > 0 &&
+                  !limitedSelections &&
+                  variantButtonContent}
+              </Box>
+            </Box>
             <Button onClick={onClose} a11yTitle="Close Select">
               <FormUp />
             </Button>
@@ -561,30 +569,6 @@ const SelectContainer = forwardRef(
               </Keyboard>
             </Box>
           )}
-          <Box
-            pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
-            direction="row"
-            justify="between"
-            gap="small"
-          >
-            <Box alignSelf="center">
-              {value.length === 0 ? (
-                <Text size="small">0 selected</Text>
-              ) : limitedSelections ? (
-                <Text size="small">{value.length} selected of 5</Text>
-              ) : (
-                <Text size="small">
-                  {value.length} selected of {options.length}
-                </Text>
-              )}
-            </Box>
-            <Box>
-              {(search === '' || search === undefined) &&
-                options.length > 0 &&
-                !limitedSelections &&
-                variantButtonContent}
-            </Box>
-          </Box>
           <OptionsBox
             role="listbox"
             tabIndex="0"

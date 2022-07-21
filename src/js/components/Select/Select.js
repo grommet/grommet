@@ -315,7 +315,9 @@ const Select = forwardRef(
     );
 
     return (
-      <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
+      <Keyboard
+      // onDown={onRequestOpen} onUp={onRequestOpen}
+      >
         <StyledSelectDropButton
           direction="row"
           alignContent="start"
@@ -418,7 +420,7 @@ const Select = forwardRef(
                       {...rest}
                       tabIndex="-1"
                       type="text"
-                      placeholder={placeholder}
+                      placeholder={`${value.length} selected of ${optionsProp.length}`}
                       plain
                       readOnly
                       // value={inputValue}
@@ -427,6 +429,7 @@ const Select = forwardRef(
                       // size="small"
                       theme={theme}
                     />
+
                     {SelectIcon && (
                       <Box
                         pad={{ top: 'xsmall' }}
@@ -498,7 +501,11 @@ const Select = forwardRef(
                 </Box>
               )}
             </DropButton>
-            {!open && (selectValue || displayLabelKey)}
+            {!open && (
+              // <Box role="listbox" aria-multiselectable={true}>
+                (selectValue || displayLabelKey)
+              // </Box>
+            )}
           </Box>
         </StyledSelectDropButton>
       </Keyboard>

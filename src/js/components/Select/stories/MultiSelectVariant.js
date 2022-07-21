@@ -36,7 +36,12 @@ export const MultiSelect = () => {
   useEffect(() => {
     let intermediate = intermediateValue;
     let newLabel = (
-      <Box width="100%">
+      <Box
+        width="100%"
+        role="listbox"
+        aria-multiselectable={true}
+        a11yTitle="Selected Options"
+      >
         {valueMultiple &&
           dummyOptions
             .filter((i) => valueMultiple.indexOf(i) !== -1)
@@ -44,6 +49,15 @@ export const MultiSelect = () => {
               if (valueMultiple.indexOf(i) < 5) {
                 return (
                   <Button
+                    role="option"
+                    a11yTitle={
+                      intermediate.includes(i)
+                        ? `${i} selected`
+                        : `${i} not selected`
+                    }
+                    aria-setsize={intermediate.length}
+                    aria-posinset={intermediate.indexOf(i)}
+                    aria-selected={intermediate.includes(i)}
                     plain
                     hoverIndicator
                     fill="horizontal"
@@ -65,19 +79,19 @@ export const MultiSelect = () => {
                       }
                     }}
                   >
-                    <Box key={i}>
-                      <CheckBox
-                        label={
-                          <Box alignSelf="center" width="100%" align="start">
-                            {i}
-                          </Box>
-                        }
-                        key={i}
-                        pad="xsmall"
-                        tabIndex="-1"
-                        checked={intermediate.includes(i)}
-                      />
-                    </Box>
+                    {/* <Box key={i}> */}
+                    <CheckBox
+                      label={
+                        <Box alignSelf="center" width="100%" align="start">
+                          {i}
+                        </Box>
+                      }
+                      key={i}
+                      pad="xsmall"
+                      tabIndex="-1"
+                      checked={intermediate.includes(i)}
+                    />
+                    {/* </Box> */}
                   </Button>
                 );
               }
