@@ -26,7 +26,7 @@ exports[`Spinner border renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -51,7 +51,7 @@ exports[`Spinner border renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -77,7 +77,7 @@ exports[`Spinner border renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -104,7 +104,7 @@ exports[`Spinner border renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -129,7 +129,7 @@ exports[`Spinner border renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -146,7 +146,7 @@ exports[`Spinner border renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -159,7 +159,7 @@ exports[`Spinner border renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -178,7 +178,7 @@ exports[`Spinner border renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -208,7 +208,7 @@ exports[`Spinner border renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -221,7 +221,7 @@ exports[`Spinner border renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -264,8 +264,8 @@ exports[`Spinner round renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #7D4CDB;
+  border: solid 2px #33333310;
+  border-top: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -273,7 +273,7 @@ exports[`Spinner round renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -288,8 +288,8 @@ exports[`Spinner round renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #7D4CDB;
+  border: solid 2px #33333310;
+  border-top: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -297,7 +297,7 @@ exports[`Spinner round renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 12px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -313,8 +313,8 @@ exports[`Spinner round renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #7D4CDB;
+  border: solid 2px #33333310;
+  border-top: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -322,7 +322,7 @@ exports[`Spinner round renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 24px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -338,8 +338,8 @@ exports[`Spinner round renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #7D4CDB;
+  border: solid 2px #33333310;
+  border-top: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -347,7 +347,7 @@ exports[`Spinner round renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 48px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -358,37 +358,37 @@ exports[`Spinner round renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border: solid 1px #33333310;
+    border: solid 2px #33333310;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border-top: solid 1px #7D4CDB;
+    border-top: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c1 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border: solid 1px #33333310;
+    border: solid 2px #33333310;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px #7D4CDB;
+    border-top: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -400,19 +400,19 @@ exports[`Spinner round renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border: solid 1px #33333310;
+    border: solid 2px #33333310;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-top: solid 1px #7D4CDB;
+    border-top: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -424,19 +424,19 @@ exports[`Spinner round renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border: solid 1px #33333310;
+    border: solid 2px #33333310;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-top: solid 1px #7D4CDB;
+    border-top: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -482,8 +482,8 @@ exports[`Spinner should have no accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #7D4CDB;
+  border: solid 2px #33333310;
+  border-top: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -491,7 +491,7 @@ exports[`Spinner should have no accessibility violations 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -502,19 +502,19 @@ exports[`Spinner should have no accessibility violations 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border: solid 1px #33333310;
+    border: solid 2px #33333310;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border-top: solid 1px #7D4CDB;
+    border-top: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c1 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -554,7 +554,7 @@ exports[`Spinner size renders 1`] = `
   flex-direction: column;
   height: 18px;
   width: 18px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -579,7 +579,7 @@ exports[`Spinner size renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -677,7 +677,7 @@ exports[`Spinner size renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -695,7 +695,7 @@ exports[`Spinner size renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -792,8 +792,8 @@ exports[`Spinner size renders 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #6FFFB0;
+  border: solid 2px #33333310;
+  border-top: solid 2px #6FFFB0;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -801,7 +801,7 @@ exports[`Spinner size renders 2`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -817,8 +817,8 @@ exports[`Spinner size renders 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #00873D;
+  border: solid 2px #33333310;
+  border-top: solid 2px #00873D;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -826,7 +826,7 @@ exports[`Spinner size renders 2`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -842,8 +842,8 @@ exports[`Spinner size renders 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #3D138D;
+  border: solid 2px #33333310;
+  border-top: solid 2px #3D138D;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -851,7 +851,7 @@ exports[`Spinner size renders 2`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -867,8 +867,8 @@ exports[`Spinner size renders 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #00739D;
+  border: solid 2px #33333310;
+  border-top: solid 2px #00739D;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -876,7 +876,7 @@ exports[`Spinner size renders 2`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -892,8 +892,8 @@ exports[`Spinner size renders 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #A2423D;
+  border: solid 2px #33333310;
+  border-top: solid 2px #A2423D;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -901,7 +901,7 @@ exports[`Spinner size renders 2`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -912,91 +912,91 @@ exports[`Spinner size renders 2`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border: solid 1px #33333310;
+    border: solid 2px #33333310;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border-top: solid 1px #6FFFB0;
+    border-top: solid 2px #6FFFB0;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c1 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border: solid 1px #33333310;
+    border: solid 2px #33333310;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px #00873D;
+    border-top: solid 2px #00873D;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border: solid 1px #33333310;
+    border: solid 2px #33333310;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-top: solid 1px #3D138D;
+    border-top: solid 2px #3D138D;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border: solid 1px #33333310;
+    border: solid 2px #33333310;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-top: solid 1px #00739D;
+    border-top: solid 2px #00739D;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border: solid 1px #33333310;
+    border: solid 2px #33333310;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-top: solid 1px #A2423D;
+    border-top: solid 2px #A2423D;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c5 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -1047,7 +1047,7 @@ exports[`Spinner spinner changes according to theme 1`] = `
   flex-direction: column;
   height: 30px;
   width: 30px;
-  padding: 48px;
+  padding: 0px;
   border-radius: 24px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -1058,7 +1058,7 @@ exports[`Spinner spinner changes according to theme 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    padding: 24px;
+    padding: 0px;
   }
 }
 
@@ -1106,7 +1106,7 @@ exports[`Spinner spinner color renders over theme settings 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -1141,7 +1141,7 @@ exports[`Spinner spinner color renders over theme settings 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
