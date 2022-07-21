@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import { Box, CheckBox, Select, Text, Button } from 'grommet';
 
-import { Checkmark } from 'grommet-icons';
-
 // const dummyOptions = [
 //   'Azure MAS-TRM:v2019.03',
 //   'Azure NZISM:v3.2Azure NZISM:v3.2',
@@ -57,12 +55,12 @@ export const MultiSelectLimited = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>Multi-Select Limited</Text>
       <Select
-        contentAboveSearch={
+        contentBelowSearch={
           <Box
             direction="row"
             justify="between"
             flex={false}
-            pad={{ horizontal: 'small', top: 'xsmall' }}
+            pad={{ horizontal: 'xsmall', bottom: 'xsmall' }}
           >
             <Text size="small">Select up to 5</Text>
             {search !== '' && search !== undefined && (
@@ -78,14 +76,9 @@ export const MultiSelectLimited = () => {
             )}
           </Box>
         }
-        contentBelowSearch={
+        contentAboveSearch={
           (search === '' || search === undefined) && (
-            <Box
-              pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
-              direction="row"
-              justify="between"
-              gap="small"
-            >
+            <Box pad="xsmall" direction="row" justify="between" gap="small">
               <Box alignSelf="center">
                 {valueMultiple.length === 0 ? (
                   <Text size="small">0 selected</Text>
@@ -99,7 +92,6 @@ export const MultiSelectLimited = () => {
                 {options.length > 0 &&
                   (valueMultiple.length === 0 ? (
                     <Button
-                      icon={<Checkmark size="small" />}
                       label="Select All"
                       onClick={() => setValueMultiple(dummyOptions)}
                     />

@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import { Box, CheckBox, Select, Text, Button } from 'grommet';
 
-import { Checkmark } from 'grommet-icons';
-
 // const dummyOptions = [
 //   'Azure MAS-TRM:v2019.03',
 //   'Azure NZISM:v3.2Azure NZISM:v3.2',
@@ -55,60 +53,43 @@ export const MultiSelect = () => {
       <Select
         contentAboveSearch={
           <Box
+            pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
             direction="row"
             justify="between"
-            flex={false}
-            pad={{ horizontal: 'small', top: 'xsmall' }}
+            gap="small"
           >
-            {search !== '' && search !== undefined && (
-              <Box>
-                {valueMultiple.length === 0 ? (
-                  <Text size="small">0 selected</Text>
-                ) : (
-                  <Text size="small">
-                    {valueMultiple.length} selected of 10
-                  </Text>
-                )}
-              </Box>
+            {search === '' || search === undefined ? (
+              <>
+                <Box alignSelf="center">
+                  {valueMultiple.length === 0 ? (
+                    <Text size="small">0 selected</Text>
+                  ) : (
+                    <Text size="small">
+                      {valueMultiple.length} selected of {dummyOptions.length}
+                    </Text>
+                  )}
+                </Box>
+                <Box>
+                  {options.length > 0 &&
+                    (valueMultiple.length === 0 ? (
+                      <Button
+                        a11yTitle={`Select all ${dummyOptions.length} options`}
+                        label="Select All"
+                        onClick={() => setValueMultiple(dummyOptions)}
+                      />
+                    ) : (
+                      <Button
+                        a11yTitle={`${valueMultiple.length} options selected. Clear all?`}
+                        label="Clear All"
+                        onClick={() => setValueMultiple([])}
+                      />
+                    ))}
+                </Box>
+              </>
+            ) : (
+              <Text size="small">{`${valueMultiple.length} selected`}</Text>
             )}
           </Box>
-        }
-        contentBelowSearch={
-          (search === '' || search === undefined) && (
-            <Box
-              pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
-              direction="row"
-              justify="between"
-              gap="small"
-            >
-              <Box alignSelf="center">
-                {valueMultiple.length === 0 ? (
-                  <Text size="small">0 selected</Text>
-                ) : (
-                  <Text size="small">
-                    {valueMultiple.length} selected of {dummyOptions.length}
-                  </Text>
-                )}
-              </Box>
-              <Box>
-                {options.length > 0 &&
-                  (valueMultiple.length === 0 ? (
-                    <Button
-                      a11yTitle={`Select all ${dummyOptions.length} options`}
-                      icon={<Checkmark size="small" />}
-                      label="Select All"
-                      onClick={() => setValueMultiple(dummyOptions)}
-                    />
-                  ) : (
-                    <Button
-                      a11yTitle={`${valueMultiple.length} options selected. Clear all?`}
-                      label="Clear All"
-                      onClick={() => setValueMultiple([])}
-                    />
-                  ))}
-              </Box>
-            </Box>
-          )
         }
         value={valueMultiple}
         multiple
