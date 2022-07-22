@@ -561,7 +561,7 @@ const SelectContainer = forwardRef(
                 role="menuitem"
                 hoverIndicator="background"
                 disabled
-                aria-live="polite"
+                aria-live="polite" // announce when no options are found on search
               >
                 <Box {...selectOptionsStyle}>
                   <Text {...theme.select.container.text}>

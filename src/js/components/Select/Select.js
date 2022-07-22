@@ -70,7 +70,6 @@ const Select = forwardRef(
       id,
       icon,
       labelKey,
-      limitedSelections = false,
       margin,
       messages,
       multiple,
@@ -95,7 +94,6 @@ const Select = forwardRef(
       value: valueProp,
       valueKey,
       valueLabel,
-      variant,
       ...rest
     },
     ref,

@@ -107,7 +107,7 @@ export const MultiSelect2 = () => {
           <Box
             style={{ height: '0px' }}
             overflow="hidden"
-            // aria-live="assertive"
+            // announce when an item is removed fro m selected options
             aria-live="polite"
           >
             <Text>removed {showA11yDiv}</Text>
