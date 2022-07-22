@@ -354,7 +354,6 @@ const Select = forwardRef(
               onClick={onClick}
               dropContent={
                 <SelectContainer
-                  limitedSelections={limitedSelections}
                   clear={clear}
                   contentAboveSearch={contentAboveSearch}
                   contentBelowSearch={contentBelowSearch}
@@ -382,7 +381,6 @@ const Select = forwardRef(
                   usingKeyboard={usingKeyboard}
                   value={value}
                   valueKey={valueKey}
-                  variant={variant}
                 >
                   {children}
                 </SelectContainer>
