@@ -55,6 +55,8 @@ const Select = forwardRef(
       children,
       clear = false,
       closeOnChange = true,
+      contentAboveSearch,
+      contentBelowSearch,
       defaultValue,
       disabled,
       disabledKey,
@@ -315,9 +317,7 @@ const Select = forwardRef(
     );
 
     return (
-      <Keyboard
-      // onDown={onRequestOpen} onUp={onRequestOpen}
-      >
+      <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
           direction="row"
           alignContent="start"
@@ -343,12 +343,9 @@ const Select = forwardRef(
               aria-haspopup="listbox"
               id={id}
               disabled={disabled === true || undefined}
-              // dropAlign={dropAlign}
               dropAlign={{ top: 'top', right: 'right', left: 'left' }}
               dropTarget={selectBoxRef.current}
-              // dropTarget={dropTarget}
               open={open}
-              // alignSelf={alignSelf}
               focusIndicator={focusIndicator}
               onFocus={onFocus}
               onBlur={onBlur}
@@ -361,6 +358,8 @@ const Select = forwardRef(
                 <SelectContainer
                   limitedSelections={limitedSelections}
                   clear={clear}
+                  contentAboveSearch={contentAboveSearch}
+                  contentBelowSearch={contentBelowSearch}
                   disabled={disabled}
                   disabledKey={disabledKey}
                   dropHeight={dropHeight}
@@ -416,17 +415,12 @@ const Select = forwardRef(
                       focusIndicator={false}
                       id={id ? `${id}__input` : undefined}
                       name={name}
-                      // ref={inputRef}
                       {...rest}
                       tabIndex="-1"
                       type="text"
                       placeholder={`${value.length} selected of ${optionsProp.length}`}
                       plain
                       readOnly
-                      // value={inputValue}
-                      // value="Select Frameworks"
-                      // size={size}
-                      // size="small"
                       theme={theme}
                     />
 
@@ -501,11 +495,7 @@ const Select = forwardRef(
                 </Box>
               )}
             </DropButton>
-            {!open && (
-              // <Box role="listbox" aria-multiselectable={true}>
-                (selectValue || displayLabelKey)
-              // </Box>
-            )}
+            {!open && (selectValue || displayLabelKey)}
           </Box>
         </StyledSelectDropButton>
       </Keyboard>

@@ -8,7 +8,6 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { FormUp } from 'grommet-icons/icons/FormUp';
 import { selectedStyle, setFocusWithoutScroll } from '../../utils';
 
 import { defaultProps } from '../../default-props';
@@ -60,6 +59,8 @@ const SelectContainer = forwardRef(
   (
     {
       clear,
+      contentAboveSearch,
+      contentBelowSearch,
       children = null,
       disabled,
       disabledKey,
@@ -67,11 +68,9 @@ const SelectContainer = forwardRef(
       emptySearchMessage = 'No matches found',
       id,
       labelKey,
-      limitedSelections,
       multiple,
       name,
       onChange,
-      onClose,
       onKeyDown,
       onMore,
       onSearch,
@@ -85,7 +84,6 @@ const SelectContainer = forwardRef(
       usingKeyboard,
       value = '',
       valueKey,
-      variant,
       replace = true,
     },
     ref,
@@ -241,13 +239,11 @@ const SelectContainer = forwardRef(
                 : options[index];
             nextSelected = index;
           }
-          if (!limitedSelections || nextSelected.length <= 5) {
-            onChange(event, {
-              option: options[index],
-              value: nextValue,
-              selected: nextSelected,
-            });
-          }
+          onChange(event, {
+            option: options[index],
+            value: nextValue,
+            selected: nextSelected,
+          });
         }
       },
       [multiple, onChange, optionIndexesInValue, options, allOptions, valueKey],
@@ -387,98 +383,6 @@ const SelectContainer = forwardRef(
         }
       : {};
 
-    let variantButtonContent;
-    if (variant === 1) {
-      if (value.length === 0) {
-        variantButtonContent = (
-          <Button
-            size="small"
-            label="Select All"
-            onClick={(event) => {
-              if (onChange) {
-                onChange(event, {
-                  option: options,
-                  value: allOptions,
-                  selected: allOptions,
-                });
-              }
-            }}
-          />
-        );
-      } else {
-        variantButtonContent = (
-          <Button
-            size="small"
-            label="Clear All"
-            onClick={(event) => {
-              if (onChange) {
-                onChange(event, {
-                  option: options,
-                  value: [],
-                  selected: [],
-                });
-              }
-            }}
-          />
-        );
-      }
-    }
-    if (variant === 2) {
-      if (value.length === 0) {
-        variantButtonContent = (
-          <Box>
-            <Button
-              size="xsmall"
-              label="Select All"
-              secondary
-              onClick={(event) => {
-                if (onChange) {
-                  onChange(event, {
-                    option: options,
-                    value: allOptions,
-                    selected: allOptions,
-                  });
-                }
-              }}
-            />
-          </Box>
-        );
-      } else {
-        variantButtonContent = (
-          <Box direction="horizontal" gap="small">
-            <Button
-              size="xsmall"
-              label="Clear All"
-              secondary
-              onClick={(event) => {
-                if (onChange) {
-                  onChange(event, {
-                    option: options,
-                    value: [],
-                    selected: [],
-                  });
-                }
-              }}
-            />
-            <Button
-              size="xsmall"
-              label="View Selection"
-              primary
-              onClick={(event) => {
-                if (onChange) {
-                  onChange(event, {
-                    option: options,
-                    value: [],
-                    selected: [],
-                  });
-                }
-              }}
-            />
-          </Box>
-        );
-      }
-    }
-
     return (
       <Keyboard
         onEnter={onSelectOption}
@@ -494,56 +398,7 @@ const SelectContainer = forwardRef(
           dropHeight={dropHeight}
           a11yTitle="Select dropdown"
         >
-          <Box
-            direction="row"
-            justify="between"
-            flex={false}
-            pad={{ horizontal: 'small', top: 'xsmall' }}
-          >
-            {/* <Text size="small">Select</Text> */}
-            {/* {limitedSelections && (
-              <>
-                <Text>Select up to 5</Text>
-                {search !== '' && search !== undefined && (
-                  <Box>
-                    {value.length === 0 ? (
-                      <Text size="small">0 selected</Text>
-                    ) : (
-                      <Text size="small">{value.length} selected of 5</Text>
-                    )}
-                  </Box>
-                )}
-              </>
-            )} */}
-            <Box
-              pad={{ top: 'xsmall', bottom: 'xsmall' }}
-              direction="row"
-              justify="between"
-              gap="small"
-              fill="horizontal"
-            >
-              <Box alignSelf="center">
-                {value.length === 0 ? (
-                  <Text size="small">0 selected</Text>
-                ) : search === '' || search === undefined ? (
-                  <Text size="small">
-                    {value.length} selected of {options.length}
-                  </Text>
-                ) : (
-                  <Text size="small">{value.length} selected</Text>
-                )}
-              </Box>
-              <Box>
-                {(search === '' || search === undefined) &&
-                  options.length > 0 &&
-                  !limitedSelections &&
-                  variantButtonContent}
-              </Box>
-            </Box>
-            <Button onClick={onClose} a11yTitle="Close Select">
-              <FormUp />
-            </Button>
-          </Box>
+          {contentAboveSearch}
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
               <Keyboard
@@ -569,6 +424,7 @@ const SelectContainer = forwardRef(
               </Keyboard>
             </Box>
           )}
+          {contentBelowSearch}
           <OptionsBox
             role="listbox"
             tabIndex="0"
@@ -630,10 +486,11 @@ const SelectContainer = forwardRef(
                       if (
                         child.props.option.toLowerCase().indexOf(search) >= 0
                       ) {
-                        let boldIndex = child.props.option
+                        // code to bold search term in matching options
+                        const boldIndex = child.props.option
                           .toLowerCase()
                           .indexOf(search);
-                        let childBeginning = child.props.option.substring(
+                        const childBeginning = child.props.option.substring(
                           0,
                           boldIndex,
                         );
@@ -642,7 +499,7 @@ const SelectContainer = forwardRef(
                           boldIndex + search.length,
                         );
                         childBold = <b>{childBold}</b>;
-                        let childEnd = child.props.option.substring(
+                        const childEnd = child.props.option.substring(
                           boldIndex + search.length,
                         );
                         child = (
@@ -662,15 +519,6 @@ const SelectContainer = forwardRef(
                     }
                   }
 
-                  let limitDisable = false;
-                  if (
-                    limitedSelections &&
-                    !optionSelected &&
-                    value.length === 5
-                  ) {
-                    limitDisable = true;
-                  }
-
                   // if we have a child, turn on plain, and hoverIndicator
                   return (
                     <SelectOption
@@ -683,16 +531,13 @@ const SelectContainer = forwardRef(
                       aria-setsize={options.length}
                       aria-posinset={index + 1}
                       aria-selected={optionSelected}
-                      // aria-live={optionSelected ? 'assertive' : 'off'}
-                      aria-disabled={
-                        optionDisabled || limitDisable || undefined
-                      }
+                      aria-disabled={optionDisabled || undefined}
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
                       hoverIndicator={!child ? undefined : 'background'}
                       label={!child ? optionLabel(index) : undefined}
-                      disabled={optionDisabled || limitDisable || undefined}
+                      disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}
                       onMouseOver={

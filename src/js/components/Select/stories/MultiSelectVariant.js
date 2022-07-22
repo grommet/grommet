@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { Box, CheckBox, Select, Text, Button } from 'grommet';
 
+import { FormUp } from 'grommet-icons';
+
 const dummyOptions = [
   'Apple',
   'Orange',
@@ -19,6 +21,7 @@ export const MultiSelect = () => {
   const [options, setOptions] = useState(dummyOptions.sort());
   const [valueMultiple, setValueMultiple] = useState([]);
   const [intermediateValue, setIntermediateValue] = useState(valueMultiple);
+  const [search, setSearch] = useState();
   const [label, setLabel] = useState(undefined);
   const [open, setOpen] = useState(false);
   const Option = React.memo(({ option }) => (
@@ -35,11 +38,11 @@ export const MultiSelect = () => {
 
   useEffect(() => {
     let intermediate = intermediateValue;
-    let newLabel = (
+    const newLabel = (
       <Box
         width="100%"
         role="listbox"
-        aria-multiselectable={true}
+        aria-multiselectable
         a11yTitle="Selected Options"
       >
         {valueMultiple &&
@@ -69,7 +72,7 @@ export const MultiSelect = () => {
                       } else {
                         intermediate.push(i);
                         intermediate.sort();
-                        let temp = intermediate.concat(valueMultiple);
+                        const temp = intermediate.concat(valueMultiple);
                         temp.sort();
                         setValueMultiple(
                           temp.filter(
@@ -79,7 +82,6 @@ export const MultiSelect = () => {
                       }
                     }}
                   >
-                    {/* <Box key={i}> */}
                     <CheckBox
                       label={
                         <Box alignSelf="center" width="100%" align="start">
@@ -91,7 +93,6 @@ export const MultiSelect = () => {
                       tabIndex="-1"
                       checked={intermediate.includes(i)}
                     />
-                    {/* </Box> */}
                   </Button>
                 );
               }
@@ -129,13 +130,82 @@ export const MultiSelect = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>Multi-Select Variant</Text>
       <Select
-        width="medium"
-        variant={1}
+        contentAboveSearch={
+          <Box
+            direction="row"
+            justify="between"
+            flex={false}
+            pad={{ horizontal: 'small', top: 'xsmall' }}
+          >
+            <Box
+              pad={{ top: 'xsmall', bottom: 'xsmall' }}
+              direction="row"
+              justify="between"
+              gap="small"
+              fill="horizontal"
+            >
+              <Box alignSelf="center">
+                {valueMultiple.length === 0 ? (
+                  <Text size="small">0 selected</Text>
+                ) : search === '' || search === undefined ? (
+                  <Text size="small">
+                    {valueMultiple.length} selected of {dummyOptions.length}
+                  </Text>
+                ) : (
+                  <Text size="small">{valueMultiple.length} selected</Text>
+                )}
+              </Box>
+              <Box>
+                {(search === '' || search === undefined) &&
+                  (valueMultiple.length === 0 ? (
+                    <Button
+                      a11yTitle={`Select all ${dummyOptions.length} options`}
+                      size="small"
+                      label="Select All"
+                      onClick={() => setValueMultiple(dummyOptions)}
+                    />
+                  ) : (
+                    <Button
+                      a11yTitle={`${valueMultiple.length} options selected. Clear all?`}
+                      size="small"
+                      label="Clear All"
+                      onClick={() => setValueMultiple([])}
+                    />
+                  ))}
+              </Box>
+            </Box>
+            <Button
+              onClick={() => {
+                setIntermediateValue(valueMultiple);
+                setOpen(false);
+                let next = [...valueMultiple];
+                // loop through next selected and sort alphabetically
+                next.sort();
+                // remove next selected from options
+                const sortedOptions = dummyOptions.filter(
+                  (i) => !next.includes(i),
+                );
+
+                next = next.filter((i) => dummyOptions.includes(i));
+                // sort options alphabetically
+                sortedOptions.sort();
+
+                // concat next selected and options
+                const sortedAllOptions = next.concat(sortedOptions);
+                setOptions(sortedAllOptions);
+              }}
+              a11yTitle="Close Select"
+            >
+              <FormUp />
+            </Button>
+          </Box>
+        }
         multiple
         closeOnChange={false}
         placeholder="Select"
         options={options}
         onSearch={(text) => {
+          setSearch(text);
           // The line below escapes regular expression special characters:
           // [ \ ^ $ . | ? * + ( )
           const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -184,7 +254,7 @@ export const MultiSelect = () => {
           const sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
         }}
-        onChange={({ value, option }) => {
+        onChange={({ value }) => {
           setValueMultiple(value);
         }}
         valueLabel={label || undefined}

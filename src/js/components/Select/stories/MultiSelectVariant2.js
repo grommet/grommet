@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { Box, CheckBox, Select, Text, Button } from 'grommet';
 
+import { FormUp } from 'grommet-icons';
+
 // const dummyOptions = [
 //   'Azure MAS-TRM:v2019.03',
 //   'Azure NZISM:v3.2Azure NZISM:v3.2',
@@ -32,9 +34,10 @@ export const MultiSelect2 = () => {
   const [options, setOptions] = useState(dummyOptions.sort());
   const [valueMultiple, setValueMultiple] = useState([]);
   const [intermediateValue, setIntermediateValue] = useState(valueMultiple);
+  const [search, setSearch] = useState();
   const [label, setLabel] = useState(undefined);
   const [open, setOpen] = useState(false);
-  const [showAccessDiv, setShowAccessDiv] = useState(undefined);
+  const [showA11yDiv, setShowA11yDiv] = useState(undefined);
   const Option = React.memo(({ option }) => (
     <Box direction="row" align="center">
       <CheckBox
@@ -47,89 +50,67 @@ export const MultiSelect2 = () => {
     </Box>
   ));
 
+  /* This use effect handles updating the valueLabel for the
+  Select to show the selected options at the input level. */
   useEffect(() => {
     let intermediate = intermediateValue;
-    let newLabel = (
+    const newLabel = (
       <Box
         width="100%"
         role="listbox"
-        aria-multiselectable={true}
+        aria-multiselectable
         a11yTitle="Selected Options"
       >
         {valueMultiple &&
           dummyOptions
             .filter((i) => valueMultiple.indexOf(i) !== -1)
             .map((i) => {
-              // const [showAccessDiv, setShowAccessDiv] = useState(false);
-              let showAccessDiv = false;
               if (valueMultiple.indexOf(i) < 5) {
                 return (
-                  <>
-                    <Button
-                      role="option"
-                      a11yTitle={
-                        intermediate.includes(i)
-                          ? `${i} selected`
-                          : `${i} not selected`
+                  <Button
+                    role="option"
+                    a11yTitle={
+                      intermediate.includes(i)
+                        ? `${i} selected`
+                        : `${i} not selected`
+                    }
+                    aria-setsize={intermediate.length}
+                    aria-posinset={intermediate.indexOf(i)}
+                    aria-selected={intermediate.includes(i)}
+                    plain
+                    hoverIndicator
+                    fill="horizontal"
+                    tabIndex="0"
+                    onClick={() => {
+                      intermediate = intermediate.filter((v) => v !== i);
+                      setShowA11yDiv(i);
+                      setIntermediateValue(intermediate);
+                      setValueMultiple(intermediate);
+                    }}
+                  >
+                    <CheckBox
+                      label={
+                        <Box alignSelf="center" width="100%" align="start">
+                          {i}
+                        </Box>
                       }
-                      aria-setsize={intermediate.length}
-                      aria-posinset={intermediate.indexOf(i)}
-                      aria-selected={intermediate.includes(i)}
-                      plain
-                      hoverIndicator
-                      fill="horizontal"
-                      tabIndex="0"
-                      onClick={() => {
-                        // if (intermediate.includes(i)) {
-                        intermediate = intermediate.filter((v) => v !== i);
-                        setShowAccessDiv(i);
-                        setIntermediateValue(intermediate);
-                        setValueMultiple(intermediate);
-                        // showAccessDiv = true;
-                        // } else {
-                        //   intermediate.push(i);
-                        //   intermediate.sort();
-                        //   let temp = intermediate.concat(valueMultiple);
-                        //   console.log(
-                        //     temp.filter(
-                        //       (item, pos) => temp.indexOf(item) === pos,
-                        //     ),
-                        //   );
-                        //   temp.sort();
-                        //   setValueMultiple(
-                        //     temp.filter(
-                        //       (item, pos) => temp.indexOf(item) === pos,
-                        //     ),
-                        //   );
-                        // }
-                      }}
-                    >
-                      {/* <Box key={i}> */}
-                      <CheckBox
-                        label={
-                          <Box alignSelf="center" width="100%" align="start">
-                            {i}
-                          </Box>
-                        }
-                        key={i}
-                        pad="xsmall"
-                        tabIndex="-1"
-                        checked={intermediate.includes(i)}
-                      />
-                      {/* </Box> */}
-                    </Button>
-                  </>
+                      key={i}
+                      pad="xsmall"
+                      tabIndex="-1"
+                      checked={intermediate.includes(i)}
+                    />
+                  </Button>
                 );
               }
             })}
-        {showAccessDiv && (
+        {showA11yDiv && (
           <Box
             style={{ height: '0px' }}
             overflow="hidden"
             // aria-live="assertive"
             aria-live="polite"
           >
-            <Text>removed {showAccessDiv}</Text>
+            <Text>removed {showA11yDiv}</Text>
           </Box>
         )}
         {valueMultiple.length > 5 && (
@@ -157,7 +138,7 @@ export const MultiSelect2 = () => {
     );
     if (valueMultiple.length > 0) setLabel(newLabel);
     else setLabel(undefined);
-  }, [valueMultiple, intermediateValue, showAccessDiv]);
+  }, [valueMultiple, intermediateValue, showA11yDiv]);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
@@ -165,13 +146,82 @@ export const MultiSelect2 = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>Multi-Select Variant</Text>
       <Select
-        width="medium"
-        variant={1}
+        contentAboveSearch={
+          <Box
+            direction="row"
+            justify="between"
+            flex={false}
+            pad={{ horizontal: 'small', top: 'xsmall' }}
+          >
+            <Box
+              pad={{ top: 'xsmall', bottom: 'xsmall' }}
+              direction="row"
+              justify="between"
+              gap="small"
+              fill="horizontal"
+            >
+              <Box alignSelf="center">
+                {valueMultiple.length === 0 ? (
+                  <Text size="small">0 selected</Text>
+                ) : search === '' || search === undefined ? (
+                  <Text size="small">
+                    {valueMultiple.length} selected of {dummyOptions.length}
+                  </Text>
+                ) : (
+                  <Text size="small">{valueMultiple.length} selected</Text>
+                )}
+              </Box>
+              <Box>
+                {(search === '' || search === undefined) &&
+                  (valueMultiple.length === 0 ? (
+                    <Button
+                      a11yTitle={`Select all ${dummyOptions.length} options`}
+                      size="small"
+                      label="Select All"
+                      onClick={() => setValueMultiple(dummyOptions)}
+                    />
+                  ) : (
+                    <Button
+                      a11yTitle={`${valueMultiple.length} options selected. Clear all?`}
+                      size="small"
+                      label="Clear All"
+                      onClick={() => setValueMultiple([])}
+                    />
+                  ))}
+              </Box>
+            </Box>
+            <Button
+              onClick={() => {
+                setIntermediateValue(valueMultiple);
+                setOpen(false);
+                let next = [...valueMultiple];
+                // loop through next selected and sort alphabetically
+                next.sort();
+                // remove next selected from options
+                const sortedOptions = dummyOptions.filter(
+                  (i) => !next.includes(i),
+                );
+
+                next = next.filter((i) => dummyOptions.includes(i));
+                // sort options alphabetically
+                sortedOptions.sort();
+
+                // concat next selected and options
+                const sortedAllOptions = next.concat(sortedOptions);
+                setOptions(sortedAllOptions);
+              }}
+              a11yTitle="Close Select"
+            >
+              <FormUp />
+            </Button>
+          </Box>
+        }
         multiple
         closeOnChange={false}
-        placeholder="Select Fruits"
+        placeholder="Select"
         options={options}
         onSearch={(text) => {
+          setSearch(text);
           // The line below escapes regular expression special characters:
           // [ \ ^ $ . | ? * + ( )
           const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -220,7 +270,7 @@ export const MultiSelect2 = () => {
           const sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
         }}
-        onChange={({ value, option }) => {
+        onChange={({ value }) => {
           setValueMultiple(value);
         }}
         valueLabel={label || undefined}
