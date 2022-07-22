@@ -1,12 +1,5 @@
-import React, {
-  forwardRef,
-  useContext,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useContext, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
@@ -65,10 +58,6 @@ const DataChart = forwardRef(
 
     // legend interaction, if any
     const [activeProperty, setActiveProperty] = useState();
-
-    // refs used for ie11 not having Grid
-    const xRef = useRef();
-    const spacerRef = useRef();
 
     // normalize seriesProp to an array of objects, one per property
     const series = useMemo(() => {
@@ -516,14 +505,6 @@ const DataChart = forwardRef(
       return result;
     }, [axis, data, series]);
 
-    // for ie11, align the spacer Box height to the x-axis height
-    useLayoutEffect(() => {
-      if (xRef.current && spacerRef.current) {
-        const rect = xRef.current.getBoundingClientRect();
-        spacerRef.current.style.height = `${rect.height}px`;
-      }
-    }, []);
-
     const renderValue = (serie, dataIndex, valueArg) => {
       let value;
       if (valueArg !== undefined) {
@@ -549,7 +530,6 @@ const DataChart = forwardRef(
     const xAxisElement =
       axis && axis.x && chartProps.length ? (
         <XAxis
-          ref={xRef}
           axis={axis}
           values={
             (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
@@ -680,6 +660,7 @@ const DataChart = forwardRef(
             activeProperty={activeProperty}
             axis={axis}
             data={data}
+            pad={pad}
             series={series}
             seriesStyles={seriesStyles}
             renderValue={renderValue}
