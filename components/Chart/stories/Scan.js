@@ -15,23 +15,28 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var ScanChart = function ScanChart(props) {
+var count = 30,
+    max = 100,
+    min = 0;
+
+var ScanChart = function ScanChart() {
   var _useState = (0, _react.useState)(undefined),
       active = _useState[0],
       setActive = _useState[1];
 
-  var data = props.data,
-      max = props.max;
+  var data = (0, _react.useMemo)(function () {
+    return (0, _data.generateData)(count, max, min);
+  }, []);
   var values = data.map(function (d) {
     return [d.time, d.value];
   });
 
   var _useMemo = (0, _react.useMemo)(function () {
     return (0, _calcs.calcs)(values, {
-      min: 0,
+      min: min,
       max: max
     });
-  }, [values, max]),
+  }, [values]),
       axis = _useMemo.axis,
       bounds = _useMemo.bounds,
       pad = _useMemo.pad,
@@ -157,10 +162,7 @@ var ScanChart = function ScanChart(props) {
 };
 
 var Scan = function Scan() {
-  return /*#__PURE__*/_react["default"].createElement(ScanChart, {
-    data: (0, _data.generateData)(30, 100),
-    max: 100
-  });
+  return /*#__PURE__*/_react["default"].createElement(ScanChart, null);
 };
 
 exports.Scan = Scan;

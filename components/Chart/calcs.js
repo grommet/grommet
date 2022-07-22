@@ -39,9 +39,12 @@ var calcBounds = function calcBounds(values, options) {
   // coarseness influences the rounding of the bounds, the smaller the
   // number, the more the bounds will be rounded. e.g. 111 -> 110 -> 100
   // Normalize to an array. Backwards compatible has no coarseness for x-axis
-  var coarseness = Array.isArray(options.coarseness) && options.coarseness || options.coarseness && [undefined, options.coarseness] || [undefined, 5]; // the number of steps is one less than the number of labels
+  var coarseness = Array.isArray(options.coarseness) && options.coarseness || options.coarseness && [undefined, options.coarseness] || [undefined, 5];
+  var coarseX = coarseness[0],
+      coarseY = coarseness[1]; // the number of steps is one less than the number of labels
 
   var steps = options.steps || [1, 1];
+  var stepsY = steps[1];
   var calcValues = (0, _utils.normalizeValues)(values || []); // min and max values
 
   var minX;
@@ -88,19 +91,16 @@ var calcBounds = function calcBounds(values, options) {
     // graph axis labels.
 
 
-    var cX = coarseness[0],
-        cY = coarseness[1];
-
-    if (cX) {
+    if (coarseX) {
       var deltaX = maxX - minX;
-      var intervalX = Number.parseFloat((deltaX / cX).toPrecision(1));
+      var intervalX = Number.parseFloat((deltaX / coarseX).toPrecision(1));
       minX = alignMin(minX, intervalX);
       maxX = alignMax(maxX, intervalX);
     }
 
-    if (cY) {
+    if (coarseY) {
       var deltaY = maxY - minY;
-      var intervalY = Number.parseFloat((deltaY / cY).toPrecision(1));
+      var intervalY = Number.parseFloat((deltaY / coarseY).toPrecision(1));
       minY = alignMin(minY, intervalY);
       maxY = alignMax(maxY, intervalY);
     }
@@ -108,19 +108,26 @@ var calcBounds = function calcBounds(values, options) {
     if (minY < 0 && maxY > 0 && Math.abs(minY) !== Math.abs(maxY)) {
       // Adjust min and max when crossing 0 to ensure 0 will be shown on
       // the Y axis based on the number of steps.
-      // const ratio = Math.abs(max) / Math.abs(min);
-      var stepInterval = (maxY - minY) / steps[1];
-      var minSteps = minY / stepInterval;
-      var maxSteps = maxY / stepInterval;
-
-      if (Math.abs(minSteps) < Math.abs(maxSteps)) {
-        stepInterval = maxY / Math.floor(maxSteps);
-        maxY = stepInterval * Math.floor(maxSteps);
-        minY = stepInterval * Math.floor(minSteps);
+      if (stepsY === 1) {
+        var largest = Math.max(Math.abs(minY), Math.abs(maxY));
+        minY = -largest;
+        maxY = largest;
       } else {
-        stepInterval = Math.abs(minY / Math.ceil(minSteps));
-        minY = stepInterval * Math.ceil(minSteps);
-        maxY = stepInterval * Math.ceil(maxSteps);
+        var stepInterval = (maxY - minY) / stepsY;
+        var minSteps = minY / stepInterval;
+        var maxSteps = maxY / stepInterval;
+
+        if (Math.abs(minSteps) < Math.abs(maxSteps)) {
+          // more above than below
+          stepInterval = maxY / Math.floor(maxSteps);
+          maxY = stepInterval * Math.floor(maxSteps);
+          minY = stepInterval * Math.floor(minSteps);
+        } else {
+          // more below than above
+          stepInterval = Math.abs(minY / Math.ceil(minSteps));
+          minY = stepInterval * Math.ceil(minSteps);
+          maxY = stepInterval * Math.ceil(maxSteps);
+        }
       }
     }
   }
@@ -143,27 +150,37 @@ var calcs = function calcs(values, options) {
 
   // the number of steps is one less than the number of labels
   var steps = options.steps || [1, 1];
+  var stepsX = steps[0],
+      stepsY = steps[1];
   var bounds = options.bounds || calcBounds(values, options);
   if (options.min !== undefined) bounds[1][0] = options.min;
   if (options.max !== undefined) bounds[1][1] = options.max;
-  var dimensions = [round(bounds[0][1] - bounds[0][0], 2), round(bounds[1][1] - bounds[1][0], 2)]; // Calculate x and y axis values across the specfied number of steps.
+  var boundsX = bounds[0],
+      boundsY = bounds[1];
+  var boundsXmin = boundsX[0],
+      boundsXmax = boundsX[1];
+  var boundsYmin = boundsY[0],
+      boundsYmax = boundsY[1];
+  var dimensions = [round(boundsXmax - boundsXmin, 2), round(boundsYmax - boundsYmin, 2)];
+  var dimensionsX = dimensions[0],
+      dimensionsY = dimensions[1]; // Calculate x and y axis values across the specfied number of steps.
 
   var yAxis = [];
-  var y = bounds[1][1]; // To deal with javascript math limitations, round the step with 4 decimal
+  var y = boundsYmax; // To deal with javascript math limitations, round the step with 4 decimal
   // places and then push the values with 2 decimal places
 
-  var yStepInterval = round(dimensions[1] / steps[1], 4);
+  var yStepInterval = round(dimensionsY / stepsY, 4);
 
-  while (round(y, 2) >= bounds[1][0]) {
+  while (round(y, 2) >= boundsYmin) {
     yAxis.push(round(y, 2));
     y -= yStepInterval;
   }
 
   var xAxis = [];
-  var x = bounds[0][0];
-  var xStepInterval = round(dimensions[0] / steps[0], 4);
+  var x = boundsXmin;
+  var xStepInterval = round(dimensionsX / stepsX, 4);
 
-  while (round(x, 2) <= bounds[0][1]) {
+  while (round(x, 2) <= boundsXmax) {
     xAxis.push(round(x, 2));
     x += xStepInterval;
   }
