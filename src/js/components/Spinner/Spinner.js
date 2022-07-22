@@ -49,7 +49,7 @@ const Spinner = forwardRef(
       ...themeProps
     } = theme.spinner.container;
 
-    const spinnerPad = theme?.spinner?.container?.pad;
+    const pad = theme?.spinner?.container?.pad;
 
     const normalizedSize = size || sizeThemeProp;
     const spinnerSize = theme.spinner.size[normalizedSize] || normalizedSize;
@@ -77,16 +77,33 @@ const Spinner = forwardRef(
 
     // check the size of the pad plus border
     // than multiple by 2 in order to compare to it to theme sizes
+    const spinnerPad = parseMetricToNum(
+      theme?.global?.edgeSize && theme.global.edgeSize[pad],
+    );
+
     let spinnerPadBorder;
+    // if a user passes border as a prop we should assume they want the pad
     if (!rest.border) {
-      spinnerPadBorder =
-        2 *
-        (parseMetricToNum(
-          theme?.global?.edgeSize && theme.global.edgeSize[spinnerPad],
-        ) +
-          parseMetricToNum(
-            theme?.global?.edgeSize && theme.global.borderSize[normalizedSize],
-          ));
+      // if  borderthemeProp is provided need to map through and use
+      // the sizes given for the border
+      if (borderThemeProp) {
+        spinnerPadBorder = borderThemeProp.map(
+          (item) =>
+            2 *
+            (spinnerPad +
+              parseMetricToNum(
+                theme?.global?.edgeSize && theme.global.borderSize[item.size],
+              )),
+        );
+      } else {
+        spinnerPadBorder =
+          2 *
+          (spinnerPad +
+            parseMetricToNum(
+              theme?.global?.edgeSize &&
+                theme.global.borderSize[normalizedSize],
+            ));
+      }
     }
 
     // children will take prsecedence over theme attributes
