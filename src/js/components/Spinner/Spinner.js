@@ -12,6 +12,14 @@ import { defaultProps } from '../../default-props';
 import { SpinnerPropTypes } from './propTypes';
 import { parseMetricToNum } from '../../utils';
 
+// dimension = 2 * (border + pad)
+const getDimensions = (pad, borderSize, theme) =>
+  2 *
+  (pad +
+    parseMetricToNum(
+      theme?.global?.edgeSize && theme.global.borderSize[borderSize],
+    ));
+
 const BasicSpinner = ({ ref, size, ...rest }) => (
   <Box height={size} width={size} ref={ref} {...rest} />
 );
@@ -49,8 +57,6 @@ const Spinner = forwardRef(
       ...themeProps
     } = theme.spinner.container;
 
-    const pad = theme?.spinner?.container?.pad;
-
     const normalizedSize = size || sizeThemeProp;
     const spinnerSize = theme.spinner.size[normalizedSize] || normalizedSize;
 
@@ -65,6 +71,7 @@ const Spinner = forwardRef(
       },
       { side: 'top', color, size: normalizedSize },
     ];
+
     const spinnerBorder = Array.isArray(borderThemeProp)
       ? borderThemeProp.map((borderSide) => ({
           ...borderSide,
@@ -75,38 +82,28 @@ const Spinner = forwardRef(
         }))
       : borderThemeProp;
 
-    // check the size of the pad plus border
-    // than multiple by 2 in order to compare to it to theme sizes
-    const spinnerPad = parseMetricToNum(
-      theme?.global?.edgeSize && theme.global.edgeSize[pad],
+    let spinnerPad = theme?.spinner?.container?.pad;
+    spinnerPad = parseMetricToNum(
+      theme.global.edgeSize[spinnerPad] || spinnerPad,
     );
 
-    let spinnerPadBorder;
-    // if a user passes border as a prop we should assume they want the pad
-    if (!rest.border) {
-      // if  borderthemeProp is provided need to map through and use
-      // the sizes given for the border
-      if (borderThemeProp) {
-        spinnerPadBorder = borderThemeProp.map(
-          (item) =>
-            2 *
-            (spinnerPad +
-              parseMetricToNum(
-                theme?.global?.edgeSize && theme.global.borderSize[item.size],
-              )),
-        );
-      } else {
-        spinnerPadBorder =
-          2 *
-          (spinnerPad +
-            parseMetricToNum(
-              theme?.global?.edgeSize &&
-                theme.global.borderSize[normalizedSize],
-            ));
-      }
+    // compute what the dimensions of the spinner will be.
+    // to be used as comparison against what theme wants spinner dimensions to
+    // be given spinnerSize.
+    let computedDimensions;
+    if (borderThemeProp) {
+      computedDimensions = Array.isArray(borderThemeProp)
+        ? Math.max(
+            ...borderThemeProp.map((item) =>
+              getDimensions(spinnerPad, item.size, theme),
+            ),
+          )
+        : getDimensions(spinnerPad, borderThemeProp.size, theme);
+    } else {
+      computedDimensions = getDimensions(spinnerPad, normalizedSize, theme);
     }
 
-    // children will take prsecedence over theme attributes
+    // children will take precedence over theme attributes
     if (children) {
       return (
         <BasicSpinner size={spinnerSize} ref={ref} {...rest}>
@@ -136,9 +133,11 @@ const Spinner = forwardRef(
           typeof borderThemeProp === 'undefined' ? defaultBorder : spinnerBorder
         }
         {...themeProps}
-        // If border plus pad is larger than spinnerSize there should be no pad.
+        // don't let pad cause spinner to exceed theme defined size.
+        // for backwards compatibility, if caller defines border as prop,
+        // don't remove restrict size by removing pad
         pad={
-          spinnerPadBorder > spinnerSize.replace('px', '')
+          computedDimensions > spinnerSize.replace('px', '') && !rest.border
             ? 'none'
             : theme.spinner.container.pad
         }
