@@ -61,9 +61,9 @@ const Spinner = forwardRef(
       {
         side: 'all',
         color: 'background-contrast',
-        size: size === undefined ? 'small' : size,
+        size: normalizedSize,
       },
-      { side: 'top', color, size: size === undefined ? 'small' : size },
+      { side: 'top', color, size: normalizedSize },
     ];
     const spinnerBorder = Array.isArray(borderThemeProp)
       ? borderThemeProp.map((borderSide) => ({
@@ -76,24 +76,17 @@ const Spinner = forwardRef(
       : borderThemeProp;
 
     // check the size of the pad plus border
+    // than multiple by 2 in order to compare to it to theme sizes
     let spinnerPadBorder;
     if (!rest.border) {
-      if (size !== undefined) {
-        spinnerPadBorder =
+      spinnerPadBorder =
+        2 *
+        (parseMetricToNum(
+          theme?.global?.edgeSize && theme.global.edgeSize[spinnerPad],
+        ) +
           parseMetricToNum(
-            theme?.global?.edgeSize && theme.global.edgeSize[spinnerPad],
-          ) +
-          parseMetricToNum(
-            theme?.global?.edgeSize && theme.global.borderSize[size],
-          );
-      } else
-        spinnerPadBorder =
-          parseMetricToNum(
-            theme?.global?.edgeSize && theme.global.edgeSize[spinnerPad],
-          ) +
-          parseMetricToNum(
-            theme?.global?.edgeSize && theme.global.borderSize.small,
-          );
+            theme?.global?.edgeSize && theme.global.borderSize[normalizedSize],
+          ));
     }
 
     // children will take prsecedence over theme attributes
@@ -128,7 +121,7 @@ const Spinner = forwardRef(
         {...themeProps}
         // If border plus pad is larger than spinnerSize there should be no pad.
         pad={
-          spinnerPadBorder * 2 > spinnerSize.replace(/px/, '') * 1
+          spinnerPadBorder > spinnerSize.replace('px', '')
             ? 'none'
             : theme.spinner.container.pad
         }
