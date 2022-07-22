@@ -328,9 +328,7 @@ const SelectContainer = forwardRef(
 
     const onActiveOption = useCallback(
       (index) => () => {
-        if (!keyboardNavigation) {
-          setActiveIndex(index);
-        }
+        if (!keyboardNavigation) setActiveIndex(index);
       },
       [keyboardNavigation],
     );
