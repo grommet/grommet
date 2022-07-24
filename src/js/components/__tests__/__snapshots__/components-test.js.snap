@@ -532,6 +532,7 @@ Object {
       "onOrder": [Function],
       "pad": [Function],
       "paginate": [Function],
+      "pinned": [Function],
       "primaryKey": [Function],
       "secondaryKey": [Function],
       "show": [Function],
@@ -1394,7 +1395,7 @@ Object {
               "opacity": 0.3,
             },
           },
-          "debounceDelay": 300,
+          "debounceDelay": 500,
           "deviceBreakpoints": Object {
             "computer": "large",
             "phone": "small",
