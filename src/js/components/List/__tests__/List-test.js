@@ -4,7 +4,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, within } from '@testing-library/react';
 
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
@@ -824,6 +824,46 @@ describe('List pinned', () => {
     );
     const { asFragment } = render(<App />);
 
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Pinned items should not be allowed to be re-ordered', async () => {
+    const onOrder = jest.fn();
+    const user = userEvent.setup();
+
+    const App = () => {
+      const [ordered, setOrdered] = useState(locations);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            pinned={pinnedLocations}
+            onOrder={(next) => {
+              setOrdered(next);
+              onOrder(next);
+            }}
+          />
+        </Grommet>
+      );
+    };
+
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+
+    const list = screen.getByRole('listbox');
+    const listItems = within(list).getAllByRole('listitem');
+    const middleItem = screen.getByRole('button', {
+      name: '3 San Francisco move up',
+    });
+
+    // expect item at position 2 in the list
+    expect(listItems[1]).toHaveTextContent('2Fort Collins');
+    await user.click(middleItem);
+    expect(onOrder).toHaveBeenCalled();
+
+    // confirm item at position 2 in the list is unchanged
+    expect(listItems[1]).toHaveTextContent('2Fort Collins');
     expect(asFragment()).toMatchSnapshot();
   });
 });
