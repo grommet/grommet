@@ -324,7 +324,11 @@ const Tabs = forwardRef(
         {...rest}
         background={theme.tabs.background}
       >
-        <Box direction={overflow ? 'row' : 'column'} {...tabsHeaderStyles}>
+        <Box
+          flex={false}
+          direction={overflow ? 'row' : 'column'}
+          {...tabsHeaderStyles}
+        >
           {overflow && (
             <Button
               a11yTitle="Previous Tab"
@@ -348,7 +352,7 @@ const Tabs = forwardRef(
             ref={headerRef}
             as={Box}
             direction="row"
-            justify={justify}
+            justify={overflow ? 'start' : justify}
             alignSelf={alignControls}
             flex={!!overflow}
             wrap={false}

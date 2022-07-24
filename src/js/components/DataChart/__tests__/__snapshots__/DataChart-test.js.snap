@@ -4756,6 +4756,7 @@ exports[`DataChart detail 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 0px;
 }
 
 .c12 {
@@ -5041,6 +5042,933 @@ exports[`DataChart detail 1`] = `
             </g>
           </g>
         </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataChart detail pad + thickness 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 96px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
+  -webkit-flex-basis: 24px;
+  -ms-flex-preferred-size: 24px;
+  flex-basis: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: -36px;
+  padding-right: -36px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: -36px;
+  padding-right: -36px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: -48px;
+  padding-right: -48px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 96px;
+  padding-right: 96px;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 72px;
+  padding-right: 72px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 48px;
+}
+
+.c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-areas: "yAxis charts" ". xAxis";
+  grid-template-columns: auto auto;
+  grid-gap: 12px 12px;
+  grid-template-rows: auto auto;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+.c9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c17 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c20 {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        0
+      </div>
+      <div
+        class="c3"
+      >
+        1
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        2
+      </div>
+      <div
+        class="c5"
+      >
+        0.8
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <svg
+          class="c8"
+          height="192"
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width="384"
+        >
+          0
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 48,192 L 48,160"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 336,192 L 336,0"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div
+        class="c9"
+      >
+        <div
+          class="c10 c11"
+          tabindex="0"
+        >
+          <div
+            class="c12"
+          >
+            <div
+              class="c13"
+            />
+          </div>
+          <div
+            class="c12"
+          >
+            <div
+              class="c13"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c14"
+    >
+      <div
+        class="c3"
+      >
+        0
+      </div>
+      <div
+        class="c3"
+      >
+        1
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <div
+        class="c15"
+      >
+        2
+      </div>
+      <div
+        class="c15"
+      >
+        0.8
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <svg
+          class="c8"
+          height="192"
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width="384"
+        >
+          0
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 12,180 L 12,152"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 372,180 L 372,12"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div
+        class="c9"
+      >
+        <div
+          class="c16 c11"
+          tabindex="0"
+        >
+          <div
+            class="c12"
+          >
+            <div
+              class="c13"
+            />
+          </div>
+          <div
+            class="c12"
+          >
+            <div
+              class="c13"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c17"
+    >
+      <div
+        class="c3"
+      >
+        0
+      </div>
+      <div
+        class="c3"
+      >
+        1
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        2
+      </div>
+      <div
+        class="c5"
+      >
+        0.8
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <svg
+          class="c8"
+          height="192"
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width="384"
+        >
+          0
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 12,192 L 12,160"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 372,192 L 372,0"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div
+        class="c9"
+      >
+        <div
+          class="c18 c11"
+          tabindex="0"
+        >
+          <div
+            class="c12"
+          >
+            <div
+              class="c13"
+            />
+          </div>
+          <div
+            class="c12"
+          >
+            <div
+              class="c13"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c14"
+    >
+      <div
+        class="c3"
+      >
+        0
+      </div>
+      <div
+        class="c3"
+      >
+        1
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <div
+        class="c15"
+      >
+        2
+      </div>
+      <div
+        class="c15"
+      >
+        0.8
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <svg
+          class="c8"
+          height="192"
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width="384"
+        >
+          0
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,180 L 0,152"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,180 L 384,12"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div
+        class="c9"
+      >
+        <div
+          class="c19 c11"
+          tabindex="0"
+        >
+          <div
+            class="c12"
+          >
+            <div
+              class="c13"
+            />
+          </div>
+          <div
+            class="c12"
+          >
+            <div
+              class="c13"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c20"
+    >
+      <div
+        class="c3"
+      >
+        0
+      </div>
+      <div
+        class="c3"
+      >
+        1
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        2
+      </div>
+      <div
+        class="c5"
+      >
+        0.8
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <svg
+          class="c8"
+          height="192"
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width="384"
+        >
+          0
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="48"
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 96,192 L 96,160"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 288,192 L 288,0"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div
+        class="c9"
+      >
+        <div
+          class="c21 c11"
+          tabindex="0"
+        >
+          <div
+            class="c22"
+          >
+            <div
+              class="c13"
+            />
+          </div>
+          <div
+            class="c22"
+          >
+            <div
+              class="c13"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -6618,6 +7546,457 @@ exports[`DataChart lines 1`] = `
             >
               <path
                 d="M 48,143.9996 L 336,143.9992"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataChart negative values 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-areas: "yAxis charts" ". xAxis";
+  grid-template-columns: auto auto;
+  grid-gap: 12px 12px;
+  grid-template-rows: auto auto;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        0
+      </div>
+      <div
+        class="c3"
+      >
+        2
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        4
+      </div>
+      <div
+        class="c5"
+      >
+        -4
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <svg
+          class="c8"
+          height="192"
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width="384"
+        >
+          0
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 48,96 L 48,72"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 192,144 L 192,96"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 336,96 L 336,24"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        0
+      </div>
+      <div
+        class="c3"
+      >
+        2
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        4
+      </div>
+      <div
+        class="c5"
+      >
+        -4
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <svg
+          class="c8"
+          height="192"
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width="384"
+        >
+          0
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 48,96 L 48,72"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 192,144 L 192,96"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 336,96 L 336,24"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        0
+      </div>
+      <div
+        class="c3"
+      >
+        2
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        4
+      </div>
+      <div
+        class="c5"
+      >
+        -4
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <svg
+          class="c8"
+          height="192"
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width="384"
+        >
+          0
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 48,96 L 48,72"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 192,144 L 192,96"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 336,96 L 336,24"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        0
+      </div>
+      <div
+        class="c3"
+      >
+        2
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        4
+      </div>
+      <div
+        class="c5"
+      >
+        -4
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <svg
+          class="c8"
+          height="192"
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width="384"
+        >
+          0
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 48,96 L 48,72"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 192,144 L 192,96"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 336,96 L 336,24"
               />
             </g>
           </g>

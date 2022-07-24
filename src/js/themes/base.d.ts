@@ -368,7 +368,8 @@ export interface ThemeType {
         color?: ColorType;
         size?: string;
       };
-      shadow?: {
+      shadow?: 
+        string | {
         color?: ColorType;
         size?: string;
       };

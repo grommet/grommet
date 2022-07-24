@@ -199,6 +199,31 @@ describe('DataChart', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('detail pad + thickness', () => {
+    const { container } = render(
+      <Grommet>
+        <DataChart data={data} series="a" detail />
+        <DataChart data={data} series="a" detail pad="small" />
+        <DataChart
+          data={data}
+          series="a"
+          detail
+          pad={{ horizontal: 'small' }}
+        />
+        <DataChart data={data} series="a" detail pad={{ vertical: 'small' }} />
+        <DataChart
+          data={data}
+          series="a"
+          chart={[{ property: 'a', thickness: 'large' }]}
+          detail
+          pad={{ horizontal: 'xlarge' }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('axis x granularity', () => {
     const { container } = render(
       <Grommet>
@@ -371,6 +396,22 @@ describe('DataChart', () => {
     const { container } = render(
       <Grommet>
         <DataChart data={data} series={['a', 'c']} bounds={{ y: [0, 100] }} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('negative values', () => {
+    const { container } = render(
+      <Grommet>
+        {[undefined, 'coarse', 'medium', 'find'].map((granularity) => (
+          <DataChart
+            key={granularity || 'u'}
+            data={[{ a: 1 }, { a: -2 }, { a: 3 }]}
+            series={['a']}
+          />
+        ))}
       </Grommet>,
     );
 
