@@ -1,22 +1,12 @@
 // generate a data set
 const dataSet = {
-  generateData: (count, max) => {
+  generateData: (count = 5, max = 100, min = 0) => {
     const data = [];
-    let value = max / 2;
-    let increase = true;
     let date = new Date();
+    const span = max - min;
     while (data.length < count) {
-      if (increase) {
-        value += (max - value) % Math.ceil(((data.length % (max / 4)) + 1) / 2);
-        if (value >= max) {
-          increase = false;
-        }
-      } else {
-        value -= value % Math.ceil(((data.length % (max / 4)) + 1) / 2);
-        if (value <= 0) {
-          increase = true;
-        }
-      }
+      const s = Math.sin(data.length / 2.0);
+      const value = s * (span / 2) + (span / 2 + min);
       const nextDay = date.getDate() - 1;
       date = new Date(date);
       date.setDate(nextDay);
