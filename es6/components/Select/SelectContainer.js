@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 
 import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { selectedStyle, setFocusWithoutScroll } from '../../utils';
+import { getHoverIndicatorStyle, selectedStyle, setFocusWithoutScroll } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -20,8 +20,10 @@ var OptionsBox = styled.div.withConfig({
 var SelectOption = styled(Button).withConfig({
   displayName: "SelectContainer__SelectOption",
   componentId: "sc-1wi0ul8-1"
-})(["", " display:block;width:100%;"], function (props) {
+})(["", " ", " display:block;width:100%;"], function (props) {
   return props.selected && props.textComponent && selectedStyle;
+}, function (props) {
+  return props.active && getHoverIndicatorStyle(!props.children && !props.theme.select.options ? undefined : 'background', props.theme);
 });
 var ClearButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var clear = _ref.clear,
@@ -73,28 +75,24 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       replace = _ref2$replace === void 0 ? true : _ref2$replace;
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
-  var _useState = useState(-1),
+  var _useState = useState(usingKeyboard ? 0 : -1),
       activeIndex = _useState[0],
       setActiveIndex = _useState[1];
 
-  var _useState2 = useState(),
+  var _useState2 = useState(usingKeyboard),
       keyboardNavigation = _useState2[0],
       setKeyboardNavigation = _useState2[1];
 
   var searchRef = useRef();
   var optionsRef = useRef();
   var clearRef = useRef();
-  useEffect(function () {
-    var optionsNode = optionsRef.current;
+  var activeRef = useRef(); // for keyboard/screenreader, keep the active option in focus
 
-    if (optionsNode.children) {
-      var clearButton = clearRef.current;
-      var index = activeIndex;
-      if (clear && clear.position !== 'bottom' && clearButton) index += 1;
-      var optionNode = optionsNode.children[index];
-      if (optionNode) optionNode.focus();
-    }
-  }, [activeIndex, clear]); // set initial focus
+  useEffect(function () {
+    var _activeRef$current;
+
+    if (activeIndex) (_activeRef$current = activeRef.current) == null ? void 0 : _activeRef$current.focus();
+  }, [activeIndex]); // set initial focus
 
   useEffect(function () {
     // need to wait for Drop to be ready
@@ -110,11 +108,8 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         }
       } else if (clear && clearButton && clearButton.focus && clear.position !== 'bottom') {
         setFocusWithoutScroll(clearButton);
-      } else if (optionsNode && optionsNode.children && usingKeyboard) {
-        // if the user is navigating with the keyboard set the
-        // first child as the active index when the drop opens
-        setFocusWithoutScroll(optionsNode.children[0]);
-        setActiveIndex(0);
+      } else if (usingKeyboard && activeRef.current) {
+        setFocusWithoutScroll(activeRef.current);
       } else if (optionsNode) {
         setFocusWithoutScroll(optionsNode);
       }
@@ -122,21 +117,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     return function () {
       return clearTimeout(timer);
     };
-  }, [onSearch, usingKeyboard, clear]); // clear keyboardNavigation after a while
-
-  useEffect(function () {
-    if (keyboardNavigation) {
-      // 100ms was empirically determined
-      var timer = setTimeout(function () {
-        return setKeyboardNavigation(false);
-      }, 100);
-      return function () {
-        return clearTimeout(timer);
-      };
-    }
-
-    return undefined;
-  }, [keyboardNavigation]);
+  }, [onSearch, usingKeyboard, clear]);
   var optionLabel = useCallback(function (index) {
     return applyKey(options[index], labelKey);
   }, [labelKey, options]);
@@ -355,7 +336,10 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     role: "listbox",
     tabIndex: "-1",
     ref: optionsRef,
-    "aria-multiselectable": multiple
+    "aria-multiselectable": multiple,
+    onMouseMove: function onMouseMove() {
+      return setKeyboardNavigation(false);
+    }
   }, shouldShowClearButton('top') && /*#__PURE__*/React.createElement(ClearButton, {
     ref: clearRef,
     clear: clear,
@@ -392,8 +376,13 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
 
     return /*#__PURE__*/React.createElement(SelectOption // eslint-disable-next-line react/no-array-index-key
     , {
-      key: index,
-      ref: optionRef,
+      key: index // merge optionRef and activeRef
+      ,
+      ref: function ref(node) {
+        // eslint-disable-next-line no-param-reassign
+        if (optionRef) optionRef.current = node;
+        if (optionActive) activeRef.current = node;
+      },
       tabIndex: optionSelected ? '0' : '-1',
       role: "option",
       "aria-setsize": options.length,
@@ -404,7 +393,6 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       plain: !child ? undefined : true,
       align: "start",
       kind: !child ? 'option' : undefined,
-      hoverIndicator: !child ? undefined : 'background',
       label: !child ? optionLabel(index) : undefined,
       disabled: optionDisabled || undefined,
       active: optionActive,
