@@ -142,8 +142,6 @@ const plainStyle = (props) => css`
 
 const activeButtonStyle = (props) => css`
   ${activeStyle}
-  ${props.activeIndicator &&
-  getHoverIndicatorStyle(props.activeIndicator, props.theme)}
   ${props.primary &&
   props.theme.button.primary &&
   props.theme.button.primary.active &&

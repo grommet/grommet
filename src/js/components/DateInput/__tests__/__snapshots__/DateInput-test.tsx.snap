@@ -17853,7 +17853,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jul 20 2020"
-                  class="StyledButton-sc-323bzc-0 lbLasy"
+                  class="StyledButton-sc-323bzc-0 jOLUOa"
                   tabindex="-1"
                   type="button"
                 >
@@ -22751,7 +22751,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Fri Jul 10 2020"
-                  class="StyledButton-sc-323bzc-0 lbLasy"
+                  class="StyledButton-sc-323bzc-0 jOLUOa"
                   tabindex="-1"
                   type="button"
                 >

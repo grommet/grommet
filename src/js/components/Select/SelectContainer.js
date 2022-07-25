@@ -8,7 +8,11 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { selectedStyle, setFocusWithoutScroll } from '../../utils';
+import {
+  getHoverIndicatorStyle,
+  selectedStyle,
+  setFocusWithoutScroll,
+} from '../../utils';
 
 import { defaultProps } from '../../default-props';
 
@@ -32,6 +36,14 @@ const OptionsBox = styled.div`
 
 const SelectOption = styled(Button)`
   ${(props) => props.selected && props.textComponent && selectedStyle}
+  // applies theme.global.hover.background to the active
+  // option for mouse and keyboard interactions
+  ${(props) =>
+    props.active &&
+    getHoverIndicatorStyle(
+      !props.children && !props.theme.select.options ? undefined : 'background',
+      props.theme,
+    )}
   display: block;
   width: 100%;
 `;
@@ -471,9 +483,6 @@ const SelectContainer = forwardRef(
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
-                      // applies theme.global.hover.background to the active
-                      // option for mouse and keyboard interactions
-                      activeIndicator={!child ? undefined : 'background'}
                       label={!child ? optionLabel(index) : undefined}
                       disabled={optionDisabled || undefined}
                       active={optionActive}

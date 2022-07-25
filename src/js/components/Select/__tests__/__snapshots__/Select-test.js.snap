@@ -2018,8 +2018,6 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   text-align: inherit;
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-  background-color: lightgreen;
-  color: #7D4CDB;
 }
 
 .c0:focus:not(:focus-visible) {
@@ -2043,6 +2041,8 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 }
 
 .c1 {
+  background-color: lightgreen;
+  color: #7D4CDB;
   display: block;
   width: 100%;
 }
@@ -9217,7 +9217,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 hgxEgi"
+    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 khNgJL"
     role="option"
     tabindex="-1"
     type="button"
@@ -9236,7 +9236,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 hgxEgi"
+    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 khNgJL"
     role="option"
     tabindex="-1"
     type="button"
