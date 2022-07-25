@@ -21,6 +21,7 @@ const Meter = forwardRef(
       background = { color: 'light-2', opacity: 'medium' },
       color,
       direction = 'horizontal',
+      reverse = false,
       size = 'medium',
       thickness = 'medium',
       type = 'bar',
@@ -58,6 +59,7 @@ const Meter = forwardRef(
           ref={ref}
           max={memoizedMax}
           values={values}
+          reverse={reverse}
           size={size}
           thickness={thickness}
           type={type}

@@ -8,8 +8,17 @@ import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
 
 const Circle = forwardRef((props, ref) => {
-  const { background, max, round, size, thickness, type, values, ...rest } =
-    props;
+  const {
+    background,
+    max,
+    round,
+    size,
+    thickness,
+    type,
+    values,
+    reverse,
+    ...rest
+  } = props;
   const theme = useContext(ThemeContext);
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
@@ -42,7 +51,7 @@ const Circle = forwardRef((props, ref) => {
       if (startValue + value >= max) {
         endAngle = type === 'semicircle' ? 90 : 360;
       } else {
-        endAngle = translateEndAngle(startAngle, anglePer, value);
+        endAngle = translateEndAngle(startAngle, anglePer, value, reverse);
       }
       let hoverProps;
       if (onHover) {
@@ -56,7 +65,14 @@ const Circle = forwardRef((props, ref) => {
         theme,
       );
       if (round) {
-        const d1 = arcCommands(centerX, centerY, radius, startAngle, endAngle);
+        const d1 = arcCommands(
+          centerX,
+          centerY,
+          radius,
+          startAngle,
+          endAngle,
+          reverse,
+        );
         paths.unshift(
           <path
             key={key}
@@ -79,6 +95,7 @@ const Circle = forwardRef((props, ref) => {
           radius,
           endAngle - 0.5,
           endAngle,
+          reverse,
         );
         const pathCap = (
           <path
@@ -99,7 +116,14 @@ const Circle = forwardRef((props, ref) => {
         }
         pathCaps.unshift(pathCap);
       } else {
-        const d = arcCommands(centerX, centerY, radius, startAngle, endAngle);
+        const d = arcCommands(
+          centerX,
+          centerY,
+          radius,
+          startAngle,
+          endAngle,
+          reverse,
+        );
         paths.push(
           <path
             key={key}
@@ -119,7 +143,7 @@ const Circle = forwardRef((props, ref) => {
 
   let track;
   if (type === 'semicircle') {
-    const d1 = arcCommands(centerX, centerY, radius, 270, 90);
+    const d1 = arcCommands(centerX, centerY, radius, 270, 90, reverse);
     track = (
       <path
         d={d1}

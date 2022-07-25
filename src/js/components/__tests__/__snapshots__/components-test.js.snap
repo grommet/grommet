@@ -607,6 +607,7 @@ Object {
       "gridArea": [Function],
       "margin": [Function],
       "max": [Function],
+      "reverse": [Function],
       "round": [Function],
       "size": [Function],
       "thickness": [Function],

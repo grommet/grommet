@@ -27,6 +27,12 @@ export const Circle = () => {
         background="light-2"
         values={[{ value, color: value > 50 ? 'accent-2' : 'accent-1' }]}
       />
+      <Meter
+        reverse
+        type="circle"
+        background="light-2"
+        values={[{ value, color: value > 50 ? 'accent-2' : 'accent-1' }]}
+      />
     </Box>
     // </Grommet>
   );
