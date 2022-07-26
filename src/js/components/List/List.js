@@ -1,6 +1,6 @@
 import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { Pin } from 'grommet-icons';
+import { Pin } from 'grommet-icons/icons/Pin';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
