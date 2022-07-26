@@ -384,11 +384,6 @@ exports[`Select Clear option renders - bottom 1`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -642,11 +637,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus:not(:focus-visible) {
@@ -912,11 +902,6 @@ exports[`Select Clear option renders custom label 1`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -1170,11 +1155,6 @@ exports[`Select Clear option renders- top 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus:not(:focus-visible) {
@@ -2061,6 +2041,8 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 }
 
 .c1 {
+  background-color: lightgreen;
+  color: #7D4CDB;
   display: block;
   width: 100%;
 }
@@ -2780,11 +2762,6 @@ exports[`Select complex options and children 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus:not(:focus-visible) {
@@ -3679,11 +3656,6 @@ exports[`Select default value clear 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c8:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -4933,11 +4905,6 @@ exports[`Select disabled key 2`] = `
   text-align: inherit;
 }
 
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -5233,11 +5200,6 @@ exports[`Select disabled option value 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c9:focus:not(:focus-visible) {
@@ -5888,11 +5850,6 @@ exports[`Select large drop container height 1`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -6137,11 +6094,6 @@ exports[`Select medium drop container height 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus:not(:focus-visible) {
@@ -6956,11 +6908,6 @@ exports[`Select onChange with valueKey string 2`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -7443,11 +7390,6 @@ exports[`Select onChange with valueLabel 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus:not(:focus-visible) {
@@ -7985,11 +7927,6 @@ exports[`Select onChange without valueKey 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus:not(:focus-visible) {
@@ -9131,11 +9068,6 @@ exports[`Select prop: onOpen 3`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -9285,7 +9217,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 gYfHFH SelectContainer__SelectOption-sc-1wi0ul8-1 hgxEgi"
+    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 khNgJL"
     role="option"
     tabindex="-1"
     type="button"
@@ -9304,7 +9236,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 gYfHFH SelectContainer__SelectOption-sc-1wi0ul8-1 hgxEgi"
+    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 khNgJL"
     role="option"
     tabindex="-1"
     type="button"
@@ -11686,11 +11618,6 @@ exports[`Select search 2`] = `
   text-align: inherit;
 }
 
-.c8:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -12382,11 +12309,6 @@ exports[`Select search and select 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c8:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -15793,11 +15715,6 @@ exports[`Select small drop container height 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus:not(:focus-visible) {
