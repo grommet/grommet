@@ -368,7 +368,8 @@ export interface ThemeType {
         color?: ColorType;
         size?: string;
       };
-      shadow?: {
+      shadow?: 
+        string | {
         color?: ColorType;
         size?: string;
       };
@@ -526,7 +527,7 @@ export interface ThemeType {
     };
   };
   card?: {
-    container?: BoxProps;
+    container?: BoxProps | { extend?: ExtendType };
     hover?: {
       container?: {
         elevation?: ElevationType;

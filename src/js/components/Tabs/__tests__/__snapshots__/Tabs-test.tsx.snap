@@ -24,6 +24,23 @@ exports[`Tabs Custom Tab component 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -37,7 +54,7 @@ exports[`Tabs Custom Tab component 1`] = `
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -57,7 +74,7 @@ exports[`Tabs Custom Tab component 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -77,19 +94,19 @@ exports[`Tabs Custom Tab component 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c8 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -107,43 +124,43 @@ exports[`Tabs Custom Tab component 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -157,7 +174,7 @@ exports[`Tabs Custom Tab component 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -165,66 +182,66 @@ exports[`Tabs Custom Tab component 1`] = `
   margin-bottom: 3px;
 }
 
-.c5:hover {
+.c6:hover {
   color: #000000;
 }
 
-.c5:focus {
+.c6:focus {
   z-index: 1;
 }
 
-.c9 {
+.c10 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     border-bottom: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     padding-bottom: 3px;
   }
 }
@@ -237,23 +254,23 @@ exports[`Tabs Custom Tab component 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c4 c5"
+            class="c5 c6"
           >
             <span
-              class="c6"
+              class="c7"
             >
               Tab 1
             </span>
@@ -262,15 +279,15 @@ exports[`Tabs Custom Tab component 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c7 c5"
+            class="c8 c6"
           >
             <span
-              class="c8"
+              class="c9"
             >
               Tab 2
             </span>
@@ -280,7 +297,7 @@ exports[`Tabs Custom Tab component 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="c9"
+      class="c10"
       role="tabpanel"
     >
       Tab body 1
@@ -313,6 +330,23 @@ exports[`Tabs Tab 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -326,7 +360,7 @@ exports[`Tabs Tab 1`] = `
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -346,7 +380,7 @@ exports[`Tabs Tab 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -366,19 +400,19 @@ exports[`Tabs Tab 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c8 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -396,43 +430,43 @@ exports[`Tabs Tab 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -446,7 +480,7 @@ exports[`Tabs Tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -454,66 +488,66 @@ exports[`Tabs Tab 1`] = `
   margin-bottom: 3px;
 }
 
-.c5:hover {
+.c6:hover {
   color: #000000;
 }
 
-.c5:focus {
+.c6:focus {
   z-index: 1;
 }
 
-.c9 {
+.c10 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     border-bottom: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     padding-bottom: 3px;
   }
 }
@@ -526,23 +560,23 @@ exports[`Tabs Tab 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c4 c5"
+            class="c5 c6"
           >
             <span
-              class="c6"
+              class="c7"
             >
               Tab 1
             </span>
@@ -551,15 +585,15 @@ exports[`Tabs Tab 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c7 c5"
+            class="c8 c6"
           >
             <span
-              class="c8"
+              class="c9"
             >
               Tab 2
             </span>
@@ -569,7 +603,7 @@ exports[`Tabs Tab 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="c9"
+      class="c10"
       role="tabpanel"
     >
       Tab body 1
@@ -600,6 +634,23 @@ exports[`Tabs alignControls 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -618,7 +669,7 @@ exports[`Tabs alignControls 1`] = `
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -638,7 +689,7 @@ exports[`Tabs alignControls 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -658,19 +709,19 @@ exports[`Tabs alignControls 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c8 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -688,43 +739,43 @@ exports[`Tabs alignControls 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -741,7 +792,7 @@ exports[`Tabs alignControls 1`] = `
   overflow: auto;
 }
 
-.c5 {
+.c6 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -749,66 +800,66 @@ exports[`Tabs alignControls 1`] = `
   margin-bottom: 3px;
 }
 
-.c5:hover {
+.c6:hover {
   color: #000000;
 }
 
-.c5:focus {
+.c6:focus {
   z-index: 1;
 }
 
-.c9 {
+.c10 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     border-bottom: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     padding-bottom: 3px;
   }
 }
@@ -821,23 +872,23 @@ exports[`Tabs alignControls 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c4 c5"
+            class="c5 c6"
           >
             <span
-              class="c6"
+              class="c7"
             >
               Tab 1
             </span>
@@ -846,15 +897,15 @@ exports[`Tabs alignControls 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c7 c5"
+            class="c8 c6"
           >
             <span
-              class="c8"
+              class="c9"
             >
               Tab 2
             </span>
@@ -864,7 +915,7 @@ exports[`Tabs alignControls 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="c9"
+      class="c10"
       role="tabpanel"
     >
       Tab body 1
@@ -897,6 +948,23 @@ exports[`Tabs change to second tab 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -910,7 +978,7 @@ exports[`Tabs change to second tab 1`] = `
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -930,7 +998,7 @@ exports[`Tabs change to second tab 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -950,19 +1018,19 @@ exports[`Tabs change to second tab 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c8 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -980,43 +1048,43 @@ exports[`Tabs change to second tab 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1030,7 +1098,7 @@ exports[`Tabs change to second tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -1038,66 +1106,66 @@ exports[`Tabs change to second tab 1`] = `
   margin-bottom: 3px;
 }
 
-.c5:hover {
+.c6:hover {
   color: #000000;
 }
 
-.c5:focus {
+.c6:focus {
   z-index: 1;
 }
 
-.c9 {
+.c10 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     border-bottom: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     padding-bottom: 3px;
   }
 }
@@ -1110,23 +1178,23 @@ exports[`Tabs change to second tab 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c4 c5"
+            class="c5 c6"
           >
             <span
-              class="c6"
+              class="c7"
             >
               Tab 1
             </span>
@@ -1135,15 +1203,15 @@ exports[`Tabs change to second tab 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c7 c5"
+            class="c8 c6"
           >
             <span
-              class="c8"
+              class="c9"
             >
               Tab 2
             </span>
@@ -1153,7 +1221,7 @@ exports[`Tabs change to second tab 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="c9"
+      class="c10"
       role="tabpanel"
     >
       Tab body 1
@@ -1171,7 +1239,7 @@ exports[`Tabs change to second tab 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iNDmPr"
+      class="StyledBox-sc-13pk1d4-0 hFkNOm"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 bTwWAl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
@@ -1247,6 +1315,23 @@ exports[`Tabs complex title 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -1260,7 +1345,7 @@ exports[`Tabs complex title 1`] = `
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1280,7 +1365,7 @@ exports[`Tabs complex title 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1300,7 +1385,7 @@ exports[`Tabs complex title 1`] = `
   padding-bottom: 6px;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1318,43 +1403,43 @@ exports[`Tabs complex title 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1368,7 +1453,7 @@ exports[`Tabs complex title 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -1376,66 +1461,66 @@ exports[`Tabs complex title 1`] = `
   margin-bottom: 3px;
 }
 
-.c5:hover {
+.c6:hover {
   color: #000000;
 }
 
-.c5:focus {
+.c6:focus {
   z-index: 1;
 }
 
-.c7 {
+.c8 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     border-bottom: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     padding-bottom: 3px;
   }
 }
@@ -1448,20 +1533,20 @@ exports[`Tabs complex title 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c4 c5"
+            class="c5 c6"
           >
             <div>
               Tab 1
@@ -1471,12 +1556,12 @@ exports[`Tabs complex title 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c6 c5"
+            class="c7 c6"
           >
             <div>
               Tab 2
@@ -1487,7 +1572,7 @@ exports[`Tabs complex title 1`] = `
     </div>
     <div
       aria-label="1 Tab Contents"
-      class="c7"
+      class="c8"
       role="tabpanel"
     >
       Tab body 1
@@ -1520,6 +1605,23 @@ exports[`Tabs no Tab 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -1533,7 +1635,7 @@ exports[`Tabs no Tab 1`] = `
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1553,7 +1655,7 @@ exports[`Tabs no Tab 1`] = `
   padding-bottom: 6px;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1571,43 +1673,43 @@ exports[`Tabs no Tab 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1621,7 +1723,7 @@ exports[`Tabs no Tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -1629,40 +1731,40 @@ exports[`Tabs no Tab 1`] = `
   margin-bottom: 3px;
 }
 
-.c5:hover {
+.c6:hover {
   color: #000000;
 }
 
-.c5:focus {
+.c6:focus {
   z-index: 1;
 }
 
-.c6 {
+.c7 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
@@ -1675,27 +1777,27 @@ exports[`Tabs no Tab 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c4 c5"
+            class="c5 c6"
           />
         </button>
       </div>
     </div>
     <div
       aria-label="1 Tab Contents"
-      class="c6"
+      class="c7"
       role="tabpanel"
     />
   </div>
@@ -1726,6 +1828,23 @@ exports[`Tabs onClick 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -1739,7 +1858,7 @@ exports[`Tabs onClick 1`] = `
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1759,7 +1878,7 @@ exports[`Tabs onClick 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1779,19 +1898,19 @@ exports[`Tabs onClick 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c8 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1809,43 +1928,43 @@ exports[`Tabs onClick 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1859,7 +1978,7 @@ exports[`Tabs onClick 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -1867,66 +1986,66 @@ exports[`Tabs onClick 1`] = `
   margin-bottom: 3px;
 }
 
-.c5:hover {
+.c6:hover {
   color: #000000;
 }
 
-.c5:focus {
+.c6:focus {
   z-index: 1;
 }
 
-.c9 {
+.c10 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     border-bottom: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     padding-bottom: 3px;
   }
 }
@@ -1939,23 +2058,23 @@ exports[`Tabs onClick 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c4 c5"
+            class="c5 c6"
           >
             <span
-              class="c6"
+              class="c7"
             >
               Tab 1
             </span>
@@ -1964,15 +2083,15 @@ exports[`Tabs onClick 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c7 c5"
+            class="c8 c6"
           >
             <span
-              class="c8"
+              class="c9"
             >
               Tab 2
             </span>
@@ -1982,7 +2101,7 @@ exports[`Tabs onClick 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="c9"
+      class="c10"
       role="tabpanel"
     >
       Tab body 1
@@ -2015,6 +2134,23 @@ exports[`Tabs set on hover 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -2028,7 +2164,7 @@ exports[`Tabs set on hover 1`] = `
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2048,7 +2184,7 @@ exports[`Tabs set on hover 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2068,19 +2204,19 @@ exports[`Tabs set on hover 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c8 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2098,43 +2234,43 @@ exports[`Tabs set on hover 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2148,7 +2284,7 @@ exports[`Tabs set on hover 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -2156,66 +2292,66 @@ exports[`Tabs set on hover 1`] = `
   margin-bottom: 3px;
 }
 
-.c5:hover {
+.c6:hover {
   color: #000000;
 }
 
-.c5:focus {
+.c6:focus {
   z-index: 1;
 }
 
-.c9 {
+.c10 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     border-bottom: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     padding-bottom: 3px;
   }
 }
@@ -2228,23 +2364,23 @@ exports[`Tabs set on hover 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c4 c5"
+            class="c5 c6"
           >
             <span
-              class="c6"
+              class="c7"
             >
               Tab 1
             </span>
@@ -2253,15 +2389,15 @@ exports[`Tabs set on hover 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c7 c5"
+            class="c8 c6"
           >
             <span
-              class="c8"
+              class="c9"
             >
               Tab 2
             </span>
@@ -2271,7 +2407,7 @@ exports[`Tabs set on hover 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="c9"
+      class="c10"
       role="tabpanel"
     >
       Tab body 1
@@ -2289,7 +2425,7 @@ exports[`Tabs set on hover 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iNDmPr"
+      class="StyledBox-sc-13pk1d4-0 hFkNOm"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 bTwWAl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
@@ -2350,7 +2486,7 @@ exports[`Tabs set on hover 3`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iNDmPr"
+      class="StyledBox-sc-13pk1d4-0 hFkNOm"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 bTwWAl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
@@ -2411,7 +2547,7 @@ exports[`Tabs set on hover 4`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iNDmPr"
+      class="StyledBox-sc-13pk1d4-0 hFkNOm"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 bTwWAl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
@@ -2472,7 +2608,7 @@ exports[`Tabs set on hover 5`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iNDmPr"
+      class="StyledBox-sc-13pk1d4-0 hFkNOm"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 bTwWAl StyledTabs__StyledTabsHeader-sc-a4fwxl-0 gzVA-ds"
@@ -2548,6 +2684,23 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -2561,7 +2714,7 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2581,13 +2734,13 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2605,43 +2758,43 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2655,7 +2808,7 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
+.c5 {
   white-space: nowrap;
   color: red;
   padding: 20px;
@@ -2663,7 +2816,7 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   margin: 30px;
 }
 
-.c6 {
+.c7 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -2675,40 +2828,40 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   margin: 30px;
 }
 
-.c6:hover {
+.c7:hover {
   color: #000000;
 }
 
-.c6:focus {
+.c7:focus {
   z-index: 1;
 }
 
-.c8 {
+.c9 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     border-bottom: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding-bottom: 3px;
   }
 }
@@ -2721,20 +2874,20 @@ exports[`Tabs should allow to extend tab styles 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c1 c4"
+            class="c1 c5"
           >
             Title 1
           </div>
@@ -2742,15 +2895,15 @@ exports[`Tabs should allow to extend tab styles 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c6 c7"
           >
             <span
-              class="c7"
+              class="c8"
             >
               Title 2
             </span>
@@ -2760,7 +2913,7 @@ exports[`Tabs should allow to extend tab styles 1`] = `
     </div>
     <div
       aria-label="Title 1 Tab Contents"
-      class="c8"
+      class="c9"
       role="tabpanel"
     >
       Some content
@@ -2793,6 +2946,23 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -2806,7 +2976,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2826,7 +2996,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2846,19 +3016,19 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c10 {
+.c11 {
   font-size: 18px;
   line-height: 24px;
   color: blue;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2876,47 +3046,47 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2936,43 +3106,43 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   cursor: default;
 }
 
-.c7:focus {
+.c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c8:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c7:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2986,7 +3156,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -2994,15 +3164,15 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   margin-bottom: 3px;
 }
 
-.c5:hover {
+.c6:hover {
   color: #000000;
 }
 
-.c5:focus {
+.c6:focus {
   z-index: 1;
 }
 
-.c9 {
+.c10 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -3011,58 +3181,58 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   color: blue;
 }
 
-.c11 {
+.c12 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     border-bottom: solid 2px green;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     padding-bottom: 3px;
   }
 }
@@ -3075,23 +3245,23 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c4 c5"
+            class="c5 c6"
           >
             <span
-              class="c6"
+              class="c7"
             >
               Enabled Tab
             </span>
@@ -3100,17 +3270,17 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c7"
+          class="c8"
           disabled=""
           role="tab"
           type="button"
         >
           <div
-            class="c8 c9"
+            class="c9 c10"
             disabled=""
           >
             <span
-              class="c10"
+              class="c11"
             >
               Disabled Tab
             </span>
@@ -3120,7 +3290,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
     </div>
     <div
       aria-label="Enabled Tab Tab Contents"
-      class="c11"
+      class="c12"
       role="tabpanel"
     >
       This tab is enabled
@@ -3154,6 +3324,23 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -3167,7 +3354,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3187,7 +3374,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3207,19 +3394,19 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   padding-bottom: 6px;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c10 {
+.c11 {
   font-size: 18px;
   line-height: 24px;
   color: blue;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3237,47 +3424,47 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   color: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3297,43 +3484,43 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   cursor: default;
 }
 
-.c7:focus {
+.c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c8:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c7:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3347,7 +3534,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -3355,15 +3542,15 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   margin-bottom: 3px;
 }
 
-.c5:hover {
+.c6:hover {
   color: #000000;
 }
 
-.c5:focus {
+.c6:focus {
   z-index: 1;
 }
 
-.c9 {
+.c10 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -3372,58 +3559,58 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   color: blue;
 }
 
-.c11 {
+.c12 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     border-bottom: solid 2px green;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     padding-bottom: 3px;
   }
 }
@@ -3436,23 +3623,23 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c4 c5"
+            class="c5 c6"
           >
             <span
-              class="c6"
+              class="c7"
             >
               Enabled Tab
             </span>
@@ -3461,17 +3648,17 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c7"
+          class="c8"
           disabled=""
           role="tab"
           type="button"
         >
           <div
-            class="c8 c9"
+            class="c9 c10"
             disabled=""
           >
             <span
-              class="c10"
+              class="c11"
             >
               Disabled Tab
             </span>
@@ -3481,7 +3668,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
     </div>
     <div
       aria-label="Enabled Tab Tab Contents"
-      class="c11"
+      class="c12"
       role="tabpanel"
     >
       This tab is enabled
@@ -3514,6 +3701,23 @@ exports[`Tabs should have no accessibility violations 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -3527,7 +3731,7 @@ exports[`Tabs should have no accessibility violations 1`] = `
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3547,7 +3751,7 @@ exports[`Tabs should have no accessibility violations 1`] = `
   padding-bottom: 6px;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3565,43 +3769,43 @@ exports[`Tabs should have no accessibility violations 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3615,7 +3819,7 @@ exports[`Tabs should have no accessibility violations 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -3623,40 +3827,40 @@ exports[`Tabs should have no accessibility violations 1`] = `
   margin-bottom: 3px;
 }
 
-.c5:hover {
+.c6:hover {
   color: #000000;
 }
 
-.c5:focus {
+.c6:focus {
   z-index: 1;
 }
 
-.c6 {
+.c7 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
@@ -3670,28 +3874,28 @@ exports[`Tabs should have no accessibility violations 1`] = `
       role="tablist"
     >
       <div
-        class="c1"
+        class="c2"
       >
         <div
-          class="c2 "
+          class="c3 "
         >
           <button
             aria-expanded="true"
             aria-label="test"
             aria-selected="true"
-            class="c3"
+            class="c4"
             role="tab"
             type="button"
           >
             <div
-              class="c4 c5"
+              class="c5 c6"
             />
           </button>
         </div>
       </div>
       <div
         aria-label="1 Tab Contents"
-        class="c6"
+        class="c7"
         role="tabpanel"
       />
     </div>
@@ -3723,6 +3927,23 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -3736,7 +3957,7 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
   overflow: visible;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3754,43 +3975,43 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3804,11 +4025,11 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
+.c5 {
   white-space: nowrap;
 }
 
-.c5 {
+.c6 {
   min-height: 0;
 }
 
@@ -3820,20 +4041,20 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c1 c4"
+            class="c1 c5"
           >
             Title 1
           </div>
@@ -3842,7 +4063,7 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
     </div>
     <div
       aria-label="Title 1 Tab Contents"
-      class="c5"
+      class="c6"
       role="tabpanel"
     />
   </div>
@@ -3873,6 +4094,23 @@ exports[`Tabs should style as disabled 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -3886,7 +4124,7 @@ exports[`Tabs should style as disabled 1`] = `
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3906,7 +4144,7 @@ exports[`Tabs should style as disabled 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3926,19 +4164,19 @@ exports[`Tabs should style as disabled 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c10 {
+.c11 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3956,47 +4194,47 @@ exports[`Tabs should style as disabled 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4016,43 +4254,43 @@ exports[`Tabs should style as disabled 1`] = `
   cursor: default;
 }
 
-.c7:focus {
+.c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c8:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c7:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4066,7 +4304,7 @@ exports[`Tabs should style as disabled 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -4074,15 +4312,15 @@ exports[`Tabs should style as disabled 1`] = `
   margin-bottom: 3px;
 }
 
-.c5:hover {
+.c6:hover {
   color: #000000;
 }
 
-.c5:focus {
+.c6:focus {
   z-index: 1;
 }
 
-.c9 {
+.c10 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -4090,58 +4328,58 @@ exports[`Tabs should style as disabled 1`] = `
   margin-bottom: 3px;
 }
 
-.c11 {
+.c12 {
   min-height: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     border-bottom: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     padding-bottom: 3px;
   }
 }
@@ -4154,23 +4392,23 @@ exports[`Tabs should style as disabled 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c4 c5"
+            class="c5 c6"
           >
             <span
-              class="c6"
+              class="c7"
             >
               Enabled Tab
             </span>
@@ -4179,17 +4417,17 @@ exports[`Tabs should style as disabled 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c7"
+          class="c8"
           disabled=""
           role="tab"
           type="button"
         >
           <div
-            class="c8 c9"
+            class="c9 c10"
             disabled=""
           >
             <span
-              class="c10"
+              class="c11"
             >
               Disabled Tab
             </span>
@@ -4199,7 +4437,7 @@ exports[`Tabs should style as disabled 1`] = `
     </div>
     <div
       aria-label="Enabled Tab Tab Contents"
-      class="c11"
+      class="c12"
       role="tabpanel"
     >
       This tab is enabled
@@ -4232,6 +4470,23 @@ exports[`Tabs styled component should change tab color when active 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -4245,7 +4500,7 @@ exports[`Tabs styled component should change tab color when active 1`] = `
   overflow: visible;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4265,7 +4520,7 @@ exports[`Tabs styled component should change tab color when active 1`] = `
   padding-bottom: 6px;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4285,19 +4540,19 @@ exports[`Tabs styled component should change tab color when active 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4315,43 +4570,398 @@ exports[`Tabs styled component should change tab color when active 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c7 {
+  white-space: nowrap;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.c7:hover {
+  color: #000000;
+}
+
+.c7:focus {
+  z-index: 1;
+}
+
+.c12 {
+  min-height: 0;
+}
+
+.c9 {
+  background: blue;
+}
+
+.c5 {
+  background: green;
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    border-bottom: solid 2px #000000;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    border-bottom: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 "
+    role="tablist"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3 "
+      >
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c4 c5"
+          role="tab"
+          type="button"
+        >
+          <div
+            class="c6 c7"
+          >
+            <span
+              class="c8"
+            >
+              About
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c4 c9"
+          role="tab"
+          type="button"
+        >
+          <div
+            class="c10 c7"
+          >
+            <span
+              class="c11"
+            >
+              Activity
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c4 c5"
+          role="tab"
+          type="button"
+        >
+          <div
+            class="c6 c7"
+          >
+            <span
+              class="c8"
+            >
+              Stickers
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="Activity Tab Contents"
+      class="c12"
+      role="tabpanel"
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs with icon + reverse 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: solid 2px #000000;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4385,398 +4995,60 @@ exports[`Tabs styled component should change tab color when active 1`] = `
   min-height: 0;
 }
 
-.c8 {
-  background: blue;
-}
-
-.c4 {
-  background: green;
-}
-
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
+  .c5 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c9 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin-top: 2px;
-    margin-bottom: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    border-bottom: solid 2px #7D4CDB;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-bottom: 3px;
-  }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1 "
-    role="tablist"
-  >
-    <div
-      class="c1"
-    >
-      <div
-        class="c2 "
-      >
-        <button
-          aria-expanded="false"
-          aria-selected="false"
-          class="c3 c4"
-          role="tab"
-          type="button"
-        >
-          <div
-            class="c5 c6"
-          >
-            <span
-              class="c7"
-            >
-              About
-            </span>
-          </div>
-        </button>
-        <button
-          aria-expanded="true"
-          aria-selected="true"
-          class="c3 c8"
-          role="tab"
-          type="button"
-        >
-          <div
-            class="c9 c6"
-          >
-            <span
-              class="c10"
-            >
-              Activity
-            </span>
-          </div>
-        </button>
-        <button
-          aria-expanded="false"
-          aria-selected="false"
-          class="c3 c4"
-          role="tab"
-          type="button"
-        >
-          <div
-            class="c5 c6"
-          >
-            <span
-              class="c7"
-            >
-              Stickers
-            </span>
-          </div>
-        </button>
-      </div>
-    </div>
-    <div
-      aria-label="Activity Tab Contents"
-      class="c11"
-      role="tabpanel"
-    />
-  </div>
-</div>
-`;
-
-exports[`Tabs with icon + reverse 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: visible;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-bottom: solid 2px #000000;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-bottom: 6px;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-bottom: solid 2px #7D4CDB;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-bottom: 6px;
-}
-
-.c6 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-}
-
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #7D4CDB;
-}
-
-.c3 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c3:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c5 {
-  white-space: nowrap;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-}
-
-.c5:hover {
-  color: #000000;
-}
-
-.c5:focus {
-  z-index: 1;
-}
-
-.c10 {
-  min-height: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin-top: 2px;
-    margin-bottom: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    border-bottom: solid 2px #000000;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin-top: 2px;
-    margin-bottom: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    border-bottom: solid 2px #7D4CDB;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     width: 6px;
   }
 }
@@ -4789,29 +5061,29 @@ exports[`Tabs with icon + reverse 1`] = `
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2 "
+        class="c3 "
       >
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c4 c5"
+            class="c5 c6"
           >
             <svg
               color="text"
             />
             <div
-              class="c6"
+              class="c7"
             />
             <span
-              class="c7"
+              class="c8"
             >
               Tab 1
             </span>
@@ -4820,20 +5092,20 @@ exports[`Tabs with icon + reverse 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c3"
+          class="c4"
           role="tab"
           type="button"
         >
           <div
-            class="c8 c5"
+            class="c9 c6"
           >
             <span
-              class="c9"
+              class="c10"
             >
               Tab 2
             </span>
             <div
-              class="c6"
+              class="c7"
             />
             <svg
               color="control"
@@ -4844,7 +5116,7 @@ exports[`Tabs with icon + reverse 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="c10"
+      class="c11"
       role="tabpanel"
     >
       Tab body 1
