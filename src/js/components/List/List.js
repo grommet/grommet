@@ -1,6 +1,5 @@
 import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { Pin } from 'grommet-icons/icons/Pin';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -284,15 +283,15 @@ const List = React.forwardRef(
                   } else if (
                     disabledItems?.includes(
                       typeof itemKey === 'function'
-                        ? itemKey(orderableData[active])
-                        : orderableData[active],
+                        ? itemKey(data[active])
+                        : data[active],
                     )
                   ) {
                     event.preventDefault();
                   } else if (onClickItem) {
                     event.persist();
                     const adjustedEvent = event;
-                    adjustedEvent.item = orderableData[active];
+                    adjustedEvent.item = data[active];
                     adjustedEvent.index = active;
                     onClickItem(adjustedEvent);
                   }
@@ -313,7 +312,7 @@ const List = React.forwardRef(
                   const min = onOrder ? 1 : 0;
                   const max = onOrder
                     ? orderableData.length * 2 - 2
-                    : orderableData.length - 1;
+                    : data.length - 1;
                   updateActive(active >= min ? Math.min(active + 1, max) : min);
                 }
               : undefined
@@ -461,7 +460,7 @@ const List = React.forwardRef(
                   adjustedBackground =
                     adjustedBackground[index % adjustedBackground.length];
                 } else if (isPinned) {
-                  adjustedBackground = 'light-2';
+                  adjustedBackground = theme.list.item.pinned.color;
                 }
 
                 let adjustedBorder =
@@ -471,7 +470,7 @@ const List = React.forwardRef(
                 }
 
                 let clickProps;
-                if (onClickItem && !onOrder && !isPinned) {
+                if (onClickItem && !onOrder) {
                   clickProps = {
                     role: 'option',
                     tabIndex: -1,
@@ -643,6 +642,11 @@ const List = React.forwardRef(
                   }
                 }
 
+                // Pinned icon and settings
+                const Pin = theme.list.icons.pin;
+                const pinSize = theme.list.item.pinned.icon.size;
+                const pinPad = theme.list.item.pinned.icon.pad;
+
                 let displayPinned;
                 if (isPinned) {
                   boxProps = {
@@ -653,8 +657,8 @@ const List = React.forwardRef(
                   };
                   displayPinned = (
                     <Box direction="row" align="center" justify="end">
-                      <Box pad="small">
-                        <Pin viewBox="0 0 28 28" />
+                      <Box pad={pinPad}>
+                        <Pin size={pinSize} />
                       </Box>
                     </Box>
                   );
@@ -672,7 +676,6 @@ const List = React.forwardRef(
                     background={adjustedBackground}
                     border={adjustedBorder}
                     isDisabled={isDisabled}
-                    isPinned={isPinned}
                     flex={false}
                     pad={pad || theme.list.item.pad}
                     {...defaultItemProps}
