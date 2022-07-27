@@ -1,6 +1,5 @@
 import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { Pin } from 'grommet-icons/icons/Pin';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -461,7 +460,7 @@ const List = React.forwardRef(
                   adjustedBackground =
                     adjustedBackground[index % adjustedBackground.length];
                 } else if (isPinned) {
-                  adjustedBackground = 'light-2';
+                  adjustedBackground = theme.list.item.pinned.color;
                 }
 
                 let adjustedBorder =
@@ -643,6 +642,11 @@ const List = React.forwardRef(
                   }
                 }
 
+                // Pinned icon and settings
+                const Pin = theme.list.icons.pin;
+                const pinSize = theme.list.item.pinned.icon.size;
+                const pinPad = theme.list.item.pinned.icon.pad;
+
                 let displayPinned;
                 if (isPinned) {
                   boxProps = {
@@ -653,8 +657,8 @@ const List = React.forwardRef(
                   };
                   displayPinned = (
                     <Box direction="row" align="center" justify="end">
-                      <Box pad="small">
-                        <Pin viewBox="0 0 28 28" />
+                      <Box pad={pinPad}>
+                        <Pin size={pinSize} />
                       </Box>
                     </Box>
                   );

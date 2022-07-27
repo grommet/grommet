@@ -1680,6 +1680,10 @@ Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
             },
+            "pin": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
             "up": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
@@ -1694,6 +1698,13 @@ Object {
             "pad": Object {
               "horizontal": "medium",
               "vertical": "small",
+            },
+            "pinned": Object {
+              "color": "background-contrast",
+              "icon": Object {
+                "pad": "15px",
+                "size": "18px",
+              },
             },
           },
         },
