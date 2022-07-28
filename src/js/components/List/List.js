@@ -656,10 +656,13 @@ const List = React.forwardRef(
                     gap: 'medium',
                   };
                   displayPinned = (
-                    <Box direction="row" align="center" justify="end">
-                      <Box pad={pinPad}>
-                        <Pin size={pinSize} />
-                      </Box>
+                    <Box
+                      direction="row"
+                      align="center"
+                      justify="end"
+                      pad={pinPad}
+                    >
+                      <Pin size={pinSize} />
                     </Box>
                   );
                   content = <Box flex>{content}</Box>;
