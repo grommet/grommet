@@ -6,6 +6,8 @@ export interface TipProps {
   children?: React.ReactNode;
   content?: React.ReactNode;
   dropProps?: DropProps;
+  show?: boolean;
+  onShow?: () => void;
   plain?: boolean;
 }
 

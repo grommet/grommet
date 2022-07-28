@@ -5,6 +5,7 @@ import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
 import { Box } from '../../Box';
@@ -196,5 +197,46 @@ describe('Tip', () => {
     expect(onFocus).toHaveBeenCalledTimes(1);
     await user.tab();
     expect(onBlur).toHaveBeenCalledTimes(1);
+  });
+
+  describe('Controlled', () => {
+    const onShawn = jest.fn();
+    const onClick = jest.fn();
+    const tooltipText = 'tooltip';
+    const renderTipComponent = (show = false) =>
+      render(
+        <Grommet>
+          <Tip content="tooltip" show={show} onShow={onShawn}>
+            <Button label="Button" onClick={onClick} />
+          </Tip>
+        </Grommet>,
+      );
+
+    test('showing and hiding Tip using a prop', () => {
+      const { rerender } = renderTipComponent();
+
+      expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
+
+      rerender(
+        <Grommet>
+          <Tip content="tooltip" show={true} onShow={onShawn}>
+            <Button label="Button" onClick={onClick} />
+          </Tip>
+        </Grommet>,
+      );
+
+      expect(screen.getByText(tooltipText)).toBeInTheDocument();
+      expect(onShawn).toHaveBeenCalledTimes(1);
+    });
+
+    test('default Tip onMouseEnter and onFocus events bindings', async () => {
+      renderTipComponent();
+
+      await userEvent.hover(screen.getByRole('button'));
+      expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
+
+      await userEvent.tab();
+      expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
+    });
   });
 });

@@ -2801,7 +2801,9 @@ Object {
     "propTypes": Object {
       "content": [Function],
       "dropProps": [Function],
+      "onShow": [Function],
       "plain": [Function],
+      "show": [Function],
     },
     "render": [Function],
   },
