@@ -129,7 +129,10 @@ export interface DataTableProps<TRowType = any> {
 
 export interface DataTableExtendedProps<TRowType = any>
   extends DataTableProps<TRowType>,
-    Omit<JSX.IntrinsicElements['table'], 'onSelect' | 'placeholder'> {}
+    Omit<
+      JSX.IntrinsicElements['table'],
+      'onSelect' | 'placeholder' | 'border'
+    > {}
 
 declare class DataTable<TRowType = any> extends React.Component<
   DataTableExtendedProps<TRowType>
