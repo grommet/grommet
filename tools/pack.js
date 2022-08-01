@@ -1,5 +1,5 @@
 import path from 'path';
-import { deleteSync } from 'del';
+import del from 'del';
 import fs from 'fs';
 import cp from 'child_process';
 import tarball from 'tarball-extract';
@@ -80,7 +80,7 @@ try {
         `${JSON.stringify(JSON.parse(packageJSONAsString), null, 2)}\n`,
       );
 
-      deleteSync.sync(['./tmp']);
+      del.sync(['./tmp']);
     });
   });
 } catch (e) {

@@ -97,7 +97,7 @@
     "copyfiles": "^2.4.1",
     "core-js": "^3.24.0",
     "cross-env": "^7.0.3",
-    "del": "^7.0.0",
+    "del": "6.1.1",
     "elliptic": "^6.5.4",
     "eslint": "^8.20.0",
     "eslint-config-airbnb": "^19.0.4",
