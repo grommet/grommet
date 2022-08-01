@@ -1,4 +1,4 @@
-import { deleteAsync } from 'del';
+import del from 'del';
 import fs from 'fs-extra';
 import git from 'simple-git/promise';
 import path from 'path';
@@ -8,12 +8,12 @@ const localFolder = path.resolve('.tmp/grommet');
 const localDist = path.resolve('dist');
 
 if (process.env.CI) {
-  deleteAsync(localFolder).then(() => {
+  del(localFolder).then(() => {
     git()
       .silent(false)
       .clone(repoURL, localFolder)
       .then(() => git(localFolder).checkout('stable'))
-      .then(() => deleteAsync([`${localFolder}/**/*`]))
+      .then(() => del([`${localFolder}/**/*`]))
       .then(() => fs.copy(localDist, localFolder))
       .then(() => git(localFolder).add(['--all', '.']))
       .then(() => git(localFolder).commit('stable updated'))
