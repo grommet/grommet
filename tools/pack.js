@@ -1,5 +1,5 @@
 import path from 'path';
-import del from 'del';
+import { deleteSync } from 'del';
 import fs from 'fs';
 import cp from 'child_process';
 import tarball from 'tarball-extract';
@@ -33,14 +33,20 @@ try {
 
       fs.renameSync(
         path.resolve(__dirname, `../${tarballName}`),
-        path.resolve(__dirname, `../${json.name}-${json.version}-src-with-dependecies.tgz`)
+        path.resolve(
+          __dirname,
+          `../${json.name}-${json.version}-src-with-dependecies.tgz`,
+        ),
       );
 
-      const dependencies = fs.readdirSync(path.resolve(__dirname, '../tmp/package/node_modules'));
+      const dependencies = fs.readdirSync(
+        path.resolve(__dirname, '../tmp/package/node_modules'),
+      );
 
       dependencies.forEach((dependency) => {
         const dependencyPackageJSON = path.resolve(
-          __dirname, `../node_modules/${dependency}/package.json`
+          __dirname,
+          `../node_modules/${dependency}/package.json`,
         );
         if (fs.existsSync(dependencyPackageJSON)) {
           const contents = fs.readFileSync(dependencyPackageJSON);
@@ -61,27 +67,28 @@ try {
       });
 
       const dependencyLicense = path.resolve(
-        __dirname, `../${json.name}-${json.version}-licenses.json`
+        __dirname,
+        `../${json.name}-${json.version}-licenses.json`,
       );
 
       // write dependency license map
-      fs.writeFileSync(dependencyLicense, JSON.stringify(
-        licenseMap, null, 2)
-      );
+      fs.writeFileSync(dependencyLicense, JSON.stringify(licenseMap, null, 2));
 
       // revert original package.json
-      fs.writeFileSync(packageJSON, `${JSON.stringify(
-        JSON.parse(packageJSONAsString), null, 2)
-      }\n`);
+      fs.writeFileSync(
+        packageJSON,
+        `${JSON.stringify(JSON.parse(packageJSONAsString), null, 2)}\n`,
+      );
 
-      del.sync(['./tmp']);
+      deleteSync.sync(['./tmp']);
     });
   });
 } catch (e) {
   console.log(e);
 
   // revert original package.json
-  fs.writeFileSync(packageJSON, `${JSON.stringify(
-    JSON.parse(packageJSONAsString), null, 2)
-  }\n`);
+  fs.writeFileSync(
+    packageJSON,
+    `${JSON.stringify(JSON.parse(packageJSONAsString), null, 2)}\n`,
+  );
 }
