@@ -310,7 +310,7 @@ const Menu = forwardRef((props, ref) => {
         pad="small"
         direction="row"
         gap={item.gap}
-        justify={item.justify}
+        justify={item.justify || theme.menu.item?.justify}
       >
         {item.reverse && item.label}
         {item.icon}
