@@ -8,7 +8,11 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { selectedStyle, setFocusWithoutScroll } from '../../utils';
+import {
+  getHoverIndicatorStyle,
+  selectedStyle,
+  setFocusWithoutScroll,
+} from '../../utils';
 
 import { defaultProps } from '../../default-props';
 
@@ -32,6 +36,14 @@ const OptionsBox = styled.div`
 
 const SelectOption = styled(Button)`
   ${(props) => props.selected && props.textComponent && selectedStyle}
+  // applies theme.global.hover.background to the active
+  // option for mouse and keyboard interactions
+  ${(props) =>
+    props.active &&
+    getHoverIndicatorStyle(
+      !props.children && !props.theme.select.options ? undefined : 'background',
+      props.theme,
+    )}
   display: block;
   width: 100%;
 `;
@@ -86,22 +98,17 @@ const SelectContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [activeIndex, setActiveIndex] = useState(-1);
-    const [keyboardNavigation, setKeyboardNavigation] = useState();
+    const [activeIndex, setActiveIndex] = useState(usingKeyboard ? 0 : -1);
+    const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
     const searchRef = useRef();
     const optionsRef = useRef();
     const clearRef = useRef();
+    const activeRef = useRef();
 
+    // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {
-      const optionsNode = optionsRef.current;
-      if (optionsNode.children) {
-        const clearButton = clearRef.current;
-        let index = activeIndex;
-        if (clear && clear.position !== 'bottom' && clearButton) index += 1;
-        const optionNode = optionsNode.children[index];
-        if (optionNode) optionNode.focus();
-      }
-    }, [activeIndex, clear]);
+      if (activeIndex) activeRef.current?.focus();
+    }, [activeIndex]);
 
     // set initial focus
     useEffect(() => {
@@ -121,27 +128,14 @@ const SelectContainer = forwardRef(
           clear.position !== 'bottom'
         ) {
           setFocusWithoutScroll(clearButton);
-        } else if (optionsNode && optionsNode.children && usingKeyboard) {
-          // if the user is navigating with the keyboard set the
-          // first child as the active index when the drop opens
-          setFocusWithoutScroll(optionsNode.children[0]);
-          setActiveIndex(0);
+        } else if (usingKeyboard && activeRef.current) {
+          setFocusWithoutScroll(activeRef.current);
         } else if (optionsNode) {
           setFocusWithoutScroll(optionsNode);
         }
       }, 100);
       return () => clearTimeout(timer);
     }, [onSearch, usingKeyboard, clear]);
-
-    // clear keyboardNavigation after a while
-    useEffect(() => {
-      if (keyboardNavigation) {
-        // 100ms was empirically determined
-        const timer = setTimeout(() => setKeyboardNavigation(false), 100);
-        return () => clearTimeout(timer);
-      }
-      return undefined;
-    }, [keyboardNavigation]);
 
     const optionLabel = useCallback(
       (index) => applyKey(options[index], labelKey),
@@ -417,6 +411,7 @@ const SelectContainer = forwardRef(
             tabIndex="-1"
             ref={optionsRef}
             aria-multiselectable={multiple}
+            onMouseMove={() => setKeyboardNavigation(false)}
           >
             {shouldShowClearButton('top') && (
               <ClearButton
@@ -472,7 +467,12 @@ const SelectContainer = forwardRef(
                     <SelectOption
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
-                      ref={optionRef}
+                      // merge optionRef and activeRef
+                      ref={(node) => {
+                        // eslint-disable-next-line no-param-reassign
+                        if (optionRef) optionRef.current = node;
+                        if (optionActive) activeRef.current = node;
+                      }}
                       tabIndex={optionSelected ? '0' : '-1'}
                       role="option"
                       aria-setsize={options.length}
@@ -483,7 +483,6 @@ const SelectContainer = forwardRef(
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
-                      hoverIndicator={!child ? undefined : 'background'}
                       label={!child ? optionLabel(index) : undefined}
                       disabled={optionDisabled || undefined}
                       active={optionActive}
