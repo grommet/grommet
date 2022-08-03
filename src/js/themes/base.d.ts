@@ -1026,7 +1026,7 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
-    button?: ButtonType;
+    item?: ButtonType;
     drop?: DropType;
     extend?: ExtendType;
     group?: {

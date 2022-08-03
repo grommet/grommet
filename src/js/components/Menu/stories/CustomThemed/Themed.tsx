@@ -65,9 +65,9 @@ const customBreakpoints: ThemeType = {
       down: FormDown,
       up: FormUp,
     },
-    button: {
+    item: {
       color: 'brand',
-      style: { margin: '6px' },
+      style: { fontFamily: 'Arial', fontWeight: 'bold' },
     },
     extend: `border: 3px solid gray`,
   },
