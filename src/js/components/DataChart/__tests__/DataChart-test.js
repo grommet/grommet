@@ -402,6 +402,22 @@ describe('DataChart', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('negative values', () => {
+    const { container } = render(
+      <Grommet>
+        {[undefined, 'coarse', 'medium', 'find'].map((granularity) => (
+          <DataChart
+            key={granularity || 'u'}
+            data={[{ a: 1 }, { a: -2 }, { a: 3 }]}
+            series={['a']}
+          />
+        ))}
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('placeholder text', () => {
     const { container } = render(
       <Grommet>
