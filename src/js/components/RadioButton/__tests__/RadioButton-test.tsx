@@ -141,6 +141,27 @@ describe('RadioButton', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders custom circle icon', () => {
+    const CustomCircleIcon = ({ ...rest }) => (
+      <svg data-testid="custom-radioButton-icon" {...rest} />
+    );
+    const customTheme = {
+      radioButton: {
+        icons: {
+          circle: CustomCircleIcon,
+        },
+      },
+    };
+
+    const { container, getByTestId } = render(
+      <Grommet theme={customTheme}>
+        <RadioButton name="test" checked onChange={jest.fn()} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    expect(getByTestId('custom-radioButton-icon')).toBeDefined();
+  });
+
   test('should apply a11yTitle or aria-label', () => {
     const { container, getByLabelText } = render(
       <Grommet>
