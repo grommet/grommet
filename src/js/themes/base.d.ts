@@ -368,11 +368,12 @@ export interface ThemeType {
         color?: ColorType;
         size?: string;
       };
-      shadow?: 
-        string | {
-        color?: ColorType;
-        size?: string;
-      };
+      shadow?:
+        | string
+        | {
+            color?: ColorType;
+            size?: string;
+          };
     };
     font?: {
       face?: string;
@@ -1257,7 +1258,7 @@ export interface ThemeType {
       size?: string;
     };
     icons?: {
-      circle?: string;
+      circle?: any;
     };
     gap?: string;
     size?: string;
