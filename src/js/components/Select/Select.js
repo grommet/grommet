@@ -20,7 +20,12 @@ import { FormContext } from '../Form/FormContext';
 import { TextInput } from '../TextInput';
 
 import { SelectContainer } from './SelectContainer';
-import { applyKey } from './utils';
+import {
+  applyKey,
+  // SelectTextInput,
+  // HiddenInput,
+  // StyledSelectDropButton,
+} from './utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
 
