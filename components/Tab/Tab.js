@@ -70,7 +70,7 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var tabStyles = {};
   var tabRef = (0, _utils.useForwardedRef)(ref);
   (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
-    if (tabRef.current) {
+    if (tabRef.current && tabsContextRef) {
       tabsContextRef.current = tabRef.current;
     }
   });

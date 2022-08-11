@@ -37,6 +37,16 @@ describe('Tabs', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('no Tabs', () => {
+    const { container } = render(
+      <Grommet>
+        <Tab />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('Tab', () => {
     const { container } = render(
       <Grommet>
@@ -314,10 +324,10 @@ describe('Tabs', () => {
     const { getByText, container } = render(
       <Grommet>
         <Tabs>
-          <Tab title="Tab 1">
-            Tab body 1
+          <Tab title="Tab 1">Tab body 1</Tab>
+          <Tab title="Tab 2" onClick={onClick}>
+            Tab body 2
           </Tab>
-          <Tab title="Tab 2" onClick={onClick}>Tab body 2</Tab>
         </Tabs>
       </Grommet>,
     );

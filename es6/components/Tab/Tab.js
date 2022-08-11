@@ -50,7 +50,7 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var tabStyles = {};
   var tabRef = useForwardedRef(ref);
   useLayoutEffect(function () {
-    if (tabRef.current) {
+    if (tabRef.current && tabsContextRef) {
       tabsContextRef.current = tabRef.current;
     }
   });
