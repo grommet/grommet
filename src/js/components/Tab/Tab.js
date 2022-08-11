@@ -49,7 +49,7 @@ const Tab = forwardRef(
     const tabRef = useForwardedRef(ref);
 
     useLayoutEffect(() => {
-      if (tabRef.current) {
+      if (tabRef.current && tabsContextRef) {
         tabsContextRef.current = tabRef.current;
       }
     });
