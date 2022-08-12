@@ -13,8 +13,6 @@ export interface MultiSelectProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   children?: (...args: any[]) => any;
-  clear?: boolean | { position?: 'top' | 'bottom'; label?: string };
-  closeOnChange?: boolean;
   defaultValue?: string | number | object | (string | number | object)[];
   disabled?: boolean | (number | string | object)[];
   disabledKey?: string | ((...args: any[]) => any);
@@ -28,6 +26,7 @@ export interface MultiSelectProps {
   dropTarget?: object;
   dropProps?: DropProps;
   focusIndicator?: boolean;
+  helpContent: React.ReactNode;
   icon?: boolean | ((...args: any[]) => any) | React.ReactNode | React.FC;
   id?: string;
   labelKey?: string | ((...args: any[]) => string | React.ReactNode);
@@ -52,6 +51,7 @@ export interface MultiSelectProps {
     | string
     | { key: string; reduce?: boolean }
     | ((...args: any[]) => string);
+  visibleSelection: boolean;
   emptySearchMessage?: string | React.ReactNode;
 }
 

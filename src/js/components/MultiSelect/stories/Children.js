@@ -21,7 +21,6 @@ export const Children = () => {
   const [selected, setSelected] = useState([]);
 
   const onRemoveSeason = (season) => {
-    const seasonIndex = allSeasons.indexOf(season);
     setSelected(selected.filter((selectedSeason) => selectedSeason !== season));
   };
 
@@ -86,7 +85,6 @@ export const Children = () => {
         )}
         options={allSeasons}
         value={selected}
-        // disabled={[2, 6]}
         onChange={({ value }) => {
           setSelected([...value].sort());
         }}

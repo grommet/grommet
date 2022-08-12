@@ -2,52 +2,26 @@ import React, { useState } from 'react';
 
 import { Box, Text } from 'grommet';
 import { MultiSelect } from '../MultiSelect';
-import { CaretDown, Github, Slack } from 'grommet-icons';
-
-// const dummyOptions = [
-//   'French Vanilla Cake with Buttercream',
-//   'Sweet Grilled Peaches',
-//   'Chocolate Chip Cookies',
-//   'Pineapple Upside-Down Cake',
-//   'Peanut Butter Chocolate Fondue',
-//   'Strawberry Shortcake',
-//   'Peach Cobbler',
-//   'German Chocolate Cake',
-//   'Carrot Cake with Cream Cheese Frosting',
-//   'Cinnamon Coffee Cake',
-// ];
 
 const dummyOptions = [
-  { name: 'first', val: '1' },
-  { name: 'second', val: '2' },
+  'French Vanilla Cake with Buttercream',
+  'Sweet Grilled Peaches',
+  'Chocolate Chip Cookies',
+  'Pineapple Upside-Down Cake',
+  'Peanut Butter Chocolate Fondue',
+  'Strawberry Shortcake',
+  'Peach Cobbler',
+  'German Chocolate Cake',
+  'Carrot Cake with Cream Cheese Frosting',
+  'Cinnamon Coffee Cake',
 ];
-
-// const dummyOptions = [
-//   'Apple',
-//   'Orange',
-//   'Banana',
-//   'Grape',
-//   'Melon',
-//   'Strawberry',
-//   'Kiwi',
-//   'Mango',
-//   'Raspberry',
-//   'Rhubarb',
-// ];
 
 export const Disabled = () => {
   const [options, setOptions] = useState(dummyOptions.sort());
-  // const [valueMultiple, setValueMultiple] = useState([
-  //   'Chocolate Chip Cookies',
-  //   'Strawberry Shortcake',
-  // ]);
   const [valueMultiple, setValueMultiple] = useState([
-    // '1'
-    { name: 'first', val: '1' }
-    // 'Chocolate Chip Cookies',
-    // 'Strawberry Shortcake',
+    'Chocolate Chip Cookies',
+    'Strawberry Shortcake',
   ]);
-  // const [search, setSearch] = useState();
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
@@ -55,28 +29,16 @@ export const Disabled = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>Multi-Select Disabled</Text>
       <MultiSelect
+        width="medium"
         // limit={5}
         visibleSelection
-        // dropProps={{
-        //   background: 'pink',
-        // }}
+        dropProps={{
+          width: 'medium',
+        }}
         // icon={<CaretDown />}
         // icon={false}
-        // helpContent={
-        //   <Box
-        //     direction="row"
-        //     justify="between"
-        //     flex={false}
-        //     pad={{ horizontal: 'xsmall', bottom: 'xsmall' }}
-        //   >
-        //     <Text size="small">Select up to 5</Text>
-        //   </Box>
-        // }
-        // disabled={['Chocolate Chip Cookies', 'Pineapple Upside-Down Cake']}
+        disabled={['Chocolate Chip Cookies', 'Pineapple Upside-Down Cake']}
         value={valueMultiple}
-        valueKey={{ key: "val" }}
-        labelKey="name"
-        // valueLabel="name"
         placeholder="Select"
         options={options}
         onSearch={(text) => {
@@ -113,7 +75,6 @@ export const Disabled = () => {
           setOptions(sortedAllOptions);
         }}
         onChange={({ value }) => {
-          console.log(value)
           setValueMultiple(value);
         }}
       />

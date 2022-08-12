@@ -3,12 +3,6 @@ import React, { useCallback, useState } from 'react';
 import { Box, Button, Form, FormField } from 'grommet';
 import { MultiSelect } from '../MultiSelect';
 
-// const options = [
-//   { label: 'option 1', value: 1 },
-//   { label: 'option 2', value: 2 },
-//   { label: 'option 3', value: 3 },
-// ];
-
 const options = [
   'Apple',
   'Orange',
@@ -21,7 +15,6 @@ const options = [
   'Raspberry',
   'Rhubarb',
 ];
-
 
 export const InsideFormField = () => {
   const [value, setValue] = useState({});
@@ -42,8 +35,6 @@ export const InsideFormField = () => {
             name="select"
             placeholder="placeholder"
             options={options}
-            // labelKey="label"
-            // valueKey="value"
           />
         </FormField>
         <Button type="submit" label="Update" primary />

@@ -26,36 +26,33 @@ export const Children = () => {
     );
   };
 
-  const renderSeason = (season) => {
-    console.log(season);
-    return (
-      <Button
-        key={`season_tag_${season}`}
-        href="#"
-        onClick={(event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          onRemoveSeason(season);
-        }}
-        onFocus={(event) => event.stopPropagation()}
+  const renderSeason = (season) => (
+    <Button
+      key={`season_tag_${season}`}
+      href="#"
+      onClick={(event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        onRemoveSeason(season);
+      }}
+      onFocus={(event) => event.stopPropagation()}
+    >
+      <Box
+        align="center"
+        direction="row"
+        gap="xsmall"
+        pad={{ vertical: 'xsmall', horizontal: 'small' }}
+        margin="xsmall"
+        background="brand"
+        round="large"
       >
-        <Box
-          align="center"
-          direction="row"
-          gap="xsmall"
-          pad={{ vertical: 'xsmall', horizontal: 'small' }}
-          margin="xsmall"
-          background="brand"
-          round="large"
-        >
-          <Text size="small">{season}</Text>
-          <Box round="full" margin={{ left: 'xsmall' }}>
-            <FormClose size="small" style={{ width: '12px', height: '12px' }} />
-          </Box>
+        <Text size="small">{season}</Text>
+        <Box round="full" margin={{ left: 'xsmall' }}>
+          <FormClose size="small" style={{ width: '12px', height: '12px' }} />
         </Box>
-      </Button>
-    );
-  };
+      </Box>
+    </Button>
+  );
 
   const renderOption = (option, state) => (
     <Box pad="small" background={state.active ? 'active' : undefined}>
@@ -68,10 +65,9 @@ export const Children = () => {
     // <Grommet theme={...}>
     <Box fill align="center" justify="center">
       <Select
-        // <MultiSelect
         closeOnChange={false}
         multiple
-        valueLabel={
+        value={
           <Box wrap direction="row" width="small">
             {selected && selected.length ? (
               selected.map((index) => renderSeason(allSeasons[index]))
@@ -86,14 +82,13 @@ export const Children = () => {
           </Box>
         }
         options={allSeasons}
-        // value={selected}
-        // disabled={[2, 6]}
+        selected={selected}
+        disabled={[2, 6]}
         onChange={({ selected: nextSelected }) => {
           setSelected([...nextSelected].sort());
         }}
       >
-        {/* {renderOption} */}
-        {/* </MultiSelect> */}
+        {renderOption}
       </Select>
     </Box>
     // </Grommet>

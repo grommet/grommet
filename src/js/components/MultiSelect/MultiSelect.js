@@ -28,21 +28,12 @@ import { TextInput } from '../TextInput';
 import { Text } from '../Text';
 
 import { MultiSelectContainer } from './MultiSelectContainer';
-import {
-  applyKey,
-  // SelectTextInput,
-  // HiddenInput,
-  // StyledSelectDropButton,
-} from '../Select/utils';
+import { applyKey, HiddenInput } from '../Select/utils';
 import { MessageContext } from '../../contexts/MessageContext';
-// import { SelectPropTypes } from './propTypes';
+import { MultiSelectPropTypes } from './propTypes';
 
 const SelectTextInput = styled(TextInput)`
   cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
-`;
-
-const HiddenInput = styled.input`
-  display: none;
 `;
 
 const StyledSelectDropButton = styled(DropButton)`
@@ -111,6 +102,7 @@ const MultiSelect = forwardRef(
       valueKey,
       valueLabel,
       visibleSelection = false,
+      width,
       ...rest
     },
     ref,
@@ -297,32 +289,13 @@ const MultiSelect = forwardRef(
 
     // element to show, trumps inputValue
     const selectValue = useMemo(() => {
-      console.log(value.length);
       if (valueLabel instanceof Function) {
-        console.log('HERE 2');
         if (value) {
-          console.log('!!');
           return valueLabel(value);
         }
       } else if (valueLabel) {
-        console.log('HERE 1');
         return valueLabel;
-      }
-      // else if (React.isValidElement(value)) return value; // deprecated
-      else if (value.length > 0 && visibleSelection) {
-        console.log('lin 313');
-        console.log(value);
-        console.log(
-          allOptions.filter((i) => {
-            console.log(i);
-            return (
-              value.indexOf(
-                valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
-              ) !== -1
-            );
-          }),
-        );
-        console.log(allOptions.find((i) => value.includes(i.value)));
+      } else if (value.length > 0 && visibleSelection) {
         return (
           <>
             <Box
@@ -339,16 +312,13 @@ const MultiSelect = forwardRef(
                         valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
                       ) !== -1,
                   )
+                  /* eslint-disable-next-line array-callback-return, 
+                  consistent-return */
                   .map((i) => {
-                    console.log('HERE');
                     const iValue =
                       valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
                     const indexOptions = allOptions.indexOf(i);
-                    const indexValue = value.indexOf(i);
                     const iLabel = optionLabel(indexOptions);
-                    // console.log(value.indexOf(iValue));
-                    // console.log(i[valueKey.key]);
-                    // console.log(valueKey.key);
                     if (value.indexOf(iValue) < 5) {
                       let child;
                       if (children) {
@@ -378,25 +348,17 @@ const MultiSelect = forwardRef(
                           hoverIndicator
                           fill="horizontal"
                           tabIndex="0"
-                          // focusIndicator={focusIndicator}
                           onClick={(event) => {
                             if (!isDisabled(indexOptions)) {
-                              // console.log('in onclick');
-                              let intermediate = [...value];
+                              const intermediate = [...value];
                               const index = value.indexOf(iValue);
                               if (intermediate.includes(iValue)) {
-                                // intermediate = intermediate.filter(
-                                //   (v) => v !== iValue,
-                                // );
                                 onSelectChange(event, {
                                   option: iValue,
                                   value: intermediate.filter(
                                     (v) => v !== iValue,
                                   ),
                                 });
-                                // console.log(value[index + 1]);
-                                // console.log(iValue);
-                                // console.log(intermediate);
                                 if (index !== intermediate.length - 1) {
                                   let timer = 0;
                                   // if index is the last one visible
@@ -409,61 +371,38 @@ const MultiSelect = forwardRef(
                                       `selected-${intermediate[index + 1]}`,
                                     );
                                     if (nextFocus) nextFocus.focus();
-                                    let result = allOptions.find((obj, i) => {
-                                      return (
-                                        // to do: valuekey can be a string or object
-                                        optionValue(i) ===
-                                        intermediate[index + 1]
-                                        // obj[valueKey.key] === value[index + 1]
-                                      );
-                                    });
-                                    // console.log('result ', result);
-                                    // console.log(allOptions.indexOf(result));
-                                    // console.log(
-                                    //   optionLabel(allOptions.indexOf(result)),
-                                    // );
+                                    const result = allOptions.find(
+                                      (obj, j) =>
+                                        optionValue(j) ===
+                                        intermediate[index + 1],
+                                    );
                                     setShowA11yDiv(
-                                      `Unselected ${iLabel}. Focus moved to ${optionLabel(
+                                      `Unselected ${iLabel}. 
+                                      Focus moved to ${optionLabel(
                                         allOptions.indexOf(result),
                                       )}`,
                                     );
                                   }, timer);
                                 } else if (intermediate.length !== 1) {
-                                  // console.log(value[index + 1]);
-                                  // console.log(iValue);
-                                  // console.log(intermediate);
                                   const nextFocus = document.getElementById(
                                     `selected-${intermediate[index - 1]}`,
                                   );
                                   if (nextFocus) nextFocus.focus();
-                                  let result = allOptions.find((obj, i) => {
-                                    return (
-                                      // to do: valuekey can be a string or object
-                                      optionValue(i) === intermediate[index - 1]
-                                      // obj[valueKey.key] === value[index + 1]
-                                    );
-                                  });
-                                  setShowA11yDiv(
-                                    `Unselected ${iLabel}. Focus moved to ${optionLabel(
-                                      allOptions.indexOf(result),
-                                    )}`,
+                                  const result = allOptions.find(
+                                    (obj, j) =>
+                                      optionValue(j) ===
+                                      intermediate[index - 1],
                                   );
-                                } else {
-                                  // setShowA11yDiv(
-                                  //   `Unselected ${iLabel}. Focus moved to Select.`,
-                                  // );
-                                  // setShowA11yDiv(undefined);
-                                  if (dropButtonRef.current)
-                                    dropButtonRef.current.focus();
-                                }
+                                  setShowA11yDiv(
+                                    `Unselected ${iLabel}. Focus moved to 
+                                    ${optionLabel(allOptions.indexOf(result))}`,
+                                  );
+                                } else if (dropButtonRef.current)
+                                  dropButtonRef.current.focus();
                               }
-                              // onSelectChange(event, {
-                              //   option: iValue,
-                              //   value: intermediate,
-                              // });
                             }
                           }}
-                          key={iValue}
+                          key={iLabel}
                           id={`selected-${iValue}`}
                         >
                           {children && child ? (
@@ -480,7 +419,7 @@ const MultiSelect = forwardRef(
                                   {iLabel}
                                 </Box>
                               }
-                              key={iValue}
+                              key={iLabel}
                               pad="xsmall"
                               tabIndex="-1"
                               checked={value.includes(iValue)}
@@ -497,7 +436,6 @@ const MultiSelect = forwardRef(
                   overflow="hidden"
                   // announce when an item is removed from selected options
                   aria-live="assertive"
-                  // aria-live="polite"
                 >
                   <Text>{showA11yDiv}</Text>
                 </Box>
@@ -518,6 +456,12 @@ const MultiSelect = forwardRef(
       }
       return undefined;
     }, [
+      children,
+      dropButtonRef,
+      isDisabled,
+      optionLabel,
+      optionValue,
+      valueKey,
       value,
       valueLabel,
       visibleSelection,
@@ -563,7 +507,6 @@ const MultiSelect = forwardRef(
     // return the value.
     // If reduce is true, this value will be used for the 'value'
     // delivered via 'onChange'.
-    let displayValue = undefined;
     const inputValue = useMemo(() => {
       if (!selectValue) {
         if (optionIndexesInValue.length === 0) return '';
@@ -625,22 +568,22 @@ const MultiSelect = forwardRef(
       } selected.`,
       'aria-expanded': Boolean(open),
       'aria-haspopup': 'listbox',
-      id: id,
+      id,
       disabled: disabled === true || undefined,
-      open: open,
-      focusIndicator: focusIndicator,
-      onFocus: onFocus,
-      onBlur: onBlur,
-      gridArea: gridArea,
-      margin: margin,
+      open,
+      focusIndicator,
+      onFocus,
+      onBlur,
+      gridArea,
+      margin,
       onOpen: onRequestOpen,
       onClose: onRequestClose,
-      onClick: onClick,
+      onClick,
       callerPlain: plain,
-      plain: plain, // Button should be plain
-      dropProps: dropProps,
-      dropContent: dropContent,
-      theme: theme,
+      plain, // Button should be plain
+      dropProps,
+      dropContent,
+      theme,
     };
 
     return (
@@ -655,9 +598,11 @@ const MultiSelect = forwardRef(
             ref={selectBoxRef}
             flex={false}
             callerPlain={plain}
+            width={width}
           >
-            <Box direction="column">
+            <Box direction="column" width="100%">
               <DropButton
+                fill="horizontal"
                 alignSelf="start"
                 {...dropButtonProps}
                 dropAlign={
@@ -665,9 +610,9 @@ const MultiSelect = forwardRef(
                 }
                 dropTarget={dropTarget || selectBoxRef.current}
               >
-                {selectValue || displayLabelKey || displayValue ? (
+                {selectValue || displayLabelKey ? (
                   <>
-                    <Box direction="row">
+                    <Box direction="row" width="100%">
                       <SelectTextInput
                         a11yTitle={
                           (ariaLabel || a11yTitle) &&
@@ -681,9 +626,11 @@ const MultiSelect = forwardRef(
                         focusIndicator={false}
                         id={id ? `${id}__input` : undefined}
                         name={name}
+                        width="100%"
                         {...rest}
                         tabIndex="-1"
                         type="text"
+                        // eslint-disable-next-line max-len
                         placeholder={`${value.length} selected of ${allOptions.length}`}
                         plain
                         readOnly
@@ -724,12 +671,12 @@ const MultiSelect = forwardRef(
                           value && typeof value === 'string' ? `, ${value}` : ''
                         }`
                       }
-                      // When Select is disabled, we want to show a default cursor
-                      // but not have disabled styling come from TextInput
-                      // Disabled can be a bool or an array of options to disable.
-                      // We only want to disable the TextInput if the control
-                      // button should be disabled which occurs when disabled
-                      // equals true.
+                      // When Select is disabled, we want to show a default
+                      // cursor but not have disabled styling come from
+                      // TextInput. Disabled can be a bool or an array of
+                      // options to disable. We only want to disable the
+                      // TextInput if the control button should be
+                      // disabled which occurs when disabled equals true.
                       defaultCursor={disabled === true || undefined}
                       focusIndicator={false}
                       id={id ? `${id}__input` : undefined}
@@ -762,7 +709,7 @@ const MultiSelect = forwardRef(
                   </Box>
                 )}
               </DropButton>
-              {!open && (selectValue || displayLabelKey || displayValue)}
+              {!open && (selectValue || displayLabelKey)}
             </Box>
           </StyledSelectBox>
         ) : (
@@ -778,6 +725,7 @@ const MultiSelect = forwardRef(
               direction="row"
               justify="between"
               background={theme.select.background}
+              width={width}
             >
               <Box direction="row" flex basis="auto">
                 {selectValue || displayLabelKey ? (
@@ -847,6 +795,6 @@ const MultiSelect = forwardRef(
 MultiSelect.defaultProps = { ...defaultProps };
 
 MultiSelect.displayName = 'MultiSelect';
-// Select.propTypes = SelectPropTypes;
+MultiSelect.propTypes = MultiSelectPropTypes;
 
 export { MultiSelect };

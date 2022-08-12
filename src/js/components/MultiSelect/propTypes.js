@@ -6,14 +6,6 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     ...genericProps,
     children: PropTypes.func,
-    clear: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        position: PropTypes.oneOf(['top', 'bottom']),
-        label: PropTypes.string,
-      }),
-    ]),
-    closeOnChange: PropTypes.bool,
     defaultValue: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object,
@@ -50,6 +42,7 @@ if (process.env.NODE_ENV !== 'production') {
     dropTarget: PropTypes.object,
     dropProps: PropTypes.object,
     focusIndicator: PropTypes.bool,
+    helpContent: PropTypes.element,
     icon: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.func,
@@ -57,6 +50,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.elementType,
     ]),
     labelKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    limit: PropTypes.number,
     messages: PropTypes.shape({
       multiple: PropTypes.string,
     }),
@@ -71,7 +65,6 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
-        PropTypes.bool,
         PropTypes.element,
         PropTypes.object,
       ]),
@@ -95,7 +88,6 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
     value: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.element, // deprecated, use valueLabel
       PropTypes.object,
       PropTypes.number,
       PropTypes.arrayOf(
@@ -115,7 +107,8 @@ if (process.env.NODE_ENV !== 'production') {
         reduce: PropTypes.bool,
       }),
     ]),
+    visibleSelection: PropTypes.bool,
     emptySearchMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   };
 }
-export const SelectPropTypes = PropType;
+export const MultiSelectPropTypes = PropType;

@@ -2,18 +2,6 @@ import React, { useState } from 'react';
 
 import { Box, Text } from 'grommet';
 import { MultiSelect } from '../MultiSelect';
-// const dummyOptions = [
-//   'Azure MAS-TRM:v2019.03',
-//   'Azure NZISM:v3.2Azure NZISM:v3.2',
-//   'Azure NIST800-53:R4',
-//   'Azure NZISM:v3.3',
-//   'Azure IS027001:2013',
-//   'Azure PCI-DSS:v3.2.1',
-//   'Pavlo DEFAULT:v1',
-//   'Azure Security Health Check:v2.0',
-//   'Butterfly:v1.0',
-//   'KStadnyk:v1.0',
-// ];
 
 const dummyOptions = [
   'Apple',
@@ -39,49 +27,6 @@ export const Default = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>Multi-Select Default</Text>
       <MultiSelect
-        // limit={5}
-        // disabled
-        // helpContent={<Box>help</Box>}
-        // contentAboveSearch={
-        //   <Box
-        //     pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
-        //     direction="row"
-        //     justify="between"
-        //     gap="small"
-        //   >
-        //     {search === '' || search === undefined ? (
-        //       <>
-        //         <Box alignSelf="center">
-        //           {valueMultiple.length === 0 ? (
-        //             <Text size="small">0 selected</Text>
-        //           ) : (
-        //             <Text size="small">
-        //               {valueMultiple.length} selected of {dummyOptions.length}
-        //             </Text>
-        //           )}
-        //         </Box>
-        //         <Box>
-        //           {options.length > 0 &&
-        //             (valueMultiple.length === 0 ? (
-        //               <Button
-        //                 a11yTitle={`Select all ${dummyOptions.length} options`}
-        //                 label="Select All"
-        //                 onClick={() => setValueMultiple(dummyOptions)}
-        //               />
-        //             ) : (
-        //               <Button
-        //                 a11yTitle={`${valueMultiple.length} options selected. Clear all?`}
-        //                 label="Clear All"
-        //                 onClick={() => setValueMultiple([])}
-        //               />
-        //             ))}
-        //         </Box>
-        //       </>
-        //     ) : (
-        //       <Text size="small">{`${valueMultiple.length} selected`}</Text>
-        //     )}
-        //   </Box>
-        // }
         value={valueMultiple}
         placeholder="Select"
         options={options}

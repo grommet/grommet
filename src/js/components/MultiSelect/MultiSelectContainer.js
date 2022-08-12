@@ -26,15 +26,22 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
 import { StyledContainer } from '../Select/StyledSelect';
-import { applyKey } from '../Select/utils';
+import {
+  applyKey,
+  OptionsBox,
+  optionLabel,
+  optionValue,
+  isDisabled,
+  isSelected,
+} from '../Select/utils';
 
 // position relative is so scroll can be managed correctly
-const OptionsBox = styled.div`
-  position: relative;
-  scroll-behavior: smooth;
-  overflow: auto;
-  outline: none;
-`;
+// const OptionsBox = styled.div`
+//   position: relative;
+//   scroll-behavior: smooth;
+//   overflow: auto;
+//   outline: none;
+// `;
 
 const SelectOption = styled(Button)`
   ${(props) => props.selected && props.textComponent && selectedStyle}
@@ -84,8 +91,8 @@ const MultiSelectContainer = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     // const [activeIndex, setActiveIndex] = useState(usingKeyboard ? 0 : -1);
     const [activeIndex, setActiveIndex] = useState(-1);
-    // const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
-    const [keyboardNavigation, setKeyboardNavigation] = useState();
+    const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
+    // const [keyboardNavigation, setKeyboardNavigation] = useState();
     const searchRef = useRef();
     const optionsRef = useRef();
     const [disabled, setDisabled] = useState(disabledProp);
@@ -105,99 +112,6 @@ const MultiSelectContainer = forwardRef(
       }
     }, [activeIndex]);
 
-    // set initial focus
-    useEffect(() => {
-      // need to wait for Drop to be ready
-      const timer = setTimeout(() => {
-        const optionsNode = optionsRef.current;
-        if (onSearch) {
-          const searchInput = searchRef.current;
-          if (searchInput && searchInput.focus) {
-            // setFocusWithoutScroll(searchInput);
-          }
-        } else if (optionsNode && optionsNode.children && usingKeyboard) {
-          // if the user is navigating with the keyboard set the
-          // first child as the active index when the drop opens
-          // setFocusWithoutScroll(optionsNode.children[0]);
-          // setActiveIndex(0);
-        } else if (usingKeyboard && activeRef.current) {
-          // setFocusWithoutScroll(activeRef.current);
-        } else if (optionsNode) {
-          // setFocusWithoutScroll(optionsNode);
-        }
-      }, 100);
-      return () => clearTimeout(timer);
-    }, [onSearch, usingKeyboard]);
-
-    // clear keyboardNavigation after a while
-    // useEffect(() => {
-    //   if (keyboardNavigation) {
-    //     // 100ms was empirically determined
-    //     const timer = setTimeout(() => setKeyboardNavigation(false), 100);
-    //     return () => clearTimeout(timer);
-    //   }
-    //   return undefined;
-    // }, [keyboardNavigation]);
-
-    const optionLabel = useCallback(
-      (index) => applyKey(options[index], labelKey),
-      [labelKey, options],
-    );
-
-    const optionValue = useCallback(
-      (index) => applyKey(options[index], valueKey),
-      [options, valueKey],
-    );
-
-    const isDisabled = useCallback(
-      (index) => {
-        const option = options[index];
-        let result;
-        if (disabledKey) {
-          result = applyKey(option, disabledKey);
-        } else if (Array.isArray(disabled)) {
-          if (typeof disabled[0] === 'number') {
-            result = disabled.indexOf(index) !== -1;
-          } else {
-            const optionVal = optionValue(index);
-            result = disabled.indexOf(optionVal) !== -1;
-          }
-        }
-        return result;
-      },
-      [disabled, disabledKey, options, optionValue],
-    );
-
-    const isSelected = useCallback(
-      (index) => {
-        let result;
-        const optionVal = optionValue(index);
-        if (Array.isArray(value)) {
-          if (value.length === 0) {
-            result = false;
-          } else if (typeof value[0] !== 'object') {
-            result = value.indexOf(optionVal) !== -1;
-          } else if (valueKey) {
-            result = value.some((valueItem) => {
-              const valueValue =
-                typeof valueKey === 'function'
-                  ? valueKey(valueItem)
-                  : valueItem[valueKey];
-              return valueValue === optionVal;
-            });
-          }
-        } else if (valueKey && typeof value === 'object') {
-          const valueValue =
-            typeof valueKey === 'function' ? valueKey(value) : value[valueKey];
-          result = valueValue === optionVal;
-        } else {
-          result = value === optionVal;
-        }
-        return result;
-      },
-      [optionValue, value, valueKey],
-    );
-
     const selectOption = useCallback(
       (index) => (event) => {
         if (onChange) {
@@ -215,40 +129,6 @@ const MultiSelectContainer = forwardRef(
               : allOptions[i],
           );
           const nextSelected = nextOptionIndexesInValue;
-          // console.log(options[index]);
-          // console.log(nextValue);
-          // console.log(nextSelected);
-          // if (limit && nextValue.length === limit) {
-          //   console.log('In limit');
-          //   const originallyDisabled = (index) => {
-          //     const option = allOptions[index];
-          //     let result;
-          //     if (disabledKey) {
-          //       result = applyKey(option, disabledKey);
-          //     } else if (Array.isArray(disabledProp)) {
-          //       if (typeof disabledProp[0] === 'number') {
-          //         result = disabledProp.indexOf(index) !== -1;
-          //       } else {
-          //         const optionVal = optionValue(index);
-          //         result = disabledProp.indexOf(optionVal) !== -1;
-          //       }
-          //     }
-          //     return result;
-          //   };
-          //   console.log(
-          //     allOptions.filter(
-          //       (i, index) =>
-          //         !nextSelected.includes(index) || originallyDisabled(index),
-          //     ),
-          //   );
-
-          //   setDisabled(
-          //     options.filter(
-          //       (i, index) =>
-          //         !nextSelected.includes(index) || originallyDisabled(index),
-          //     ),
-          //   );
-          // }
           onChange(event, {
             option: options[index],
             value: nextValue,
@@ -256,19 +136,21 @@ const MultiSelectContainer = forwardRef(
           });
         }
       },
-      [limit, onChange, optionIndexesInValue, options, allOptions, valueKey],
+      [
+        limit,
+        onChange,
+        optionIndexesInValue,
+        options,
+        allOptions,
+        valueKey,
+        value,
+      ],
     );
 
     const onNextOption = useCallback(
       (event) => {
         event.preventDefault();
         const nextActiveIndex = activeIndex + 1;
-        // while (
-        //   nextActiveIndex < options.length &&
-        //   isDisabled(nextActiveIndex)
-        // ) {
-        //   nextActiveIndex += 1;
-        // }
         if (nextActiveIndex !== options.length) {
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
@@ -290,9 +172,6 @@ const MultiSelectContainer = forwardRef(
           }
         }
 
-        // while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
-        //   nextActiveIndex -= 1;
-        // }
         if (nextActiveIndex >= 0) {
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
@@ -304,7 +183,7 @@ const MultiSelectContainer = forwardRef(
     const onKeyDownOption = useCallback(
       (event) => {
         if (!onSearch) {
-          const nextActiveIndex = options.findIndex((e, index) => {
+          const nextActiveIndex = options.findIndex((e) => {
             let label;
             if (typeof e === 'object') {
               label = e.label || applyKey(e, labelKey);
@@ -314,8 +193,6 @@ const MultiSelectContainer = forwardRef(
             return (
               typeof label === 'string' &&
               label.charAt(0).toLowerCase() === event.key.toLowerCase()
-              // &&
-              // !isDisabled(index)
             );
           });
 
@@ -329,7 +206,7 @@ const MultiSelectContainer = forwardRef(
           onKeyDown(event);
         }
       },
-      [onKeyDown, options, isDisabled, onSearch, labelKey],
+      [onKeyDown, options, onSearch, labelKey],
     );
 
     const onActiveOption = useCallback(
@@ -342,7 +219,7 @@ const MultiSelectContainer = forwardRef(
     const onSelectOption = useCallback(
       (event) => {
         if (
-          !isDisabled(activeIndex) &&
+          !isDisabled(activeIndex, disabled, disabledKey, options, valueKey) &&
           activeIndex >= 0 &&
           activeIndex < options.length
         ) {
@@ -350,7 +227,7 @@ const MultiSelectContainer = forwardRef(
           selectOption(activeIndex)(event);
         }
       },
-      [activeIndex, selectOption, options],
+      [activeIndex, selectOption, options, disabled, disabledKey, valueKey],
     );
 
     const customSearchInput = theme.select.searchInput;
@@ -364,11 +241,8 @@ const MultiSelectContainer = forwardRef(
 
     useEffect(() => {
       if (value.length === limit) {
-        let newDisabled = [...disabledProp];
+        const newDisabled = [...disabledProp];
         // disable everything that is not selected
-        // console.log(value);
-        // console.log(options);
-        // console.log(newDisabled);
         const originallyDisabled = (index) => {
           const option = allOptions[index];
           let result;
@@ -378,29 +252,40 @@ const MultiSelectContainer = forwardRef(
             if (typeof disabledProp[0] === 'number') {
               result = disabledProp.indexOf(index) !== -1;
             } else {
-              const optionVal = optionValue(index);
-              result = disabledProp.indexOf(optionVal) !== -1;
+              result =
+                disabledProp.indexOf(optionValue(index, options, labelKey)) !==
+                -1;
             }
           }
           return result;
         };
-        for (let i = 0; i < options.length; i++) {
-          if (!isSelected(i) && !originallyDisabled(i)) {
-            console.log('here ', i);
-            console.log(options[i]);
+        for (let i = 0; i < options.length; i += 1) {
+          if (
+            !isSelected(i, value, valueKey, labelKey, options) &&
+            !originallyDisabled(i)
+          ) {
             newDisabled.push(options[i]);
           }
         }
         if (usingKeyboard)
           setShowA11yLimit('Selected. Maximum selection limit reached.');
+        console.log(newDisabled);
         setDisabled(newDisabled);
       } else {
         if (usingKeyboard) setShowA11yLimit(undefined);
         setDisabled(disabledProp);
       }
-      //if disabled and selected
-      // revert to disabledProp
-    }, [value, limit, disabledProp]);
+    }, [
+      value,
+      limit,
+      disabledProp,
+      allOptions,
+      disabledKey,
+      labelKey,
+      options,
+      usingKeyboard,
+      valueKey,
+    ]);
 
     // reset showA11yLimit after announcement is read
     useEffect(() => {
@@ -426,7 +311,6 @@ const MultiSelectContainer = forwardRef(
           dropHeight={dropHeight}
           a11yTitle="Select dropdown"
         >
-          {/* {contentAboveSearch} */}
           {visibleSelection ? (
             <Box
               direction="row"
@@ -442,15 +326,18 @@ const MultiSelectContainer = forwardRef(
                 fill="horizontal"
               >
                 <Box alignSelf="center">
-                  {value.length === 0 ? (
-                    <Text size="small">0 selected</Text>
-                  ) : search === '' || search === undefined ? (
-                    <Text size="small">
-                      {value.length} selected of {allOptions.length}
-                    </Text>
-                  ) : (
-                    <Text size="small">{value.length} selected</Text>
-                  )}
+                  {value.length === 0 && <Text size="small">0 selected</Text>}
+                  {value.length !== 0 &&
+                    (search === '' || search === undefined) && (
+                      <Text size="small">
+                        {value.length} selected of {allOptions.length}
+                      </Text>
+                    )}
+                  {value.length !== 0 &&
+                    search !== '' &&
+                    search !== undefined && (
+                      <Text size="small">{value.length} selected</Text>
+                    )}
                 </Box>
                 <Box>
                   {(search === '' || search === undefined) &&
@@ -463,7 +350,14 @@ const MultiSelectContainer = forwardRef(
                           onClick={(event) => {
                             if (onChange) {
                               const nextSelected = options.filter(
-                                (i, index) => !isDisabled(index),
+                                (i, index) =>
+                                  !isDisabled(
+                                    index,
+                                    disabled,
+                                    disabledKey,
+                                    options,
+                                    valueKey,
+                                  ),
                               );
                               const nextValue = nextSelected.map((i) =>
                                 valueKey && valueKey.reduce
@@ -483,14 +377,28 @@ const MultiSelectContainer = forwardRef(
                       )
                     ) : (
                       <Button
-                        a11yTitle={`${value.length} options selected. Clear all?`}
+                        a11yTitle={`${value.length}
+                         options selected. Clear all?`}
                         size="small"
                         label="Clear All"
                         onClick={(event) => {
                           if (onChange) {
                             const nextSelected = options.filter(
                               (i, index) =>
-                                isDisabled(index) && isSelected(index),
+                                isDisabled(
+                                  index,
+                                  disabled,
+                                  disabledKey,
+                                  options,
+                                  valueKey,
+                                ) &&
+                                isSelected(
+                                  index,
+                                  value,
+                                  valueKey,
+                                  labelKey,
+                                  options,
+                                ),
                             );
                             const nextValue = nextSelected.map((i) =>
                               valueKey && valueKey.reduce
@@ -543,7 +451,14 @@ const MultiSelectContainer = forwardRef(
                             onClick={(event) => {
                               if (onChange) {
                                 const nextSelected = options.filter(
-                                  (i, index) => !isDisabled(index),
+                                  (i, index) =>
+                                    !isDisabled(
+                                      index,
+                                      disabled,
+                                      disabledKey,
+                                      options,
+                                      valueKey,
+                                    ),
                                 );
                                 const nextValue = nextSelected.map((i) =>
                                   valueKey && valueKey.reduce
@@ -563,13 +478,27 @@ const MultiSelectContainer = forwardRef(
                         )
                       ) : (
                         <Button
-                          a11yTitle={`${value.length} options selected. Clear all?`}
+                          a11yTitle={`${value.length} 
+                          options selected. Clear all?`}
                           label="Clear All"
                           onClick={(event) => {
                             if (onChange) {
                               const nextSelected = options.filter(
                                 (i, index) =>
-                                  isDisabled(index) && isSelected(index),
+                                  isDisabled(
+                                    index,
+                                    disabled,
+                                    disabledKey,
+                                    options,
+                                    valueKey,
+                                  ) &&
+                                  isSelected(
+                                    index,
+                                    value,
+                                    valueKey,
+                                    labelKey,
+                                    options,
+                                  ),
                               );
                               const nextValue = nextSelected.map((i) =>
                                 valueKey && valueKey.reduce
@@ -624,15 +553,9 @@ const MultiSelectContainer = forwardRef(
             role="listbox"
             tabIndex="0"
             ref={optionsRef}
-            // focusIndicator
-            aria-multiselectable={true}
+            aria-multiselectable
             onMouseMove={() => setKeyboardNavigation(false)}
             aria-activedescendant={optionsRef?.current?.children[activeIndex]}
-            // onBlur={() => {
-            //   console.log(document.activeElement);
-            //   // if (!optionsRef.current.contains(document.activeElement))
-            //   // setActiveIndex(-1);
-            // }}
           >
             {options.length > 0 ? (
               <InfiniteScroll
@@ -644,12 +567,17 @@ const MultiSelectContainer = forwardRef(
               >
                 {(option, index, optionRef) => {
                   const iValue =
-                    valueKey && valueKey.reduce ? applyKey(option, valueKey) : option;
-                  const optionDisabled = isDisabled(index);
-                  // const optionSelected = isSelected(index);
+                    valueKey && valueKey.reduce
+                      ? applyKey(option, valueKey)
+                      : option;
+                  const optionDisabled = isDisabled(
+                    index,
+                    disabled,
+                    disabledKey,
+                    options,
+                    valueKey,
+                  );
                   const optionSelected = value.includes(iValue);
-                  // console.log(value.includes(iValue));
-                  // console.log(isSelected(index));
                   const optionActive = activeIndex === index;
 
                   // Determine whether the label is done as a child or
@@ -669,37 +597,12 @@ const MultiSelectContainer = forwardRef(
                         typeof child.props.children === 'string')
                     )
                       textComponent = true;
-                    // } else if (theme.select.options) {
-                    //   console.log('In theme select options');
-                    //   child = (
-                    //     <CheckBox
-                    //       label={
-                    //         <Box
-                    //           alignSelf="center"
-                    //           width="100%"
-                    //           align="start"
-                    //           // {...selectOptionsStyle}
-                    //         >
-                    //           <Text
-                    //           // {...theme.select.options.text}
-                    //           >
-                    //             {optionLabel(index)}
-                    //           </Text>
-                    //         </Box>
-                    //       }
-                    //       pad="xsmall"
-                    //       tabIndex="-1"
-                    //       checked={optionSelected}
-                    //     />
-                    //   );
-                    //   textComponent = true;
                   } else {
-                    // console.log('In checkbox');
                     child = (
                       <CheckBox
                         label={
                           <Box alignSelf="center" width="100%" align="start">
-                            {optionLabel(index)}
+                            {optionLabel(index, options, labelKey)}
                           </Box>
                         }
                         pad="xsmall"
@@ -711,25 +614,20 @@ const MultiSelectContainer = forwardRef(
                   }
 
                   if (!children && !theme.select.options && search) {
-                    console.log(typeof optionLabel(index));
+                    const label = optionLabel(index, options, labelKey);
                     if (
-                      typeof optionLabel(index) === typeof '' &&
-                      optionLabel(index).toLowerCase().indexOf(search) >= 0
+                      typeof label === typeof '' &&
+                      label.toLowerCase().indexOf(search) >= 0
                     ) {
                       // code to bold search term in matching options
-                      const boldIndex = optionLabel(index)
-                        .toLowerCase()
-                        .indexOf(search);
-                      const childBeginning = optionLabel(index).substring(
-                        0,
-                        boldIndex,
-                      );
-                      let childBold = optionLabel(index).substring(
+                      const boldIndex = label.toLowerCase().indexOf(search);
+                      const childBeginning = label.substring(0, boldIndex);
+                      let childBold = label.substring(
                         boldIndex,
                         boldIndex + search.length,
                       );
                       childBold = <b>{childBold}</b>;
-                      const childEnd = optionLabel(index).substring(
+                      const childEnd = label.substring(
                         boldIndex + search.length,
                       );
                       child = (
@@ -762,7 +660,6 @@ const MultiSelectContainer = forwardRef(
                     <SelectOption
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
-                      // ref={optionRef}
                       // merge optionRef and activeRef
                       ref={(node) => {
                         // eslint-disable-next-line no-param-reassign
@@ -780,9 +677,6 @@ const MultiSelectContainer = forwardRef(
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
-                      // hoverIndicator={!child ? undefined : 'background'}
-                      // label={!child ? optionLabel(index) : undefined}
-                      // disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}
                       onMouseOver={
@@ -822,7 +716,6 @@ const MultiSelectContainer = forwardRef(
               overflow="hidden"
               // announce when an item is removed from selected options
               aria-live="assertive"
-              // aria-live="polite"
             >
               <Text>{showA11yLimit}</Text>
             </Box>
