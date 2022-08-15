@@ -2746,14 +2746,14 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
   >
     <div
       aria-multiselectable="true"
-      class="SelectContainer__OptionsBox-sc-1wi0ul8-0 eaJPmL"
+      class="utils__OptionsBox-sc-1v8p29u-0 fuUgsk"
       role="listbox"
       tabindex="-1"
     >
       <button
         aria-posinset="1"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 khNgJL"
+        class="StyledButton-sc-323bzc-0 ghVuhX utils__SelectOption-sc-1v8p29u-2 bGnurH"
         role="option"
         tabindex="-1"
         type="button"
@@ -2771,7 +2771,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
       <button
         aria-posinset="2"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 khNgJL"
+        class="StyledButton-sc-323bzc-0 ghVuhX utils__SelectOption-sc-1v8p29u-2 bGnurH"
         role="option"
         tabindex="-1"
         type="button"
@@ -3076,7 +3076,7 @@ exports[`Select Controlled multiple values 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select; Selected: one,two"
-  class="StyledButton-sc-323bzc-0 iqZbKa Select__StyledSelectDropButton-sc-17idtfo-2 cKXNfT"
+  class="StyledButton-sc-323bzc-0 iqZbKa utils__StyledSelectDropButton-sc-1v8p29u-4 jXsdyV"
   id="test-select"
   type="button"
 >
@@ -3091,7 +3091,7 @@ exports[`Select Controlled multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fKwwIt Select__SelectTextInput-sc-17idtfo-0 bQAqdj"
+          class="StyledTextInput-sc-1x30a0s-0 fKwwIt utils__SelectTextInput-sc-1v8p29u-3 cEA-Dds"
           id="test-select__input"
           placeholder="test select"
           readonly=""

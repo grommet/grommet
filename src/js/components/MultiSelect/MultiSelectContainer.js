@@ -6,14 +6,10 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 import { FormUp } from 'grommet-icons/icons/FormUp';
 
-import {
-  getHoverIndicatorStyle,
-  selectedStyle,
-  setFocusWithoutScroll,
-} from '../../utils';
+import { setFocusWithoutScroll } from '../../utils';
 
 import { defaultProps } from '../../default-props';
 
@@ -29,33 +25,11 @@ import { StyledContainer } from '../Select/StyledSelect';
 import {
   applyKey,
   OptionsBox,
-  optionLabel,
-  optionValue,
-  isDisabled,
-  isSelected,
+  getOptionLabel,
+  getOptionValue,
+  checkDisabled,
+  SelectOption,
 } from '../Select/utils';
-
-// position relative is so scroll can be managed correctly
-// const OptionsBox = styled.div`
-//   position: relative;
-//   scroll-behavior: smooth;
-//   overflow: auto;
-//   outline: none;
-// `;
-
-const SelectOption = styled(Button)`
-  ${(props) => props.selected && props.textComponent && selectedStyle}
-  // applies theme.global.hover.background to the active
-  // option for mouse and keyboard interactions
-  ${(props) =>
-    props.active &&
-    getHoverIndicatorStyle(
-      !props.children && !props.theme.select.options ? undefined : 'background',
-      props.theme,
-    )}
-  display: block;
-  width: 100%;
-`;
 
 const MultiSelectContainer = forwardRef(
   (
@@ -111,6 +85,51 @@ const MultiSelectContainer = forwardRef(
         if (optionNode) optionNode.focus();
       }
     }, [activeIndex]);
+
+    const optionLabel = useCallback(
+      (index) => getOptionLabel(index, options, labelKey),
+      [labelKey, options],
+    );
+
+    const optionValue = useCallback(
+      (index) => getOptionValue(index, options, valueKey),
+      [options, valueKey],
+    );
+
+    const isDisabled = useCallback(
+      (index) => checkDisabled(index, disabled, disabledKey, options, valueKey),
+      [disabled, disabledKey, options, valueKey],
+    );
+
+    const isSelected = useCallback(
+      (index) => {
+        let result;
+        const optionVal = optionValue(index);
+        if (Array.isArray(value)) {
+          if (value.length === 0) {
+            result = false;
+          } else if (typeof value[0] !== 'object') {
+            result = value.indexOf(optionVal) !== -1;
+          } else if (valueKey) {
+            result = value.some((valueItem) => {
+              const valueValue =
+                typeof valueKey === 'function'
+                  ? valueKey(valueItem)
+                  : valueItem[valueKey];
+              return valueValue === optionVal;
+            });
+          }
+        } else if (valueKey && typeof value === 'object') {
+          const valueValue =
+            typeof valueKey === 'function' ? valueKey(value) : value[valueKey];
+          result = valueValue === optionVal;
+        } else {
+          result = value === optionVal;
+        }
+        return result;
+      },
+      [optionValue, value, valueKey],
+    );
 
     const selectOption = useCallback(
       (index) => (event) => {
@@ -219,7 +238,7 @@ const MultiSelectContainer = forwardRef(
     const onSelectOption = useCallback(
       (event) => {
         if (
-          !isDisabled(activeIndex, disabled, disabledKey, options, valueKey) &&
+          !isDisabled(activeIndex) &&
           activeIndex >= 0 &&
           activeIndex < options.length
         ) {
@@ -227,7 +246,7 @@ const MultiSelectContainer = forwardRef(
           selectOption(activeIndex)(event);
         }
       },
-      [activeIndex, selectOption, options, disabled, disabledKey, valueKey],
+      [activeIndex, selectOption, options, isDisabled],
     );
 
     const customSearchInput = theme.select.searchInput;
@@ -239,6 +258,7 @@ const MultiSelectContainer = forwardRef(
         }
       : {};
 
+    // handle when limit is reached
     useEffect(() => {
       if (value.length === limit) {
         const newDisabled = [...disabledProp];
@@ -252,30 +272,26 @@ const MultiSelectContainer = forwardRef(
             if (typeof disabledProp[0] === 'number') {
               result = disabledProp.indexOf(index) !== -1;
             } else {
-              result =
-                disabledProp.indexOf(optionValue(index, options, labelKey)) !==
-                -1;
+              result = disabledProp.indexOf(optionValue(index)) !== -1;
             }
           }
           return result;
         };
         for (let i = 0; i < options.length; i += 1) {
-          if (
-            !isSelected(i, value, valueKey, labelKey, options) &&
-            !originallyDisabled(i)
-          ) {
+          if (!isSelected(i) && !originallyDisabled(i)) {
             newDisabled.push(options[i]);
           }
         }
         if (usingKeyboard)
           setShowA11yLimit('Selected. Maximum selection limit reached.');
-        console.log(newDisabled);
         setDisabled(newDisabled);
       } else {
         if (usingKeyboard) setShowA11yLimit(undefined);
         setDisabled(disabledProp);
       }
     }, [
+      isSelected,
+      optionValue,
       value,
       limit,
       disabledProp,
@@ -350,14 +366,7 @@ const MultiSelectContainer = forwardRef(
                           onClick={(event) => {
                             if (onChange) {
                               const nextSelected = options.filter(
-                                (i, index) =>
-                                  !isDisabled(
-                                    index,
-                                    disabled,
-                                    disabledKey,
-                                    options,
-                                    valueKey,
-                                  ),
+                                (i, index) => !isDisabled(index),
                               );
                               const nextValue = nextSelected.map((i) =>
                                 valueKey && valueKey.reduce
@@ -385,20 +394,7 @@ const MultiSelectContainer = forwardRef(
                           if (onChange) {
                             const nextSelected = options.filter(
                               (i, index) =>
-                                isDisabled(
-                                  index,
-                                  disabled,
-                                  disabledKey,
-                                  options,
-                                  valueKey,
-                                ) &&
-                                isSelected(
-                                  index,
-                                  value,
-                                  valueKey,
-                                  labelKey,
-                                  options,
-                                ),
+                                isDisabled(index) && isSelected(index),
                             );
                             const nextValue = nextSelected.map((i) =>
                               valueKey && valueKey.reduce
@@ -451,14 +447,7 @@ const MultiSelectContainer = forwardRef(
                             onClick={(event) => {
                               if (onChange) {
                                 const nextSelected = options.filter(
-                                  (i, index) =>
-                                    !isDisabled(
-                                      index,
-                                      disabled,
-                                      disabledKey,
-                                      options,
-                                      valueKey,
-                                    ),
+                                  (i, index) => !isDisabled(index),
                                 );
                                 const nextValue = nextSelected.map((i) =>
                                   valueKey && valueKey.reduce
@@ -485,20 +474,7 @@ const MultiSelectContainer = forwardRef(
                             if (onChange) {
                               const nextSelected = options.filter(
                                 (i, index) =>
-                                  isDisabled(
-                                    index,
-                                    disabled,
-                                    disabledKey,
-                                    options,
-                                    valueKey,
-                                  ) &&
-                                  isSelected(
-                                    index,
-                                    value,
-                                    valueKey,
-                                    labelKey,
-                                    options,
-                                  ),
+                                  isDisabled(index) && isSelected(index),
                               );
                               const nextValue = nextSelected.map((i) =>
                                 valueKey && valueKey.reduce
@@ -570,13 +546,7 @@ const MultiSelectContainer = forwardRef(
                     valueKey && valueKey.reduce
                       ? applyKey(option, valueKey)
                       : option;
-                  const optionDisabled = isDisabled(
-                    index,
-                    disabled,
-                    disabledKey,
-                    options,
-                    valueKey,
-                  );
+                  const optionDisabled = isDisabled(index);
                   const optionSelected = value.includes(iValue);
                   const optionActive = activeIndex === index;
 
@@ -602,7 +572,7 @@ const MultiSelectContainer = forwardRef(
                       <CheckBox
                         label={
                           <Box alignSelf="center" width="100%" align="start">
-                            {optionLabel(index, options, labelKey)}
+                            {optionLabel(index)}
                           </Box>
                         }
                         pad="xsmall"
@@ -614,7 +584,7 @@ const MultiSelectContainer = forwardRef(
                   }
 
                   if (!children && !theme.select.options && search) {
-                    const label = optionLabel(index, options, labelKey);
+                    const label = optionLabel(index);
                     if (
                       typeof label === typeof '' &&
                       label.toLowerCase().indexOf(search) >= 0

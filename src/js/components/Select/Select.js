@@ -8,43 +8,29 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 
-import { controlBorderStyle, normalizeColor, useKeyboard } from '../../utils';
+import { useKeyboard } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
-import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
-import { TextInput } from '../TextInput';
 
 import { SelectContainer } from './SelectContainer';
 import {
   applyKey,
-  // SelectTextInput,
-  // HiddenInput,
-  // StyledSelectDropButton,
+  SelectTextInput,
+  HiddenInput,
+  StyledSelectDropButton,
+  calcValuedValue,
+  changeEvent,
+  getSelectIcon,
+  getDisplayLabelKey,
+  getIconColor,
 } from './utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
-
-const SelectTextInput = styled(TextInput)`
-  cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
-`;
-
-const HiddenInput = styled.input`
-  display: none;
-`;
-
-const StyledSelectDropButton = styled(DropButton)`
-  ${(props) => !props.callerPlain && controlBorderStyle};
-  ${(props) =>
-    props.theme.select &&
-    props.theme.select.control &&
-    props.theme.select.control.extend};
-  ${(props) => props.open && props.theme.select.control.open};
-`;
 
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
@@ -123,22 +109,11 @@ const Select = forwardRef(
       value: valueProp,
       initialValue: defaultValue || '',
     });
-    // valuedValue is the value mapped with any valueKey applied
-    // When the options array contains objects, this property indicates how
-    // to retrieve the value of each option.
-    // If a string is provided, it is used as the key to retrieve a
-    // property of an option object.
-    // If a function is provided, it is called with the option and should
-    // return the value.
-    // If reduce is true, this value will be used for the 'value'
-    // delivered via 'onChange'.
-    const valuedValue = useMemo(() => {
-      if (Array.isArray(value))
-        return value.map((v) =>
-          valueKey && valueKey.reduce ? v : applyKey(v, valueKey),
-        );
-      return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
-    }, [value, valueKey]);
+
+    const valuedValue = useMemo(
+      () => calcValuedValue(value, valueKey),
+      [value, valueKey],
+    );
     // search input value
     const [search, setSearch] = useState();
     // All select option indices and values
@@ -186,19 +161,10 @@ const Select = forwardRef(
       setSearch();
     }, [onClose]);
 
-    const triggerChangeEvent = useCallback((nextValue) => {
-      // Calling set value function directly on input because React library
-      // overrides setter `event.target.value =` and loses original event
-      // target fidelity.
-      // https://stackoverflow.com/a/46012210
-      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-        window.HTMLInputElement.prototype,
-        'value',
-      ).set;
-      nativeInputValueSetter.call(inputRef.current, nextValue);
-      const event = new Event('input', { bubbles: true });
-      inputRef.current.dispatchEvent(event);
-    }, []);
+    const triggerChangeEvent = useCallback(
+      (nextValue) => changeEvent(inputRef, nextValue),
+      [],
+    );
 
     const onSelectChange = useCallback(
       (event, { option, value: nextValue, selected: nextSelected }) => {
@@ -243,20 +209,7 @@ const Select = forwardRef(
       [closeOnChange, onChange, onRequestClose, setValue, triggerChangeEvent],
     );
 
-    let SelectIcon;
-    switch (icon) {
-      case false:
-        break;
-      case true:
-      case undefined:
-        SelectIcon =
-          open && theme.select.icons.up
-            ? theme.select.icons.up
-            : theme.select.icons.down;
-        break;
-      default:
-        SelectIcon = icon;
-    }
+    const SelectIcon = getSelectIcon(icon, theme, open);
 
     // element to show, trumps inputValue
     const selectValue = useMemo(() => {
@@ -267,22 +220,16 @@ const Select = forwardRef(
       return undefined;
     }, [value, valueLabel]);
 
-    // if labelKey is a function and valueLabel is not defined
-    // we should use the labelKey function to display the
-    // selected value
-    const displayLabelKey = useMemo(() => {
-      const optionLabelKey = applyKey(
-        allOptions[optionIndexesInValue[0]],
-        labelKey,
-      );
-      if (
-        !selectValue &&
-        optionIndexesInValue.length === 1 &&
-        typeof optionLabelKey === 'object'
-      )
-        return optionLabelKey;
-      return undefined;
-    }, [labelKey, allOptions, optionIndexesInValue, selectValue]);
+    const displayLabelKey = useMemo(
+      () =>
+        getDisplayLabelKey(
+          labelKey,
+          allOptions,
+          optionIndexesInValue,
+          selectValue,
+        ),
+      [labelKey, allOptions, optionIndexesInValue, selectValue],
+    );
 
     // text to show
     // When the options array contains objects, this property indicates how
@@ -310,10 +257,7 @@ const Select = forwardRef(
       selectValue,
     ]);
 
-    const iconColor = normalizeColor(
-      theme.select.icons.color || 'control',
-      theme,
-    );
+    const iconColor = getIconColor(theme);
 
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>

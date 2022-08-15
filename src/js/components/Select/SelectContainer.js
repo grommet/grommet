@@ -6,13 +6,9 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 
-import {
-  getHoverIndicatorStyle,
-  selectedStyle,
-  setFocusWithoutScroll,
-} from '../../utils';
+import { setFocusWithoutScroll } from '../../utils';
 
 import { defaultProps } from '../../default-props';
 
@@ -24,29 +20,14 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
 import { StyledContainer } from './StyledSelect';
-import { applyKey } from './utils';
-
-// position relative is so scroll can be managed correctly
-const OptionsBox = styled.div`
-  position: relative;
-  scroll-behavior: smooth;
-  overflow: auto;
-  outline: none;
-`;
-
-const SelectOption = styled(Button)`
-  ${(props) => props.selected && props.textComponent && selectedStyle}
-  // applies theme.global.hover.background to the active
-  // option for mouse and keyboard interactions
-  ${(props) =>
-    props.active &&
-    getHoverIndicatorStyle(
-      !props.children && !props.theme.select.options ? undefined : 'background',
-      props.theme,
-    )}
-  display: block;
-  width: 100%;
-`;
+import {
+  applyKey,
+  OptionsBox,
+  SelectOption,
+  checkDisabled,
+  getOptionLabel,
+  getOptionValue,
+} from './utils';
 
 const ClearButton = forwardRef(({ clear, onClear, name, theme }, ref) => {
   const { label, position } = clear;
@@ -138,32 +119,18 @@ const SelectContainer = forwardRef(
     }, [onSearch, usingKeyboard, clear]);
 
     const optionLabel = useCallback(
-      (index) => applyKey(options[index], labelKey),
+      (index) => getOptionLabel(index, options, labelKey),
       [labelKey, options],
     );
 
     const optionValue = useCallback(
-      (index) => applyKey(options[index], valueKey),
+      (index) => getOptionValue(index, options, valueKey),
       [options, valueKey],
     );
 
     const isDisabled = useCallback(
-      (index) => {
-        const option = options[index];
-        let result;
-        if (disabledKey) {
-          result = applyKey(option, disabledKey);
-        } else if (Array.isArray(disabled)) {
-          if (typeof disabled[0] === 'number') {
-            result = disabled.indexOf(index) !== -1;
-          } else {
-            const optionVal = optionValue(index);
-            result = disabled.indexOf(optionVal) !== -1;
-          }
-        }
-        return result;
-      },
-      [disabled, disabledKey, options, optionValue],
+      (index) => checkDisabled(index, disabled, disabledKey, options, valueKey),
+      [disabled, disabledKey, options, valueKey],
     );
 
     const isSelected = useCallback(
