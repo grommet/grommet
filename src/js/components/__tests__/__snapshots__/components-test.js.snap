@@ -2055,6 +2055,36 @@ Object {
               "auto",
             ],
           },
+          "size": Object {
+            "large": Object {
+              "pad": Object {
+                "bottom": "large",
+                "top": "xlarge",
+              },
+              "subtitle": Object {
+                "margin": "none",
+                "size": "large",
+              },
+              "title": Object {
+                "margin": "none",
+                "size": "large",
+              },
+            },
+            "small": Object {
+              "pad": Object {
+                "bottom": "small",
+                "top": "medium",
+              },
+              "subtitle": Object {
+                "margin": "none",
+                "size": "small",
+              },
+              "title": Object {
+                "margin": "none",
+                "size": "small",
+              },
+            },
+          },
           "small": Object {
             "areas": Array [
               Array [

@@ -1321,6 +1321,41 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: 'none',
         fill: true,
       },
+      size: {
+        small: {
+          pad: {
+            top: 'medium',
+            bottom: 'small',
+          },
+          subtitle: {
+            size: 'small',
+            margin: 'none',
+          },
+          title: {
+            size: 'small',
+            margin: 'none',
+          },
+        },
+        // medium: {
+        //   // pad: undefined,
+        //   // subtitle: {},
+        //   // title: {},
+        // },
+        large: {
+          pad: {
+            top: 'xlarge',
+            bottom: 'large',
+          },
+          subtitle: {
+            size: 'large',
+            margin: 'none',
+          },
+          title: {
+            size: 'large',
+            margin: 'none',
+          },
+        },
+      },
       small: {
         areas: [
           ['parent', 'parent'],

@@ -8,6 +8,11 @@ import { Grid } from '../Grid';
 import { Paragraph } from '../Paragraph';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 
+const sizeStyle = (size, style, theme) =>
+  size && theme.pageHeader.size[size]?.[style]
+    ? theme.pageHeader.size[size]?.[style]
+    : theme.pageHeader[style];
+
 const PageHeader = forwardRef(
   (
     {
@@ -15,6 +20,7 @@ const PageHeader = forwardRef(
       gridProps: gridPropsProp,
       parent,
       responsive,
+      size,
       subtitle,
       title,
       ...rest
@@ -45,7 +51,7 @@ const PageHeader = forwardRef(
         ref={ref}
         direction="column"
         gap="none"
-        pad={theme.pageHeader.pad}
+        pad={sizeStyle(size, 'pad', theme)}
         {...rest}
       >
         <Grid
@@ -61,14 +67,16 @@ const PageHeader = forwardRef(
           </Box>
           <Box gridArea="title">
             {typeof title === 'string' ? (
-              <Heading {...theme.pageHeader.title}>{title}</Heading>
+              <Heading {...sizeStyle(size, 'title', theme)}>{title}</Heading>
             ) : (
               title
             )}
           </Box>
           <Box gridArea="subtitle">
             {typeof subtitle === 'string' ? (
-              <Paragraph {...theme.pageHeader.subtitle}>{subtitle}</Paragraph>
+              <Paragraph {...sizeStyle(size, 'subtitle', theme)}>
+                {subtitle}
+              </Paragraph>
             ) : (
               subtitle
             )}

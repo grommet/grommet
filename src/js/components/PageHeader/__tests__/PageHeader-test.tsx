@@ -26,6 +26,24 @@ describe('PageHeader', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('size', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <PageHeader
+          title="Grommet"
+          subtitle={`Grommet helps you build responsive and accessible 
+          mobile-first projects for the web with an easy to use component 
+          library.`}
+          actions={<Button label="Get Started" primary />}
+          parent={<Anchor label="Parent Page" />}
+          size="large"
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('custom theme', () => {
     const customTheme = {
       pageHeader: {
