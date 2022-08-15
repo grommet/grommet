@@ -40,8 +40,8 @@
     "test-calendar-dateinput": "jest ./src/js/components/Calendar/__tests__/Calendar-test.tsx ./src/js/components/DateInput/__tests__/DateInput-test.tsx",
     "pack": "babel-node ./tools/pack",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
-    "start": "webpack serve --config ./app/webpack.config.js --mode development",
-    "test-e2e": "testcafe chrome:headless",
+    "start": "webpack serve --config ./e2e/webpack.config.js --mode development",
+    "test-e2e": "testcafe chrome:headless e2e/tests",
     "build-storybook": "build-storybook -c storybook -o storybook-static",
     "prettier": "pretty-quick --staged",
     "chromatic": "chromatic -t 9q99in2ygnh"
