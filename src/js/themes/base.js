@@ -1329,11 +1329,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
           subtitle: {
             size: 'small',
-            margin: 'none',
           },
           title: {
             size: 'small',
-            margin: 'none',
           },
         },
         // medium: {
@@ -1348,11 +1346,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
           subtitle: {
             size: 'large',
-            margin: 'none',
           },
           title: {
             size: 'large',
-            margin: 'none',
           },
         },
       },

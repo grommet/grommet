@@ -8,10 +8,15 @@ import { Grid } from '../Grid';
 import { Paragraph } from '../Paragraph';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 
-const sizeStyle = (size, style, theme) =>
-  size && theme.pageHeader.size[size]?.[style]
-    ? theme.pageHeader.size[size]?.[style]
-    : theme.pageHeader[style];
+const sizeStyle = (size, feature, theme) => {
+  const style = {
+    ...theme.pageHeader[feature],
+    ...((size && theme.pageHeader.size[size]?.[feature]) ??
+      theme.pageHeader[feature]),
+  };
+
+  return style;
+};
 
 const PageHeader = forwardRef(
   (

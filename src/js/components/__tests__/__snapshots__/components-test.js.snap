@@ -2062,11 +2062,9 @@ Object {
                 "top": "xlarge",
               },
               "subtitle": Object {
-                "margin": "none",
                 "size": "large",
               },
               "title": Object {
-                "margin": "none",
                 "size": "large",
               },
             },
@@ -2076,11 +2074,9 @@ Object {
                 "top": "medium",
               },
               "subtitle": Object {
-                "margin": "none",
                 "size": "small",
               },
               "title": Object {
-                "margin": "none",
                 "size": "small",
               },
             },
