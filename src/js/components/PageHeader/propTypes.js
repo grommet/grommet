@@ -10,6 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
     gridProps: GridPropTypes,
     parent: PropTypes.element,
     responsive: PropTypes.bool,
+    size: PropTypes.oneOf(['small', 'medium', 'large']),
     subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   };
