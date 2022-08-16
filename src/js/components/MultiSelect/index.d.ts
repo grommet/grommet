@@ -27,7 +27,7 @@ export interface MultiSelectProps {
   dropProps?: DropProps;
   emptySearchMessage?: string | React.ReactNode;
   focusIndicator?: boolean;
-  helpContent: React.ReactNode;
+  helpContent?: React.ReactNode;
   icon?: boolean | ((...args: any[]) => any) | React.ReactNode | React.FC;
   id?: string;
   labelKey?: string | ((...args: any[]) => string | React.ReactNode);
@@ -53,7 +53,7 @@ export interface MultiSelectProps {
     | { key: string; reduce?: boolean }
     | ((...args: any[]) => string);
   valueLabel?: React.ReactNode | ((...args: any[]) => string | React.ReactNode);
-  visibleSelection: boolean;
+  visibleSelection?: boolean;
 }
 
 // Try without Omit<> to see where we define our own attributes for overrides
