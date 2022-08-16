@@ -520,6 +520,52 @@ const MultiSelect = forwardRef(
       theme,
     };
 
+    const displaySelectIcon = SelectIcon && (
+      <Box
+        pad={{ top: 'xsmall' }}
+        alignSelf="start"
+        margin={theme.select.icons.margin}
+        style={{ minWidth: 'auto' }}
+      >
+        {isValidElement(SelectIcon) ? (
+          SelectIcon
+        ) : (
+          <SelectIcon color={iconColor} size={size} />
+        )}
+      </Box>
+    );
+
+    const defaultSelectTextInput = (
+      <SelectTextInput
+        a11yTitle={
+          (ariaLabel || a11yTitle) &&
+          `${ariaLabel || a11yTitle}${
+            value && typeof value === 'string' ? `, ${value}` : ''
+          }`
+        }
+        // When Select is disabled, we want to show a default cursor
+        // but not have disabled styling come from TextInput
+        // Disabled can be a bool or an array of options to disable.
+        // We only want to disable the TextInput if the control
+        // button should be disabled which occurs when disabled
+        // equals true.
+        defaultCursor={disabled === true || undefined}
+        focusIndicator={false}
+        id={id ? `${id}__input` : undefined}
+        name={name}
+        ref={inputRef}
+        {...rest}
+        tabIndex="-1"
+        type="text"
+        placeholder={placeholder}
+        plain
+        readOnly
+        value={inputValue}
+        size={size}
+        theme={theme}
+      />
+    );
+
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         {visibleSelection ? (
@@ -571,21 +617,7 @@ const MultiSelect = forwardRef(
                         value=""
                         theme={theme}
                       />
-
-                      {SelectIcon && (
-                        <Box
-                          pad={{ top: 'xsmall' }}
-                          alignSelf="start"
-                          margin={theme.select.icons.margin}
-                          style={{ minWidth: 'auto' }}
-                        >
-                          {isValidElement(SelectIcon) ? (
-                            SelectIcon
-                          ) : (
-                            <SelectIcon color={iconColor} size={size} />
-                          )}
-                        </Box>
-                      )}
+                      {displaySelectIcon}
                     </Box>
                     <HiddenInput
                       type="text"
@@ -598,48 +630,8 @@ const MultiSelect = forwardRef(
                   </>
                 ) : (
                   <Box direction="row">
-                    <SelectTextInput
-                      a11yTitle={
-                        (ariaLabel || a11yTitle) &&
-                        `${ariaLabel || a11yTitle}${
-                          value && typeof value === 'string' ? `, ${value}` : ''
-                        }`
-                      }
-                      // When Select is disabled, we want to show a default
-                      // cursor but not have disabled styling come from
-                      // TextInput. Disabled can be a bool or an array of
-                      // options to disable. We only want to disable the
-                      // TextInput if the control button should be
-                      // disabled which occurs when disabled equals true.
-                      defaultCursor={disabled === true || undefined}
-                      focusIndicator={false}
-                      id={id ? `${id}__input` : undefined}
-                      name={name}
-                      ref={inputRef}
-                      {...rest}
-                      tabIndex="-1"
-                      type="text"
-                      placeholder={placeholder}
-                      plain
-                      readOnly
-                      value={inputValue}
-                      size={size}
-                      theme={theme}
-                    />
-                    {SelectIcon && (
-                      <Box
-                        pad={{ top: 'xsmall' }}
-                        alignSelf="start"
-                        margin={theme.select.icons.margin}
-                        style={{ minWidth: 'auto' }}
-                      >
-                        {isValidElement(SelectIcon) ? (
-                          SelectIcon
-                        ) : (
-                          <SelectIcon color={iconColor} size={size} />
-                        )}
-                      </Box>
-                    )}
+                    {defaultSelectTextInput}
+                    {displaySelectIcon}
                   </Box>
                 )}
               </DropButton>
@@ -675,49 +667,10 @@ const MultiSelect = forwardRef(
                     />
                   </>
                 ) : (
-                  <SelectTextInput
-                    a11yTitle={
-                      (ariaLabel || a11yTitle) &&
-                      `${ariaLabel || a11yTitle}${
-                        value && typeof value === 'string' ? `, ${value}` : ''
-                      }`
-                    }
-                    // When Select is disabled, we want to show a default cursor
-                    // but not have disabled styling come from TextInput
-                    // Disabled can be a bool or an array of options to disable.
-                    // We only want to disable the TextInput if the control
-                    // button should be disabled which occurs when disabled
-                    // equals true.
-                    defaultCursor={disabled === true || undefined}
-                    focusIndicator={false}
-                    id={id ? `${id}__input` : undefined}
-                    name={name}
-                    ref={inputRef}
-                    {...rest}
-                    tabIndex="-1"
-                    type="text"
-                    placeholder={placeholder}
-                    plain
-                    readOnly
-                    value={inputValue}
-                    size={size}
-                    theme={theme}
-                  />
+                  defaultSelectTextInput
                 )}
               </Box>
-              {SelectIcon && (
-                <Box
-                  margin={theme.select.icons.margin}
-                  flex={false}
-                  style={{ minWidth: 'auto' }}
-                >
-                  {isValidElement(SelectIcon) ? (
-                    SelectIcon
-                  ) : (
-                    <SelectIcon color={iconColor} size={size} />
-                  )}
-                </Box>
-              )}
+              {displaySelectIcon}
             </Box>
           </StyledSelectDropButton>
         )}

@@ -312,6 +312,85 @@ const MultiSelectContainer = forwardRef(
       }
     }, [showA11yLimit]);
 
+    const selectedValuesDisabled = useCallback(() => {
+      let disabledSelected = 0;
+      for (let i = 0; i < allOptions.length; i += 1) {
+        if (value.includes(optionValue(i)) && isDisabled(i))
+          disabledSelected += 1;
+      }
+      if (value.length === disabledSelected) return true;
+      return false;
+    }, [value, allOptions, isDisabled, optionValue]);
+
+    const selectClearAll =
+      search === '' || search === undefined ? (
+        <>
+          <Box alignSelf="center">
+            {value.length === 0 ? (
+              <Text size="small">0 selected</Text>
+            ) : (
+              <Text size="small">
+                {value.length} selected of {options.length}
+              </Text>
+            )}
+          </Box>
+          <Box>
+            {options.length > 0 &&
+              (value.length === 0 || selectedValuesDisabled() ? (
+                !limit && (
+                  <Button
+                    a11yTitle={`Select all ${options.length} options`}
+                    label="Select All"
+                    onClick={(event) => {
+                      if (onChange) {
+                        const nextSelected = options.filter(
+                          (i, index) => !isDisabled(index) || isSelected(index),
+                        );
+                        const nextValue = nextSelected.map((i) =>
+                          valueKey && valueKey.reduce
+                            ? applyKey(i, valueKey)
+                            : i,
+                        );
+
+                        onChange(event, {
+                          option: options,
+                          value: nextValue,
+                          selected: nextSelected,
+                        });
+                      }
+                    }}
+                    onFocus={() => setActiveIndex(-1)}
+                  />
+                )
+              ) : (
+                <Button
+                  a11yTitle={`${value.length} 
+                          options selected. Clear all?`}
+                  label="Clear All"
+                  onClick={(event) => {
+                    if (onChange) {
+                      const nextSelected = options.filter(
+                        (i, index) => isDisabled(index) && isSelected(index),
+                      );
+                      const nextValue = nextSelected.map((i) =>
+                        valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
+                      );
+                      onChange(event, {
+                        option: options,
+                        value: nextSelected,
+                        selected: nextValue,
+                      });
+                    }
+                  }}
+                  onFocus={() => setActiveIndex(-1)}
+                />
+              ))}
+          </Box>
+        </>
+      ) : (
+        <Text size="small">{`${value.length} selected`}</Text>
+      );
+
     return (
       <Keyboard
         onEnter={onSelectOption}
@@ -341,78 +420,7 @@ const MultiSelectContainer = forwardRef(
                 gap="small"
                 fill="horizontal"
               >
-                <Box alignSelf="center">
-                  {value.length === 0 && <Text size="small">0 selected</Text>}
-                  {value.length !== 0 &&
-                    (search === '' || search === undefined) && (
-                      <Text size="small">
-                        {value.length} selected of {allOptions.length}
-                      </Text>
-                    )}
-                  {value.length !== 0 &&
-                    search !== '' &&
-                    search !== undefined && (
-                      <Text size="small">{value.length} selected</Text>
-                    )}
-                </Box>
-                <Box>
-                  {(search === '' || search === undefined) &&
-                    (value.length === 0 ? (
-                      !limit && (
-                        <Button
-                          a11yTitle={`Select all ${allOptions.length} options`}
-                          size="small"
-                          label="Select All"
-                          onClick={(event) => {
-                            if (onChange) {
-                              const nextSelected = options.filter(
-                                (i, index) => !isDisabled(index),
-                              );
-                              const nextValue = nextSelected.map((i) =>
-                                valueKey && valueKey.reduce
-                                  ? applyKey(i, valueKey)
-                                  : i,
-                              );
-
-                              onChange(event, {
-                                option: options,
-                                value: nextValue,
-                                selected: nextSelected,
-                              });
-                            }
-                          }}
-                          onFocus={() => setActiveIndex(-1)}
-                        />
-                      )
-                    ) : (
-                      <Button
-                        a11yTitle={`${value.length}
-                         options selected. Clear all?`}
-                        size="small"
-                        label="Clear All"
-                        onClick={(event) => {
-                          if (onChange) {
-                            const nextSelected = options.filter(
-                              (i, index) =>
-                                isDisabled(index) && isSelected(index),
-                            );
-                            const nextValue = nextSelected.map((i) =>
-                              valueKey && valueKey.reduce
-                                ? applyKey(i, valueKey)
-                                : i,
-                            );
-
-                            onChange(event, {
-                              option: options,
-                              value: nextValue,
-                              selected: nextSelected,
-                            });
-                          }
-                        }}
-                        onFocus={() => setActiveIndex(-1)}
-                      />
-                    ))}
-                </Box>
+                {selectClearAll}
               </Box>
               <Button onClick={onClose} a11yTitle="Close Select">
                 <FormUp />
@@ -426,76 +434,7 @@ const MultiSelectContainer = forwardRef(
               gap="small"
               flex={false}
             >
-              {search === '' || search === undefined ? (
-                <>
-                  <Box alignSelf="center">
-                    {value.length === 0 ? (
-                      <Text size="small">0 selected</Text>
-                    ) : (
-                      <Text size="small">
-                        {value.length} selected of {options.length}
-                      </Text>
-                    )}
-                  </Box>
-                  <Box>
-                    {options.length > 0 &&
-                      (value.length === 0 ? (
-                        !limit && (
-                          <Button
-                            a11yTitle={`Select all ${options.length} options`}
-                            label="Select All"
-                            onClick={(event) => {
-                              if (onChange) {
-                                const nextSelected = options.filter(
-                                  (i, index) => !isDisabled(index),
-                                );
-                                const nextValue = nextSelected.map((i) =>
-                                  valueKey && valueKey.reduce
-                                    ? applyKey(i, valueKey)
-                                    : i,
-                                );
-
-                                onChange(event, {
-                                  option: options,
-                                  value: nextValue,
-                                  selected: nextSelected,
-                                });
-                              }
-                            }}
-                            onFocus={() => setActiveIndex(-1)}
-                          />
-                        )
-                      ) : (
-                        <Button
-                          a11yTitle={`${value.length} 
-                          options selected. Clear all?`}
-                          label="Clear All"
-                          onClick={(event) => {
-                            if (onChange) {
-                              const nextSelected = options.filter(
-                                (i, index) =>
-                                  isDisabled(index) && isSelected(index),
-                              );
-                              const nextValue = nextSelected.map((i) =>
-                                valueKey && valueKey.reduce
-                                  ? applyKey(i, valueKey)
-                                  : i,
-                              );
-                              onChange(event, {
-                                option: options,
-                                value: nextSelected,
-                                selected: nextValue,
-                              });
-                            }
-                          }}
-                          onFocus={() => setActiveIndex(-1)}
-                        />
-                      ))}
-                  </Box>
-                </>
-              ) : (
-                <Text size="small">{`${value.length} selected`}</Text>
-              )}
+              {selectClearAll}
             </Box>
           )}
 
@@ -507,7 +446,7 @@ const MultiSelectContainer = forwardRef(
                 }}
               >
                 <SelectTextInput
-                  a11yTitle="Search"
+                  a11yTitle="Search to filter options."
                   focusIndicator={!customSearchInput}
                   size="small"
                   ref={searchRef}

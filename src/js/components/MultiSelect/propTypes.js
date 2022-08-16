@@ -41,8 +41,9 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
     dropTarget: PropTypes.object,
     dropProps: PropTypes.object,
+    emptySearchMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     focusIndicator: PropTypes.bool,
-    helpContent: PropTypes.element,
+    helpContent: PropTypes.node,
     icon: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.func,
@@ -54,13 +55,13 @@ if (process.env.NODE_ENV !== 'production') {
     messages: PropTypes.shape({
       multiple: PropTypes.string,
     }),
-    multiple: PropTypes.bool,
     name: PropTypes.string,
     onChange: PropTypes.func,
     onClose: PropTypes.func,
+    onMore: PropTypes.func,
     onOpen: PropTypes.func,
     onSearch: PropTypes.func,
-    onMore: PropTypes.func,
+    open: PropTypes.bool,
     options: PropTypes.arrayOf(
       PropTypes.oneOfType([
         PropTypes.string,
@@ -69,7 +70,6 @@ if (process.env.NODE_ENV !== 'production') {
         PropTypes.object,
       ]),
     ).isRequired,
-    open: PropTypes.bool,
     placeholder: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element,
@@ -78,10 +78,6 @@ if (process.env.NODE_ENV !== 'production') {
     plain: PropTypes.bool,
     replace: PropTypes.bool,
     searchPlaceholder: PropTypes.string,
-    selected: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.arrayOf(PropTypes.number),
-    ]),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
@@ -98,7 +94,6 @@ if (process.env.NODE_ENV !== 'production') {
         ]),
       ),
     ]),
-    valueLabel: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
     valueKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,
@@ -107,8 +102,8 @@ if (process.env.NODE_ENV !== 'production') {
         reduce: PropTypes.bool,
       }),
     ]),
+    valueLabel: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
     visibleSelection: PropTypes.bool,
-    emptySearchMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   };
 }
 export const MultiSelectPropTypes = PropType;

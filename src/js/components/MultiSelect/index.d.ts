@@ -25,11 +25,13 @@ export interface MultiSelectProps {
   dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   dropTarget?: object;
   dropProps?: DropProps;
+  emptySearchMessage?: string | React.ReactNode;
   focusIndicator?: boolean;
   helpContent: React.ReactNode;
   icon?: boolean | ((...args: any[]) => any) | React.ReactNode | React.FC;
   id?: string;
   labelKey?: string | ((...args: any[]) => string | React.ReactNode);
+  limit?: number;
   margin?: MarginType;
   messages?: { multiple?: string };
   name?: string;
@@ -38,21 +40,20 @@ export interface MultiSelectProps {
   onMore?: (...args: any[]) => any;
   onOpen?: (...args: any[]) => any;
   onSearch?: (search: string) => void;
-  options: (string | boolean | number | JSX.Element | object)[];
   open?: boolean;
+  options: (string | boolean | number | JSX.Element | object)[];
   placeholder?: PlaceHolderType;
   plain?: boolean;
   replace?: boolean;
   searchPlaceholder?: string;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   value?: string | JSX.Element | object | (string | number | object)[];
-  valueLabel?: React.ReactNode | ((...args: any[]) => string | React.ReactNode);
   valueKey?:
     | string
     | { key: string; reduce?: boolean }
     | ((...args: any[]) => string);
+  valueLabel?: React.ReactNode | ((...args: any[]) => string | React.ReactNode);
   visibleSelection: boolean;
-  emptySearchMessage?: string | React.ReactNode;
 }
 
 // Try without Omit<> to see where we define our own attributes for overrides
