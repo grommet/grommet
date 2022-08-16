@@ -1468,6 +1468,37 @@ var generate = function generate(baseSpacing, scale) {
         margin: 'none',
         fill: true
       },
+      size: {
+        small: {
+          pad: {
+            top: 'medium',
+            bottom: 'small'
+          },
+          subtitle: {
+            size: 'small'
+          },
+          title: {
+            size: 'small'
+          }
+        },
+        // medium: {
+        //   // pad: undefined,
+        //   // subtitle: {},
+        //   // title: {},
+        // },
+        large: {
+          pad: {
+            top: 'xlarge',
+            bottom: 'large'
+          },
+          subtitle: {
+            size: 'large'
+          },
+          title: {
+            size: 'large'
+          }
+        }
+      },
       small: {
         areas: [['parent', 'parent'], ['title', 'actions'], ['subtitle', 'actions']],
         columns: [['small', 'flex'], 'auto'],

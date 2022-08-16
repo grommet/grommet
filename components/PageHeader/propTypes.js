@@ -21,6 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
     gridProps: _propTypes2.GridPropTypes,
     parent: _propTypes["default"].element,
     responsive: _propTypes["default"].bool,
+    size: _propTypes["default"].oneOf(['small', 'medium', 'large']),
     subtitle: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].element]),
     title: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].element])
   });
