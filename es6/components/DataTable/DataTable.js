@@ -368,6 +368,7 @@ var DataTable = function DataTable(_ref) {
       items = _usePagination[0],
       paginationProps = _usePagination[1];
 
+  var paginationStep = paginationProps.step;
   var Container = paginate ? StyledContainer : Fragment;
   var containterProps = paginate ? _extends({}, theme.dataTable.container, {
     fill: fill
@@ -421,13 +422,13 @@ var DataTable = function DataTable(_ref) {
           expanded: Object.keys(groupState).filter(function (k) {
             return groupState[k].expanded;
           }),
-          count: limit + step
+          count: limit + paginationStep
         };
         if (sort != null && sort.property) opts.sort = sort;
         if (showProp) opts.show = showProp;
         onUpdate(opts);
         setLimit(function (prev) {
-          return prev + step;
+          return prev + paginationStep;
         });
       }
     } : onMore,
@@ -441,7 +442,7 @@ var DataTable = function DataTable(_ref) {
     rowProps: rowProps,
     selected: selected,
     size: size,
-    step: step,
+    step: paginationStep,
     verticalAlign: typeof verticalAlign === 'string' ? verticalAlign : verticalAlign == null ? void 0 : verticalAlign.body
   }) : /*#__PURE__*/React.createElement(Body, {
     ref: bodyRef,
@@ -452,13 +453,13 @@ var DataTable = function DataTable(_ref) {
     onMore: onUpdate ? function () {
       if (adjustedData.length === limit) {
         var opts = {
-          count: limit + step
+          count: limit + paginationStep
         };
         if (sort != null && sort.property) opts.sort = sort;
         if (showProp) opts.show = showProp;
         onUpdate(opts);
         setLimit(function (prev) {
-          return prev + step;
+          return prev + paginationStep;
         });
       }
     } : onMore,
@@ -475,7 +476,7 @@ var DataTable = function DataTable(_ref) {
     selected: selected,
     show: !paginate ? showProp : undefined,
     size: size,
-    step: step,
+    step: paginationStep,
     rowDetails: rowDetails,
     rowExpand: rowExpand,
     setRowExpand: setRowExpand,
@@ -537,7 +538,7 @@ var DataTable = function DataTable(_ref) {
   }), placeholder && items && items.length > 0 && /*#__PURE__*/React.createElement(StyledPlaceholder, {
     top: headerHeight,
     bottom: footerHeight
-  }, placeholderContent))), paginate && adjustedData.length > step && items && items.length ? /*#__PURE__*/React.createElement(Pagination, _extends({
+  }, placeholderContent))), paginate && adjustedData.length > paginationStep && items && items.length ? /*#__PURE__*/React.createElement(Pagination, _extends({
     alignSelf: "end"
   }, paginationProps)) : null);
 };
