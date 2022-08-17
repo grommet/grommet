@@ -1031,7 +1031,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           cursor: 'default',
         },
         pinned: {
-          color: 'background-contrast',
+          background: 'background-contrast',
           icon: {
             size: '18px',
             pad: '15px',

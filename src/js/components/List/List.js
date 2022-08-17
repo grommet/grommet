@@ -460,7 +460,7 @@ const List = React.forwardRef(
                   adjustedBackground =
                     adjustedBackground[index % adjustedBackground.length];
                 } else if (isPinned) {
-                  adjustedBackground = theme.list.item.pinned.color;
+                  adjustedBackground = theme.list.item.pinned.background;
                 }
 
                 let adjustedBorder =
@@ -642,13 +642,13 @@ const List = React.forwardRef(
                   }
                 }
 
-                // Pinned icon and settings
-                const Pin = theme.list.icons.pin;
-                const pinSize = theme.list.item.pinned.icon.size;
-                const pinPad = theme.list.item.pinned.icon.pad;
-
                 let displayPinned;
                 if (isPinned) {
+                  // Pinned icon and settings
+                  const Pin = theme.list.icons.pin;
+                  const pinSize = theme.list.item.pinned.icon.size;
+                  const pinPad = theme.list.item.pinned.icon.pad;
+
                   boxProps = {
                     direction: 'row',
                     align:

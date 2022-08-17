@@ -1700,7 +1700,7 @@ Object {
               "vertical": "small",
             },
             "pinned": Object {
-              "color": "background-contrast",
+              "background": "background-contrast",
               "icon": Object {
                 "pad": "15px",
                 "size": "18px",
