@@ -2067,6 +2067,32 @@ Object {
               "auto",
             ],
           },
+          "size": Object {
+            "large": Object {
+              "pad": Object {
+                "bottom": "large",
+                "top": "xlarge",
+              },
+              "subtitle": Object {
+                "size": "large",
+              },
+              "title": Object {
+                "size": "large",
+              },
+            },
+            "small": Object {
+              "pad": Object {
+                "bottom": "small",
+                "top": "medium",
+              },
+              "subtitle": Object {
+                "size": "small",
+              },
+              "title": Object {
+                "size": "small",
+              },
+            },
+          },
           "small": Object {
             "areas": Array [
               Array [
