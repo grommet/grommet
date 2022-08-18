@@ -1012,9 +1012,19 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   width: 100%;
 }
 
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c10 {
   display: block;
   width: 100%;
+}
+
+.c10:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -1555,6 +1565,11 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   width: 100%;
 }
 
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -2091,6 +2106,11 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -2631,6 +2651,11 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   width: 100%;
 }
 
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -2753,7 +2778,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
       <button
         aria-posinset="1"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 khNgJL"
+        class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 mhbs"
         role="option"
         tabindex="-1"
         type="button"
@@ -2771,7 +2796,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
       <button
         aria-posinset="2"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 khNgJL"
+        class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 mhbs"
         role="option"
         tabindex="-1"
         type="button"
@@ -3277,6 +3302,11 @@ exports[`Select Controlled multiple values 3`] = `
   color: #FFFFFF;
   display: block;
   width: 100%;
+}
+
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -3815,6 +3845,11 @@ exports[`Select Controlled multiple with empty results 2`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {

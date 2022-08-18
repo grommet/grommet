@@ -1143,6 +1143,68 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
   });
 
+  // test('Clear option renders- top', async () => {
+  //   const user = userEvent.setup();
+
+  //   const Test = () => {
+  //     const [value] = React.useState();
+  //     return (
+  //       <Select
+  //         id="test-select"
+  //         placeholder="test select"
+  //         value={value}
+  //         options={['one', 'two']}
+  //         clear
+  //       />
+  //     );
+  //   };
+  //   render(
+  //     <Grommet>
+  //       <Test />
+  //     </Grommet>,
+  //   );
+
+  //   await user.click(screen.getByPlaceholderText('test select'));
+  //   await user.click(screen.getByRole('option', { name: 'one' }));
+  //   await user.click(screen.getByPlaceholderText('test select'));
+  //   const clearButton = screen.getByRole('button', {
+  //     name: 'Clear selection, press down arrow to move to select options',
+  //   });
+  //   expect(clearButton).toBeTruthy();
+  //   expectPortal('test-select__drop').toMatchSnapshot();
+  // });
+
+  // test('Clear option renders - bottom', async () => {
+  //   const user = userEvent.setup();
+  //   const Test = () => {
+  //     const [value] = React.useState();
+  //     return (
+  //       <Select
+  //         id="test-select"
+  //         placeholder="test select"
+  //         value={value}
+  //         options={['one', 'two']}
+  //         clear={{ position: 'bottom' }}
+  //       />
+  //     );
+  //   };
+  //   render(
+  //     <Grommet>
+  //       <Test />
+  //     </Grommet>,
+  //   );
+
+  //   await user.click(screen.getByPlaceholderText('test select'));
+  //   await user.click(screen.getByRole('option', { name: 'one' }));
+  //   await user.click(screen.getByPlaceholderText('test select'));
+  //   const clearButton = screen.getByRole('button', {
+  //     name: 'Clear selection, press shift tab to move to select options',
+  //   });
+  //   expect(clearButton).toBeTruthy();
+
+  //   expectPortal('test-select__drop').toMatchSnapshot();
+  // });
+
   test('Clear option renders custom label', () => {
     const Test = () => {
       const [value] = React.useState();

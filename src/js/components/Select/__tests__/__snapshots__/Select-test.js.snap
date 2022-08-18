@@ -423,6 +423,11 @@ exports[`Select Clear option renders - bottom 1`] = `
   width: 100%;
 }
 
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -676,6 +681,11 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -941,6 +951,11 @@ exports[`Select Clear option renders custom label 1`] = `
   width: 100%;
 }
 
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -1194,6 +1209,11 @@ exports[`Select Clear option renders- top 1`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -2047,6 +2067,11 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   width: 100%;
 }
 
+.c1:focus {
+  background-color: lightgreen;
+  color: #7D4CDB;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -2803,6 +2828,11 @@ exports[`Select complex options and children 3`] = `
   width: 100%;
 }
 
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -3528,7 +3558,7 @@ exports[`Select default value clear 1`] = `
   padding: 12px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3547,7 +3577,7 @@ exports[`Select default value clear 1`] = `
   padding: 12px;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3595,13 +3625,13 @@ exports[`Select default value clear 1`] = `
   color: #555555;
 }
 
-.c11 {
+.c12 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c5 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3620,27 +3650,27 @@ exports[`Select default value clear 1`] = `
   width: 100%;
 }
 
-.c5:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3658,27 +3688,27 @@ exports[`Select default value clear 1`] = `
   text-align: inherit;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c12 {
+.c13 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3696,23 +3726,23 @@ exports[`Select default value clear 1`] = `
   text-align: inherit;
 }
 
-.c12:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3720,7 +3750,7 @@ exports[`Select default value clear 1`] = `
   max-height: inherit;
 }
 
-.c4 {
+.c8 {
   position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
@@ -3730,16 +3760,31 @@ exports[`Select default value clear 1`] = `
   outline: none;
 }
 
-.c9 {
+.c10 {
   display: block;
   width: 100%;
 }
 
-.c13 {
+.c10:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c14 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
   width: 100%;
+}
+
+.c14:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -3753,7 +3798,7 @@ exports[`Select default value clear 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c11 {
     padding: 6px;
   }
 }
@@ -3788,39 +3833,40 @@ exports[`Select default value clear 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
+    <button
+      aria-label="Clear selection, press down arrow to move to select options"
+      class="c4 c5"
+      type="button"
+    >
+      <div
+        class="c6"
+      >
+        <span
+          class="c7"
+        >
+          Clear selection
+        </span>
+      </div>
+    </button>
     <div
-      class="c4"
+      class="c8"
       role="listbox"
       tabindex="-1"
     >
       <button
-        class="c5"
-        type="button"
-      >
-        <div
-          class="c6"
-        >
-          <span
-            class="c7"
-          >
-            Clear selection
-          </span>
-        </div>
-      </button>
-      <button
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c8 c9"
+        class="c9 c10"
         role="option"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10"
+          class="c11"
         >
           <span
-            class="c11"
+            class="c12"
           >
             one
           </span>
@@ -3830,23 +3876,23 @@ exports[`Select default value clear 1`] = `
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="c12 c13"
+        class="c13 c14"
         role="option"
         tabindex="0"
         type="button"
       >
         <div
-          class="c10"
+          class="c11"
         >
           <span
-            class="c11"
+            class="c12"
           >
             two
           </span>
         </div>
       </button>
       <div
-        class="c14"
+        class="c15"
       />
     </div>
   </div>
@@ -4944,6 +4990,11 @@ exports[`Select disabled key 2`] = `
   width: 100%;
 }
 
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -5239,6 +5290,11 @@ exports[`Select disabled option value 1`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -5889,6 +5945,11 @@ exports[`Select large drop container height 1`] = `
   width: 100%;
 }
 
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -6133,6 +6194,11 @@ exports[`Select medium drop container height 1`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -6947,6 +7013,11 @@ exports[`Select onChange with valueKey string 2`] = `
   width: 100%;
 }
 
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -7429,6 +7500,11 @@ exports[`Select onChange with valueLabel 2`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -7966,6 +8042,11 @@ exports[`Select onChange without valueKey 2`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -9107,6 +9188,11 @@ exports[`Select prop: onOpen 3`] = `
   width: 100%;
 }
 
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -9217,7 +9303,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 khNgJL"
+    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 mhbs"
     role="option"
     tabindex="-1"
     type="button"
@@ -9236,7 +9322,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 khNgJL"
+    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 mhbs"
     role="option"
     tabindex="-1"
     type="button"
@@ -11764,11 +11850,21 @@ exports[`Select search 2`] = `
   width: 100%;
 }
 
+.c9:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c13 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
   width: 100%;
+}
+
+.c13:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -12417,6 +12513,11 @@ exports[`Select search and select 2`] = `
 .c9 {
   display: block;
   width: 100%;
+}
+
+.c9:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -15754,6 +15855,11 @@ exports[`Select small drop container height 1`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
