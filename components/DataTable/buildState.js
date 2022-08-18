@@ -110,8 +110,8 @@ var filterAndSortData = function filterAndSortData(data, filters, onSearch, sort
       var d1Val = datumValue(d1, property);
       var d2Val = datumValue(d2, property);
 
-      if (typeof d1Val === 'string' && typeof d2Val === 'string') {
-        var sortResult = d1Val.localeCompare(d2Val, undefined, {
+      if (typeof d1Val === 'string' && typeof d2Val === 'string' || typeof d1Val === 'string' && !d2Val || typeof d2Val === 'string' && !d1Val) {
+        var sortResult = (d1Val || '').localeCompare(d2Val || '', undefined, {
           sensitivity: 'base'
         });
         return sortAsc ? sortResult : -sortResult;
