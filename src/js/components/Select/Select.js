@@ -20,7 +20,7 @@ import { FormContext } from '../Form/FormContext';
 import { SelectContainer } from './SelectContainer';
 import {
   applyKey,
-  SelectTextInput,
+  DefaultSelectTextInput,
   HiddenInput,
   StyledSelectDropButton,
   calcValuedValue,
@@ -110,6 +110,15 @@ const Select = forwardRef(
       initialValue: defaultValue || '',
     });
 
+    // valuedValue is the value mapped with any valueKey applied
+    // When the options array contains objects, this property indicates how
+    // to retrieve the value of each option.
+    // If a string is provided, it is used as the key to retrieve a
+    // property of an option object.
+    // If a function is provided, it is called with the option and should
+    // return the value.
+    // If reduce is true, this value will be used for the 'value'
+    // delivered via 'onChange'.
     const valuedValue = useMemo(
       () => calcValuedValue(value, valueKey),
       [value, valueKey],
@@ -344,33 +353,22 @@ const Select = forwardRef(
                   />
                 </>
               ) : (
-                <SelectTextInput
+                <DefaultSelectTextInput
                   a11yTitle={
                     (ariaLabel || a11yTitle) &&
                     `${ariaLabel || a11yTitle}${
                       value && typeof value === 'string' ? `, ${value}` : ''
                     }`
                   }
-                  // When Select is disabled, we want to show a default cursor
-                  // but not have disabled styling come from TextInput
-                  // Disabled can be a bool or an array of options to disable.
-                  // We only want to disable the TextInput if the control
-                  // button should be disabled which occurs when disabled
-                  // equals true.
-                  defaultCursor={disabled === true || undefined}
-                  focusIndicator={false}
-                  id={id ? `${id}__input` : undefined}
+                  disabled={disabled}
+                  id={id}
                   name={name}
                   ref={inputRef}
-                  {...rest}
-                  tabIndex="-1"
-                  type="text"
                   placeholder={placeholder}
-                  plain
-                  readOnly
                   value={inputValue}
                   size={size}
                   theme={theme}
+                  {...rest}
                 />
               )}
             </Box>

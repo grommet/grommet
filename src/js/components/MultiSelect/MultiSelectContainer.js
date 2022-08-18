@@ -56,7 +56,7 @@ const MultiSelectContainer = forwardRef(
       search,
       setSearch,
       usingKeyboard,
-      value = '',
+      value = [],
       valueKey,
       visibleSelection,
     },
@@ -86,11 +86,6 @@ const MultiSelectContainer = forwardRef(
       }
     }, [activeIndex]);
 
-    const optionLabel = useCallback(
-      (index) => getOptionLabel(index, options, labelKey),
-      [labelKey, options],
-    );
-
     const optionValue = useCallback(
       (index) => getOptionValue(index, options, valueKey),
       [options, valueKey],
@@ -105,26 +100,18 @@ const MultiSelectContainer = forwardRef(
       (index) => {
         let result;
         const optionVal = optionValue(index);
-        if (Array.isArray(value)) {
-          if (value.length === 0) {
-            result = false;
-          } else if (typeof value[0] !== 'object') {
-            result = value.indexOf(optionVal) !== -1;
-          } else if (valueKey) {
-            result = value.some((valueItem) => {
-              const valueValue =
-                typeof valueKey === 'function'
-                  ? valueKey(valueItem)
-                  : valueItem[valueKey];
-              return valueValue === optionVal;
-            });
-          }
-        } else if (valueKey && typeof value === 'object') {
-          const valueValue =
-            typeof valueKey === 'function' ? valueKey(value) : value[valueKey];
-          result = valueValue === optionVal;
-        } else {
-          result = value === optionVal;
+        if (value.length === 0) {
+          result = false;
+        } else if (typeof value[0] !== 'object') {
+          result = value.indexOf(optionVal) !== -1;
+        } else if (valueKey) {
+          result = value.some((valueItem) => {
+            const valueValue =
+              typeof valueKey === 'function'
+                ? valueKey(valueItem)
+                : valueItem[valueKey];
+            return valueValue === optionVal;
+          });
         }
         return result;
       },
@@ -511,7 +498,7 @@ const MultiSelectContainer = forwardRef(
                       <CheckBox
                         label={
                           <Box alignSelf="center" width="100%" align="start">
-                            {optionLabel(index)}
+                            {getOptionLabel(index, options, labelKey)}
                           </Box>
                         }
                         pad="xsmall"
@@ -523,7 +510,7 @@ const MultiSelectContainer = forwardRef(
                   }
 
                   if (!children && !theme.select.options && search) {
-                    const label = optionLabel(index);
+                    const label = getOptionLabel(index, options, labelKey);
                     if (
                       typeof label === typeof '' &&
                       label.toLowerCase().indexOf(search) >= 0

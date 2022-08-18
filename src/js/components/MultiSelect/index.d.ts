@@ -13,7 +13,7 @@ export interface MultiSelectProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   children?: (...args: any[]) => any;
-  defaultValue?: string | number | object | (string | number | object)[];
+  defaultValue?: (string | number | object)[];
   disabled?: boolean | (number | string | object)[];
   disabledKey?: string | ((...args: any[]) => any);
   dropAlign?: {
@@ -47,7 +47,7 @@ export interface MultiSelectProps {
   replace?: boolean;
   searchPlaceholder?: string;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
-  value?: string | JSX.Element | object | (string | number | object)[];
+  value?: (string | number | object)[];
   valueKey?:
     | string
     | { key: string; reduce?: boolean }

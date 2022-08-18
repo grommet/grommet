@@ -64,7 +64,6 @@ export const Default = () => {
           setOptions(sortedAllOptions);
         }}
         onChange={({ value }) => {
-          console.log('in onChange ', value);
           setValueMultiple(value);
         }}
       />

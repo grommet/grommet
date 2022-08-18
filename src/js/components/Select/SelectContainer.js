@@ -118,11 +118,6 @@ const SelectContainer = forwardRef(
       return () => clearTimeout(timer);
     }, [onSearch, usingKeyboard, clear]);
 
-    const optionLabel = useCallback(
-      (index) => getOptionLabel(index, options, labelKey),
-      [labelKey, options],
-    );
-
     const optionValue = useCallback(
       (index) => getOptionValue(index, options, valueKey),
       [options, valueKey],
@@ -422,7 +417,7 @@ const SelectContainer = forwardRef(
                     child = (
                       <Box {...selectOptionsStyle}>
                         <Text {...theme.select.options.text}>
-                          {optionLabel(index)}
+                          {getOptionLabel(index, options, labelKey)}
                         </Text>
                       </Box>
                     );
@@ -450,7 +445,11 @@ const SelectContainer = forwardRef(
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
-                      label={!child ? optionLabel(index) : undefined}
+                      label={
+                        !child
+                          ? getOptionLabel(index, options, labelKey)
+                          : undefined
+                      }
                       disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}

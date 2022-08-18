@@ -35,6 +35,8 @@ import {
   getOptionValue,
   getOptionLabel,
   getDisplayLabelKey,
+  SelectOption,
+  DefaultSelectTextInput,
 } from '../Select/utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { MultiSelectPropTypes } from './propTypes';
@@ -123,6 +125,15 @@ const MultiSelect = forwardRef(
       initialValue: defaultValue || '',
     });
 
+    // valuedValue is the value mapped with any valueKey applied
+    // When the options array contains objects, this property indicates how
+    // to retrieve the value of each option.
+    // If a string is provided, it is used as the key to retrieve a
+    // property of an option object.
+    // If a function is provided, it is called with the option and should
+    // return the value.
+    // If reduce is true, this value will be used for the 'value'
+    // delivered via 'onChange'.
     const valuedValue = useMemo(
       () => calcValuedValue(value, valueKey),
       [value, valueKey],
@@ -142,11 +153,10 @@ const MultiSelect = forwardRef(
     const optionIndexesInValue = useMemo(() => {
       const result = [];
       allOptions.forEach((option, index) => {
-        if (Array.isArray(valuedValue)) {
-          if (valuedValue.some((v) => v === applyKey(option, valueKey))) {
-            result.push(index);
-          }
-        } else if (valuedValue === applyKey(option, valueKey)) {
+        if (
+          valuedValue.length > 0 &&
+          valuedValue.some((v) => v === applyKey(option, valueKey))
+        ) {
           result.push(index);
         }
       });
@@ -215,11 +225,6 @@ const MultiSelect = forwardRef(
 
     const SelectIcon = getSelectIcon(icon, theme, open);
 
-    const optionLabel = useCallback(
-      (index) => getOptionLabel(index, allOptions, labelKey),
-      [labelKey, allOptions],
-    );
-
     const optionValue = useCallback(
       (index) => getOptionValue(index, allOptions, valueKey),
       [allOptions, valueKey],
@@ -231,15 +236,138 @@ const MultiSelect = forwardRef(
       [disabled, disabledKey, allOptions, valueKey],
     );
 
+    const visibleValue = useCallback(
+      (i) => {
+        const iValue = valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
+        const indexOptions = allOptions.indexOf(i);
+        const iLabel = getOptionLabel(indexOptions, allOptions, labelKey);
+        if (value.indexOf(iValue) < 5) {
+          let child;
+          if (children) {
+            const optionDisabled = isDisabled(indexOptions);
+            const optionSelected = true;
+            const optionActive = false;
+            child = children(i, indexOptions, allOptions, {
+              active: optionActive,
+              disabled: optionDisabled,
+              selected: optionSelected,
+            });
+          }
+
+          return (
+            <SelectOption
+              role="option"
+              a11yTitle={
+                value.includes(iValue)
+                  ? `${iLabel} selected`
+                  : `${iLabel} not selected`
+              }
+              aria-setsize={value.length}
+              aria-posinset={value.indexOf(iValue)}
+              aria-selected={value.includes(iValue)}
+              aria-disabled={isDisabled(indexOptions)}
+              plain
+              hoverIndicator
+              fill="horizontal"
+              tabIndex="0"
+              onClick={(event) => {
+                if (!isDisabled(indexOptions)) {
+                  const intermediate = [...value];
+                  const index = value.indexOf(iValue);
+                  if (intermediate.includes(iValue)) {
+                    onSelectChange(event, {
+                      option: iValue,
+                      value: intermediate.filter((v) => v !== iValue),
+                    });
+                    if (index !== intermediate.length - 1) {
+                      let timer = 0;
+                      // if index is the last one visible
+                      // allow time for the next option to
+                      // become visible
+                      if (index === 4) timer = 200;
+
+                      setTimeout(() => {
+                        const nextFocus = document.getElementById(
+                          `selected-${intermediate[index + 1]}`,
+                        );
+                        if (nextFocus) nextFocus.focus();
+                        const result = allOptions.find(
+                          (obj, j) =>
+                            optionValue(j) === intermediate[index + 1],
+                        );
+                        setShowA11yDiv(
+                          `Unselected ${iLabel}. 
+                                      Focus moved to ${getOptionLabel(
+                                        allOptions.indexOf(result),
+                                        allOptions,
+                                        labelKey,
+                                      )}`,
+                        );
+                      }, timer);
+                    } else if (intermediate.length !== 1) {
+                      const nextFocus = document.getElementById(
+                        `selected-${intermediate[index - 1]}`,
+                      );
+                      if (nextFocus) nextFocus.focus();
+                      const result = allOptions.find(
+                        (obj, j) => optionValue(j) === intermediate[index - 1],
+                      );
+                      setShowA11yDiv(
+                        `Unselected ${iLabel}. Focus moved to 
+                                    ${getOptionLabel(
+                                      allOptions.indexOf(result),
+                                      allOptions,
+                                      labelKey,
+                                    )}`,
+                      );
+                    } else if (dropButtonRef.current)
+                      dropButtonRef.current.focus();
+                  }
+                }
+              }}
+              key={iLabel}
+              id={`selected-${iValue}`}
+            >
+              {children && child ? (
+                child
+              ) : (
+                <CheckBox
+                  disabled={isDisabled(indexOptions)}
+                  label={
+                    <Box alignSelf="center" width="100%" align="start">
+                      {iLabel}
+                    </Box>
+                  }
+                  key={iLabel}
+                  pad="xsmall"
+                  tabIndex="-1"
+                  checked={value.includes(iValue)}
+                />
+              )}
+            </SelectOption>
+          );
+        }
+        return undefined;
+      },
+      [
+        valueKey,
+        allOptions,
+        children,
+        dropButtonRef,
+        isDisabled,
+        labelKey,
+        onSelectChange,
+        optionValue,
+        value,
+      ],
+    );
+
     // element to show, trumps inputValue
     const selectValue = useMemo(() => {
       if (valueLabel instanceof Function) {
-        if (value) {
-          return valueLabel(value);
-        }
-      } else if (valueLabel) {
-        return valueLabel;
-      } else if (value.length > 0 && visibleSelection) {
+        if (value) return valueLabel(value);
+      } else if (valueLabel) return valueLabel;
+      else if (value.length > 0 && visibleSelection) {
         return (
           <>
             <Box
@@ -258,121 +386,7 @@ const MultiSelect = forwardRef(
                   )
                   /* eslint-disable-next-line array-callback-return, 
                   consistent-return */
-                  .map((i) => {
-                    const iValue =
-                      valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
-                    const indexOptions = allOptions.indexOf(i);
-                    const iLabel = optionLabel(indexOptions);
-                    if (value.indexOf(iValue) < 5) {
-                      let child;
-                      if (children) {
-                        const optionDisabled = isDisabled(indexOptions);
-                        const optionSelected = true;
-                        const optionActive = false;
-                        child = children(i, indexOptions, allOptions, {
-                          active: optionActive,
-                          disabled: optionDisabled,
-                          selected: optionSelected,
-                        });
-                      }
-
-                      return (
-                        <Button
-                          role="option"
-                          a11yTitle={
-                            value.includes(iValue)
-                              ? `${iLabel} selected`
-                              : `${iLabel} not selected`
-                          }
-                          aria-setsize={value.length}
-                          aria-posinset={value.indexOf(iValue)}
-                          aria-selected={value.includes(iValue)}
-                          aria-disabled={isDisabled(indexOptions)}
-                          plain
-                          hoverIndicator
-                          fill="horizontal"
-                          tabIndex="0"
-                          onClick={(event) => {
-                            if (!isDisabled(indexOptions)) {
-                              const intermediate = [...value];
-                              const index = value.indexOf(iValue);
-                              if (intermediate.includes(iValue)) {
-                                onSelectChange(event, {
-                                  option: iValue,
-                                  value: intermediate.filter(
-                                    (v) => v !== iValue,
-                                  ),
-                                });
-                                if (index !== intermediate.length - 1) {
-                                  let timer = 0;
-                                  // if index is the last one visible
-                                  // allow time for the next option to
-                                  // become visible
-                                  if (index === 4) timer = 200;
-
-                                  setTimeout(() => {
-                                    const nextFocus = document.getElementById(
-                                      `selected-${intermediate[index + 1]}`,
-                                    );
-                                    if (nextFocus) nextFocus.focus();
-                                    const result = allOptions.find(
-                                      (obj, j) =>
-                                        optionValue(j) ===
-                                        intermediate[index + 1],
-                                    );
-                                    setShowA11yDiv(
-                                      `Unselected ${iLabel}. 
-                                      Focus moved to ${optionLabel(
-                                        allOptions.indexOf(result),
-                                      )}`,
-                                    );
-                                  }, timer);
-                                } else if (intermediate.length !== 1) {
-                                  const nextFocus = document.getElementById(
-                                    `selected-${intermediate[index - 1]}`,
-                                  );
-                                  if (nextFocus) nextFocus.focus();
-                                  const result = allOptions.find(
-                                    (obj, j) =>
-                                      optionValue(j) ===
-                                      intermediate[index - 1],
-                                  );
-                                  setShowA11yDiv(
-                                    `Unselected ${iLabel}. Focus moved to 
-                                    ${optionLabel(allOptions.indexOf(result))}`,
-                                  );
-                                } else if (dropButtonRef.current)
-                                  dropButtonRef.current.focus();
-                              }
-                            }
-                          }}
-                          key={iLabel}
-                          id={`selected-${iValue}`}
-                        >
-                          {children && child ? (
-                            child
-                          ) : (
-                            <CheckBox
-                              disabled={isDisabled(indexOptions)}
-                              label={
-                                <Box
-                                  alignSelf="center"
-                                  width="100%"
-                                  align="start"
-                                >
-                                  {iLabel}
-                                </Box>
-                              }
-                              key={iLabel}
-                              pad="xsmall"
-                              tabIndex="-1"
-                              checked={value.includes(iValue)}
-                            />
-                          )}
-                        </Button>
-                      );
-                    }
-                  })}
+                  .map((i) => visibleValue(i))}
               {showA11yDiv && (
                 <Box
                   height="0px"
@@ -399,11 +413,6 @@ const MultiSelect = forwardRef(
       }
       return undefined;
     }, [
-      children,
-      dropButtonRef,
-      isDisabled,
-      optionLabel,
-      optionValue,
       valueKey,
       value,
       valueLabel,
@@ -411,7 +420,7 @@ const MultiSelect = forwardRef(
       showA11yDiv,
       allOptions,
       onRequestOpen,
-      onSelectChange,
+      visibleValue,
     ]);
 
     // After announcing set showA11yDiv to undefined so it won't
@@ -535,37 +544,6 @@ const MultiSelect = forwardRef(
       </Box>
     );
 
-    const defaultSelectTextInput = (
-      <SelectTextInput
-        a11yTitle={
-          (ariaLabel || a11yTitle) &&
-          `${ariaLabel || a11yTitle}${
-            value && typeof value === 'string' ? `, ${value}` : ''
-          }`
-        }
-        // When Select is disabled, we want to show a default cursor
-        // but not have disabled styling come from TextInput
-        // Disabled can be a bool or an array of options to disable.
-        // We only want to disable the TextInput if the control
-        // button should be disabled which occurs when disabled
-        // equals true.
-        defaultCursor={disabled === true || undefined}
-        focusIndicator={false}
-        id={id ? `${id}__input` : undefined}
-        name={name}
-        ref={inputRef}
-        {...rest}
-        tabIndex="-1"
-        type="text"
-        placeholder={placeholder}
-        plain
-        readOnly
-        value={inputValue}
-        size={size}
-        theme={theme}
-      />
-    );
-
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         {visibleSelection ? (
@@ -594,14 +572,7 @@ const MultiSelect = forwardRef(
                   <>
                     <Box direction="row" width="100%">
                       <SelectTextInput
-                        a11yTitle={
-                          (ariaLabel || a11yTitle) &&
-                          `${ariaLabel || a11yTitle}${
-                            value && typeof value === 'string'
-                              ? `, ${value}`
-                              : ''
-                          }`
-                        }
+                        a11yTitle={ariaLabel || a11yTitle}
                         defaultCursor={disabled === true || undefined}
                         focusIndicator={false}
                         id={id ? `${id}__input` : undefined}
@@ -630,7 +601,18 @@ const MultiSelect = forwardRef(
                   </>
                 ) : (
                   <Box direction="row">
-                    {defaultSelectTextInput}
+                    <DefaultSelectTextInput
+                      a11yTitle={ariaLabel || a11yTitle}
+                      disabled={disabled}
+                      id={id}
+                      name={name}
+                      ref={inputRef}
+                      placeholder={placeholder}
+                      value={inputValue}
+                      size={size}
+                      theme={theme}
+                      {...rest}
+                    />
                     {displaySelectIcon}
                   </Box>
                 )}
@@ -667,7 +649,18 @@ const MultiSelect = forwardRef(
                     />
                   </>
                 ) : (
-                  defaultSelectTextInput
+                  <DefaultSelectTextInput
+                    a11yTitle={ariaLabel || a11yTitle}
+                    disabled={disabled}
+                    id={id}
+                    name={name}
+                    ref={inputRef}
+                    placeholder={placeholder}
+                    value={inputValue}
+                    size={size}
+                    theme={theme}
+                    {...rest}
+                  />
                 )}
               </Box>
               {displaySelectIcon}

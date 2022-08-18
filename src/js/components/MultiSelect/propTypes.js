@@ -6,18 +6,13 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     ...genericProps,
     children: PropTypes.func,
-    defaultValue: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.object,
-      PropTypes.number,
-      PropTypes.arrayOf(
-        PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.object,
-          PropTypes.number,
-        ]),
-      ),
-    ]),
+    defaultValue: PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object,
+        PropTypes.number,
+      ]),
+    ),
     disabled: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.arrayOf(
@@ -82,18 +77,13 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]),
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.object,
-      PropTypes.number,
-      PropTypes.arrayOf(
-        PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.object,
-          PropTypes.number,
-        ]),
-      ),
-    ]),
+    value: PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object,
+        PropTypes.number,
+      ]),
+    ),
     valueKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,
