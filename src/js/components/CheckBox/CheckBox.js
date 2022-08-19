@@ -50,6 +50,7 @@ const CheckBox = forwardRef(
       onMouseOut,
       onMouseOver,
       pad,
+      plainProp = false,
       reverse,
       toggle,
       indeterminate,
@@ -96,6 +97,7 @@ const CheckBox = forwardRef(
       // need to visually indicate when a CheckBox is active.
       // If focus = true but focusIndicator = false,
       // we will apply the hover treament.
+      plainProp,
       focusIndicator,
       reverse,
       toggle,

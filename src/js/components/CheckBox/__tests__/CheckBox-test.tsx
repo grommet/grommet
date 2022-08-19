@@ -199,4 +199,15 @@ describe('CheckBox', () => {
     expect(getByLabelText(`${LABEL}-2`)).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('plainProp renders', () => {
+    const { container } = render(
+      <Grommet>
+        <CheckBox plainProp />
+        <CheckBox plainProp checked />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
