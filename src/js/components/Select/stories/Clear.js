@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 
 import { Box, Select } from 'grommet';
 
-const options = ['one', 'two', 'three'];
+const options = [];
+for (let i = 0; i < 500; i += 1) {
+  options.push(`Number ${i}`);
+}
 
 const ClearTop = () => {
   const [value, setValue] = useState();
@@ -14,6 +17,7 @@ const ClearTop = () => {
         multiple
         options={options}
         onChange={({ value: nextValue }) => setValue(nextValue)}
+        dropHeight="large"
         clear
       />
     </Box>
@@ -30,6 +34,7 @@ const ClearBottom = () => {
         multiple
         options={options}
         onChange={({ value: nextValue }) => setValue(nextValue)}
+        dropHeight="large"
         clear={{ position: 'bottom' }}
       />
     </Box>
