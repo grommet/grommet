@@ -49,6 +49,7 @@ const SelectOption = styled(Button)`
   // visible to keyboard users
   &:focus {
     ${(props) =>
+      props.active &&
       getHoverIndicatorStyle(
         !props.children && !props.theme.select.options
           ? undefined
@@ -67,26 +68,29 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const ClearButton = forwardRef(({ clear, onClear, name, theme }, ref) => {
-  const { label, position } = clear;
-  const align = position !== 'bottom' ? 'start' : 'center';
-  const buttonLabel = label || `Clear ${name || 'selection'}`;
-  return (
-    <StyledButton
-      a11yTitle={`${buttonLabel}, press ${
-        position === 'bottom' ? 'shift tab' : 'down arrow'
-      } to move to select options`}
-      fill="horizontal"
-      ref={ref}
-      onClick={onClear}
-      focusIndicator={false}
-    >
-      <Box {...theme.select.clear.container} align={align}>
-        <Text {...theme.select.clear.text}>{buttonLabel}</Text>
-      </Box>
-    </StyledButton>
-  );
-});
+const ClearButton = forwardRef(
+  ({ clear, onClear, name, theme, ...rest }, ref) => {
+    const { label, position } = clear;
+    const align = position !== 'bottom' ? 'start' : 'center';
+    const buttonLabel = label || `Clear ${name || 'selection'}`;
+    return (
+      <StyledButton
+        a11yTitle={`${buttonLabel}, press ${
+          position === 'bottom' ? 'shift tab' : 'down arrow'
+        } to move to select options`}
+        fill="horizontal"
+        ref={ref}
+        onClick={onClear}
+        focusIndicator={false}
+        {...rest}
+      >
+        <Box {...theme.select.clear.container} align={align}>
+          <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+        </Box>
+      </StyledButton>
+    );
+  },
+);
 
 const SelectContainer = forwardRef(
   (
@@ -425,6 +429,8 @@ const SelectContainer = forwardRef(
               clear={clear}
               name={name}
               onClear={onClear}
+              onFocus={() => setActiveIndex(-1)}
+              onMouseOver={() => setActiveIndex(-1)}
               theme={theme}
             />
           )}
@@ -538,6 +544,8 @@ const SelectContainer = forwardRef(
               clear={clear}
               name={name}
               onClear={onClear}
+              onFocus={() => setActiveIndex(-1)}
+              onMouseOver={() => setActiveIndex(-1)}
               theme={theme}
             />
           )}

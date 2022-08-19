@@ -423,11 +423,6 @@ exports[`Select Clear option renders - bottom 1`] = `
   width: 100%;
 }
 
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
 
 }
@@ -681,11 +676,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -951,11 +941,6 @@ exports[`Select Clear option renders custom label 1`] = `
   width: 100%;
 }
 
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
 
 }
@@ -1209,11 +1194,6 @@ exports[`Select Clear option renders- top 1`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -2828,11 +2808,6 @@ exports[`Select complex options and children 3`] = `
   width: 100%;
 }
 
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
 
 }
@@ -3765,21 +3740,11 @@ exports[`Select default value clear 1`] = `
   width: 100%;
 }
 
-.c10:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c14 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
   width: 100%;
-}
-
-.c14:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -4990,11 +4955,6 @@ exports[`Select disabled key 2`] = `
   width: 100%;
 }
 
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
 
 }
@@ -5290,11 +5250,6 @@ exports[`Select disabled option value 1`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -5945,11 +5900,6 @@ exports[`Select large drop container height 1`] = `
   width: 100%;
 }
 
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
 
 }
@@ -6194,11 +6144,6 @@ exports[`Select medium drop container height 1`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -7013,11 +6958,6 @@ exports[`Select onChange with valueKey string 2`] = `
   width: 100%;
 }
 
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
 
 }
@@ -7500,11 +7440,6 @@ exports[`Select onChange with valueLabel 2`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -8042,11 +7977,6 @@ exports[`Select onChange without valueKey 2`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -9188,11 +9118,6 @@ exports[`Select prop: onOpen 3`] = `
   width: 100%;
 }
 
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
 
 }
@@ -9303,7 +9228,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 mhbs"
+    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 cJsyfs"
     role="option"
     tabindex="-1"
     type="button"
@@ -9322,7 +9247,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 mhbs"
+    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 cJsyfs"
     role="option"
     tabindex="-1"
     type="button"
@@ -11850,21 +11775,11 @@ exports[`Select search 2`] = `
   width: 100%;
 }
 
-.c9:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c13 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
   width: 100%;
-}
-
-.c13:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -12513,11 +12428,6 @@ exports[`Select search and select 2`] = `
 .c9 {
   display: block;
   width: 100%;
-}
-
-.c9:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -15855,11 +15765,6 @@ exports[`Select small drop container height 1`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c6:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
