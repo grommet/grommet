@@ -203,8 +203,8 @@ describe('CheckBox', () => {
   test('plainProp renders', () => {
     const { container } = render(
       <Grommet>
-        <CheckBox plainProp />
-        <CheckBox plainProp checked />
+        <CheckBox plain />
+        <CheckBox plain checked />
       </Grommet>,
     );
 

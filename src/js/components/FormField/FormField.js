@@ -225,7 +225,7 @@ const FormField = forwardRef(
             child.props.focusIndicator === undefined
           ) {
             return cloneElement(child, {
-              plain: true,
+              plain: 'noBorder',
               focusIndicator: false,
             });
           }

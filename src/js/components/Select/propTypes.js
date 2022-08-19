@@ -82,7 +82,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.element,
       PropTypes.node,
     ]),
-    plain: PropTypes.bool,
+    plain: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     replace: PropTypes.bool,
     searchPlaceholder: PropTypes.string,
     selected: PropTypes.oneOfType([

@@ -11,7 +11,7 @@ export interface CheckBoxProps {
   label?: React.ReactNode;
   name?: string;
   pad?: PadType;
-  plainProp?: boolean;
+  plain?: boolean;
   reverse?: boolean;
   toggle?: boolean;
   indeterminate?: boolean;

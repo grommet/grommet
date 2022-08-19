@@ -13,7 +13,7 @@ if (process.env.NODE_ENV !== 'production') {
     name: PropTypes.string,
     onChange: PropTypes.func,
     pad: padPropType,
-    plainProp: PropTypes.bool,
+    plain: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     reverse: PropTypes.bool,
     toggle: PropTypes.bool,
     indeterminate: PropTypes.bool,
