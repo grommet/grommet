@@ -1,7 +1,9 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
+import { Box } from '../Box';
 import { Button } from '../Button';
 import { DropButton } from '../DropButton';
+import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import {
   getHoverIndicatorStyle,
@@ -52,9 +54,9 @@ export const StyledSelectDropButton = styled(DropButton)`
   ${(props) => !props.callerPlain && controlBorderStyle};
   ${(props) =>
     props.theme.select &&
-    props.theme.select.control &&
-    props.theme.select.control.extend};
-  ${(props) => props.open && props.theme.select.control.open};
+    props.theme.select?.control &&
+    props.theme.select?.control?.extend};
+  ${(props) => props.open && props.theme.select?.control?.open};
 `;
 
 export const DefaultSelectTextInput = forwardRef(
@@ -86,6 +88,25 @@ export const DefaultSelectTextInput = forwardRef(
       theme={theme}
     />
   ),
+);
+
+export const EmptySearchOption = ({
+  emptySearchMessage,
+  selectOptionsStyle,
+  theme,
+}) => (
+  <SelectOption
+    key="search_empty"
+    tabIndex="0"
+    role="menuitem"
+    hoverIndicator="background"
+    disabled
+    aria-live="polite"
+  >
+    <Box {...selectOptionsStyle}>
+      <Text {...theme.select.container.text}>{emptySearchMessage}</Text>
+    </Box>
+  </SelectOption>
 );
 
 export const getOptionLabel = (index, options, labelKey) =>

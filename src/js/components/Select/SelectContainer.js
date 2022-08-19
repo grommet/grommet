@@ -27,6 +27,7 @@ import {
   checkDisabled,
   getOptionLabel,
   getOptionValue,
+  EmptySearchOption,
 } from './utils';
 
 const ClearButton = forwardRef(({ clear, onClear, name, theme }, ref) => {
@@ -467,19 +468,11 @@ const SelectContainer = forwardRef(
                 }}
               </InfiniteScroll>
             ) : (
-              <SelectOption
-                key="search_empty"
-                tabIndex="-1"
-                role="menuitem"
-                hoverIndicator="background"
-                disabled
-              >
-                <Box {...selectOptionsStyle}>
-                  <Text {...theme.select.container.text}>
-                    {emptySearchMessage}
-                  </Text>
-                </Box>
-              </SelectOption>
+              <EmptySearchOption
+                emptySearchMessage={emptySearchMessage}
+                selectOptionsStyle={selectOptionsStyle}
+                theme={theme}
+              />
             )}
             {shouldShowClearButton('bottom') && (
               <ClearButton

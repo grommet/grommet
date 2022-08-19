@@ -29,6 +29,7 @@ import {
   getOptionValue,
   checkDisabled,
   SelectOption,
+  EmptySearchOption,
 } from '../Select/utils';
 
 const MultiSelectContainer = forwardRef(
@@ -63,10 +64,8 @@ const MultiSelectContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    // const [activeIndex, setActiveIndex] = useState(usingKeyboard ? 0 : -1);
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
-    // const [keyboardNavigation, setKeyboardNavigation] = useState();
     const searchRef = useRef();
     const optionsRef = useRef();
     const [disabled, setDisabled] = useState(disabledProp);
@@ -589,20 +588,11 @@ const MultiSelectContainer = forwardRef(
                 }}
               </InfiniteScroll>
             ) : (
-              <SelectOption
-                key="search_empty"
-                tabIndex="0"
-                role="menuitem"
-                hoverIndicator="background"
-                disabled
-                aria-live="polite"
-              >
-                <Box {...selectOptionsStyle}>
-                  <Text {...theme.select.container.text}>
-                    {emptySearchMessage}
-                  </Text>
-                </Box>
-              </SelectOption>
+              <EmptySearchOption
+                emptySearchMessage={emptySearchMessage}
+                selectOptionsStyle={selectOptionsStyle}
+                theme={theme}
+              />
             )}
           </OptionsBox>
           {usingKeyboard && showA11yLimit && (
