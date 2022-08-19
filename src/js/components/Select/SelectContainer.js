@@ -75,7 +75,7 @@ const ClearButton = forwardRef(
     const buttonLabel = label || `Clear ${name || 'selection'}`;
     return (
       <StyledButton
-        a11yTitle={`${buttonLabel}, press ${
+        a11yTitle={`${buttonLabel}. Or, press ${
           position === 'bottom' ? 'shift tab' : 'down arrow'
         } to move to select options`}
         fill="horizontal"
