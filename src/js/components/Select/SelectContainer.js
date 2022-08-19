@@ -313,7 +313,15 @@ const SelectContainer = forwardRef(
 
         if (nextActiveIndex === -1) {
           const searchInput = searchRef.current;
-          if (searchInput && searchInput.focus) {
+          const clearButton = clearRef.current;
+          if (
+            clearButton &&
+            clearButton.focus &&
+            shouldShowClearButton('top')
+          ) {
+            setActiveIndex(nextActiveIndex);
+            setFocusWithoutScroll(clearButton);
+          } else if (searchInput && searchInput.focus) {
             setActiveIndex(nextActiveIndex);
             setFocusWithoutScroll(searchInput);
           }
@@ -327,7 +335,7 @@ const SelectContainer = forwardRef(
           setKeyboardNavigation(true);
         }
       },
-      [activeIndex, isDisabled],
+      [activeIndex, isDisabled, shouldShowClearButton],
     );
 
     const onKeyDownOption = useCallback(

@@ -17,6 +17,7 @@ const ClearTop = () => {
         multiple
         options={options}
         onChange={({ value: nextValue }) => setValue(nextValue)}
+        dropHeight="large"
         clear
       />
     </Box>
@@ -33,6 +34,7 @@ const ClearBottom = () => {
         multiple
         options={options}
         onChange={({ value: nextValue }) => setValue(nextValue)}
+        dropHeight="large"
         clear={{ position: 'bottom' }}
       />
     </Box>
