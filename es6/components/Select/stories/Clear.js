@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Box, Select } from 'grommet';
-var options = ['one', 'two', 'three'];
+var options = [];
+
+for (var i = 0; i < 500; i += 1) {
+  options.push("Number " + i);
+}
 
 var ClearTop = function ClearTop() {
   var _useState = useState(),
@@ -21,6 +25,7 @@ var ClearTop = function ClearTop() {
       var nextValue = _ref.value;
       return setValue(nextValue);
     },
+    dropHeight: "large",
     clear: true
   }));
 };
@@ -44,6 +49,7 @@ var ClearBottom = function ClearBottom() {
       var nextValue = _ref2.value;
       return setValue(nextValue);
     },
+    dropHeight: "large",
     clear: {
       position: 'bottom'
     }
