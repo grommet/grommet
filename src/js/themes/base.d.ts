@@ -369,11 +369,12 @@ export interface ThemeType {
         color?: ColorType;
         size?: string;
       };
-      shadow?: 
-        string | {
-        color?: ColorType;
-        size?: string;
-      };
+      shadow?:
+        | string
+        | {
+            color?: ColorType;
+            size?: string;
+          };
     };
     font?: {
       face?: string;
@@ -1165,6 +1166,23 @@ export interface ThemeType {
     };
     subtitle?: ParagraphProps;
     title?: HeadingProps;
+    size?: {
+      small?: {
+        pad?: PadType;
+        subtitle?: ParagraphProps;
+        title?: ParagraphProps;
+      };
+      medium?: {
+        pad?: PadType;
+        subtitle?: ParagraphProps;
+        title?: ParagraphProps;
+      };
+      large?: {
+        pad?: PadType;
+        subtitle?: ParagraphProps;
+        title?: ParagraphProps;
+      };
+    };
     small?: {
       areas?: AreasType;
       columns?: GridColumnsType;
