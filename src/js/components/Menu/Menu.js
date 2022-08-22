@@ -309,7 +309,7 @@ const Menu = forwardRef((props, ref) => {
         align="start"
         pad="small"
         direction="row"
-        gap={item.gap}
+        gap={item.gap || theme.menu.item?.gap}
         justify={item.justify || theme.menu.item?.justify}
       >
         {item.reverse && item.label}
@@ -334,10 +334,10 @@ const Menu = forwardRef((props, ref) => {
           focusIndicator={false}
           plain={!child ? undefined : true}
           align="start"
-          justify={item.justify}
           kind={!child ? 'option' : undefined}
           hoverIndicator={!child ? undefined : 'background'}
           {...theme.menu.item}
+          justify={item.justify || theme.menu.item?.justify}
           {...(!child
             ? item
             : {
