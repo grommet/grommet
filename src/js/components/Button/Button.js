@@ -178,11 +178,13 @@ const Button = forwardRef(
         sendAnalytics({
           type: 'buttonClick',
           element: event.target,
-          data: event,
+          event,
+          href,
+          label: typeof label === 'string' ? label: undefined,
         });
         if (onClickProp) onClickProp(event);
       },
-      [onClickProp, sendAnalytics],
+      [onClickProp, sendAnalytics, href, label],
     );
 
     // kindArg is object if we are referencing a theme object

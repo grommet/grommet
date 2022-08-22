@@ -5,10 +5,7 @@ export const AnalyticsContext = React.createContext(() => {});
 export const useAnalytics = () => useContext(AnalyticsContext);
 
 export const AnalyticsProvider = ({ onAnalytics, children }) => {
-  const pathInfoRef = useRef({
-    lastUrl: window.location.href,
-    observer: undefined,
-  });
+  const lastUrlRef = useRef();
 
   const sendAnalytics = useCallback(
     (data) => onAnalytics && onAnalytics(data),
@@ -19,15 +16,15 @@ export const AnalyticsProvider = ({ onAnalytics, children }) => {
     let observer;
     if (onAnalytics) {
       observer = new window.MutationObserver(() => {
-        const url = window.location.href;
-        if (url !== pathInfoRef.current.lastUrl) {
-          pathInfoRef.current.lastUrl = url;
-          sendAnalytics({ type: 'pageView', data: url });
+        const url = window?.location?.href;
+        const previousUrl = lastUrlRef.current;
+        if (url !== previousUrl) {
+          lastUrlRef.current = url;
+          sendAnalytics({ type: 'pageView', url, previousUrl });
         }
       });
       observer.observe(document, { subtree: true, childList: true });
     }
-    pathInfoRef.current.observer = observer;
 
     return () => observer?.disconnect();
   }, [sendAnalytics, onAnalytics]);

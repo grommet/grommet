@@ -1,6 +1,7 @@
 import React, {
   cloneElement,
   forwardRef,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -15,6 +16,7 @@ import { Box } from '../Box';
 
 import { StyledAnchor } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
 
 const Anchor = forwardRef(
   (
@@ -29,7 +31,7 @@ const Anchor = forwardRef(
       icon,
       label,
       onBlur,
-      onClick,
+      onClick: onClickProp,
       onFocus,
       reverse,
       ...rest
@@ -38,6 +40,22 @@ const Anchor = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
+
+    const sendAnalytics = useAnalytics();
+
+    const onClick = useCallback(
+      (event) => {
+        sendAnalytics({
+          type: 'anchorClick',
+          element: event.target,
+          event,
+          href,
+          label: typeof label === 'string' ? label: undefined,
+        });
+        if (onClickProp) onClickProp(event);
+      },
+      [onClickProp, sendAnalytics, label, href],
+    );
 
     useEffect(() => {
       if ((icon || label) && children) {

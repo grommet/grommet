@@ -361,12 +361,15 @@ const Form = forwardRef(
         element,
       });
       return () => {
-        sendAnalytics({
-          type: 'formClose',
-          element,
-          errors: analyticsRef.current.errors,
-          elapsed: new Date().getTime() - analyticsRef.current.start.getTime(),
-        });
+        if (!analyticsRef.current.submitted) {
+          sendAnalytics({
+            type: 'formClose',
+            element,
+            errors: analyticsRef.current.errors,
+            elapsed: 
+              new Date().getTime() - analyticsRef.current.start.getTime(),
+          });
+        }
       };
     }, [sendAnalytics, formRef]);
 
@@ -648,6 +651,7 @@ const Form = forwardRef(
                 new Date().getTime() - analyticsRef.current.start.getTime(),
             });
             analyticsRef.current.errors = {};
+            analyticsRef.current.submitted = true;
           }
         }}
       >
