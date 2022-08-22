@@ -40,7 +40,7 @@ export const ObjectOptions = () => {
           const exp = new RegExp(escapedText, 'i');
           setOptions(objectOptions.filter((o) => exp.test(o.label)));
         }}
-        visibleSelection
+        showSelectedInline
         id="select"
         name="select"
         placeholder="Select"

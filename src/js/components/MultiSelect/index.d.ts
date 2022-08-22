@@ -53,7 +53,7 @@ export interface MultiSelectProps {
     | { key: string; reduce?: boolean }
     | ((...args: any[]) => string);
   valueLabel?: React.ReactNode | ((...args: any[]) => string | React.ReactNode);
-  visibleSelection?: boolean;
+  showSelectedInline?: boolean;
 }
 
 // Try without Omit<> to see where we define our own attributes for overrides

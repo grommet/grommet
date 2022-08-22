@@ -63,7 +63,7 @@ export const Children = () => {
     // <Grommet theme={...}>
     <Box fill align="center" pad="small">
       <MultiSelect
-        visibleSelection
+        showSelectedInline
         valueLabel={(option) => (
           <Box wrap direction="row" width="small">
             {option && option.length ? (

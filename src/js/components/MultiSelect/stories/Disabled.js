@@ -31,7 +31,7 @@ export const Disabled = () => {
       <MultiSelect
         width="medium"
         // limit={5}
-        visibleSelection
+        showSelectedInline
         dropProps={{
           width: 'medium',
         }}

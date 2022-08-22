@@ -124,14 +124,14 @@ describe('MultiSelect', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
   });
 
-  test('visibleSelection', async () => {
+  test('showSelectionInline', async () => {
     // Mock scrollIntoView since JSDOM doesn't do layout.
     // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     const user = userEvent.setup();
     const { container } = render(
       <Grommet>
-        <MultiSelect options={[0, 1, 2]} visibleSelection />
+        <MultiSelect options={[0, 1, 2]} showSelectedInline />
       </Grommet>,
     );
     // open MultiSelect

@@ -31,7 +31,7 @@ export const InsideFormField = () => {
       >
         <FormField label="Label" name="select">
           <MultiSelect
-            visibleSelection
+            showSelectedInline
             name="select"
             placeholder="placeholder"
             options={options}

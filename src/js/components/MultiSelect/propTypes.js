@@ -93,7 +93,7 @@ if (process.env.NODE_ENV !== 'production') {
       }),
     ]),
     valueLabel: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-    visibleSelection: PropTypes.bool,
+    showSelectedInline: PropTypes.bool,
   };
 }
 export const MultiSelectPropTypes = PropType;

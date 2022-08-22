@@ -62,9 +62,9 @@ const MultiSelect = forwardRef(
       dropProps,
       dropTarget,
       emptySearchMessage,
-      focusIndicator,
+      focusIndicator, // internal only from FormField
       gridArea,
-      helpContent,
+      help,
       id,
       icon,
       labelKey,
@@ -81,7 +81,7 @@ const MultiSelect = forwardRef(
       onMore,
       onOpen,
       onSearch,
-      open: propOpen,
+      open: openProp,
       options: optionsProp,
       placeholder,
       plain,
@@ -91,7 +91,7 @@ const MultiSelect = forwardRef(
       value: valueProp,
       valueKey,
       valueLabel,
-      visibleSelection = false,
+      showSelectedInline = false,
       width,
       ...rest
     },
@@ -147,6 +147,7 @@ const MultiSelect = forwardRef(
       const result = [];
       allOptions.forEach((option, index) => {
         if (
+          valuedValue &&
           valuedValue.length > 0 &&
           valuedValue.some((v) => v === applyKey(option, valueKey))
         ) {
@@ -156,8 +157,8 @@ const MultiSelect = forwardRef(
       return result;
     }, [allOptions, valueKey, valuedValue]);
 
-    const [open, setOpen] = useState(propOpen);
-    useEffect(() => setOpen(propOpen), [propOpen]);
+    const [open, setOpen] = useState(openProp);
+    useEffect(() => setOpen(openProp), [openProp]);
 
     const onRequestOpen = useCallback(() => {
       if (open) return;
@@ -223,7 +224,7 @@ const MultiSelect = forwardRef(
       if (valueLabel instanceof Function) {
         if (value) return valueLabel(value);
       } else if (valueLabel) return valueLabel;
-      else if (value.length > 0 && visibleSelection) {
+      else if (value.length > 0 && showSelectedInline) {
         return (
           <MultiSelectValue
             allOptions={allOptions}
@@ -245,7 +246,7 @@ const MultiSelect = forwardRef(
       valueKey,
       value,
       valueLabel,
-      visibleSelection,
+      showSelectedInline,
       onRequestOpen,
       allOptions,
       children,
@@ -303,7 +304,7 @@ const MultiSelect = forwardRef(
         disabledKey={disabledKey}
         dropHeight={dropHeight}
         emptySearchMessage={emptySearchMessage}
-        helpContent={helpContent}
+        help={help}
         id={id}
         labelKey={labelKey}
         limit={limit}
@@ -321,7 +322,7 @@ const MultiSelect = forwardRef(
         usingKeyboard={usingKeyboard}
         value={value}
         valueKey={valueKey}
-        visibleSelection={visibleSelection}
+        showSelectedInline={showSelectedInline}
       >
         {children}
       </MultiSelectContainer>
@@ -354,8 +355,7 @@ const MultiSelect = forwardRef(
 
     const displaySelectIcon = SelectIcon && (
       <Box
-        pad={{ top: 'xsmall' }}
-        alignSelf="start"
+        alignSelf="center"
         margin={theme.select.icons.margin}
         style={{ minWidth: 'auto' }}
       >
@@ -369,7 +369,7 @@ const MultiSelect = forwardRef(
 
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
-        {visibleSelection ? (
+        {showSelectedInline ? (
           <StyledSelectBox
             disabled={disabled === true || undefined}
             alignSelf={alignSelf}
@@ -444,51 +444,52 @@ const MultiSelect = forwardRef(
             </Box>
           </StyledSelectBox>
         ) : (
-          <StyledSelectDropButton
-            {...dropButtonProps}
-            dropAlign={dropAlign || { top: 'bottom', left: 'left' }}
-            dropTarget={dropTarget}
-            alignSelf={alignSelf}
-            tabIndex="0"
-          >
-            <Box
-              align="center"
-              direction="row"
-              justify="between"
-              background={theme.select.background}
-              width={width}
+          <Box width={width}>
+            <StyledSelectDropButton
+              {...dropButtonProps}
+              dropAlign={dropAlign || { top: 'bottom', left: 'left' }}
+              dropTarget={dropTarget}
+              alignSelf={alignSelf}
+              tabIndex="0"
             >
-              <Box direction="row" flex basis="auto">
-                {selectValue || displayLabelKey ? (
-                  <>
-                    {selectValue || displayLabelKey}
-                    <HiddenInput
-                      type="text"
+              <Box
+                align="center"
+                direction="row"
+                justify="between"
+                background={theme.select.background}
+              >
+                <Box direction="row" flex basis="auto">
+                  {selectValue || displayLabelKey ? (
+                    <>
+                      {selectValue || displayLabelKey}
+                      <HiddenInput
+                        type="text"
+                        name={name}
+                        id={id ? `${id}__input` : undefined}
+                        value={inputValue}
+                        ref={inputRef}
+                        readOnly
+                      />
+                    </>
+                  ) : (
+                    <DefaultSelectTextInput
+                      a11yTitle={ariaLabel || a11yTitle}
+                      disabled={disabled}
+                      id={id}
                       name={name}
-                      id={id ? `${id}__input` : undefined}
-                      value={inputValue}
                       ref={inputRef}
-                      readOnly
+                      placeholder={placeholder}
+                      value={inputValue}
+                      size={size}
+                      theme={theme}
+                      {...rest}
                     />
-                  </>
-                ) : (
-                  <DefaultSelectTextInput
-                    a11yTitle={ariaLabel || a11yTitle}
-                    disabled={disabled}
-                    id={id}
-                    name={name}
-                    ref={inputRef}
-                    placeholder={placeholder}
-                    value={inputValue}
-                    size={size}
-                    theme={theme}
-                    {...rest}
-                  />
-                )}
+                  )}
+                </Box>
+                {displaySelectIcon}
               </Box>
-              {displaySelectIcon}
-            </Box>
-          </StyledSelectDropButton>
+            </StyledSelectDropButton>
+          </Box>
         )}
       </Keyboard>
     );

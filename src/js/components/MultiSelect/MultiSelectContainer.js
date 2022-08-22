@@ -41,7 +41,7 @@ const MultiSelectContainer = forwardRef(
       disabledKey,
       dropHeight,
       emptySearchMessage = 'No matches found',
-      helpContent,
+      help,
       id,
       labelKey,
       limit,
@@ -59,7 +59,7 @@ const MultiSelectContainer = forwardRef(
       usingKeyboard,
       value = [],
       valueKey,
-      visibleSelection,
+      showSelectedInline,
     },
     ref,
   ) => {
@@ -71,11 +71,33 @@ const MultiSelectContainer = forwardRef(
     const [disabled, setDisabled] = useState(disabledProp);
     const activeRef = useRef();
     const [showA11yLimit, setShowA11yLimit] = useState();
+    const clearRef = useRef();
 
     // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {
       if (activeIndex) activeRef.current?.focus();
     }, [activeIndex]);
+
+    // set initial focus
+    useEffect(() => {
+      // need to wait for Drop to be ready
+      const timer = setTimeout(() => {
+        const clearButton = clearRef.current;
+        if (clearButton && clearButton.focus) {
+          setFocusWithoutScroll(clearButton);
+        } else if (searchRef && searchRef.current) {
+          const searchInput = searchRef.current;
+          if (searchInput && searchInput.focus) {
+            setFocusWithoutScroll(searchInput);
+          }
+        } else if (activeRef.current) {
+          setFocusWithoutScroll(activeRef.current);
+        } else if (optionsRef.current) {
+          setActiveIndex(0);
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }, []);
 
     useEffect(() => {
       const optionsNode = optionsRef.current;
@@ -346,6 +368,7 @@ const MultiSelectContainer = forwardRef(
                       }
                     }}
                     onFocus={() => setActiveIndex(-1)}
+                    ref={clearRef}
                   />
                 )
               ) : (
@@ -369,6 +392,7 @@ const MultiSelectContainer = forwardRef(
                     }
                   }}
                   onFocus={() => setActiveIndex(-1)}
+                  ref={clearRef}
                 />
               ))}
           </Box>
@@ -392,7 +416,7 @@ const MultiSelectContainer = forwardRef(
           dropHeight={dropHeight}
           a11yTitle="Select dropdown"
         >
-          {visibleSelection ? (
+          {showSelectedInline ? (
             <Box
               direction="row"
               justify="between"
@@ -449,7 +473,7 @@ const MultiSelectContainer = forwardRef(
               </Keyboard>
             </Box>
           )}
-          <Box flex={false}>{helpContent}</Box>
+          <Box flex={false}>{help}</Box>
           <OptionsBox
             role="listbox"
             tabIndex="0"
@@ -580,6 +604,7 @@ const MultiSelectContainer = forwardRef(
                       onClick={
                         !optionDisabled ? selectOption(index) : undefined
                       }
+                      onFocus={() => setActiveIndex(index)}
                       textComponent={textComponent}
                     >
                       {child}
@@ -603,7 +628,7 @@ const MultiSelectContainer = forwardRef(
               // announce when an item is removed from selected options
               aria-live="assertive"
             >
-              <Text>{showA11yLimit}</Text>
+              {showA11yLimit}
             </Box>
           )}
         </StyledContainer>

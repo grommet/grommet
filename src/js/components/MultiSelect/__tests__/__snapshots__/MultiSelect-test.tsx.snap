@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MultiSelect children 1`] = `
-.c9 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12,30 +12,44 @@ exports[`MultiSelect children 1`] = `
   stroke: #7D4CDB;
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c3 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -57,7 +71,7 @@ exports[`MultiSelect children 1`] = `
   justify-content: space-between;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -76,16 +90,16 @@ exports[`MultiSelect children 1`] = `
   flex-basis: auto;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -93,10 +107,9 @@ exports[`MultiSelect children 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-top: 6px;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -114,47 +127,47 @@ exports[`MultiSelect children 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c2:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -172,33 +185,33 @@ exports[`MultiSelect children 1`] = `
   border: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c5 {
+.c6 {
   position: relative;
   width: 100%;
 }
@@ -213,41 +226,35 @@ exports[`MultiSelect children 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c7 {
+.c8 {
   cursor: pointer;
 }
 
-.c2 {
+.c3 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding-top: 3px;
   }
 }
 
 <div
   class="c0"
 >
-  <button
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-label="Open Drop. 0 selected."
-    class="c1 c2"
-    tabindex="0"
-    type="button"
+  <div
+    class="c1"
   >
-    <div
-      class="c3"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Open Drop. 0 selected."
+      class="c2 c3"
+      tabindex="0"
+      type="button"
     >
       <div
         class="c4"
@@ -255,40 +262,44 @@ exports[`MultiSelect children 1`] = `
         <div
           class="c5"
         >
-          <input
-            autocomplete="off"
-            class="c6 c7"
-            readonly=""
-            tabindex="-1"
-            type="text"
-            value=""
-          />
+          <div
+            class="c6"
+          >
+            <input
+              autocomplete="off"
+              class="c7 c8"
+              readonly=""
+              tabindex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="c9"
+          style="min-width: auto;"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c10"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </div>
       </div>
-      <div
-        class="c8"
-        style="min-width: auto;"
-      >
-        <svg
-          aria-label="FormDown"
-          class="c9"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m18 9-6 6-6-6"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </div>
-  </button>
+    </button>
+  </div>
 </div>
 `;
 
 exports[`MultiSelect defaultValue 1`] = `
-.c9 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -299,30 +310,44 @@ exports[`MultiSelect defaultValue 1`] = `
   stroke: #7D4CDB;
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c3 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -344,7 +369,7 @@ exports[`MultiSelect defaultValue 1`] = `
   justify-content: space-between;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -363,16 +388,16 @@ exports[`MultiSelect defaultValue 1`] = `
   flex-basis: auto;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -380,10 +405,9 @@ exports[`MultiSelect defaultValue 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-top: 6px;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -401,47 +425,47 @@ exports[`MultiSelect defaultValue 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c2:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -459,33 +483,33 @@ exports[`MultiSelect defaultValue 1`] = `
   border: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c5 {
+.c6 {
   position: relative;
   width: 100%;
 }
@@ -500,41 +524,35 @@ exports[`MultiSelect defaultValue 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c7 {
+.c8 {
   cursor: pointer;
 }
 
-.c2 {
+.c3 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding-top: 3px;
   }
 }
 
 <div
   class="c0"
 >
-  <button
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-label="Open Drop. 1 selected."
-    class="c1 c2"
-    tabindex="0"
-    type="button"
+  <div
+    class="c1"
   >
-    <div
-      class="c3"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Open Drop. 1 selected."
+      class="c2 c3"
+      tabindex="0"
+      type="button"
     >
       <div
         class="c4"
@@ -542,41 +560,45 @@ exports[`MultiSelect defaultValue 1`] = `
         <div
           class="c5"
         >
-          <input
-            autocomplete="off"
-            class="c6 c7"
-            readonly=""
-            tabindex="-1"
-            type="text"
-            value="one"
-          />
+          <div
+            class="c6"
+          >
+            <input
+              autocomplete="off"
+              class="c7 c8"
+              readonly=""
+              tabindex="-1"
+              type="text"
+              value="one"
+            />
+          </div>
+        </div>
+        <div
+          class="c9"
+          style="min-width: auto;"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c10"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </div>
       </div>
-      <div
-        class="c8"
-        style="min-width: auto;"
-      >
-        <svg
-          aria-label="FormDown"
-          class="c9"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m18 9-6 6-6-6"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </div>
-  </button>
+    </button>
+  </div>
   ,
 </div>
 `;
 
 exports[`MultiSelect disabled 1`] = `
-.c9 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -587,30 +609,44 @@ exports[`MultiSelect disabled 1`] = `
   stroke: #7D4CDB;
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c3 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -632,7 +668,7 @@ exports[`MultiSelect disabled 1`] = `
   justify-content: space-between;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -651,16 +687,16 @@ exports[`MultiSelect disabled 1`] = `
   flex-basis: auto;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -668,10 +704,9 @@ exports[`MultiSelect disabled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-top: 6px;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -691,47 +726,47 @@ exports[`MultiSelect disabled 1`] = `
   cursor: default;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c2:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -749,33 +784,33 @@ exports[`MultiSelect disabled 1`] = `
   border: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c5 {
+.c6 {
   position: relative;
   width: 100%;
 }
@@ -790,42 +825,36 @@ exports[`MultiSelect disabled 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c7 {
+.c8 {
   cursor: default;
 }
 
-.c2 {
+.c3 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding-top: 3px;
   }
 }
 
 <div
   class="c0"
 >
-  <button
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-label="Open Drop. 0 selected."
-    class="c1 c2"
-    disabled=""
-    tabindex="0"
-    type="button"
+  <div
+    class="c1"
   >
-    <div
-      class="c3"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Open Drop. 0 selected."
+      class="c2 c3"
+      disabled=""
+      tabindex="0"
+      type="button"
     >
       <div
         class="c4"
@@ -833,35 +862,39 @@ exports[`MultiSelect disabled 1`] = `
         <div
           class="c5"
         >
-          <input
-            autocomplete="off"
-            class="c6 c7"
-            readonly=""
-            tabindex="-1"
-            type="text"
-            value=""
-          />
+          <div
+            class="c6"
+          >
+            <input
+              autocomplete="off"
+              class="c7 c8"
+              readonly=""
+              tabindex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="c9"
+          style="min-width: auto;"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c10"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </div>
       </div>
-      <div
-        class="c8"
-        style="min-width: auto;"
-      >
-        <svg
-          aria-label="FormDown"
-          class="c9"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m18 9-6 6-6-6"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </div>
-  </button>
+    </button>
+  </div>
 </div>
 `;
 
@@ -948,9 +981,9 @@ exports[`MultiSelect disabled option 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -958,7 +991,6 @@ exports[`MultiSelect disabled option 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-top: 6px;
 }
 
 .c0 {
@@ -1085,12 +1117,6 @@ exports[`MultiSelect disabled option 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    padding-top: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
 
 }
 
@@ -1176,14 +1202,9 @@ exports[`MultiSelect disabled option 1`] = `
 
 exports[`MultiSelect disabled option 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jlcvnz {
+  .kbhVkf {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jlcvnz {
-    padding-top: 3px;
   }
 }
 .iqZbKa {
@@ -1326,9 +1347,9 @@ exports[`MultiSelect limit 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -1336,7 +1357,6 @@ exports[`MultiSelect limit 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-top: 6px;
 }
 
 .c0 {
@@ -1463,12 +1483,6 @@ exports[`MultiSelect limit 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    padding-top: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
 
 }
 
@@ -1554,14 +1568,9 @@ exports[`MultiSelect limit 1`] = `
 
 exports[`MultiSelect limit 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jlcvnz {
+  .kbhVkf {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jlcvnz {
-    padding-top: 3px;
   }
 }
 .iqZbKa {
@@ -1622,7 +1631,7 @@ exports[`MultiSelect limit 2`] = `
 `;
 
 exports[`MultiSelect placeholder 1`] = `
-.c9 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1633,30 +1642,44 @@ exports[`MultiSelect placeholder 1`] = `
   stroke: #7D4CDB;
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c3 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1678,7 +1701,7 @@ exports[`MultiSelect placeholder 1`] = `
   justify-content: space-between;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1697,16 +1720,16 @@ exports[`MultiSelect placeholder 1`] = `
   flex-basis: auto;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -1714,10 +1737,9 @@ exports[`MultiSelect placeholder 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-top: 6px;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1735,47 +1757,47 @@ exports[`MultiSelect placeholder 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c2:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1793,33 +1815,33 @@ exports[`MultiSelect placeholder 1`] = `
   border: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c5 {
+.c6 {
   position: relative;
   width: 100%;
 }
@@ -1834,41 +1856,35 @@ exports[`MultiSelect placeholder 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c7 {
+.c8 {
   cursor: pointer;
 }
 
-.c2 {
+.c3 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding-top: 3px;
   }
 }
 
 <div
   class="c0"
 >
-  <button
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-label="placeholder text. 0 selected."
-    class="c1 c2"
-    tabindex="0"
-    type="button"
+  <div
+    class="c1"
   >
-    <div
-      class="c3"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="placeholder text. 0 selected."
+      class="c2 c3"
+      tabindex="0"
+      type="button"
     >
       <div
         class="c4"
@@ -1876,41 +1892,45 @@ exports[`MultiSelect placeholder 1`] = `
         <div
           class="c5"
         >
-          <input
-            autocomplete="off"
-            class="c6 c7"
-            placeholder="placeholder text"
-            readonly=""
-            tabindex="-1"
-            type="text"
-            value=""
-          />
+          <div
+            class="c6"
+          >
+            <input
+              autocomplete="off"
+              class="c7 c8"
+              placeholder="placeholder text"
+              readonly=""
+              tabindex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="c9"
+          style="min-width: auto;"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c10"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </div>
       </div>
-      <div
-        class="c8"
-        style="min-width: auto;"
-      >
-        <svg
-          aria-label="FormDown"
-          class="c9"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m18 9-6 6-6-6"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </div>
-  </button>
+    </button>
+  </div>
 </div>
 `;
 
 exports[`MultiSelect should not have accessibility violations 1`] = `
-.c9 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1921,30 +1941,44 @@ exports[`MultiSelect should not have accessibility violations 1`] = `
   stroke: #7D4CDB;
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c3 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1966,7 +2000,7 @@ exports[`MultiSelect should not have accessibility violations 1`] = `
   justify-content: space-between;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1985,16 +2019,16 @@ exports[`MultiSelect should not have accessibility violations 1`] = `
   flex-basis: auto;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -2002,10 +2036,9 @@ exports[`MultiSelect should not have accessibility violations 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-top: 6px;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2023,47 +2056,47 @@ exports[`MultiSelect should not have accessibility violations 1`] = `
   text-align: inherit;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c2:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -2081,33 +2114,33 @@ exports[`MultiSelect should not have accessibility violations 1`] = `
   border: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c5 {
+.c6 {
   position: relative;
   width: 100%;
 }
@@ -2122,41 +2155,35 @@ exports[`MultiSelect should not have accessibility violations 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c7 {
+.c8 {
   cursor: pointer;
 }
 
-.c2 {
+.c3 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding-top: 3px;
   }
 }
 
 <div
   class="c0"
 >
-  <button
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-label="test. 0 selected."
-    class="c1 c2"
-    tabindex="0"
-    type="button"
+  <div
+    class="c1"
   >
-    <div
-      class="c3"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="test. 0 selected."
+      class="c2 c3"
+      tabindex="0"
+      type="button"
     >
       <div
         class="c4"
@@ -2164,40 +2191,44 @@ exports[`MultiSelect should not have accessibility violations 1`] = `
         <div
           class="c5"
         >
-          <input
-            aria-label="test"
-            autocomplete="off"
-            class="c6 c7"
-            readonly=""
-            tabindex="-1"
-            type="text"
-            value=""
-          />
+          <div
+            class="c6"
+          >
+            <input
+              aria-label="test"
+              autocomplete="off"
+              class="c7 c8"
+              readonly=""
+              tabindex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="c9"
+          style="min-width: auto;"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c10"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </div>
       </div>
-      <div
-        class="c8"
-        style="min-width: auto;"
-      >
-        <svg
-          aria-label="FormDown"
-          class="c9"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m18 9-6 6-6-6"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </div>
-  </button>
+    </button>
+  </div>
 </div>
 `;
 
-exports[`MultiSelect visibleSelection 1`] = `
+exports[`MultiSelect showSelectionInline 1`] = `
 .c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2274,9 +2305,9 @@ exports[`MultiSelect visibleSelection 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -2284,7 +2315,6 @@ exports[`MultiSelect visibleSelection 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-top: 6px;
 }
 
 .c15 {
@@ -2632,12 +2662,6 @@ exports[`MultiSelect visibleSelection 1`] = `
   .c9 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-top: 3px;
   }
 }
 

@@ -26,7 +26,7 @@ export const Variant = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>Multi-Select Variant</Text>
       <MultiSelect
-        visibleSelection
+        showSelectedInline
         placeholder="Select"
         options={options}
         onSearch={(text) => {
