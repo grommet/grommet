@@ -9,7 +9,7 @@ var _StyledHeading = require("./StyledHeading");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["color", "fill", "level"];
+var _excluded = ["color", "fill", "level", "weight"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -24,6 +24,7 @@ var Heading = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref // munged 
   var color = _ref.color,
       fill = _ref.fill,
       level = _ref.level,
+      weight = _ref.weight,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   return (
@@ -33,7 +34,8 @@ var Heading = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref // munged 
       as: "h" + level,
       colorProp: color,
       fillProp: fill,
-      level: +level
+      level: +level,
+      weight: weight
     }, rest, {
       ref: ref
     }))

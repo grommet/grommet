@@ -10,7 +10,7 @@ var sizeStyle = function sizeStyle(props) {
 
   if (levelStyle) {
     var data = levelStyle[size];
-    var styles = [css(["font-size:", ";line-height:", ";max-width:", ";font-weight:", ";"], data ? data.size : size, data ? data.height : 'normal', props.fillProp && 'none' || data && data.maxWidth || levelStyle.medium.maxWidth, levelStyle.font.weight || headingTheme.weight)];
+    var styles = [css(["font-size:", ";line-height:", ";max-width:", ";font-weight:", ";"], data ? data.size : size, data ? data.height : 'normal', props.fillProp && 'none' || data && data.maxWidth || levelStyle.medium.maxWidth, props.weight || levelStyle.font.weight || headingTheme.weight)];
 
     if (props.responsive && headingTheme.responsiveBreakpoint) {
       var breakpoint = props.theme.global.breakpoints[headingTheme.responsiveBreakpoint];

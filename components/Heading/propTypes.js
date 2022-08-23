@@ -21,7 +21,8 @@ if (process.env.NODE_ENV !== 'production') {
     responsive: _propTypes["default"].bool,
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
     textAlign: _propTypes["default"].oneOf(['start', 'center', 'end', 'justify']),
-    truncate: _propTypes["default"].bool
+    truncate: _propTypes["default"].bool,
+    weight: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['normal', 'bold', 'lighter', 'bolder']), _propTypes["default"].number, _propTypes["default"].string])
   });
 }
 

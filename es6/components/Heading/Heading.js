@@ -1,4 +1,4 @@
-var _excluded = ["color", "fill", "level"];
+var _excluded = ["color", "fill", "level", "weight"];
 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -12,6 +12,7 @@ var Heading = /*#__PURE__*/forwardRef(function (_ref, ref // munged to avoid sty
   var color = _ref.color,
       fill = _ref.fill,
       level = _ref.level,
+      weight = _ref.weight,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   return (
@@ -21,7 +22,8 @@ var Heading = /*#__PURE__*/forwardRef(function (_ref, ref // munged to avoid sty
       as: "h" + level,
       colorProp: color,
       fillProp: fill,
-      level: +level
+      level: +level,
+      weight: weight
     }, rest, {
       ref: ref
     }))
