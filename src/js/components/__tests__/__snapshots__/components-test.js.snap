@@ -473,6 +473,7 @@ Object {
       "size": [Function],
       "textAlign": [Function],
       "truncate": [Function],
+      "weight": [Function],
     },
     "render": [Function],
   },

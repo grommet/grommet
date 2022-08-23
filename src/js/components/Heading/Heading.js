@@ -5,7 +5,8 @@ import { HeadingPropTypes } from './propTypes';
 
 const Heading = forwardRef(
   (
-    { color, fill, level, overflowWrap, ...rest },
+    { color, fill, level, overflowWrap, weight, ...rest },
+
     ref, // munged to avoid styled-components putting it in the DOM
   ) => (
     // enforce level to be a number
@@ -15,6 +16,7 @@ const Heading = forwardRef(
       fillProp={fill}
       level={+level}
       overflowWrap={overflowWrap}
+      weight={weight}
       {...rest}
       ref={ref}
     />

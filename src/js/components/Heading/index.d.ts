@@ -24,6 +24,7 @@ export interface HeadingProps {
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   textAlign?: TextAlignType;
   truncate?: boolean;
+  weight?: 'normal' | 'bold' | 'lighter' | 'bolder' | number | string;
 }
 
 type hProps =

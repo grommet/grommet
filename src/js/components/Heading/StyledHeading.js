@@ -22,7 +22,9 @@ const sizeStyle = (props) => {
         max-width: ${(props.fillProp && 'none') ||
         (data && data.maxWidth) ||
         levelStyle.medium.maxWidth};
-        font-weight: ${levelStyle.font.weight || headingTheme.weight};
+        font-weight: ${props.weight ||
+        levelStyle.font.weight ||
+        headingTheme.weight};
         overflow-wrap: ${props.overflowWrap};
       `,
     ];
