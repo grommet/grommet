@@ -66,6 +66,7 @@ if (process.env.NODE_ENV !== 'production') {
           volumeUp: PropTypes.string,
         }),
       }),
+      onAnalytics: PropTypes.func,
     }),
   };
 }
