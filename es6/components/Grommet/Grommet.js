@@ -1,4 +1,4 @@
-var _excluded = ["children", "full", "containerTarget", "theme", "options", "messages"];
+var _excluded = ["children", "full", "containerTarget", "theme", "options", "messages", "onAnalytics"];
 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -15,6 +15,7 @@ import { OptionsContext } from '../../contexts/OptionsContext';
 import { format as _format, MessageContext } from '../../contexts/MessageContext';
 import defaultMessages from '../../languages/default.json';
 import { GrommetPropTypes } from './propTypes';
+import { AnalyticsProvider } from '../../contexts/AnalyticsContext';
 var FullGlobalStyle = createGlobalStyle(["body{margin:0;}"]);
 
 var deviceResponsive = function deviceResponsive(userAgent, theme) {
@@ -52,6 +53,7 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
       _props$options = props.options,
       options = _props$options === void 0 ? defaultOptions : _props$options,
       messagesProp = props.messages,
+      onAnalytics = props.onAnalytics,
       rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var background = props.background,
@@ -132,11 +134,13 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
     value: options
   }, /*#__PURE__*/React.createElement(MessageContext.Provider, {
     value: messages
+  }, /*#__PURE__*/React.createElement(AnalyticsProvider, {
+    onAnalytics: onAnalytics
   }, /*#__PURE__*/React.createElement(StyledGrommet, _extends({
     full: full
   }, rest, {
     ref: grommetRef
-  }), children), full && /*#__PURE__*/React.createElement(FullGlobalStyle, null)))))));
+  }), children), full && /*#__PURE__*/React.createElement(FullGlobalStyle, null))))))));
 });
 Grommet.displayName = 'Grommet';
 Grommet.propTypes = GrommetPropTypes;

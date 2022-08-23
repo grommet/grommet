@@ -17,6 +17,8 @@ var _StyledAnchor = require("./StyledAnchor");
 
 var _propTypes = require("./propTypes");
 
+var _AnalyticsContext = require("../../contexts/AnalyticsContext");
+
 var _excluded = ["a11yTitle", "aria-label", "children", "color", "disabled", "gap", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -38,7 +40,7 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       icon = _ref.icon,
       label = _ref.label,
       _onBlur = _ref.onBlur,
-      onClick = _ref.onClick,
+      onClickProp = _ref.onClick,
       _onFocus = _ref.onFocus,
       reverse = _ref.reverse,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -49,6 +51,17 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       focus = _useState[0],
       setFocus = _useState[1];
 
+  var sendAnalytics = (0, _AnalyticsContext.useAnalytics)();
+  var onClick = (0, _react.useCallback)(function (event) {
+    sendAnalytics({
+      type: 'anchorClick',
+      element: event.target,
+      event: event,
+      href: href,
+      label: typeof label === 'string' ? label : undefined
+    });
+    if (onClickProp) onClickProp(event);
+  }, [onClickProp, sendAnalytics, label, href]);
   (0, _react.useEffect)(function () {
     if ((icon || label) && children) {
       console.warn('Anchor should not have children if icon or label is provided');

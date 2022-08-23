@@ -4,13 +4,14 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { cloneElement, forwardRef, useContext, useEffect, useState } from 'react';
+import React, { cloneElement, forwardRef, useCallback, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 import { StyledAnchor } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
 var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       ariaLabel = _ref['aria-label'],
@@ -22,7 +23,7 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
       icon = _ref.icon,
       label = _ref.label,
       _onBlur = _ref.onBlur,
-      onClick = _ref.onClick,
+      onClickProp = _ref.onClick,
       _onFocus = _ref.onFocus,
       reverse = _ref.reverse,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -33,6 +34,17 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
       focus = _useState[0],
       setFocus = _useState[1];
 
+  var sendAnalytics = useAnalytics();
+  var onClick = useCallback(function (event) {
+    sendAnalytics({
+      type: 'anchorClick',
+      element: event.target,
+      event: event,
+      href: href,
+      label: typeof label === 'string' ? label : undefined
+    });
+    if (onClickProp) onClickProp(event);
+  }, [onClickProp, sendAnalytics, label, href]);
   useEffect(function () {
     if ((icon || label) && children) {
       console.warn('Anchor should not have children if icon or label is provided');

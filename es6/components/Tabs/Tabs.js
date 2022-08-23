@@ -18,6 +18,7 @@ import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TabsPropTypes } from './propTypes';
+import { useAnalytics } from '../../contexts/AnalyticsContext/AnalyticsContext';
 var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var alignControls = _ref.alignControls,
       children = _ref.children,
@@ -67,6 +68,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var headerRef = useRef();
   var size = useContext(ResponsiveContext);
+  var sendAnalytics = useAnalytics();
 
   if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
     setActiveIndex(propsActiveIndex);
@@ -233,6 +235,11 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [tabRefs, disableLeftArrow, disableRightArrow, activeIndex, headerRef, overflow, updateArrowState]);
   var getTabsContext = useCallback(function (index) {
     var activateTab = function activateTab(nextIndex) {
+      sendAnalytics({
+        type: 'activateTab',
+        element: tabRefs[nextIndex].current
+      });
+
       if (propsActiveIndex === undefined) {
         setActiveIndex(nextIndex);
       }
@@ -254,7 +261,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setActiveTitle: setActiveTitle,
       setFocusIndex: setFocusIndex
     };
-  }, [activeIndex, onActive, propsActiveIndex, tabRefs]);
+  }, [activeIndex, onActive, propsActiveIndex, sendAnalytics, tabRefs]);
   var tabs = React.Children.map(children, function (child, index) {
     return /*#__PURE__*/React.createElement(TabsContext.Provider, {
       value: getTabsContext(index)

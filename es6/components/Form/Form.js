@@ -5,7 +5,9 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { useAnalytics } from '../../contexts';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useForwardedRef } from '../../utils';
 import { FormContext } from './FormContext';
 import { FormPropTypes } from './propTypes';
 var defaultValue = {};
@@ -182,6 +184,8 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       valueProp = _ref2.value,
       rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
 
+  var formRef = useForwardedRef(ref);
+
   var _useContext = useContext(MessageContext),
       format = _useContext.format;
 
@@ -225,6 +229,11 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
 
   var validationRulesRef = useRef({});
   var requiredFields = useRef([]);
+  var analyticsRef = useRef({
+    start: new Date(),
+    errors: {}
+  });
+  var sendAnalytics = useAnalytics();
   var buildValid = useCallback(function (nextErrors) {
     var valid = false;
     valid = requiredFields.current.filter(function (n) {
@@ -245,6 +254,19 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     }).forEach(function (n) {
       return delete nextValidations[n];
     });
+  };
+
+  var updateAnalytics = function updateAnalytics() {
+    var _validationResultsRef;
+
+    var errorFields = Object.keys((_validationResultsRef = validationResultsRef.current) == null ? void 0 : _validationResultsRef.errors);
+    var errorCounts = analyticsRef.current.errors;
+
+    if (errorFields.length > 0) {
+      errorFields.forEach(function (key) {
+        errorCounts[key] = (errorCounts[key] || 0) + 1;
+      });
+    }
   };
 
   var applyValidationRules = useCallback(function (validationRules) {
@@ -271,6 +293,7 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         valid: buildValid(nextErrors)
       }));
       validationResultsRef.current = nextValidationResults;
+      updateAnalytics();
       return nextValidationResults;
     });
   }, [buildValid, format, messages, onValidate, value]); // Validate all fields holding values onMount if set to
@@ -318,17 +341,38 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   // as the user fixes them (basically act like validate=change for that)
 
   useEffect(function () {
-    var _validationResultsRef;
+    var _validationResultsRef2;
 
     var validationRules = Object.entries(validationRulesRef.current);
 
-    if ((_validationResultsRef = validationResultsRef.current) != null && _validationResultsRef.errors && Object.keys(validationResultsRef.current.errors).length > 0) {
+    if ((_validationResultsRef2 = validationResultsRef.current) != null && _validationResultsRef2.errors && Object.keys(validationResultsRef.current.errors).length > 0) {
       applyValidationRules(validationRules.filter(function (_ref6) {
         var n = _ref6[0];
         return touched[n] && validationResultsRef.current.errors[n];
       }));
     }
-  }, [applyValidationRules, touched]); // There are three basic patterns of handling form input value state:
+  }, [applyValidationRules, touched]);
+  useEffect(function () {
+    var element = formRef.current;
+    analyticsRef.current = {
+      start: new Date(),
+      errors: {}
+    };
+    sendAnalytics({
+      type: 'formOpen',
+      element: element
+    });
+    return function () {
+      if (!analyticsRef.current.submitted) {
+        sendAnalytics({
+          type: 'formClose',
+          element: element,
+          errors: analyticsRef.current.errors,
+          elapsed: new Date().getTime() - analyticsRef.current.start.getTime()
+        });
+      }
+    };
+  }, [sendAnalytics, formRef]); // There are three basic patterns of handling form input value state:
   //
   // 1 - form controlled
   //
@@ -516,9 +560,16 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     };
   }, [onChange, pendingValidation, touched, validateOn, validationResults.errors, validationResults.infos, value, valueProp]);
   return /*#__PURE__*/React.createElement("form", _extends({
-    ref: ref
+    ref: formRef
   }, rest, {
     onReset: function onReset(event) {
+      sendAnalytics({
+        type: 'formReset',
+        element: formRef.current,
+        data: event,
+        errors: analyticsRef.current.errors,
+        elapsed: new Date().getTime() - analyticsRef.current.start.getTime()
+      });
       setPendingValidation(undefined);
 
       if (!valueProp) {
@@ -530,6 +581,10 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
 
       setTouched(defaultTouched);
       setValidationResults(defaultValidationResults);
+      analyticsRef.current = {
+        start: new Date(),
+        errors: {}
+      };
 
       if (_onReset) {
         event.persist(); // extract from React's synthetic event pool
@@ -560,6 +615,7 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         };
         if (onValidate) onValidate(nextValidationResults);
         validationResultsRef.current = nextValidationResults;
+        updateAnalytics();
         return nextValidationResults;
       });
 
@@ -571,6 +627,16 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         adjustedEvent.touched = touched;
 
         _onSubmit(adjustedEvent);
+
+        sendAnalytics({
+          type: 'formSubmit',
+          element: formRef.current,
+          data: adjustedEvent,
+          errors: analyticsRef.current.errors,
+          elapsed: new Date().getTime() - analyticsRef.current.start.getTime()
+        });
+        analyticsRef.current.errors = {};
+        analyticsRef.current.submitted = true;
       }
     }
   }), /*#__PURE__*/React.createElement(FormContext.Provider, {

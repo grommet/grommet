@@ -4,7 +4,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { cloneElement, Children, forwardRef, useContext, useMemo, useState } from 'react';
+import React, { cloneElement, Children, forwardRef, useContext, useMemo, useState, useCallback } from 'react';
 import { ThemeContext } from 'styled-components';
 import { backgroundAndTextColors, colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -13,7 +13,8 @@ import { Box } from '../Box';
 import { Tip } from '../Tip';
 import { Badge } from './Badge';
 import { StyledButton } from './StyledButton';
-import { StyledButtonKind } from './StyledButtonKind'; // We have two Styled* components to separate
+import { StyledButtonKind } from './StyledButtonKind';
+import { useAnalytics } from '../../contexts/AnalyticsContext'; // We have two Styled* components to separate
 // the newer default|primary|secondary approach,
 // which we use the term "kind" to refer to,
 // from the previous approach. Hopefully, when we get to grommet v3,
@@ -126,7 +127,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       kindArg = _ref.kind,
       label = _ref.label,
       _onBlur = _ref.onBlur,
-      onClick = _ref.onClick,
+      onClickProp = _ref.onClick,
       _onFocus = _ref.onFocus,
       onMouseOut = _ref.onMouseOut,
       onMouseOver = _ref.onMouseOver,
@@ -156,9 +157,20 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   if ((icon || label) && children) {
     console.warn('Button should not have children if icon or label is provided');
-  } // kindArg is object if we are referencing a theme object
-  // outside of theme.button
+  }
 
+  var sendAnalytics = useAnalytics();
+  var onClick = useCallback(function (event) {
+    sendAnalytics({
+      type: 'buttonClick',
+      element: event.target,
+      event: event,
+      href: href,
+      label: typeof label === 'string' ? label : undefined
+    });
+    if (onClickProp) onClickProp(event);
+  }, [onClickProp, sendAnalytics, href, label]); // kindArg is object if we are referencing a theme object
+  // outside of theme.button
 
   var kindObj = useMemo(function () {
     return typeof kindArg === 'object';
@@ -348,7 +360,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       href: href,
       kind: kind,
       themePaths: themePaths,
-      onClick: onClick,
+      onClick: onClickProp ? onClick : undefined,
       onFocus: function onFocus(event) {
         setFocus(true);
         if (_onFocus) _onFocus(event);

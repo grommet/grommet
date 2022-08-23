@@ -31,6 +31,8 @@ var _MessageContext = require("../../contexts/MessageContext");
 
 var _propTypes = require("./propTypes");
 
+var _AnalyticsContext = require("../../contexts/AnalyticsContext/AnalyticsContext");
+
 var _excluded = ["alignControls", "children", "flex", "justify", "messages", "responsive"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -90,6 +92,7 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var headerRef = (0, _react.useRef)();
   var size = (0, _react.useContext)(_ResponsiveContext.ResponsiveContext);
+  var sendAnalytics = (0, _AnalyticsContext.useAnalytics)();
 
   if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
     setActiveIndex(propsActiveIndex);
@@ -256,6 +259,11 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [tabRefs, disableLeftArrow, disableRightArrow, activeIndex, headerRef, overflow, updateArrowState]);
   var getTabsContext = (0, _react.useCallback)(function (index) {
     var activateTab = function activateTab(nextIndex) {
+      sendAnalytics({
+        type: 'activateTab',
+        element: tabRefs[nextIndex].current
+      });
+
       if (propsActiveIndex === undefined) {
         setActiveIndex(nextIndex);
       }
@@ -277,7 +285,7 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       setActiveTitle: setActiveTitle,
       setFocusIndex: setFocusIndex
     };
-  }, [activeIndex, onActive, propsActiveIndex, tabRefs]);
+  }, [activeIndex, onActive, propsActiveIndex, sendAnalytics, tabRefs]);
 
   var tabs = _react["default"].Children.map(children, function (child, index) {
     return /*#__PURE__*/_react["default"].createElement(_TabsContext.TabsContext.Provider, {

@@ -23,6 +23,8 @@ var _StyledButton = require("./StyledButton");
 
 var _StyledButtonKind = require("./StyledButtonKind");
 
+var _AnalyticsContext = require("../../contexts/AnalyticsContext");
+
 var _excluded = ["active", "align", "aria-label", "badge", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "justify", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "a11yTitle", "as"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -145,7 +147,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       kindArg = _ref.kind,
       label = _ref.label,
       _onBlur = _ref.onBlur,
-      onClick = _ref.onClick,
+      onClickProp = _ref.onClick,
       _onFocus = _ref.onFocus,
       onMouseOut = _ref.onMouseOut,
       onMouseOver = _ref.onMouseOver,
@@ -175,9 +177,20 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   if ((icon || label) && children) {
     console.warn('Button should not have children if icon or label is provided');
-  } // kindArg is object if we are referencing a theme object
-  // outside of theme.button
+  }
 
+  var sendAnalytics = (0, _AnalyticsContext.useAnalytics)();
+  var onClick = (0, _react.useCallback)(function (event) {
+    sendAnalytics({
+      type: 'buttonClick',
+      element: event.target,
+      event: event,
+      href: href,
+      label: typeof label === 'string' ? label : undefined
+    });
+    if (onClickProp) onClickProp(event);
+  }, [onClickProp, sendAnalytics, href, label]); // kindArg is object if we are referencing a theme object
+  // outside of theme.button
 
   var kindObj = (0, _react.useMemo)(function () {
     return typeof kindArg === 'object';
@@ -367,7 +380,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       href: href,
       kind: kind,
       themePaths: themePaths,
-      onClick: onClick,
+      onClick: onClickProp ? onClick : undefined,
       onFocus: function onFocus(event) {
         setFocus(true);
         if (_onFocus) _onFocus(event);

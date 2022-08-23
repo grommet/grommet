@@ -76,7 +76,8 @@ if (process.env.NODE_ENV !== 'production') {
           volumeDown: _propTypes["default"].string,
           volumeUp: _propTypes["default"].string
         })
-      })
+      }),
+      onAnalytics: _propTypes["default"].func
     })
   };
 }

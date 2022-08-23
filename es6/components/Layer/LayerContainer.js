@@ -12,6 +12,7 @@ import { Keyboard } from '../Keyboard';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { backgroundIsDark, findVisibleParent, PortalContext } from '../../utils';
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 var HiddenAnchor = styled.a.withConfig({
@@ -57,6 +58,22 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var nextPortalContext = useMemo(function () {
     return [].concat(portalContext, [portalId]);
   }, [portalContext, portalId]);
+  var sendAnalytics = useAnalytics();
+  useEffect(function () {
+    var start = new Date();
+    var element = layerRef.current;
+    sendAnalytics({
+      type: 'layerOpen',
+      element: element
+    });
+    return function () {
+      sendAnalytics({
+        type: 'layerClose',
+        element: element,
+        elapsed: new Date().getTime() - start.getTime()
+      });
+    };
+  }, [sendAnalytics, layerRef]);
   useEffect(function () {
     if (position !== 'hidden') {
       var node = layerRef.current || containerRef.current || ref.current;

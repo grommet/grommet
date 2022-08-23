@@ -25,7 +25,9 @@ var _default = _interopRequireDefault(require("../../languages/default.json"));
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["children", "full", "containerTarget", "theme", "options", "messages"];
+var _AnalyticsContext = require("../../contexts/AnalyticsContext");
+
+var _excluded = ["children", "full", "containerTarget", "theme", "options", "messages", "onAnalytics"];
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -74,6 +76,7 @@ var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       _props$options = props.options,
       options = _props$options === void 0 ? defaultOptions : _props$options,
       messagesProp = props.messages,
+      onAnalytics = props.onAnalytics,
       rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var background = props.background,
@@ -154,11 +157,13 @@ var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     value: options
   }, /*#__PURE__*/_react["default"].createElement(_MessageContext.MessageContext.Provider, {
     value: messages
+  }, /*#__PURE__*/_react["default"].createElement(_AnalyticsContext.AnalyticsProvider, {
+    onAnalytics: onAnalytics
   }, /*#__PURE__*/_react["default"].createElement(_StyledGrommet.StyledGrommet, _extends({
     full: full
   }, rest, {
     ref: grommetRef
-  }), children), full && /*#__PURE__*/_react["default"].createElement(FullGlobalStyle, null)))))));
+  }), children), full && /*#__PURE__*/_react["default"].createElement(FullGlobalStyle, null))))))));
 });
 exports.Grommet = Grommet;
 Grommet.displayName = 'Grommet';

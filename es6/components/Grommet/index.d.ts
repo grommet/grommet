@@ -64,6 +64,7 @@ export interface GrommetProps {
     };
     format: (...args: any[]) => void;
   };
+  onAnalytics?: (data: any) => void;
   plain?: boolean;
   theme?: ThemeType;
   themeMode?: 'dark' | 'light';

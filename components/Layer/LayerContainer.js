@@ -19,6 +19,8 @@ var _OptionsContext = require("../../contexts/OptionsContext");
 
 var _ContainerTargetContext = require("../../contexts/ContainerTargetContext");
 
+var _AnalyticsContext = require("../../contexts/AnalyticsContext");
+
 var _utils = require("../../utils");
 
 var _StyledLayer = require("./StyledLayer");
@@ -79,6 +81,22 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var nextPortalContext = (0, _react.useMemo)(function () {
     return [].concat(portalContext, [portalId]);
   }, [portalContext, portalId]);
+  var sendAnalytics = (0, _AnalyticsContext.useAnalytics)();
+  (0, _react.useEffect)(function () {
+    var start = new Date();
+    var element = layerRef.current;
+    sendAnalytics({
+      type: 'layerOpen',
+      element: element
+    });
+    return function () {
+      sendAnalytics({
+        type: 'layerClose',
+        element: element,
+        elapsed: new Date().getTime() - start.getTime()
+      });
+    };
+  }, [sendAnalytics, layerRef]);
   (0, _react.useEffect)(function () {
     if (position !== 'hidden') {
       var node = layerRef.current || containerRef.current || ref.current;
