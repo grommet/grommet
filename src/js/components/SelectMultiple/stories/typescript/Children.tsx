@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { FormClose } from 'grommet-icons';
 import { Box, Button, Text } from 'grommet';
-import { SelectMultiple } from '../SelectMultiple.js';
+import { SelectMultiple } from '../../SelectMultiple.js';
 
 const allSeasons = [
   'S01',
