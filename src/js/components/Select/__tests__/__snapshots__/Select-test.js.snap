@@ -404,6 +404,10 @@ exports[`Select Clear option renders - bottom 1`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -417,10 +421,6 @@ exports[`Select Clear option renders - bottom 1`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -659,6 +659,10 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -672,10 +676,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -922,6 +922,10 @@ exports[`Select Clear option renders custom label 1`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -935,10 +939,6 @@ exports[`Select Clear option renders custom label 1`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -1177,6 +1177,10 @@ exports[`Select Clear option renders- top 1`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -1190,10 +1194,6 @@ exports[`Select Clear option renders- top 1`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -2784,6 +2784,10 @@ exports[`Select complex options and children 3`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -2797,10 +2801,6 @@ exports[`Select complex options and children 3`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -3716,6 +3716,10 @@ exports[`Select default value clear 1`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -3736,10 +3740,6 @@ exports[`Select default value clear 1`] = `
   color: #FFFFFF;
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -4925,6 +4925,10 @@ exports[`Select disabled key 2`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -4938,10 +4942,6 @@ exports[`Select disabled key 2`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -5222,6 +5222,10 @@ exports[`Select disabled option value 1`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -5235,10 +5239,6 @@ exports[`Select disabled option value 1`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -5870,6 +5870,10 @@ exports[`Select large drop container height 1`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: 768px;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -5883,10 +5887,6 @@ exports[`Select large drop container height 1`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: 768px;
 }
 
 @media only screen and (max-width:768px) {
@@ -6116,6 +6116,10 @@ exports[`Select medium drop container height 1`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: 384px;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -6129,10 +6133,6 @@ exports[`Select medium drop container height 1`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: 384px;
 }
 
 @media only screen and (max-width:768px) {
@@ -6928,6 +6928,10 @@ exports[`Select onChange with valueKey string 2`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -6941,10 +6945,6 @@ exports[`Select onChange with valueKey string 2`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -7412,6 +7412,10 @@ exports[`Select onChange with valueLabel 2`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -7425,10 +7429,6 @@ exports[`Select onChange with valueLabel 2`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -7949,6 +7949,10 @@ exports[`Select onChange without valueKey 2`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -7962,10 +7966,6 @@ exports[`Select onChange without valueKey 2`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -9088,6 +9088,10 @@ exports[`Select prop: onOpen 3`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -9101,10 +9105,6 @@ exports[`Select prop: onOpen 3`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -11745,6 +11745,10 @@ exports[`Select search 2`] = `
   width: 100%;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c7 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -11765,10 +11769,6 @@ exports[`Select search 2`] = `
   color: #FFFFFF;
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -12400,6 +12400,10 @@ exports[`Select search and select 2`] = `
   width: 100%;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c7 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -12413,10 +12417,6 @@ exports[`Select search and select 2`] = `
 .c9 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -15737,6 +15737,10 @@ exports[`Select small drop container height 1`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: 192px;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -15750,10 +15754,6 @@ exports[`Select small drop container height 1`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: 192px;
 }
 
 @media only screen and (max-width:768px) {

@@ -28,7 +28,7 @@ const grommetInputNames = [
   'TextInput',
   'Select',
   'MaskedInput',
-  'MultiSelect',
+  'SelectMultiple',
   'TextArea',
   'DateInput',
   'FileInput',

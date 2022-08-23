@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Box, Text } from 'grommet';
-import { MultiSelect } from '../MultiSelect';
+import { SelectMultiple } from '../SelectMultiple';
 
 const objectOptions = [
   {
@@ -30,7 +30,7 @@ export const ObjectOptions = () => {
     // <Grommet theme={...}>
     <Box fill gap="large" align="center" justify="start" pad="large">
       <Text>SelectMultiple with Object Options</Text>
-      <MultiSelect
+      <SelectMultiple
         onSearch={(text) => {
           const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
 
@@ -60,5 +60,5 @@ ObjectOptions.parameters = {
 };
 
 export default {
-  title: 'Input/MultiSelect/Object options',
+  title: 'Input/SelectMultiple/Object options',
 };

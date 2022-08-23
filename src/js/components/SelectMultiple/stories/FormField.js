@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 
 import { Box, Button, Form, FormField } from 'grommet';
-import { MultiSelect } from '../MultiSelect';
+import { SelectMultiple } from '../SelectMultiple';
 
 const options = [
   'Apple',
@@ -30,7 +30,7 @@ export const InsideFormField = () => {
         onSubmit={() => console.log('Submit', value)}
       >
         <FormField label="Label" name="select">
-          <MultiSelect
+          <SelectMultiple
             showSelectedInline
             name="select"
             placeholder="placeholder"
@@ -47,5 +47,5 @@ export const InsideFormField = () => {
 InsideFormField.storyName = 'Inside a FormField';
 
 export default {
-  title: 'Input/MultiSelect/Inside a FormField',
+  title: 'Input/SelectMultiple/Inside a FormField',
 };

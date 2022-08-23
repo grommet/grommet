@@ -991,6 +991,10 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -1011,10 +1015,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 .c10 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -1536,6 +1536,10 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -1549,10 +1553,6 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -2074,6 +2074,10 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -2087,10 +2091,6 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -2612,6 +2612,10 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -2625,10 +2629,6 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -3258,6 +3258,10 @@ exports[`Select Controlled multiple values 3`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -3273,10 +3277,6 @@ exports[`Select Controlled multiple values 3`] = `
   color: #FFFFFF;
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -3798,6 +3798,10 @@ exports[`Select Controlled multiple with empty results 2`] = `
   border: 0;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 .c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
@@ -3811,10 +3815,6 @@ exports[`Select Controlled multiple with empty results 2`] = `
 .c6 {
   display: block;
   width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {

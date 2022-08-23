@@ -12,7 +12,7 @@ import {
   SelectOption,
 } from '../Select/utils';
 
-const MultiSelectValue = ({
+const SelectMultipleValue = ({
   allOptions,
   children,
   disabled,
@@ -209,4 +209,4 @@ const MultiSelectValue = ({
   );
 };
 
-export { MultiSelectValue };
+export { SelectMultipleValue };

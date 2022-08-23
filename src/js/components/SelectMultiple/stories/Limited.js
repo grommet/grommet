@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, MultiSelect, Text } from 'grommet';
+import { Box, SelectMultiple, Text } from 'grommet';
 
 const dummyOptions = [
   'Apple',
@@ -15,7 +15,7 @@ const dummyOptions = [
   'Rhubarb',
 ];
 
-export const MultiSelectLimited = () => {
+export const SelectMultipleLimited = () => {
   const [options, setOptions] = useState(dummyOptions.sort());
   const [valueMultiple, setValueMultiple] = useState([]);
 
@@ -24,7 +24,7 @@ export const MultiSelectLimited = () => {
     // <Grommet theme={...}>
     <Box fill align="center" pad="large" gap="large">
       <Text>SelectMultiple Limited</Text>
-      <MultiSelect
+      <SelectMultiple
         limit={5}
         helpContent={
           <Box
@@ -63,16 +63,16 @@ export const MultiSelectLimited = () => {
   );
 };
 
-MultiSelectLimited.parameters = {
+SelectMultipleLimited.parameters = {
   chromatic: { disable: true },
 };
 
-MultiSelectLimited.args = {
+SelectMultipleLimited.args = {
   full: true,
 };
 
-MultiSelectLimited.storyName = 'Limited';
+SelectMultipleLimited.storyName = 'Limited';
 
 export default {
-  title: 'Input/MultiSelect/Limited',
+  title: 'Input/SelectMultiple/Limited',
 };

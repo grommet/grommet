@@ -1,32 +1,43 @@
 import React, { useState } from 'react';
 
 import { Box, Text } from 'grommet';
-import { MultiSelect } from '../MultiSelect';
+import { SelectMultiple } from '../SelectMultiple';
 
 const dummyOptions = [
-  'Apple',
-  'Orange',
-  'Banana',
-  'Grape',
-  'Melon',
-  'Strawberry',
-  'Kiwi',
-  'Mango',
-  'Raspberry',
-  'Rhubarb',
+  'French Vanilla Cake with Buttercream',
+  'Sweet Grilled Peaches',
+  'Chocolate Chip Cookies',
+  'Pineapple Upside-Down Cake',
+  'Peanut Butter Chocolate Fondue',
+  'Strawberry Shortcake',
+  'Peach Cobbler',
+  'German Chocolate Cake',
+  'Carrot Cake with Cream Cheese Frosting',
+  'Cinnamon Coffee Cake',
 ];
 
-export const Default = () => {
+export const Disabled = () => {
   const [options, setOptions] = useState(dummyOptions.sort());
-  const [valueMultiple, setValueMultiple] = useState([]);
-  // const [search, setSearch] = useState();
+  const [valueMultiple, setValueMultiple] = useState([
+    'Chocolate Chip Cookies',
+    'Strawberry Shortcake',
+  ]);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box fill align="center" pad="large" gap="large">
-      <Text>SelectMultiple Default</Text>
-      <MultiSelect
+      <Text>SelectMultiple Disabled</Text>
+      <SelectMultiple
+        width="medium"
+        // limit={5}
+        showSelectedInline
+        dropProps={{
+          width: 'medium',
+        }}
+        // icon={<CaretDown />}
+        // icon={false}
+        disabled={['Chocolate Chip Cookies', 'Pineapple Upside-Down Cake']}
         value={valueMultiple}
         placeholder="Select"
         options={options}
@@ -55,8 +66,8 @@ export const Default = () => {
           // loop through next selected and sort alphabetically
           next.sort();
           // remove next selected from options
-          const sortedOptions = options.filter((i) => !next.includes(i));
-          next = next.filter((i) => options.includes(i));
+          const sortedOptions = dummyOptions.filter((i) => !next.includes(i));
+          next = next.filter((i) => dummyOptions.includes(i));
           // sort options alphabetically
           sortedOptions.sort();
           // concat next selected and options
@@ -72,14 +83,14 @@ export const Default = () => {
   );
 };
 
-Default.parameters = {
+Disabled.parameters = {
   chromatic: { disable: true },
 };
 
-Default.args = {
+Disabled.args = {
   full: true,
 };
 
 export default {
-  title: 'Input/MultiSelect/Default',
+  title: 'Input/SelectMultiple/Disabled',
 };

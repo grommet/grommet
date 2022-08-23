@@ -9,15 +9,15 @@ import '@testing-library/jest-dom';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../..';
-import { MultiSelect } from '..';
+import { SelectMultiple } from '..';
 
-describe('MultiSelect', () => {
+describe('SelectMultiple', () => {
   window.scrollTo = jest.fn();
   beforeEach(createPortal);
   test('should not have accessibility violations', async () => {
     const { container } = render(
       <Grommet>
-        <MultiSelect options={['one', 'two', 'three']} a11yTitle="test" />
+        <SelectMultiple options={['one', 'two', 'three']} a11yTitle="test" />
       </Grommet>,
     );
     const results = await axe(container, {
@@ -41,7 +41,7 @@ describe('MultiSelect', () => {
   test('defaultValue', () => {
     const { container } = render(
       <Grommet>
-        <MultiSelect options={['one', 'two']} defaultValue={['one']} />,
+        <SelectMultiple options={['one', 'two']} defaultValue={['one']} />,
       </Grommet>,
     );
 
@@ -51,9 +51,9 @@ describe('MultiSelect', () => {
   test('children', () => {
     const { container } = render(
       <Grommet>
-        <MultiSelect options={[{ test: 'one' }, { test: 'two' }]}>
+        <SelectMultiple options={[{ test: 'one' }, { test: 'two' }]}>
           {(option) => <span>{option.test}</span>}
-        </MultiSelect>
+        </SelectMultiple>
       </Grommet>,
     );
 
@@ -63,7 +63,7 @@ describe('MultiSelect', () => {
   test('placeholder', () => {
     const { container } = render(
       <Grommet>
-        <MultiSelect
+        <SelectMultiple
           options={[{ test: 'one' }, { test: 'two' }]}
           placeholder="placeholder text"
         />
@@ -76,7 +76,7 @@ describe('MultiSelect', () => {
   test('disabled', async () => {
     const { container } = render(
       <Grommet>
-        <MultiSelect options={[1, 2]} disabled />
+        <SelectMultiple options={[1, 2]} disabled />
       </Grommet>,
     );
 
@@ -87,14 +87,14 @@ describe('MultiSelect', () => {
     const user = userEvent.setup();
     render(
       <Grommet>
-        <MultiSelect
+        <SelectMultiple
           id="test-select__drop"
           options={[0, 1, 2]}
           disabled={[1]}
         />
       </Grommet>,
     );
-    // open MultiSelect
+    // open SelectMultiple
     await user.click(screen.getByRole('button', { name: /Open Drop/i }));
     // try to click all the options
     await user.click(screen.getByRole('option', { name: /0/i }));
@@ -110,10 +110,10 @@ describe('MultiSelect', () => {
     const user = userEvent.setup();
     render(
       <Grommet>
-        <MultiSelect id="test-select__drop" options={[0, 1, 2]} limit={2} />
+        <SelectMultiple id="test-select__drop" options={[0, 1, 2]} limit={2} />
       </Grommet>,
     );
-    // open MultiSelect
+    // open SelectMultiple
     await user.click(screen.getByRole('button', { name: /Open Drop/i }));
     // select 2 options
     await user.click(screen.getByRole('option', { name: /0/i }));
@@ -131,17 +131,17 @@ describe('MultiSelect', () => {
     const user = userEvent.setup();
     const { container } = render(
       <Grommet>
-        <MultiSelect options={[0, 1, 2]} showSelectedInline />
+        <SelectMultiple options={[0, 1, 2]} showSelectedInline />
       </Grommet>,
     );
-    // open MultiSelect
+    // open SelectMultiple
     await user.click(screen.getByRole('button', { name: /Open Drop/i }));
     // click all the options
     await user.click(screen.getByRole('option', { name: /0/i }));
     await user.click(screen.getByRole('option', { name: /1/i }));
     await user.click(screen.getByRole('option', { name: /2/i }));
 
-    // close MultiSelect
+    // close SelectMultiple
     await user.click(screen.getByRole('button', { name: /Close Select/i }));
 
     // all options should be visible when drop is closed

@@ -17,9 +17,9 @@ import { Box } from '../Box';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
-import { MultiSelectValue } from './MultiSelectValue';
+import { SelectMultipleValue } from './SelectMultipleValue';
 
-import { MultiSelectContainer } from './MultiSelectContainer';
+import { SelectMultipleContainer } from './SelectMultipleContainer';
 import {
   applyKey,
   HiddenInput,
@@ -33,7 +33,7 @@ import {
   DefaultSelectTextInput,
 } from '../Select/utils';
 import { MessageContext } from '../../contexts/MessageContext';
-import { MultiSelectPropTypes } from './propTypes';
+import { SelectMultiplePropTypes } from './propTypes';
 
 const StyledSelectBox = styled(Box)`
   ${(props) => !props.callerPlain && controlBorderStyle};
@@ -47,7 +47,7 @@ const StyledSelectBox = styled(Box)`
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
 
-const MultiSelect = forwardRef(
+const SelectMultiple = forwardRef(
   (
     {
       a11yTitle,
@@ -226,7 +226,7 @@ const MultiSelect = forwardRef(
       } else if (valueLabel) return valueLabel;
       else if (value.length > 0 && showSelectedInline) {
         return (
-          <MultiSelectValue
+          <SelectMultipleValue
             allOptions={allOptions}
             disabled={disabled}
             disabledKey={disabledKey}
@@ -238,7 +238,7 @@ const MultiSelect = forwardRef(
             valueKey={valueKey}
           >
             {children}
-          </MultiSelectValue>
+          </SelectMultipleValue>
         );
       }
       return undefined;
@@ -298,7 +298,7 @@ const MultiSelect = forwardRef(
     const iconColor = getIconColor(theme);
 
     const dropContent = (
-      <MultiSelectContainer
+      <SelectMultipleContainer
         allOptions={allOptions}
         disabled={disabled}
         disabledKey={disabledKey}
@@ -325,7 +325,7 @@ const MultiSelect = forwardRef(
         showSelectedInline={showSelectedInline}
       >
         {children}
-      </MultiSelectContainer>
+      </SelectMultipleContainer>
     );
 
     const dropButtonProps = {
@@ -496,9 +496,9 @@ const MultiSelect = forwardRef(
   },
 );
 
-MultiSelect.defaultProps = { ...defaultProps };
+SelectMultiple.defaultProps = { ...defaultProps };
 
-MultiSelect.displayName = 'MultiSelect';
-MultiSelect.propTypes = MultiSelectPropTypes;
+SelectMultiple.displayName = 'SelectMultiple';
+SelectMultiple.propTypes = SelectMultiplePropTypes;
 
-export { MultiSelect };
+export { SelectMultiple };

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MultiSelect children 1`] = `
+exports[`SelectMultiple children 1`] = `
 .c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -107,6 +107,7 @@ exports[`MultiSelect children 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: auto;
 }
 
 .c2 {
@@ -277,7 +278,6 @@ exports[`MultiSelect children 1`] = `
         </div>
         <div
           class="c9"
-          style="min-width: auto;"
         >
           <svg
             aria-label="FormDown"
@@ -298,7 +298,7 @@ exports[`MultiSelect children 1`] = `
 </div>
 `;
 
-exports[`MultiSelect defaultValue 1`] = `
+exports[`SelectMultiple defaultValue 1`] = `
 .c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -405,6 +405,7 @@ exports[`MultiSelect defaultValue 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: auto;
 }
 
 .c2 {
@@ -575,7 +576,6 @@ exports[`MultiSelect defaultValue 1`] = `
         </div>
         <div
           class="c9"
-          style="min-width: auto;"
         >
           <svg
             aria-label="FormDown"
@@ -597,7 +597,7 @@ exports[`MultiSelect defaultValue 1`] = `
 </div>
 `;
 
-exports[`MultiSelect disabled 1`] = `
+exports[`SelectMultiple disabled 1`] = `
 .c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -704,6 +704,7 @@ exports[`MultiSelect disabled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: auto;
 }
 
 .c2 {
@@ -877,7 +878,6 @@ exports[`MultiSelect disabled 1`] = `
         </div>
         <div
           class="c9"
-          style="min-width: auto;"
         >
           <svg
             aria-label="FormDown"
@@ -898,7 +898,7 @@ exports[`MultiSelect disabled 1`] = `
 </div>
 `;
 
-exports[`MultiSelect disabled option 1`] = `
+exports[`SelectMultiple disabled option 1`] = `
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -991,6 +991,7 @@ exports[`MultiSelect disabled option 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: auto;
 }
 
 .c0 {
@@ -1132,14 +1133,6 @@ exports[`MultiSelect disabled option 1`] = `
 
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -1181,7 +1174,6 @@ exports[`MultiSelect disabled option 1`] = `
     </div>
     <div
       class="c7"
-      style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
@@ -1200,9 +1192,9 @@ exports[`MultiSelect disabled option 1`] = `
 </button>
 `;
 
-exports[`MultiSelect disabled option 2`] = `
+exports[`SelectMultiple disabled option 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kbhVkf {
+  .fkrsaY {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1264,7 +1256,7 @@ exports[`MultiSelect disabled option 2`] = `
 }"
 `;
 
-exports[`MultiSelect limit 1`] = `
+exports[`SelectMultiple limit 1`] = `
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1357,6 +1349,7 @@ exports[`MultiSelect limit 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: auto;
 }
 
 .c0 {
@@ -1498,14 +1491,6 @@ exports[`MultiSelect limit 1`] = `
 
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -1547,7 +1532,6 @@ exports[`MultiSelect limit 1`] = `
     </div>
     <div
       class="c7"
-      style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
@@ -1566,9 +1550,9 @@ exports[`MultiSelect limit 1`] = `
 </button>
 `;
 
-exports[`MultiSelect limit 2`] = `
+exports[`SelectMultiple limit 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kbhVkf {
+  .fkrsaY {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1630,7 +1614,7 @@ exports[`MultiSelect limit 2`] = `
 }"
 `;
 
-exports[`MultiSelect placeholder 1`] = `
+exports[`SelectMultiple placeholder 1`] = `
 .c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1737,6 +1721,7 @@ exports[`MultiSelect placeholder 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: auto;
 }
 
 .c2 {
@@ -1908,7 +1893,6 @@ exports[`MultiSelect placeholder 1`] = `
         </div>
         <div
           class="c9"
-          style="min-width: auto;"
         >
           <svg
             aria-label="FormDown"
@@ -1929,7 +1913,7 @@ exports[`MultiSelect placeholder 1`] = `
 </div>
 `;
 
-exports[`MultiSelect should not have accessibility violations 1`] = `
+exports[`SelectMultiple should not have accessibility violations 1`] = `
 .c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2036,6 +2020,7 @@ exports[`MultiSelect should not have accessibility violations 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: auto;
 }
 
 .c2 {
@@ -2207,7 +2192,6 @@ exports[`MultiSelect should not have accessibility violations 1`] = `
         </div>
         <div
           class="c9"
-          style="min-width: auto;"
         >
           <svg
             aria-label="FormDown"
@@ -2228,7 +2212,7 @@ exports[`MultiSelect should not have accessibility violations 1`] = `
 </div>
 `;
 
-exports[`MultiSelect showSelectionInline 1`] = `
+exports[`SelectMultiple showSelectionInline 1`] = `
 .c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2298,6 +2282,20 @@ exports[`MultiSelect showSelectionInline 1`] = `
   width: 100%;
 }
 
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2315,6 +2313,7 @@ exports[`MultiSelect showSelectionInline 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: auto;
 }
 
 .c15 {
@@ -2338,43 +2337,6 @@ exports[`MultiSelect showSelectionInline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
 }
 
 .c18 {
@@ -2401,6 +2363,27 @@ exports[`MultiSelect showSelectionInline 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c4 {
@@ -2678,10 +2661,6 @@ exports[`MultiSelect showSelectionInline 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
   .c15 {
     margin-right: 6px;
   }
@@ -2740,7 +2719,6 @@ exports[`MultiSelect showSelectionInline 1`] = `
           </div>
           <div
             class="c9"
-            style="min-width: auto;"
           >
             <svg
               aria-label="FormDown"
@@ -2771,7 +2749,7 @@ exports[`MultiSelect showSelectionInline 1`] = `
       >
         <button
           aria-label="0 selected"
-          aria-posinset="0"
+          aria-posinset="1"
           aria-selected="true"
           aria-setsize="3"
           class="c12 c13"
@@ -2817,7 +2795,7 @@ exports[`MultiSelect showSelectionInline 1`] = `
         </button>
         <button
           aria-label="1 selected"
-          aria-posinset="1"
+          aria-posinset="2"
           aria-selected="true"
           aria-setsize="3"
           class="c12 c13"
@@ -2863,7 +2841,7 @@ exports[`MultiSelect showSelectionInline 1`] = `
         </button>
         <button
           aria-label="2 selected"
-          aria-posinset="2"
+          aria-posinset="3"
           aria-selected="true"
           aria-setsize="3"
           class="c12 c13"

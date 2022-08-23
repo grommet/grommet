@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { FormClose } from 'grommet-icons';
 import { Box, Button, Text } from 'grommet';
-import { MultiSelect } from '../MultiSelect.js';
+import { SelectMultiple } from '../SelectMultiple.js';
 
 const allSeasons = [
   'S01',
@@ -62,7 +62,7 @@ export const Children = () => {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box fill align="center" pad="small">
-      <MultiSelect
+      <SelectMultiple
         showSelectedInline
         valueLabel={(option) => (
           <Box wrap direction="row" width="small">
@@ -90,7 +90,7 @@ export const Children = () => {
         }}
       >
         {renderOption}
-      </MultiSelect>
+      </SelectMultiple>
     </Box>
     // </Grommet>
   );
@@ -105,5 +105,5 @@ Children.args = {
 };
 
 export default {
-  title: 'Input/MultiSelect/Children',
+  title: 'Input/SelectMultiple/Children',
 };

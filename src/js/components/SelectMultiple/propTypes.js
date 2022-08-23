@@ -24,4 +24,4 @@ if (process.env.NODE_ENV !== 'production') {
     showSelectedInline: PropTypes.bool,
   };
 }
-export const MultiSelectPropTypes = PropType;
+export const SelectMultiplePropTypes = PropType;

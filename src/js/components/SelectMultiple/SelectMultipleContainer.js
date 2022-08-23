@@ -32,7 +32,7 @@ import {
   EmptySearchOption,
 } from '../Select/utils';
 
-const MultiSelectContainer = forwardRef(
+const SelectMultipleContainer = forwardRef(
   (
     {
       allOptions,
@@ -642,4 +642,4 @@ const MultiSelectContainer = forwardRef(
   },
 );
 
-export { MultiSelectContainer };
+export { SelectMultipleContainer };

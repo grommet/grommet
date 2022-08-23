@@ -1,48 +1,35 @@
 import React, { useState } from 'react';
 
-import { Box, Text } from 'grommet';
-import { MultiSelect } from '../MultiSelect';
+import { Box, SelectMultiple, Text } from 'grommet';
 
 const dummyOptions = [
-  'French Vanilla Cake with Buttercream',
-  'Sweet Grilled Peaches',
-  'Chocolate Chip Cookies',
-  'Pineapple Upside-Down Cake',
-  'Peanut Butter Chocolate Fondue',
-  'Strawberry Shortcake',
-  'Peach Cobbler',
-  'German Chocolate Cake',
-  'Carrot Cake with Cream Cheese Frosting',
-  'Cinnamon Coffee Cake',
+  'Apple',
+  'Orange',
+  'Banana',
+  'Grape',
+  'Melon',
+  'Strawberry',
+  'Kiwi',
+  'Mango',
+  'Raspberry',
+  'Rhubarb',
 ];
 
-export const Disabled = () => {
+export const Variant = () => {
   const [options, setOptions] = useState(dummyOptions.sort());
-  const [valueMultiple, setValueMultiple] = useState([
-    'Chocolate Chip Cookies',
-    'Strawberry Shortcake',
-  ]);
+  const [valueMultiple, setValueMultiple] = useState([]);
+  const [open, setOpen] = useState(false);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box fill align="center" pad="large" gap="large">
-      <Text>SelectMultiple Disabled</Text>
-      <MultiSelect
-        width="medium"
-        // limit={5}
+      <Text>SelectMultiple Variant</Text>
+      <SelectMultiple
         showSelectedInline
-        dropProps={{
-          width: 'medium',
-        }}
-        // icon={<CaretDown />}
-        // icon={false}
-        disabled={['Chocolate Chip Cookies', 'Pineapple Upside-Down Cake']}
-        value={valueMultiple}
         placeholder="Select"
         options={options}
         onSearch={(text) => {
-          // setSearch(text);
           // The line below escapes regular expression special characters:
           // [ \ ^ $ . | ? * + ( )
           const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -61,15 +48,33 @@ export const Disabled = () => {
           const sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
         }}
+        value={valueMultiple}
+        open={open}
+        onOpen={() => {
+          // setValueMultiple(intermediateValue);
+          setOpen(true);
+          let next = [...valueMultiple];
+          next.sort();
+          const sortedOptions = dummyOptions.filter((i) => !next.includes(i));
+          next = next.filter((i) => dummyOptions.includes(i));
+          sortedOptions.sort();
+          const sortedAllOptions = next.concat(sortedOptions);
+          setOptions(sortedAllOptions);
+        }}
         onClose={() => {
+          // setIntermediateValue(valueMultiple);
+          setOpen(false);
           let next = [...valueMultiple];
           // loop through next selected and sort alphabetically
           next.sort();
           // remove next selected from options
           const sortedOptions = dummyOptions.filter((i) => !next.includes(i));
+
           next = next.filter((i) => dummyOptions.includes(i));
+          next.sort();
           // sort options alphabetically
           sortedOptions.sort();
+
           // concat next selected and options
           const sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
@@ -83,14 +88,14 @@ export const Disabled = () => {
   );
 };
 
-Disabled.parameters = {
+Variant.parameters = {
   chromatic: { disable: true },
 };
 
-Disabled.args = {
+Variant.args = {
   full: true,
 };
 
 export default {
-  title: 'Input/MultiSelect/Disabled',
+  title: 'Input/SelectMultiple/Variant',
 };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import { Box, MultiSelect, Text } from 'grommet';
+import { Box, Text } from 'grommet';
+import { SelectMultiple } from '../SelectMultiple';
 
 const dummyOptions = [
   'Apple',
@@ -15,21 +16,22 @@ const dummyOptions = [
   'Rhubarb',
 ];
 
-export const Variant = () => {
+export const Default = () => {
   const [options, setOptions] = useState(dummyOptions.sort());
   const [valueMultiple, setValueMultiple] = useState([]);
-  const [open, setOpen] = useState(false);
+  // const [search, setSearch] = useState();
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box fill align="center" pad="large" gap="large">
-      <Text>SelectMultiple Variant</Text>
-      <MultiSelect
-        showSelectedInline
+      <Text>SelectMultiple Default</Text>
+      <SelectMultiple
+        value={valueMultiple}
         placeholder="Select"
         options={options}
         onSearch={(text) => {
+          // setSearch(text);
           // The line below escapes regular expression special characters:
           // [ \ ^ $ . | ? * + ( )
           const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -48,33 +50,15 @@ export const Variant = () => {
           const sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
         }}
-        value={valueMultiple}
-        open={open}
-        onOpen={() => {
-          // setValueMultiple(intermediateValue);
-          setOpen(true);
-          let next = [...valueMultiple];
-          next.sort();
-          const sortedOptions = dummyOptions.filter((i) => !next.includes(i));
-          next = next.filter((i) => dummyOptions.includes(i));
-          sortedOptions.sort();
-          const sortedAllOptions = next.concat(sortedOptions);
-          setOptions(sortedAllOptions);
-        }}
         onClose={() => {
-          // setIntermediateValue(valueMultiple);
-          setOpen(false);
           let next = [...valueMultiple];
           // loop through next selected and sort alphabetically
           next.sort();
           // remove next selected from options
-          const sortedOptions = dummyOptions.filter((i) => !next.includes(i));
-
-          next = next.filter((i) => dummyOptions.includes(i));
-          next.sort();
+          const sortedOptions = options.filter((i) => !next.includes(i));
+          next = next.filter((i) => options.includes(i));
           // sort options alphabetically
           sortedOptions.sort();
-
           // concat next selected and options
           const sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
@@ -88,14 +72,14 @@ export const Variant = () => {
   );
 };
 
-Variant.parameters = {
+Default.parameters = {
   chromatic: { disable: true },
 };
 
-Variant.args = {
+Default.args = {
   full: true,
 };
 
 export default {
-  title: 'Input/MultiSelect/Variant',
+  title: 'Input/SelectMultiple/Default',
 };
