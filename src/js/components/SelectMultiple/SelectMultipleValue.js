@@ -21,6 +21,7 @@ const SelectMultipleValue = ({
   labelKey,
   onRequestOpen,
   onSelectChange,
+  theme,
   value,
   valueKey,
 }) => {
@@ -38,7 +39,7 @@ const SelectMultipleValue = ({
         allOptions,
         valueKey,
       );
-      if (value.indexOf(iValue) < 5) {
+      if (value.indexOf(iValue) < theme.selectMultiple.visibleInline) {
         let child;
         if (children) {
           child = children(i, indexOptions, allOptions, {
@@ -152,6 +153,7 @@ const SelectMultipleValue = ({
       labelKey,
       onSelectChange,
       value,
+      theme.selectMultiple.visibleInline,
     ],
   );
 
@@ -196,12 +198,14 @@ const SelectMultipleValue = ({
           </Box>
         )}
       </Box>
-      {value && value.length > 5 && (
+      {value && value.length > theme.selectMultiple.visibleInline && (
         <Box alignSelf="start">
           <Button
             onClick={onRequestOpen}
             size="small"
-            label={`+ ${value.length - 5} more`}
+            label={`+ ${
+              value.length - theme.selectMultiple.visibleInline
+            } more`}
           />
         </Box>
       )}

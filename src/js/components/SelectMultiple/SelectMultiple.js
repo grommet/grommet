@@ -234,6 +234,7 @@ const SelectMultiple = forwardRef(
             labelKey={labelKey}
             onRequestOpen={onRequestOpen}
             onSelectChange={onSelectChange}
+            theme={theme}
             value={value}
             valueKey={valueKey}
           >
@@ -255,6 +256,7 @@ const SelectMultiple = forwardRef(
       disabled,
       disabledKey,
       dropButtonRef,
+      theme,
     ]);
 
     const displayLabelKey = useMemo(

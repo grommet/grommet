@@ -368,11 +368,12 @@ export interface ThemeType {
         color?: ColorType;
         size?: string;
       };
-      shadow?: 
-        string | {
-        color?: ColorType;
-        size?: string;
-      };
+      shadow?:
+        | string
+        | {
+            color?: ColorType;
+            size?: string;
+          };
     };
     font?: {
       face?: string;
@@ -1362,6 +1363,9 @@ export interface ThemeType {
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
     searchInput?: ReactComponentElement<any>;
     step?: number;
+  };
+  selectMultiple?: {
+    visibleInline?: number;
   };
   skipLinks?: {
     position?: LayerPositionType;

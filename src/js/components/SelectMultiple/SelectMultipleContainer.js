@@ -386,6 +386,7 @@ const SelectMultipleContainer = forwardRef(
                       selected: nextValue,
                     });
                   }
+                  if (limit) setActiveIndex(0);
                 }}
                 onFocus={() => setActiveIndex(-1)}
                 ref={clearRef}
