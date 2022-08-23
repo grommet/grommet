@@ -1174,7 +1174,7 @@ exports[`Calendar change months 2`] = `
           class="StyledBox-sc-13pk1d4-0 fzaBin"
         >
           <h3
-            class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+            class="StyledHeading-sc-1rdh4aw-0 ixzGGA"
           >
             January 2020
           </h3>
@@ -15990,7 +15990,7 @@ exports[`Calendar select date 2`] = `
           class="StyledBox-sc-13pk1d4-0 fzaBin"
         >
           <h3
-            class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+            class="StyledHeading-sc-1rdh4aw-0 ixzGGA"
           >
             January 2020
           </h3>
@@ -18008,7 +18008,7 @@ exports[`Calendar select dates 2`] = `
           class="StyledBox-sc-13pk1d4-0 fzaBin"
         >
           <h3
-            class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+            class="StyledHeading-sc-1rdh4aw-0 ixzGGA"
           >
             January 2020
           </h3>

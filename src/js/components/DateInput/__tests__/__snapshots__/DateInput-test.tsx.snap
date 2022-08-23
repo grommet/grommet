@@ -1764,7 +1764,7 @@ exports[`DateInput controlled format inline 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+              class="StyledHeading-sc-1rdh4aw-0 ixzGGA"
             >
               July 2020
             </h3>
@@ -15960,12 +15960,12 @@ exports[`DateInput select format 4`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hAlxRY {
+  .ixzGGA {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hAlxRY {
+  .ixzGGA {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
@@ -17399,7 +17399,7 @@ exports[`DateInput select format inline 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+              class="StyledHeading-sc-1rdh4aw-0 ixzGGA"
             >
               July 2020
             </h3>
@@ -22477,7 +22477,7 @@ exports[`DateInput select format inline range 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+              class="StyledHeading-sc-1rdh4aw-0 ixzGGA"
             >
               July 2020
             </h3>
@@ -27946,12 +27946,12 @@ exports[`DateInput select format no timezone 4`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hAlxRY {
+  .ixzGGA {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hAlxRY {
+  .ixzGGA {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
@@ -31741,7 +31741,7 @@ exports[`DateInput type format inline 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+              class="StyledHeading-sc-1rdh4aw-0 ixzGGA"
             >
               July 2020
             </h3>
@@ -36740,7 +36740,7 @@ exports[`DateInput type format inline range 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+              class="StyledHeading-sc-1rdh4aw-0 ixzGGA"
             >
               July 2020
             </h3>
@@ -38991,7 +38991,7 @@ exports[`DateInput type format inline range partial 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+              class="StyledHeading-sc-1rdh4aw-0 ixzGGA"
             >
               July 2020
             </h3>
@@ -39851,7 +39851,7 @@ exports[`DateInput type format inline range partial 3`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+              class="StyledHeading-sc-1rdh4aw-0 ixzGGA"
             >
               July 2020
             </h3>
@@ -49013,7 +49013,7 @@ exports[`DateInput type format inline short 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+              class="StyledHeading-sc-1rdh4aw-0 ixzGGA"
             >
               July 2020
             </h3>

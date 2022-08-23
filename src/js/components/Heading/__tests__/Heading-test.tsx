@@ -111,6 +111,7 @@ test('Heading color renders', () => {
 });
 
 const LONG = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
+const LONGWORD = 'supercalifragilisticexpialidocious';
 
 test('Heading truncate renders', () => {
   const { container } = render(
@@ -121,6 +122,18 @@ test('Heading truncate renders', () => {
   );
 
   expect(container.firstChild).toMatchSnapshot();
+});
+
+test('Heading overflowWrap renders', () => {
+  const { asFragment } = render(
+    <Grommet>
+      <Heading>{LONGWORD}</Heading>
+      <Heading overflowWrap="anywhere">{LONGWORD}</Heading>
+      <Heading overflowWrap="break-word">{LONGWORD}</Heading>
+    </Grommet>,
+  );
+
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('responsive renders', () => {
