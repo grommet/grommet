@@ -43,8 +43,12 @@ var Circle = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var centerY = width / 2;
   var radius = width / 2 - strokeWidth / 2; // truncate to avoid floating point arithmetic errors
   // see: https://github.com/grommet/grommet/issues/6190
+  // Choose a scale factor at least 3 orders of magnitude above max
 
-  var anglePer = Math.floor((type === 'semicircle' ? 180 : 360) / max * 10000) / 10000;
+  var scalePower = Math.max(5, Math.ceil(Math.log10(max)) + 3);
+  var scale = Math.pow(10, scalePower);
+  var anglePer = Math.floor((type === 'semicircle' ? 180 : 360) / max * scale) / scale; //  (type === 'semicircle' ? 180 : 360) / max;
+
   var someHighlight = (values || []).some(function (v) {
     return v.highlight;
   });
