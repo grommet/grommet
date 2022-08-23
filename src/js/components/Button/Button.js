@@ -78,20 +78,48 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
         obj.color === undefined
           ? false
           : undefined);
+
+      let color;
+      if (obj?.icon?.props?.color) color = obj.icon.props.color;
       // use passed in color for text if the theme doesn't have
       // background or border color
-      const color =
-        colorProp &&
-        (!obj.background || !obj.background.color) &&
-        (!obj.border || !obj.border.color)
-          ? colorProp
-          : objColor;
+      else
+        color =
+          colorProp &&
+          (!obj.background || !obj.background.color) &&
+          (!obj.border || !obj.border.color)
+            ? colorProp
+            : objColor;
 
       result = backgroundAndTextColors(background, color, theme);
     }
     index -= 1;
   }
   return result[1] || undefined;
+};
+
+// get the icon for the current button state
+const getKindIcon = (paths = [], theme, kind) => {
+  let result;
+  let index = paths.length - 1;
+  // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+  if (typeof kind === 'object') index = 0;
+  // stop when we have a color or no more paths
+  while (index >= 0 && !result) {
+    let obj = (typeof kind === 'object' && kind) || theme.button;
+    // find the sub-object under the button them that corresponds with this path
+    // for example: 'active.primary'
+    if (paths[index]) {
+      const parts = paths[index].split('.');
+      while (obj && parts.length) obj = obj[parts.shift()];
+    }
+
+    if (obj?.icon) result = obj.icon;
+
+    index -= 1;
+  }
+  return result || undefined;
 };
 
 const getPropertyColor = (property, paths = [], theme, kind, primary) => {
@@ -146,7 +174,7 @@ const Button = forwardRef(
       onMouseOver,
       plain,
       primary,
-      reverse,
+      reverse: reverseProp,
       secondary,
       selected,
       size,
@@ -246,7 +274,8 @@ const Button = forwardRef(
       }
     };
 
-    let buttonIcon = icon;
+    const kindIcon = getKindIcon(themePaths?.base, theme, kind);
+    let buttonIcon = icon || kindIcon;
     // only change color if user did not specify the color themselves...
     if (icon && !icon.props.color) {
       if (kind) {
@@ -263,8 +292,17 @@ const Button = forwardRef(
             theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'],
         });
       }
+    } else if (kind && kindIcon && !plain) {
+      const iconColor =
+        (hover && getIconColor(themePaths.hover, theme)) ||
+        getIconColor(themePaths.base, theme, color, kind);
+      if (iconColor)
+        buttonIcon = cloneElement(kindIcon, {
+          color: iconColor,
+        });
     }
 
+    const reverse = reverseProp || theme.button[kind]?.reverse;
     const domTag = !as && href ? 'a' : as;
     const first = reverse ? label : buttonIcon;
     const second = reverse ? buttonIcon : label;
