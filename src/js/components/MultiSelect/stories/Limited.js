@@ -23,7 +23,7 @@ export const MultiSelectLimited = () => {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box fill align="center" pad="large" gap="large">
-      <Text>Multi-Select Limited</Text>
+      <Text>SelectMultiple Limited</Text>
       <MultiSelect
         limit={5}
         helpContent={

@@ -25,7 +25,7 @@ import {
   HiddenInput,
   SelectTextInput,
   StyledSelectDropButton,
-  calcValuedValue,
+  getNormalizedValue,
   changeEvent,
   getSelectIcon,
   getIconColor,
@@ -118,7 +118,7 @@ const MultiSelect = forwardRef(
       initialValue: defaultValue || '',
     });
 
-    // valuedValue is the value mapped with any valueKey applied
+    // normalizedValue is the value mapped with any valueKey applied
     // When the options array contains objects, this property indicates how
     // to retrieve the value of each option.
     // If a string is provided, it is used as the key to retrieve a
@@ -127,8 +127,8 @@ const MultiSelect = forwardRef(
     // return the value.
     // If reduce is true, this value will be used for the 'value'
     // delivered via 'onChange'.
-    const valuedValue = useMemo(
-      () => calcValuedValue(value, valueKey),
+    const normalizedValue = useMemo(
+      () => getNormalizedValue(value, valueKey),
       [value, valueKey],
     );
     // search input value
@@ -147,15 +147,15 @@ const MultiSelect = forwardRef(
       const result = [];
       allOptions.forEach((option, index) => {
         if (
-          valuedValue &&
-          valuedValue.length > 0 &&
-          valuedValue.some((v) => v === applyKey(option, valueKey))
+          normalizedValue &&
+          normalizedValue.length > 0 &&
+          normalizedValue.some((v) => v === applyKey(option, valueKey))
         ) {
           result.push(index);
         }
       });
       return result;
-    }, [allOptions, valueKey, valuedValue]);
+    }, [allOptions, valueKey, normalizedValue]);
 
     const [open, setOpen] = useState(openProp);
     useEffect(() => setOpen(openProp), [openProp]);
@@ -357,7 +357,7 @@ const MultiSelect = forwardRef(
       <Box
         alignSelf="center"
         margin={theme.select.icons.margin}
-        style={{ minWidth: 'auto' }}
+        width={{ min: 'auto' }}
       >
         {isValidElement(SelectIcon) ? (
           SelectIcon
@@ -381,7 +381,7 @@ const MultiSelect = forwardRef(
             callerPlain={plain}
             width={width}
           >
-            <Box direction="column" width="100%">
+            <Box width="100%">
               <DropButton
                 fill="horizontal"
                 alignSelf="start"
@@ -393,7 +393,7 @@ const MultiSelect = forwardRef(
               >
                 {selectValue || displayLabelKey ? (
                   <>
-                    <Box direction="row" width="100%">
+                    <Box direction="row">
                       <SelectTextInput
                         a11yTitle={ariaLabel || a11yTitle}
                         defaultCursor={disabled === true || undefined}

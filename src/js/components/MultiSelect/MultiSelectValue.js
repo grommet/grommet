@@ -3,7 +3,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { CheckBox } from '../CheckBox';
-import { Text } from '../Text';
 
 import {
   applyKey,
@@ -58,7 +57,7 @@ const MultiSelectValue = ({
                 : `${iLabel} not selected`
             }
             aria-setsize={value.length}
-            aria-posinset={value.indexOf(iValue)}
+            aria-posinset={value.indexOf(iValue) + 1}
             aria-selected={value.includes(iValue)}
             aria-disabled={iDisabled}
             plain
@@ -75,12 +74,6 @@ const MultiSelectValue = ({
                     value: intermediate.filter((v) => v !== iValue),
                   });
                   if (index !== intermediate.length - 1) {
-                    let timer = 0;
-                    // if index is the last one visible
-                    // allow time for the next option to
-                    // become visible
-                    if (index === 4) timer = 200;
-
                     setTimeout(() => {
                       const nextFocus = document.getElementById(
                         `selected-${intermediate[index + 1]}`,
@@ -99,25 +92,27 @@ const MultiSelectValue = ({
                           labelKey,
                         )}`,
                       );
-                    }, timer);
+                    }, 200);
                   } else if (intermediate.length !== 1) {
-                    const nextFocus = document.getElementById(
-                      `selected-${intermediate[index - 1]}`,
-                    );
-                    if (nextFocus) nextFocus.focus();
-                    const result = allOptions.find(
-                      (obj, j) =>
-                        getOptionValue(j, allOptions, valueKey) ===
-                        intermediate[index - 1],
-                    );
-                    setShowA11yDiv(
-                      `Unselected ${iLabel}. Focus moved to 
-                    ${getOptionLabel(
-                      allOptions.indexOf(result),
-                      allOptions,
-                      labelKey,
-                    )}`,
-                    );
+                    setTimeout(() => {
+                      const nextFocus = document.getElementById(
+                        `selected-${intermediate[index - 1]}`,
+                      );
+                      if (nextFocus) nextFocus.focus();
+                      const result = allOptions.find(
+                        (obj, j) =>
+                          getOptionValue(j, allOptions, valueKey) ===
+                          intermediate[index - 1],
+                      );
+                      setShowA11yDiv(
+                        `Unselected ${iLabel}. Focus moved to 
+                          ${getOptionLabel(
+                            allOptions.indexOf(result),
+                            allOptions,
+                            labelKey,
+                          )}`,
+                      );
+                    }, 200);
                   } else if (dropButtonRef.current)
                     dropButtonRef.current.focus();
                 }
@@ -132,7 +127,7 @@ const MultiSelectValue = ({
               <CheckBox
                 disabled={iDisabled}
                 label={
-                  <Box alignSelf="center" width="100%" align="start">
+                  <Box alignSelf="center" align="start">
                     {iLabel}
                   </Box>
                 }
@@ -197,7 +192,7 @@ const MultiSelectValue = ({
             // announce when an item is removed from selected options
             aria-live="assertive"
           >
-            <Text>{showA11yDiv}</Text>
+            {showA11yDiv}
           </Box>
         )}
       </Box>

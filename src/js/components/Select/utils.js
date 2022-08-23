@@ -137,7 +137,7 @@ export const checkDisabled = (
   return result;
 };
 
-export const calcValuedValue = (value, valueKey) => {
+export const getNormalizedValue = (value, valueKey) => {
   if (Array.isArray(value))
     return value.map((v) =>
       valueKey && valueKey.reduce ? v : applyKey(v, valueKey),

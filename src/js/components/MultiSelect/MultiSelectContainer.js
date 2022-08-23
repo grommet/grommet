@@ -342,60 +342,55 @@ const MultiSelectContainer = forwardRef(
               </Text>
             )}
           </Box>
-          <Box>
-            {options.length > 0 &&
-              (value.length === 0 || selectedValuesDisabled() ? (
-                !limit && (
-                  <Button
-                    a11yTitle={`Select all ${options.length} options`}
-                    label="Select All"
-                    onClick={(event) => {
-                      if (onChange) {
-                        const nextSelected = options.filter(
-                          (i, index) => !isDisabled(index) || isSelected(index),
-                        );
-                        const nextValue = nextSelected.map((i) =>
-                          valueKey && valueKey.reduce
-                            ? applyKey(i, valueKey)
-                            : i,
-                        );
-
-                        onChange(event, {
-                          option: options,
-                          value: nextValue,
-                          selected: nextSelected,
-                        });
-                      }
-                    }}
-                    onFocus={() => setActiveIndex(-1)}
-                    ref={clearRef}
-                  />
-                )
-              ) : (
+          {options.length > 0 &&
+            (value.length === 0 || selectedValuesDisabled() ? (
+              !limit && (
                 <Button
-                  a11yTitle={`${value.length} 
-                          options selected. Clear all?`}
-                  label="Clear All"
+                  a11yTitle={`Select all ${options.length} options`}
+                  label="Select All"
                   onClick={(event) => {
                     if (onChange) {
                       const nextSelected = options.filter(
-                        (i, index) => isDisabled(index) && isSelected(index),
+                        (i, index) => !isDisabled(index) || isSelected(index),
                       );
                       const nextValue = nextSelected.map((i) =>
                         valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
                       );
+
                       onChange(event, {
                         option: options,
-                        value: nextSelected,
-                        selected: nextValue,
+                        value: nextValue,
+                        selected: nextSelected,
                       });
                     }
                   }}
                   onFocus={() => setActiveIndex(-1)}
                   ref={clearRef}
                 />
-              ))}
-          </Box>
+              )
+            ) : (
+              <Button
+                a11yTitle={`${value.length} options selected. Clear all?`}
+                label="Clear All"
+                onClick={(event) => {
+                  if (onChange) {
+                    const nextSelected = options.filter(
+                      (i, index) => isDisabled(index) && isSelected(index),
+                    );
+                    const nextValue = nextSelected.map((i) =>
+                      valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
+                    );
+                    onChange(event, {
+                      option: options,
+                      value: nextSelected,
+                      selected: nextValue,
+                    });
+                  }
+                }}
+                onFocus={() => setActiveIndex(-1)}
+                ref={clearRef}
+              />
+            ))}
         </>
       ) : (
         <Text size="small">{`${value.length} selected`}</Text>
@@ -408,6 +403,7 @@ const MultiSelectContainer = forwardRef(
         onUp={onPreviousOption}
         onDown={onNextOption}
         onKeyDown={onKeyDownOption}
+        onEsc={onClose}
       >
         <StyledContainer
           ref={ref}
@@ -424,7 +420,7 @@ const MultiSelectContainer = forwardRef(
               pad={{ horizontal: 'small', top: 'xsmall' }}
             >
               <Box
-                pad={{ top: 'xsmall', bottom: 'xsmall' }}
+                pad={{ vertical: 'xsmall' }}
                 direction="row"
                 justify="between"
                 gap="small"
@@ -432,13 +428,16 @@ const MultiSelectContainer = forwardRef(
               >
                 {selectClearAll}
               </Box>
-              <Button onClick={onClose} a11yTitle="Close Select">
-                <FormUp />
-              </Button>
+              <Button
+                icon={<FormUp />}
+                onClick={onClose}
+                a11yTitle="Close Select"
+                plain
+              />
             </Box>
           ) : (
             <Box
-              pad={{ horizontal: 'xsmall', top: 'xsmall', bottom: 'xsmall' }}
+              pad="xsmall"
               direction="row"
               justify="between"
               gap="small"
@@ -498,6 +497,7 @@ const MultiSelectContainer = forwardRef(
                   const optionDisabled = isDisabled(index);
                   const optionSelected = value.includes(iValue);
                   const optionActive = activeIndex === index;
+                  const iLabel = getOptionLabel(index, options, labelKey);
 
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.
@@ -521,7 +521,7 @@ const MultiSelectContainer = forwardRef(
                       <CheckBox
                         label={
                           <Box alignSelf="center" width="100%" align="start">
-                            {getOptionLabel(index, options, labelKey)}
+                            {iLabel}
                           </Box>
                         }
                         pad="xsmall"
@@ -533,20 +533,19 @@ const MultiSelectContainer = forwardRef(
                   }
 
                   if (!children && !theme.select.options && search) {
-                    const label = getOptionLabel(index, options, labelKey);
                     if (
-                      typeof label === typeof '' &&
-                      label.toLowerCase().indexOf(search) >= 0
+                      typeof iLabel === typeof '' &&
+                      iLabel.toLowerCase().indexOf(search) >= 0
                     ) {
                       // code to bold search term in matching options
-                      const boldIndex = label.toLowerCase().indexOf(search);
-                      const childBeginning = label.substring(0, boldIndex);
-                      let childBold = label.substring(
+                      const boldIndex = iLabel.toLowerCase().indexOf(search);
+                      const childBeginning = iLabel.substring(0, boldIndex);
+                      let childBold = iLabel.substring(
                         boldIndex,
                         boldIndex + search.length,
                       );
                       childBold = <b>{childBold}</b>;
-                      const childEnd = label.substring(
+                      const childEnd = iLabel.substring(
                         boldIndex + search.length,
                       );
                       child = (
@@ -577,6 +576,11 @@ const MultiSelectContainer = forwardRef(
                   // if we have a child, turn on plain, and hoverIndicator
                   return (
                     <SelectOption
+                      a11yTitle={
+                        optionSelected
+                          ? `${iLabel} selected`
+                          : `${iLabel} not selected`
+                      }
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
                       // merge optionRef and activeRef
@@ -625,7 +629,8 @@ const MultiSelectContainer = forwardRef(
               height="0px"
               width="0px"
               overflow="hidden"
-              // announce when an item is removed from selected options
+              // announce when we reach the limit of items
+              // that can be selected
               aria-live="assertive"
             >
               {showA11yLimit}

@@ -28,8 +28,8 @@ export const ObjectOptions = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box fill align="center" justify="start" pad="large">
-      <Text>Select with Object Options</Text>
+    <Box fill gap="large" align="center" justify="start" pad="large">
+      <Text>SelectMultiple with Object Options</Text>
       <MultiSelect
         onSearch={(text) => {
           const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');

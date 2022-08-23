@@ -23,7 +23,7 @@ import {
   DefaultSelectTextInput,
   HiddenInput,
   StyledSelectDropButton,
-  calcValuedValue,
+  getNormalizedValue,
   changeEvent,
   getSelectIcon,
   getDisplayLabelKey,
@@ -110,7 +110,7 @@ const Select = forwardRef(
       initialValue: defaultValue || '',
     });
 
-    // valuedValue is the value mapped with any valueKey applied
+    // normalizedValue is the value mapped with any valueKey applied
     // When the options array contains objects, this property indicates how
     // to retrieve the value of each option.
     // If a string is provided, it is used as the key to retrieve a
@@ -119,8 +119,8 @@ const Select = forwardRef(
     // return the value.
     // If reduce is true, this value will be used for the 'value'
     // delivered via 'onChange'.
-    const valuedValue = useMemo(
-      () => calcValuedValue(value, valueKey),
+    const normalizedValue = useMemo(
+      () => getNormalizedValue(value, valueKey),
       [value, valueKey],
     );
     // search input value
@@ -144,16 +144,16 @@ const Select = forwardRef(
           } else if (index === selected) {
             result.push(index);
           }
-        } else if (Array.isArray(valuedValue)) {
-          if (valuedValue.some((v) => v === applyKey(option, valueKey))) {
+        } else if (Array.isArray(normalizedValue)) {
+          if (normalizedValue.some((v) => v === applyKey(option, valueKey))) {
             result.push(index);
           }
-        } else if (valuedValue === applyKey(option, valueKey)) {
+        } else if (normalizedValue === applyKey(option, valueKey)) {
           result.push(index);
         }
       });
       return result;
-    }, [allOptions, selected, valueKey, valuedValue]);
+    }, [allOptions, selected, valueKey, normalizedValue]);
 
     const [open, setOpen] = useState(propOpen);
     useEffect(() => setOpen(propOpen), [propOpen]);

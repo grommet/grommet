@@ -25,7 +25,7 @@ export const Default = () => {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box fill align="center" pad="large" gap="large">
-      <Text>Multi-Select Default</Text>
+      <Text>SelectMultiple Default</Text>
       <MultiSelect
         value={valueMultiple}
         placeholder="Select"

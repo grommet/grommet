@@ -27,7 +27,7 @@ export const Disabled = () => {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box fill align="center" pad="large" gap="large">
-      <Text>Multi-Select Disabled</Text>
+      <Text>SelectMultiple Disabled</Text>
       <MultiSelect
         width="medium"
         // limit={5}
