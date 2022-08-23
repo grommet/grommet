@@ -33,6 +33,7 @@ var BasicSpinner = function BasicSpinner(_ref) {
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
+    flex: false,
     height: size,
     width: size,
     ref: ref

@@ -19,6 +19,7 @@ var BasicSpinner = function BasicSpinner(_ref) {
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   return /*#__PURE__*/React.createElement(Box, _extends({
+    flex: false,
     height: size,
     width: size,
     ref: ref
