@@ -233,14 +233,14 @@ exports[`Meter boundary values 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 368.6869942844 157.6240483661 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
+      d="M 368.6870620811 157.6243968322 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
       fill="none"
       stroke="#00873D"
       stroke-linecap="butt"
       stroke-width="24"
     />
     <path
-      d="M 191.9981778763 12.0000000092 A 180.0000000000 180.0000000000 0 1 0 368.6869942844 157.6240483661"
+      d="M 191.9997957965 12.0000000001 A 180.0000000000 180.0000000000 0 1 0 368.6870620811 157.6243968322"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -288,6 +288,85 @@ exports[`Meter default 1`] = `
       stroke-linecap="square"
       stroke-opacity="0.4"
       stroke-width="24"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Meter large circle values 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<div
+  class="c0"
+>
+  <svg
+    class="c1"
+    height="192"
+    viewBox="0 0 192 192"
+    width="192"
+  >
+    <circle
+      cx="96"
+      cy="96"
+      fill="none"
+      r="90"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="12"
+    />
+    <path
+      d="M 156.0149675602 28.9313510740 A 90.0000000000 90.0000000000 0 0 0 96.0000000000 6.0000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="12"
+    />
+    <path
+      d="M 182.4540298401 70.9859894379 A 90.0000000000 90.0000000000 0 0 0 156.0149675602 28.9313510740"
+      fill="none"
+      stroke="#00873D"
+      stroke-linecap="butt"
+      stroke-width="12"
+    />
+    <path
+      d="M 183.4934330444 117.0926331716 A 90.0000000000 90.0000000000 0 0 0 182.4540298401 70.9859894379"
+      fill="none"
+      stroke="#3D138D"
+      stroke-linecap="butt"
+      stroke-width="12"
+    />
+    <path
+      d="M 167.6249510067 150.4964805587 A 90.0000000000 90.0000000000 0 0 0 183.4934330444 117.0926331716"
+      fill="none"
+      stroke="#00739D"
+      stroke-linecap="butt"
+      stroke-width="12"
+    />
+    <path
+      d="M 96.0000000000 6.0000000000 A 90.0000000000 90.0000000000 0 1 0 167.6249510067 150.4964805587"
+      fill="none"
+      stroke="#A2423D"
+      stroke-linecap="butt"
+      stroke-width="12"
     />
   </svg>
 </div>
