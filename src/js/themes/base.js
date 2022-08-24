@@ -1047,6 +1047,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     menu: {
       // background: undefined,
+      // item: undefined,
       // extend: undefined,
       drop: {
         align: {
