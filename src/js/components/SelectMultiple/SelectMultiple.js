@@ -21,10 +21,12 @@ import { SelectMultipleValue } from './SelectMultipleValue';
 
 import { SelectMultipleContainer } from './SelectMultipleContainer';
 import {
-  applyKey,
   HiddenInput,
   SelectTextInput,
   StyledSelectDropButton,
+} from '../Select/StyledSelect';
+import {
+  applyKey,
   getNormalizedValue,
   changeEvent,
   getSelectIcon,

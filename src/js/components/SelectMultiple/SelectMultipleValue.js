@@ -3,13 +3,12 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { CheckBox } from '../CheckBox';
-
+import { SelectOption } from '../Select/StyledSelect';
 import {
   applyKey,
   getOptionLabel,
   getOptionValue,
   checkDisabled,
-  SelectOption,
 } from '../Select/utils';
 
 const SelectMultipleValue = ({

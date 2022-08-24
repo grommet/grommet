@@ -1,16 +1,8 @@
 import React, { forwardRef } from 'react';
-import styled from 'styled-components';
 import { Box } from '../Box';
-import { Button } from '../Button';
-import { DropButton } from '../DropButton';
 import { Text } from '../Text';
-import { TextInput } from '../TextInput';
-import {
-  getHoverIndicatorStyle,
-  selectedStyle,
-  controlBorderStyle,
-  normalizeColor,
-} from '../../utils';
+import { normalizeColor } from '../../utils';
+import { SelectOption, SelectTextInput } from './StyledSelect';
 
 export const applyKey = (option, key) => {
   if (option === undefined) return undefined;
@@ -19,45 +11,6 @@ export const applyKey = (option, key) => {
   if (key !== undefined) return option[key];
   return option;
 };
-
-// position relative is so scroll can be managed correctly
-export const OptionsBox = styled.div`
-  position: relative;
-  scroll-behavior: smooth;
-  overflow: auto;
-  outline: none;
-`;
-
-export const HiddenInput = styled.input`
-  display: none;
-`;
-
-export const SelectOption = styled(Button)`
-  ${(props) => props.selected && props.textComponent && selectedStyle}
-  // applies theme.global.hover.background to the active
-  // option for mouse and keyboard interactions
-  ${(props) =>
-    props.active &&
-    getHoverIndicatorStyle(
-      !props.children && !props.theme.select.options ? undefined : 'background',
-      props.theme,
-    )}
-  display: block;
-  width: 100%;
-`;
-
-export const SelectTextInput = styled(TextInput)`
-  cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
-`;
-
-export const StyledSelectDropButton = styled(DropButton)`
-  ${(props) => !props.callerPlain && controlBorderStyle};
-  ${(props) =>
-    props.theme.select &&
-    props.theme.select?.control &&
-    props.theme.select?.control?.extend};
-  ${(props) => props.open && props.theme.select?.control?.open};
-`;
 
 export const DefaultSelectTextInput = forwardRef(
   (

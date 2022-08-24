@@ -18,11 +18,10 @@ import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 
 import { SelectContainer } from './SelectContainer';
+import { HiddenInput, StyledSelectDropButton } from './StyledSelect';
 import {
   applyKey,
   DefaultSelectTextInput,
-  HiddenInput,
-  StyledSelectDropButton,
   getNormalizedValue,
   changeEvent,
   getSelectIcon,

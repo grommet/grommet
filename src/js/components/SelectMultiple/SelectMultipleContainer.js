@@ -21,14 +21,16 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
-import { StyledContainer } from '../Select/StyledSelect';
+import {
+  StyledContainer,
+  OptionsBox,
+  SelectOption,
+} from '../Select/StyledSelect';
 import {
   applyKey,
-  OptionsBox,
   getOptionLabel,
   getOptionValue,
   checkDisabled,
-  SelectOption,
   EmptySearchOption,
 } from '../Select/utils';
 

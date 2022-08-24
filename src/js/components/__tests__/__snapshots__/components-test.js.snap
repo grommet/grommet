@@ -2285,6 +2285,9 @@ Object {
           },
           "step": 20,
         },
+        "selectMultiple": Object {
+          "visibleInline": 5,
+        },
         "skipLinks": Object {
           "container": Object {
             "elevation": "large",
@@ -4167,6 +4170,9 @@ Object {
             },
           },
           "step": 20,
+        },
+        "selectMultiple": Object {
+          "visibleInline": 5,
         },
         "skipLinks": Object {
           "container": Object {

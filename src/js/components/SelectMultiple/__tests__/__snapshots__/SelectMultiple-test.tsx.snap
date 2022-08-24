@@ -1250,7 +1250,7 @@ exports[`SelectMultiple disabled option 2`] = `
 .iqZbKa:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
-.jXsdyV {
+.ieVmJT {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }"
@@ -1608,7 +1608,7 @@ exports[`SelectMultiple limit 2`] = `
 .iqZbKa:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
-.jXsdyV {
+.ieVmJT {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }"

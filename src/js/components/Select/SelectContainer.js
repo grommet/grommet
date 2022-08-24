@@ -19,11 +19,9 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
-import { StyledContainer } from './StyledSelect';
+import { StyledContainer, OptionsBox, SelectOption } from './StyledSelect';
 import {
   applyKey,
-  OptionsBox,
-  SelectOption,
   checkDisabled,
   getOptionLabel,
   getOptionValue,
