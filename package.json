@@ -28,7 +28,7 @@
     "node": ">= 14"
   },
   "scripts": {
-    "build": "webpack --mode production && babel ./src/js/ --out-dir ./dist --ignore '**/**/__tests__' --ignore 'src/**/portal.js' && copyfiles -u 2 \"src/js/**/**/*.*\" -e \"src/js/**/**/*.js\" -e \"src/js/**/**/*.js.snap\" \"./dist\" && cross-env BABEL_ENV=es6 babel ./src/js/ --out-dir ./dist/es6 --ignore '**/**/__tests__' --ignore 'src/**/portal.js' && copyfiles -u 2 \"src/js/**/**/*.*\" -e \"src/js/**/**/*.js\" -e \"src/js/**/**/*.js.snap\" \"./dist/es6\"",
+    "build": "webpack --mode production && babel ./src/js/ --out-dir ./dist --ignore '**/**/__tests__' --ignore './e2e' --ignore 'src/**/portal.js' && copyfiles -u 2 \"src/js/**/**/*.*\" -e \"src/js/**/**/*.js\" -e \"src/js/**/**/*.js.snap\" \"./dist\" && cross-env BABEL_ENV=es6 babel ./src/js/ --out-dir ./dist/es6 --ignore '**/**/__tests__' --ignore 'src/**/portal.js' && copyfiles -u 2 \"src/js/**/**/*.*\" -e \"src/js/**/**/*.js\" -e \"src/js/**/**/*.js.snap\" \"./dist/es6\"",
     "release-stable": "babel-node ./tools/release-stable",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
@@ -40,6 +40,8 @@
     "test-calendar-dateinput": "jest ./src/js/components/Calendar/__tests__/Calendar-test.tsx ./src/js/components/DateInput/__tests__/DateInput-test.tsx",
     "pack": "babel-node ./tools/pack",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
+    "start": "webpack serve --config ./e2e/webpack.config.js --mode development",
+    "test-e2e": "testcafe chrome:headless e2e/tests",
     "build-storybook": "build-storybook -c storybook -o storybook-static",
     "prettier": "pretty-quick --staged",
     "chromatic": "chromatic -t 9q99in2ygnh"
@@ -50,10 +52,13 @@
     "styled-components": ">= 5.1"
   },
   "dependencies": {
+    "@testing-library/testcafe": "^4.4.1",
     "grommet-icons": "^4.7.0",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^7.1.5",
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "testcafe": "^1.20.1",
+    "testcafe-react-selectors": "^5.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.9",
@@ -97,7 +102,7 @@
     "copyfiles": "^2.4.1",
     "core-js": "^3.24.0",
     "cross-env": "^7.0.3",
-    "del": "^7.0.0",
+    "del": "^6.1.1",
     "elliptic": "^6.5.4",
     "eslint": "^8.20.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -137,7 +142,8 @@
     "ts-loader": "^8.4.0",
     "typescript": "^4.7.4",
     "webpack": "^4.44.2",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.9.3"
   },
   "jest": {
     "globals": {
@@ -196,7 +202,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "132 kB"
+      "maxSize": "133 kB"
     }
   ],
   "keywords": [

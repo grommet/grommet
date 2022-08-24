@@ -1047,6 +1047,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     menu: {
       // background: undefined,
+      // item: undefined,
       // extend: undefined,
       drop: {
         align: {
@@ -1320,6 +1321,37 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any heading props
         margin: 'none',
         fill: true,
+      },
+      size: {
+        small: {
+          pad: {
+            top: 'medium',
+            bottom: 'small',
+          },
+          subtitle: {
+            size: 'small',
+          },
+          title: {
+            size: 'small',
+          },
+        },
+        // medium: {
+        //   // pad: undefined,
+        //   // subtitle: {},
+        //   // title: {},
+        // },
+        large: {
+          pad: {
+            top: 'xlarge',
+            bottom: 'large',
+          },
+          subtitle: {
+            size: 'large',
+          },
+          title: {
+            size: 'large',
+          },
+        },
       },
       small: {
         areas: [

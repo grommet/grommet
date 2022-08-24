@@ -47,6 +47,18 @@ export const SelectOption = styled(Button)`
       !props.children && !props.theme.select.options ? undefined : 'background',
       props.theme,
     )}
+  // apply hover styling when option receives tab focus so it's
+  // visible to keyboard users
+  &:focus {
+    ${(props) =>
+      props.active &&
+      getHoverIndicatorStyle(
+        !props.children && !props.theme.select.options
+          ? undefined
+          : 'background',
+        props.theme,
+      )}
+  }
   display: block;
   width: 100%;
 `;

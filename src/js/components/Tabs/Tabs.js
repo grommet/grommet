@@ -22,6 +22,7 @@ import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TabsPropTypes } from './propTypes';
+import { useAnalytics } from '../../contexts/AnalyticsContext/AnalyticsContext';
 
 const Tabs = forwardRef(
   (
@@ -48,6 +49,8 @@ const Tabs = forwardRef(
     const [focusIndex, setFocusIndex] = useState(-1);
     const headerRef = useRef();
     const size = useContext(ResponsiveContext);
+
+    const sendAnalytics = useAnalytics();
 
     if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
       setActiveIndex(propsActiveIndex);
@@ -260,6 +263,10 @@ const Tabs = forwardRef(
     const getTabsContext = useCallback(
       (index) => {
         const activateTab = (nextIndex) => {
+          sendAnalytics({
+            type: 'activateTab',
+            element: tabRefs[nextIndex].current,
+          });
           if (propsActiveIndex === undefined) {
             setActiveIndex(nextIndex);
           }
@@ -279,7 +286,7 @@ const Tabs = forwardRef(
           setFocusIndex,
         };
       },
-      [activeIndex, onActive, propsActiveIndex, tabRefs],
+      [activeIndex, onActive, propsActiveIndex, sendAnalytics, tabRefs],
     );
 
     const tabs = React.Children.map(children, (child, index) => (
