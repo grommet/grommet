@@ -748,6 +748,7 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .c2 {
@@ -772,6 +773,7 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
   <div
     class="c1 c2"
     href="#"
+    tabindex="0"
   />
 </div>
 `;
