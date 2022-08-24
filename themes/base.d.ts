@@ -32,7 +32,7 @@ import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
 import { LayerPositionType, LayerProps } from '../components/Layer';
-import { DropProps } from '../components/Drop';
+import { DropProps, DropType } from '../components/Drop';
 import {
   AreasType,
   GridColumnsType,
@@ -232,6 +232,7 @@ interface ButtonType {
       };
     };
   };
+  style?: Partial<CSSStyleDeclaration>;
   transition?: {
     timing?: string;
     duration?: number;
@@ -1026,7 +1027,8 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
-    drop?: DropProps;
+    item?: ButtonType;
+    drop?: DropType;
     extend?: ExtendType;
     group?: {
       container?: BoxProps;

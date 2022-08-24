@@ -1172,6 +1172,7 @@ var generate = function generate(baseSpacing, scale) {
     },
     menu: {
       // background: undefined,
+      // item: undefined,
       // extend: undefined,
       drop: {
         align: {
