@@ -109,20 +109,15 @@ const SelectMultipleContainer = forwardRef(
       }
     }, [activeIndex]);
 
-    const optionValue = useCallback(
-      (index) => getOptionValue(index, options, valueKey),
-      [options, valueKey],
-    );
-
-    const isDisabled = useCallback(
-      (index) => checkDisabled(index, disabled, disabledKey, options, valueKey),
-      [disabled, disabledKey, options, valueKey],
-    );
+    // const optionValue = useCallback(
+    //   (index) => getOptionValue(index, options, valueKey),
+    //   [options, valueKey],
+    // );
 
     const isSelected = useCallback(
       (index) => {
         let result;
-        const optionVal = optionValue(index);
+        const optionVal = getOptionValue(index, options, valueKey);
         if (value.length === 0) {
           result = false;
         } else if (typeof value[0] !== 'object') {
@@ -138,7 +133,7 @@ const SelectMultipleContainer = forwardRef(
         }
         return result;
       },
-      [optionValue, value, valueKey],
+      [value, valueKey, options],
     );
 
     const selectOption = useCallback(
@@ -248,7 +243,13 @@ const SelectMultipleContainer = forwardRef(
     const onSelectOption = useCallback(
       (event) => {
         if (
-          !isDisabled(activeIndex) &&
+          !checkDisabled(
+            activeIndex,
+            disabled,
+            disabledKey,
+            options,
+            valueKey,
+          ) &&
           activeIndex >= 0 &&
           activeIndex < options.length
         ) {
@@ -256,7 +257,7 @@ const SelectMultipleContainer = forwardRef(
           selectOption(activeIndex)(event);
         }
       },
-      [activeIndex, selectOption, options, isDisabled],
+      [activeIndex, selectOption, options, disabled, disabledKey, valueKey],
     );
 
     const customSearchInput = theme.select.searchInput;
@@ -282,7 +283,10 @@ const SelectMultipleContainer = forwardRef(
             if (typeof disabledProp[0] === 'number') {
               result = disabledProp.indexOf(index) !== -1;
             } else {
-              result = disabledProp.indexOf(optionValue(index)) !== -1;
+              result =
+                disabledProp.indexOf(
+                  getOptionValue(index, options, valueKey),
+                ) !== -1;
             }
           }
           return result;
@@ -301,7 +305,6 @@ const SelectMultipleContainer = forwardRef(
       }
     }, [
       isSelected,
-      optionValue,
       value,
       limit,
       disabledProp,
@@ -325,12 +328,15 @@ const SelectMultipleContainer = forwardRef(
     const selectedValuesDisabled = useCallback(() => {
       let disabledSelected = 0;
       for (let i = 0; i < allOptions.length; i += 1) {
-        if (value.includes(optionValue(i)) && isDisabled(i))
+        if (
+          value.includes(getOptionValue(i, options, valueKey)) &&
+          checkDisabled(i, disabled, disabledKey, options, valueKey)
+        )
           disabledSelected += 1;
       }
       if (value.length === disabledSelected) return true;
       return false;
-    }, [value, allOptions, isDisabled, optionValue]);
+    }, [value, allOptions, disabled, disabledKey, options, valueKey]);
 
     const selectClearAll =
       search === '' || search === undefined ? (
@@ -353,7 +359,14 @@ const SelectMultipleContainer = forwardRef(
                   onClick={(event) => {
                     if (onChange) {
                       const nextSelected = options.filter(
-                        (i, index) => !isDisabled(index) || isSelected(index),
+                        (i, index) =>
+                          !checkDisabled(
+                            index,
+                            disabled,
+                            disabledKey,
+                            options,
+                            valueKey,
+                          ) || isSelected(index),
                       );
                       const nextValue = nextSelected.map((i) =>
                         valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
@@ -377,7 +390,14 @@ const SelectMultipleContainer = forwardRef(
                 onClick={(event) => {
                   if (onChange) {
                     const nextSelected = options.filter(
-                      (i, index) => isDisabled(index) && isSelected(index),
+                      (i, index) =>
+                        checkDisabled(
+                          index,
+                          disabled,
+                          disabledKey,
+                          options,
+                          valueKey,
+                        ) && isSelected(index),
                     );
                     const nextValue = nextSelected.map((i) =>
                       valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
@@ -497,7 +517,13 @@ const SelectMultipleContainer = forwardRef(
                     valueKey && valueKey.reduce
                       ? applyKey(option, valueKey)
                       : option;
-                  const optionDisabled = isDisabled(index);
+                  const optionDisabled = checkDisabled(
+                    index,
+                    disabled,
+                    disabledKey,
+                    options,
+                    valueKey,
+                  );
                   const optionSelected = value.includes(iValue);
                   const optionActive = activeIndex === index;
                   const iLabel = getOptionLabel(index, options, labelKey);
