@@ -5,6 +5,7 @@ import React, {
   useContext,
   useMemo,
   useState,
+  useCallback,
 } from 'react';
 
 import { ThemeContext } from 'styled-components';
@@ -23,6 +24,7 @@ import { Tip } from '../Tip';
 import { Badge } from './Badge';
 import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
 
 // We have two Styled* components to separate
 // the newer default|primary|secondary approach,
@@ -168,7 +170,7 @@ const Button = forwardRef(
       kind: kindArg,
       label,
       onBlur,
-      onClick,
+      onClick: onClickProp,
       onFocus,
       onMouseOut,
       onMouseOver,
@@ -196,6 +198,22 @@ const Button = forwardRef(
         'Button should not have children if icon or label is provided',
       );
     }
+
+    const sendAnalytics = useAnalytics();
+
+    const onClick = useCallback(
+      (event) => {
+        sendAnalytics({
+          type: 'buttonClick',
+          element: event.target,
+          event,
+          href,
+          label: typeof label === 'string' ? label: undefined,
+        });
+        if (onClickProp) onClickProp(event);
+      },
+      [onClickProp, sendAnalytics, href, label],
+    );
 
     // kindArg is object if we are referencing a theme object
     // outside of theme.button
@@ -413,7 +431,7 @@ const Button = forwardRef(
           href={href}
           kind={kind}
           themePaths={themePaths}
-          onClick={onClick}
+          onClick={onClickProp ? onClick : undefined}
           onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);

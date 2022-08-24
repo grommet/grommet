@@ -22,6 +22,7 @@ import { OptionsContext } from '../../contexts/OptionsContext';
 import { format, MessageContext } from '../../contexts/MessageContext';
 import defaultMessages from '../../languages/default.json';
 import { GrommetPropTypes } from './propTypes';
+import { AnalyticsProvider } from '../../contexts/AnalyticsContext';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
@@ -58,6 +59,7 @@ const Grommet = forwardRef((props, ref) => {
     theme: themeProp,
     options = defaultOptions,
     messages: messagesProp,
+    onAnalytics,
     ...rest
   } = props;
   const { background, dir, themeMode, userAgent } = props;
@@ -145,10 +147,12 @@ const Grommet = forwardRef((props, ref) => {
           <ContainerTargetContext.Provider value={containerTarget}>
             <OptionsContext.Provider value={options}>
               <MessageContext.Provider value={messages}>
-                <StyledGrommet full={full} {...rest} ref={grommetRef}>
-                  {children}
-                </StyledGrommet>
-                {full && <FullGlobalStyle />}
+                <AnalyticsProvider onAnalytics={onAnalytics}>
+                  <StyledGrommet full={full} {...rest} ref={grommetRef}>
+                    {children}
+                  </StyledGrommet>
+                  {full && <FullGlobalStyle />}
+                </AnalyticsProvider>
               </MessageContext.Provider>
             </OptionsContext.Provider>
           </ContainerTargetContext.Provider>
