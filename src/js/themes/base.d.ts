@@ -141,6 +141,7 @@ interface ButtonKindType {
     | {
         color?: ColorType;
         width?: string;
+        radius?: string;
       }
     | boolean;
   color?: ColorType;
@@ -195,7 +196,13 @@ interface ButtonType {
         secondary?: ButtonKindType;
       })
     | { [key: string]: ButtonKindType };
-  disabled?: ButtonKindType & { opacity?: OpacityType };
+  disabled?:
+    | (ButtonKindType & {
+        default?: ButtonKindType;
+        primary?: ButtonKindType;
+        secondary?: ButtonKindType;
+      })
+    | ({ [key: string]: ButtonKindType } & { opacity?: OpacityType });
   hover?:
     | (ButtonKindType & {
         default?: ButtonKindType;
