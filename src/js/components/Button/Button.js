@@ -56,7 +56,7 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
   // stop when we have a color or no more paths
   while (index >= 0 && !result[1]) {
     let obj = (typeof kind === 'object' && kind) || theme.button;
-    // find the sub-object under the button them that corresponds with this path
+    // find sub-object under the button theme that corresponds with this path
     // for example: 'active.primary'
     if (paths[index]) {
       const parts = paths[index].split('.');
@@ -108,7 +108,7 @@ const getKindIcon = (paths = [], theme, kind) => {
   // stop when we have a color or no more paths
   while (index >= 0 && !result) {
     let obj = (typeof kind === 'object' && kind) || theme.button;
-    // find the sub-object under the button them that corresponds with this path
+    // find sub-object under the button theme that corresponds with this path
     // for example: 'active.primary'
     if (paths[index]) {
       const parts = paths[index].split('.');
