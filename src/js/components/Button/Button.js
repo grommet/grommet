@@ -208,7 +208,7 @@ const Button = forwardRef(
           element: event.target,
           event,
           href,
-          label: typeof label === 'string' ? label: undefined,
+          label: typeof label === 'string' ? label : undefined,
         });
         if (onClickProp) onClickProp(event);
       },
@@ -292,7 +292,11 @@ const Button = forwardRef(
       }
     };
 
-    const kindIcon = getKindIcon(themePaths?.base, theme, kind);
+    const hoverIcon = getKindIcon(themePaths?.hover, theme, kind);
+    const kindIcon =
+      hover && hoverIcon
+        ? hoverIcon
+        : getKindIcon(themePaths?.base, theme, kind);
     let buttonIcon = icon || kindIcon;
     // only change color if user did not specify the color themselves...
     if (icon && !icon.props.color) {
