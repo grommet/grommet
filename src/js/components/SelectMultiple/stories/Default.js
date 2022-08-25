@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Box, Text } from 'grommet';
 import { SelectMultiple } from '../SelectMultiple';
 
-const dummyOptions = [
+const defaultOptions = [
   'Apple',
   'Orange',
   'Banana',
@@ -17,7 +17,7 @@ const dummyOptions = [
 ];
 
 export const Default = () => {
-  const [options, setOptions] = useState(dummyOptions.sort());
+  const [options, setOptions] = useState(defaultOptions.sort());
   const [valueMultiple, setValueMultiple] = useState([]);
   // const [search, setSearch] = useState();
 
@@ -43,7 +43,7 @@ export const Default = () => {
 
           let next = [...valueMultiple];
           next = next.filter((o) => exp.test(o));
-          let sortedOptions = dummyOptions.filter((i) => !next.includes(i));
+          let sortedOptions = defaultOptions.filter((i) => !next.includes(i));
 
           sortedOptions = sortedOptions.filter((o) => exp.test(o));
 

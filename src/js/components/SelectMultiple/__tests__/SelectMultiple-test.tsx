@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -9,6 +9,7 @@ import '@testing-library/jest-dom';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../..';
+import { Box } from '../../Box';
 import { SelectMultiple } from '..';
 
 describe('SelectMultiple', () => {
@@ -129,9 +130,49 @@ describe('SelectMultiple', () => {
     // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     const user = userEvent.setup();
+    const open = jest.fn();
+    const close = jest.fn();
     const { container } = render(
       <Grommet>
-        <SelectMultiple options={[0, 1, 2]} showSelectedInline />
+        <SelectMultiple
+          onOpen={open}
+          onClose={close}
+          options={[0, 1, 2]}
+          showSelectedInline
+        />
+      </Grommet>,
+    );
+    // open SelectMultiple
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    expect(open).toHaveBeenCalled();
+
+    // click all the options
+    await user.click(screen.getByRole('option', { name: /0/i }));
+    await user.click(screen.getByRole('option', { name: /1/i }));
+    await user.click(screen.getByRole('option', { name: /2/i }));
+
+    // close SelectMultiple
+    await user.click(screen.getByRole('button', { name: /Close Select/i }));
+    expect(close).toHaveBeenCalled();
+
+    // all options should be visible when drop is closed
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('showSelectionInline with children', async () => {
+    // Mock scrollIntoView since JSDOM doesn't do layout.
+    // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    const user = userEvent.setup();
+    const { container } = render(
+      <Grommet>
+        <SelectMultiple options={[0, 1, 2]} showSelectedInline>
+          {(option, state) => (
+            <Box pad="small" background={state.active ? 'active' : undefined}>
+              {option}
+            </Box>
+          )}
+        </SelectMultiple>
       </Grommet>,
     );
     // open SelectMultiple
@@ -143,8 +184,98 @@ describe('SelectMultiple', () => {
 
     // close SelectMultiple
     await user.click(screen.getByRole('button', { name: /Close Select/i }));
-
     // all options should be visible when drop is closed
     expect(container.firstChild).toMatchSnapshot();
+
+    // unselect option at input level
+    await user.click(screen.getByRole('option', { name: /0/i }));
+    await user.click(screen.getByRole('option', { name: /2/i }));
+    await user.click(screen.getByRole('option', { name: /1/i }));
+    // options should no longer be visible after unselecting them
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('showSelectionInline with disabled options', () => {
+    // Mock scrollIntoView since JSDOM doesn't do layout.
+    // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    const { container } = render(
+      <Grommet>
+        <SelectMultiple
+          options={['one', 'two', 'three']}
+          disabled={['one']}
+          value={['one']}
+          showSelectedInline
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('keyboard interactions', async () => {
+    // Mock scrollIntoView since JSDOM doesn't do layout.
+    // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    const user = userEvent.setup();
+    const { container } = render(
+      <Grommet>
+        <SelectMultiple options={['one', 'two', 'three', 'four']} limit={2} />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    const input = screen.getByRole('listbox');
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 38 }); // up
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('valueKey and labelKey', () => {
+    const { container } = render(
+      <Grommet>
+        <SelectMultiple
+          showSelectedInline
+          options={[
+            { value: 'one', label: 'a' },
+            { value: 'two', label: 'b' },
+          ]}
+          valueKey={{
+            key: 'value',
+            reduce: true,
+          }}
+          labelKey="label"
+          value={['one']}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('search', async () => {
+    const user = userEvent.setup();
+    const onSearch = jest.fn();
+    render(
+      <Grommet>
+        <SelectMultiple
+          showSelectedInline
+          options={['one1', 'two', 'three', 'four']}
+          onSearch={onSearch}
+          limit={1}
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    const input = screen.getByRole('searchbox');
+    await user.type(input, 'th');
+
+    expect(onSearch).toBeCalledWith(expect.stringMatching(/^th/));
   });
 });

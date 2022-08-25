@@ -109,11 +109,6 @@ const SelectMultipleContainer = forwardRef(
       }
     }, [activeIndex]);
 
-    // const optionValue = useCallback(
-    //   (index) => getOptionValue(index, options, valueKey),
-    //   [options, valueKey],
-    // );
-
     const isSelected = useCallback(
       (index) => {
         let result;
@@ -342,78 +337,62 @@ const SelectMultipleContainer = forwardRef(
       search === '' || search === undefined ? (
         <>
           <Box alignSelf="center">
-            {value.length === 0 ? (
-              <Text size="small">0 selected</Text>
-            ) : (
-              <Text size="small">
-                {value.length} selected of {options.length}
-              </Text>
-            )}
+            <Text size="small">
+              {value.length === 0
+                ? `0 selected`
+                : `${value.length} selected of ${options.length}`}
+            </Text>
           </Box>
-          {options.length > 0 &&
-            (value.length === 0 || selectedValuesDisabled() ? (
-              !limit && (
-                <Button
-                  a11yTitle={`Select all ${options.length} options`}
-                  label="Select All"
-                  onClick={(event) => {
-                    if (onChange) {
-                      const nextSelected = options.filter(
-                        (i, index) =>
-                          !checkDisabled(
-                            index,
-                            disabled,
-                            disabledKey,
-                            options,
-                            valueKey,
-                          ) || isSelected(index),
-                      );
-                      const nextValue = nextSelected.map((i) =>
-                        valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
-                      );
-
-                      onChange(event, {
-                        option: options,
-                        value: nextValue,
-                        selected: nextSelected,
-                      });
-                    }
-                  }}
-                  onFocus={() => setActiveIndex(-1)}
-                  ref={clearRef}
-                />
-              )
-            ) : (
-              <Button
-                a11yTitle={`${value.length} options selected. Clear all?`}
-                label="Clear All"
-                onClick={(event) => {
-                  if (onChange) {
-                    const nextSelected = options.filter(
-                      (i, index) =>
-                        checkDisabled(
+          {(options.length &&
+            (!limit || !(value.length === 0 && selectedValuesDisabled()))) >
+            0 && (
+            <Button
+              a11yTitle={
+                value.length === 0 || selectedValuesDisabled()
+                  ? `Select all ${options.length} options`
+                  : `${value.length} options selected. Clear all?`
+              }
+              label={
+                value.length === 0 || selectedValuesDisabled()
+                  ? 'Select All'
+                  : 'Clear All'
+              }
+              onClick={(event) => {
+                const selectAll =
+                  value.length === 0 || selectedValuesDisabled();
+                if (onChange) {
+                  const nextSelected = options.filter((i, index) =>
+                    selectAll
+                      ? !checkDisabled(
+                          index,
+                          disabled,
+                          disabledKey,
+                          options,
+                          valueKey,
+                        ) || isSelected(index)
+                      : checkDisabled(
                           index,
                           disabled,
                           disabledKey,
                           options,
                           valueKey,
                         ) && isSelected(index),
-                    );
-                    const nextValue = nextSelected.map((i) =>
-                      valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
-                    );
-                    onChange(event, {
-                      option: options,
-                      value: nextSelected,
-                      selected: nextValue,
-                    });
-                  }
-                  if (limit) setActiveIndex(0);
-                }}
-                onFocus={() => setActiveIndex(-1)}
-                ref={clearRef}
-              />
-            ))}
+                  );
+                  const nextValue = nextSelected.map((i) =>
+                    valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
+                  );
+                  onChange(event, {
+                    option: options,
+                    value: nextValue,
+                    selected: nextSelected,
+                  });
+                }
+                if (limit && !selectAll) setActiveIndex(0);
+              }}
+              onFocus={() => setActiveIndex(-1)}
+              ref={clearRef}
+            />
+          )}
         </>
       ) : (
         <Text size="small">{`${value.length} selected`}</Text>

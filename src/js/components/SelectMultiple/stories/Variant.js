@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Box, SelectMultiple, Text } from 'grommet';
 
-const dummyOptions = [
+const defaultOptions = [
   'Apple',
   'Orange',
   'Banana',
@@ -15,8 +15,8 @@ const dummyOptions = [
   'Rhubarb',
 ];
 
-export const Variant = () => {
-  const [options, setOptions] = useState(dummyOptions.sort());
+export const ShowSelectedInline = () => {
+  const [options, setOptions] = useState(defaultOptions.sort());
   const [valueMultiple, setValueMultiple] = useState([]);
   const [open, setOpen] = useState(false);
 
@@ -41,7 +41,7 @@ export const Variant = () => {
 
           let next = [...valueMultiple];
           next = next.filter((o) => exp.test(o));
-          let sortedOptions = dummyOptions.filter((i) => !next.includes(i));
+          let sortedOptions = defaultOptions.filter((i) => !next.includes(i));
 
           sortedOptions = sortedOptions.filter((o) => exp.test(o));
 
@@ -55,8 +55,8 @@ export const Variant = () => {
           setOpen(true);
           let next = [...valueMultiple];
           next.sort();
-          const sortedOptions = dummyOptions.filter((i) => !next.includes(i));
-          next = next.filter((i) => dummyOptions.includes(i));
+          const sortedOptions = defaultOptions.filter((i) => !next.includes(i));
+          next = next.filter((i) => defaultOptions.includes(i));
           sortedOptions.sort();
           const sortedAllOptions = next.concat(sortedOptions);
           setOptions(sortedAllOptions);
@@ -68,9 +68,9 @@ export const Variant = () => {
           // loop through next selected and sort alphabetically
           next.sort();
           // remove next selected from options
-          const sortedOptions = dummyOptions.filter((i) => !next.includes(i));
+          const sortedOptions = defaultOptions.filter((i) => !next.includes(i));
 
-          next = next.filter((i) => dummyOptions.includes(i));
+          next = next.filter((i) => defaultOptions.includes(i));
           next.sort();
           // sort options alphabetically
           sortedOptions.sort();
@@ -88,14 +88,14 @@ export const Variant = () => {
   );
 };
 
-Variant.parameters = {
+ShowSelectedInline.parameters = {
   chromatic: { disable: true },
 };
 
-Variant.args = {
+ShowSelectedInline.args = {
   full: true,
 };
 
 export default {
-  title: 'Input/SelectMultiple/Variant',
+  title: 'Input/SelectMultiple/ShowSelectedInline',
 };

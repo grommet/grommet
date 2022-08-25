@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Box, SelectMultiple, Text } from 'grommet';
 
-const dummyOptions = [
+const defaultOptions = [
   'Apple',
   'Orange',
   'Banana',
@@ -16,7 +16,7 @@ const dummyOptions = [
 ];
 
 export const SelectMultipleLimited = () => {
-  const [options, setOptions] = useState(dummyOptions.sort());
+  const [options, setOptions] = useState(defaultOptions.sort());
   const [valueMultiple, setValueMultiple] = useState([]);
 
   return (
