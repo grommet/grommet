@@ -193,7 +193,6 @@ Object {
       "name": [Function],
       "onChange": [Function],
       "pad": [Function],
-      "plain": [Function],
       "reverse": [Function],
       "toggle": [Function],
     },
