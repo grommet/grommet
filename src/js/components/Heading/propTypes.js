@@ -15,6 +15,11 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
     textAlign: PropTypes.oneOf(['start', 'center', 'end', 'justify']),
     truncate: PropTypes.bool,
+    weight: PropTypes.oneOfType([
+      PropTypes.oneOf(['normal', 'bold', 'lighter', 'bolder']),
+      PropTypes.number,
+      PropTypes.string,
+    ]),
   };
 }
 export const HeadingPropTypes = PropType;

@@ -318,7 +318,7 @@ exports[`Select Clear option renders - bottom 1`] = `
   padding: 12px;
 }
 
-.c9 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -334,6 +334,26 @@ exports[`Select Clear option renders - bottom 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #33333310;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
 }
 
 .c1 {
@@ -364,6 +384,50 @@ exports[`Select Clear option renders - bottom 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
+}
+
+.c15 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #555555;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -404,6 +468,45 @@ exports[`Select Clear option renders - bottom 1`] = `
   border: 0;
 }
 
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   max-height: inherit;
 }
@@ -418,9 +521,21 @@ exports[`Select Clear option renders - bottom 1`] = `
   outline: none;
 }
 
-.c6 {
+.c10 {
   display: block;
   width: 100%;
+}
+
+.c6 {
+  background-color: #7D4CDB;
+  color: #FFFFFF;
+  display: block;
+  width: 100%;
+}
+
+.c13:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -429,6 +544,12 @@ exports[`Select Clear option renders - bottom 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
     padding: 6px;
   }
 }
@@ -470,11 +591,11 @@ exports[`Select Clear option renders - bottom 1`] = `
     >
       <button
         aria-posinset="1"
-        aria-selected="false"
+        aria-selected="true"
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -491,7 +612,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c9 c10"
         role="option"
         tabindex="-1"
         type="button"
@@ -507,9 +628,24 @@ exports[`Select Clear option renders - bottom 1`] = `
         </div>
       </button>
       <div
-        class="c9"
+        class="c11"
       />
     </div>
+    <button
+      aria-label="Clear selection. Or, press shift tab to move to select options"
+      class="c12 c13"
+      type="button"
+    >
+      <div
+        class="c14"
+      >
+        <span
+          class="c15"
+        >
+          Clear selection
+        </span>
+      </div>
+    </button>
   </div>
 </div>
 `;
@@ -1072,7 +1208,7 @@ exports[`Select Clear option renders- top 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1091,7 +1227,7 @@ exports[`Select Clear option renders- top 1`] = `
   padding: 12px;
 }
 
-.c9 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1107,6 +1243,26 @@ exports[`Select Clear option renders- top 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background: #33333310;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
 }
 
 .c1 {
@@ -1133,13 +1289,19 @@ exports[`Select Clear option renders- top 1`] = `
   animation-delay: 0.01s;
 }
 
-.c8 {
+.c12 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c5 {
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #555555;
+}
+
+.c13 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1157,23 +1319,100 @@ exports[`Select Clear option renders- top 1`] = `
   text-align: inherit;
 }
 
-.c5:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1181,7 +1420,7 @@ exports[`Select Clear option renders- top 1`] = `
   max-height: inherit;
 }
 
-.c4 {
+.c8 {
   position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
@@ -1191,17 +1430,35 @@ exports[`Select Clear option renders- top 1`] = `
   outline: none;
 }
 
-.c6 {
+.c14 {
   display: block;
   width: 100%;
 }
 
+.c10 {
+  background-color: #7D4CDB;
+  color: #FFFFFF;
+  display: block;
+  width: 100%;
+}
+
+.c5:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
 
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c11 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
     padding: 6px;
   }
 }
@@ -1236,25 +1493,40 @@ exports[`Select Clear option renders- top 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
+    <button
+      aria-label="Clear selection. Or, press down arrow to move to select options"
+      class="c4 c5"
+      type="button"
+    >
+      <div
+        class="c6"
+      >
+        <span
+          class="c7"
+        >
+          Clear selection
+        </span>
+      </div>
+    </button>
     <div
-      class="c4"
+      class="c8"
       role="listbox"
       tabindex="-1"
     >
       <button
         aria-posinset="1"
-        aria-selected="false"
+        aria-selected="true"
         aria-setsize="2"
-        class="c5 c6"
+        class="c9 c10"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
-          class="c7"
+          class="c11"
         >
           <span
-            class="c8"
+            class="c12"
           >
             one
           </span>
@@ -1264,23 +1536,23 @@ exports[`Select Clear option renders- top 1`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c13 c14"
         role="option"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c7"
+          class="c11"
         >
           <span
-            class="c8"
+            class="c12"
           >
             two
           </span>
         </div>
       </button>
       <div
-        class="c9"
+        class="c15"
       />
     </div>
   </div>
@@ -2045,6 +2317,11 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   color: #7D4CDB;
   display: block;
   width: 100%;
+}
+
+.c1:focus {
+  background-color: lightgreen;
+  color: #7D4CDB;
 }
 
 @media only screen and (max-width:768px) {
@@ -3528,7 +3805,7 @@ exports[`Select default value clear 1`] = `
   padding: 12px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3547,7 +3824,7 @@ exports[`Select default value clear 1`] = `
   padding: 12px;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3595,13 +3872,13 @@ exports[`Select default value clear 1`] = `
   color: #555555;
 }
 
-.c11 {
+.c12 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c5 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3620,27 +3897,27 @@ exports[`Select default value clear 1`] = `
   width: 100%;
 }
 
-.c5:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3658,27 +3935,27 @@ exports[`Select default value clear 1`] = `
   text-align: inherit;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c12 {
+.c13 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3696,23 +3973,23 @@ exports[`Select default value clear 1`] = `
   text-align: inherit;
 }
 
-.c12:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3720,7 +3997,7 @@ exports[`Select default value clear 1`] = `
   max-height: inherit;
 }
 
-.c4 {
+.c8 {
   position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
@@ -3730,16 +4007,21 @@ exports[`Select default value clear 1`] = `
   outline: none;
 }
 
-.c9 {
+.c10 {
   display: block;
   width: 100%;
 }
 
-.c13 {
+.c14 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
   width: 100%;
+}
+
+.c5:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -3753,7 +4035,7 @@ exports[`Select default value clear 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c11 {
     padding: 6px;
   }
 }
@@ -3788,39 +4070,40 @@ exports[`Select default value clear 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
+    <button
+      aria-label="Clear selection. Or, press down arrow to move to select options"
+      class="c4 c5"
+      type="button"
+    >
+      <div
+        class="c6"
+      >
+        <span
+          class="c7"
+        >
+          Clear selection
+        </span>
+      </div>
+    </button>
     <div
-      class="c4"
+      class="c8"
       role="listbox"
       tabindex="-1"
     >
       <button
-        class="c5"
-        type="button"
-      >
-        <div
-          class="c6"
-        >
-          <span
-            class="c7"
-          >
-            Clear selection
-          </span>
-        </div>
-      </button>
-      <button
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c8 c9"
+        class="c9 c10"
         role="option"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10"
+          class="c11"
         >
           <span
-            class="c11"
+            class="c12"
           >
             one
           </span>
@@ -3830,23 +4113,23 @@ exports[`Select default value clear 1`] = `
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="c12 c13"
+        class="c13 c14"
         role="option"
         tabindex="0"
         type="button"
       >
         <div
-          class="c10"
+          class="c11"
         >
           <span
-            class="c11"
+            class="c12"
           >
             two
           </span>
         </div>
       </button>
       <div
-        class="c14"
+        class="c15"
       />
     </div>
   </div>
@@ -9217,7 +9500,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 khNgJL"
+    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 cJsyfs"
     role="option"
     tabindex="-1"
     type="button"
@@ -9236,7 +9519,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 khNgJL"
+    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 cJsyfs"
     role="option"
     tabindex="-1"
     type="button"
