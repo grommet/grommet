@@ -16,7 +16,6 @@ const defaultOptions = [
 ];
 
 export const SelectMultipleLimited = () => {
-  const [options, setOptions] = useState(defaultOptions.sort());
   const [valueMultiple, setValueMultiple] = useState([]);
 
   return (
@@ -25,6 +24,7 @@ export const SelectMultipleLimited = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>SelectMultiple Limited</Text>
       <SelectMultiple
+        sort
         limit={5}
         helpContent={
           <Box
@@ -38,22 +38,7 @@ export const SelectMultipleLimited = () => {
         }
         value={valueMultiple}
         placeholder="Select"
-        options={options}
-        onClose={() => {
-          let next = [...valueMultiple];
-          // loop through next selected and sort alphabetically
-          next.sort();
-          // remove next selected from options
-          const sortedOptions = options.filter((i) => !next.includes(i));
-
-          next = next.filter((i) => options.includes(i));
-          // sort options alphabetically
-          sortedOptions.sort();
-
-          // concat next selected and options
-          const sortedAllOptions = next.concat(sortedOptions);
-          setOptions(sortedAllOptions);
-        }}
+        options={defaultOptions}
         onChange={({ value }) => {
           setValueMultiple(value);
         }}

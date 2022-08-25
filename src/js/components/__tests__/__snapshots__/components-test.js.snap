@@ -4559,6 +4559,7 @@ Object {
       "searchPlaceholder": [Function],
       "showSelectedInline": [Function],
       "size": [Function],
+      "sort": [Function],
       "value": [Function],
       "valueKey": [Function],
       "valueLabel": [Function],

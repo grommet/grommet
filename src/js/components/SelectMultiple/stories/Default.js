@@ -17,9 +17,8 @@ const defaultOptions = [
 ];
 
 export const Default = () => {
-  const [options, setOptions] = useState(defaultOptions.sort());
+  const [options, setOptions] = useState(defaultOptions);
   const [valueMultiple, setValueMultiple] = useState([]);
-  // const [search, setSearch] = useState();
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
@@ -27,11 +26,12 @@ export const Default = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>SelectMultiple Default</Text>
       <SelectMultiple
+        sort
         value={valueMultiple}
         placeholder="Select"
+        allOptions={defaultOptions}
         options={options}
         onSearch={(text) => {
-          // setSearch(text);
           // The line below escapes regular expression special characters:
           // [ \ ^ $ . | ? * + ( )
           const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -40,29 +40,9 @@ export const Default = () => {
           // handles escaping special characters. Without escaping special
           // characters, errors will appear in the console
           const exp = new RegExp(escapedText, 'i');
-
-          let next = [...valueMultiple];
-          next = next.filter((o) => exp.test(o));
-          let sortedOptions = defaultOptions.filter((i) => !next.includes(i));
-
-          sortedOptions = sortedOptions.filter((o) => exp.test(o));
-
-          const sortedAllOptions = next.concat(sortedOptions);
-          setOptions(sortedAllOptions);
+          setOptions(defaultOptions.filter((o) => exp.test(o)));
         }}
-        onClose={() => {
-          let next = [...valueMultiple];
-          // loop through next selected and sort alphabetically
-          next.sort();
-          // remove next selected from options
-          const sortedOptions = options.filter((i) => !next.includes(i));
-          next = next.filter((i) => options.includes(i));
-          // sort options alphabetically
-          sortedOptions.sort();
-          // concat next selected and options
-          const sortedAllOptions = next.concat(sortedOptions);
-          setOptions(sortedAllOptions);
-        }}
+        onClose={() => setOptions(defaultOptions)}
         onChange={({ value }) => {
           setValueMultiple(value);
         }}

@@ -9,7 +9,6 @@ import React, {
   useEffect,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-
 import { controlBorderStyle, useKeyboard, useForwardedRef } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -90,6 +89,7 @@ const SelectMultiple = forwardRef(
       replace,
       searchPlaceholder,
       size,
+      sort,
       value: valueProp,
       valueKey,
       valueLabel,
@@ -137,11 +137,13 @@ const SelectMultiple = forwardRef(
     const [search, setSearch] = useState();
     // All select option indices and values
     const [allOptions, setAllOptions] = useState(optionsProp);
+    const [sortedOptions, setSortedOptions] = useState(optionsProp);
     // Track changes to options property, except when options are being
     // updated due to search activity. Allows option's initial index value
     // to be referenced when filtered by search.
     useEffect(() => {
       if (!search) setAllOptions(optionsProp);
+      if (!search) setSortedOptions(optionsProp);
     }, [optionsProp, search]);
 
     // the option indexes present in the value
@@ -167,6 +169,21 @@ const SelectMultiple = forwardRef(
       setOpen(true);
       if (onOpen) onOpen();
     }, [onOpen, open]);
+
+    useEffect(() => {
+      if (sort && ((open && search) || !open)) {
+        const selectedOptions = optionsProp.filter((option) => {
+          const iValue =
+            valueKey && valueKey.reduce ? applyKey(option, valueKey) : option;
+          return value.includes(iValue);
+        });
+        const unselectedOptions = optionsProp.filter(
+          (i) => !selectedOptions.includes(i),
+        );
+        const nextSortedOptions = selectedOptions.concat(unselectedOptions);
+        setSortedOptions(nextSortedOptions);
+      }
+    }, [open, sort, optionsProp, value, valueKey, search]);
 
     const onRequestClose = useCallback(() => {
       setOpen(false);
@@ -317,7 +334,7 @@ const SelectMultiple = forwardRef(
         onKeyDown={onKeyDown}
         onMore={onMore}
         onSearch={onSearch}
-        options={optionsProp}
+        options={sortedOptions}
         optionIndexesInValue={optionIndexesInValue}
         replace={replace}
         searchPlaceholder={searchPlaceholder}

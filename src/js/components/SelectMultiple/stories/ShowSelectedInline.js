@@ -1,44 +1,32 @@
 import React, { useState } from 'react';
 
-import { Box, Text } from 'grommet';
-import { SelectMultiple } from '../SelectMultiple';
+import { Box, SelectMultiple, Text } from 'grommet';
 
 const defaultOptions = [
-  'French Vanilla Cake with Buttercream',
-  'Sweet Grilled Peaches',
-  'Chocolate Chip Cookies',
-  'Pineapple Upside-Down Cake',
-  'Peanut Butter Chocolate Fondue',
-  'Strawberry Shortcake',
-  'Peach Cobbler',
-  'German Chocolate Cake',
-  'Carrot Cake with Cream Cheese Frosting',
-  'Cinnamon Coffee Cake',
+  'Apple',
+  'Orange',
+  'Banana',
+  'Grape',
+  'Melon',
+  'Strawberry',
+  'Kiwi',
+  'Mango',
+  'Raspberry',
+  'Rhubarb',
 ];
 
-export const Disabled = () => {
-  const [options, setOptions] = useState(defaultOptions);
-  const [valueMultiple, setValueMultiple] = useState([
-    'Chocolate Chip Cookies',
-    'Strawberry Shortcake',
-  ]);
+export const ShowSelectedInline = () => {
+  const [options, setOptions] = useState(defaultOptions.sort());
+  const [valueMultiple, setValueMultiple] = useState([]);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box fill align="center" pad="large" gap="large">
-      <Text>SelectMultiple Disabled</Text>
+      <Text>SelectMultiple showSelectedInline</Text>
       <SelectMultiple
         sort
-        width="medium"
         showSelectedInline
-        dropProps={{
-          width: 'medium',
-        }}
-        // icon={<CaretDown />}
-        // icon={false}
-        disabled={['Chocolate Chip Cookies', 'Pineapple Upside-Down Cake']}
-        value={valueMultiple}
         placeholder="Select"
         options={options}
         onSearch={(text) => {
@@ -53,6 +41,7 @@ export const Disabled = () => {
           setOptions(defaultOptions.filter((o) => exp.test(o)));
         }}
         onClose={() => setOptions(defaultOptions)}
+        value={valueMultiple}
         onChange={({ value }) => {
           setValueMultiple(value);
         }}
@@ -62,14 +51,16 @@ export const Disabled = () => {
   );
 };
 
-Disabled.parameters = {
+ShowSelectedInline.storyName = 'showSelectedInline';
+
+ShowSelectedInline.parameters = {
   chromatic: { disable: true },
 };
 
-Disabled.args = {
+ShowSelectedInline.args = {
   full: true,
 };
 
 export default {
-  title: 'Input/SelectMultiple/Disabled',
+  title: 'Input/SelectMultiple/showSelectedInline',
 };
