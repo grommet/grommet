@@ -57,7 +57,8 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
   if (typeof kind === 'object') index = 0;
   // stop when we have a color or no more paths
   while (index >= 0 && !result[1]) {
-    let obj = (typeof kind === 'object' && kind) || theme.button;
+    const baseObj = (typeof kind === 'object' && kind) || theme.button;
+    let obj = baseObj;
     // find sub-object under the button theme that corresponds with this path
     // for example: 'active.primary'
     if (paths[index]) {
@@ -83,9 +84,16 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
 
       let color;
       if (obj?.icon?.props?.color) color = obj.icon.props.color;
+      // if no icon defined for this state, see if there is an icon
+      // with color defined at one higher level
+      else if (paths[index + 1]) {
+        const parts = paths[index + 1].split('.');
+        while (baseObj && parts.length) obj = baseObj[parts.shift()];
+        if (obj?.icon?.props?.color) color = obj.icon.props.color;
+      }
       // use passed in color for text if the theme doesn't have
       // background or border color
-      else
+      if (!color)
         color =
           colorProp &&
           (!obj.background || !obj.background.color) &&
