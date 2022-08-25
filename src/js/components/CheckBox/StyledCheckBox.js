@@ -34,10 +34,6 @@ const hoverStyle = css`
   }
 `;
 
-const plainStyle = () => css`
-  padding: 0;
-`;
-
 const StyledCheckBoxIcon = styled.svg`
   box-sizing: border-box;
   stroke-width: ${(props) => props.theme.checkBox.check.thickness};
@@ -61,7 +57,6 @@ const StyledCheckBoxContainer = styled.label`
       ? props.theme.checkBox.label.align
       : undefined};
   user-select: none;
-  ${(props) => props.plain === true && plainStyle}
   ${(props) => (props.fillProp ? fillStyle() : 'width: fit-content;')}
   ${(props) =>
     (props.pad || props.theme.checkBox.pad) &&

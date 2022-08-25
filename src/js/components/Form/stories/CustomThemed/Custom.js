@@ -54,10 +54,7 @@ const customTheme = deepMerge(hpe, {
     label: {
       align: 'start',
     },
-    pad: {
-      vertical: 'xsmall',
-    },
-    extend: ({ disabled, plain, theme }) => `
+    extend: ({ disabled, theme }) => `
     ${
       !disabled &&
       `:hover {
@@ -68,17 +65,18 @@ const customTheme = deepMerge(hpe, {
       };
     }`
     }
-    ${
-      plain !== true &&
-      `padding-left: ${theme.global.edgeSize.small};
-       padding-right: ${theme.global.edgeSize.small};`
-    };
     font-weight: 500;
     width: auto;
   };
   `,
   },
   formField: {
+    checkBox: {
+      pad: {
+        vertical: 'xsmall',
+        horizontal: 'small',
+      },
+    },
     content: {
       margin: { vertical: 'xsmall' },
       pad: undefined,
@@ -180,7 +178,7 @@ export const Custom = () => (
           <FormField name="haveAlias">
             <CheckBox name="haveAlias" label="alias?" />
           </FormField>
-          <CheckBox plain name="haveAlias" label="alias?" />
+          <CheckBox name="haveAlias" label="alias?" />
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />

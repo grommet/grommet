@@ -768,6 +768,9 @@ export interface ThemeType {
         color?: ColorType;
       };
     };
+    checkBox: {
+      pad: PadType;
+    };
     content?: {
       margin?: MarginType;
       pad?: PadType;

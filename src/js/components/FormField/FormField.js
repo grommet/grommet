@@ -220,13 +220,27 @@ const FormField = forwardRef(
           if (
             child &&
             child.type &&
+            'CheckBox'.indexOf(child.type.displayName) === -1 &&
             grommetInputNames.indexOf(child.type.displayName) !== -1 &&
             child.props.plain === undefined &&
             child.props.focusIndicator === undefined
           ) {
             return cloneElement(child, {
-              plain: 'noBorder',
+              plain: true,
               focusIndicator: false,
+            });
+          }
+          if (
+            child &&
+            child.type &&
+            'CheckBox'.indexOf(child.type.displayName) !== -1 &&
+            child.props.plain === undefined &&
+            child.props.focusIndicator === undefined
+          ) {
+            return cloneElement(child, {
+              plain: true,
+              focusIndicator: false,
+              pad: formFieldTheme?.checkBox?.pad,
             });
           }
           return child;

@@ -1335,7 +1335,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
         class="StyledBox-sc-13pk1d4-0 pdYPx FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fcbMDR"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
           label="toggle"
         >
           <div
@@ -1770,7 +1770,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 pdYPx FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fcbMDR"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
           label="toggle"
         >
           <div
@@ -2010,7 +2010,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 pdYPx FormField__FormFieldContentBox-sc-m9hood-1 jVcIHD"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jyVSRn"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kdBHcq"
           label="toggle"
         >
           <div
@@ -3422,7 +3422,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         class="StyledBox-sc-13pk1d4-0 pdYPx FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fcbMDR"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
           for="test-checkbox"
           label="test-checkbox"
         >
