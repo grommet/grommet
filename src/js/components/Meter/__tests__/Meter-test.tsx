@@ -74,6 +74,28 @@ describe('Meter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('large circle values', () => {
+    // for https://github.com/grommet/grommet/issues/6190
+    const { container } = render(
+      <Grommet>
+        <Meter
+          type="circle"
+          values={[
+            { value: 904426, color: "graph-0" },
+            { value: 692866, color: "graph-1" },
+            { value: 642068, color: "graph-2" },
+            { value: 512772, color: "graph-3" },
+            { value: 5032870, color: "graph-4" },
+          ]}
+          size="small"
+          thickness="small"
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('type', () => {
     const { container } = render(
       <Grommet>
