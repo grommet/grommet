@@ -773,6 +773,9 @@ export interface ThemeType {
       margin?: MarginType;
       pad?: PadType;
     };
+    checkBox: {
+      pad: PadType;
+    };
     disabled?: {
       background?: BackgroundType;
       border?: {
