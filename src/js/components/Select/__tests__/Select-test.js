@@ -296,6 +296,50 @@ describe('Select', () => {
     );
   });
 
+  test('onChange without labelKey or valueKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('1')); // 1 matches first key
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          id: 1,
+          name: 'Value1',
+        },
+      }),
+    );
+  });
+
   test('onChange with valueKey string', () => {
     const onChange = jest.fn();
     const Test = () => {
