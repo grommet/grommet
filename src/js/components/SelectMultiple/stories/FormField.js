@@ -44,12 +44,11 @@ export const InsideFormField = () => {
   );
 };
 
-InsideFormField.storyName = 'Inside a FormField';
-
 InsideFormField.parameters = {
   chromatic: { disable: true },
 };
 
+InsideFormField.storyName = 'Inside a FormField';
 
 export default {
   title: 'Input/SelectMultiple/Inside a FormField',

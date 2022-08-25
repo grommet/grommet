@@ -86,7 +86,7 @@ export const Children = () => {
         options={allSeasons}
         value={selected}
         onChange={({ value }) => {
-          setSelected([...value].sort());
+          setSelected([...value]);
         }}
       >
         {renderOption}

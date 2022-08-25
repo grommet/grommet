@@ -16,7 +16,7 @@ const defaultOptions = [
 ];
 
 export const ShowSelectedInline = () => {
-  const [options, setOptions] = useState(defaultOptions.sort());
+  const [options, setOptions] = useState(defaultOptions);
   const [valueMultiple, setValueMultiple] = useState([]);
 
   return (
