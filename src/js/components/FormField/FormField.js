@@ -220,7 +220,6 @@ const FormField = forwardRef(
           if (
             child &&
             child.type &&
-            'CheckBox'.indexOf(child.type.displayName) === -1 &&
             grommetInputNames.indexOf(child.type.displayName) !== -1 &&
             child.props.plain === undefined &&
             child.props.focusIndicator === undefined
@@ -228,19 +227,10 @@ const FormField = forwardRef(
             return cloneElement(child, {
               plain: true,
               focusIndicator: false,
-            });
-          }
-          if (
-            child &&
-            child.type &&
-            'CheckBox'.indexOf(child.type.displayName) !== -1 &&
-            child.props.plain === undefined &&
-            child.props.focusIndicator === undefined
-          ) {
-            return cloneElement(child, {
-              plain: true,
-              focusIndicator: false,
-              pad: formFieldTheme?.checkBox?.pad,
+              pad:
+                'CheckBox'.indexOf(child.type.displayName) !== -1
+                  ? formFieldTheme?.checkBox?.pad
+                  : undefined,
             });
           }
           return child;
