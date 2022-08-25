@@ -166,11 +166,11 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     };
   }, [onSearch, usingKeyboard, clear]);
   var optionLabel = (0, _react.useCallback)(function (index) {
-    return (0, _utils2.applyKey)(options[index], labelKey);
-  }, [labelKey, options]);
+    return (0, _utils2.applyKey)(options[index], labelKey || valueKey);
+  }, [labelKey, options, valueKey]);
   var optionValue = (0, _react.useCallback)(function (index) {
-    return (0, _utils2.applyKey)(options[index], valueKey);
-  }, [options, valueKey]);
+    return (0, _utils2.applyKey)(options[index], valueKey || labelKey);
+  }, [options, valueKey, labelKey]);
   var isDisabled = (0, _react.useCallback)(function (index) {
     var option = options[index];
     var result;

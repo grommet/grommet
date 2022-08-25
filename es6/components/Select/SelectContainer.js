@@ -141,11 +141,11 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     };
   }, [onSearch, usingKeyboard, clear]);
   var optionLabel = useCallback(function (index) {
-    return applyKey(options[index], labelKey);
-  }, [labelKey, options]);
+    return applyKey(options[index], labelKey || valueKey);
+  }, [labelKey, options, valueKey]);
   var optionValue = useCallback(function (index) {
-    return applyKey(options[index], valueKey);
-  }, [options, valueKey]);
+    return applyKey(options[index], valueKey || labelKey);
+  }, [options, valueKey, labelKey]);
   var isDisabled = useCallback(function (index) {
     var option = options[index];
     var result;
