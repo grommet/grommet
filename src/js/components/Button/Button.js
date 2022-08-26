@@ -304,7 +304,6 @@ const Button = forwardRef(
       (hover && getKindIcon(themePaths?.hover, theme, kind)) ||
       getKindIcon(themePaths?.base, theme, kind);
     let buttonIcon = icon || kindIcon;
-
     // only change color if user did not specify the color themselves...
     if (icon && !icon.props.color) {
       if (kind) {
