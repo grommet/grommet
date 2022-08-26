@@ -300,12 +300,11 @@ const Button = forwardRef(
       }
     };
 
-    const hoverIcon = getKindIcon(themePaths?.hover, theme, kind);
     const kindIcon =
-      hover && hoverIcon
-        ? hoverIcon
-        : getKindIcon(themePaths?.base, theme, kind);
+      (hover && getKindIcon(themePaths?.hover, theme, kind)) ||
+      getKindIcon(themePaths?.base, theme, kind);
     let buttonIcon = icon || kindIcon;
+
     // only change color if user did not specify the color themselves...
     if (icon && !icon.props.color) {
       if (kind) {
@@ -322,7 +321,7 @@ const Button = forwardRef(
             theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'],
         });
       }
-    } else if (kind && kindIcon && !plain) {
+    } else if (kindIcon && !plain) {
       const iconColor =
         (hover && getIconColor(themePaths.hover, theme)) ||
         getIconColor(themePaths.base, theme, color, kind);

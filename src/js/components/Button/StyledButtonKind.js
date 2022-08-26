@@ -38,11 +38,8 @@ const fontStyle = (props) => {
 };
 
 const padFromTheme = (size = 'medium', theme, themeObj, kind) => {
-  if (size && themeObj?.size?.[size]?.[kind]) {
-    return {
-      vertical: themeObj.size[size][kind].pad.vertical,
-      horizontal: themeObj.size[size][kind].pad.horizontal,
-    };
+  if (size && themeObj?.size?.[size]?.[kind]?.pad) {
+    return themeObj.size[size][kind].pad;
   }
 
   if (size && themeObj.size && themeObj.size[size] && themeObj.size[size].pad) {
