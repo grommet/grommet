@@ -332,7 +332,7 @@ const Button = forwardRef(
         });
     }
 
-    const reverse = reverseProp || theme.button[kind]?.reverse;
+    const reverse = reverseProp ?? theme.button[kind]?.reverse;
     const domTag = !as && href ? 'a' : as;
     const first = reverse ? label : buttonIcon;
     const second = reverse ? buttonIcon : label;
