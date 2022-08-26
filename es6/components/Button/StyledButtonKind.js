@@ -18,9 +18,15 @@ var fontStyle = function fontStyle(props) {
   return css(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
 
-var padFromTheme = function padFromTheme(size, theme, themeObj) {
+var padFromTheme = function padFromTheme(size, theme, themeObj, kind) {
+  var _themeObj$size, _themeObj$size$size, _themeObj$size$size$k;
+
   if (size === void 0) {
     size = 'medium';
+  }
+
+  if (size && themeObj != null && (_themeObj$size = themeObj.size) != null && (_themeObj$size$size = _themeObj$size[size]) != null && (_themeObj$size$size$k = _themeObj$size$size[kind]) != null && _themeObj$size$size$k.pad) {
+    return themeObj.size[size][kind].pad;
   }
 
   if (size && themeObj.size && themeObj.size[size] && themeObj.size[size].pad) {
@@ -47,7 +53,7 @@ var padStyle = function padStyle(_ref) {
   // caller has specified a themeObj to use for styling
   // relevant for cases like pagination which looks to theme.pagination.button
   var themeObj = typeof kind === 'object' ? kind : theme.button;
-  var pad = padFromTheme(size, theme, themeObj);
+  var pad = padFromTheme(size, theme, themeObj, kind);
   return pad ? css(["padding:", " ", ";"], pad.vertical, pad.horizontal) : '';
 };
 
@@ -86,7 +92,7 @@ var kindStyle = function kindStyle(_ref2) {
   // relevant for cases like pagination which looks to theme.pagination.button
 
   var themeObj = typeof kind === 'object' ? kind : theme.button;
-  var pad = padFromTheme(size, theme, themeObj);
+  var pad = padFromTheme(size, theme, themeObj, kind);
   themePaths.base.forEach(function (themePath) {
     var obj = getPath(themeObj, themePath);
 

@@ -29,7 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
     primary: PropTypes.bool,
     reverse: PropTypes.bool,
     secondary: PropTypes.bool,
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large']), PropTypes.string]),
     target: PropTypes.oneOfType([PropTypes.oneOf(['_self', '_blank', '_parent', '_top']), PropTypes.string]),
     tip: PropTypes.oneOfType([PropTypes.shape({
       content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),

@@ -38,7 +38,7 @@ if (process.env.NODE_ENV !== 'production') {
     primary: _propTypes["default"].bool,
     reverse: _propTypes["default"].bool,
     secondary: _propTypes["default"].bool,
-    size: _propTypes["default"].oneOf(['small', 'medium', 'large']),
+    size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['small', 'medium', 'large']), _propTypes["default"].string]),
     target: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['_self', '_blank', '_parent', '_top']), _propTypes["default"].string]),
     tip: _propTypes["default"].oneOfType([_propTypes["default"].shape({
       content: _propTypes["default"].oneOfType([_propTypes["default"].node, _propTypes["default"].string]),

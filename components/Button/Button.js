@@ -69,7 +69,8 @@ var getIconColor = function getIconColor(paths, theme, colorProp, kind) {
   if (typeof kind === 'object') index = 0; // stop when we have a color or no more paths
 
   while (index >= 0 && !result[1]) {
-    var obj = typeof kind === 'object' && kind || theme.button; // find the sub-object under the button them that corresponds with this path
+    var baseObj = typeof kind === 'object' && kind || theme.button;
+    var obj = baseObj; // find sub-object under the button theme that corresponds with this path
     // for example: 'active.primary'
 
     if (paths[index]) {
@@ -81,14 +82,30 @@ var getIconColor = function getIconColor(paths, theme, colorProp, kind) {
     }
 
     if (obj) {
+      var _obj, _obj$icon, _obj$icon$props;
+
       // use passed in color for background if the theme has a background color
       var background = colorProp && obj.background && obj.background.color ? colorProp : obj.background; // if theme object explicitly sets the color to undefined, pass false
       // to indicate that the theme doesn't want any text color
 
-      var objColor = obj.color || (Object.prototype.hasOwnProperty.call(obj, 'color') && obj.color === undefined ? false : undefined); // use passed in color for text if the theme doesn't have
+      var objColor = obj.color || (Object.prototype.hasOwnProperty.call(obj, 'color') && obj.color === undefined ? false : undefined);
+      var color = void 0;
+      if ((_obj = obj) != null && (_obj$icon = _obj.icon) != null && (_obj$icon$props = _obj$icon.props) != null && _obj$icon$props.color) color = obj.icon.props.color; // if no icon defined for this state, see if there is an icon
+      // with color defined at one higher level
+      else if (paths[index + 1]) {
+        var _obj2, _obj2$icon, _obj2$icon$props;
+
+        var _parts = paths[index + 1].split('.');
+
+        while (baseObj && _parts.length) {
+          obj = baseObj[_parts.shift()];
+        }
+
+        if ((_obj2 = obj) != null && (_obj2$icon = _obj2.icon) != null && (_obj2$icon$props = _obj2$icon.props) != null && _obj2$icon$props.color) color = obj.icon.props.color;
+      } // use passed in color for text if the theme doesn't have
       // background or border color
 
-      var color = colorProp && (!obj.background || !obj.background.color) && (!obj.border || !obj.border.color) ? colorProp : objColor;
+      if (!color) color = colorProp && (!obj.background || !obj.background.color) && (!obj.border || !obj.border.color) ? colorProp : objColor;
       result = (0, _utils.backgroundAndTextColors)(background, color, theme);
     }
 
@@ -96,6 +113,39 @@ var getIconColor = function getIconColor(paths, theme, colorProp, kind) {
   }
 
   return result[1] || undefined;
+}; // get the icon for the current button state
+
+
+var getKindIcon = function getKindIcon(paths, theme, kind) {
+  if (paths === void 0) {
+    paths = [];
+  }
+
+  var result;
+  var index = paths.length - 1; // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+
+  if (typeof kind === 'object') index = 0; // stop when we have a color or no more paths
+
+  while (index >= 0 && !result) {
+    var _obj3;
+
+    var obj = typeof kind === 'object' && kind || theme.button; // find sub-object under the button theme that corresponds with this path
+    // for example: 'active.primary'
+
+    if (paths[index]) {
+      var parts = paths[index].split('.');
+
+      while (obj && parts.length) {
+        obj = obj[parts.shift()];
+      }
+    }
+
+    if ((_obj3 = obj) != null && _obj3.icon) result = obj.icon;
+    index -= 1;
+  }
+
+  return result || undefined;
 };
 
 var getPropertyColor = function getPropertyColor(property, paths, theme, kind, primary) {
@@ -129,6 +179,8 @@ var getPropertyColor = function getPropertyColor(property, paths, theme, kind, p
 };
 
 var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var _theme$button$kind;
+
   var active = _ref.active,
       _ref$align = _ref.align,
       align = _ref$align === void 0 ? 'center' : _ref$align,
@@ -153,7 +205,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onMouseOver = _ref.onMouseOver,
       plain = _ref.plain,
       primary = _ref.primary,
-      reverse = _ref.reverse,
+      reverseProp = _ref.reverse,
       secondary = _ref.secondary,
       selected = _ref.selected,
       size = _ref.size,
@@ -268,7 +320,8 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   };
 
-  var buttonIcon = icon; // only change color if user did not specify the color themselves...
+  var kindIcon = hover && getKindIcon(themePaths == null ? void 0 : themePaths.hover, theme, kind) || getKindIcon(themePaths == null ? void 0 : themePaths.base, theme, kind);
+  var buttonIcon = icon || kindIcon; // only change color if user did not specify the color themselves...
 
   if (icon && !icon.props.color) {
     if (kind) {
@@ -284,8 +337,15 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         color: theme.global.colors.text[isDarkBackground() ? 'dark' : 'light']
       });
     }
+  } else if (kindIcon && !plain) {
+    var _iconColor = hover && getIconColor(themePaths.hover, theme) || getIconColor(themePaths.base, theme, color, kind);
+
+    if (_iconColor) buttonIcon = /*#__PURE__*/(0, _react.cloneElement)(kindIcon, {
+      color: _iconColor
+    });
   }
 
+  var reverse = reverseProp != null ? reverseProp : (_theme$button$kind = theme.button[kind]) == null ? void 0 : _theme$button$kind.reverse;
   var domTag = !as && href ? 'a' : as;
   var first = reverse ? label : buttonIcon;
   var second = reverse ? buttonIcon : label;
