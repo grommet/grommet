@@ -963,6 +963,9 @@ export var generate = function generate(baseSpacing, scale) {
         position: 'inner',
         side: 'bottom'
       },
+      // checkBox: {
+      //   pad: undefined,
+      // },
       content: {
         // margin: undefined,
         pad: 'small'

@@ -230,9 +230,12 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     }
 
     if (child && child.type && grommetInputNames.indexOf(child.type.displayName) !== -1 && child.props.plain === undefined && child.props.focusIndicator === undefined) {
+      var _formFieldTheme$check;
+
       return /*#__PURE__*/(0, _react.cloneElement)(child, {
         plain: true,
-        focusIndicator: false
+        focusIndicator: false,
+        pad: 'CheckBox'.indexOf(child.type.displayName) !== -1 ? formFieldTheme == null ? void 0 : (_formFieldTheme$check = formFieldTheme.checkBox) == null ? void 0 : _formFieldTheme$check.pad : undefined
       });
     }
 
