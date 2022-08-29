@@ -29,8 +29,8 @@ import {
   checkDisabled,
   getOptionLabel,
   getOptionValue,
-  EmptySearchOption,
 } from './utils';
+import { EmptySearchOption } from './EmptySearchOption';
 
 // ensure ClearButton receives visual indication of keyboard
 const StyledButton = styled(Button)`

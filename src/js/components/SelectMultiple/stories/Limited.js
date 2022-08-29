@@ -24,7 +24,7 @@ export const SelectMultipleLimited = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>SelectMultiple Limited</Text>
       <SelectMultiple
-        sort
+        separateSelected
         limit={5}
         help={
           <Box

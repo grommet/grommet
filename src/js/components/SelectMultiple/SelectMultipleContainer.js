@@ -31,8 +31,8 @@ import {
   getOptionLabel,
   getOptionValue,
   checkDisabled,
-  EmptySearchOption,
 } from '../Select/utils';
+import { EmptySearchOption } from '../Select/EmptySearchOption';
 
 const SelectMultipleContainer = forwardRef(
   (

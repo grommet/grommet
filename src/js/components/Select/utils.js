@@ -1,8 +1,4 @@
-import React, { forwardRef } from 'react';
-import { Box } from '../Box';
-import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
-import { SelectOption, SelectTextInput } from './StyledSelect';
 
 export const applyKey = (option, key) => {
   if (option === undefined) return undefined;
@@ -13,56 +9,6 @@ export const applyKey = (option, key) => {
     return option[Object.keys(option)[0]];
   return option;
 };
-
-export const DefaultSelectTextInput = forwardRef(
-  (
-    { a11yTitle, disabled, id, name, placeholder, value, size, theme, ...rest },
-    ref,
-  ) => (
-    <SelectTextInput
-      a11yTitle={a11yTitle}
-      // When Select is disabled, we want to show a default cursor
-      // but not have disabled styling come from TextInput
-      // Disabled can be a bool or an array of options to disable.
-      // We only want to disable the TextInput if the control
-      // button should be disabled which occurs when disabled
-      // equals true.
-      defaultCursor={disabled === true || undefined}
-      focusIndicator={false}
-      id={id ? `${id}__input` : undefined}
-      name={name}
-      ref={ref}
-      {...rest}
-      tabIndex="-1"
-      type="text"
-      placeholder={placeholder}
-      plain
-      readOnly
-      value={value}
-      size={size}
-      theme={theme}
-    />
-  ),
-);
-
-export const EmptySearchOption = ({
-  emptySearchMessage,
-  selectOptionsStyle,
-  theme,
-}) => (
-  <SelectOption
-    key="search_empty"
-    tabIndex="0"
-    role="menuitem"
-    hoverIndicator="background"
-    disabled
-    aria-live="polite"
-  >
-    <Box {...selectOptionsStyle}>
-      <Text {...theme.select.container.text}>{emptySearchMessage}</Text>
-    </Box>
-  </SelectOption>
-);
 
 export const getOptionLabel = (index, options, labelKey) =>
   applyKey(options[index], labelKey);

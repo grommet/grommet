@@ -26,7 +26,7 @@ export const Default = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>SelectMultiple Default</Text>
       <SelectMultiple
-        sort
+        separateSelected
         value={valueMultiple}
         placeholder="Select"
         allOptions={defaultOptions}

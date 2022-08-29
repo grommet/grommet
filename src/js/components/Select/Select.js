@@ -21,13 +21,13 @@ import { SelectContainer } from './SelectContainer';
 import { HiddenInput, StyledSelectDropButton } from './StyledSelect';
 import {
   applyKey,
-  DefaultSelectTextInput,
   getNormalizedValue,
   changeEvent,
   getSelectIcon,
   getDisplayLabelKey,
   getIconColor,
 } from './utils';
+import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
 

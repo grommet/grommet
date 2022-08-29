@@ -31,8 +31,8 @@ import {
   getSelectIcon,
   getIconColor,
   getDisplayLabelKey,
-  DefaultSelectTextInput,
 } from '../Select/utils';
+import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
 
@@ -137,14 +137,14 @@ const SelectMultiple = forwardRef(
     const [search, setSearch] = useState();
     // All select option indices and values
     const [allOptions, setAllOptions] = useState(optionsProp);
-    const [orderedOptions, setOrderedOptions] = useState(optionsProp);
+    const [orderedOptions, setOrderedOptions] = useState();
     // Track changes to options property, except when options are being
     // updated due to search activity. Allows option's initial index value
     // to be referenced when filtered by search.
     useEffect(() => {
       if (!search) setAllOptions(optionsProp);
-      if (!search) setOrderedOptions(optionsProp);
-    }, [optionsProp, search]);
+      if (!search && separateSelected) setOrderedOptions(optionsProp);
+    }, [optionsProp, search, separateSelected]);
 
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
@@ -334,7 +334,7 @@ const SelectMultiple = forwardRef(
         onKeyDown={onKeyDown}
         onMore={onMore}
         onSearch={onSearch}
-        options={orderedOptions}
+        options={orderedOptions || optionsProp}
         optionIndexesInValue={optionIndexesInValue}
         replace={replace}
         searchPlaceholder={searchPlaceholder}
