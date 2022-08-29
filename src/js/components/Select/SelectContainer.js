@@ -179,13 +179,13 @@ const SelectContainer = forwardRef(
     }, [onSearch, usingKeyboard, clear]);
 
     const optionLabel = useCallback(
-      (index) => applyKey(options[index], labelKey),
-      [labelKey, options],
+      (index) => applyKey(options[index], labelKey || valueKey),
+      [labelKey, options, valueKey],
     );
 
     const optionValue = useCallback(
-      (index) => applyKey(options[index], valueKey),
-      [options, valueKey],
+      (index) => applyKey(options[index], valueKey || labelKey),
+      [options, valueKey, labelKey],
     );
 
     const isDisabled = useCallback(
