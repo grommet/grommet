@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
         PropTypes.number,
       ]),
     ),
-    helpContent: PropTypes.node,
+    help: PropTypes.node,
     limit: PropTypes.number,
     value: PropTypes.arrayOf(
       PropTypes.oneOfType([

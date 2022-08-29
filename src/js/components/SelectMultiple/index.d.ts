@@ -3,7 +3,7 @@ import { BasicSelectProps } from '../Select';
 
 export interface SelectMultipleProps extends BasicSelectProps {
   defaultValue?: (string | number | object)[];
-  helpContent?: React.ReactNode;
+  help?: React.ReactNode;
   limit?: number;
   value?: (string | number | object)[];
   showSelectedInline?: boolean;

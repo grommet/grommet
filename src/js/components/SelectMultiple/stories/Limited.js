@@ -26,7 +26,7 @@ export const SelectMultipleLimited = () => {
       <SelectMultiple
         sort
         limit={5}
-        helpContent={
+        help={
           <Box
             direction="row"
             justify="between"

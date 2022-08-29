@@ -4539,7 +4539,7 @@ Object {
       "emptySearchMessage": [Function],
       "focusIndicator": [Function],
       "gridArea": [Function],
-      "helpContent": [Function],
+      "help": [Function],
       "icon": [Function],
       "labelKey": [Function],
       "limit": [Function],
