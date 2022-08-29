@@ -148,10 +148,12 @@ interface ButtonKindType {
   font?: {
     weight?: number | string;
   };
+  icon?: React.ReactNode | Icon;
   padding?: {
     vertical?: string;
     horizontal?: string;
   };
+  reverse?: boolean;
   extend?: ExtendType;
 }
 
@@ -779,6 +781,9 @@ export interface ThemeType {
     content?: {
       margin?: MarginType;
       pad?: PadType;
+    };
+    checkBox: {
+      pad: PadType;
     };
     disabled?: {
       background?: BackgroundType;

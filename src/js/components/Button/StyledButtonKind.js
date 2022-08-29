@@ -37,7 +37,11 @@ const fontStyle = (props) => {
   `;
 };
 
-const padFromTheme = (size = 'medium', theme, themeObj) => {
+const padFromTheme = (size = 'medium', theme, themeObj, kind) => {
+  if (size && themeObj?.size?.[size]?.[kind]?.pad) {
+    return themeObj.size[size][kind].pad;
+  }
+
   if (size && themeObj.size && themeObj.size[size] && themeObj.size[size].pad) {
     return {
       vertical: themeObj.size[size].pad.vertical,
@@ -62,7 +66,7 @@ const padStyle = ({ sizeProp: size, theme, kind }) => {
   // caller has specified a themeObj to use for styling
   // relevant for cases like pagination which looks to theme.pagination.button
   const themeObj = typeof kind === 'object' ? kind : theme.button;
-  const pad = padFromTheme(size, theme, themeObj);
+  const pad = padFromTheme(size, theme, themeObj, kind);
   return pad
     ? css`
         padding: ${pad.vertical} ${pad.horizontal};
@@ -112,7 +116,7 @@ const kindStyle = ({ colorValue, kind, sizeProp: size, themePaths, theme }) => {
   // relevant for cases like pagination which looks to theme.pagination.button
   const themeObj = typeof kind === 'object' ? kind : theme.button;
 
-  const pad = padFromTheme(size, theme, themeObj);
+  const pad = padFromTheme(size, theme, themeObj, kind);
   themePaths.base.forEach((themePath) => {
     const obj = getPath(themeObj, themePath);
     if (obj) {
