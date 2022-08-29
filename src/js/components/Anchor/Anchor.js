@@ -10,7 +10,7 @@ import React, {
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { normalizeColor } from '../../utils';
+import { findButtonParent, normalizeColor } from '../../utils';
 
 import { Box } from '../Box';
 
@@ -47,7 +47,7 @@ const Anchor = forwardRef(
       (event) => {
         sendAnalytics({
           type: 'anchorClick',
-          element: event.target,
+          element: findButtonParent(event.target),
           event,
           href,
           label: typeof label === 'string' ? label: undefined,
