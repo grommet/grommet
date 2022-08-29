@@ -7,7 +7,7 @@ export interface SelectMultipleProps extends BasicSelectProps {
   limit?: number;
   value?: (string | number | object)[];
   showSelectedInline?: boolean;
-  sort?: boolean;
+  separateSelected?: boolean;
 }
 
 // Try without Omit<> to see where we define our own attributes for overrides

@@ -89,7 +89,7 @@ const SelectMultiple = forwardRef(
       replace,
       searchPlaceholder,
       size,
-      sort,
+      separateSelected,
       value: valueProp,
       valueKey,
       valueLabel,
@@ -137,13 +137,13 @@ const SelectMultiple = forwardRef(
     const [search, setSearch] = useState();
     // All select option indices and values
     const [allOptions, setAllOptions] = useState(optionsProp);
-    const [sortedOptions, setSortedOptions] = useState(optionsProp);
+    const [orderedOptions, setOrderedOptions] = useState(optionsProp);
     // Track changes to options property, except when options are being
     // updated due to search activity. Allows option's initial index value
     // to be referenced when filtered by search.
     useEffect(() => {
       if (!search) setAllOptions(optionsProp);
-      if (!search) setSortedOptions(optionsProp);
+      if (!search) setOrderedOptions(optionsProp);
     }, [optionsProp, search]);
 
     // the option indexes present in the value
@@ -171,7 +171,7 @@ const SelectMultiple = forwardRef(
     }, [onOpen, open]);
 
     useEffect(() => {
-      if (sort && ((open && search) || !open)) {
+      if (separateSelected && ((open && search) || !open)) {
         const selectedOptions = optionsProp.filter((option) => {
           const iValue =
             valueKey && valueKey.reduce ? applyKey(option, valueKey) : option;
@@ -180,10 +180,10 @@ const SelectMultiple = forwardRef(
         const unselectedOptions = optionsProp.filter(
           (i) => !selectedOptions.includes(i),
         );
-        const nextSortedOptions = selectedOptions.concat(unselectedOptions);
-        setSortedOptions(nextSortedOptions);
+        const nextOrderedOptions = selectedOptions.concat(unselectedOptions);
+        setOrderedOptions(nextOrderedOptions);
       }
-    }, [open, sort, optionsProp, value, valueKey, search]);
+    }, [open, separateSelected, optionsProp, value, valueKey, search]);
 
     const onRequestClose = useCallback(() => {
       setOpen(false);
@@ -334,7 +334,7 @@ const SelectMultiple = forwardRef(
         onKeyDown={onKeyDown}
         onMore={onMore}
         onSearch={onSearch}
-        options={sortedOptions}
+        options={orderedOptions}
         optionIndexesInValue={optionIndexesInValue}
         replace={replace}
         searchPlaceholder={searchPlaceholder}

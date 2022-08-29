@@ -22,7 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
       ]),
     ),
     showSelectedInline: PropTypes.bool,
-    sort: PropTypes.bool,
+    separateSelected: PropTypes.bool,
   };
 }
 export const SelectMultiplePropTypes = PropType;
