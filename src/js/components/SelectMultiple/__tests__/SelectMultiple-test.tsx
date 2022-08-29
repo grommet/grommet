@@ -10,6 +10,7 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../..';
 import { Box } from '../../Box';
+import { Text } from '../../Text';
 import { SelectMultiple } from '..';
 
 describe('SelectMultiple', () => {
@@ -65,6 +66,7 @@ describe('SelectMultiple', () => {
     const { container } = render(
       <Grommet>
         <SelectMultiple
+          help={<Text>help text</Text>}
           options={[{ test: 'one' }, { test: 'two' }]}
           placeholder="placeholder text"
         />
@@ -92,6 +94,7 @@ describe('SelectMultiple', () => {
           id="test-select__drop"
           options={[0, 1, 2]}
           disabled={[1]}
+          separateSelected
         />
       </Grommet>,
     );
@@ -265,7 +268,7 @@ describe('SelectMultiple', () => {
       <Grommet>
         <SelectMultiple
           showSelectedInline
-          options={['one1', 'two', 'three', 'four']}
+          options={['one', 'two', 'three', 'four']}
           onSearch={onSearch}
           limit={1}
         />
@@ -277,5 +280,26 @@ describe('SelectMultiple', () => {
     await user.type(input, 'th');
 
     expect(onSearch).toBeCalledWith(expect.stringMatching(/^th/));
+  });
+
+  test('select all and clear', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <SelectMultiple
+          id="test-select__drop"
+          options={['one', 'two', 'three', 'four']}
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    await user.click(screen.getByRole('button', { name: /Select All/i }));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    await user.click(screen.getByRole('button', { name: /Clear All/i }));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
   });
 });
