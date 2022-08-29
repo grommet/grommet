@@ -11,6 +11,7 @@ const SelectionSummary = ({
   disabled,
   disabledKey,
   isSelected,
+  labelKey,
   limit,
   onChange,
   options,
@@ -23,14 +24,14 @@ const SelectionSummary = ({
     let disabledSelected = 0;
     for (let i = 0; i < allOptions.length; i += 1) {
       if (
-        value.includes(getOptionValue(i, options, valueKey)) &&
-        checkDisabled(i, disabled, disabledKey, options, valueKey)
+        value.includes(getOptionValue(i, options, valueKey || labelKey)) &&
+        checkDisabled(i, disabled, disabledKey, options, valueKey || labelKey)
       )
         disabledSelected += 1;
     }
     if (value.length === disabledSelected) return true;
     return false;
-  }, [value, allOptions, disabled, disabledKey, options, valueKey]);
+  }, [value, allOptions, disabled, disabledKey, options, valueKey, labelKey]);
 
   if (search === '' || search === undefined)
     return (
@@ -66,14 +67,14 @@ const SelectionSummary = ({
                         disabled,
                         disabledKey,
                         options,
-                        valueKey,
+                        valueKey || labelKey,
                       ) || isSelected(index)
                     : checkDisabled(
                         index,
                         disabled,
                         disabledKey,
                         options,
-                        valueKey,
+                        valueKey || labelKey,
                       ) && isSelected(index),
                 );
                 const nextValue = nextSelected.map((i) =>

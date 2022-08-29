@@ -156,7 +156,11 @@ const SelectContainer = forwardRef(
           // deprecated in favor of value
           result = selected.indexOf(index) !== -1;
         } else {
-          const optionVal = getOptionValue(index, options, valueKey);
+          const optionVal = getOptionValue(
+            index,
+            options,
+            valueKey || labelKey,
+          );
           if (Array.isArray(value)) {
             if (value.length === 0) {
               result = false;
@@ -183,7 +187,7 @@ const SelectContainer = forwardRef(
         }
         return result;
       },
-      [selected, value, valueKey, options],
+      [selected, value, valueKey, options, labelKey],
     );
 
     const selectOption = useCallback(
@@ -241,7 +245,7 @@ const SelectContainer = forwardRef(
             disabled,
             disabledKey,
             options,
-            valueKey,
+            valueKey || labelKey,
           )
         ) {
           nextActiveIndex += 1;
@@ -251,7 +255,7 @@ const SelectContainer = forwardRef(
           setKeyboardNavigation(true);
         }
       },
-      [activeIndex, options, disabled, disabledKey, valueKey],
+      [activeIndex, options, disabled, disabledKey, valueKey, labelKey],
     );
 
     const onPreviousOption = useCallback(
@@ -282,7 +286,7 @@ const SelectContainer = forwardRef(
             disabled,
             disabledKey,
             options,
-            valueKey,
+            valueKey || labelKey,
           )
         ) {
           nextActiveIndex -= 1;
@@ -294,10 +298,11 @@ const SelectContainer = forwardRef(
       },
       [
         activeIndex,
-        shouldShowClearButton,
         disabled,
         disabledKey,
+        labelKey,
         options,
+        shouldShowClearButton,
         valueKey,
       ],
     );
@@ -315,7 +320,13 @@ const SelectContainer = forwardRef(
             return (
               typeof label === 'string' &&
               label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
-              !checkDisabled(index, disabled, disabledKey, options, valueKey)
+              !checkDisabled(
+                index,
+                disabled,
+                disabledKey,
+                options,
+                valueKey || labelKey,
+              )
             );
           });
 
@@ -427,7 +438,7 @@ const SelectContainer = forwardRef(
                     disabled,
                     disabledKey,
                     options,
-                    valueKey,
+                    valueKey || labelKey,
                   );
                   const optionSelected = isSelected(index);
                   const optionActive = activeIndex === index;
@@ -452,7 +463,7 @@ const SelectContainer = forwardRef(
                     child = (
                       <Box {...selectOptionsStyle}>
                         <Text {...theme.select.options.text}>
-                          {getOptionLabel(index, options, labelKey)}
+                          {getOptionLabel(index, options, labelKey || valueKey)}
                         </Text>
                       </Box>
                     );
@@ -482,7 +493,7 @@ const SelectContainer = forwardRef(
                       kind={!child ? 'option' : undefined}
                       label={
                         !child
-                          ? getOptionLabel(index, options, labelKey)
+                          ? getOptionLabel(index, options, labelKey || valueKey)
                           : undefined
                       }
                       disabled={optionDisabled || undefined}

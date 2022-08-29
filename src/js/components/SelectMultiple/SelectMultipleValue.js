@@ -30,13 +30,17 @@ const SelectMultipleValue = ({
     (i) => {
       const iValue = valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
       const indexOptions = allOptions.indexOf(i);
-      const iLabel = getOptionLabel(indexOptions, allOptions, labelKey);
+      const iLabel = getOptionLabel(
+        indexOptions,
+        allOptions,
+        labelKey || valueKey,
+      );
       const iDisabled = checkDisabled(
         indexOptions,
         disabled,
         disabledKey,
         allOptions,
-        valueKey,
+        valueKey || labelKey,
       );
       if (value.indexOf(iValue) < theme.selectMultiple.visibleInline) {
         let child;
@@ -81,15 +85,18 @@ const SelectMultipleValue = ({
                       if (nextFocus) nextFocus.focus();
                       const result = allOptions.find(
                         (obj, j) =>
-                          getOptionValue(j, allOptions, valueKey) ===
-                          intermediate[index + 1],
+                          getOptionValue(
+                            j,
+                            allOptions,
+                            valueKey || labelKey,
+                          ) === intermediate[index + 1],
                       );
                       setShowA11yDiv(
                         `Unselected ${iLabel}. 
                         Focus moved to ${getOptionLabel(
                           allOptions.indexOf(result),
                           allOptions,
-                          labelKey,
+                          labelKey || valueKey,
                         )}`,
                       );
                     }, 200);
@@ -101,15 +108,18 @@ const SelectMultipleValue = ({
                       if (nextFocus) nextFocus.focus();
                       const result = allOptions.find(
                         (obj, j) =>
-                          getOptionValue(j, allOptions, valueKey) ===
-                          intermediate[index - 1],
+                          getOptionValue(
+                            j,
+                            allOptions,
+                            valueKey || labelKey,
+                          ) === intermediate[index - 1],
                       );
                       setShowA11yDiv(
                         `Unselected ${iLabel}. Focus moved to 
                           ${getOptionLabel(
                             allOptions.indexOf(result),
                             allOptions,
-                            labelKey,
+                            labelKey || valueKey,
                           )}`,
                       );
                     }, 200);

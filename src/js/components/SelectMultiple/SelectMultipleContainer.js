@@ -112,7 +112,7 @@ const SelectMultipleContainer = forwardRef(
     const isSelected = useCallback(
       (index) => {
         let result;
-        const optionVal = getOptionValue(index, options, valueKey);
+        const optionVal = getOptionValue(index, options, valueKey || labelKey);
         if (value.length === 0) {
           result = false;
         } else if (typeof value[0] !== 'object') {
@@ -128,7 +128,7 @@ const SelectMultipleContainer = forwardRef(
         }
         return result;
       },
-      [value, valueKey, options],
+      [value, valueKey, options, labelKey],
     );
 
     const selectOption = useCallback(
@@ -243,7 +243,7 @@ const SelectMultipleContainer = forwardRef(
             disabled,
             disabledKey,
             options,
-            valueKey,
+            valueKey || labelKey,
           ) &&
           activeIndex >= 0 &&
           activeIndex < options.length
@@ -252,7 +252,15 @@ const SelectMultipleContainer = forwardRef(
           selectOption(activeIndex)(event);
         }
       },
-      [activeIndex, selectOption, options, disabled, disabledKey, valueKey],
+      [
+        activeIndex,
+        selectOption,
+        options,
+        disabled,
+        disabledKey,
+        valueKey,
+        labelKey,
+      ],
     );
 
     const customSearchInput = theme.select.searchInput;
@@ -280,7 +288,7 @@ const SelectMultipleContainer = forwardRef(
             } else {
               result =
                 disabledProp.indexOf(
-                  getOptionValue(index, options, valueKey),
+                  getOptionValue(index, options, valueKey || labelKey),
                 ) !== -1;
             }
           }
@@ -356,6 +364,7 @@ const SelectMultipleContainer = forwardRef(
                   disabled={disabled}
                   disabledKey={disabledKey}
                   isSelected={isSelected}
+                  labelKey={labelKey}
                   limit={limit}
                   onChange={onChange}
                   options={options}
@@ -449,11 +458,15 @@ const SelectMultipleContainer = forwardRef(
                     disabled,
                     disabledKey,
                     options,
-                    valueKey,
+                    valueKey || labelKey,
                   );
                   const optionSelected = value.includes(iValue);
                   const optionActive = activeIndex === index;
-                  const iLabel = getOptionLabel(index, options, labelKey);
+                  const iLabel = getOptionLabel(
+                    index,
+                    options,
+                    labelKey || valueKey,
+                  );
 
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.

@@ -141,16 +141,19 @@ interface ButtonKindType {
     | {
         color?: ColorType;
         width?: string;
+        radius?: string;
       }
     | boolean;
   color?: ColorType;
   font?: {
     weight?: number | string;
   };
+  icon?: React.ReactNode | Icon;
   padding?: {
     vertical?: string;
     horizontal?: string;
   };
+  reverse?: boolean;
   extend?: ExtendType;
 }
 
@@ -195,7 +198,13 @@ interface ButtonType {
         secondary?: ButtonKindType;
       })
     | { [key: string]: ButtonKindType };
-  disabled?: ButtonKindType & { opacity?: OpacityType };
+  disabled?:
+    | (ButtonKindType & {
+        default?: ButtonKindType;
+        primary?: ButtonKindType;
+        secondary?: ButtonKindType;
+      })
+    | ({ [key: string]: ButtonKindType } & { opacity?: OpacityType });
   hover?:
     | (ButtonKindType & {
         default?: ButtonKindType;
@@ -772,6 +781,9 @@ export interface ThemeType {
     content?: {
       margin?: MarginType;
       pad?: PadType;
+    };
+    checkBox: {
+      pad: PadType;
     };
     disabled?: {
       background?: BackgroundType;

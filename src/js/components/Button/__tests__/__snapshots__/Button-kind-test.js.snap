@@ -3180,6 +3180,74 @@ exports[`Button kind plain with icon 1`] = `
 `;
 
 exports[`Button kind primary button 1`] = `
+.c2 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c2 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c2 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c2 *[fill-rule],
+.c2 *[FILL-RULE],
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: red;
+  stroke: red;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -3248,6 +3316,83 @@ exports[`Button kind primary button 1`] = `
   border: 0;
 }
 
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 6px 12px;
+  background-color: green;
+  color: #000000;
+  background-color: transparent;
+  color: #555555;
+  opacity: 1;
+  padding: 4px 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #555555;
+  text-align: center;
+  opacity: 1;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3264,7 +3409,38 @@ exports[`Button kind primary button 1`] = `
   <button
     class="c1"
     type="button"
-  />
+  >
+    <svg
+      aria-label="FormNextLink"
+      class="c2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M6 12.4h12M12.6 7l5.4 5.4-5.4 5.4"
+        fill="none"
+        stroke="#000"
+        stroke-width="2"
+      />
+    </svg>
+  </button>
+  <button
+    class="c3"
+    disabled=""
+    type="button"
+  >
+    <svg
+      aria-label="FormNextLink"
+      class="c4"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M6 12.4h12M12.6 7l5.4 5.4-5.4 5.4"
+        fill="none"
+        stroke="#000"
+        stroke-width="2"
+      />
+    </svg>
+  </button>
 </div>
 `;
 
@@ -3760,8 +3936,8 @@ exports[`Button kind size of default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 18px;
-  padding: 4px 20px;
+  border-radius: 4px;
+  padding: 4px 8px;
   font-size: 14px;
   line-height: 20px;
   text-align: center;
