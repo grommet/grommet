@@ -135,10 +135,13 @@ var DataTable = function DataTable(_ref) {
 
   var _useState5 = (0, _react.useState)(sortProp || {}),
       sort = _useState5[0],
-      setSort = _useState5[1]; // the data filtered and sorted, if needed
+      setSort = _useState5[1];
+
+  (0, _react.useEffect)(function () {
+    if (sortProp) setSort(sortProp);
+  }, [sortProp]); // the data filtered and sorted, if needed
   // Note: onUpdate mode expects the data to be passed
   //   in completely filtered and sorted already.
-
 
   var adjustedData = (0, _react.useMemo)(function () {
     return onUpdate ? data : (0, _buildState.filterAndSortData)(data, filters, onSearch, sort);
