@@ -28,6 +28,51 @@ export const normalizeBackground = (background, theme) => {
   return result;
 };
 
+const normalizeBackgroundImage = (background, theme) => {
+  let result;
+
+  if (background.image) {
+    result =
+      normalizeBackground(
+        theme.global.backgrounds?.[background.image],
+        theme,
+      ) || background.image;
+  } else {
+    const normalized = normalizeBackground(
+      theme.global.backgrounds?.[background],
+      theme,
+    );
+    result =
+      typeof normalized === 'object'
+        ? normalizeBackgroundImage(normalized, theme)
+        : normalized;
+  }
+  return result;
+};
+
+const rotateBackground = (background, theme) => {
+  const backgroundImage = normalizeBackgroundImage(background, theme);
+  let result = backgroundImage;
+
+  if (backgroundImage.lastIndexOf('linear-gradient', 0) === 0) {
+    const regex = /\d{1,}deg\b,/gm; // Contains rotation specified in degrees. Only targets 'deg' string with a trailing comma. Do not match 'deg' string for hsl, etc..
+    result =
+      backgroundImage.lastIndexOf('deg,') >= 0
+        ? backgroundImage.replace(regex, `${background.rotate}deg,`)
+        : backgroundImage.replace(
+            'linear-gradient(',
+            `linear-gradient(${background.rotate}deg, `,
+          );
+  } else {
+    console.warn(
+      // eslint-disable-next-line max-len
+      `'background.rotate' property only supports 'background.image' containing a linear-gradient string.`,
+    );
+  }
+
+  return result;
+};
+
 export const backgroundIsDark = (backgroundArg, theme) => {
   const background = normalizeBackground(backgroundArg, theme);
   let result;
@@ -137,13 +182,28 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
     theme,
   );
 
-  if (background.image) {
+  let backgroundImage = normalizeBackgroundImage(background, theme);
+
+  if (background.rotate) {
+    backgroundImage = rotateBackground(background, theme);
+  }
+
+  if (backgroundImage) {
     const backgroundStyles = `
       ${backgroundColor ? `background-color: ${backgroundColor};` : ''}
-      background-image: ${background.image};
+      background-image: ${backgroundImage};
       background-repeat: ${background.repeat || 'no-repeat'};
       background-position: ${background.position || 'center center'};
       background-size: ${background.size || 'cover'};
+      ${
+        background.clip && background.clip === 'text'
+          ? `
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+          `
+          : background.clip || ''
+      };
     `;
 
     // allow both background color and image, in case the image doesn't fill
