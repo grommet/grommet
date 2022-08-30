@@ -208,7 +208,7 @@ const SelectMultipleValue = ({
         )}
       </Box>
       {value && value.length > theme.selectMultiple.visibleInline && (
-        <Box alignSelf="start">
+        <Box pad="small" alignSelf="start">
           <Button
             onClick={onRequestOpen}
             size="small"

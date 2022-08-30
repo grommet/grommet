@@ -41,7 +41,7 @@ export const Children = () => {
         gap="xsmall"
         pad={{ vertical: 'xsmall', horizontal: 'small' }}
         margin="xsmall"
-        background="brand"
+        background="light-3"
         round="large"
       >
         <Text size="small">{season}</Text>
@@ -61,7 +61,8 @@ export const Children = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box fill align="center" pad="small">
+    <Box fill align="center" pad="large" gap="large">
+      <Text>SelectMultiple with custom children</Text>
       <SelectMultiple
         showSelectedInline
         valueLabel={(option) => (
@@ -74,12 +75,7 @@ export const Children = () => {
                 })}
               </>
             ) : (
-              <Box
-                pad={{ vertical: 'xsmall', horizontal: 'small' }}
-                margin="xsmall"
-              >
-                Select Season
-              </Box>
+              <Text color="text-weak">Select Season</Text>
             )}
           </Box>
         )}

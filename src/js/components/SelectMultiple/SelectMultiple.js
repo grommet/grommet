@@ -426,7 +426,11 @@ const SelectMultiple = forwardRef(
                         tabIndex="-1"
                         type="text"
                         // eslint-disable-next-line max-len
-                        placeholder={`${value.length} selected of ${allOptions.length}`}
+                        placeholder={
+                          value.length === 0
+                            ? placeholder || selectValue || displayLabelKey
+                            : `${value.length} selected of ${allOptions.length}`
+                        }
                         plain
                         readOnly
                         value=""
@@ -461,7 +465,7 @@ const SelectMultiple = forwardRef(
                   </Box>
                 )}
               </DropButton>
-              {!open && (selectValue || displayLabelKey)}
+              {!open && value.length > 0 && (selectValue || displayLabelKey)}
             </Box>
           </StyledSelectBox>
         ) : (
