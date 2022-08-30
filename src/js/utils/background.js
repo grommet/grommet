@@ -188,22 +188,26 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
     backgroundImage = rotateBackground(background, theme);
   }
 
+  let backgroundClipStyle = '';
+  if (background.clip) {
+    backgroundClipStyle =
+      background.clip === 'text'
+        ? `-webkit-text-fill-color: transparent; 
+           -webkit-background-clip: text; 
+           background-clip: text;`
+        : `background-clip: ${background.clip};`;
+  }
+
   if (backgroundImage) {
     const backgroundStyles = `
       ${backgroundColor ? `background-color: ${backgroundColor};` : ''}
       background-image: ${backgroundImage};
-      background-repeat: ${background.repeat || 'no-repeat'};
+      background-repeat: ${
+        (typeof background === 'object' && background.repeat) || 'no-repeat'
+      };
       background-position: ${background.position || 'center center'};
       background-size: ${background.size || 'cover'};
-      ${
-        background.clip && background.clip === 'text'
-          ? `
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-          `
-          : background.clip || ''
-      };
+      ${backgroundClipStyle}
     `;
 
     // allow both background color and image, in case the image doesn't fill

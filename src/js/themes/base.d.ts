@@ -279,7 +279,7 @@ export interface ThemeType {
       };
     };
     backgrounds?: {
-      [x: string]: BackgroundType | { dark?: string; light?: string };
+      [x: string]: string | { dark?: string; light?: string };
     };
     borderSize?: {
       xsmall?: string;
