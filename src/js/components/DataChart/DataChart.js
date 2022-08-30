@@ -469,22 +469,20 @@ const DataChart = forwardRef(
       [offsets, thicknesses],
     );
 
-    // The thickness of the Detail segments. We need to convert to numbers
+    // The thickness of the segments. We need to convert to numbers
     // to be able to compare across charts where some might be using T-shirt
     // labels and others might be pixel values.
-    const detailThickness = useMemo(() => {
+    const segmentThickness = useMemo(() => {
       let result = 0;
-      if (detail) {
-        charts.forEach((_, index) => {
-          const { thickness } = chartProps[index];
-          result = Math.max(
-            result,
-            parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
-          );
-        });
-      }
+      charts.forEach((_, index) => {
+        const { thickness } = chartProps[index];
+        result = Math.max(
+          result,
+          parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
+        );
+      });
       return `${result}px`;
-    }, [charts, chartProps, detail, theme]);
+    }, [charts, chartProps, theme]);
 
     const dateFormats = useMemo(() => {
       const result = {};
@@ -537,6 +535,7 @@ const DataChart = forwardRef(
           }
           pad={offsetPad ? { ...pad, end: offsetPad } : pad}
           renderValue={renderValue}
+          thickness={segmentThickness}
           serie={axis.x.property && getPropertySeries(axis.x.property)}
           style={
             offsetPad
@@ -547,6 +546,7 @@ const DataChart = forwardRef(
                 }
               : {}
           }
+          theme={theme}
         />
       ) : null;
 
@@ -664,7 +664,7 @@ const DataChart = forwardRef(
             series={series}
             seriesStyles={seriesStyles}
             renderValue={renderValue}
-            thickness={detailThickness}
+            thickness={segmentThickness}
           />
         )}
       </Stack>
