@@ -13,7 +13,7 @@ const columns = [
     property: 'rocket',
     header: 'Rocket',
     size: 'small',
-    render: (datum) => <Text>{datum.rocket.name}</Text>,
+    render: (datum) => <Text key={datum.rocket.name}>{datum.rocket.name}</Text>,
   },
   {
     property: 'success',
@@ -24,7 +24,7 @@ const columns = [
         const content = (
           <Box width={{ max: 'medium' }}>
             {datum.failures?.map(({ reason }) => (
-              <Text>{reason}</Text>
+              <Text key={reason}>{reason}</Text>
             ))}
           </Box>
         );
@@ -80,6 +80,7 @@ export const SpaceXUngrouped = () => {
       })
         .then((response) => response.json())
         .then(({ docs }) => {
+          console.log(docs);
           setData(docs || []);
         })
         .catch((error) => console.error('Unable to get data:', error));
