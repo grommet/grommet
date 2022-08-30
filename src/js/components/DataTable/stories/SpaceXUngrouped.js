@@ -80,7 +80,6 @@ export const SpaceXUngrouped = () => {
       })
         .then((response) => response.json())
         .then(({ docs }) => {
-          console.log(docs);
           setData(docs || []);
         })
         .catch((error) => console.error('Unable to get data:', error));
