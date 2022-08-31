@@ -8,6 +8,9 @@ export var parseMetricToNum = function parseMetricToNum(metric) {
 
   return parseFloat(metric.match(/\d+(\.\d+)?/), 10);
 };
+export var edgeToNum = function edgeToNum(size, theme) {
+  return size ? parseMetricToNum(theme.global.edgeSize[size] || size) : 0;
+};
 export var fontSize = function fontSize(size, lineHeight) {
   return css(["font-size:", ";line-height:", ";"], function (props) {
     return parseMetricToNum(size) / parseMetricToNum(props.theme.global.font.size) * 1 + "rem";

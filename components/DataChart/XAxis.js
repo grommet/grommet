@@ -5,9 +5,11 @@ exports.XAxis = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _utils = require("../../utils");
+
 var _Box = require("../Box");
 
-var _excluded = ["values", "pad", "renderValue", "serie"];
+var _excluded = ["values", "pad", "renderValue", "serie", "theme", "thickness"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -19,40 +21,49 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var XAxis = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var values = _ref.values,
-      pad = _ref.pad,
+      padProp = _ref.pad,
       renderValue = _ref.renderValue,
       serie = _ref.serie,
+      theme = _ref.theme,
+      thickness = _ref.thickness,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
-  // When there are only labels at the end of the axis, let them take as much
-  // space as they like. If there are more, align their container to the
+  // pad to the edge of the thickness, for when padding is more than half
+  // the thickness
+  var pad = (0, _react.useMemo)(function () {
+    return {
+      start: (0, _utils.edgeToNum)(padProp.start || padProp.horizontal, theme) - (0, _utils.edgeToNum)(thickness, theme) / 2 + "px",
+      end: (0, _utils.edgeToNum)(padProp.end || padProp.horizontal, theme) - (0, _utils.edgeToNum)(thickness, theme) / 2 + "px"
+    };
+  }, [padProp, theme, thickness]); // When there are only labels at the end of the axis and there isn't
+  // much space for them, let them take as much space as they like
+  // flowing in from the edges.
+  // Otherwise, align their container to the
   // data/guide lines and then let their content overflow that.
-  var itemProps = values.length === 2 ? {} : {
-    width: '1px',
-    overflow: 'visible',
-    align: 'center'
-  };
-  var horizontal = pad.horizontal,
-      start = pad.start,
-      end = pad.end; // ignore vertical parts
 
+  var labelContainerProps = (0, _react.useMemo)(function () {
+    // 24px was chosen empirically as 48px is enough to show some simple text
+    var centered = values.length !== 2 || (0, _utils.edgeToNum)(padProp.start || padProp.horizontal, theme) >= 24;
+    if (centered) return {
+      width: thickness,
+      overflow: 'visible',
+      align: 'center'
+    };
+    return {};
+  }, [padProp, theme, thickness, values]);
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     ref: ref,
     gridArea: "xAxis",
     direction: "row",
     justify: "between",
-    pad: {
-      horizontal: horizontal,
-      start: start,
-      end: end
-    }
+    pad: pad
   }, rest), values.map(function (dataIndex, i) {
     return (
       /*#__PURE__*/
       // eslint-disable-next-line react/no-array-index-key
       _react["default"].createElement(_Box.Box, _extends({
         key: i
-      }, itemProps), serie ? renderValue(serie, dataIndex) : dataIndex)
+      }, labelContainerProps), serie ? renderValue(serie, dataIndex) : dataIndex)
     );
   }));
 });

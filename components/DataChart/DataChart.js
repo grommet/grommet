@@ -514,22 +514,18 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var offsetPad = (0, _react.useMemo)(function () {
     return offsets ? offsets[offsets.length - 1] + thicknesses[thicknesses.length - 1] + "px" : undefined;
-  }, [offsets, thicknesses]); // The thickness of the Detail segments. We need to convert to numbers
+  }, [offsets, thicknesses]); // The thickness of the segments. We need to convert to numbers
   // to be able to compare across charts where some might be using T-shirt
   // labels and others might be pixel values.
 
-  var detailThickness = (0, _react.useMemo)(function () {
+  var segmentThickness = (0, _react.useMemo)(function () {
     var result = 0;
-
-    if (detail) {
-      charts.forEach(function (_, index) {
-        var thickness = chartProps[index].thickness;
-        result = Math.max(result, (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness));
-      });
-    }
-
+    charts.forEach(function (_, index) {
+      var thickness = chartProps[index].thickness;
+      result = Math.max(result, (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness));
+    });
     return result + "px";
-  }, [charts, chartProps, detail, theme]);
+  }, [charts, chartProps, theme]);
   var dateFormats = (0, _react.useMemo)(function () {
     var result = {};
     var full = axis && axis.x && axis.x.granularity === 'coarse';
@@ -574,10 +570,12 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       end: offsetPad
     }) : pad,
     renderValue: renderValue,
+    thickness: segmentThickness,
     serie: axis.x.property && getPropertySeries(axis.x.property),
     style: offsetPad ? {
       transform: "translate(" + offsets[Math.floor(offsets.length / 2)] + "px, 0px)"
-    } : {}
+    } : {},
+    theme: theme
   }) : null;
   var yAxisElement = axis && axis.y && (chartProps.length || boundsProp != null && boundsProp.y) ? /*#__PURE__*/_react["default"].createElement(_YAxis.YAxis, {
     axis: axis,
@@ -682,7 +680,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     series: series,
     seriesStyles: seriesStyles,
     renderValue: renderValue,
-    thickness: detailThickness
+    thickness: segmentThickness
   }));
 
   var legendElement = legend ? /*#__PURE__*/_react["default"].createElement(_Legend.Legend, {

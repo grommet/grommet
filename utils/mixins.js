@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.parseMetricToNum = exports.getAvailableAtBadge = exports.fontSize = exports.findAllByType = exports.breakpointStyle = void 0;
+exports.parseMetricToNum = exports.getAvailableAtBadge = exports.fontSize = exports.findAllByType = exports.edgeToNum = exports.breakpointStyle = void 0;
 
 var _styledComponents = require("styled-components");
 
@@ -16,6 +16,12 @@ var parseMetricToNum = function parseMetricToNum(metric) {
 };
 
 exports.parseMetricToNum = parseMetricToNum;
+
+var edgeToNum = function edgeToNum(size, theme) {
+  return size ? parseMetricToNum(theme.global.edgeSize[size] || size) : 0;
+};
+
+exports.edgeToNum = edgeToNum;
 
 var fontSize = function fontSize(size, lineHeight) {
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], function (props) {
