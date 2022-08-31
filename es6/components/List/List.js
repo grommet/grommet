@@ -13,6 +13,7 @@ import { Keyboard } from '../Keyboard';
 import { Pagination } from '../Pagination';
 import { Text } from '../Text';
 import { focusStyle, genericStyles, normalizeColor, normalizeShow, unfocusStyle, useForwardedRef, usePagination } from '../../utils';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { ListPropTypes } from './propTypes';
 var StyledList = styled.ul.withConfig({
   displayName: "List__StyledList",
@@ -201,6 +202,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       setOrderingData = _useState5[1];
 
   var draggingRef = useRef();
+  var sendAnalytics = useAnalytics();
   var ariaProps = {
     role: onClickItem || onOrder ? 'listbox' : 'list'
   };
@@ -246,6 +248,13 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         adjustedEvent.item = data[active];
         adjustedEvent.index = active;
         onClickItem(adjustedEvent);
+        sendAnalytics({
+          type: 'listItemClick',
+          element: listRef.current,
+          event: adjustedEvent,
+          item: data[active],
+          index: active
+        });
       }
     } : undefined,
     onUp: (onClickItem || onOrder) && active ? function () {
@@ -400,6 +409,13 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
             // accessibility guidelines that focus remains on `ul`
 
             listRef.current.focus();
+            sendAnalytics({
+              type: 'listItemClick',
+              element: listRef.current,
+              event: adjustedEvent,
+              item: item,
+              index: index
+            });
           }
         },
         onMouseOver: function onMouseOver() {

@@ -55,7 +55,7 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var onClick = (0, _react.useCallback)(function (event) {
     sendAnalytics({
       type: 'anchorClick',
-      element: event.target,
+      element: (0, _utils.findButtonParent)(event.target),
       event: event,
       href: href,
       label: typeof label === 'string' ? label : undefined

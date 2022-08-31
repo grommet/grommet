@@ -21,6 +21,8 @@ var _Text = require("../Text");
 
 var _utils = require("../../utils");
 
+var _AnalyticsContext = require("../../contexts/AnalyticsContext");
+
 var _propTypes = require("./propTypes");
 
 var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step"];
@@ -221,6 +223,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       setOrderingData = _useState5[1];
 
   var draggingRef = (0, _react.useRef)();
+  var sendAnalytics = (0, _AnalyticsContext.useAnalytics)();
   var ariaProps = {
     role: onClickItem || onOrder ? 'listbox' : 'list'
   };
@@ -266,6 +269,13 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
         adjustedEvent.item = data[active];
         adjustedEvent.index = active;
         onClickItem(adjustedEvent);
+        sendAnalytics({
+          type: 'listItemClick',
+          element: listRef.current,
+          event: adjustedEvent,
+          item: data[active],
+          index: active
+        });
       }
     } : undefined,
     onUp: (onClickItem || onOrder) && active ? function () {
@@ -420,6 +430,13 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
             // accessibility guidelines that focus remains on `ul`
 
             listRef.current.focus();
+            sendAnalytics({
+              type: 'listItemClick',
+              element: listRef.current,
+              event: adjustedEvent,
+              item: item,
+              index: index
+            });
           }
         },
         onMouseOver: function onMouseOver() {

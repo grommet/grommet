@@ -85,18 +85,25 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   (0, _react.useEffect)(function () {
     var start = new Date();
     var element = layerRef.current;
-    sendAnalytics({
-      type: 'layerOpen',
-      element: element
-    });
-    return function () {
+    var isHidden = position === 'hidden';
+
+    if (!isHidden) {
       sendAnalytics({
-        type: 'layerClose',
-        element: element,
-        elapsed: new Date().getTime() - start.getTime()
+        type: 'layerOpen',
+        element: element
       });
+    }
+
+    return function () {
+      if (!isHidden) {
+        sendAnalytics({
+          type: 'layerClose',
+          element: element,
+          elapsed: new Date().getTime() - start.getTime()
+        });
+      }
     };
-  }, [sendAnalytics, layerRef]);
+  }, [sendAnalytics, layerRef, position]);
   (0, _react.useEffect)(function () {
     if (position !== 'hidden') {
       var node = layerRef.current || containerRef.current || ref.current;

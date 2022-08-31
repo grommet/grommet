@@ -7,7 +7,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { cloneElement, forwardRef, useCallback, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { normalizeColor } from '../../utils';
+import { findButtonParent, normalizeColor } from '../../utils';
 import { Box } from '../Box';
 import { StyledAnchor } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
@@ -38,7 +38,7 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var onClick = useCallback(function (event) {
     sendAnalytics({
       type: 'anchorClick',
-      element: event.target,
+      element: findButtonParent(event.target),
       event: event,
       href: href,
       label: typeof label === 'string' ? label : undefined

@@ -6,7 +6,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { cloneElement, Children, forwardRef, useContext, useMemo, useState, useCallback } from 'react';
 import { ThemeContext } from 'styled-components';
-import { backgroundAndTextColors, colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
+import { backgroundAndTextColors, colorIsDark, findButtonParent, normalizeBackground, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { ButtonPropTypes } from './propTypes';
 import { Box } from '../Box';
@@ -215,7 +215,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var onClick = useCallback(function (event) {
     sendAnalytics({
       type: 'buttonClick',
-      element: event.target,
+      element: findButtonParent(event.target),
       event: event,
       href: href,
       label: typeof label === 'string' ? label : undefined
@@ -420,7 +420,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       href: href,
       kind: kind,
       themePaths: themePaths,
-      onClick: onClickProp ? onClick : undefined,
+      onClick: onClick,
       onFocus: function onFocus(event) {
         setFocus(true);
         if (_onFocus) _onFocus(event);
