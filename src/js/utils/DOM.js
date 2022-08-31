@@ -197,3 +197,9 @@ export const isNodeBeforeScroll = (node, target) => {
     : { top: 0 };
   return top <= targetTop;
 };
+
+export const findButtonParent = (element) => {
+  if (element && (element.nodeName !== 'BUTTON') && (element.nodeName !== 'A'))
+    return findButtonParent(element.parentElement);
+  return element;
+};
