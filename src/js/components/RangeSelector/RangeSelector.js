@@ -11,6 +11,8 @@ import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { EdgeControl } from './EdgeControl';
 import { parseMetricToNum } from '../../utils';
+import { MessageContext } from '../../contexts/MessageContext';
+import { RangeSelectorPropTypes } from './propTypes';
 
 const Container = styled(Box)`
   user-select: none;
@@ -23,7 +25,7 @@ const RangeSelector = forwardRef(
       direction = 'horizontal',
       invert,
       max = 100,
-      messages = { lower: 'Lower Bounds', upper: 'Upper Bounds' },
+      messages,
       min = 0,
       onChange,
       opacity = 'medium',
@@ -36,13 +38,14 @@ const RangeSelector = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { format } = useContext(MessageContext);
     const [changing, setChanging] = useState();
     const [lastChange, setLastChange] = useState();
     const [moveValue, setMoveValue] = useState();
     const containerRef = useRef();
 
     const valueForMouseCoord = useCallback(
-      event => {
+      (event) => {
         const rect = containerRef.current.getBoundingClientRect();
         let value;
         if (direction === 'vertical') {
@@ -68,8 +71,8 @@ const RangeSelector = forwardRef(
       [direction, max, min, step],
     );
 
-    useEffect(() => {
-      const mouseMove = event => {
+    const onMouseMove = useCallback(
+      (event) => {
         const value = valueForMouseCoord(event);
         let nextValues;
         if (changing === 'lower' && value <= values[1] && value !== moveValue) {
@@ -96,24 +99,36 @@ const RangeSelector = forwardRef(
           setMoveValue(value);
           onChange(nextValues);
         }
-      };
+      },
+      [
+        values,
+        changing,
+        moveValue,
+        max,
+        min,
+        setMoveValue,
+        onChange,
+        valueForMouseCoord,
+      ],
+    );
 
-      const mouseUp = () => setChanging(undefined);
+    useEffect(() => {
+      const onMouseUp = () => setChanging(undefined);
 
       if (changing) {
-        window.addEventListener('mousemove', mouseMove);
-        window.addEventListener('mouseup', mouseUp);
+        window.addEventListener('mousemove', onMouseMove);
+        window.addEventListener('mouseup', onMouseUp);
 
         return () => {
-          window.removeEventListener('mousemove', mouseMove);
-          window.removeEventListener('mouseup', mouseUp);
+          window.removeEventListener('mousemove', onMouseMove);
+          window.removeEventListener('mouseup', onMouseUp);
         };
       }
       return undefined;
-    }, [changing, max, min, moveValue, onChange, valueForMouseCoord, values]);
+    }, [changing, onMouseMove]);
 
     const onClick = useCallback(
-      event => {
+      (event) => {
         const value = valueForMouseCoord(event);
         if (
           value <= values[0] ||
@@ -130,6 +145,14 @@ const RangeSelector = forwardRef(
         }
       },
       [lastChange, onChange, valueForMouseCoord, values],
+    );
+
+    const onTouchMove = useCallback(
+      (event) => {
+        const touchEvent = event.changedTouches[0];
+        onMouseMove(touchEvent);
+      },
+      [onMouseMove],
     );
 
     const [lower, upper] = values;
@@ -153,6 +176,7 @@ const RangeSelector = forwardRef(
         {...rest}
         tabIndex="-1"
         onClick={onChange ? onClick : undefined}
+        onTouchMove={onChange ? onTouchMove : undefined}
       >
         <Box
           style={{ flex: `${lower - min} 0 0` }}
@@ -170,7 +194,11 @@ const RangeSelector = forwardRef(
           {...layoutProps}
         />
         <EdgeControl
-          a11yTitle={messages.lower}
+          a11yTitle={format({ id: 'rangeSelector.lower', messages })}
+          role="slider"
+          aria-valuenow={lower}
+          aria-valuemin={min}
+          aria-valuemax={max}
           tabIndex={0}
           ref={ref}
           color={color}
@@ -178,6 +206,7 @@ const RangeSelector = forwardRef(
           thickness={thickness}
           edge="lower"
           onMouseDown={onChange ? () => setChanging('lower') : undefined}
+          onTouchStart={onChange ? () => setChanging('lower') : undefined}
           onDecrease={
             onChange && lower - step >= min
               ? () => onChange([lower - step, upper])
@@ -204,7 +233,7 @@ const RangeSelector = forwardRef(
           {...layoutProps}
           onMouseDown={
             onChange
-              ? event => {
+              ? (event) => {
                   const nextMoveValue = valueForMouseCoord(event);
                   setChanging('selection');
                   setMoveValue(nextMoveValue);
@@ -213,13 +242,18 @@ const RangeSelector = forwardRef(
           }
         />
         <EdgeControl
-          a11yTitle={messages.upper}
+          a11yTitle={format({ id: 'rangeSelector.upper', messages })}
+          role="slider"
+          aria-valuenow={upper}
+          aria-valuemin={min}
+          aria-valuemax={max}
           tabIndex={0}
           color={color}
           direction={direction}
           thickness={thickness}
           edge="upper"
           onMouseDown={onChange ? () => setChanging('upper') : undefined}
+          onTouchStart={onChange ? () => setChanging('upper') : undefined}
           onDecrease={
             onChange && upper - step >= lower
               ? () => onChange([lower, upper - step])
@@ -253,12 +287,6 @@ const RangeSelector = forwardRef(
 );
 
 RangeSelector.displayName = 'RangeSelector';
+RangeSelector.propTypes = RangeSelectorPropTypes;
 
-let RangeSelectorDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RangeSelectorDoc = require('./doc').doc(RangeSelector);
-}
-const RangeSelectorWrapper = RangeSelectorDoc || RangeSelector;
-
-export { RangeSelectorWrapper as RangeSelector };
+export { RangeSelector };

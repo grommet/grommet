@@ -1,9 +1,8 @@
 import React from 'react';
-import 'jest-styled-components';
-import renderer from 'react-test-renderer';
-import { cleanup, render, fireEvent, act } from '@testing-library/react';
+import { render, fireEvent, act, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
+import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
 
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
@@ -15,7 +14,6 @@ import { Select } from '..';
 describe('Select', () => {
   window.scrollTo = jest.fn();
   beforeEach(createPortal);
-  afterEach(cleanup);
 
   test('should not have accessibility violations', async () => {
     const { container } = render(
@@ -23,27 +21,44 @@ describe('Select', () => {
         <Select options={['one', 'two', 'three']} a11yTitle="test" />
       </Grommet>,
     );
-    const results = await axe(container);
-    expect(container.firstChild).toMatchSnapshot();
+
+    const results = await axe(container, {
+      rules: {
+        /* This rule is flagged because Select is built using a 
+        TextInput within a DropButton. According to Dequeue and 
+        WCAG 4.1.2 "interactive controls must not have focusable 
+        descendants". Jest-axe is assuming that the input is focusable
+        and since the input is a descendant of the button the rule is 
+        flagged. However, the TextInput is built so that it is read 
+        only and cannot receive focus. Select is accessible 
+        according to the WCAG specification, but jest-axe is flagging
+        it so we are disabling this rule. */
+        'nested-interactive': { enabled: false },
+      },
+    });
     expect(results).toHaveNoViolations();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('dark', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box fill background="dark-1" align="center" justify="center">
           <Select placeholder="Select" options={['one', 'two']} />
         </Box>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('prop: onOpen', () => {
@@ -96,7 +111,7 @@ describe('Select', () => {
   });
 
   test('0 value', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select
         id="test-select"
         placeholder="test select"
@@ -104,7 +119,8 @@ describe('Select', () => {
         value={0}
       />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('search', () => {
@@ -148,7 +164,7 @@ describe('Select', () => {
           placeholder="test select"
           options={options}
           onChange={onChange}
-          onSearch={arg => {
+          onSearch={(arg) => {
             onSearch(arg);
             setOptions(['two']);
           }}
@@ -184,7 +200,7 @@ describe('Select', () => {
         options={[{ test: 'one' }, { test: 'two' }]}
         onChange={onChange}
       >
-        {option => <span>{option.test}</span>}
+        {(option) => <span>{option.test}</span>}
       </Select>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -202,7 +218,7 @@ describe('Select', () => {
   });
 
   test('size', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select
         id="test-select"
         size="large"
@@ -212,10 +228,11 @@ describe('Select', () => {
         onChange={() => {}}
       />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
-  ['small', 'medium', 'large'].forEach(dropHeight => {
+  ['small', 'medium', 'large'].forEach((dropHeight) => {
     test(`${dropHeight} drop container height`, () => {
       const { getByPlaceholderText } = render(
         <Select
@@ -269,6 +286,50 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          id: 1,
+          name: 'Value1',
+        },
+      }),
+    );
+  });
+
+  test('onChange without labelKey or valueKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('1')); // 1 matches first key
     expect(onChange).toBeCalledWith(
       expect.objectContaining({
         value: {
@@ -370,7 +431,7 @@ describe('Select', () => {
         placeholder="test select"
         options={[{ test: 'one' }, { test: 'two' }]}
       >
-        {option => <span>{option.test}</span>}
+        {(option) => <span>{option.test}</span>}
       </Select>,
     );
     // before opening
@@ -470,6 +531,45 @@ describe('Select', () => {
     expect(window.scrollTo).toBeCalled();
   });
 
+  test('select an object with label key specific with keypress', () => {
+    const onChange = jest.fn();
+    const options = [
+      { id: 1, name: 'one' },
+      { id: 2, name: 'two' },
+      { id: 3, name: 'three' },
+    ];
+    const { getByPlaceholderText, container } = render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={options}
+        labelKey="name"
+        valueKey="id"
+        onChange={onChange}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByPlaceholderText('test select'));
+    // verify that keyboard navigation is working
+    fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+      key: 't',
+      keyCode: 84,
+      which: 84,
+    });
+    fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: { id: 2, name: 'two' },
+      }),
+    );
+    expect(window.scrollTo).toBeCalled();
+  });
+
   test('select on multiple keydown always picks first enabled option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
@@ -560,24 +660,27 @@ describe('Select', () => {
   });
 
   test('renders without icon', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} icon={false} />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders custom icon', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} icon={CaretDown} />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders default icon', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} icon />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('modifies select control style on open', () => {
@@ -608,7 +711,7 @@ describe('Select', () => {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    const selectButton = container.querySelector('Button');
+    const selectButton = document.getElementById('test-open-id');
     let style;
 
     style = window.getComputedStyle(selectButton);
@@ -907,6 +1010,45 @@ describe('Select', () => {
     expect(container.firsChild).toMatchSnapshot();
   });
 
+  test('onChange with valueLabel', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value, setValue] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          value={value}
+          valueLabel={<span>{value || 'none'}</span>}
+          options={['one', 'two']}
+          onChange={(event) => {
+            setValue(event.value);
+            onChange(event);
+          }}
+        />
+      );
+    };
+    const { getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('none'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('one'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: 'one',
+        option: 'one',
+        target: expect.objectContaining({
+          value: 'one',
+        }),
+      }),
+    );
+  });
+
   test('selected', () => {
     const { container, getByPlaceholderText } = render(
       <Grommet>
@@ -1012,13 +1154,19 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText } = render(
+    render(
       <Grommet>
         <Test />
       </Grommet>,
     );
-    fireEvent.click(getByPlaceholderText('test select'));
 
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    fireEvent.click(screen.getByRole('option', { name: 'one' }));
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    const clearButton = screen.getByRole('button', {
+      name: 'Clear selection. Or, press down arrow to move to select options',
+    });
+    expect(clearButton).toBeTruthy();
     expectPortal('test-select__drop').toMatchSnapshot();
   });
 
@@ -1035,12 +1183,19 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText } = render(
+    render(
       <Grommet>
         <Test />
       </Grommet>,
     );
-    fireEvent.click(getByPlaceholderText('test select'));
+
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    fireEvent.click(screen.getByRole('option', { name: 'one' }));
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    const clearButton = screen.getByRole('button', {
+      name: 'Clear selection. Or, press shift tab to move to select options',
+    });
+    expect(clearButton).toBeTruthy();
 
     expectPortal('test-select__drop').toMatchSnapshot();
   });
@@ -1197,6 +1352,54 @@ describe('Select', () => {
         .querySelectorAll('button')[0],
     );
     expect(select.value).toEqual('');
+  });
+
+  test('select option by typing should not break if caller passes JSX', () => {
+    jest.useFakeTimers();
+    const onChange = jest.fn();
+
+    const { getByPlaceholderText, container } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[<Box>JSX Element</Box>, 'one', 'two']}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    // advance timers so select can open
+    act(() => jest.advanceTimersByTime(200));
+    // add content to search box
+    fireEvent.keyDown(document.activeElement, {
+      key: 't',
+      keyCode: 84,
+      which: 84,
+    });
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'two' }));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply a11yTitle or aria-label', () => {
+    const { container, getByRole } = render(
+      <Grommet>
+        <Select options={['one', 'two', 'three']} a11yTitle="test" />
+        <Select options={['one', 'two', 'three']} aria-label="test-select" />
+      </Grommet>,
+    );
+
+    expect(getByRole('button', { name: 'test' })).toBeTruthy();
+    expect(getByRole('button', { name: 'test-select' })).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   window.scrollTo.mockRestore();

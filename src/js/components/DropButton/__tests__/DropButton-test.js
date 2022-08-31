@@ -1,19 +1,17 @@
 import React from 'react';
-import 'jest-styled-components';
-import renderer from 'react-test-renderer';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import 'jest-styled-components';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
+import { Grommet } from '../../Grommet';
 import { DropButton } from '..';
 
 describe('DropButton', () => {
   beforeEach(createPortal);
-
-  afterEach(cleanup);
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
@@ -28,29 +26,33 @@ describe('DropButton', () => {
   });
 
   test('closed', () => {
-    const component = renderer.create(
+    window.scrollTo = jest.fn();
+
+    const { container } = render(
       <DropButton
         label="Dropper"
         dropContent={<div id="drop-contents">drop contents</div>}
       />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('opened', () => {
-    const component = renderer.create(
+    const { container } = render(
       <DropButton
         label="Dropper"
         open
         dropContent={<div id="drop-contents">drop contents</div>}
       />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('open and close', () => {
     window.scrollTo = jest.fn();
-    const onClose = jest.fn(event => event.persist());
+    const onClose = jest.fn((event) => event.persist());
 
     const { getByText, container } = render(
       <DropButton
@@ -73,9 +75,9 @@ describe('DropButton', () => {
     expect(onClose).toBeCalledWith(expect.objectContaining({ type: 'click' }));
   });
 
-  test('close by clicking outside', done => {
+  test('close by clicking outside', (done) => {
     const onClose = jest.fn();
-    const onOpen = jest.fn(event => event.persist());
+    const onOpen = jest.fn((event) => event.persist());
 
     const { getByText, container } = render(
       <DropButton
@@ -151,5 +153,26 @@ describe('DropButton', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(ref).toBeCalled();
     expectPortal('drop-contents').toMatchSnapshot();
+  });
+
+  test('rendersr a11yTitle and aria-label', () => {
+    const LABEL = 'Test Label';
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DropButton
+          label="Dropper"
+          aria-label={LABEL}
+          dropContent={<div id="drop-contents">drop contents</div>}
+        />
+        <DropButton
+          label="Dropper"
+          a11yTitle={`${LABEL}-2`}
+          dropContent={<div id="drop-contents">drop contents</div>}
+        />
+      </Grommet>,
+    );
+    expect(getByLabelText(LABEL)).toBeTruthy();
+    expect(getByLabelText(`${LABEL}-2`)).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1,14 +1,15 @@
 import { css } from 'styled-components';
 import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
+import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
 
 export const baseStyle = css`
-  font-family: ${props => props.theme.global.font.family};
-  font-size: ${props => props.theme.global.font.size};
-  line-height: ${props => props.theme.global.font.height};
-  font-weight: ${props => props.theme.global.font.weight};
-  ${props =>
+  font-family: ${(props) => props.theme.global.font.family};
+  font-size: ${(props) => props.theme.global.font.size};
+  line-height: ${(props) => props.theme.global.font.height};
+  font-weight: ${(props) => props.theme.global.font.weight};
+  ${(props) =>
     !props.plain && backgroundStyle(props.theme.baseBackground, props.theme)}
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -18,13 +19,13 @@ export const baseStyle = css`
 `;
 
 export const controlBorderStyle = css`
-  border: ${props => props.theme.global.control.border.width} solid
-    ${props =>
+  border: ${(props) => props.theme.global.control.border.width} solid
+    ${(props) =>
       normalizeColor(
         props.theme.global.control.border.color || 'border',
         props.theme,
       )};
-  border-radius: ${props => props.theme.global.control.border.radius};
+  border-radius: ${(props) => props.theme.global.control.border.radius};
 `;
 
 export const edgeStyle = (
@@ -168,8 +169,9 @@ export const edgeStyle = (
         ? breakpointStyle(
             breakpoint,
             `
-          ${kind}-inline-start: ${breakpoint.edgeSize[data.start] ||
-              data.start};
+          ${kind}-inline-start: ${
+              breakpoint.edgeSize[data.start] || data.start
+            };
         `,
           )
         : ''};
@@ -192,7 +194,7 @@ export const edgeStyle = (
   return result;
 };
 
-export const fillStyle = fillProp => {
+export const fillStyle = (fillProp) => {
   if (fillProp === 'horizontal') {
     return 'width: 100%;';
   }
@@ -306,7 +308,7 @@ export const focusStyle = ({
   justBorder,
   skipSvgChildren,
 } = {}) => css`
-  ${props =>
+  ${(props) =>
     !skipSvgChildren &&
     `
   > circle,
@@ -318,9 +320,9 @@ export const focusStyle = ({
   > rect {
     ${focusStyles(props)}
   }`}
-  ${props => focusStyles(props, { forceOutline, justBorder })}
+  ${(props) => focusStyles(props, { forceOutline, justBorder })}
   ${!forceOutline &&
-    `
+  `
   ::-moz-focus-inner {
     border: 0;
   }
@@ -329,15 +331,16 @@ export const focusStyle = ({
 
 // This is placed next to focusStyle for easy maintainability
 // of code since changes to focusStyle should be reflected in
-// unfocusStyle as well. However, this function is only being used
-// by List for an iterim state. It is not recommended to rely on
-// this function for other components.
+// unfocusStyle as well.
+// this function can be used to reset focus styles which is
+// applicable when turning the focus ring off when using the mouse
+// see https://nelo.is/writing/styling-better-focus-states/
 export const unfocusStyle = ({
   forceOutline,
   justBorder,
   skipSvgChildren,
 } = {}) => css`
-  ${props =>
+  ${(props) =>
     !skipSvgChildren &&
     `
   > circle,
@@ -349,9 +352,9 @@ export const unfocusStyle = ({
   > rect {
     ${unfocusStyles(props)}
   }`}
-  ${props => unfocusStyles(props, { forceOutline, justBorder })}
+  ${(props) => unfocusStyles(props, { forceOutline, justBorder })}
   ${!forceOutline &&
-    `
+  `
   ::-moz-focus-inner {
     border: 0;
   }
@@ -365,8 +368,10 @@ export const unfocusStyle = ({
 // theme itself, we have to add back in the border width here.
 // This is used for placeholder/icon in TextInput and MaskedInput.
 const adjustPad = (props, value) =>
-  `${parseMetricToNum(`${props.theme.global.edgeSize[value] || value}px`) +
-    parseMetricToNum(`${props.theme.global.control.border.width}px`)}px`;
+  `${
+    parseMetricToNum(`${props.theme.global.edgeSize[value] || value}px`) +
+    parseMetricToNum(`${props.theme.global.control.border.width}px`)
+  }px`;
 
 export const getInputPadBySide = (props, side) => {
   if (typeof props.theme.global.input.padding !== 'object') {
@@ -391,7 +396,7 @@ export const getInputPadBySide = (props, side) => {
 };
 
 const placeholderColor = css`
-  color: ${props =>
+  color: ${(props) =>
     normalizeColor(props.theme.global.colors.placeholder, props.theme)};
 `;
 
@@ -409,8 +414,15 @@ const placeholderStyle = css`
   }
 `;
 
-const inputSizeStyle = props => {
+const inputSizeStyle = (props) => {
   const data = props.theme.text[props.size];
+
+  if (!data) {
+    return css`
+      font-size: ${props.size};
+    `;
+  }
+
   return css`
     font-size: ${data.size};
     line-height: ${data.height};
@@ -419,10 +431,10 @@ const inputSizeStyle = props => {
 
 export const inputStyle = css`
   box-sizing: border-box;
-  ${props =>
+  ${(props) =>
     `font-size: ${
       props.theme.global.input.font.size
-        ? props.theme.text[props.theme.global.input.font.size].size ||
+        ? props.theme.text[props.theme.global.input.font.size]?.size ||
           props.theme.global.input.font.size
         : 'inherit'
     };`}
@@ -432,20 +444,22 @@ export const inputStyle = css`
   background: transparent;
   color: inherit;
   width: 100%;
-  ${props =>
+  ${(props) =>
     props.theme.global.input.font.height &&
     `line-height: ${props.theme.global.input.font.height};`}
-  ${props =>
+  ${(props) =>
     props.theme.global.input.padding &&
     typeof props.theme.global.input.padding !== 'object'
       ? // On a breaking change release, this condition could be removed and
         // just the edgeStyle could remain. Currently, this is needed for
         // backwards compatibility since we are placing the calculation in
         // base.js
-        `padding: ${parseMetricToNum(
-          props.theme.global.edgeSize[props.theme.global.input.padding] ||
-            props.theme.global.input.padding,
-        ) - parseMetricToNum(props.theme.global.control.border.width)}px;`
+        `padding: ${
+          parseMetricToNum(
+            props.theme.global.edgeSize[props.theme.global.input.padding] ||
+              props.theme.global.input.padding,
+          ) - parseMetricToNum(props.theme.global.control.border.width)
+        }px;`
       : edgeStyle(
           'padding',
           props.theme.global.input.padding,
@@ -453,15 +467,17 @@ export const inputStyle = css`
           props.theme.box.responsiveBreakpoint,
           props.theme,
         )}
-  ${props =>
+  ${(props) =>
     // for backwards compatibility, check if props.theme.global.input.weight
     (props.theme.global.input.weight || props.theme.global.input.font.weight) &&
     css`
       font-weight: ${props.theme.global.input.weight ||
-        props.theme.global.input.font.weight};
+      props.theme.global.input.font.weight};
     `} margin: 0;
-  ${props => props.size && inputSizeStyle(props)}
-  ${props => props.focus && !props.plain && focusStyle()};
+  ${(props) => props.size && inputSizeStyle(props)}
+  &:focus {
+    ${(props) => (!props.plain || props.focusIndicator) && focusStyle()};
+  }
   ${controlBorderStyle}
   ${placeholderStyle}
 
@@ -475,14 +491,15 @@ export const inputStyle = css`
   }
 
   &:-moz-placeholder, // FF 18-
-  &::-moz-placeholder { // FF 19+
+  &::-moz-placeholder {
+    // FF 19+
     opacity: 1;
   }
 
-  ${props => props.theme.global.input.extend}
+  ${(props) => props.theme.global.input.extend}
 `;
 
-export const overflowStyle = overflowProp => {
+export const overflowStyle = (overflowProp) => {
   if (typeof overflowProp === 'string') {
     return css`
       overflow: ${overflowProp};
@@ -491,8 +508,8 @@ export const overflowStyle = overflowProp => {
 
   return css`
     ${overflowProp.horizontal &&
-      `overflow-x: ${overflowProp.horizontal};`} ${overflowProp.vertical &&
-      `overflow-y: ${overflowProp.vertical};`};
+    `overflow-x: ${overflowProp.horizontal};`} ${overflowProp.vertical &&
+    `overflow-y: ${overflowProp.vertical};`};
   `;
 };
 
@@ -504,10 +521,10 @@ const ALIGN_SELF_MAP = {
 };
 
 export const genericStyles = css`
-  ${props =>
+  ${(props) =>
     props.alignSelf && `align-self: ${ALIGN_SELF_MAP[props.alignSelf]};`}
-  ${props => props.gridArea && `grid-area: ${props.gridArea};`}
-  ${props =>
+  ${(props) => props.gridArea && `grid-area: ${props.gridArea};`}
+  ${(props) =>
     props.margin &&
     props.theme.global &&
     edgeStyle(
@@ -519,8 +536,8 @@ export const genericStyles = css`
     )}
 `;
 
-export const disabledStyle = componentStyle => css`
-  opacity: ${props =>
+export const disabledStyle = (componentStyle) => css`
+  opacity: ${(props) =>
     componentStyle || props.theme.global.control.disabled.opacity};
   cursor: default;
 `;
@@ -542,9 +559,9 @@ export const kindPartStyles = (obj, theme, colorValue) => {
     const pad = obj.padding || obj.pad;
     if (pad.vertical || pad.horizontal)
       styles.push(
-        `padding: ${theme.global.edgeSize[pad.vertical] ||
-          pad.vertical ||
-          0} ${theme.global.edgeSize[pad.horizontal] || pad.horizontal || 0};`,
+        `padding: ${theme.global.edgeSize[pad.vertical] || pad.vertical || 0} ${
+          theme.global.edgeSize[pad.horizontal] || pad.horizontal || 0
+        };`,
       );
     else styles.push(`padding: ${theme.global.edgeSize[pad] || pad || 0};`);
   }
@@ -606,12 +623,245 @@ export const kindPartStyles = (obj, theme, colorValue) => {
   return styles;
 };
 
+const ROUND_MAP = {
+  full: '100%',
+};
+
+export const roundStyle = (data, responsive, theme) => {
+  const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
+  const styles = [];
+  if (typeof data === 'object') {
+    const size =
+      ROUND_MAP[data.size] ||
+      theme.global.edgeSize[data.size || 'medium'] ||
+      data.size;
+    const responsiveSize =
+      responsive &&
+      breakpoint &&
+      breakpoint.edgeSize[data.size] &&
+      (breakpoint.edgeSize[data.size] || data.size);
+    if (data.corner === 'top') {
+      styles.push(css`
+        border-top-left-radius: ${size};
+        border-top-right-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-top-left-radius: ${responsiveSize};
+          border-top-right-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else if (data.corner === 'bottom') {
+      styles.push(css`
+        border-bottom-left-radius: ${size};
+        border-bottom-right-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-bottom-left-radius: ${responsiveSize};
+          border-bottom-right-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else if (data.corner === 'left') {
+      styles.push(css`
+        border-top-left-radius: ${size};
+        border-bottom-left-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-top-left-radius: ${responsiveSize};
+          border-bottom-left-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else if (data.corner === 'right') {
+      styles.push(css`
+        border-top-right-radius: ${size};
+        border-bottom-right-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-top-right-radius: ${responsiveSize};
+          border-bottom-right-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else if (data.corner) {
+      styles.push(css`
+        border-${data.corner}-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-${data.corner}-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else {
+      styles.push(css`
+        border-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    }
+  } else {
+    const size = data === true ? 'medium' : data;
+    styles.push(css`
+      border-radius: ${ROUND_MAP[size] || theme.global.edgeSize[size] || size};
+    `);
+    const responsiveSize = breakpoint && breakpoint.edgeSize[size];
+    if (responsiveSize) {
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
+        border-radius: ${responsiveSize};
+      `,
+        ),
+      );
+    }
+  }
+  return styles;
+};
+
 const TEXT_ALIGN_MAP = {
   center: 'center',
   end: 'right',
+  justify: 'justify',
   start: 'left',
 };
 
 export const textAlignStyle = css`
-  text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
+  text-align: ${(props) => TEXT_ALIGN_MAP[props.textAlign]};
 `;
+
+const ALIGN_ITEMS_MAP = {
+  baseline: 'baseline',
+  center: 'center',
+  end: 'flex-end',
+  start: 'flex-start',
+  stretch: 'stretch',
+};
+
+export const alignStyle = css`
+  align-items: ${(props) => ALIGN_ITEMS_MAP[props.align] ?? props.align};
+`;
+
+const ALIGN_CONTENT_MAP = {
+  around: 'space-around',
+  baseline: 'baseline',
+  between: 'space-between',
+  center: 'center',
+  evenly: 'space-evenly',
+  end: 'flex-end',
+  start: 'flex-start',
+  stretch: 'stretch',
+};
+
+export const alignContentStyle = css`
+  align-content: ${(props) =>
+    ALIGN_CONTENT_MAP[props.alignContent] ?? props.alignContent};
+`;
+const getSize = (theme, size) => theme.global.size[size] || size;
+
+const widthObjectStyle = (width, theme) => {
+  const result = [];
+  if (width.max)
+    result.push(
+      css`
+        max-width: ${getSize(theme, width.max)};
+      `,
+    );
+  if (width.min)
+    result.push(
+      css`
+        min-width: ${getSize(theme, width.min)};
+      `,
+    );
+  if (width.width)
+    result.push(
+      css`
+        width: ${getSize(theme, width.width)};
+      `,
+    );
+  return result;
+};
+
+const widthStringStyle = (width, theme) =>
+  css`
+    width: ${getSize(theme, width)};
+  `;
+
+export const widthStyle = (width, theme) =>
+  typeof width === 'object'
+    ? widthObjectStyle(width, theme)
+    : widthStringStyle(width, theme);
+
+const heightObjectStyle = (height, theme) => {
+  const result = [];
+  if (height.max)
+    result.push(
+      css`
+        max-height: ${getSize(theme, height.max)};
+      `,
+    );
+  if (height.min)
+    result.push(
+      css`
+        min-height: ${getSize(theme, height.min)};
+      `,
+    );
+  // backwards compatibile
+  if (height.width)
+    result.push(
+      css`
+        height: ${getSize(theme, height.height)};
+      `,
+    );
+  if (height.height)
+    result.push(
+      css`
+        height: ${getSize(theme, height.height)};
+      `,
+    );
+  return result;
+};
+
+const heightStringStyle = (height, theme) =>
+  css`
+    height: ${getSize(theme, height)};
+  `;
+
+export const heightStyle = (height, theme) =>
+  typeof height === 'object'
+    ? heightObjectStyle(height, theme)
+    : heightStringStyle(height, theme);

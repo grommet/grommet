@@ -27,6 +27,10 @@ export interface StackProps {
   margin?: MarginType;
 }
 
-declare const Stack: React.FC<StackProps & JSX.IntrinsicElements['div']>;
+type divProps = JSX.IntrinsicElements['div'];
+
+export interface StackExtendedProps extends StackProps, divProps {}
+
+declare const Stack: React.FC<StackExtendedProps>;
 
 export { Stack };

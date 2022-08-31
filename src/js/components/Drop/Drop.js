@@ -6,10 +6,12 @@ import { defaultProps } from '../../default-props';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { DropPropTypes } from './propTypes';
 
 const Drop = forwardRef(
   (
     {
+      inline,
       restrictFocus,
       target: dropTarget, // avoid DOM leakage
       trapFocus = true,
@@ -22,9 +24,13 @@ const Drop = forwardRef(
     useEffect(() => setOriginalFocusedElement(document.activeElement), []);
     const [dropContainer, setDropContainer] = useState();
     const containerTarget = useContext(ContainerTargetContext);
-    useEffect(() => setDropContainer(getNewContainer(containerTarget)), [
-      containerTarget,
-    ]);
+    useEffect(
+      () =>
+        setDropContainer(
+          !inline ? getNewContainer(containerTarget) : undefined,
+        ),
+      [containerTarget, inline],
+    );
 
     // just a few things to clean up when the Drop is unmounted
     useEffect(
@@ -47,28 +53,26 @@ const Drop = forwardRef(
       [containerTarget, dropContainer, originalFocusedElement, restrictFocus],
     );
 
-    return dropContainer
-      ? createPortal(
-          <DropContainer
-            ref={ref}
-            dir={theme && theme.dir}
-            dropTarget={dropTarget}
-            restrictFocus={restrictFocus}
-            trapFocus={trapFocus}
-            {...rest}
-          />,
-          dropContainer,
-        )
-      : null;
+    const content = (
+      <DropContainer
+        ref={ref}
+        dir={theme && theme.dir}
+        dropTarget={dropTarget}
+        restrictFocus={restrictFocus}
+        trapFocus={trapFocus}
+        {...rest}
+      />
+    );
+
+    if (inline) return content;
+
+    if (dropContainer) return createPortal(content, dropContainer);
+
+    return null;
   },
 );
 
 Drop.displayName = 'Drop';
+Drop.propTypes = DropPropTypes;
 
-let DropDoc;
-if (process.env.NODE_ENV !== 'production') {
-  DropDoc = require('./doc').doc(Drop); // eslint-disable-line global-require
-}
-const DropWrapper = DropDoc || Drop;
-
-export { DropWrapper as Drop };
+export { Drop };

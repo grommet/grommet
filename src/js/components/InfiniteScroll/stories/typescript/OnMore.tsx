@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 
-import {
-  Grommet,
-  Box,
-  InfiniteScroll,
-  InfiniteScrollProps,
-  Text,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, InfiniteScroll, InfiniteScrollProps, Text } from 'grommet';
 
 const allItems = Array(2000)
   .fill(0)
@@ -32,22 +25,23 @@ const OnMoreInfiniteScroll: React.FC<IProps> = ({ props }) => {
   };
 
   return (
-    <Grommet theme={grommet}>
-      <Box>
-        <InfiniteScroll items={items} onMore={onMore} {...props}>
-          {item => (
-            <Box
-              key={item}
-              pad="medium"
-              border={{ side: 'bottom' }}
-              align="center"
-            >
-              <Text>{item}</Text>
-            </Box>
-          )}
-        </InfiniteScroll>
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box>
+      <InfiniteScroll items={items} onMore={onMore} {...props}>
+        {(item) => (
+          <Box
+            key={item}
+            pad="medium"
+            border={{ side: 'bottom' }}
+            align="center"
+          >
+            <Text>{item}</Text>
+          </Box>
+        )}
+      </InfiniteScroll>
+    </Box>
+    // </Grommet>
   );
 };
 

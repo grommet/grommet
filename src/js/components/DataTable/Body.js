@@ -1,64 +1,239 @@
-import React, { forwardRef } from 'react';
+/* eslint-disable no-underscore-dangle */
+import React, { forwardRef, memo, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
+import { useKeyboard } from '../../utils';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { Keyboard } from '../Keyboard';
+import { ExpanderCell } from './ExpanderCell';
 
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
-import { datumValue } from './buildState';
+import { datumValue, normalizeRowCellProps } from './buildState';
+import { defaultProps } from '../../default-props';
+
+const Row = memo(
+  ({
+    cellProps,
+    primaryValue,
+    index,
+    rowRef,
+    size,
+    active,
+    onClickRow,
+    datum,
+    selected,
+    onSelect,
+    isDisabled,
+    isSelected,
+    rowDetails,
+    isRowExpanded,
+    setActive,
+    setRowExpand,
+    rowExpand,
+    columns,
+    pinnedOffset,
+    primaryProperty,
+    data,
+    verticalAlign,
+  }) => (
+    <>
+      <StyledDataTableRow
+        ref={rowRef}
+        size={size}
+        active={active}
+        aria-disabled={(onClickRow && isDisabled) || undefined}
+        onClick={
+          onClickRow
+            ? (event) => {
+                if (onClickRow && !isDisabled) {
+                  if (typeof onClickRow === 'function') {
+                    // extract from React's synthetic event pool
+                    event.persist();
+                    const adjustedEvent = event;
+                    adjustedEvent.datum = datum;
+                    adjustedEvent.index = index;
+                    onClickRow(adjustedEvent);
+                  } else if (onClickRow === 'select') {
+                    if (isSelected) {
+                      onSelect(selected.filter((s) => s !== primaryValue));
+                    } else onSelect([...selected, primaryValue]);
+                  }
+                }
+              }
+            : undefined
+        }
+        onMouseEnter={
+          onClickRow && !isDisabled ? () => setActive(index) : undefined
+        }
+        onMouseLeave={onClickRow ? () => setActive(undefined) : undefined}
+      >
+        {(selected || onSelect) && (
+          <Cell
+            background={
+              (pinnedOffset?._grommetDataTableSelect &&
+                cellProps.pinned.background) ||
+              cellProps.background
+            }
+            pinnedOffset={pinnedOffset?._grommetDataTableSelect}
+            aria-disabled={isDisabled || !onSelect || undefined}
+            column={{
+              pin: Boolean(pinnedOffset?._grommetDataTableSelect),
+              plain: 'noPad',
+              size: 'auto',
+              render: () => (
+                <CheckBox
+                  tabIndex={onClickRow === 'select' ? -1 : undefined}
+                  a11yTitle={`${
+                    isSelected ? 'unselect' : 'select'
+                  } ${primaryValue}`}
+                  checked={isSelected}
+                  disabled={isDisabled || !onSelect}
+                  onChange={() => {
+                    if (isSelected) {
+                      onSelect(selected.filter((s) => s !== primaryValue));
+                    } else onSelect([...selected, primaryValue]);
+                  }}
+                  pad={cellProps.pad}
+                />
+              ),
+            }}
+            verticalAlign={verticalAlign}
+          />
+        )}
+
+        {rowDetails && (
+          <ExpanderCell
+            context={isRowExpanded ? 'groupHeader' : 'body'}
+            expanded={isRowExpanded}
+            onToggle={() => {
+              if (isRowExpanded) {
+                setRowExpand(rowExpand.filter((s) => s !== index));
+              } else {
+                setRowExpand([...rowExpand, index]);
+              }
+            }}
+            pad={cellProps.pad}
+            verticalAlign={verticalAlign}
+          />
+        )}
+        {columns.map((column) => (
+          <Cell
+            key={column.property}
+            background={
+              (column.pin && cellProps.pinned.background) ||
+              cellProps.background
+            }
+            border={(column.pin && cellProps.pinned.border) || cellProps.border}
+            context="body"
+            column={column}
+            datum={datum}
+            pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
+            pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
+            primaryProperty={primaryProperty}
+            scope={
+              column.primary || column.property === primaryProperty
+                ? 'row'
+                : undefined
+            }
+            verticalAlign={verticalAlign}
+          />
+        ))}
+      </StyledDataTableRow>
+      {rowDetails && isRowExpanded && (
+        <StyledDataTableRow key={`${index.toString()}_expand`}>
+          {(selected || onSelect) && <TableCell />}
+          <TableCell colSpan={columns.length + 1}>
+            {rowDetails(data[index])}
+          </TableCell>
+        </StyledDataTableRow>
+      )}
+    </>
+  ),
+);
 
 const Body = forwardRef(
   (
     {
-      background,
-      border,
+      cellProps: cellPropsProp,
       columns,
       data,
+      disabled,
       onMore,
       replace,
       onClickRow,
       onSelect,
-      pad,
-      pinnedBackground,
+      pinnedOffset,
       primaryProperty,
       rowProps,
       selected,
+      rowDetails,
+      show,
       size,
       step,
+      rowExpand,
+      setRowExpand,
+      verticalAlign,
       ...rest
     },
     ref,
   ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const [active, setActive] = React.useState();
+    const [lastActive, setLastActive] = React.useState();
+
+    // Determine if using a keyboard to cover focus behavior
+    const usingKeyboard = useKeyboard();
+
+    const onFocusActive =
+      active ?? lastActive ?? (usingKeyboard ? 0 : undefined);
+
+    const selectRow = () => {
+      const primaryValue = data[active]?.[primaryProperty];
+      if (selected && selected.includes(primaryValue)) {
+        onSelect(selected.filter((s) => s !== primaryValue));
+      } else onSelect([...selected, primaryValue]);
+    };
+
+    const clickableRow =
+      onClickRow &&
+      active >= 0 &&
+      (!disabled ||
+        !disabled.includes(datumValue(data[active], primaryProperty)));
+
     return (
       <Keyboard
         onEnter={
-          onClickRow && active >= 0
-            ? event => {
-                event.persist();
-                const adjustedEvent = event;
-                adjustedEvent.datum = data[active];
-                onClickRow(adjustedEvent);
+          clickableRow
+            ? (event) => {
+                if (clickableRow) {
+                  if (typeof onClickRow === 'function') {
+                    event.persist();
+                    const adjustedEvent = event;
+                    adjustedEvent.datum = data[active];
+                    onClickRow(adjustedEvent);
+                  } else if (onClickRow === 'select') {
+                    selectRow();
+                  }
+                }
               }
             : undefined
         }
-        onUp={
-          onClickRow && active
-            ? () => {
-                setActive(active - 1);
-              }
-            : undefined
-        }
+        // The WCAG recommendation for checkboxes is to select them with "Space"
+        onSpace={() => {
+          if (clickableRow) {
+            if (onClickRow === 'select') {
+              selectRow();
+            }
+          }
+        }}
+        onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
         onDown={
-          onClickRow && data.length
-            ? () => {
-                setActive(
-                  active >= 0 ? Math.min(active + 1, data.length - 1) : 0,
-                );
-              }
+          onClickRow && data.length && active < data.length - 1
+            ? () => setActive((active ?? -1) + 1)
             : undefined
         }
       >
@@ -66,18 +241,23 @@ const Body = forwardRef(
           ref={ref}
           size={size}
           tabIndex={onClickRow ? 0 : undefined}
+          onFocus={() => setActive(onFocusActive)}
+          onBlur={() => {
+            setLastActive(active);
+            setActive(undefined);
+          }}
           {...rest}
         >
           <InfiniteScroll
             items={data}
             onMore={onMore}
             replace={replace}
-            renderMarker={marker => (
+            renderMarker={(marker) => (
               <TableRow>
                 <TableCell>{marker}</TableCell>
               </TableRow>
             )}
-            scrollableAncestor="window"
+            show={show}
             step={step}
           >
             {(datum, index, rowRef) => {
@@ -85,67 +265,42 @@ const Body = forwardRef(
                 ? datumValue(datum, primaryProperty)
                 : undefined;
               const isSelected = selected && selected.includes(primaryValue);
+              const isDisabled = disabled && disabled.includes(primaryValue);
+              const isRowExpanded = rowExpand && rowExpand.includes(index);
+              const cellProps = normalizeRowCellProps(
+                rowProps,
+                cellPropsProp,
+                primaryValue,
+                index,
+              );
               return (
-                <StyledDataTableRow
-                  key={primaryValue || index}
-                  ref={rowRef}
+                <Row
+                  key={index}
+                  setActive={setActive}
+                  rowRef={rowRef}
+                  cellProps={cellProps}
+                  primaryValue={primaryValue}
+                  isDisabled={isDisabled}
+                  isSelected={isSelected}
+                  isRowExpanded={isRowExpanded}
+                  index={index}
                   size={size}
                   active={active >= 0 ? active === index : undefined}
-                  onClick={
-                    onClickRow
-                      ? event => {
-                          // extract from React's synthetic event pool
-                          event.persist();
-                          const adjustedEvent = event;
-                          adjustedEvent.datum = datum;
-                          adjustedEvent.index = index;
-                          onClickRow(adjustedEvent);
-                        }
-                      : undefined
-                  }
-                  onMouseEnter={onClickRow ? () => setActive(index) : undefined}
-                  onMouseLeave={
-                    onClickRow ? () => setActive(undefined) : undefined
-                  }
-                  onFocus={onClickRow ? () => setActive(index) : undefined}
-                  onBlur={onClickRow ? () => setActive(undefined) : undefined}
-                >
-                  {(selected || onSelect) && (
-                    <TableCell background={background}>
-                      <CheckBox
-                        a11yTitle={`${
-                          isSelected ? 'unselect' : 'select'
-                        } ${primaryValue}`}
-                        checked={isSelected}
-                        disabled={!onSelect}
-                        onChange={() => {
-                          if (isSelected)
-                            onSelect(selected.filter(s => s !== primaryValue));
-                          else onSelect([...selected, primaryValue]);
-                        }}
-                      />
-                    </TableCell>
-                  )}
-                  {columns.map(column => (
-                    <Cell
-                      key={column.property}
-                      background={column.pin ? pinnedBackground : background}
-                      border={border}
-                      context="body"
-                      column={column}
-                      datum={datum}
-                      index={index}
-                      pad={pad}
-                      primaryProperty={primaryProperty}
-                      rowProp={rowProps && rowProps[primaryValue]}
-                      scope={
-                        column.primary || column.property === primaryProperty
-                          ? 'row'
-                          : undefined
-                      }
-                    />
-                  ))}
-                </StyledDataTableRow>
+                  onClickRow={onClickRow}
+                  datum={datum}
+                  selected={selected}
+                  onSelect={onSelect}
+                  rowDetails={rowDetails}
+                  setRowExpand={setRowExpand}
+                  rowExpand={rowExpand}
+                  columns={columns}
+                  primaryProperty={primaryProperty}
+                  rowProps={rowProps}
+                  data={data}
+                  theme={theme}
+                  pinnedOffset={pinnedOffset}
+                  verticalAlign={verticalAlign}
+                />
               );
             }}
           </InfiniteScroll>

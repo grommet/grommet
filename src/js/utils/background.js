@@ -56,7 +56,7 @@ export const backgroundIsDark = (backgroundArg, theme) => {
   return result;
 };
 
-const darkContext = backgroundColor => {
+const darkContext = (backgroundColor) => {
   const isDark = colorIsDark(backgroundColor);
   if (isDark === undefined) return undefined;
   return isDark ? 'dark' : 'light';
@@ -192,7 +192,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
 };
 
 export const activeStyle = css`
-  ${props =>
+  ${(props) =>
     backgroundStyle(
       normalizeColor(props.theme.global.active.background, props.theme),
       props.theme,
@@ -201,7 +201,7 @@ export const activeStyle = css`
 `;
 
 export const selectedStyle = css`
-  ${props =>
+  ${(props) =>
     backgroundStyle(
       normalizeColor(props.theme.global.selected.background, props.theme),
       props.theme,
@@ -211,12 +211,21 @@ export const selectedStyle = css`
 
 export const getHoverIndicatorStyle = (hoverIndicator, theme) => {
   let background;
+  let elevation;
   if (hoverIndicator === true || hoverIndicator === 'background') {
     ({ background } = theme.global.hover);
+  } else if (typeof hoverIndicator === 'object') {
+    if (hoverIndicator.elevation || hoverIndicator.background)
+      ({ elevation, background } = hoverIndicator);
+    else background = hoverIndicator;
   } else {
     background = hoverIndicator;
   }
   return css`
     ${backgroundStyle(background, theme, theme.global.hover.color)}
+    ${elevation &&
+    `box-shadow: ${
+      theme.global.elevation[theme.dark ? 'dark' : 'light'][elevation]
+    };`}
   `;
 };

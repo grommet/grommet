@@ -10,6 +10,8 @@ import {
   TextAlignType,
 } from '../../utils';
 
+import { TipProps } from '../Tip';
+
 export interface TextProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
@@ -32,12 +34,16 @@ export interface TextProps {
     | string;
   tag?: PolymorphicType;
   textAlign?: TextAlignType;
-  truncate?: boolean;
-  weight?: 'normal' | 'bold' | number;
+  truncate?: boolean | 'tip';
+  weight?: 'normal' | 'bold' | 'bolder' | 'lighter' | number;
   wordBreak?: 'normal' | 'break-all' | 'keep-all' | 'break-word';
+  tip?: TipProps | string;
 }
+export interface TextExtendedProps
+  extends TextProps,
+    Omit<JSX.IntrinsicElements['span'], 'color'> {}
 
-declare const Text: React.FC<TextProps &
-  Omit<JSX.IntrinsicElements['span'], 'color'>>;
+declare const Text: React.FC<TextExtendedProps>;
+export type TextType = TextProps;
 
 export { Text };

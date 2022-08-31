@@ -1,14 +1,11 @@
 import React from 'react';
 
-import { Box, Grommet, WorldMap } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, WorldMap } from 'grommet';
 
 export const Color = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <WorldMap color="graph-1" />
-    </Box>
-  </Grommet>
+  <Box align="center" pad="large">
+    <WorldMap color="graph-1" />
+  </Box>
 );
 
 Color.parameters = {

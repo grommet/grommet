@@ -32,15 +32,17 @@ import {
   StyledIcon,
   StyledSuggestions,
 } from './StyledTextInput';
+import { MessageContext } from '../../contexts/MessageContext';
+import { TextInputPropTypes } from './propTypes';
 
-const renderLabel = suggestion => {
+const renderLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
     return suggestion.label || suggestion.value;
   }
   return suggestion;
 };
 
-const stringLabel = suggestion => {
+const stringLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
     if (suggestion.label && typeof suggestion.label === 'string') {
       return suggestion.label;
@@ -51,7 +53,7 @@ const stringLabel = suggestion => {
 };
 
 const ContainerBox = styled(Box)`
-  ${props =>
+  ${(props) =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
       : 'max-height: inherit;'};
@@ -64,14 +66,6 @@ const ContainerBox = styled(Box)`
 
 const defaultDropAlign = { top: 'bottom', left: 'left' };
 
-const defaultMessages = {
-  enterSelect: '(Press Enter to Select)',
-  suggestionsCount: 'suggestions available',
-  suggestionsExist: 'This input has suggestions use arrow keys to navigate',
-  suggestionIsOpen:
-    'Suggestions drop is open, continue to use arrow keys to navigate',
-};
-
 const TextInput = forwardRef(
   (
     {
@@ -82,9 +76,10 @@ const TextInput = forwardRef(
       dropHeight,
       dropTarget,
       dropProps,
+      focusIndicator = true,
       icon,
       id,
-      messages = defaultMessages,
+      messages,
       name,
       onBlur,
       onChange,
@@ -106,6 +101,7 @@ const TextInput = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
     const inputRef = useForwardedRef(ref);
@@ -113,10 +109,10 @@ const TextInput = forwardRef(
     const suggestionsRef = useRef();
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
-    const [value, setValue] = formContext.useFormInput(
-      readOnly ? undefined : name,
-      valueProp,
-    );
+    const [value, setValue] = formContext.useFormInput({
+      name: readOnly ? undefined : name,
+      value: valueProp,
+    });
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState(false);
@@ -134,23 +130,33 @@ const TextInput = forwardRef(
 
     const openDrop = useCallback(() => {
       setShowDrop(true);
-      announce(messages.suggestionIsOpen);
-      announce(`${suggestions.length} ${messages.suggestionsCount}`);
+      announce(
+        format({
+          id: 'textInput.suggestionIsOpen',
+          messages,
+        }),
+      );
+      announce(
+        `${suggestions.length} ${format({
+          id: 'textInput.suggestionsCount',
+          messages,
+        })}`,
+      );
       if (onSuggestionsOpen) onSuggestionsOpen();
-    }, [
-      announce,
-      messages.suggestionsCount,
-      messages.suggestionIsOpen,
-      onSuggestionsOpen,
-      suggestions,
-    ]);
+    }, [announce, messages, format, onSuggestionsOpen, suggestions]);
 
     const closeDrop = useCallback(() => {
       setSuggestionsAtClose(suggestions); // must be before closing drop
       setShowDrop(false);
-      if (messages.onSuggestionsClose) onSuggestionsClose();
       if (onSuggestionsClose) onSuggestionsClose();
-    }, [messages.onSuggestionsClose, onSuggestionsClose, suggestions]);
+    }, [onSuggestionsClose, suggestions]);
+
+    const clickOutside = useCallback(
+      (event) => {
+        if (event.target !== inputRef.current) closeDrop();
+      },
+      [inputRef, closeDrop],
+    );
 
     // Handle scenarios where we have focus, the drop isn't showing,
     // and the suggestions change. We don't want to open the drop if
@@ -173,14 +179,16 @@ const TextInput = forwardRef(
 
     // if we have no suggestions, close drop if it's open
     useEffect(() => {
-      if (showDrop && (!suggestions || !suggestions.length)) closeDrop();
+      if (showDrop && (!suggestions || !suggestions.length)) {
+        closeDrop();
+      }
     }, [closeDrop, showDrop, suggestions]);
 
     const valueSuggestionIndex = useMemo(
       () =>
         suggestions
           ? suggestions
-              .map(suggestion =>
+              .map((suggestion) =>
                 typeof suggestion === 'object' ? suggestion.value : suggestion,
               )
               .indexOf(value)
@@ -202,18 +210,18 @@ const TextInput = forwardRef(
 
     // activeSuggestionIndex unifies mouse and keyboard interaction of
     // the suggestions
-    const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(
-      resetSuggestionIndex,
-    );
+    const [activeSuggestionIndex, setActiveSuggestionIndex] =
+      useState(resetSuggestionIndex);
 
     // Only update active suggestion index when the mouse actually moves,
     // not when suggestions are moving under the mouse.
     const [mouseMovedSinceLastKey, setMouseMovedSinceLastKey] = useState();
 
     // set activeSuggestionIndex when value changes
-    useEffect(() => setActiveSuggestionIndex(valueSuggestionIndex), [
-      valueSuggestionIndex,
-    ]);
+    useEffect(
+      () => setActiveSuggestionIndex(valueSuggestionIndex),
+      [valueSuggestionIndex],
+    );
 
     // reset activeSuggestionIndex when the drop is closed
     useEffect(() => {
@@ -224,9 +232,14 @@ const TextInput = forwardRef(
     useEffect(() => {
       if (activeSuggestionIndex >= 0) {
         const label = stringLabel(suggestions[activeSuggestionIndex]);
-        announce(`${label} ${messages.enterSelect}`);
+        announce(
+          `${label} ${format({
+            id: 'textInput.enterSelect',
+            messages,
+          })}`,
+        );
       }
-    }, [activeSuggestionIndex, announce, messages, suggestions]);
+    }, [activeSuggestionIndex, announce, messages, format, suggestions]);
 
     // make sure activeSuggestion is visible in scroll
     useEffect(() => {
@@ -267,7 +280,7 @@ const TextInput = forwardRef(
     };
 
     const onNextSuggestion = useCallback(
-      event => {
+      (event) => {
         event.preventDefault();
         const nextActiveIndex = Math.min(
           activeSuggestionIndex + 1,
@@ -280,7 +293,7 @@ const TextInput = forwardRef(
     );
 
     const onPreviousSuggestion = useCallback(
-      event => {
+      (event) => {
         event.preventDefault();
         const nextActiveIndex = Math.max(activeSuggestionIndex - 1, 0);
         setActiveSuggestionIndex(nextActiveIndex);
@@ -289,11 +302,11 @@ const TextInput = forwardRef(
       [activeSuggestionIndex],
     );
 
-    const [showStyledPlaceholder, setShowStyledPlaceholder] = useState(
-      placeholder &&
-        typeof placeholder !== 'string' &&
-        !(inputRef.current && inputRef.current.value) &&
-        !value,
+    // account for input value in both controlled and uncontrolled scenarios
+    const hasValue = value || inputRef.current?.value;
+    const showStyledPlaceholder = useMemo(
+      () => placeholder && typeof placeholder !== 'string' && !hasValue,
+      [hasValue, placeholder],
     );
 
     let drop;
@@ -309,11 +322,13 @@ const TextInput = forwardRef(
           align={dropAlign}
           responsive={false}
           target={dropTarget || inputRef.current}
-          onClickOutside={closeDrop}
+          onClickOutside={clickOutside}
           onEsc={closeDrop}
           {...dropProps}
         >
           <ContainerBox
+            id={id ? `listbox__${id}` : undefined}
+            role="listbox"
             overflow="auto"
             dropHeight={dropHeight}
             onMouseMove={() => setMouseMovedSinceLastKey(true)}
@@ -329,6 +344,8 @@ const TextInput = forwardRef(
                 }
               >
                 {(suggestion, index, itemRef) => {
+                  const active = activeSuggestionIndex === index;
+                  const selected = suggestion === value;
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.
                   const renderedLabel = renderLabel(suggestion);
@@ -351,13 +368,16 @@ const TextInput = forwardRef(
                       ref={itemRef}
                     >
                       <Button
-                        active={activeSuggestionIndex === index}
-                        fill
+                        id={id ? `listbox-option-${index}__${id}` : undefined}
+                        role="option"
+                        aria-selected={selected ? 'true' : 'false'}
+                        active={active}
+                        fill="horizontal"
                         plain={!child ? undefined : true}
                         align="start"
                         kind={!child ? 'option' : undefined}
                         label={!child ? renderedLabel : undefined}
-                        onClick={event =>
+                        onClick={(event) =>
                           setValueFromSuggestion(event, suggestion)
                         }
                         onMouseMove={
@@ -381,7 +401,7 @@ const TextInput = forwardRef(
 
     const keyboardProps = { onKeyDown };
     if (showDrop) {
-      keyboardProps.onEnter = event => {
+      keyboardProps.onEnter = (event) => {
         // prevent submitting forms via Enter when the drop is open
         event.preventDefault();
         if (activeSuggestionIndex >= 0)
@@ -396,6 +416,24 @@ const TextInput = forwardRef(
       keyboardProps.onDown = openDrop;
     }
 
+    /*
+    If the text input has a list of suggestions, add the WAI-ARIA 1.2
+    combobox role and states.
+    */
+    let comboboxProps = {};
+    let activeOptionID;
+    if (id && suggestions?.length > -1) {
+      if (showDrop && activeSuggestionIndex > -1) {
+        activeOptionID = `listbox-option-${activeSuggestionIndex}__${id}`;
+      }
+      comboboxProps = {
+        'aria-activedescendant': activeOptionID,
+        'aria-autocomplete': 'list',
+        'aria-expanded': showDrop ? 'true' : 'false',
+        'aria-controls': showDrop ? `listbox__${id}` : undefined,
+        role: 'combobox',
+      };
+    }
     // For the Keyboard target below, if we have focus,
     // either on the input element or within the drop,
     // then we set the target to the document,
@@ -426,26 +464,33 @@ const TextInput = forwardRef(
             icon={icon}
             reverse={reverse}
             focus={focus}
+            focusIndicator={focusIndicator}
             textAlign={textAlign}
             {...rest}
             {...extraProps}
+            {...comboboxProps}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             readOnly={readOnly}
-            onFocus={event => {
+            onFocus={(event) => {
               // Don't do anything if we are acting like we already have
               // focus. This can happen when this input loses focus temporarily
               // to our drop, see onBlur() handler below.
               if (!focus) {
                 setFocus(true);
                 if (suggestions && suggestions.length > 0) {
-                  announce(messages.suggestionsExist);
+                  announce(
+                    format({
+                      id: 'textInput.suggestionsExist',
+                      messages,
+                    }),
+                  );
                   openDrop();
                 }
                 if (onFocus) onFocus(event);
               }
             }}
-            onBlur={event => {
+            onBlur={(event) => {
               // Only treat it as a blur if the element receiving focus
               // isn't in our drop. The relatedTarget will be our drop
               // when the user clicks on a suggestion or interacts with the
@@ -461,18 +506,16 @@ const TextInput = forwardRef(
             onChange={
               readOnly
                 ? undefined
-                : event => {
+                : (event) => {
                     // when TextInput is not contained in a Form, no re-render
                     // will come from this onChange and remove the placeholder
                     // so we need to update state to ensure the styled
                     // placeholder only appears when there is no value
-                    setShowStyledPlaceholder(
-                      placeholder &&
-                        typeof placeholder !== 'string' &&
-                        !event.target.value,
-                    );
+                    if (suggestions && focus && !showDrop) {
+                      openDrop();
+                    }
                     setValue(event.target.value);
-                    setActiveSuggestionIndex(-1);
+                    setActiveSuggestionIndex(resetSuggestionIndex);
                     if (onChange) onChange(event);
                   }
             }
@@ -486,12 +529,6 @@ const TextInput = forwardRef(
 );
 
 TextInput.displayName = 'TextInput';
+TextInput.propTypes = TextInputPropTypes;
 
-let TextInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TextInputDoc = require('./doc').doc(TextInput);
-}
-const TextInputWrapper = TextInputDoc || TextInput;
-
-export { TextInputWrapper as TextInput };
+export { TextInput };

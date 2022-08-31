@@ -1,18 +1,2 @@
 ## TableRow
-A row of cells in a table.
-
-## Usage
-
-```javascript
-import { TableRow } from 'grommet';
-<TableRow />
-```
-
-## Properties
-
-  
-## Intrinsic element
-
-```
-tr
-```
+Documentation for this component: https://v2.grommet.io/table

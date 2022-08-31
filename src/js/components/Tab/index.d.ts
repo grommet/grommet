@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Omit } from '../../utils';
+import { A11yTitleType, Omit } from '../../utils';
 
 export interface TabProps {
+  a11yTitle?: A11yTitleType;
   disabled?: boolean;
   icon?: JSX.Element;
   plain?: boolean;
@@ -9,7 +10,10 @@ export interface TabProps {
   title?: React.ReactNode;
 }
 
-declare const Tab: React.ComponentClass<TabProps &
-  Omit<JSX.IntrinsicElements['button'], 'title'>>;
+export interface TabExtendedProps
+  extends TabProps,
+    Omit<JSX.IntrinsicElements['button'], 'title'> {}
+
+declare const Tab: React.FC<TabExtendedProps>;
 
 export { Tab };

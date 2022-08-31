@@ -19,7 +19,7 @@ const DIRECTION_PROPS = {
 };
 
 const StyledBox = styled(Box)`
-  ${props => props.focus && focusStyle()}
+  ${(props) => props.focus && focusStyle()}
 `;
 
 const EdgeControl = forwardRef(
@@ -90,7 +90,7 @@ const EdgeControl = forwardRef(
               outline: 'none',
               minWidth: size,
               minHeight: size,
-              zIndex: 10,
+              zIndex: 1,
             }}
             tabIndex={0}
             onFocus={() => setFocus(true)}

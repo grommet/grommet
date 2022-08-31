@@ -1,8 +1,7 @@
 import React from 'react';
 
+import { Box, Tab, Tabs } from 'grommet';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
-import { Box, Grommet, Tab, Tabs } from 'grommet';
-import { grommet } from 'grommet/themes';
 
 const ControlledTabs = () => {
   const [index, setIndex] = React.useState(0);
@@ -12,25 +11,27 @@ const ControlledTabs = () => {
   const onActive = (nextIndex: number) => setIndex(nextIndex);
 
   return (
-    <Grommet theme={grommet}>
-      <Tabs activeIndex={index} onActive={onActive}>
-        <Tab title="Tab 1">
-          <Box margin="small" pad="large" align="center" background="accent-1">
-            <Attraction size="xlarge" />
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box align="center" pad="medium">
+      <Tabs activeIndex={index} onActive={onActive} justify="start">
+        <Tab title="General">
+          <Box margin="small" gap="small">
+            User Information
           </Box>
         </Tab>
-        <Tab title="Tab 2">
-          <Box margin="small" pad="large" align="center" background="accent-2">
-            <TreeOption size="xlarge" />
-          </Box>
+        <Tab title="Account">
+          <Box margin="small">Account Information</Box>
         </Tab>
-        <Tab title="Tab 3">
-          <Box margin="small" pad="large" align="center" background="accent-3">
-            <Car size="xlarge" />
-          </Box>
+        <Tab title="Billing">
+          <Box margin="small">Billing Information</Box>
+        </Tab>
+        <Tab title="Notifications">
+          <Box margin="small">Notifications will show here.</Box>
         </Tab>
       </Tabs>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 

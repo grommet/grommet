@@ -3,6 +3,7 @@ import React, { forwardRef, useCallback, useEffect, useState } from 'react';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils';
+import { DropButtonPropTypes } from './propTypes';
 
 const defaultDropAlign = { top: 'top', left: 'left' };
 
@@ -33,7 +34,7 @@ const DropButton = forwardRef(
       }
     }, [open, show]);
     const onDropClose = useCallback(
-      event => {
+      (event) => {
         // if the user has clicked on our Button, don't do anything here,
         // handle that in onClickInternal() below.
         let node = event.target;
@@ -50,7 +51,7 @@ const DropButton = forwardRef(
     );
 
     const onClickInternal = useCallback(
-      event => {
+      (event) => {
         if (!show) {
           setShow(true);
           if (onOpen) onOpen(event);
@@ -93,12 +94,6 @@ const DropButton = forwardRef(
 );
 
 DropButton.displayName = 'DropButton';
+DropButton.propTypes = DropButtonPropTypes;
 
-let DropButtonDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DropButtonDoc = require('./doc').doc(DropButton);
-}
-const DropButtonWrapper = DropButtonDoc || DropButton;
-
-export { DropButtonWrapper as DropButton };
+export { DropButton };

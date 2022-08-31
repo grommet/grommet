@@ -1,9 +1,16 @@
 import styled, { css } from 'styled-components';
-
-import { borderStyle, edgeStyle, genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
+import {
+  alignContentStyle,
+  alignStyle,
+  borderStyle,
+  edgeStyle,
+  genericStyles,
+  heightStyle,
+  widthStyle,
+} from '../../utils';
 
-const fillStyle = fill => {
+const fillStyle = (fill) => {
   if (!fill) {
     return fill;
   }
@@ -19,30 +26,6 @@ const fillStyle = fill => {
     `;
 };
 
-const ALIGN_MAP = {
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch',
-};
-
-const alignStyle = css`
-  align-items: ${props => ALIGN_MAP[props.align]};
-`;
-
-const ALIGN_CONTENT_MAP = {
-  around: 'space-around',
-  between: 'space-between',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch',
-};
-
-const alignContentStyle = css`
-  align-content: ${props => ALIGN_CONTENT_MAP[props.alignContent]};
-`;
-
 const JUSTIFY_MAP = {
   center: 'center',
   end: 'flex-end',
@@ -51,7 +34,7 @@ const JUSTIFY_MAP = {
 };
 
 const justifyStyle = css`
-  justify-items: ${props => JUSTIFY_MAP[props.justify]};
+  justify-items: ${(props) => JUSTIFY_MAP[props.justify]};
 `;
 
 const JUSTIFY_CONTENT_MAP = {
@@ -64,33 +47,35 @@ const JUSTIFY_CONTENT_MAP = {
 };
 
 const justifyContentStyle = css`
-  justify-content: ${props => JUSTIFY_CONTENT_MAP[props.justifyContent]};
+  justify-content: ${(props) => JUSTIFY_CONTENT_MAP[props.justifyContent]};
 `;
 
-const gapStyle = props => {
+const gapSizes = (props) => {
+  const result = [];
   if (typeof props.gap === 'string') {
-    const gapSize = props.theme.global.edgeSize[props.gap] || props.gap;
-    return `grid-gap: ${gapSize} ${gapSize};`;
+    const size = props.theme.global.edgeSize[props.gap] || props.gap;
+    result[0] = size;
+    result[1] = size;
+  } else if (props.gap) {
+    if (props.gap.row)
+      result[0] = props.theme.global.edgeSize[props.gap.row] || props.gap.row;
+    if (props.gap.column)
+      result[1] =
+        props.theme.global.edgeSize[props.gap.column] || props.gap.column;
   }
-  if (props.gap.row && props.gap.column) {
-    return `
-      grid-row-gap: ${props.theme.global.edgeSize[props.gap.row] ||
-        props.gap.row};
-      grid-column-gap: ${props.theme.global.edgeSize[props.gap.column] ||
-        props.gap.column};
-    `;
+  return result;
+};
+
+const gapStyle = (props) => {
+  const sizes = gapSizes(props);
+  if (sizes[0] !== undefined && sizes[1] !== undefined) {
+    return `grid-gap: ${sizes[0]} ${sizes[1]};`;
   }
-  if (props.gap.row) {
-    return `
-      grid-row-gap: ${props.theme.global.edgeSize[props.gap.row] ||
-        props.gap.row};
-    `;
+  if (sizes[0] !== undefined) {
+    return `grid-row-gap: ${sizes[0]};`;
   }
-  if (props.gap.column) {
-    return `
-      grid-column-gap: ${props.theme.global.edgeSize[props.gap.column] ||
-        props.gap.column};
-    `;
+  if (sizes[1] !== undefined) {
+    return `grid-column-gap: ${sizes[1]};`;
   }
   return '';
 };
@@ -106,47 +91,60 @@ const SIZE_MAP = {
   '2/3': '66.66%',
 };
 
-const getRepeatCount = count =>
-  typeof count === 'number' ? count : `auto-${count}`;
+const normalizeSize = (size, props) =>
+  SIZE_MAP[size] || props.theme.global.size[size] || size;
 
-const getRepeatSize = (size, theme) => {
+const getRepeatCount = (count) =>
+  typeof count === 'number' ? count : `auto-${count || 'fit'}`;
+
+const getRepeatSize = (size, props) => {
   if (size === 'flex') return '1fr';
+  const gaps = gapSizes(props);
   let min;
   let max;
+  let minFill;
   if (Array.isArray(size)) {
-    min = theme.global.size[size[0]] || size[0];
-    max = theme.global.size[size[1]] || size[1];
+    const [minSize = 'auto', maxSize = 'auto'] = size;
+    min = normalizeSize(minSize, props);
+    if (min.search(/px/) !== -1) minFill = true;
+    max = normalizeSize(maxSize, props);
+    if (gaps[1] !== undefined) {
+      // account for the column gap when using fractional sizes, e.g. 1/3
+      if (minSize.indexOf('/') !== -1)
+        min = `calc(${min} - (${gaps[1]} * (1 - ${minSize})))`;
+      if (maxSize.indexOf('/') !== -1)
+        max = `calc(${max} - (${gaps[1]} * (1 - ${maxSize})))`;
+    }
   } else {
-    min = theme.global.size[size] || size;
+    min = normalizeSize(size, props);
+    if (min.search(/px/) !== -1) minFill = true;
     max = '1fr';
+    if (gaps[1] !== undefined) {
+      // account for column gap with fractional sizes, e.g. 1/3
+      if (size.indexOf('/') !== -1)
+        min = `calc(${min} - (${gaps[1]} * (1 - ${size})))`;
+    }
   }
-  if (min.search(/\d/) !== -1) {
+  if (minFill) {
+    // ensure we never go beyond the container width,
+    // for mobile/narrow situations
     min = `min(${min}, 100%)`;
   }
   return `minmax(${min}, ${max})`;
 };
 
-const sizeFor = (size, props, isRow) => {
-  const mapped = SIZE_MAP[size];
-  if (
-    isRow &&
-    mapped &&
-    (!props.fillContainer || props.fillContainer === 'horizontal')
-  ) {
-    console.warn('Grid needs `fill` when using fractional row sizes');
-  }
-  return mapped || props.theme.global.size[size] || size;
-};
-
-const columnsStyle = props => {
+const columnsStyle = (props) => {
   if (Array.isArray(props.columns)) {
     return css`
       grid-template-columns: ${props.columns
-        .map(s => {
+        .map((s) => {
           if (Array.isArray(s)) {
-            return `minmax(${sizeFor(s[0], props)}, ${sizeFor(s[1], props)})`;
+            return `minmax(${normalizeSize(s[0], props)}, ${normalizeSize(
+              s[1],
+              props,
+            )})`;
           }
-          return sizeFor(s, props);
+          return normalizeSize(s, props);
         })
         .join(' ')};
     `;
@@ -155,31 +153,30 @@ const columnsStyle = props => {
     return css`
       grid-template-columns: repeat(
         ${getRepeatCount(props.columns.count)},
-        ${getRepeatSize(props.columns.size, props.theme)}
+        ${getRepeatSize(props.columns.size, props)}
       );
     `;
   }
   return css`
     grid-template-columns: repeat(
       auto-fill,
-      ${getRepeatSize(props.columns, props.theme)}
+      ${getRepeatSize(props.columns, props)}
     );
   `;
 };
 
-const rowsStyle = props => {
+const rowsStyle = (props) => {
   if (Array.isArray(props.rowsProp)) {
     return css`
       grid-template-rows: ${props.rowsProp
-        .map(s => {
+        .map((s) => {
           if (Array.isArray(s)) {
-            return `minmax(${sizeFor(s[0], props, true)}, ${sizeFor(
+            return `minmax(${normalizeSize(s[0], props)}, ${normalizeSize(
               s[1],
               props,
-              true,
             )})`;
           }
-          return sizeFor(s, props, true);
+          return normalizeSize(s, props);
         })
         .join(' ')};
     `;
@@ -189,21 +186,21 @@ const rowsStyle = props => {
   `;
 };
 
-const areasStyle = props => {
+const areasStyle = (props) => {
   // translate areas objects into grid-template-areas syntax
   if (!Array.isArray(props.rowsProp) || !Array.isArray(props.columns)) {
     console.warn('Grid `areas` requires `rows` and `columns` to be arrays.');
   }
   if (
     Array.isArray(props.areas) &&
-    props.areas.every(area => Array.isArray(area))
+    props.areas.every((area) => Array.isArray(area))
   ) {
     return `grid-template-areas: ${props.areas
-      .map(area => `"${area.join(' ')}"`)
+      .map((area) => `"${area.join(' ')}"`)
       .join(' ')};`;
   }
   const cells = props.rowsProp.map(() => props.columns.map(() => '.'));
-  props.areas.forEach(area => {
+  props.areas.forEach((area) => {
     for (let row = area.start[1]; row <= area.end[1]; row += 1) {
       for (let column = area.start[0]; column <= area.end[0]; column += 1) {
         cells[row][column] = area.name;
@@ -211,33 +208,28 @@ const areasStyle = props => {
     }
   });
   return `grid-template-areas: ${cells
-    .map(r => `"${r.join(' ')}"`)
+    .map((r) => `"${r.join(' ')}"`)
     .join(' ')};`;
 };
 
-const StyledGrid = styled.div.attrs(props => ({
+const StyledGrid = styled.div.attrs((props) => ({
   'aria-label': props.a11yTitleProp,
 }))`
   display: grid;
   box-sizing: border-box;
 
   ${genericStyles}
-  ${props =>
-    props.border &&
-    (Array.isArray(props.border)
-      ? props.border.map(border =>
-          borderStyle(border, props.responsive, props.theme),
-        )
-      : borderStyle(props.border, props.responsive, props.theme))}
-  ${props => fillStyle(props.fillContainer)}
-  ${props => props.align && alignStyle}
-  ${props => props.alignContent && alignContentStyle}
-  ${props => props.areas && areasStyle(props)}
-  ${props => props.columns && columnsStyle(props)}
-  ${props => props.gap && gapStyle(props)}
-  ${props => props.justify && justifyStyle}
-  ${props => props.justifyContent && justifyContentStyle}
-  ${props =>
+  ${(props) =>
+    props.border && borderStyle(props.border, props.responsive, props.theme)}
+  ${(props) => fillStyle(props.fillContainer)}
+  ${(props) => props.align && alignStyle}
+  ${(props) => props.alignContent && alignContentStyle}
+  ${(props) => props.areas && areasStyle(props)}
+  ${(props) => props.columns && columnsStyle(props)}
+  ${(props) => props.gap && gapStyle(props)}
+  ${(props) => props.justify && justifyStyle}
+  ${(props) => props.justifyContent && justifyContentStyle}
+  ${(props) =>
     props.pad &&
     edgeStyle(
       'padding',
@@ -246,8 +238,10 @@ const StyledGrid = styled.div.attrs(props => ({
       props.theme.global.edgeSize.responsiveBreakpoint,
       props.theme,
     )}
-  ${props => props.rowsProp && rowsStyle(props)}
-  ${props => props.theme.grid && props.theme.grid.extend}
+  ${(props) => props.rowsProp && rowsStyle(props)}
+  ${(props) => props.heightProp && heightStyle(props.heightProp, props.theme)}
+  ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
+  ${(props) => props.theme.grid && props.theme.grid.extend}
 `;
 
 StyledGrid.defaultProps = {};

@@ -1,0 +1,74 @@
+{
+  "calendar": {
+    "previousMove": "Moved to {date}",
+    "previous": "Go to {date}",
+    "nextMove": "Moved to {date}",
+    "next": "Go to {date}"
+  },
+  "carousel": {
+    "previous": "Go to slide {slide}",
+    "next": "Go to slide {slide}",
+    "jump": "Jump to slide {slide}"
+  },
+  "dateInput": {
+    "openCalendar": "Press space to open calendar",
+    "enterCalendar": "Calendar is open, use arrow keys and enter to select a date.",
+    "exitCalendar": "Exited calendar dialog"
+  },
+  "fileInput": {
+    "browse": "browse",
+    "dropPrompt": "Drop file here or",
+    "dropPromptMultiple": "Drop files here or",
+    "files": "files",
+    "maxSizeSingle": "The file is too large. Select a file no larger than {maxSize}.",
+    "maxSizeMultiple": {
+      "singular": "One file is too large. Select files which are no larger than {maxSize}.",
+      "plural": "{numOfFiles} files are too large. Select files which are no larger than {maxSize}."
+    },
+    "remove": "remove",
+    "removeAll": "remove all",
+    "maxFile": "Attach a maximum of {max} files only."
+  },
+  "form": {
+    "invalid": "invalid",
+    "required": "required"
+  },
+  "menu": {
+    "openMenu": "Open Menu",
+    "closeMenu": "Close Menu"
+  },
+  "rangeSelector": {
+    "lower": "Lower Bounds",
+    "upper": "Upper Bounds"
+  },
+  "select": {
+    "multiple": "multiple",
+    "selected": "; Selected: {currentSelectedValue}"
+  },
+  "skipLinks": {
+    "skipTo": "Skip To:"
+  },
+  "tabs": {
+    "tabContents": "Tab Contents"
+  },
+  "textInput": {
+    "enterSelect": "(Press Enter to Select)",
+    "suggestionsCount": "suggestions available",
+    "suggestionsExist": "This input has suggestions use arrow keys to navigate",
+    "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
+  },
+  "video": {
+    "captions": "closed captions",
+    "closeMenu": "close menu",
+    "audioDescriptions": "video audio description",
+    "fullScreen": "full screen",
+    "progressMeter": "video progress",
+    "scrubber": "scrubber",
+    "openMenu": "open menu",
+    "pauseButton": "pause",
+    "playButton": "play",
+    "volumeDown": "volume down",
+    "volumeUp": "volume up",
+    "description": "video audio description"
+  }
+}

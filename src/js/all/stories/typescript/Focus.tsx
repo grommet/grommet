@@ -41,5 +41,5 @@ const CustomFocusFC = () => (
 export const Focus = () => <CustomFocusFC />;
 
 export default {
-  title: 'Others/Theme/Focus',
+  title: 'Utilities/Theme/Focus',
 };

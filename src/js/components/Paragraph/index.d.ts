@@ -16,12 +16,16 @@ export interface ParagraphProps {
   fill?: boolean;
   gridArea?: GridAreaType;
   margin?: MarginType;
+  maxLines?: number;
   responsive?: boolean;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | string;
   textAlign?: TextAlignType;
 }
 
-declare const Paragraph: React.FC<ParagraphProps &
-  Omit<JSX.IntrinsicElements['p'], 'color'>>;
+export interface ParagraphExtendedProps
+  extends ParagraphProps,
+    Omit<JSX.IntrinsicElements['p'], 'color'> {}
+
+declare const Paragraph: React.FC<ParagraphExtendedProps>;
 
 export { Paragraph };

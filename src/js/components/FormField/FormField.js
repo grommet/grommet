@@ -4,11 +4,15 @@ import React, {
   forwardRef,
   useContext,
   useState,
+  useEffect,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { focusStyle, parseMetricToNum } from '../../utils';
+import { containsFocus, shouldKeepFocus } from '../../utils/DOM';
+import { focusStyle } from '../../utils/styles';
+import { parseMetricToNum } from '../../utils/mixins';
+import { useForwardedRef } from '../../utils/refs';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { CheckBoxGroup } from '../CheckBoxGroup';
@@ -16,13 +20,19 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
+import { FormFieldPropTypes } from './propTypes';
 
 const grommetInputNames = [
+  'CheckBox',
+  'CheckBoxGroup',
   'TextInput',
   'Select',
   'MaskedInput',
   'TextArea',
   'DateInput',
+  'FileInput',
+  'RadioButtonGroup',
+  'RangeInput',
 ];
 const grommetInputPadNames = [
   'CheckBox',
@@ -31,25 +41,31 @@ const grommetInputPadNames = [
   'RangeInput',
 ];
 
-const isGrommetInput = comp =>
+const isGrommetInput = (comp) =>
   comp &&
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
 const FormFieldBox = styled(Box)`
-  ${props => props.focus && focusStyle({ justBorder: true })}
-  ${props => props.theme.formField && props.theme.formField.extend}
+  ${(props) => props.focus && focusStyle({ justBorder: true })}
+  ${(props) => props.theme.formField && props.theme.formField.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
-  ${props => props.focus && focusStyle({ justBorder: true })}
+  ${(props) => props.focus && focusStyle({ justBorder: true })}
 `;
 
 const StyledMessageContainer = styled(Box)`
-  ${props =>
+  ${(props) =>
     props.messageType &&
     props.theme.formField[props.messageType].container &&
     props.theme.formField[props.messageType].container.extend}
+`;
+
+const RequiredText = styled(Text)`
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 `;
 
 const Message = ({ error, info, message, type, ...rest }) => {
@@ -87,7 +103,10 @@ const Message = ({ error, info, message, type, ...rest }) => {
 
 const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   const formContext = useContext(FormContext);
-  const [value, setValue] = formContext.useFormInput(name, rest.value);
+  const [value, setValue] = formContext.useFormInput({
+    name,
+    value: rest.value,
+  });
   const InputComponent = component || TextInput;
   // Grommet input components already check for FormContext
   // and, using their `name`, end up calling the useFormInput.setValue()
@@ -98,7 +117,7 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
     ? { focusIndicator: false, onChange, plain: true }
     : {
         value,
-        onChange: event => {
+        onChange: (event) => {
           setValue(
             event.value !== undefined ? event.value : event.target.value,
           );
@@ -114,6 +133,19 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
       {...extraProps}
     />
   );
+};
+
+const useDebounce = () => {
+  const [func, setFunc] = useState();
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+
+  useEffect(() => {
+    let timer;
+    if (func) timer = setTimeout(() => func(), theme.global.debounceDelay);
+    return () => clearTimeout(timer);
+  }, [func, theme.global.debounceDelay]);
+
+  return setFunc;
 };
 
 const FormField = forwardRef(
@@ -132,6 +164,7 @@ const FormField = forwardRef(
       margin,
       name, // pass through in renderInput()
       onBlur,
+      onChange,
       onFocus,
       pad,
       required,
@@ -148,7 +181,9 @@ const FormField = forwardRef(
       info,
       inForm,
       onBlur: contextOnBlur,
+      onChange: contextOnChange,
     } = formContext.useFormField({
+      disabled,
       error: errorProp,
       info: infoProp,
       name,
@@ -156,9 +191,11 @@ const FormField = forwardRef(
       validate,
     });
     const [focus, setFocus] = useState();
+    const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
+    const debounce = useDebounce();
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -172,7 +209,7 @@ const FormField = forwardRef(
     let contents =
       (themeBorder &&
         children &&
-        Children.map(children, child => {
+        Children.map(children, (child) => {
           if (
             child &&
             child.type &&
@@ -190,6 +227,10 @@ const FormField = forwardRef(
             return cloneElement(child, {
               plain: true,
               focusIndicator: false,
+              pad:
+                'CheckBox'.indexOf(child.type.displayName) !== -1
+                  ? formFieldTheme?.checkBox?.pad
+                  : undefined,
             });
           }
           return child;
@@ -226,6 +267,29 @@ const FormField = forwardRef(
       }
     }
 
+    // fileinput handle
+    // use fileinput plain use formfield to drive the border
+    let isFileInputComponent;
+    if (
+      children &&
+      Children.forEach(children, (child) => {
+        if (
+          child &&
+          child.type &&
+          'FileInput'.indexOf(child.type.displayName) !== -1
+        )
+          isFileInputComponent = true;
+      })
+    );
+
+    if (
+      component &&
+      component.displayName === 'FileInput' &&
+      !isFileInputComponent
+    ) {
+      isFileInputComponent = true;
+    }
+
     if (!themeBorder) {
       contents = (
         <Box {...themeContentProps} {...contentProps}>
@@ -242,8 +306,22 @@ const FormField = forwardRef(
       formFieldTheme.disabled.border.color
     ) {
       borderColor = formFieldTheme.disabled.border.color;
-    } else if (error && themeBorder && themeBorder.error.color) {
-      borderColor = themeBorder.error.color || 'status-critical';
+    } else if (
+      // backward compatibility check
+      (error && themeBorder && themeBorder.error.color) ||
+      (error && formFieldTheme.error && formFieldTheme.error.border)
+    ) {
+      if (
+        themeBorder.error.color &&
+        formFieldTheme.error.border === undefined
+      ) {
+        borderColor = themeBorder.error.color || 'status-critical';
+      } else if (
+        formFieldTheme.error.border &&
+        formFieldTheme.error.border.color
+      ) {
+        borderColor = formFieldTheme.error.border.color || 'status-critical';
+      }
     } else if (
       focus &&
       formFieldTheme.focus &&
@@ -268,17 +346,30 @@ const FormField = forwardRef(
     let abutMargin;
     let outerStyle = style;
 
+    // If fileinput is wrapped in a formfield we want to use
+    // the border style from the fileInput.theme. We also do not
+    // want the foocus around the formfield since the the focus
+    // is on the anchor/button inside fileinput
+
     if (themeBorder) {
       const innerProps =
         themeBorder.position === 'inner'
           ? {
               border: {
                 ...themeBorder,
-                side: themeBorder.side || 'bottom',
+                size: isFileInputComponent
+                  ? theme.fileInput.border.size
+                  : undefined,
+                style: isFileInputComponent
+                  ? theme.fileInput.border.style
+                  : undefined,
+                side: isFileInputComponent
+                  ? theme.fileInput.border.side
+                  : themeBorder.side || 'bottom',
                 color: borderColor,
               },
               round: formFieldTheme.round,
-              focus,
+              focus: isFileInputComponent ? undefined : focus,
             }
           : {};
       contents = (
@@ -361,25 +452,39 @@ const FormField = forwardRef(
       // a11yTitle necessary so screenreader announces as "required"
       // as opposed to "star"
       // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
-      requiredIndicator = <Text a11yTitle="required">*</Text>;
+      requiredIndicator = <RequiredText a11yTitle="required">*</RequiredText>;
+
+    let showRequiredIndicator = required && requiredIndicator;
+    if (typeof required === 'object' && required.indicator === false)
+      showRequiredIndicator = false;
 
     return (
       <FormFieldBox
-        ref={ref}
+        ref={formFieldRef}
         className={className}
         background={outerBackground}
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
-        onFocus={event => {
-          setFocus(true);
+        onFocus={(event) => {
+          setFocus(containsFocus(formFieldRef.current) && shouldKeepFocus());
           if (onFocus) onFocus(event);
         }}
-        onBlur={event => {
+        onBlur={(event) => {
           setFocus(false);
           if (contextOnBlur) contextOnBlur(event);
           if (onBlur) onBlur(event);
         }}
+        onChange={
+          contextOnChange || onChange
+            ? (event) => {
+                event.persist();
+                if (onChange) onChange(event);
+                if (contextOnChange)
+                  debounce(() => () => contextOnChange(event));
+              }
+            : undefined
+        }
         {...containerRest}
       >
         {(label && component !== CheckBox) || help ? (
@@ -387,14 +492,12 @@ const FormField = forwardRef(
             {label && component !== CheckBox && (
               <Text as="label" htmlFor={htmlFor} {...labelStyle}>
                 {label}
-                {required && requiredIndicator ? requiredIndicator : undefined}
+                {showRequiredIndicator ? requiredIndicator : undefined}
               </Text>
             )}
             <Message message={help} {...formFieldTheme.help} />
           </>
-        ) : (
-          undefined
-        )}
+        ) : undefined}
         {contents}
         <Message type="error" message={error} {...formFieldTheme.error} />
         <Message type="info" message={info} {...formFieldTheme.info} />
@@ -404,12 +507,6 @@ const FormField = forwardRef(
 );
 
 FormField.displayName = 'FormField';
+FormField.propTypes = FormFieldPropTypes;
 
-let FormFieldDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FormFieldDoc = require('./doc').doc(FormField);
-}
-const FormFieldWrapper = FormFieldDoc || FormField;
-
-export { FormFieldWrapper as FormField };
+export { FormField };

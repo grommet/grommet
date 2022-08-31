@@ -9,6 +9,7 @@ import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
 
 import { AccordionContext } from '../Accordion/AccordionContext';
+import { AccordionPanelPropTypes } from './propTypes';
 
 const AccordionPanel = forwardRef(
   (
@@ -93,20 +94,21 @@ const AccordionPanel = forwardRef(
           aria-expanded={active}
           plain={theme.button.default ? true : undefined}
           onClick={onPanelChange}
-          onMouseOver={event => {
+          hoverIndicator={theme.accordion.hover.background}
+          onMouseOver={(event) => {
             setHover(headingColor);
             if (onMouseOver) onMouseOver(event);
           }}
-          onMouseOut={event => {
+          onMouseOut={(event) => {
             setHover(undefined);
             if (onMouseOut) onMouseOut(event);
           }}
-          onFocus={event => {
+          onFocus={(event) => {
             setHover(headingColor);
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             setHover(undefined);
             setFocus(false);
             if (onBlur) onBlur(event);
@@ -137,7 +139,10 @@ const AccordionPanel = forwardRef(
                 label
               )}
               {AccordionIcon && (
-                <Box pad={{ horizontal: 'small' }}>
+                <Box
+                  pad={{ horizontal: 'small' }}
+                  width={{ min: 'fit-content' }}
+                >
                   <AccordionIcon color={iconColor} />
                 </Box>
               )}
@@ -158,11 +163,5 @@ const AccordionPanel = forwardRef(
 
 AccordionPanel.displayName = 'AccordionPanel';
 
-let AccordionPanelDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  AccordionPanelDoc = require('./doc').doc(AccordionPanel);
-}
-const AccordionPanelWrapper = AccordionPanelDoc || AccordionPanel;
-
-export { AccordionPanelWrapper as AccordionPanel };
+AccordionPanel.propTypes = AccordionPanelPropTypes;
+export { AccordionPanel };

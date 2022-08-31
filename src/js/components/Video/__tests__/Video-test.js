@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -20,8 +20,6 @@ describe('Video', () => {
       </Grommet>
     );
   });
-
-  afterEach(cleanup);
 
   test('should have no accessibility violations', async () => {
     const { container } = render(<App />);

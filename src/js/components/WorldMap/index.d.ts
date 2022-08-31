@@ -7,6 +7,7 @@ import {
   GridAreaType,
   MarginType,
 } from '../../utils';
+import { DropProps } from '../Drop';
 
 export interface WorldMapProps {
   a11yTitle?: A11yTitleType;
@@ -31,6 +32,8 @@ export interface WorldMapProps {
   onSelectPlace?: (place: [number, number]) => void;
   places?: {
     color?: string | { dark?: string; light?: string };
+    content?: React.ReactNode;
+    dropProps?: DropProps;
     name?: string;
     location: number[];
     onClick?: (name: string) => void;
@@ -38,7 +41,10 @@ export interface WorldMapProps {
   }[];
 }
 
-declare const WorldMap: React.ComponentClass<WorldMapProps &
-  Omit<JSX.IntrinsicElements['svg'], 'color'>>;
+export interface WorldMapExtendedProps
+  extends WorldMapProps,
+    Omit<JSX.IntrinsicElements['svg'], 'color' | 'fill'> {}
+
+declare const WorldMap: React.FC<WorldMapExtendedProps>;
 
 export { WorldMap };

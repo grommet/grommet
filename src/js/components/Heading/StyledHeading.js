@@ -8,7 +8,7 @@ import {
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const sizeStyle = props => {
+const sizeStyle = (props) => {
   // size is a combination of the level and size properties
   const size = props.size || 'medium';
   const headingTheme = props.theme.heading;
@@ -20,9 +20,11 @@ const sizeStyle = props => {
         font-size: ${data ? data.size : size};
         line-height: ${data ? data.height : 'normal'};
         max-width: ${(props.fillProp && 'none') ||
-          (data && data.maxWidth) ||
-          levelStyle.medium.maxWidth};
-        font-weight: ${levelStyle.font.weight || headingTheme.weight};
+        (data && data.maxWidth) ||
+        levelStyle.medium.maxWidth};
+        font-weight: ${props.weight ||
+        levelStyle.font.weight ||
+        headingTheme.weight};
       `,
     ];
     if (props.responsive && headingTheme.responsiveBreakpoint) {
@@ -53,7 +55,7 @@ const sizeStyle = props => {
   return '';
 };
 
-const fontFamily = props => {
+const fontFamily = (props) => {
   const { font } = props.theme.heading.level[props.level] || {};
   if (font && font.family) {
     return css`
@@ -74,18 +76,18 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  color: ${props =>
+  color: ${(props) =>
     normalizeColor(props.colorProp || props.theme.heading.color, props.theme)};
 `;
 
 const StyledHeading = styled.h1`
   ${genericStyles}
-  ${props => fontFamily(props)}
-  ${props => sizeStyle(props)}
-  ${props => props.textAlign && textAlignStyle}
-  ${props => props.truncate && truncateStyle}
-  ${props => (props.colorProp || props.theme.heading.color) && colorStyle}
-  ${props => props.theme.heading && props.theme.heading.extend}
+  ${(props) => fontFamily(props)}
+  ${(props) => sizeStyle(props)}
+  ${(props) => props.textAlign && textAlignStyle}
+  ${(props) => props.truncate && truncateStyle}
+  ${(props) => (props.colorProp || props.theme.heading.color) && colorStyle}
+  ${(props) => props.theme.heading && props.theme.heading.extend}
 `;
 
 StyledHeading.defaultProps = {};

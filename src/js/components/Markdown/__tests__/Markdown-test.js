@@ -1,9 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Markdown } from '..';
+import { Box } from '../../Box';
 
 const CONTENT = `
 # H1
@@ -28,12 +29,26 @@ Markdown | Less | Pretty
 1 | 2 | 3
 `;
 
+const Wrapper = props => <Box gap="small" {...props} />;
+
 test('Markdown renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Markdown>{CONTENT}</Markdown>
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('wrapper', () => {
+  const { container } = render(
+    <Grommet>
+      <Markdown
+        options={{ wrapper: Wrapper }}
+      >{CONTENT}</Markdown>
+    </Grommet>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
 });

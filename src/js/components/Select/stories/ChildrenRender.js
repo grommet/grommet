@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 import { FormClose } from 'grommet-icons';
-import { Box, Button, Grommet, Select, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Select, Text } from 'grommet';
 
 const allSeasons = [
   'S01',
@@ -17,26 +16,26 @@ const allSeasons = [
   'S10',
 ];
 
-export const ChildrenRender = () => {
+export const Children = () => {
   const [selected, setSelected] = useState([]);
 
-  const onRemoveSeason = season => {
+  const onRemoveSeason = (season) => {
     const seasonIndex = allSeasons.indexOf(season);
     setSelected(
-      selected.filter(selectedSeason => selectedSeason !== seasonIndex),
+      selected.filter((selectedSeason) => selectedSeason !== seasonIndex),
     );
   };
 
-  const renderSeason = season => (
+  const renderSeason = (season) => (
     <Button
       key={`season_tag_${season}`}
       href="#"
-      onClick={event => {
+      onClick={(event) => {
         event.preventDefault();
         event.stopPropagation();
         onRemoveSeason(season);
       }}
-      onFocus={event => event.stopPropagation()}
+      onFocus={(event) => event.stopPropagation()}
     >
       <Box
         align="center"
@@ -44,18 +43,12 @@ export const ChildrenRender = () => {
         gap="xsmall"
         pad={{ vertical: 'xsmall', horizontal: 'small' }}
         margin="xsmall"
-        background="accent-1"
+        background="brand"
         round="large"
       >
-        <Text size="small" color="white">
-          {season}
-        </Text>
-        <Box background="white" round="full" margin={{ left: 'xsmall' }}>
-          <FormClose
-            color="accent-1"
-            size="small"
-            style={{ width: '12px', height: '12px' }}
-          />
+        <Text size="small">{season}</Text>
+        <Box round="full" margin={{ left: 'xsmall' }}>
+          <FormClose size="small" style={{ width: '12px', height: '12px' }} />
         </Box>
       </Box>
     </Button>
@@ -68,41 +61,48 @@ export const ChildrenRender = () => {
   );
 
   return (
-    <Grommet full theme={grommet}>
-      <Box fill align="center" justify="center">
-        <Select
-          closeOnChange={false}
-          multiple
-          value={
-            <Box wrap direction="row" width="small">
-              {selected && selected.length ? (
-                selected.map(index => renderSeason(allSeasons[index]))
-              ) : (
-                <Box
-                  pad={{ vertical: 'xsmall', horizontal: 'small' }}
-                  margin="xsmall"
-                >
-                  Select Season
-                </Box>
-              )}
-            </Box>
-          }
-          options={allSeasons}
-          selected={selected}
-          disabled={[2, 6]}
-          onChange={({ selected: nextSelected }) => {
-            setSelected([...nextSelected].sort());
-          }}
-        >
-          {renderOption}
-        </Select>
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box fill align="center" justify="center">
+      <Select
+        closeOnChange={false}
+        multiple
+        value={
+          <Box wrap direction="row" width="small">
+            {selected && selected.length ? (
+              selected.map((index) => renderSeason(allSeasons[index]))
+            ) : (
+              <Box
+                pad={{ vertical: 'xsmall', horizontal: 'small' }}
+                margin="xsmall"
+              >
+                Select Season
+              </Box>
+            )}
+          </Box>
+        }
+        options={allSeasons}
+        selected={selected}
+        disabled={[2, 6]}
+        onChange={({ selected: nextSelected }) => {
+          setSelected([...nextSelected].sort());
+        }}
+      >
+        {renderOption}
+      </Select>
+    </Box>
+    // </Grommet>
   );
 };
 
-ChildrenRender.storyName = 'Children render';
+Children.parameters = {
+  chromatic: { disable: true },
+};
+
+Children.args = {
+  full: true,
+};
 
 export default {
-  title: 'Input/Select/Children render',
+  title: 'Input/Select/Children',
 };

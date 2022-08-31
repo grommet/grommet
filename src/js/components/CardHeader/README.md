@@ -1,12 +1,2 @@
 ## CardHeader
-The Card Header.
-
-
-## Properties
-
-  
-## Intrinsic element
-
-```
-div
-```
+Documentation for this component: https://v2.grommet.io/card

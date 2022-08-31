@@ -1,8 +1,18 @@
 import * as React from 'react';
-import { Omit, PlaceHolderType, TextAlignType } from '../../utils';
+import {
+  A11yTitleType,
+  Omit,
+  PlaceHolderType,
+  TextAlignType,
+} from '../../utils';
 import { DropProps } from '../Drop';
 
-export interface TextInputProps {
+export interface TextInputProps
+  extends Omit<
+    JSX.IntrinsicElements['input'],
+    'onSelect' | 'size' | 'placeholder'
+  > {
+  a11yTitle?: A11yTitleType;
   dropAlign?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
@@ -42,7 +52,6 @@ export interface TextInputProps {
   value?: string | number;
 }
 
-declare const TextInput: React.FC<TextInputProps &
-  Omit<JSX.IntrinsicElements['input'], 'onSelect' | 'size' | 'placeholder'>>;
+declare const TextInput: React.FC<TextInputProps>;
 
 export { TextInput };

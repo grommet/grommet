@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { Grommet, DataTable } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { DataTable } from 'grommet';
 
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
@@ -18,18 +17,19 @@ export const ControlledGroupedDataTable = () => {
   const [expandedGroups, setExpandedGroups] = useState([DATA[2].location]);
 
   return (
-    <Grommet theme={grommet}>
-      <DataTable
-        columns={groupColumns}
-        data={DATA}
-        groupBy={{
-          property: 'location',
-          expand: expandedGroups,
-          onExpand: setExpandedGroups,
-        }}
-        sortable
-      />
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <DataTable
+      columns={groupColumns}
+      data={DATA}
+      groupBy={{
+        property: 'location',
+        expand: expandedGroups,
+        onExpand: setExpandedGroups,
+      }}
+      sortable
+    />
+    // </Grommet>
   );
 };
 

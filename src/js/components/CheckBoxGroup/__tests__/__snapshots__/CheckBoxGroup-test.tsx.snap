@@ -1,0 +1,677 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBoxGroup custom theme 1`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 bRUjod StyledCheckBoxGroup-sc-2nhc5d-0"
+    role="group"
+  >
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="first-label"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        first-label
+      </span>
+    </label>
+    <div
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kGhSUQ"
+    />
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="second-label"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        second-label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`CheckBoxGroup disabled renders 1`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
+    role="group"
+  >
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hRSKdR"
+      disabled=""
+      label="First"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+        disabled=""
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 izuNoZ"
+          disabled=""
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+          disabled=""
+        />
+      </div>
+      <span>
+        First
+      </span>
+    </label>
+    <div
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 qdAYv"
+    />
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hRSKdR"
+      disabled=""
+      label="Second"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+        disabled=""
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 izuNoZ"
+          disabled=""
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+          disabled=""
+        />
+      </div>
+      <span>
+        Second
+      </span>
+    </label>
+  </div>
+  <div
+    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
+    role="group"
+  >
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hRSKdR"
+      disabled=""
+      label="First"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+        disabled=""
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 izuNoZ"
+          disabled=""
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+          disabled=""
+        />
+      </div>
+      <span>
+        First
+      </span>
+    </label>
+  </div>
+  <div
+    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
+    role="group"
+  >
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hRSKdR"
+      disabled=""
+      label="First"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+        disabled=""
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 izuNoZ"
+          disabled=""
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+          disabled=""
+        />
+      </div>
+      <span>
+        First
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`CheckBoxGroup initial value renders 1`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
+    role="group"
+  >
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="Maui"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        Maui
+      </span>
+    </label>
+    <div
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 qdAYv"
+    />
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="Jerusalem"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          checked=""
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 bGhwjx StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        >
+          <svg
+            class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 frpnnl"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6,11.3 L10.3,16 L18,6.2"
+              fill="none"
+            />
+          </svg>
+        </div>
+      </div>
+      <span>
+        Jerusalem
+      </span>
+    </label>
+    <div
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 qdAYv"
+    />
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="Wuhan"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          checked=""
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 bGhwjx StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        >
+          <svg
+            class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 frpnnl"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6,11.3 L10.3,16 L18,6.2"
+              fill="none"
+            />
+          </svg>
+        </div>
+      </div>
+      <span>
+        Wuhan
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`CheckBoxGroup labelKey 1`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
+    role="group"
+  >
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="first-label"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        first-label
+      </span>
+    </label>
+    <div
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 qdAYv"
+    />
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="second-label"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        second-label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`CheckBoxGroup onChange 1`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
+    role="group"
+  >
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="first-label"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 bGhwjx StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        >
+          <svg
+            class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 frpnnl"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6,11.3 L10.3,16 L18,6.2"
+              fill="none"
+            />
+          </svg>
+        </div>
+      </div>
+      <span>
+        first-label
+      </span>
+    </label>
+    <div
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 qdAYv"
+    />
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="second-label"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        second-label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 1`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 hHdQrv StyledCheckBoxGroup-sc-2nhc5d-0"
+    role="group"
+    tabindex="0"
+  >
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="first-label"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 bGhwjx StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        >
+          <svg
+            class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 frpnnl"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6,11.3 L10.3,16 L18,6.2"
+              fill="none"
+            />
+          </svg>
+        </div>
+      </div>
+      <span>
+        first-label
+      </span>
+    </label>
+    <div
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 qdAYv"
+    />
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="second-label"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        second-label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 hHdQrv StyledCheckBoxGroup-sc-2nhc5d-0"
+    role="group"
+    tabindex="0"
+  >
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="first-label"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        first-label
+      </span>
+    </label>
+    <div
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 qdAYv"
+    />
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="second-label"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        second-label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`CheckBoxGroup options renders 1`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
+    role="group"
+  >
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="First"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        First
+      </span>
+    </label>
+    <div
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 qdAYv"
+    />
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="Second"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        Second
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`CheckBoxGroup value renders 1`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
+    role="group"
+  >
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="First"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          checked=""
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 bGhwjx StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        >
+          <svg
+            class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 frpnnl"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6,11.3 L10.3,16 L18,6.2"
+              fill="none"
+            />
+          </svg>
+        </div>
+      </div>
+      <span>
+        First
+      </span>
+    </label>
+    <div
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 qdAYv"
+    />
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="Second"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        Second
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`CheckBoxGroup valueKey 1`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
+    role="group"
+  >
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="first-label"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        first-label
+      </span>
+    </label>
+    <div
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 qdAYv"
+    />
+    <label
+      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+      label="second-label"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      >
+        <input
+          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+          type="checkbox"
+        />
+        <div
+          class="StyledBox-sc-13pk1d4-0 kibvml StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        />
+      </div>
+      <span>
+        second-label
+      </span>
+    </label>
+  </div>
+</div>
+`;

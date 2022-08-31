@@ -18,6 +18,10 @@ export interface ImageProps {
   opacity?: 'weak' | 'medium' | 'strong' | string | boolean;
 }
 
-declare const Image: React.FC<ImageProps & JSX.IntrinsicElements['img']>;
+type imgProps = JSX.IntrinsicElements['img'];
+
+export interface ImageExtendedProps extends ImageProps, imgProps {}
+
+declare const Image: React.FC<ImageExtendedProps>;
 
 export { Image };

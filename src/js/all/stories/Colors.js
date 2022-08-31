@@ -56,5 +56,5 @@ export const Colors = () => (
 );
 
 export default {
-  title: 'Others/Theme/Colors',
+  title: 'Utilities/Theme/Colors',
 };

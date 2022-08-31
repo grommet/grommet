@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, List } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, List, Layer, Button, Text } from 'grommet';
 
 const locations = [
   'Boise',
@@ -25,17 +24,35 @@ for (let i = 0; i < 40; i += 1) {
 
 export const OnClickItemList = () => {
   const [clicked, setClicked] = React.useState();
-  return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large" gap="large">
-        <List
-          data={data.slice(0, 10)}
-          onClickItem={event => setClicked(event.item)}
-        />
+  const [show, setShow] = React.useState();
 
-        {clicked && JSON.stringify(clicked, null, 2)}
-      </Box>
-    </Grommet>
+  return (
+    <Box align="center" pad="large" gap="large">
+      <List
+        data={data.slice(0, 10)}
+        onClickItem={(event) => {
+          setShow(true);
+          setClicked(event.item);
+        }}
+      />
+
+      {show && (
+        <Layer
+          position="center"
+          onEsc={() => setShow(false)}
+          onClickOutside={() => setShow(false)}
+        >
+          <Box margin="medium">
+            <Text>{clicked && JSON.stringify(clicked, null, 2)}</Text>
+            <Button
+              margin={{ top: 'medium' }}
+              label="close"
+              onClick={() => setShow(false)}
+            />
+          </Box>
+        </Layer>
+      )}
+    </Box>
   );
 };
 

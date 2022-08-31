@@ -1,18 +1,2 @@
 ## TableHeader
-The header of a table.
-
-## Usage
-
-```javascript
-import { TableHeader } from 'grommet';
-<TableHeader />
-```
-
-## Properties
-
-  
-## Intrinsic element
-
-```
-thead
-```
+Documentation for this component: https://v2.grommet.io/table

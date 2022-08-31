@@ -5,15 +5,13 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { Add } from 'grommet-icons';
 
 import { Grommet, Button } from '../..';
 import { buttonKindTheme } from './theme/buttonKindTheme';
 
 describe('Button kind', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container, getByText } = render(
       <Grommet
@@ -104,6 +102,7 @@ describe('Button kind', () => {
     const { container } = render(
       <Grommet theme={buttonKindTheme}>
         <Button primary />
+        <Button primary disabled />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -325,19 +324,18 @@ describe('Button kind', () => {
       <Grommet
         theme={{
           button: {
-            default: {
-              size: {
-                small: {
-                  border: {
-                    radius: '4px',
-                  },
-                  pad: {
-                    vertical: '4px',
-                    horizontal: '8px',
-                  },
+            size: {
+              small: {
+                border: {
+                  radius: '4px',
+                },
+                pad: {
+                  vertical: '4px',
+                  horizontal: '8px',
                 },
               },
             },
+            default: {},
           },
         }}
       >
@@ -380,5 +378,258 @@ describe('Button kind', () => {
 
     fireEvent.mouseOver(getByText('Button'));
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`should apply styling according to theme size definitions`, () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {},
+            size: {
+              small: {
+                border: {
+                  radius: '4px',
+                },
+                pad: {
+                  vertical: '4px',
+                  horizontal: '8px',
+                },
+              },
+              medium: {
+                border: {
+                  radius: '4px',
+                },
+                pad: {
+                  vertical: '6px',
+                  horizontal: '12px',
+                },
+              },
+              large: {
+                border: {
+                  radius: '6px',
+                },
+                pad: {
+                  vertical: '6px',
+                  horizontal: '16px',
+                },
+              },
+            },
+          },
+        }}
+      >
+        <Button label="Button" size="small" />
+        {/* button with no size specified should have medium styling applied 
+        by default */}
+        <Button label="Button" />
+        <Button label="Button" size="medium" />
+        <Button label="Button" size="large" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should be offset from top-right corner`, () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              border: {
+                color: 'border',
+                width: '2px',
+              },
+            },
+          },
+        }}
+      >
+        <Button a11yTitle="Button, alert" label="Button" badge />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should display number content`, () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              border: {
+                color: 'border',
+                width: '2px',
+              },
+            },
+          },
+        }}
+      >
+        <Button a11yTitle="Button, 2 unread alerts" label="Button" badge={2} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should display "+" when number is greater than max`, () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              border: {
+                color: 'border',
+                width: '2px',
+              },
+            },
+          },
+        }}
+      >
+        <Button
+          a11yTitle="Button, 100 unread alerts"
+          label="Button"
+          badge={{ value: 100, max: 9 }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should apply background`, () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              border: {
+                color: 'border',
+                width: '2px',
+              },
+            },
+          },
+        }}
+      >
+        <Button
+          a11yTitle="Button, 100 unread alerts"
+          label="Button"
+          badge={{
+            background: 'status-ok',
+            value: 100,
+          }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should render custom element`, () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              border: {
+                color: 'border',
+                width: '2px',
+              },
+            },
+          },
+        }}
+      >
+        <Button
+          a11yTitle="Button, Add user alert"
+          label="Button"
+          badge={<Add />}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should render relative to contents when button has no 
+  border or background`, () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: { default: {} },
+        }}
+      >
+        <Button a11yTitle="Button, Add user alert" icon={<Add />} badge />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`hoverIndicator with color and background`, () => {
+    const { container, getByText } = render(
+      <Grommet
+        theme={{
+          button: { default: {} },
+        }}
+      >
+        <Button
+          hoverIndicator={{
+            background: {
+              color: 'pink',
+            },
+            color: 'white',
+          }}
+          label="Button"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseOver(getByText('Button'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`hover secondary with color and background`, () => {
+    const { container, getByText } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {},
+            secondary: {
+              color: 'white',
+              background: {
+                color: 'skyblue',
+              },
+            },
+            hover: {
+              secondary: {
+                color: 'green',
+                background: {
+                  color: 'orange',
+                },
+              },
+            },
+          },
+        }}
+      >
+        <Button secondary label="Button" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseOver(getByText('Button'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`plain with icon`, () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          button: { default: {} },
+        }}
+      >
+        <Button plain icon={<Add />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

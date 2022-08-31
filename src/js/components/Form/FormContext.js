@@ -5,18 +5,20 @@ import React, { useState } from 'react';
 // But, it does store the value for components like CheckBox or Select
 // where the grommet component needs to know the value in order to
 // render custom visuals.
-const useFormInput = (_, valueProp, initialValue) => {
+const useFormInput = ({ value: valueProp, initialValue }) => {
   const [value, setValue] = useState(
     valueProp !== undefined ? valueProp : initialValue,
   );
+
+  // Returns an array [value and function to set the value]
   return [
     valueProp !== undefined ? valueProp : value,
-    nextValue => {
+    (nextValue) => {
       if (initialValue !== undefined) setValue(nextValue);
     },
   ];
 };
 
-const useFormField = ({ error, info }) => ({ error, info });
+const useFormField = ({ error, info, disabled }) => ({ error, info, disabled });
 
 export const FormContext = React.createContext({ useFormField, useFormInput });

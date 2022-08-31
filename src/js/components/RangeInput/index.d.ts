@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { A11yTitleType } from '../../utils';
+import { A11yTitleType, ColorType } from '../../utils';
+
+interface ColorInterface {
+  color: ColorType;
+  value: number;
+  opacity?: number;
+}
 
 export interface RangeInputProps {
   a11yTitle?: A11yTitleType;
@@ -8,10 +14,14 @@ export interface RangeInputProps {
   max?: number | string;
   name?: string;
   step?: number;
+  color?: ColorType | ColorInterface[];
   value?: number | string;
 }
 
-declare const RangeInput: React.FC<RangeInputProps &
-  JSX.IntrinsicElements['input']>;
+export interface RangeInputExtendedProps
+  extends RangeInputProps,
+    Omit<JSX.IntrinsicElements['input'], 'color' | 'step' | 'value'> {}
+
+declare const RangeInput: React.FC<RangeInputExtendedProps>;
 
 export { RangeInput };

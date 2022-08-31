@@ -1,17 +1,16 @@
 import React from 'react';
 
-import { Box, Calendar, Grommet } from 'grommet';
-
-import { grommet } from 'grommet/themes';
+import { Box, Calendar } from 'grommet';
 
 export const Fill = () => (
-  <Grommet theme={grommet}>
-    <Box align="center">
-      <Box height="large" width="large" border>
-        <Calendar fill daysOfWeek />
-      </Box>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box align="center">
+    <Box height="large" width="large" border>
+      <Calendar fill daysOfWeek />
     </Box>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 export default {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
+import { Grommet, Box, Button, DataTable, Layer, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { ColumnConfig } from '../..';
@@ -28,14 +28,14 @@ const columns: ColumnConfig<RowType>[] = [
   {
     property: 'date',
     header: 'Date',
-    render: datum =>
+    render: (datum) =>
       datum.date && new Date(datum.date).toLocaleDateString('en-US'),
     align: 'end',
   },
   {
     property: 'percent',
     header: 'Percent Complete',
-    render: datum => (
+    render: (datum) => (
       <Box pad={{ vertical: 'xsmall' }}>
         <Meter
           values={[{ value: datum.percent }]}
@@ -48,7 +48,7 @@ const columns: ColumnConfig<RowType>[] = [
   {
     property: 'paid',
     header: 'Paid',
-    render: datum => amountFormatter.format(datum.paid / 100),
+    render: (datum) => amountFormatter.format(datum.paid / 100),
     align: 'end',
     aggregate: 'sum',
     footer: { aggregate: true },
@@ -140,19 +140,44 @@ const DATA: RowType[] = [
   },
 ];
 
-export const ClickableDataTable = () => (
-  <Grommet theme={grommet}>
+export const ClickableDataTable = () => {
+  const [show, setShow] = React.useState(false);
+  const [clicked, setClicked] = React.useState({});
+
+  return (
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      {/* eslint-disable no-alert */}
       <DataTable
         columns={columns}
         data={DATA}
         step={10}
-        onClickRow={event => console.log(event.datum)}
+        disabled={['Matt']}
+        onClickRow={(event) => {
+          setShow(true);
+          setClicked(event.datum);
+        }}
       />
+      {show && (
+        <Layer
+          position="center"
+          onEsc={() => setShow(false)}
+          onClickOutside={() => setShow(false)}
+        >
+          <Box margin="medium">
+            <Text>{clicked && JSON.stringify(clicked, null, 2)}</Text>
+            <Button
+              margin={{ top: 'medium' }}
+              label="close"
+              onClick={() => setShow(false)}
+            />
+          </Box>
+        </Layer>
+      )}
     </Box>
-  </Grommet>
-);
+    // </Grommet>
+  );
+};
 
 ClickableDataTable.storyName = 'Clickable';
 

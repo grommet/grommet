@@ -4,6 +4,7 @@ node_modules
 #IDEA
 .idea/**
 .vscode
+*.code-workspace
 
 # testing
 coverage
@@ -19,6 +20,7 @@ storybook-static
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+build-storybook.log
 report*
 
 #licenses 

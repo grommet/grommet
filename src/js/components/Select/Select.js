@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { controlBorderStyle, normalizeColor } from '../../utils';
+import { controlBorderStyle, normalizeColor, useKeyboard } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -21,30 +21,36 @@ import { TextInput } from '../TextInput';
 
 import { SelectContainer } from './SelectContainer';
 import { applyKey } from './utils';
+import { MessageContext } from '../../contexts/MessageContext';
+import { SelectPropTypes } from './propTypes';
 
 const SelectTextInput = styled(TextInput)`
-  cursor: ${props => (props.defaultCursor ? 'default' : 'pointer')};
+  cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
+`;
+
+const HiddenInput = styled.input`
+  display: none;
 `;
 
 const StyledSelectDropButton = styled(DropButton)`
-  ${props => !props.callerPlain && controlBorderStyle};
-  ${props =>
+  ${(props) => !props.callerPlain && controlBorderStyle};
+  ${(props) =>
     props.theme.select &&
     props.theme.select.control &&
     props.theme.select.control.extend};
-  ${props => props.open && props.theme.select.control.open};
+  ${(props) => props.open && props.theme.select.control.open};
 `;
 
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
 
 const defaultDropAlign = { top: 'bottom', left: 'left' };
-const defaultMessages = { multiple: 'multiple' };
 
 const Select = forwardRef(
   (
     {
       a11yTitle,
+      'aria-label': ariaLabel,
       alignSelf,
       children,
       clear = false,
@@ -63,12 +69,14 @@ const Select = forwardRef(
       icon,
       labelKey,
       margin,
-      messages = defaultMessages,
+      messages,
       multiple,
       name,
+      onBlur,
       onChange,
       onClick,
       onClose,
+      onFocus,
       onKeyDown,
       onMore,
       onOpen,
@@ -91,17 +99,37 @@ const Select = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const inputRef = useRef();
     const formContext = useContext(FormContext);
+    const { format } = useContext(MessageContext);
+
+    // Determine if the Select is opened with the keyboard. If so,
+    // focus should be set on the first option when the drop opens
+    // see set initial focus code in SelectContainer.js
+    const usingKeyboard = useKeyboard();
+
     // value is used for what we receive in valueProp and the basis for
     // what we send with onChange
-    const [value, setValue] = formContext.useFormInput(
+    // When 'valueKey' sets 'reduce', the value(s) here should match
+    // what the 'valueKey' would return for the corresponding
+    // selected option object.
+    // Otherwise, the value(s) should match the selected options.
+
+    const [value, setValue] = formContext.useFormInput({
       name,
-      valueProp,
-      defaultValue || '',
-    );
+      value: valueProp,
+      initialValue: defaultValue || '',
+    });
     // valuedValue is the value mapped with any valueKey applied
+    // When the options array contains objects, this property indicates how
+    // to retrieve the value of each option.
+    // If a string is provided, it is used as the key to retrieve a
+    // property of an option object.
+    // If a function is provided, it is called with the option and should
+    // return the value.
+    // If reduce is true, this value will be used for the 'value'
+    // delivered via 'onChange'.
     const valuedValue = useMemo(() => {
       if (Array.isArray(value))
-        return value.map(v =>
+        return value.map((v) =>
           valueKey && valueKey.reduce ? v : applyKey(v, valueKey),
         );
       return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
@@ -128,7 +156,7 @@ const Select = forwardRef(
             result.push(index);
           }
         } else if (Array.isArray(valuedValue)) {
-          if (valuedValue.some(v => v === applyKey(option, valueKey))) {
+          if (valuedValue.some((v) => v === applyKey(option, valueKey))) {
             result.push(index);
           }
         } else if (valuedValue === applyKey(option, valueKey)) {
@@ -150,24 +178,64 @@ const Select = forwardRef(
     const onRequestClose = useCallback(() => {
       setOpen(false);
       if (onClose) onClose();
+      setSearch();
     }, [onClose]);
+
+    const triggerChangeEvent = useCallback((nextValue) => {
+      // Calling set value function directly on input because React library
+      // overrides setter `event.target.value =` and loses original event
+      // target fidelity.
+      // https://stackoverflow.com/a/46012210
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'value',
+      ).set;
+      nativeInputValueSetter.call(inputRef.current, nextValue);
+      const event = new Event('input', { bubbles: true });
+      inputRef.current.dispatchEvent(event);
+    }, []);
 
     const onSelectChange = useCallback(
       (event, { option, value: nextValue, selected: nextSelected }) => {
         if (closeOnChange) onRequestClose();
+        // nextValue must not be of type object to set value directly on the
+        // input. if it is an object, then the user has not provided necessary
+        // props to reduce object option
+        if (
+          typeof nextValue !== 'object' &&
+          nextValue !== event.target.value &&
+          inputRef.current
+        ) {
+          // select registers changing option as a click event or keydown.
+          // when in a form, we need to programatically trigger a change
+          // event in order for the change event to be registered upstream
+          // necessary for change validation in form
+          triggerChangeEvent(nextValue);
+        }
         setValue(nextValue);
         if (onChange) {
           event.persist();
-          const adjustedEvent = event;
-          adjustedEvent.target = inputRef.current;
-          adjustedEvent.value = nextValue;
-          adjustedEvent.option = option;
-          adjustedEvent.selected = nextSelected;
+          let adjustedEvent;
+          // support for native event used by Preact
+          if (event instanceof Event) {
+            adjustedEvent = new event.constructor(event.type, event);
+            Object.defineProperties(adjustedEvent, {
+              target: { value: inputRef.current },
+              value: { value: nextValue },
+              option: { value: option },
+              selected: { value: nextSelected },
+            });
+          } else {
+            adjustedEvent = event;
+            adjustedEvent.target = inputRef.current;
+            adjustedEvent.value = nextValue;
+            adjustedEvent.option = option;
+            adjustedEvent.selected = nextSelected;
+          }
           onChange(adjustedEvent);
         }
-        setSearch();
       },
-      [closeOnChange, onChange, onRequestClose, setValue],
+      [closeOnChange, onChange, onRequestClose, setValue, triggerChangeEvent],
     );
 
     let SelectIcon;
@@ -187,21 +255,55 @@ const Select = forwardRef(
 
     // element to show, trumps inputValue
     const selectValue = useMemo(() => {
-      if (valueLabel) return valueLabel;
-      if (React.isValidElement(value)) return value; // deprecated
+      if (valueLabel instanceof Function) {
+        if (value) return valueLabel(value);
+      } else if (valueLabel) return valueLabel;
+      else if (React.isValidElement(value)) return value; // deprecated
       return undefined;
     }, [value, valueLabel]);
 
+    // if labelKey is a function and valueLabel is not defined
+    // we should use the labelKey function to display the
+    // selected value
+    const displayLabelKey = useMemo(() => {
+      const optionLabelKey = applyKey(
+        allOptions[optionIndexesInValue[0]],
+        labelKey,
+      );
+      if (
+        !selectValue &&
+        optionIndexesInValue.length === 1 &&
+        typeof optionLabelKey === 'object'
+      )
+        return optionLabelKey;
+      return undefined;
+    }, [labelKey, allOptions, optionIndexesInValue, selectValue]);
+
     // text to show
+    // When the options array contains objects, this property indicates how
+    // to retrieve the value of each option.
+    // If a string is provided, it is used as the key to retrieve a
+    // property of an option object.
+    // If a function is provided, it is called with the option and should
+    // return the value.
+    // If reduce is true, this value will be used for the 'value'
+    // delivered via 'onChange'.
     const inputValue = useMemo(() => {
       if (!selectValue) {
         if (optionIndexesInValue.length === 0) return '';
         if (optionIndexesInValue.length === 1)
           return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
-        return messages.multiple;
+        return format({ id: 'select.multiple', messages });
       }
       return undefined;
-    }, [labelKey, messages, optionIndexesInValue, allOptions, selectValue]);
+    }, [
+      labelKey,
+      messages,
+      format,
+      optionIndexesInValue,
+      allOptions,
+      selectValue,
+    ]);
 
     const iconColor = normalizeColor(
       theme.select.icons.color || 'control',
@@ -212,6 +314,17 @@ const Select = forwardRef(
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
           ref={ref}
+          a11yTitle={`${ariaLabel || a11yTitle || placeholder || 'Open Drop'}${
+            value
+              ? format({
+                  id: 'select.selected',
+                  messages,
+                  values: { currentSelectedValue: value },
+                })
+              : ''
+          }`}
+          aria-expanded={Boolean(open)}
+          aria-haspopup="listbox"
           id={id}
           disabled={disabled === true || undefined}
           dropAlign={dropAlign}
@@ -219,6 +332,8 @@ const Select = forwardRef(
           open={open}
           alignSelf={alignSelf}
           focusIndicator={focusIndicator}
+          onFocus={onFocus}
+          onBlur={onBlur}
           gridArea={gridArea}
           margin={margin}
           onOpen={onRequestOpen}
@@ -247,6 +362,7 @@ const Select = forwardRef(
               search={search}
               setSearch={setSearch}
               selected={selected}
+              usingKeyboard={usingKeyboard}
               value={value}
               valueKey={valueKey}
             >
@@ -266,11 +382,23 @@ const Select = forwardRef(
             background={theme.select.background}
           >
             <Box direction="row" flex basis="auto">
-              {selectValue || (
+              {selectValue || displayLabelKey ? (
+                <>
+                  {selectValue || displayLabelKey}
+                  <HiddenInput
+                    type="text"
+                    name={name}
+                    id={id ? `${id}__input` : undefined}
+                    value={inputValue}
+                    ref={inputRef}
+                    readOnly
+                  />
+                </>
+              ) : (
                 <SelectTextInput
                   a11yTitle={
-                    a11yTitle &&
-                    `${a11yTitle}${
+                    (ariaLabel || a11yTitle) &&
+                    `${ariaLabel || a11yTitle}${
                       value && typeof value === 'string' ? `, ${value}` : ''
                     }`
                   }
@@ -281,6 +409,7 @@ const Select = forwardRef(
                   // button should be disabled which occurs when disabled
                   // equals true.
                   defaultCursor={disabled === true || undefined}
+                  focusIndicator={false}
                   id={id ? `${id}__input` : undefined}
                   name={name}
                   ref={inputRef}
@@ -319,12 +448,6 @@ const Select = forwardRef(
 Select.defaultProps = { ...defaultProps };
 
 Select.displayName = 'Select';
+Select.propTypes = SelectPropTypes;
 
-let SelectDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SelectDoc = require('./doc').doc(Select);
-}
-const SelectWrapper = SelectDoc || Select;
-
-export { SelectWrapper as Select };
+export { Select };

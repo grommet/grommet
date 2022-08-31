@@ -1,19 +1,23 @@
 import * as React from 'react';
 import {
   A11yTitleType,
+  AlignType,
   AlignContentType,
   AlignSelfType,
   BackgroundType,
   BasisType,
   BorderType,
+  DirectionType,
   ElevationType,
   FillType,
   GapType,
   GridAreaType,
+  HeightType,
   MarginType,
   PadType,
   PolymorphicType,
   RoundType,
+  WidthType,
 } from '../../utils';
 
 export interface BoxProps {
@@ -21,7 +25,7 @@ export interface BoxProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  align?: 'start' | 'center' | 'end' | 'baseline' | 'stretch';
+  align?: AlignType;
   alignContent?: AlignContentType;
   animation?:
     | 'fadeIn'
@@ -42,6 +46,8 @@ export interface BoxProps {
           | 'fadeOut'
           | 'jiggle'
           | 'pulse'
+          | 'rotateLeft'
+          | 'rotateRight'
           | 'slideUp'
           | 'slideDown'
           | 'slideLeft'
@@ -83,47 +89,17 @@ export interface BoxProps {
   background?: BackgroundType;
   basis?: BasisType;
   border?: BorderType;
-  direction?:
-    | 'row'
-    | 'column'
-    | 'row-responsive'
-    | 'row-reverse'
-    | 'column-reverse';
+  direction?: DirectionType;
   elevation?: ElevationType;
   flex?: 'grow' | 'shrink' | boolean | { grow?: number; shrink?: number };
   fill?: FillType;
   focusIndicator?: boolean;
   gap?: GapType;
-  height?:
-    | 'xxsmall'
-    | 'xsmall'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'xlarge'
-    | 'xxlarge'
-    | string
-    | {
-        max?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-        min?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-      };
-  hoverIndicator?: BackgroundType | boolean;
+  height?: HeightType;
+  hoverIndicator?:
+    | { background?: BackgroundType; elevation?: ElevationType }
+    | BackgroundType
+    | boolean;
   justify?:
     | 'around'
     | 'between'
@@ -148,48 +124,17 @@ export interface BoxProps {
   round?: RoundType;
   tag?: PolymorphicType;
   as?: PolymorphicType;
-  width?:
-    | 'xxsmall'
-    | 'xsmall'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'xlarge'
-    | 'xxlarge'
-    | string
-    | {
-        width?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-        max?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-        min?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-      };
+  width?: WidthType;
   wrap?: boolean | 'reverse';
 }
 
-declare const Box: React.FC<BoxProps & JSX.IntrinsicElements['div']>;
+export interface BoxExtendedProps
+  extends BoxProps,
+    Omit<JSX.IntrinsicElements['div'], keyof BoxProps> {}
+
+// Keep type alias for backwards compatibility.
 export type BoxTypes = BoxProps & JSX.IntrinsicElements['div'];
+
+declare const Box: React.FC<BoxExtendedProps>;
 
 export { Box };

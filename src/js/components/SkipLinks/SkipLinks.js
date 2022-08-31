@@ -1,15 +1,23 @@
-import React, { cloneElement, useContext, useRef, useState } from 'react';
+import React, {
+  Children,
+  cloneElement,
+  useContext,
+  useRef,
+  useState,
+} from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Layer } from '../Layer';
 import { defaultProps } from '../../default-props';
+import { MessageContext } from '../../contexts/MessageContext';
+import { SkipLinksPropTypes } from './propTypes';
 
 const SkipLinks = ({ children, id, messages }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [showLayer, setShowLayer] = useState(false);
-
+  const { format } = useContext(MessageContext);
   const layerRef = useRef(null);
 
   const onFocus = () => {
@@ -47,12 +55,13 @@ const SkipLinks = ({ children, id, messages }) => {
       responsive={false}
     >
       <Box {...theme.skipLinks.container}>
-        {messages.skipTo && (
-          <Text {...theme.skipLinks.label}>{messages.skipTo}</Text>
-        )}
+        <Text {...theme.skipLinks.label}>
+          {format({ id: 'skipLinks.skipTo', messages })}
+        </Text>
         <Box align="center" gap="medium">
-          {children.map((element, index) =>
-            cloneElement(element, {
+          {Children.map(children, (child, index) =>
+            cloneElement(child, {
+              // eslint-disable-next-line react/no-array-index-key
               key: `skip-link-${index}`,
               onClick: removeLayer,
             }),
@@ -63,17 +72,7 @@ const SkipLinks = ({ children, id, messages }) => {
   );
 };
 
-SkipLinks.defaultProps = {
-  messages: {
-    skipTo: 'Skip To:',
-  },
-};
+SkipLinks.defaultProps = {};
+SkipLinks.propTypes = SkipLinksPropTypes;
 
-let SkipLinksDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SkipLinksDoc = require('./doc').doc(SkipLinks);
-}
-const SkipLinksWrapper = SkipLinksDoc || SkipLinks;
-
-export { SkipLinksWrapper as SkipLinks };
+export { SkipLinks };

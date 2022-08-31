@@ -54,15 +54,13 @@ exports[`FormField abut 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -122,17 +120,282 @@ exports[`FormField abut with margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
+</div>
+`;
+
+exports[`FormField checkbox pad is defined in formfield 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+
+.c4:hover input:not([disabled]) + div,
+.c4:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c9:hover input:not([disabled]) + div,
+.c9:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c7 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c7:checked + span > span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c6 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+      >
+        label
+      </label>
+      <div
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <label
+          class="c4"
+          label="checkbox with pad"
+        >
+          <div
+            class="c5 c6"
+          >
+            <input
+              class="c7"
+              type="checkbox"
+            />
+            <div
+              class="c8 "
+            />
+          </div>
+          <span>
+            checkbox with pad
+          </span>
+        </label>
+      </div>
+    </div>
+    <label
+      class="c9"
+      label="checkbox without pad"
+    >
+      <div
+        class="c5 c6"
+      >
+        <input
+          class="c7"
+          type="checkbox"
+        />
+        <div
+          class="c8 "
+        />
+      </div>
+      <span>
+        checkbox without pad
+      </span>
+    </label>
+  </form>
 </div>
 `;
 
@@ -241,35 +504,27 @@ exports[`FormField contentProps 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3 FormField__FormFieldContentBox-m9hood-1"
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            value=""
           />
         </div>
       </div>
@@ -493,85 +748,77 @@ exports[`FormField custom error and info icon and container 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3 FormField__FormFieldContentBox-m9hood-1"
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            aria-invalid={true}
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            aria-invalid="true"
+            autocomplete="off"
+            class="c5"
+            value=""
           />
         </div>
       </div>
       <div
-        className="c6 FormField__StyledMessageContainer-m9hood-2"
+        class="c6 FormField__StyledMessageContainer-sc-m9hood-2"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
             aria-label="Alert"
-            className="c8"
+            class="c8"
             viewBox="0 0 24 24"
           >
             <path
-              d="M12,17 L12,19 M12,10 L12,16 M12,3 L2,22 L22,22 L12,3 Z"
+              d="M12 17v2m0-9v6m0-13L2 22h20L12 3z"
               fill="none"
               stroke="#000"
-              strokeWidth="2"
+              stroke-width="2"
             />
           </svg>
         </div>
         <span
-          className="c9"
+          class="c9"
         >
           This is an error message.
         </span>
       </div>
       <div
-        className="c10 FormField__StyledMessageContainer-m9hood-2"
+        class="c10 FormField__StyledMessageContainer-sc-m9hood-2"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            aria-label="StatusInfo"
-            className="c8"
+            aria-label="Information Status"
+            class="c8"
             viewBox="0 0 24 24"
           >
             <path
-              d="M2,3.99079514 C2,2.89130934 2.89821238,2 3.99079514,2 L20.0092049,2 C21.1086907,2 22,2.89821238 22,3.99079514 L22,20.0092049 C22,21.1086907 21.1017876,22 20.0092049,22 L3.99079514,22 C2.89130934,22 2,21.1017876 2,20.0092049 L2,3.99079514 Z M12,10 L12,18 M12,6 L12,8"
+              d="M2 3.99C2 2.892 2.898 2 3.99 2h16.02C21.108 2 22 2.898 22 3.99v16.02c0 1.099-.898 1.99-1.99 1.99H3.99A1.995 1.995 0 0 1 2 20.01V3.99zM12 10v8m0-12v2"
               fill="none"
               stroke="#000"
-              strokeWidth="2"
+              stroke-width="2"
             />
           </svg>
         </div>
         <span
-          className="c11"
+          class="c11"
         >
           Here is a little added info on FormField.
         </span>
@@ -639,15 +886,13 @@ exports[`FormField custom formfield 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 c2"
   >
     <div
-      className="c3 FormField__FormFieldContentBox-m9hood-1"
+      class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -774,35 +1019,27 @@ exports[`FormField custom input margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3 FormField__FormFieldContentBox-m9hood-1"
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            value=""
           />
         </div>
       </div>
@@ -922,35 +1159,27 @@ exports[`FormField custom label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3 FormField__FormFieldContentBox-m9hood-1"
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            value=""
           />
         </div>
       </div>
@@ -1062,35 +1291,28 @@ exports[`FormField default 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <input
-          autoComplete="off"
-          className="c4"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
+          autocomplete="off"
+          class="c4"
+          value=""
         />
       </div>
     </div>
@@ -1205,41 +1427,31 @@ exports[`FormField disabled 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
    
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <div
-        className="c2 FormField__FormFieldContentBox-m9hood-1"
+        class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          className="c3"
+          class="c3"
         >
           <input
-            autoComplete="off"
-            className="c4"
-            disabled={true}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c4"
+            disabled=""
+            value=""
           />
         </div>
       </div>
@@ -1363,36 +1575,28 @@ exports[`FormField disabled with custom label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3 FormField__FormFieldContentBox-m9hood-1"
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            disabled={true}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            disabled=""
+            value=""
           />
         </div>
       </div>
@@ -1455,15 +1659,13 @@ exports[`FormField empty margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -1533,18 +1735,16 @@ exports[`FormField error 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
     <span
-      className="c3"
+      class="c3"
     >
       test error
     </span>
@@ -1613,20 +1813,18 @@ exports[`FormField help 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <span
-      className="c2"
+      class="c2"
     >
       test help
     </span>
     <div
-      className="c3 FormField__FormFieldContentBox-m9hood-1"
+      class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -1686,15 +1884,13 @@ exports[`FormField htmlFor 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -1764,18 +1960,16 @@ exports[`FormField info 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
     <span
-      className="c3"
+      class="c3"
     >
       test info
     </span>
@@ -1846,20 +2040,18 @@ exports[`FormField label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <label
-      className="c2"
+      class="c2"
     >
       test label
     </label>
     <div
-      className="c3 FormField__FormFieldContentBox-m9hood-1"
+      class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -1919,15 +2111,13 @@ exports[`FormField margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -1994,15 +2184,13 @@ exports[`FormField pad 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -2120,35 +2308,27 @@ exports[`FormField pad with border undefined 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            value=""
           />
         </div>
       </div>
@@ -2260,40 +2440,30 @@ exports[`FormField required 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
    
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <div
-        className="c2 FormField__FormFieldContentBox-m9hood-1"
+        class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          className="c3"
+          class="c3"
         >
           <input
-            autoComplete="off"
-            className="c4"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c4"
+            value=""
           />
         </div>
       </div>
@@ -2362,9 +2532,150 @@ exports[`FormField should have no accessibility violations 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
+</div>
+`;
+
+exports[`FormField should not render asterisk when required.indicator === false 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+      >
+        label
+      </label>
+      <div
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="c4"
+        >
+          <input
+            autocomplete="off"
+            class="c5"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
 `;
 
@@ -2394,7 +2705,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   flex-direction: column;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2423,7 +2734,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -2441,35 +2752,41 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   border: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c5 {
+.c6 {
   position: relative;
   width: 100%;
+}
+
+.c4 {
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -2479,7 +2796,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
@@ -2497,20 +2814,20 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
         label
         <span
           aria-label="required"
-          class="c3"
+          class="c3 c4"
         >
           *
         </span>
       </label>
       <div
-        class="c4 FormField__FormFieldContentBox-m9hood-1"
+        class="c5 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="c5"
+          class="c6"
         >
           <input
             autocomplete="off"
-            class="c6"
+            class="c7"
             value=""
           />
         </div>
@@ -2520,7 +2837,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
 </div>
 `;
 
-exports[`FormField should render custom indicator when requiredIndicator is 
+exports[`FormField should render custom indicator when requiredIndicator is
   element 1`] = `
 .c3 {
   display: inline-block;
@@ -2683,7 +3000,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,1 L12,23 M2,6 L22,18 M22.0000001,6 L2.00000008,18"
+            d="M12 1v22M2 6l20 12m0-12L2 18"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -2691,7 +3008,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
         </svg>
       </label>
       <div
-        class="c4 FormField__FormFieldContentBox-m9hood-1"
+        class="c4 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="c5"

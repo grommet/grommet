@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { FormClose } from 'grommet-icons';
-import { Box, Button, Grommet, Keyboard, Text, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Keyboard, Text, TextInput } from 'grommet';
 
 const allSuggestions = ['sony', 'sonar', 'foo', 'bar'];
 
@@ -32,17 +31,16 @@ const Tag = ({ children, onRemove, ...rest }) => {
 
 const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
   const [currentTag, setCurrentTag] = React.useState('');
-  const [box, setBox] = React.useState();
-  const boxRef = React.useCallback(setBox, []);
+  const boxRef = React.useRef();
 
-  const updateCurrentTag = event => {
+  const updateCurrentTag = (event) => {
     setCurrentTag(event.target.value);
     if (onChange) {
       onChange(event);
     }
   };
 
-  const onAddTag = tag => {
+  const onAddTag = (tag) => {
     if (onAdd) {
       onAdd(tag);
     }
@@ -81,11 +79,11 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
           <TextInput
             type="search"
             plain
-            dropTarget={box}
+            dropTarget={boxRef.current}
             {...rest}
             onChange={updateCurrentTag}
             value={currentTag}
-            onSuggestionSelect={event => onAddTag(event.suggestion)}
+            onSuggestionSelect={(event) => onAddTag(event.suggestion)}
           />
         </Box>
       </Box>
@@ -97,7 +95,7 @@ export const WithTags = () => {
   const [selectedTags, setSelectedTags] = React.useState(['foo', 'sony']);
   const [suggestions, setSuggestions] = React.useState(allSuggestions);
 
-  const onRemoveTag = tag => {
+  const onRemoveTag = (tag) => {
     const removeIndex = selectedTags.indexOf(tag);
     const newTags = [...selectedTags];
     if (removeIndex >= 0) {
@@ -106,29 +104,30 @@ export const WithTags = () => {
     setSelectedTags(newTags);
   };
 
-  const onAddTag = tag => setSelectedTags([...selectedTags, tag]);
+  const onAddTag = (tag) => setSelectedTags([...selectedTags, tag]);
 
-  const onFilterSuggestion = value =>
+  const onFilterSuggestion = (value) =>
     setSuggestions(
       allSuggestions.filter(
-        suggestion =>
+        (suggestion) =>
           suggestion.toLowerCase().indexOf(value.toLowerCase()) >= 0,
       ),
     );
 
   return (
-    <Grommet full theme={grommet}>
-      <Box pad="small">
-        <TagInput
-          placeholder="Search for aliases..."
-          suggestions={suggestions}
-          value={selectedTags}
-          onRemove={onRemoveTag}
-          onAdd={onAddTag}
-          onChange={({ target: { value } }) => onFilterSuggestion(value)}
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box pad="small">
+      <TagInput
+        placeholder="Search for aliases..."
+        suggestions={suggestions}
+        value={selectedTags}
+        onRemove={onRemoveTag}
+        onAdd={onAddTag}
+        onChange={({ target: { value } }) => onFilterSuggestion(value)}
+      />
+    </Box>
+    // </Grommet>
   );
 };
 

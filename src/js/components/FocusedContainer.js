@@ -1,12 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
-import {
-  getBodyChildElements,
-  makeNodeFocusable,
-  makeNodeUnfocusable,
-} from '../utils';
-
-const isNotAncestorOf = child => parent => !parent.contains(child);
+import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';
+import { RootsContext } from '../contexts/RootsContext';
 
 export const FocusedContainer = ({
   hidden = false,
@@ -18,44 +13,55 @@ export const FocusedContainer = ({
   const [bodyOverflowStyle, setBodyOverflowStyle] = useState('');
   const ref = useRef(null);
 
+  const roots = useContext(RootsContext);
+  const [nextRoots, setNextRoots] = useState(roots);
   useEffect(() => {
-    const removeTrap = () => {
-      const child = ref.current;
-      getBodyChildElements()
-        .filter(isNotAncestorOf(child))
-        .forEach(makeNodeFocusable);
-      if (restrictScroll) {
+    // make sure value of null is not added to array
+    if (ref.current) setNextRoots([...roots, ref.current]);
+  }, [roots]);
+
+  useEffect(() => {
+    if (
+      bodyOverflowStyle !== 'hidden' &&
+      !hidden &&
+      restrictScroll &&
+      trapFocus
+    ) {
+      setBodyOverflowStyle(document.body.style.overflow);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      if (
+        bodyOverflowStyle !== 'hidden' &&
+        !hidden &&
+        restrictScroll &&
+        trapFocus
+      ) {
         document.body.style.overflow = bodyOverflowStyle;
       }
     };
+  }, [bodyOverflowStyle, hidden, trapFocus, restrictScroll]);
 
-    const handleTrapFocus = () => {
-      const child = ref.current;
-      getBodyChildElements()
-        .filter(isNotAncestorOf(child))
-        .forEach(makeNodeUnfocusable);
-
-      if (restrictScroll && bodyOverflowStyle !== 'hidden') {
-        setBodyOverflowStyle(document.body.style.overflow);
-        document.body.style.overflow = 'hidden';
-      }
-    };
-
+  useEffect(() => {
     const timer = setTimeout(() => {
-      if (!hidden && trapFocus) {
-        handleTrapFocus();
+      if (!hidden && trapFocus && roots && roots[0]) {
+        roots.forEach(makeNodeUnfocusable);
       }
     }, 0);
 
     return () => {
-      removeTrap();
+      // remove trap and restore ability to focus on the last root only
+      if (roots && roots[0]) makeNodeFocusable(roots[roots.length - 1]);
       clearTimeout(timer);
     };
-  }, [hidden, bodyOverflowStyle, restrictScroll, trapFocus]);
+  }, [hidden, roots, trapFocus]);
 
   return (
-    <div ref={ref} aria-hidden={hidden} {...rest}>
-      {children}
-    </div>
+    <RootsContext.Provider value={nextRoots}>
+      <div ref={ref} aria-hidden={hidden} {...rest}>
+        {children}
+      </div>
+    </RootsContext.Provider>
   );
 };

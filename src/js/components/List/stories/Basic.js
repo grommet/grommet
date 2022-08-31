@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, List } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, List } from 'grommet';
 
 const locations = [
   'Boise',
@@ -12,11 +11,9 @@ const locations = [
 ];
 
 export const Basic = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <List data={locations} />
-    </Box>
-  </Grommet>
+  <Box align="center" pad="large">
+    <List a11yTitle="Locations" data={locations} />
+  </Box>
 );
 
 export default {

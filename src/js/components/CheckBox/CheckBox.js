@@ -5,6 +5,7 @@ import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
+import { CheckBoxPropTypes } from './propTypes';
 
 import {
   StyledCheckBox,
@@ -18,7 +19,7 @@ import {
 
 import { normalizeColor } from '../../utils';
 
-const stopLabelClick = event => {
+const stopLabelClick = (event) => {
   // prevents clicking on the label trigging the event twice
   // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
   if (event.target.type !== 'checkbox') {
@@ -30,16 +31,25 @@ const CheckBox = forwardRef(
   (
     {
       a11yTitle,
+      'aria-label': ariaLabel,
       checked: checkedProp,
+      children,
       defaultChecked = false,
       disabled,
+      fill,
       focus: focusProp,
+      focusIndicator = true,
       id,
       label,
       name,
       onBlur,
       onChange,
       onFocus,
+      onMouseEnter,
+      onMouseLeave,
+      onMouseOut,
+      onMouseOver,
+      pad,
       reverse,
       toggle,
       indeterminate,
@@ -50,14 +60,18 @@ const CheckBox = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
-    const [checked, setChecked] = formContext.useFormInput(
+    const [checked, setChecked] = formContext.useFormInput({
       name,
-      checkedProp,
-      defaultChecked,
-    );
+      value: checkedProp,
+      initialValue: defaultChecked,
+    });
 
     const [focus, setFocus] = useState(focusProp);
-    useEffect(() => setFocus(focusProp), [focusProp]);
+    useEffect(() => {
+      // don't allow checkbox to have focus when disabled
+      if (disabled && focusProp) setFocus(false);
+      else setFocus(focusProp);
+    }, [disabled, focusProp]);
 
     useEffect(() => {
       if (checkedProp && indeterminate) {
@@ -77,6 +91,12 @@ const CheckBox = forwardRef(
       checked,
       disabled,
       focus,
+      // when contained in a FormField, focusIndicator = false,
+      // so that the FormField has focus style. However, we still
+      // need to visually indicate when a CheckBox is active.
+      // If focus = true but focusIndicator = false,
+      // we will apply the hover treament.
+      focusIndicator,
       reverse,
       toggle,
       indeterminate,
@@ -87,10 +107,8 @@ const CheckBox = forwardRef(
       hidden = <input name={name} type="hidden" value="true" />;
     }
 
-    const {
-      checked: CheckedIcon,
-      indeterminate: IndeterminateIcon,
-    } = theme.checkBox.icons;
+    const { checked: CheckedIcon, indeterminate: IndeterminateIcon } =
+      theme.checkBox.icons;
 
     let borderColor = normalizeColor(theme.checkBox.border.color, theme);
     if (checked) {
@@ -146,7 +164,7 @@ const CheckBox = forwardRef(
       </StyledCheckBoxBox>
     );
 
-    const side = reverse ? 'left' : 'right';
+    const side = !reverse !== !theme.dir ? 'left' : 'right';
     const checkBoxNode = (
       <StyledCheckBox
         as={Box}
@@ -156,6 +174,7 @@ const CheckBox = forwardRef(
         {...themeableProps}
       >
         <StyledCheckBoxInput
+          aria-label={ariaLabel || a11yTitle}
           {...rest}
           ref={ref}
           type="checkbox"
@@ -166,20 +185,20 @@ const CheckBox = forwardRef(
             disabled,
           })}
           {...themeableProps}
-          onFocus={event => {
+          onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}
-          onChange={event => {
+          onChange={(event) => {
             setChecked(event.target.checked);
             if (onChange) onChange(event);
           }}
         />
-        {visual}
+        {children ? children({ checked, indeterminate }) : visual}
         {hidden}
       </StyledCheckBox>
     );
@@ -192,11 +211,17 @@ const CheckBox = forwardRef(
 
     return (
       <StyledCheckBoxContainer
-        aria-label={a11yTitle}
+        fillProp={fill}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}
+        label={label}
         onClick={stopLabelClick}
+        pad={pad}
+        onMouseEnter={(event) => onMouseEnter?.(event)}
+        onMouseOver={(event) => onMouseOver?.(event)}
+        onMouseLeave={(event) => onMouseLeave?.(event)}
+        onMouseOut={(event) => onMouseOut?.(event)}
         {...themeableProps}
       >
         {first}
@@ -207,12 +232,6 @@ const CheckBox = forwardRef(
 );
 
 CheckBox.displayName = 'CheckBox';
+CheckBox.propTypes = CheckBoxPropTypes;
 
-let CheckBoxDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CheckBoxDoc = require('./doc').doc(CheckBox);
-}
-const CheckBoxWrapper = CheckBoxDoc || CheckBox;
-
-export { CheckBoxWrapper as CheckBox };
+export { CheckBox };

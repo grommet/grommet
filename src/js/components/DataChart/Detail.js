@@ -1,16 +1,26 @@
-import React, { Fragment, useCallback, useMemo, useRef, useState } from 'react';
-import styled from 'styled-components';
+import React, {
+  Fragment,
+  useCallback,
+  useContext,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Grid } from '../Grid';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle } from '../../utils';
+import { focusStyle, parseMetricToNum, unfocusStyle } from '../../utils';
 import { Swatch } from './Swatch';
 
 const DetailControl = styled(Box)`
   &:focus {
     ${focusStyle()}
+  }
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
   }
 `;
 
@@ -18,16 +28,35 @@ const Detail = ({
   activeProperty,
   axis,
   data,
-  pad,
+  pad: padProp,
   series,
   seriesStyles,
   renderValue,
+  thickness,
 }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const [detailIndex, setDetailIndex] = useState();
   const activeIndex = useRef();
   const detailRefs = useMemo(() => [], []);
 
-  const onMouseLeave = useCallback(event => {
+  const pad = useMemo(() => {
+    // ensure the hit targets and center lines align with
+    // the data/guide lines
+    let horizontal =
+      padProp?.horizontal || (typeof padProp === 'string' && padProp) || 0;
+    horizontal = theme.global.edgeSize[horizontal] || horizontal;
+    horizontal = parseMetricToNum(horizontal);
+    let vertical =
+      padProp?.vertical || (typeof padProp === 'string' && padProp) || 0;
+    vertical = theme.global.edgeSize[vertical] || vertical;
+    vertical = parseMetricToNum(vertical);
+    return {
+      horizontal: `${horizontal - parseMetricToNum(thickness) / 2}px`,
+      vertical: `${vertical}px`,
+    };
+  }, [padProp, theme.global.edgeSize, thickness]);
+
+  const onMouseLeave = useCallback((event) => {
     // Only remove detail if the mouse isn't over the active index.
     // This helps distinguish leaving the drop on the edge where it is
     // anchored.
@@ -61,6 +90,7 @@ const Detail = ({
           tabIndex={0}
           direction="row"
           fill
+          pad={pad}
           justify="between"
           responsive={false}
           onFocus={() => {}}
@@ -72,8 +102,8 @@ const Detail = ({
               key={i}
               align="center"
               responsive={false}
-              pad={{ horizontal: pad.horizontal }}
-              onMouseOver={event => {
+              width={thickness}
+              onMouseOver={(event) => {
                 activeIndex.current = event.currentTarget;
                 setDetailIndex(i);
               }}
@@ -82,7 +112,7 @@ const Detail = ({
               onBlur={() => {}}
             >
               <Box
-                ref={c => {
+                ref={(c) => {
                   detailRefs[i] = c;
                 }}
                 fill="vertical"
@@ -117,7 +147,7 @@ const Detail = ({
                     activeProperty === property ||
                     (axis && axis.x && axis.x.property === property),
                 )
-                .map(serie => {
+                .map((serie) => {
                   const propertyStyle = seriesStyles[serie.property];
                   return (
                     <Fragment key={serie.property}>

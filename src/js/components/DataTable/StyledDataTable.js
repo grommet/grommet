@@ -4,10 +4,12 @@ import {
   backgroundStyle,
   fillStyle,
   focusStyle,
+  unfocusStyle,
   genericStyles,
   normalizeColor,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { Box } from '../Box';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
 import { TableBody } from '../TableBody';
@@ -20,11 +22,10 @@ const StyledDataTable = styled(Table)`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: auto; /* helps Firefox to get table contents to not overflow */
-
+  height: 100%;
   ${genericStyles}
-  ${props => props.fillProp && fillStyle(props.fillProp)}
-  ${props =>
+  ${(props) => props.fillProp && fillStyle(props.fillProp)}
+  ${(props) =>
     props.theme.dataTable &&
     props.theme.dataTable.body &&
     props.theme.dataTable.body.extend};
@@ -33,8 +34,19 @@ const StyledDataTable = styled(Table)`
 StyledDataTable.defaultProps = {};
 Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
 
+// when paginated, this wraps the data table and pagination component
+const StyledContainer = styled(Box)`
+  ${(props) =>
+    props.theme.dataTable &&
+    props.theme.dataTable.container &&
+    props.theme.dataTable.container.extend};
+`;
+
+StyledContainer.defaultProps = {};
+Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
+
 const hoverStyle = css`
-  ${props =>
+  ${(props) =>
     backgroundStyle(
       normalizeColor(
         (props.theme.table &&
@@ -46,7 +58,7 @@ const hoverStyle = css`
       ),
       props.theme,
     )}
-  color: ${props =>
+  color: ${(props) =>
     normalizeColor(
       (props.theme.table &&
         props.theme.table.row &&
@@ -58,22 +70,19 @@ const hoverStyle = css`
 `;
 
 const StyledDataTableRow = styled(TableRow)`
-  ${props =>
+  ${(props) =>
     props.size &&
     `
     display: table;
     width: 100%;
     table-layout: fixed;
   `}
-  ${props =>
+  ${(props) =>
     props.onClick &&
     `
     cursor: pointer;
   `}
-  &:hover {
-    ${props => props.onClickRow && !props.active && hoverStyle}
-  }
-  ${props => props.active && hoverStyle}
+  ${(props) => props.active && hoverStyle}
 `;
 
 StyledDataTableRow.defaultProps = {};
@@ -81,7 +90,7 @@ Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps);
 
 // focus styling other than outline doesn't work on <tbody />
 const StyledDataTableBody = styled(TableBody)`
-  ${props =>
+  ${(props) =>
     props.size &&
     `
     display: block;
@@ -93,15 +102,20 @@ const StyledDataTableBody = styled(TableBody)`
   &:focus {
     ${focusStyle({ skipSvgChildren: true, forceOutline: true })}
   }
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle({ skipSvgChildren: true, forceOutline: true })}
+  }
 `;
 
 StyledDataTableBody.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableBody.defaultProps, defaultProps);
 
 const StyledDataTableHeader = styled(TableHeader)`
-  ${props =>
+  ${(props) =>
     props.size &&
     `
+    height: fit-content;
     display: table;
     width: calc(100% - ${props.scrollOffset}px);
     table-layout: fixed;
@@ -112,14 +126,14 @@ StyledDataTableHeader.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableHeader.defaultProps, defaultProps);
 
 const StyledDataTableFooter = styled(TableFooter)`
-  ${props =>
+  ${(props) =>
     props.size &&
     `
     display: table;
     width: calc(100% - ${props.scrollOffset}px);
     table-layout: fixed;
   `}
-  ${props =>
+  ${(props) =>
     props.pin &&
     `
       /* Safari needs the relative positioning of tfoot specified */
@@ -133,27 +147,36 @@ StyledDataTableFooter.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableFooter.defaultProps, defaultProps);
 
 const StyledDataTableCell = styled(TableCell)`
-  ${props =>
+  ${(props) =>
     props.context === 'header' &&
     props.theme.dataTable &&
     props.theme.dataTable.header &&
     props.theme.dataTable.header.extend};
-  ${props =>
+  ${(props) =>
     props.pin &&
     props.pin.length > 0 &&
-    `
-    position: sticky;
-    ${props.pin.map(p => `${p}: 0;`).join(' ')}
+    `position: sticky;
+    ${props.pin
+      .map(
+        (p) =>
+          `${p}: ${
+            (props.pinnedOffset &&
+              props.pinnedOffset[p] &&
+              `${props.pinnedOffset[p]}px`) ||
+            0
+          };`,
+      )
+      .join(' ')}
     z-index: ${Object.keys(props.pin).length};
-    ${
-      props.theme.dataTable &&
-      props.theme.dataTable.pinned &&
-      props.theme.dataTable.pinned[props.context] &&
-      props.theme.dataTable.pinned[props.context].extend
-        ? props.theme.dataTable.pinned[props.context].extend
-        : ''
-    }
   `}
+  ${(props) =>
+    props.pin &&
+    props.pin.length > 0 &&
+    props.theme.dataTable.pinned &&
+    props.theme.dataTable.pinned[props.context] &&
+    props.theme.dataTable.pinned[props.context].extend
+      ? props.theme.dataTable.pinned[props.context].extend
+      : ''}
 `;
 
 StyledDataTableCell.defaultProps = {};
@@ -161,13 +184,14 @@ Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
 
 const StyledPlaceholder = styled('caption')`
   position: absolute;
-  ${props => `top: ${props.top || 0}px;`}
-  ${props => `bottom: ${props.bottom || 0}px;`}
+  ${(props) => `top: ${props.top || 0}px;`}
+  ${(props) => `bottom: ${props.bottom || 0}px;`}
   left: 0;
   right: 0;
 `;
 
 export {
+  StyledContainer,
   StyledDataTable,
   StyledDataTableRow,
   StyledDataTableBody,

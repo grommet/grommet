@@ -10,6 +10,11 @@ import { defaultProps } from '../../default-props';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
+import { ResponsiveContext } from '../../contexts/ResponsiveContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
+
 import {
   backgroundIsDark,
   findVisibleParent,
@@ -46,16 +51,39 @@ const LayerContainer = forwardRef(
     },
     ref,
   ) => {
+    const containerTarget = useContext(ContainerTargetContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const size = useContext(ResponsiveContext);
+    // layerOptions was created to preserve backwards compatibility but
+    // should not be supported in v3
+    const { layer: layerOptions } = useContext(OptionsContext);
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
     const portalContext = useContext(PortalContext) || defaultPortalContext;
     const portalId = useMemo(() => portalContext.length, [portalContext]);
-    const nextPortalContext = useMemo(() => [...portalContext, portalId], [
-      portalContext,
-      portalId,
-    ]);
+    const nextPortalContext = useMemo(
+      () => [...portalContext, portalId],
+      [portalContext, portalId],
+    );
+
+    const sendAnalytics = useAnalytics();
+
+    useEffect(() => {
+      const start = new Date();
+      const element = layerRef.current;
+      sendAnalytics({
+        type: 'layerOpen',
+        element,
+      });
+      return () => {
+        sendAnalytics({
+          type: 'layerClose',
+          element,
+          elapsed: new Date().getTime() - start.getTime(),
+        });
+      };
+    }, [sendAnalytics, layerRef]);
 
     useEffect(() => {
       if (position !== 'hidden') {
@@ -87,10 +115,11 @@ const LayerContainer = forwardRef(
     }, [position, ref]);
 
     useEffect(() => {
-      const onClickDocument = event => {
+      const onClickDocument = (event) => {
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
-        let node = event.target;
+        let node =
+          containerTarget === document.body ? event.target : event?.path[0];
         while (clickedPortalId === null && node !== document && node !== null) {
           // check if user click occurred within the layer
           const attr = node.getAttribute('data-g-portal-id');
@@ -163,14 +192,17 @@ const LayerContainer = forwardRef(
           document.removeEventListener('mousedown', onClickDocument);
         }
       };
-    }, [layerTarget, onClickOutside, portalContext, portalId]);
+    }, [containerTarget, layerTarget, onClickOutside, portalContext, portalId]);
 
     let content = (
       <StyledContainer
         ref={ref || containerRef}
         background={background}
         elevation={theme.layer.container.elevation}
-        id={id}
+        // layerOptions was created to preserve backwards compatibility but
+        // should not be supported in v3. In v3, this should always be
+        // ${id}__container
+        id={layerOptions && layerOptions.singleId ? `${id}__container` : id}
         full={full}
         margin={margin}
         modal={modal}
@@ -192,35 +224,34 @@ const LayerContainer = forwardRef(
         {children}
       </StyledContainer>
     );
-    if (modal || layerTarget) {
-      content = (
-        <StyledLayer
-          ref={layerRef}
-          id={id}
-          plain={plain}
-          position={position}
-          responsive={responsive}
-          tabIndex="-1"
-          dir={theme.dir}
-        >
-          {modal && (
-            <StyledOverlay
-              plain={plain}
-              responsive={responsive}
-              onMouseDown={onClickOutside}
-            />
-          )}
-          {content}
-        </StyledLayer>
-      );
-    }
+    content = (
+      <StyledLayer
+        ref={layerRef}
+        id={id}
+        plain={plain}
+        position={position}
+        responsive={responsive}
+        layerTarget={layerTarget}
+        tabIndex="-1"
+        dir={theme.dir}
+      >
+        {modal && (
+          <StyledOverlay
+            plain={plain}
+            responsive={responsive}
+            onMouseDown={onClickOutside}
+          />
+        )}
+        {content}
+      </StyledLayer>
+    );
 
     if (onEsc) {
       content = (
         <Keyboard
           onEsc={
             onEsc
-              ? event => {
+              ? (event) => {
                   // prevent further capturing or bubbling of event to other
                   // child or parent elements
                   event.stopPropagation();
@@ -235,11 +266,16 @@ const LayerContainer = forwardRef(
       );
     }
 
-    if (theme.layer.background) {
+    const themeContextValue = useMemo(() => {
       const dark = backgroundIsDark(theme.layer.background, theme);
+      return { ...theme, dark };
+    }, [theme]);
+
+    if (theme.layer.background) {
+      const { dark } = themeContextValue;
       if (dark !== undefined && dark !== theme.dark) {
         content = (
-          <ThemeContext.Provider value={{ ...theme, dark }}>
+          <ThemeContext.Provider value={themeContextValue}>
             {content}
           </ThemeContext.Provider>
         );
@@ -252,14 +288,22 @@ const LayerContainer = forwardRef(
       </PortalContext.Provider>
     );
 
-    if (modal) {
+    const hitResponsiveBreakpoint =
+      responsive && size === theme.layer.responsiveBreakpoint;
+    // if layer is responsive and we've hit the breakpoint,
+    // the layer will be filling the viewport, so we want to
+    // restrict the scroll to the layer and not allow the
+    // body to scroll
+    if (modal || hitResponsiveBreakpoint) {
       content = (
         <FocusedContainer
           hidden={position === 'hidden'}
           // if layer has a target, do not restrict scroll.
           // restricting scroll could inhibit the user's
           // ability to scroll the page while the layer is open.
-          restrictScroll={!layerTarget ? true : undefined}
+          restrictScroll={
+            !layerTarget || hitResponsiveBreakpoint ? true : undefined
+          }
           trapFocus
         >
           {content}

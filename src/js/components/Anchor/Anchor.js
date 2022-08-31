@@ -1,6 +1,7 @@
 import React, {
   cloneElement,
   forwardRef,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -14,19 +15,23 @@ import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 
 import { StyledAnchor } from './StyledAnchor';
+import { AnchorPropTypes } from './propTypes';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
 
 const Anchor = forwardRef(
   (
     {
       a11yTitle,
+      'aria-label': ariaLabel,
       children,
       color,
       disabled,
+      gap,
       href,
       icon,
       label,
       onBlur,
-      onClick,
+      onClick: onClickProp,
       onFocus,
       reverse,
       ...rest
@@ -35,6 +40,22 @@ const Anchor = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
+
+    const sendAnalytics = useAnalytics();
+
+    const onClick = useCallback(
+      (event) => {
+        sendAnalytics({
+          type: 'anchorClick',
+          element: event.target,
+          event,
+          href,
+          label: typeof label === 'string' ? label: undefined,
+        });
+        if (onClickProp) onClickProp(event);
+      },
+      [onClickProp, sendAnalytics, label, href],
+    );
 
     useEffect(() => {
       if ((icon || label) && children) {
@@ -58,7 +79,7 @@ const Anchor = forwardRef(
       <StyledAnchor
         {...rest}
         ref={ref}
-        aria-label={a11yTitle}
+        aria-label={ariaLabel || a11yTitle}
         colorProp={color}
         disabled={disabled}
         hasIcon={!!icon}
@@ -67,11 +88,11 @@ const Anchor = forwardRef(
         reverse={reverse}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
-        onFocus={event => {
+        onFocus={(event) => {
           setFocus(true);
           if (onFocus) onFocus(event);
         }}
-        onBlur={event => {
+        onBlur={(event) => {
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
@@ -81,7 +102,7 @@ const Anchor = forwardRef(
             as="span"
             direction="row"
             align="center"
-            gap="small"
+            gap={gap || theme.anchor.gap}
             responsive={false}
             style={{ display: 'inline-flex' }}
           >
@@ -97,12 +118,6 @@ const Anchor = forwardRef(
 );
 
 Anchor.displayName = 'Anchor';
+Anchor.propTypes = AnchorPropTypes;
 
-let AnchorDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  AnchorDoc = require('./doc').doc(Anchor);
-}
-const AnchorWrapper = AnchorDoc || Anchor;
-
-export { AnchorWrapper as Anchor };
+export { Anchor };

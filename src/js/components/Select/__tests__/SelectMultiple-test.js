@@ -1,10 +1,11 @@
 import React from 'react';
-import 'jest-styled-components';
-import renderer from 'react-test-renderer';
-import { act, cleanup, render, fireEvent } from '@testing-library/react';
+import { act, render, fireEvent, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import 'jest-styled-components';
+import '@testing-library/jest-dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -14,7 +15,6 @@ import { Select } from '..';
 describe('Select Controlled', () => {
   window.scrollTo = jest.fn();
   beforeEach(createPortal);
-  afterEach(cleanup);
 
   test('should not have accessibility violations', async () => {
     const { container } = render(
@@ -22,13 +22,26 @@ describe('Select Controlled', () => {
         <Select options={['one', 'two', 'three']} a11yTitle="test" multiple />
       </Grommet>,
     );
-    const results = await axe(container);
+    const results = await axe(container, {
+      rules: {
+        /* This rule is flagged because Select is built using a
+        TextInput within a DropButton. According to Dequeue and
+        WCAG 4.1.2 "interactive controls must not have focusable
+        descendants". Jest-axe is assuming that the input is focusable
+        and since the input is a descendant of the button the rule is
+        flagged. However, the TextInput is built so that it is read
+        only and cannot receive focus. Select is accessible
+        according to the WCAG specification, but jest-axe is flagging
+        it so we are disabling this rule. */
+        'nested-interactive': { enabled: false },
+      },
+    });
     expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
   });
 
   test('multiple', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select
         id="test-select"
         multiple
@@ -37,7 +50,8 @@ describe('Select Controlled', () => {
         value={[]}
       />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('multiple values', () => {
@@ -105,6 +119,31 @@ describe('Select Controlled', () => {
       document.getElementById('test-select__drop').querySelector('button'),
     );
     expect(onChange).toBeCalledWith(expect.objectContaining({ value: [] }));
+  });
+
+  test('deselect all options should remove clear selection', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        multiple
+        options={['one', 'two']}
+        clear
+      />,
+    );
+
+    await user.click(screen.getByPlaceholderText('test select'));
+    await user.click(screen.getByRole('option', { name: 'one' }));
+    await user.click(screen.getByPlaceholderText('test select'));
+
+    expect(screen.getByText('Clear selection')).toBeInTheDocument();
+
+    await user.click(screen.getByRole('option', { name: 'one' }));
+    await user.click(screen.getByPlaceholderText('test select'));
+
+    expect(screen.queryByText('Clear selection')).not.toBeInTheDocument();
   });
 
   test('multiple onChange without valueKey', () => {
@@ -365,10 +404,10 @@ describe('Select Controlled', () => {
             setValue(nextValue);
           }}
           onClose={() => setOptions(defaultOptions)}
-          onSearch={text => {
+          onSearch={(text) => {
             onSearch(text);
             const nextOptions = defaultOptions.filter(
-              option =>
+              (option) =>
                 option.name.toLowerCase().indexOf(text.toLowerCase()) >= 0,
             );
             setOptions(nextOptions);
@@ -418,7 +457,7 @@ describe('Select Controlled', () => {
     expect(onChange).toHaveBeenNthCalledWith(3, [{ id: 21, name: 'Value21' }]);
   });
 
-  test(`should allow multiple selections when options are 
+  test(`should allow multiple selections when options are
   loaded lazily`, () => {
     jest.useFakeTimers();
     const onChange = jest.fn();

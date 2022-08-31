@@ -4,10 +4,22 @@ import { ColorType } from '../../utils';
 
 export type DiagramConnectionAnchor = 'center' | 'vertical' | 'horizontal';
 export type DiagramConnectionType = 'direct' | 'curved' | 'rectilinear';
+export type DiagramAnimationType =
+  | boolean
+  | 'pulse'
+  | 'draw'
+  | {
+      type?: 'pulse' | 'draw';
+      delay?: number | string;
+      duration?: number | string;
+      size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    };
 
 export interface DiagramProps {
+  animation?: DiagramAnimationType;
   connections: {
     anchor?: DiagramConnectionAnchor;
+    animation?: DiagramAnimationType;
     color?: ColorType;
     fromTarget: string | object;
     label?: string;
@@ -25,6 +37,10 @@ export interface DiagramProps {
   }[];
 }
 
-declare const Diagram: React.FC<DiagramProps & JSX.IntrinsicElements['svg']>;
+type divProps = JSX.IntrinsicElements['svg'];
+
+export interface DiagramExtendedProps extends DiagramProps, divProps {}
+
+declare const Diagram: React.FC<DiagramExtendedProps>;
 
 export { Diagram };

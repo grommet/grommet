@@ -1,8 +1,9 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
-
 import {
+  alignContentStyle,
+  alignStyle,
   backgroundStyle,
   borderStyle,
   breakpointStyle,
@@ -10,37 +11,18 @@ import {
   fillStyle,
   focusStyle,
   genericStyles,
+  getBreakpointStyle,
   getHoverIndicatorStyle,
+  heightStyle,
   overflowStyle,
   parseMetricToNum,
   responsiveBorderStyle,
-  getBreakpointStyle,
+  widthStyle,
 } from '../../utils';
 
-const ALIGN_MAP = {
-  baseline: 'baseline',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch',
-};
+import { roundStyle } from '../../utils/styles';
 
-const alignStyle = css`
-  align-items: ${props => ALIGN_MAP[props.align]};
-`;
-
-const ALIGN_CONTENT_MAP = {
-  around: 'around',
-  between: 'between',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch',
-};
-
-const alignContentStyle = css`
-  align-content: ${props => ALIGN_CONTENT_MAP[props.alignContent]};
-`;
+import { animationBounds, animationObjectStyle } from '../../utils/animation';
 
 const BASIS_MAP = {
   auto: 'auto',
@@ -54,7 +36,7 @@ const BASIS_MAP = {
 };
 
 const basisStyle = css`
-  flex-basis: ${props =>
+  flex-basis: ${(props) =>
     BASIS_MAP[props.basis] ||
     props.theme.global.size[props.basis] ||
     props.basis};
@@ -94,10 +76,10 @@ const directionStyle = (direction, theme) => {
   return styles;
 };
 
-const elevationStyle = css`
-  box-shadow: ${props =>
+const elevationStyle = (elevation) => css`
+  box-shadow: ${(props) =>
     props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
-      props.elevationProp
+      elevation
     ]};
 `;
 
@@ -108,7 +90,7 @@ const FLEX_MAP = {
   shrink: '0 1',
 };
 
-const flexGrowShrinkProp = flex => {
+const flexGrowShrinkProp = (flex) => {
   if (typeof flex === 'boolean' || typeof flex === 'string') {
     return FLEX_MAP[flex];
   }
@@ -117,7 +99,7 @@ const flexGrowShrinkProp = flex => {
 };
 
 const flexStyle = css`
-  flex: ${props =>
+  flex: ${(props) =>
     `${flexGrowShrinkProp(props.flex)}${
       props.flex !== true && !props.basis ? ' auto' : ''
     }`};
@@ -133,7 +115,7 @@ const JUSTIFY_MAP = {
 };
 
 const justifyStyle = css`
-  justify-content: ${props => JUSTIFY_MAP[props.justify]};
+  justify-content: ${(props) => JUSTIFY_MAP[props.justify]};
 `;
 
 const WRAP_MAP = {
@@ -142,269 +124,8 @@ const WRAP_MAP = {
 };
 
 const wrapStyle = css`
-  flex-wrap: ${props => WRAP_MAP[props.wrapProp]};
+  flex-wrap: ${(props) => WRAP_MAP[props.wrapProp]};
 `;
-
-const ROUND_MAP = {
-  full: '100%',
-};
-
-const roundStyle = (data, responsive, theme) => {
-  const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
-  const styles = [];
-  if (typeof data === 'object') {
-    const size =
-      ROUND_MAP[data.size] ||
-      theme.global.edgeSize[data.size || 'medium'] ||
-      data.size;
-    const responsiveSize =
-      responsive &&
-      breakpoint &&
-      breakpoint.edgeSize[data.size] &&
-      (breakpoint.edgeSize[data.size] || data.size);
-    if (data.corner === 'top') {
-      styles.push(css`
-        border-top-left-radius: ${size};
-        border-top-right-radius: ${size};
-      `);
-      if (responsiveSize) {
-        styles.push(
-          breakpointStyle(
-            breakpoint,
-            `
-          border-top-left-radius: ${responsiveSize};
-          border-top-right-radius: ${responsiveSize};
-        `,
-          ),
-        );
-      }
-    } else if (data.corner === 'bottom') {
-      styles.push(css`
-        border-bottom-left-radius: ${size};
-        border-bottom-right-radius: ${size};
-      `);
-      if (responsiveSize) {
-        styles.push(
-          breakpointStyle(
-            breakpoint,
-            `
-          border-bottom-left-radius: ${responsiveSize};
-          border-bottom-right-radius: ${responsiveSize};
-        `,
-          ),
-        );
-      }
-    } else if (data.corner === 'left') {
-      styles.push(css`
-        border-top-left-radius: ${size};
-        border-bottom-left-radius: ${size};
-      `);
-      if (responsiveSize) {
-        styles.push(
-          breakpointStyle(
-            breakpoint,
-            `
-          border-top-left-radius: ${responsiveSize};
-          border-bottom-left-radius: ${responsiveSize};
-        `,
-          ),
-        );
-      }
-    } else if (data.corner === 'right') {
-      styles.push(css`
-        border-top-right-radius: ${size};
-        border-bottom-right-radius: ${size};
-      `);
-      if (responsiveSize) {
-        styles.push(
-          breakpointStyle(
-            breakpoint,
-            `
-          border-top-right-radius: ${responsiveSize};
-          border-bottom-right-radius: ${responsiveSize};
-        `,
-          ),
-        );
-      }
-    } else if (data.corner) {
-      styles.push(css`
-        border-${data.corner}-radius: ${size};
-      `);
-      if (responsiveSize) {
-        styles.push(
-          breakpointStyle(
-            breakpoint,
-            `
-          border-${data.corner}-radius: ${responsiveSize};
-        `,
-          ),
-        );
-      }
-    } else {
-      styles.push(css`
-        border-radius: ${size};
-      `);
-      if (responsiveSize) {
-        styles.push(
-          breakpointStyle(
-            breakpoint,
-            `
-          border-radius: ${responsiveSize};
-        `,
-          ),
-        );
-      }
-    }
-  } else {
-    const size = data === true ? 'medium' : data;
-    styles.push(css`
-      border-radius: ${ROUND_MAP[size] || theme.global.edgeSize[size] || size};
-    `);
-    const responsiveSize = breakpoint && breakpoint.edgeSize[size];
-    if (responsiveSize) {
-      styles.push(
-        breakpointStyle(
-          breakpoint,
-          `
-        border-radius: ${responsiveSize};
-      `,
-        ),
-      );
-    }
-  }
-  return styles;
-};
-
-const SLIDE_SIZES = {
-  xsmall: 1,
-  small: 5,
-  medium: 10,
-  large: 50,
-  xlarge: 200,
-};
-
-const PULSE_SIZES = {
-  xsmall: 1.001,
-  small: 1.01,
-  medium: 1.1,
-  large: 1.5,
-  xlarge: 2,
-};
-
-const JIGGLE_SIZES = {
-  xsmall: 0.1,
-  small: 1,
-  medium: 5,
-  large: 400,
-  xlarge: 1000,
-};
-
-const ZOOM_SIZES = {
-  xsmall: 0.001,
-  small: 0.01,
-  medium: 0.05,
-  large: 0.1,
-  xlarge: 0.5,
-};
-
-const animationBounds = (type, size = 'medium') => {
-  if (type === 'fadeIn') {
-    return ['opacity: 0;', 'opacity: 1;'];
-  }
-  if (type === 'fadeOut') {
-    return ['opacity: 1;', 'opacity: 0;'];
-  }
-  if (type === 'jiggle') {
-    const deg = JIGGLE_SIZES[size];
-    return [`transform: rotate(-${deg}deg);`, `transform: rotate(${deg}deg);`];
-  }
-  if (type === 'pulse') {
-    return ['transform: scale(1);', `transform: scale(${PULSE_SIZES[size]})`];
-  }
-  if (type === 'rotateRight') {
-    return [`transform: rotate(0deg);`, `transform: rotate(359deg);`];
-  }
-  if (type === 'rotateLeft') {
-    return [`transform: rotate(0deg);`, `transform: rotate(-359deg);`];
-  }
-  if (type === 'flipIn') {
-    return ['transform: rotateY(90deg);', 'transform: rotateY(0);'];
-  }
-  if (type === 'flipOut') {
-    return ['transform: rotateY(0);', 'transform: rotateY(90deg);'];
-  }
-  if (type === 'slideDown') {
-    return [
-      `transform: translateY(-${SLIDE_SIZES[size]}%);`,
-      'transform: none;',
-    ];
-  }
-  if (type === 'slideLeft') {
-    return [
-      `transform: translateX(${SLIDE_SIZES[size]}%);`,
-      'transform: none;',
-    ];
-  }
-  if (type === 'slideRight') {
-    return [
-      `transform: translateX(-${SLIDE_SIZES[size]}%);`,
-      'transform: none;',
-    ];
-  }
-  if (type === 'slideUp') {
-    return [
-      `transform: translateY(${SLIDE_SIZES[size]}%);`,
-      'transform: none;',
-    ];
-  }
-  if (type === 'zoomIn') {
-    return [`transform: scale(${1 - ZOOM_SIZES[size]});`, 'transform: none;'];
-  }
-  if (type === 'zoomOut') {
-    return [`transform: scale(${1 + ZOOM_SIZES[size]});`, 'transform: none;'];
-  }
-  return [];
-};
-
-const normalizeTiming = (time, defaultTiming) =>
-  time ? `${time / 1000.0}s` : defaultTiming;
-
-const animationEnding = type => {
-  if (type === 'jiggle') {
-    return 'alternate infinite';
-  }
-  if (type === 'pulse') {
-    return 'alternate infinite';
-  }
-  if (type === 'rotateRight' || type === 'rotateLeft') {
-    return 'infinite linear';
-  }
-  return 'forwards';
-};
-
-const animationObjectStyle = (animation, theme) => {
-  const bounds = animationBounds(animation.type, animation.size);
-  if (bounds) {
-    const animationTransition = css`
-      from {
-        ${bounds[0]};
-      }
-      to {
-        ${bounds[1]};
-      }
-    `;
-    return css`${keyframes`${animationTransition}`}
-    ${normalizeTiming(
-      animation.duration,
-      (theme.global.animation[animation.type]
-        ? theme.global.animation[animation.type].duration
-        : undefined) || theme.global.animation.duration,
-    )}
-    ${normalizeTiming(animation.delay, '0s')}
-    ${animationEnding(animation.type)}`;
-  }
-  return '';
-};
 
 const animationItemStyle = (item, theme) => {
   if (typeof item === 'string') {
@@ -413,7 +134,9 @@ const animationItemStyle = (item, theme) => {
   if (Array.isArray(item)) {
     return item.reduce(
       (style, a, index) =>
-        css`${style}${index > 0 ? ',' : ''} ${animationItemStyle(a, theme)}`,
+        css`
+          ${style}${index > 0 ? ',' : ''} ${animationItemStyle(a, theme)}
+        `,
       '',
     );
   }
@@ -423,14 +146,14 @@ const animationItemStyle = (item, theme) => {
   return '';
 };
 
-const animationAncilaries = animation => {
+const animationAncilaries = (animation) => {
   if (animation.type === 'flipIn' || animation.type === 'flipOut') {
     return 'perspective: 1000px; transform-style: preserve-3d;';
   }
   return '';
 };
 
-const animationObjectInitialStyle = animation => {
+const animationObjectInitialStyle = (animation) => {
   const bounds = animationBounds(animation.type, animation.size);
   if (bounds) {
     return `${bounds[0]} ${animationAncilaries(animation)}`;
@@ -438,13 +161,13 @@ const animationObjectInitialStyle = animation => {
   return '';
 };
 
-const animationInitialStyle = item => {
+const animationInitialStyle = (item) => {
   if (typeof item === 'string') {
     return animationObjectInitialStyle({ type: item });
   }
   if (Array.isArray(item)) {
     return item
-      .map(a =>
+      .map((a) =>
         typeof a === 'string'
           ? animationObjectInitialStyle({ type: a })
           : animationObjectInitialStyle(a),
@@ -458,7 +181,7 @@ const animationInitialStyle = item => {
 };
 
 const animationStyle = css`
-  ${props => css`
+  ${(props) => css`
     ${animationInitialStyle(props.animation)}
     animation: ${animationItemStyle(props.animation, props.theme)};
   `};
@@ -468,83 +191,37 @@ const interactiveStyle = css`
   cursor: pointer;
 
   &:hover {
-    ${props =>
+    ${(props) =>
+      props.kindProp?.hover &&
+      getHoverIndicatorStyle(props.kindProp.hover, props.theme)}
+    ${(props) =>
       props.hoverIndicator &&
       getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
   }
-`;
-
-const getSize = (props, size) => props.theme.global.size[size] || size;
-
-const heightObjectStyle = css`
-  ${props =>
-    props.heightProp.max &&
-    css`
-      max-height: ${getSize(props, props.heightProp.max)};
-    `};
-  ${props =>
-    props.heightProp.min &&
-    css`
-      min-height: ${getSize(props, props.heightProp.min)};
-    `};
-`;
-
-const heightStyle = css`
-  height: ${props => getSize(props, props.heightProp)};
-`;
-
-const widthObjectStyle = css`
-  ${props =>
-    props.widthProp.max &&
-    css`
-      max-width: ${getSize(props, props.widthProp.max)};
-    `};
-  ${props =>
-    props.widthProp.min &&
-    css`
-      min-width: ${getSize(props, props.widthProp.min)};
-    `};
-  ${props =>
-    props.widthProp.width &&
-    css`
-      width: ${getSize(props, props.widthProp.width)};
-    `};
-`;
-
-const widthStyle = css`
-  width: ${props => getSize(props, props.widthProp)};
 `;
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div`
   display: flex;
   box-sizing: border-box;
-  ${props => !props.basis && 'max-width: 100%;'};
+  ${(props) => !props.basis && 'max-width: 100%;'};
 
   ${genericStyles}
-  ${props => props.align && alignStyle}
-  ${props => props.alignContent && alignContentStyle}
-  ${props => props.background && backgroundStyle(props.background, props.theme)}
-  ${props =>
-    props.border &&
-    (Array.isArray(props.border)
-      ? props.border.map(border =>
-          borderStyle(border, props.responsive, props.theme),
-        )
-      : borderStyle(props.border, props.responsive, props.theme))}
-  ${props =>
+  ${(props) => props.align && alignStyle}
+  ${(props) => props.alignContent && alignContentStyle}
+  ${(props) =>
+    props.background && backgroundStyle(props.background, props.theme)}
+  ${(props) =>
+    props.border && borderStyle(props.border, props.responsive, props.theme)}
+  ${(props) =>
     props.directionProp && directionStyle(props.directionProp, props.theme)}
-  ${props =>
-    props.heightProp &&
-    (typeof props.heightProp === 'object' ? heightObjectStyle : heightStyle)}
-  ${props =>
-    props.widthProp &&
-    (typeof props.widthProp === 'object' ? widthObjectStyle : widthStyle)}
-  ${props => props.flex !== undefined && flexStyle}
-  ${props => props.basis && basisStyle}
-  ${props => props.fillProp && fillStyle(props.fillProp)}
-  ${props => props.justify && justifyStyle}
-  ${props =>
+  ${(props) => props.heightProp && heightStyle(props.heightProp, props.theme)}
+  ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
+  ${(props) => props.flex !== undefined && flexStyle}
+  ${(props) => props.basis && basisStyle}
+  ${(props) => props.fillProp && fillStyle(props.fillProp)}
+  ${(props) => props.justify && justifyStyle}
+  ${(props) =>
     props.pad &&
     edgeStyle(
       'padding',
@@ -553,19 +230,20 @@ const StyledBox = styled.div`
       props.theme.box.responsiveBreakpoint,
       props.theme,
     )}
-  ${props =>
+  ${(props) =>
     props.round && roundStyle(props.round, props.responsive, props.theme)}
-  ${props => props.wrapProp && wrapStyle}
-  ${props => props.overflowProp && overflowStyle(props.overflowProp)}
-  ${props => props.elevationProp && elevationStyle}
-  ${props => props.animation && animationStyle}
-  ${props => props.onClick && interactiveStyle}
-  ${props =>
+  ${(props) => props.wrapProp && wrapStyle}
+  ${(props) => props.overflowProp && overflowStyle(props.overflowProp)}
+  ${(props) => props.elevationProp && elevationStyle(props.elevationProp)}
+  ${(props) => props.animation && animationStyle}
+  ${(props) => props.onClick && interactiveStyle}
+  ${(props) =>
     props.onClick &&
     props.focus &&
     props.focusIndicator !== false &&
     focusStyle()}
-  ${props => props.theme.box && props.theme.box.extend}
+  ${(props) => props.theme.box && props.theme.box.extend}
+  ${(props) => props.kindProp && props.kindProp.extend}
 `;
 
 const gapStyle = (directionProp, gap, responsive, border, theme) => {
@@ -601,16 +279,19 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
   if (border === 'between' || (border && border.side === 'between')) {
     const borderSize = border.size || 'xsmall';
     const borderMetric = theme.global.borderSize[borderSize] || borderSize;
-    const borderOffset = `${parseMetricToNum(metric) / 2 -
-      parseMetricToNum(borderMetric) / 2}px`;
+    const borderOffset = `${
+      parseMetricToNum(metric) / 2 - parseMetricToNum(borderMetric) / 2
+    }px`;
     const responsiveBorderMetric =
       responsive &&
       breakpoint &&
       (breakpoint.borderSize[borderSize] || borderSize);
     const responsiveBorderOffset =
       responsiveBorderMetric &&
-      `${parseMetricToNum(responsiveMetric) / 2 -
-        parseMetricToNum(responsiveBorderMetric) / 2}px`;
+      `${
+        parseMetricToNum(responsiveMetric) / 2 -
+        parseMetricToNum(responsiveBorderMetric) / 2
+      }px`;
 
     if (directionProp === 'column' || directionProp === 'column-reverse') {
       const adjustedBorder =
@@ -698,7 +379,7 @@ Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 const StyledBoxGap = styled.div`
   flex: 0 0 auto;
   align-self: stretch;
-  ${props =>
+  ${(props) =>
     props.gap &&
     gapStyle(
       props.directionProp,

@@ -1,10 +1,5 @@
-import React, {
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import {
   findScrollParent,
   findScrollParents,
@@ -12,6 +7,10 @@ import {
   isNodeBeforeScroll,
 } from '../../utils';
 import { Box } from '../Box';
+import { InfiniteScrollPropTypes } from './propTypes';
+
+const calculateLastPageBound = (show, step) =>
+  show ? Math.floor((show + step) / step) - 1 : 0;
 
 const InfiniteScroll = ({
   children,
@@ -19,22 +18,22 @@ const InfiniteScroll = ({
   onMore,
   renderMarker,
   replace,
-  show: showProp,
+  show,
   step = 50,
 }) => {
   // item index to be made visible initially
-  const [show, setShow] = useState(showProp);
+  const [scrollShow, setScrollShow] = useState();
 
   // the last page we have items for
-  const lastPage = useMemo(() => Math.floor(items.length / step), [
-    items.length,
-    step,
-  ]);
+  const lastPage = useMemo(
+    () => Math.max(0, Math.ceil(items.length / step) - 1),
+    [items.length, step],
+  );
 
   // the pages we are rendering
   const [renderPageBounds, setRenderPageBounds] = useState([
     0,
-    show ? Math.floor((show + step) / step) - 1 : 0,
+    calculateLastPageBound(show, step),
   ]);
 
   // the heights of the pages, approximated after we render the first page
@@ -98,7 +97,7 @@ const InfiniteScroll = ({
 
       if (show) {
         // ensure we try to render any show page
-        const showPage = Math.floor((show + step) / step) - 1;
+        const showPage = calculateLastPageBound(show, step);
         nextBeginPage = Math.min(showPage, nextBeginPage);
         nextEndPage = Math.max(showPage, nextEndPage);
       }
@@ -120,13 +119,15 @@ const InfiniteScroll = ({
     // might not be there yet or might have already rendered everything
     if (belowMarkerRef.current) {
       scrollParents = findScrollParents(belowMarkerRef.current);
-      scrollParents.forEach(sp => sp.addEventListener('scroll', debounce));
+      scrollParents.forEach((sp) => sp.addEventListener('scroll', debounce));
     }
     window.addEventListener('resize', debounce);
     evaluate();
     return () => {
       if (scrollParents) {
-        scrollParents.forEach(sp => sp.removeEventListener('scroll', debounce));
+        scrollParents.forEach((sp) =>
+          sp.removeEventListener('scroll', debounce),
+        );
       }
       window.removeEventListener('resize', debounce);
       clearTimeout(timer);
@@ -138,7 +139,8 @@ const InfiniteScroll = ({
     if (
       onMore &&
       renderPageBounds[1] === lastPage &&
-      items.length >= pendingLength
+      items.length >= pendingLength &&
+      items.length > 0
     ) {
       // remember we've asked for more, so we don't keep asking if it takes
       // a while
@@ -147,17 +149,24 @@ const InfiniteScroll = ({
     }
   }, [items.length, lastPage, onMore, pendingLength, renderPageBounds, step]);
 
+  useEffect(() => {
+    if (items.length === 0 && lastPage === 0 && pendingLength !== 0) {
+      setPageHeights([]);
+      setPendingLength(0);
+      setRenderPageBounds([0, calculateLastPageBound(show, step)]);
+    }
+  }, [lastPage, pendingLength, show, step, items.length]);
+
   // scroll to any 'show'
   useLayoutEffect(() => {
     // ride out any animation delays, 100ms empirically measured
     const timer = setTimeout(() => {
-      if (show && belowMarkerRef.current) {
+      if (show && belowMarkerRef.current && show !== scrollShow) {
         // calculate show index based on beginPage
         const showIndex =
           show - renderPageBounds[0] * step + (renderPageBounds[0] ? 1 : 0);
-        const showNode = belowMarkerRef.current.parentNode.children.item(
-          showIndex,
-        );
+        const showNode =
+          belowMarkerRef.current.parentNode.children.item(showIndex);
         if (showNode) {
           const scrollParent = findScrollParent(showNode);
           if (isNodeBeforeScroll(showNode, scrollParent)) {
@@ -166,11 +175,16 @@ const InfiniteScroll = ({
             showNode.scrollIntoView(false);
           }
           // clean up after having shown
-          setShow(undefined);
+          setScrollShow(show);
         }
       }
     }, 100);
     return () => clearTimeout(timer);
+    // Omitting scrollShow as a dependency due to concern that setScrollShow
+    // is being called within the timer. If left included, re-renders and other
+    // dependency values could change in an unpredictable manner during timer
+    // and potentially result in an infinite loop.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [renderPageBounds, show, step]);
 
   // calculate and keep track of page heights
@@ -303,7 +317,7 @@ const InfiniteScroll = ({
         // Since the caller might have included a ref in what their
         // renderMarker returns, we have to take care of both refs.
         // https://github.com/facebook/react/issues/8873#issuecomment-489579878
-        ref: node => {
+        ref: (node) => {
           // Keep your own reference
           belowMarkerRef.current = node;
           // Call the original ref, if any
@@ -322,11 +336,6 @@ const InfiniteScroll = ({
   return result;
 };
 
-let InfiniteScrollDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  InfiniteScrollDoc = require('./doc').doc(InfiniteScroll);
-}
-const InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;
+InfiniteScroll.propTypes = InfiniteScrollPropTypes;
 
-export { InfiniteScrollWrapper as InfiniteScroll };
+export { InfiniteScroll };

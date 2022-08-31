@@ -136,6 +136,34 @@ exports[`Video Configure Menu Button 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -181,6 +209,26 @@ exports[`Video Configure Menu Button 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -219,32 +267,24 @@ exports[`Video Configure Menu Button 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -291,6 +331,26 @@ exports[`Video Configure Menu Button 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -310,6 +370,26 @@ exports[`Video Configure Menu Button 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -342,6 +422,7 @@ exports[`Video Configure Menu Button 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -367,9 +448,9 @@ exports[`Video Configure Menu Button 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -427,6 +508,8 @@ exports[`Video Configure Menu Button 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="true"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -443,7 +526,7 @@ exports[`Video Configure Menu Button 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -593,6 +676,34 @@ exports[`Video End event handler 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -638,6 +749,26 @@ exports[`Video End event handler 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -676,32 +807,24 @@ exports[`Video End event handler 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -748,6 +871,26 @@ exports[`Video End event handler 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -769,6 +912,26 @@ exports[`Video End event handler 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -787,6 +950,7 @@ exports[`Video End event handler 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -812,9 +976,9 @@ exports[`Video End event handler 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -872,6 +1036,8 @@ exports[`Video End event handler 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -888,7 +1054,7 @@ exports[`Video End event handler 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -1038,6 +1204,34 @@ exports[`Video Play and Pause event handlers 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1083,6 +1277,26 @@ exports[`Video Play and Pause event handlers 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -1121,32 +1335,24 @@ exports[`Video Play and Pause event handlers 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -1193,6 +1399,26 @@ exports[`Video Play and Pause event handlers 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -1214,6 +1440,26 @@ exports[`Video Play and Pause event handlers 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -1232,6 +1478,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -1258,7 +1505,7 @@ exports[`Video Play and Pause event handlers 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M3,21 L9,21 L9,3 L3,3 L3,21 Z M15,21 L21,21 L21,3 L15,3 L15,21 Z"
+              d="M3 21h6V3H3v18zm12 0h6V3h-6v18z"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -1317,6 +1564,8 @@ exports[`Video Play and Pause event handlers 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -1333,7 +1582,7 @@ exports[`Video Play and Pause event handlers 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -1349,13 +1598,14 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 exports[`Video Play and Pause event handlers 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-w4v8h9-1 iOBuda"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 eKRKEJ"
+    tabindex="-1"
   >
     <video
-      class="StyledVideo-w4v8h9-0 jGIeSQ"
+      class="StyledVideo-sc-w4v8h9-0 fLrMDE"
     >
       <source
         src="small.mp4"
@@ -1364,13 +1614,13 @@ exports[`Video Play and Pause event handlers 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-w4v8h9-2 erQDx"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 ktbAeZ"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 htrgHk"
+        class="StyledBox-sc-13pk1d4-0 bUvXbw"
       >
         <button
-          class="StyledButton-sc-323bzc-0 gLYflw"
+          class="StyledButton-sc-323bzc-0 dCpDhA"
           type="button"
         >
           .c0 {
@@ -1420,29 +1670,29 @@ exports[`Video Play and Pause event handlers 2`] = `
             class="c0"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 capuyN"
+          class="StyledBox-sc-13pk1d4-0 khSOdN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kluzTJ"
+            class="StyledBox-sc-13pk1d4-0 kGMroR"
           >
             <div
-              class="StyledStack-ajspsk-0 fDjhAR"
+              class="StyledStack-sc-ajspsk-0 DIRUt"
             >
               <div
-                class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bBReQo"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-nsxarx-0 lbkssj"
+                  class="StyledMeter-sc-nsxarx-0 woljL"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -1458,11 +1708,11 @@ exports[`Video Play and Pause event handlers 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jzjNT"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-w4v8h9-3 gyySjP"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 bqdDef"
                   role="button"
                   tabindex="0"
                 />
@@ -1470,33 +1720,35 @@ exports[`Video Play and Pause event handlers 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 fLpZkZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fEvqji"
+              class="StyledText-sc-1sadyjn-0 fuZiZD"
             >
               NaN:NaN
             </span>
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 ebqXLG"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 daPkeH"
+            class="StyledBox-sc-13pk1d4-0 hOAJOL"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
+              class="StyledText-sc-1sadyjn-0 hpCRgD"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-ofa7kd-0 dcacLZ"
+              class="StyledIcon-sc-ofa7kd-0 cnewlt"
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -1646,6 +1898,34 @@ exports[`Video autoPlay renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1691,6 +1971,26 @@ exports[`Video autoPlay renders 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -1729,32 +2029,24 @@ exports[`Video autoPlay renders 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -1801,6 +2093,26 @@ exports[`Video autoPlay renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -1822,6 +2134,26 @@ exports[`Video autoPlay renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -1840,6 +2172,7 @@ exports[`Video autoPlay renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       autoplay=""
@@ -1866,9 +2199,9 @@ exports[`Video autoPlay renders 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -1926,6 +2259,8 @@ exports[`Video autoPlay renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -1942,7 +2277,7 @@ exports[`Video autoPlay renders 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -2090,6 +2425,34 @@ exports[`Video controls below renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2135,6 +2498,26 @@ exports[`Video controls below renders 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -2173,32 +2556,24 @@ exports[`Video controls below renders 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -2245,6 +2620,26 @@ exports[`Video controls below renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -2259,6 +2654,26 @@ exports[`Video controls below renders 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -2279,6 +2694,7 @@ exports[`Video controls below renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -2304,9 +2720,9 @@ exports[`Video controls below renders 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -2365,6 +2781,8 @@ exports[`Video controls below renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -2381,7 +2799,7 @@ exports[`Video controls below renders 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -2531,6 +2949,34 @@ exports[`Video controls over renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2576,6 +3022,26 @@ exports[`Video controls over renders 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -2614,32 +3080,24 @@ exports[`Video controls over renders 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -2686,6 +3144,26 @@ exports[`Video controls over renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -2707,6 +3185,26 @@ exports[`Video controls over renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -2725,6 +3223,7 @@ exports[`Video controls over renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -2750,9 +3249,9 @@ exports[`Video controls over renders 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -2810,6 +3309,8 @@ exports[`Video controls over renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -2826,7 +3327,7 @@ exports[`Video controls over renders 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -2976,6 +3477,34 @@ exports[`Video duration event handler 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3021,6 +3550,26 @@ exports[`Video duration event handler 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -3059,32 +3608,24 @@ exports[`Video duration event handler 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -3131,6 +3672,26 @@ exports[`Video duration event handler 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -3152,6 +3713,26 @@ exports[`Video duration event handler 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -3170,6 +3751,7 @@ exports[`Video duration event handler 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -3195,9 +3777,9 @@ exports[`Video duration event handler 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -3255,6 +3837,8 @@ exports[`Video duration event handler 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -3271,7 +3855,7 @@ exports[`Video duration event handler 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -3421,6 +4005,34 @@ exports[`Video fit  cover renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3466,6 +4078,26 @@ exports[`Video fit  cover renders 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -3504,32 +4136,24 @@ exports[`Video fit  cover renders 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -3581,6 +4205,26 @@ exports[`Video fit  cover renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -3602,6 +4246,26 @@ exports[`Video fit  cover renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -3620,6 +4284,7 @@ exports[`Video fit  cover renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -3645,9 +4310,9 @@ exports[`Video fit  cover renders 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -3705,6 +4370,8 @@ exports[`Video fit  cover renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -3721,7 +4388,7 @@ exports[`Video fit  cover renders 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -3871,6 +4538,34 @@ exports[`Video fit contain renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3916,6 +4611,26 @@ exports[`Video fit contain renders 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -3954,32 +4669,24 @@ exports[`Video fit contain renders 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -4031,6 +4738,26 @@ exports[`Video fit contain renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -4052,6 +4779,26 @@ exports[`Video fit contain renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -4070,6 +4817,7 @@ exports[`Video fit contain renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -4095,9 +4843,9 @@ exports[`Video fit contain renders 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -4155,6 +4903,8 @@ exports[`Video fit contain renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -4171,7 +4921,7 @@ exports[`Video fit contain renders 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -4321,6 +5071,34 @@ exports[`Video loop renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -4366,6 +5144,26 @@ exports[`Video loop renders 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -4404,32 +5202,24 @@ exports[`Video loop renders 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -4476,6 +5266,26 @@ exports[`Video loop renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -4497,6 +5307,26 @@ exports[`Video loop renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -4515,6 +5345,7 @@ exports[`Video loop renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -4541,9 +5372,9 @@ exports[`Video loop renders 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -4601,6 +5432,8 @@ exports[`Video loop renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -4617,7 +5450,7 @@ exports[`Video loop renders 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -4767,6 +5600,34 @@ exports[`Video mouse events handlers of controls 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -4812,6 +5673,26 @@ exports[`Video mouse events handlers of controls 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -4850,32 +5731,24 @@ exports[`Video mouse events handlers of controls 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -4922,6 +5795,26 @@ exports[`Video mouse events handlers of controls 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -4943,6 +5836,26 @@ exports[`Video mouse events handlers of controls 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -4961,6 +5874,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -4986,9 +5900,9 @@ exports[`Video mouse events handlers of controls 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -5046,6 +5960,8 @@ exports[`Video mouse events handlers of controls 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -5062,7 +5978,7 @@ exports[`Video mouse events handlers of controls 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -5078,13 +5994,14 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 exports[`Video mouse events handlers of controls 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-w4v8h9-1 iOBuda"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 eKRKEJ"
+    tabindex="-1"
   >
     <video
-      class="StyledVideo-w4v8h9-0 jGIeSQ"
+      class="StyledVideo-sc-w4v8h9-0 fLrMDE"
     >
       <source
         src="small.mp4"
@@ -5093,43 +6010,43 @@ exports[`Video mouse events handlers of controls 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-w4v8h9-2 emtekd"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 jcBnZh"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 htrgHk"
+        class="StyledBox-sc-13pk1d4-0 bUvXbw"
       >
         <button
-          class="StyledButton-sc-323bzc-0 gLYflw"
+          class="StyledButton-sc-323bzc-0 dCpDhA"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-ofa7kd-0 dcacLZ"
+            class="StyledIcon-sc-ofa7kd-0 cnewlt"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 capuyN"
+          class="StyledBox-sc-13pk1d4-0 khSOdN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kluzTJ"
+            class="StyledBox-sc-13pk1d4-0 kGMroR"
           >
             <div
-              class="StyledStack-ajspsk-0 fDjhAR"
+              class="StyledStack-sc-ajspsk-0 DIRUt"
             >
               <div
-                class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bBReQo"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-nsxarx-0 lbkssj"
+                  class="StyledMeter-sc-nsxarx-0 woljL"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -5145,11 +6062,11 @@ exports[`Video mouse events handlers of controls 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jzjNT"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-w4v8h9-3 gyySjP"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 bqdDef"
                   role="button"
                   tabindex="0"
                 />
@@ -5157,33 +6074,35 @@ exports[`Video mouse events handlers of controls 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 fLpZkZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fEvqji"
+              class="StyledText-sc-1sadyjn-0 fuZiZD"
             >
               NaN:NaN
             </span>
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 ebqXLG"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 daPkeH"
+            class="StyledBox-sc-13pk1d4-0 hOAJOL"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
+              class="StyledText-sc-1sadyjn-0 hpCRgD"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-ofa7kd-0 dcacLZ"
+              class="StyledIcon-sc-ofa7kd-0 cnewlt"
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -5199,13 +6118,14 @@ exports[`Video mouse events handlers of controls 2`] = `
 
 exports[`Video mouse events handlers of controls 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-w4v8h9-1 iOBuda"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 eKRKEJ"
+    tabindex="-1"
   >
     <video
-      class="StyledVideo-w4v8h9-0 jGIeSQ"
+      class="StyledVideo-sc-w4v8h9-0 fLrMDE"
     >
       <source
         src="small.mp4"
@@ -5214,43 +6134,43 @@ exports[`Video mouse events handlers of controls 3`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-w4v8h9-2 emtekd"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 jcBnZh"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 htrgHk"
+        class="StyledBox-sc-13pk1d4-0 bUvXbw"
       >
         <button
-          class="StyledButton-sc-323bzc-0 gLYflw"
+          class="StyledButton-sc-323bzc-0 dCpDhA"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-ofa7kd-0 dcacLZ"
+            class="StyledIcon-sc-ofa7kd-0 cnewlt"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 capuyN"
+          class="StyledBox-sc-13pk1d4-0 khSOdN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kluzTJ"
+            class="StyledBox-sc-13pk1d4-0 kGMroR"
           >
             <div
-              class="StyledStack-ajspsk-0 fDjhAR"
+              class="StyledStack-sc-ajspsk-0 DIRUt"
             >
               <div
-                class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bBReQo"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-nsxarx-0 lbkssj"
+                  class="StyledMeter-sc-nsxarx-0 woljL"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -5266,11 +6186,11 @@ exports[`Video mouse events handlers of controls 3`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jzjNT"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-w4v8h9-3 gyySjP"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 bqdDef"
                   role="button"
                   tabindex="0"
                 />
@@ -5278,33 +6198,35 @@ exports[`Video mouse events handlers of controls 3`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 fLpZkZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fEvqji"
+              class="StyledText-sc-1sadyjn-0 fuZiZD"
             >
               NaN:NaN
             </span>
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 ebqXLG"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 daPkeH"
+            class="StyledBox-sc-13pk1d4-0 hOAJOL"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
+              class="StyledText-sc-1sadyjn-0 hpCRgD"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-ofa7kd-0 dcacLZ"
+              class="StyledIcon-sc-ofa7kd-0 cnewlt"
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -5454,6 +6376,34 @@ exports[`Video mute renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -5499,6 +6449,26 @@ exports[`Video mute renders 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -5537,32 +6507,24 @@ exports[`Video mute renders 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -5609,6 +6571,26 @@ exports[`Video mute renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -5630,6 +6612,26 @@ exports[`Video mute renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -5648,6 +6650,7 @@ exports[`Video mute renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -5673,9 +6676,9 @@ exports[`Video mute renders 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -5733,6 +6736,8 @@ exports[`Video mute renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -5749,7 +6754,7 @@ exports[`Video mute renders 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -5899,6 +6904,34 @@ exports[`Video renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -5944,6 +6977,26 @@ exports[`Video renders 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -5982,32 +7035,24 @@ exports[`Video renders 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -6054,6 +7099,26 @@ exports[`Video renders 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -6075,6 +7140,26 @@ exports[`Video renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -6093,6 +7178,7 @@ exports[`Video renders 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -6118,9 +7204,9 @@ exports[`Video renders 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -6178,6 +7264,8 @@ exports[`Video renders 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -6194,7 +7282,7 @@ exports[`Video renders 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -6344,6 +7432,34 @@ exports[`Video renders with theme 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -6389,6 +7505,26 @@ exports[`Video renders with theme 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -6427,32 +7563,24 @@ exports[`Video renders with theme 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -6499,6 +7627,26 @@ exports[`Video renders with theme 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -6520,6 +7668,26 @@ exports[`Video renders with theme 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -6538,6 +7706,7 @@ exports[`Video renders with theme 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -6563,9 +7732,9 @@ exports[`Video renders with theme 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -6623,6 +7792,8 @@ exports[`Video renders with theme 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -6639,7 +7810,7 @@ exports[`Video renders with theme 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -6789,6 +7960,34 @@ exports[`Video scrubber 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -6834,6 +8033,26 @@ exports[`Video scrubber 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -6872,32 +8091,24 @@ exports[`Video scrubber 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -6944,6 +8155,26 @@ exports[`Video scrubber 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -6965,6 +8196,26 @@ exports[`Video scrubber 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -6983,6 +8234,7 @@ exports[`Video scrubber 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -7008,9 +8260,9 @@ exports[`Video scrubber 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -7068,6 +8320,8 @@ exports[`Video scrubber 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -7084,7 +8338,7 @@ exports[`Video scrubber 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -7100,13 +8354,14 @@ exports[`Video scrubber 1`] = `
 
 exports[`Video scrubber 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-w4v8h9-1 iOBuda"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 eKRKEJ"
+    tabindex="-1"
   >
     <video
-      class="StyledVideo-w4v8h9-0 jGIeSQ"
+      class="StyledVideo-sc-w4v8h9-0 fLrMDE"
     >
       <source
         src="small.mp4"
@@ -7115,43 +8370,43 @@ exports[`Video scrubber 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-w4v8h9-2 emtekd"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 jcBnZh"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 htrgHk"
+        class="StyledBox-sc-13pk1d4-0 bUvXbw"
       >
         <button
-          class="StyledButton-sc-323bzc-0 gLYflw"
+          class="StyledButton-sc-323bzc-0 dCpDhA"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-ofa7kd-0 dcacLZ"
+            class="StyledIcon-sc-ofa7kd-0 cnewlt"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 capuyN"
+          class="StyledBox-sc-13pk1d4-0 khSOdN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kluzTJ"
+            class="StyledBox-sc-13pk1d4-0 kGMroR"
           >
             <div
-              class="StyledStack-ajspsk-0 fDjhAR"
+              class="StyledStack-sc-ajspsk-0 DIRUt"
             >
               <div
-                class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bBReQo"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-nsxarx-0 lbkssj"
+                  class="StyledMeter-sc-nsxarx-0 woljL"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -7167,11 +8422,11 @@ exports[`Video scrubber 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jzjNT"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-w4v8h9-3 gyySjP"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 bqdDef"
                   role="button"
                   tabindex="0"
                 />
@@ -7179,33 +8434,35 @@ exports[`Video scrubber 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 fLpZkZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fEvqji"
+              class="StyledText-sc-1sadyjn-0 fuZiZD"
             >
               NaN:NaN
             </span>
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 ebqXLG"
+          class="StyledButton-sc-323bzc-0 iqZbKa"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 daPkeH"
+            class="StyledBox-sc-13pk1d4-0 hOAJOL"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
+              class="StyledText-sc-1sadyjn-0 hpCRgD"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-ofa7kd-0 dcacLZ"
+              class="StyledIcon-sc-ofa7kd-0 cnewlt"
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -7355,6 +8612,34 @@ exports[`Video timeUpdate event handler 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -7400,6 +8685,26 @@ exports[`Video timeUpdate event handler 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -7438,32 +8743,24 @@ exports[`Video timeUpdate event handler 1`] = `
   border: 0;
 }
 
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -7510,6 +8807,26 @@ exports[`Video timeUpdate event handler 1`] = `
   position: relative;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
@@ -7531,6 +8848,26 @@ exports[`Video timeUpdate event handler 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -7549,6 +8886,7 @@ exports[`Video timeUpdate event handler 1`] = `
 >
   <div
     class="c1"
+    tabindex="-1"
   >
     <video
       class="c2"
@@ -7574,9 +8912,9 @@ exports[`Video timeUpdate event handler 1`] = `
             class="c6"
             viewBox="0 0 24 24"
           >
-            <polygon
+            <path
+              d="m3 22 18-10L3 2z"
               fill="none"
-              points="3 22 21 12 3 2"
               stroke="#000"
               stroke-width="2"
             />
@@ -7634,6 +8972,8 @@ exports[`Video timeUpdate event handler 1`] = `
           </div>
         </div>
         <button
+          aria-expanded="false"
+          aria-haspopup="menu"
           aria-label="open menu"
           class="c16"
           type="button"
@@ -7650,7 +8990,7 @@ exports[`Video timeUpdate event handler 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"

@@ -4,26 +4,31 @@ import {
   activeStyle,
   disabledStyle,
   focusStyle,
+  unfocusStyle,
   genericStyles,
   kindPartStyles,
   parseMetricToNum,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const radiusStyle = props => {
+const radiusStyle = (props) => {
   const size = props.sizeProp;
-  if (size && props.theme.button.size && props.theme.button.size[size])
+  // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+  const themeObj =
+    typeof props.kind === 'object' ? props.kind : props.theme.button;
+  if (size && themeObj.size && themeObj.size[size])
     return css`
-      border-radius: ${props.theme.button.size[size].border.radius};
+      border-radius: ${themeObj.size[size].border.radius};
     `;
-  if (props.theme.button.border && props.theme.button.border.radius)
+  if (themeObj.border && themeObj.border.radius)
     return css`
-      border-radius: ${props.theme.button.border.radius};
+      border-radius: ${themeObj.border.radius};
     `;
   return '';
 };
 
-const fontStyle = props => {
+const fontStyle = (props) => {
   const size = props.sizeProp || 'medium';
   const data = props.theme.text[size];
   return css`
@@ -32,16 +37,15 @@ const fontStyle = props => {
   `;
 };
 
-const padFromTheme = (size, theme) => {
-  if (
-    size &&
-    theme.button.size &&
-    theme.button.size[size] &&
-    theme.button.size[size].pad
-  ) {
+const padFromTheme = (size = 'medium', theme, themeObj, kind) => {
+  if (size && themeObj?.size?.[size]?.[kind]?.pad) {
+    return themeObj.size[size][kind].pad;
+  }
+
+  if (size && themeObj.size && themeObj.size[size] && themeObj.size[size].pad) {
     return {
-      vertical: theme.button.size[size].pad.vertical,
-      horizontal: theme.button.size[size].pad.horizontal,
+      vertical: themeObj.size[size].pad.vertical,
+      horizontal: themeObj.size[size].pad.horizontal,
     };
   }
 
@@ -58,8 +62,11 @@ const padFromTheme = (size, theme) => {
   return undefined;
 };
 
-const padStyle = ({ sizeProp: size, theme }) => {
-  const pad = padFromTheme(size, theme);
+const padStyle = ({ sizeProp: size, theme, kind }) => {
+  // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+  const themeObj = typeof kind === 'object' ? kind : theme.button;
+  const pad = padFromTheme(size, theme, themeObj, kind);
   return pad
     ? css`
         padding: ${pad.vertical} ${pad.horizontal};
@@ -67,17 +74,20 @@ const padStyle = ({ sizeProp: size, theme }) => {
     : '';
 };
 
-// The > svg rule is to ensure Buttons with just an icon don't add additional
-// vertical height internally.
-const basicStyle = props => css`
+const basicStyle = (props) => css`
   border: none;
   ${radiusStyle(props)};
   ${padStyle(props)}
   ${fontStyle(props)}
 
-  > svg {
-    vertical-align: bottom;
-  }
+  ${props.icon &&
+  `
+    > svg {
+      display: flex;
+      align-self: center;
+      vertical-align: middle;
+    }
+  `}
 `;
 
 const getPath = (theme, path) => {
@@ -93,20 +103,22 @@ const getPath = (theme, path) => {
 const adjustPadStyle = (pad, width) => {
   const offset = parseMetricToNum(width);
   return css`
-    padding: ${parseMetricToNum(pad.vertical) - offset}px
-      ${parseMetricToNum(pad.horizontal) - offset}px;
+    padding: ${Math.max(parseMetricToNum(pad.vertical) - offset, 0)}px
+      ${Math.max(parseMetricToNum(pad.horizontal) - offset, 0)}px;
   `;
 };
 
 // build up CSS from basic to specific based on the supplied sub-object paths
-const kindStyle = ({ colorValue, sizeProp: size, themePaths, theme }) => {
+const kindStyle = ({ colorValue, kind, sizeProp: size, themePaths, theme }) => {
   const styles = [];
 
-  const pad = padFromTheme(size, theme);
+  // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+  const themeObj = typeof kind === 'object' ? kind : theme.button;
 
-  themePaths.base.forEach(themePath => {
-    const obj = getPath(theme, `button.${themePath}`);
-
+  const pad = padFromTheme(size, theme, themeObj, kind);
+  themePaths.base.forEach((themePath) => {
+    const obj = getPath(themeObj, themePath);
     if (obj) {
       styles.push(kindPartStyles(obj, theme, colorValue));
       if (obj.border && obj.border.width && pad && !obj.padding) {
@@ -118,8 +130,22 @@ const kindStyle = ({ colorValue, sizeProp: size, themePaths, theme }) => {
     }
   });
 
-  themePaths.hover.forEach(themePath => {
-    const obj = getPath(theme, `button.${themePath}`);
+  // do the styling from the root of the object if caller passes one
+  if (!themePaths.base.length && typeof kind === 'object') {
+    const obj = kind;
+    if (obj) {
+      styles.push(kindPartStyles(obj, theme, colorValue));
+      if (obj.border && obj.border.width && pad && !obj.padding) {
+        // Adjust padding from the button.size or just top button.padding
+        // to deal with the kind's border width. But don't override any
+        // padding in the kind itself for backward compatibility
+        styles.push(adjustPadStyle(pad, obj.border.width));
+      }
+    }
+  }
+
+  themePaths.hover.forEach((themePath) => {
+    const obj = getPath(themeObj, themePath);
 
     if (obj) {
       const partStyles = kindPartStyles(obj, theme);
@@ -150,7 +176,11 @@ const hoverIndicatorStyle = ({ hoverIndicator, theme }) => {
   const themishObj = {};
   if (hoverIndicator === true || hoverIndicator === 'background')
     themishObj.background = theme.global.hover.background;
-  else themishObj.background = hoverIndicator;
+  else if (hoverIndicator.color || hoverIndicator.background) {
+    if (hoverIndicator.background)
+      themishObj.background = hoverIndicator.background;
+    if (hoverIndicator.color) themishObj.color = hoverIndicator.color;
+  } else themishObj.background = hoverIndicator;
   const styles = kindPartStyles(themishObj, theme);
   if (styles.length > 0)
     return css`
@@ -161,7 +191,7 @@ const hoverIndicatorStyle = ({ hoverIndicator, theme }) => {
   return '';
 };
 
-const fillStyle = fillContainer => {
+const fillStyle = (fillContainer) => {
   if (fillContainer === 'horizontal') {
     return 'width: 100%;';
   }
@@ -179,24 +209,28 @@ const fillStyle = fillContainer => {
   return undefined;
 };
 
-// The > svg rule is to ensure Buttons with just an icon don't add additional
-// vertical height internally.
-const plainStyle = () => css`
+const plainStyle = (props) => css`
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
   color: inherit;
-
-  > svg {
-    vertical-align: bottom;
-  }
+  ${props.icon &&
+  `
+    > svg {
+      display: flex;
+      align-self: center;
+      vertical-align: middle;
+    }
+  `}
 `;
 
-const StyledButtonKind = styled.button.attrs(() => ({
+const StyledButtonKind = styled.button.withConfig({
   // don't let kind attribute leak to DOM
-  kind: undefined,
-}))`
+  // https://styled-components.com/docs/api#shouldforwardprop
+  shouldForwardProp: (prop, defaultValidatorFn) =>
+    !['kind'].includes(prop) && defaultValidatorFn(prop),
+})`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -208,29 +242,33 @@ const StyledButtonKind = styled.button.attrs(() => ({
   text-transform: none;
 
   ${genericStyles}
-  ${props => props.plain && plainStyle(props)}
+  ${(props) => props.plain && plainStyle(props)}
   // set baseline activeStyle for all buttons including plain buttons
   // buttons with kind will have active styling overridden by kindStyle
   // if they have specific state styles
-  ${props => !props.disabled && props.active && activeStyle}
-  ${props => !props.plain && basicStyle(props)}
-  ${props => !props.plain && kindStyle(props)}
-  ${props =>
+  ${(props) => !props.disabled && props.active && activeStyle}
+  ${(props) => !props.plain && basicStyle(props)}
+  ${(props) => !props.plain && kindStyle(props)}
+  ${(props) =>
     !props.plain &&
     props.align &&
     `
     text-align: ${props.align};
     `}
-  ${props =>
+  ${(props) =>
     !props.disabled && props.hoverIndicator && hoverIndicatorStyle(props)}
-  ${props =>
+  ${(props) =>
     props.disabled && disabledStyle(props.theme.button.disabled.opacity)}
 
   &:focus {
-    ${props => (!props.plain || props.focusIndicator) && focusStyle()}
+    ${(props) => (!props.plain || props.focusIndicator) && focusStyle()}
   }
-  
-  ${props =>
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
+  }
+
+  ${(props) =>
     !props.plain &&
     props.theme.button.transition &&
     `
@@ -238,8 +276,8 @@ const StyledButtonKind = styled.button.attrs(() => ({
     transition-duration: ${props.theme.button.transition.duration}s;
     transition-timing-function: ${props.theme.button.transition.timing};
   `}
-  ${props => props.fillContainer && fillStyle(props.fillContainer)}
-  ${props => props.theme.button && props.theme.button.extend}
+  ${(props) => props.fillContainer && fillStyle(props.fillContainer)}
+  ${(props) => props.theme.button && props.theme.button.extend}
 `;
 
 StyledButtonKind.defaultProps = {};

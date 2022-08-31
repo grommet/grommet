@@ -1,7 +1,9 @@
 import React, {
   Children,
+  useCallback,
   useContext,
   useEffect,
+  useMemo,
   useState,
   useRef,
 } from 'react';
@@ -9,49 +11,153 @@ import React, {
 import { normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { ThemeContext } from '../../contexts';
+import { MessageContext } from '../../contexts/MessageContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { Stack } from '../Stack';
+
+import { StyledCarouselContainer, StyledControl } from './StyledCarousel';
+import { CarouselChild } from './CarouselChild';
+import { CarouselPropTypes } from './propTypes';
 
 const Carousel = ({
+  activeChild,
   initialChild,
   onChild,
   play,
   children,
   controls,
+  height,
   fill,
+  width,
   onFocus,
   onBlur,
+  wrap,
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const [focus, setFocus] = useState();
-
+  const { format } = useContext(MessageContext);
   const timerRef = useRef();
 
+  const animationDuration = useMemo(
+    () =>
+      play && play < theme.carousel.animation.duration
+        ? play
+        : theme.carousel.animation.duration,
+    [play, theme.carousel.animation.duration],
+  );
+
   const [indexes, setIndexes] = useState({
-    activeIndex: initialChild,
+    activeIndex: activeChild !== undefined ? activeChild : initialChild,
   });
+  const [activeChildState, setActiveChildState] = useState(activeChild);
+  const [direction, setDirection] = useState();
+  const [inTransition, setInTransition] = useState(false);
 
   const { activeIndex, priorActiveIndex } = indexes;
   const lastIndex = Children.count(children) - 1;
 
+  const onChildChange = useCallback(
+    (index) => {
+      if (onChild) {
+        onChild(index);
+      }
+    },
+    [onChild],
+  );
+
+  const onRight = useCallback(() => {
+    if (inTransition) return;
+    clearInterval(timerRef.current);
+    const nextActiveIndex = activeIndex < lastIndex ? activeIndex + 1 : 0;
+    setIndexes({
+      activeIndex: nextActiveIndex,
+      priorActiveIndex: activeIndex,
+    });
+    setInTransition(true);
+    setDirection('left');
+    onChildChange(nextActiveIndex);
+  }, [activeIndex, inTransition, lastIndex, onChildChange]);
+
+  const onLeft = useCallback(() => {
+    if (inTransition) return;
+    clearInterval(timerRef.current);
+    const nextActiveIndex = activeIndex === 0 ? lastIndex : activeIndex - 1;
+    setIndexes({
+      activeIndex: nextActiveIndex,
+      priorActiveIndex: activeIndex,
+    });
+    setInTransition(true);
+    setDirection('right');
+    onChildChange(nextActiveIndex);
+  }, [activeIndex, inTransition, lastIndex, onChildChange]);
+
+  const onSelect = useCallback(
+    (index) => () => {
+      if (!inTransition && activeIndex !== index) {
+        clearInterval(timerRef.current);
+        setIndexes({ activeIndex: index, priorActiveIndex: activeIndex });
+        setInTransition(true);
+        setDirection(index > activeIndex ? 'left' : 'right');
+        onChildChange(index);
+      }
+    },
+    [activeIndex, inTransition, onChildChange],
+  );
+
+  const onControlledNavigation = useCallback(() => {
+    if (
+      inTransition ||
+      activeChild === activeChildState ||
+      activeChild === activeIndex ||
+      activeChild === undefined ||
+      activeChild < 0 ||
+      activeChild > lastIndex
+    )
+      return;
+    setDirection(activeChild > activeIndex ? 'left' : 'right');
+    setInTransition(true);
+    setIndexes({ activeIndex: activeChild, priorActiveIndex: activeIndex });
+    setActiveChildState(activeChild);
+    onChildChange(activeChild);
+  }, [
+    activeChild,
+    activeChildState,
+    activeIndex,
+    inTransition,
+    lastIndex,
+    onChildChange,
+  ]);
+
+  /**
+   * Delays the transitions between Carousel slides. This is needed to
+   * avoid users "spamming" the controls which results in jarring animations
+   * and a bad user experience.
+   */
   useEffect(() => {
-    if (play) {
+    let transitionTimer;
+    if (inTransition) {
+      transitionTimer = setTimeout(() => {
+        setInTransition(false);
+      }, animationDuration);
+    }
+    return () => clearTimeout(transitionTimer);
+  }, [inTransition, setInTransition, animationDuration]);
+
+  // Handles auto-playing Carousel slides
+  useEffect(() => {
+    // stop playing if wrap is explicitly false and we're at the end
+    if (play && (wrap !== false || activeIndex < lastIndex)) {
       const timer = setInterval(() => {
-        if (activeIndex < lastIndex) {
-          setIndexes({
-            activeIndex: activeIndex + 1,
-            priorActiveIndex: activeIndex,
-          });
-        } else {
-          setIndexes({
-            activeIndex: 0,
-            priorActiveIndex: activeIndex,
-          });
-        }
+        const nextActiveIndex = activeIndex < lastIndex ? activeIndex + 1 : 0;
+        setIndexes({
+          activeIndex: nextActiveIndex,
+          priorActiveIndex: activeIndex,
+        });
+        setInTransition(true);
+        setDirection('left');
+        onChildChange(nextActiveIndex);
       }, play);
 
       timerRef.current = timer;
@@ -61,40 +167,23 @@ const Carousel = ({
       };
     }
     return () => {};
-  }, [activeIndex, play, children, lastIndex]);
+  }, [activeIndex, play, children, lastIndex, onChildChange, wrap]);
 
+  // Allow Carousel slides to be controlled outside the component
   useEffect(() => {
-    if (onChild) onChild(activeIndex);
-    return () => {};
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeIndex]);
-
-  const onRight = () => {
-    if (activeIndex >= lastIndex) {
-      return;
-    }
-    clearInterval(timerRef.current);
-    setIndexes({
-      activeIndex: activeIndex + 1,
-      priorActiveIndex: activeIndex,
-    });
-  };
-
-  const onLeft = () => {
-    if (activeIndex <= 0) {
-      return;
-    }
-    clearInterval(timerRef.current);
-    setIndexes({
-      activeIndex: activeIndex - 1,
-      priorActiveIndex: activeIndex,
-    });
-  };
-
-  const onSelect = index => () => {
-    clearInterval(timerRef.current);
-    setIndexes({ activeIndex: index, priorActiveIndex: activeIndex });
-  };
+    onControlledNavigation(
+      activeIndex,
+      activeChild,
+      activeChildState,
+      inTransition,
+    );
+  }, [
+    onControlledNavigation,
+    activeIndex,
+    activeChild,
+    activeChildState,
+    inTransition,
+  ]);
 
   const showArrows = controls && controls !== 'selectors';
   const showSelectors = controls && controls !== 'arrows';
@@ -109,6 +198,10 @@ const Carousel = ({
   const wrappedChildren = Children.map(children, (child, index) => {
     selectors.push(
       <Button
+        a11yTitle={format({
+          id: 'carousel.jump',
+          values: { slide: index + 1 },
+        })}
         // eslint-disable-next-line react/no-array-index-key
         key={index}
         icon={
@@ -118,58 +211,35 @@ const Carousel = ({
       />,
     );
 
-    let animation;
-    if (index === activeIndex) {
-      if (priorActiveIndex !== undefined) {
-        animation = {
-          type: priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
-          size: 'xlarge',
-          duration: theme.carousel.animation.duration,
-        };
-      }
-    } else if (index === priorActiveIndex) {
-      animation = {
-        type: 'fadeOut',
-        duration: theme.carousel.animation.duration,
-      };
-    } else {
-      animation = { type: 'fadeOut', duration: 0 };
-    }
-
     return (
-      <Box fill={fill} overflow="hidden">
-        <Box fill={fill} animation={animation}>
-          {child}
-        </Box>
-      </Box>
+      <CarouselChild
+        animationDuration={animationDuration}
+        fill={fill || !!height || !!width}
+        index={index}
+        activeIndex={activeIndex}
+        priorActiveIndex={priorActiveIndex}
+        direction={direction}
+      >
+        {child}
+      </CarouselChild>
     );
   });
 
   const NextIcon = theme.carousel.icons.next;
   const PreviousIcon = theme.carousel.icons.previous;
-  const nextIconDisabled = activeIndex >= lastIndex;
-  const previousIconDisabled = activeIndex <= 0;
+  const nextIconDisabled = !wrap && activeIndex >= lastIndex;
+  const previousIconDisabled = !wrap && activeIndex <= 0;
 
   return (
     <Keyboard onLeft={onLeft} onRight={onRight}>
-      <Stack guidingChild={activeIndex} fill={fill} {...rest}>
-        {wrappedChildren}
-        <Box
-          tabIndex="0"
-          focus={focus}
-          onFocus={event => {
-            setFocus(true);
-            if (onFocus) onFocus(event);
-          }}
-          onBlur={event => {
-            setFocus(false);
-            if (onBlur) onBlur(event);
-          }}
-          fill
-          direction="row"
-          justify="between"
-        >
-          {showArrows && (
+      <StyledCarouselContainer
+        fill={fill}
+        height={height}
+        width={width}
+        {...rest}
+      >
+        {showArrows && (
+          <StyledControl offsetProp="left" fill="vertical">
             <Button
               fill="vertical"
               icon={
@@ -182,20 +252,29 @@ const Carousel = ({
                   )}
                 />
               }
+              a11yTitle={format({
+                id: 'carousel.previous',
+                values: { slide: activeIndex },
+              })}
               plain
               disabled={previousIconDisabled}
               onClick={onLeft}
               hoverIndicator
             />
-          )}
-          {showSelectors && (
+          </StyledControl>
+        )}
+        {wrappedChildren}
+        {showSelectors && (
+          <StyledControl offsetProp="bottom" fill="horizontal">
             <Box justify="end" fill={!showArrows && 'horizontal'}>
               <Box direction="row" justify="center">
                 {selectors}
               </Box>
             </Box>
-          )}
-          {showArrows && (
+          </StyledControl>
+        )}
+        {showArrows && (
+          <StyledControl offsetProp="right" fill="vertical">
             <Button
               fill="vertical"
               icon={
@@ -208,14 +287,18 @@ const Carousel = ({
                   )}
                 />
               }
+              a11yTitle={format({
+                id: 'carousel.next',
+                values: { slide: activeIndex + 2 },
+              })}
               plain
               disabled={nextIconDisabled}
               onClick={onRight}
               hoverIndicator
             />
-          )}
-        </Box>
-      </Stack>
+          </StyledControl>
+        )}
+      </StyledCarouselContainer>
     </Keyboard>
   );
 };
@@ -227,11 +310,6 @@ Carousel.defaultProps = {
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 Carousel.displayName = 'Carousel';
 
-let CarouselDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CarouselDoc = require('./doc').doc(Carousel);
-}
-const CarouselWrapper = CarouselDoc || Carousel;
+Carousel.propTypes = CarouselPropTypes;
 
-export { CarouselWrapper as Carousel };
+export { Carousel };

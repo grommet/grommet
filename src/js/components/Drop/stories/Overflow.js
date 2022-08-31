@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { Box, Calendar, Drop, Heading, Grommet, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Calendar, Drop, Heading, TextInput } from 'grommet';
+
+const align = { top: 'bottom', left: 'left' };
 
 const OverflowDrop = () => {
   const targetRef = useRef();
@@ -10,7 +11,7 @@ const OverflowDrop = () => {
   const [date, setDate] = useState(undefined);
   const [showCalendar, setShowCalendar] = useState(false);
 
-  const onSelect = nextDate => {
+  const onSelect = (nextDate) => {
     setDate(nextDate !== date ? nextDate : undefined);
     setShowCalendar(false);
   };
@@ -19,50 +20,54 @@ const OverflowDrop = () => {
   useEffect(() => setShowDrop(true), []);
 
   return (
-    <Grommet theme={grommet} full>
-      <Box fill align="center" justify="center">
-        <Box
-          background="dark-3"
-          pad="medium"
-          align="center"
-          justify="start"
-          ref={targetRef}
-        >
-          Target
-        </Box>
-        {targetRef.current && (
-          <Drop
-            overflow="unset"
-            align={{ top: 'bottom', left: 'left' }}
-            target={targetRef.current}
-            onClose={() => setShowCalendar(false)}
-          >
-            <Box height="small">
-              <Heading level={4}>Select Start Date</Heading>
-              <div style={{ position: 'relative' }}>
-                <TextInput
-                  ref={inputRef}
-                  value={date || ''}
-                  placeholder="Focus on me"
-                  onFocus={() => setShowCalendar(true)}
-                />
-                {showCalendar && (
-                  <div style={{ position: 'absolute', background: '#eee' }}>
-                    <Calendar date={date} onSelect={onSelect} size="small" />
-                  </div>
-                )}
-              </div>
-            </Box>
-          </Drop>
-        )}
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box fill align="center" justify="center">
+      <Box
+        background="dark-3"
+        pad="medium"
+        align="center"
+        justify="start"
+        ref={targetRef}
+      >
+        Target
       </Box>
-    </Grommet>
+      {targetRef.current && (
+        <Drop
+          overflow="unset"
+          align={align}
+          target={targetRef.current}
+          onClose={() => setShowCalendar(false)}
+        >
+          <Box pad="small" height="small">
+            <Heading level={4}>Select Start Date</Heading>
+            <div style={{ position: 'relative' }}>
+              <TextInput
+                ref={inputRef}
+                value={date || ''}
+                placeholder="Focus on me"
+                onFocus={() => setShowCalendar(true)}
+              />
+              {showCalendar && (
+                <div style={{ position: 'absolute', background: '#eee' }}>
+                  <Calendar date={date} onSelect={onSelect} size="small" />
+                </div>
+              )}
+            </div>
+          </Box>
+        </Drop>
+      )}
+    </Box>
+    // </Grommet>
   );
 };
 
 export const Overflow = () => <OverflowDrop />;
 Overflow.parameters = {
   chromatic: { disable: true },
+};
+Overflow.args = {
+  full: true,
 };
 
 export default {

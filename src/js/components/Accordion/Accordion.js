@@ -1,10 +1,10 @@
-import React, { Children, forwardRef, useState } from 'react';
-
+import React, { Children, forwardRef, useCallback, useState } from 'react';
+import { AccordionPropTypes } from './propTypes';
 import { Box } from '../Box';
 
 import { AccordionContext } from './AccordionContext';
 
-const activeAsArray = active =>
+const activeAsArray = (active) =>
   typeof active === 'number' ? [active] : active;
 
 const Accordion = forwardRef(
@@ -27,37 +27,44 @@ const Accordion = forwardRef(
       setStateActiveIndex(activeIndex);
     }
 
-    const onPanelChange = index => {
-      let nextActiveIndexes = [...(activeIndexes || [])];
+    const getAccordionContext = useCallback(
+      (index) => {
+        const onPanelChange = (nextIndex) => {
+          let nextActiveIndexes = [...(activeIndexes || [])];
 
-      const nextActiveIndex = nextActiveIndexes.indexOf(index);
-      if (nextActiveIndex > -1) {
-        nextActiveIndexes.splice(nextActiveIndex, 1);
-      } else if (multiple) {
-        nextActiveIndexes.push(index);
-      } else {
-        nextActiveIndexes = [index];
-      }
+          const nextActiveIndex = nextActiveIndexes.indexOf(nextIndex);
+          if (nextActiveIndex > -1) {
+            nextActiveIndexes.splice(nextActiveIndex, 1);
+          } else if (multiple) {
+            nextActiveIndexes.push(nextIndex);
+          } else {
+            nextActiveIndexes = [nextIndex];
+          }
 
-      setActiveIndexes(nextActiveIndexes);
-      if (onActive) {
-        onActive(nextActiveIndexes);
-      }
-    };
+          setActiveIndexes(nextActiveIndexes);
+          if (onActive) {
+            onActive(nextActiveIndexes);
+          }
+        };
+
+        return {
+          active: activeIndexes.indexOf(index) > -1,
+          animate,
+          onPanelChange: () => onPanelChange(index),
+        };
+      },
+      [activeIndexes, animate, multiple, onActive],
+    );
 
     return (
       <Box ref={ref} role="tablist" {...rest}>
         {Children.toArray(children)
-          .filter(child => child)
+          .filter((child) => child)
           .map((child, index) => (
             <AccordionContext.Provider
               // eslint-disable-next-line react/no-array-index-key
               key={index}
-              value={{
-                active: activeIndexes.indexOf(index) > -1,
-                animate,
-                onPanelChange: () => onPanelChange(index),
-              }}
+              value={getAccordionContext(index)}
             >
               {child}
             </AccordionContext.Provider>
@@ -67,13 +74,6 @@ const Accordion = forwardRef(
   },
 );
 
-Accordion.displayName = 'Accordion';
+Accordion.propTypes = AccordionPropTypes;
 
-let AccordionDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  AccordionDoc = require('./doc').doc(Accordion);
-}
-const AccordionWrapper = AccordionDoc || Accordion;
-
-export { AccordionWrapper as Accordion };
+export { Accordion };

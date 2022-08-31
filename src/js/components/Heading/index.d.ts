@@ -23,16 +23,19 @@ export interface HeadingProps {
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   textAlign?: TextAlignType;
   truncate?: boolean;
+  weight?: 'normal' | 'bold' | 'lighter' | 'bolder' | number | string;
 }
 
-declare const Heading: React.FC<HeadingProps &
-  (
-    | Omit<JSX.IntrinsicElements['h1'], 'color'>
-    | Omit<JSX.IntrinsicElements['h2'], 'color'>
-    | Omit<JSX.IntrinsicElements['h3'], 'color'>
-    | Omit<JSX.IntrinsicElements['h4'], 'color'>
-    | Omit<JSX.IntrinsicElements['h5'], 'color'>
-    | Omit<JSX.IntrinsicElements['h6'], 'color'>
-  )>;
+type hProps =
+  | Omit<JSX.IntrinsicElements['h1'], 'color'>
+  | Omit<JSX.IntrinsicElements['h2'], 'color'>
+  | Omit<JSX.IntrinsicElements['h3'], 'color'>
+  | Omit<JSX.IntrinsicElements['h4'], 'color'>
+  | Omit<JSX.IntrinsicElements['h5'], 'color'>
+  | Omit<JSX.IntrinsicElements['h6'], 'color'>;
+
+export interface HeadingExtendedProps extends HeadingProps, hProps {}
+
+declare const Heading: React.FC<HeadingExtendedProps>;
 
 export { Heading };

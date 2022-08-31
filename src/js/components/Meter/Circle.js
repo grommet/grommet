@@ -8,24 +8,35 @@ import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
 
 const Circle = forwardRef((props, ref) => {
-  const { background, max, round, size, thickness, values, ...rest } = props;
+  const { background, max, round, size, thickness, type, values, ...rest } =
+    props;
   const theme = useContext(ThemeContext);
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
-  const height = parseMetricToNum(
-    theme.global.edgeSize[thickness] || thickness,
-  );
-  const mid = width / 2;
-  const radius = width / 2 - height / 2;
-  const anglePer = 360 / max;
-  const someHighlight = (values || []).some(v => v.highlight);
+  const strokeWidth =
+    type === 'pie'
+      ? width / 2
+      : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
+  const centerX = width / 2;
+  const centerY = width / 2;
+  const radius = width / 2 - strokeWidth / 2;
+  // truncate to avoid floating point arithmetic errors
+  // see: https://github.com/grommet/grommet/issues/6190
+  // Choose a scale factor at least 3 orders of magnitude above max
+  const scalePower = Math.max(5, Math.ceil(Math.log10(max)) + 3);
+  const scale = 10 ** scalePower;
+
+  const anglePer =
+    Math.floor(((type === 'semicircle' ? 180 : 360) / max) * scale) / scale;
+    //  (type === 'semicircle' ? 180 : 360) / max;
+  const someHighlight = (values || []).some((v) => v.highlight);
 
   let startValue = 0;
-  let startAngle = 0;
+  let startAngle = type === 'semicircle' ? 270 : 0;
   const paths = [];
   let pathCaps = [];
   (values || [])
-    .filter(v => v.value > 0)
+    .filter((v) => v.value > 0)
     .forEach((valueArg, index) => {
       const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
       const key = `p-${index}`;
@@ -34,12 +45,9 @@ const Circle = forwardRef((props, ref) => {
 
       let endAngle;
       if (startValue + value >= max) {
-        endAngle = 360;
+        endAngle = type === 'semicircle' ? 90 : 360;
       } else {
-        endAngle = Math.min(
-          360,
-          translateEndAngle(startAngle, anglePer, value),
-        );
+        endAngle = translateEndAngle(startAngle, anglePer, value);
       }
       let hoverProps;
       if (onHover) {
@@ -52,22 +60,15 @@ const Circle = forwardRef((props, ref) => {
         someHighlight && !highlight ? background : colorName,
         theme,
       );
-
       if (round) {
-        const d1 = arcCommands(
-          width / 2,
-          width / 2,
-          radius,
-          startAngle,
-          endAngle,
-        );
+        const d1 = arcCommands(centerX, centerY, radius, startAngle, endAngle);
         paths.unshift(
           <path
             key={key}
             d={d1}
             fill="none"
             {...stroke}
-            strokeWidth={height}
+            strokeWidth={strokeWidth}
             strokeLinecap="round"
             {...hoverProps}
             {...pathRest}
@@ -78,8 +79,8 @@ const Circle = forwardRef((props, ref) => {
         // a dot at the end. Give just a bit of angle to avoid anti-aliasing
         // leakage around the edge.
         const d2 = arcCommands(
-          width / 2,
-          width / 2,
+          centerX,
+          centerY,
           radius,
           endAngle - 0.5,
           endAngle,
@@ -90,7 +91,7 @@ const Circle = forwardRef((props, ref) => {
             d={d2}
             fill="none"
             {...stroke}
-            strokeWidth={height}
+            strokeWidth={strokeWidth}
             strokeLinecap="round"
             {...hoverProps}
             {...pathRest}
@@ -103,20 +104,14 @@ const Circle = forwardRef((props, ref) => {
         }
         pathCaps.unshift(pathCap);
       } else {
-        const d = arcCommands(
-          width / 2,
-          width / 2,
-          radius,
-          startAngle,
-          endAngle,
-        );
+        const d = arcCommands(centerX, centerY, radius, startAngle, endAngle);
         paths.push(
           <path
             key={key}
             d={d}
             fill="none"
             {...stroke}
-            strokeWidth={height}
+            strokeWidth={strokeWidth}
             strokeLinecap="butt"
             {...hoverProps}
             {...pathRest}
@@ -127,23 +122,43 @@ const Circle = forwardRef((props, ref) => {
       startAngle = endAngle;
     });
 
-  return (
-    <StyledMeter
-      ref={ref}
-      viewBox={`0 0 ${width} ${width}`}
-      width={size === 'full' ? '100%' : width}
-      height={size === 'full' ? '100%' : width}
-      {...rest}
-    >
+  let track;
+  if (type === 'semicircle') {
+    const d1 = arcCommands(centerX, centerY, radius, 270, 90);
+    track = (
+      <path
+        d={d1}
+        strokeWidth={strokeWidth}
+        fill="none"
+        {...strokeProps(background, theme)}
+        strokeLinecap={round ? 'round' : 'square'}
+      />
+    );
+  } else {
+    track = (
       <circle
-        cx={mid}
-        cy={mid}
+        cx={centerX}
+        cy={centerY}
         r={radius}
         {...strokeProps(background, theme)}
-        strokeWidth={height}
+        strokeWidth={strokeWidth}
         strokeLinecap={round ? 'round' : 'square'}
         fill="none"
       />
+    );
+  }
+
+  const viewBoxHeight = type === 'semicircle' ? width / 2 : width;
+
+  return (
+    <StyledMeter
+      ref={ref}
+      viewBox={`0 0 ${width} ${viewBoxHeight}`}
+      width={size === 'full' ? '100%' : width}
+      height={size === 'full' ? '100%' : viewBoxHeight}
+      {...rest}
+    >
+      {track}
       {paths}
       {pathCaps}
     </StyledMeter>
