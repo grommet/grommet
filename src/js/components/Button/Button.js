@@ -210,12 +210,6 @@ const Button = forwardRef(
 
     const sendAnalytics = useAnalytics();
 
-/*    const findAncestor = (type, element) => {
-      if (element && element.nodeName !== type)
-        return findAncestor(type, element.parentElement);
-      return element;
-    };
-*/
     const onClick = useCallback(
       (event) => {
         sendAnalytics({
