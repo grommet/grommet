@@ -29,7 +29,9 @@ var columns = [{
         }
       }, (_datum$failures = datum.failures) == null ? void 0 : _datum$failures.map(function (_ref) {
         var reason = _ref.reason;
-        return /*#__PURE__*/React.createElement(Text, null, reason);
+        return /*#__PURE__*/React.createElement(Text, {
+          key: reason
+        }, reason);
       }));
       return /*#__PURE__*/React.createElement(Tip, {
         plain: true,

@@ -28,7 +28,9 @@ var columns = [{
   header: 'Rocket',
   size: 'small',
   render: function render(datum) {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, datum.rocket.name);
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      key: datum.rocket.name
+    }, datum.rocket.name);
   }
 }, {
   property: 'success',
@@ -44,7 +46,9 @@ var columns = [{
         }
       }, (_datum$failures = datum.failures) == null ? void 0 : _datum$failures.map(function (_ref) {
         var reason = _ref.reason;
-        return /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, reason);
+        return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+          key: reason
+        }, reason);
       }));
 
       return /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
