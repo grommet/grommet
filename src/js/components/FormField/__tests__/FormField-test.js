@@ -9,6 +9,7 @@ import 'regenerator-runtime/runtime';
 import { Alert, New, StatusInfo } from 'grommet-icons';
 import { Grommet } from '../../Grommet';
 import { Form } from '../../Form';
+import { CheckBox } from '../../CheckBox';
 import { FormField } from '..';
 import { TextInput } from '../../TextInput';
 
@@ -414,6 +415,32 @@ describe('FormField', () => {
       >
         <Form>
           <FormField label="label" required={{ indicator: false }} />
+        </Form>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('checkbox pad is defined in formfield', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          formField: {
+            checkBox: {
+              pad: {
+                horizontal: 'small',
+                vertical: 'xsmall',
+              },
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label">
+            <CheckBox label="checkbox with pad" />
+          </FormField>
+          <CheckBox label="checkbox without pad" />
         </Form>
       </Grommet>,
     );

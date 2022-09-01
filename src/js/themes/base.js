@@ -471,10 +471,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   font: {
       //     weight: undefined,
       //   },
+      //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
       //     horizontal: undefined,
       //   },
+      //   reverse: undefined,
       //   extend: undefined,
       // },
       // primary: {
@@ -484,10 +486,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
       //     horizontal: undefined,
       //   },
+      //   reverse: undefined,
       //   extend: undefined,
       // },
       // secondary: {
@@ -497,20 +501,24 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
       //     horizontal: undefined,
       //   },
+      //   reverse: undefined,
       //   extend: undefined,
       // },
       // option: {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
       //     horizontal: undefined,
       //   },
+      //   reverse: undefined,
       //   extend: undefined,
       // },
       active: {
@@ -868,6 +876,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         position: 'inner',
         side: 'bottom',
       },
+      // checkBox: {
+      //   pad: undefined,
+      // },
       content: {
         // margin: undefined,
         pad: 'small',
@@ -1056,6 +1067,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     menu: {
       // background: undefined,
+      // item: undefined,
       // extend: undefined,
       drop: {
         align: {

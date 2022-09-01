@@ -108,6 +108,9 @@ const DataTable = ({
 
   // which column we are sorting on, with direction
   const [sort, setSort] = useState(sortProp || {});
+  useEffect(() => {
+    if (sortProp) setSort(sortProp);
+  }, [sortProp]);
 
   // the data filtered and sorted, if needed
   // Note: onUpdate mode expects the data to be passed

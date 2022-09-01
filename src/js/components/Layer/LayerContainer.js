@@ -13,6 +13,8 @@ import { Keyboard } from '../Keyboard';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
+
 import {
   backgroundIsDark,
   findVisibleParent,
@@ -64,6 +66,30 @@ const LayerContainer = forwardRef(
       () => [...portalContext, portalId],
       [portalContext, portalId],
     );
+
+    const sendAnalytics = useAnalytics();
+
+    useEffect(() => {
+      const start = new Date();
+      const element = layerRef.current;
+      const isHidden = position === 'hidden';
+      if (!isHidden) {
+
+        sendAnalytics({
+          type: 'layerOpen',
+          element,
+        });
+      }
+      return () => {
+        if (!isHidden) {
+          sendAnalytics({
+            type: 'layerClose',
+            element,
+            elapsed: new Date().getTime() - start.getTime(),
+          });
+        }
+      };
+    }, [sendAnalytics, layerRef, position]);
 
     useEffect(() => {
       if (position !== 'hidden') {
