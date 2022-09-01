@@ -11,7 +11,7 @@ import { FormUp } from 'grommet-icons/icons/FormUp';
 import { Next } from 'grommet-icons/icons/Next';
 import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
-import { Pin } from 'grommet-icons/icons/Pin';
+import { FormPin } from 'grommet-icons/icons/FormPin';
 import { Previous } from 'grommet-icons/icons/Previous';
 import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
 import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
@@ -1044,8 +1044,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pinned: {
           background: 'background-contrast',
           icon: {
-            size: '18px',
-            pad: '15px',
+            size: 'medium',
+            pad: 'small',
           },
         },
         pad: { horizontal: 'medium', vertical: 'small' },
@@ -1054,7 +1054,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       icons: {
         down: FormDown,
         up: FormUp,
-        pin: Pin,
+        pin: FormPin,
       },
       // extend: undefined,
     },

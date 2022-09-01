@@ -16818,40 +16818,6 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
   stroke: none;
 }
 
-.c14 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c14 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c14 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c14 *[stroke*="#"],
-.c14 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c14 *[fill-rule],
-.c14 *[FILL-RULE],
-.c14 *[fill*="#"],
-.c14 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -16975,10 +16941,10 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 15px;
+  padding: 12px;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17171,25 +17137,25 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
 
 @media only screen and (max-width:768px) {
   .c13 {
-    padding: 15px;
+    padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -17298,12 +17264,12 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
           class="c13"
         >
           <svg
-            aria-label="Pin"
-            class="c14"
+            aria-label="FormPin"
+            class="c9"
             viewBox="0 0 24 24"
           >
             <path
-              d="m16 3-6 6s-4-1-7 2l10 10c3-3 2-7 2-7l6-6-5-5zM1 23l7-7m6-15 9 9"
+              d="m4 19 4.455-4.454M12.273 5 18 10.727m-4.454-4.454L9.727 10.09s-2.545-.636-4.454 1.273l6.363 6.363c1.91-1.909 1.273-4.454 1.273-4.454l3.818-3.818-3.181-3.182Z"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -17312,7 +17278,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
         </div>
       </li>
       <li
-        class="c15 c3"
+        class="c14 c3"
         draggable="true"
       >
         <span
@@ -17399,12 +17365,12 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
           class="c13"
         >
           <svg
-            aria-label="Pin"
-            class="c14"
+            aria-label="FormPin"
+            class="c9"
             viewBox="0 0 24 24"
           >
             <path
-              d="m16 3-6 6s-4-1-7 2l10 10c3-3 2-7 2-7l6-6-5-5zM1 23l7-7m6-15 9 9"
+              d="m4 19 4.455-4.454M12.273 5 18 10.727m-4.454-4.454L9.727 10.09s-2.545-.636-4.454 1.273l6.363 6.363c1.91-1.909 1.273-4.454 1.273-4.454l3.818-3.818-3.181-3.182Z"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -17413,7 +17379,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
         </div>
       </li>
       <li
-        class="c15 c3"
+        class="c14 c3"
         draggable="true"
       >
         <span
@@ -17515,40 +17481,6 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
 .c9 *[FILL-RULE],
 .c9 *[fill*="#"],
 .c9 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c14 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c14 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c14 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c14 *[stroke*="#"],
-.c14 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c14 *[fill-rule],
-.c14 *[FILL-RULE],
-.c14 *[fill*="#"],
-.c14 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -17676,10 +17608,10 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 15px;
+  padding: 12px;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17807,53 +17739,6 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
   border: 0;
 }
 
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c17:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c17:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -17870,8 +17755,15 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
   line-height: 0;
   padding: 12px;
+}
+
+.c16:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 .c16:focus:not(:focus-visible) {
@@ -17891,6 +17783,46 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
 }
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) > circle,
+.c15:focus:not(:focus-visible) > ellipse,
+.c15:focus:not(:focus-visible) > line,
+.c15:focus:not(:focus-visible) > path,
+.c15:focus:not(:focus-visible) > polygon,
+.c15:focus:not(:focus-visible) > polyline,
+.c15:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -17960,25 +17892,25 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
 
 @media only screen and (max-width:768px) {
   .c13 {
-    padding: 15px;
+    padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -18088,12 +18020,12 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
           class="c13"
         >
           <svg
-            aria-label="Pin"
-            class="c14"
+            aria-label="FormPin"
+            class="c9"
             viewBox="0 0 24 24"
           >
             <path
-              d="m16 3-6 6s-4-1-7 2l10 10c3-3 2-7 2-7l6-6-5-5zM1 23l7-7m6-15 9 9"
+              d="m4 19 4.455-4.454M12.273 5 18 10.727m-4.454-4.454L9.727 10.09s-2.545-.636-4.454 1.273l6.363 6.363c1.91-1.909 1.273-4.454 1.273-4.454l3.818-3.818-3.181-3.182Z"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -18102,7 +18034,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
         </div>
       </li>
       <li
-        class="c15 c3"
+        class="c14 c3"
         draggable="true"
       >
         <span
@@ -18126,7 +18058,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
         >
           <button
             aria-label="2 San Francisco move up"
-            class="c16"
+            class="c15"
             id="San FranciscoMoveUp"
             tabindex="-1"
             type="button"
@@ -18189,12 +18121,12 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
           class="c13"
         >
           <svg
-            aria-label="Pin"
-            class="c14"
+            aria-label="FormPin"
+            class="c9"
             viewBox="0 0 24 24"
           >
             <path
-              d="m16 3-6 6s-4-1-7 2l10 10c3-3 2-7 2-7l6-6-5-5zM1 23l7-7m6-15 9 9"
+              d="m4 19 4.455-4.454M12.273 5 18 10.727m-4.454-4.454L9.727 10.09s-2.545-.636-4.454 1.273l6.363 6.363c1.91-1.909 1.273-4.454 1.273-4.454l3.818-3.818-3.181-3.182Z"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -18203,7 +18135,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
         </div>
       </li>
       <li
-        class="c15 c3"
+        class="c14 c3"
         draggable="true"
       >
         <span
@@ -18227,7 +18159,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
         >
           <button
             aria-label="3 Los Gatos move up"
-            class="c17"
+            class="c16"
             id="Los GatosMoveUp"
             tabindex="-1"
             type="button"
@@ -18280,8 +18212,8 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   fill: #666666;
   stroke: #666666;
 }
@@ -18406,7 +18338,7 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 15px;
+  padding: 12px;
 }
 
 .c9 {
@@ -18494,7 +18426,7 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    padding: 15px;
+    padding: 6px;
   }
 }
 
@@ -18551,12 +18483,12 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
           class="c7"
         >
           <svg
-            aria-label="Pin"
+            aria-label="FormPin"
             class="c8"
             viewBox="0 0 24 24"
           >
             <path
-              d="m16 3-6 6s-4-1-7 2l10 10c3-3 2-7 2-7l6-6-5-5zM1 23l7-7m6-15 9 9"
+              d="m4 19 4.455-4.454M12.273 5 18 10.727m-4.454-4.454L9.727 10.09s-2.545-.636-4.454 1.273l6.363 6.363c1.91-1.909 1.273-4.454 1.273-4.454l3.818-3.818-3.181-3.182Z"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -18584,12 +18516,12 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
           class="c7"
         >
           <svg
-            aria-label="Pin"
+            aria-label="FormPin"
             class="c8"
             viewBox="0 0 24 24"
           >
             <path
-              d="m16 3-6 6s-4-1-7 2l10 10c3-3 2-7 2-7l6-6-5-5zM1 23l7-7m6-15 9 9"
+              d="m4 19 4.455-4.454M12.273 5 18 10.727m-4.454-4.454L9.727 10.09s-2.545-.636-4.454 1.273l6.363 6.363c1.91-1.909 1.273-4.454 1.273-4.454l3.818-3.818-3.181-3.182Z"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -18614,8 +18546,8 @@ exports[`List pinned Should apply pinned styling to items when data are children
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   fill: #666666;
   stroke: #666666;
 }
@@ -18754,7 +18686,7 @@ exports[`List pinned Should apply pinned styling to items when data are children
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 15px;
+  padding: 12px;
 }
 
 .c11 {
@@ -18848,7 +18780,7 @@ exports[`List pinned Should apply pinned styling to items when data are children
 
 @media only screen and (max-width:768px) {
   .c9 {
-    padding: 15px;
+    padding: 6px;
   }
 }
 
@@ -18921,12 +18853,12 @@ exports[`List pinned Should apply pinned styling to items when data are children
           class="c9"
         >
           <svg
-            aria-label="Pin"
+            aria-label="FormPin"
             class="c10"
             viewBox="0 0 24 24"
           >
             <path
-              d="m16 3-6 6s-4-1-7 2l10 10c3-3 2-7 2-7l6-6-5-5zM1 23l7-7m6-15 9 9"
+              d="m4 19 4.455-4.454M12.273 5 18 10.727m-4.454-4.454L9.727 10.09s-2.545-.636-4.454 1.273l6.363 6.363c1.91-1.909 1.273-4.454 1.273-4.454l3.818-3.818-3.181-3.182Z"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -18970,12 +18902,12 @@ exports[`List pinned Should apply pinned styling to items when data are children
           class="c9"
         >
           <svg
-            aria-label="Pin"
+            aria-label="FormPin"
             class="c10"
             viewBox="0 0 24 24"
           >
             <path
-              d="m16 3-6 6s-4-1-7 2l10 10c3-3 2-7 2-7l6-6-5-5zM1 23l7-7m6-15 9 9"
+              d="m4 19 4.455-4.454M12.273 5 18 10.727m-4.454-4.454L9.727 10.09s-2.545-.636-4.454 1.273l6.363 6.363c1.91-1.909 1.273-4.454 1.273-4.454l3.818-3.818-3.181-3.182Z"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -19008,8 +18940,8 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   fill: #666666;
   stroke: #666666;
 }
@@ -19134,7 +19066,7 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 15px;
+  padding: 12px;
 }
 
 .c9 {
@@ -19222,7 +19154,7 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
 
 @media only screen and (max-width:768px) {
   .c7 {
-    padding: 15px;
+    padding: 6px;
   }
 }
 
@@ -19279,12 +19211,12 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
           class="c7"
         >
           <svg
-            aria-label="Pin"
+            aria-label="FormPin"
             class="c8"
             viewBox="0 0 24 24"
           >
             <path
-              d="m16 3-6 6s-4-1-7 2l10 10c3-3 2-7 2-7l6-6-5-5zM1 23l7-7m6-15 9 9"
+              d="m4 19 4.455-4.454M12.273 5 18 10.727m-4.454-4.454L9.727 10.09s-2.545-.636-4.454 1.273l6.363 6.363c1.91-1.909 1.273-4.454 1.273-4.454l3.818-3.818-3.181-3.182Z"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -19312,12 +19244,12 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
           class="c7"
         >
           <svg
-            aria-label="Pin"
+            aria-label="FormPin"
             class="c8"
             viewBox="0 0 24 24"
           >
             <path
-              d="m16 3-6 6s-4-1-7 2l10 10c3-3 2-7 2-7l6-6-5-5zM1 23l7-7m6-15 9 9"
+              d="m4 19 4.455-4.454M12.273 5 18 10.727m-4.454-4.454L9.727 10.09s-2.545-.636-4.454 1.273l6.363 6.363c1.91-1.909 1.273-4.454 1.273-4.454l3.818-3.818-3.181-3.182Z"
               fill="none"
               stroke="#000"
               stroke-width="2"

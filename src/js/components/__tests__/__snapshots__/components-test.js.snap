@@ -1703,8 +1703,8 @@ Object {
             "pinned": Object {
               "background": "background-contrast",
               "icon": Object {
-                "pad": "15px",
-                "size": "18px",
+                "pad": "small",
+                "size": "medium",
               },
             },
           },

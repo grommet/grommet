@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "@testing-library/testcafe": "^4.4.1",
-    "grommet-icons": "^4.7.0",
+    "grommet-icons": "^4.8.0",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^7.1.5",
     "prop-types": "^15.8.1",
