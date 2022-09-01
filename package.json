@@ -52,13 +52,10 @@
     "styled-components": ">= 5.1"
   },
   "dependencies": {
-    "@testing-library/testcafe": "^4.4.1",
     "grommet-icons": "^4.7.0",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^7.1.5",
-    "prop-types": "^15.8.1",
-    "testcafe": "^1.20.1",
-    "testcafe-react-selectors": "^5.0.2"
+    "prop-types": "^15.8.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.9",
@@ -83,6 +80,7 @@
     "@testing-library/dom": "8.14.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
+    "@testing-library/testcafe": "^4.4.1",
     "@testing-library/user-event": "14.2.1",
     "@types/jest": "^28.1.6",
     "@types/jest-axe": "^3.5.4",
@@ -138,6 +136,8 @@
     "simple-git": "^3.10.0",
     "styled-components": "^5.3.5",
     "tarball-extract": "^0.0.6",
+    "testcafe": "^2.0.0",
+    "testcafe-react-selectors": "^5.0.2",
     "ts-jest": "^28.0.7",
     "ts-loader": "^8.4.0",
     "typescript": "^4.7.4",
