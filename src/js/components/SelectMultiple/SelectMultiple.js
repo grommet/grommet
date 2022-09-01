@@ -151,9 +151,8 @@ const SelectMultiple = forwardRef(
       const result = [];
       allOptions.forEach((option, index) => {
         if (
-          normalizedValue &&
-          normalizedValue.length > 0 &&
-          normalizedValue.some((v) => v === applyKey(option, valueKey))
+          normalizedValue.length &&
+          normalizedValue?.some((v) => v === applyKey(option, valueKey))
         ) {
           result.push(index);
         }
