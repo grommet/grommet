@@ -26,7 +26,7 @@ export const StyledContainer = styled.div`
 `;
 
 // position relative is so scroll can be managed correctly
-export const OptionsBox = styled.div`
+export const OptionsContainer = styled.div`
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;

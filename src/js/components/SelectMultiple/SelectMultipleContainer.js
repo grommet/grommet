@@ -23,7 +23,7 @@ import { TextInput } from '../TextInput';
 import { SelectionSummary } from './SelectionSummary';
 import {
   StyledContainer,
-  OptionsBox,
+  OptionsContainer,
   SelectOption,
 } from '../Select/StyledSelect';
 import {
@@ -408,7 +408,7 @@ const SelectMultipleContainer = forwardRef(
             </Box>
           )}
           <Box flex={false}>{help}</Box>
-          <OptionsBox
+          <OptionsContainer
             role="listbox"
             tabIndex="0"
             ref={optionsRef}
@@ -573,7 +573,7 @@ const SelectMultipleContainer = forwardRef(
                 theme={theme}
               />
             )}
-          </OptionsBox>
+          </OptionsContainer>
           {usingKeyboard && showA11yLimit && (
             <Box
               height="0px"

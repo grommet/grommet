@@ -23,7 +23,11 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
-import { StyledContainer, OptionsBox, SelectOption } from './StyledSelect';
+import {
+  StyledContainer,
+  OptionsContainer,
+  SelectOption,
+} from './StyledSelect';
 import {
   applyKey,
   checkDisabled,
@@ -417,7 +421,7 @@ const SelectContainer = forwardRef(
               theme={theme}
             />
           )}
-          <OptionsBox
+          <OptionsContainer
             role="listbox"
             tabIndex="-1"
             ref={optionsRef}
@@ -522,7 +526,7 @@ const SelectContainer = forwardRef(
                 theme={theme}
               />
             )}
-          </OptionsBox>
+          </OptionsContainer>
           {shouldShowClearButton('bottom') && (
             <ClearButton
               ref={clearRef}

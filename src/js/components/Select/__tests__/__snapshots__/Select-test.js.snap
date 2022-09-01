@@ -10029,7 +10029,7 @@ exports[`Select prop: onOpen 4`] = `
 
 exports[`Select prop: onOpen 5`] = `
 <div
-  class="StyledSelect__OptionsBox-sc-znp66n-1 euwKzW"
+  class="StyledSelect__OptionsContainer-sc-znp66n-1 fMVXhA"
   role="listbox"
   tabindex="-1"
 >
