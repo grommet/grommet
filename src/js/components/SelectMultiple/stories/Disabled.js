@@ -29,7 +29,6 @@ export const Disabled = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>SelectMultiple Disabled</Text>
       <SelectMultiple
-        separateSelected
         width="medium"
         showSelectedInline
         dropProps={{

@@ -37,11 +37,8 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
 
 const StyledSelectBox = styled(Box)`
-  ${(props) => !props.callerPlain && controlBorderStyle};
-  ${(props) =>
-    props.theme.select &&
-    props.theme.select?.control &&
-    props.theme.select?.control?.extend};
+  ${(props) => !props.plainSelect && controlBorderStyle};
+  ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select.control?.open};
 `;
 
@@ -89,7 +86,7 @@ const SelectMultiple = forwardRef(
       replace,
       searchPlaceholder,
       size,
-      separateSelected,
+      sortSelectedOnClose = true,
       value: valueProp,
       valueKey,
       valueLabel,
@@ -143,8 +140,11 @@ const SelectMultiple = forwardRef(
     // to be referenced when filtered by search.
     useEffect(() => {
       if (!search) setAllOptions(optionsProp);
-      if (!search && separateSelected) setOrderedOptions(optionsProp);
-    }, [optionsProp, search, separateSelected]);
+    }, [optionsProp, search]);
+
+    useEffect(() => {
+      if (!search && sortSelectedOnClose) setOrderedOptions(optionsProp);
+    }, [optionsProp, search, sortSelectedOnClose]);
 
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
@@ -171,19 +171,19 @@ const SelectMultiple = forwardRef(
     }, [onOpen, open]);
 
     useEffect(() => {
-      if (separateSelected && ((open && search) || !open)) {
-        const selectedOptions = optionsProp.filter((option) => {
-          const iValue =
-            valueKey && valueKey.reduce ? applyKey(option, valueKey) : option;
-          return value.includes(iValue);
-        });
+      if (sortSelectedOnClose && ((open && search) || !open)) {
+        const selectedOptions = optionsProp.filter((option) =>
+          value.includes(
+            valueKey && valueKey.reduce ? applyKey(option, valueKey) : option,
+          ),
+        );
         const unselectedOptions = optionsProp.filter(
           (i) => !selectedOptions.includes(i),
         );
         const nextOrderedOptions = selectedOptions.concat(unselectedOptions);
         setOrderedOptions(nextOrderedOptions);
       }
-    }, [open, separateSelected, optionsProp, value, valueKey, search]);
+    }, [open, sortSelectedOnClose, optionsProp, value, valueKey, search]);
 
     const onRequestClose = useCallback(() => {
       setOpen(false);
@@ -367,7 +367,7 @@ const SelectMultiple = forwardRef(
       onOpen: onRequestOpen,
       onClose: onRequestClose,
       onClick,
-      callerPlain: plain,
+      plainSelect: plain,
       plain, // Button should be plain
       dropProps,
       dropContent,
@@ -399,7 +399,7 @@ const SelectMultiple = forwardRef(
             background={theme.select.background}
             ref={selectBoxRef}
             flex={false}
-            callerPlain={plain}
+            plainSelect={plain}
             width={width}
           >
             <Box width="100%">

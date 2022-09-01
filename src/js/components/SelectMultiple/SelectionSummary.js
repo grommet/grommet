@@ -17,6 +17,7 @@ const SelectionSummary = ({
   options,
   search,
   setActiveIndex,
+  showSelectedInline,
   value,
   valueKey,
 }) => {
@@ -35,7 +36,14 @@ const SelectionSummary = ({
 
   if (search === '' || search === undefined)
     return (
-      <>
+      <Box
+        pad={showSelectedInline ? { vertical: 'xsmall' } : 'small'}
+        direction="row"
+        justify="between"
+        gap="small"
+        fill="horizontal"
+        flex
+      >
         <Box alignSelf="center">
           <Text size="small">
             {value.length === 0
@@ -92,7 +100,7 @@ const SelectionSummary = ({
             ref={clearRef}
           />
         )}
-      </>
+      </Box>
     );
   return <Text size="small">{`${value.length} selected`}</Text>;
 };

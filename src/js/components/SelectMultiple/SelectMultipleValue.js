@@ -28,9 +28,10 @@ const SelectMultipleValue = ({
 
   const visibleValue = useCallback(
     (i) => {
-      const iValue = valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
+      const optionValue =
+        valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
       const indexOptions = allOptions.indexOf(i);
-      const iLabel = getOptionLabel(
+      const optionLabel = getOptionLabel(
         indexOptions,
         allOptions,
         labelKey || valueKey,
@@ -42,7 +43,7 @@ const SelectMultipleValue = ({
         allOptions,
         valueKey || labelKey,
       );
-      if (value.indexOf(iValue) < theme.selectMultiple.visibleInline) {
+      if (value.indexOf(optionValue) < theme.selectMultiple.visibleInline) {
         let child;
         if (children) {
           child = children(i, indexOptions, allOptions, {
@@ -56,13 +57,13 @@ const SelectMultipleValue = ({
           <SelectOption
             role="option"
             a11yTitle={
-              value.includes(iValue)
-                ? `${iLabel} selected`
-                : `${iLabel} not selected`
+              value.includes(optionValue)
+                ? `${optionLabel} selected`
+                : `${optionLabel} not selected`
             }
             aria-setsize={value.length}
-            aria-posinset={value.indexOf(iValue) + 1}
-            aria-selected={value.includes(iValue)}
+            aria-posinset={value.indexOf(optionValue) + 1}
+            aria-selected={value.includes(optionValue)}
             aria-disabled={iDisabled}
             plain
             hoverIndicator
@@ -71,11 +72,11 @@ const SelectMultipleValue = ({
             onClick={(event) => {
               if (!iDisabled) {
                 const intermediate = [...value];
-                const index = value.indexOf(iValue);
-                if (intermediate.includes(iValue)) {
+                const index = value.indexOf(optionValue);
+                if (intermediate.includes(optionValue)) {
                   onSelectChange(event, {
-                    option: iValue,
-                    value: intermediate.filter((v) => v !== iValue),
+                    option: optionValue,
+                    value: intermediate.filter((v) => v !== optionValue),
                   });
                   if (index !== intermediate.length - 1) {
                     setTimeout(() => {
@@ -92,14 +93,16 @@ const SelectMultipleValue = ({
                           ) === intermediate[index + 1],
                       );
                       setShowA11yDiv(
-                        `Unselected ${iLabel}. 
+                        `Unselected ${optionLabel}. 
                         Focus moved to ${getOptionLabel(
                           allOptions.indexOf(result),
                           allOptions,
                           labelKey || valueKey,
                         )}`,
                       );
-                    }, 200);
+                    }, 200); // Timeout needed to allow screen reader
+                    // time to announce and next item to display on
+                    // screen. Based on testing, 200ms is enough time
                   } else if (intermediate.length !== 1) {
                     setTimeout(() => {
                       const nextFocus = document.getElementById(
@@ -115,36 +118,36 @@ const SelectMultipleValue = ({
                           ) === intermediate[index - 1],
                       );
                       setShowA11yDiv(
-                        `Unselected ${iLabel}. Focus moved to 
+                        `Unselected ${optionLabel}. Focus moved to 
                           ${getOptionLabel(
                             allOptions.indexOf(result),
                             allOptions,
                             labelKey || valueKey,
                           )}`,
                       );
-                    }, 200);
+                    }, 200); // Timeout needed to allow screen reader
+                    // time to announce and next item to display on
+                    // screen. Based on testing, 200ms is enough time
                   } else if (dropButtonRef.current)
                     dropButtonRef.current.focus();
                 }
               }
             }}
-            key={iLabel}
-            id={`selected-${iValue}`}
+            key={optionLabel}
+            id={`selected-${optionValue}`}
           >
-            {children && child ? (
-              child
-            ) : (
+            {child || (
               <CheckBox
                 disabled={iDisabled}
                 label={
                   <Box alignSelf="center" align="start">
-                    {iLabel}
+                    {optionLabel}
                   </Box>
                 }
-                key={iLabel}
+                key={optionLabel}
                 pad="xsmall"
                 tabIndex="-1"
-                checked={value.includes(iValue)}
+                checked={value.includes(optionValue)}
               />
             )}
           </SelectOption>
@@ -208,7 +211,10 @@ const SelectMultipleValue = ({
         )}
       </Box>
       {value && value.length > theme.selectMultiple.visibleInline && (
-        <Box pad="small" alignSelf="start">
+        <Box
+          pad={{ horizontal: 'small', bottom: 'small', top: 'xsmall' }}
+          alignSelf="start"
+        >
           <Button
             onClick={onRequestOpen}
             size="small"

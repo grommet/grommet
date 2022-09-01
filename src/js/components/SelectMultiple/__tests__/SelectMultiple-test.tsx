@@ -94,7 +94,7 @@ describe('SelectMultiple', () => {
           id="test-select__drop"
           options={[0, 1, 2]}
           disabled={[1]}
-          separateSelected
+          sortSelectedOnClose
         />
       </Grommet>,
     );

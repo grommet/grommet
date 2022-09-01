@@ -3,11 +3,11 @@ import { BasicSelectProps } from '../Select';
 
 export interface SelectMultipleProps extends BasicSelectProps {
   defaultValue?: (string | number | object)[];
-  help?: React.ReactNode;
+  help?: string | React.ReactNode;
   limit?: number;
   value?: (string | number | object)[];
   showSelectedInline?: boolean;
-  separateSelected?: boolean;
+  sortSelectedOnClose?: boolean;
 }
 
 // Try without Omit<> to see where we define our own attributes for overrides

@@ -68,10 +68,7 @@ export const SelectTextInput = styled(TextInput)`
 `;
 
 export const StyledSelectDropButton = styled(DropButton)`
-  ${(props) => !props.callerPlain && controlBorderStyle};
-  ${(props) =>
-    props.theme.select &&
-    props.theme.select?.control &&
-    props.theme.select?.control?.extend};
+  ${(props) => !props.plainSelect && controlBorderStyle};
+  ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select?.control?.open};
 `;

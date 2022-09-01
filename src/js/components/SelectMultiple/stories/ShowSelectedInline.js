@@ -25,7 +25,6 @@ export const ShowSelectedInline = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>SelectMultiple showSelectedInline</Text>
       <SelectMultiple
-        separateSelected
         showSelectedInline
         placeholder="Select"
         options={options}

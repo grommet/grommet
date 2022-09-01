@@ -64,6 +64,7 @@ export const Children = () => {
     <Box fill align="center" pad="large" gap="large">
       <Text>SelectMultiple with custom children</Text>
       <SelectMultiple
+        sortSelectedOnClose={false}
         showSelectedInline
         valueLabel={(option) => (
           <Box wrap direction="row" width="small">

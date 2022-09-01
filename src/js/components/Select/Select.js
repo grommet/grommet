@@ -327,7 +327,7 @@ const Select = forwardRef(
             </SelectContainer>
           }
           // StyledDropButton needs to know if the border should be shown
-          callerPlain={plain}
+          plainSelect={plain}
           plain // Button should be plain
           dropProps={dropProps}
           theme={theme}

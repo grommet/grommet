@@ -324,9 +324,46 @@ const SelectMultipleContainer = forwardRef(
       if (showA11yLimit !== undefined) {
         setTimeout(() => {
           setShowA11yLimit(undefined);
-        }, 2000);
+        }, 2000); // value chosen based on length of a11yLimit message
       }
     }, [showA11yLimit]);
+
+    let summaryContent = (
+      <SelectionSummary
+        allOptions={allOptions}
+        clearRef={clearRef}
+        disabled={disabled}
+        disabledKey={disabledKey}
+        isSelected={isSelected}
+        labelKey={labelKey}
+        limit={limit}
+        onChange={onChange}
+        options={options}
+        search={search}
+        setActiveIndex={setActiveIndex}
+        showSelectedInline={showSelectedInline}
+        value={value}
+        valueKey={valueKey}
+      />
+    );
+
+    if (showSelectedInline)
+      summaryContent = (
+        <Box
+          direction="row"
+          justify="between"
+          flex={false}
+          pad={{ horizontal: 'small', top: 'xsmall' }}
+        >
+          {summaryContent}
+          <Button
+            icon={<FormUp />}
+            onClick={onClose}
+            a11yTitle="Close Select"
+            plain
+          />
+        </Box>
+      );
 
     return (
       <Keyboard
@@ -344,68 +381,7 @@ const SelectMultipleContainer = forwardRef(
           dropHeight={dropHeight}
           a11yTitle="Select dropdown"
         >
-          {showSelectedInline ? (
-            <Box
-              direction="row"
-              justify="between"
-              flex={false}
-              pad={{ horizontal: 'small', top: 'xsmall' }}
-            >
-              <Box
-                pad={{ vertical: 'xsmall' }}
-                direction="row"
-                justify="between"
-                gap="small"
-                fill="horizontal"
-              >
-                <SelectionSummary
-                  allOptions={allOptions}
-                  clearRef={clearRef}
-                  disabled={disabled}
-                  disabledKey={disabledKey}
-                  isSelected={isSelected}
-                  labelKey={labelKey}
-                  limit={limit}
-                  onChange={onChange}
-                  options={options}
-                  search={search}
-                  setActiveIndex={setActiveIndex}
-                  value={value}
-                  valueKey={valueKey}
-                />
-              </Box>
-              <Button
-                icon={<FormUp />}
-                onClick={onClose}
-                a11yTitle="Close Select"
-                plain
-              />
-            </Box>
-          ) : (
-            <Box
-              pad="xsmall"
-              direction="row"
-              justify="between"
-              gap="small"
-              flex={false}
-            >
-              <SelectionSummary
-                allOptions={allOptions}
-                clearRef={clearRef}
-                disabled={disabled}
-                disabledKey={disabledKey}
-                isSelected={isSelected}
-                limit={limit}
-                onChange={onChange}
-                options={options}
-                search={search}
-                setActiveIndex={setActiveIndex}
-                value={value}
-                valueKey={valueKey}
-              />
-            </Box>
-          )}
-
+          {summaryContent}
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
               <Keyboard
@@ -449,10 +425,6 @@ const SelectMultipleContainer = forwardRef(
                 show={activeIndex !== -1 ? activeIndex : undefined}
               >
                 {(option, index, optionRef) => {
-                  const iValue =
-                    valueKey && valueKey.reduce
-                      ? applyKey(option, valueKey)
-                      : option;
                   const optionDisabled = checkDisabled(
                     index,
                     disabled,
@@ -460,9 +432,13 @@ const SelectMultipleContainer = forwardRef(
                     options,
                     valueKey || labelKey,
                   );
-                  const optionSelected = value.includes(iValue);
+                  const optionSelected = value.includes(
+                    valueKey && valueKey.reduce
+                      ? applyKey(option, valueKey)
+                      : option,
+                  );
                   const optionActive = activeIndex === index;
-                  const iLabel = getOptionLabel(
+                  const optionLabel = getOptionLabel(
                     index,
                     options,
                     labelKey || valueKey,
@@ -490,7 +466,7 @@ const SelectMultipleContainer = forwardRef(
                       <CheckBox
                         label={
                           <Box alignSelf="center" width="100%" align="start">
-                            {iLabel}
+                            {optionLabel}
                           </Box>
                         }
                         pad="xsmall"
@@ -501,20 +477,25 @@ const SelectMultipleContainer = forwardRef(
                     );
                   }
 
-                  if (!children && !theme.select.options && search) {
+                  if (!children && search) {
                     if (
-                      typeof iLabel === typeof '' &&
-                      iLabel.toLowerCase().indexOf(search) >= 0
+                      typeof optionLabel === typeof '' &&
+                      optionLabel.toLowerCase().indexOf(search) >= 0
                     ) {
                       // code to bold search term in matching options
-                      const boldIndex = iLabel.toLowerCase().indexOf(search);
-                      const childBeginning = iLabel.substring(0, boldIndex);
-                      let childBold = iLabel.substring(
+                      const boldIndex = optionLabel
+                        .toLowerCase()
+                        .indexOf(search);
+                      const childBeginning = optionLabel.substring(
+                        0,
+                        boldIndex,
+                      );
+                      let childBold = optionLabel.substring(
                         boldIndex,
                         boldIndex + search.length,
                       );
                       childBold = <b>{childBold}</b>;
-                      const childEnd = iLabel.substring(
+                      const childEnd = optionLabel.substring(
                         boldIndex + search.length,
                       );
                       child = (
@@ -547,8 +528,8 @@ const SelectMultipleContainer = forwardRef(
                     <SelectOption
                       a11yTitle={
                         optionSelected
-                          ? `${iLabel} selected`
-                          : `${iLabel} not selected`
+                          ? `${optionLabel} selected`
+                          : `${optionLabel} not selected`
                       }
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
