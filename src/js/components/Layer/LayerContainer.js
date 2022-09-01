@@ -72,18 +72,23 @@ const LayerContainer = forwardRef(
     useEffect(() => {
       const start = new Date();
       const element = layerRef.current;
-      sendAnalytics({
-        type: 'layerOpen',
-        element,
-      });
-      return () => {
+      const isHidden = position === 'hidden';
+      if (!isHidden) {
         sendAnalytics({
-          type: 'layerClose',
+          type: 'layerOpen',
           element,
-          elapsed: new Date().getTime() - start.getTime(),
         });
+      }
+      return () => {
+        if (!isHidden) {
+          sendAnalytics({
+            type: 'layerClose',
+            element,
+            elapsed: new Date().getTime() - start.getTime(),
+          });
+        }
       };
-    }, [sendAnalytics, layerRef]);
+    }, [sendAnalytics, layerRef, position]);
 
     useEffect(() => {
       if (position !== 'hidden') {
