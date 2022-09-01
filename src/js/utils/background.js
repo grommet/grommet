@@ -10,9 +10,10 @@ const evalStyle = (arg, theme) => {
   return arg;
 };
 
-export const normalizeBackground = (background, theme) => {
-  // If the background has a light or dark object, use that
+export const normalizeBackground = (backgroundArg, theme) => {
+  const background = theme.global.backgrounds?.[backgroundArg] || backgroundArg;
   let result = background;
+  // If the background has a light or dark object, use that
   if (background) {
     if (theme.dark && background.dark && typeof background.dark !== 'boolean') {
       result = background.dark;
@@ -24,6 +25,23 @@ export const normalizeBackground = (background, theme) => {
       result = background.light;
     }
     result = evalStyle(result, theme);
+  }
+  return result;
+};
+
+const normalizeBackgroundColor = (background, theme) => {
+  // Background color may originate from theme.global.backgrounds or
+  // theme.global.colors.
+  let result = normalizeColor(
+    theme.global.backgrounds?.[background.color] ||
+      background?.color ||
+      theme.global.backgrounds?.[background] ||
+      background,
+    theme,
+    background?.dark,
+  );
+  if (result.color) {
+    result = normalizeBackgroundColor(result, theme);
   }
   return result;
 };
@@ -127,7 +145,8 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
     }
 
     if (background.color) {
-      const color = normalizeColor(background.color, theme, background.dark);
+      // const color = normalizeColor(background.color, theme, background.dark);
+      const color = normalizeBackgroundColor(background, theme);
       const opacity =
         background.opacity === true
           ? global.opacity.medium
@@ -143,7 +162,8 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
       }
     }
   } else {
-    backgroundColor = normalizeColor(background, theme);
+    // backgroundColor = normalizeColor(background, theme);
+    backgroundColor = normalizeBackgroundColor(background, theme);
     const shade = darkContext(backgroundColor, theme);
     if (shade) {
       textColor = normalizeColor(text[shade] || text, theme, shade === 'dark');
@@ -165,16 +185,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
   if (backgroundArg === undefined) return undefined;
 
   const background = normalizeBackground(backgroundArg, theme);
-
-  if (
-    typeof background === 'string' &&
-    background.lastIndexOf('url', 0) === 0
-  ) {
-    return css`
-      background: ${background} no-repeat center center;
-      background-size: cover;
-    `;
-  }
+  console.log('Normalized Background: ', background);
 
   const [backgroundColor, textColor] = backgroundAndTextColors(
     background,
@@ -196,6 +207,16 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
            -webkit-background-clip: text; 
            background-clip: text;`
         : `background-clip: ${background.clip};`;
+  }
+
+  if (
+    typeof background === 'string' &&
+    background.lastIndexOf('url', 0) === 0
+  ) {
+    return css`
+      background: ${background} no-repeat center center;
+      background-size: cover;
+    `;
   }
 
   if (backgroundImage) {
