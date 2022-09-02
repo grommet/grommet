@@ -8,6 +8,9 @@ export const parseMetricToNum = metric => {
   return parseFloat(metric.match(/\d+(\.\d+)?/), 10);
 };
 
+export const edgeToNum = (size, theme) =>
+  size ? parseMetricToNum(theme.global.edgeSize[size] || size) : 0;
+
 export const fontSize = (size, lineHeight) => css`
   font-size: ${props =>
     `${(parseMetricToNum(size) /

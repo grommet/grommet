@@ -60,10 +60,16 @@ const customBreakpoints: ThemeType = {
     },
   },
   menu: {
+    background: 'light-3',
     icons: {
       down: FormDown,
       up: FormUp,
     },
+    item: {
+      color: 'brand',
+      style: { fontFamily: 'Arial', fontWeight: 'bold' },
+    },
+    extend: `border: 3px solid gray`,
   },
 };
 

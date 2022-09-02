@@ -16,6 +16,8 @@ import {
   useForwardedRef,
   usePagination,
 } from '../../utils';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
+
 import { ListPropTypes } from './propTypes';
 
 const StyledList = styled.ul`
@@ -196,6 +198,8 @@ const List = React.forwardRef(
 
     const draggingRef = useRef();
 
+    const sendAnalytics = useAnalytics();
+
     const ariaProps = {
       role: onClickItem || onOrder ? 'listbox' : 'list',
     };
@@ -254,6 +258,13 @@ const List = React.forwardRef(
                     adjustedEvent.item = data[active];
                     adjustedEvent.index = active;
                     onClickItem(adjustedEvent);
+                    sendAnalytics({
+                      type: 'listItemClick',
+                      element: listRef.current,
+                      event: adjustedEvent,
+                      item: data[active],
+                      index: active,
+                    });
                   }
                 }
               : undefined
@@ -430,6 +441,13 @@ const List = React.forwardRef(
                         // put focus on the List container to meet WCAG
                         // accessibility guidelines that focus remains on `ul`
                         listRef.current.focus();
+                        sendAnalytics({
+                          type: 'listItemClick',
+                          element: listRef.current,
+                          event: adjustedEvent,
+                          item,
+                          index,
+                        });
                       }
                     },
                     onMouseOver: () => updateActive(index),
