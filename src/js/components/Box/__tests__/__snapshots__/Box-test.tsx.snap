@@ -1477,6 +1477,7 @@ exports[`Box background 1`] = `
   left: 0;
   bottom: 0;
   z-index: -1;
+  border-radius: inherit;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: center center;
@@ -1564,6 +1565,7 @@ exports[`Box background 1`] = `
   left: 0;
   bottom: 0;
   z-index: -1;
+  border-radius: inherit;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: center center;
@@ -1714,11 +1716,7 @@ exports[`Box background from theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  color: #444444;
-  background-image: linear-gradient( hsl(240deg 90% 55%) 0%, hsl(341deg 90% 55%) 50%, hsl(60deg 90% 55%) 100%);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background: linear-gradient( hsl(240deg 90% 55%) 0%, hsl(341deg 90% 55%) 50%, hsl(60deg 90% 55%) 100%);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1751,6 +1749,7 @@ exports[`Box background from theme 1`] = `
   left: 0;
   bottom: 0;
   z-index: -1;
+  border-radius: inherit;
   background-color: red;
   background-image: url(https://images.unsplash.com/photo-1603484477859-abe6a73f9366?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
   background-repeat: no-repeat;

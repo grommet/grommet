@@ -1,97 +1,163 @@
 import React from 'react';
 
 import { Grommet, Box, Text } from 'grommet';
+import { Grid } from '../../Grid';
 
 const myTheme = {
   global: {
     backgrounds: {
-      'image-1': `url(https://images.unsplash.com/photo-1620497772559-b65fc1d1ccf7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80)`,
-      'image-2': {
-        dark: `url(https://images.unsplash.com/photo-1614292253389-bd2c1f89cd0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80)`,
-        light: `url(https://images.unsplash.com/photo-1603484477859-abe6a73f9366?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80)`,
+      hex: '#555555',
+      themeColor: 'accent-1',
+      image: `url(https://images.unsplash.com/photo-1583530015497-6cf9ef9c6f0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)`,
+      'dark-light-image': {
+        dark: `url(https://images.unsplash.com/photo-1620744209976-74accdabd814?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80)`,
+        light: `url(https://images.unsplash.com/photo-1646723504943-4b55a30ed655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80)`,
       },
-      'gradient-1': `linear-gradient(
-        hsl(240deg 90% 55%) 0%,
-        hsl(341deg 90% 55%) 50%,
-        hsl(60deg 90% 55%) 100%)`,
-      hex: '#000',
-      'color-1': 'brand',
-      'fancy-1': {
-        color: 'brand',
+      gradient: `linear-gradient(
+        80deg,
+        hsl(41deg 100% 67%) 0%,
+        hsl(333deg 100% 70%) 33%,
+        hsl(257deg 99% 73%) 67%,
+        hsl(173deg 95% 75%) 100%
+      );`,
+      object: {
+        color: 'white',
+        image: `url(https://images.unsplash.com/photo-1464820453369-31d2c0b651af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=80&q=80)`,
+        repeat: 'repeat',
+        size: '24px',
         opacity: true,
-        // image: 'image-1',
       },
-      'fancy-2': {
-        color: 'color-1',
-        opacity: true,
-        // image: 'image-1',
+      stack: {
+        color: 'light-1',
+        image: `url(https://v2.grommet.io/img/stak-hurrah.svg)`,
       },
     },
   },
 };
 
+const backgroundSamples = [
+  {
+    background: '#F8F8F8',
+    label: { value: 'hex value', context: 'prop string' },
+  },
+  { background: 'hex', label: { value: 'hex value', context: 'theme string' } },
+  {
+    background: 'accent-4',
+    label: { value: 'color name', context: 'prop string' },
+  },
+  {
+    background: 'themeColor',
+    label: { value: 'color name', context: 'theme string' },
+  },
+  {
+    background: `url(https://images.unsplash.com/photo-1493552832879-f61d5dce6c9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)`,
+    label: { value: 'image', context: 'prop string' },
+  },
+  {
+    background: 'image',
+    label: { value: 'image', context: 'theme string' },
+  },
+  {
+    background: {
+      color: 'light-1',
+    },
+    label: { value: 'hover', context: 'over me' },
+    onClick: () => {},
+    hoverIndicator: 'stack',
+  },
+  {
+    background: `linear-gradient(
+      155deg,
+      hsl(147deg 100% 72%) 0%,
+      hsl(223deg 100% 72%) 50%,
+      hsl(299deg 100% 72%) 100%
+    );`,
+    label: { value: 'gradient', context: 'prop string' },
+  },
+  {
+    background: 'gradient',
+    label: { value: 'gradient', context: 'theme string' },
+  },
+  {
+    background: { dark: 'accent-2', light: 'accent-3' },
+    label: { value: 'dark-light object', context: 'prop object' },
+  },
+  {
+    background: 'dark-light-image',
+    label: { value: 'dark-light object', context: 'theme object' },
+  },
+  {
+    background: {
+      color: 'neutral-2',
+      image: `url(https://images.unsplash.com/photo-1653023500770-3a3b64a1b4c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80)`,
+      position: 'top-left',
+    },
+    label: { value: 'object', context: 'prop object' },
+  },
+  {
+    background: 'object',
+    label: { value: 'object', context: 'theme object' },
+  },
+  {
+    background: { image: 'gradient', rotate: 180 },
+    label: { value: 'rotate', context: 'prop object' },
+  },
+  {
+    background: {
+      image: 'gradient',
+      rotate: -90,
+      clip: 'text',
+    },
+    label: {
+      value: <Text size="xxlarge">clip text</Text>,
+      context: <Text size="medium">prop object</Text>,
+    },
+  },
+  {
+    background: {
+      image: 'image',
+      rotate: -90,
+      clip: 'text',
+    },
+    label: {
+      value: <Text size="xxlarge">clip text</Text>,
+      context: <Text size="medium">prop object</Text>,
+    },
+  },
+];
+
+const Swatch = ({ label, ...rest }) => (
+  <Box fill pad="medium" justify="center" round="small" {...rest}>
+    <Text weight="bold" size="large">
+      {label.value}
+    </Text>
+    <Text size="small">{label.context}</Text>
+  </Box>
+);
+
 export const BackgroundBoxTemp = () => (
   // Uncomment <Grommet> lines when using outside of storybook
-  <Grommet theme={myTheme}>
-    <Box pad="small" gap="small" align="start">
-      <Text size="xlarge">Strings</Text>
-      {/* <Box background="accent-3" pad="medium">
-        <Text weight="bold">background color</Text>
-      </Box>
-      <Box background="color-1" pad="medium">
-        <Text weight="bold">background color</Text>
-      </Box> */}
-      {/* <Box background="#458FFA" pad="medium">
-        <Text weight="bold">background hex</Text>
-      </Box>
-      <Box background="hex" pad="medium">
-        <Text weight="bold">background hex from theme</Text>
-      </Box>
-      <Box
-        background="url(https://images.unsplash.com/photo-1614292253389-bd2c1f89cd0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80)"
-        pad="medium"
-      >
-        <Text weight="bold">background image</Text>
-      </Box> */}
-      {/* <Box background="image-2" pad="medium">
-        <Text weight="bold">background image from theme</Text>
-      </Box>
-      <Box
-        background={`linear-gradient(
-          90deg,
-          hsl(200deg 100% 65%) 0%,
-          hsl(230deg 80% 70%) 40%,
-          hsl(280deg 90% 50%) 100%)`}
-        pad="medium"
-      >
-      <Text weight="bold">background gradient</Text>
-      </Box> */}
-      <Text size="xlarge">Objects</Text>
-      {/* <Box background={{ color: 'accent-1' }} pad="medium">
-        <Text weight="bold">background object - color</Text>
-      </Box>
-      <Box background={{ color: 'color-1' }} pad="medium">
-        <Text weight="bold">background object - color</Text>
-      </Box> */}
-      <Box background="fancy-1" pad="medium">
-        <Text weight="bold">background theme object</Text>
-      </Box>
-      <Box background="fancy-2" pad="medium">
-        <Text weight="bold">background theme object</Text>
-      </Box>
-      {/* <Box
-        background={{ image: 'image-1', color: 'red', opacity: true }}
-        pad="medium"
-      >
-        <Text weight="bold">background object - image, color, opacity</Text>
-      </Box>
-      <Box background={{ image: 'image-1', clip: 'text' }} pad="medium">
-        <Text weight="bold">clip text</Text>
-      </Box>
-      <Box background={{ image: 'gradient-1', rotate: -45 }} pad="medium">
-        <Text weight="bold">rotate background gradient</Text>
-      </Box> */}
-    </Box>
+  <Grommet
+    theme={myTheme}
+    full
+    background={`linear-gradient(
+      155deg,
+      hsl(0deg 0% 51%) 0%,
+      hsl(0deg 0% 76%) 50%,
+      hsl(0deg 0% 100%) 100%
+    )`}
+  >
+    <Grid columns="small" rows="small" gap="small" pad="large">
+      {backgroundSamples.map((sample, index) => (
+        <Swatch
+          key={sample.background}
+          background={sample.background}
+          label={sample.label}
+          animation={{ type: 'fadeIn', delay: index * 50 }}
+          {...sample}
+        />
+      ))}
+    </Grid>
   </Grommet>
 );
 

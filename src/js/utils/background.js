@@ -29,20 +29,15 @@ export const normalizeBackground = (backgroundArg, theme) => {
   return result;
 };
 
-const normalizeBackgroundColor = (background, theme) => {
-  // Background color may originate from theme.global.backgrounds or
-  // theme.global.colors.
-  let result = normalizeColor(
-    theme.global.backgrounds?.[background.color] ||
-      background?.color ||
-      theme.global.backgrounds?.[background] ||
-      background,
+const normalizeBackgroundColor = (backgroundArg, theme) => {
+  const background = backgroundArg.color || backgroundArg;
+  const result = normalizeColor(
+    // Background color may be defined by theme.global.backgrounds or
+    // theme.global.colors.
+    theme.global.backgrounds?.[background] || background,
     theme,
     background?.dark,
   );
-  if (result.color) {
-    result = normalizeBackgroundColor(result, theme);
-  }
   return result;
 };
 
@@ -185,7 +180,6 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
   if (backgroundArg === undefined) return undefined;
 
   const background = normalizeBackground(backgroundArg, theme);
-  console.log('Normalized Background: ', background);
 
   const [backgroundColor, textColor] = backgroundAndTextColors(
     background,
@@ -193,11 +187,9 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
     theme,
   );
 
-  let backgroundImage = normalizeBackgroundImage(background, theme);
-
-  if (background.rotate) {
-    backgroundImage = rotateBackground(background, theme);
-  }
+  const backgroundImage = background.rotate
+    ? rotateBackground(background, theme)
+    : normalizeBackgroundImage(background, theme);
 
   let backgroundClipStyle = '';
   if (background.clip) {
@@ -249,6 +241,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
           left: 0;
           bottom: 0;
           z-index: -1;
+          border-radius: inherit;
           ${backgroundStyles}
           opacity: ${
             background.opacity === true
