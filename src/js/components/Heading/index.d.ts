@@ -19,7 +19,6 @@ export interface HeadingProps {
   fill?: boolean;
   level?: '1' | '2' | '3' | '4' | '5' | '6' | 1 | 2 | 3 | 4 | 5 | 6;
   margin?: MarginType;
-  overflowWrap?: 'normal' | 'break-word' | 'anywhere' | string;
   responsive?: boolean;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   textAlign?: TextAlignType;

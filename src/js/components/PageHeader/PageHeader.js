@@ -72,12 +72,7 @@ const PageHeader = forwardRef(
           </Box>
           <Box gridArea="title">
             {typeof title === 'string' ? (
-              <Heading
-                {...sizeStyle(size, 'title', theme)}
-                overflowWrap="break-word"
-              >
-                {title}
-              </Heading>
+              <Heading {...sizeStyle(size, 'title', theme)}>{title}</Heading>
             ) : (
               title
             )}
