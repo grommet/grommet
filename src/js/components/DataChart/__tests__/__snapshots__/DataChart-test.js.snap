@@ -28,8 +28,8 @@ exports[`DataChart areas 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -39,11 +39,17 @@ exports[`DataChart areas 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -130,8 +136,13 @@ exports[`DataChart areas 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -258,8 +269,8 @@ exports[`DataChart axis 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -269,11 +280,17 @@ exports[`DataChart axis 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -346,8 +363,13 @@ exports[`DataChart axis 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -754,8 +776,8 @@ exports[`DataChart axis x granularity 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c6 {
@@ -774,11 +796,51 @@ exports[`DataChart axis x granularity 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 1px;
+  width: 96px;
   overflow: visible;
 }
 
 .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 48px;
+  overflow: visible;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 24px;
+  overflow: visible;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -790,48 +852,6 @@ exports[`DataChart axis x granularity 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  grid-area: xAxis;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  grid-area: xAxis;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c5 {
@@ -861,22 +881,13 @@ exports[`DataChart axis x granularity 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -967,12 +978,12 @@ exports[`DataChart axis x granularity 1`] = `
       class="c2"
     >
       <div
-        class="c7"
+        class="c6"
       >
         0
       </div>
       <div
-        class="c7"
+        class="c6"
       >
         1
       </div>
@@ -1180,20 +1191,20 @@ exports[`DataChart axis x granularity 1`] = `
     class="c1"
   >
     <div
-      class="c8"
+      class="c2"
     >
       <div
-        class="c6"
+        class="c7"
       >
         0
       </div>
       <div
-        class="c6"
+        class="c7"
       >
         2
       </div>
       <div
-        class="c6"
+        class="c7"
       >
         4
       </div>
@@ -1268,7 +1279,7 @@ exports[`DataChart axis x granularity 1`] = `
     class="c1"
   >
     <div
-      class="c8"
+      class="c2"
     >
       <div
         class="c7"
@@ -1359,25 +1370,25 @@ exports[`DataChart axis x granularity 1`] = `
     class="c1"
   >
     <div
-      class="c8"
+      class="c2"
     >
       <div
-        class="c6"
+        class="c7"
       >
         0
       </div>
       <div
-        class="c6"
+        class="c7"
       >
         2
       </div>
       <div
-        class="c6"
+        class="c7"
       >
         4
       </div>
       <div
-        class="c6"
+        class="c7"
       >
         6
       </div>
@@ -1468,7 +1479,7 @@ exports[`DataChart axis x granularity 1`] = `
     class="c1"
   >
     <div
-      class="c8"
+      class="c2"
     >
       <div
         class="c7"
@@ -1575,30 +1586,30 @@ exports[`DataChart axis x granularity 1`] = `
     class="c1"
   >
     <div
-      class="c8"
+      class="c2"
     >
       <div
-        class="c6"
+        class="c7"
       >
         0
       </div>
       <div
-        class="c6"
+        class="c7"
       >
         2
       </div>
       <div
-        class="c6"
+        class="c7"
       >
         4
       </div>
       <div
-        class="c6"
+        class="c7"
       >
         6
       </div>
       <div
-        class="c6"
+        class="c7"
       >
         8
       </div>
@@ -1705,25 +1716,25 @@ exports[`DataChart axis x granularity 1`] = `
     class="c1"
   >
     <div
-      class="c8"
+      class="c2"
     >
       <div
-        class="c6"
+        class="c7"
       >
         0
       </div>
       <div
-        class="c6"
+        class="c7"
       >
         3
       </div>
       <div
-        class="c6"
+        class="c7"
       >
         6
       </div>
       <div
-        class="c6"
+        class="c7"
       >
         9
       </div>
@@ -1838,20 +1849,20 @@ exports[`DataChart axis x granularity 1`] = `
     class="c1"
   >
     <div
-      class="c9"
+      class="c2"
     >
       <div
-        class="c6"
+        class="c8"
       >
         0
       </div>
       <div
-        class="c6"
+        class="c8"
       >
         5
       </div>
       <div
-        class="c6"
+        class="c8"
       >
         10
       </div>
@@ -1974,15 +1985,15 @@ exports[`DataChart axis x granularity 1`] = `
     class="c1"
   >
     <div
-      class="c9"
+      class="c2"
     >
       <div
-        class="c7"
+        class="c9"
       >
         0
       </div>
       <div
-        class="c7"
+        class="c9"
       >
         11
       </div>
@@ -2113,30 +2124,30 @@ exports[`DataChart axis x granularity 1`] = `
     class="c1"
   >
     <div
-      class="c9"
+      class="c2"
     >
       <div
-        class="c6"
+        class="c8"
       >
         0
       </div>
       <div
-        class="c6"
+        class="c8"
       >
         3
       </div>
       <div
-        class="c6"
+        class="c8"
       >
         6
       </div>
       <div
-        class="c6"
+        class="c8"
       >
         9
       </div>
       <div
-        class="c6"
+        class="c8"
       >
         12
       </div>
@@ -2302,8 +2313,8 @@ exports[`DataChart bars 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -2313,11 +2324,17 @@ exports[`DataChart bars 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -2404,8 +2421,13 @@ exports[`DataChart bars 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -2553,8 +2575,8 @@ exports[`DataChart bars colors 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -2564,11 +2586,17 @@ exports[`DataChart bars colors 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -2655,8 +2683,13 @@ exports[`DataChart bars colors 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -2804,8 +2837,8 @@ exports[`DataChart bars empty 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -2846,8 +2879,13 @@ exports[`DataChart bars empty 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -2898,8 +2936,8 @@ exports[`DataChart bars invalid 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -2909,11 +2947,17 @@ exports[`DataChart bars invalid 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -3000,8 +3044,13 @@ exports[`DataChart bars invalid 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -3152,8 +3201,8 @@ exports[`DataChart bounds align 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -3163,11 +3212,17 @@ exports[`DataChart bounds align 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -3240,8 +3295,13 @@ exports[`DataChart bounds align 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -3352,8 +3412,8 @@ exports[`DataChart bounds explicit 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -3363,11 +3423,17 @@ exports[`DataChart bounds explicit 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -3440,8 +3506,13 @@ exports[`DataChart bounds explicit 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -3552,8 +3623,8 @@ exports[`DataChart dates 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -3563,11 +3634,17 @@ exports[`DataChart dates 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -3724,8 +3801,13 @@ exports[`DataChart dates 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -4477,8 +4559,8 @@ exports[`DataChart default 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -4488,11 +4570,17 @@ exports[`DataChart default 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -4565,8 +4653,13 @@ exports[`DataChart default 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -4677,8 +4770,8 @@ exports[`DataChart detail 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -4688,11 +4781,17 @@ exports[`DataChart detail 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -4868,8 +4967,13 @@ exports[`DataChart detail 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -5076,8 +5180,8 @@ exports[`DataChart detail pad + thickness 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -5087,11 +5191,17 @@ exports[`DataChart detail pad + thickness 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -5209,9 +5319,25 @@ exports[`DataChart detail pad + thickness 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-inline-start: -48px;
+  padding-inline-end: -48px;
 }
 
 .c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5238,7 +5364,7 @@ exports[`DataChart detail pad + thickness 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5262,7 +5388,7 @@ exports[`DataChart detail pad + thickness 1`] = `
   padding-bottom: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5279,11 +5405,11 @@ exports[`DataChart detail pad + thickness 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-inline-start: -36px;
+  padding-inline-end: -36px;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5307,7 +5433,7 @@ exports[`DataChart detail pad + thickness 1`] = `
   padding-bottom: 0px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5331,7 +5457,7 @@ exports[`DataChart detail pad + thickness 1`] = `
   padding-bottom: 12px;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5348,11 +5474,31 @@ exports[`DataChart detail pad + thickness 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 96px;
-  padding-right: 96px;
+  padding-inline-start: 72px;
+  padding-inline-end: 72px;
 }
 
-.c21 {
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 48px;
+  overflow: visible;
+}
+
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5376,7 +5522,7 @@ exports[`DataChart detail pad + thickness 1`] = `
   padding-bottom: 0px;
 }
 
-.c22 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5470,22 +5616,49 @@ exports[`DataChart detail pad + thickness 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
-    padding-left: 6px;
-    padding-right: 6px;
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
-    padding-left: 48px;
-    padding-right: 48px;
+  .c14 {
+    padding-inline-start: -48px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding-inline-end: -48px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c18 {
+    padding-inline-start: -36px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c18 {
+    padding-inline-end: -36px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c21 {
+    padding-inline-start: 72px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c21 {
+    padding-inline-end: 72px;
   }
 }
 
@@ -5595,12 +5768,12 @@ exports[`DataChart detail pad + thickness 1`] = `
       class="c14"
     >
       <div
-        class="c3"
+        class="c15"
       >
         0
       </div>
       <div
-        class="c3"
+        class="c15"
       >
         1
       </div>
@@ -5609,12 +5782,12 @@ exports[`DataChart detail pad + thickness 1`] = `
       class="c4"
     >
       <div
-        class="c15"
+        class="c16"
       >
         2
       </div>
       <div
-        class="c15"
+        class="c16"
       >
         0.8
       </div>
@@ -5663,7 +5836,7 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
-          class="c16 c11"
+          class="c17 c11"
           tabindex="0"
         >
           <div
@@ -5688,15 +5861,15 @@ exports[`DataChart detail pad + thickness 1`] = `
     class="c1"
   >
     <div
-      class="c17"
+      class="c18"
     >
       <div
-        class="c3"
+        class="c15"
       >
         0
       </div>
       <div
-        class="c3"
+        class="c15"
       >
         1
       </div>
@@ -5759,7 +5932,7 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
-          class="c18 c11"
+          class="c19 c11"
           tabindex="0"
         >
           <div
@@ -5787,12 +5960,12 @@ exports[`DataChart detail pad + thickness 1`] = `
       class="c14"
     >
       <div
-        class="c3"
+        class="c15"
       >
         0
       </div>
       <div
-        class="c3"
+        class="c15"
       >
         1
       </div>
@@ -5801,12 +5974,12 @@ exports[`DataChart detail pad + thickness 1`] = `
       class="c4"
     >
       <div
-        class="c15"
+        class="c16"
       >
         2
       </div>
       <div
-        class="c15"
+        class="c16"
       >
         0.8
       </div>
@@ -5855,7 +6028,7 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
-          class="c19 c11"
+          class="c20 c11"
           tabindex="0"
         >
           <div
@@ -5880,15 +6053,15 @@ exports[`DataChart detail pad + thickness 1`] = `
     class="c1"
   >
     <div
-      class="c20"
+      class="c21"
     >
       <div
-        class="c3"
+        class="c22"
       >
         0
       </div>
       <div
-        class="c3"
+        class="c22"
       >
         1
       </div>
@@ -5951,18 +6124,18 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
-          class="c21 c11"
+          class="c23 c11"
           tabindex="0"
         >
           <div
-            class="c22"
+            class="c24"
           >
             <div
               class="c13"
             />
           </div>
           <div
-            class="c22"
+            class="c24"
           >
             <div
               class="c13"
@@ -6003,8 +6176,8 @@ exports[`DataChart gap 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -6014,11 +6187,17 @@ exports[`DataChart gap 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -6109,8 +6288,13 @@ exports[`DataChart gap 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -6367,8 +6551,8 @@ exports[`DataChart guide 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -6378,11 +6562,17 @@ exports[`DataChart guide 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -6539,8 +6729,13 @@ exports[`DataChart guide 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -6965,8 +7160,8 @@ exports[`DataChart legend 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c4 {
@@ -6976,11 +7171,17 @@ exports[`DataChart legend 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c5 {
@@ -7108,8 +7309,13 @@ exports[`DataChart legend 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -7351,8 +7557,8 @@ exports[`DataChart lines 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -7362,11 +7568,17 @@ exports[`DataChart lines 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -7453,8 +7665,13 @@ exports[`DataChart lines 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -7584,8 +7801,8 @@ exports[`DataChart negative values 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -7595,11 +7812,17 @@ exports[`DataChart negative values 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -7672,8 +7895,13 @@ exports[`DataChart negative values 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -8035,8 +8263,8 @@ exports[`DataChart nothing 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c4 {
@@ -8046,11 +8274,17 @@ exports[`DataChart nothing 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c5 {
@@ -8123,8 +8357,13 @@ exports[`DataChart nothing 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -8270,9 +8509,8 @@ exports[`DataChart offset 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
-  padding-inline-end: 96px;
+  padding-inline-start: 0px;
+  padding-inline-end: 48px;
 }
 
 .c3 {
@@ -8282,11 +8520,17 @@ exports[`DataChart offset 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -8359,14 +8603,13 @@ exports[`DataChart offset 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-inline-end: 96px;
+    padding-inline-end: 48px;
   }
 }
 
@@ -8479,9 +8722,8 @@ exports[`DataChart offset gap 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
-  padding-inline-end: 96px;
+  padding-inline-start: 0px;
+  padding-inline-end: 48px;
 }
 
 .c3 {
@@ -8491,11 +8733,17 @@ exports[`DataChart offset gap 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -8568,14 +8816,13 @@ exports[`DataChart offset gap 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-inline-end: 96px;
+    padding-inline-end: 48px;
   }
 }
 
@@ -8688,6 +8935,8 @@ exports[`DataChart pad 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-inline-start: -48px;
+  padding-inline-end: -48px;
 }
 
 .c3 {
@@ -8830,6 +9079,18 @@ exports[`DataChart pad 1`] = `
 .c7 {
   position: relative;
   display: block;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-start: -48px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: -48px;
+  }
 }
 
 <div
@@ -9085,8 +9346,8 @@ exports[`DataChart placeholder node 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -9096,11 +9357,17 @@ exports[`DataChart placeholder node 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -9212,8 +9479,13 @@ exports[`DataChart placeholder node 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -9320,8 +9592,8 @@ exports[`DataChart placeholder text 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -9331,11 +9603,17 @@ exports[`DataChart placeholder text 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -9449,8 +9727,13 @@ exports[`DataChart placeholder text 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -9564,8 +9847,8 @@ exports[`DataChart single 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -9584,7 +9867,7 @@ exports[`DataChart single 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 1px;
+  width: 96px;
   overflow: visible;
 }
 
@@ -9658,8 +9941,13 @@ exports[`DataChart single 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -9757,8 +10045,8 @@ exports[`DataChart size 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -9768,11 +10056,17 @@ exports[`DataChart size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -9904,8 +10198,13 @@ exports[`DataChart size 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
@@ -10162,8 +10461,8 @@ exports[`DataChart type 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
 }
 
 .c3 {
@@ -10173,11 +10472,17 @@ exports[`DataChart type 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
+  overflow: visible;
 }
 
 .c4 {
@@ -10277,8 +10582,13 @@ exports[`DataChart type 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-inline-end: 0px;
   }
 }
 
