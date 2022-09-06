@@ -30,7 +30,7 @@ import {
   applyKey,
   getOptionLabel,
   getOptionValue,
-  checkDisabled,
+  useDisabled,
 } from '../Select/utils';
 import { EmptySearchOption } from '../Select/EmptySearchOption';
 
@@ -74,6 +74,12 @@ const SelectMultipleContainer = forwardRef(
     const activeRef = useRef();
     const [showA11yLimit, setShowA11yLimit] = useState();
     const clearRef = useRef();
+    const isDisabled = useDisabled(
+      disabled,
+      disabledKey,
+      options,
+      valueKey || labelKey,
+    );
 
     // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {
@@ -97,7 +103,7 @@ const SelectMultipleContainer = forwardRef(
         } else if (optionsRef.current) {
           setActiveIndex(0);
         }
-      }, 100);
+      }, 100); // Drop should be open after 100ms
       return () => clearTimeout(timer);
     }, []);
 
@@ -238,13 +244,7 @@ const SelectMultipleContainer = forwardRef(
     const onSelectOption = useCallback(
       (event) => {
         if (
-          !checkDisabled(
-            activeIndex,
-            disabled,
-            disabledKey,
-            options,
-            valueKey || labelKey,
-          ) &&
+          !isDisabled(activeIndex) &&
           activeIndex >= 0 &&
           activeIndex < options.length
         ) {
@@ -252,15 +252,7 @@ const SelectMultipleContainer = forwardRef(
           selectOption(activeIndex)(event);
         }
       },
-      [
-        activeIndex,
-        selectOption,
-        options,
-        disabled,
-        disabledKey,
-        valueKey,
-        labelKey,
-      ],
+      [activeIndex, selectOption, options, isDisabled],
     );
 
     const customSearchInput = theme.select.searchInput;
@@ -425,13 +417,7 @@ const SelectMultipleContainer = forwardRef(
                 show={activeIndex !== -1 ? activeIndex : undefined}
               >
                 {(option, index, optionRef) => {
-                  const optionDisabled = checkDisabled(
-                    index,
-                    disabled,
-                    disabledKey,
-                    options,
-                    valueKey || labelKey,
-                  );
+                  const optionDisabled = isDisabled(index);
                   const optionSelected = value.includes(
                     valueKey && valueKey.reduce
                       ? applyKey(option, valueKey)
@@ -479,7 +465,7 @@ const SelectMultipleContainer = forwardRef(
 
                   if (!children && search) {
                     if (
-                      typeof optionLabel === typeof '' &&
+                      typeof optionLabel === 'string' &&
                       optionLabel.toLowerCase().indexOf(search) >= 0
                     ) {
                       // code to bold search term in matching options

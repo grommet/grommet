@@ -8,7 +8,7 @@ import {
   applyKey,
   getOptionLabel,
   getOptionValue,
-  checkDisabled,
+  useDisabled,
 } from '../Select/utils';
 
 const SelectMultipleValue = ({
@@ -25,6 +25,12 @@ const SelectMultipleValue = ({
   valueKey,
 }) => {
   const [showA11yDiv, setShowA11yDiv] = useState(false);
+  const isDisabled = useDisabled(
+    disabled,
+    disabledKey,
+    allOptions,
+    valueKey || labelKey,
+  );
 
   const visibleValue = useCallback(
     (i) => {
@@ -36,19 +42,13 @@ const SelectMultipleValue = ({
         allOptions,
         labelKey || valueKey,
       );
-      const iDisabled = checkDisabled(
-        indexOptions,
-        disabled,
-        disabledKey,
-        allOptions,
-        valueKey || labelKey,
-      );
-      if (value.indexOf(optionValue) < theme.selectMultiple.visibleInline) {
+      const optionDisabled = isDisabled(indexOptions);
+      if (value.indexOf(optionValue) < theme.selectMultiple.maxInline) {
         let child;
         if (children) {
           child = children(i, indexOptions, allOptions, {
             active: false,
-            disabled: iDisabled,
+            disabled: optionDisabled,
             selected: true,
           });
         }
@@ -64,13 +64,13 @@ const SelectMultipleValue = ({
             aria-setsize={value.length}
             aria-posinset={value.indexOf(optionValue) + 1}
             aria-selected={value.includes(optionValue)}
-            aria-disabled={iDisabled}
+            aria-disabled={optionDisabled}
             plain
             hoverIndicator
             fill="horizontal"
             tabIndex="0"
             onClick={(event) => {
-              if (!iDisabled) {
+              if (!optionDisabled) {
                 const intermediate = [...value];
                 const index = value.indexOf(optionValue);
                 if (intermediate.includes(optionValue)) {
@@ -138,7 +138,7 @@ const SelectMultipleValue = ({
           >
             {child || (
               <CheckBox
-                disabled={iDisabled}
+                disabled={optionDisabled}
                 label={
                   <Box alignSelf="center" align="start">
                     {optionLabel}
@@ -159,13 +159,12 @@ const SelectMultipleValue = ({
       valueKey,
       allOptions,
       children,
-      disabled,
-      disabledKey,
       dropButtonRef,
+      isDisabled,
       labelKey,
       onSelectChange,
       value,
-      theme.selectMultiple.visibleInline,
+      theme.selectMultiple.maxInline,
     ],
   );
 
@@ -210,7 +209,7 @@ const SelectMultipleValue = ({
           </Box>
         )}
       </Box>
-      {value && value.length > theme.selectMultiple.visibleInline && (
+      {value && value.length > theme.selectMultiple.maxInline && (
         <Box
           pad={{ horizontal: 'small', bottom: 'small', top: 'xsmall' }}
           alignSelf="start"
@@ -218,9 +217,7 @@ const SelectMultipleValue = ({
           <Button
             onClick={onRequestOpen}
             size="small"
-            label={`+ ${
-              value.length - theme.selectMultiple.visibleInline
-            } more`}
+            label={`+ ${value.length - theme.selectMultiple.maxInline} more`}
           />
         </Box>
       )}

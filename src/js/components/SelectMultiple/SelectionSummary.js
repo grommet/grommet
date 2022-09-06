@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import { applyKey, getOptionValue, checkDisabled } from '../Select/utils';
+import { applyKey, getOptionValue, useDisabled } from '../Select/utils';
 
 const SelectionSummary = ({
   allOptions,
@@ -21,18 +21,25 @@ const SelectionSummary = ({
   value,
   valueKey,
 }) => {
+  const isDisabled = useDisabled(
+    disabled,
+    disabledKey,
+    options,
+    valueKey || labelKey,
+  );
+
   const selectedValuesDisabled = useCallback(() => {
     let disabledSelected = 0;
     for (let i = 0; i < allOptions.length; i += 1) {
       if (
         value.includes(getOptionValue(i, options, valueKey || labelKey)) &&
-        checkDisabled(i, disabled, disabledKey, options, valueKey || labelKey)
+        isDisabled(i)
       )
         disabledSelected += 1;
     }
     if (value.length === disabledSelected) return true;
     return false;
-  }, [value, allOptions, disabled, disabledKey, options, valueKey, labelKey]);
+  }, [value, allOptions, options, valueKey, labelKey, isDisabled]);
 
   if (search === '' || search === undefined)
     return (
@@ -70,20 +77,8 @@ const SelectionSummary = ({
               if (onChange) {
                 const nextSelected = options.filter((i, index) =>
                   selectAll
-                    ? !checkDisabled(
-                        index,
-                        disabled,
-                        disabledKey,
-                        options,
-                        valueKey || labelKey,
-                      ) || isSelected(index)
-                    : checkDisabled(
-                        index,
-                        disabled,
-                        disabledKey,
-                        options,
-                        valueKey || labelKey,
-                      ) && isSelected(index),
+                    ? !isDisabled(index) || isSelected(index)
+                    : isDisabled(index) && isSelected(index),
                 );
                 const nextValue = nextSelected.map((i) =>
                   valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,

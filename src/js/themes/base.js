@@ -1619,7 +1619,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       step: 20,
     },
     selectMultiple: {
-      visibleInline: 5,
+      maxInline: 5,
     },
     skipLinks: {
       position: 'top',

@@ -2313,7 +2313,7 @@ Object {
           "step": 20,
         },
         "selectMultiple": Object {
-          "visibleInline": 5,
+          "maxInline": 5,
         },
         "skipLinks": Object {
           "container": Object {
@@ -4225,7 +4225,7 @@ Object {
           "step": 20,
         },
         "selectMultiple": Object {
-          "visibleInline": 5,
+          "maxInline": 5,
         },
         "skipLinks": Object {
           "container": Object {

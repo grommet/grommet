@@ -28,12 +28,7 @@ import {
   OptionsContainer,
   SelectOption,
 } from './StyledSelect';
-import {
-  applyKey,
-  checkDisabled,
-  getOptionLabel,
-  getOptionValue,
-} from './utils';
+import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
 import { EmptySearchOption } from './EmptySearchOption';
 
 // ensure ClearButton receives visual indication of keyboard
@@ -110,6 +105,13 @@ const SelectContainer = forwardRef(
         return clear && hasValue && showAtPosition;
       },
       [clear, multiple, value],
+    );
+
+    const isDisabled = useDisabled(
+      disabled,
+      disabledKey,
+      options,
+      valueKey || labelKey,
     );
 
     const [activeIndex, setActiveIndex] = useState(
@@ -244,13 +246,7 @@ const SelectContainer = forwardRef(
         let nextActiveIndex = activeIndex + 1;
         while (
           nextActiveIndex < options.length &&
-          checkDisabled(
-            nextActiveIndex,
-            disabled,
-            disabledKey,
-            options,
-            valueKey || labelKey,
-          )
+          isDisabled(nextActiveIndex)
         ) {
           nextActiveIndex += 1;
         }
@@ -259,7 +255,7 @@ const SelectContainer = forwardRef(
           setKeyboardNavigation(true);
         }
       },
-      [activeIndex, options, disabled, disabledKey, valueKey, labelKey],
+      [activeIndex, options, isDisabled],
     );
 
     const onPreviousOption = useCallback(
@@ -283,16 +279,7 @@ const SelectContainer = forwardRef(
           }
         }
 
-        while (
-          nextActiveIndex >= 0 &&
-          checkDisabled(
-            nextActiveIndex,
-            disabled,
-            disabledKey,
-            options,
-            valueKey || labelKey,
-          )
-        ) {
+        while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
           nextActiveIndex -= 1;
         }
         if (nextActiveIndex >= 0) {
@@ -300,15 +287,7 @@ const SelectContainer = forwardRef(
           setKeyboardNavigation(true);
         }
       },
-      [
-        activeIndex,
-        disabled,
-        disabledKey,
-        labelKey,
-        options,
-        shouldShowClearButton,
-        valueKey,
-      ],
+      [activeIndex, isDisabled, shouldShowClearButton],
     );
 
     const onKeyDownOption = useCallback(
@@ -324,13 +303,7 @@ const SelectContainer = forwardRef(
             return (
               typeof label === 'string' &&
               label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
-              !checkDisabled(
-                index,
-                disabled,
-                disabledKey,
-                options,
-                valueKey || labelKey,
-              )
+              !isDisabled(index)
             );
           });
 
@@ -344,7 +317,7 @@ const SelectContainer = forwardRef(
           onKeyDown(event);
         }
       },
-      [onKeyDown, options, onSearch, labelKey, disabled, disabledKey, valueKey],
+      [isDisabled, labelKey, onKeyDown, options, onSearch],
     );
 
     const onActiveOption = useCallback(
@@ -437,13 +410,7 @@ const SelectContainer = forwardRef(
                 show={activeIndex !== -1 ? activeIndex : undefined}
               >
                 {(option, index, optionRef) => {
-                  const optionDisabled = checkDisabled(
-                    index,
-                    disabled,
-                    disabledKey,
-                    options,
-                    valueKey || labelKey,
-                  );
+                  const optionDisabled = isDisabled(index);
                   const optionSelected = isSelected(index);
                   const optionActive = activeIndex === index;
                   // Determine whether the label is done as a child or

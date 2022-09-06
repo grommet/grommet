@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { normalizeColor } from '../../utils';
 
 export const applyKey = (option, key) => {
@@ -16,27 +17,25 @@ export const getOptionLabel = (index, options, labelKey) =>
 export const getOptionValue = (index, options, valueKey) =>
   applyKey(options[index], valueKey);
 
-export const checkDisabled = (
-  index,
-  disabled,
-  disabledKey,
-  options,
-  valueKey,
-) => {
-  const option = options[index];
-  let result;
-  if (disabledKey) {
-    result = applyKey(option, disabledKey);
-  } else if (Array.isArray(disabled)) {
-    if (typeof disabled[0] === 'number') {
-      result = disabled.indexOf(index) !== -1;
-    } else {
-      const optionVal = getOptionValue(index, options, valueKey);
-      result = disabled.indexOf(optionVal) !== -1;
-    }
-  }
-  return result;
-};
+export const useDisabled = (disabled, disabledKey, options, valueKey) =>
+  useCallback(
+    (index) => {
+      const option = options[index];
+      let result;
+      if (disabledKey) {
+        result = applyKey(option, disabledKey);
+      } else if (Array.isArray(disabled)) {
+        if (typeof disabled[0] === 'number') {
+          result = disabled.indexOf(index) !== -1;
+        } else {
+          const optionVal = getOptionValue(index, options, valueKey);
+          result = disabled.indexOf(optionVal) !== -1;
+        }
+      }
+      return result;
+    },
+    [disabled, disabledKey, options, valueKey],
+  );
 
 export const getNormalizedValue = (value, valueKey) => {
   if (Array.isArray(value))

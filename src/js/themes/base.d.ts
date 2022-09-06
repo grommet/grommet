@@ -1396,7 +1396,7 @@ export interface ThemeType {
     step?: number;
   };
   selectMultiple?: {
-    visibleInline?: number;
+    maxInline?: number;
   };
   skipLinks?: {
     position?: LayerPositionType;
