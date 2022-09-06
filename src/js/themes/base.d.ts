@@ -1395,6 +1395,9 @@ export interface ThemeType {
     searchInput?: ReactComponentElement<any>;
     step?: number;
   };
+  selectMultiple?: {
+    maxInline?: number;
+  };
   skipLinks?: {
     position?: LayerPositionType;
     container?: BoxProps;
