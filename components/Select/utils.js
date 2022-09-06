@@ -1,7 +1,11 @@
 "use strict";
 
 exports.__esModule = true;
-exports.applyKey = void 0;
+exports.useDisabled = exports.getSelectIcon = exports.getOptionValue = exports.getOptionLabel = exports.getNormalizedValue = exports.getIconColor = exports.getDisplayLabelKey = exports.changeEvent = exports.applyKey = void 0;
+
+var _react = require("react");
+
+var _utils = require("../../utils");
 
 var applyKey = function applyKey(option, key) {
   if (option === undefined) return undefined;
@@ -13,3 +17,99 @@ var applyKey = function applyKey(option, key) {
 };
 
 exports.applyKey = applyKey;
+
+var getOptionLabel = function getOptionLabel(index, options, labelKey) {
+  return applyKey(options[index], labelKey);
+};
+
+exports.getOptionLabel = getOptionLabel;
+
+var getOptionValue = function getOptionValue(index, options, valueKey) {
+  return applyKey(options[index], valueKey);
+};
+
+exports.getOptionValue = getOptionValue;
+
+var useDisabled = function useDisabled(disabled, disabledKey, options, valueKey) {
+  return (0, _react.useCallback)(function (index) {
+    var option = options[index];
+    var result;
+
+    if (disabledKey) {
+      result = applyKey(option, disabledKey);
+    } else if (Array.isArray(disabled)) {
+      if (typeof disabled[0] === 'number') {
+        result = disabled.indexOf(index) !== -1;
+      } else {
+        var optionVal = getOptionValue(index, options, valueKey);
+        result = disabled.indexOf(optionVal) !== -1;
+      }
+    }
+
+    return result;
+  }, [disabled, disabledKey, options, valueKey]);
+};
+
+exports.useDisabled = useDisabled;
+
+var getNormalizedValue = function getNormalizedValue(value, valueKey) {
+  if (Array.isArray(value)) return value.map(function (v) {
+    return valueKey && valueKey.reduce ? v : applyKey(v, valueKey);
+  });
+  return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
+};
+
+exports.getNormalizedValue = getNormalizedValue;
+
+var changeEvent = function changeEvent(inputRef, nextValue) {
+  // Calling set value function directly on input because React library
+  // overrides setter `event.target.value =` and loses original event
+  // target fidelity.
+  // https://stackoverflow.com/a/46012210
+  var nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+  nativeInputValueSetter.call(inputRef.current, nextValue);
+  var event = new Event('input', {
+    bubbles: true
+  });
+  inputRef.current.dispatchEvent(event);
+};
+
+exports.changeEvent = changeEvent;
+
+var getSelectIcon = function getSelectIcon(icon, theme, open) {
+  var SelectIcon;
+
+  switch (icon) {
+    case false:
+      break;
+
+    case true:
+    case undefined:
+      SelectIcon = open && theme.select.icons.up ? theme.select.icons.up : theme.select.icons.down;
+      break;
+
+    default:
+      SelectIcon = icon;
+  }
+
+  return SelectIcon;
+}; // if labelKey is a function and valueLabel is not defined
+// we should use the labelKey function to display the
+// selected value
+
+
+exports.getSelectIcon = getSelectIcon;
+
+var getDisplayLabelKey = function getDisplayLabelKey(labelKey, allOptions, optionIndexesInValue, selectValue) {
+  var optionLabelKey = applyKey(allOptions[optionIndexesInValue[0]], labelKey);
+  if (!selectValue && optionIndexesInValue.length === 1 && typeof optionLabelKey === 'object') return optionLabelKey;
+  return undefined;
+};
+
+exports.getDisplayLabelKey = getDisplayLabelKey;
+
+var getIconColor = function getIconColor(theme) {
+  return (0, _utils.normalizeColor)(theme.select.icons.color || 'control', theme);
+};
+
+exports.getIconColor = getIconColor;

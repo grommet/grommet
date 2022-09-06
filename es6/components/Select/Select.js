@@ -5,38 +5,18 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { forwardRef, isValidElement, useCallback, useContext, useMemo, useState, useRef, useEffect } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { controlBorderStyle, normalizeColor, useKeyboard } from '../../utils';
+import { ThemeContext } from 'styled-components';
+import { useKeyboard } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
-import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
-import { TextInput } from '../TextInput';
 import { SelectContainer } from './SelectContainer';
-import { applyKey } from './utils';
+import { HiddenInput, StyledSelectDropButton } from './StyledSelect';
+import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getDisplayLabelKey, getIconColor } from './utils';
+import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
-var SelectTextInput = styled(TextInput).withConfig({
-  displayName: "Select__SelectTextInput",
-  componentId: "sc-17idtfo-0"
-})(["cursor:", ";"], function (props) {
-  return props.defaultCursor ? 'default' : 'pointer';
-});
-var HiddenInput = styled.input.withConfig({
-  displayName: "Select__HiddenInput",
-  componentId: "sc-17idtfo-1"
-})(["display:none;"]);
-var StyledSelectDropButton = styled(DropButton).withConfig({
-  displayName: "Select__StyledSelectDropButton",
-  componentId: "sc-17idtfo-2"
-})(["", ";", ";", ";"], function (props) {
-  return !props.callerPlain && controlBorderStyle;
-}, function (props) {
-  return props.theme.select && props.theme.select.control && props.theme.select.control.extend;
-}, function (props) {
-  return props.open && props.theme.select.control.open;
-});
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
 var defaultDropAlign = {
@@ -115,7 +95,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     initialValue: defaultValue || ''
   }),
       value = _formContext$useFormI[0],
-      setValue = _formContext$useFormI[1]; // valuedValue is the value mapped with any valueKey applied
+      setValue = _formContext$useFormI[1]; // normalizedValue is the value mapped with any valueKey applied
   // When the options array contains objects, this property indicates how
   // to retrieve the value of each option.
   // If a string is provided, it is used as the key to retrieve a
@@ -126,11 +106,8 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // delivered via 'onChange'.
 
 
-  var valuedValue = useMemo(function () {
-    if (Array.isArray(value)) return value.map(function (v) {
-      return valueKey && valueKey.reduce ? v : applyKey(v, valueKey);
-    });
-    return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
+  var normalizedValue = useMemo(function () {
+    return getNormalizedValue(value, valueKey);
   }, [value, valueKey]); // search input value
 
   var _useState = useState(),
@@ -158,18 +135,18 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
         } else if (index === selected) {
           result.push(index);
         }
-      } else if (Array.isArray(valuedValue)) {
-        if (valuedValue.some(function (v) {
+      } else if (Array.isArray(normalizedValue)) {
+        if (normalizedValue.some(function (v) {
           return v === applyKey(option, valueKey);
         })) {
           result.push(index);
         }
-      } else if (valuedValue === applyKey(option, valueKey)) {
+      } else if (normalizedValue === applyKey(option, valueKey)) {
         result.push(index);
       }
     });
     return result;
-  }, [allOptions, selected, valueKey, valuedValue]);
+  }, [allOptions, selected, valueKey, normalizedValue]);
 
   var _useState3 = useState(propOpen),
       open = _useState3[0],
@@ -189,16 +166,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     setSearch();
   }, [onClose]);
   var triggerChangeEvent = useCallback(function (nextValue) {
-    // Calling set value function directly on input because React library
-    // overrides setter `event.target.value =` and loses original event
-    // target fidelity.
-    // https://stackoverflow.com/a/46012210
-    var nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-    nativeInputValueSetter.call(inputRef.current, nextValue);
-    var event = new Event('input', {
-      bubbles: true
-    });
-    inputRef.current.dispatchEvent(event);
+    return changeEvent(inputRef, nextValue);
   }, []);
   var onSelectChange = useCallback(function (event, _ref2) {
     var option = _ref2.option,
@@ -249,21 +217,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onChange(adjustedEvent);
     }
   }, [closeOnChange, onChange, onRequestClose, setValue, triggerChangeEvent]);
-  var SelectIcon;
-
-  switch (icon) {
-    case false:
-      break;
-
-    case true:
-    case undefined:
-      SelectIcon = open && theme.select.icons.up ? theme.select.icons.up : theme.select.icons.down;
-      break;
-
-    default:
-      SelectIcon = icon;
-  } // element to show, trumps inputValue
-
+  var SelectIcon = getSelectIcon(icon, theme, open); // element to show, trumps inputValue
 
   var selectValue = useMemo(function () {
     if (valueLabel instanceof Function) {
@@ -272,14 +226,9 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
 
     return undefined;
-  }, [value, valueLabel]); // if labelKey is a function and valueLabel is not defined
-  // we should use the labelKey function to display the
-  // selected value
-
+  }, [value, valueLabel]);
   var displayLabelKey = useMemo(function () {
-    var optionLabelKey = applyKey(allOptions[optionIndexesInValue[0]], labelKey);
-    if (!selectValue && optionIndexesInValue.length === 1 && typeof optionLabelKey === 'object') return optionLabelKey;
-    return undefined;
+    return getDisplayLabelKey(labelKey, allOptions, optionIndexesInValue, selectValue);
   }, [labelKey, allOptions, optionIndexesInValue, selectValue]); // text to show
   // When the options array contains objects, this property indicates how
   // to retrieve the value of each option.
@@ -302,7 +251,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
     return undefined;
   }, [labelKey, messages, format, optionIndexesInValue, allOptions, selectValue]);
-  var iconColor = normalizeColor(theme.select.icons.color || 'control', theme);
+  var iconColor = getIconColor(theme);
   return /*#__PURE__*/React.createElement(Keyboard, {
     onDown: onRequestOpen,
     onUp: onRequestOpen
@@ -358,7 +307,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       valueKey: valueKey
     }, children) // StyledDropButton needs to know if the border should be shown
     ,
-    callerPlain: plain,
+    plainSelect: plain,
     plain: true // Button should be plain
     ,
     dropProps: dropProps,
@@ -379,29 +328,17 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     value: inputValue,
     ref: inputRef,
     readOnly: true
-  })) : /*#__PURE__*/React.createElement(SelectTextInput, _extends({
-    a11yTitle: (ariaLabel || a11yTitle) && "" + (ariaLabel || a11yTitle) + (value && typeof value === 'string' ? ", " + value : '') // When Select is disabled, we want to show a default cursor
-    // but not have disabled styling come from TextInput
-    // Disabled can be a bool or an array of options to disable.
-    // We only want to disable the TextInput if the control
-    // button should be disabled which occurs when disabled
-    // equals true.
-    ,
-    defaultCursor: disabled === true || undefined,
-    focusIndicator: false,
-    id: id ? id + "__input" : undefined,
+  })) : /*#__PURE__*/React.createElement(DefaultSelectTextInput, _extends({
+    a11yTitle: (ariaLabel || a11yTitle) && "" + (ariaLabel || a11yTitle) + (value && typeof value === 'string' ? ", " + value : ''),
+    disabled: disabled,
+    id: id,
     name: name,
-    ref: inputRef
-  }, rest, {
-    tabIndex: "-1",
-    type: "text",
+    ref: inputRef,
     placeholder: placeholder,
-    plain: true,
-    readOnly: true,
     value: inputValue,
     size: size,
     theme: theme
-  }))), SelectIcon && /*#__PURE__*/React.createElement(Box, {
+  }, rest))), SelectIcon && /*#__PURE__*/React.createElement(Box, {
     margin: theme.select.icons.margin,
     flex: false,
     style: {

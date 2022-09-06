@@ -466,6 +466,14 @@ Object.keys(_Select).forEach(function (key) {
   exports[key] = _Select[key];
 });
 
+var _SelectMultiple = require("./SelectMultiple");
+
+Object.keys(_SelectMultiple).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _SelectMultiple[key]) return;
+  exports[key] = _SelectMultiple[key];
+});
+
 var _Sidebar = require("./Sidebar");
 
 Object.keys(_Sidebar).forEach(function (key) {

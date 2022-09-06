@@ -1761,6 +1761,9 @@ var generate = function generate(baseSpacing, scale) {
       // searchInput: undefined,
       step: 20
     },
+    selectMultiple: {
+      maxInline: 5
+    },
     skipLinks: {
       position: 'top',
       container: {

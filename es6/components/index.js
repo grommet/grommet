@@ -56,6 +56,7 @@ export * from './RangeSelector';
 export * from './RoutedAnchor';
 export * from './RoutedButton';
 export * from './Select';
+export * from './SelectMultiple';
 export * from './Sidebar';
 export * from './SkipLink';
 export * from './SkipLinks';
