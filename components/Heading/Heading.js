@@ -5,11 +5,15 @@ exports.Heading = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
+
 var _StyledHeading = require("./StyledHeading");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["color", "fill", "level", "weight"];
+var _utils = require("../../utils");
+
+var _excluded = ["color", "fill", "level", "overflowWrap", "weight"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -24,9 +28,33 @@ var Heading = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref // munged 
   var color = _ref.color,
       fill = _ref.fill,
       level = _ref.level,
+      overflowWrapProp = _ref.overflowWrap,
       weight = _ref.weight,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
+  var headingRef = (0, _utils.useForwardedRef)(ref);
+
+  var _useState = (0, _react.useState)(overflowWrapProp || 'break-word'),
+      overflowWrap = _useState[0],
+      setOverflowWrap = _useState[1]; // handle overflowWrap of heading
+
+
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
+    var updateOverflowWrap = function updateOverflowWrap() {
+      var wrap;
+
+      if (!overflowWrapProp && headingRef.current) {
+        wrap = headingRef.current.scrollWidth > headingRef.current.offsetWidth ? 'anywhere' : 'break-word';
+        setOverflowWrap(wrap);
+      }
+    };
+
+    window.addEventListener('resize', updateOverflowWrap);
+    updateOverflowWrap();
+    return function () {
+      return window.removeEventListener('resize', updateOverflowWrap);
+    };
+  }, [headingRef, overflowWrapProp]);
   return (
     /*#__PURE__*/
     // enforce level to be a number
@@ -35,9 +63,10 @@ var Heading = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref // munged 
       colorProp: color,
       fillProp: fill,
       level: +level,
+      overflowWrap: overflowWrap,
       weight: weight
     }, rest, {
-      ref: ref
+      ref: headingRef
     }))
   );
 });

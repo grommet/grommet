@@ -18,6 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
     color: _generalPropTypes.colorPropType,
     fill: _propTypes["default"].bool,
     level: _propTypes["default"].oneOf([1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6']),
+    overflowWrap: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['normal', 'break-word', 'anywhere']), _propTypes["default"].string]),
     responsive: _propTypes["default"].bool,
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
     textAlign: _propTypes["default"].oneOf(['start', 'center', 'end', 'justify']),

@@ -12,6 +12,7 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var headingFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
+var longWord = 'Supercalifragilisticexpialidocious';
 
 var H = function H(_ref) {
   var level = _ref.level,
@@ -60,7 +61,9 @@ var All = function All() {
       size: "xlarge"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
       fill: true
-    }, headingFiller)) // </Grommet>
+    }, headingFiller), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      fill: true
+    }, longWord)) // </Grommet>
 
   );
 };

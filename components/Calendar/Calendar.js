@@ -569,7 +569,8 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     }, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
       level: size === 'small' ? theme.calendar.heading && theme.calendar.heading.level || 4 : (theme.calendar.heading && theme.calendar.heading.level || 4) - 1,
       size: size,
-      margin: "none"
+      margin: "none",
+      overflowWrap: "normal"
     }, reference.toLocaleDateString(locale, {
       month: 'long',
       year: 'numeric'

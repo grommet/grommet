@@ -201,6 +201,7 @@ exports[`PageHeader basic 1`] = `
   line-height: 56px;
   max-width: none;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -518,6 +519,7 @@ exports[`PageHeader custom theme 1`] = `
   line-height: 56px;
   max-width: none;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -820,6 +822,7 @@ exports[`PageHeader size - large 1`] = `
   line-height: 88px;
   max-width: none;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -1120,6 +1123,7 @@ exports[`PageHeader size - medium 1`] = `
   line-height: 56px;
   max-width: none;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -1420,6 +1424,7 @@ exports[`PageHeader size - small 1`] = `
   line-height: 40px;
   max-width: none;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {

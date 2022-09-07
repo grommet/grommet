@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Heading } from 'grommet';
 var headingFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
+var longWord = 'Supercalifragilisticexpialidocious';
 
 var H = function H(_ref) {
   var level = _ref.level,
@@ -49,7 +50,9 @@ export var All = function All() {
       size: "xlarge"
     })), /*#__PURE__*/React.createElement(Heading, {
       fill: true
-    }, headingFiller)) // </Grommet>
+    }, headingFiller), /*#__PURE__*/React.createElement(Heading, {
+      fill: true
+    }, longWord)) // </Grommet>
 
   );
 };
