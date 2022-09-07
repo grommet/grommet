@@ -7,27 +7,32 @@ import { useForwardedRef } from '../../utils';
 
 const Heading = forwardRef(
   (
-    { color, fill, level, weight, ...rest },
+    { color, fill, level, overflowWrap: overflowWrapProp, weight, ...rest },
 
     ref, // munged to avoid styled-components putting it in the DOM
   ) => {
     const headingRef = useForwardedRef(ref);
-    const [overflowWrap, setOverflowWrap] = useState('break-word');
+    const [overflowWrap, setOverflowWrap] = useState(
+      overflowWrapProp || 'break-word',
+    );
 
     // handle overflowWrap of heading
     useLayoutEffect(() => {
       const updateOverflowWrap = () => {
-        if (
-          headingRef.current &&
-          headingRef.current.scrollWidth > headingRef.current.offsetWidth
-        ) {
-          setOverflowWrap('anywhere');
+        let wrap;
+        if (!overflowWrapProp && headingRef.current) {
+          wrap =
+            headingRef.current.scrollWidth > headingRef.current.offsetWidth
+              ? 'anywhere'
+              : 'break-word';
+          setOverflowWrap(wrap);
         }
       };
+
       window.addEventListener('resize', updateOverflowWrap);
       updateOverflowWrap();
       return () => window.removeEventListener('resize', updateOverflowWrap);
-    }, [headingRef]);
+    }, [headingRef, overflowWrapProp]);
 
     return (
       // enforce level to be a number

@@ -655,7 +655,7 @@ exports[`DateInput controlled format inline 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -1765,7 +1765,7 @@ exports[`DateInput controlled format inline 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 fNqlyw"
+              class="StyledHeading-sc-1rdh4aw-0 geeMiP"
             >
               July 2020
             </h3>
@@ -2971,7 +2971,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -4422,7 +4422,7 @@ exports[`DateInput controlled format inline without timezone 2`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -6906,7 +6906,7 @@ exports[`DateInput format inline 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -8873,7 +8873,7 @@ exports[`DateInput inline 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -11483,7 +11483,7 @@ exports[`DateInput range format inline 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -12797,7 +12797,7 @@ exports[`DateInput range inline 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -14975,7 +14975,7 @@ exports[`DateInput select format 3`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c2 {
@@ -15968,12 +15968,12 @@ exports[`DateInput select format 4`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fNqlyw {
+  .geeMiP {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fNqlyw {
+  .geeMiP {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
@@ -16304,7 +16304,7 @@ exports[`DateInput select format inline 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -17408,7 +17408,7 @@ exports[`DateInput select format inline 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 fNqlyw"
+              class="StyledHeading-sc-1rdh4aw-0 geeMiP"
             >
               July 2020
             </h3>
@@ -18539,7 +18539,7 @@ exports[`DateInput select format inline 3`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -19975,7 +19975,7 @@ exports[`DateInput select format inline 4`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -21367,7 +21367,7 @@ exports[`DateInput select format inline range 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -22489,7 +22489,7 @@ exports[`DateInput select format inline range 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 fNqlyw"
+              class="StyledHeading-sc-1rdh4aw-0 geeMiP"
             >
               July 2020
             </h3>
@@ -23620,7 +23620,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -25074,7 +25074,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -26968,7 +26968,7 @@ exports[`DateInput select format no timezone 3`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c2 {
@@ -27961,12 +27961,12 @@ exports[`DateInput select format no timezone 4`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fNqlyw {
+  .geeMiP {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fNqlyw {
+  .geeMiP {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
@@ -28219,7 +28219,7 @@ exports[`DateInput select inline 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -29398,7 +29398,7 @@ exports[`DateInput select inline without timezone 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -30655,7 +30655,7 @@ exports[`DateInput type format inline 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -31759,7 +31759,7 @@ exports[`DateInput type format inline 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 fNqlyw"
+              class="StyledHeading-sc-1rdh4aw-0 geeMiP"
             >
               July 2020
             </h3>
@@ -32889,7 +32889,7 @@ exports[`DateInput type format inline partial 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -34264,7 +34264,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -35639,7 +35639,7 @@ exports[`DateInput type format inline range 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -36761,7 +36761,7 @@ exports[`DateInput type format inline range 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 fNqlyw"
+              class="StyledHeading-sc-1rdh4aw-0 geeMiP"
             >
               July 2020
             </h3>
@@ -37891,7 +37891,7 @@ exports[`DateInput type format inline range partial 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -39013,7 +39013,7 @@ exports[`DateInput type format inline range partial 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 fNqlyw"
+              class="StyledHeading-sc-1rdh4aw-0 geeMiP"
             >
               July 2020
             </h3>
@@ -39873,7 +39873,7 @@ exports[`DateInput type format inline range partial 3`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 fNqlyw"
+              class="StyledHeading-sc-1rdh4aw-0 geeMiP"
             >
               July 2020
             </h3>
@@ -41004,7 +41004,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -42398,7 +42398,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -43774,7 +43774,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -45150,7 +45150,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -46544,7 +46544,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -47937,7 +47937,7 @@ exports[`DateInput type format inline short 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -49041,7 +49041,7 @@ exports[`DateInput type format inline short 2`] = `
             class="StyledBox-sc-13pk1d4-0 fzaBin"
           >
             <h3
-              class="StyledHeading-sc-1rdh4aw-0 fNqlyw"
+              class="StyledHeading-sc-1rdh4aw-0 geeMiP"
             >
               July 2020
             </h3>
@@ -50172,7 +50172,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -51548,7 +51548,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -52924,7 +52924,7 @@ exports[`DateInput type format inline without timezone 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {
@@ -54300,7 +54300,7 @@ exports[`DateInput type format inline without timezone 2`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .c7 {

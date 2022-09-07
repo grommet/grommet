@@ -468,6 +468,7 @@ Object {
       "gridArea": [Function],
       "level": [Function],
       "margin": [Function],
+      "overflowWrap": [Function],
       "responsive": [Function],
       "size": [Function],
       "textAlign": [Function],
