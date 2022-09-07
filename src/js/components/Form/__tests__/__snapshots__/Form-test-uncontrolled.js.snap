@@ -3362,7 +3362,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-label="test select"
-          class="StyledButton-sc-323bzc-0 ghVuhX Select__StyledSelectDropButton-sc-17idtfo-2 ikQPYb"
+          class="StyledButton-sc-323bzc-0 ghVuhX StyledSelect__StyledSelectDropButton-sc-znp66n-5 iRgMjD"
           id="test-select"
           type="button"
         >
@@ -3377,7 +3377,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
               >
                 <input
                   autocomplete="off"
-                  class="StyledTextInput-sc-1x30a0s-0 fKwwIt Select__SelectTextInput-sc-17idtfo-0 bQAqdj"
+                  class="StyledTextInput-sc-1x30a0s-0 fKwwIt StyledSelect__SelectTextInput-sc-znp66n-4 lbPTGE"
                   id="test-select__input"
                   name="test-select"
                   placeholder="test select"

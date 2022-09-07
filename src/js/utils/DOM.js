@@ -199,7 +199,7 @@ export const isNodeBeforeScroll = (node, target) => {
 };
 
 export const findButtonParent = (element) => {
-  if (element && (element.nodeName !== 'BUTTON') && (element.nodeName !== 'A'))
+  if (element && element.nodeName !== 'BUTTON' && element.nodeName !== 'A')
     return findButtonParent(element.parentElement);
   return element;
 };
