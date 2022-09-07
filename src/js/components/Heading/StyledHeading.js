@@ -25,6 +25,7 @@ const sizeStyle = (props) => {
         font-weight: ${props.weight ||
         levelStyle.font.weight ||
         headingTheme.weight};
+        overflow-wrap: ${props.overflowWrap};
       `,
     ];
     if (props.responsive && headingTheme.responsiveBreakpoint) {
