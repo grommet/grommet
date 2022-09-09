@@ -12,6 +12,7 @@ import { ThemeContext } from 'styled-components';
 import {
   backgroundAndTextColors,
   colorIsDark,
+  findButtonParent,
   normalizeBackground,
   normalizeColor,
 } from '../../utils';
@@ -213,7 +214,7 @@ const Button = forwardRef(
       (event) => {
         sendAnalytics({
           type: 'buttonClick',
-          element: event.target,
+          element: findButtonParent(event.target),
           event,
           href,
           label: typeof label === 'string' ? label : undefined,
@@ -441,7 +442,7 @@ const Button = forwardRef(
           href={href}
           kind={kind}
           themePaths={themePaths}
-          onClick={onClickProp ? onClick : undefined}
+          onClick={onClick}
           onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);

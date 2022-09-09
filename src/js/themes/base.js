@@ -1619,6 +1619,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // searchInput: undefined,
       step: 20,
     },
+    selectMultiple: {
+      maxInline: 5,
+    },
     skipLinks: {
       position: 'top',
       container: {
