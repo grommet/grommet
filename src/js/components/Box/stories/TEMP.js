@@ -88,6 +88,14 @@ const backgroundSamples = [
   },
   {
     background: {
+      image: 'dark-light-image',
+      dark: true,
+      color: { dark: 'black', light: 'gold' },
+    },
+    label: { value: 'dark-light object force dark', context: 'theme object' },
+  },
+  {
+    background: {
       color: 'neutral-2',
       image: `url(https://images.unsplash.com/photo-1653023500770-3a3b64a1b4c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80)`,
       position: 'top-left',
@@ -150,7 +158,8 @@ export const BackgroundBoxTemp = () => (
     <Grid columns="small" rows="small" gap="small" pad="large">
       {backgroundSamples.map((sample, index) => (
         <Swatch
-          key={sample.background}
+          // eslint-disable-next-line react/no-array-index-key
+          key={index}
           background={sample.background}
           label={sample.label}
           animation={{ type: 'fadeIn', delay: index * 50 }}

@@ -36,18 +36,19 @@ const normalizeBackgroundColor = (backgroundArg, theme) => {
     // theme.global.colors.
     theme.global.backgrounds?.[background] || background,
     theme,
-    background?.dark,
+    backgroundArg.dark,
   );
   return result;
 };
 
 const normalizeBackgroundImage = (background, theme) => {
   let result;
-
   if (background.image) {
     result =
       normalizeBackground(
-        theme.global.backgrounds?.[background.image],
+        background.dark
+          ? theme.global.backgrounds?.[background.image].dark
+          : theme.global.backgrounds?.[background.image],
         theme,
       ) || background.image;
   } else {
@@ -140,7 +141,6 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
     }
 
     if (background.color) {
-      // const color = normalizeColor(background.color, theme, background.dark);
       const color = normalizeBackgroundColor(background, theme);
       const opacity =
         background.opacity === true
@@ -157,7 +157,6 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
       }
     }
   } else {
-    // backgroundColor = normalizeColor(background, theme);
     backgroundColor = normalizeBackgroundColor(background, theme);
     const shade = darkContext(backgroundColor, theme);
     if (shade) {
