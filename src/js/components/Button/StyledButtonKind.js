@@ -76,6 +76,7 @@ const padStyle = ({ sizeProp: size, theme, kind }) => {
 
 const basicStyle = (props) => css`
   border: none;
+  color: inherit;
   ${radiusStyle(props)};
   ${padStyle(props)}
   ${fontStyle(props)}

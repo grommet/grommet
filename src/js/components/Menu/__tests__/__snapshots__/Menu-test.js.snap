@@ -1578,6 +1578,7 @@ exports[`Menu custom theme with default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -2597,6 +2598,7 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;

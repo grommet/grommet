@@ -4404,6 +4404,7 @@ exports[`List events should apply pagination styling 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -4490,6 +4491,7 @@ exports[`List events should apply pagination styling 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -4567,6 +4569,7 @@ exports[`List events should apply pagination styling 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -4643,6 +4646,7 @@ exports[`List events should apply pagination styling 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -5560,6 +5564,7 @@ exports[`List events should paginate 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -5646,6 +5651,7 @@ exports[`List events should paginate 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -5723,6 +5729,7 @@ exports[`List events should paginate 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -5799,6 +5806,7 @@ exports[`List events should paginate 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -6559,6 +6567,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -6645,6 +6654,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -6722,6 +6732,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -6798,6 +6809,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -7448,6 +7460,7 @@ exports[`List events should render new data when page changes 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -7534,6 +7547,7 @@ exports[`List events should render new data when page changes 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -7611,6 +7625,7 @@ exports[`List events should render new data when page changes 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -7687,6 +7702,7 @@ exports[`List events should render new data when page changes 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -11810,7 +11826,7 @@ exports[`List events should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 keNLVa StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+              class="StyledButtonKind-sc-1vhfpnt-0 haokZj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
               type="button"
             >
               <svg
@@ -11835,7 +11851,7 @@ exports[`List events should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 mwqRM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+              class="StyledButtonKind-sc-1vhfpnt-0 bpJYGB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
               type="button"
             >
               1
@@ -11850,7 +11866,7 @@ exports[`List events should render new data when page changes 2`] = `
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 iMAkpG StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+              class="StyledButtonKind-sc-1vhfpnt-0 keYDKv StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
               type="button"
             >
               2
@@ -11865,7 +11881,7 @@ exports[`List events should render new data when page changes 2`] = `
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 jfPneK StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+              class="StyledButtonKind-sc-1vhfpnt-0 bIsOjP StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
               disabled=""
               type="button"
             >
@@ -12114,6 +12130,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -12200,6 +12217,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -12277,6 +12295,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -12353,6 +12372,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -13113,6 +13133,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -13200,6 +13221,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -13278,6 +13300,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -13355,6 +13378,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;

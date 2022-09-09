@@ -126,6 +126,7 @@ exports[`Pagination should allow user to control page via state with page +
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -203,6 +204,7 @@ exports[`Pagination should allow user to control page via state with page +
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -279,6 +281,7 @@ exports[`Pagination should allow user to control page via state with page +
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -725,6 +728,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -811,6 +815,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -888,6 +893,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -964,6 +970,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -1537,6 +1544,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -1629,6 +1637,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -1709,6 +1718,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -1785,6 +1795,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -2226,6 +2237,7 @@ exports[`Pagination should apply custom theme 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -2312,6 +2324,7 @@ exports[`Pagination should apply custom theme 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -2389,6 +2402,7 @@ exports[`Pagination should apply custom theme 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -2465,6 +2479,7 @@ exports[`Pagination should apply custom theme 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -2927,6 +2942,7 @@ exports[`Pagination should apply size 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -3013,6 +3029,7 @@ exports[`Pagination should apply size 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -3090,6 +3107,7 @@ exports[`Pagination should apply size 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -3166,6 +3184,7 @@ exports[`Pagination should apply size 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -3253,6 +3272,7 @@ exports[`Pagination should apply size 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 3px;
   padding: 4px 4px;
   font-size: 14px;
@@ -3339,6 +3359,7 @@ exports[`Pagination should apply size 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 3px;
   padding: 4px 4px;
   font-size: 14px;
@@ -3416,6 +3437,7 @@ exports[`Pagination should apply size 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 3px;
   padding: 4px 4px;
   font-size: 14px;
@@ -3492,6 +3514,7 @@ exports[`Pagination should apply size 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 3px;
   padding: 4px 4px;
   font-size: 14px;
@@ -3579,6 +3602,7 @@ exports[`Pagination should apply size 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 6px;
   padding: 4px 4px;
   font-size: 22px;
@@ -3665,6 +3689,7 @@ exports[`Pagination should apply size 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 6px;
   padding: 4px 4px;
   font-size: 22px;
@@ -3742,6 +3767,7 @@ exports[`Pagination should apply size 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 6px;
   padding: 4px 4px;
   font-size: 22px;
@@ -3818,6 +3844,7 @@ exports[`Pagination should apply size 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 6px;
   padding: 4px 4px;
   font-size: 22px;
@@ -4618,6 +4645,7 @@ exports[`Pagination should change the page on prop change 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -4695,6 +4723,7 @@ exports[`Pagination should change the page on prop change 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -4771,6 +4800,7 @@ exports[`Pagination should change the page on prop change 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -5217,6 +5247,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -5304,6 +5335,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -5382,6 +5414,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -5459,6 +5492,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -5866,6 +5900,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -5952,6 +5987,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -6266,6 +6302,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -6571,6 +6608,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -6657,6 +6695,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -7009,6 +7048,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -7095,6 +7135,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -7172,6 +7213,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -7248,6 +7290,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -7665,6 +7708,7 @@ exports[`Pagination should display next page of results when "next" is
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -7742,6 +7786,7 @@ exports[`Pagination should display next page of results when "next" is
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -7818,6 +7863,7 @@ exports[`Pagination should display next page of results when "next" is
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -8127,7 +8173,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 keNLVa StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 haokZj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             <svg
@@ -8152,7 +8198,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 mwqRM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 bpJYGB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             1
@@ -8167,7 +8213,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 iMAkpG StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 keYDKv StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             2
@@ -8181,7 +8227,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 mwqRM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 bpJYGB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             3
@@ -8195,7 +8241,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 mwqRM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 bpJYGB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             4
@@ -8209,7 +8255,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 mwqRM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 bpJYGB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             5
@@ -8235,7 +8281,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 mwqRM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 bpJYGB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             24
@@ -8249,7 +8295,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 keNLVa StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 haokZj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             <svg
@@ -8398,6 +8444,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -8475,6 +8522,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -8551,6 +8599,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -8964,6 +9013,7 @@ exports[`Pagination should display previous page of results when "previous" is
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -9051,6 +9101,7 @@ exports[`Pagination should display previous page of results when "previous" is
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -9129,6 +9180,7 @@ exports[`Pagination should display previous page of results when "previous" is
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -9428,7 +9480,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 keNLVa StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 haokZj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             <svg
@@ -9453,7 +9505,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 mwqRM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 bpJYGB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             1
@@ -9468,7 +9520,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 iMAkpG StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 keYDKv StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             2
@@ -9482,7 +9534,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 mwqRM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 bpJYGB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             3
@@ -9496,7 +9548,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 mwqRM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 bpJYGB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             4
@@ -9510,7 +9562,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 mwqRM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 bpJYGB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             5
@@ -9536,7 +9588,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 mwqRM StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 bpJYGB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             24
@@ -9550,7 +9602,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 keNLVa StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
+            class="StyledButtonKind-sc-1vhfpnt-0 haokZj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iKQztq"
             type="button"
           >
             <svg
@@ -9731,6 +9783,7 @@ exports[`Pagination should display the correct last page based on items length
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -9817,6 +9870,7 @@ exports[`Pagination should display the correct last page based on items length
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -9894,6 +9948,7 @@ exports[`Pagination should display the correct last page based on items length
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -9970,6 +10025,7 @@ exports[`Pagination should display the correct last page based on items length
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -10384,6 +10440,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -10471,6 +10528,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -10549,6 +10607,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -11005,6 +11064,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -11092,6 +11152,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -11170,6 +11231,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -11584,6 +11646,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -11671,6 +11734,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -11749,6 +11813,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -12211,6 +12276,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -12297,6 +12363,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -12374,6 +12441,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -12450,6 +12518,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -12871,6 +12940,7 @@ exports[`Pagination should set page to last page if page prop > total possible
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -12958,6 +13028,7 @@ exports[`Pagination should set page to last page if page prop > total possible
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -13036,6 +13107,7 @@ exports[`Pagination should set page to last page if page prop > total possible
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
@@ -13113,6 +13185,7 @@ exports[`Pagination should set page to last page if page prop > total possible
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;

@@ -65,6 +65,7 @@ exports[`Button kind badge should apply background 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -231,6 +232,7 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -398,6 +400,7 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -571,6 +574,7 @@ exports[`Button kind badge should display number content 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -755,6 +759,7 @@ exports[`Button kind badge should render custom element 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -957,6 +962,7 @@ exports[`Button kind badge should render relative to contents when button has no
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -1090,6 +1096,7 @@ exports[`Button kind border on default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -1216,6 +1223,7 @@ exports[`Button kind button icon colors 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -1362,6 +1370,7 @@ exports[`Button kind button with icon and align 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -1472,6 +1481,7 @@ exports[`Button kind default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 10px;
   font-size: 18px;
@@ -1565,6 +1575,7 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -1649,7 +1660,7 @@ exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 jmrTmz"
+    class="StyledButtonKind-sc-1vhfpnt-0 bguLGq"
     disabled=""
     type="button"
   >
@@ -1671,6 +1682,7 @@ exports[`Button kind extend on default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -1760,6 +1772,7 @@ exports[`Button kind fill 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -1831,6 +1844,7 @@ exports[`Button kind fill 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -1897,6 +1911,7 @@ exports[`Button kind fill 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -1998,6 +2013,7 @@ exports[`Button kind font on button default 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -2088,6 +2104,7 @@ exports[`Button kind font undefined 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -2262,6 +2279,7 @@ exports[`Button kind hover secondary with color and background 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -2349,7 +2367,7 @@ exports[`Button kind hover secondary with color and background 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 dePmIQ"
+    class="StyledButtonKind-sc-1vhfpnt-0 gnQBRF"
     type="button"
   >
     Button
@@ -2370,6 +2388,7 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -2455,7 +2474,7 @@ exports[`Button kind hoverIndicator with color and background 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 gIFSMH"
+    class="StyledButtonKind-sc-1vhfpnt-0 iKLOOa"
     type="button"
   >
     Button
@@ -2542,6 +2561,7 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -2654,7 +2674,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 cdUjho"
+    class="StyledButtonKind-sc-1vhfpnt-0 efsBvF"
     type="button"
   >
     <div
@@ -2694,6 +2714,7 @@ exports[`Button kind no border on default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -2783,6 +2804,7 @@ exports[`Button kind no padding on default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -2873,6 +2895,7 @@ exports[`Button kind opacity on default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -2962,6 +2985,7 @@ exports[`Button kind padding on default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
@@ -3260,6 +3284,7 @@ exports[`Button kind primary button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 10px;
   font-size: 18px;
@@ -3328,6 +3353,7 @@ exports[`Button kind primary button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 10px;
   font-size: 18px;
@@ -3538,6 +3564,7 @@ exports[`Button kind secondary button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 10px;
   font-size: 18px;
@@ -3635,6 +3662,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 8px;
   font-size: 14px;
@@ -3700,6 +3728,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 18px;
   padding: 6px 12px;
   font-size: 18px;
@@ -3765,6 +3794,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 6px 12px;
   font-size: 18px;
@@ -3830,6 +3860,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 6px;
   padding: 6px 16px;
   font-size: 22px;
@@ -3936,6 +3967,7 @@ exports[`Button kind size of default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
+  color: inherit;
   border-radius: 4px;
   padding: 4px 8px;
   font-size: 14px;
