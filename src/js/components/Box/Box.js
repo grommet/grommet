@@ -134,7 +134,7 @@ const Box = forwardRef(
       return undefined;
     }, [background, skeleton, skeletonProp]);
 
-    let skeletonProps = {};
+    const skeletonProps = {};
     if (nextSkeleton) {
       console.log('nextSkeleton', nextSkeleton);
       if (nextSkeleton.loading) {
