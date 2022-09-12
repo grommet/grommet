@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Grommet, Box, Text } from 'grommet';
-import { Grid } from '../../Grid';
+import { Grommet, Box, Grid, Text } from 'grommet';
+import { ThemeType } from 'grommet/themes';
 
-const myTheme = {
+const myTheme: ThemeType = {
   global: {
     backgrounds: {
       hex: '#555555',
@@ -143,7 +143,7 @@ const Swatch = ({ label, ...rest }) => (
   </Box>
 );
 
-export const BackgroundBoxTemp = () => (
+export const ThemedBackgrounds = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   <Grommet
     theme={myTheme}
@@ -162,7 +162,6 @@ export const BackgroundBoxTemp = () => (
           key={index}
           background={sample.background}
           label={sample.label}
-          animation={{ type: 'fadeIn', delay: index * 50 }}
           {...sample}
         />
       ))}
@@ -170,8 +169,8 @@ export const BackgroundBoxTemp = () => (
   </Grommet>
 );
 
-BackgroundBoxTemp.storyName = 'Background Temp';
+ThemedBackgrounds.storyName = 'Themed Background';
 
 export default {
-  title: 'Layout/Box/Background Temp',
+  title: 'Layout/Box/Custom Themed/Themed Background',
 };
