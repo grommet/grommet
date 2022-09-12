@@ -36,7 +36,7 @@
     "test-update": "jest --updateSnapshot && yarn test-timezones",
     "test-watch": "jest --watchAll",
     "test-bundlesize": "bundlesize",
-    "test-timezones": "TZ=Australia/Brisbane yarn test-calendar-dateinput --coverage=false && TZ=America/Los_Angeles yarn test-calendar-dateinput --coverage=false && TZ=Europe/Madrid yarn test-calendar-dateinput --coverage=false",
+    "test-timezones": "cross-env TZ=Australia/Brisbane yarn test-calendar-dateinput --coverage=false && cross-env TZ=America/Los_Angeles yarn test-calendar-dateinput --coverage=false && cross-env TZ=Europe/Madrid yarn test-calendar-dateinput --coverage=false",
     "test-calendar-dateinput": "jest ./src/js/components/Calendar/__tests__/Calendar-test.tsx ./src/js/components/DateInput/__tests__/DateInput-test.tsx",
     "pack": "babel-node ./tools/pack",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
