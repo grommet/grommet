@@ -6,6 +6,7 @@ import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
 import { useForwardedRef } from '../../utils';
 import { TextPropTypes } from './propTypes';
+import { Skeleton, useSkeleton } from '../Skeleton';
 
 const Text = forwardRef(
   (
@@ -27,6 +28,8 @@ const Text = forwardRef(
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
 
+    const { loading } = useSkeleton();
+
     useLayoutEffect(() => {
       const updateTip = () => {
         setTextTruncated(false);
@@ -42,6 +45,10 @@ const Text = forwardRef(
       updateTip();
       return () => window.removeEventListener('resize', updateTip);
     }, [textRef, truncate]);
+
+    if (loading) {
+      return <Skeleton ref={ref} type="text" {...rest} />;
+    }
 
     const styledTextResult = (
       <StyledText

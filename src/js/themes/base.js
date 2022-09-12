@@ -1621,6 +1621,24 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     selectMultiple: {
       maxInline: 5,
     },
+    skeleton: {
+      colors: {
+        dark: ['background-back', 'background-front'],
+        light: ['background-front', 'background-back'],
+      },
+      text: {
+        width: '100px',
+        margin: { vertical: 'xsmall' },
+        colors: {
+          dark: ['background-front', 'border'],
+          light: ['background-back', 'background-front'],
+        },
+      },
+      button: {
+        width: '100px',
+        margin: { vertical: 'xsmall' },
+      },
+    },
     skipLinks: {
       position: 'top',
       container: {

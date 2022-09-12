@@ -13,12 +13,13 @@ import { Keyboard } from '../Keyboard';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
+import { SkeletonContext, useSkeleton } from '../Skeleton';
 
 const Box = forwardRef(
   (
     {
       a11yTitle,
-      background,
+      background: backgroundProp,
       border,
       children,
       direction = 'column',
@@ -37,11 +38,16 @@ const Box = forwardRef(
       width, // munged to avoid styled-components putting it in the DOM
       height, // munged to avoid styled-components putting it in the DOM
       tabIndex,
+      skeleton: skeletonProp,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+
+    const skeleton = useSkeleton();
+
+    let background = backgroundProp;
 
     const focusable = useMemo(
       () => onClick && !(tabIndex < 0),
@@ -111,6 +117,42 @@ const Box = forwardRef(
       });
     }
 
+    // if background depth++
+    
+    // if skeletonProp || (background && skeleton.loading) create Provider
+    
+    const nextSkeleton = useMemo(() => {
+      // console.log('skeletonProp', skeletonProp, background, skeleton);
+      if (skeletonProp || (background && skeleton?.loading) ) {
+        const depth = skeleton ? skeleton.depth + 1 : 0;
+        return {
+          ...skeleton,
+          ...skeletonProp,
+          depth,
+        };
+      }
+      return undefined;
+    }, [background, skeleton, skeletonProp]);
+
+    let skeletonProps = {};
+    if (nextSkeleton) {
+      console.log('nextSkeleton', nextSkeleton);
+      if (nextSkeleton.loading) {
+        const skeletonColors = 
+          theme.skeleton.colors[theme.dark ? 'dark' : 'light'];
+        background = skeletonColors[nextSkeleton.depth % 2];
+        if (skeletonProp?.animation) {
+          skeletonProps.animation = skeletonProp.animation;
+        }
+        console.log('Box Skeleton Colors', skeletonColors, background);
+      }
+      contents = (
+        <SkeletonContext.Provider value={nextSkeleton}>
+          {contents}
+        </SkeletonContext.Provider>
+      );
+    }   
+
     // construct a new theme object in case we have a background that wants
     // to change the background color context
     const nextTheme = useMemo(() => {
@@ -152,6 +194,7 @@ const Box = forwardRef(
         tabIndex={adjustedTabIndex}
         {...clickProps}
         {...rest}
+        {...skeletonProps}
       >
         <ThemeContext.Provider value={nextTheme}>
           {contents}
