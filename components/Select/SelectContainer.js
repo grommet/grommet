@@ -101,7 +101,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var shouldShowClearButton = (0, _react.useCallback)(function (position) {
-    var hasValue = Boolean(multiple ? value.length : value);
+    var hasValue = Boolean(multiple && value ? value.length : value);
     var showAtPosition = position === 'bottom' ? (clear == null ? void 0 : clear.position) === 'bottom' : (clear == null ? void 0 : clear.position) !== 'bottom';
     return clear && hasValue && showAtPosition;
   }, [clear, multiple, value]);

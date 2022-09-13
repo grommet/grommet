@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { normalizeColor } from '../../utils';
 export var applyKey = function applyKey(option, key) {
-  if (option === undefined) return undefined;
+  if (option === undefined || option === null) return undefined;
   if (typeof key === 'object') return applyKey(option, key.key);
   if (typeof key === 'function') return key(option);
   if (key !== undefined) return option[key];

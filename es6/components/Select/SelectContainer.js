@@ -77,7 +77,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       replace = _ref2$replace === void 0 ? true : _ref2$replace;
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var shouldShowClearButton = useCallback(function (position) {
-    var hasValue = Boolean(multiple ? value.length : value);
+    var hasValue = Boolean(multiple && value ? value.length : value);
     var showAtPosition = position === 'bottom' ? (clear == null ? void 0 : clear.position) === 'bottom' : (clear == null ? void 0 : clear.position) !== 'bottom';
     return clear && hasValue && showAtPosition;
   }, [clear, multiple, value]);
