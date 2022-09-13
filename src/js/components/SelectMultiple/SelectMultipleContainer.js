@@ -345,7 +345,7 @@ const SelectMultipleContainer = forwardRef(
           direction="row"
           justify="between"
           flex={false}
-          pad={{ horizontal: 'small', top: 'xsmall' }}
+          pad={{ horizontal: 'small' }}
         >
           {summaryContent}
           <Button
