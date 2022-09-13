@@ -568,6 +568,7 @@ const SelectMultipleContainer = forwardRef(
               // announce when we reach the limit of items
               // that can be selected
               aria-live="assertive"
+              role="alert"
             >
               {showA11yLimit}
             </Box>
