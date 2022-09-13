@@ -50,7 +50,7 @@ const Anchor = forwardRef(
           element: findButtonParent(event.target),
           event,
           href,
-          label: typeof label === 'string' ? label: undefined,
+          label: typeof label === 'string' ? label : undefined,
         });
         if (onClickProp) onClickProp(event);
       },

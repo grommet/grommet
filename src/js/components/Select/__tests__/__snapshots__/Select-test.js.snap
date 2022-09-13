@@ -2904,7 +2904,7 @@ exports[`Select complex options and children 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 iqZbKa Select__StyledSelectDropButton-sc-17idtfo-2 cKXNfT"
+  class="StyledButton-sc-323bzc-0 iqZbKa StyledSelect__StyledSelectDropButton-sc-znp66n-5 ieVmJT"
   id="test-select"
   type="button"
 >
@@ -2919,7 +2919,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fKwwIt Select__SelectTextInput-sc-17idtfo-0 bQAqdj"
+          class="StyledTextInput-sc-1x30a0s-0 fKwwIt StyledSelect__SelectTextInput-sc-znp66n-4 lbPTGE"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4703,7 +4703,7 @@ exports[`Select disabled 2`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 fKcpCY Select__StyledSelectDropButton-sc-17idtfo-2 cKXNfT"
+  class="StyledButton-sc-323bzc-0 fKcpCY StyledSelect__StyledSelectDropButton-sc-znp66n-5 ieVmJT"
   disabled=""
   id="test-select"
   type="button"
@@ -4719,7 +4719,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fKwwIt Select__SelectTextInput-sc-17idtfo-0 fDnYDX"
+          class="StyledTextInput-sc-1x30a0s-0 fKwwIt StyledSelect__SelectTextInput-sc-znp66n-4 dqSJFc"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -9726,7 +9726,7 @@ exports[`Select prop: onOpen 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 iqZbKa Select__StyledSelectDropButton-sc-17idtfo-2 cKXNfT"
+  class="StyledButton-sc-323bzc-0 iqZbKa StyledSelect__StyledSelectDropButton-sc-znp66n-5 ieVmJT"
   id="test-select"
   type="button"
 >
@@ -9741,7 +9741,7 @@ exports[`Select prop: onOpen 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fKwwIt Select__SelectTextInput-sc-17idtfo-0 bQAqdj"
+          class="StyledTextInput-sc-1x30a0s-0 fKwwIt StyledSelect__SelectTextInput-sc-znp66n-4 lbPTGE"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -10029,7 +10029,7 @@ exports[`Select prop: onOpen 4`] = `
 
 exports[`Select prop: onOpen 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 eaJPmL"
+  class="StyledSelect__OptionsContainer-sc-znp66n-1 fMVXhA"
   role="listbox"
   tabindex="-1"
 >
@@ -10037,7 +10037,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 cJsyfs"
+    class="StyledButton-sc-323bzc-0 ghVuhX StyledSelect__SelectOption-sc-znp66n-3 dlQohO"
     role="option"
     tabindex="-1"
     type="button"
@@ -10056,7 +10056,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 ghVuhX SelectContainer__SelectOption-sc-1wi0ul8-1 cJsyfs"
+    class="StyledButton-sc-323bzc-0 ghVuhX StyledSelect__SelectOption-sc-znp66n-3 dlQohO"
     role="option"
     tabindex="-1"
     type="button"
@@ -10632,7 +10632,7 @@ exports[`Select renders custom up and down icons 2`] = `
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="StyledButton-sc-323bzc-0 iqZbKa Select__StyledSelectDropButton-sc-17idtfo-2 cKXNfT"
+    class="StyledButton-sc-323bzc-0 iqZbKa StyledSelect__StyledSelectDropButton-sc-znp66n-5 ieVmJT"
     type="button"
   >
     <div
@@ -10646,7 +10646,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 fKwwIt Select__SelectTextInput-sc-17idtfo-0 bQAqdj"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt StyledSelect__SelectTextInput-sc-znp66n-4 lbPTGE"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -15217,7 +15217,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select; Selected: two"
-    class="StyledButton-sc-323bzc-0 iqZbKa Select__StyledSelectDropButton-sc-17idtfo-2 cKXNfT"
+    class="StyledButton-sc-323bzc-0 iqZbKa StyledSelect__StyledSelectDropButton-sc-znp66n-5 ieVmJT"
     id="test-select"
     type="button"
   >
@@ -15232,7 +15232,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 fKwwIt Select__SelectTextInput-sc-17idtfo-0 bQAqdj"
+            class="StyledTextInput-sc-1x30a0s-0 fKwwIt StyledSelect__SelectTextInput-sc-znp66n-4 lbPTGE"
             id="test-select__input"
             placeholder="test select"
             readonly=""

@@ -9,9 +9,9 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 
 import {
-  getHoverIndicatorStyle,
-  selectedStyle,
   setFocusWithoutScroll,
+  getHoverIndicatorStyle,
+  containsFocus,
 } from '../../utils';
 
 import { defaultProps } from '../../default-props';
@@ -23,43 +23,13 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
-import { StyledContainer } from './StyledSelect';
-import { applyKey } from './utils';
-import { containsFocus } from '../../utils/DOM';
-
-// position relative is so scroll can be managed correctly
-const OptionsBox = styled.div`
-  position: relative;
-  scroll-behavior: smooth;
-  overflow: auto;
-  outline: none;
-`;
-
-const SelectOption = styled(Button)`
-  ${(props) => props.selected && props.textComponent && selectedStyle}
-  // applies theme.global.hover.background to the active
-  // option for mouse and keyboard interactions
-  ${(props) =>
-    props.active &&
-    getHoverIndicatorStyle(
-      !props.children && !props.theme.select.options ? undefined : 'background',
-      props.theme,
-    )}
-  // apply hover styling when option receives tab focus so it's
-  // visible to keyboard users
-  &:focus {
-    ${(props) =>
-      props.active &&
-      getHoverIndicatorStyle(
-        !props.children && !props.theme.select.options
-          ? undefined
-          : 'background',
-        props.theme,
-      )}
-  }
-  display: block;
-  width: 100%;
-`;
+import {
+  StyledContainer,
+  OptionsContainer,
+  SelectOption,
+} from './StyledSelect';
+import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
+import { EmptySearchOption } from './EmptySearchOption';
 
 // ensure ClearButton receives visual indication of keyboard
 const StyledButton = styled(Button)`
@@ -137,6 +107,13 @@ const SelectContainer = forwardRef(
       [clear, multiple, value],
     );
 
+    const isDisabled = useDisabled(
+      disabled,
+      disabledKey,
+      options,
+      valueKey || labelKey,
+    );
+
     const [activeIndex, setActiveIndex] = useState(
       usingKeyboard && !shouldShowClearButton('top') ? 0 : -1,
     );
@@ -178,35 +155,6 @@ const SelectContainer = forwardRef(
       return () => clearTimeout(timer);
     }, [onSearch, usingKeyboard, clear]);
 
-    const optionLabel = useCallback(
-      (index) => applyKey(options[index], labelKey || valueKey),
-      [labelKey, options, valueKey],
-    );
-
-    const optionValue = useCallback(
-      (index) => applyKey(options[index], valueKey || labelKey),
-      [options, valueKey, labelKey],
-    );
-
-    const isDisabled = useCallback(
-      (index) => {
-        const option = options[index];
-        let result;
-        if (disabledKey) {
-          result = applyKey(option, disabledKey);
-        } else if (Array.isArray(disabled)) {
-          if (typeof disabled[0] === 'number') {
-            result = disabled.indexOf(index) !== -1;
-          } else {
-            const optionVal = optionValue(index);
-            result = disabled.indexOf(optionVal) !== -1;
-          }
-        }
-        return result;
-      },
-      [disabled, disabledKey, options, optionValue],
-    );
-
     const isSelected = useCallback(
       (index) => {
         let result;
@@ -214,7 +162,11 @@ const SelectContainer = forwardRef(
           // deprecated in favor of value
           result = selected.indexOf(index) !== -1;
         } else {
-          const optionVal = optionValue(index);
+          const optionVal = getOptionValue(
+            index,
+            options,
+            valueKey || labelKey,
+          );
           if (Array.isArray(value)) {
             if (value.length === 0) {
               result = false;
@@ -241,7 +193,7 @@ const SelectContainer = forwardRef(
         }
         return result;
       },
-      [optionValue, selected, value, valueKey],
+      [selected, value, valueKey, options, labelKey],
     );
 
     const selectOption = useCallback(
@@ -303,7 +255,7 @@ const SelectContainer = forwardRef(
           setKeyboardNavigation(true);
         }
       },
-      [activeIndex, isDisabled, options],
+      [activeIndex, options, isDisabled],
     );
 
     const onPreviousOption = useCallback(
@@ -365,7 +317,7 @@ const SelectContainer = forwardRef(
           onKeyDown(event);
         }
       },
-      [onKeyDown, options, isDisabled, onSearch, labelKey],
+      [isDisabled, labelKey, onKeyDown, options, onSearch],
     );
 
     const onActiveOption = useCallback(
@@ -442,7 +394,7 @@ const SelectContainer = forwardRef(
               theme={theme}
             />
           )}
-          <OptionsBox
+          <OptionsContainer
             role="listbox"
             tabIndex="-1"
             ref={optionsRef}
@@ -482,7 +434,7 @@ const SelectContainer = forwardRef(
                     child = (
                       <Box {...selectOptionsStyle}>
                         <Text {...theme.select.options.text}>
-                          {optionLabel(index)}
+                          {getOptionLabel(index, options, labelKey || valueKey)}
                         </Text>
                       </Box>
                     );
@@ -510,7 +462,11 @@ const SelectContainer = forwardRef(
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
-                      label={!child ? optionLabel(index) : undefined}
+                      label={
+                        !child
+                          ? getOptionLabel(index, options, labelKey || valueKey)
+                          : undefined
+                      }
                       disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}
@@ -531,21 +487,13 @@ const SelectContainer = forwardRef(
                 }}
               </InfiniteScroll>
             ) : (
-              <SelectOption
-                key="search_empty"
-                tabIndex="-1"
-                role="menuitem"
-                hoverIndicator="background"
-                disabled
-              >
-                <Box {...selectOptionsStyle}>
-                  <Text {...theme.select.container.text}>
-                    {emptySearchMessage}
-                  </Text>
-                </Box>
-              </SelectOption>
+              <EmptySearchOption
+                emptySearchMessage={emptySearchMessage}
+                selectOptionsStyle={selectOptionsStyle}
+                theme={theme}
+              />
             )}
-          </OptionsBox>
+          </OptionsContainer>
           {shouldShowClearButton('bottom') && (
             <ClearButton
               ref={clearRef}
