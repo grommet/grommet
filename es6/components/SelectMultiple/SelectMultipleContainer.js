@@ -440,7 +440,8 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     overflow: "hidden" // announce when we reach the limit of items
     // that can be selected
     ,
-    "aria-live": "assertive"
+    "aria-live": "assertive",
+    role: "alert"
   }, showA11yLimit)));
 });
 export { SelectMultipleContainer };

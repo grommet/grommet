@@ -147,7 +147,8 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     width: "0px",
     overflow: "hidden" // announce when an item is removed from selected options
     ,
-    "aria-live": "assertive"
+    "aria-live": "assertive",
+    role: "alert"
   }, showA11yDiv)), value && value.length > theme.selectMultiple.maxInline && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: {
       horizontal: 'small',

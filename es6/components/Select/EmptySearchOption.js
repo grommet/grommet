@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 import React from 'react';
 import { Box } from '../Box';
 import { Text } from '../Text';
@@ -11,7 +13,9 @@ export var EmptySearchOption = function EmptySearchOption(_ref) {
     tabIndex: "0",
     role: "menuitem",
     hoverIndicator: "background",
-    disabled: true,
-    "aria-live": "polite"
-  }, /*#__PURE__*/React.createElement(Box, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, theme.select.container.text, emptySearchMessage)));
+    disabled: true
+  }, /*#__PURE__*/React.createElement(Box, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, _extends({
+    "aria-live": "polite",
+    role: "alert"
+  }, theme.select.container.text), emptySearchMessage)));
 };

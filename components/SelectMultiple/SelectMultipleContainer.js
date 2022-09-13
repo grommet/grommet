@@ -468,7 +468,8 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     overflow: "hidden" // announce when we reach the limit of items
     // that can be selected
     ,
-    "aria-live": "assertive"
+    "aria-live": "assertive",
+    role: "alert"
   }, showA11yLimit)));
 });
 exports.SelectMultipleContainer = SelectMultipleContainer;
