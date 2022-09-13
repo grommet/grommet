@@ -22,12 +22,14 @@ var colorPropType = _propTypes["default"].oneOfType([_propTypes["default"].strin
 exports.colorPropType = colorPropType;
 
 var backgroundPropType = _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
+  clip: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['text']), _propTypes["default"].string]),
   color: colorPropType,
   dark: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].string]),
   image: _propTypes["default"].string,
   position: _propTypes["default"].string,
   opacity: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].bool, _propTypes["default"].number, _propTypes["default"].oneOf(['weak', 'medium', 'strong'])]),
   repeat: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['no-repeat', 'repeat']), _propTypes["default"].string]),
+  rotate: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]),
   size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['cover', 'contain']), _propTypes["default"].string]),
   light: _propTypes["default"].string
 })]);

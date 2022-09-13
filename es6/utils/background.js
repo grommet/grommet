@@ -11,9 +11,11 @@ var evalStyle = function evalStyle(arg, theme) {
   return arg;
 };
 
-export var normalizeBackground = function normalizeBackground(background, theme) {
-  // If the background has a light or dark object, use that
-  var result = background;
+export var normalizeBackground = function normalizeBackground(backgroundArg, theme) {
+  var _theme$global$backgro;
+
+  var background = ((_theme$global$backgro = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro[backgroundArg]) || backgroundArg;
+  var result = background; // If the background has a light or dark object, use that
 
   if (background) {
     if (theme.dark && background.dark && typeof background.dark !== 'boolean') {
@@ -27,6 +29,50 @@ export var normalizeBackground = function normalizeBackground(background, theme)
 
   return result;
 };
+
+var normalizeBackgroundColor = function normalizeBackgroundColor(backgroundArg, theme) {
+  var _theme$global$backgro2;
+
+  var background = backgroundArg.color || backgroundArg;
+  var result = normalizeColor( // Background color may be defined by theme.global.backgrounds or
+  // theme.global.colors.
+  ((_theme$global$backgro2 = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro2[background]) || background, theme, backgroundArg.dark);
+  return result;
+};
+
+var normalizeBackgroundImage = function normalizeBackgroundImage(background, theme) {
+  var result;
+
+  if (background.image) {
+    var _theme$global$backgro3, _theme$global$backgro4;
+
+    result = normalizeBackground(background.dark ? (_theme$global$backgro3 = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro3[background.image].dark : (_theme$global$backgro4 = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro4[background.image], theme) || background.image;
+  } else {
+    var _theme$global$backgro5;
+
+    var normalized = normalizeBackground((_theme$global$backgro5 = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro5[background], theme);
+    result = typeof normalized === 'object' ? normalizeBackgroundImage(normalized, theme) : normalized;
+  }
+
+  return result;
+};
+
+var rotateBackground = function rotateBackground(background, theme) {
+  var backgroundImage = normalizeBackgroundImage(background, theme);
+  var result = backgroundImage;
+
+  if (backgroundImage.lastIndexOf('linear-gradient', 0) === 0) {
+    var regex = /\d{1,}deg\b,/gm; // Contains rotation specified in degrees. Only targets 'deg' string with a trailing comma. Do not match 'deg' string for hsl, etc..
+
+    result = backgroundImage.lastIndexOf('deg,') >= 0 ? backgroundImage.replace(regex, background.rotate + "deg,") : backgroundImage.replace('linear-gradient(', "linear-gradient(" + background.rotate + "deg, ");
+  } else {
+    console.warn( // eslint-disable-next-line max-len
+    "'background.rotate' property only supports 'background.image' containing a linear-gradient string.");
+  }
+
+  return result;
+};
+
 export var backgroundIsDark = function backgroundIsDark(backgroundArg, theme) {
   var background = normalizeBackground(backgroundArg, theme);
   var result;
@@ -84,7 +130,7 @@ export var backgroundAndTextColors = function backgroundAndTextColors(background
     }
 
     if (background.color) {
-      var color = normalizeColor(background.color, theme, background.dark);
+      var color = normalizeBackgroundColor(background, theme);
       var opacity = background.opacity === true ? global.opacity.medium : global.opacity[background.opacity] || background.opacity;
       backgroundColor = getRGBA(color, opacity) || color; // If we don't have a textColor already, and we aren't too translucent,
       // set the textColor to have the best contrast against the background
@@ -96,7 +142,7 @@ export var backgroundAndTextColors = function backgroundAndTextColors(background
       }
     }
   } else {
-    backgroundColor = normalizeColor(background, theme);
+    backgroundColor = normalizeBackgroundColor(background, theme);
 
     var _shade = darkContext(backgroundColor, theme);
 
@@ -119,21 +165,28 @@ export var backgroundStyle = function backgroundStyle(backgroundArg, theme, text
   if (backgroundArg === undefined) return undefined;
   var background = normalizeBackground(backgroundArg, theme);
 
-  if (typeof background === 'string' && background.lastIndexOf('url', 0) === 0) {
-    return css(["background:", " no-repeat center center;background-size:cover;"], background);
-  }
-
   var _backgroundAndTextCol = backgroundAndTextColors(background, textColorArg, theme),
       backgroundColor = _backgroundAndTextCol[0],
       textColor = _backgroundAndTextCol[1];
 
-  if (background.image) {
-    var backgroundStyles = "\n      " + (backgroundColor ? "background-color: " + backgroundColor + ";" : '') + "\n      background-image: " + background.image + ";\n      background-repeat: " + (background.repeat || 'no-repeat') + ";\n      background-position: " + (background.position || 'center center') + ";\n      background-size: " + (background.size || 'cover') + ";\n    "; // allow both background color and image, in case the image doesn't fill
+  var backgroundImage = background.rotate ? rotateBackground(background, theme) : normalizeBackgroundImage(background, theme);
+  var backgroundClipStyle = '';
+
+  if (background.clip) {
+    backgroundClipStyle = background.clip === 'text' ? "-webkit-text-fill-color: transparent; \n           -webkit-background-clip: text; \n           background-clip: text;" : "background-clip: " + background.clip + ";";
+  }
+
+  if (typeof background === 'string' && background.lastIndexOf('url', 0) === 0) {
+    return css(["background:", " no-repeat center center;background-size:cover;"], background);
+  }
+
+  if (backgroundImage) {
+    var backgroundStyles = "\n      " + (backgroundColor ? "background-color: " + backgroundColor + ";" : '') + "\n      background-image: " + backgroundImage + ";\n      background-repeat: " + (typeof background === 'object' && background.repeat || 'no-repeat') + ";\n      background-position: " + (background.position || 'center center') + ";\n      background-size: " + (background.size || 'cover') + ";\n      " + backgroundClipStyle + "\n    "; // allow both background color and image, in case the image doesn't fill
     // when image and opacity are used together, we need to use pseudo :before
     // to ensure that only image and background color are affected by opacity
     // but not the container contents
 
-    return css(["", " ", ""], textColor ? "color: " + textColor + ";" : '', !background.opacity ? backgroundStyles : "position: relative;\n        z-index: 0;\n        &:before {\n          content: '';\n          position: absolute;\n          top: 0;\n          right: 0;\n          left: 0;\n          bottom: 0;\n          z-index: -1;\n          " + backgroundStyles + "\n          opacity: " + (background.opacity === true ? theme.global.opacity.medium : theme.global.opacity[background.opacity] || background.opacity) + ";\n        }");
+    return css(["", " ", ""], textColor ? "color: " + textColor + ";" : '', !background.opacity ? backgroundStyles : "position: relative;\n        z-index: 0;\n        &:before {\n          content: '';\n          position: absolute;\n          top: 0;\n          right: 0;\n          left: 0;\n          bottom: 0;\n          z-index: -1;\n          border-radius: inherit;\n          " + backgroundStyles + "\n          opacity: " + (background.opacity === true ? theme.global.opacity.medium : theme.global.opacity[background.opacity] || background.opacity) + ";\n        }");
   }
 
   if (backgroundColor) {

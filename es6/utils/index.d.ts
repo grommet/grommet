@@ -139,6 +139,8 @@ export interface BackgroundObject {
   repeat?: 'no-repeat' | 'repeat' | string;
   size?: 'cover' | 'contain' | string;
   light?: string;
+  clip?: 'text' | string;
+  rotate?: number | string;
 }
 export type BackgroundType = string | BackgroundObject;
 export type HoverIndicatorType =

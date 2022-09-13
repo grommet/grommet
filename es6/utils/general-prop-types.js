@@ -6,12 +6,14 @@ export var colorPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shap
   light: PropTypes.string
 })]);
 export var backgroundPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+  clip: PropTypes.oneOfType([PropTypes.oneOf(['text']), PropTypes.string]),
   color: colorPropType,
   dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   image: PropTypes.string,
   position: PropTypes.string,
   opacity: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number, PropTypes.oneOf(['weak', 'medium', 'strong'])]),
   repeat: PropTypes.oneOfType([PropTypes.oneOf(['no-repeat', 'repeat']), PropTypes.string]),
+  rotate: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   size: PropTypes.oneOfType([PropTypes.oneOf(['cover', 'contain']), PropTypes.string]),
   light: PropTypes.string
 })]);

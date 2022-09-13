@@ -154,6 +154,7 @@ export var generate = function generate(baseSpacing, scale) {
           duration: '0.1s'
         }
       },
+      // backgrounds: undefined,
       borderSize: {
         xsmall: '1px',
         small: '2px',
