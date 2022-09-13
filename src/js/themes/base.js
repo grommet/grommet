@@ -159,6 +159,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           duration: '0.1s',
         },
       },
+      // backgrounds: undefined,
       borderSize: {
         xsmall: '1px',
         small: '2px',
