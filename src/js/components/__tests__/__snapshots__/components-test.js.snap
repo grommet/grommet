@@ -201,6 +201,7 @@ Object {
   "CheckBoxGroup": Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
+      "defaultValue": [Function],
       "disabled": [Function],
       "labelKey": [Function],
       "name": [Function],

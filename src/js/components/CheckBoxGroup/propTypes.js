@@ -6,6 +6,13 @@ if (process.env.NODE_ENV !== 'production') {
     value: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     ),
+    defaultValue: PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+        PropTypes.shape({}),
+      ]),
+    ),
     disabled: PropTypes.bool,
     labelKey: PropTypes.string,
     name: PropTypes.string,
