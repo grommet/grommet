@@ -345,15 +345,14 @@ const SelectMultipleContainer = forwardRef(
           direction="row"
           justify="between"
           flex={false}
-          pad={{ horizontal: 'small' }}
+          pad={{ left: 'small' }}
         >
           {summaryContent}
-          <Button
-            icon={<FormUp />}
-            onClick={onClose}
-            a11yTitle="Close Select"
-            plain
-          />
+          <Button onClick={onClose} a11yTitle="Close Select">
+            <Box pad={{ right: 'small' }}>
+              <FormUp />
+            </Box>
+          </Button>
         </Box>
       );
 
