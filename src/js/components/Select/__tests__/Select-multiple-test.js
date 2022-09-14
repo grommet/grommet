@@ -134,14 +134,24 @@ describe('Select Controlled', () => {
       />,
     );
 
-    await user.click(screen.getByPlaceholderText('test select'));
-    await user.click(screen.getByRole('option', { name: 'one' }));
-    await user.click(screen.getByPlaceholderText('test select'));
+    await act(async () => {
+      await user.click(screen.getByPlaceholderText('test select'));
+    });
+    await act(async () => {
+      await user.click(screen.getByRole('option', { name: 'one' }));
+    });
+    await act(async () => {
+      await user.click(screen.getByPlaceholderText('test select'));
+    });
 
     expect(screen.getByText('Clear selection')).toBeInTheDocument();
 
-    await user.click(screen.getByRole('option', { name: 'one' }));
-    await user.click(screen.getByPlaceholderText('test select'));
+    await act(async () => {
+      await user.click(screen.getByRole('option', { name: 'one' }));
+    });
+    await act(async () => {
+      await user.click(screen.getByPlaceholderText('test select'));
+    });
 
     expect(screen.queryByText('Clear selection')).not.toBeInTheDocument();
   });

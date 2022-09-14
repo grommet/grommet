@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { render, screen, fireEvent, createEvent } from '@testing-library/react';
+import {
+  act,
+  render,
+  screen,
+  fireEvent,
+  createEvent,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
@@ -100,11 +106,12 @@ describe('RoutedAnchor', () => {
 
     const anchor = screen.getByRole('link');
 
-    await user.pointer([
-      { target: anchor },
-      { keys: '[MouseRight]', target: anchor },
-    ]);
-
+    await act(async () => {
+      await user.pointer([
+        { target: anchor },
+        { keys: '[MouseRight]', target: anchor },
+      ]);
+    });
     expect(onClick).not.toHaveBeenCalled();
     expect(warnSpy).toHaveBeenCalled();
   });
