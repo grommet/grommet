@@ -1240,9 +1240,10 @@ export var generate = function generate(baseSpacing, scale) {
         direction: 'row',
         container: {
           // any box props
+          round: 'xsmall',
           pad: {
-            horizontal: 'large',
-            vertical: 'xsmall'
+            horizontal: 'medium',
+            vertical: 'small'
           }
         }
       },
