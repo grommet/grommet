@@ -49,7 +49,7 @@ const SelectionSummary = ({
         justify="between"
         gap="small"
         fill="horizontal"
-        flex
+        flex={showSelectedInline}
       >
         <Box alignSelf="center">
           <Text size="small">
