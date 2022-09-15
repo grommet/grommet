@@ -1008,13 +1008,10 @@ describe('DateInput', () => {
         </Form>
       </Grommet>,
     );
-    await act(async () => {
-      await user.tab();
-    });
+    await user.tab();
     expect(asFragment()).toMatchSnapshot();
-    await act(async () => {
-      await user.tab();
-    });
+
+    await user.tab();
     expect(asFragment()).toMatchSnapshot();
     expect(onFocus).toHaveBeenCalledTimes(1);
   });

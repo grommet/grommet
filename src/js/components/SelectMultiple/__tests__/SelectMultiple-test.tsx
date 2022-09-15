@@ -99,21 +99,14 @@ describe('SelectMultiple', () => {
         />
       </Grommet>,
     );
-    await act(async () => {
-      // open SelectMultiple
-      await user.click(screen.getByRole('button', { name: /Open Drop/i }));
-    });
-
+     // open SelectMultiple
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    
     // try to click all the options
-    await act(async () => {
-      await user.click(screen.getByRole('option', { name: /0/i }));
-    });
-    await act(async () => {
-      await user.click(screen.getByRole('option', { name: /1/i }));
-    });
-    await act(async () => {
-      await user.click(screen.getByRole('option', { name: /2/i }));
-    });
+    await user.click(screen.getByRole('option', { name: /0/i }));
+    await user.click(screen.getByRole('option', { name: /1/i }));
+    await user.click(screen.getByRole('option', { name: /2/i }));
+
     // only 2 options should be selected (0 and 2)
     expectPortal('test-select__drop').toMatchSnapshot();
   });
@@ -126,21 +119,14 @@ describe('SelectMultiple', () => {
         <SelectMultiple id="test-select__drop" options={[0, 1, 2]} limit={2} />
       </Grommet>,
     );
-    await act(async () => {
-      // open SelectMultiple
-      await user.click(screen.getByRole('button', { name: /Open Drop/i }));
-    });
-
-      // select 2 options
-    await act(async () => {
-      await user.click(screen.getByRole('option', { name: /0/i }));
-    });
-    await act(async () => {
-      await user.click(screen.getByRole('option', { name: /1/i }));
-    });
-    await act(async () => {
-      await user.click(screen.getByRole('option', { name: /2/i }));
-    });
+    
+    // open SelectMultiple
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+  
+    // select 2 options
+    await user.click(screen.getByRole('option', { name: /0/i }));
+    await user.click(screen.getByRole('option', { name: /1/i }));
+    await user.click(screen.getByRole('option', { name: /2/i }));
 
     // option 2 should be disabled
     expectPortal('test-select__drop').toMatchSnapshot();
@@ -164,25 +150,16 @@ describe('SelectMultiple', () => {
       </Grommet>,
     );
     // open SelectMultiple
-    await act(async () => {
-      await user.click(screen.getByRole('button', { name: /Open Drop/i }));
-    });
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
     expect(open).toHaveBeenCalled();
 
-    await act(async () => {
-      // click all the options
-      await user.click(screen.getByRole('option', { name: /0/i }));
-    });
-    await act(async () => {
-      await user.click(screen.getByRole('option', { name: /1/i }));
-    });
-    await act(async () => {
-      await user.click(screen.getByRole('option', { name: /2/i }));
-    });
-    await act(async () => {
-      // close SelectMultiple
-      await user.click(screen.getByRole('button', { name: /Close Select/i }));
-    });
+    // click all the options
+    await user.click(screen.getByRole('option', { name: /0/i }));
+    await user.click(screen.getByRole('option', { name: /1/i }));
+    await user.click(screen.getByRole('option', { name: /2/i }));
+  
+    // close SelectMultiple
+    await user.click(screen.getByRole('button', { name: /Close Select/i }));
 
     expect(close).toHaveBeenCalled();
 
@@ -207,37 +184,24 @@ describe('SelectMultiple', () => {
       </Grommet>,
     );
 
-    await act(async () => {
-      // open SelectMultiple
-      await user.click(screen.getByRole('button', { name: /Open Drop/i }));
-    });
-    await act(async () => {
-      // click all the options
-      await user.click(screen.getByRole('option', { name: /0/i }));
-    });
-    await act(async () => {
-      await user.click(screen.getByRole('option', { name: /1/i }));
-    });
-    await act(async () => {
-      await user.click(screen.getByRole('option', { name: /2/i }));
-    });
-    await act(async () => {
-      // close SelectMultiple
-      await user.click(screen.getByRole('button', { name: /Close Select/i }));
-    });
+    // open SelectMultiple
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+
+    // click all the options
+    await user.click(screen.getByRole('option', { name: /0/i }));
+    await user.click(screen.getByRole('option', { name: /1/i }));
+    await user.click(screen.getByRole('option', { name: /2/i }));
+    // close SelectMultiple
+    await user.click(screen.getByRole('button', { name: /Close Select/i }));
+
     // all options should be visible when drop is closed
     expect(container.firstChild).toMatchSnapshot();
     
-    await act(async () => {
-      // unselect option at input level
-      await user.click(screen.getByRole('option', { name: /0/i }));
-    });
-    await act(async () => {
-      await user.click(screen.getByRole('option', { name: /2/i }));
-    });
-    await act(async () => {
-      await user.click(screen.getByRole('option', { name: /1/i }));
-    });
+    // unselect option at input level
+    await user.click(screen.getByRole('option', { name: /0/i }));
+    await user.click(screen.getByRole('option', { name: /2/i }));
+    await user.click(screen.getByRole('option', { name: /1/i }));
+
     // options should no longer be visible after unselecting them
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -276,24 +240,13 @@ describe('SelectMultiple', () => {
     });
 
     const input = screen.getByRole('listbox');
-    await act(async () => {
-      fireEvent.keyDown(input, { keyCode: 40 }); // down
-    });
-    await act(async () => {
-      fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    });
-    await act(async () => {
-      fireEvent.keyDown(input, { keyCode: 40 }); // down
-    });
-    await act(async () => {
-      fireEvent.keyDown(input, { keyCode: 40 }); // down
-    });
-    await act(async () => {
-      fireEvent.keyDown(input, { keyCode: 38 }); // up
-    });
-    await act(async () => {
-      fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    });
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 38 }); // up
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -333,14 +286,10 @@ describe('SelectMultiple', () => {
       </Grommet>,
     );
 
-    await act(async () => {
-      await user.click(screen.getByRole('button', { name: /Open Drop/i }));
-    });
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
 
-    await act(async () => {
-      const input = screen.getByRole('searchbox');
-      await user.type(input, 'th');
-    });
+    const input = screen.getByRole('searchbox');
+    await user.type(input, 'th');
     expect(onSearch).toBeCalledWith(expect.stringMatching(/^th/));
   });
 
@@ -355,18 +304,11 @@ describe('SelectMultiple', () => {
       </Grommet>,
     );
 
-    await act(async () => {
-      await user.click(screen.getByRole('button', { name: /Open Drop/i }));
-    });
-    await act(async () => {
-      await user.click(screen.getByRole('button', { name: /Select All/i }));
-    });
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    await user.click(screen.getByRole('button', { name: /Select All/i }));
     expectPortal('test-select__drop').toMatchSnapshot();
 
-    await act(async () => {
-      await user.click(screen.getByRole('button', { name: /Clear All/i }));
-    });
-
+    await user.click(screen.getByRole('button', { name: /Clear All/i }));
     expectPortal('test-select__drop').toMatchSnapshot();
   });
 });
