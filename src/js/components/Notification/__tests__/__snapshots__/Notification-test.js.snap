@@ -252,6 +252,7 @@ exports[`Notification global 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  border-radius: 6px;
 }
 
 .c2 {
@@ -269,10 +270,10 @@ exports[`Notification global 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding-left: 48px;
-  padding-right: 48px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .c3 {
@@ -341,16 +342,22 @@ exports[`Notification global 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+  .c1 {
+    border-radius: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -4249,6 +4256,7 @@ exports[`Notification status 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  border-radius: 6px;
 }
 
 .c2 {
@@ -4266,10 +4274,10 @@ exports[`Notification status 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding-left: 48px;
-  padding-right: 48px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .c3 {
@@ -4317,6 +4325,7 @@ exports[`Notification status 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  border-radius: 6px;
 }
 
 .c12 {
@@ -4332,6 +4341,7 @@ exports[`Notification status 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  border-radius: 6px;
 }
 
 .c6 {
@@ -4368,22 +4378,40 @@ exports[`Notification status 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    padding-left: 24px;
-    padding-right: 24px;
+  .c1 {
+    border-radius: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
     padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    border-radius: 3px;
   }
 }
 

@@ -345,15 +345,14 @@ const SelectMultipleContainer = forwardRef(
           direction="row"
           justify="between"
           flex={false}
-          pad={{ horizontal: 'small', top: 'xsmall' }}
+          pad={{ left: 'small' }}
         >
           {summaryContent}
-          <Button
-            icon={<FormUp />}
-            onClick={onClose}
-            a11yTitle="Close Select"
-            plain
-          />
+          <Button onClick={onClose} a11yTitle="Close Select">
+            <Box pad={{ right: 'small' }}>
+              <FormUp />
+            </Box>
+          </Button>
         </Box>
       );
 
@@ -568,6 +567,7 @@ const SelectMultipleContainer = forwardRef(
               // announce when we reach the limit of items
               // that can be selected
               aria-live="assertive"
+              role="alert"
             >
               {showA11yLimit}
             </Box>

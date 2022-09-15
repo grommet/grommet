@@ -278,6 +278,9 @@ export interface ThemeType {
         duration?: string;
       };
     };
+    backgrounds?: {
+      [x: string]: BackgroundType | { dark?: string; light?: string };
+    };
     borderSize?: {
       xsmall?: string;
       small?: string;

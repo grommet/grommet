@@ -159,6 +159,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           duration: '0.1s',
         },
       },
+      // backgrounds: undefined,
       borderSize: {
         xsmall: '1px',
         small: '2px',
@@ -1142,9 +1143,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         direction: 'row',
         container: {
           // any box props
+          round: 'xsmall',
           pad: {
-            horizontal: 'large',
-            vertical: 'xsmall',
+            horizontal: 'medium',
+            vertical: 'small',
           },
         },
       },
