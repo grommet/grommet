@@ -51,7 +51,7 @@ var SelectionSummary = function SelectionSummary(_ref) {
     justify: "between",
     gap: "small",
     fill: "horizontal",
-    flex: true
+    flex: showSelectedInline
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     alignSelf: "center"
   }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {

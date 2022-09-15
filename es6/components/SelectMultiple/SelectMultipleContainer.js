@@ -285,15 +285,16 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     justify: "between",
     flex: false,
     pad: {
-      horizontal: 'small',
-      top: 'xsmall'
+      left: 'small'
     }
   }, summaryContent, /*#__PURE__*/React.createElement(Button, {
-    icon: /*#__PURE__*/React.createElement(FormUp, null),
     onClick: onClose,
-    a11yTitle: "Close Select",
-    plain: true
-  }));
+    a11yTitle: "Close Select"
+  }, /*#__PURE__*/React.createElement(Box, {
+    pad: {
+      right: 'small'
+    }
+  }, /*#__PURE__*/React.createElement(FormUp, null))));
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: onSelectOption,
     onSpace: onSelectOption,

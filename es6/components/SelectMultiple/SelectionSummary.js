@@ -38,7 +38,7 @@ var SelectionSummary = function SelectionSummary(_ref) {
     justify: "between",
     gap: "small",
     fill: "horizontal",
-    flex: true
+    flex: showSelectedInline
   }, /*#__PURE__*/React.createElement(Box, {
     alignSelf: "center"
   }, /*#__PURE__*/React.createElement(Text, {
