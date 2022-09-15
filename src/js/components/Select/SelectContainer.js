@@ -96,7 +96,7 @@ const SelectContainer = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const shouldShowClearButton = useCallback(
       (position) => {
-        const hasValue = Boolean(multiple ? value.length : value);
+        const hasValue = Boolean(multiple && value ? value.length : value);
         const showAtPosition =
           position === 'bottom'
             ? clear?.position === 'bottom'
