@@ -199,7 +199,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     // input. if it is an object, then the user has not provided necessary
     // props to reduce object option
 
-    if (typeof nextValue !== 'object' && nextValue !== event.target.value && inputRef.current) {
+    if ((typeof nextValue !== 'object' || multiple) && nextValue !== event.target.value && inputRef.current) {
       // select registers changing option as a click event or keydown.
       // when in a form, we need to programatically trigger a change
       // event in order for the change event to be registered upstream
@@ -239,7 +239,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
       onChange(adjustedEvent);
     }
-  }, [closeOnChange, onChange, onRequestClose, setValue, triggerChangeEvent]);
+  }, [closeOnChange, multiple, onChange, onRequestClose, setValue, triggerChangeEvent]);
   var SelectIcon = (0, _utils2.getSelectIcon)(icon, theme, open); // element to show, trumps inputValue
 
   var selectValue = (0, _react.useMemo)(function () {
