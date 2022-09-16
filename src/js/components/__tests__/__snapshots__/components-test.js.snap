@@ -1797,9 +1797,10 @@ Object {
           "global": Object {
             "container": Object {
               "pad": Object {
-                "horizontal": "large",
-                "vertical": "xsmall",
+                "horizontal": "medium",
+                "vertical": "small",
               },
+              "round": "xsmall",
             },
             "direction": "row",
           },
@@ -3709,9 +3710,10 @@ Object {
           "global": Object {
             "container": Object {
               "pad": Object {
-                "horizontal": "large",
-                "vertical": "xsmall",
+                "horizontal": "medium",
+                "vertical": "small",
               },
+              "round": "xsmall",
             },
             "direction": "row",
           },
