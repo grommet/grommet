@@ -16,6 +16,7 @@ exports[`Heading accepts ref 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 @media only screen and (max-width:768px) {
@@ -51,6 +52,7 @@ exports[`Heading color renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #7D4CDB;
 }
 
@@ -87,6 +89,7 @@ exports[`Heading fill renders 1`] = `
   line-height: 56px;
   max-width: none;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 @media only screen and (max-width:768px) {
@@ -122,6 +125,7 @@ exports[`Heading level renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -129,6 +133,7 @@ exports[`Heading level renders 1`] = `
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c3 {
@@ -136,6 +141,7 @@ exports[`Heading level renders 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c4 {
@@ -143,6 +149,7 @@ exports[`Heading level renders 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 @media only screen and (max-width:768px) {
@@ -224,6 +231,7 @@ exports[`Heading margin renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -232,6 +240,7 @@ exports[`Heading margin renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c3 {
@@ -240,6 +249,7 @@ exports[`Heading margin renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c4 {
@@ -248,6 +258,7 @@ exports[`Heading margin renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c5 {
@@ -256,6 +267,7 @@ exports[`Heading margin renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c6 {
@@ -264,6 +276,7 @@ exports[`Heading margin renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c7 {
@@ -272,6 +285,7 @@ exports[`Heading margin renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c8 {
@@ -280,6 +294,7 @@ exports[`Heading margin renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 @media only screen and (max-width:768px) {
@@ -440,6 +455,7 @@ exports[`Heading renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 @media only screen and (max-width:768px) {
@@ -475,6 +491,7 @@ exports[`Heading size renders 1`] = `
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -482,6 +499,7 @@ exports[`Heading size renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c3 {
@@ -489,6 +507,7 @@ exports[`Heading size renders 1`] = `
   line-height: 88px;
   max-width: 1968px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c4 {
@@ -496,6 +515,7 @@ exports[`Heading size renders 1`] = `
   line-height: 120px;
   max-width: 2736px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c5 {
@@ -503,6 +523,7 @@ exports[`Heading size renders 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c6 {
@@ -510,6 +531,7 @@ exports[`Heading size renders 1`] = `
   line-height: 72px;
   max-width: 1584px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c7 {
@@ -517,6 +539,7 @@ exports[`Heading size renders 1`] = `
   line-height: 28px;
   max-width: 528px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c8 {
@@ -524,6 +547,7 @@ exports[`Heading size renders 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c9 {
@@ -531,6 +555,7 @@ exports[`Heading size renders 1`] = `
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c10 {
@@ -538,6 +563,7 @@ exports[`Heading size renders 1`] = `
   line-height: 48px;
   max-width: 1008px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c11 {
@@ -545,6 +571,7 @@ exports[`Heading size renders 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c12 {
@@ -552,6 +579,7 @@ exports[`Heading size renders 1`] = `
   line-height: normal;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 @media only screen and (max-width:768px) {
@@ -715,6 +743,7 @@ exports[`Heading textAlign renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
   text-align: left;
 }
 
@@ -723,6 +752,7 @@ exports[`Heading textAlign renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
   text-align: center;
 }
 
@@ -731,6 +761,7 @@ exports[`Heading textAlign renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
   text-align: right;
 }
 
@@ -739,6 +770,7 @@ exports[`Heading textAlign renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
   text-align: justify;
 }
 
@@ -808,6 +840,7 @@ exports[`Heading truncate renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -815,6 +848,7 @@ exports[`Heading truncate renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -869,6 +903,7 @@ exports[`Theme based font family renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -877,6 +912,7 @@ exports[`Theme based font family renders 1`] = `
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c3 {
@@ -885,6 +921,7 @@ exports[`Theme based font family renders 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c4 {
@@ -893,6 +930,7 @@ exports[`Theme based font family renders 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 @media only screen and (max-width:768px) {
@@ -961,6 +999,7 @@ exports[`Theme based font weight renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 700;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -968,6 +1007,7 @@ exports[`Theme based font weight renders 1`] = `
   line-height: 40px;
   max-width: 816px;
   font-weight: 400;
+  overflow-wrap: break-word;
 }
 
 .c3 {
@@ -975,6 +1015,7 @@ exports[`Theme based font weight renders 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 200;
+  overflow-wrap: break-word;
 }
 
 .c4 {
@@ -982,6 +1023,7 @@ exports[`Theme based font weight renders 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 @media only screen and (max-width:768px) {
@@ -1050,6 +1092,7 @@ exports[`Theme color renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #000000;
 }
 
@@ -1058,6 +1101,7 @@ exports[`Theme color renders 1`] = `
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #000000;
 }
 
@@ -1066,6 +1110,7 @@ exports[`Theme color renders 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #000000;
 }
 
@@ -1074,6 +1119,7 @@ exports[`Theme color renders 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #000000;
 }
 
@@ -1143,6 +1189,7 @@ exports[`responsive renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -1150,6 +1197,7 @@ exports[`responsive renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 @media only screen and (max-width:768px) {
@@ -1189,6 +1237,7 @@ exports[`weight renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -1196,6 +1245,7 @@ exports[`weight renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: normal;
+  overflow-wrap: break-word;
 }
 
 .c3 {
@@ -1203,6 +1253,7 @@ exports[`weight renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: bold;
+  overflow-wrap: break-word;
 }
 
 .c4 {
@@ -1210,6 +1261,7 @@ exports[`weight renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 700;
+  overflow-wrap: break-word;
 }
 
 @media only screen and (max-width:768px) {

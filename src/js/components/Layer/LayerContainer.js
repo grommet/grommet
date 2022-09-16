@@ -74,7 +74,6 @@ const LayerContainer = forwardRef(
       const element = layerRef.current;
       const isHidden = position === 'hidden';
       if (!isHidden) {
-
         sendAnalytics({
           type: 'layerOpen',
           element,

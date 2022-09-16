@@ -278,6 +278,9 @@ export interface ThemeType {
         duration?: string;
       };
     };
+    backgrounds?: {
+      [x: string]: BackgroundType | { dark?: string; light?: string };
+    };
     borderSize?: {
       xsmall?: string;
       small?: string;
@@ -782,8 +785,8 @@ export interface ThemeType {
       margin?: MarginType;
       pad?: PadType;
     };
-    checkBox: {
-      pad: PadType;
+    checkBox?: {
+      pad?: PadType;
     };
     disabled?: {
       background?: BackgroundType;
@@ -1394,6 +1397,9 @@ export interface ThemeType {
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
     searchInput?: ReactComponentElement<any>;
     step?: number;
+  };
+  selectMultiple?: {
+    maxInline?: number;
   };
   skipLinks?: {
     position?: LayerPositionType;
