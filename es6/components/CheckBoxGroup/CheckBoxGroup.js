@@ -1,4 +1,4 @@
-var _excluded = ["children", "value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
+var _excluded = ["children", "defaultValue", "value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
     _excluded2 = ["value"];
 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -13,6 +13,7 @@ import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
 import { CheckBoxGroupPropTypes } from './propTypes';
 var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
+      defaultValue = _ref.defaultValue,
       valueProp = _ref.value,
       disabledProp = _ref.disabled,
       _ref$focusIndicator = _ref.focusIndicator,
@@ -39,7 +40,7 @@ var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _formContext$useFormI = formContext.useFormInput({
     name: name,
     value: valueProp,
-    initialValue: []
+    initialValue: defaultValue || []
   }),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1]; // Logic is necessary to maintain a proper data structure for Form logic

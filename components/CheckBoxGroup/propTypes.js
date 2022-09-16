@@ -12,6 +12,7 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     value: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string])),
+    defaultValue: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])),
     disabled: _propTypes["default"].bool,
     labelKey: _propTypes["default"].string,
     name: _propTypes["default"].string,

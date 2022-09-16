@@ -15,7 +15,7 @@ var _StyledCheckBoxGroup = require("./StyledCheckBoxGroup");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["children", "value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
+var _excluded = ["children", "defaultValue", "value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
     _excluded2 = ["value"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -28,6 +28,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var children = _ref.children,
+      defaultValue = _ref.defaultValue,
       valueProp = _ref.value,
       disabledProp = _ref.disabled,
       _ref$focusIndicator = _ref.focusIndicator,
@@ -54,7 +55,7 @@ var CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _formContext$useFormI = formContext.useFormInput({
     name: name,
     value: valueProp,
-    initialValue: []
+    initialValue: defaultValue || []
   }),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1]; // Logic is necessary to maintain a proper data structure for Form logic

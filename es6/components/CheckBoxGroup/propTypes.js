@@ -4,6 +4,7 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     value: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+    defaultValue: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
     disabled: PropTypes.bool,
     labelKey: PropTypes.string,
     name: PropTypes.string,
