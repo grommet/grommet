@@ -273,6 +273,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     labelKey: labelKey,
     limit: limit,
     onChange: onChange,
+    onMore: onMore,
     options: options,
     search: search,
     setActiveIndex: setActiveIndex,
@@ -291,8 +292,11 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onClick: onClose,
     a11yTitle: "Close Select"
   }, /*#__PURE__*/React.createElement(Box, {
+    fill: true,
+    alignSelf: "start",
     pad: {
-      right: 'small'
+      right: 'small',
+      top: 'small'
     }
   }, /*#__PURE__*/React.createElement(FormUp, null))));
   return /*#__PURE__*/React.createElement(Keyboard, {

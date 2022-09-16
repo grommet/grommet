@@ -26,6 +26,7 @@ var SelectionSummary = function SelectionSummary(_ref) {
       labelKey = _ref.labelKey,
       limit = _ref.limit,
       onChange = _ref.onChange,
+      onMore = _ref.onMore,
       options = _ref.options,
       search = _ref.search,
       setActiveIndex = _ref.setActiveIndex,
@@ -53,10 +54,16 @@ var SelectionSummary = function SelectionSummary(_ref) {
     fill: "horizontal",
     flex: showSelectedInline
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    pad: {
+      vertical: 'xsmall'
+    },
     alignSelf: "center"
   }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+    margin: {
+      vertical: 'xsmall'
+    },
     size: "small"
-  }, value.length === 0 ? "0 selected" : value.length + " selected of " + options.length)), (options.length && (!limit || !(value.length === 0 && selectedValuesDisabled()))) > 0 && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+  }, value.length === 0 || onMore ? value.length + " selected" : value.length + " selected of " + options.length)), (options.length && (!limit || !(value.length === 0 && selectedValuesDisabled()))) > 0 && (!onMore || onMore && value.length !== 0) && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     a11yTitle: value.length === 0 || selectedValuesDisabled() ? "Select all " + options.length + " options" : value.length + " options selected. Clear all?",
     label: value.length === 0 || selectedValuesDisabled() ? 'Select All' : 'Clear All',
     onClick: function onClick(event) {

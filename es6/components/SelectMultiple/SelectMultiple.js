@@ -375,9 +375,9 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     width: "100%"
   }, rest, {
     tabIndex: "-1",
-    type: "text" // eslint-disable-next-line max-len
-    ,
-    placeholder: value.length === 0 ? placeholder || selectValue || displayLabelKey : value.length + " selected of " + allOptions.length,
+    type: "text",
+    placeholder: // eslint-disable-next-line no-nested-ternary
+    value.length === 0 ? placeholder || selectValue || displayLabelKey : onMore ? value.length + " selected" : value.length + " selected of " + allOptions.length,
     plain: true,
     readOnly: true,
     value: "",

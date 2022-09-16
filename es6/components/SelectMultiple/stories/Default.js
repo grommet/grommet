@@ -23,7 +23,6 @@ export var Default = function Default() {
     }, /*#__PURE__*/React.createElement(Text, null, "SelectMultiple Default"), /*#__PURE__*/React.createElement(SelectMultiple, {
       value: valueMultiple,
       placeholder: "Select",
-      allOptions: defaultOptions,
       options: options,
       onSearch: function onSearch(text) {
         // The line below escapes regular expression special characters:

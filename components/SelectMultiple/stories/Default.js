@@ -36,7 +36,6 @@ var Default = function Default() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "SelectMultiple Default"), /*#__PURE__*/_react["default"].createElement(_SelectMultiple.SelectMultiple, {
       value: valueMultiple,
       placeholder: "Select",
-      allOptions: defaultOptions,
       options: options,
       onSearch: function onSearch(text) {
         // The line below escapes regular expression special characters:
