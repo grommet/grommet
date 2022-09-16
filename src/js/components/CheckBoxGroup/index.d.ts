@@ -15,6 +15,7 @@ export interface CheckBoxType
 
 export interface CheckBoxGroupProps {
   value?: (number | string)[];
+  defaultValue?: (number | string)[];
   disabled?: boolean;
   labelKey?: string;
   name?: string;
@@ -26,7 +27,7 @@ export interface CheckBoxGroupProps {
 export interface CheckBoxGroupExtendedProps
   extends CheckBoxGroupProps,
     BoxProps,
-    Omit<JSX.IntrinsicElements['div'], 'onClick' | 'onChange'> {}
+    Omit<JSX.IntrinsicElements['div'], 'onClick' | keyof CheckBoxGroupProps> {}
 
 declare const CheckBoxGroup: React.FC<CheckBoxGroupExtendedProps>;
 
