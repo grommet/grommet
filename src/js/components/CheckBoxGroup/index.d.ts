@@ -15,7 +15,7 @@ export interface CheckBoxType
 
 export interface CheckBoxGroupProps {
   value?: (number | string)[];
-  defaultValue?: (number | string | object)[];
+  defaultValue?: (number | string)[];
   disabled?: boolean;
   labelKey?: string;
   name?: string;
