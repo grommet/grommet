@@ -201,6 +201,7 @@ Object {
   "CheckBoxGroup": Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
+      "defaultValue": [Function],
       "disabled": [Function],
       "labelKey": [Function],
       "name": [Function],
@@ -1796,9 +1797,10 @@ Object {
           "global": Object {
             "container": Object {
               "pad": Object {
-                "horizontal": "large",
-                "vertical": "xsmall",
+                "horizontal": "medium",
+                "vertical": "small",
               },
+              "round": "xsmall",
             },
             "direction": "row",
           },
@@ -3708,9 +3710,10 @@ Object {
           "global": Object {
             "container": Object {
               "pad": Object {
-                "horizontal": "large",
-                "vertical": "xsmall",
+                "horizontal": "medium",
+                "vertical": "small",
               },
+              "round": "xsmall",
             },
             "direction": "row",
           },
