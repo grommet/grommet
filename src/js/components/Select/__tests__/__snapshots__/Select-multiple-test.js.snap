@@ -2734,7 +2734,7 @@ exports[`Select Controlled multiple onChange without valueKey 3`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 kMTAEP StyledDrop-sc-16s5rx8-0 bFAyzd"
+  class="StyledBox-sc-13pk1d4-0 kMTAEP StyledDrop-sc-16s5rx8-0 iOcHVa"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"

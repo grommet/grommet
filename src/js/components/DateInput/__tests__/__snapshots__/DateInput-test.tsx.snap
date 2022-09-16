@@ -1714,7 +1714,7 @@ exports[`DateInput controlled format inline 1`] = `
 
 exports[`DateInput controlled format inline 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -3039,6 +3039,9 @@ exports[`DateInput controlled format inline without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c20 {
@@ -3056,9 +3059,6 @@ exports[`DateInput controlled format inline without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
 }
 
 .c4 {
@@ -3181,7 +3181,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy"
-            value="07/02/2020"
+            value="07/01/2020"
           />
         </div>
         <button
@@ -3262,7 +3262,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 2, 2020;"
+            aria-label="July 2020; Currently selected July 1, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -3370,7 +3370,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       3
                     </div>
@@ -3387,7 +3387,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       4
                     </div>
@@ -3409,7 +3409,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       5
                     </div>
@@ -3426,7 +3426,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       6
                     </div>
@@ -3443,7 +3443,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       7
                     </div>
@@ -3460,7 +3460,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       8
                     </div>
@@ -3477,7 +3477,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       9
                     </div>
@@ -3494,7 +3494,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       10
                     </div>
@@ -3511,7 +3511,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       11
                     </div>
@@ -3533,7 +3533,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       12
                     </div>
@@ -3550,7 +3550,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       13
                     </div>
@@ -3567,7 +3567,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       14
                     </div>
@@ -3584,7 +3584,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       15
                     </div>
@@ -3601,7 +3601,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       16
                     </div>
@@ -3618,7 +3618,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       17
                     </div>
@@ -3635,7 +3635,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       18
                     </div>
@@ -3657,7 +3657,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       19
                     </div>
@@ -3674,7 +3674,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       20
                     </div>
@@ -3691,7 +3691,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       21
                     </div>
@@ -3708,7 +3708,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       22
                     </div>
@@ -3725,7 +3725,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       23
                     </div>
@@ -3742,7 +3742,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       24
                     </div>
@@ -3759,7 +3759,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       25
                     </div>
@@ -3781,7 +3781,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       26
                     </div>
@@ -3798,7 +3798,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       27
                     </div>
@@ -3815,7 +3815,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       28
                     </div>
@@ -3832,7 +3832,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       29
                     </div>
@@ -3849,7 +3849,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       30
                     </div>
@@ -3866,7 +3866,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       31
                     </div>
@@ -4475,23 +4475,6 @@ exports[`DateInput controlled format inline without timezone 2`] = `
   opacity: 0.5;
 }
 
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-}
-
 .c19 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4510,6 +4493,23 @@ exports[`DateInput controlled format inline without timezone 2`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
 }
 
 .c4 {
@@ -14602,7 +14602,7 @@ exports[`DateInput select format 1`] = `
 
 exports[`DateInput select format 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 lhOJod"
@@ -17357,7 +17357,7 @@ exports[`DateInput select format inline 1`] = `
 
 exports[`DateInput select format inline 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -18607,6 +18607,9 @@ exports[`DateInput select format inline 3`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c20 {
@@ -18624,9 +18627,6 @@ exports[`DateInput select format inline 3`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
 }
 
 .c4 {
@@ -18749,7 +18749,7 @@ exports[`DateInput select format inline 3`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy"
-            value="07/02/2020"
+            value="07/01/2020"
           />
         </div>
         <button
@@ -18830,7 +18830,7 @@ exports[`DateInput select format inline 3`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 2, 2020;"
+            aria-label="July 2020; Currently selected July 1, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -18938,7 +18938,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       3
                     </div>
@@ -18955,7 +18955,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       4
                     </div>
@@ -18977,7 +18977,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       5
                     </div>
@@ -18994,7 +18994,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       6
                     </div>
@@ -19011,7 +19011,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       7
                     </div>
@@ -19028,7 +19028,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       8
                     </div>
@@ -19045,7 +19045,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       9
                     </div>
@@ -19062,7 +19062,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       10
                     </div>
@@ -19079,7 +19079,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       11
                     </div>
@@ -19101,7 +19101,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       12
                     </div>
@@ -19118,7 +19118,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       13
                     </div>
@@ -19135,7 +19135,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       14
                     </div>
@@ -19152,7 +19152,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       15
                     </div>
@@ -19169,7 +19169,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       16
                     </div>
@@ -19186,7 +19186,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       17
                     </div>
@@ -19203,7 +19203,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       18
                     </div>
@@ -19225,7 +19225,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       19
                     </div>
@@ -19242,7 +19242,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       20
                     </div>
@@ -19259,7 +19259,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       21
                     </div>
@@ -19276,7 +19276,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       22
                     </div>
@@ -19293,7 +19293,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       23
                     </div>
@@ -19310,7 +19310,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       24
                     </div>
@@ -19327,7 +19327,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       25
                     </div>
@@ -19349,7 +19349,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       26
                     </div>
@@ -19366,7 +19366,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       27
                     </div>
@@ -19383,7 +19383,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       28
                     </div>
@@ -19400,7 +19400,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       29
                     </div>
@@ -19417,7 +19417,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       30
                     </div>
@@ -19434,7 +19434,7 @@ exports[`DateInput select format inline 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       31
                     </div>
@@ -19909,7 +19909,7 @@ exports[`DateInput select format inline 4`] = `
   border: 0;
 }
 
-.c20 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -19929,43 +19929,43 @@ exports[`DateInput select format inline 4`] = `
   color: #000000;
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus::-moz-focus-inner {
+.c21:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c20:focus:not(:focus-visible) {
+.c21:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible) > circle,
-.c20:focus:not(:focus-visible) > ellipse,
-.c20:focus:not(:focus-visible) > line,
-.c20:focus:not(:focus-visible) > path,
-.c20:focus:not(:focus-visible) > polygon,
-.c20:focus:not(:focus-visible) > polyline,
-.c20:focus:not(:focus-visible) > rect {
+.c21:focus:not(:focus-visible) > circle,
+.c21:focus:not(:focus-visible) > ellipse,
+.c21:focus:not(:focus-visible) > line,
+.c21:focus:not(:focus-visible) > path,
+.c21:focus:not(:focus-visible) > polygon,
+.c21:focus:not(:focus-visible) > polyline,
+.c21:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible)::-moz-focus-inner {
+.c21:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -20045,24 +20045,7 @@ exports[`DateInput select format inline 4`] = `
   opacity: 0.5;
 }
 
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-}
-
-.c21 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -20080,6 +20063,23 @@ exports[`DateInput select format inline 4`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
 }
 
 .c4 {
@@ -20202,7 +20202,7 @@ exports[`DateInput select format inline 4`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy"
-            value="07/20/2020"
+            value="07/19/2020"
           />
         </div>
         <button
@@ -20283,7 +20283,7 @@ exports[`DateInput select format inline 4`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 20, 2020;"
+            aria-label="July 2020; Currently selected July 19, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -20678,7 +20678,7 @@ exports[`DateInput select format inline 4`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       19
                     </div>
@@ -20690,12 +20690,12 @@ exports[`DateInput select format inline 4`] = `
                 >
                   <button
                     aria-label="Mon Jul 20 2020"
-                    class="c20"
+                    class="c21"
                     tabindex="-1"
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c19"
                     >
                       20
                     </div>
@@ -22438,7 +22438,7 @@ exports[`DateInput select format inline range 1`] = `
 
 exports[`DateInput select format inline range 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -23688,6 +23688,9 @@ exports[`DateInput select format inline range without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c20 {
@@ -23705,9 +23708,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
+  background-color: rgba(125,76,219,0.1);
 }
 
 .c21 {
@@ -23725,7 +23726,6 @@ exports[`DateInput select format inline range without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: rgba(125,76,219,0.1);
 }
 
 .c4 {
@@ -23848,7 +23848,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy-mm/dd/yyyy"
-            value="07/02/2020-07/07/2020"
+            value="07/01/2020-07/06/2020"
           />
         </div>
         <button
@@ -23929,7 +23929,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 2, 2020 through July 7, 2020"
+            aria-label="July 2020; Currently selected July 1, 2020 through July 6, 2020"
             class="c13"
             role="grid"
             tabindex="0"
@@ -24037,7 +24037,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c20"
                     >
                       3
                     </div>
@@ -24054,7 +24054,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c20"
                     >
                       4
                     </div>
@@ -24076,7 +24076,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c20"
                     >
                       5
                     </div>
@@ -24093,7 +24093,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c19"
                     >
                       6
                     </div>
@@ -24110,7 +24110,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c20"
+                      class="c21"
                     >
                       7
                     </div>
@@ -24127,7 +24127,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       8
                     </div>
@@ -24144,7 +24144,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       9
                     </div>
@@ -24161,7 +24161,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       10
                     </div>
@@ -24178,7 +24178,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       11
                     </div>
@@ -24200,7 +24200,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       12
                     </div>
@@ -24217,7 +24217,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       13
                     </div>
@@ -24234,7 +24234,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       14
                     </div>
@@ -24251,7 +24251,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       15
                     </div>
@@ -24268,7 +24268,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       16
                     </div>
@@ -24285,7 +24285,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       17
                     </div>
@@ -24302,7 +24302,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       18
                     </div>
@@ -24324,7 +24324,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       19
                     </div>
@@ -24341,7 +24341,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       20
                     </div>
@@ -24358,7 +24358,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       21
                     </div>
@@ -24375,7 +24375,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       22
                     </div>
@@ -24392,7 +24392,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       23
                     </div>
@@ -24409,7 +24409,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       24
                     </div>
@@ -24426,7 +24426,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       25
                     </div>
@@ -24448,7 +24448,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       26
                     </div>
@@ -24465,7 +24465,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       27
                     </div>
@@ -24482,7 +24482,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       28
                     </div>
@@ -24499,7 +24499,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       29
                     </div>
@@ -24516,7 +24516,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       30
                     </div>
@@ -24533,7 +24533,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       31
                     </div>
@@ -25008,7 +25008,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
   border: 0;
 }
 
-.c20 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -25028,43 +25028,43 @@ exports[`DateInput select format inline range without timezone 2`] = `
   color: #000000;
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus::-moz-focus-inner {
+.c21:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c20:focus:not(:focus-visible) {
+.c21:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible) > circle,
-.c20:focus:not(:focus-visible) > ellipse,
-.c20:focus:not(:focus-visible) > line,
-.c20:focus:not(:focus-visible) > path,
-.c20:focus:not(:focus-visible) > polygon,
-.c20:focus:not(:focus-visible) > polyline,
-.c20:focus:not(:focus-visible) > rect {
+.c21:focus:not(:focus-visible) > circle,
+.c21:focus:not(:focus-visible) > ellipse,
+.c21:focus:not(:focus-visible) > line,
+.c21:focus:not(:focus-visible) > path,
+.c21:focus:not(:focus-visible) > polygon,
+.c21:focus:not(:focus-visible) > polyline,
+.c21:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible)::-moz-focus-inner {
+.c21:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -25144,24 +25144,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
   opacity: 0.5;
 }
 
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-}
-
-.c21 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25179,6 +25162,23 @@ exports[`DateInput select format inline range without timezone 2`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
 }
 
 .c4 {
@@ -25301,7 +25301,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy-mm/dd/yyyy"
-            value="07/10/2020-07/10/2020"
+            value="07/09/2020-07/09/2020"
           />
         </div>
         <button
@@ -25382,7 +25382,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 10, 2020 through July 10, 2020"
+            aria-label="July 2020; Currently selected July 9, 2020 through July 9, 2020"
             class="c13"
             role="grid"
             tabindex="0"
@@ -25597,7 +25597,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       9
                     </div>
@@ -25609,12 +25609,12 @@ exports[`DateInput select format inline range without timezone 2`] = `
                 >
                   <button
                     aria-label="Fri Jul 10 2020"
-                    class="c20"
+                    class="c21"
                     tabindex="-1"
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c19"
                     >
                       10
                     </div>
@@ -26363,7 +26363,7 @@ exports[`DateInput select format no timezone 1`] = `
           id="item"
           name="item"
           placeholder="mm/dd/yyyy"
-          value="07/02/2020"
+          value="07/01/2020"
         />
       </div>
       <button
@@ -26608,7 +26608,7 @@ exports[`DateInput select format no timezone 2`] = `
           id="item"
           name="item"
           placeholder="mm/dd/yyyy"
-          value="07/02/2020"
+          value="07/01/2020"
         />
       </div>
       <button
@@ -27053,6 +27053,9 @@ exports[`DateInput select format no timezone 3`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c18 {
@@ -27070,9 +27073,6 @@ exports[`DateInput select format no timezone 3`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
 }
 
 @media only screen and (max-width:768px) {
@@ -27184,7 +27184,7 @@ exports[`DateInput select format no timezone 3`] = `
         </div>
       </div>
       <div
-        aria-label="July 2020; Currently selected July 2, 2020;"
+        aria-label="July 2020; Currently selected July 1, 2020;"
         class="c10"
         role="grid"
         tabindex="0"
@@ -27292,7 +27292,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   3
                 </div>
@@ -27309,7 +27309,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   4
                 </div>
@@ -27331,7 +27331,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   5
                 </div>
@@ -27348,7 +27348,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   6
                 </div>
@@ -27365,7 +27365,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   7
                 </div>
@@ -27382,7 +27382,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   8
                 </div>
@@ -27399,7 +27399,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   9
                 </div>
@@ -27416,7 +27416,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   10
                 </div>
@@ -27433,7 +27433,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   11
                 </div>
@@ -27455,7 +27455,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   12
                 </div>
@@ -27472,7 +27472,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   13
                 </div>
@@ -27489,7 +27489,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   14
                 </div>
@@ -27506,7 +27506,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   15
                 </div>
@@ -27523,7 +27523,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   16
                 </div>
@@ -27540,7 +27540,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   17
                 </div>
@@ -27557,7 +27557,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   18
                 </div>
@@ -27579,7 +27579,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   19
                 </div>
@@ -27596,7 +27596,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   20
                 </div>
@@ -27613,7 +27613,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   21
                 </div>
@@ -27630,7 +27630,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   22
                 </div>
@@ -27647,7 +27647,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   23
                 </div>
@@ -27664,7 +27664,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   24
                 </div>
@@ -27681,7 +27681,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   25
                 </div>
@@ -27703,7 +27703,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   26
                 </div>
@@ -27720,7 +27720,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   27
                 </div>
@@ -27737,7 +27737,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   28
                 </div>
@@ -27754,7 +27754,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   29
                 </div>
@@ -27771,7 +27771,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   30
                 </div>
@@ -27788,7 +27788,7 @@ exports[`DateInput select format no timezone 3`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   31
                 </div>
@@ -29466,6 +29466,9 @@ exports[`DateInput select inline without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c16 {
@@ -29483,9 +29486,6 @@ exports[`DateInput select inline without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
 }
 
 @media only screen and (max-width:768px) {
@@ -29573,7 +29573,7 @@ exports[`DateInput select inline without timezone 1`] = `
         </div>
       </div>
       <div
-        aria-label="July 2020; Currently selected July 2, 2020;"
+        aria-label="July 2020; Currently selected July 1, 2020;"
         class="c9"
         role="grid"
         tabindex="0"
@@ -29681,7 +29681,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   3
                 </div>
@@ -29698,7 +29698,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   4
                 </div>
@@ -29720,7 +29720,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   5
                 </div>
@@ -29737,7 +29737,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   6
                 </div>
@@ -29754,7 +29754,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   7
                 </div>
@@ -29771,7 +29771,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   8
                 </div>
@@ -29788,7 +29788,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   9
                 </div>
@@ -29805,7 +29805,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   10
                 </div>
@@ -29822,7 +29822,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   11
                 </div>
@@ -29844,7 +29844,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   12
                 </div>
@@ -29861,7 +29861,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   13
                 </div>
@@ -29878,7 +29878,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   14
                 </div>
@@ -29895,7 +29895,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   15
                 </div>
@@ -29912,7 +29912,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   16
                 </div>
@@ -29929,7 +29929,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   17
                 </div>
@@ -29946,7 +29946,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   18
                 </div>
@@ -29968,7 +29968,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   19
                 </div>
@@ -29985,7 +29985,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   20
                 </div>
@@ -30002,7 +30002,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   21
                 </div>
@@ -30019,7 +30019,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   22
                 </div>
@@ -30036,7 +30036,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   23
                 </div>
@@ -30053,7 +30053,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   24
                 </div>
@@ -30070,7 +30070,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   25
                 </div>
@@ -30092,7 +30092,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   26
                 </div>
@@ -30109,7 +30109,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   27
                 </div>
@@ -30126,7 +30126,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   28
                 </div>
@@ -30143,7 +30143,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   29
                 </div>
@@ -30160,7 +30160,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   30
                 </div>
@@ -30177,7 +30177,7 @@ exports[`DateInput select inline without timezone 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   31
                 </div>
@@ -31708,7 +31708,7 @@ exports[`DateInput type format inline 1`] = `
 
 exports[`DateInput type format inline 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -34332,6 +34332,9 @@ exports[`DateInput type format inline partial without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c20 {
@@ -34349,9 +34352,6 @@ exports[`DateInput type format inline partial without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
 }
 
 .c4 {
@@ -34474,7 +34474,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy"
-            value="07/02/2020"
+            value="07/01/2020"
           />
         </div>
         <button
@@ -34555,7 +34555,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 2, 2020;"
+            aria-label="July 2020; Currently selected July 1, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -34663,7 +34663,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       3
                     </div>
@@ -34680,7 +34680,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       4
                     </div>
@@ -34702,7 +34702,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       5
                     </div>
@@ -34719,7 +34719,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       6
                     </div>
@@ -34736,7 +34736,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       7
                     </div>
@@ -34753,7 +34753,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       8
                     </div>
@@ -34770,7 +34770,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       9
                     </div>
@@ -34787,7 +34787,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       10
                     </div>
@@ -34804,7 +34804,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       11
                     </div>
@@ -34826,7 +34826,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       12
                     </div>
@@ -34843,7 +34843,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       13
                     </div>
@@ -34860,7 +34860,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       14
                     </div>
@@ -34877,7 +34877,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       15
                     </div>
@@ -34894,7 +34894,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       16
                     </div>
@@ -34911,7 +34911,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       17
                     </div>
@@ -34928,7 +34928,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       18
                     </div>
@@ -34950,7 +34950,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       19
                     </div>
@@ -34967,7 +34967,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       20
                     </div>
@@ -34984,7 +34984,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       21
                     </div>
@@ -35001,7 +35001,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       22
                     </div>
@@ -35018,7 +35018,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       23
                     </div>
@@ -35035,7 +35035,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       24
                     </div>
@@ -35052,7 +35052,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       25
                     </div>
@@ -35074,7 +35074,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       26
                     </div>
@@ -35091,7 +35091,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       27
                     </div>
@@ -35108,7 +35108,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       28
                     </div>
@@ -35125,7 +35125,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       29
                     </div>
@@ -35142,7 +35142,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       30
                     </div>
@@ -35159,7 +35159,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       31
                     </div>
@@ -36710,7 +36710,7 @@ exports[`DateInput type format inline range 1`] = `
 
 exports[`DateInput type format inline range 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -38962,7 +38962,7 @@ exports[`DateInput type format inline range partial 1`] = `
 
 exports[`DateInput type format inline range partial 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -39822,7 +39822,7 @@ exports[`DateInput type format inline range partial 2`] = `
 
 exports[`DateInput type format inline range partial 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -41072,6 +41072,9 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c20 {
@@ -41089,9 +41092,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
+  background-color: rgba(125,76,219,0.1);
 }
 
 .c21 {
@@ -41109,7 +41110,6 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: rgba(125,76,219,0.1);
 }
 
 .c4 {
@@ -41232,7 +41232,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy-mm/dd/yyyy"
-            value="07/02/2020-07/07/2020"
+            value="07/01/2020-07/06/2020"
           />
         </div>
         <button
@@ -41313,7 +41313,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 2, 2020 through July 7, 2020"
+            aria-label="July 2020; Currently selected July 1, 2020 through July 6, 2020"
             class="c13"
             role="grid"
             tabindex="0"
@@ -41421,7 +41421,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c20"
                     >
                       3
                     </div>
@@ -41438,7 +41438,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c20"
                     >
                       4
                     </div>
@@ -41460,7 +41460,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c20"
                     >
                       5
                     </div>
@@ -41477,7 +41477,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c19"
                     >
                       6
                     </div>
@@ -41494,7 +41494,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c20"
+                      class="c21"
                     >
                       7
                     </div>
@@ -41511,7 +41511,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       8
                     </div>
@@ -41528,7 +41528,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       9
                     </div>
@@ -41545,7 +41545,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       10
                     </div>
@@ -41562,7 +41562,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       11
                     </div>
@@ -41584,7 +41584,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       12
                     </div>
@@ -41601,7 +41601,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       13
                     </div>
@@ -41618,7 +41618,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       14
                     </div>
@@ -41635,7 +41635,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       15
                     </div>
@@ -41652,7 +41652,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       16
                     </div>
@@ -41669,7 +41669,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       17
                     </div>
@@ -41686,7 +41686,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       18
                     </div>
@@ -41708,7 +41708,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       19
                     </div>
@@ -41725,7 +41725,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       20
                     </div>
@@ -41742,7 +41742,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       21
                     </div>
@@ -41759,7 +41759,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       22
                     </div>
@@ -41776,7 +41776,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       23
                     </div>
@@ -41793,7 +41793,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       24
                     </div>
@@ -41810,7 +41810,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       25
                     </div>
@@ -41832,7 +41832,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       26
                     </div>
@@ -41849,7 +41849,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       27
                     </div>
@@ -41866,7 +41866,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       28
                     </div>
@@ -41883,7 +41883,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       29
                     </div>
@@ -41900,7 +41900,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       30
                     </div>
@@ -41917,7 +41917,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       31
                     </div>
@@ -42451,23 +42451,6 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
   opacity: 0.5;
 }
 
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-}
-
 .c20 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -42486,6 +42469,23 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
 }
 
 .c4 {
@@ -42608,7 +42608,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy-mm/dd/yyyy"
-            value="07/21/2020-07"
+            value="07/20/2020-"
           />
         </div>
         <button
@@ -42689,7 +42689,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 21, 2020 through none"
+            aria-label="July 2020; Currently selected July 20, 2020 through none"
             class="c13"
             role="grid"
             tabindex="0"
@@ -43101,7 +43101,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       20
                     </div>
@@ -43118,7 +43118,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
                     type="button"
                   >
                     <div
-                      class="c20"
+                      class="c19"
                     >
                       21
                     </div>
@@ -43827,23 +43827,6 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
   opacity: 0.5;
 }
 
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-}
-
 .c20 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -43862,6 +43845,23 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
 }
 
 .c4 {
@@ -43984,7 +43984,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy-mm/dd/yyyy"
-            value="07/21/2020-"
+            value="07/20/2020-"
           />
         </div>
         <button
@@ -44065,7 +44065,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 21, 2020 through none"
+            aria-label="July 2020; Currently selected July 20, 2020 through none"
             class="c13"
             role="grid"
             tabindex="0"
@@ -44477,7 +44477,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       20
                     </div>
@@ -44494,7 +44494,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
                     type="button"
                   >
                     <div
-                      class="c20"
+                      class="c19"
                     >
                       21
                     </div>
@@ -45218,6 +45218,9 @@ exports[`DateInput type format inline range without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c20 {
@@ -45235,9 +45238,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
+  background-color: rgba(125,76,219,0.1);
 }
 
 .c21 {
@@ -45255,7 +45256,6 @@ exports[`DateInput type format inline range without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: rgba(125,76,219,0.1);
 }
 
 .c4 {
@@ -45378,7 +45378,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy-mm/dd/yyyy"
-            value="07/02/2020-07/07/2020"
+            value="07/01/2020-07/06/2020"
           />
         </div>
         <button
@@ -45459,7 +45459,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 2, 2020 through July 7, 2020"
+            aria-label="July 2020; Currently selected July 1, 2020 through July 6, 2020"
             class="c13"
             role="grid"
             tabindex="0"
@@ -45567,7 +45567,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c20"
                     >
                       3
                     </div>
@@ -45584,7 +45584,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c20"
                     >
                       4
                     </div>
@@ -45606,7 +45606,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c20"
                     >
                       5
                     </div>
@@ -45623,7 +45623,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c19"
                     >
                       6
                     </div>
@@ -45640,7 +45640,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c20"
+                      class="c21"
                     >
                       7
                     </div>
@@ -45657,7 +45657,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       8
                     </div>
@@ -45674,7 +45674,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       9
                     </div>
@@ -45691,7 +45691,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       10
                     </div>
@@ -45708,7 +45708,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       11
                     </div>
@@ -45730,7 +45730,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       12
                     </div>
@@ -45747,7 +45747,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       13
                     </div>
@@ -45764,7 +45764,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       14
                     </div>
@@ -45781,7 +45781,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       15
                     </div>
@@ -45798,7 +45798,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       16
                     </div>
@@ -45815,7 +45815,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       17
                     </div>
@@ -45832,7 +45832,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       18
                     </div>
@@ -45854,7 +45854,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       19
                     </div>
@@ -45871,7 +45871,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       20
                     </div>
@@ -45888,7 +45888,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       21
                     </div>
@@ -45905,7 +45905,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       22
                     </div>
@@ -45922,7 +45922,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       23
                     </div>
@@ -45939,7 +45939,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       24
                     </div>
@@ -45956,7 +45956,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       25
                     </div>
@@ -45978,7 +45978,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       26
                     </div>
@@ -45995,7 +45995,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       27
                     </div>
@@ -46012,7 +46012,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       28
                     </div>
@@ -46029,7 +46029,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       29
                     </div>
@@ -46046,7 +46046,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       30
                     </div>
@@ -46063,7 +46063,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c21"
                     >
                       31
                     </div>
@@ -46597,23 +46597,6 @@ exports[`DateInput type format inline range without timezone 2`] = `
   opacity: 0.5;
 }
 
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-}
-
 .c20 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -46650,6 +46633,23 @@ exports[`DateInput type format inline range without timezone 2`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125,76,219,0.1);
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
 }
 
 .c4 {
@@ -46772,7 +46772,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy-mm/dd/yyyy"
-            value="07/21/2020-07/23/2020"
+            value="07/20/2020-07/22/2020"
           />
         </div>
         <button
@@ -46853,7 +46853,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 21, 2020 through July 23, 2020"
+            aria-label="July 2020; Currently selected July 20, 2020 through July 22, 2020"
             class="c13"
             role="grid"
             tabindex="0"
@@ -47265,7 +47265,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       20
                     </div>
@@ -47282,7 +47282,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
                     type="button"
                   >
                     <div
-                      class="c20"
+                      class="c21"
                     >
                       21
                     </div>
@@ -47299,7 +47299,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
                     type="button"
                   >
                     <div
-                      class="c21"
+                      class="c20"
                     >
                       22
                     </div>
@@ -47316,7 +47316,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
                     type="button"
                   >
                     <div
-                      class="c20"
+                      class="c19"
                     >
                       23
                     </div>
@@ -48990,7 +48990,7 @@ exports[`DateInput type format inline short 1`] = `
 
 exports[`DateInput type format inline short 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -50240,6 +50240,9 @@ exports[`DateInput type format inline short without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c20 {
@@ -50257,9 +50260,6 @@ exports[`DateInput type format inline short without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
 }
 
 .c4 {
@@ -50382,7 +50382,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
             id="item"
             name="item"
             placeholder="m/d/yy"
-            value="7/2/20"
+            value="7/1/20"
           />
         </div>
         <button
@@ -50463,7 +50463,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 2, 2020;"
+            aria-label="July 2020; Currently selected July 1, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -50571,7 +50571,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       3
                     </div>
@@ -50588,7 +50588,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       4
                     </div>
@@ -50610,7 +50610,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       5
                     </div>
@@ -50627,7 +50627,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       6
                     </div>
@@ -50644,7 +50644,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       7
                     </div>
@@ -50661,7 +50661,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       8
                     </div>
@@ -50678,7 +50678,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       9
                     </div>
@@ -50695,7 +50695,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       10
                     </div>
@@ -50712,7 +50712,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       11
                     </div>
@@ -50734,7 +50734,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       12
                     </div>
@@ -50751,7 +50751,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       13
                     </div>
@@ -50768,7 +50768,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       14
                     </div>
@@ -50785,7 +50785,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       15
                     </div>
@@ -50802,7 +50802,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       16
                     </div>
@@ -50819,7 +50819,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       17
                     </div>
@@ -50836,7 +50836,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       18
                     </div>
@@ -50858,7 +50858,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       19
                     </div>
@@ -50875,7 +50875,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       20
                     </div>
@@ -50892,7 +50892,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       21
                     </div>
@@ -50909,7 +50909,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       22
                     </div>
@@ -50926,7 +50926,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       23
                     </div>
@@ -50943,7 +50943,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       24
                     </div>
@@ -50960,7 +50960,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       25
                     </div>
@@ -50982,7 +50982,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       26
                     </div>
@@ -50999,7 +50999,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       27
                     </div>
@@ -51016,7 +51016,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       28
                     </div>
@@ -51033,7 +51033,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       29
                     </div>
@@ -51050,7 +51050,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       30
                     </div>
@@ -51067,7 +51067,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       31
                     </div>
@@ -51601,23 +51601,6 @@ exports[`DateInput type format inline short without timezone 2`] = `
   opacity: 0.5;
 }
 
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-}
-
 .c20 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -51636,6 +51619,23 @@ exports[`DateInput type format inline short without timezone 2`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
 }
 
 .c4 {
@@ -51758,7 +51758,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
             id="item"
             name="item"
             placeholder="m/d/yy"
-            value="7/21/20"
+            value="7/20/20"
           />
         </div>
         <button
@@ -51839,7 +51839,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 21, 2020;"
+            aria-label="July 2020; Currently selected July 20, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -52251,7 +52251,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       20
                     </div>
@@ -52268,7 +52268,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
                     type="button"
                   >
                     <div
-                      class="c20"
+                      class="c19"
                     >
                       21
                     </div>
@@ -52992,6 +52992,9 @@ exports[`DateInput type format inline without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c20 {
@@ -53009,9 +53012,6 @@ exports[`DateInput type format inline without timezone 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
 }
 
 .c4 {
@@ -53134,7 +53134,7 @@ exports[`DateInput type format inline without timezone 1`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy"
-            value="07/02/2020"
+            value="07/01/2020"
           />
         </div>
         <button
@@ -53215,7 +53215,7 @@ exports[`DateInput type format inline without timezone 1`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 2, 2020;"
+            aria-label="July 2020; Currently selected July 1, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -53323,7 +53323,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       3
                     </div>
@@ -53340,7 +53340,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       4
                     </div>
@@ -53362,7 +53362,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       5
                     </div>
@@ -53379,7 +53379,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       6
                     </div>
@@ -53396,7 +53396,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       7
                     </div>
@@ -53413,7 +53413,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       8
                     </div>
@@ -53430,7 +53430,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       9
                     </div>
@@ -53447,7 +53447,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       10
                     </div>
@@ -53464,7 +53464,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       11
                     </div>
@@ -53486,7 +53486,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       12
                     </div>
@@ -53503,7 +53503,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       13
                     </div>
@@ -53520,7 +53520,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       14
                     </div>
@@ -53537,7 +53537,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       15
                     </div>
@@ -53554,7 +53554,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       16
                     </div>
@@ -53571,7 +53571,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       17
                     </div>
@@ -53588,7 +53588,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       18
                     </div>
@@ -53610,7 +53610,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       19
                     </div>
@@ -53627,7 +53627,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       20
                     </div>
@@ -53644,7 +53644,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       21
                     </div>
@@ -53661,7 +53661,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       22
                     </div>
@@ -53678,7 +53678,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       23
                     </div>
@@ -53695,7 +53695,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       24
                     </div>
@@ -53712,7 +53712,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       25
                     </div>
@@ -53734,7 +53734,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       26
                     </div>
@@ -53751,7 +53751,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       27
                     </div>
@@ -53768,7 +53768,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       28
                     </div>
@@ -53785,7 +53785,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       29
                     </div>
@@ -53802,7 +53802,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       30
                     </div>
@@ -53819,7 +53819,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       31
                     </div>
@@ -54353,23 +54353,6 @@ exports[`DateInput type format inline without timezone 2`] = `
   opacity: 0.5;
 }
 
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-}
-
 .c20 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -54388,6 +54371,23 @@ exports[`DateInput type format inline without timezone 2`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
 }
 
 .c4 {
@@ -54510,7 +54510,7 @@ exports[`DateInput type format inline without timezone 2`] = `
             id="item"
             name="item"
             placeholder="mm/dd/yyyy"
-            value="07/21/2020"
+            value="07/20/2020"
           />
         </div>
         <button
@@ -54591,7 +54591,7 @@ exports[`DateInput type format inline without timezone 2`] = `
             </div>
           </div>
           <div
-            aria-label="July 2020; Currently selected July 21, 2020;"
+            aria-label="July 2020; Currently selected July 20, 2020;"
             class="c13"
             role="grid"
             tabindex="0"
@@ -55003,7 +55003,7 @@ exports[`DateInput type format inline without timezone 2`] = `
                     type="button"
                   >
                     <div
-                      class="c19"
+                      class="c20"
                     >
                       20
                     </div>
@@ -55020,7 +55020,7 @@ exports[`DateInput type format inline without timezone 2`] = `
                     type="button"
                   >
                     <div
-                      class="c20"
+                      class="c19"
                     >
                       21
                     </div>

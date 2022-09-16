@@ -2627,7 +2627,7 @@ exports[`DataTable click 1`] = `
 
 exports[`DataTable click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -3371,7 +3371,7 @@ exports[`DataTable custom theme 1`] = `
 
 exports[`DataTable custom theme 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -3738,7 +3738,7 @@ exports[`DataTable disabled click 1`] = `
 
 exports[`DataTable disabled click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -5621,7 +5621,7 @@ exports[`DataTable groupBy 1`] = `
 
 exports[`DataTable groupBy 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -6921,7 +6921,7 @@ exports[`DataTable groupBy property 1`] = `
 
 exports[`DataTable groupBy property 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -7393,7 +7393,7 @@ exports[`DataTable groupBy toggle 1`] = `
 
 exports[`DataTable groupBy toggle 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <button
     type="button"
@@ -7974,7 +7974,7 @@ exports[`DataTable groupBy toggle 2`] = `
 
 exports[`DataTable groupBy toggle 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <button
     type="button"
@@ -11330,7 +11330,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 
 exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -11705,7 +11705,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
 
 exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -12514,7 +12514,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
 
 exports[`DataTable onSelect select/unselect all 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -12950,7 +12950,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
 
 exports[`DataTable onSelect select/unselect all 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -13589,7 +13589,7 @@ exports[`DataTable onSort 1`] = `
 
 exports[`DataTable onSort 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -14223,7 +14223,7 @@ exports[`DataTable onSort external 1`] = `
 
 exports[`DataTable onSort external 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -20423,7 +20423,7 @@ exports[`DataTable search 1`] = `
 
 exports[`DataTable search 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -21048,7 +21048,7 @@ exports[`DataTable select 1`] = `
 
 exports[`DataTable select 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -30001,7 +30001,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 
 exports[`DataTable should render new data when page changes 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr StyledDataTable__StyledContainer-sc-xrlyjm-1 cmJcZv"
@@ -39125,7 +39125,7 @@ exports[`DataTable sort null data 1`] = `
 
 exports[`DataTable sort null data 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -39529,7 +39529,7 @@ exports[`DataTable sort null data 2`] = `
 
 exports[`DataTable sort null data 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -39933,7 +39933,7 @@ exports[`DataTable sort null data 3`] = `
 
 exports[`DataTable sort null data 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
@@ -40675,7 +40675,7 @@ exports[`DataTable sortable 1`] = `
 
 exports[`DataTable sortable 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
 >
   <table
     class="StyledTable-sc-1m3u5g-6 YPHTu StyledDataTable-sc-xrlyjm-0 hmFzTO"
