@@ -47,6 +47,7 @@ if (process.env.NODE_ENV !== 'production') {
     onOrder: _propTypes["default"].func,
     pad: _propTypes["default"].oneOfType([_generalPropTypes.padPropType]),
     paginate: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].object]),
+    pinned: _propTypes["default"].arrayOf(_propTypes["default"].string),
     primaryKey: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
     secondaryKey: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
     show: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].shape({

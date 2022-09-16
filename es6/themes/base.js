@@ -13,6 +13,7 @@ import { FormUp } from 'grommet-icons/icons/FormUp';
 import { Next } from 'grommet-icons/icons/Next';
 import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
+import { FormPin } from 'grommet-icons/icons/FormPin';
 import { Previous } from 'grommet-icons/icons/Previous';
 import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
 import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
@@ -1134,6 +1135,13 @@ export var generate = function generate(baseSpacing, scale) {
           color: 'status-disabled',
           cursor: 'default'
         },
+        pinned: {
+          background: 'background-contrast',
+          icon: {
+            size: 'medium',
+            pad: 'small'
+          }
+        },
         pad: {
           horizontal: 'medium',
           vertical: 'small'
@@ -1142,7 +1150,8 @@ export var generate = function generate(baseSpacing, scale) {
       },
       icons: {
         down: FormDown,
-        up: FormUp
+        up: FormUp,
+        pin: FormPin
       } // extend: undefined,
 
     },

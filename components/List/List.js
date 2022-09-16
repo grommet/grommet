@@ -25,7 +25,7 @@ var _AnalyticsContext = require("../../contexts/AnalyticsContext");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step"];
+var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "pad", "paginate", "pinned", "primaryKey", "secondaryKey", "show", "step"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -101,7 +101,7 @@ var normalize = function normalize(item, index, property) {
   return item[property];
 };
 
-var reorder = function reorder(array, source, target) {
+var reorder = function reorder(array, pinnedArray, source, target) {
   var result = array.slice(0);
   var tmp = result[source];
   if (source < target) for (var i = source; i < target; i += 1) {
@@ -109,7 +109,15 @@ var reorder = function reorder(array, source, target) {
   } else for (var _i = source; _i > target; _i -= 1) {
     result[_i] = result[_i - 1];
   }
-  result[target] = tmp;
+  result[target] = tmp; // insert pinned items into their proper index within the orderable
+  // data object to make the complete data set again
+
+  if (pinnedArray.data.length > 0) {
+    pinnedArray.data.forEach(function (pinnedItem, index) {
+      result.splice(pinnedArray.indexes[index], 0, pinnedItem);
+    });
+  }
+
   return result;
 }; // Determine the primary content for a row. If the List
 // has a primaryKey defined this returns the item data
@@ -158,7 +166,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       defaultItemProps = _ref.defaultItemProps,
       disabledItems = _ref.disabled,
       focus = _ref.focus,
-      itemKey = _ref.itemKey,
+      defaultItemKey = _ref.itemKey,
       itemProps = _ref.itemProps,
       onActive = _ref.onActive,
       onClickItem = _ref.onClickItem,
@@ -167,6 +175,8 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       onOrder = _ref.onOrder,
       pad = _ref.pad,
       paginate = _ref.paginate,
+      _ref$pinned = _ref.pinned,
+      pinned = _ref$pinned === void 0 ? [] : _ref$pinned,
       primaryKey = _ref.primaryKey,
       secondaryKey = _ref.secondaryKey,
       showProp = _ref.show,
@@ -175,7 +185,9 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var listRef = (0, _utils.useForwardedRef)(ref);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext); // active will be the index of the current 'active'
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext); // fixes issue where itemKey is undefined when only primaryKey is provided
+
+  var itemKey = defaultItemKey || primaryKey || null; // active will be the index of the current 'active'
   // control in the list. If the onOrder property is defined
   // this will be the index of up or down control for ordering
   // items in the list. In this case the item index of that
@@ -205,7 +217,34 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
 
   var _useState4 = (0, _react.useState)(),
       dragging = _useState4[0],
-      setDragging = _useState4[1];
+      setDragging = _useState4[1]; // store a reference to the pinned and the data that is orderable
+
+
+  var _useMemo = (0, _react.useMemo)(function () {
+    var orderable = [];
+    var pinnedData = [];
+    var pinnedIndexes = [];
+    if (pinned.length === 0) return [data, {
+      data: pinnedData,
+      indexes: pinnedIndexes
+    }];
+    data.forEach(function (item, index) {
+      var key = typeof item === 'object' ? item[itemKey] : item;
+
+      if (pinned.includes(key)) {
+        pinnedData.push(item);
+        pinnedIndexes.push(index);
+      } else {
+        orderable.push(item);
+      }
+    });
+    return [orderable, {
+      data: pinnedData,
+      indexes: pinnedIndexes
+    }];
+  }, [data, itemKey, pinned]),
+      orderableData = _useMemo[0],
+      pinnedInfo = _useMemo[1];
 
   var _usePagination = (0, _utils.usePagination)(_extends({
     data: data,
@@ -237,10 +276,10 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       // figure out which arrow button will be the active one.
       var buttonId = active % 2 ? 'MoveDown' : 'MoveUp';
       var itemIndex = Math.trunc(active / 2);
-      activeId = "" + getItemId(data[itemIndex], itemIndex, primaryKey) + buttonId;
+      activeId = "" + getItemId(orderableData[itemIndex], itemIndex, primaryKey) + buttonId;
     } else if (onClickItem) {
       // The whole list item is active. Figure out an id
-      activeId = getItemId(data[active], active, primaryKey);
+      activeId = getItemId(orderableData[active], active, primaryKey);
     }
 
     ariaProps['aria-activedescendant'] = activeId;
@@ -255,10 +294,10 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
         // even though it moved up or down.
 
         if (active % 2) {
-          onOrder(reorder(data, index, index + 1));
-          updateActive(Math.min(active + 2, data.length * 2 - 2));
+          onOrder(reorder(orderableData, pinnedInfo, index, index + 1));
+          updateActive(Math.min(active + 2, orderableData.length * 2 - 2));
         } else {
-          onOrder(reorder(data, index, index - 1));
+          onOrder(reorder(orderableData, pinnedInfo, index, index - 1));
           updateActive(Math.max(active - 2, 1));
         }
       } else if (disabledItems != null && disabledItems.includes(typeof itemKey === 'function' ? itemKey(data[active]) : data[active])) {
@@ -282,9 +321,9 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       var min = onOrder ? 1 : 0;
       updateActive(Math.max(active - 1, min));
     } : undefined,
-    onDown: (onClickItem || onOrder) && data && data.length ? function () {
+    onDown: (onClickItem || onOrder) && orderableData && orderableData.length ? function () {
       var min = onOrder ? 1 : 0;
-      var max = onOrder ? data.length * 2 - 2 : data.length - 1;
+      var max = onOrder ? orderableData.length * 2 - 2 : data.length - 1;
       updateActive(active >= min ? Math.min(active + 1, max) : min);
     } : undefined,
     onKeyDown: onKeyDown
@@ -369,6 +408,10 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     }
 
     var key = itemKey ? itemId : getKey(item, index, itemId);
+    var orderableIndex = orderableData.findIndex(function (ordItem) {
+      var ordItemKey = typeof ordItem === 'object' ? ordItem[itemKey] : ordItem;
+      return ordItemKey === key;
+    });
     var isDisabled;
 
     if (disabledItems) {
@@ -378,6 +421,17 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       }
 
       isDisabled = disabledItems == null ? void 0 : disabledItems.includes(key);
+    }
+
+    var isPinned;
+
+    if (pinned.length > 0) {
+      if (typeof item === 'object' && !itemKey) {
+        console.error( // eslint-disable-next-line max-len
+        "Warning: Missing prop itemKey. Prop pin requires itemKey to be specified when data is of type 'object'.");
+      }
+
+      isPinned = pinned == null ? void 0 : pinned.includes(key);
     }
 
     if (action) {
@@ -399,6 +453,8 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       adjustedBackground = theme.global.hover.background;
     } else if (Array.isArray(adjustedBackground)) {
       adjustedBackground = adjustedBackground[index % adjustedBackground.length];
+    } else if (isPinned) {
+      adjustedBackground = theme.list.item.pinned.background;
     }
 
     var adjustedBorder = border !== undefined ? border : theme.list.item.border;
@@ -459,7 +515,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     var orderProps;
     var orderControls;
 
-    if (onOrder) {
+    if (onOrder && !isPinned) {
       orderProps = {
         draggable: true,
         onDragStart: function onDragStart(event) {
@@ -468,7 +524,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
           // eslint-disable-next-line no-param-reassign
 
           event.dataTransfer.effectAllowed = 'move';
-          setDragging(index);
+          setDragging(orderableIndex);
           updateActive(undefined);
         },
         onDragEnd: function onDragEnd() {
@@ -479,11 +535,11 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
           if (dragging !== undefined) {
             event.preventDefault();
 
-            if (dragging !== index) {
+            if (dragging !== orderableIndex) {
               // eslint-disable-next-line no-param-reassign
               event.dataTransfer.dropEffect = 'move';
-              setOrderingData(reorder(orderingData || data, dragging, index));
-              setDragging(index);
+              setOrderingData(reorder(orderableData, pinnedInfo, dragging, orderableIndex));
+              setDragging(orderableIndex);
             }
           }
         },
@@ -492,35 +548,35 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
             onOrder(orderingData);
           }
         },
-        ref: dragging === index ? draggingRef : undefined
+        ref: dragging === orderableIndex ? draggingRef : undefined
       };
       var Up = theme.list.icons.up;
       var Down = theme.list.icons.down;
-      orderControls = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      orderControls = !isPinned && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         direction: "row",
         align: "center",
         justify: "end"
       }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
         id: key + "MoveUp",
-        a11yTitle: index + 1 + " " + key + " move up",
+        a11yTitle: orderableIndex + 1 + " " + key + " move up",
         icon: /*#__PURE__*/_react["default"].createElement(Up, null),
         hoverIndicator: true,
         focusIndicator: false,
-        disabled: !index,
-        active: active === index * 2,
+        disabled: !orderableIndex,
+        active: active === orderableIndex * 2,
         onClick: function onClick(event) {
           event.stopPropagation();
-          onOrder(reorder(data, index, index - 1));
+          onOrder(reorder(orderableData, pinnedInfo, orderableIndex, orderableIndex - 1));
         },
         tabIndex: -1,
         onMouseOver: function onMouseOver() {
-          return updateActive(index * 2);
+          return updateActive(orderableIndex * 2);
         },
         onMouseOut: function onMouseOut() {
           return updateActive(undefined);
         },
         onFocus: function onFocus() {
-          updateActive(index * 2);
+          updateActive(orderableIndex * 2);
           setItemFocus(true);
         },
         onBlur: function onBlur() {
@@ -529,25 +585,25 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
         }
       }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
         id: key + "MoveDown",
-        a11yTitle: index + 1 + " " + key + " move down",
+        a11yTitle: orderableIndex + 1 + " " + key + " move down",
         icon: /*#__PURE__*/_react["default"].createElement(Down, null),
         hoverIndicator: true,
         focusIndicator: false,
-        disabled: index >= data.length - 1,
-        active: active === index * 2 + 1,
+        disabled: orderableIndex >= orderableData.length - 1,
+        active: active === orderableIndex * 2 + 1,
         onClick: function onClick(event) {
           event.stopPropagation();
-          onOrder(reorder(data, index, index + 1));
+          onOrder(reorder(orderableData, pinnedInfo, orderableIndex, orderableIndex + 1));
         },
         tabIndex: -1,
         onMouseOver: function onMouseOver() {
-          return updateActive(index * 2 + 1);
+          return updateActive(orderableIndex * 2 + 1);
         },
         onMouseOut: function onMouseOut() {
           return updateActive(undefined);
         },
         onFocus: function onFocus() {
-          updateActive(index * 2 + 1);
+          updateActive(orderableIndex * 2 + 1);
           setItemFocus(true);
         },
         onBlur: function onBlur() {
@@ -579,6 +635,31 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       }
     }
 
+    var displayPinned;
+
+    if (isPinned) {
+      // Pinned icon and settings
+      var Pin = theme.list.icons.pin;
+      var pinSize = theme.list.item.pinned.icon.size;
+      var pinPad = theme.list.item.pinned.icon.pad;
+      boxProps = {
+        direction: 'row',
+        align: defaultItemProps && defaultItemProps.align || 'center',
+        gap: 'medium'
+      };
+      displayPinned = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+        direction: "row",
+        align: "center",
+        justify: "end",
+        pad: pinPad
+      }, /*#__PURE__*/_react["default"].createElement(Pin, {
+        size: pinSize
+      }));
+      content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+        flex: true
+      }, content);
+    }
+
     if (itemProps && itemProps[index]) {
       boxProps = _extends({}, boxProps, itemProps[index]);
     }
@@ -591,7 +672,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       isDisabled: isDisabled,
       flex: false,
       pad: pad || theme.list.item.pad
-    }, defaultItemProps, boxProps, clickProps, orderProps, itemAriaProps), onOrder && /*#__PURE__*/_react["default"].createElement(_Text.Text, null, index + 1), content, orderControls);
+    }, defaultItemProps, boxProps, clickProps, orderProps, itemAriaProps), onOrder && /*#__PURE__*/_react["default"].createElement(_Text.Text, null, index + 1), content, displayPinned, orderControls);
   }))), paginate && data.length > step && items && items.length ? /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, _extends({
     alignSelf: "end"
   }, paginationProps)) : null);

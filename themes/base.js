@@ -29,6 +29,8 @@ var _Pause = require("grommet-icons/icons/Pause");
 
 var _Play = require("grommet-icons/icons/Play");
 
+var _FormPin = require("grommet-icons/icons/FormPin");
+
 var _Previous = require("grommet-icons/icons/Previous");
 
 var _StatusCriticalSmall = require("grommet-icons/icons/StatusCriticalSmall");
@@ -1164,6 +1166,13 @@ var generate = function generate(baseSpacing, scale) {
           color: 'status-disabled',
           cursor: 'default'
         },
+        pinned: {
+          background: 'background-contrast',
+          icon: {
+            size: 'medium',
+            pad: 'small'
+          }
+        },
         pad: {
           horizontal: 'medium',
           vertical: 'small'
@@ -1172,7 +1181,8 @@ var generate = function generate(baseSpacing, scale) {
       },
       icons: {
         down: _FormDown.FormDown,
-        up: _FormUp.FormUp
+        up: _FormUp.FormUp,
+        pin: _FormPin.FormPin
       } // extend: undefined,
 
     },
