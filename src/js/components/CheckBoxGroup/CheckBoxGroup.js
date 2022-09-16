@@ -10,6 +10,7 @@ const CheckBoxGroup = forwardRef(
   (
     {
       children,
+      defaultValue,
       value: valueProp,
       disabled: disabledProp,
       focusIndicator = true,
@@ -41,7 +42,7 @@ const CheckBoxGroup = forwardRef(
     const [value, setValue] = formContext.useFormInput({
       name,
       value: valueProp,
-      initialValue: [],
+      initialValue: defaultValue || [],
     });
 
     // Logic is necessary to maintain a proper data structure for Form logic
