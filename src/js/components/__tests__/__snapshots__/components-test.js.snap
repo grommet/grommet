@@ -1779,28 +1779,30 @@ Object {
               "horizontal": "small",
               "vertical": "xsmall",
             },
+            "round": "xsmall",
           },
           "critical": Object {
-            "color": "status-critical",
-            "global": Object {
-              "background": Object {
-                "color": "status-critical",
-                "opacity": "weak",
-              },
+            "background": Object {
+              "color": "status-critical",
+              "opacity": "weak",
             },
+            "color": "status-critical",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
+            },
+            "toast": Object {
+              "background": "background-front",
             },
           },
           "direction": "column",
           "global": Object {
             "container": Object {
               "pad": Object {
-                "horizontal": "medium",
-                "vertical": "small",
+                "horizontal": "large",
+                "vertical": "xsmall",
               },
-              "round": "xsmall",
+              "round": "none",
             },
             "direction": "row",
           },
@@ -1811,26 +1813,31 @@ Object {
             },
           },
           "info": Object {
+            "background": "background-contrast",
             "color": "text-strong",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
+            },
+            "toast": Object {
+              "background": "background-front",
             },
           },
           "message": Object {
             "margin": "none",
           },
           "normal": Object {
-            "color": "status-ok",
-            "global": Object {
-              "background": Object {
-                "color": "status-ok",
-                "opacity": "weak",
-              },
+            "background": Object {
+              "color": "status-ok",
+              "opacity": "weak",
             },
+            "color": "status-ok",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
+            },
+            "toast": Object {
+              "background": "background-front",
             },
           },
           "textContainer": Object {
@@ -1842,7 +1849,6 @@ Object {
           "toast": Object {
             "container": Object {
               "elevation": "medium",
-              "round": "xsmall",
               "width": "medium",
             },
             "layer": Object {
@@ -1859,29 +1865,31 @@ Object {
             },
           },
           "unknown": Object {
-            "color": "status-unknown",
-            "global": Object {
-              "background": Object {
-                "color": "status-unknown",
-                "opacity": "weak",
-              },
+            "background": Object {
+              "color": "status-unknown",
+              "opacity": "weak",
             },
+            "color": "status-unknown",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
+            },
+            "toast": Object {
+              "background": "background-front",
             },
           },
           "warning": Object {
-            "color": "status-warning",
-            "global": Object {
-              "background": Object {
-                "color": "status-warning",
-                "opacity": "weak",
-              },
+            "background": Object {
+              "color": "status-warning",
+              "opacity": "weak",
             },
+            "color": "status-warning",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
+            },
+            "toast": Object {
+              "background": "background-front",
             },
           },
         },
@@ -3692,28 +3700,30 @@ Object {
               "horizontal": "small",
               "vertical": "xsmall",
             },
+            "round": "xsmall",
           },
           "critical": Object {
-            "color": "status-critical",
-            "global": Object {
-              "background": Object {
-                "color": "status-critical",
-                "opacity": "weak",
-              },
+            "background": Object {
+              "color": "status-critical",
+              "opacity": "weak",
             },
+            "color": "status-critical",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
+            },
+            "toast": Object {
+              "background": "background-front",
             },
           },
           "direction": "column",
           "global": Object {
             "container": Object {
               "pad": Object {
-                "horizontal": "medium",
-                "vertical": "small",
+                "horizontal": "large",
+                "vertical": "xsmall",
               },
-              "round": "xsmall",
+              "round": "none",
             },
             "direction": "row",
           },
@@ -3724,26 +3734,31 @@ Object {
             },
           },
           "info": Object {
+            "background": "background-contrast",
             "color": "text-strong",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
+            },
+            "toast": Object {
+              "background": "background-front",
             },
           },
           "message": Object {
             "margin": "none",
           },
           "normal": Object {
-            "color": "status-ok",
-            "global": Object {
-              "background": Object {
-                "color": "status-ok",
-                "opacity": "weak",
-              },
+            "background": Object {
+              "color": "status-ok",
+              "opacity": "weak",
             },
+            "color": "status-ok",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
+            },
+            "toast": Object {
+              "background": "background-front",
             },
           },
           "textContainer": Object {
@@ -3755,7 +3770,6 @@ Object {
           "toast": Object {
             "container": Object {
               "elevation": "medium",
-              "round": "xsmall",
               "width": "medium",
             },
             "layer": Object {
@@ -3772,29 +3786,31 @@ Object {
             },
           },
           "unknown": Object {
-            "color": "status-unknown",
-            "global": Object {
-              "background": Object {
-                "color": "status-unknown",
-                "opacity": "weak",
-              },
+            "background": Object {
+              "color": "status-unknown",
+              "opacity": "weak",
             },
+            "color": "status-unknown",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
+            },
+            "toast": Object {
+              "background": "background-front",
             },
           },
           "warning": Object {
-            "color": "status-warning",
-            "global": Object {
-              "background": Object {
-                "color": "status-warning",
-                "opacity": "weak",
-              },
+            "background": Object {
+              "color": "status-warning",
+              "opacity": "weak",
             },
+            "color": "status-warning",
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
+            },
+            "toast": Object {
+              "background": "background-front",
             },
           },
         },
