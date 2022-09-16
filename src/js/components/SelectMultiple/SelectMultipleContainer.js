@@ -330,6 +330,7 @@ const SelectMultipleContainer = forwardRef(
         labelKey={labelKey}
         limit={limit}
         onChange={onChange}
+        onMore={onMore}
         options={options}
         search={search}
         setActiveIndex={setActiveIndex}
@@ -349,7 +350,7 @@ const SelectMultipleContainer = forwardRef(
         >
           {summaryContent}
           <Button onClick={onClose} a11yTitle="Close Select">
-            <Box pad={{ right: 'small' }}>
+            <Box fill alignSelf="start" pad={{ right: 'small', top: 'small' }}>
               <FormUp />
             </Box>
           </Button>
