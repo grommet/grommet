@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -288,9 +288,7 @@ describe('DateInput', () => {
         />
       </Grommet>,
     );
-    await act(async () => {
-      await user.click(getByText('20'));
-    });
+    await user.click(getByText('20'));
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith([
       `2020-07-20T08:00:00.000Z`,
@@ -339,9 +337,7 @@ describe('DateInput', () => {
       </Grommet>,
     );
 
-    await act(async () => {
-      await user.click(getByPlaceholderText('mm/dd/yyyy'));
-    });
+    await user.click(getByPlaceholderText('mm/dd/yyyy'));
     expect(document.getElementById('item__drop')).toBeNull();
   });
 
@@ -987,9 +983,7 @@ describe('DateInput', () => {
     expect(
       screen.queryByRole('heading', { name: /January 2021/i }),
     ).not.toBeInTheDocument();
-    await act(async () => {
-      await user.click(screen.getByRole('button', { name: /Calendar/i }));
-    });
+    await user.click(screen.getByRole('button', { name: /Calendar/i }));
     expect(
       screen.getByRole('heading', { name: /January 2021/i }),
     ).toBeInTheDocument();
@@ -1010,7 +1004,6 @@ describe('DateInput', () => {
     );
     await user.tab();
     expect(asFragment()).toMatchSnapshot();
-
     await user.tab();
     expect(asFragment()).toMatchSnapshot();
     expect(onFocus).toHaveBeenCalledTimes(1);

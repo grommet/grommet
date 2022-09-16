@@ -65,10 +65,8 @@ describe('Carousel', () => {
      * - Expecting "Slide Two" to be visible
      */
     const nextButton = screen.getByRole('button', { name: /Go to slide 2/i });
-    
-    await act(async () => {
-      await user.click(nextButton);
-    });
+
+    await user.click(nextButton);
     act(() => {
       jest.advanceTimersByTime(1000);
     });
@@ -98,9 +96,7 @@ describe('Carousel', () => {
     const previousButton = screen.getByRole('button', {
       name: /Go to slide 1/i,
     });
-    await act(async () => {
-      await user.click(previousButton);
-    });
+    await user.click(previousButton);
     act(() => {
       jest.advanceTimersByTime(1000);
     });
@@ -130,9 +126,7 @@ describe('Carousel', () => {
     const thirdSelector = screen.getByRole('button', {
       name: /Jump to slide 3/i,
     });
-    await act(async () => {
-      await user.click(thirdSelector);
-    });
+    await user.click(thirdSelector);
     act(() => {
       jest.advanceTimersByTime(1000);
     });
@@ -162,9 +156,7 @@ describe('Carousel', () => {
     const firstSelector = screen.getByRole('button', {
       name: /Jump to slide 1/i,
     });
-    await act(async () => {
-      await user.click(firstSelector);
-    });
+    await user.click(firstSelector);
     act(() => {
       jest.advanceTimersByTime(1000);
     });

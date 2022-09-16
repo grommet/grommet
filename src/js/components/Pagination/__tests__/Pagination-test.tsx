@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import { act, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { fireEvent } from '@testing-library/dom';
 
 import { Grommet } from '../../Grommet';
@@ -148,9 +148,7 @@ describe('Pagination', () => {
     );
 
     const expectedPage = `${Math.ceil(numberItems / step)}`;
-    act(() => {
-      fireEvent.click(getByText(expectedPage));
-    });
+    fireEvent.click(getByText(expectedPage));
     const activePage = (
       container.querySelector(`[aria-current="page"]`) as HTMLButtonElement
     ).innerHTML;
@@ -170,9 +168,7 @@ describe('Pagination', () => {
     );
 
     const nextPageButton = getByLabelText('Go to next page');
-    act(() => {
-      fireEvent.click(nextPageButton);
-    });
+    fireEvent.click(nextPageButton);
 
     // step is 10 by default, so startIndex/endIndex are based on that
     expect(onChange).toBeCalledWith(
@@ -194,19 +190,15 @@ describe('Pagination', () => {
     const nextPageButton = getByLabelText('Go to next page');
 
     // mouse click
-    act(() => {
-      fireEvent.click(nextPageButton);
-    });
+    fireEvent.click(nextPageButton);
     expect(onChange).toBeCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
 
     // keyboard enter
-    act(() => {
-      fireEvent.keyDown(nextPageButton, {
-        key: 'Enter',
-        keyCode: 13,
-        which: 13,
-      });
+    fireEvent.keyDown(nextPageButton, {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
     });
     expect(onChange).toBeCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
@@ -224,19 +216,15 @@ describe('Pagination', () => {
     const previousPageButton = getByLabelText('Go to previous page');
 
     // mouse click
-    act(() => {
-      fireEvent.click(previousPageButton);
-    });
+    fireEvent.click(previousPageButton);
     expect(onChange).toBeCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
 
     // keyboard enter
-    act(() => {
-      fireEvent.keyDown(previousPageButton, {
-        key: 'Enter',
-        keyCode: 13,
-        which: 13,
-      });
+    fireEvent.keyDown(previousPageButton, {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
     });
     expect(onChange).toBeCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
@@ -251,9 +239,7 @@ describe('Pagination', () => {
     );
 
     const desiredPage = '2';
-    act(() => {
-      fireEvent.click(getByText(desiredPage));
-    });
+    fireEvent.click(getByText(desiredPage));
     const activePage = (
       container.querySelector(`[aria-current="page"]`) as HTMLButtonElement
     ).innerHTML;

@@ -212,6 +212,7 @@ describe('MaskedInput', () => {
     );
 
     await user.type(screen.getByRole('textbox'), 'abbb');
+
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('abb');
   });
@@ -237,7 +238,7 @@ describe('MaskedInput', () => {
     );
 
     await user.type(screen.getByRole('textbox'), 'abbb');
-    
+
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('abbb');
   });

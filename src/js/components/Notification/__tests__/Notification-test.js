@@ -51,9 +51,7 @@ describe('Notification', () => {
       </Grommet>,
     );
 
-    await act(async () => {
-      await user.click(screen.getByRole('button'));
-    });
+    await user.click(screen.getByRole('button'));
     expect(onClose).toBeCalled();
   });
 
@@ -119,12 +117,7 @@ describe('Notification', () => {
       );
     };
     render(<Test />);
-
-    await act(async () => {
-      await user.click(
-        screen.getByRole('button', { name: 'Show Notification' }),
-      );
-    });
+    await user.click(screen.getByRole('button', { name: 'Show Notification' }));
     expect(screen.getByText('Status Title')).toBeInTheDocument();
     expect(onOpen).toHaveBeenCalled();
     act(() => {
@@ -165,11 +158,7 @@ describe('Notification', () => {
       );
     };
     render(<Test />);
-    await act(async () => {
-      await user.click(
-        screen.getByRole('button', { name: 'Show Notification' }),
-      );
-    });
+    await user.click(screen.getByRole('button', { name: 'Show Notification' }));
     expect(onOpen).toHaveBeenCalled();
     act(() => {
       jest.advanceTimersByTime(9000);

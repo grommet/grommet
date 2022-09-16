@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
@@ -143,15 +143,11 @@ test('Image fallback', async () => {
 
   const { getByAltText } = render(<Test />);
 
-  act(() => {
-    fireEvent(getByAltText('test'), new Event('error'));
-  });
+  fireEvent(getByAltText('test'), new Event('error'));
   let imgSrc = screen.getByRole<HTMLImageElement>('img').src;
   expect(imgSrc).toEqual(fallbackImage);
 
-  await act(async () => {
-    await user.click(screen.getByRole('button', { name: /Update Image/i }));
-  });
+  await user.click(screen.getByRole('button', { name: /Update Image/i }));
   imgSrc = screen.getByRole<HTMLImageElement>('img').src;
   expect(imgSrc).toEqual(regularImage);
 });

@@ -4,7 +4,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
-import { render, fireEvent, screen, act } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
@@ -647,34 +647,27 @@ describe('List disabled', () => {
       (item) => !disabledLocations.includes(item),
     );
 
-    await act(async () => {
-      await user.click(
-        screen.getByRole('option', {
-          name: enabledItems[0],
-        }),
-      );
-    });
-    await act(async () => {
-      await user.click(
-        screen.getByRole('option', {
-          name: disabledLocations[0],
-        }),
-      );
-    });
-    await act(async () => {
-      await user.click(
-        screen.getByRole('option', {
-          name: enabledItems[enabledItems.length - 1],
-        }),
-      );
-    });
-    await act(async () => {
-      await user.click(
-        screen.getByRole('option', {
-          name: disabledLocations[disabledLocations.length - 1],
-        }),
-      );
-    });
+    await user.click(
+      screen.getByRole('option', {
+        name: enabledItems[0],
+      }),
+    );
+    await user.click(
+      screen.getByRole('option', {
+        name: disabledLocations[0],
+      }),
+    );
+    await user.click(
+      screen.getByRole('option', {
+        name: enabledItems[enabledItems.length - 1],
+      }),
+    );
+    await user.click(
+      screen.getByRole('option', {
+        name: disabledLocations[disabledLocations.length - 1],
+      }),
+    );
+
     expect(onClickItem).toHaveBeenCalledTimes(2);
   });
 
@@ -771,9 +764,7 @@ describe('List disabled', () => {
     const disabledItem = screen.getByRole('button', {
       name: '2 Fort Collins move up',
     });
-    await act(async () => {
-      await user.click(disabledItem);
-    });
+    await user.click(disabledItem);
     expect(onOrder).toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import userEvent from '@testing-library/user-event';
 
@@ -55,9 +55,7 @@ describe('Tag', () => {
       </Grommet>,
     );
 
-    await act(async () => {
-      await user.click(screen.getByRole('button'));
-    });
+    await user.click(screen.getByRole('button'));
     expect(onClick).toBeCalled();
 
     expect(container.firstChild).toMatchSnapshot();
@@ -73,9 +71,7 @@ describe('Tag', () => {
       </Grommet>,
     );
 
-    await act(async () => {
-      await user.click(screen.getByRole('button'));
-    });
+    await user.click(screen.getByRole('button'));
     expect(onRemove).toBeCalled();
 
     expect(container.firstChild).toMatchSnapshot();

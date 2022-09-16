@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import userEvent from '@testing-library/user-event';
 
@@ -233,9 +233,7 @@ describe('Button', () => {
     expect(button).not.toHaveFocus();
     expect(document.body).toHaveFocus();
 
-    await act(async () => {
-      await user.tab();
-    });
+    await user.tab();
     expect(button).toHaveFocus();
     expect(document.body).not.toHaveFocus();
 
