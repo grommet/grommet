@@ -53,8 +53,7 @@
     "styled-components": ">= 5.1"
   },
   "dependencies": {
-    "@storybook/builder-webpack5": "^6.5.12",
-    "@storybook/manager-webpack5": "^6.5.12",
+    
     "grommet-icons": "^4.7.0",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^7.1.5",
@@ -78,6 +77,8 @@
     "@storybook/addon-storysource": "^6.5.12",
     "@storybook/addon-toolbars": "^6.5.12",
     "@storybook/addons": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
     "@storybook/react": "^6.5.12",
     "@storybook/source-loader": "^6.5.12",
     "@testing-library/dom": "^8.17.1",
