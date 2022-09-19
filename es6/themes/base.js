@@ -1237,6 +1237,7 @@ export var generate = function generate(baseSpacing, scale) {
       direction: 'column',
       container: {
         // any box props
+        round: 'xsmall',
         pad: {
           horizontal: 'small',
           vertical: 'xsmall'
@@ -1249,10 +1250,10 @@ export var generate = function generate(baseSpacing, scale) {
         direction: 'row',
         container: {
           // any box props
-          round: 'xsmall',
+          round: 'none',
           pad: {
-            horizontal: 'medium',
-            vertical: 'small'
+            horizontal: 'large',
+            vertical: 'xsmall'
           }
         }
       },
@@ -1261,7 +1262,6 @@ export var generate = function generate(baseSpacing, scale) {
         container: {
           // any box props
           elevation: 'medium',
-          round: 'xsmall',
           width: 'medium'
         },
         layer: {
@@ -1294,58 +1294,60 @@ export var generate = function generate(baseSpacing, scale) {
       },
       critical: {
         icon: StatusCriticalSmall,
-        // background: undefined,
+        background: {
+          color: 'status-critical',
+          opacity: 'weak'
+        },
         color: 'status-critical',
-        global: {
-          background: {
-            color: 'status-critical',
-            opacity: 'weak'
-          }
-        } // toast: {},
-
+        // global: {},
+        toast: {
+          background: 'background-front'
+        }
       },
       warning: {
         icon: StatusWarningSmall,
-        // background: undefined,
+        background: {
+          color: 'status-warning',
+          opacity: 'weak'
+        },
         color: 'status-warning',
-        global: {
-          background: {
-            color: 'status-warning',
-            opacity: 'weak'
-          }
-        } // toast: {},
-
+        // global: {},
+        toast: {
+          background: 'background-front'
+        }
       },
       normal: {
         icon: StatusGoodSmall,
-        // background: undefined,
+        background: {
+          color: 'status-ok',
+          opacity: 'weak'
+        },
         color: 'status-ok',
-        global: {
-          background: {
-            color: 'status-ok',
-            opacity: 'weak'
-          }
-        } // toast: {},
-
+        // global: {},
+        toast: {
+          background: 'background-front'
+        }
       },
       info: {
         icon: CircleInformation,
-        // background: undefined,
-        color: 'text-strong' // global: {},
-        // toast: {},
-
+        background: 'background-contrast',
+        color: 'text-strong',
+        // global: {},
+        toast: {
+          background: 'background-front'
+        }
       },
       unknown: {
         icon: StatusUnknownSmall,
-        // background: undefined,
+        background: {
+          color: 'status-unknown',
+          opacity: 'weak'
+        },
         color: 'status-unknown',
-        global: {
-          background: {
-            color: 'status-unknown',
-            opacity: 'weak'
-          }
-        } // toast: {},
-
+        // global: {},
+        toast: {
+          background: 'background-front'
+        }
       },
       // deprecate "undefined" in v3
       // and if undefined, no icon

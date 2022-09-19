@@ -1268,6 +1268,7 @@ var generate = function generate(baseSpacing, scale) {
       direction: 'column',
       container: {
         // any box props
+        round: 'xsmall',
         pad: {
           horizontal: 'small',
           vertical: 'xsmall'
@@ -1280,10 +1281,10 @@ var generate = function generate(baseSpacing, scale) {
         direction: 'row',
         container: {
           // any box props
-          round: 'xsmall',
+          round: 'none',
           pad: {
-            horizontal: 'medium',
-            vertical: 'small'
+            horizontal: 'large',
+            vertical: 'xsmall'
           }
         }
       },
@@ -1292,7 +1293,6 @@ var generate = function generate(baseSpacing, scale) {
         container: {
           // any box props
           elevation: 'medium',
-          round: 'xsmall',
           width: 'medium'
         },
         layer: {
@@ -1325,58 +1325,60 @@ var generate = function generate(baseSpacing, scale) {
       },
       critical: {
         icon: _StatusCriticalSmall.StatusCriticalSmall,
-        // background: undefined,
+        background: {
+          color: 'status-critical',
+          opacity: 'weak'
+        },
         color: 'status-critical',
-        global: {
-          background: {
-            color: 'status-critical',
-            opacity: 'weak'
-          }
-        } // toast: {},
-
+        // global: {},
+        toast: {
+          background: 'background-front'
+        }
       },
       warning: {
         icon: _StatusWarningSmall.StatusWarningSmall,
-        // background: undefined,
+        background: {
+          color: 'status-warning',
+          opacity: 'weak'
+        },
         color: 'status-warning',
-        global: {
-          background: {
-            color: 'status-warning',
-            opacity: 'weak'
-          }
-        } // toast: {},
-
+        // global: {},
+        toast: {
+          background: 'background-front'
+        }
       },
       normal: {
         icon: _StatusGoodSmall.StatusGoodSmall,
-        // background: undefined,
+        background: {
+          color: 'status-ok',
+          opacity: 'weak'
+        },
         color: 'status-ok',
-        global: {
-          background: {
-            color: 'status-ok',
-            opacity: 'weak'
-          }
-        } // toast: {},
-
+        // global: {},
+        toast: {
+          background: 'background-front'
+        }
       },
       info: {
         icon: _CircleInformation.CircleInformation,
-        // background: undefined,
-        color: 'text-strong' // global: {},
-        // toast: {},
-
+        background: 'background-contrast',
+        color: 'text-strong',
+        // global: {},
+        toast: {
+          background: 'background-front'
+        }
       },
       unknown: {
         icon: _StatusUnknownSmall.StatusUnknownSmall,
-        // background: undefined,
+        background: {
+          color: 'status-unknown',
+          opacity: 'weak'
+        },
         color: 'status-unknown',
-        global: {
-          background: {
-            color: 'status-unknown',
-            opacity: 'weak'
-          }
-        } // toast: {},
-
+        // global: {},
+        toast: {
+          background: 'background-front'
+        }
       },
       // deprecate "undefined" in v3
       // and if undefined, no icon
