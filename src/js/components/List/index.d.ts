@@ -61,6 +61,7 @@ export interface ListProps<ListItemType> {
   onOrder?: (orderedData: ListItemType[]) => void;
   pad?: PadType;
   paginate?: boolean | PaginationType;
+  pinned?: (string | number)[];
   primaryKey?: string | ((item: ListItemType) => React.ReactElement);
   secondaryKey?: string | ((item: ListItemType) => React.ReactElement);
   show?: number | { page?: number };

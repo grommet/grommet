@@ -421,10 +421,12 @@ const SelectMultiple = forwardRef(
                         {...rest}
                         tabIndex="-1"
                         type="text"
-                        // eslint-disable-next-line max-len
                         placeholder={
+                          // eslint-disable-next-line no-nested-ternary
                           value.length === 0
                             ? placeholder || selectValue || displayLabelKey
+                            : onMore
+                            ? `${value.length} selected`
                             : `${value.length} selected of ${allOptions.length}`
                         }
                         plain
