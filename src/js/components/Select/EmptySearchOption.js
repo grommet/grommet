@@ -14,10 +14,11 @@ export const EmptySearchOption = ({
     role="menuitem"
     hoverIndicator="background"
     disabled
-    aria-live="polite"
   >
     <Box {...selectOptionsStyle}>
-      <Text {...theme.select.container.text}>{emptySearchMessage}</Text>
+      <Text aria-live="polite" role="alert" {...theme.select.container.text}>
+        {emptySearchMessage}
+      </Text>
     </Box>
   </SelectOption>
 );

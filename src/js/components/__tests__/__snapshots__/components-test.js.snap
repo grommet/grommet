@@ -201,6 +201,7 @@ Object {
   "CheckBoxGroup": Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
+      "defaultValue": [Function],
       "disabled": [Function],
       "labelKey": [Function],
       "name": [Function],
@@ -534,6 +535,7 @@ Object {
       "onOrder": [Function],
       "pad": [Function],
       "paginate": [Function],
+      "pinned": [Function],
       "primaryKey": [Function],
       "secondaryKey": [Function],
       "show": [Function],
@@ -1681,6 +1683,10 @@ Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
             },
+            "pin": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
             "up": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
@@ -1695,6 +1701,13 @@ Object {
             "pad": Object {
               "horizontal": "medium",
               "vertical": "small",
+            },
+            "pinned": Object {
+              "background": "background-contrast",
+              "icon": Object {
+                "pad": "small",
+                "size": "medium",
+              },
             },
           },
         },
@@ -1796,9 +1809,10 @@ Object {
           "global": Object {
             "container": Object {
               "pad": Object {
-                "horizontal": "large",
-                "vertical": "xsmall",
+                "horizontal": "medium",
+                "vertical": "small",
               },
+              "round": "xsmall",
             },
             "direction": "row",
           },
@@ -3593,6 +3607,10 @@ Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
             },
+            "pin": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
             "up": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
@@ -3607,6 +3625,13 @@ Object {
             "pad": Object {
               "horizontal": "medium",
               "vertical": "small",
+            },
+            "pinned": Object {
+              "background": "background-contrast",
+              "icon": Object {
+                "pad": "small",
+                "size": "medium",
+              },
             },
           },
         },
@@ -3708,9 +3733,10 @@ Object {
           "global": Object {
             "container": Object {
               "pad": Object {
-                "horizontal": "large",
-                "vertical": "xsmall",
+                "horizontal": "medium",
+                "vertical": "small",
               },
+              "round": "xsmall",
             },
             "direction": "row",
           },

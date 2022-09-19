@@ -204,6 +204,7 @@ const SelectMultipleValue = ({
             overflow="hidden"
             // announce when an item is removed from selected options
             aria-live="assertive"
+            role="alert"
           >
             {showA11yDiv}
           </Box>
