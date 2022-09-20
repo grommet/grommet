@@ -31,14 +31,16 @@ const SelectionSummary = ({
 
   const selectedValuesDisabled = useCallback(() => {
     let disabledSelected = 0;
-    for (let i = 0; i < allOptions.length; i += 1) {
-      if (
-        value.includes(getOptionValue(i, options, valueKey || labelKey)) &&
-        isDisabled(i)
-      )
-        disabledSelected += 1;
+    if (value) {
+      for (let i = 0; i < allOptions.length; i += 1) {
+        if (
+          value.includes(getOptionValue(i, options, valueKey || labelKey)) &&
+          isDisabled(i)
+        )
+          disabledSelected += 1;
+      }
+      if (value.length === disabledSelected) return true;
     }
-    if (value.length === disabledSelected) return true;
     return false;
   }, [value, allOptions, options, valueKey, labelKey, isDisabled]);
 
@@ -54,28 +56,30 @@ const SelectionSummary = ({
       >
         <Box pad={{ vertical: 'xsmall' }} alignSelf="center">
           <Text margin={{ vertical: 'xsmall' }} size="small">
-            {value.length === 0 || onMore
-              ? `${value.length} selected`
-              : `${value.length} selected of ${options.length}`}
+            {value?.length === 0 || onMore || !value
+              ? `${value?.length || '0'} selected`
+              : `${value?.length || '0'} selected of ${options.length}`}
           </Text>
         </Box>
         {(options.length &&
-          (!limit || !(value.length === 0 && selectedValuesDisabled()))) > 0 &&
-          (!onMore || (onMore && value.length !== 0)) && (
+          (!limit ||
+            !(!value || (value?.length === 0 && selectedValuesDisabled())))) >
+          0 &&
+          (!onMore || (onMore && value?.length !== 0)) && (
             <Button
               a11yTitle={
-                value.length === 0 || selectedValuesDisabled()
+                value?.length === 0 || selectedValuesDisabled() || !value
                   ? `Select all ${options.length} options`
-                  : `${value.length} options selected. Clear all?`
+                  : `${value?.length} options selected. Clear all?`
               }
               label={
-                value.length === 0 || selectedValuesDisabled()
+                value?.length === 0 || selectedValuesDisabled() || !value
                   ? 'Select All'
                   : 'Clear All'
               }
               onClick={(event) => {
                 const selectAll =
-                  value.length === 0 || selectedValuesDisabled();
+                  value?.length === 0 || selectedValuesDisabled() || !value;
                 if (onChange) {
                   const nextSelected = options.filter((i, index) =>
                     selectAll
@@ -99,7 +103,7 @@ const SelectionSummary = ({
           )}
       </Box>
     );
-  return <Text size="small">{`${value.length} selected`}</Text>;
+  return <Text size="small">{`${value?.length || '0'} selected`}</Text>;
 };
 
 export { SelectionSummary };
