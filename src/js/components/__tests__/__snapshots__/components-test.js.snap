@@ -236,6 +236,7 @@ Object {
     },
     "render": [Function],
   },
+  "Data": [Function],
   "DataChart": Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
@@ -259,6 +260,9 @@ Object {
     },
     "render": [Function],
   },
+  "DataFilter": [Function],
+  "DataFilters": [Function],
+  "DataSearch": [Function],
   "DataTable": [Function],
   "DateInput": Object {
     "$$typeof": Symbol(react.forward_ref),
@@ -4750,6 +4754,7 @@ Object {
     },
     "render": [Function],
   },
+  "Toolbar": [Function],
   "Video": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {},

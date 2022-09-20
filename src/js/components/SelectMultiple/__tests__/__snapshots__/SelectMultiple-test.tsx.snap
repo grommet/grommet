@@ -217,6 +217,15 @@ exports[`SelectMultiple children 1`] = `
   width: 100%;
 }
 
+.c8 {
+  cursor: pointer;
+}
+
+.c3 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -225,15 +234,6 @@ exports[`SelectMultiple children 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c8 {
-  cursor: pointer;
-}
-
-.c3 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -515,6 +515,15 @@ exports[`SelectMultiple defaultValue 1`] = `
   width: 100%;
 }
 
+.c8 {
+  cursor: pointer;
+}
+
+.c3 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -523,15 +532,6 @@ exports[`SelectMultiple defaultValue 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c8 {
-  cursor: pointer;
-}
-
-.c3 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -816,6 +816,15 @@ exports[`SelectMultiple disabled 1`] = `
   width: 100%;
 }
 
+.c8 {
+  cursor: default;
+}
+
+.c3 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -824,15 +833,6 @@ exports[`SelectMultiple disabled 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c8 {
-  cursor: default;
-}
-
-.c3 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -1477,6 +1477,15 @@ exports[`SelectMultiple keyboard interactions 1`] = `
   width: 100%;
 }
 
+.c8 {
+  cursor: pointer;
+}
+
+.c3 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1485,15 +1494,6 @@ exports[`SelectMultiple keyboard interactions 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c8 {
-  cursor: pointer;
-}
-
-.c3 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -2168,6 +2168,15 @@ exports[`SelectMultiple placeholder 1`] = `
   width: 100%;
 }
 
+.c8 {
+  cursor: pointer;
+}
+
+.c3 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2176,15 +2185,6 @@ exports[`SelectMultiple placeholder 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c8 {
-  cursor: pointer;
-}
-
-.c3 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -2945,6 +2945,15 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
   width: 100%;
 }
 
+.c8 {
+  cursor: pointer;
+}
+
+.c3 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2953,15 +2962,6 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c8 {
-  cursor: pointer;
-}
-
-.c3 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -3428,16 +3428,6 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   width: 100%;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c11 {
   display: none;
 }
@@ -3454,6 +3444,16 @@ exports[`SelectMultiple showSelectionInline 1`] = `
 .c2 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -4004,16 +4004,6 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
   width: 100%;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c11 {
   display: none;
 }
@@ -4030,6 +4020,16 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
 .c2 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -4730,16 +4730,6 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   width: 100%;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c11 {
   display: none;
 }
@@ -4756,6 +4746,16 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
 .c2 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -5303,16 +5303,6 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
   width: 100%;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c11 {
   display: none;
 }
@@ -5329,6 +5319,16 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
 .c2 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {

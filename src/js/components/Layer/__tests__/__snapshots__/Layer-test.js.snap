@@ -2138,6 +2138,15 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   width: 100%;
 }
 
+.c9 {
+  cursor: pointer;
+}
+
+.c4 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2197,15 +2206,6 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   position: absolute;
 }
 
-.c9 {
-  cursor: pointer;
-}
-
-.c4 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-}
-
 @media only screen and (max-width:768px) {
   .c10 {
     margin-left: 6px;
@@ -2214,6 +2214,10 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -2239,10 +2243,6 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
     height: 100vh;
     width: 100vw;
   }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
 }
 
 <div

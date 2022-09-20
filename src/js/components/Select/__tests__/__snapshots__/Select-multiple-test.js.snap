@@ -737,6 +737,15 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -745,15 +754,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -1320,6 +1320,15 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1328,15 +1337,6 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -1858,6 +1858,15 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1866,15 +1875,6 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -2396,6 +2396,15 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2404,15 +2413,6 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -3582,6 +3582,15 @@ exports[`Select Controlled multiple with empty results 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3590,15 +3599,6 @@ exports[`Select Controlled multiple with empty results 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -4388,6 +4388,15 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4396,15 +4405,6 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
