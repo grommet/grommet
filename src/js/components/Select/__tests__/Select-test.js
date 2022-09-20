@@ -110,18 +110,20 @@ describe('Select', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
-  test('0 value', () => {
-    const { container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={[0, 1]}
-        value={0}
-      />,
-    );
+  [0, null].forEach((value) =>
+    test(`${value} value`, () => {
+      const { asFragment } = render(
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[0, 1]}
+          value={value}
+        />,
+      );
 
-    expect(container.firstChild).toMatchSnapshot();
-  });
+      expect(asFragment()).toMatchSnapshot();
+    }),
+  );
 
   test('search', () => {
     jest.useFakeTimers();

@@ -181,7 +181,7 @@ const Select = forwardRef(
         // input. if it is an object, then the user has not provided necessary
         // props to reduce object option
         if (
-          typeof nextValue !== 'object' &&
+          (typeof nextValue !== 'object' || multiple) &&
           nextValue !== event.target.value &&
           inputRef.current
         ) {
@@ -214,7 +214,14 @@ const Select = forwardRef(
           onChange(adjustedEvent);
         }
       },
-      [closeOnChange, onChange, onRequestClose, setValue, triggerChangeEvent],
+      [
+        closeOnChange,
+        multiple,
+        onChange,
+        onRequestClose,
+        setValue,
+        triggerChangeEvent,
+      ],
     );
 
     const SelectIcon = getSelectIcon(icon, theme, open);
