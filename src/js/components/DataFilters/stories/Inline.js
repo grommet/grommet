@@ -10,7 +10,7 @@ export const Inline = () => (
   // <Grommet theme={...}>
   <Box fill align="center" justify="start" pad="large">
     <Data data={DATA}>
-      <DataFilters search toolbar={false}>
+      <DataFilters>
         <DataSearch />
         <DataFilter property="location" />
       </DataFilters>

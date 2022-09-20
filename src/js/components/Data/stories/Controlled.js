@@ -4,6 +4,8 @@ import {
   Box,
   DataFilters,
   DataFilter,
+  DataSearch,
+  DataSummary,
   DataTable,
   Heading,
   Toolbar,
@@ -16,7 +18,7 @@ import { columns, DATA } from '../../DataTable/stories/data';
 const filter = (filters) =>
   DATA.filter((datum) => {
     let matched = true;
-    if (filters) {
+    if (filters.propeties) {
       matched = !Object.keys(filters).some((property) => {
         const value = filters[property];
         if (Array.isArray(value)) return !value.includes(datum[property]);
@@ -35,22 +37,23 @@ export const Controlled = () => {
       <Data
         data={filteredData}
         total={DATA.length}
-        onSubmit={(filters) => {
-          console.log('!!! submit', filters);
-          setFilteredData(filter(filters));
-        }}
+        onSubmit={(filters) => setFilteredData(filter(filters))}
       >
         <Heading size="small">DataTable</Heading>
         <Toolbar>
-          <DataFilters search>
-            <DataFilter
-              property="location"
-              options={Array.from(new Set(DATA.map((d) => d.location)))
-                .filter((v) => v)
-                .sort()}
-            />
-          </DataFilters>
+          <Box direction="row" gap="small">
+            <DataSearch />
+            <DataFilters drop>
+              <DataFilter
+                property="location"
+                options={Array.from(new Set(DATA.map((d) => d.location)))
+                  .filter((v) => v)
+                  .sort()}
+              />
+            </DataFilters>
+          </Box>
         </Toolbar>
+        <DataSummary />
         <DataTable columns={columns} />
       </Data>
     </Box>

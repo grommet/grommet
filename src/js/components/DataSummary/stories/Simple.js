@@ -1,21 +1,18 @@
 import React from 'react';
 
-import { Box, Data, DataTable, Paragraph } from 'grommet';
+import { Box, Data, DataTable } from 'grommet';
 
-import { DataSearch } from '../DataSearch';
+import { DataSummary } from '../DataSummary';
 import { columns, DATA } from '../../DataTable/stories/data';
 
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box fill flex="grow" pad="large" gap="large">
-    <Data data={DATA} onChange>
-      <DataSearch />
+  <Box fill align="center" justify="start" pad="large">
+    <Data data={DATA}>
+      <DataSummary />
       <DataTable columns={columns} />
     </Data>
-    <Paragraph color="text-weak">
-      Note: Results are filtered as you type.
-    </Paragraph>
   </Box>
   // </Grommet>
 );
@@ -25,5 +22,5 @@ Simple.args = {
 };
 
 export default {
-  title: 'Input/DataSearch/Simple',
+  title: 'Type/DataSummary/Simple',
 };

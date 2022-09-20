@@ -10,7 +10,7 @@ export const Layer = () => (
   // <Grommet theme={...}>
   <Box fill align="center" justify="start" pad="large">
     <Data data={DATA}>
-      <DataFilters search kind="layer">
+      <DataFilters layer>
         <DataFilter property="location" />
       </DataFilters>
     </Data>

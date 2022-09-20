@@ -4,6 +4,8 @@ import {
   Box,
   DataFilters,
   DataFilter,
+  DataSearch,
+  DataSummary,
   DataTable,
   Heading,
   Toolbar,
@@ -17,14 +19,16 @@ export const Table = () => (
   // <Grommet theme={...}>
   <Box flex={false} fill="horizontal" pad="large">
     <Data data={DATA}>
-      <Heading size="small">
-        DataTable
-      </Heading>
+      <Heading size="small">DataTable</Heading>
       <Toolbar>
-        <DataFilters search>
-          <DataFilter property="location" />
-        </DataFilters>
+        <Box direction="row" gap="small">
+          <DataSearch />
+          <DataFilters drop>
+            <DataFilter property="location" />
+          </DataFilters>
+        </Box>
       </Toolbar>
+      <DataSummary />
       <DataTable columns={columns} />
     </Data>
   </Box>

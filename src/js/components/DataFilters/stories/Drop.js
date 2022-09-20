@@ -10,7 +10,7 @@ export const Drop = () => (
   // <Grommet theme={...}>
   <Box fill align="center" justify="start" pad="large">
     <Data data={DATA}>
-      <DataFilters search kind="drop">
+      <DataFilters drop>
         <DataFilter property="location" />
       </DataFilters>
     </Data>

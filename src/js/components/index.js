@@ -21,6 +21,7 @@ export * from './DataFilter';
 export * from './DataFilters';
 export * from './DataTable';
 export * from './DataSearch';
+export * from './DataSummary';
 export * from './DateInput';
 export * from './Diagram';
 export * from './Distribution';

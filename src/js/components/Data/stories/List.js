@@ -4,6 +4,7 @@ import {
   Box,
   DataFilters,
   DataFilter,
+  DataSummary,
   List,
   Heading,
   Toolbar,
@@ -21,10 +22,11 @@ export const Example = () => (
         List
       </Heading>
       <Toolbar>
-        <DataFilters search>
+        <DataFilters drop>
           <DataFilter property="location" />
         </DataFilters>
       </Toolbar>
+      <DataSummary />
       <List primaryKey="name" secondaryKey="location" />
     </Data>
   </Box>
