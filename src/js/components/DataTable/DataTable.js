@@ -12,6 +12,7 @@ import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
+import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';
@@ -37,6 +38,8 @@ import {
 import { DataTablePropTypes } from './propTypes';
 import { PlaceholderBody } from './PlaceholderBody';
 
+const emptyData = [];
+
 function useGroupState(groups, groupBy) {
   const [groupState, setGroupState] = useState(() =>
     buildGroupState(groups, groupBy),
@@ -58,7 +61,7 @@ const DataTable = ({
   background,
   border,
   columns = [],
-  data = [],
+  data: dataProp,
   disabled,
   fill,
   groupBy,
@@ -87,6 +90,8 @@ const DataTable = ({
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
+  const { data: contextData } = useContext(DataContext);
+  const data = dataProp || contextData || emptyData;
 
   // property name of the primary property
   const primaryProperty = useMemo(

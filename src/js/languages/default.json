@@ -15,6 +15,10 @@
     "enterCalendar": "Calendar is open, use arrow keys and enter to select a date.",
     "exitCalendar": "Exited calendar dialog"
   },
+  "dataFilters": {
+    "filtered": "{filtered} results of {total} items",
+    "total": "{total} items"
+  },
   "fileInput": {
     "browse": "browse",
     "dropPrompt": "Drop file here or",
