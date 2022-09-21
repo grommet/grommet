@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Data, DataTable, Paragraph } from 'grommet';
+import { Data, DataTable, Grid, Paragraph } from 'grommet';
 
 import { DataSearch } from '../DataSearch';
 import { columns, DATA } from '../../DataTable/stories/data';
@@ -8,15 +8,15 @@ import { columns, DATA } from '../../DataTable/stories/data';
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box fill flex="grow" pad="large" gap="large">
+  <Grid pad="large" columns={['large']} justifyContent="center">
+    <Paragraph color="text-weak">
+      Note: Results are filtered as you type, checking all fields.
+    </Paragraph>
     <Data data={DATA} onChange>
       <DataSearch />
       <DataTable columns={columns} />
     </Data>
-    <Paragraph color="text-weak">
-      Note: Results are filtered as you type.
-    </Paragraph>
-  </Box>
+  </Grid>
   // </Grommet>
 );
 

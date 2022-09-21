@@ -16,12 +16,16 @@ const filterData = (data, filters) => {
   const searchExp = filters.search.text
     ? new RegExp(filters.search.text, 'i')
     : undefined;
-  const searchProperties = filters.search.properties;
+  const searchProperty = filters.search.property;
   const result = data.filter((datum) => {
     let matched = true;
     if (searchExp) {
       matched = Object.keys(datum).some((property) => {
-        if (!searchProperties || searchProperties.includes(property))
+        if (
+          !searchProperty ||
+          searchProperty === property ||
+          (Array.isArray(searchProperty) && searchProperty.includes(property))
+        )
           return searchExp.test(datum[property]);
         return false;
       });
@@ -55,6 +59,11 @@ export const Data = ({
     const result = {};
 
     result.filters = filters;
+
+    result.setSearchProperty = (property) => {
+      if (property !== filters.search.property)
+        setFilters({ ...filters, search: { ...filters.search, property } });
+    };
 
     if (filters.search.text || Object.keys(filters.properties).length) {
       result.clearFilters = () => {

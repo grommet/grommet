@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, CardBody, CardFooter, Heading } from 'grommet';
+import { Card, CardBody, CardFooter, Grid, Heading } from 'grommet';
 import { Cards } from '../Cards';
 
 const data = [
@@ -7,13 +7,14 @@ const data = [
   { city: 'Fort Collins', state: 'Colorado' },
   { city: 'Bay Area', state: 'California' },
   { city: 'San Diego', state: 'California' },
+  { city: 'San Francisco', state: 'California' },
 ];
 
 export const Children = () => (
-  <Box pad="large">
+  <Grid pad="large" columns={[['medium', 'large']]} justifyContent="center">
     <Cards data={data} pad="medium" border={false}>
       {(datum) => (
-        <Card>
+        <Card key={datum.city}>
           <CardBody>
             <Heading level={2} size="small" margin="none">
               {datum.city}
@@ -23,7 +24,7 @@ export const Children = () => (
         </Card>
       )}
     </Cards>
-  </Box>
+  </Grid>
 );
 
 export default {

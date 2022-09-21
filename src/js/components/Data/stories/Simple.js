@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, DataTable } from 'grommet';
+import { Grid, DataTable } from 'grommet';
 
 import { Data } from '../Data';
 import { columns, DATA } from '../../DataTable/stories/data';
@@ -8,11 +8,11 @@ import { columns, DATA } from '../../DataTable/stories/data';
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box fill pad="large">
+  <Grid flex={false} pad="large" columns={['large']} justifyContent="center">
     <Data data={DATA} search filters={['location']}>
       <DataTable columns={columns} />
     </Data>
-  </Box>
+  </Grid>
   // </Grommet>
 );
 

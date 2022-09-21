@@ -7,6 +7,7 @@ import {
   DataSearch,
   DataSummary,
   DataTable,
+  Grid,
   Toolbar,
 } from 'grommet';
 
@@ -16,7 +17,7 @@ import { columns, DATA } from '../../DataTable/stories/data';
 export const Table = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box flex={false} fill="horizontal" pad="large">
+  <Grid flex={false} pad="large" columns={['large']} justifyContent="center">
     <Data data={DATA}>
       <Toolbar>
         <Box direction="row" gap="small">
@@ -29,7 +30,7 @@ export const Table = () => (
       <DataSummary />
       <DataTable columns={columns} />
     </Data>
-  </Box>
+  </Grid>
   // </Grommet>
 );
 

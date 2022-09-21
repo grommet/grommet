@@ -7,6 +7,7 @@ import {
   DataSearch,
   DataSummary,
   DataTable,
+  Grid,
   Toolbar,
 } from 'grommet';
 
@@ -14,8 +15,9 @@ import { Data } from '../Data';
 import { columns, DATA } from '../../DataTable/stories/data';
 
 // simulate back end filtering
-const filter = (filters) =>
-  DATA.filter((datum) => {
+const filter = (filters) => {
+  console.log('!!! filter', filters);
+  return DATA.filter((datum) => {
     let matched = true;
     if (filters.propeties) {
       matched = !Object.keys(filters).some((property) => {
@@ -26,13 +28,14 @@ const filter = (filters) =>
     }
     return matched;
   });
+};
 
 export const Controlled = () => {
   const [filteredData, setFilteredData] = useState(DATA);
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box flex={false} fill="horizontal" pad="large">
+    <Grid flex={false} pad="large" columns={['large']} justifyContent="center">
       <Data
         data={filteredData}
         total={DATA.length}
@@ -54,7 +57,7 @@ export const Controlled = () => {
         <DataSummary />
         <DataTable columns={columns} />
       </Data>
-    </Box>
+    </Grid>
     // </Grommet>
   );
 };

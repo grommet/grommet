@@ -1,35 +1,24 @@
 import React from 'react';
-
-import { Box, List, Menu } from 'grommet';
-import { More } from 'grommet-icons';
+import { Grid } from 'grommet';
+import { Cards } from '../Cards';
 
 const data = [];
 
 for (let i = 0; i < 95; i += 1) {
-  data.push({
-    entry: `entry-${i + 1}`,
-  });
+  data.push(`item ${i + 1}`);
 }
 
 export const Paginated = () => (
-  <Box pad="medium">
-    <List
+  <Grid pad="large" columns={[['medium', 'large']]} justifyContent="center">
+    <Cards
       data={data}
-      action={(item, index) => (
-        <Menu
-          key={index}
-          icon={<More />}
-          hoverIndicator
-          items={[{ label: 'one' }]}
-        />
-      )}
-      step={3}
+      step={9}
       show={{ page: 7 }}
       paginate
     />
-  </Box>
+  </Grid>
 );
 
 export default {
-  title: 'Visualizations/List/Paginated',
+  title: 'Visualizations/Cards/Paginated',
 };

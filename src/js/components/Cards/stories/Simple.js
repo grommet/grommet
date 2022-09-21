@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'grommet';
+import { Grid } from 'grommet';
 import { Cards } from '../Cards';
 
 const locations = [
@@ -11,9 +11,9 @@ const locations = [
 ];
 
 export const Simple = () => (
-  <Box pad="large">
+  <Grid pad="large" columns={[['medium', 'large']]} justifyContent="center">
     <Cards a11yTitle="Locations" data={locations} />
-  </Box>
+  </Grid>
 );
 
 export default {
