@@ -19,28 +19,27 @@ import { columns, DATA } from '../../DataTable/stories/data';
 export const Inline = () => {
   const size = useContext(ResponsiveContext);
 
+  const Filters = ({ search, ...rest }) => (
+    <DataFilters {...rest}>
+      {search && <DataSearch />}
+      <DataFilter property="location" />
+      <DataFilter property="percent" />
+    </DataFilters>
+  );
+
   let toolbar;
   let sidebar;
-  if (size === 'small') {
+  if (size === 'small' || size === 'xsmall') {
     toolbar = (
       <Toolbar key="tool">
         <Box direction="row" gap="xsmall">
           <DataSearch />
-          <DataFilters drop>
-            <DataSearch />
-            <DataFilter property="location" />
-          </DataFilters>
+          <Filters drop />
         </Box>
       </Toolbar>
     );
   } else {
-    sidebar = (
-      <DataFilters>
-        <DataSearch />
-        <DataFilter property="location" />
-        <DataFilter property="percent" />
-      </DataFilters>
-    );
+    sidebar = <Filters search />;
   }
 
   return (
