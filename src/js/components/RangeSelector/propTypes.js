@@ -5,6 +5,7 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     color: colorPropType,
+    defaultValues: PropTypes.arrayOf(PropTypes.number),
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     invert: PropTypes.bool,
     max: PropTypes.number,
@@ -36,7 +37,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.string,
     ]),
     step: PropTypes.number,
-    values: PropTypes.arrayOf(PropTypes.number).isRequired,
+    values: PropTypes.arrayOf(PropTypes.number),
   };
 }
 export const RangeSelectorPropTypes = PropType;
