@@ -33,9 +33,12 @@ const filterData = (data, filters) => {
     if (matched) {
       matched = !Object.keys(filters.properties).some((property) => {
         // returning true means it doesn't match the filter
-        const value = filters.properties[property];
-        if (Array.isArray(value)) return !value.includes(datum[property]);
-        return value !== datum[property];
+        const filterValue = filters.properties[property];
+        const value = datum[property];
+        if (Array.isArray(filterValue) && typeof filterValue[0] === 'number')
+          return value < filterValue[0] || value > filterValue[1];
+        if (Array.isArray(filterValue)) return !value.includes(value);
+        return filterValue !== value;
       });
     }
     return matched;

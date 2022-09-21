@@ -1,8 +1,11 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import { DataContext } from '../../contexts/DataContext';
+import { Box } from '../Box';
 import { FormField } from '../FormField';
 import { CheckBoxGroup } from '../CheckBoxGroup';
+import { RangeSelector } from '../RangeSelector';
 import { SelectMultiple } from '../SelectMultiple';
+import { Text } from '../Text';
 import { DataFilterPropTypes } from './propTypes';
 
 export const DataFilter = ({
@@ -23,23 +26,48 @@ export const DataFilter = ({
       .sort();
   }, [children, optionsProp, property, unfilteredData]);
 
-  // TODO: other kinds of input, e.g. RangeInput
+  const [rangeValues, setRangeValues] = useState(() =>
+    typeof options[0] === 'number'
+      ? [options[0], options[options.length - 1]]
+      : undefined,
+  );
+
   let content = children;
   if (!content) {
-    if (options.length < 7) {
+    if (rangeValues) {
       content = (
-        <CheckBoxGroup
-          name={property}
-          options={options}
-        />
+        <Box
+          direction="row"
+          justify="between"
+          align="center"
+          pad="xsmall"
+          gap="small"
+        >
+          <Text size="small" style={{ fontFamily: 'monospace' }}>
+            {rangeValues[0]}
+          </Text>
+          <RangeSelector
+            name={property}
+            defaultValues={rangeValues}
+            direction="horizontal"
+            invert={false}
+            min={options[0]}
+            max={options[options.length - 1]}
+            size="full"
+            round="small"
+            // values={[options[0], last]}
+            onChange={(values) => setRangeValues(values)}
+          />
+          <Text size="small" style={{ fontFamily: 'monospace' }}>
+            {rangeValues[1]}
+          </Text>
+        </Box>
       );
+    } else if (options.length < 7) {
+      content = <CheckBoxGroup name={property} options={options} />;
     } else {
       content = (
-        <SelectMultiple
-          name={property}
-          showSelectedInline
-          options={options}
-        />
+        <SelectMultiple name={property} showSelectedInline options={options} />
       );
     }
   }

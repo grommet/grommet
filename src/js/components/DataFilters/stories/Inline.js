@@ -13,6 +13,7 @@ export const Inline = () => (
       <DataFilters>
         <DataSearch />
         <DataFilter property="location" />
+        <DataFilter property="percent" />
       </DataFilters>
     </Data>
   </Box>
