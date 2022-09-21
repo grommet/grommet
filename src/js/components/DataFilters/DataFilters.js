@@ -3,6 +3,7 @@ import { Close } from 'grommet-icons/icons/Close';
 import { Filter } from 'grommet-icons/icons/Filter';
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { DataFilter } from '../DataFilter';
 import { DataForm } from '../Data';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
@@ -15,7 +16,14 @@ const dropProps = {
   align: { top: 'bottom', right: 'right' },
 };
 
-export const DataFilters = ({ drop, children, layer, messages, ...rest }) => {
+export const DataFilters = ({
+  drop,
+  children,
+  layer,
+  messages,
+  properties,
+  ...rest
+}) => {
   const { filters, clearFilters } = useContext(DataContext);
   const [showContent, setShowContent] = useState();
   const controlled = drop || layer;
@@ -33,19 +41,25 @@ export const DataFilters = ({ drop, children, layer, messages, ...rest }) => {
       onDone={() => setShowContent(false)}
       {...(!controlled ? rest : {})}
     >
-      <Header>
-        <Heading margin="none" level={2} size="small">
-          Filters
-        </Heading>
-        {layer && (
-          <Button
-            icon={<Close />}
-            hoverIndicator
-            onClick={() => setShowContent(false)}
-          />
-        )}
-        {!controlled && clearControl}
-      </Header>
+      {!drop && (
+        <Header>
+          <Heading margin="none" level={2} size="small">
+            Filters
+          </Heading>
+          {layer && (
+            <Button
+              icon={<Close />}
+              hoverIndicator
+              onClick={() => setShowContent(false)}
+            />
+          )}
+          {!controlled && clearControl}
+        </Header>
+      )}
+      {properties &&
+        properties.map((property) => (
+          <DataFilter key={property} property={property} />
+        ))}
       {children}
     </DataForm>
   );

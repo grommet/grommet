@@ -6,7 +6,6 @@ import {
   DataFilter,
   DataSummary,
   List,
-  Heading,
   Toolbar,
 } from 'grommet';
 
@@ -18,9 +17,6 @@ export const Example = () => (
   // <Grommet theme={...}>
   <Box flex={false} fill="horizontal" pad="large">
     <Data data={DATA}>
-      <Heading size="small">
-        List
-      </Heading>
       <Toolbar>
         <DataFilters drop>
           <DataFilter property="location" />
@@ -32,6 +28,8 @@ export const Example = () => (
   </Box>
   // </Grommet>
 );
+
+Example.storyName = 'List';
 
 Example.args = {
   full: true,

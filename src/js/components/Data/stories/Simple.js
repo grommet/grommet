@@ -8,8 +8,8 @@ import { columns, DATA } from '../../DataTable/stories/data';
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box fill align="center" justify="start" pad="large">
-    <Data data={DATA}>
+  <Box fill pad="large">
+    <Data data={DATA} search filters={['location']}>
       <DataTable columns={columns} />
     </Data>
   </Box>

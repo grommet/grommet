@@ -7,7 +7,6 @@ import {
   DataSearch,
   DataSummary,
   DataTable,
-  Heading,
   Toolbar,
 } from 'grommet';
 
@@ -19,7 +18,6 @@ export const Table = () => (
   // <Grommet theme={...}>
   <Box flex={false} fill="horizontal" pad="large">
     <Data data={DATA}>
-      <Heading size="small">DataTable</Heading>
       <Toolbar>
         <Box direction="row" gap="small">
           <DataSearch />
@@ -34,6 +32,8 @@ export const Table = () => (
   </Box>
   // </Grommet>
 );
+
+Table.storyName = 'DataTable';
 
 Table.args = {
   full: true,

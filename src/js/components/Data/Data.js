@@ -1,5 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { Box } from '../Box';
+import { DataFilters } from '../DataFilters';
+import { DataSearch } from '../DataSearch';
+import { DataSummary } from '../DataSummary';
+import { Toolbar } from '../Toolbar';
 import { DataContext } from '../../contexts/DataContext';
 import { DataPropTypes } from './propTypes';
 
@@ -38,8 +42,10 @@ const filterData = (data, filters) => {
 export const Data = ({
   children,
   data,
+  filters: filtersProp,
   onChange,
   onSubmit,
+  search,
   total,
   ...rest
 }) => {
@@ -81,9 +87,43 @@ export const Data = ({
     return result;
   }, [data, filters, onChange, onSubmit, total]);
 
+  const searchProps = useMemo(
+    () =>
+      ((typeof search === 'string' || Array.isArray(search)) && {
+        property: search,
+      }) ||
+      (typeof search === 'object' && search) ||
+      undefined,
+    [search],
+  );
+
+  const filtersProps = useMemo(
+    () =>
+      ((typeof filtersProp === 'string' || Array.isArray(filtersProp)) && {
+        properties: filtersProp,
+      }) ||
+      (typeof filtersProp === 'object' && filtersProp) ||
+      undefined,
+    [filtersProp],
+  );
+
+  let controls;
+  if (filtersProp || search) {
+    controls = [
+      <Toolbar key="toolbar">
+        <Box flex={false} direction="row" gap="small">
+          {search && <DataSearch {...searchProps} />}
+          {filters && <DataFilters drop {...filtersProps} />}
+        </Box>
+      </Toolbar>,
+      <DataSummary key="summary" />,
+    ];
+  }
+
   return (
     <DataContext.Provider value={contextValue}>
       <Box flex={false} {...rest}>
+        {controls}
         {children}
       </Box>
     </DataContext.Provider>

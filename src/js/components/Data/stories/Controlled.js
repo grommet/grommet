@@ -7,7 +7,6 @@ import {
   DataSearch,
   DataSummary,
   DataTable,
-  Heading,
   Toolbar,
 } from 'grommet';
 
@@ -39,7 +38,6 @@ export const Controlled = () => {
         total={DATA.length}
         onSubmit={(filters) => setFilteredData(filter(filters))}
       >
-        <Heading size="small">DataTable</Heading>
         <Toolbar>
           <Box direction="row" gap="small">
             <DataSearch />

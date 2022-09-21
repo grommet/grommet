@@ -5,6 +5,7 @@ import {
   DataFilters,
   DataFilter,
   DataSearch,
+  DataSummary,
   DataTable,
   Grid,
   Heading,
@@ -19,7 +20,7 @@ export const Inline = () => (
   <Box flex={false} fill="horizontal" justify="start" pad="large">
     <Data data={DATA} onChange>
       <Grid columns={['auto', 'flex']} gap="medium">
-        <DataFilters toolbar={false}>
+        <DataFilters>
           <DataSearch />
           <DataFilter property="location" />
         </DataFilters>
@@ -27,7 +28,7 @@ export const Inline = () => (
           <Heading size="small" margin="none">
             People
           </Heading>
-          <DataFilters />
+          <DataSummary />
           <Box flex={false}>
             <DataTable columns={columns} />
           </Box>
