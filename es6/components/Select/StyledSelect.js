@@ -23,12 +23,14 @@ export var HiddenInput = styled.input.withConfig({
 export var SelectOption = styled(Button).withConfig({
   displayName: "StyledSelect__SelectOption",
   componentId: "sc-znp66n-3"
-})(["", " ", " &:focus{", "}display:block;width:100%;"], function (props) {
+})(["", " ", " &:focus{", "}display:block;width:100%;", ";"], function (props) {
   return props.selected && props.textComponent && selectedStyle;
 }, function (props) {
   return props.active && getHoverIndicatorStyle(!props.children && !props.theme.select.options ? undefined : 'background', props.theme);
 }, function (props) {
   return props.active && getHoverIndicatorStyle(!props.children && !props.theme.select.options ? undefined : 'background', props.theme);
+}, function (props) {
+  return props["aria-disabled"] && "cursor: default";
 });
 export var SelectTextInput = styled(TextInput).withConfig({
   displayName: "StyledSelect__SelectTextInput",

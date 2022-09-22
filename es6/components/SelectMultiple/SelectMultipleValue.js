@@ -48,7 +48,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
         "aria-selected": value.includes(optionValue),
         "aria-disabled": optionDisabled,
         plain: true,
-        hoverIndicator: true,
+        hoverIndicator: !optionDisabled,
         fill: "horizontal",
         tabIndex: "0",
         onClick: function onClick(event) {

@@ -43,12 +43,14 @@ exports.HiddenInput = HiddenInput;
 var SelectOption = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "StyledSelect__SelectOption",
   componentId: "sc-znp66n-3"
-})(["", " ", " &:focus{", "}display:block;width:100%;"], function (props) {
+})(["", " ", " &:focus{", "}display:block;width:100%;", ";"], function (props) {
   return props.selected && props.textComponent && _utils.selectedStyle;
 }, function (props) {
   return props.active && (0, _utils.getHoverIndicatorStyle)(!props.children && !props.theme.select.options ? undefined : 'background', props.theme);
 }, function (props) {
   return props.active && (0, _utils.getHoverIndicatorStyle)(!props.children && !props.theme.select.options ? undefined : 'background', props.theme);
+}, function (props) {
+  return props["aria-disabled"] && "cursor: default";
 });
 exports.SelectOption = SelectOption;
 var SelectTextInput = (0, _styledComponents["default"])(_TextInput.TextInput).withConfig({
