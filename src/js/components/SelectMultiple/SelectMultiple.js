@@ -236,11 +236,14 @@ const SelectMultiple = forwardRef(
 
     // element to show, trumps inputValue
     const selectValue = useMemo(() => {
-      if (valueLabel instanceof Function) {
-        if (value) return valueLabel(value);
-      } else if (valueLabel) return valueLabel;
-      else if (value?.length > 0 && showSelectedInline) {
-        return (
+      let result;
+      if (valueLabel) {
+        result =
+          value && valueLabel instanceof Function
+            ? valueLabel(value)
+            : valueLabel;
+      } else if (value?.length > 0 && showSelectedInline) {
+        result = (
           <SelectMultipleValue
             allOptions={allOptions}
             disabled={disabled}
@@ -257,7 +260,7 @@ const SelectMultiple = forwardRef(
           </SelectMultipleValue>
         );
       }
-      return undefined;
+      return result;
     }, [
       valueKey,
       value,

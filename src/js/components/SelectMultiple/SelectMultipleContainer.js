@@ -268,27 +268,28 @@ const SelectMultipleContainer = forwardRef(
 
     // handle when limit is reached
     useEffect(() => {
+      const originallyDisabled = (index) => {
+        const option = allOptions[index];
+        let result;
+        if (disabledKey) {
+          result = applyKey(option, disabledKey);
+        } else if (Array.isArray(disabledProp)) {
+          if (typeof disabledProp[0] === 'number') {
+            result = disabledProp.indexOf(index) !== -1;
+          } else {
+            result =
+              disabledProp.indexOf(
+                getOptionValue(index, options, valueKey || labelKey),
+              ) !== -1;
+          }
+        }
+        return result;
+      };
+
       if (value && limit) {
         if (value.length === limit) {
           const newDisabled = [...disabledProp];
           // disable everything that is not selected
-          const originallyDisabled = (index) => {
-            const option = allOptions[index];
-            let result;
-            if (disabledKey) {
-              result = applyKey(option, disabledKey);
-            } else if (Array.isArray(disabledProp)) {
-              if (typeof disabledProp[0] === 'number') {
-                result = disabledProp.indexOf(index) !== -1;
-              } else {
-                result =
-                  disabledProp.indexOf(
-                    getOptionValue(index, options, valueKey || labelKey),
-                  ) !== -1;
-              }
-            }
-            return result;
-          };
           for (let i = 0; i < options.length; i += 1) {
             if (!isSelected(i) && !originallyDisabled(i)) {
               newDisabled.push(options[i]);

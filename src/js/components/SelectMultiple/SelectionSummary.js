@@ -44,7 +44,12 @@ const SelectionSummary = ({
     return false;
   }, [value, allOptions, options, valueKey, labelKey, isDisabled]);
 
-  if (search === '' || search === undefined)
+  if (search === '' || search === undefined) {
+    const showSelectAll = !!(
+      value?.length === 0 ||
+      selectedValuesDisabled() ||
+      !value
+    );
     return (
       <Box
         pad={showSelectedInline ? { vertical: 'xsmall' } : 'small'}
@@ -68,21 +73,15 @@ const SelectionSummary = ({
           (!onMore || (onMore && value?.length !== 0)) && (
             <Button
               a11yTitle={
-                value?.length === 0 || selectedValuesDisabled() || !value
+                showSelectAll
                   ? `Select all ${options.length} options`
                   : `${value?.length} options selected. Clear all?`
               }
-              label={
-                value?.length === 0 || selectedValuesDisabled() || !value
-                  ? 'Select All'
-                  : 'Clear All'
-              }
+              label={showSelectAll ? 'Select All' : 'Clear All'}
               onClick={(event) => {
-                const selectAll =
-                  value?.length === 0 || selectedValuesDisabled() || !value;
                 if (onChange) {
                   const nextSelected = options.filter((i, index) =>
-                    selectAll
+                    showSelectAll
                       ? !isDisabled(index) || isSelected(index)
                       : isDisabled(index) && isSelected(index),
                   );
@@ -95,7 +94,7 @@ const SelectionSummary = ({
                     selected: nextSelected,
                   });
                 }
-                if (limit && !selectAll) setActiveIndex(0);
+                if (limit && !showSelectAll) setActiveIndex(0);
               }}
               onFocus={() => setActiveIndex(-1)}
               ref={clearRef}
@@ -103,6 +102,7 @@ const SelectionSummary = ({
           )}
       </Box>
     );
+  }
   return <Text size="small">{`${value?.length || '0'} selected`}</Text>;
 };
 
