@@ -312,10 +312,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   if (showSelectedInline) summaryContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     direction: "row",
     justify: "between",
-    flex: false,
-    pad: {
-      left: 'small'
-    }
+    flex: false
   }, summaryContent, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     onClick: onClose,
     a11yTitle: "Close Select"

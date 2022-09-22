@@ -46,8 +46,9 @@ var SelectionSummary = function SelectionSummary(_ref) {
   }, [value, allOptions, options, valueKey, labelKey, isDisabled]);
   if (search === '' || search === undefined) return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: showSelectedInline ? {
+      left: 'xsmall',
       vertical: 'xsmall'
-    } : 'small',
+    } : 'xsmall',
     direction: "row",
     justify: "between",
     gap: "small",
@@ -59,9 +60,6 @@ var SelectionSummary = function SelectionSummary(_ref) {
     },
     alignSelf: "center"
   }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
-    margin: {
-      vertical: 'xsmall'
-    },
     size: "small"
   }, value.length === 0 || onMore ? value.length + " selected" : value.length + " selected of " + options.length)), (options.length && (!limit || !(value.length === 0 && selectedValuesDisabled()))) > 0 && (!onMore || onMore && value.length !== 0) && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     a11yTitle: value.length === 0 || selectedValuesDisabled() ? "Select all " + options.length + " options" : value.length + " options selected. Clear all?",
@@ -90,9 +88,11 @@ var SelectionSummary = function SelectionSummary(_ref) {
     },
     ref: clearRef
   }));
-  return /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+  return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    pad: "xsmall"
+  }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
     size: "small"
-  }, value.length + " selected");
+  }, value.length + " selected"));
 };
 
 exports.SelectionSummary = SelectionSummary;

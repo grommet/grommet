@@ -33,8 +33,9 @@ var SelectionSummary = function SelectionSummary(_ref) {
   }, [value, allOptions, options, valueKey, labelKey, isDisabled]);
   if (search === '' || search === undefined) return /*#__PURE__*/React.createElement(Box, {
     pad: showSelectedInline ? {
+      left: 'xsmall',
       vertical: 'xsmall'
-    } : 'small',
+    } : 'xsmall',
     direction: "row",
     justify: "between",
     gap: "small",
@@ -46,9 +47,6 @@ var SelectionSummary = function SelectionSummary(_ref) {
     },
     alignSelf: "center"
   }, /*#__PURE__*/React.createElement(Text, {
-    margin: {
-      vertical: 'xsmall'
-    },
     size: "small"
   }, value.length === 0 || onMore ? value.length + " selected" : value.length + " selected of " + options.length)), (options.length && (!limit || !(value.length === 0 && selectedValuesDisabled()))) > 0 && (!onMore || onMore && value.length !== 0) && /*#__PURE__*/React.createElement(Button, {
     a11yTitle: value.length === 0 || selectedValuesDisabled() ? "Select all " + options.length + " options" : value.length + " options selected. Clear all?",
@@ -77,9 +75,11 @@ var SelectionSummary = function SelectionSummary(_ref) {
     },
     ref: clearRef
   }));
-  return /*#__PURE__*/React.createElement(Text, {
+  return /*#__PURE__*/React.createElement(Box, {
+    pad: "xsmall"
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "small"
-  }, value.length + " selected");
+  }, value.length + " selected"));
 };
 
 export { SelectionSummary };
