@@ -1,12 +1,5 @@
-import React, {
-  forwardRef,
-  useContext,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useContext, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
@@ -65,10 +58,6 @@ const DataChart = forwardRef(
 
     // legend interaction, if any
     const [activeProperty, setActiveProperty] = useState();
-
-    // refs used for ie11 not having Grid
-    const xRef = useRef();
-    const spacerRef = useRef();
 
     // normalize seriesProp to an array of objects, one per property
     const series = useMemo(() => {
@@ -480,22 +469,20 @@ const DataChart = forwardRef(
       [offsets, thicknesses],
     );
 
-    // The thickness of the Detail segments. We need to convert to numbers
+    // The thickness of the segments. We need to convert to numbers
     // to be able to compare across charts where some might be using T-shirt
     // labels and others might be pixel values.
-    const detailThickness = useMemo(() => {
+    const segmentThickness = useMemo(() => {
       let result = 0;
-      if (detail) {
-        charts.forEach((_, index) => {
-          const { thickness } = chartProps[index];
-          result = Math.max(
-            result,
-            parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
-          );
-        });
-      }
+      charts.forEach((_, index) => {
+        const { thickness } = chartProps[index];
+        result = Math.max(
+          result,
+          parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
+        );
+      });
       return `${result}px`;
-    }, [charts, chartProps, detail, theme]);
+    }, [charts, chartProps, theme]);
 
     const dateFormats = useMemo(() => {
       const result = {};
@@ -515,14 +502,6 @@ const DataChart = forwardRef(
       });
       return result;
     }, [axis, data, series]);
-
-    // for ie11, align the spacer Box height to the x-axis height
-    useLayoutEffect(() => {
-      if (xRef.current && spacerRef.current) {
-        const rect = xRef.current.getBoundingClientRect();
-        spacerRef.current.style.height = `${rect.height}px`;
-      }
-    }, []);
 
     const renderValue = (serie, dataIndex, valueArg) => {
       let value;
@@ -549,7 +528,6 @@ const DataChart = forwardRef(
     const xAxisElement =
       axis && axis.x && chartProps.length ? (
         <XAxis
-          ref={xRef}
           axis={axis}
           values={
             (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
@@ -557,6 +535,7 @@ const DataChart = forwardRef(
           }
           pad={offsetPad ? { ...pad, end: offsetPad } : pad}
           renderValue={renderValue}
+          thickness={segmentThickness}
           serie={axis.x.property && getPropertySeries(axis.x.property)}
           style={
             offsetPad
@@ -567,6 +546,7 @@ const DataChart = forwardRef(
                 }
               : {}
           }
+          theme={theme}
         />
       ) : null;
 
@@ -680,10 +660,11 @@ const DataChart = forwardRef(
             activeProperty={activeProperty}
             axis={axis}
             data={data}
+            pad={pad}
             series={series}
             seriesStyles={seriesStyles}
             renderValue={renderValue}
-            thickness={detailThickness}
+            thickness={segmentThickness}
           />
         )}
       </Stack>
@@ -697,39 +678,6 @@ const DataChart = forwardRef(
         setActiveProperty={setActiveProperty}
       />
     ) : null;
-
-    // IE11
-    if (!Grid.available) {
-      let content = stackElement;
-      if (xAxisElement) {
-        content = (
-          <Box>
-            {content}
-            {xAxisElement}
-          </Box>
-        );
-      }
-      if (yAxisElement) {
-        content = (
-          <Box direction="row">
-            <Box>
-              {yAxisElement}
-              <Box ref={spacerRef} flex={false} />
-            </Box>
-            {content}
-          </Box>
-        );
-      }
-      if (legendElement) {
-        content = (
-          <Box>
-            {content}
-            {legendElement}
-          </Box>
-        );
-      }
-      return content;
-    }
 
     let content = (
       <Grid

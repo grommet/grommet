@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import userEvent from '@testing-library/user-event';
 
 import 'jest-styled-components';
 
@@ -10,6 +11,7 @@ import { Button } from '../../Button';
 import { TextInput } from '../../TextInput';
 import { CheckBox } from '../../CheckBox';
 import { Box } from '../../Box';
+import { Select } from '../../Select';
 
 describe('Form controlled', () => {
   test('controlled', () => {
@@ -482,6 +484,7 @@ describe('Form controlled', () => {
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
+        valid: false,
       }),
     );
 
@@ -491,7 +494,7 @@ describe('Form controlled', () => {
     act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
-      expect.objectContaining({ errors: {}, infos: {} }),
+      expect.objectContaining({ errors: {}, infos: {}, valid: true }),
     );
 
     // clear mood, should fail validation
@@ -503,6 +506,7 @@ describe('Form controlled', () => {
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
+        valid: false,
       }),
     );
 
@@ -513,7 +517,7 @@ describe('Form controlled', () => {
     act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
-      expect.objectContaining({ errors: {}, infos: {} }),
+      expect.objectContaining({ errors: {}, infos: {}, valid: true }),
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -928,5 +932,85 @@ describe('Form controlled', () => {
     expect(screen.queryAllByText('invalid')).toHaveLength(2);
     // lastName should not trigger required validation onMount
     expect(screen.queryAllByText('required')).toHaveLength(0);
+  });
+
+  test('validate select with multiple selection', async () => {
+    global.scrollTo = jest.fn();
+    const Test = () => {
+      const options = ['foo', 'bar', 'baz'];
+      const [formValue, setFormValue] = useState({
+        firstName: '',
+        multiple: [],
+      });
+
+      return (
+        <Form
+          value={formValue}
+          validate="change"
+          onChange={(nextValue) => setFormValue(nextValue)}
+        >
+          <FormField
+            label="Multiple"
+            name="multiple"
+            htmlFor="multiple"
+            required
+            validate={[
+              (value) => {
+                if (value.length === 1) {
+                  return {
+                    message: 'multiple selection error',
+                    status: 'error',
+                  };
+                }
+                return undefined;
+              },
+            ]}
+          >
+            <Select
+              data-testid="multiple"
+              multiple
+              size="medium"
+              name="multiple"
+              id="multiple"
+              placeholder="multiple"
+              options={options}
+              closeOnChange={false}
+            />
+          </FormField>
+
+          <FormField
+            label="First Name"
+            htmlFor="first-name"
+            name="firstName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              (firstName) => {
+                if (firstName && firstName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          >
+            <TextInput
+              id="first-name"
+              name="firstName"
+              placeholder="firstName"
+            />
+          </FormField>
+        </Form>
+      );
+    };
+
+    render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    userEvent.click(screen.getByTestId('multiple'));
+    expect(await screen.findByRole('listbox')).toBeTruthy();
+    userEvent.click(screen.getByRole('option', { name: 'foo' }));
+    expect(await screen.findByText('multiple selection error')).toBeTruthy();
   });
 });

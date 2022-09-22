@@ -3,9 +3,7 @@ import fs from 'fs-extra';
 import git from 'simple-git/promise';
 import path from 'path';
 
-const repoURL = `https://${
-  process.env.GH_TOKEN
-}@github.com/grommet/grommet.git`;
+const repoURL = `https://${process.env.GH_TOKEN}@github.com/grommet/grommet.git`;
 const localFolder = path.resolve('.tmp/grommet');
 const localDist = path.resolve('dist');
 
@@ -20,7 +18,7 @@ if (process.env.CI) {
       .then(() => git(localFolder).add(['--all', '.']))
       .then(() => git(localFolder).commit('stable updated'))
       .then(() => git(localFolder).push('origin', 'stable'))
-      .catch(err => console.error('failed: ', err));
+      .catch((err) => console.error('failed: ', err));
   });
 } else {
   console.warn(

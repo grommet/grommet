@@ -11,6 +11,7 @@ import { FormUp } from 'grommet-icons/icons/FormUp';
 import { Next } from 'grommet-icons/icons/Next';
 import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
+import { FormPin } from 'grommet-icons/icons/FormPin';
 import { Previous } from 'grommet-icons/icons/Previous';
 import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
 import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
@@ -159,6 +160,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           duration: '0.1s',
         },
       },
+      // backgrounds: undefined,
       borderSize: {
         xsmall: '1px',
         small: '2px',
@@ -220,7 +222,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       // The time to wait after the user stopped typing, measured in ms.
-      debounceDelay: 300,
+      // A half second (500ms) debounce can be a helpful starting point.
+      // You want to give the user time to fill out a field, but capture
+      // their attention before they move on past it. 2 second (2000ms)
+      // might be too long depending on how fast people type, and 200ms
+      // would be an eye blink
+      debounceDelay: 500,
       drop: {
         // intelligentMargin: undefined,
         background: {
@@ -465,10 +472,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   font: {
       //     weight: undefined,
       //   },
+      //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
       //     horizontal: undefined,
       //   },
+      //   reverse: undefined,
       //   extend: undefined,
       // },
       // primary: {
@@ -478,10 +487,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
       //     horizontal: undefined,
       //   },
+      //   reverse: undefined,
       //   extend: undefined,
       // },
       // secondary: {
@@ -491,20 +502,24 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
       //     horizontal: undefined,
       //   },
+      //   reverse: undefined,
       //   extend: undefined,
       // },
       // option: {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
       //     horizontal: undefined,
       //   },
+      //   reverse: undefined,
       //   extend: undefined,
       // },
       active: {
@@ -862,6 +877,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         position: 'inner',
         side: 'bottom',
       },
+      // checkBox: {
+      //   pad: undefined,
+      // },
       content: {
         // margin: undefined,
         pad: 'small',
@@ -1024,12 +1042,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'status-disabled',
           cursor: 'default',
         },
+        pinned: {
+          background: 'background-contrast',
+          icon: {
+            size: 'medium',
+            pad: 'small',
+          },
+        },
         pad: { horizontal: 'medium', vertical: 'small' },
         // extend: undefined,
       },
       icons: {
         down: FormDown,
         up: FormUp,
+        pin: FormPin,
       },
       // extend: undefined,
     },
@@ -1042,6 +1068,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     menu: {
       // background: undefined,
+      // item: undefined,
       // extend: undefined,
       drop: {
         align: {
@@ -1059,6 +1086,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         separator: {
           color: 'border',
           size: 'xsmall',
+          pad: {
+            horizontal: 'small',
+          },
         },
       },
       icons: {
@@ -1113,6 +1143,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       direction: 'column',
       container: {
         // any box props
+        round: 'xsmall',
         pad: { horizontal: 'small', vertical: 'xsmall' },
         background: {
           color: 'background-front',
@@ -1122,6 +1153,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         direction: 'row',
         container: {
           // any box props
+          round: 'none',
           pad: {
             horizontal: 'large',
             vertical: 'xsmall',
@@ -1133,7 +1165,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         container: {
           // any box props
           elevation: 'medium',
-          round: 'xsmall',
           width: 'medium',
         },
         layer: {
@@ -1164,58 +1195,60 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       critical: {
         icon: StatusCriticalSmall,
-        // background: undefined,
-        color: 'status-critical',
-        global: {
-          background: {
-            color: 'status-critical',
-            opacity: 'weak',
-          },
+        background: {
+          color: 'status-critical',
+          opacity: 'weak',
         },
-        // toast: {},
+        color: 'status-critical',
+        // global: {},
+        toast: {
+          background: 'background-front',
+        },
       },
       warning: {
         icon: StatusWarningSmall,
-        // background: undefined,
-        color: 'status-warning',
-        global: {
-          background: {
-            color: 'status-warning',
-            opacity: 'weak',
-          },
+        background: {
+          color: 'status-warning',
+          opacity: 'weak',
         },
-        // toast: {},
+        color: 'status-warning',
+        // global: {},
+        toast: {
+          background: 'background-front',
+        },
       },
       normal: {
         icon: StatusGoodSmall,
-        // background: undefined,
-        color: 'status-ok',
-        global: {
-          background: {
-            color: 'status-ok',
-            opacity: 'weak',
-          },
+        background: {
+          color: 'status-ok',
+          opacity: 'weak',
         },
-        // toast: {},
+        color: 'status-ok',
+        // global: {},
+        toast: {
+          background: 'background-front',
+        },
       },
       info: {
         icon: CircleInformation,
-        // background: undefined,
+        background: 'background-contrast',
         color: 'text-strong',
         // global: {},
-        // toast: {},
+        toast: {
+          background: 'background-front',
+        },
       },
       unknown: {
         icon: StatusUnknownSmall,
-        // background: undefined,
-        color: 'status-unknown',
-        global: {
-          background: {
-            color: 'status-unknown',
-            opacity: 'weak',
-          },
+        background: {
+          color: 'status-unknown',
+          opacity: 'weak',
         },
-        // toast: {},
+        color: 'status-unknown',
+        // global: {},
+        toast: {
+          background: 'background-front',
+        },
       },
       // deprecate "undefined" in v3
       // and if undefined, no icon
@@ -1312,6 +1345,37 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any heading props
         margin: 'none',
         fill: true,
+      },
+      size: {
+        small: {
+          pad: {
+            top: 'medium',
+            bottom: 'small',
+          },
+          subtitle: {
+            size: 'small',
+          },
+          title: {
+            size: 'small',
+          },
+        },
+        // medium: {
+        //   // pad: undefined,
+        //   // subtitle: {},
+        //   // title: {},
+        // },
+        large: {
+          pad: {
+            top: 'xlarge',
+            bottom: 'large',
+          },
+          subtitle: {
+            size: 'large',
+          },
+          title: {
+            size: 'large',
+          },
+        },
       },
       small: {
         areas: [
@@ -1567,6 +1631,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // searchInput: undefined,
       step: 20,
     },
+    selectMultiple: {
+      maxInline: 5,
+    },
     skipLinks: {
       position: 'top',
       container: {
@@ -1646,6 +1713,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       panel: {
         // extend: undefined,
+      },
+      step: {
+        small: 1,
+        medium: 3,
+        large: 3,
       },
     },
     table: {

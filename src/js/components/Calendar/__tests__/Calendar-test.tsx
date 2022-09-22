@@ -40,26 +40,11 @@ describe('Calendar', () => {
   });
 
   test('disabled', () => {
-    // need to set the date to avoid snapshot drift over time
-    // have disabled date be distinct from selected date
-    const normalizeForTimezone = (value: string, timestamp: string) => {
-      const hourDelta = parseInt(timestamp?.split(':')[0], 10);
-      const valueOffset = hourDelta * 60 * 1000; // ms
-      const localOffset = new Date().getTimezoneOffset() * 60 * 1000;
-
-      return (
-        value &&
-        new Date(
-          new Date(value).getTime() - valueOffset + localOffset,
-        ).toISOString()
-      );
-    };
-    const adjustedDate = normalizeForTimezone(DATE, '08:00:00.000Z');
-    const disabledDate = new Date(adjustedDate);
+    const disabledDate = new Date(DATE);
     disabledDate.setDate(disabledDate.getDate() + 1);
     const { asFragment } = render(
       <Grommet>
-        <Calendar date={DATE} disabled={[disabledDate.toDateString()]} />
+        <Calendar date={DATE} disabled={[disabledDate.toISOString()]} />
       </Grommet>,
     );
 
@@ -609,6 +594,43 @@ describe('Calendar', () => {
         expect.stringMatching(/^2020-01-03T/),
       ],
     ]);
+  });
+
+  test('daylight savings', () => {
+    const onSelect = jest.fn();
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar
+          reference="2022-07-14T08:00:00.000Z"
+          onSelect={onSelect}
+          animate={false}
+        />
+      </Grommet>,
+    );
+    fireEvent.click(getByLabelText('Fri Jul 15 2022'));
+    expect(onSelect).toBeCalledWith(
+      expect.stringMatching(/^2022-07-15T08:00:00.000Z/),
+    );
+
+    // Change the Calendar from July to March
+    fireEvent.click(getByLabelText('Go to June 2022'));
+    fireEvent.click(getByLabelText('Go to May 2022'));
+    fireEvent.click(getByLabelText('Go to April 2022'));
+    fireEvent.click(getByLabelText('Go to March 2022'));
+
+    fireEvent.click(getByLabelText('Wed Mar 02 2022'));
+
+    const date = new Date();
+    const january = new Date(date.getFullYear(), 0, 1).getTimezoneOffset();
+    const july = new Date(date.getFullYear(), 6, 1).getTimezoneOffset();
+    const hasDaylightSavings = january !== july;
+
+    expect(onSelect).toBeCalledWith(
+      // expecting one hour diff bc of daylight savings shift, otherwise no shift
+      expect.stringMatching(
+        `2022-03-02T0${hasDaylightSavings ? 9 : 8}:00:00.000Z`,
+      ),
+    );
   });
 });
 

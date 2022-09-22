@@ -12,7 +12,7 @@ import { defaultProps } from '../../default-props';
 import { SpinnerPropTypes } from './propTypes';
 
 const BasicSpinner = ({ ref, size, ...rest }) => (
-  <Box height={size} width={size} ref={ref} {...rest} />
+  <Box flex={false} height={size} width={size} ref={ref} {...rest} />
 );
 /**
  * If the user is calling <Spinner>…</Spinner> with children, it will take

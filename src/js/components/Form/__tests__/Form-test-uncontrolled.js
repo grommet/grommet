@@ -1389,6 +1389,7 @@ describe('Form uncontrolled', () => {
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
+        valid: false,
       }),
     );
 
@@ -1398,7 +1399,7 @@ describe('Form uncontrolled', () => {
     act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
-      expect.objectContaining({ errors: {}, infos: {} }),
+      expect.objectContaining({ errors: {}, infos: {}, valid: true }),
     );
 
     // clear mood, should fail validation
@@ -1410,6 +1411,7 @@ describe('Form uncontrolled', () => {
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
+        valid: false,
       }),
     );
 
@@ -1420,7 +1422,7 @@ describe('Form uncontrolled', () => {
     act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
-      expect.objectContaining({ errors: {}, infos: {} }),
+      expect.objectContaining({ errors: {}, infos: {}, valid: true }),
     );
 
     expect(container.firstChild).toMatchSnapshot();

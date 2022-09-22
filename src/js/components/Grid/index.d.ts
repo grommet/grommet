@@ -44,7 +44,9 @@ export type GridColumnsType =
 
 export type GridGapType = GapType | { row?: GapType; column?: GapType };
 
-export type AreasType = { name?: string; start?: number[]; end?: number[] }[] | string[][];
+export type AreasType =
+  | { name?: string; start?: number[]; end?: number[] }[]
+  | string[][];
 export interface GridProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
@@ -72,6 +74,6 @@ type divProps = JSX.IntrinsicElements['div'];
 
 export interface GridExtendedProps extends GridProps, divProps {}
 
-declare const Grid: React.FC<GridExtendedProps> & { available?: boolean };
+declare const Grid: React.FC<GridExtendedProps>;
 
 export { Grid };
