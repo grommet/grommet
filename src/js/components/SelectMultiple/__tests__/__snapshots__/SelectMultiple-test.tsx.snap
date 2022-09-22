@@ -4925,11 +4925,6 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   width: 100%;
 }
 
-.c12:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c12:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -5088,6 +5083,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
 .c13 {
   display: block;
   width: 100%;
+  cursor: default;
 }
 
 .c8 {
