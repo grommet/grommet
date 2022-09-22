@@ -335,7 +335,7 @@ describe('Calendar', () => {
 
     fireEvent.click(nextMonthButton);
 
-    expect(onReference).toBeCalledWith('2019-02-01T03:00:00.000Z');
+    expect(onReference).toBeCalledWith(expect.stringContaining('2019-02-01'));
   });
 
   test('change to next month when date is after bounds', () => {
@@ -358,7 +358,7 @@ describe('Calendar', () => {
 
     fireEvent.click(previousMonthButton);
 
-    expect(onReference).toBeCalledWith('2020-12-31T03:00:00.000Z');
+    expect(onReference).toBeCalledWith(expect.stringContaining('2020-12-31'));
   });
 
   test('select date with range no date set', () => {
