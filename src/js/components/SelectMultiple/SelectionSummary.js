@@ -52,7 +52,9 @@ const SelectionSummary = ({
     );
     return (
       <Box
-        pad={showSelectedInline ? { vertical: 'xsmall' } : 'small'}
+        pad={
+          showSelectedInline ? { left: 'xsmall', vertical: 'xsmall' } : 'xsmall'
+        }
         direction="row"
         justify="between"
         gap="small"
@@ -60,10 +62,10 @@ const SelectionSummary = ({
         flex={showSelectedInline}
       >
         <Box pad={{ vertical: 'xsmall' }} alignSelf="center">
-          <Text margin={{ vertical: 'xsmall' }} size="small">
+          <Text size="small">
             {value?.length === 0 || onMore || !value
-              ? `${value?.length || '0'} selected`
-              : `${value?.length || '0'} selected of ${options.length}`}
+              ? `${value?.length || 0} selected`
+              : `${value?.length || 0} selected of ${options.length}`}
           </Text>
         </Box>
         {(options.length &&
@@ -103,7 +105,11 @@ const SelectionSummary = ({
       </Box>
     );
   }
-  return <Text size="small">{`${value?.length || '0'} selected`}</Text>;
+  return (
+    <Box pad="xsmall">
+      <Text size="small">{`${value?.length || '0'} selected`}</Text>
+    </Box>
+  );
 };
 
 export { SelectionSummary };
