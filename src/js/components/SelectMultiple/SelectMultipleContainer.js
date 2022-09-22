@@ -342,12 +342,7 @@ const SelectMultipleContainer = forwardRef(
 
     if (showSelectedInline)
       summaryContent = (
-        <Box
-          direction="row"
-          justify="between"
-          flex={false}
-          pad={{ left: 'small' }}
-        >
+        <Box direction="row" justify="between" flex={false}>
           {summaryContent}
           <Button onClick={onClose} a11yTitle="Close Select">
             <Box fill alignSelf="start" pad={{ right: 'small', top: 'small' }}>
