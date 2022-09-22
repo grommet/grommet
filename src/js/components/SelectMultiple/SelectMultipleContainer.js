@@ -119,18 +119,20 @@ const SelectMultipleContainer = forwardRef(
       (index) => {
         let result;
         const optionVal = getOptionValue(index, options, valueKey || labelKey);
-        if (value.length === 0) {
-          result = false;
-        } else if (typeof value[0] !== 'object') {
-          result = value.indexOf(optionVal) !== -1;
-        } else if (valueKey) {
-          result = value.some((valueItem) => {
-            const valueValue =
-              typeof valueKey === 'function'
-                ? valueKey(valueItem)
-                : valueItem[valueKey];
-            return valueValue === optionVal;
-          });
+        if (value) {
+          if (value.length === 0) {
+            result = false;
+          } else if (typeof value[0] !== 'object') {
+            result = value.indexOf(optionVal) !== -1;
+          } else if (valueKey) {
+            result = value.some((valueItem) => {
+              const valueValue =
+                typeof valueKey === 'function'
+                  ? valueKey(valueItem)
+                  : valueItem[valueKey];
+              return valueValue === optionVal;
+            });
+          }
         }
         return result;
       },
@@ -143,7 +145,7 @@ const SelectMultipleContainer = forwardRef(
           const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
           const allOptionsIndex = allOptions.indexOf(options[index]);
           const valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
-          if (valueIndex === -1 && (!limit || value.length < limit)) {
+          if (valueIndex === -1 && (!limit || value?.length < limit)) {
             nextOptionIndexesInValue.push(allOptionsIndex);
           } else {
             nextOptionIndexesInValue.splice(valueIndex, 1);
@@ -266,37 +268,40 @@ const SelectMultipleContainer = forwardRef(
 
     // handle when limit is reached
     useEffect(() => {
-      if (value.length === limit) {
-        const newDisabled = [...disabledProp];
-        // disable everything that is not selected
-        const originallyDisabled = (index) => {
-          const option = allOptions[index];
-          let result;
-          if (disabledKey) {
-            result = applyKey(option, disabledKey);
-          } else if (Array.isArray(disabledProp)) {
-            if (typeof disabledProp[0] === 'number') {
-              result = disabledProp.indexOf(index) !== -1;
-            } else {
-              result =
-                disabledProp.indexOf(
-                  getOptionValue(index, options, valueKey || labelKey),
-                ) !== -1;
-            }
-          }
-          return result;
-        };
-        for (let i = 0; i < options.length; i += 1) {
-          if (!isSelected(i) && !originallyDisabled(i)) {
-            newDisabled.push(options[i]);
+      const originallyDisabled = (index) => {
+        const option = allOptions[index];
+        let result;
+        if (disabledKey) {
+          result = applyKey(option, disabledKey);
+        } else if (Array.isArray(disabledProp)) {
+          if (typeof disabledProp[0] === 'number') {
+            result = disabledProp.indexOf(index) !== -1;
+          } else {
+            result =
+              disabledProp.indexOf(
+                getOptionValue(index, options, valueKey || labelKey),
+              ) !== -1;
           }
         }
-        if (usingKeyboard)
-          setShowA11yLimit('Selected. Maximum selection limit reached.');
-        setDisabled(newDisabled);
-      } else {
-        if (usingKeyboard) setShowA11yLimit(undefined);
-        setDisabled(disabledProp);
+        return result;
+      };
+
+      if (value && limit) {
+        if (value.length === limit) {
+          const newDisabled = [...disabledProp];
+          // disable everything that is not selected
+          for (let i = 0; i < options.length; i += 1) {
+            if (!isSelected(i) && !originallyDisabled(i)) {
+              newDisabled.push(options[i]);
+            }
+          }
+          if (usingKeyboard)
+            setShowA11yLimit('Selected. Maximum selection limit reached.');
+          setDisabled(newDisabled);
+        } else {
+          if (usingKeyboard) setShowA11yLimit(undefined);
+          setDisabled(disabledProp);
+        }
       }
     }, [
       isSelected,
@@ -413,11 +418,13 @@ const SelectMultipleContainer = forwardRef(
               >
                 {(option, index, optionRef) => {
                   const optionDisabled = isDisabled(index);
-                  const optionSelected = value.includes(
-                    valueKey && valueKey.reduce
-                      ? applyKey(option, valueKey)
-                      : option,
-                  );
+                  const optionSelected = value
+                    ? value.includes(
+                        valueKey && valueKey.reduce
+                          ? applyKey(option, valueKey)
+                          : option,
+                      )
+                    : false;
                   const optionActive = activeIndex === index;
                   const optionLabel = getOptionLabel(
                     index,
