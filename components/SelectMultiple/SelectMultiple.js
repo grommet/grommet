@@ -194,7 +194,7 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     if (onOpen) onOpen();
   }, [onOpen, open]);
   (0, _react.useEffect)(function () {
-    if (sortSelectedOnClose && (open && search || !open)) {
+    if (sortSelectedOnClose && value && (open && search || !open)) {
       var selectedOptions = optionsProp.filter(function (option) {
         return value.includes(valueKey && valueKey.reduce ? (0, _utils2.applyKey)(option, valueKey) : option);
       });
@@ -260,10 +260,12 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var SelectIcon = (0, _utils2.getSelectIcon)(icon, theme, open); // element to show, trumps inputValue
 
   var selectValue = (0, _react.useMemo)(function () {
-    if (valueLabel instanceof Function) {
-      if (value) return valueLabel(value);
-    } else if (valueLabel) return valueLabel;else if (value.length > 0 && showSelectedInline) {
-      return /*#__PURE__*/_react["default"].createElement(_SelectMultipleValue.SelectMultipleValue, {
+    var result;
+
+    if (valueLabel) {
+      result = value && valueLabel instanceof Function ? valueLabel(value) : valueLabel;
+    } else if ((value == null ? void 0 : value.length) > 0 && showSelectedInline) {
+      result = /*#__PURE__*/_react["default"].createElement(_SelectMultipleValue.SelectMultipleValue, {
         allOptions: allOptions,
         disabled: disabled,
         disabledKey: disabledKey,
@@ -277,7 +279,7 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       }, children);
     }
 
-    return undefined;
+    return result;
   }, [valueKey, value, valueLabel, showSelectedInline, onRequestOpen, allOptions, children, labelKey, onSelectChange, disabled, disabledKey, dropButtonRef, theme]);
   var displayLabelKey = (0, _react.useMemo)(function () {
     return (0, _utils2.getDisplayLabelKey)(labelKey, allOptions, optionIndexesInValue, selectValue);
@@ -335,7 +337,7 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var dropButtonProps = {
     ref: dropButtonRef,
-    a11yTitle: (ariaLabel || a11yTitle || placeholder || 'Open Drop') + ". " + value.length + " selected.",
+    a11yTitle: (ariaLabel || a11yTitle || placeholder || 'Open Drop') + ". " + ((value == null ? void 0 : value.length) || 0) + " selected.",
     'aria-expanded': Boolean(open),
     'aria-haspopup': 'listbox',
     id: id,
@@ -406,7 +408,7 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     tabIndex: "-1",
     type: "text",
     placeholder: // eslint-disable-next-line no-nested-ternary
-    value.length === 0 ? placeholder || selectValue || displayLabelKey : onMore ? value.length + " selected" : value.length + " selected of " + allOptions.length,
+    !value || (value == null ? void 0 : value.length) === 0 ? placeholder || selectValue || displayLabelKey : onMore ? ((value == null ? void 0 : value.length) || '0') + " selected" : ((value == null ? void 0 : value.length) || '0') + " selected of " + allOptions.length,
     plain: true,
     readOnly: true,
     value: "",
@@ -426,11 +428,11 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     id: id,
     name: name,
     ref: inputRef,
-    placeholder: placeholder,
+    placeholder: placeholder || 'Select',
     value: inputValue,
     size: size,
     theme: theme
-  }, rest)), displaySelectIcon)), !open && value.length > 0 && (selectValue || displayLabelKey))) : /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  }, rest)), displaySelectIcon)), !open && (value == null ? void 0 : value.length) > 0 && (selectValue || displayLabelKey))) : /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     width: width
   }, /*#__PURE__*/_react["default"].createElement(_StyledSelect.StyledSelectDropButton, _extends({}, dropButtonProps, {
     dropAlign: dropAlign || {

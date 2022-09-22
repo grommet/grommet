@@ -24,62 +24,68 @@ var SelectionSummary = function SelectionSummary(_ref) {
   var selectedValuesDisabled = useCallback(function () {
     var disabledSelected = 0;
 
-    for (var i = 0; i < allOptions.length; i += 1) {
-      if (value.includes(getOptionValue(i, options, valueKey || labelKey)) && isDisabled(i)) disabledSelected += 1;
-    }
-
-    if (value.length === disabledSelected) return true;
-    return false;
-  }, [value, allOptions, options, valueKey, labelKey, isDisabled]);
-  if (search === '' || search === undefined) return /*#__PURE__*/React.createElement(Box, {
-    pad: showSelectedInline ? {
-      left: 'xsmall',
-      vertical: 'xsmall'
-    } : 'xsmall',
-    direction: "row",
-    justify: "between",
-    gap: "small",
-    fill: "horizontal",
-    flex: showSelectedInline
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: {
-      vertical: 'xsmall'
-    },
-    alignSelf: "center"
-  }, /*#__PURE__*/React.createElement(Text, {
-    size: "small"
-  }, value.length === 0 || onMore ? value.length + " selected" : value.length + " selected of " + options.length)), (options.length && (!limit || !(value.length === 0 && selectedValuesDisabled()))) > 0 && (!onMore || onMore && value.length !== 0) && /*#__PURE__*/React.createElement(Button, {
-    a11yTitle: value.length === 0 || selectedValuesDisabled() ? "Select all " + options.length + " options" : value.length + " options selected. Clear all?",
-    label: value.length === 0 || selectedValuesDisabled() ? 'Select All' : 'Clear All',
-    onClick: function onClick(event) {
-      var selectAll = value.length === 0 || selectedValuesDisabled();
-
-      if (onChange) {
-        var nextSelected = options.filter(function (i, index) {
-          return selectAll ? !isDisabled(index) || isSelected(index) : isDisabled(index) && isSelected(index);
-        });
-        var nextValue = nextSelected.map(function (i) {
-          return valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
-        });
-        onChange(event, {
-          option: options,
-          value: nextValue,
-          selected: nextSelected
-        });
+    if (value) {
+      for (var i = 0; i < allOptions.length; i += 1) {
+        if (value.includes(getOptionValue(i, options, valueKey || labelKey)) && isDisabled(i)) disabledSelected += 1;
       }
 
-      if (limit && !selectAll) setActiveIndex(0);
-    },
-    onFocus: function onFocus() {
-      return setActiveIndex(-1);
-    },
-    ref: clearRef
-  }));
+      if (value.length === disabledSelected) return true;
+    }
+
+    return false;
+  }, [value, allOptions, options, valueKey, labelKey, isDisabled]);
+
+  if (search === '' || search === undefined) {
+    var showSelectAll = !!((value == null ? void 0 : value.length) === 0 || selectedValuesDisabled() || !value);
+    return /*#__PURE__*/React.createElement(Box, {
+      pad: showSelectedInline ? {
+        left: 'xsmall',
+        vertical: 'xsmall'
+      } : 'xsmall',
+      direction: "row",
+      justify: "between",
+      gap: "small",
+      fill: "horizontal",
+      flex: showSelectedInline
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: {
+        vertical: 'xsmall'
+      },
+      alignSelf: "center"
+    }, /*#__PURE__*/React.createElement(Text, {
+      size: "small"
+    }, (value == null ? void 0 : value.length) === 0 || onMore || !value ? ((value == null ? void 0 : value.length) || 0) + " selected" : ((value == null ? void 0 : value.length) || 0) + " selected of " + options.length)), (options.length && (!limit || !(!value || (value == null ? void 0 : value.length) === 0 && selectedValuesDisabled()))) > 0 && (!onMore || onMore && (value == null ? void 0 : value.length) !== 0) && /*#__PURE__*/React.createElement(Button, {
+      a11yTitle: showSelectAll ? "Select all " + options.length + " options" : (value == null ? void 0 : value.length) + " options selected. Clear all?",
+      label: showSelectAll ? 'Select All' : 'Clear All',
+      onClick: function onClick(event) {
+        if (onChange) {
+          var nextSelected = options.filter(function (i, index) {
+            return showSelectAll ? !isDisabled(index) || isSelected(index) : isDisabled(index) && isSelected(index);
+          });
+          var nextValue = nextSelected.map(function (i) {
+            return valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
+          });
+          onChange(event, {
+            option: options,
+            value: nextValue,
+            selected: nextSelected
+          });
+        }
+
+        if (limit && !showSelectAll) setActiveIndex(0);
+      },
+      onFocus: function onFocus() {
+        return setActiveIndex(-1);
+      },
+      ref: clearRef
+    }));
+  }
+
   return /*#__PURE__*/React.createElement(Box, {
     pad: "xsmall"
   }, /*#__PURE__*/React.createElement(Text, {
     size: "small"
-  }, value.length + " selected"));
+  }, ((value == null ? void 0 : value.length) || '0') + " selected"));
 };
 
 export { SelectionSummary };

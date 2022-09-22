@@ -116,15 +116,17 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var result;
     var optionVal = getOptionValue(index, options, valueKey || labelKey);
 
-    if (value.length === 0) {
-      result = false;
-    } else if (typeof value[0] !== 'object') {
-      result = value.indexOf(optionVal) !== -1;
-    } else if (valueKey) {
-      result = value.some(function (valueItem) {
-        var valueValue = typeof valueKey === 'function' ? valueKey(valueItem) : valueItem[valueKey];
-        return valueValue === optionVal;
-      });
+    if (value) {
+      if (value.length === 0) {
+        result = false;
+      } else if (typeof value[0] !== 'object') {
+        result = value.indexOf(optionVal) !== -1;
+      } else if (valueKey) {
+        result = value.some(function (valueItem) {
+          var valueValue = typeof valueKey === 'function' ? valueKey(valueItem) : valueItem[valueKey];
+          return valueValue === optionVal;
+        });
+      }
     }
 
     return result;
@@ -136,7 +138,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         var allOptionsIndex = allOptions.indexOf(options[index]);
         var valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
 
-        if (valueIndex === -1 && (!limit || value.length < limit)) {
+        if (valueIndex === -1 && (!limit || (value == null ? void 0 : value.length) < limit)) {
           nextOptionIndexesInValue.push(allOptionsIndex);
         } else {
           nextOptionIndexesInValue.splice(valueIndex, 1);
@@ -223,37 +225,39 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var selectOptionsStyle = theme.select.options ? _extends({}, theme.select.options.box, theme.select.options.container) : {}; // handle when limit is reached
 
   useEffect(function () {
-    if (value.length === limit) {
-      var newDisabled = [].concat(disabledProp); // disable everything that is not selected
+    var originallyDisabled = function originallyDisabled(index) {
+      var option = allOptions[index];
+      var result;
 
-      var originallyDisabled = function originallyDisabled(index) {
-        var option = allOptions[index];
-        var result;
-
-        if (disabledKey) {
-          result = applyKey(option, disabledKey);
-        } else if (Array.isArray(disabledProp)) {
-          if (typeof disabledProp[0] === 'number') {
-            result = disabledProp.indexOf(index) !== -1;
-          } else {
-            result = disabledProp.indexOf(getOptionValue(index, options, valueKey || labelKey)) !== -1;
-          }
-        }
-
-        return result;
-      };
-
-      for (var i = 0; i < options.length; i += 1) {
-        if (!isSelected(i) && !originallyDisabled(i)) {
-          newDisabled.push(options[i]);
+      if (disabledKey) {
+        result = applyKey(option, disabledKey);
+      } else if (Array.isArray(disabledProp)) {
+        if (typeof disabledProp[0] === 'number') {
+          result = disabledProp.indexOf(index) !== -1;
+        } else {
+          result = disabledProp.indexOf(getOptionValue(index, options, valueKey || labelKey)) !== -1;
         }
       }
 
-      if (usingKeyboard) setShowA11yLimit('Selected. Maximum selection limit reached.');
-      setDisabled(newDisabled);
-    } else {
-      if (usingKeyboard) setShowA11yLimit(undefined);
-      setDisabled(disabledProp);
+      return result;
+    };
+
+    if (value && limit) {
+      if (value.length === limit) {
+        var newDisabled = [].concat(disabledProp); // disable everything that is not selected
+
+        for (var i = 0; i < options.length; i += 1) {
+          if (!isSelected(i) && !originallyDisabled(i)) {
+            newDisabled.push(options[i]);
+          }
+        }
+
+        if (usingKeyboard) setShowA11yLimit('Selected. Maximum selection limit reached.');
+        setDisabled(newDisabled);
+      } else {
+        if (usingKeyboard) setShowA11yLimit(undefined);
+        setDisabled(disabledProp);
+      }
     }
   }, [isSelected, value, limit, disabledProp, allOptions, disabledKey, labelKey, options, usingKeyboard, valueKey]); // reset showA11yLimit after announcement is read
 
@@ -349,7 +353,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     show: activeIndex !== -1 ? activeIndex : undefined
   }, function (option, index, optionRef) {
     var optionDisabled = isDisabled(index);
-    var optionSelected = value.includes(valueKey && valueKey.reduce ? applyKey(option, valueKey) : option);
+    var optionSelected = value ? value.includes(valueKey && valueKey.reduce ? applyKey(option, valueKey) : option) : false;
     var optionActive = activeIndex === index;
     var optionLabel = getOptionLabel(index, options, labelKey || valueKey); // Determine whether the label is done as a child or
     // as an option Button kind property.
