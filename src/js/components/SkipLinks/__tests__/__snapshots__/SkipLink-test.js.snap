@@ -79,7 +79,7 @@ exports[`SkipLink basic 1`] = `
 
 exports[`SkipLink basic 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div>
     <a
@@ -111,7 +111,7 @@ exports[`SkipLink basic 2`] = `
 
 exports[`SkipLink basic 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div>
     <a
@@ -210,7 +210,7 @@ exports[`SkipLink should allow for single skip link 1`] = `
 
 exports[`SkipLink should allow for single skip link 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div>
     <a
@@ -236,7 +236,7 @@ exports[`SkipLink should allow for single skip link 2`] = `
 
 exports[`SkipLink should allow for single skip link 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div>
     <a

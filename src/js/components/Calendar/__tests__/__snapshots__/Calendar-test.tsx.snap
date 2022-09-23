@@ -1160,7 +1160,7 @@ exports[`Calendar change months 1`] = `
 
 exports[`Calendar change months 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledCalendar-sc-1y4xhmp-0 eRFLFF"
@@ -15986,7 +15986,7 @@ exports[`Calendar select date 1`] = `
 
 exports[`Calendar select date 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledCalendar-sc-1y4xhmp-0 eRFLFF"
@@ -18005,7 +18005,7 @@ exports[`Calendar select dates 1`] = `
 
 exports[`Calendar select dates 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledCalendar-sc-1y4xhmp-0 eRFLFF"

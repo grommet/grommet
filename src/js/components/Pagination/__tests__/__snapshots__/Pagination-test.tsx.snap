@@ -8110,7 +8110,7 @@ exports[`Pagination should display next page of results when "next" is
 exports[`Pagination should display next page of results when "next" is
   selected 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr Pagination__StyledPaginationContainer-sc-rnlw6m-0"
@@ -9411,7 +9411,7 @@ exports[`Pagination should display previous page of results when "previous" is
 exports[`Pagination should display previous page of results when "previous" is
   selected 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gatMrI"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr Pagination__StyledPaginationContainer-sc-rnlw6m-0"
