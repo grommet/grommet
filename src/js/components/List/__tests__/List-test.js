@@ -11,6 +11,7 @@ import { Grommet } from '../../Grommet';
 import { List } from '..';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
+import { Button } from '../../Button';
 
 const data = [];
 for (let i = 0; i < 95; i += 1) {
@@ -548,6 +549,39 @@ describe('List onOrder', () => {
       which: 13,
     });
     expect(onOrder).toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+});
+
+describe('List onOrder with action', () => {
+  let onOrder;
+  let App;
+
+  beforeEach(() => {
+    onOrder = jest.fn();
+    App = () => {
+      const [ordered, setOrdered] = useState([{ a: 'alpha' }, { a: 'beta' }]);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            primaryKey="a"
+            onOrder={(newData) => {
+              setOrdered(newData);
+              onOrder(newData);
+            }}
+            // eslint-disable-next-line react/no-unstable-nested-components
+            action={(item, index) =>
+              <Button key={`action${index}`} label="Action"/>}
+          />
+        </Grommet>
+      );
+    };
+  });
+
+  test('Render', () => {
+    const { container } = render(<App />);
+
     expect(container.firstChild).toMatchSnapshot();
   });
 });
