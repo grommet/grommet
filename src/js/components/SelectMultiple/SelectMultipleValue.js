@@ -66,7 +66,7 @@ const SelectMultipleValue = ({
             aria-selected={value.includes(optionValue)}
             aria-disabled={optionDisabled}
             plain
-            hoverIndicator
+            hoverIndicator={!optionDisabled}
             fill="horizontal"
             tabIndex="0"
             onClick={(event) => {

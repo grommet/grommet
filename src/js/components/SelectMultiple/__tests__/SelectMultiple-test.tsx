@@ -300,4 +300,15 @@ describe('SelectMultiple', () => {
 
     expectPortal('test-select__drop').toMatchSnapshot();
   });
+
+  test('null value', () => {
+    const { asFragment } = render(
+      <Grommet>
+        {/* @ts-expect-error */}
+        <SelectMultiple options={['a', 'b']} value={null} />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
