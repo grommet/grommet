@@ -580,9 +580,9 @@ describe('List onOrder with action', () => {
   });
 
   test('Render', () => {
-    const { container } = render(<App />);
+    const { asFragment } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 

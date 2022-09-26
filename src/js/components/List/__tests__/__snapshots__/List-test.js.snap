@@ -16567,7 +16567,8 @@ exports[`List onOrder Mouse move down 2`] = `
 `;
 
 exports[`List onOrder with action Render 1`] = `
-.c12 {
+<DocumentFragment>
+  .c12 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -16972,181 +16973,182 @@ exports[`List onOrder with action Render 1`] = `
 }
 
 <div
-  class="c0"
->
-  <ul
-    class="c1"
-    role="listbox"
-    tabindex="0"
+    class="c0"
   >
-    <li
-      class="c2 c3"
-      draggable="true"
+    <ul
+      class="c1"
+      role="listbox"
+      tabindex="0"
     >
-      <span
-        class="c4"
+      <li
+        class="c2 c3"
+        draggable="true"
       >
-        1
-      </span>
-      <div
-        class="c5"
-      />
-      <div
-        class="c6"
-      >
-        <div
-          class="c7"
+        <span
+          class="c4"
         >
-          <span
-            class="c8"
+          1
+        </span>
+        <div
+          class="c5"
+        />
+        <div
+          class="c6"
+        >
+          <div
+            class="c7"
           >
-            alpha
-          </span>
+            <span
+              class="c8"
+            >
+              alpha
+            </span>
+          </div>
+          <div
+            class="c5"
+          />
+          <button
+            class="c9"
+            type="button"
+          >
+            Action
+          </button>
         </div>
         <div
           class="c5"
         />
-        <button
-          class="c9"
-          type="button"
-        >
-          Action
-        </button>
-      </div>
-      <div
-        class="c5"
-      />
-      <div
-        class="c10"
-      >
-        <button
-          aria-label="1 alpha move up"
-          class="c11"
-          disabled=""
-          id="alphaMoveUp"
-          tabindex="-1"
-          type="button"
-        >
-          <svg
-            aria-label="FormUp"
-            class="c12"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="m18 15-6-6-6 6"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
-        <button
-          aria-label="1 alpha move down"
-          class="c13"
-          id="alphaMoveDown"
-          tabindex="-1"
-          type="button"
-        >
-          <svg
-            aria-label="FormDown"
-            class="c12"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="m18 9-6 6-6-6"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
-      </div>
-    </li>
-    <li
-      class="c14 c3"
-      draggable="true"
-    >
-      <span
-        class="c4"
-      >
-        2
-      </span>
-      <div
-        class="c5"
-      />
-      <div
-        class="c6"
-      >
         <div
-          class="c7"
+          class="c10"
         >
-          <span
-            class="c8"
+          <button
+            aria-label="1 alpha move up"
+            class="c11"
+            disabled=""
+            id="alphaMoveUp"
+            tabindex="-1"
+            type="button"
           >
-            beta
-          </span>
+            <svg
+              aria-label="FormUp"
+              class="c12"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 15-6-6-6 6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="1 alpha move down"
+            class="c13"
+            id="alphaMoveDown"
+            tabindex="-1"
+            type="button"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c12"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 9-6 6-6-6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </li>
+      <li
+        class="c14 c3"
+        draggable="true"
+      >
+        <span
+          class="c4"
+        >
+          2
+        </span>
+        <div
+          class="c5"
+        />
+        <div
+          class="c6"
+        >
+          <div
+            class="c7"
+          >
+            <span
+              class="c8"
+            >
+              beta
+            </span>
+          </div>
+          <div
+            class="c5"
+          />
+          <button
+            class="c9"
+            type="button"
+          >
+            Action
+          </button>
         </div>
         <div
           class="c5"
         />
-        <button
-          class="c9"
-          type="button"
+        <div
+          class="c10"
         >
-          Action
-        </button>
-      </div>
-      <div
-        class="c5"
-      />
-      <div
-        class="c10"
-      >
-        <button
-          aria-label="2 beta move up"
-          class="c13"
-          id="betaMoveUp"
-          tabindex="-1"
-          type="button"
-        >
-          <svg
-            aria-label="FormUp"
-            class="c12"
-            viewBox="0 0 24 24"
+          <button
+            aria-label="2 beta move up"
+            class="c13"
+            id="betaMoveUp"
+            tabindex="-1"
+            type="button"
           >
-            <path
-              d="m18 15-6-6-6 6"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
-        <button
-          aria-label="2 beta move down"
-          class="c11"
-          disabled=""
-          id="betaMoveDown"
-          tabindex="-1"
-          type="button"
-        >
-          <svg
-            aria-label="FormDown"
-            class="c12"
-            viewBox="0 0 24 24"
+            <svg
+              aria-label="FormUp"
+              class="c12"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 15-6-6-6 6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="2 beta move down"
+            class="c11"
+            disabled=""
+            id="betaMoveDown"
+            tabindex="-1"
+            type="button"
           >
-            <path
-              d="m18 9-6 6-6-6"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
-      </div>
-    </li>
-  </ul>
-</div>
+            <svg
+              aria-label="FormDown"
+              class="c12"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 9-6 6-6-6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`List pad object 1`] = `
