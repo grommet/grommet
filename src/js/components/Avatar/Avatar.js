@@ -1,11 +1,14 @@
 import React, { useCallback, useContext, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
 
+import { Image } from '../Image';
 import { defaultProps } from '../../default-props';
 import { StyledAvatar, StyledAvatarText } from './StyledAvatar';
 import { AvatarPropTypes } from './propTypes';
 
 const Avatar = ({
+  a11yTitle,
+  'aria-label': ariaLabel,
   align = 'center',
   children,
   height, // for warning check and discarding the value
@@ -49,12 +52,18 @@ const Avatar = ({
 
   if (typeof src === 'string') {
     return (
-      <StyledAvatar {...avatarProps} {...rest} background={`url(${src})`} />
+      <StyledAvatar {...avatarProps} {...rest}>
+        <Image a11yTitle={a11yTitle || ariaLabel} fit="contain" src={src} />
+      </StyledAvatar>
     );
   }
   if (typeof children === 'string') {
     return (
-      <StyledAvatar {...avatarProps} {...rest}>
+      <StyledAvatar
+        a11yTitle={a11yTitle || ariaLabel}
+        {...avatarProps}
+        {...rest}
+      >
         <StyledAvatarText alignSelf="center" size={avatarTextSize}>
           {children}
         </StyledAvatarText>
