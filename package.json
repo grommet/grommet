@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.25.3",
+  "version": "2.26.0",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -33,10 +33,11 @@
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "test": "jest --runInBand && yarn test-timezones",
+    "test-simple": "jest --runInBand",
     "test-update": "jest --updateSnapshot && yarn test-timezones",
     "test-watch": "jest --watchAll",
     "test-bundlesize": "bundlesize",
-    "test-timezones": "TZ=Australia/Brisbane yarn test-calendar-dateinput --coverage=false && TZ=America/Los_Angeles yarn test-calendar-dateinput --coverage=false && TZ=Europe/Madrid yarn test-calendar-dateinput --coverage=false",
+    "test-timezones": "cross-env TZ=Australia/Brisbane yarn test-calendar-dateinput --coverage=false && cross-env TZ=America/Los_Angeles yarn test-calendar-dateinput --coverage=false && cross-env TZ=Europe/Madrid yarn test-calendar-dateinput --coverage=false",
     "test-calendar-dateinput": "jest ./src/js/components/Calendar/__tests__/Calendar-test.tsx ./src/js/components/DateInput/__tests__/DateInput-test.tsx",
     "pack": "babel-node ./tools/pack",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
@@ -52,8 +53,7 @@
     "styled-components": ">= 5.1"
   },
   "dependencies": {
-    "@testing-library/testcafe": "^4.4.1",
-    "grommet-icons": "^4.8.0",
+    "grommet-icons": "^4.7.0",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^7.1.5",
     "prop-types": "^15.8.1"
@@ -72,17 +72,19 @@
     "@babel/plugin-proposal-pipeline-operator": "^7.18.9",
     "@babel/preset-env": "^7.18.9",
     "@babel/preset-react": "^7.18.6",
-    "@storybook/addon-a11y": "6.4.22",
-    "@storybook/addon-storysource": "6.4.22",
-    "@storybook/addon-toolbars": "6.4.22",
-    "@storybook/addons": "6.4.22",
-    "@storybook/react": "6.4.22",
-    "@storybook/source-loader": "6.4.22",
-    "@testing-library/dom": "8.14.0",
+    "@storybook/addon-a11y": "^6.5.12",
+    "@storybook/addon-storysource": "^6.5.12",
+    "@storybook/addon-toolbars": "^6.5.12",
+    "@storybook/addons": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/source-loader": "^6.5.12",
+    "@testing-library/dom": "^8.17.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/testcafe": "^4.4.1",
-    "@testing-library/user-event": "14.2.1",
+    "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^28.1.6",
     "@types/jest-axe": "^3.5.4",
     "@types/node": "^18.6.2",
@@ -140,11 +142,11 @@
     "testcafe": "^2.0.0",
     "testcafe-react-selectors": "^5.0.2",
     "ts-jest": "^28.0.7",
-    "ts-loader": "^8.4.0",
+    "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.9.3"
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.0"
   },
   "jest": {
     "globals": {
@@ -203,7 +205,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "140 kB"
+      "maxSize": "142 kB"
     }
   ],
   "keywords": [

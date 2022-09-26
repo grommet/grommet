@@ -83,11 +83,14 @@ export const parameters = {
 
 export const globalTypes = {
   theme: {
-    name: 'Theme',
     defaultValue: 'grommet',
     toolbar: {
-      items: ['base', 'grommet', 'hpe'],
-      showName: true,
+      title: 'Theme',
+      items: [
+        { title: 'base', value: 'base' },
+        { title: 'grommet', value: 'grommet' },
+        { title: 'hpe', value: 'hpe' },
+      ],
     },
   },
 };
