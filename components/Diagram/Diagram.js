@@ -223,7 +223,8 @@ var Diagram = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
         path = /*#__PURE__*/_react["default"].createElement("path", _extends({
           // eslint-disable-next-line react/no-array-index-key
-          key: index,
+          key: index // eslint-disable-next-line react/no-unknown-property
+          ,
           animation: animation
         }, cleanedRest, {
           stroke: (0, _utils.normalizeColor)(colorName, theme),

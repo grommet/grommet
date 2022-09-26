@@ -65,6 +65,7 @@ describe('Carousel', () => {
      * - Expecting "Slide Two" to be visible
      */
     const nextButton = screen.getByRole('button', { name: /Go to slide 2/i });
+
     await user.click(nextButton);
     act(() => {
       jest.advanceTimersByTime(1000);

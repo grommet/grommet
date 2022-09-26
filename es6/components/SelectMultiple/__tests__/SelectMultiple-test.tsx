@@ -184,12 +184,10 @@ describe('SelectMultiple', () => {
     await user.click(screen.getByRole('option', { name: /0/i }));
     await user.click(screen.getByRole('option', { name: /1/i }));
     await user.click(screen.getByRole('option', { name: /2/i }));
-
     // close SelectMultiple
     await user.click(screen.getByRole('button', { name: /Close Select/i }));
     // all options should be visible when drop is closed
     expect(container.firstChild).toMatchSnapshot();
-
     // unselect option at input level
     await user.click(screen.getByRole('option', { name: /0/i }));
     await user.click(screen.getByRole('option', { name: /2/i }));
