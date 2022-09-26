@@ -637,6 +637,11 @@ const List = React.forwardRef(
                     </Box>
                   );
 
+                  // wrap the main content and use
+                  // the boxProps defined for the content
+                  content = <Box flex {...boxProps}>{content}</Box>;
+
+                  // Adjust the boxProps to account for the order controls
                   boxProps = {
                     direction: 'row',
                     align:
@@ -644,7 +649,6 @@ const List = React.forwardRef(
                     gap: 'medium',
                   };
 
-                  content = <Box flex>{content}</Box>;
                 }
 
                 let itemAriaProps;
