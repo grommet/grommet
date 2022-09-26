@@ -589,15 +589,18 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           updateActive(undefined);
           setItemFocus(false);
         }
-      }));
+      })); // wrap the main content and use
+      // the boxProps defined for the content
+
+      content = /*#__PURE__*/React.createElement(Box, _extends({
+        flex: true
+      }, boxProps), content); // Adjust the boxProps to account for the order controls
+
       boxProps = {
         direction: 'row',
         align: defaultItemProps && defaultItemProps.align || 'center',
         gap: 'medium'
       };
-      content = /*#__PURE__*/React.createElement(Box, {
-        flex: true
-      }, content);
     }
 
     var itemAriaProps;

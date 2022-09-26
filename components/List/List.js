@@ -610,15 +610,18 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
           updateActive(undefined);
           setItemFocus(false);
         }
-      }));
+      })); // wrap the main content and use
+      // the boxProps defined for the content
+
+      content = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
+        flex: true
+      }, boxProps), content); // Adjust the boxProps to account for the order controls
+
       boxProps = {
         direction: 'row',
         align: defaultItemProps && defaultItemProps.align || 'center',
         gap: 'medium'
       };
-      content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-        flex: true
-      }, content);
     }
 
     var itemAriaProps;
