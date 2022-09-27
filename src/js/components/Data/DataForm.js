@@ -6,17 +6,31 @@ import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
 
 const formSearchKey = '_search';
+const formSortPropertyKey = '_sort.property';
+const formSortDirectionKey = '_sort.direction';
 
 const filtersToFormValue = (filters) => ({
   ...filters.properties,
   [formSearchKey]: filters.search.text,
+  [formSortPropertyKey]: filters?.sort?.property,
+  [formSortDirectionKey]: filters?.sort?.direction,
 });
 
 const formValueToFilters = (value) => {
   const properties = value;
   const searchText = value[formSearchKey];
   delete properties[formSearchKey];
-  return { properties, search: { text: searchText } };
+  const sortProperty = value[formSortPropertyKey];
+  const sortDirection = value[formSortDirectionKey];
+  delete properties[formSortPropertyKey];
+  delete properties[formSortDirectionKey];
+  return {
+    properties,
+    search: { text: searchText },
+    ...(sortProperty || sortDirection
+      ? { sort: { property: sortProperty, direction: sortDirection } }
+      : {}),
+  };
 };
 
 const clearEmpty = (properties) => {

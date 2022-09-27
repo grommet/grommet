@@ -5,6 +5,7 @@ import {
   DataFilters,
   DataFilter,
   DataSearch,
+  DataSort,
   DataSummary,
   DataTable,
   Grid,
@@ -24,6 +25,7 @@ export const Table = () => (
           <DataSearch />
           <DataFilters drop>
             <DataFilter property="location" />
+            <DataSort />
           </DataFilters>
         </Box>
       </Toolbar>

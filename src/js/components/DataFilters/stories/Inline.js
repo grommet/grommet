@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Data, DataFilter, DataSearch } from 'grommet';
+import { Box, Data, DataFilter, DataSearch, DataSort } from 'grommet';
 
 import { DataFilters } from '../DataFilters';
 import { DATA } from '../../DataTable/stories/data';
@@ -14,6 +14,7 @@ export const Inline = () => (
         <DataSearch />
         <DataFilter property="location" />
         <DataFilter property="percent" />
+        <DataSort />
       </DataFilters>
     </Data>
   </Box>

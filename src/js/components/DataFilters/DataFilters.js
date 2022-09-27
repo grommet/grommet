@@ -5,6 +5,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataFilter } from '../DataFilter';
 import { DataForm } from '../Data';
+import { DataSort } from '../DataSort';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
@@ -22,6 +23,7 @@ export const DataFilters = ({
   layer,
   messages,
   properties,
+  sort,
   ...rest
 }) => {
   const { filters, clearFilters } = useContext(DataContext);
@@ -60,6 +62,7 @@ export const DataFilters = ({
         properties.map((property) => (
           <DataFilter key={property} property={property} />
         ))}
+      {sort && <DataSort />}
       {children}
     </DataForm>
   );

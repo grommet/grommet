@@ -12,6 +12,8 @@ const defaultFilters = {
   properties: {},
 };
 
+// TODO: handle '.' delimited property names via sub objects
+
 const filterData = (data, filters) => {
   const searchExp = filters.search.text
     ? new RegExp(filters.search.text, 'i')
@@ -19,6 +21,7 @@ const filterData = (data, filters) => {
   const searchProperty = filters.search.property;
   const result = data.filter((datum) => {
     let matched = true;
+    // check whether it matches any search
     if (searchExp) {
       matched = Object.keys(datum).some((property) => {
         if (
@@ -30,6 +33,7 @@ const filterData = (data, filters) => {
         return false;
       });
     }
+    // check whether it matches any specific values
     if (matched) {
       matched = !Object.keys(filters.properties).some((property) => {
         // returning true means it doesn't match the filter
@@ -43,6 +47,32 @@ const filterData = (data, filters) => {
     }
     return matched;
   });
+
+  if (filters?.sort?.property && filters?.sort?.direction) {
+    const { property, direction } = filters.sort;
+    const sortAsc = direction === 'asc';
+    const before = sortAsc ? 1 : -1;
+    const after = sortAsc ? -1 : 1;
+    result.sort((d1, d2) => {
+      const d1Val = d1[property];
+      const d2Val = d2[property];
+      // sort strings via locale case insensitive
+      if ((typeof d1Val === 'string' && typeof d2Val === 'string') ||
+        (typeof d1Val === 'string' && !d2Val) ||
+        (typeof d2Val === 'string' && !d1Val)) {
+        const sortResult = (d1Val || '').localeCompare(d2Val || '', undefined, {
+          sensitivity: 'base',
+        });
+        return sortAsc ? sortResult : -sortResult;
+      }
+      // numbers are easier to sort
+      if (d1Val > d2Val) return before;
+      if (d1Val < d2Val) return after;
+
+      return 0;
+    });
+  }
+
   return result;
 };
 
@@ -53,6 +83,7 @@ export const Data = ({
   onChange,
   onSubmit,
   search,
+  sort,
   total,
   ...rest
 }) => {
@@ -113,10 +144,11 @@ export const Data = ({
     () =>
       ((typeof filtersProp === 'string' || Array.isArray(filtersProp)) && {
         properties: filtersProp,
+        sort,
       }) ||
-      (typeof filtersProp === 'object' && filtersProp) ||
+      (typeof filtersProp === 'object' && { ...filtersProp, sort }) ||
       undefined,
-    [filtersProp],
+    [filtersProp, sort],
   );
 
   let controls;

@@ -5,6 +5,7 @@ import {
   DataFilters,
   DataFilter,
   DataSearch,
+  DataSort,
   DataSummary,
   DataTable,
   Grid,
@@ -24,6 +25,7 @@ export const Inline = () => {
       {search && <DataSearch />}
       <DataFilter property="location" />
       <DataFilter property="percent" />
+      <DataSort />
     </DataFilters>
   );
 

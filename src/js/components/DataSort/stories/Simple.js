@@ -1,15 +1,16 @@
 import React from 'react';
 
-import { Grid, DataTable } from 'grommet';
+import { Data, DataTable, Grid } from 'grommet';
 
-import { Data } from '../Data';
+import { DataSort } from '../DataSort';
 import { columns, DATA } from '../../DataTable/stories/data';
 
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Grid flex={false} pad="large" columns={['large']} justifyContent="center">
-    <Data data={DATA} search filters={['location']} sort>
+  <Grid pad="large" columns={['large']} justifyContent="center">
+    <Data data={DATA} onChange>
+      <DataSort />
       <DataTable columns={columns} />
     </Data>
   </Grid>
@@ -21,5 +22,5 @@ Simple.args = {
 };
 
 export default {
-  title: 'Layout/Data/Simple',
+  title: 'Input/DataSort/Simple',
 };
