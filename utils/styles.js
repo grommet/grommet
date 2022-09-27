@@ -13,7 +13,7 @@ var _responsive = require("./responsive");
 
 var _mixins = require("./mixins");
 
-var baseStyle = (0, _styledComponents.css)(["font-family:", ";font-size:", ";line-height:", ";font-weight:", ";", " box-sizing:border-box;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;"], function (props) {
+var baseStyle = (0, _styledComponents.css)(["font-family:", ";font-size:", ";line-height:", ";font-weight:", ";", " ", " box-sizing:border-box;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;"], function (props) {
   return props.theme.global.font.family;
 }, function (props) {
   return props.theme.global.font.size;
@@ -21,6 +21,8 @@ var baseStyle = (0, _styledComponents.css)(["font-family:", ";font-size:", ";lin
   return props.theme.global.font.height;
 }, function (props) {
   return props.theme.global.font.weight;
+}, function (props) {
+  return props.theme.global.font.variant && "\n    font-variant:" + props.theme.global.font.variant + ";\n  ";
 }, function (props) {
   return !props.plain && (0, _background.backgroundStyle)(props.theme.baseBackground, props.theme);
 });

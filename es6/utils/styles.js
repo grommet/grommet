@@ -3,7 +3,7 @@ import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
 import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
-export var baseStyle = css(["font-family:", ";font-size:", ";line-height:", ";font-weight:", ";", " box-sizing:border-box;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;"], function (props) {
+export var baseStyle = css(["font-family:", ";font-size:", ";line-height:", ";font-weight:", ";", " ", " box-sizing:border-box;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;"], function (props) {
   return props.theme.global.font.family;
 }, function (props) {
   return props.theme.global.font.size;
@@ -11,6 +11,8 @@ export var baseStyle = css(["font-family:", ";font-size:", ";line-height:", ";fo
   return props.theme.global.font.height;
 }, function (props) {
   return props.theme.global.font.weight;
+}, function (props) {
+  return props.theme.global.font.variant && "\n    font-variant:" + props.theme.global.font.variant + ";\n  ";
 }, function (props) {
   return !props.plain && backgroundStyle(props.theme.baseBackground, props.theme);
 });
