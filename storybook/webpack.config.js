@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = async ({ config }) => {
   config.module.rules.push({
     test: /\.stories\.js$|(\/|\\)stories(\/|\\).*\.js$/,
-    loaders: [
+    use: [
       {
         loader: require.resolve('@storybook/source-loader'),
         options: {
@@ -18,14 +18,7 @@ module.exports = async ({ config }) => {
 
   config.module.rules.push({
     test: /stories(\\|\/).*\.(ts|tsx)$/,
-    loaders: [
-      {
-        loader: require.resolve('ts-loader'),
-      },
-      {
-        loader: require.resolve('@storybook/source-loader'),
-      },
-    ],
+    use: ['ts-loader', '@storybook/source-loader'],
   });
 
   // eslint-disable-next-line no-param-reassign

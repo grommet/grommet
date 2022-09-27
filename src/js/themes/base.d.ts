@@ -395,6 +395,7 @@ export interface ThemeType {
       maxWidth?: string;
       size?: string;
       weight?: number | string;
+      variant?: string;
     };
     graph?: {
       colors?: GraphColorsType;

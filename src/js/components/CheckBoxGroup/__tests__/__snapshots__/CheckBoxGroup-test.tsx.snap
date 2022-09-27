@@ -2,7 +2,7 @@
 
 exports[`CheckBoxGroup custom theme 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 bRUjod StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -56,7 +56,7 @@ exports[`CheckBoxGroup custom theme 1`] = `
 exports[`CheckBoxGroup defaultValue renders 1`] = `
 <DocumentFragment>
   <div
-    class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+    class="StyledGrommet-sc-19lkkz7-0 eANINY"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -122,7 +122,7 @@ exports[`CheckBoxGroup defaultValue renders 1`] = `
 
 exports[`CheckBoxGroup disabled renders 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -239,7 +239,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
 
 exports[`CheckBoxGroup initial value renders 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -338,7 +338,7 @@ exports[`CheckBoxGroup initial value renders 1`] = `
 
 exports[`CheckBoxGroup labelKey 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -391,7 +391,7 @@ exports[`CheckBoxGroup labelKey 1`] = `
 
 exports[`CheckBoxGroup onChange 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -455,7 +455,7 @@ exports[`CheckBoxGroup onChange 1`] = `
 
 exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 hHdQrv StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -520,7 +520,7 @@ exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 1`] = `
 
 exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 hHdQrv StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -574,7 +574,7 @@ exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 2`] = `
 
 exports[`CheckBoxGroup options renders 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -627,7 +627,7 @@ exports[`CheckBoxGroup options renders 1`] = `
 
 exports[`CheckBoxGroup value renders 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -692,7 +692,7 @@ exports[`CheckBoxGroup value renders 1`] = `
 
 exports[`CheckBoxGroup valueKey 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr StyledCheckBoxGroup-sc-2nhc5d-0"

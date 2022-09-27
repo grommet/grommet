@@ -5084,7 +5084,7 @@ exports[`Select disabled key 2`] = `
   padding: 12px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5225,6 +5225,12 @@ exports[`Select disabled key 2`] = `
 }
 
 .c6 {
+  display: block;
+  width: 100%;
+  cursor: default;
+}
+
+.c10 {
   display: block;
   width: 100%;
 }
@@ -5299,7 +5305,7 @@ exports[`Select disabled key 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c9 c6"
+        class="c9 c10"
         role="option"
         tabindex="-1"
         type="button"
@@ -5315,7 +5321,7 @@ exports[`Select disabled key 2`] = `
         </div>
       </button>
       <div
-        class="c10"
+        class="c11"
       />
     </div>
   </div>
@@ -5381,7 +5387,7 @@ exports[`Select disabled option value 1`] = `
   padding: 12px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5524,6 +5530,12 @@ exports[`Select disabled option value 1`] = `
 .c6 {
   display: block;
   width: 100%;
+  cursor: default;
+}
+
+.c10 {
+  display: block;
+  width: 100%;
 }
 
 @media only screen and (max-width:768px) {
@@ -5596,7 +5608,7 @@ exports[`Select disabled option value 1`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c9 c6"
+        class="c9 c10"
         role="option"
         tabindex="-1"
         type="button"
@@ -5612,7 +5624,7 @@ exports[`Select disabled option value 1`] = `
         </div>
       </button>
       <div
-        class="c10"
+        class="c11"
       />
     </div>
   </div>
@@ -10309,7 +10321,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 ghVuhX StyledSelect__SelectOption-sc-znp66n-3 dlQohO"
+    class="StyledButton-sc-323bzc-0 ghVuhX StyledSelect__SelectOption-sc-znp66n-3 fkzPuo"
     role="option"
     tabindex="-1"
     type="button"
@@ -10328,7 +10340,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 ghVuhX StyledSelect__SelectOption-sc-znp66n-3 dlQohO"
+    class="StyledButton-sc-323bzc-0 ghVuhX StyledSelect__SelectOption-sc-znp66n-3 fkzPuo"
     role="option"
     tabindex="-1"
     type="button"
@@ -10898,7 +10910,7 @@ exports[`Select renders custom up and down icons 1`] = `
 
 exports[`Select renders custom up and down icons 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <button
     aria-expanded="true"
@@ -15483,7 +15495,7 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
 
 exports[`Select select option by typing should not break if caller passes JSX 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <button
     aria-expanded="false"

@@ -1598,7 +1598,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 exports[`Video Play and Pause event handlers 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 eKRKEJ"
@@ -5994,7 +5994,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 exports[`Video mouse events handlers of controls 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 eKRKEJ"
@@ -6118,7 +6118,7 @@ exports[`Video mouse events handlers of controls 2`] = `
 
 exports[`Video mouse events handlers of controls 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 eKRKEJ"
@@ -8354,7 +8354,7 @@ exports[`Video scrubber 1`] = `
 
 exports[`Video scrubber 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 eKRKEJ"

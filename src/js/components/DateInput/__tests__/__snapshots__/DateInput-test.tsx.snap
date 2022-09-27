@@ -1714,7 +1714,7 @@ exports[`DateInput controlled format inline 1`] = `
 
 exports[`DateInput controlled format inline 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -14602,7 +14602,7 @@ exports[`DateInput select format 1`] = `
 
 exports[`DateInput select format 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 lhOJod"
@@ -17357,7 +17357,7 @@ exports[`DateInput select format inline 1`] = `
 
 exports[`DateInput select format inline 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -22438,7 +22438,7 @@ exports[`DateInput select format inline range 1`] = `
 
 exports[`DateInput select format inline range 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -31708,7 +31708,7 @@ exports[`DateInput type format inline 1`] = `
 
 exports[`DateInput type format inline 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -36710,7 +36710,7 @@ exports[`DateInput type format inline range 1`] = `
 
 exports[`DateInput type format inline range 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -38962,7 +38962,7 @@ exports[`DateInput type format inline range partial 1`] = `
 
 exports[`DateInput type format inline range partial 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -39822,7 +39822,7 @@ exports[`DateInput type format inline range partial 2`] = `
 
 exports[`DateInput type format inline range partial 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
@@ -48990,7 +48990,7 @@ exports[`DateInput type format inline short 1`] = `
 
 exports[`DateInput type format inline short 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 iNDmPr"
