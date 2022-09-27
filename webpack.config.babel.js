@@ -27,19 +27,21 @@ export default {
   },
   resolve: {
     extensions: ['.js', '.json'],
+    fallback: {
+      fs: false,
+      net: false,
+      tls: false,
+    },
   },
   plugins,
-  node: {
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-  },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+        },
       },
     ],
   },

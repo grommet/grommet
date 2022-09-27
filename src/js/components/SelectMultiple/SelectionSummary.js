@@ -14,6 +14,7 @@ const SelectionSummary = ({
   labelKey,
   limit,
   onChange,
+  onMore,
   options,
   search,
   setActiveIndex,
@@ -30,74 +31,85 @@ const SelectionSummary = ({
 
   const selectedValuesDisabled = useCallback(() => {
     let disabledSelected = 0;
-    for (let i = 0; i < allOptions.length; i += 1) {
-      if (
-        value.includes(getOptionValue(i, options, valueKey || labelKey)) &&
-        isDisabled(i)
-      )
-        disabledSelected += 1;
+    if (value) {
+      for (let i = 0; i < allOptions.length; i += 1) {
+        if (
+          value.includes(getOptionValue(i, options, valueKey || labelKey)) &&
+          isDisabled(i)
+        )
+          disabledSelected += 1;
+      }
+      if (value.length === disabledSelected) return true;
     }
-    if (value.length === disabledSelected) return true;
     return false;
   }, [value, allOptions, options, valueKey, labelKey, isDisabled]);
 
-  if (search === '' || search === undefined)
+  if (search === '' || search === undefined) {
+    const showSelectAll = !!(
+      value?.length === 0 ||
+      selectedValuesDisabled() ||
+      !value
+    );
     return (
       <Box
-        pad={showSelectedInline ? { vertical: 'xsmall' } : 'small'}
+        pad={
+          showSelectedInline ? { left: 'xsmall', vertical: 'xsmall' } : 'xsmall'
+        }
         direction="row"
         justify="between"
         gap="small"
         fill="horizontal"
         flex={showSelectedInline}
       >
-        <Box alignSelf="center">
+        <Box pad={{ vertical: 'xsmall' }} alignSelf="center">
           <Text size="small">
-            {value.length === 0
-              ? `0 selected`
-              : `${value.length} selected of ${options.length}`}
+            {value?.length === 0 || onMore || !value
+              ? `${value?.length || 0} selected`
+              : `${value?.length || 0} selected of ${options.length}`}
           </Text>
         </Box>
         {(options.length &&
-          (!limit || !(value.length === 0 && selectedValuesDisabled()))) >
-          0 && (
-          <Button
-            a11yTitle={
-              value.length === 0 || selectedValuesDisabled()
-                ? `Select all ${options.length} options`
-                : `${value.length} options selected. Clear all?`
-            }
-            label={
-              value.length === 0 || selectedValuesDisabled()
-                ? 'Select All'
-                : 'Clear All'
-            }
-            onClick={(event) => {
-              const selectAll = value.length === 0 || selectedValuesDisabled();
-              if (onChange) {
-                const nextSelected = options.filter((i, index) =>
-                  selectAll
-                    ? !isDisabled(index) || isSelected(index)
-                    : isDisabled(index) && isSelected(index),
-                );
-                const nextValue = nextSelected.map((i) =>
-                  valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
-                );
-                onChange(event, {
-                  option: options,
-                  value: nextValue,
-                  selected: nextSelected,
-                });
+          (!limit ||
+            !(!value || (value?.length === 0 && selectedValuesDisabled())))) >
+          0 &&
+          (!onMore || (onMore && value?.length !== 0)) && (
+            <Button
+              a11yTitle={
+                showSelectAll
+                  ? `Select all ${options.length} options`
+                  : `${value?.length} options selected. Clear all?`
               }
-              if (limit && !selectAll) setActiveIndex(0);
-            }}
-            onFocus={() => setActiveIndex(-1)}
-            ref={clearRef}
-          />
-        )}
+              label={showSelectAll ? 'Select All' : 'Clear All'}
+              onClick={(event) => {
+                if (onChange) {
+                  const nextSelected = options.filter((i, index) =>
+                    showSelectAll
+                      ? !isDisabled(index) || isSelected(index)
+                      : isDisabled(index) && isSelected(index),
+                  );
+                  const nextValue = nextSelected.map((i) =>
+                    valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
+                  );
+                  onChange(event, {
+                    option: options,
+                    value: nextValue,
+                    selected: nextSelected,
+                  });
+                }
+                if (limit && !showSelectAll) setActiveIndex(0);
+              }}
+              onFocus={() => setActiveIndex(-1)}
+              ref={clearRef}
+            />
+          )}
       </Box>
     );
-  return <Text size="small">{`${value.length} selected`}</Text>;
+  }
+  return (
+    <Box pad="xsmall">
+      <Text size="small">{`${value?.length || '0'} selected`}</Text>
+    </Box>
+  );
 };
 
 export { SelectionSummary };
