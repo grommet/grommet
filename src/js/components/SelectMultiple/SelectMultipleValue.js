@@ -66,7 +66,7 @@ const SelectMultipleValue = ({
             aria-selected={value.includes(optionValue)}
             aria-disabled={optionDisabled}
             plain
-            hoverIndicator
+            hoverIndicator={!optionDisabled}
             fill="horizontal"
             tabIndex="0"
             onClick={(event) => {
@@ -204,6 +204,7 @@ const SelectMultipleValue = ({
             overflow="hidden"
             // announce when an item is removed from selected options
             aria-live="assertive"
+            role="alert"
           >
             {showA11yDiv}
           </Box>
