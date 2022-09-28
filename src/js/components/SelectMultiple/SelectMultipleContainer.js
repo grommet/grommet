@@ -466,7 +466,7 @@ const SelectMultipleContainer = forwardRef(
                   }
 
                   if (!children && search) {
-                    let searchText = search.toLowerCase();
+                    const searchText = search.toLowerCase();
                     if (
                       typeof optionLabel === 'string' &&
                       optionLabel.toLowerCase().indexOf(searchText) >= 0
