@@ -167,9 +167,9 @@ const SelectMultiple = forwardRef(
     }, [onOpen, open]);
 
     useEffect(() => {
-      if (sortSelectedOnClose && value && ((open && search) || !open)) {
+      if (sortSelectedOnClose && ((open && search) || !open)) {
         const selectedOptions = optionsProp.filter((option) =>
-          value.includes(
+          value?.includes(
             valueKey && valueKey.reduce ? applyKey(option, valueKey) : option,
           ),
         );
