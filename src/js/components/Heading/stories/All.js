@@ -8,6 +8,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
 `;
 
+const longWord = 'Supercalifragilisticexpialidocious';
+
 const H = ({ level, size }) => (
   <Heading level={level} size={size}>
     {`Heading ${level} ${size}`}
@@ -42,6 +44,7 @@ export const All = () => (
       <Set size="xlarge" />
     </Grid>
     <Heading fill>{headingFiller}</Heading>
+    <Heading fill>{longWord}</Heading>
   </>
   // </Grommet>
 );

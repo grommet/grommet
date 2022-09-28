@@ -9,6 +9,10 @@ export const baseStyle = css`
   font-size: ${(props) => props.theme.global.font.size};
   line-height: ${(props) => props.theme.global.font.height};
   font-weight: ${(props) => props.theme.global.font.weight};
+  /* check if prop is defined in the theme*/
+  ${(props)=>props.theme.global.font.variant && `
+    font-variant:${props.theme.global.font.variant};
+  `}
   ${(props) =>
     !props.plain && backgroundStyle(props.theme.baseBackground, props.theme)}
   box-sizing: border-box;

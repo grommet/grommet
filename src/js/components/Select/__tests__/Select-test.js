@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, act } from '@testing-library/react';
+import { render, fireEvent, act, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'jest-styled-components';
@@ -110,18 +110,20 @@ describe('Select', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
-  test('0 value', () => {
-    const { container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={[0, 1]}
-        value={0}
-      />,
-    );
+  [0, null].forEach((value) =>
+    test(`${value} value`, () => {
+      const { asFragment } = render(
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[0, 1]}
+          value={value}
+        />,
+      );
 
-    expect(container.firstChild).toMatchSnapshot();
-  });
+      expect(asFragment()).toMatchSnapshot();
+    }),
+  );
 
   test('search', () => {
     jest.useFakeTimers();
@@ -286,6 +288,50 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          id: 1,
+          name: 'Value1',
+        },
+      }),
+    );
+  });
+
+  test('onChange without labelKey or valueKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('1')); // 1 matches first key
     expect(onChange).toBeCalledWith(
       expect.objectContaining({
         value: {
@@ -1110,13 +1156,19 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText } = render(
+    render(
       <Grommet>
         <Test />
       </Grommet>,
     );
-    fireEvent.click(getByPlaceholderText('test select'));
 
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    fireEvent.click(screen.getByRole('option', { name: 'one' }));
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    const clearButton = screen.getByRole('button', {
+      name: 'Clear selection. Or, press down arrow to move to select options',
+    });
+    expect(clearButton).toBeTruthy();
     expectPortal('test-select__drop').toMatchSnapshot();
   });
 
@@ -1133,12 +1185,19 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText } = render(
+    render(
       <Grommet>
         <Test />
       </Grommet>,
     );
-    fireEvent.click(getByPlaceholderText('test select'));
+
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    fireEvent.click(screen.getByRole('option', { name: 'one' }));
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    const clearButton = screen.getByRole('button', {
+      name: 'Clear selection. Or, press shift tab to move to select options',
+    });
+    expect(clearButton).toBeTruthy();
 
     expectPortal('test-select__drop').toMatchSnapshot();
   });

@@ -8,38 +8,28 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 
-import { controlBorderStyle, normalizeColor, useKeyboard } from '../../utils';
+import { useKeyboard } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
-import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
-import { TextInput } from '../TextInput';
 
 import { SelectContainer } from './SelectContainer';
-import { applyKey } from './utils';
+import { HiddenInput, StyledSelectDropButton } from './StyledSelect';
+import {
+  applyKey,
+  getNormalizedValue,
+  changeEvent,
+  getSelectIcon,
+  getDisplayLabelKey,
+  getIconColor,
+} from './utils';
+import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
-
-const SelectTextInput = styled(TextInput)`
-  cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
-`;
-
-const HiddenInput = styled.input`
-  display: none;
-`;
-
-const StyledSelectDropButton = styled(DropButton)`
-  ${(props) => !props.callerPlain && controlBorderStyle};
-  ${(props) =>
-    props.theme.select &&
-    props.theme.select.control &&
-    props.theme.select.control.extend};
-  ${(props) => props.open && props.theme.select.control.open};
-`;
 
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
@@ -118,7 +108,8 @@ const Select = forwardRef(
       value: valueProp,
       initialValue: defaultValue || '',
     });
-    // valuedValue is the value mapped with any valueKey applied
+
+    // normalizedValue is the value mapped with any valueKey applied
     // When the options array contains objects, this property indicates how
     // to retrieve the value of each option.
     // If a string is provided, it is used as the key to retrieve a
@@ -127,13 +118,10 @@ const Select = forwardRef(
     // return the value.
     // If reduce is true, this value will be used for the 'value'
     // delivered via 'onChange'.
-    const valuedValue = useMemo(() => {
-      if (Array.isArray(value))
-        return value.map((v) =>
-          valueKey && valueKey.reduce ? v : applyKey(v, valueKey),
-        );
-      return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
-    }, [value, valueKey]);
+    const normalizedValue = useMemo(
+      () => getNormalizedValue(value, valueKey),
+      [value, valueKey],
+    );
     // search input value
     const [search, setSearch] = useState();
     // All select option indices and values
@@ -155,16 +143,16 @@ const Select = forwardRef(
           } else if (index === selected) {
             result.push(index);
           }
-        } else if (Array.isArray(valuedValue)) {
-          if (valuedValue.some((v) => v === applyKey(option, valueKey))) {
+        } else if (Array.isArray(normalizedValue)) {
+          if (normalizedValue.some((v) => v === applyKey(option, valueKey))) {
             result.push(index);
           }
-        } else if (valuedValue === applyKey(option, valueKey)) {
+        } else if (normalizedValue === applyKey(option, valueKey)) {
           result.push(index);
         }
       });
       return result;
-    }, [allOptions, selected, valueKey, valuedValue]);
+    }, [allOptions, selected, valueKey, normalizedValue]);
 
     const [open, setOpen] = useState(propOpen);
     useEffect(() => setOpen(propOpen), [propOpen]);
@@ -181,19 +169,10 @@ const Select = forwardRef(
       setSearch();
     }, [onClose]);
 
-    const triggerChangeEvent = useCallback((nextValue) => {
-      // Calling set value function directly on input because React library
-      // overrides setter `event.target.value =` and loses original event
-      // target fidelity.
-      // https://stackoverflow.com/a/46012210
-      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-        window.HTMLInputElement.prototype,
-        'value',
-      ).set;
-      nativeInputValueSetter.call(inputRef.current, nextValue);
-      const event = new Event('input', { bubbles: true });
-      inputRef.current.dispatchEvent(event);
-    }, []);
+    const triggerChangeEvent = useCallback(
+      (nextValue) => changeEvent(inputRef, nextValue),
+      [],
+    );
 
     const onSelectChange = useCallback(
       (event, { option, value: nextValue, selected: nextSelected }) => {
@@ -202,7 +181,7 @@ const Select = forwardRef(
         // input. if it is an object, then the user has not provided necessary
         // props to reduce object option
         if (
-          typeof nextValue !== 'object' &&
+          (typeof nextValue !== 'object' || multiple) &&
           nextValue !== event.target.value &&
           inputRef.current
         ) {
@@ -235,23 +214,17 @@ const Select = forwardRef(
           onChange(adjustedEvent);
         }
       },
-      [closeOnChange, onChange, onRequestClose, setValue, triggerChangeEvent],
+      [
+        closeOnChange,
+        multiple,
+        onChange,
+        onRequestClose,
+        setValue,
+        triggerChangeEvent,
+      ],
     );
 
-    let SelectIcon;
-    switch (icon) {
-      case false:
-        break;
-      case true:
-      case undefined:
-        SelectIcon =
-          open && theme.select.icons.up
-            ? theme.select.icons.up
-            : theme.select.icons.down;
-        break;
-      default:
-        SelectIcon = icon;
-    }
+    const SelectIcon = getSelectIcon(icon, theme, open);
 
     // element to show, trumps inputValue
     const selectValue = useMemo(() => {
@@ -262,22 +235,16 @@ const Select = forwardRef(
       return undefined;
     }, [value, valueLabel]);
 
-    // if labelKey is a function and valueLabel is not defined
-    // we should use the labelKey function to display the
-    // selected value
-    const displayLabelKey = useMemo(() => {
-      const optionLabelKey = applyKey(
-        allOptions[optionIndexesInValue[0]],
-        labelKey,
-      );
-      if (
-        !selectValue &&
-        optionIndexesInValue.length === 1 &&
-        typeof optionLabelKey === 'object'
-      )
-        return optionLabelKey;
-      return undefined;
-    }, [labelKey, allOptions, optionIndexesInValue, selectValue]);
+    const displayLabelKey = useMemo(
+      () =>
+        getDisplayLabelKey(
+          labelKey,
+          allOptions,
+          optionIndexesInValue,
+          selectValue,
+        ),
+      [labelKey, allOptions, optionIndexesInValue, selectValue],
+    );
 
     // text to show
     // When the options array contains objects, this property indicates how
@@ -305,10 +272,7 @@ const Select = forwardRef(
       selectValue,
     ]);
 
-    const iconColor = normalizeColor(
-      theme.select.icons.color || 'control',
-      theme,
-    );
+    const iconColor = getIconColor(theme);
 
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
@@ -370,7 +334,7 @@ const Select = forwardRef(
             </SelectContainer>
           }
           // StyledDropButton needs to know if the border should be shown
-          callerPlain={plain}
+          plainSelect={plain}
           plain // Button should be plain
           dropProps={dropProps}
           theme={theme}
@@ -395,33 +359,22 @@ const Select = forwardRef(
                   />
                 </>
               ) : (
-                <SelectTextInput
+                <DefaultSelectTextInput
                   a11yTitle={
                     (ariaLabel || a11yTitle) &&
                     `${ariaLabel || a11yTitle}${
                       value && typeof value === 'string' ? `, ${value}` : ''
                     }`
                   }
-                  // When Select is disabled, we want to show a default cursor
-                  // but not have disabled styling come from TextInput
-                  // Disabled can be a bool or an array of options to disable.
-                  // We only want to disable the TextInput if the control
-                  // button should be disabled which occurs when disabled
-                  // equals true.
-                  defaultCursor={disabled === true || undefined}
-                  focusIndicator={false}
-                  id={id ? `${id}__input` : undefined}
+                  disabled={disabled}
+                  id={id}
                   name={name}
                   ref={inputRef}
-                  {...rest}
-                  tabIndex="-1"
-                  type="text"
                   placeholder={placeholder}
-                  plain
-                  readOnly
                   value={inputValue}
                   size={size}
                   theme={theme}
+                  {...rest}
                 />
               )}
             </Box>

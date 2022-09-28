@@ -235,6 +235,7 @@ exports[`Calendar change months 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -1159,7 +1160,7 @@ exports[`Calendar change months 1`] = `
 
 exports[`Calendar change months 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledCalendar-sc-1y4xhmp-0 eRFLFF"
@@ -1174,7 +1175,7 @@ exports[`Calendar change months 2`] = `
           class="StyledBox-sc-13pk1d4-0 fzaBin"
         >
           <h3
-            class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+            class="StyledHeading-sc-1rdh4aw-0 geeMiP"
           >
             January 2020
           </h3>
@@ -2628,6 +2629,7 @@ exports[`Calendar children 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -3469,6 +3471,7 @@ exports[`Calendar date 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -4646,6 +4649,7 @@ exports[`Calendar dates 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -5841,6 +5845,7 @@ exports[`Calendar daysOfWeek 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -7172,6 +7177,7 @@ exports[`Calendar disabled 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -8359,6 +8365,7 @@ exports[`Calendar fill 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -9549,6 +9556,7 @@ exports[`Calendar first day sunday week monday 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -10726,6 +10734,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -13874,6 +13883,7 @@ exports[`Calendar reference 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -15031,6 +15041,7 @@ exports[`Calendar select date 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -15975,7 +15986,7 @@ exports[`Calendar select date 1`] = `
 
 exports[`Calendar select date 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledCalendar-sc-1y4xhmp-0 eRFLFF"
@@ -15990,7 +16001,7 @@ exports[`Calendar select date 2`] = `
           class="StyledBox-sc-13pk1d4-0 fzaBin"
         >
           <h3
-            class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+            class="StyledHeading-sc-1rdh4aw-0 geeMiP"
           >
             January 2020
           </h3>
@@ -17031,6 +17042,7 @@ exports[`Calendar select dates 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -17993,7 +18005,7 @@ exports[`Calendar select dates 1`] = `
 
 exports[`Calendar select dates 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 eANINY"
 >
   <div
     class="StyledCalendar-sc-1y4xhmp-0 eRFLFF"
@@ -18008,7 +18020,7 @@ exports[`Calendar select dates 2`] = `
           class="StyledBox-sc-13pk1d4-0 fzaBin"
         >
           <h3
-            class="StyledHeading-sc-1rdh4aw-0 hAlxRY"
+            class="StyledHeading-sc-1rdh4aw-0 geeMiP"
           >
             January 2020
           </h3>
@@ -19049,6 +19061,7 @@ exports[`Calendar showAdjacentDays 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {
@@ -21748,6 +21761,7 @@ exports[`Calendar size 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c19 {
@@ -21756,6 +21770,7 @@ exports[`Calendar size 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c26 {
@@ -21764,6 +21779,7 @@ exports[`Calendar size 1`] = `
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
+  overflow-wrap: normal;
 }
 
 .c1 {

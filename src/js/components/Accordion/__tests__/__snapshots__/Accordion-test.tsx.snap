@@ -209,6 +209,7 @@ exports[`Accordion AccordionPanel 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -556,6 +557,7 @@ exports[`Accordion accordion border 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -873,6 +875,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -1184,6 +1187,7 @@ exports[`Accordion blur styles 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: red;
 }
 
@@ -1493,6 +1497,7 @@ exports[`Accordion change active index 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -1895,6 +1900,7 @@ exports[`Accordion change active index 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c6 {
@@ -1902,6 +1908,7 @@ exports[`Accordion change active index 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -2263,6 +2270,7 @@ exports[`Accordion change to second Panel 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -2687,6 +2695,7 @@ exports[`Accordion change to second Panel 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c12 {
@@ -2694,6 +2703,7 @@ exports[`Accordion change to second Panel 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -3061,6 +3071,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -3461,6 +3472,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c11 {
@@ -3468,6 +3480,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -4334,6 +4347,7 @@ exports[`Accordion custom accordion 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -4648,6 +4662,7 @@ exports[`Accordion custom accordion 2`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -4963,6 +4978,7 @@ exports[`Accordion focus and hover styles 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: red;
 }
 
@@ -5277,6 +5293,7 @@ exports[`Accordion multiple panels 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -5677,6 +5694,7 @@ exports[`Accordion multiple panels 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c11 {
@@ -5684,6 +5702,7 @@ exports[`Accordion multiple panels 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -6096,6 +6115,7 @@ exports[`Accordion multiple panels 3`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c6 {
@@ -6103,6 +6123,7 @@ exports[`Accordion multiple panels 3`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -6518,6 +6539,7 @@ exports[`Accordion multiple panels 4`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c11 {
@@ -6525,6 +6547,7 @@ exports[`Accordion multiple panels 4`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -6938,6 +6961,7 @@ exports[`Accordion multiple panels 5`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c6 {
@@ -6945,6 +6969,7 @@ exports[`Accordion multiple panels 5`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -7605,6 +7630,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: teal;
 }
 
@@ -7914,6 +7940,7 @@ exports[`Accordion wrapped panel 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -8314,6 +8341,7 @@ exports[`Accordion wrapped panel 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c6 {
@@ -8321,6 +8349,7 @@ exports[`Accordion wrapped panel 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 

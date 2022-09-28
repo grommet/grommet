@@ -565,6 +565,7 @@ const Calendar = forwardRef(
               }
               size={size}
               margin="none"
+              overflowWrap="normal"
             >
               {reference.toLocaleDateString(locale, {
                 month: 'long',

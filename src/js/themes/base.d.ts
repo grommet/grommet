@@ -32,7 +32,7 @@ import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
 import { LayerPositionType, LayerProps } from '../components/Layer';
-import { DropProps } from '../components/Drop';
+import { DropProps, DropType } from '../components/Drop';
 import {
   AreasType,
   GridColumnsType,
@@ -141,16 +141,19 @@ interface ButtonKindType {
     | {
         color?: ColorType;
         width?: string;
+        radius?: string;
       }
     | boolean;
   color?: ColorType;
   font?: {
     weight?: number | string;
   };
+  icon?: React.ReactNode | Icon;
   padding?: {
     vertical?: string;
     horizontal?: string;
   };
+  reverse?: boolean;
   extend?: ExtendType;
 }
 
@@ -195,7 +198,13 @@ interface ButtonType {
         secondary?: ButtonKindType;
       })
     | { [key: string]: ButtonKindType };
-  disabled?: ButtonKindType & { opacity?: OpacityType };
+  disabled?:
+    | (ButtonKindType & {
+        default?: ButtonKindType;
+        primary?: ButtonKindType;
+        secondary?: ButtonKindType;
+      })
+    | ({ [key: string]: ButtonKindType } & { opacity?: OpacityType });
   hover?:
     | (ButtonKindType & {
         default?: ButtonKindType;
@@ -232,6 +241,7 @@ interface ButtonType {
       };
     };
   };
+  style?: Partial<CSSStyleDeclaration>;
   transition?: {
     timing?: string;
     duration?: number;
@@ -267,6 +277,9 @@ export interface ThemeType {
       jiggle?: {
         duration?: string;
       };
+    };
+    backgrounds?: {
+      [x: string]: BackgroundType | { dark?: string; light?: string };
     };
     borderSize?: {
       xsmall?: string;
@@ -382,6 +395,7 @@ export interface ThemeType {
       maxWidth?: string;
       size?: string;
       weight?: number | string;
+      variant?: string;
     };
     graph?: {
       colors?: GraphColorsType;
@@ -772,6 +786,9 @@ export interface ThemeType {
       margin?: MarginType;
       pad?: PadType;
     };
+    checkBox?: {
+      pad?: PadType;
+    };
     disabled?: {
       background?: BackgroundType;
       border?: {
@@ -1026,7 +1043,8 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
-    drop?: DropProps;
+    item?: ButtonType;
+    drop?: DropType;
     extend?: ExtendType;
     group?: {
       container?: BoxProps;
@@ -1164,6 +1182,23 @@ export interface ThemeType {
     };
     subtitle?: ParagraphProps;
     title?: HeadingProps;
+    size?: {
+      small?: {
+        pad?: PadType;
+        subtitle?: ParagraphProps;
+        title?: ParagraphProps;
+      };
+      medium?: {
+        pad?: PadType;
+        subtitle?: ParagraphProps;
+        title?: ParagraphProps;
+      };
+      large?: {
+        pad?: PadType;
+        subtitle?: ParagraphProps;
+        title?: ParagraphProps;
+      };
+    };
     small?: {
       areas?: AreasType;
       columns?: GridColumnsType;
@@ -1363,6 +1398,9 @@ export interface ThemeType {
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
     searchInput?: ReactComponentElement<any>;
     step?: number;
+  };
+  selectMultiple?: {
+    maxInline?: number;
   };
   skipLinks?: {
     position?: LayerPositionType;

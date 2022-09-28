@@ -28,6 +28,7 @@ const grommetInputNames = [
   'TextInput',
   'Select',
   'MaskedInput',
+  'SelectMultiple',
   'TextArea',
   'DateInput',
   'FileInput',
@@ -227,6 +228,10 @@ const FormField = forwardRef(
             return cloneElement(child, {
               plain: true,
               focusIndicator: false,
+              pad:
+                'CheckBox'.indexOf(child.type.displayName) !== -1
+                  ? formFieldTheme?.checkBox?.pad
+                  : undefined,
             });
           }
           return child;

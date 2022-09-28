@@ -1,9 +1,10 @@
 import React from 'react';
 import 'jest-styled-components';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
+import { Button } from '../../Button';
 import { Text } from '../../Text';
 import { DataTable } from '..';
 
@@ -157,6 +158,39 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('sort null data', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+            { property: 'c', header: 'C' },
+            { property: 'd', header: 'D' },
+          ]}
+          data={[
+            { a: undefined, b: 0, c: 'first', d: 'y' },
+            { a: 'one', b: 1, c: null },
+            { a: 'two', b: 2, c: 'second' },
+            { a: undefined, b: 3, c: null, d: 'z' },
+          ]}
+          sortable
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    let headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+    headerCell = getByText('C');
+    fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+    headerCell = getByText('D');
+    fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('onSort', () => {
     const onSort = jest.fn();
     const { container, getByText } = render(
@@ -237,6 +271,43 @@ describe('DataTable', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('sort controlled', () => {
+    const Test = () => {
+      const [sort, setSort] = React.useState({
+        property: 'a',
+        direction: 'asc',
+      });
+
+      return (
+        <Grommet>
+          <Button
+            label="Sort data"
+            onClick={() => setSort({ property: 'a', direction: 'desc' })}
+          />
+          <DataTable
+            columns={[
+              { property: 'a', header: 'A' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'zero', b: 0 },
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
+            sort={sort}
+          />
+        </Grommet>
+      );
+    };
+    const { asFragment } = render(<Test />);
+    expect(asFragment()).toMatchSnapshot();
+
+    const sortButton = screen.getByRole('button', { name: 'Sort data' });
+    fireEvent.click(sortButton);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('sort nested object', () => {

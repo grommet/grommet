@@ -4,13 +4,14 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, within } from '@testing-library/react';
 
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
 import { List } from '..';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
+import { Button } from '../../Button';
 
 const data = [];
 for (let i = 0; i < 95; i += 1) {
@@ -552,6 +553,39 @@ describe('List onOrder', () => {
   });
 });
 
+describe('List onOrder with action', () => {
+  let onOrder;
+  let App;
+
+  beforeEach(() => {
+    onOrder = jest.fn();
+    App = () => {
+      const [ordered, setOrdered] = useState([{ a: 'alpha' }, { a: 'beta' }]);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            primaryKey="a"
+            onOrder={(newData) => {
+              setOrdered(newData);
+              onOrder(newData);
+            }}
+            // eslint-disable-next-line react/no-unstable-nested-components
+            action={(item, index) =>
+              <Button key={`action${index}`} label="Action"/>}
+          />
+        </Grommet>
+      );
+    };
+  });
+
+  test('Render', () => {
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
+
 describe('List disabled', () => {
   const locations = [
     'Boise',
@@ -766,6 +800,104 @@ describe('List disabled', () => {
     });
     await user.click(disabledItem);
     expect(onOrder).toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
+
+describe('List pinned', () => {
+  const locations = [
+    'Boise',
+    'Fort Collins',
+    'Los Gatos',
+    'Palo Alto',
+    'San Francisco',
+  ];
+  const pinnedLocations = ['Fort Collins', 'Palo Alto'];
+
+  test('Should apply pinned styling to items', () => {
+    const App = () => (
+      <Grommet>
+        <List data={locations} pinned={pinnedLocations} />
+      </Grommet>
+    );
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Should apply pinned styling to items when data are objects', () => {
+    const typeObjects = [
+      { city: 'Boise', state: 'Idaho' },
+      { city: 'Fort Collins', state: 'Colorado' },
+      { city: 'Los Gatos', state: 'California' },
+      { city: 'Palo Alto', state: 'California' },
+      { city: 'San Francisco', state: 'California' },
+    ];
+
+    const App = () => (
+      <Grommet>
+        <List data={typeObjects} pinned={pinnedLocations} itemKey="city" />
+      </Grommet>
+    );
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Should apply pinned styling to items when data are children', () => {
+    const App = () => (
+      <Grommet>
+        <List data={locations} pinned={pinnedLocations}>
+          {(item) => (
+            <Box>
+              <Text weight="bold">{item}</Text>
+            </Box>
+          )}
+        </List>
+      </Grommet>
+    );
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Pinned items should not be allowed to be re-ordered', async () => {
+    const onOrder = jest.fn();
+    const user = userEvent.setup();
+
+    const App = () => {
+      const [ordered, setOrdered] = useState(locations);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            pinned={pinnedLocations}
+            onOrder={(next) => {
+              setOrdered(next);
+              onOrder(next);
+            }}
+          />
+        </Grommet>
+      );
+    };
+
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+
+    const list = screen.getByRole('listbox');
+    const listItems = within(list).getAllByRole('listitem');
+    const middleItem = screen.getByRole('button', {
+      name: '3 San Francisco move up',
+    });
+
+    // expect item at position 2 in the list
+    expect(listItems[1]).toHaveTextContent('2Fort Collins');
+    await user.click(middleItem);
+    expect(onOrder).toHaveBeenCalled();
+
+    // confirm item at position 2 in the list is unchanged
+    expect(listItems[1]).toHaveTextContent('2Fort Collins');
     expect(asFragment()).toMatchSnapshot();
   });
 });
