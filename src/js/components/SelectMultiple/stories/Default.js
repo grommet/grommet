@@ -18,7 +18,7 @@ const defaultOptions = [
 
 export const Default = () => {
   const [options, setOptions] = useState(defaultOptions);
-  const [valueMultiple, setValueMultiple] = useState();
+  const [valueMultiple, setValueMultiple] = useState([]);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
