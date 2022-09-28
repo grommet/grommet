@@ -34,7 +34,7 @@ import {
   Video,
 } from 'grommet';
 import { FormNext } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
+import { grommet, hacktoberfest2022 } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
 import { hpe } from 'grommet-theme-hpe';
@@ -67,6 +67,7 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
 const themes = {
   grommet,
   hpe,
+  hacktoberfest2022,
   aruba,
   hp,
   dxc,
