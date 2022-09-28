@@ -466,25 +466,26 @@ const SelectMultipleContainer = forwardRef(
                   }
 
                   if (!children && search) {
+                    let searchText = search.toLowerCase();
                     if (
                       typeof optionLabel === 'string' &&
-                      optionLabel.toLowerCase().indexOf(search) >= 0
+                      optionLabel.toLowerCase().indexOf(searchText) >= 0
                     ) {
                       // code to bold search term in matching options
                       const boldIndex = optionLabel
                         .toLowerCase()
-                        .indexOf(search);
+                        .indexOf(searchText);
                       const childBeginning = optionLabel.substring(
                         0,
                         boldIndex,
                       );
                       let childBold = optionLabel.substring(
                         boldIndex,
-                        boldIndex + search.length,
+                        boldIndex + searchText.length,
                       );
                       childBold = <b>{childBold}</b>;
                       const childEnd = optionLabel.substring(
-                        boldIndex + search.length,
+                        boldIndex + searchText.length,
                       );
                       child = (
                         <CheckBox
