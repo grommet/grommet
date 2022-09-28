@@ -194,9 +194,9 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     if (onOpen) onOpen();
   }, [onOpen, open]);
   (0, _react.useEffect)(function () {
-    if (sortSelectedOnClose && value && (open && search || !open)) {
+    if (sortSelectedOnClose && (open && search || !open)) {
       var selectedOptions = optionsProp.filter(function (option) {
-        return value.includes(valueKey && valueKey.reduce ? (0, _utils2.applyKey)(option, valueKey) : option);
+        return value == null ? void 0 : value.includes(valueKey && valueKey.reduce ? (0, _utils2.applyKey)(option, valueKey) : option);
       });
       var unselectedOptions = optionsProp.filter(function (i) {
         return !selectedOptions.includes(i);

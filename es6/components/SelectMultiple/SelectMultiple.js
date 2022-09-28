@@ -169,9 +169,9 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (onOpen) onOpen();
   }, [onOpen, open]);
   useEffect(function () {
-    if (sortSelectedOnClose && value && (open && search || !open)) {
+    if (sortSelectedOnClose && (open && search || !open)) {
       var selectedOptions = optionsProp.filter(function (option) {
-        return value.includes(valueKey && valueKey.reduce ? applyKey(option, valueKey) : option);
+        return value == null ? void 0 : value.includes(valueKey && valueKey.reduce ? applyKey(option, valueKey) : option);
       });
       var unselectedOptions = optionsProp.filter(function (i) {
         return !selectedOptions.includes(i);

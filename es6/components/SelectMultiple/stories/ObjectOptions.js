@@ -48,7 +48,10 @@ export var ObjectOptions = function ObjectOptions() {
       valueKey: {
         key: 'value'
       },
-      options: options
+      options: options,
+      onClose: function onClose() {
+        setOptions(objectOptions);
+      }
     })) // </Grommet>
 
   );

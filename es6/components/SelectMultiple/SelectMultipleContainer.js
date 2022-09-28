@@ -383,13 +383,15 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
 
     if (!children && search) {
-      if (typeof optionLabel === 'string' && optionLabel.toLowerCase().indexOf(search) >= 0) {
+      var searchText = search.toLowerCase();
+
+      if (typeof optionLabel === 'string' && optionLabel.toLowerCase().indexOf(searchText) >= 0) {
         // code to bold search term in matching options
-        var boldIndex = optionLabel.toLowerCase().indexOf(search);
+        var boldIndex = optionLabel.toLowerCase().indexOf(searchText);
         var childBeginning = optionLabel.substring(0, boldIndex);
-        var childBold = optionLabel.substring(boldIndex, boldIndex + search.length);
+        var childBold = optionLabel.substring(boldIndex, boldIndex + searchText.length);
         childBold = /*#__PURE__*/React.createElement("b", null, childBold);
-        var childEnd = optionLabel.substring(boldIndex + search.length);
+        var childEnd = optionLabel.substring(boldIndex + searchText.length);
         child = /*#__PURE__*/React.createElement(CheckBox, {
           label: /*#__PURE__*/React.createElement(Box, {
             alignSelf: "center",
