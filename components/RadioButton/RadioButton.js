@@ -107,6 +107,7 @@ var RadioButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     },
     round: theme.radioButton.check.radius
   }, checked && (Icon ? /*#__PURE__*/_react["default"].createElement(Icon, {
+    theme: theme,
     as: _StyledRadioButton.StyledRadioButtonIcon
   }) : /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonIcon, {
     viewBox: "0 0 24 24",
