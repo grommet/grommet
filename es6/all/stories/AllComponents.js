@@ -8,7 +8,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { useMemo, useState } from 'react';
 import { Grommet, Accordion, AccordionPanel, Anchor, Box, Button, Calendar, Chart, CheckBox, Clock, DataTable, Diagram, Distribution, FormField, Grid, Heading, MaskedInput, Menu, Meter, Paragraph, RadioButtonGroup, RangeInput, RangeSelector, Select, Stack, Tab, Tabs, Text, TextArea, TextInput, Video } from 'grommet';
 import { FormNext } from "grommet-icons/es6/icons/FormNext";
-import { grommet } from 'grommet/themes';
+import { grommet, hacktoberfest2022 } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
 import { hpe } from 'grommet-theme-hpe';
@@ -48,6 +48,7 @@ var connection = function connection(fromTarget, toTarget, _temp) {
 var themes = {
   grommet: grommet,
   hpe: hpe,
+  hacktoberfest2022: hacktoberfest2022,
   aruba: aruba,
   hp: hp,
   dxc: dxc

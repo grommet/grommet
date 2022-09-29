@@ -66,6 +66,7 @@ var connection = function connection(fromTarget, toTarget, _temp) {
 var themes = {
   grommet: _themes.grommet,
   hpe: _grommetThemeHpe.hpe,
+  hacktoberfest2022: _themes.hacktoberfest2022,
   aruba: _grommetThemeAruba.aruba,
   hp: _grommetThemeHp.hp,
   dxc: _grommetThemeDxc.dxc
