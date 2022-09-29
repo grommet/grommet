@@ -650,9 +650,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             dark: 'white',
             light: 'black',
           },
-          // extend: undefined
         },
         // background: undefined,
+        // extend: undefined,
       },
       icon: {
         // size: undefined,

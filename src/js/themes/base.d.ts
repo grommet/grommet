@@ -591,11 +591,11 @@ export interface ThemeType {
     hover?: {
       border?: {
         color?: ColorType;
-        extend?: ExtendType;
       };
       background?: {
         color?: ColorType;
       };
+      extend?: ExtendType;
     };
     icon?: {
       size?: string;
