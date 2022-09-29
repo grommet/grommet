@@ -87,6 +87,7 @@ describe('SelectMultiple', () => {
   });
 
   test('disabled option', async () => {
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
     const user = userEvent.setup();
     render(
       <Grommet>
