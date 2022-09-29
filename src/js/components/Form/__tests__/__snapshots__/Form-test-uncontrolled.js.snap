@@ -2377,7 +2377,7 @@ exports[`Form uncontrolled regexp validation 1`] = `
 `;
 
 exports[`Form uncontrolled regexp validation with status 1`] = `
-Array [
+[
   .c0 {
   margin-left: 12px;
   margin-right: 12px;

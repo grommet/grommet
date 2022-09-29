@@ -6444,7 +6444,7 @@ exports[`DataTable groupBy expand 1`] = `
 `;
 
 exports[`DataTable groupBy onExpand 1`] = `
-Array [
+[
   "one",
 ]
 `;
