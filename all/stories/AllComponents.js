@@ -9,20 +9,6 @@ var _grommet = require("grommet");
 
 var _grommetIcons = require("grommet-icons");
 
-var _themes = require("grommet/themes");
-
-var _base = require("grommet/themes/base");
-
-var _utils = require("grommet/utils");
-
-var _grommetThemeHpe = require("grommet-theme-hpe");
-
-var _grommetThemeAruba = require("grommet-theme-aruba");
-
-var _grommetThemeHp = require("grommet-theme-hp");
-
-var _grommetThemeDxc = require("grommet-theme-dxc");
-
 var _excluded = ["id"],
     _excluded2 = ["color"];
 
@@ -63,62 +49,31 @@ var connection = function connection(fromTarget, toTarget, _temp) {
   }, rest);
 };
 
-var themes = {
-  grommet: _themes.grommet,
-  hpe: _grommetThemeHpe.hpe,
-  hacktoberfest2022: _themes.hacktoberfest2022,
-  aruba: _grommetThemeAruba.aruba,
-  hp: _grommetThemeHp.hp,
-  dxc: _grommetThemeDxc.dxc
-};
-
 var Components = function Components() {
-  var _useState = (0, _react.useState)(24),
-      baseSize = _useState[0],
-      setBaseSize = _useState[1];
+  var _useState = (0, _react.useState)(true),
+      checkBox = _useState[0],
+      setCheckBox = _useState[1];
 
-  var _useState2 = (0, _react.useState)(true),
-      checkBox = _useState2[0],
-      setCheckBox = _useState2[1];
+  var _useState2 = (0, _react.useState)(''),
+      textInput = _useState2[0],
+      setTextInput = _useState2[1];
 
   var _useState3 = (0, _react.useState)(''),
-      textInput = _useState3[0],
-      setTextInput = _useState3[1];
+      maskedInput = _useState3[0],
+      setMaskedInput = _useState3[1];
 
-  var _useState4 = (0, _react.useState)(''),
-      maskedInput = _useState4[0],
-      setMaskedInput = _useState4[1];
+  var _useState4 = (0, _react.useState)('RadioButton 1'),
+      radioButton = _useState4[0],
+      setRadioButton = _useState4[1];
 
-  var _useState5 = (0, _react.useState)('RadioButton 1'),
-      radioButton = _useState5[0],
-      setRadioButton = _useState5[1];
+  var _useState5 = (0, _react.useState)([1, 2]),
+      rangeSelector = _useState5[0],
+      setRangeSelector = _useState5[1];
 
-  var _useState6 = (0, _react.useState)([1, 2]),
-      rangeSelector = _useState6[0],
-      setRangeSelector = _useState6[1];
+  var _useState6 = (0, _react.useState)(0),
+      tabIndex = _useState6[0],
+      setTabIndex = _useState6[1];
 
-  var _useState7 = (0, _react.useState)(),
-      themeMode = _useState7[0],
-      setThemeMode = _useState7[1];
-
-  var _useState8 = (0, _react.useState)('grommet'),
-      themeName = _useState8[0],
-      setThemeName = _useState8[1];
-
-  var _useState9 = (0, _react.useState)(undefined),
-      background = _useState9[0],
-      setBackground = _useState9[1];
-
-  var _useState10 = (0, _react.useState)(0),
-      tabIndex = _useState10[0],
-      setTabIndex = _useState10[1];
-
-  var theme = (0, _react.useMemo)(function () {
-    return (0, _utils.deepMerge)((0, _base.generate)(baseSize), themes[themeName]);
-  }, [baseSize, themeName]);
-  var themeCanMode = (0, _react.useMemo)(function () {
-    return theme && theme.global.colors.background && theme.global.colors.background.dark;
-  }, [theme]);
   var content = [/*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     key: "type",
     align: "start",
@@ -377,77 +332,14 @@ var Components = function Components() {
     src: "http://techslides.com/demos/sample-videos/small.3gp",
     type: "video/3gp"
   })))];
-  return /*#__PURE__*/_react["default"].createElement("div", {
-    style: {
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet,
-    style: {
-      flex: '0 0 auto'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row-responsive",
-    gap: "medium",
-    justify: "end",
-    align: "center",
-    margin: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    basis: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
-    plain: true,
-    size: "small",
-    options: Object.keys(themes),
-    value: themeName,
-    onChange: function onChange(event) {
-      return setThemeName(event.option);
-    }
-  })), themeCanMode && /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
-    label: "dark",
-    checked: themeMode === 'dark',
-    onChange: function onChange() {
-      return setThemeMode(themeMode === 'dark' ? 'light' : 'dark');
-    }
-  }), !themeCanMode && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    basis: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
-    plain: true,
-    placeholder: "background",
-    size: "small",
-    options: ['default', 'dark-1', 'light-1'],
-    value: background,
-    onChange: function onChange(event) {
-      return setBackground(event.option);
-    }
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    basis: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
-    min: 16,
-    max: 36,
-    step: 2,
-    value: baseSize,
-    onChange: function onChange(event) {
-      return setBaseSize(parseInt(event.target.value, 10));
-    }
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    size: "small"
-  }, baseSize + "px base spacing"))), /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: theme,
-    themeMode: themeMode,
-    style: {
-      flex: '1 1'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     pad: "medium",
-    background: background || theme.global.colors.background,
     overflow: "auto"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     columns: "small",
     gap: "medium"
-  }, content))));
+  }, content));
 };
 
 var All = function All() {

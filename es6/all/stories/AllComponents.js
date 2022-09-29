@@ -5,16 +5,9 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useMemo, useState } from 'react';
-import { Grommet, Accordion, AccordionPanel, Anchor, Box, Button, Calendar, Chart, CheckBox, Clock, DataTable, Diagram, Distribution, FormField, Grid, Heading, MaskedInput, Menu, Meter, Paragraph, RadioButtonGroup, RangeInput, RangeSelector, Select, Stack, Tab, Tabs, Text, TextArea, TextInput, Video } from 'grommet';
+import React, { useState } from 'react';
+import { Accordion, AccordionPanel, Anchor, Box, Button, Calendar, Chart, CheckBox, Clock, DataTable, Diagram, Distribution, FormField, Grid, Heading, MaskedInput, Menu, Meter, Paragraph, RadioButtonGroup, RangeInput, RangeSelector, Select, Stack, Tab, Tabs, Text, TextArea, TextInput, Video } from 'grommet';
 import { FormNext } from "grommet-icons/es6/icons/FormNext";
-import { grommet, hacktoberfest2022 } from 'grommet/themes';
-import { generate } from 'grommet/themes/base';
-import { deepMerge } from 'grommet/utils';
-import { hpe } from 'grommet-theme-hpe';
-import { aruba } from 'grommet-theme-aruba';
-import { hp } from 'grommet-theme-hp';
-import { dxc } from 'grommet-theme-dxc';
 
 var Node = function Node(_ref) {
   var id = _ref.id,
@@ -45,62 +38,31 @@ var connection = function connection(fromTarget, toTarget, _temp) {
   }, rest);
 };
 
-var themes = {
-  grommet: grommet,
-  hpe: hpe,
-  hacktoberfest2022: hacktoberfest2022,
-  aruba: aruba,
-  hp: hp,
-  dxc: dxc
-};
-
 var Components = function Components() {
-  var _useState = useState(24),
-      baseSize = _useState[0],
-      setBaseSize = _useState[1];
+  var _useState = useState(true),
+      checkBox = _useState[0],
+      setCheckBox = _useState[1];
 
-  var _useState2 = useState(true),
-      checkBox = _useState2[0],
-      setCheckBox = _useState2[1];
+  var _useState2 = useState(''),
+      textInput = _useState2[0],
+      setTextInput = _useState2[1];
 
   var _useState3 = useState(''),
-      textInput = _useState3[0],
-      setTextInput = _useState3[1];
+      maskedInput = _useState3[0],
+      setMaskedInput = _useState3[1];
 
-  var _useState4 = useState(''),
-      maskedInput = _useState4[0],
-      setMaskedInput = _useState4[1];
+  var _useState4 = useState('RadioButton 1'),
+      radioButton = _useState4[0],
+      setRadioButton = _useState4[1];
 
-  var _useState5 = useState('RadioButton 1'),
-      radioButton = _useState5[0],
-      setRadioButton = _useState5[1];
+  var _useState5 = useState([1, 2]),
+      rangeSelector = _useState5[0],
+      setRangeSelector = _useState5[1];
 
-  var _useState6 = useState([1, 2]),
-      rangeSelector = _useState6[0],
-      setRangeSelector = _useState6[1];
+  var _useState6 = useState(0),
+      tabIndex = _useState6[0],
+      setTabIndex = _useState6[1];
 
-  var _useState7 = useState(),
-      themeMode = _useState7[0],
-      setThemeMode = _useState7[1];
-
-  var _useState8 = useState('grommet'),
-      themeName = _useState8[0],
-      setThemeName = _useState8[1];
-
-  var _useState9 = useState(undefined),
-      background = _useState9[0],
-      setBackground = _useState9[1];
-
-  var _useState10 = useState(0),
-      tabIndex = _useState10[0],
-      setTabIndex = _useState10[1];
-
-  var theme = useMemo(function () {
-    return deepMerge(generate(baseSize), themes[themeName]);
-  }, [baseSize, themeName]);
-  var themeCanMode = useMemo(function () {
-    return theme && theme.global.colors.background && theme.global.colors.background.dark;
-  }, [theme]);
   var content = [/*#__PURE__*/React.createElement(Box, {
     key: "type",
     align: "start",
@@ -359,77 +321,14 @@ var Components = function Components() {
     src: "http://techslides.com/demos/sample-videos/small.3gp",
     type: "video/3gp"
   })))];
-  return /*#__PURE__*/React.createElement("div", {
-    style: {
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column'
-    }
-  }, /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    style: {
-      flex: '0 0 auto'
-    }
-  }, /*#__PURE__*/React.createElement(Box, {
-    direction: "row-responsive",
-    gap: "medium",
-    justify: "end",
-    align: "center",
-    margin: "small"
-  }, /*#__PURE__*/React.createElement(Box, {
-    basis: "small"
-  }, /*#__PURE__*/React.createElement(Select, {
-    plain: true,
-    size: "small",
-    options: Object.keys(themes),
-    value: themeName,
-    onChange: function onChange(event) {
-      return setThemeName(event.option);
-    }
-  })), themeCanMode && /*#__PURE__*/React.createElement(CheckBox, {
-    label: "dark",
-    checked: themeMode === 'dark',
-    onChange: function onChange() {
-      return setThemeMode(themeMode === 'dark' ? 'light' : 'dark');
-    }
-  }), !themeCanMode && /*#__PURE__*/React.createElement(Box, {
-    basis: "small"
-  }, /*#__PURE__*/React.createElement(Select, {
-    plain: true,
-    placeholder: "background",
-    size: "small",
-    options: ['default', 'dark-1', 'light-1'],
-    value: background,
-    onChange: function onChange(event) {
-      return setBackground(event.option);
-    }
-  })), /*#__PURE__*/React.createElement(Box, {
-    basis: "small"
-  }, /*#__PURE__*/React.createElement(RangeInput, {
-    min: 16,
-    max: 36,
-    step: 2,
-    value: baseSize,
-    onChange: function onChange(event) {
-      return setBaseSize(parseInt(event.target.value, 10));
-    }
-  })), /*#__PURE__*/React.createElement(Text, {
-    size: "small"
-  }, baseSize + "px base spacing"))), /*#__PURE__*/React.createElement(Grommet, {
-    theme: theme,
-    themeMode: themeMode,
-    style: {
-      flex: '1 1'
-    }
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     fill: true,
     pad: "medium",
-    background: background || theme.global.colors.background,
     overflow: "auto"
   }, /*#__PURE__*/React.createElement(Grid, {
     columns: "small",
     gap: "medium"
-  }, content))));
+  }, content));
 };
 
 export var All = function All() {

@@ -15,6 +15,7 @@ var hacktoberfest2022 = (0, _object.deepFreeze)({
       'background-back': '#000000',
       'background-front': '#160F1D',
       'text-strong': '#FFFFFF',
+      text: '#E4E1E6',
       'text-weak': '#76717A',
       grey: '#AFACB2',
       lime: '#C6FC60',
@@ -27,7 +28,6 @@ var hacktoberfest2022 = (0, _object.deepFreeze)({
       focus: '#233670',
       brand: 'lime',
       control: 'teal',
-      text: '#E4E1E6',
       'graph-0': 'yellow',
       'graph-1': 'purple',
       'graph-2': 'teal',
@@ -53,11 +53,6 @@ var hacktoberfest2022 = (0, _object.deepFreeze)({
       'dark-4': undefined
     },
     backgrounds: {
-      'gradient-purple-blue': {
-        color: 'neutral-3',
-        image: "linear-gradient(\n          #3D138D 0%,\n          #00739D 100%\n        );",
-        rotate: 145
-      },
       'gradient-purple-teal': {
         image: "linear-gradient(\n          #7C7EF4 0%,\n          #73DAFB 100%\n        );"
       },
