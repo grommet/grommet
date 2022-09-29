@@ -10,6 +10,7 @@ export const hacktoberfest2022 = deepFreeze({
       'background-back': '#000000',
       'background-front': '#160F1D',
       'text-strong': '#FFFFFF',
+      text: '#E4E1E6',
       'text-weak': '#76717A',
       grey: '#AFACB2',
       lime: '#C6FC60',
@@ -22,7 +23,6 @@ export const hacktoberfest2022 = deepFreeze({
       focus: '#233670',
       brand: 'lime',
       control: 'teal',
-      text: '#E4E1E6',
       'graph-0': 'yellow',
       'graph-1': 'purple',
       'graph-2': 'teal',
@@ -48,14 +48,6 @@ export const hacktoberfest2022 = deepFreeze({
       'dark-4': undefined,
     },
     backgrounds: {
-      'gradient-purple-blue': {
-        color: 'neutral-3',
-        image: `linear-gradient(
-          #3D138D 0%,
-          #00739D 100%
-        );`,
-        rotate: 145,
-      },
       'gradient-purple-teal': {
         image: `linear-gradient(
           #7C7EF4 0%,
