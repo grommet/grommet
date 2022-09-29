@@ -315,25 +315,25 @@ exports[`CheckBox controlled 1`] = `
 
 exports[`CheckBox controlled 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eANINY"
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jUgUBs"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 sYvHP"
     label="test-label"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gibDHu StyledCheckBox-sc-1dbk5ju-6 eJWclz"
+      class="StyledBox-sc-13pk1d4-0 bLhmeR StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
     >
       <input
         checked=""
-        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cOPtKl"
+        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 kLqSaO"
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 bGhwjx StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 bNwZfh"
+        class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
       >
         <svg
-          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 frpnnl"
+          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 hrzLMu"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
