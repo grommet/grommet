@@ -19,6 +19,7 @@ export const hacktoberfest2022 = deepFreeze({
       yellow: '#EDD063',
       darkPurple: '#291E40',
       active: 'purple',
+      focus: '#233670',
       brand: 'lime',
       control: 'teal',
       text: '#E4E1E6',
@@ -83,6 +84,12 @@ export const hacktoberfest2022 = deepFreeze({
         rotate: 90,
       },
     },
+    focus: {
+      shadow: {
+        color: 'focus',
+        size: '3px',
+      },
+    },
     font: {
       family: '"JetBrains Mono", monospace',
       face: "/* latin */\n@font-face {\n  font-family: 'JetBrains Mono';\n  font-style: normal;\n  font-weight: 400;\n  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v13/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTOlOTk6OThhvA.woff) format('woff');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}",
@@ -135,6 +142,10 @@ export const hacktoberfest2022 = deepFreeze({
         0px 12px
       );
       text-transform: uppercase;
+
+      &:focus {
+        clip-path: none;
+      }
     `,
   },
   heading: {
