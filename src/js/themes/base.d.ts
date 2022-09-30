@@ -602,7 +602,7 @@ export interface ThemeType {
       extend?: ExtendType;
     };
     icons?: {
-      checked?: any;
+      checked?: React.ReactNode | Icon;
       indeterminate?: any;
     };
     pad?: PadType;
@@ -1294,7 +1294,7 @@ export interface ThemeType {
       size?: string;
     };
     icons?: {
-      circle?: string;
+      circle?: React.ReactNode | Icon;
     };
     gap?: string;
     size?: string;

@@ -47,6 +47,9 @@ export const ObjectOptions = () => {
         labelKey="label"
         valueKey={{ key: 'value' }}
         options={options}
+        onClose={() => {
+          setOptions(objectOptions);
+        }}
       />
     </Box>
     // </Grommet>
