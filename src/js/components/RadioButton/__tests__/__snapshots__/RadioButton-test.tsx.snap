@@ -28,7 +28,7 @@ exports[`RadioButton background-color themed 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -81,7 +81,7 @@ exports[`RadioButton background-color themed 1`] = `
   border-color: #000000;
 }
 
-.c3 {
+.c4 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -90,12 +90,32 @@ exports[`RadioButton background-color themed 1`] = `
   cursor: pointer;
 }
 
-.c5 {
+.c7 {
   background-color: red;
 }
 
+.c3:focus + .c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6 > circle,
+.c3:focus + .c7 > ellipse,
+.c3:focus + .c7 > line,
+.c3:focus + .c7 > path,
+.c3:focus + .c7 > polygon,
+.c3:focus + .c7 > polyline,
+.c3:focus + .c7 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
@@ -110,12 +130,12 @@ exports[`RadioButton background-color themed 1`] = `
       class="c2 "
     >
       <input
-        class="c3"
+        class="c3 c4"
         name="test"
         type="radio"
       />
       <div
-        class="c4 c5"
+        class="c5 c6 c7"
       />
     </div>
   </label>
@@ -150,7 +170,7 @@ exports[`RadioButton background-color themed symbolic 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -203,7 +223,7 @@ exports[`RadioButton background-color themed symbolic 1`] = `
   border-color: #000000;
 }
 
-.c3 {
+.c4 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -212,12 +232,32 @@ exports[`RadioButton background-color themed symbolic 1`] = `
   cursor: pointer;
 }
 
-.c5 {
+.c7 {
   background-color: #7D4CDB;
 }
 
+.c3:focus + .c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6 > circle,
+.c3:focus + .c7 > ellipse,
+.c3:focus + .c7 > line,
+.c3:focus + .c7 > path,
+.c3:focus + .c7 > polygon,
+.c3:focus + .c7 > polyline,
+.c3:focus + .c7 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
@@ -232,12 +272,12 @@ exports[`RadioButton background-color themed symbolic 1`] = `
       class="c2 "
     >
       <input
-        class="c3"
+        class="c3 c4"
         name="test"
         type="radio"
       />
       <div
-        class="c4 c5"
+        class="c5 c6 c7"
       />
     </div>
   </label>
@@ -272,7 +312,7 @@ exports[`RadioButton basic 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -325,7 +365,7 @@ exports[`RadioButton basic 1`] = `
   border-color: #000000;
 }
 
-.c3 {
+.c4 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -334,8 +374,28 @@ exports[`RadioButton basic 1`] = `
   cursor: pointer;
 }
 
+.c3:focus + .c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6 > circle,
+.c3:focus + .c7 > ellipse,
+.c3:focus + .c7 > line,
+.c3:focus + .c7 > path,
+.c3:focus + .c7 > polygon,
+.c3:focus + .c7 > polyline,
+.c3:focus + .c7 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
@@ -350,13 +410,13 @@ exports[`RadioButton basic 1`] = `
       class="c2 "
     >
       <input
-        class="c3"
+        class="c3 c4"
         name="test"
         type="radio"
         value="1"
       />
       <div
-        class="c4 "
+        class="c5 c6 c7"
       />
     </div>
   </label>
@@ -368,14 +428,14 @@ exports[`RadioButton basic 1`] = `
       class="c2 "
     >
       <input
-        class="c3"
+        class="c3 c4"
         id="test id"
         name="test"
         type="radio"
         value="2"
       />
       <div
-        class="c4 "
+        class="c5 c6 c7"
       />
     </div>
   </label>
@@ -410,7 +470,7 @@ exports[`RadioButton checked 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -463,7 +523,7 @@ exports[`RadioButton checked 1`] = `
   border-color: #000000;
 }
 
-.c3 {
+.c4 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -472,15 +532,35 @@ exports[`RadioButton checked 1`] = `
   cursor: pointer;
 }
 
-.c5 {
+.c8 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
 }
 
+.c3:focus + .c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6 > circle,
+.c3:focus + .c7 > ellipse,
+.c3:focus + .c7 > line,
+.c3:focus + .c7 > path,
+.c3:focus + .c7 > polygon,
+.c3:focus + .c7 > polyline,
+.c3:focus + .c7 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -496,16 +576,16 @@ exports[`RadioButton checked 1`] = `
     >
       <input
         checked=""
-        class="c3"
+        class="c3 c4"
         name="test"
         type="radio"
         value="1"
       />
       <div
-        class="c4 "
+        class="c5 c6 c7"
       >
         <svg
-          class="c5"
+          class="c8"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -700,7 +780,7 @@ exports[`RadioButton disabled 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -726,7 +806,7 @@ exports[`RadioButton disabled 1`] = `
   border-radius: 100%;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -780,7 +860,7 @@ exports[`RadioButton disabled 1`] = `
   border-color: #000000;
 }
 
-.c3 {
+.c4 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -788,21 +868,41 @@ exports[`RadioButton disabled 1`] = `
   margin: 0;
 }
 
-.c6 {
+.c9 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
 }
 
+.c3:focus + .c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6 > circle,
+.c3:focus + .c7 > ellipse,
+.c3:focus + .c7 > line,
+.c3:focus + .c7 > path,
+.c3:focus + .c7 > polygon,
+.c3:focus + .c7 > polyline,
+.c3:focus + .c7 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c8 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -818,14 +918,14 @@ exports[`RadioButton disabled 1`] = `
       class="c2 "
     >
       <input
-        class="c3"
+        class="c3 c4"
         disabled=""
         name="test"
         type="radio"
         value="1"
       />
       <div
-        class="c4 "
+        class="c5 c6 c7"
       />
     </div>
   </label>
@@ -838,17 +938,17 @@ exports[`RadioButton disabled 1`] = `
     >
       <input
         checked=""
-        class="c3"
+        class="c3 c4"
         disabled=""
         name="test"
         type="radio"
         value="2"
       />
       <div
-        class="c5 "
+        class="c8 c6 c7"
       >
         <svg
-          class="c6"
+          class="c9"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -893,7 +993,7 @@ exports[`RadioButton label 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -946,13 +1046,33 @@ exports[`RadioButton label 1`] = `
   border-color: #000000;
 }
 
-.c3 {
+.c4 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
   height: 0;
   margin: 0;
   cursor: pointer;
+}
+
+.c3:focus + .c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6 > circle,
+.c3:focus + .c7 > ellipse,
+.c3:focus + .c7 > line,
+.c3:focus + .c7 > path,
+.c3:focus + .c7 > polygon,
+.c3:focus + .c7 > polyline,
+.c3:focus + .c7 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -962,7 +1082,7 @@ exports[`RadioButton label 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
@@ -977,13 +1097,13 @@ exports[`RadioButton label 1`] = `
       class="c2 "
     >
       <input
-        class="c3"
+        class="c3 c4"
         name="test"
         type="radio"
         value="1"
       />
       <div
-        class="c4 "
+        class="c5 c6 c7"
       />
     </div>
     <span
@@ -999,13 +1119,13 @@ exports[`RadioButton label 1`] = `
       class="c2 "
     >
       <input
-        class="c3"
+        class="c3 c4"
         name="test"
         type="radio"
         value="2"
       />
       <div
-        class="c4 "
+        class="c5 c6 c7"
       />
     </div>
     <div>
@@ -1044,7 +1164,7 @@ exports[`RadioButton label themed 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1097,7 +1217,7 @@ exports[`RadioButton label themed 1`] = `
   border-color: #000000;
 }
 
-.c3 {
+.c4 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -1106,8 +1226,28 @@ exports[`RadioButton label themed 1`] = `
   cursor: pointer;
 }
 
-.c5 {
+.c8 {
   font-weight: 500;
+}
+
+.c3:focus + .c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6 > circle,
+.c3:focus + .c7 > ellipse,
+.c3:focus + .c7 > line,
+.c3:focus + .c7 > path,
+.c3:focus + .c7 > polygon,
+.c3:focus + .c7 > polyline,
+.c3:focus + .c7 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -1117,7 +1257,7 @@ exports[`RadioButton label themed 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
@@ -1132,16 +1272,16 @@ exports[`RadioButton label themed 1`] = `
       class="c2 "
     >
       <input
-        class="c3"
+        class="c3 c4"
         name="test"
         type="radio"
       />
       <div
-        class="c4 "
+        class="c5 c6 c7"
       />
     </div>
     <span
-      class="c5"
+      class="c8"
     >
       test
     </span>
@@ -1177,7 +1317,7 @@ exports[`RadioButton renders custom circle icon 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1230,7 +1370,7 @@ exports[`RadioButton renders custom circle icon 1`] = `
   border-color: #000000;
 }
 
-.c3 {
+.c4 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -1239,8 +1379,28 @@ exports[`RadioButton renders custom circle icon 1`] = `
   cursor: pointer;
 }
 
+.c3:focus + .c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6 > circle,
+.c3:focus + .c7 > ellipse,
+.c3:focus + .c7 > line,
+.c3:focus + .c7 > path,
+.c3:focus + .c7 > polygon,
+.c3:focus + .c7 > polyline,
+.c3:focus + .c7 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -1256,12 +1416,12 @@ exports[`RadioButton renders custom circle icon 1`] = `
     >
       <input
         checked=""
-        class="c3"
+        class="c3 c4"
         name="test"
         type="radio"
       />
       <div
-        class="c4 "
+        class="c5 c6 c7"
       >
         <svg
           as=".StyledRadioButton__StyledRadioButtonIcon-sc-g1f6ld-3"
@@ -1302,7 +1462,7 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1355,7 +1515,7 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
   border-color: #000000;
 }
 
-.c3 {
+.c4 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -1364,8 +1524,28 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
   cursor: pointer;
 }
 
+.c3:focus + .c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6 > circle,
+.c3:focus + .c7 > ellipse,
+.c3:focus + .c7 > line,
+.c3:focus + .c7 > path,
+.c3:focus + .c7 > polygon,
+.c3:focus + .c7 > polyline,
+.c3:focus + .c7 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
@@ -1381,12 +1561,12 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
     >
       <input
         aria-label="test"
-        class="c3"
+        class="c3 c4"
         name="test"
         type="radio"
       />
       <div
-        class="c4 "
+        class="c5 c6 c7"
       />
     </div>
   </label>
@@ -1398,12 +1578,12 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
     >
       <input
         aria-label="test-2"
-        class="c3"
+        class="c3 c4"
         name="test"
         type="radio"
       />
       <div
-        class="c4 "
+        class="c5 c6 c7"
       />
     </div>
   </label>
@@ -1438,7 +1618,7 @@ exports[`RadioButton should have no accessibility violations 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1491,7 +1671,7 @@ exports[`RadioButton should have no accessibility violations 1`] = `
   border-color: #000000;
 }
 
-.c3 {
+.c4 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -1500,8 +1680,28 @@ exports[`RadioButton should have no accessibility violations 1`] = `
   cursor: pointer;
 }
 
+.c3:focus + .c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6 > circle,
+.c3:focus + .c7 > ellipse,
+.c3:focus + .c7 > line,
+.c3:focus + .c7 > path,
+.c3:focus + .c7 > polygon,
+.c3:focus + .c7 > polyline,
+.c3:focus + .c7 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus + .c6::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
@@ -1517,12 +1717,12 @@ exports[`RadioButton should have no accessibility violations 1`] = `
     >
       <input
         aria-label="test"
-        class="c3"
+        class="c3 c4"
         name="test"
         type="radio"
       />
       <div
-        class="c4 "
+        class="c5 c6 c7"
       />
     </div>
   </label>
