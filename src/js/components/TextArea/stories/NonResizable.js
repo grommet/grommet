@@ -11,7 +11,13 @@ const Resize = (props) => {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box align="center" pad="large">
-      <TextArea value={value} onChange={onChange} {...props} />
+      <TextArea
+        label="text area"
+        aria-label="text area"
+        value={value}
+        onChange={onChange}
+        {...props}
+      />
     </Box>
     // </Grommet>
   );
