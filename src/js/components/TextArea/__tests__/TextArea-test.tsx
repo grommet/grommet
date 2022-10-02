@@ -190,6 +190,10 @@ describe('TextArea', () => {
       fireEvent.change(input, {
         target: { value: 'Test' },
       });
+      if (!(input instanceof HTMLTextAreaElement)) {
+        fail("node 'input' is not of type 'HTMLTextAreaElement'");
+      }
+      expect(input.value).toEqual('Test');
       expect(onChange).toHaveBeenCalledTimes(1);
     });
 
