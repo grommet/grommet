@@ -6,7 +6,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
-import { TextArea } from '..';
+import { TextArea, TextAreaProps } from '..';
 
 describe('TextArea', () => {
   test('should not have accessibility violations', async () => {
@@ -79,7 +79,13 @@ describe('TextArea', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  [true, false, 'horizontal', 'vertical'].forEach((resize) => {
+  const resizes: TextAreaProps['resize'][] = [
+    true,
+    false,
+    'horizontal',
+    'vertical',
+  ];
+  resizes.forEach((resize) => {
     test(`resize ${resize}`, () => {
       const { container } = render(
         <Grommet>
@@ -111,10 +117,11 @@ describe('TextArea', () => {
     };
 
     test(`onKeyDown`, () => {
-      let capturedEvent = null;
-      const callback = (event) => {
-        const { key, keyCode, which } = event;
-        capturedEvent = { key, keyCode, which };
+      let capturedEvent: React.KeyboardEvent<HTMLTextAreaElement> | null = null;
+      const callback: React.KeyboardEventHandler<HTMLTextAreaElement> = (
+        event,
+      ) => {
+        capturedEvent = event;
       };
 
       const component = render(
@@ -131,15 +138,15 @@ describe('TextArea', () => {
       const textArea = component.getByPlaceholderText('item');
 
       fireEvent.keyDown(textArea, keyEvent);
-
       expect(capturedEvent).toEqual(expect.objectContaining(keyEvent));
     });
 
     test(`onKeyUp`, () => {
-      let capturedEvent = null;
-      const callback = (event) => {
-        const { key, keyCode, which } = event;
-        capturedEvent = { key, keyCode, which };
+      let capturedEvent: React.KeyboardEvent<HTMLTextAreaElement> | null = null;
+      const callback: React.KeyboardEventHandler<HTMLTextAreaElement> = (
+        event,
+      ) => {
+        capturedEvent = event;
       };
 
       const component = render(
@@ -183,7 +190,6 @@ describe('TextArea', () => {
       fireEvent.change(input, {
         target: { value: 'Test' },
       });
-      expect(input.value).toEqual('Test');
       expect(onChange).toHaveBeenCalledTimes(1);
     });
 
