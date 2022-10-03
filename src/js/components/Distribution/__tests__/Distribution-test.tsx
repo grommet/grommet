@@ -28,6 +28,22 @@ describe('Distribution', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('undefined value', () => {
+    const { container } = render(
+      <Grommet>
+        <Distribution
+          values={
+            // @ts-ignore
+            [{ value: 20 }, { value: undefined }]
+          }
+        >
+          {(value) => <span>{value.value}</span>}
+        </Distribution>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('gap renders', () => {
     const { container } = render(
       <Grommet>
