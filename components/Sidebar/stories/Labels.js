@@ -60,7 +60,9 @@ var SidebarButton = function SidebarButton(_ref) {
 };
 
 var SidebarFooter = function SidebarFooter() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Nav, null, /*#__PURE__*/_react["default"].createElement(SidebarButton, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
+    "aria-label": "sidebar footer"
+  }, /*#__PURE__*/_react["default"].createElement(SidebarButton, {
     icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Chat, null)
   }), /*#__PURE__*/_react["default"].createElement(SidebarButton, {
     icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Help, null)
@@ -69,6 +71,7 @@ var SidebarFooter = function SidebarFooter() {
 
 var MainNavigation = function MainNavigation() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
+    "aria-label": "main navigation",
     gap: "large",
     responsive: false
   }, /*#__PURE__*/_react["default"].createElement(SidebarButton, {

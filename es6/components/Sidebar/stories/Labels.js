@@ -56,7 +56,9 @@ var SidebarButton = function SidebarButton(_ref) {
 };
 
 var SidebarFooter = function SidebarFooter() {
-  return /*#__PURE__*/React.createElement(Nav, null, /*#__PURE__*/React.createElement(SidebarButton, {
+  return /*#__PURE__*/React.createElement(Nav, {
+    "aria-label": "sidebar footer"
+  }, /*#__PURE__*/React.createElement(SidebarButton, {
     icon: /*#__PURE__*/React.createElement(Chat, null)
   }), /*#__PURE__*/React.createElement(SidebarButton, {
     icon: /*#__PURE__*/React.createElement(Help, null)
@@ -65,6 +67,7 @@ var SidebarFooter = function SidebarFooter() {
 
 var MainNavigation = function MainNavigation() {
   return /*#__PURE__*/React.createElement(Nav, {
+    "aria-label": "main navigation",
     gap: "large",
     responsive: false
   }, /*#__PURE__*/React.createElement(SidebarButton, {
