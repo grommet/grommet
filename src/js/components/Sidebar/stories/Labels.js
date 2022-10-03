@@ -41,14 +41,14 @@ const SidebarButton = ({ icon, label, ...rest }) => (
 );
 
 const SidebarFooter = () => (
-  <Nav>
+  <Nav aria-label="sidebar footer">
     <SidebarButton icon={<Chat />} />
     <SidebarButton icon={<Help />} />
   </Nav>
 );
 
 const MainNavigation = () => (
-  <Nav gap="large" responsive={false}>
+  <Nav aria-label="main navigation" gap="large" responsive={false}>
     <SidebarButton icon={<StatusInfoSmall />} label="Focus" />
     <SidebarButton icon={<Projects />} label="Services" />
     <SidebarButton icon={<Clock />} label="Glances" />
