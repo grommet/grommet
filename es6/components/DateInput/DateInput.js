@@ -259,7 +259,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   }, /*#__PURE__*/React.createElement(Box, {
     ref: containerRef,
     border: !plain,
-    round: "xxsmall",
+    round: theme.dateInput.container.round,
     direction: "row",
     fill: true
   }, reverse && calendarButton, /*#__PURE__*/React.createElement(MaskedInput, _extends({

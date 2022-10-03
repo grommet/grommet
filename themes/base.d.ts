@@ -663,6 +663,9 @@ export interface ThemeType {
     baseline?: number;
   };
   dateInput?: {
+    container?: {
+      round?: RoundType;
+    };
     icon?: {
       size?: string;
     };
