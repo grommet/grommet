@@ -5,10 +5,10 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import { Grommet, Video } from '../..';
+import { Grommet, Video, VideoExtendedProps } from '../..';
 
 describe('Video', () => {
-  let App;
+  let App: React.FC<VideoExtendedProps>;
 
   beforeEach(() => {
     App = ({ ...props }) => (
@@ -89,14 +89,13 @@ describe('Video', () => {
   test('Play and Pause event handlers', () => {
     const onPlay = jest.fn();
     const onPause = jest.fn();
-    const { container } = render(
-      <App playing={false} onPlay={onPlay} onPause={onPause} />,
-    );
+    const { container } = render(<App onPlay={onPlay} onPause={onPause} />);
     const videoContainer = document.querySelector('video');
-    fireEvent.play(videoContainer);
+    expect(videoContainer).not.toBeNull();
+    fireEvent.play(videoContainer!);
     expect(container.firstChild).toMatchSnapshot();
     expect(onPlay).toHaveBeenCalled();
-    fireEvent.pause(videoContainer);
+    fireEvent.pause(videoContainer!);
     expect(container.firstChild).toMatchSnapshot();
     expect(onPause).toHaveBeenCalled();
   });
@@ -105,11 +104,12 @@ describe('Video', () => {
     const { container } = render(<App />);
 
     const videoContainer = document.querySelector('video');
-    fireEvent.mouseOver(videoContainer);
+    expect(videoContainer).not.toBeNull();
+    fireEvent.mouseOver(videoContainer!);
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.mouseMove(videoContainer);
+    fireEvent.mouseMove(videoContainer!);
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.touchStart(videoContainer);
+    fireEvent.touchStart(videoContainer!);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -118,8 +118,9 @@ describe('Video', () => {
     const { container } = render(<App onEnded={onEnd} />);
     // Need to fire play event to get video playing before we fire ended event.
     const videoContainer = document.querySelector('video');
-    fireEvent.play(videoContainer);
-    fireEvent.ended(videoContainer);
+    expect(videoContainer).not.toBeNull();
+    fireEvent.play(videoContainer!);
+    fireEvent.ended(videoContainer!);
     expect(container.firstChild).toMatchSnapshot();
     expect(onEnd).toHaveBeenCalled();
   });
@@ -146,7 +147,7 @@ describe('Video', () => {
   });
 
   test('fullscreen button', () => {
-    window.scrollTo = jest.fn();
+    const scrollSpy = jest.spyOn(window, 'scrollTo').mockImplementation();
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { getByLabelText } = render(<App />);
     fireEvent.click(getByLabelText('open menu'));
@@ -159,13 +160,13 @@ describe('Video', () => {
     );
     warnSpy.mockReset();
     warnSpy.mockRestore();
-    window.scrollTo.mockRestore();
+    scrollSpy.mockRestore();
   });
 
   test('play button', () => {
     const playStub = jest
       .spyOn(window.HTMLMediaElement.prototype, 'play')
-      .mockImplementation(() => {});
+      .mockImplementation(async () => {});
     const { getByLabelText } = render(<App />);
     fireEvent.click(getByLabelText('play'));
     expect(playStub).toHaveBeenCalled();
@@ -174,7 +175,8 @@ describe('Video', () => {
 
   test('volume controls', () => {
     const volMock = jest.fn();
-    window.scrollTo = jest.fn();
+    const scrollSpy = jest.spyOn(window, 'scrollTo').mockImplementation();
+
     const { getByLabelText } = render(<App onVolumeChange={volMock} />);
     fireEvent.click(getByLabelText('open menu'));
     fireEvent.click(getByLabelText('volume down'));
@@ -182,14 +184,15 @@ describe('Video', () => {
     fireEvent.click(getByLabelText('volume up'));
     expect(volMock).toHaveBeenCalledTimes(2);
 
-    window.scrollTo.mockRestore();
+    scrollSpy.mockRestore();
   });
 
   test('timeUpdate event handler', () => {
     const onTimeUpdate = jest.fn();
     const { container } = render(<App onTimeUpdate={onTimeUpdate} />);
     const videoContainer = document.querySelector('video');
-    fireEvent.timeUpdate(videoContainer);
+    expect(videoContainer).not.toBeNull();
+    fireEvent.timeUpdate(videoContainer!);
     expect(container.firstChild).toMatchSnapshot();
     expect(onTimeUpdate).toHaveBeenCalled();
   });
@@ -198,7 +201,8 @@ describe('Video', () => {
     const onDurationChange = jest.fn();
     const { container } = render(<App onDurationChange={onDurationChange} />);
     const videoContainer = document.querySelector('video');
-    fireEvent.durationChange(videoContainer);
+    expect(videoContainer).not.toBeNull();
+    fireEvent.durationChange(videoContainer!);
     expect(container.firstChild).toMatchSnapshot();
     expect(onDurationChange).toHaveBeenCalled();
   });
