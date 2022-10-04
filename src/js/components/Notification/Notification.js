@@ -47,8 +47,10 @@ const Notification = ({ message, onClose, status, title, toast }) => {
       >
         <Box>
           <Text {...theme.notification.title}>{title}</Text>
-          {message && (
+          {typeof message === 'string' ? (
             <Paragraph {...theme.notification.message}>{message}</Paragraph>
+          ) : (
+            message
           )}
         </Box>
         {onClose && (
