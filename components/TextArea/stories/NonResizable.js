@@ -30,6 +30,7 @@ var Resize = function Resize(props) {
       align: "center",
       pad: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextArea, _extends({
+      "aria-label": "text area",
       value: value,
       onChange: onChange
     }, props))) // </Grommet>
