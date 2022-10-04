@@ -196,18 +196,23 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
 
   var _useState4 = useState(),
       dragging = _useState4[0],
-      setDragging = _useState4[1]; // store a reference to the pinned and the data that is orderable
+      setDragging = _useState4[1];
+
+  var _useState5 = useState(),
+      orderingData = _useState5[0],
+      setOrderingData = _useState5[1]; // store a reference to the pinned and the data that is orderable
 
 
   var _useMemo = useMemo(function () {
     var orderable = [];
     var pinnedData = [];
     var pinnedIndexes = [];
-    if (pinned.length === 0) return [data, {
+    var currentData = orderingData || data;
+    if (pinned.length === 0) return [currentData, {
       data: pinnedData,
       indexes: pinnedIndexes
     }];
-    data.forEach(function (item, index) {
+    currentData.forEach(function (item, index) {
       var key = typeof item === 'object' ? item[itemKey] : item;
 
       if (pinned.includes(key)) {
@@ -221,7 +226,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       data: pinnedData,
       indexes: pinnedIndexes
     }];
-  }, [data, itemKey, pinned]),
+  }, [data, orderingData, itemKey, pinned]),
       orderableData = _useMemo[0],
       pinnedInfo = _useMemo[1];
 
@@ -235,11 +240,6 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
 
   var Container = paginate ? StyledContainer : Fragment;
   var containterProps = paginate ? _extends({}, theme.list.container) : undefined;
-
-  var _useState5 = useState(),
-      orderingData = _useState5[0],
-      setOrderingData = _useState5[1];
-
   var draggingRef = useRef();
   var sendAnalytics = useAnalytics();
   var ariaProps = {
