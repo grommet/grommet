@@ -158,7 +158,12 @@ const Select = forwardRef(
     useEffect(() => setOpen(propOpen), [propOpen]);
 
     const onRequestOpen = useCallback(() => {
-      if (open) return;
+      if (open) 
+      // get selected option
+      var selectedOption=useRef(selected);
+      selectedOption.scrollIntoView({})
+      scrollIntoView
+      return;
       setOpen(true);
       if (onOpen) onOpen();
     }, [onOpen, open]);
