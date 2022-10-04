@@ -5,7 +5,14 @@ import { MessageContext } from '../../contexts/MessageContext';
 
 import { defaultProps } from '../../default-props';
 
-import { disabledStyle, parseMetricToNum, useForwardedRef } from '../../utils';
+import {
+  disabledStyle,
+  focusStyle,
+  parseMetricToNum,
+  unfocusStyle,
+  useForwardedRef,
+  useKeyboard,
+} from '../../utils';
 
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
@@ -51,6 +58,8 @@ const ContentsBox = styled(Box)`
     props.theme.fileInput &&
     props.theme.fileInput.dragOver &&
     props.theme.fileInput.dragOver.extend};
+  ${(props) => props.focus && focusStyle()};
+  ${(props) => !props.focus && unfocusStyle()};
 `;
 
 const Label = styled(Text)`
@@ -100,6 +109,7 @@ const FileInput = forwardRef(
     const formContext = useContext(FormContext);
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
+    const [focus, setFocus] = React.useState();
     const [showRemoveConfirmation, setShowRemoveConfirmation] = useState(false);
     const [pendingRemoval, setPendingRemoval] = useState(defaultPendingRemoval);
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
@@ -109,6 +119,7 @@ const FileInput = forwardRef(
     const removeRef = useRef();
     const ConfirmRemove = confirmRemove;
     const RemoveIcon = theme.fileInput.icons.remove;
+    const usingKeyboard = useKeyboard();
 
     const [files, setFiles] = formContext.useFormInput({
       name,
@@ -282,7 +293,44 @@ const FileInput = forwardRef(
           onMouseOver={disabled ? undefined : () => setHover(true)}
           onMouseOut={disabled ? undefined : () => setHover(false)}
           dragOver={dragOver}
+          focus={usingKeyboard && focus}
         >
+          <StyledFileInput
+            ref={inputRef}
+            type="file"
+            id={id}
+            name={name}
+            maxSize={maxSize}
+            multiple={multiple}
+            disabled={disabled}
+            plain
+            rightOffset={rightOffset}
+            {...rest}
+            onDragOver={() => setDragOver(true)}
+            onDragLeave={() => setDragOver(false)}
+            onChange={(event) => {
+              event.persist();
+              const fileList = event.target.files;
+              const nextFiles = multiple ? [...files] : [];
+              for (let i = 0; i < fileList.length; i += 1) {
+                // avoid duplicates
+                const existing =
+                  nextFiles.filter(
+                    (file) =>
+                      file.name === fileList[i].name &&
+                      file.size === fileList[i].size,
+                  ).length > 0;
+                if (!existing) {
+                  nextFiles.push(fileList[i]);
+                }
+              }
+              setFiles(nextFiles);
+              setDragOver(false);
+              if (onChange) onChange(event, { files: nextFiles });
+            }}
+            onBlur={() => setFocus(false)}
+            onFocus={() => setFocus(true)}
+          />
           {(!files.length || files.length > 1) && (
             <Box
               align="center"
@@ -306,6 +354,8 @@ const FileInput = forwardRef(
                   >
                     {theme.fileInput.button ? (
                       <Button
+                        // The focus here is redundant for keyboard users
+                        tabIndex={-1}
                         ref={controlRef}
                         kind={theme.fileInput.button}
                         label={format({
@@ -319,7 +369,8 @@ const FileInput = forwardRef(
                       />
                     ) : (
                       <Anchor
-                        tabIndex={0}
+                        // The focus here is redundant for keyboard users
+                        tabIndex={-1}
                         alignSelf="center"
                         ref={controlRef}
                         margin="small"
@@ -376,6 +427,8 @@ const FileInput = forwardRef(
                 >
                   {theme.fileInput.button ? (
                     <Button
+                      // The focus here is redundant for keyboard users
+                      tabIndex={-1}
                       ref={controlRef}
                       kind={theme.fileInput.button}
                       label={format({
@@ -389,7 +442,8 @@ const FileInput = forwardRef(
                     />
                   ) : (
                     <Anchor
-                      tabIndex={0}
+                      // The focus here is redundant for keyboard users
+                      tabIndex={-1}
                       alignSelf="center"
                       ref={controlRef}
                       margin="small"
@@ -468,6 +522,8 @@ const FileInput = forwardRef(
                     >
                       {theme.fileInput.button ? (
                         <Button
+                          // The focus here is redundant for keyboard users
+                          tabIndex={-1}
                           ref={controlRef}
                           kind={theme.fileInput.button}
                           label={format({
@@ -481,7 +537,8 @@ const FileInput = forwardRef(
                         />
                       ) : (
                         <Anchor
-                          tabIndex={0}
+                          // The focus here is redundant for keyboard users
+                          tabIndex={-1}
                           ref={controlRef}
                           margin="small"
                           onClick={() => {
@@ -499,40 +556,6 @@ const FileInput = forwardRef(
                 </Box>
               </Box>
             ))}
-          <StyledFileInput
-            ref={inputRef}
-            type="file"
-            id={id}
-            name={name}
-            maxSize={maxSize}
-            multiple={multiple}
-            disabled={disabled}
-            plain
-            rightOffset={rightOffset}
-            {...rest}
-            onDragOver={() => setDragOver(true)}
-            onDragLeave={() => setDragOver(false)}
-            onChange={(event) => {
-              event.persist();
-              const fileList = event.target.files;
-              const nextFiles = multiple ? [...files] : [];
-              for (let i = 0; i < fileList.length; i += 1) {
-                // avoid duplicates
-                const existing =
-                  nextFiles.filter(
-                    (file) =>
-                      file.name === fileList[i].name &&
-                      file.size === fileList[i].size,
-                  ).length > 0;
-                if (!existing) {
-                  nextFiles.push(fileList[i]);
-                }
-              }
-              setFiles(nextFiles);
-              setDragOver(false);
-              if (onChange) onChange(event, { files: nextFiles });
-            }}
-          />
         </ContentsBox>
         {showRemoveConfirmation && (
           <ConfirmRemove
