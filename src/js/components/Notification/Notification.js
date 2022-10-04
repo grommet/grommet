@@ -10,7 +10,7 @@ import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 
-const Notification = ({ message, onClose, status, title, toast }) => {
+const Notification = ({ message, onClose, status, title, toast, icon }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
 
@@ -36,7 +36,7 @@ const Notification = ({ message, onClose, status, title, toast }) => {
       direction="row"
     >
       <Box {...theme.notification.iconContainer}>
-        <StatusIcon color={color} />
+        {icon || <StatusIcon color={color} />}
       </Box>
       <Box
         {...theme.notification.textContainer}

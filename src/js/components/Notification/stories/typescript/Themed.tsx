@@ -4,7 +4,7 @@ import { Box, Grommet, Notification } from 'grommet';
 
 import { deepMerge } from 'grommet/utils';
 import { grommet, ThemeType } from 'grommet/themes';
-import { DisabledOutline, CircleQuestion } from 'grommet-icons';
+import { CircleQuestion } from 'grommet-icons';
 
 // Type annotations can only be used in TypeScript files.
 // Remove ': ThemeType' if you are not using Typescript.
