@@ -26,7 +26,7 @@ const CustomHeaderAccordion = () => {
       >
         <Box pad="medium" background="light-2" style={{ height: '800px' }}>
           <Text>Panel 1 contents</Text>
-          <TextInput />
+          <TextInput a11yTitle="panel 1 text box" />
         </Box>
       </AccordionPanel>
       <AccordionPanel
