@@ -234,7 +234,6 @@ describe('Button', () => {
     expect(document.body).toHaveFocus();
 
     await user.tab();
-
     expect(button).toHaveFocus();
     expect(document.body).not.toHaveFocus();
 

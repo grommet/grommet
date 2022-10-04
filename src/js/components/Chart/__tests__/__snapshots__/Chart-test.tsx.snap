@@ -165,28 +165,28 @@ exports[`Chart animate 1`] = `
 `;
 
 exports[`Chart calcs basic 1`] = `
-Object {
-  "axis": Array [
-    Array [
+{
+  "axis": [
+    [
       1,
       2,
     ],
-    Array [
+    [
       2,
       0.8,
     ],
   ],
-  "bounds": Array [
-    Array [
+  "bounds": [
+    [
       1,
       2,
     ],
-    Array [
+    [
       0.8,
       2,
     ],
   ],
-  "dimensions": Array [
+  "dimensions": [
     1,
     1.2,
   ],
@@ -196,28 +196,28 @@ Object {
 `;
 
 exports[`Chart calcs hair thickness 1`] = `
-Object {
-  "axis": Array [
-    Array [
+{
+  "axis": [
+    [
       0,
       1,
     ],
-    Array [
+    [
       3,
       1.8,
     ],
   ],
-  "bounds": Array [
-    Array [
+  "bounds": [
+    [
       0,
       1,
     ],
-    Array [
+    [
       1.8,
       3.0000000000000004,
     ],
   ],
-  "dimensions": Array [
+  "dimensions": [
     1,
     1.2,
   ],
@@ -227,28 +227,28 @@ Object {
 `;
 
 exports[`Chart calcs large thickness 1`] = `
-Object {
-  "axis": Array [
-    Array [
+{
+  "axis": [
+    [
       0,
       1,
     ],
-    Array [
+    [
       3,
       1.8,
     ],
   ],
-  "bounds": Array [
-    Array [
+  "bounds": [
+    [
       0,
       1,
     ],
-    Array [
+    [
       1.8,
       3.0000000000000004,
     ],
   ],
-  "dimensions": Array [
+  "dimensions": [
     1,
     1.2,
   ],
@@ -258,28 +258,28 @@ Object {
 `;
 
 exports[`Chart calcs medium thickness 1`] = `
-Object {
-  "axis": Array [
-    Array [
+{
+  "axis": [
+    [
       0,
       1,
     ],
-    Array [
+    [
       3,
       1.8,
     ],
   ],
-  "bounds": Array [
-    Array [
+  "bounds": [
+    [
       0,
       1,
     ],
-    Array [
+    [
       1.8,
       3.0000000000000004,
     ],
   ],
-  "dimensions": Array [
+  "dimensions": [
     1,
     1.2,
   ],
@@ -289,28 +289,28 @@ Object {
 `;
 
 exports[`Chart calcs small thickness 1`] = `
-Object {
-  "axis": Array [
-    Array [
+{
+  "axis": [
+    [
       0,
       1,
     ],
-    Array [
+    [
       3,
       1.8,
     ],
   ],
-  "bounds": Array [
-    Array [
+  "bounds": [
+    [
       0,
       1,
     ],
-    Array [
+    [
       1.8,
       3.0000000000000004,
     ],
   ],
-  "dimensions": Array [
+  "dimensions": [
     1,
     1.2,
   ],
@@ -320,28 +320,28 @@ Object {
 `;
 
 exports[`Chart calcs with negative min 1`] = `
-Object {
-  "axis": Array [
-    Array [
+{
+  "axis": [
+    [
       1,
       2,
     ],
-    Array [
+    [
       2.4,
       -2.4,
     ],
   ],
-  "bounds": Array [
-    Array [
+  "bounds": [
+    [
       1,
       2,
     ],
-    Array [
+    [
       -2.4000000000000004,
       2.4000000000000004,
     ],
   ],
-  "dimensions": Array [
+  "dimensions": [
     1,
     4.8,
   ],
@@ -351,28 +351,28 @@ Object {
 `;
 
 exports[`Chart calcs with single value 1`] = `
-Object {
-  "axis": Array [
-    Array [
+{
+  "axis": [
+    [
       0,
       1,
     ],
-    Array [
+    [
       1,
       0,
-    ],
-  ],
-  "bounds": Array [
-    Array [
-      0,
-      1,
-    ],
-    Array [
-      0,
-      1,
     ],
   ],
-  "dimensions": Array [
+  "bounds": [
+    [
+      0,
+      1,
+    ],
+    [
+      0,
+      1,
+    ],
+  ],
+  "dimensions": [
     1,
     1,
   ],
@@ -382,28 +382,28 @@ Object {
 `;
 
 exports[`Chart calcs xsmall thickness 1`] = `
-Object {
-  "axis": Array [
-    Array [
+{
+  "axis": [
+    [
       0,
       1,
     ],
-    Array [
+    [
       3,
       1.8,
     ],
   ],
-  "bounds": Array [
-    Array [
+  "bounds": [
+    [
       0,
       1,
     ],
-    Array [
+    [
       1.8,
       3.0000000000000004,
     ],
   ],
-  "dimensions": Array [
+  "dimensions": [
     1,
     1.2,
   ],

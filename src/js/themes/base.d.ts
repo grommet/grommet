@@ -395,6 +395,7 @@ export interface ThemeType {
       maxWidth?: string;
       size?: string;
       weight?: number | string;
+      variant?: string;
     };
     graph?: {
       colors?: GraphColorsType;
@@ -600,7 +601,7 @@ export interface ThemeType {
       extend?: ExtendType;
     };
     icons?: {
-      checked?: any;
+      checked?: React.ReactNode | Icon;
       indeterminate?: any;
     };
     pad?: PadType;
@@ -662,6 +663,9 @@ export interface ThemeType {
     baseline?: number;
   };
   dateInput?: {
+    container?: {
+      round?: RoundType;
+    };
     icon?: {
       size?: string;
     };
@@ -1292,7 +1296,7 @@ export interface ThemeType {
       size?: string;
     };
     icons?: {
-      circle?: string;
+      circle?: React.ReactNode | Icon;
     };
     gap?: string;
     size?: string;

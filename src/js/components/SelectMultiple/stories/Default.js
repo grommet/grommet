@@ -28,7 +28,6 @@ export const Default = () => {
       <SelectMultiple
         value={valueMultiple}
         placeholder="Select"
-        allOptions={defaultOptions}
         options={options}
         onSearch={(text) => {
           // The line below escapes regular expression special characters:

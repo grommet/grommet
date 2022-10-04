@@ -1137,6 +1137,10 @@ exports[`SelectMultiple disabled option 1`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -1198,12 +1202,12 @@ exports[`SelectMultiple disabled option 1`] = `
 
 exports[`SelectMultiple disabled option 2`] = `
 "@media only screen and (max-width: 768px) {
-  .fkrsaY {
+  .fbVyfn {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.iqZbKa {
+.hIPuDF {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1220,41 +1224,41 @@ exports[`SelectMultiple disabled option 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.iqZbKa:focus {
+.hIPuDF:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iqZbKa:focus > circle,
-.iqZbKa:focus > ellipse,
-.iqZbKa:focus > line,
-.iqZbKa:focus > path,
-.iqZbKa:focus > polygon,
-.iqZbKa:focus > polyline,
-.iqZbKa:focus > rect {
+.hIPuDF:focus > circle,
+.hIPuDF:focus > ellipse,
+.hIPuDF:focus > line,
+.hIPuDF:focus > path,
+.hIPuDF:focus > polygon,
+.hIPuDF:focus > polyline,
+.hIPuDF:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iqZbKa:focus::-moz-focus-inner {
+.hIPuDF:focus::-moz-focus-inner {
   border: 0;
 }
-.iqZbKa:focus:not(:focus-visible) {
+.hIPuDF:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.iqZbKa:focus:not(:focus-visible) > circle,
-.iqZbKa:focus:not(:focus-visible) > ellipse,
-.iqZbKa:focus:not(:focus-visible) > line,
-.iqZbKa:focus:not(:focus-visible) > path,
-.iqZbKa:focus:not(:focus-visible) > polygon,
-.iqZbKa:focus:not(:focus-visible) > polyline,
-.iqZbKa:focus:not(:focus-visible) > rect {
+.hIPuDF:focus:not(:focus-visible) > circle,
+.hIPuDF:focus:not(:focus-visible) > ellipse,
+.hIPuDF:focus:not(:focus-visible) > line,
+.hIPuDF:focus:not(:focus-visible) > path,
+.hIPuDF:focus:not(:focus-visible) > polygon,
+.hIPuDF:focus:not(:focus-visible) > polyline,
+.hIPuDF:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.iqZbKa:focus:not(:focus-visible)::-moz-focus-inner {
+.hIPuDF:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
-.ieVmJT {
+.iCxWAc {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }"
@@ -1501,6 +1505,10 @@ exports[`SelectMultiple keyboard interactions 1`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -1828,6 +1836,10 @@ exports[`SelectMultiple limit 1`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -1889,12 +1901,12 @@ exports[`SelectMultiple limit 1`] = `
 
 exports[`SelectMultiple limit 2`] = `
 "@media only screen and (max-width: 768px) {
-  .fkrsaY {
+  .fbVyfn {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.iqZbKa {
+.hIPuDF {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1911,44 +1923,344 @@ exports[`SelectMultiple limit 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.iqZbKa:focus {
+.hIPuDF:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iqZbKa:focus > circle,
-.iqZbKa:focus > ellipse,
-.iqZbKa:focus > line,
-.iqZbKa:focus > path,
-.iqZbKa:focus > polygon,
-.iqZbKa:focus > polyline,
-.iqZbKa:focus > rect {
+.hIPuDF:focus > circle,
+.hIPuDF:focus > ellipse,
+.hIPuDF:focus > line,
+.hIPuDF:focus > path,
+.hIPuDF:focus > polygon,
+.hIPuDF:focus > polyline,
+.hIPuDF:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iqZbKa:focus::-moz-focus-inner {
+.hIPuDF:focus::-moz-focus-inner {
   border: 0;
 }
-.iqZbKa:focus:not(:focus-visible) {
+.hIPuDF:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.iqZbKa:focus:not(:focus-visible) > circle,
-.iqZbKa:focus:not(:focus-visible) > ellipse,
-.iqZbKa:focus:not(:focus-visible) > line,
-.iqZbKa:focus:not(:focus-visible) > path,
-.iqZbKa:focus:not(:focus-visible) > polygon,
-.iqZbKa:focus:not(:focus-visible) > polyline,
-.iqZbKa:focus:not(:focus-visible) > rect {
+.hIPuDF:focus:not(:focus-visible) > circle,
+.hIPuDF:focus:not(:focus-visible) > ellipse,
+.hIPuDF:focus:not(:focus-visible) > line,
+.hIPuDF:focus:not(:focus-visible) > path,
+.hIPuDF:focus:not(:focus-visible) > polygon,
+.hIPuDF:focus:not(:focus-visible) > polyline,
+.hIPuDF:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.iqZbKa:focus:not(:focus-visible)::-moz-focus-inner {
+.hIPuDF:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
-.ieVmJT {
+.iCxWAc {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }"
+`;
+
+exports[`SelectMultiple null value 1`] = `
+<DocumentFragment>
+  .c10 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: auto;
+}
+
+.c2 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c7::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c7::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c7:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c7::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c7::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
+  opacity: 1;
+}
+
+.c6 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c8 {
+  cursor: pointer;
+}
+
+.c3 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <button
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-label="Open Drop. 0 selected."
+        class="c2 c3"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <div
+              class="c6"
+            >
+              <input
+                autocomplete="off"
+                class="c7 c8"
+                readonly=""
+                tabindex="-1"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="c9"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c10"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 9-6 6-6-6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`SelectMultiple placeholder 1`] = `
@@ -2489,6 +2801,10 @@ exports[`SelectMultiple select all and clear 1`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -2550,12 +2866,12 @@ exports[`SelectMultiple select all and clear 1`] = `
 
 exports[`SelectMultiple select all and clear 2`] = `
 "@media only screen and (max-width: 768px) {
-  .fkrsaY {
+  .fbVyfn {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.iqZbKa {
+.hIPuDF {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2572,41 +2888,41 @@ exports[`SelectMultiple select all and clear 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.iqZbKa:focus {
+.hIPuDF:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iqZbKa:focus > circle,
-.iqZbKa:focus > ellipse,
-.iqZbKa:focus > line,
-.iqZbKa:focus > path,
-.iqZbKa:focus > polygon,
-.iqZbKa:focus > polyline,
-.iqZbKa:focus > rect {
+.hIPuDF:focus > circle,
+.hIPuDF:focus > ellipse,
+.hIPuDF:focus > line,
+.hIPuDF:focus > path,
+.hIPuDF:focus > polygon,
+.hIPuDF:focus > polyline,
+.hIPuDF:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iqZbKa:focus::-moz-focus-inner {
+.hIPuDF:focus::-moz-focus-inner {
   border: 0;
 }
-.iqZbKa:focus:not(:focus-visible) {
+.hIPuDF:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.iqZbKa:focus:not(:focus-visible) > circle,
-.iqZbKa:focus:not(:focus-visible) > ellipse,
-.iqZbKa:focus:not(:focus-visible) > line,
-.iqZbKa:focus:not(:focus-visible) > path,
-.iqZbKa:focus:not(:focus-visible) > polygon,
-.iqZbKa:focus:not(:focus-visible) > polyline,
-.iqZbKa:focus:not(:focus-visible) > rect {
+.hIPuDF:focus:not(:focus-visible) > circle,
+.hIPuDF:focus:not(:focus-visible) > ellipse,
+.hIPuDF:focus:not(:focus-visible) > line,
+.hIPuDF:focus:not(:focus-visible) > path,
+.hIPuDF:focus:not(:focus-visible) > polygon,
+.hIPuDF:focus:not(:focus-visible) > polyline,
+.hIPuDF:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.iqZbKa:focus:not(:focus-visible)::-moz-focus-inner {
+.hIPuDF:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
-.ieVmJT {
+.iCxWAc {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }"
@@ -2617,24 +2933,24 @@ exports[`SelectMultiple select all and clear 3`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="Open Drop. 0 selected."
-  class="StyledButton-sc-323bzc-0 iqZbKa StyledSelect__StyledSelectDropButton-sc-znp66n-5 ieVmJT"
+  class="StyledButton-sc-323bzc-0 hIPuDF StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
   data-g-tabindex="0"
   id="test-select__drop"
   tabindex="-1"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dsfsDz"
+    class="StyledBox-sc-13pk1d4-0 hMXKog"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iShJPx"
+      class="StyledBox-sc-13pk1d4-0 hWKKwG"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kZzThM"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fKwwIt StyledSelect__SelectTextInput-sc-znp66n-4 lbPTGE"
+          class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
           data-g-tabindex="-1"
           id="test-select__drop__input"
           readonly=""
@@ -2645,11 +2961,11 @@ exports[`SelectMultiple select all and clear 3`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 fkrsaY"
+      class="StyledBox-sc-13pk1d4-0 fbVyfn"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 llpfFt"
+        class="StyledIcon-sc-ofa7kd-0 eTQGBW"
         viewBox="0 0 24 24"
       >
         <path
@@ -2666,12 +2982,12 @@ exports[`SelectMultiple select all and clear 3`] = `
 
 exports[`SelectMultiple select all and clear 4`] = `
 "@media only screen and (max-width: 768px) {
-  .fkrsaY {
+  .fbVyfn {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.iqZbKa {
+.hIPuDF {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2688,41 +3004,41 @@ exports[`SelectMultiple select all and clear 4`] = `
   padding: 0;
   text-align: inherit;
 }
-.iqZbKa:focus {
+.hIPuDF:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iqZbKa:focus > circle,
-.iqZbKa:focus > ellipse,
-.iqZbKa:focus > line,
-.iqZbKa:focus > path,
-.iqZbKa:focus > polygon,
-.iqZbKa:focus > polyline,
-.iqZbKa:focus > rect {
+.hIPuDF:focus > circle,
+.hIPuDF:focus > ellipse,
+.hIPuDF:focus > line,
+.hIPuDF:focus > path,
+.hIPuDF:focus > polygon,
+.hIPuDF:focus > polyline,
+.hIPuDF:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iqZbKa:focus::-moz-focus-inner {
+.hIPuDF:focus::-moz-focus-inner {
   border: 0;
 }
-.iqZbKa:focus:not(:focus-visible) {
+.hIPuDF:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.iqZbKa:focus:not(:focus-visible) > circle,
-.iqZbKa:focus:not(:focus-visible) > ellipse,
-.iqZbKa:focus:not(:focus-visible) > line,
-.iqZbKa:focus:not(:focus-visible) > path,
-.iqZbKa:focus:not(:focus-visible) > polygon,
-.iqZbKa:focus:not(:focus-visible) > polyline,
-.iqZbKa:focus:not(:focus-visible) > rect {
+.hIPuDF:focus:not(:focus-visible) > circle,
+.hIPuDF:focus:not(:focus-visible) > ellipse,
+.hIPuDF:focus:not(:focus-visible) > line,
+.hIPuDF:focus:not(:focus-visible) > path,
+.hIPuDF:focus:not(:focus-visible) > polygon,
+.hIPuDF:focus:not(:focus-visible) > polyline,
+.hIPuDF:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.iqZbKa:focus:not(:focus-visible)::-moz-focus-inner {
+.hIPuDF:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
-.ieVmJT {
+.iCxWAc {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }"
@@ -3476,6 +3792,14 @@ exports[`SelectMultiple showSelectionInline 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c15 {
     margin-right: 6px;
   }
@@ -4052,6 +4376,14 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c14 {
     padding: 6px;
   }
@@ -4191,23 +4523,23 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
 
 exports[`SelectMultiple showSelectionInline with children 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 lgkPHo SelectMultiple__StyledSelectBox-sc-18zwyth-0 gBOJlI"
+    class="StyledBox-sc-13pk1d4-0 fGERXT SelectMultiple__StyledSelectBox-sc-18zwyth-0 bbEBKn"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bTSMfs"
+      class="StyledBox-sc-13pk1d4-0 dsRaTX"
     >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-label="Open Drop. 0 selected."
-        class="StyledButton-sc-323bzc-0 hEOfxx"
+        class="StyledButton-sc-323bzc-0 fiEwea"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jzOfgr"
+          class="StyledBox-sc-13pk1d4-0 euWtCA"
         >
           .c1 {
   box-sizing: border-box;
@@ -4286,6 +4618,14 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -4300,6 +4640,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
             <input
               autocomplete="off"
               class="c1 c2"
+              placeholder="Select"
               readonly=""
               tabindex="-1"
               type="text"
@@ -4307,11 +4648,11 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
             />
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 fkrsaY"
+            class="StyledBox-sc-13pk1d4-0 fbVyfn"
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-sc-ofa7kd-0 llpfFt"
+              class="StyledIcon-sc-ofa7kd-0 eTQGBW"
               viewBox="0 0 24 24"
             >
               <path
@@ -4584,11 +4925,6 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   width: 100%;
 }
 
-.c12:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c12:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -4747,6 +5083,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
 .c13 {
   display: block;
   width: 100%;
+  cursor: default;
 }
 
 .c8 {

@@ -61,6 +61,7 @@ export const SelectOption = styled(Button)`
   }
   display: block;
   width: 100%;
+  ${(props) => props[`aria-disabled`] && `cursor: default`};
 `;
 
 export const SelectTextInput = styled(TextInput)`

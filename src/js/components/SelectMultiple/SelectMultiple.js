@@ -169,7 +169,7 @@ const SelectMultiple = forwardRef(
     useEffect(() => {
       if (sortSelectedOnClose && ((open && search) || !open)) {
         const selectedOptions = optionsProp.filter((option) =>
-          value.includes(
+          value?.includes(
             valueKey && valueKey.reduce ? applyKey(option, valueKey) : option,
           ),
         );
@@ -236,11 +236,14 @@ const SelectMultiple = forwardRef(
 
     // element to show, trumps inputValue
     const selectValue = useMemo(() => {
-      if (valueLabel instanceof Function) {
-        if (value) return valueLabel(value);
-      } else if (valueLabel) return valueLabel;
-      else if (value.length > 0 && showSelectedInline) {
-        return (
+      let result;
+      if (valueLabel) {
+        result =
+          value && valueLabel instanceof Function
+            ? valueLabel(value)
+            : valueLabel;
+      } else if (value?.length > 0 && showSelectedInline) {
+        result = (
           <SelectMultipleValue
             allOptions={allOptions}
             disabled={disabled}
@@ -257,7 +260,7 @@ const SelectMultiple = forwardRef(
           </SelectMultipleValue>
         );
       }
-      return undefined;
+      return result;
     }, [
       valueKey,
       value,
@@ -348,7 +351,7 @@ const SelectMultiple = forwardRef(
     const dropButtonProps = {
       ref: dropButtonRef,
       a11yTitle: `${ariaLabel || a11yTitle || placeholder || 'Open Drop'}. ${
-        value.length
+        value?.length || 0
       } selected.`,
       'aria-expanded': Boolean(open),
       'aria-haspopup': 'listbox',
@@ -421,11 +424,15 @@ const SelectMultiple = forwardRef(
                         {...rest}
                         tabIndex="-1"
                         type="text"
-                        // eslint-disable-next-line max-len
                         placeholder={
-                          value.length === 0
+                          // eslint-disable-next-line no-nested-ternary
+                          !value || value?.length === 0
                             ? placeholder || selectValue || displayLabelKey
-                            : `${value.length} selected of ${allOptions.length}`
+                            : onMore
+                            ? `${value?.length || '0'} selected`
+                            : `${value?.length || '0'} selected of ${
+                                allOptions.length
+                              }`
                         }
                         plain
                         readOnly
@@ -451,7 +458,7 @@ const SelectMultiple = forwardRef(
                       id={id}
                       name={name}
                       ref={inputRef}
-                      placeholder={placeholder}
+                      placeholder={placeholder || 'Select'}
                       value={inputValue}
                       size={size}
                       theme={theme}
@@ -461,7 +468,7 @@ const SelectMultiple = forwardRef(
                   </Box>
                 )}
               </DropButton>
-              {!open && value.length > 0 && (selectValue || displayLabelKey)}
+              {!open && value?.length > 0 && (selectValue || displayLabelKey)}
             </Box>
           </StyledSelectBox>
         ) : (

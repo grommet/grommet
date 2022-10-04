@@ -559,7 +559,6 @@ exports[`Sidebar renders 1`] = `
   <div
     class="c1"
     id="test id"
-    name="test name"
   >
     <div
       class="c2"
