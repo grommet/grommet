@@ -50,30 +50,29 @@ const Avatar = ({
     );
   }
 
-  if (typeof src === 'string') {
-    return (
-      <StyledAvatar
-        a11yTitle={a11yTitle || ariaLabel}
-        {...avatarProps}
-        {...rest}
-      >
-        <Image fit="contain" src={src} />
-      </StyledAvatar>
-    );
-  }
+  let content;
   if (typeof children === 'string') {
+    content = (
+      <StyledAvatarText alignSelf="center" size={avatarTextSize}>
+        {children}
+      </StyledAvatarText>
+    );
+  } else if (typeof src === 'string') {
+    content = <Image fit="contain" src={src} />;
+  }
+
+  if (typeof children === 'string' || typeof src === 'string') {
     return (
       <StyledAvatar
         a11yTitle={a11yTitle || ariaLabel}
         {...avatarProps}
         {...rest}
       >
-        <StyledAvatarText alignSelf="center" size={avatarTextSize}>
-          {children}
-        </StyledAvatarText>
+        {content}
       </StyledAvatar>
     );
   }
+
   return <AvatarChildren />;
 };
 
