@@ -33,7 +33,7 @@ describe('Video', () => {
         theme={{
           video: {
             controls: { background: '#000000' },
-            scrubber: { track: { color: '#444444' }, interval: 0 },
+            scrubber: { track: { color: '#444444' } },
           },
         }}
       >
