@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
     status: PropTypes.oneOf(['critical', 'warning', 'normal', 'unknown']),
     toast: PropTypes.bool,
     onClose: PropTypes.func,
-    icon: PropTypes.node,
+    icon: PropTypes.element,
   };
 }
 export const NotificationType = PropType;
