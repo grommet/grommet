@@ -34,7 +34,9 @@ var CustomHeaderAccordion = function CustomHeaderAccordion() {
       style: {
         height: '800px'
       }
-    }, /*#__PURE__*/React.createElement(Text, null, "Panel 1 contents"), /*#__PURE__*/React.createElement(TextInput, null))), /*#__PURE__*/React.createElement(AccordionPanel, {
+    }, /*#__PURE__*/React.createElement(Text, null, "Panel 1 contents"), /*#__PURE__*/React.createElement(TextInput, {
+      a11yTitle: "panel 1 text box"
+    }))), /*#__PURE__*/React.createElement(AccordionPanel, {
       header: renderPanelHeader('Panel 2', activeIndex.includes(1))
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "medium",

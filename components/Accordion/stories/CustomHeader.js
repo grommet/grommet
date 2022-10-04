@@ -44,7 +44,9 @@ var CustomHeaderAccordion = function CustomHeaderAccordion() {
       style: {
         height: '800px'
       }
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Panel 1 contents"), /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, null))), /*#__PURE__*/_react["default"].createElement(_grommet.AccordionPanel, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Panel 1 contents"), /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      a11yTitle: "panel 1 text box"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.AccordionPanel, {
       header: renderPanelHeader('Panel 2', activeIndex.includes(1))
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "medium",
