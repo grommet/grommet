@@ -1015,4 +1015,20 @@ describe('DateInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('custom theme', () => {
+    const customTheme = {
+      dateInput: {
+        container: {
+          round: 'xsmall',
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <DateInput format="mm/dd/yyyy" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

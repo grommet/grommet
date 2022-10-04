@@ -663,6 +663,9 @@ export interface ThemeType {
     baseline?: number;
   };
   dateInput?: {
+    container?: {
+      round?: RoundType;
+    };
     icon?: {
       size?: string;
     };
@@ -1651,7 +1654,7 @@ export interface ThemeType {
     };
     scrubber?: {
       color?: ColorType;
-      interval: number;
+      interval?: number;
       track?: {
         color?: ColorType;
       };
