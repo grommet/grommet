@@ -6,7 +6,7 @@ import 'regenerator-runtime/runtime';
 import { axe } from 'jest-axe';
 import { render, cleanup, fireEvent, screen } from '@testing-library/react';
 
-import { Grommet, Notification } from '../..';
+import { Grommet, Notification, Text } from '../..';
 
 describe('Notification', () => {
   afterEach(cleanup);
@@ -45,5 +45,17 @@ describe('Notification', () => {
 
     fireEvent.click(screen.getByRole('button'));
     expect(onClose).toBeCalled();
+  });
+
+  test('should render custom template inside notification', () => {
+    const { container } = render(
+      <Grommet>
+        <Notification
+          title="Test title"
+          message={<Text>A sample text message</Text>}
+        />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
   });
 });
