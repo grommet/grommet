@@ -12,7 +12,6 @@ const Resize = (props) => {
     // <Grommet theme={...}>
     <Box align="center" pad="large">
       <TextArea
-        label="text area"
         aria-label="text area"
         value={value}
         onChange={onChange}
