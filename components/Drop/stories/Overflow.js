@@ -48,7 +48,7 @@ var OverflowDrop = function OverflowDrop() {
       align: "center",
       justify: "center"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      background: "dark-3",
+      background: "dark-2",
       pad: "medium",
       align: "center",
       justify: "start",
