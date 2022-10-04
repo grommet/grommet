@@ -12,7 +12,7 @@ describe('Sidebar', () => {
   test('renders', () => {
     const { container } = render(
       <Grommet>
-        <Sidebar id="test id" name="test name" />
+        <Sidebar id="test id" />
       </Grommet>,
     );
 
