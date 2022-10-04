@@ -7,13 +7,15 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _Image = require("../Image");
+
 var _defaultProps = require("../../default-props");
 
 var _StyledAvatar = require("./StyledAvatar");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["align", "children", "height", "justify", "round", "size", "src", "width"];
+var _excluded = ["a11yTitle", "aria-label", "align", "children", "height", "justify", "round", "size", "src", "width"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -24,7 +26,9 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Avatar = function Avatar(_ref) {
-  var _ref$align = _ref.align,
+  var a11yTitle = _ref.a11yTitle,
+      ariaLabel = _ref['aria-label'],
+      _ref$align = _ref.align,
       align = _ref$align === void 0 ? 'center' : _ref$align,
       children = _ref.children,
       height = _ref.height,
@@ -60,17 +64,24 @@ var Avatar = function Avatar(_ref) {
     console.warn('Avatar should use `size` instead of `height` or `width` props');
   }
 
-  if (typeof src === 'string') {
-    return /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({}, avatarProps, rest, {
-      background: "url(" + src + ")"
-    }));
-  }
+  var content;
 
   if (typeof children === 'string') {
-    return /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({}, avatarProps, rest), /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatarText, {
+    content = /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatarText, {
       alignSelf: "center",
       size: avatarTextSize
-    }, children));
+    }, children);
+  } else if (typeof src === 'string') {
+    content = /*#__PURE__*/_react["default"].createElement(_Image.Image, {
+      fit: "contain",
+      src: src
+    });
+  }
+
+  if (typeof children === 'string' || typeof src === 'string') {
+    return /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({
+      a11yTitle: a11yTitle || ariaLabel
+    }, avatarProps, rest), content);
   }
 
   return /*#__PURE__*/_react["default"].createElement(AvatarChildren, null);

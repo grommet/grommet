@@ -141,4 +141,14 @@ describe('Avatar', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('a11yTitle renders', () => {
+    const { container } = render(
+      <Grommet>
+        <Avatar a11yTitle="testing for a11ytitle" src={src} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
