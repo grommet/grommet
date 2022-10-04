@@ -49,10 +49,10 @@ exports[`Avatar a11yTitle renders 1`] = `
   class="c0"
 >
   <div
+    aria-label="testing for a11ytitle"
     class="c1 StyledAvatar-sc-1suyamb-1"
   >
     <img
-      aria-label="testing for a11ytitle"
       class="c2"
       src=""
     />

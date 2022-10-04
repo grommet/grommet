@@ -52,8 +52,12 @@ const Avatar = ({
 
   if (typeof src === 'string') {
     return (
-      <StyledAvatar {...avatarProps} {...rest}>
-        <Image a11yTitle={a11yTitle || ariaLabel} fit="contain" src={src} />
+      <StyledAvatar
+        a11yTitle={a11yTitle || ariaLabel}
+        {...avatarProps}
+        {...rest}
+      >
+        <Image fit="contain" src={src} />
       </StyledAvatar>
     );
   }
