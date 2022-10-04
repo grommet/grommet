@@ -162,11 +162,7 @@ const SelectContainer = forwardRef(
           // deprecated in favor of value
           result = selected.indexOf(index) !== -1;
         } else {
-          const optionVal = getOptionValue(
-            index,
-            options,
-            valueKey || labelKey,
-          );
+          const optionVal = getOptionValue(index, options, valueKey);
           if (Array.isArray(value)) {
             if (value.length === 0) {
               result = false;
@@ -177,7 +173,7 @@ const SelectContainer = forwardRef(
                 const valueValue =
                   typeof valueKey === 'function'
                     ? valueKey(valueItem)
-                    : valueItem[valueKey];
+                    : valueItem[valueKey] || valueItem[valueKey.key];
                 return valueValue === optionVal;
               });
             }
@@ -193,7 +189,7 @@ const SelectContainer = forwardRef(
         }
         return result;
       },
-      [selected, value, valueKey, options, labelKey],
+      [selected, value, valueKey, options],
     );
 
     const selectOption = useCallback(
@@ -434,7 +430,7 @@ const SelectContainer = forwardRef(
                     child = (
                       <Box {...selectOptionsStyle}>
                         <Text {...theme.select.options.text}>
-                          {getOptionLabel(index, options, labelKey || valueKey)}
+                          {getOptionLabel(index, options, labelKey)}
                         </Text>
                       </Box>
                     );
