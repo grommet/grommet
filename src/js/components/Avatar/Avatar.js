@@ -58,12 +58,13 @@ const Avatar = ({
       </StyledAvatarText>
     );
   } else if (typeof src === 'string') {
-    content = <Image fit="contain" src={src} />;
+    content = <Image role="presentation" fit="contain" src={src} />;
   }
 
   if (typeof children === 'string' || typeof src === 'string') {
     return (
       <StyledAvatar
+        role={typeof src === 'string' ? 'figure' : undefined}
         a11yTitle={a11yTitle || ariaLabel}
         {...avatarProps}
         {...rest}
