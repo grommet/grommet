@@ -60,6 +60,7 @@ const Notification = ({
   status,
   title,
   toast,
+  icon,
   ...rest
 }) => {
   const autoClose =
@@ -180,7 +181,7 @@ const Notification = ({
         avoid nested interactive elements */}
       <Box direction="row" pad={textPad} flex>
         <Box {...theme.notification.iconContainer}>
-          <StatusIcon color={color} />
+          {icon || <StatusIcon color={color} />}
         </Box>
         <Box {...theme.notification.textContainer}>
           <TextWrapper>
