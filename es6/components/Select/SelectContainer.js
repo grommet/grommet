@@ -133,7 +133,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       // deprecated in favor of value
       result = selected.indexOf(index) !== -1;
     } else {
-      var optionVal = getOptionValue(index, options, valueKey || labelKey);
+      var optionVal = getOptionValue(index, options, valueKey);
 
       if (Array.isArray(value)) {
         if (value.length === 0) {
@@ -142,7 +142,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
           result = value.indexOf(optionVal) !== -1;
         } else if (valueKey) {
           result = value.some(function (valueItem) {
-            var valueValue = typeof valueKey === 'function' ? valueKey(valueItem) : valueItem[valueKey];
+            var valueValue = typeof valueKey === 'function' ? valueKey(valueItem) : valueItem[valueKey] || valueItem[valueKey.key];
             return valueValue === optionVal;
           });
         }
@@ -155,7 +155,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     }
 
     return result;
-  }, [selected, value, valueKey, options, labelKey]);
+  }, [selected, value, valueKey, options]);
   var selectOption = useCallback(function (index) {
     return function (event) {
       if (onChange) {
@@ -352,7 +352,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       });
       if (typeof child === 'string' || child.props && child.props.children && typeof child.props.children === 'string') textComponent = true;
     } else if (theme.select.options) {
-      child = /*#__PURE__*/React.createElement(Box, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, theme.select.options.text, getOptionLabel(index, options, labelKey || valueKey)));
+      child = /*#__PURE__*/React.createElement(Box, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, theme.select.options.text, getOptionLabel(index, options, labelKey)));
       textComponent = true;
     } // if we have a child, turn on plain, and hoverIndicator
 

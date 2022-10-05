@@ -45,7 +45,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       gridArea = _ref.gridArea,
       id = _ref.id,
       icon = _ref.icon,
-      labelKey = _ref.labelKey,
+      labelKeyProp = _ref.labelKey,
       margin = _ref.margin,
       messages = _ref.messages,
       multiple = _ref.multiple,
@@ -68,7 +68,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       selected = _ref.selected,
       size = _ref.size,
       valueProp = _ref.value,
-      valueKey = _ref.valueKey,
+      valueKeyProp = _ref.valueKey,
       valueLabel = _ref.valueLabel,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
@@ -77,10 +77,14 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var formContext = useContext(FormContext);
 
   var _useContext = useContext(MessageContext),
-      format = _useContext.format; // Determine if the Select is opened with the keyboard. If so,
+      format = _useContext.format; // For greater resilience, use labelKey if valueKey isn't provided and
+  // vice versa. https://github.com/grommet/grommet/pull/6299
+
+
+  var valueKey = valueKeyProp || labelKeyProp;
+  var labelKey = labelKeyProp || valueKeyProp; // Determine if the Select is opened with the keyboard. If so,
   // focus should be set on the first option when the drop opens
   // see set initial focus code in SelectContainer.js
-
 
   var usingKeyboard = useKeyboard(); // value is used for what we receive in valueProp and the basis for
   // what we send with onChange
