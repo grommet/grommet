@@ -27,6 +27,7 @@ export var OnClickItemList = function OnClickItemList() {
     pad: "large",
     gap: "large"
   }, /*#__PURE__*/React.createElement(List, {
+    "aria-label": "onClickItem list",
     data: data.slice(0, 10),
     onClickItem: function onClickItem(event) {
       setShow(true);

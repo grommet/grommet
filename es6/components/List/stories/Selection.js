@@ -20,6 +20,7 @@ export var Selection = function Selection() {
     pad: "large",
     gap: "large"
   }, /*#__PURE__*/React.createElement(List, {
+    "aria-label": "selection list",
     data: data.slice(0, 10),
     itemProps: selected >= 0 ? (_ref = {}, _ref[selected] = {
       background: 'brand'

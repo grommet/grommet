@@ -23,6 +23,7 @@ var Pinned = function Pinned() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
+    "aria-label": "pinned list",
     data: ordered,
     onOrder: setOrder,
     pinned: pinnedLocations

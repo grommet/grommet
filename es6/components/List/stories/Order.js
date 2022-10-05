@@ -10,6 +10,7 @@ export var Order = function Order() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(List, {
+    "aria-label": "order list",
     data: ordered,
     onOrder: setOrder
   }));

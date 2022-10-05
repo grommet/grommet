@@ -22,6 +22,7 @@ var Order = function Order() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
+    "aria-label": "order list",
     data: ordered,
     onOrder: setOrder
   }));

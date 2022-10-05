@@ -11,6 +11,7 @@ export var Pinned = function Pinned() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(List, {
+    "aria-label": "pinned list",
     data: ordered,
     onOrder: setOrder,
     pinned: pinnedLocations

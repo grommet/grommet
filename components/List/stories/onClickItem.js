@@ -36,6 +36,7 @@ var OnClickItemList = function OnClickItemList() {
     pad: "large",
     gap: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
+    "aria-label": "onClickItem list",
     data: data.slice(0, 10),
     onClickItem: function onClickItem(event) {
       setShow(true);
