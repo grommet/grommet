@@ -595,6 +595,7 @@ export interface ThemeType {
       background?: {
         color?: ColorType;
       };
+      extend?: ExtendType;
     };
     icon?: {
       size?: string;
