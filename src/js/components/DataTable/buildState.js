@@ -90,8 +90,10 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
     result.sort((d1, d2) => {
       const d1Val = datumValue(d1, property);
       const d2Val = datumValue(d2, property);
-      if (typeof d1Val === 'string' && typeof d2Val === 'string') {
-        const sortResult = d1Val.localeCompare(d2Val, undefined, {
+      if ((typeof d1Val === 'string' && typeof d2Val === 'string') ||
+        (typeof d1Val === 'string' && !d2Val) ||
+        (typeof d2Val === 'string' && !d1Val)) {
+        const sortResult = (d1Val || '').localeCompare(d2Val || '', undefined, {
           sensitivity: 'base',
         });
         return sortAsc ? sortResult : -sortResult;
@@ -173,32 +175,45 @@ export const buildFooterValues = (columns, data) => {
 
 // looks at the groupBy property of each data object and returns an
 // array with one item for each unique value of that property.
-export const buildGroups = (columns, data, groupBy) => {
+export const buildGroups = (columns, data, groupBy, primaryProperty) => {
   let result;
-  if (groupBy) {
+  if (groupBy?.property || typeof groupBy === 'string') {
     result = [];
     const groupMap = {};
     data.forEach((datum) => {
+      const key = datumValue(datum, primaryProperty);
+      const isGroup = key && groupBy.expandable?.includes(key);
+
       const groupByProperty = groupBy.property ? groupBy.property : groupBy;
-      const groupValue = datumValue(datum, groupByProperty);
+      const groupValue = isGroup ? key : datumValue(datum, groupByProperty);
       if (!groupMap[groupValue]) {
-        const group = { data: [], datum: {}, key: groupValue };
+        const group = {
+          data: [],
+          datum: isGroup ? datum : {},
+          key: groupValue,
+        };
         group.datum[groupByProperty] = groupValue;
         result.push(group);
         groupMap[groupValue] = group;
       }
-      groupMap[groupValue].data.push(datum);
+      if (!isGroup) groupMap[groupValue].data.push(datum);
     });
 
     // include any aggregate column values across the data for each group
-    columns.forEach((column) => {
-      if (column.aggregate) {
-        result.forEach((group) => {
-          const { datum } = group;
-          datum[column.property] = aggregateColumn(column, group.data);
-        });
-      }
-    });
+    // If expandable was specified we let the onUpdate callback do it since
+    // we may not have access to all the data to aggregate it.
+    if (!groupBy.expandable) {
+      columns.forEach((column) => {
+        if (column.aggregate) {
+          result.forEach((group) => {
+            const { datum } = group;
+            datum[column.property] = aggregateColumn(column, group.data);
+          });
+        }
+      });
+    }
+  } else if (groupBy?.expandable) {
+    result = groupBy.expandable.map((key) => ({ data: [], datum: {}, key }));
   }
 
   return result;
@@ -209,7 +224,7 @@ export const buildGroupState = (groups, groupBy) => {
   const result = {};
   if (groups) {
     groups.forEach(({ key }) => {
-      result[key] = { expanded: false };
+      if (key) result[key] = { expanded: false };
     });
   }
   if (groupBy && groupBy.expand) {

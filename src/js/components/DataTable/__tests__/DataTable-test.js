@@ -1,9 +1,10 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
+import { Button } from '../../Button';
 import { Text } from '../../Text';
 import { DataTable } from '..';
 
@@ -13,8 +14,6 @@ for (let i = 0; i < 95; i += 1) {
 }
 
 describe('DataTable', () => {
-  afterEach(cleanup);
-
   test('empty', () => {
     const { container } = render(
       <Grommet>
@@ -159,6 +158,39 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('sort null data', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+            { property: 'c', header: 'C' },
+            { property: 'd', header: 'D' },
+          ]}
+          data={[
+            { a: undefined, b: 0, c: 'first', d: 'y' },
+            { a: 'one', b: 1, c: null },
+            { a: 'two', b: 2, c: 'second' },
+            { a: undefined, b: 3, c: null, d: 'z' },
+          ]}
+          sortable
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    let headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+    headerCell = getByText('C');
+    fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+    headerCell = getByText('D');
+    fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('onSort', () => {
     const onSort = jest.fn();
     const { container, getByText } = render(
@@ -239,6 +271,43 @@ describe('DataTable', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('sort controlled', () => {
+    const Test = () => {
+      const [sort, setSort] = React.useState({
+        property: 'a',
+        direction: 'asc',
+      });
+
+      return (
+        <Grommet>
+          <Button
+            label="Sort data"
+            onClick={() => setSort({ property: 'a', direction: 'desc' })}
+          />
+          <DataTable
+            columns={[
+              { property: 'a', header: 'A' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'zero', b: 0 },
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
+            sort={sort}
+          />
+        </Grommet>
+      );
+    };
+    const { asFragment } = render(<Test />);
+    expect(asFragment()).toMatchSnapshot();
+
+    const sortButton = screen.getByRole('button', { name: 'Sort data' });
+    fireEvent.click(sortButton);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('sort nested object', () => {
@@ -551,6 +620,26 @@ describe('DataTable', () => {
         <DataTable
           columns={[{ property: 'a', header: 'A' }]}
           data={[{ a: 'alpha' }, { a: 'beta' }]}
+          onClickRow={onClickRow}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('beta'));
+    expect(onClickRow).toBeCalledWith(
+      expect.objectContaining({ datum: { a: 'beta' } }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('disabled click', () => {
+    const onClickRow = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          disabled={['alpha']}
           onClickRow={onClickRow}
         />
       </Grommet>,
@@ -948,8 +1037,30 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
-    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']));
+    expect(onSelect).toBeCalledWith(
+      expect.arrayContaining(['alpha', 'beta']),
+      undefined,
+    );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('disabled select', () => {
+    const onSelect = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          primaryKey="a"
+          disabled={['alpha']}
+          select={['beta']}
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('alpha'));
+    expect(onSelect).not.toBeCalled();
   });
 
   test('custom theme', () => {
@@ -1042,6 +1153,13 @@ describe('DataTable', () => {
           data={[
             { a: 'one', b: 1 },
             { a: 'two', b: 2 },
+          ]}
+          placeholder={<Text weight="bold">test placeholder</Text>}
+        />
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
           ]}
           placeholder={<Text weight="bold">test placeholder</Text>}
         />
@@ -1211,6 +1329,41 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('onSelect select/unselect all', () => {
+    const onSelect = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B', primary: true },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    let headerCheckBox;
+    headerCheckBox = getByLabelText('select all');
+    fireEvent.click(headerCheckBox);
+    expect(onSelect).toBeCalledWith([1.1, 1.2, 2.1, 2.2]);
+    expect(container.firstChild).toMatchSnapshot();
+
+    // aria-label should have changed since all entries
+    // are selected
+    headerCheckBox = getByLabelText('unselect all');
+    fireEvent.click(headerCheckBox);
+    expect(onSelect).toBeCalledWith([]);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('onSelect + groupBy should select/deselect all when grouped', () => {
     const onSelect = jest.fn();
     const { container, getByLabelText } = render(
@@ -1268,7 +1421,10 @@ describe('DataTable', () => {
 
     const groupCheckBox = getByLabelText('select one');
     fireEvent.click(groupCheckBox);
-    expect(onSelect).toBeCalledWith(expect.arrayContaining([1.1, 1.2]));
+    expect(onSelect).toBeCalledWith(
+      expect.arrayContaining([1.1, 1.2]),
+      expect.objectContaining({ a: 'one' }),
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1328,5 +1484,45 @@ describe('DataTable', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('verticalAlign', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b.c', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: { c: 1 } },
+            { a: 'two', b: { c: 2 } },
+          ]}
+          verticalAlign="top"
+        />
+        <DataTable
+          columns={[
+            {
+              property: 'This is a long header that wraps',
+              header: 'A',
+              footer: 'This is a long footer that wraps',
+              size: 'xsmall',
+            },
+            { property: 'b.c', header: 'B' },
+          ]}
+          data={[
+            { a: 'this is long data that might wrap also', b: { c: 1 } },
+            { a: 'two', b: { c: 2 } },
+          ]}
+          verticalAlign={{
+            header: 'bottom',
+            body: 'top',
+            footer: 'top',
+          }}
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

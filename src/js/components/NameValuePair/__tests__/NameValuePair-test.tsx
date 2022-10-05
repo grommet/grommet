@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { Box } from '../../Box';
 import { Grommet } from '../../Grommet';
@@ -18,8 +18,6 @@ const data = {
 };
 
 describe('NameValuePair', () => {
-  afterEach(cleanup);
-
   test(`should render name when name is typeof string`, () => {
     const { container } = render(
       <Grommet>

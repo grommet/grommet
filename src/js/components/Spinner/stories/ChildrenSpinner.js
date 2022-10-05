@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Favorite, Nodes } from 'grommet-icons';
 
-import { grommet, Box, Grommet, Spinner, Text } from 'grommet';
+import { Box, Spinner, Text } from 'grommet';
 
 const FavoriteFilled = styled(Favorite)`
   path[fill='none'] {
@@ -11,7 +11,7 @@ const FavoriteFilled = styled(Favorite)`
 `;
 
 export const Children = () => (
-  <Grommet theme={grommet} full>
+  <Box fill>
     <Box margin="large" align="center">
       <Box align="center" direction="row" gap="small" pad="small">
         <Spinner align="center" justify="center" size="large">
@@ -29,7 +29,7 @@ export const Children = () => (
         <Text margin={{ horizontal: 'small' }}> Loading with LOVE...</Text>
       </Box>
     </Box>
-  </Grommet>
+  </Box>
 );
 
 export default {

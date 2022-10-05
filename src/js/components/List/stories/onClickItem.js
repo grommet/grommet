@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, List, Layer, Button, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, List, Layer, Button, Text } from 'grommet';
 
 const locations = [
   'Boise',
@@ -28,34 +27,33 @@ export const OnClickItemList = () => {
   const [show, setShow] = React.useState();
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large" gap="large">
-        <List
-          data={data.slice(0, 10)}
-          onClickItem={(event) => {
-            setShow(true);
-            setClicked(event.item);
-          }}
-        />
+    <Box align="center" pad="large" gap="large">
+      <List
+        aria-label="onClickItem list"
+        data={data.slice(0, 10)}
+        onClickItem={(event) => {
+          setShow(true);
+          setClicked(event.item);
+        }}
+      />
 
-        {show && (
-          <Layer
-            position="center"
-            onEsc={() => setShow(false)}
-            onClickOutside={() => setShow(false)}
-          >
-            <Box margin="medium">
-              <Text>{clicked && JSON.stringify(clicked, null, 2)}</Text>
-              <Button
-                margin={{ top: 'medium' }}
-                label="close"
-                onClick={() => setShow(false)}
-              />
-            </Box>
-          </Layer>
-        )}
-      </Box>
-    </Grommet>
+      {show && (
+        <Layer
+          position="center"
+          onEsc={() => setShow(false)}
+          onClickOutside={() => setShow(false)}
+        >
+          <Box margin="medium">
+            <Text>{clicked && JSON.stringify(clicked, null, 2)}</Text>
+            <Button
+              margin={{ top: 'medium' }}
+              label="close"
+              onClick={() => setShow(false)}
+            />
+          </Box>
+        </Layer>
+      )}
+    </Box>
   );
 };
 

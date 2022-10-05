@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, CheckBox, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBox, Select } from 'grommet';
 
 const dummyOptions = Array(2000)
   .fill()
@@ -50,25 +49,26 @@ export const LazyLoadingOptions = () => {
   const onChange = ({ selected: nextSelected }) => setSelected(nextSelected);
 
   return (
-    <Grommet theme={grommet}>
-      <Box fill align="center" justify="start" pad="large">
-        <Select
-          multiple
-          closeOnChange={false}
-          placeholder="select an option..."
-          selected={selected}
-          options={options}
-          dropHeight="medium"
-          onMore={onMore}
-          onClose={onClose}
-          onChange={onChange}
-        >
-          {(option, index) => (
-            <Option value={option} selected={selected.indexOf(index) !== -1} />
-          )}
-        </Select>
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box fill align="center" justify="start" pad="large">
+      <Select
+        multiple
+        closeOnChange={false}
+        placeholder="select an option..."
+        selected={selected}
+        options={options}
+        dropHeight="medium"
+        onMore={onMore}
+        onClose={onClose}
+        onChange={onChange}
+      >
+        {(option, index) => (
+          <Option value={option} selected={selected.indexOf(index) !== -1} />
+        )}
+      </Select>
+    </Box>
+    // </Grommet>
   );
 };
 

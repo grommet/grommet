@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, Chart, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Chart, Heading } from 'grommet';
 
 const values = [
   [10, 20, 30],
@@ -10,18 +9,19 @@ const values = [
 ];
 
 export const Range = () => (
-  <Grommet theme={grommet}>
-    <Box direction="row-responsive" wrap pad="large">
-      {['bar', 'line', 'area', 'point'].map(type => (
-        <Box key={type} margin="medium">
-          <Heading size="small" textAlign="center">
-            {type}
-          </Heading>
-          <Chart type={type} values={values} thickness="small" />
-        </Box>
-      ))}
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
+  <Box direction="row-responsive" wrap pad="large">
+    {['bar', 'line', 'area', 'point'].map((type) => (
+      <Box key={type} margin="medium">
+        <Heading size="small" textAlign="center">
+          {type}
+        </Heading>
+        <Chart type={type} values={values} thickness="small" />
+      </Box>
+    ))}
+  </Box>
+  // </Grommet>
 );
 
 export default {

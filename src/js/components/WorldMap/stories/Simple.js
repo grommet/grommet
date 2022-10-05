@@ -1,14 +1,11 @@
 import React from 'react';
 
-import { Box, Grommet, WorldMap } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, WorldMap } from 'grommet';
 
 export const Simple = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <WorldMap />
-    </Box>
-  </Grommet>
+  <Box align="center" pad="large">
+    <WorldMap />
+  </Box>
 );
 
 Simple.parameters = {

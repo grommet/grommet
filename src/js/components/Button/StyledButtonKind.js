@@ -37,7 +37,11 @@ const fontStyle = (props) => {
   `;
 };
 
-const padFromTheme = (size = 'medium', theme, themeObj) => {
+const padFromTheme = (size = 'medium', theme, themeObj, kind) => {
+  if (size && themeObj?.size?.[size]?.[kind]?.pad) {
+    return themeObj.size[size][kind].pad;
+  }
+
   if (size && themeObj.size && themeObj.size[size] && themeObj.size[size].pad) {
     return {
       vertical: themeObj.size[size].pad.vertical,
@@ -62,7 +66,7 @@ const padStyle = ({ sizeProp: size, theme, kind }) => {
   // caller has specified a themeObj to use for styling
   // relevant for cases like pagination which looks to theme.pagination.button
   const themeObj = typeof kind === 'object' ? kind : theme.button;
-  const pad = padFromTheme(size, theme, themeObj);
+  const pad = padFromTheme(size, theme, themeObj, kind);
   return pad
     ? css`
         padding: ${pad.vertical} ${pad.horizontal};
@@ -70,24 +74,20 @@ const padStyle = ({ sizeProp: size, theme, kind }) => {
     : '';
 };
 
-// The > svg rule is to ensure Buttons with just an icon don't add additional
-// vertical height internally.
 const basicStyle = (props) => css`
   border: none;
   ${radiusStyle(props)};
   ${padStyle(props)}
   ${fontStyle(props)}
 
-  // when button has badge, the SVG won't necessarily
-  // be the direct descendant
-  ${props.badge
-    ? `
-  svg {
-    vertical-align: bottom;
-  }`
-    : `> svg {
-    vertical-align: bottom;
-  }`}
+  ${props.icon &&
+  `
+    > svg {
+      display: flex;
+      align-self: center;
+      vertical-align: middle;
+    }
+  `}
 `;
 
 const getPath = (theme, path) => {
@@ -116,7 +116,7 @@ const kindStyle = ({ colorValue, kind, sizeProp: size, themePaths, theme }) => {
   // relevant for cases like pagination which looks to theme.pagination.button
   const themeObj = typeof kind === 'object' ? kind : theme.button;
 
-  const pad = padFromTheme(size, theme, themeObj);
+  const pad = padFromTheme(size, theme, themeObj, kind);
   themePaths.base.forEach((themePath) => {
     const obj = getPath(themeObj, themePath);
     if (obj) {
@@ -209,18 +209,20 @@ const fillStyle = (fillContainer) => {
   return undefined;
 };
 
-// The > svg rule is to ensure Buttons with just an icon don't add additional
-// vertical height internally.
-const plainStyle = () => css`
+const plainStyle = (props) => css`
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
   color: inherit;
-
-  > svg {
-    vertical-align: bottom;
-  }
+  ${props.icon &&
+  `
+    > svg {
+      display: flex;
+      align-self: center;
+      vertical-align: middle;
+    }
+  `}
 `;
 
 const StyledButtonKind = styled.button.withConfig({

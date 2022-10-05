@@ -9,35 +9,44 @@ import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { Drop } from '../Drop';
-import { useForwardedRef } from '../../utils/refs';
+import { useForwardedRef, useKeyboard } from '../../utils';
 import { TipPropTypes } from './propTypes';
 
 const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const theme = useContext(ThemeContext);
   const [over, setOver] = useState(false);
+  const usingKeyboard = useKeyboard();
 
   const componentRef = useForwardedRef(tipRef);
 
-  // In cases the child is a primitive
-  const wrapInvalidElement = () =>
-    // Handle the use case of a primitive string child
-    // so we'll be able to assign ref and events on the child.
-    !React.isValidElement(children) ? <span>{children}</span> : children;
-  /* Three use case for children
-    1. Tip has a single child + it is a React Element => Great!
-    2. Tip has a single child +  not React Element => span will wrap the child.
-    3. Tip has more than one child => Abort, display Children.only error 
-  */
+  // Three use case for children
+  // 1. Tip has a single child + it is a React Element => Great!
+  // 2. Tip has a single child +  not React Element =>
+  // span will wrap the child so we can use ref and events.
+  // 3. Tip has more than one child => Abort, display Children.only error
   const child =
-    Children.count(children) === 1
-      ? wrapInvalidElement()
-      : Children.only(children);
+    (Children.count(children) <= 1 && !React.isValidElement(children) && (
+      <span>{children}</span>
+    )) ||
+    Children.only(children);
 
   const clonedChild = cloneElement(child, {
-    onMouseEnter: () => setOver(true),
-    onMouseLeave: () => setOver(false),
-    onFocus: () => setOver(true),
-    onBlur: () => setOver(false),
+    onMouseEnter: (event) => {
+      setOver(true);
+      if (child.props?.onMouseEnter) child.props.onMouseEnter(event);
+    },
+    onMouseLeave: (event) => {
+      setOver(false);
+      if (child.props?.onMouseLeave) child.props.onMouseLeave(event);
+    },
+    onFocus: (event) => {
+      if (usingKeyboard) setOver(true);
+      if (child.props?.onFocus) child.props.onFocus(event);
+    },
+    onBlur: (event) => {
+      if (usingKeyboard) setOver(false);
+      if (child.props?.onBlur) child.props.onBlur(event);
+    },
     key: 'tip-child',
     ref: (node) => {
       // https://github.com/facebook/react/issues/8873#issuecomment-287873307

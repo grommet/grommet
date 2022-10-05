@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { Grommet, Box, Meter } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Meter } from 'grommet';
 
 export const Bar = () => {
   const value = 30;
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <Meter type="bar" value={value} />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <Meter type="bar" value={value} />
+    </Box>
+    // </Grommet>
   );
 };
 

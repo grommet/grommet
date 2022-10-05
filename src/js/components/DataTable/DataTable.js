@@ -35,6 +35,7 @@ import {
   StyledPlaceholder,
 } from './StyledDataTable';
 import { DataTablePropTypes } from './propTypes';
+import { PlaceholderBody } from './PlaceholderBody';
 
 function useGroupState(groups, groupBy) {
   const [groupState, setGroupState] = useState(() =>
@@ -58,6 +59,7 @@ const DataTable = ({
   border,
   columns = [],
   data = [],
+  disabled,
   fill,
   groupBy,
   onClickRow, // removing unknown DOM attributes
@@ -65,6 +67,7 @@ const DataTable = ({
   onSearch, // removing unknown DOM attributes
   onSelect,
   onSort: onSortProp,
+  onUpdate,
   replace,
   pad,
   paginate,
@@ -80,6 +83,7 @@ const DataTable = ({
   sortable,
   rowDetails,
   step = 50,
+  verticalAlign,
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -104,11 +108,16 @@ const DataTable = ({
 
   // which column we are sorting on, with direction
   const [sort, setSort] = useState(sortProp || {});
+  useEffect(() => {
+    if (sortProp) setSort(sortProp);
+  }, [sortProp]);
 
   // the data filtered and sorted, if needed
+  // Note: onUpdate mode expects the data to be passed
+  //   in completely filtered and sorted already.
   const adjustedData = useMemo(
-    () => filterAndSortData(data, filters, onSearch, sort),
-    [data, filters, onSearch, sort],
+    () => (onUpdate ? data : filterAndSortData(data, filters, onSearch, sort)),
+    [data, filters, onSearch, onUpdate, sort],
   );
 
   // the values to put in the footer cells
@@ -125,12 +134,14 @@ const DataTable = ({
 
   // if groupBy, an array with one item per unique groupBy key value
   const groups = useMemo(
-    () => buildGroups(columns, adjustedData, groupBy),
-    [adjustedData, columns, groupBy],
+    () => buildGroups(columns, adjustedData, groupBy, primaryProperty),
+    [adjustedData, columns, groupBy, primaryProperty],
   );
 
   // an object indicating which group values are expanded
   const [groupState, setGroupState] = useGroupState(groups, groupBy);
+
+  const [limit, setLimit] = useState(step);
 
   const [selected, setSelected] = useState(
     select || (onSelect && []) || undefined,
@@ -196,7 +207,8 @@ const DataTable = ({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useLayoutEffect(() => {
     const nextScrollOffset =
-      bodyRef.current.parentElement?.clientWidth - bodyRef.current.clientWidth;
+      (bodyRef.current.parentElement?.clientWidth || 0) -
+      bodyRef.current.clientWidth;
     if (nextScrollOffset !== scrollOffset) setScrollOffset(nextScrollOffset);
   });
 
@@ -236,6 +248,19 @@ const DataTable = ({
     else direction = 'asc';
     const nextSort = { property, direction, external };
     setSort(nextSort);
+    if (onUpdate) {
+      const opts = {
+        count: limit,
+        sort: nextSort,
+      };
+      if (groups) {
+        opts.expanded = Object.keys(groupState).filter(
+          (k) => groupState[k].expanded,
+        );
+      }
+      if (showProp) opts.show = showProp;
+      onUpdate(opts);
+    }
     if (onSortProp) onSortProp(nextSort);
   };
 
@@ -247,10 +272,19 @@ const DataTable = ({
       expanded: !nextGroupState[groupValue].expanded,
     };
     setGroupState(nextGroupState);
+    const expandedKeys = Object.keys(nextGroupState).filter(
+      (k) => nextGroupState[k].expanded,
+    );
+    if (onUpdate) {
+      const opts = {
+        expanded: expandedKeys,
+        count: limit,
+      };
+      if (sort?.property) opts.sort = sort;
+      if (showProp) opts.show = showProp;
+      onUpdate(opts);
+    }
     if (groupBy.onExpand) {
-      const expandedKeys = Object.keys(nextGroupState).filter(
-        (k) => nextGroupState[k].expanded,
-      );
       groupBy.onExpand(expandedKeys);
     }
   };
@@ -265,10 +299,19 @@ const DataTable = ({
       nextGroupState[k] = { ...groupState[k], expanded: !expanded };
     });
     setGroupState(nextGroupState);
+    const expandedKeys = Object.keys(nextGroupState).filter(
+      (k) => nextGroupState[k].expanded,
+    );
+    if (onUpdate) {
+      const opts = {
+        expanded: expandedKeys,
+        count: limit,
+      };
+      if (showProp) opts.show = showProp;
+      if (sort?.property) opts.sort = sort;
+      onUpdate(opts);
+    }
     if (groupBy.onExpand) {
-      const expandedKeys = Object.keys(nextGroupState).filter(
-        (k) => nextGroupState[k].expanded,
-      );
       groupBy.onExpand(expandedKeys);
     }
   };
@@ -288,6 +331,9 @@ const DataTable = ({
   if (size && resizeable) {
     console.warn('DataTable cannot combine "size" and "resizeble".');
   }
+  if (onUpdate && onMore) {
+    console.warn('DataTable cannot combine "onUpdate" and "onMore".');
+  }
 
   const [items, paginationProps] = usePagination({
     data: adjustedData,
@@ -295,6 +341,7 @@ const DataTable = ({
     step,
     ...paginate, // let any specifications from paginate prop override component
   });
+  const { step: paginationStep } = paginationProps;
 
   const Container = paginate ? StyledContainer : Fragment;
   const containterProps = paginate
@@ -316,6 +363,117 @@ const DataTable = ({
       ? { style: { minWidth: '100%' } }
       : undefined;
 
+  let placeholderContent = placeholder;
+  if (placeholder && typeof placeholder === 'string') {
+    placeholderContent = (
+      <Box
+        background={{ color: 'background-front', opacity: 'strong' }}
+        align="center"
+        justify="center"
+        fill="vertical"
+      >
+        <Text>{placeholder}</Text>
+      </Box>
+    );
+  }
+
+  const bodyContent = groups ? (
+    <GroupedBody
+      ref={bodyRef}
+      cellProps={cellProps.body}
+      columns={columns}
+      disabled={disabled}
+      groupBy={typeof groupBy === 'string' ? { property: groupBy } : groupBy}
+      groups={groups}
+      groupState={groupState}
+      pinnedOffset={pinnedOffset}
+      primaryProperty={primaryProperty}
+      onMore={
+        onUpdate
+          ? () => {
+              if (adjustedData.length === limit) {
+                const opts = {
+                  expanded: Object.keys(groupState).filter(
+                    (k) => groupState[k].expanded,
+                  ),
+                  count: limit + paginationStep,
+                };
+                if (sort?.property) opts.sort = sort;
+                if (showProp) opts.show = showProp;
+                onUpdate(opts);
+                setLimit((prev) => prev + paginationStep);
+              }
+            }
+          : onMore
+      }
+      onSelect={
+        onSelect
+          ? (nextSelected, row) => {
+              setSelected(nextSelected);
+              if (onSelect) onSelect(nextSelected, row);
+            }
+          : undefined
+      }
+      onToggle={onToggleGroup}
+      onUpdate={onUpdate}
+      replace={replace}
+      rowProps={rowProps}
+      selected={selected}
+      size={size}
+      step={paginationStep}
+      verticalAlign={
+        typeof verticalAlign === 'string' ? verticalAlign : verticalAlign?.body
+      }
+    />
+  ) : (
+    <Body
+      ref={bodyRef}
+      cellProps={cellProps.body}
+      columns={columns}
+      data={!paginate ? adjustedData : items}
+      disabled={disabled}
+      onMore={
+        onUpdate
+          ? () => {
+              if (adjustedData.length === limit) {
+                const opts = {
+                  count: limit + paginationStep,
+                };
+                if (sort?.property) opts.sort = sort;
+                if (showProp) opts.show = showProp;
+                onUpdate(opts);
+                setLimit((prev) => prev + paginationStep);
+              }
+            }
+          : onMore
+      }
+      replace={replace}
+      onClickRow={onClickRow}
+      onSelect={
+        onSelect
+          ? (nextSelected, row) => {
+              setSelected(nextSelected);
+              if (onSelect) onSelect(nextSelected, row);
+            }
+          : undefined
+      }
+      pinnedCellProps={cellProps.pinned}
+      pinnedOffset={pinnedOffset}
+      primaryProperty={primaryProperty}
+      rowProps={rowProps}
+      selected={selected}
+      show={!paginate ? showProp : undefined}
+      size={size}
+      step={paginationStep}
+      rowDetails={rowDetails}
+      rowExpand={rowExpand}
+      setRowExpand={setRowExpand}
+      verticalAlign={
+        typeof verticalAlign === 'string' ? verticalAlign : verticalAlign?.body
+      }
+    />
+  );
+
   return (
     <Container {...containterProps}>
       <OverflowContainer {...overflowContainerProps}>
@@ -329,9 +487,11 @@ const DataTable = ({
             cellProps={cellProps.header}
             columns={columns}
             data={adjustedData}
+            disabled={disabled}
             fill={fill}
             filtering={filtering}
             filters={filters}
+            groupBy={groupBy}
             groups={groups}
             groupState={groupState}
             pin={pin === true || pin === 'header'}
@@ -357,63 +517,22 @@ const DataTable = ({
             primaryProperty={primaryProperty}
             scrollOffset={scrollOffset}
             rowDetails={rowDetails}
+            verticalAlign={
+              typeof verticalAlign === 'string'
+                ? verticalAlign
+                : verticalAlign?.header
+            }
           />
-          {groups ? (
-            <GroupedBody
+          {placeholder && (!items || items.length === 0) ? (
+            <PlaceholderBody
               ref={bodyRef}
-              cellProps={cellProps.body}
               columns={columns}
-              groupBy={groupBy.property ? groupBy.property : groupBy}
-              groups={groups}
-              groupState={groupState}
-              pinnedOffset={pinnedOffset}
-              primaryProperty={primaryProperty}
-              onMore={onMore}
-              onSelect={
-                onSelect
-                  ? (nextSelected) => {
-                      setSelected(nextSelected);
-                      if (onSelect) onSelect(nextSelected);
-                    }
-                  : undefined
-              }
-              onToggle={onToggleGroup}
-              replace={replace}
-              rowProps={rowProps}
-              selected={selected}
-              size={size}
-              step={step}
-            />
+              onSelect={onSelect}
+            >
+              {placeholderContent}
+            </PlaceholderBody>
           ) : (
-            <Body
-              ref={bodyRef}
-              cellProps={cellProps.body}
-              columns={columns}
-              data={!paginate ? adjustedData : items}
-              onMore={onMore}
-              replace={replace}
-              onClickRow={onClickRow}
-              onSelect={
-                onSelect
-                  ? (nextSelected) => {
-                      setSelected(nextSelected);
-                      if (onSelect) onSelect(nextSelected);
-                    }
-                  : undefined
-              }
-              pinnedCellProps={cellProps.pinned}
-              pinnedOffset={pinnedOffset}
-              placeholder={placeholder}
-              primaryProperty={primaryProperty}
-              rowProps={rowProps}
-              selected={selected}
-              show={!paginate ? showProp : undefined}
-              size={size}
-              step={step}
-              rowDetails={rowDetails}
-              rowExpand={rowExpand}
-              setRowExpand={setRowExpand}
-            />
+            bodyContent
           )}
           {showFooter && (
             <Footer
@@ -430,27 +549,24 @@ const DataTable = ({
               scrollOffset={scrollOffset}
               selected={selected}
               size={size}
+              verticalAlign={
+                typeof verticalAlign === 'string'
+                  ? verticalAlign
+                  : verticalAlign?.footer
+              }
             />
           )}
-          {placeholder && (
+          {placeholder && items && items.length > 0 && (
             <StyledPlaceholder top={headerHeight} bottom={footerHeight}>
-              {typeof placeholder === 'string' ? (
-                <Box
-                  background={{ color: 'background-front', opacity: 'strong' }}
-                  align="center"
-                  justify="center"
-                  fill="vertical"
-                >
-                  <Text>{placeholder}</Text>
-                </Box>
-              ) : (
-                placeholder
-              )}
+              {placeholderContent}
             </StyledPlaceholder>
           )}
         </StyledDataTable>
       </OverflowContainer>
-      {paginate && adjustedData.length > step && items && items.length ? (
+      {paginate &&
+      adjustedData.length > paginationStep &&
+      items &&
+      items.length ? (
         <Pagination alignSelf="end" {...paginationProps} />
       ) : null}
     </Container>

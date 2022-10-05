@@ -16,6 +16,7 @@ export interface ParagraphProps {
   fill?: boolean;
   gridArea?: GridAreaType;
   margin?: MarginType;
+  maxLines?: number;
   responsive?: boolean;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | string;
   textAlign?: TextAlignType;

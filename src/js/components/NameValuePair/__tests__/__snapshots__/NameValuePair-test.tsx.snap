@@ -45,6 +45,7 @@ exports[`NameValuePair should render name when name is JSX Element 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
   grid-gap: 24px 48px;
 }
@@ -59,6 +60,16 @@ exports[`NameValuePair should render name when name is JSX Element 1`] = `
 @media only screen and (max-width:768px) {
   .c3 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
   }
 }
 
@@ -154,15 +165,9 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
   grid-gap: 24px 48px;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
 }
 
 .c4 {
@@ -170,6 +175,24 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+}
+
+.c3 {
+  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 <div
@@ -238,7 +261,6 @@ exports[`NameValuePair should render value when provided as child of type
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 96px;
 }
 
 .c0 {
@@ -254,15 +276,9 @@ exports[`NameValuePair should render value when provided as child of type
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,96px) );
   grid-gap: 24px 48px;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
 }
 
 .c4 {
@@ -270,6 +286,24 @@ exports[`NameValuePair should render value when provided as child of type
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+}
+
+.c3 {
+  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 <div
@@ -377,6 +411,7 @@ exports[`NameValuePair should render value when provided as child of type JSX El
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
   grid-gap: 24px 48px;
 }
@@ -389,6 +424,7 @@ exports[`NameValuePair should render value when provided as child of type JSX El
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -397,6 +433,16 @@ exports[`NameValuePair should render value when provided as child of type JSX El
 
 @media only screen and (max-width:768px) {
   .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
     margin: 0px;
   }
 }

@@ -1,11 +1,10 @@
 import React from 'react';
 import { Gremlin } from 'grommet-icons';
 
-import { Grommet, Box, DropButton, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DropButton, Text } from 'grommet';
 
 const renderItems = () => (
-  <Box>
+  <Box background="dark-1">
     <Text>hi</Text>
     <Text>hi</Text>
     <Text>hi</Text>
@@ -19,32 +18,36 @@ const MenuItem = () => (
   </Box>
 );
 
+const align = { top: 'bottom' };
+
 const GremlinDropButton = () => (
   <DropButton
     alignSelf="center"
     margin={{ vertical: 'small' }}
     dropContent={renderItems()}
-    dropProps={{ align: { top: 'bottom' } }}
+    dropProps={{ align }}
   >
     <MenuItem />
   </DropButton>
 );
 
 const MenuDropButton = () => (
-  <Grommet theme={grommet} full>
-    <Box fill>
-      <Box fill="vertical" width="xxsmall" background="dark-2">
-        <GremlinDropButton />
-        <Box flex />
-        <GremlinDropButton />
-      </Box>
+  <Box fill>
+    <Box fill="vertical" width="xxsmall" background="dark-2">
+      <GremlinDropButton />
+      <Box flex />
+      <GremlinDropButton />
     </Box>
-  </Grommet>
+  </Box>
 );
 
 export const Menu = () => <MenuDropButton />;
 Menu.parameters = {
   chromatic: { disable: true },
+};
+
+Menu.args = {
+  full: true,
 };
 
 export default {

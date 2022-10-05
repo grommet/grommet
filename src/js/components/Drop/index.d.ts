@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {
+  A11yTitleType,
   BackgroundType,
   ElevationType,
   KeyboardType,
@@ -8,6 +9,7 @@ import {
 } from '../../utils';
 
 export interface DropProps {
+  a11yTitle?: A11yTitleType;
   align?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
@@ -16,6 +18,7 @@ export interface DropProps {
   };
   background?: BackgroundType;
   elevation?: ElevationType;
+  inline?: boolean;
   onClickOutside?: React.MouseEventHandler<HTMLDocument>;
   onEsc?: KeyboardType;
   overflow?:

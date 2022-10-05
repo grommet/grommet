@@ -10,13 +10,12 @@ interface OnChangeEvent {
 
 export interface CheckBoxType
   extends Omit<CheckBoxProps & JSX.IntrinsicElements['input'], 'checked'> {
-  [key: CheckBoxGroupProps['labelKey'] | CheckBoxGroupProps['valueKey']]:
-    | CheckBoxProps['label']
-    | JSX.IntrinsicElements['input']['value'];
+  [key: string]: any;
 }
 
 export interface CheckBoxGroupProps {
   value?: (number | string)[];
+  defaultValue?: (number | string)[];
   disabled?: boolean;
   labelKey?: string;
   name?: string;
@@ -28,7 +27,7 @@ export interface CheckBoxGroupProps {
 export interface CheckBoxGroupExtendedProps
   extends CheckBoxGroupProps,
     BoxProps,
-    Omit<JSX.IntrinsicElements['div'], 'onClick' | 'onChange'> {}
+    Omit<JSX.IntrinsicElements['div'], 'onClick' | keyof CheckBoxGroupProps> {}
 
 declare const CheckBoxGroup: React.FC<CheckBoxGroupExtendedProps>;
 

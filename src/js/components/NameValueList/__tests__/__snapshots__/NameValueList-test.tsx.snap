@@ -14,6 +14,7 @@ exports[`NameValueList should render 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
   grid-gap: 24px 48px;
 }
@@ -32,18 +33,29 @@ exports[`NameValueList should render 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
   font-weight: bold;
 }
 
-.c4 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 <div
@@ -112,6 +124,7 @@ exports[`NameValueList should render correct alignment of name 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
   grid-gap: 24px 48px;
 }
@@ -138,10 +151,21 @@ exports[`NameValueList should render correct alignment of name 1`] = `
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
   font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 <div
@@ -210,6 +234,7 @@ exports[`NameValueList should render correct alignment of value 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
   grid-gap: 24px 48px;
 }
@@ -229,6 +254,7 @@ exports[`NameValueList should render correct alignment of value 1`] = `
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -240,6 +266,16 @@ exports[`NameValueList should render correct alignment of value 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 <div
@@ -308,8 +344,9 @@ exports[`NameValueList should render correct gap between rows and columns 1`] = 
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
-  grid-gap: 48px 12px;
+  grid-gap: 24px 48px;
 }
 
 .c2 {
@@ -326,18 +363,29 @@ exports[`NameValueList should render correct gap between rows and columns 1`] = 
   flex-direction: column;
 }
 
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
   font-weight: bold;
 }
 
-.c4 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 <div
@@ -406,6 +454,7 @@ exports[`NameValueList should render correct width of name 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
   grid-gap: 24px 48px;
 }
@@ -424,18 +473,29 @@ exports[`NameValueList should render correct width of name 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
   font-weight: bold;
 }
 
-.c4 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 <div
@@ -504,6 +564,7 @@ exports[`NameValueList should render correct width of value 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,96px) );
   grid-gap: 24px 48px;
 }
@@ -520,14 +581,6 @@ exports[`NameValueList should render correct width of value 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 96px;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
 }
 
 .c4 {
@@ -535,6 +588,24 @@ exports[`NameValueList should render correct width of value 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+}
+
+.c3 {
+  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 <div
@@ -589,6 +660,118 @@ exports[`NameValueList should render correct width of value 1`] = `
 </div>
 `;
 
+exports[`NameValueList should render correct width of value when value is array 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0px;
+  grid-template-columns: repeat( auto-fit,minmax(auto,96px) );
+  grid-gap: 24px 48px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c3 {
+  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <dl
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <dt
+          class="c3"
+        >
+          name
+        </dt>
+        <dd
+          class="c4"
+        >
+          entry
+        </dd>
+      </div>
+      <div
+        class="c2"
+      >
+        <dt
+          class="c3"
+        >
+          location
+        </dt>
+        <dd
+          class="c4"
+        >
+          San Francisco
+        </dd>
+      </div>
+      <div
+        class="c2"
+      >
+        <dt
+          class="c3"
+        >
+          health
+        </dt>
+        <dd
+          class="c4"
+        >
+          80
+        </dd>
+      </div>
+    </dl>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`NameValueList should render name/value as a column when pairProps = { direction: 
     'column' } 1`] = `
 .c0 {
@@ -604,6 +787,7 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
   grid-gap: 24px 48px;
 }
@@ -623,6 +807,7 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -634,6 +819,16 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 <div
@@ -702,6 +897,7 @@ exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   width: 100%;
   height: 100%;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
@@ -722,18 +918,29 @@ exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
   font-weight: bold;
 }
 
-.c4 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 <div
@@ -803,6 +1010,7 @@ exports[`NameValueList should render value above name when pairProps = { directi
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
   grid-gap: 24px 48px;
 }
@@ -829,10 +1037,21 @@ exports[`NameValueList should render value above name when pairProps = { directi
 }
 
 .c4 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
   font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 <div
@@ -901,8 +1120,9 @@ exports[`NameValueList should support custom theme 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
+  margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,192px) );
-  grid-gap: 48px 12px;
+  grid-gap: 12px 24px;
 }
 
 .c2 {
@@ -919,19 +1139,30 @@ exports[`NameValueList should support custom theme 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #7D4CDB;
-  font-weight: bold;
-}
-
 .c4 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
   font-weight: lighter;
+}
+
+.c3 {
+  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+  font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 <div

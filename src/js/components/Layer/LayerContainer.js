@@ -12,6 +12,9 @@ import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
+
 import {
   backgroundIsDark,
   findVisibleParent,
@@ -48,6 +51,7 @@ const LayerContainer = forwardRef(
     },
     ref,
   ) => {
+    const containerTarget = useContext(ContainerTargetContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const size = useContext(ResponsiveContext);
     // layerOptions was created to preserve backwards compatibility but
@@ -62,6 +66,29 @@ const LayerContainer = forwardRef(
       () => [...portalContext, portalId],
       [portalContext, portalId],
     );
+
+    const sendAnalytics = useAnalytics();
+
+    useEffect(() => {
+      const start = new Date();
+      const element = layerRef.current;
+      const isHidden = position === 'hidden';
+      if (!isHidden) {
+        sendAnalytics({
+          type: 'layerOpen',
+          element,
+        });
+      }
+      return () => {
+        if (!isHidden) {
+          sendAnalytics({
+            type: 'layerClose',
+            element,
+            elapsed: new Date().getTime() - start.getTime(),
+          });
+        }
+      };
+    }, [sendAnalytics, layerRef, position]);
 
     useEffect(() => {
       if (position !== 'hidden') {
@@ -96,7 +123,8 @@ const LayerContainer = forwardRef(
       const onClickDocument = (event) => {
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
-        let node = event.target;
+        let node =
+          containerTarget === document.body ? event.target : event?.path[0];
         while (clickedPortalId === null && node !== document && node !== null) {
           // check if user click occurred within the layer
           const attr = node.getAttribute('data-g-portal-id');
@@ -169,7 +197,7 @@ const LayerContainer = forwardRef(
           document.removeEventListener('mousedown', onClickDocument);
         }
       };
-    }, [layerTarget, onClickOutside, portalContext, portalId]);
+    }, [containerTarget, layerTarget, onClickOutside, portalContext, portalId]);
 
     let content = (
       <StyledContainer
@@ -243,11 +271,16 @@ const LayerContainer = forwardRef(
       );
     }
 
-    if (theme.layer.background) {
+    const themeContextValue = useMemo(() => {
       const dark = backgroundIsDark(theme.layer.background, theme);
+      return { ...theme, dark };
+    }, [theme]);
+
+    if (theme.layer.background) {
+      const { dark } = themeContextValue;
       if (dark !== undefined && dark !== theme.dark) {
         content = (
-          <ThemeContext.Provider value={{ ...theme, dark }}>
+          <ThemeContext.Provider value={themeContextValue}>
             {content}
           </ThemeContext.Provider>
         );

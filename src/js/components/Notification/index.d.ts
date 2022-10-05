@@ -1,12 +1,20 @@
 import * as React from 'react';
-
-export type StatusType = 'critical' | 'warning' | 'normal' | 'unknown';
+import { LayerPositionType } from '../Layer';
+import { AnchorType } from '..';
+export type StatusType = 'critical' | 'warning' | 'normal' | 'info' | 'unknown';
 
 export interface NotificationProps {
-  title: string;
+  actions?: AnchorType[];
+  global?: boolean;
+  title?: string;
   message?: string;
   status?: StatusType;
-  toast?: boolean;
+  toast?:
+    | boolean
+    | {
+        autoClose?: boolean;
+        position?: LayerPositionType;
+      };
   onClose?: (...args: any[]) => any;
   icon?: JSX.Element;
 }

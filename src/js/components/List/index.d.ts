@@ -43,20 +43,25 @@ export interface ListProps<ListItemType> {
     | string[]
     | { light: string | string[]; dark: string | string[] };
   border?: BorderType;
+  children?: React.ReactNode;
   data?: ListItemType[];
+  disabled?: string[];
   gridArea?: GridAreaType;
   defaultItemProps?: BoxTypes;
+  itemKey?: string | ((item: ListItemType) => string | number);
   itemProps?: {
     [_: string]: { background?: string; border?: BorderType; pad?: PadType };
   };
   margin?: MarginType;
-  onMore?: () => void;
+  onActive?: (index: number) => void;
   onClickItem?:
     | ((event: React.MouseEvent) => void)
     | ((event: { item?: ListItemType; index?: number }) => void);
+  onMore?: () => void;
   onOrder?: (orderedData: ListItemType[]) => void;
   pad?: PadType;
   paginate?: boolean | PaginationType;
+  pinned?: (string | number)[];
   primaryKey?: string | ((item: ListItemType) => React.ReactElement);
   secondaryKey?: string | ((item: ListItemType) => React.ReactElement);
   show?: number | { page?: number };

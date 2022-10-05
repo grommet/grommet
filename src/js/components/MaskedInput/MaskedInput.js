@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -72,7 +73,7 @@ const parseValue = (mask, value) => {
 
       maskIndex += 1;
       found = true;
-    } else if (item.options) {
+    } else if (item.options && item.restrictToOptions !== false) {
       // reverse assuming larger is later
       found = item.options
         .slice(0)
@@ -149,11 +150,6 @@ const ContainerBox = styled(Box)`
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
       : 'max-height: inherit;'};
-
-  /* IE11 hack to get drop contents to not overflow */
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    width: 100%;
-  }
 `;
 
 const dropAlign = { top: 'bottom', left: 'left' };
@@ -191,10 +187,7 @@ const MaskedInput = forwardRef(
       value: valueProp,
     });
 
-    const [valueParts, setValueParts] = useState(parseValue(mask, value));
-    useEffect(() => {
-      setValueParts(parseValue(mask, value));
-    }, [mask, value]);
+    const valueParts = useMemo(() => parseValue(mask, value), [mask, value]);
 
     const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
@@ -266,14 +259,28 @@ const MaskedInput = forwardRef(
     // This could be due to a paste or as the user is typing.
     const onChangeInput = useCallback(
       (event) => {
+        const eventValue = event.target.value;
         // Align with the mask.
-        const nextValueParts = parseValue(mask, event.target.value);
+        const nextValueParts = parseValue(mask, eventValue);
         const nextValue = nextValueParts.map((part) => part.part).join('');
 
-        if (nextValue !== event.target.value) {
-          // The mask required inserting something, change the input.
-          // This will re-trigger this callback with the next value
-          setInputValue(nextValue);
+        if (nextValue !== eventValue) {
+          // The mask adjusted the next value. If something was added,
+          // the value must be valid. Change the actual input value
+          // to correspond.
+          // This will re-trigger this callback with the next value.
+          if (nextValue.length > eventValue.length) setInputValue(nextValue);
+          // If the nextValue is shorter, something must be invalid.
+          else if (value && eventValue.length < value.length) {
+            // If the user is removing characters, preserve what the
+            // user is working on.
+            setValue(eventValue);
+            if (onChange) onChange(event);
+          } else {
+            // If the user is adding invalid characters, don't allow it.
+            // Revert to the prior value.
+            setInputValue(value);
+          }
         } else if (value !== nextValue) {
           setValue(nextValue);
           if (onChange) onChange(event);

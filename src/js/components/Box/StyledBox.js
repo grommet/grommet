@@ -76,10 +76,10 @@ const directionStyle = (direction, theme) => {
   return styles;
 };
 
-const elevationStyle = css`
+const elevationStyle = (elevation) => css`
   box-shadow: ${(props) =>
     props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
-      props.elevationProp
+      elevation
     ]};
 `;
 
@@ -192,6 +192,9 @@ const interactiveStyle = css`
 
   &:hover {
     ${(props) =>
+      props.kindProp?.hover &&
+      getHoverIndicatorStyle(props.kindProp.hover, props.theme)}
+    ${(props) =>
       props.hoverIndicator &&
       getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
   }
@@ -209,12 +212,7 @@ const StyledBox = styled.div`
   ${(props) =>
     props.background && backgroundStyle(props.background, props.theme)}
   ${(props) =>
-    props.border &&
-    (Array.isArray(props.border)
-      ? props.border.map((border) =>
-          borderStyle(border, props.responsive, props.theme),
-        )
-      : borderStyle(props.border, props.responsive, props.theme))}
+    props.border && borderStyle(props.border, props.responsive, props.theme)}
   ${(props) =>
     props.directionProp && directionStyle(props.directionProp, props.theme)}
   ${(props) => props.heightProp && heightStyle(props.heightProp, props.theme)}
@@ -236,7 +234,7 @@ const StyledBox = styled.div`
     props.round && roundStyle(props.round, props.responsive, props.theme)}
   ${(props) => props.wrapProp && wrapStyle}
   ${(props) => props.overflowProp && overflowStyle(props.overflowProp)}
-  ${(props) => props.elevationProp && elevationStyle}
+  ${(props) => props.elevationProp && elevationStyle(props.elevationProp)}
   ${(props) => props.animation && animationStyle}
   ${(props) => props.onClick && interactiveStyle}
   ${(props) =>
@@ -245,6 +243,7 @@ const StyledBox = styled.div`
     props.focusIndicator !== false &&
     focusStyle()}
   ${(props) => props.theme.box && props.theme.box.extend}
+  ${(props) => props.kindProp && props.kindProp.extend}
 `;
 
 const gapStyle = (directionProp, gap, responsive, border, theme) => {

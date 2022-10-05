@@ -194,7 +194,11 @@ if (process.env.NODE_ENV !== 'production') {
     responsive: PropTypes.bool,
     round: roundPropType,
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    as: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+      PropTypes.elementType,
+    ]),
     width: widthPropType,
     wrap: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['reverse'])]),
   };

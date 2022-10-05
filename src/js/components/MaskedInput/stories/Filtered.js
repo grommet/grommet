@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Grommet, MaskedInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MaskedInput } from 'grommet';
 
 const data = {
   Cummings: [
@@ -18,49 +17,54 @@ export const Filtered = () => {
   const [value, setValue] = React.useState('');
   const [first, second] = value.split(':');
   const poets = first
-    ? Object.keys(data).filter(k =>
+    ? Object.keys(data).filter((k) =>
         k.toLowerCase().startsWith(first.toLowerCase()),
       )
     : Object.keys(data);
   const poems =
     data[first] && second
-      ? data[first].filter(k =>
+      ? data[first].filter((k) =>
           k.toLowerCase().startsWith(second.toLowerCase()),
         )
       : data[first] || [];
   let longestPoemLength = 0;
-  poems.forEach(p => {
+  poems.forEach((p) => {
     longestPoemLength = Math.max(longestPoemLength, p.length);
   });
 
   return (
-    <Grommet full theme={grommet}>
-      <Box fill align="center" justify="start" pad="large">
-        <Box width="medium">
-          <MaskedInput
-            mask={[
-              {
-                options: poets,
-                placeholder: 'poet',
-              },
-              { fixed: ':' },
-              {
-                options: poems,
-                length: longestPoemLength,
-                placeholder: 'poem',
-              },
-            ]}
-            value={value}
-            onChange={event => setValue(event.target.value)}
-          />
-        </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box fill align="center" justify="start" pad="large">
+      <Box width="medium">
+        <MaskedInput
+          mask={[
+            {
+              options: poets,
+              placeholder: 'poet',
+            },
+            { fixed: ':' },
+            {
+              options: poems,
+              length: longestPoemLength,
+              placeholder: 'poem',
+            },
+          ]}
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        />
       </Box>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 
 Filtered.parameters = {
   chromatic: { disable: true },
+};
+
+Filtered.args = {
+  full: true,
 };
 
 export default {

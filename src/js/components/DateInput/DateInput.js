@@ -1,4 +1,5 @@
 import React, {
+  useRef,
   forwardRef,
   useContext,
   useEffect,
@@ -12,6 +13,7 @@ import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
 import { DropButton } from '../DropButton';
@@ -27,6 +29,27 @@ import {
   textToValue,
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
+import { getOutputFormat } from '../Calendar/Calendar';
+
+const getReference = (value) => {
+  let adjustedDate;
+  let res;
+  if (typeof value === 'string') res = value;
+  else if (Array.isArray(value) && Array.isArray(value[0]))
+    res = value[0].find((date) => date);
+  else if (Array.isArray(value) && value.length) [res] = value;
+
+  if (res) {
+    adjustedDate = new Date(res);
+    // if time is not specified in ISOstring, normalize to midnight
+    if (res?.indexOf('T') === -1) {
+      const offset = adjustedDate.getTimezoneOffset();
+      const hour = adjustedDate.getHours();
+      adjustedDate.setHours(hour, offset);
+    }
+  }
+  return adjustedDate;
+};
 
 const DateInput = forwardRef(
   (
@@ -38,11 +61,14 @@ const DateInput = forwardRef(
       dropProps, // when inline isn't true
       format,
       id,
+      icon,
       inline = false,
       inputProps, // for MaskedInput, when format is specified
       name,
       onChange,
       onFocus,
+      plain,
+      reverse: reverseProp = false,
       value: valueArg,
       messages,
       ...rest
@@ -56,11 +82,26 @@ const DateInput = forwardRef(
       (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
+    const containerRef = useRef();
     const [value, setValue] = useFormInput({
       name,
       value: valueArg,
       initialValue: defaultValue,
     });
+
+    const [outputFormat, setOutputFormat] = useState(getOutputFormat(value));
+    useEffect(() => {
+      setOutputFormat((previousFormat) => {
+        const nextFormat = getOutputFormat(value);
+        // when user types, date could become something like 07//2020
+        // and value becomes undefined. don't lose the format from the
+        // previous valid date
+        return previousFormat !== nextFormat ? previousFormat : nextFormat;
+      });
+    }, [value]);
+
+    // keep track of timestamp from original date(s)
+    const [reference, setReference] = useState(getReference(value));
 
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
@@ -76,6 +117,20 @@ const DateInput = forwardRef(
       schema ? valueToText(value, schema) : undefined,
     );
 
+    // Setting the icon through `inputProps` is deprecated.
+    // The `icon` prop should be used instead.
+    const { icon: MaskedInputIcon, ...restOfInputProps } = inputProps || {};
+    if (MaskedInputIcon) {
+      console.warn(
+        `Customizing the DateInput icon through inputProps is deprecated. 
+Use the icon prop instead.`,
+      );
+    }
+
+    const reverse = reverseProp || restOfInputProps.reverse;
+
+    const calendarDropdownAlign = { top: 'bottom', left: 'left' };
+
     // We need to distinguish between the caller changing a Form value
     // and the user typing a date that he isn't finished with yet.
     // To handle this, we see if we have a value and the text value
@@ -87,15 +142,15 @@ const DateInput = forwardRef(
         const nextTextValue = valueToText(value, schema);
         if (
           !valuesAreEqual(
-            textToValue(textValue, schema, value, range),
-            textToValue(nextTextValue, schema, value, range),
+            textToValue(textValue, schema, range, reference),
+            textToValue(nextTextValue, schema, range, reference),
           ) ||
           (textValue === '' && nextTextValue !== '')
         ) {
           setTextValue(nextTextValue);
         }
       }
-    }, [range, schema, textValue, value]);
+    }, [range, schema, textValue, reference, value]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
@@ -131,8 +186,10 @@ const DateInput = forwardRef(
                 // clicking an edge date removes it
                 else if (range) normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
+
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
+                setReference(getReference(nextValue));
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
                   closeCalendar();
@@ -144,6 +201,13 @@ const DateInput = forwardRef(
       />
     );
 
+    const formContextValue = useMemo(
+      () => ({
+        useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
+      }),
+      [],
+    );
+
     if (!format) {
       // When no format is specified, we don't give the user a way to type
       if (inline) return calendar;
@@ -152,62 +216,85 @@ const DateInput = forwardRef(
         <DropButton
           ref={ref}
           id={id}
-          dropProps={{ align: { top: 'bottom', left: 'left' }, ...dropProps }}
+          dropProps={{ align: calendarDropdownAlign, ...dropProps }}
           dropContent={calendar}
-          icon={<CalendarIcon size={iconSize} />}
+          icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
           {...buttonProps}
         />
       );
     }
 
+    const calendarButton = (
+      <Button
+        onClick={open ? closeCalendar : openCalendar}
+        plain
+        icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
+        margin={reverse ? { left: 'small' } : { right: 'small' }}
+      />
+    );
+
     const input = (
       <FormContext.Provider
         key="input"
         // don't let MaskedInput drive the Form
-        value={{
-          useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
-        }}
+        value={formContextValue}
       >
         <Keyboard
           onEsc={open ? () => closeCalendar() : undefined}
-          onSpace={openCalendar}
+          onSpace={(event) => {
+            event.preventDefault();
+            openCalendar();
+          }}
         >
-          <MaskedInput
-            ref={ref}
-            id={id}
-            name={name}
-            icon={<CalendarIcon size={iconSize} />}
-            reverse
-            disabled={disabled}
-            mask={mask}
-            {...inputProps}
-            {...rest}
-            value={textValue}
-            onChange={(event) => {
-              const nextTextValue = event.target.value;
-              setTextValue(nextTextValue);
-              const nextValue = textToValue(
-                nextTextValue,
-                schema,
-                value,
-                range,
-              );
-              // update value even when undefined
-              setValue(nextValue);
-              if (onChange) {
-                event.persist(); // extract from React synthetic event pool
-                const adjustedEvent = event;
-                adjustedEvent.value = nextValue;
-                onChange(adjustedEvent);
-              }
-            }}
-            onFocus={(event) => {
-              announce(
-                formatMessage({ id: 'dateInput.openCalendar', messages }),
-              );
-              if (onFocus) onFocus(event);
-            }}
-          />
+          <Box
+            ref={containerRef}
+            border={!plain}
+            round={theme.dateInput.container.round}
+            direction="row"
+            fill
+          >
+            {reverse && calendarButton}
+            <MaskedInput
+              ref={ref}
+              id={id}
+              name={name}
+              reverse
+              disabled={disabled}
+              mask={mask}
+              plain
+              {...restOfInputProps}
+              {...rest}
+              value={textValue}
+              onChange={(event) => {
+                const nextTextValue = event.target.value;
+                setTextValue(nextTextValue);
+                const nextValue = textToValue(
+                  nextTextValue,
+                  schema,
+                  range,
+                  reference,
+                  outputFormat,
+                );
+                if (nextValue !== undefined)
+                  setReference(getReference(nextValue));
+                // update value even when undefined
+                setValue(nextValue);
+                if (onChange) {
+                  event.persist(); // extract from React synthetic event pool
+                  const adjustedEvent = event;
+                  adjustedEvent.value = nextValue;
+                  onChange(adjustedEvent);
+                }
+              }}
+              onFocus={(event) => {
+                announce(
+                  formatMessage({ id: 'dateInput.openCalendar', messages }),
+                );
+                if (onFocus) onFocus(event);
+              }}
+            />
+            {!reverse && calendarButton}
+          </Box>
         </Keyboard>
       </FormContext.Provider>
     );
@@ -228,11 +315,16 @@ const DateInput = forwardRef(
           <Drop
             overflow="visible"
             id={id ? `${id}__drop` : undefined}
-            target={ref.current}
-            align={{ top: 'bottom', left: 'left', ...dropProps }}
+            target={containerRef.current}
+            align={{ ...calendarDropdownAlign, ...dropProps }}
             onEsc={closeCalendar}
             onClickOutside={({ target }) => {
-              if (target !== ref.current) closeCalendar();
+              if (
+                target !== containerRef.current &&
+                !containerRef.current.contains(target)
+              ) {
+                closeCalendar();
+              }
             }}
             {...dropProps}
           >

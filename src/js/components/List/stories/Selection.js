@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, List } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, List } from 'grommet';
 
 const data = [];
 
@@ -15,19 +14,18 @@ export const Selection = () => {
   const [selected, setSelected] = React.useState();
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large" gap="large">
-        <List
-          data={data.slice(0, 10)}
-          itemProps={
-            selected >= 0 ? { [selected]: { background: 'brand' } } : undefined
-          }
-          onClickItem={event =>
-            setSelected(selected === event.index ? undefined : event.index)
-          }
-        />
-      </Box>
-    </Grommet>
+    <Box align="center" pad="large" gap="large">
+      <List
+        aria-label="selection list"
+        data={data.slice(0, 10)}
+        itemProps={
+          selected >= 0 ? { [selected]: { background: 'brand' } } : undefined
+        }
+        onClickItem={(event) =>
+          setSelected(selected === event.index ? undefined : event.index)
+        }
+      />
+    </Box>
   );
 };
 

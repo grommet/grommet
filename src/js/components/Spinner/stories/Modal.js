@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { grommet, Box, Button, Grommet, Layer, Spinner, Text } from 'grommet';
+import { Box, Button, Layer, Spinner, Text } from 'grommet';
 
 export const Modal = () => {
   const [open, setOpen] = React.useState();
@@ -15,7 +15,7 @@ export const Modal = () => {
   };
 
   return (
-    <Grommet theme={grommet} full>
+    <Box pad={{ vertical: 'xlarge' }}>
       <Box fill align="center" justify="center" gap="medium">
         <Button label="Load Data" onClick={onOpen} />
         {isDataLoaded && (
@@ -41,7 +41,7 @@ export const Modal = () => {
           </Box>
         </Layer>
       )}
-    </Grommet>
+    </Box>
   );
 };
 

@@ -1,6 +1,12 @@
 import * as React from 'react';
-import { BoxTypes } from '../Box';
+import { BoxExtendedProps } from '../Box';
 
-declare const Header: React.FC<BoxTypes>;
+export interface HeaderProps {
+  sticky?: 'scrollup';
+}
+
+export interface HeaderExtendedProps extends BoxExtendedProps, HeaderProps {}
+
+declare const Header: React.FC<HeaderExtendedProps>;
 
 export { Header };

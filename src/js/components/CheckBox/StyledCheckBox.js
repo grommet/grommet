@@ -52,7 +52,10 @@ Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, defaultProps);
 const StyledCheckBoxContainer = styled.label`
   display: flex;
   flex-direction: row;
-  align-items: ${(props) => props.theme.checkBox.label.align};
+  align-items: ${(props) =>
+    typeof props.label === 'string'
+      ? props.theme.checkBox.label.align
+      : undefined};
   user-select: none;
   ${(props) => (props.fillProp ? fillStyle() : 'width: fit-content;')}
   ${(props) =>
@@ -100,7 +103,7 @@ const StyledCheckBoxInput = styled.input`
   margin: 0;
 
   ${(props) => !props.disabled && 'cursor: pointer;'} :checked + span > span {
-    left: calc(
+    ${(props) => (!props.theme.dir ? 'left' : 'right')}: calc(
       ${(props) => props.theme.checkBox.toggle.size} -
         ${(props) => props.theme.checkBox.size}
     );
@@ -147,7 +150,8 @@ const StyledCheckBoxKnob = styled.span`
   position: relative;
   display: inherit;
   top: -${(props) => props.theme.checkBox.border.width};
-  left: -${(props) => props.theme.checkBox.border.width};
+  ${(props) => (!props.theme.dir ? 'left' : 'right')}: -${(props) =>
+    props.theme.checkBox.border.width};
   transition: all 0.3s;
   width: ${(props) => props.theme.checkBox.size};
   height: ${(props) => props.theme.checkBox.size};

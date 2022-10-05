@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DateInput, grommet } from 'grommet';
+import { Box, DateInput } from 'grommet';
 import { Button } from '../../Button';
 
 const DATE = '2020-07-02T00:00:00-08:00';
@@ -11,23 +11,21 @@ export const ResetDateWithString = () => {
   const onChange = (event) => setValue(event.value);
 
   return (
-    <Grommet theme={grommet}>
-      <Box
-        direction="column"
-        align="center"
-        justify="center"
-        pad="large"
-        gap="large"
-      >
-        <DateInput value={value} onChange={onChange} format="mm/dd/yyyy" />
-        <Button
-          label="Reset Date"
-          fill="vertical"
-          onClick={() => setValue('')}
-          type="button"
-        />
-      </Box>
-    </Grommet>
+    <Box
+      direction="column"
+      align="center"
+      justify="center"
+      pad="large"
+      gap="large"
+    >
+      <DateInput value={value} onChange={onChange} format="mm/dd/yyyy" />
+      <Button
+        label="Reset Date"
+        fill="vertical"
+        onClick={() => setValue('')}
+        type="button"
+      />
+    </Box>
   );
 };
 
@@ -36,23 +34,21 @@ export const ResetDateWithArray = () => {
   const onChange = (event) => setValue(event.value);
 
   return (
-    <Grommet theme={grommet}>
-      <Box
-        direction="column"
-        align="center"
-        justify="center"
-        pad="large"
-        gap="large"
-      >
-        <DateInput value={value} onChange={onChange} format="mm/dd/yyyy" />
-        <Button
-          label="Reset Date"
-          fill="vertical"
-          onClick={() => setValue([])}
-          type="button"
-        />
-      </Box>
-    </Grommet>
+    <Box
+      direction="column"
+      align="center"
+      justify="center"
+      pad="large"
+      gap="large"
+    >
+      <DateInput value={value} onChange={onChange} format="mm/dd/yyyy" />
+      <Button
+        label="Reset Date"
+        fill="vertical"
+        onClick={() => setValue([])}
+        type="button"
+      />
+    </Box>
   );
 };
 

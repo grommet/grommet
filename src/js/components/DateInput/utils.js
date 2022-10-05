@@ -1,7 +1,8 @@
+import { handleOffset } from '../Calendar/utils';
+
 // Converting between Date and String types is handled via a "schema".
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
-
 export const formatToSchema = (format) => {
   if (!format) return undefined;
   const result = [];
@@ -23,15 +24,15 @@ export const formatToSchema = (format) => {
 };
 
 const masks = {
-  m: { length: [1, 2], regexp: new RegExp(`^[1-9]$|^1[0-2]$`) },
-  mm: { length: [1, 2], regexp: new RegExp(`^[0-1]$|^0[1-9]$|^1[0-2]$`) },
-  d: { length: [1, 2], regexp: new RegExp(`^[1-9]$|^[1-2][0-9]$|^3[0-1]$`) },
+  m: { length: [1, 2], regexp: /^[1-9]$|^1[0-2]$/ },
+  mm: { length: [1, 2], regexp: /^[0-1]$|^0[1-9]$|^1[0-2]$/ },
+  d: { length: [1, 2], regexp: /^[1-9]$|^[1-2][0-9]$|^3[0-1]$/ },
   dd: {
     length: [1, 2],
-    regexp: new RegExp(`^[0-3]$|^0[1-9]$|^[1-2][0-9]$|^3[0-1]$`),
+    regexp: /^[0-3]$|^0[1-9]$|^[1-2][0-9]$|^3[0-1]$/,
   },
-  yy: { length: [1, 2], regexp: new RegExp(`^[0-9]{1,2}$`) },
-  yyyy: { length: [1, 4], regexp: new RegExp(`^[0-9]{1,4}$`) },
+  yy: { length: [1, 2], regexp: /^[0-9]{1,2}$/ },
+  yyyy: { length: [1, 4], regexp: /^[0-9]{1,4}$/ },
 };
 
 export const schemaToMask = (schema) => {
@@ -52,9 +53,17 @@ export const valueToText = (value, schema) => {
   // show the placeholder text
   if (!value || (Array.isArray(value) && !value.length)) return text;
 
-  const dates = (Array.isArray(value) ? value : [value]).map(
-    (v) => new Date(v),
-  );
+  const dates = (Array.isArray(value) ? value : [value]).map((v) => {
+    // TO DO should we extract this to a reusable function?
+    const adjustedDate = new Date(v);
+    // if time is not specified in ISOstring, normalize to midnight
+    if (v.indexOf('T') === -1) {
+      const offset = adjustedDate.getTimezoneOffset();
+      const hour = adjustedDate.getHours();
+      adjustedDate.setHours(hour, offset);
+    }
+    return adjustedDate;
+  });
 
   let dateIndex = 0;
   let parts = {};
@@ -116,7 +125,7 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
-export const textToValue = (text, schema, valueProp, range) => {
+export const textToValue = (text, schema, range, reference, outputFormat) => {
   if (!text) return range ? [] : undefined;
 
   let result;
@@ -140,17 +149,22 @@ export const textToValue = (text, schema, valueProp, range) => {
     )
       return parts;
 
-    let date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
-    // match time and timezone of any supplied valueProp
-    if (
-      valueProp &&
-      ((Array.isArray(valueProp) && valueProp[0]) || !Array.isArray(valueProp))
-    ) {
-      const valueDate = new Date(
-        Array.isArray(valueProp) && valueProp.length ? valueProp[0] : valueProp,
-      ).toISOString();
-      date = `${date.split('T')[0]}T${valueDate.split('T')[1]}`;
+    // use time info from reference date
+    const time = reference
+      ? [
+          reference.getHours(),
+          reference.getMinutes(),
+          reference.getSeconds(),
+          reference.getMilliseconds(),
+        ]
+      : null;
+
+    let date = new Date(parts.y, parts.m - 1, parts.d, ...time).toISOString();
+
+    if (date && outputFormat === 'no timezone') {
+      [date] = handleOffset(date).toISOString().split('T');
     }
+
     if (!range) {
       if (!result) result = date;
     } else {
@@ -175,7 +189,12 @@ export const textToValue = (text, schema, valueProp, range) => {
         index += parts.m.length;
       } else if (char === 'd') {
         parts.d = pullDigits(text, index);
-        index += parts.d.length;
+        // when format is something like yyyy/mm/dd,
+        // '0' as incomplete day can cause date to be
+        // prematurely calculated.
+        // ex: 2022/01/0 would reutrn 2021/12/31 in addDate()
+        if (parts.d === '0') delete parts.d;
+        index += parts?.d?.length || 0;
       } else if (char === 'y') {
         parts.y = pullDigits(text, index);
         index += parts.y.length;

@@ -11,8 +11,10 @@ export interface DateInputProps {
   defaultValue?: string | string[];
   dropProps?: DropType;
   format?: string;
+  icon?: JSX.Element;
   id?: string;
   inline?: boolean;
+  reverse?: boolean;
   inputProps?: MaskedInputType;
   messages?: {
     enterCalendar?: string;

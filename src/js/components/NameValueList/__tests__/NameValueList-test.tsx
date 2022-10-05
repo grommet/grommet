@@ -4,7 +4,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import { axe } from 'jest-axe';
 
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { ThemeType } from '../../../themes';
 import { Grommet } from '../../Grommet';
@@ -18,8 +18,6 @@ const data = {
 };
 
 describe('NameValueList', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -83,6 +81,22 @@ describe('NameValueList', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`should render correct width of value when value is array`, () => {
+    const { asFragment } = render(
+      <Grommet>
+        <NameValueList valueProps={{ width: 'xsmall' }}>
+          {Object.entries(data).map(([name, value]) => (
+            <NameValuePair key={name} name={name}>
+              {value}
+            </NameValuePair>
+          ))}
+        </NameValueList>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test(`should render correct alignment of name`, () => {
@@ -193,6 +207,14 @@ describe('NameValueList', () => {
     const customTheme: ThemeType = {
       nameValueList: {
         gap: { column: 'small', row: 'large' },
+        pair: {
+          column: {
+            gap: {
+              column: 'medium',
+              row: 'small',
+            },
+          },
+        },
         name: {
           width: 'xsmall',
         },
