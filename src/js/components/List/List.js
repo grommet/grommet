@@ -194,6 +194,7 @@ const List = React.forwardRef(
     };
     const [itemFocus, setItemFocus] = useState();
     const [dragging, setDragging] = useState();
+    const [orderingData, setOrderingData] = useState();
 
     // store a reference to the pinned and the data that is orderable
     const [orderableData, pinnedInfo] = useMemo(() => {
@@ -201,10 +202,12 @@ const List = React.forwardRef(
       const pinnedData = [];
       const pinnedIndexes = [];
 
-      if (pinned.length === 0)
-        return [data, { data: pinnedData, indexes: pinnedIndexes }];
+      const currentData = orderingData || data;
 
-      data.forEach((item, index) => {
+      if (pinned.length === 0)
+        return [currentData, { data: pinnedData, indexes: pinnedIndexes }];
+
+      currentData.forEach((item, index) => {
         const key = typeof item === 'object' ? item[itemKey] : item;
         if (pinned.includes(key)) {
           pinnedData.push(item);
@@ -215,7 +218,7 @@ const List = React.forwardRef(
       });
 
       return [orderable, { data: pinnedData, indexes: pinnedIndexes }];
-    }, [data, itemKey, pinned]);
+    }, [data, orderingData, itemKey, pinned]);
 
     const [items, paginationProps] = usePagination({
       data,
@@ -227,9 +230,6 @@ const List = React.forwardRef(
 
     const Container = paginate ? StyledContainer : Fragment;
     const containterProps = paginate ? { ...theme.list.container } : undefined;
-
-    const [orderingData, setOrderingData] = useState();
-
     const draggingRef = useRef();
 
     const sendAnalytics = useAnalytics();

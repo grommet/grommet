@@ -740,6 +740,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       baseline: 500,
     },
     dateInput: {
+      container: {
+        round: 'xxsmall',
+      },
       // icon: {
       //   size: undefined,
       // },

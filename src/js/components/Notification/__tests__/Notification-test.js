@@ -9,7 +9,7 @@ import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, Notification, Button } from '../..';
+import { Grommet, Notification, Button, Text } from '../..';
 
 const TestNotification = ({ ...rest }) => (
   <Notification title="title" message="message" {...rest} />
@@ -250,5 +250,17 @@ describe('Notification', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should render custom template inside notification', () => {
+    const { container } = render(
+      <Grommet>
+        <Notification
+          title="Test title"
+          message={<Text>A sample text message</Text>}
+        />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
   });
 });
