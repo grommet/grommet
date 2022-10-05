@@ -1,7 +1,14 @@
 {
   "calendar": {
-    "previous": "Moved to {date}",
-    "next": "Moved to {date}"
+    "previousMove": "Moved to {date}",
+    "previous": "Go to {date}",
+    "nextMove": "Moved to {date}",
+    "next": "Go to {date}"
+  },
+  "carousel": {
+    "previous": "Go to slide {slide}",
+    "next": "Go to slide {slide}",
+    "jump": "Jump to slide {slide}"
   },
   "dateInput": {
     "openCalendar": "Press space to open calendar",
@@ -35,7 +42,8 @@
     "upper": "Upper Bounds"
   },
   "select": {
-    "multiple": "multiple"
+    "multiple": "multiple",
+    "selected": "; Selected: {currentSelectedValue}"
   },
   "skipLinks": {
     "skipTo": "Skip To:"
@@ -50,7 +58,9 @@
     "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
   },
   "video": {
+    "captions": "closed captions",
     "closeMenu": "close menu",
+    "audioDescriptions": "video audio description",
     "fullScreen": "full screen",
     "progressMeter": "video progress",
     "scrubber": "scrubber",
@@ -58,6 +68,7 @@
     "pauseButton": "pause",
     "playButton": "play",
     "volumeDown": "volume down",
-    "volumeUp": "volume up"
+    "volumeUp": "volume up",
+    "description": "video audio description"
   }
 }

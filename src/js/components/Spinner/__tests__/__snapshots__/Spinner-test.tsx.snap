@@ -26,6 +26,9 @@ exports[`Spinner border renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -51,6 +54,9 @@ exports[`Spinner border renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -77,6 +83,9 @@ exports[`Spinner border renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -104,6 +113,9 @@ exports[`Spinner border renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -129,6 +141,9 @@ exports[`Spinner border renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -273,6 +288,9 @@ exports[`Spinner round renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -297,6 +315,9 @@ exports[`Spinner round renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 12px;
   -webkit-transform: rotate(0deg);
@@ -322,6 +343,9 @@ exports[`Spinner round renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 24px;
   -webkit-transform: rotate(0deg);
@@ -347,6 +371,9 @@ exports[`Spinner round renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 48px;
   -webkit-transform: rotate(0deg);
@@ -491,6 +518,9 @@ exports[`Spinner should have no accessibility violations 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -554,6 +584,9 @@ exports[`Spinner size renders 1`] = `
   flex-direction: column;
   height: 18px;
   width: 18px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -579,6 +612,9 @@ exports[`Spinner size renders 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -604,6 +640,9 @@ exports[`Spinner size renders 1`] = `
   flex-direction: column;
   height: 48px;
   width: 48px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -629,6 +668,9 @@ exports[`Spinner size renders 1`] = `
   flex-direction: column;
   height: 72px;
   width: 72px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -654,6 +696,9 @@ exports[`Spinner size renders 1`] = `
   flex-direction: column;
   height: 96px;
   width: 96px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -801,6 +846,9 @@ exports[`Spinner size renders 2`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -826,6 +874,9 @@ exports[`Spinner size renders 2`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -851,6 +902,9 @@ exports[`Spinner size renders 2`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -876,6 +930,9 @@ exports[`Spinner size renders 2`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -901,6 +958,9 @@ exports[`Spinner size renders 2`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -1047,6 +1107,9 @@ exports[`Spinner spinner changes according to theme 1`] = `
   flex-direction: column;
   height: 30px;
   width: 30px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 48px;
   border-radius: 24px;
   -webkit-transform: rotate(0deg);
@@ -1106,6 +1169,9 @@ exports[`Spinner spinner color renders over theme settings 1`] = `
   flex-direction: column;
   height: 24px;
   width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
@@ -1217,6 +1283,9 @@ exports[`Spinner spinner icon changes according to theme 1`] = `
   flex-direction: column;
   height: 72px;
   width: 72px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;

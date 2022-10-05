@@ -1,9 +1,9 @@
-export const normalizeValues = values =>
+export const normalizeValues = (values) =>
   (values || []).map((value, index) => {
     if (value === undefined) return { value: [index, undefined] };
-    if (typeof value === 'number') return { value: [index, value] };
     if (Array.isArray(value)) return { value };
-    return value;
+    if (typeof value === 'object') return value;
+    return { value: [index, value] };
   });
 
 export const normalizeBounds = (bounds, values) => {
@@ -13,7 +13,7 @@ export const normalizeBounds = (bounds, values) => {
       [0, 1],
       [0, 1],
     ];
-    (values || []).forEach(value => {
+    (values || []).forEach((value) => {
       if (value.value[0] !== undefined) {
         result[0][0] = Math.min(result[0][0], value.value[0]);
         result[0][1] = Math.max(result[0][1], value.value[0]);

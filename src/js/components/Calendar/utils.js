@@ -35,13 +35,13 @@ export const addMonths = (date, months) => {
 
 export const subtractMonths = (date, months) => addMonths(date, -months);
 
-export const startOfMonth = date => {
+export const startOfMonth = (date) => {
   const result = new Date(date);
   result.setDate(1);
   return result;
 };
 
-export const endOfMonth = date => {
+export const endOfMonth = (date) => {
   const result = addMonths(date, 1);
   result.setDate(0);
   return result;
@@ -69,25 +69,15 @@ export const sameDayOrBefore = (date1, date2) =>
 export const daysApart = (date1, date2) =>
   Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
 
-// account for timezone offset of user's local machine
-export const localTimezoneToUTC = date =>
-  new Date(date.getTime() + date.getTimezoneOffset() * 60 * 1000);
-
-export const formatToLocalYYYYMMDD = date => {
-  const adjustedDate = new Date(date);
-  return new Date(
-    adjustedDate.getTime() - adjustedDate.getTimezoneOffset() * 60000,
-  )
-    .toISOString()
-    .split('T')[0];
-};
 // betweenDates takes an array of two elements and checks if the
 // supplied date lies between them, inclusive.
 // returns 2 if exact match to one end, 1 if between, undefined otherwise
 export const betweenDates = (date, dates) => {
   let result;
   if (dates) {
-    const [from, to] = dates.map(d => (d ? new Date(d) : undefined));
+    const [from, to] = Array.isArray(dates)
+      ? dates.map((d) => (d ? new Date(d) : undefined))
+      : [dates, undefined];
     if ((from && sameDay(date, from)) || (to && sameDay(date, to))) {
       result = 2;
     } else if (
@@ -112,9 +102,9 @@ export const withinDates = (date, dates) => {
   let result;
   if (dates) {
     if (Array.isArray(dates)) {
-      dates.some(d => {
-        if (typeof d === 'string') {
-          if (sameDay(date, new Date(d))) {
+      dates.some((d) => {
+        if (d instanceof Date) {
+          if (sameDay(date, d)) {
             result = 2;
           }
         } else {
@@ -122,9 +112,19 @@ export const withinDates = (date, dates) => {
         }
         return result;
       });
-    } else if (sameDay(date, new Date(dates))) {
+    } else if (sameDay(date, dates)) {
       result = 2;
     }
   }
   return result;
+};
+
+export const handleOffset = (date) => {
+  const normalizedDate = new Date(date);
+  const offset = normalizedDate.getTimezoneOffset();
+  const hour = normalizedDate.getHours();
+  // add back offset
+  normalizedDate.setHours(hour, offset < 0 ? -offset : offset);
+
+  return normalizedDate;
 };

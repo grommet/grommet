@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, DataChart, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataChart } from 'grommet';
 
 const data = [];
 for (let i = 1; i < 8; i += 1) {
@@ -13,8 +12,10 @@ for (let i = 1; i < 8; i += 1) {
 }
 
 export const Guide = () => (
-  <Grommet theme={grommet} full>
-    <Box margin="large" width={{ min: 'small', max: 'large' }}>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet} full>
+  <Box fill>
+    <Box pad="large" width={{ min: 'small', max: 'large' }}>
       <DataChart
         data={data}
         series={['date', 'percent']}
@@ -32,7 +33,8 @@ export const Guide = () => (
         detail
       />
     </Box>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 export default {

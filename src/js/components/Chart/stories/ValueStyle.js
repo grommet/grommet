@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, Chart } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Chart } from 'grommet';
 
 const values = [
   {
@@ -35,12 +34,13 @@ const values = [
 ];
 
 export const ValueStyleChart = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large" gap="large">
-      <Chart type="point" point="circle" values={values} />
-      <Chart type="bar" values={values} />
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
+  <Box align="center" pad="large" gap="large">
+    <Chart type="point" point="circle" values={values} />
+    <Chart type="bar" values={values} />
+  </Box>
+  // </Grommet>
 );
 
 ValueStyleChart.storyName = 'Value style';

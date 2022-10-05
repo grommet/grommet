@@ -169,7 +169,7 @@ exports[`Anchor gap renders 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 12px;
+  width: 6px;
 }
 
 .c4 {
@@ -179,7 +179,7 @@ exports[`Anchor gap renders 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  width: 12px;
 }
 
 .c5 {
@@ -189,10 +189,20 @@ exports[`Anchor gap renders 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 48px;
+  width: 24px;
 }
 
 .c6 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 48px;
+}
+
+.c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -236,7 +246,7 @@ exports[`Anchor gap renders 1`] = `
         <span
           class="c3"
         />
-        Small Gap
+        Theme Gap
       </span>
     </a>
     <a
@@ -253,7 +263,7 @@ exports[`Anchor gap renders 1`] = `
         <span
           class="c4"
         />
-        Medium Gap
+        Small Gap
       </span>
     </a>
     <a
@@ -270,7 +280,7 @@ exports[`Anchor gap renders 1`] = `
         <span
           class="c5"
         />
-        Large Gap
+        Medium Gap
       </span>
     </a>
     <a
@@ -286,6 +296,23 @@ exports[`Anchor gap renders 1`] = `
         />
         <span
           class="c6"
+        />
+        Large Gap
+      </span>
+    </a>
+    <a
+      class="c1"
+      href="#"
+    >
+      <span
+        class="c2"
+        style="display: inline-flex;"
+      >
+        <svg
+          color="#7D4CDB"
+        />
+        <span
+          class="c7"
         />
         5px Gap
       </span>
@@ -695,6 +722,59 @@ exports[`Anchor should have no accessibility violations 1`] = `
       Link
     </a>
   </div>
+</div>
+`;
+
+exports[`Anchor shows no error for component used in as prop 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c2:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+    href="#"
+    tabindex="0"
+  />
 </div>
 `;
 

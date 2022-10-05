@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, Grommet, List, Menu } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, List, Menu } from 'grommet';
 import { More } from 'grommet-icons';
 
 const data = [];
@@ -13,8 +12,8 @@ for (let i = 0; i < 95; i += 1) {
 }
 
 export const Show = () => (
-  <Grommet theme={grommet} full>
-    <Box pad="medium">
+  <Box fill>
+    <Box margin="large" height="small" overflow="scroll">
       <List
         data={data}
         action={(item, index) => (
@@ -28,5 +27,9 @@ export const Show = () => (
         show={30}
       />
     </Box>
-  </Grommet>
+  </Box>
 );
+
+export default {
+  title: 'Visualizations/List/Show',
+};

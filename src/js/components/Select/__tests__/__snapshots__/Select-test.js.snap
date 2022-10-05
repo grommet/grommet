@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select 0 value 1`] = `
-.c8 {
+<DocumentFragment>
+  .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -219,51 +220,54 @@ exports[`Select 0 value 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
-  class="c0 c1"
-  id="test-select"
-  type="button"
->
-  <div
-    class="c2"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="c0 c1"
+    id="test-select"
+    type="button"
   >
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value="0"
-        />
+        <div
+          class="c4"
+        >
+          <input
+            autocomplete="off"
+            class="c5 c6"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value="0"
+          />
+        </div>
+      </div>
+      <div
+        class="c7"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c8"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Select Clear option renders - bottom 1`] = `
@@ -316,7 +320,7 @@ exports[`Select Clear option renders - bottom 1`] = `
   padding: 12px;
 }
 
-.c9 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -332,6 +336,26 @@ exports[`Select Clear option renders - bottom 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #33333310;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
 }
 
 .c1 {
@@ -364,7 +388,13 @@ exports[`Select Clear option renders - bottom 1`] = `
   line-height: 24px;
 }
 
-.c5 {
+.c15 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #555555;
+}
+
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -382,29 +412,42 @@ exports[`Select Clear option renders - bottom 1`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
+.c9:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  box-shadow: none;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  box-shadow: none;
 }
 
-.c5:focus::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
 }
 
 .c5:focus:not(:focus-visible) {
@@ -427,6 +470,45 @@ exports[`Select Clear option renders - bottom 1`] = `
   border: 0;
 }
 
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   max-height: inherit;
 }
@@ -441,9 +523,21 @@ exports[`Select Clear option renders - bottom 1`] = `
   outline: none;
 }
 
-.c6 {
+.c10 {
   display: block;
   width: 100%;
+}
+
+.c6 {
+  background-color: #7D4CDB;
+  color: #FFFFFF;
+  display: block;
+  width: 100%;
+}
+
+.c13:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -452,6 +546,12 @@ exports[`Select Clear option renders - bottom 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
     padding: 6px;
   }
 }
@@ -488,13 +588,16 @@ exports[`Select Clear option renders - bottom 1`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="true"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
-        tabindex="-1"
+        role="option"
+        tabindex="0"
         type="button"
       >
         <div
@@ -508,8 +611,11 @@ exports[`Select Clear option renders - bottom 1`] = `
         </div>
       </button>
       <button
-        class="c5 c6"
-        role="menuitem"
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
+        class="c9 c10"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -524,17 +630,31 @@ exports[`Select Clear option renders - bottom 1`] = `
         </div>
       </button>
       <div
-        class="c9"
+        class="c11"
       />
     </div>
-    
+    <button
+      aria-label="Clear selection. Or, press shift tab to move to select options"
+      class="c12 c13"
+      type="button"
+    >
+      <div
+        class="c14"
+      >
+        <span
+          class="c15"
+        >
+          Clear selection
+        </span>
+      </div>
+    </button>
   </div>
 </div>
 `;
 
 exports[`Select Clear option renders - bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -657,31 +777,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -769,15 +864,17 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
     class="c2 c3"
     id="test-select__select-drop"
   >
-    
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -792,8 +889,11 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -817,7 +917,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 
 exports[`Select Clear option renders correct label when wrapped in FormField 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -940,31 +1040,6 @@ exports[`Select Clear option renders custom label 1`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -1044,15 +1119,17 @@ exports[`Select Clear option renders custom label 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
-    
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1067,8 +1144,11 @@ exports[`Select Clear option renders custom label 1`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -1092,7 +1172,7 @@ exports[`Select Clear option renders custom label 1`] = `
 
 exports[`Select Clear option renders custom label 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1130,7 +1210,7 @@ exports[`Select Clear option renders- top 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1149,7 +1229,7 @@ exports[`Select Clear option renders- top 1`] = `
   padding: 12px;
 }
 
-.c9 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1165,6 +1245,26 @@ exports[`Select Clear option renders- top 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  background: #33333310;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
 }
 
 .c1 {
@@ -1191,13 +1291,19 @@ exports[`Select Clear option renders- top 1`] = `
   animation-delay: 0.01s;
 }
 
-.c8 {
+.c12 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c5 {
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #555555;
+}
+
+.c13 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1215,48 +1321,100 @@ exports[`Select Clear option renders- top 1`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
+.c13:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  box-shadow: none;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  box-shadow: none;
 }
 
-.c5:focus::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+}
+
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1264,7 +1422,7 @@ exports[`Select Clear option renders- top 1`] = `
   max-height: inherit;
 }
 
-.c4 {
+.c8 {
   position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
@@ -1274,17 +1432,35 @@ exports[`Select Clear option renders- top 1`] = `
   outline: none;
 }
 
-.c6 {
+.c14 {
   display: block;
   width: 100%;
 }
 
+.c10 {
+  background-color: #7D4CDB;
+  color: #FFFFFF;
+  display: block;
+  width: 100%;
+}
+
+.c5:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
 
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c11 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
     padding: 6px;
   }
 }
@@ -1319,46 +1495,66 @@ exports[`Select Clear option renders- top 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
-    
+    <button
+      aria-label="Clear selection. Or, press down arrow to move to select options"
+      class="c4 c5"
+      type="button"
+    >
+      <div
+        class="c6"
+      >
+        <span
+          class="c7"
+        >
+          Clear selection
+        </span>
+      </div>
+    </button>
     <div
-      class="c4"
-      role="menubar"
+      class="c8"
+      role="listbox"
       tabindex="-1"
     >
       <button
-        class="c5 c6"
-        role="menuitem"
-        tabindex="-1"
+        aria-posinset="1"
+        aria-selected="true"
+        aria-setsize="2"
+        class="c9 c10"
+        role="option"
+        tabindex="0"
         type="button"
       >
         <div
-          class="c7"
+          class="c11"
         >
           <span
-            class="c8"
+            class="c12"
           >
             one
           </span>
         </div>
       </button>
       <button
-        class="c5 c6"
-        role="menuitem"
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
+        class="c13 c14"
+        role="option"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c7"
+          class="c11"
         >
           <span
-            class="c8"
+            class="c12"
           >
             two
           </span>
         </div>
       </button>
       <div
-        class="c9"
+        class="c15"
       />
     </div>
   </div>
@@ -1367,7 +1563,7 @@ exports[`Select Clear option renders- top 1`] = `
 
 exports[`Select Clear option renders- top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1623,7 +1819,9 @@ exports[`Select Search timeout 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-label="test select"
     class="c1 c2"
     data-g-tabindex="none"
     id="test-select"
@@ -1999,7 +2197,9 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="Select..."
     class="c1 c2"
     id="applies-custom-hover-style-id"
     type="button"
@@ -2094,31 +2294,6 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   color: #000000;
 }
 
-.c0:hover {
-  background-color: lightgreen;
-  color: #7D4CDB;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c0:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -2140,8 +2315,15 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 }
 
 .c1 {
+  background-color: lightgreen;
+  color: #7D4CDB;
   display: block;
   width: 100%;
+}
+
+.c1:focus {
+  background-color: lightgreen;
+  color: #7D4CDB;
 }
 
 @media only screen and (max-width:768px) {
@@ -2163,8 +2345,11 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 }
 
 <button
+  aria-posinset="2"
+  aria-selected="false"
+  aria-setsize="3"
   class="c0 c1"
-  role="menuitem"
+  role="option"
   tabindex="-1"
   type="button"
 >
@@ -2399,6 +2584,8 @@ exports[`Select basic 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Select"
   class="c0 c1"
   id="test-select"
@@ -2665,7 +2852,9 @@ exports[`Select complex options and children 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -2714,23 +2903,25 @@ exports[`Select complex options and children 1`] = `
 
 exports[`Select complex options and children 2`] = `
 <button
-  aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 kVhqUm Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
+  aria-expanded="true"
+  aria-haspopup="listbox"
+  aria-label="test select"
+  class="StyledButton-sc-323bzc-0 hIPuDF StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kTfBZm"
+    class="StyledBox-sc-13pk1d4-0 hMXKog"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iLmQXk"
+      class="StyledBox-sc-13pk1d4-0 hWKKwG"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bDhrKg"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bKnHfl Select__SelectTextInput-sc-17idtfo-0 fPXvfn"
+          class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2741,12 +2932,12 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bHRIGx"
+      class="StyledBox-sc-13pk1d4-0 kXoZXT"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+        class="StyledIcon-sc-ofa7kd-0 eTQGBW"
         viewBox="0 0 24 24"
       >
         <path
@@ -2852,31 +3043,6 @@ exports[`Select complex options and children 3`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -2952,12 +3118,15 @@ exports[`Select complex options and children 3`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -2966,8 +3135,11 @@ exports[`Select complex options and children 3`] = `
         </span>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -2985,7 +3157,7 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3253,7 +3425,9 @@ exports[`Select dark 1`] = `
     class="c1"
   >
     <button
-      aria-label="Open Drop"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Select"
       class="c2 c3"
       type="button"
     >
@@ -3532,7 +3706,9 @@ exports[`Select default value 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select; Selected: two"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -3611,7 +3787,7 @@ exports[`Select default value clear 1`] = `
   flex-direction: column;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3631,7 +3807,7 @@ exports[`Select default value clear 1`] = `
   padding: 12px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3650,7 +3826,7 @@ exports[`Select default value clear 1`] = `
   padding: 12px;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3692,13 +3868,13 @@ exports[`Select default value clear 1`] = `
   animation-delay: 0.01s;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   color: #555555;
 }
 
-.c11 {
+.c12 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -3720,26 +3896,7 @@ exports[`Select default value clear 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c4:focus::-moz-focus-inner {
-  border: 0;
+  width: 100%;
 }
 
 .c4:focus:not(:focus-visible) {
@@ -3762,7 +3919,7 @@ exports[`Select default value clear 1`] = `
   border: 0;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3780,52 +3937,27 @@ exports[`Select default value clear 1`] = `
   text-align: inherit;
 }
 
-.c8:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c12 {
+.c13 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3843,43 +3975,23 @@ exports[`Select default value clear 1`] = `
   text-align: inherit;
 }
 
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3887,7 +3999,7 @@ exports[`Select default value clear 1`] = `
   max-height: inherit;
 }
 
-.c7 {
+.c8 {
   position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
@@ -3897,30 +4009,35 @@ exports[`Select default value clear 1`] = `
   outline: none;
 }
 
-.c9 {
+.c10 {
   display: block;
   width: 100%;
 }
 
-.c13 {
+.c14 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
   width: 100%;
 }
 
+.c5:focus {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
 
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c11 {
     padding: 6px;
   }
 }
@@ -3956,58 +4073,65 @@ exports[`Select default value clear 1`] = `
     id="test-select__select-drop"
   >
     <button
-      class="c4"
+      aria-label="Clear selection. Or, press down arrow to move to select options"
+      class="c4 c5"
       type="button"
     >
       <div
-        class="c5"
+        class="c6"
       >
         <span
-          class="c6"
+          class="c7"
         >
           Clear selection
         </span>
       </div>
     </button>
     <div
-      class="c7"
-      role="menubar"
+      class="c8"
+      role="listbox"
       tabindex="-1"
     >
       <button
-        class="c8 c9"
-        role="menuitem"
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
+        class="c9 c10"
+        role="option"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10"
+          class="c11"
         >
           <span
-            class="c11"
+            class="c12"
           >
             one
           </span>
         </div>
       </button>
       <button
-        class="c12 c13"
-        role="menuitem"
-        tabindex="-1"
+        aria-posinset="2"
+        aria-selected="true"
+        aria-setsize="2"
+        class="c13 c14"
+        role="option"
+        tabindex="0"
         type="button"
       >
         <div
-          class="c10"
+          class="c11"
         >
           <span
-            class="c11"
+            class="c12"
           >
             two
           </span>
         </div>
       </button>
       <div
-        class="c14"
+        class="c15"
       />
     </div>
   </div>
@@ -4016,7 +4140,7 @@ exports[`Select default value clear 1`] = `
 
 exports[`Select default value clear 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4255,7 +4379,9 @@ exports[`Select default value object options 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select; Selected: 2"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -4524,7 +4650,9 @@ exports[`Select disabled 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select"
   class="c0 c1"
   disabled=""
   id="test-select"
@@ -4574,24 +4702,26 @@ exports[`Select disabled 1`] = `
 
 exports[`Select disabled 2`] = `
 <button
-  aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 hLmNRQ Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select"
+  class="StyledButton-sc-323bzc-0 bpAVVv StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kTfBZm"
+    class="StyledBox-sc-13pk1d4-0 hMXKog"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iLmQXk"
+      class="StyledBox-sc-13pk1d4-0 hWKKwG"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bDhrKg"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bKnHfl Select__SelectTextInput-sc-17idtfo-0 fhNCWX"
+          class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 fLRsZH"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4602,12 +4732,12 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bHRIGx"
+      class="StyledBox-sc-13pk1d4-0 kXoZXT"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+        class="StyledIcon-sc-ofa7kd-0 eTQGBW"
         viewBox="0 0 24 24"
       >
         <path
@@ -4854,7 +4984,9 @@ exports[`Select disabled key 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -4952,7 +5084,7 @@ exports[`Select disabled key 2`] = `
   padding: 12px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5020,26 +5152,6 @@ exports[`Select disabled key 2`] = `
   cursor: default;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -5078,31 +5190,6 @@ exports[`Select disabled key 2`] = `
   text-align: inherit;
 }
 
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -5138,6 +5225,12 @@ exports[`Select disabled key 2`] = `
 }
 
 .c6 {
+  display: block;
+  width: 100%;
+  cursor: default;
+}
+
+.c10 {
   display: block;
   width: 100%;
 }
@@ -5184,13 +5277,17 @@ exports[`Select disabled key 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-disabled="true"
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
         disabled=""
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -5205,8 +5302,11 @@ exports[`Select disabled key 2`] = `
         </div>
       </button>
       <button
-        class="c9 c6"
-        role="menuitem"
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
+        class="c9 c10"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -5221,7 +5321,7 @@ exports[`Select disabled key 2`] = `
         </div>
       </button>
       <div
-        class="c10"
+        class="c11"
       />
     </div>
   </div>
@@ -5230,7 +5330,7 @@ exports[`Select disabled key 2`] = `
 
 exports[`Select disabled key 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5287,7 +5387,7 @@ exports[`Select disabled option value 1`] = `
   padding: 12px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5355,26 +5455,6 @@ exports[`Select disabled option value 1`] = `
   cursor: default;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -5413,31 +5493,6 @@ exports[`Select disabled option value 1`] = `
   text-align: inherit;
 }
 
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -5473,6 +5528,12 @@ exports[`Select disabled option value 1`] = `
 }
 
 .c6 {
+  display: block;
+  width: 100%;
+  cursor: default;
+}
+
+.c10 {
   display: block;
   width: 100%;
 }
@@ -5519,13 +5580,17 @@ exports[`Select disabled option value 1`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-disabled="true"
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
         disabled=""
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -5540,8 +5605,11 @@ exports[`Select disabled option value 1`] = `
         </div>
       </button>
       <button
-        class="c9 c6"
-        role="menuitem"
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
+        class="c9 c10"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -5556,7 +5624,7 @@ exports[`Select disabled option value 1`] = `
         </div>
       </button>
       <div
-        class="c10"
+        class="c11"
       />
     </div>
   </div>
@@ -5565,7 +5633,7 @@ exports[`Select disabled option value 1`] = `
 
 exports[`Select disabled option value 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5910,7 +5978,9 @@ exports[`Select keyboard navigation timeout 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-label="test select"
     class="c1 c2"
     data-g-tabindex="none"
     id="test-select"
@@ -6077,31 +6147,6 @@ exports[`Select large drop container height 1`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -6183,12 +6228,15 @@ exports[`Select large drop container height 1`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -6203,8 +6251,11 @@ exports[`Select large drop container height 1`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -6342,31 +6393,6 @@ exports[`Select medium drop container height 1`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -6448,12 +6474,15 @@ exports[`Select medium drop container height 1`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -6468,8 +6497,11 @@ exports[`Select medium drop container height 1`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -6724,7 +6756,9 @@ exports[`Select modifies select control style on open 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="Select..."
     class="c1 c2"
     id="test-open-id"
     type="button"
@@ -6771,6 +6805,276 @@ exports[`Select modifies select control style on open 1`] = `
     </div>
   </button>
 </div>
+`;
+
+exports[`Select null value 1`] = `
+<DocumentFragment>
+  .c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
+  cursor: pointer;
+}
+
+.c1 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+<button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="c0 c1"
+    id="test-select"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <input
+            autocomplete="off"
+            class="c5 c6"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c7"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c8"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Select onChange with valueKey string 1`] = `
@@ -7005,7 +7309,9 @@ exports[`Select onChange with valueKey string 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -7169,31 +7475,6 @@ exports[`Select onChange with valueKey string 2`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -7275,12 +7556,15 @@ exports[`Select onChange with valueKey string 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -7295,8 +7579,11 @@ exports[`Select onChange with valueKey string 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -7320,7 +7607,7 @@ exports[`Select onChange with valueKey string 2`] = `
 
 exports[`Select onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -7510,6 +7797,8 @@ exports[`Select onChange with valueLabel 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
@@ -7670,29 +7959,541 @@ exports[`Select onChange with valueLabel 2`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
+.c5:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  box-shadow: none;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  box-shadow: none;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+.c4 {
+  position: relative;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow: auto;
+  outline: none;
+}
+
+.c6 {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="test-select__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+    id="test-select__select-drop"
+  >
+    <div
+      class="c4"
+      role="listbox"
+      tabindex="-1"
+    >
+      <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
+        class="c5 c6"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c7"
+        >
+          <span
+            class="c8"
+          >
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
+        class="c5 c6"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c7"
+        >
+          <span
+            class="c8"
+          >
+            two
+          </span>
+        </div>
+      </button>
+      <div
+        class="c9"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select onChange with valueLabel 3`] = `
+"@media only screen and (max-width: 768px) {
+  .kXoZXT {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}"
+`;
+
+exports[`Select onChange without labelKey or valueKey 1`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="c1 c2"
+    id="test-select"
+    type="button"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Select onChange without labelKey or valueKey 2`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
 }
 
 .c5:focus:not(:focus-visible) {
@@ -7776,12 +8577,15 @@ exports[`Select onChange with valueLabel 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -7791,13 +8595,16 @@ exports[`Select onChange with valueLabel 2`] = `
           <span
             class="c8"
           >
-            one
+            1
           </span>
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -7807,7 +8614,7 @@ exports[`Select onChange with valueLabel 2`] = `
           <span
             class="c8"
           >
-            two
+            2
           </span>
         </div>
       </button>
@@ -7819,9 +8626,9 @@ exports[`Select onChange with valueLabel 2`] = `
 </div>
 `;
 
-exports[`Select onChange with valueLabel 3`] = `
+exports[`Select onChange without labelKey or valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -8060,7 +8867,9 @@ exports[`Select onChange without valueKey 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -8224,31 +9033,6 @@ exports[`Select onChange without valueKey 2`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -8330,12 +9114,15 @@ exports[`Select onChange without valueKey 2`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -8350,8 +9137,11 @@ exports[`Select onChange without valueKey 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -8375,7 +9165,7 @@ exports[`Select onChange without valueKey 2`] = `
 
 exports[`Select onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -8613,7 +9403,9 @@ exports[`Select prop: onClose 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -8894,7 +9686,9 @@ exports[`Select prop: onClose 2`] = `
   <div />
   <div>
     <button
-      aria-label="Open Drop"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="test select"
       class="c0 c1"
       id="test-select"
       type="button"
@@ -9162,7 +9956,9 @@ exports[`Select prop: onOpen 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -9211,23 +10007,25 @@ exports[`Select prop: onOpen 1`] = `
 
 exports[`Select prop: onOpen 2`] = `
 <button
-  aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 kVhqUm Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
+  aria-expanded="true"
+  aria-haspopup="listbox"
+  aria-label="test select"
+  class="StyledButton-sc-323bzc-0 hIPuDF StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kTfBZm"
+    class="StyledBox-sc-13pk1d4-0 hMXKog"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iLmQXk"
+      class="StyledBox-sc-13pk1d4-0 hWKKwG"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bDhrKg"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bKnHfl Select__SelectTextInput-sc-17idtfo-0 fPXvfn"
+          class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -9238,12 +10036,12 @@ exports[`Select prop: onOpen 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bHRIGx"
+      class="StyledBox-sc-13pk1d4-0 kXoZXT"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+        class="StyledIcon-sc-ofa7kd-0 eTQGBW"
         viewBox="0 0 24 24"
       >
         <path
@@ -9374,31 +10172,6 @@ exports[`Select prop: onOpen 3`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -9480,12 +10253,15 @@ exports[`Select prop: onOpen 3`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -9500,8 +10276,11 @@ exports[`Select prop: onOpen 3`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -9525,7 +10304,7 @@ exports[`Select prop: onOpen 3`] = `
 
 exports[`Select prop: onOpen 4`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -9534,44 +10313,50 @@ exports[`Select prop: onOpen 4`] = `
 
 exports[`Select prop: onOpen 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 dmrrIP"
-  role="menubar"
+  class="StyledSelect__OptionsContainer-sc-znp66n-1 elhWoD"
+  role="listbox"
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 cloiJO SelectContainer__SelectOption-sc-1wi0ul8-1 bIHGwS"
-    role="menuitem"
+    aria-posinset="1"
+    aria-selected="false"
+    aria-setsize="2"
+    class="StyledButton-sc-323bzc-0 fAHGkw StyledSelect__SelectOption-sc-znp66n-3 lmVeAf"
+    role="option"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hNlVwe"
+      class="StyledBox-sc-13pk1d4-0 bvLkDM"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 dbAlhH"
+        class="StyledText-sc-1sadyjn-0 dJnVGQ"
       >
         one
       </span>
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 cloiJO SelectContainer__SelectOption-sc-1wi0ul8-1 bIHGwS"
-    role="menuitem"
+    aria-posinset="2"
+    aria-selected="false"
+    aria-setsize="2"
+    class="StyledButton-sc-323bzc-0 fAHGkw StyledSelect__SelectOption-sc-znp66n-3 lmVeAf"
+    role="option"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hNlVwe"
+      class="StyledBox-sc-13pk1d4-0 bvLkDM"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 dbAlhH"
+        class="StyledText-sc-1sadyjn-0 dJnVGQ"
       >
         two
       </span>
     </div>
   </button>
   <div
-    class="StyledBox-sc-13pk1d4-0 hDMmUh"
+    class="StyledBox-sc-13pk1d4-0 SWGaz"
   />
 </div>
 `;
@@ -9795,6 +10580,8 @@ exports[`Select renders custom icon 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -10073,7 +10860,9 @@ exports[`Select renders custom up and down icons 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="Select..."
     class="c1 c2"
     type="button"
   >
@@ -10121,25 +10910,27 @@ exports[`Select renders custom up and down icons 1`] = `
 
 exports[`Select renders custom up and down icons 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <button
-    aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 kVhqUm Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-label="Select..."
+    class="StyledButton-sc-323bzc-0 hIPuDF StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kTfBZm"
+      class="StyledBox-sc-13pk1d4-0 hMXKog"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iLmQXk"
+        class="StyledBox-sc-13pk1d4-0 hWKKwG"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bDhrKg"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 bKnHfl Select__SelectTextInput-sc-17idtfo-0 fPXvfn"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -10149,7 +10940,7 @@ exports[`Select renders custom up and down icons 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 bHRIGx"
+        class="StyledBox-sc-13pk1d4-0 kXoZXT"
         style="min-width: auto;"
       >
         .c0 {
@@ -10439,6 +11230,8 @@ exports[`Select renders default icon 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -10718,7 +11511,9 @@ exports[`Select renders styled select options backwards compatible with legacy
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="Select..."
     class="c1 c2"
     id="test-options-style-id"
     type="button"
@@ -11001,7 +11796,9 @@ exports[`Select renders styled select options combining select.options.box &&
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="Select..."
     class="c1 c2"
     id="test-options-style-id"
     type="button"
@@ -11282,7 +12079,9 @@ exports[`Select renders styled select options using select.options.container 1`]
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="Select..."
     class="c1 c2"
     id="test-options-style-id"
     type="button"
@@ -11490,6 +12289,8 @@ exports[`Select renders without icon 1`] = `
 }
 
 <button
+  aria-expanded="false"
+  aria-haspopup="listbox"
   aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
@@ -11738,7 +12539,9 @@ exports[`Select search 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select; Selected: two"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -11919,31 +12722,6 @@ exports[`Select search 2`] = `
   text-align: inherit;
 }
 
-.c8:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -11980,26 +12758,6 @@ exports[`Select search 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus::-moz-focus-inner {
-  border: 0;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -12179,12 +12937,15 @@ exports[`Select search 2`] = `
     </div>
     <div
       class="c7"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c8 c9"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -12199,9 +12960,12 @@ exports[`Select search 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="true"
+        aria-setsize="2"
         class="c12 c13"
-        role="menuitem"
-        tabindex="-1"
+        role="option"
+        tabindex="0"
         type="button"
       >
         <div
@@ -12224,7 +12988,7 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -12234,7 +12998,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 fEvXmU"
+  class="StyledTextInput-sc-1x30a0s-0 leLkkb"
   type="search"
   value=""
 />
@@ -12243,7 +13007,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 fEvXmU"
+  class="StyledTextInput-sc-1x30a0s-0 leLkkb"
   type="search"
   value="o"
 />
@@ -12468,7 +13232,9 @@ exports[`Select search and select 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -12649,31 +13415,6 @@ exports[`Select search and select 2`] = `
   text-align: inherit;
 }
 
-.c8:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -12844,12 +13585,15 @@ exports[`Select search and select 2`] = `
     </div>
     <div
       class="c7"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c8 c9"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -12864,8 +13608,11 @@ exports[`Select search and select 2`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c8 c9"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -12889,7 +13636,7 @@ exports[`Select search and select 2`] = `
 
 exports[`Select search and select 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -12899,7 +13646,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 fEvXmU"
+  class="StyledTextInput-sc-1x30a0s-0 leLkkb"
   type="search"
   value=""
 />
@@ -12908,7 +13655,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 fEvXmU"
+  class="StyledTextInput-sc-1x30a0s-0 leLkkb"
   type="search"
   value="t"
 />
@@ -13133,7 +13880,9 @@ exports[`Select select an object with label key specific with keypress 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -13399,7 +14148,9 @@ exports[`Select select an option 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -13611,7 +14362,9 @@ exports[`Select select an option with complex options 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="Open Drop; Selected: [object Object]"
   class="c0 "
   id="test-select"
   type="button"
@@ -13873,7 +14626,9 @@ exports[`Select select an option with enter 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -14139,7 +14894,9 @@ exports[`Select select an option with keypress 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -14405,7 +15162,9 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="test select"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -14684,7 +15443,9 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -14734,26 +15495,28 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
 
 exports[`Select select option by typing should not break if caller passes JSX 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <button
-    aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 kVhqUm Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select; Selected: two"
+    class="StyledButton-sc-323bzc-0 hIPuDF StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
     id="test-select"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kTfBZm"
+      class="StyledBox-sc-13pk1d4-0 hMXKog"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iLmQXk"
+        class="StyledBox-sc-13pk1d4-0 hWKKwG"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bDhrKg"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 bKnHfl Select__SelectTextInput-sc-17idtfo-0 fPXvfn"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -14764,12 +15527,12 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 bHRIGx"
+        class="StyledBox-sc-13pk1d4-0 kXoZXT"
         style="min-width: auto;"
       >
         <svg
           aria-label="FormDown"
-          class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+          class="StyledIcon-sc-ofa7kd-0 eTQGBW"
           viewBox="0 0 24 24"
         >
           <path
@@ -15017,7 +15780,9 @@ exports[`Select selected 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -15297,6 +16062,8 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="test"
     class="c1 c2"
     type="button"
@@ -15341,6 +16108,8 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
     </div>
   </button>
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="test-select"
     class="c1 c2"
     type="button"
@@ -15619,6 +16388,8 @@ exports[`Select should not have accessibility violations 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-label="test"
     class="c1 c2"
     type="button"
@@ -15886,7 +16657,9 @@ exports[`Select size 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="Open Drop; Selected: "
   class="c0 c1"
   id="test-select"
   type="button"
@@ -16048,31 +16821,6 @@ exports[`Select small drop container height 1`] = `
   text-align: inherit;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
 .c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -16154,12 +16902,15 @@ exports[`Select small drop container height 1`] = `
   >
     <div
       class="c4"
-      role="menubar"
+      role="listbox"
       tabindex="-1"
     >
       <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >
@@ -16174,8 +16925,11 @@ exports[`Select small drop container height 1`] = `
         </div>
       </button>
       <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
         class="c5 c6"
-        role="menuitem"
+        role="option"
         tabindex="-1"
         type="button"
       >

@@ -25,6 +25,7 @@ export const format = (options, messages) => {
   // their bundles that way and don't need to pass the messages
   // themselves in this property, just the format function.
   const idParts = options.id?.split('.') || [];
+  // eslint-disable-next-line no-unsafe-optional-chaining
   const baseId = idParts[idParts?.length - 1];
   let messageObj = messages;
   idParts.forEach((idPart) => {

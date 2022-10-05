@@ -8,10 +8,6 @@ if (process.env.NODE_ENV !== 'production') {
     onMore: PropTypes.func,
     renderMarker: PropTypes.func,
     replace: PropTypes.bool,
-    scrollableAncestor: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.oneOf(['window']),
-    ]),
     show: PropTypes.number,
     step: PropTypes.number,
   };

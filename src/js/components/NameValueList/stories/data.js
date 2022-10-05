@@ -18,6 +18,15 @@ export const metricData = {
   Successful: 31,
 };
 
+export const languageData = {
+  Languages: `English, Spanish, French, Chinese, Japanese, German,
+   Korean, Italian, Arabic, Portugese, Russian`,
+  'Operating System': `VMware ESXi 6.7.0 Build-14320388 Update
+   3 Patch 73 6.7.0 Build-14320388 Update 3 Patch 73 ESXi 6.7.0
+   Build-14320388 Update 3 Patch 73 6.7.0 ESXi 6.7.0 Build-14320388
+   Update 3 Patch 73 6.7.0 `,
+};
+
 export const statusData = {
   Power: 'Ok',
   Health: 'Critical',

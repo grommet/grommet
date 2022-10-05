@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 
-import { Box, Button, Form, FormField, Grommet, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Form, FormField, TextInput } from 'grommet';
 
 const allSuggestions = Array(100)
   .fill()
   .map((_, i) => `suggestion ${i + 1}`);
 
-export const InsideFormField = props => {
+export const InsideFormField = (props) => {
   const [state, setState] = useState({
     value: '',
     suggestions: allSuggestions,
   });
 
-  const onChange = event => {
+  const onChange = (event) => {
     const {
       target: { value },
     } = event;
@@ -25,35 +24,36 @@ export const InsideFormField = props => {
     // handles escaping special characters. Without escaping special
     // characters, errors will appear in the console
     const exp = new RegExp(escapedText, 'i');
-    const suggestions = allSuggestions.filter(s => exp.test(s));
+    const suggestions = allSuggestions.filter((s) => exp.test(s));
     setState({ value, suggestions });
   };
 
-  const onSelect = event => setState({ ...state, value: event.suggestion });
+  const onSelect = (event) => setState({ ...state, value: event.suggestion });
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <Form
-          onSubmit={({ value: nextValue }) => {
-            console.log(nextValue);
-            setState({ value: '', suggestions: allSuggestions });
-          }}
-        >
-          <FormField label="Label" htmlFor="text-input" {...props}>
-            <TextInput
-              id="text-input"
-              placeholder="placeholder"
-              value={state.value}
-              onChange={onChange}
-              onSelect={onSelect}
-              suggestions={state.suggestions}
-            />
-          </FormField>
-          <Button type="submit" label="submit" />
-        </Form>
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box align="center" pad="large">
+      <Form
+        onSubmit={({ value: nextValue }) => {
+          console.log(nextValue);
+          setState({ value: '', suggestions: allSuggestions });
+        }}
+      >
+        <FormField label="Label" htmlFor="text-input" {...props}>
+          <TextInput
+            id="text-input"
+            placeholder="placeholder"
+            value={state.value}
+            onChange={onChange}
+            onSelect={onSelect}
+            suggestions={state.suggestions}
+          />
+        </FormField>
+        <Button type="submit" label="submit" />
+      </Form>
+    </Box>
+    // </Grommet>
   );
 };
 

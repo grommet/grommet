@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Calendar, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Calendar } from 'grommet';
 
 export const Simple = () => {
   const [date, setDate] = useState();
@@ -11,15 +10,9 @@ export const Simple = () => {
   };
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <Calendar
-          date={date}
-          onSelect={onSelect}
-          size="small"
-          bounds={['2018-09-08', '2020-12-13']}
-        />
-      </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box>
       <Box align="center" pad="large">
         <Calendar
           date={date}
@@ -29,7 +22,8 @@ export const Simple = () => {
           bounds={['2020-09-08', '2025-12-13']}
         />
       </Box>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, DataChart, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataChart, Text } from 'grommet';
 
 const data = [];
 for (let i = 0; i < 7; i += 1) {
@@ -13,37 +12,38 @@ for (let i = 0; i < 7; i += 1) {
 }
 
 export const StackedBars = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" justify="start" pad="large">
-      <DataChart
-        data={data}
-        series={[
-          {
-            property: 'date',
-            render: date => (
-              <Text margin={{ horizontal: 'xsmall' }}>
-                {new Date(date).toLocaleDateString('en-US', {
-                  month: 'numeric',
-                  day: 'numeric',
-                })}
-              </Text>
-            ),
-          },
-          'usage',
-          'bonus',
-        ]}
-        chart={[
-          {
-            property: ['usage', 'bonus'],
-            type: 'bars',
-          },
-        ]}
-        axis={{ x: { property: 'date', granularity: 'fine' }, y: true }}
-        guide={{ y: true }}
-        legend
-      />
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
+  <Box align="center" justify="start" pad="large">
+    <DataChart
+      data={data}
+      series={[
+        {
+          property: 'date',
+          render: (date) => (
+            <Text margin={{ horizontal: 'xsmall' }}>
+              {new Date(date).toLocaleDateString('en-US', {
+                month: 'numeric',
+                day: 'numeric',
+              })}
+            </Text>
+          ),
+        },
+        'usage',
+        'bonus',
+      ]}
+      chart={[
+        {
+          property: ['usage', 'bonus'],
+          type: 'bars',
+        },
+      ]}
+      axis={{ x: { property: 'date', granularity: 'fine' }, y: true }}
+      guide={{ y: true }}
+      legend
+    />
+  </Box>
+  // </Grommet>
 );
 
 StackedBars.storyName = 'Stacked bars';

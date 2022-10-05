@@ -1,23 +1,20 @@
 import React from 'react';
 
-import { Box, Grommet, Menu } from 'grommet';
-import { User } from 'grommet-icons';
-import { hpe } from 'grommet-theme-hpe';
+import { Box, Menu } from 'grommet';
+import { Home, User } from 'grommet-icons';
 
 export const Justify = () => (
-  <Grommet theme={hpe}>
-    <Box pad="small">
-      <Menu
-        alignSelf="start"
-        label="Actions"
-        items={[
-          { label: 'Hey', icon: <User />, justify: 'center' },
-          { label: 'Hello', icon: <User />, justify: 'end' },
-          { label: 'Hii', icon: <User /> },
-        ]}
-      />
-    </Box>
-  </Grommet>
+  <Box pad="small">
+    <Menu
+      alignSelf="start"
+      label="Actions"
+      items={[
+        { label: 'User', icon: <User />, justify: 'center' },
+        { label: 'Users', icon: <User />, justify: 'end' },
+        { label: 'Home', icon: <Home /> },
+      ]}
+    />
+  </Box>
 );
 Justify.parameters = {
   chromatic: { disable: true },

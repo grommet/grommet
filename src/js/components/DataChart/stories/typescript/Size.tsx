@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, DataChart, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataChart, Text } from 'grommet';
 
 const data = [];
 for (let i = 1; i < 8; i += 1) {
@@ -13,30 +12,31 @@ for (let i = 1; i < 8; i += 1) {
 }
 
 export const Size = () => (
-  <Grommet full theme={grommet}>
-    <Box fill="horizontal" align="center" justify="center" pad="large">
-      <DataChart
-        axis
-        data={data}
-        chart="percent"
-        guide
-        series={[
-          {
-            property: 'date',
-            render: date => (
-              <Text margin={{ horizontal: 'xsmall' }}>
-                {new Date(date).toLocaleDateString('en-US', { month: 'short' })}
-              </Text>
-            ),
-          },
-          { property: 'percent', suffix: '%' },
-        ]}
-        size={{ width: 'fill' }}
-        gap="small"
-        pad={{ horizontal: 'medium', vertical: 'small' }}
-      />
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet full theme={grommet}>
+  <Box fill="horizontal" align="center" justify="center" pad="large">
+    <DataChart
+      axis
+      data={data}
+      chart="percent"
+      guide
+      series={[
+        {
+          property: 'date',
+          render: (date) => (
+            <Text margin={{ horizontal: 'xsmall' }}>
+              {new Date(date).toLocaleDateString('en-US', { month: 'short' })}
+            </Text>
+          ),
+        },
+        { property: 'percent', suffix: '%' },
+      ]}
+      size={{ width: 'fill' }}
+      gap="small"
+      pad={{ horizontal: 'medium', vertical: 'small' }}
+    />
+  </Box>
+  // </Grommet>
 );
 
 export default {

@@ -5,15 +5,13 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { Add } from 'grommet-icons';
 
 import { Grommet, Button } from '../..';
 import { buttonKindTheme } from './theme/buttonKindTheme';
 
 describe('Button kind', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container, getByText } = render(
       <Grommet
@@ -104,6 +102,7 @@ describe('Button kind', () => {
     const { container } = render(
       <Grommet theme={buttonKindTheme}>
         <Button primary />
+        <Button primary disabled />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -325,19 +324,18 @@ describe('Button kind', () => {
       <Grommet
         theme={{
           button: {
-            default: {
-              size: {
-                small: {
-                  border: {
-                    radius: '4px',
-                  },
-                  pad: {
-                    vertical: '4px',
-                    horizontal: '8px',
-                  },
+            size: {
+              small: {
+                border: {
+                  radius: '4px',
+                },
+                pad: {
+                  vertical: '4px',
+                  horizontal: '8px',
                 },
               },
             },
+            default: {},
           },
         }}
       >
@@ -620,5 +618,18 @@ describe('Button kind', () => {
 
     fireEvent.mouseOver(getByText('Button'));
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`plain with icon`, () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          button: { default: {} },
+        }}
+      >
+        <Button plain icon={<Add />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -130,17 +130,27 @@ export type AlignContentType =
   | string;
 export type AlignSelfType = 'start' | 'center' | 'end' | 'stretch';
 export type AnimateType = boolean;
-export type BackgroundType =
+export interface BackgroundObject {
+  color?: ColorType;
+  dark?: boolean | string;
+  image?: string;
+  position?: string;
+  opacity?: 'weak' | 'medium' | 'strong' | number | boolean;
+  repeat?: 'no-repeat' | 'repeat' | string;
+  size?: 'cover' | 'contain' | string;
+  light?: string;
+  clip?: 'text' | string;
+  rotate?: number | string;
+}
+export type BackgroundType = string | BackgroundObject;
+export type HoverIndicatorType =
+  | boolean
   | string
+  | 'background'
+  | BackgroundType
   | {
-      color?: ColorType;
-      dark?: boolean | string;
-      image?: string;
-      position?: string;
-      opacity?: 'weak' | 'medium' | 'strong' | number | boolean;
-      repeat?: 'no-repeat' | 'repeat' | string;
-      size?: 'cover' | 'contain' | string;
-      light?: string;
+      background: BackgroundType;
+      elevation: ElevationType;
     };
 export type BasisType =
   | 'xxsmall'

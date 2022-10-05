@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
-
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
+import { render, fireEvent, screen, within } from '@testing-library/react';
 
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
 import { List } from '..';
+import { Box } from '../../Box';
+import { Text } from '../../Text';
+import { Button } from '../../Button';
 
 const data = [];
 for (let i = 0; i < 95; i += 1) {
@@ -15,8 +19,6 @@ for (let i = 0; i < 95; i += 1) {
 }
 
 describe('List', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const onClickItem = jest.fn();
     const { container, getByText } = render(
@@ -32,6 +34,18 @@ describe('List', () => {
     fireEvent.click(getByText('alpha'));
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('renders a11yTitle and aria-label', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <List a11yTitle="test" data={[{ a: 'alpha' }, { a: 'beta' }]} />
+        <List aria-label="test-2" data={[{ a: 'alpha' }, { a: 'beta' }]} />
+      </Grommet>,
+    );
+    expect(getByLabelText('test')).toBeTruthy();
+    expect(getByLabelText('test-2')).toBeTruthy();
+    expect(container).toMatchSnapshot();
   });
 
   test('empty', () => {
@@ -257,22 +271,23 @@ describe('List', () => {
 });
 
 describe('List events', () => {
+  let onActive;
   let onClickItem;
   let App;
 
   beforeEach(() => {
+    onActive = jest.fn();
     onClickItem = jest.fn();
     App = () => (
       <Grommet>
         <List
           data={[{ a: 'alpha' }, { a: 'beta' }]}
           onClickItem={onClickItem}
+          onActive={onActive}
         />
       </Grommet>
     );
   });
-
-  afterEach(cleanup);
 
   test('Enter key', () => {
     const { container, getByText } = render(<App />);
@@ -285,6 +300,7 @@ describe('List events', () => {
       keyCode: 13,
       which: 13,
     });
+    expect(onActive).toHaveBeenCalledTimes(1);
     // Reported bug: onEnter calls onClickItem twice instead of once.
     // Issue #4173. Once fixed it should be
     // `expect(onClickItem).toHaveBeenCalledTimes(2);`
@@ -304,6 +320,7 @@ describe('List events', () => {
       which: 38,
     });
     expect(onClickItem).toHaveBeenCalledTimes(1);
+    expect(onActive).toHaveBeenCalledTimes(2);
     // Focus on beta while `active` is on alpha
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -319,6 +336,7 @@ describe('List events', () => {
       which: 40,
     });
     expect(onClickItem).toHaveBeenCalledTimes(1);
+    expect(onActive).toHaveBeenCalledTimes(2);
     // Focus on alpha while `active` is on beta
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -334,6 +352,7 @@ describe('List events', () => {
       which: 40,
     });
     expect(onClickItem).toHaveBeenCalledTimes(1);
+    expect(onActive).toHaveBeenCalledTimes(1);
     // Both focus and active should be placed on 'beta'
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -360,6 +379,7 @@ describe('List events', () => {
     // Focus on beta while `active` is not on beta
     expect(container.firstChild).toMatchSnapshot();
     expect(onClickItem).toBeCalledTimes(0);
+    expect(onActive).toHaveBeenCalledTimes(2);
   });
 
   test('should paginate', () => {
@@ -474,8 +494,6 @@ describe('List onOrder', () => {
     };
   });
 
-  afterEach(cleanup);
-
   test('Mouse move down', () => {
     const { container } = render(<App />);
 
@@ -532,5 +550,354 @@ describe('List onOrder', () => {
     });
     expect(onOrder).toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
+  });
+});
+
+describe('List onOrder with action', () => {
+  let onOrder;
+  let App;
+
+  beforeEach(() => {
+    onOrder = jest.fn();
+    App = () => {
+      const [ordered, setOrdered] = useState([{ a: 'alpha' }, { a: 'beta' }]);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            primaryKey="a"
+            onOrder={(newData) => {
+              setOrdered(newData);
+              onOrder(newData);
+            }}
+            // eslint-disable-next-line react/no-unstable-nested-components
+            action={(item, index) =>
+              <Button key={`action${index}`} label="Action"/>}
+          />
+        </Grommet>
+      );
+    };
+  });
+
+  test('Render', () => {
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
+
+describe('List disabled', () => {
+  const locations = [
+    'Boise',
+    'Fort Collins',
+    'Los Gatos',
+    'Palo Alto',
+    'San Francisco',
+  ];
+  const disabledLocations = ['Fort Collins', 'Palo Alto'];
+
+  test('Should apply disabled styling to items', () => {
+    const App = () => (
+      <Grommet>
+        <List data={locations} disabled={disabledLocations} />
+      </Grommet>
+    );
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Should render aria-disabled="true"', () => {
+    const App = () => (
+      <Grommet>
+        <List data={locations} disabled={disabledLocations} />
+      </Grommet>
+    );
+    render(<App />);
+
+    const allItems = screen.getAllByRole('listitem');
+    expect(allItems).toHaveLength(locations.length);
+    let disabledCount = 0;
+    allItems.forEach((item) => {
+      if (item.getAttribute('aria-disabled') === 'true') {
+        disabledCount += 1;
+      }
+    });
+    expect(disabledCount).toBe(disabledLocations.length);
+  });
+
+  test('Should apply disabled styling to items when data are objects', () => {
+    const typeObjects = [
+      { city: 'Boise', state: 'Idaho' },
+      { city: 'Fort Collins', state: 'Colorado' },
+      { city: 'Los Gatos', state: 'California' },
+      { city: 'Palo Alto', state: 'California' },
+      { city: 'San Francisco', state: 'California' },
+    ];
+
+    const App = () => (
+      <Grommet>
+        <List data={typeObjects} disabled={disabledLocations} itemKey="city" />
+      </Grommet>
+    );
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Should apply disabled styling to items when data are children', () => {
+    const App = () => (
+      <Grommet>
+        <List data={locations} disabled={disabledLocations}>
+          {(item) => (
+            <Box>
+              <Text weight="bold">{item}</Text>
+            </Box>
+          )}
+        </List>
+      </Grommet>
+    );
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Disabled items should not call onClickItem with mouse', async () => {
+    const onClickItem = jest.fn();
+    const user = userEvent.setup();
+
+    const App = () => (
+      <Grommet>
+        <List
+          data={locations}
+          disabled={disabledLocations}
+          onClickItem={onClickItem}
+        />
+      </Grommet>
+    );
+    render(<App />);
+
+    const enabledItems = locations.filter(
+      (item) => !disabledLocations.includes(item),
+    );
+
+    await user.click(
+      screen.getByRole('option', {
+        name: enabledItems[0],
+      }),
+    );
+    await user.click(
+      screen.getByRole('option', {
+        name: disabledLocations[0],
+      }),
+    );
+    await user.click(
+      screen.getByRole('option', {
+        name: enabledItems[enabledItems.length - 1],
+      }),
+    );
+    await user.click(
+      screen.getByRole('option', {
+        name: disabledLocations[disabledLocations.length - 1],
+      }),
+    );
+
+    expect(onClickItem).toHaveBeenCalledTimes(2);
+  });
+
+  test('Disabled items should not call onClickItem with keyboard', async () => {
+    const onClickItem = jest.fn();
+    const user = userEvent.setup();
+
+    const App = () => (
+      <Grommet>
+        <List
+          data={locations}
+          disabled={disabledLocations}
+          onClickItem={({ item }) => onClickItem(item)}
+        />
+      </Grommet>
+    );
+    render(<App />);
+
+    const list = screen.getByRole('listbox');
+    await user.tab();
+    expect(list).toHaveFocus();
+    // user.keyboard is not behaving as expected
+    // await user.keyboard('[ArrowUp][Enter]');
+    const enabledItems = locations.filter(
+      (item) => !disabledLocations.includes(item),
+    );
+
+    fireEvent.keyDown(screen.getByRole('option', { name: enabledItems[0] }), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+
+    fireEvent.keyDown(
+      screen.getByRole('option', { name: disabledLocations[0] }),
+      {
+        key: 'Enter',
+        keyCode: 13,
+        which: 13,
+      },
+    );
+
+    fireEvent.keyDown(
+      screen.getByRole('option', {
+        name: enabledItems[enabledItems.length - 1],
+      }),
+      {
+        key: 'Enter',
+        keyCode: 13,
+        which: 13,
+      },
+    );
+
+    fireEvent.keyDown(
+      screen.getByRole('option', {
+        name: disabledLocations[disabledLocations.length - 1],
+      }),
+      {
+        key: 'Enter',
+        keyCode: 13,
+        which: 13,
+      },
+    );
+
+    expect(onClickItem).toHaveBeenCalledTimes(2);
+    expect(onClickItem).toHaveBeenCalledWith(enabledItems[0]);
+    expect(onClickItem).not.toHaveBeenCalledWith(disabledLocations[0]);
+  });
+
+  test('Disabled items should be allowed to be re-ordered', async () => {
+    const onOrder = jest.fn();
+    const user = userEvent.setup();
+
+    const App = () => {
+      const [ordered, setOrdered] = useState(locations);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            disabled={disabledLocations}
+            onOrder={(next) => {
+              setOrdered(next);
+              onOrder(next);
+            }}
+          />
+        </Grommet>
+      );
+    };
+
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+
+    const disabledItem = screen.getByRole('button', {
+      name: '2 Fort Collins move up',
+    });
+    await user.click(disabledItem);
+    expect(onOrder).toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
+
+describe('List pinned', () => {
+  const locations = [
+    'Boise',
+    'Fort Collins',
+    'Los Gatos',
+    'Palo Alto',
+    'San Francisco',
+  ];
+  const pinnedLocations = ['Fort Collins', 'Palo Alto'];
+
+  test('Should apply pinned styling to items', () => {
+    const App = () => (
+      <Grommet>
+        <List data={locations} pinned={pinnedLocations} />
+      </Grommet>
+    );
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Should apply pinned styling to items when data are objects', () => {
+    const typeObjects = [
+      { city: 'Boise', state: 'Idaho' },
+      { city: 'Fort Collins', state: 'Colorado' },
+      { city: 'Los Gatos', state: 'California' },
+      { city: 'Palo Alto', state: 'California' },
+      { city: 'San Francisco', state: 'California' },
+    ];
+
+    const App = () => (
+      <Grommet>
+        <List data={typeObjects} pinned={pinnedLocations} itemKey="city" />
+      </Grommet>
+    );
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Should apply pinned styling to items when data are children', () => {
+    const App = () => (
+      <Grommet>
+        <List data={locations} pinned={pinnedLocations}>
+          {(item) => (
+            <Box>
+              <Text weight="bold">{item}</Text>
+            </Box>
+          )}
+        </List>
+      </Grommet>
+    );
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Pinned items should not be allowed to be re-ordered', async () => {
+    const onOrder = jest.fn();
+    const user = userEvent.setup();
+
+    const App = () => {
+      const [ordered, setOrdered] = useState(locations);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            pinned={pinnedLocations}
+            onOrder={(next) => {
+              setOrdered(next);
+              onOrder(next);
+            }}
+          />
+        </Grommet>
+      );
+    };
+
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+
+    const list = screen.getByRole('listbox');
+    const listItems = within(list).getAllByRole('listitem');
+    const middleItem = screen.getByRole('button', {
+      name: '3 San Francisco move up',
+    });
+
+    // expect item at position 2 in the list
+    expect(listItems[1]).toHaveTextContent('2Fort Collins');
+    await user.click(middleItem);
+    expect(onOrder).toHaveBeenCalled();
+
+    // confirm item at position 2 in the list is unchanged
+    expect(listItems[1]).toHaveTextContent('2Fort Collins');
+    expect(asFragment()).toMatchSnapshot();
   });
 });

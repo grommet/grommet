@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 
-import { Box, Grommet, Select, grommet } from 'grommet';
+import { Box, Select } from 'grommet';
 
-const options = ['one', 'two', 'three'];
+const options = [];
+for (let i = 0; i < 500; i += 1) {
+  options.push(`Number ${i}`);
+}
 
 const ClearTop = () => {
   const [value, setValue] = useState();
@@ -10,20 +13,42 @@ const ClearTop = () => {
     <Box fill align="center" justify="start" pad="large">
       <Select
         placeholder="Clear Options"
-        multiple
         value={value}
+        multiple
         options={options}
         onChange={({ value: nextValue }) => setValue(nextValue)}
+        dropHeight="large"
         clear
       />
     </Box>
   );
 };
 
+const ClearBottom = () => {
+  const [value, setValue] = useState();
+  return (
+    <Box fill align="center" justify="start" pad="large">
+      <Select
+        placeholder="Clear Options"
+        value={value}
+        multiple
+        options={options}
+        onChange={({ value: nextValue }) => setValue(nextValue)}
+        dropHeight="large"
+        clear={{ position: 'bottom' }}
+      />
+    </Box>
+  );
+};
+
 export const Clear = () => (
-  <Grommet theme={grommet}>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <>
     <ClearTop />
-  </Grommet>
+    <ClearBottom />
+  </>
+  // </Grommet>
 );
 
 Clear.parameters = {

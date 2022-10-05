@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { grommet, Box, Grommet, Spinner } from 'grommet';
+import { Box, Spinner } from 'grommet';
 
 const RoundSpinner = ({ round }) => (
   <Spinner
@@ -11,14 +11,12 @@ const RoundSpinner = ({ round }) => (
   />
 );
 export const Round = () => (
-  <Grommet theme={grommet} full>
-    <Box align="center" direction="row" gap="medium" pad="large">
-      <RoundSpinner round={false} />
-      <RoundSpinner round="small" />
-      <RoundSpinner round="medium" />
-      <RoundSpinner round="full" />
-    </Box>
-  </Grommet>
+  <Box align="center" direction="row" gap="medium" pad="large">
+    <RoundSpinner round={false} />
+    <RoundSpinner round="small" />
+    <RoundSpinner round="medium" />
+    <RoundSpinner round="full" />
+  </Box>
 );
 
 Round.parameters = {

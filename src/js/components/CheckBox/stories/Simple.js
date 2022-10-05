@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
 
-import { Box, Grommet, CheckBox } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBox } from 'grommet';
 
 const SimpleCheckBox = ({ checked: checkedProp, ...rest }) => {
   const [checked, setChecked] = useState(!!checkedProp);
-  const onChange = event => setChecked(event.target.checked);
+  const onChange = (event) => setChecked(event.target.checked);
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <CheckBox {...rest} checked={checked} onChange={onChange} />
-      </Box>
-    </Grommet>
+    <Box gap="small" align="center" pad="large">
+      <CheckBox {...rest} checked={checked} onChange={onChange} />
+    </Box>
   );
 };
 
-export const Simple = () => <SimpleCheckBox label="Choice" />;
+export const Simple = () => (
+  <>
+    <SimpleCheckBox label="Reversed Checkbox" reverse />
+    <SimpleCheckBox label="Disabled Checkbox" checked disabled />
+  </>
+);
 
 export default {
   title: 'Input/CheckBox/Simple',

@@ -1,0 +1,1324 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading accepts ref 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  />
+</div>
+`;
+
+exports[`Heading color renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  color: #7D4CDB;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  />
+</div>
+`;
+
+exports[`Heading fill renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: none;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: none;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  />
+</div>
+`;
+
+exports[`Heading level renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c2 {
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c3 {
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  />
+  <h2
+    class="c2"
+  />
+  <h3
+    class="c3"
+  />
+  <h4
+    class="c4"
+  />
+  <h1
+    class="c1"
+  />
+  <h2
+    class="c2"
+  />
+  <h3
+    class="c3"
+  />
+  <h4
+    class="c4"
+  />
+</div>
+`;
+
+exports[`Heading margin renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  margin: 12px;
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c2 {
+  margin: 24px;
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c3 {
+  margin: 48px;
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c4 {
+  margin: 0px;
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c5 {
+  margin-bottom: 12px;
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c6 {
+  margin-top: 12px;
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c7 {
+  margin-bottom: 0px;
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c8 {
+  margin-top: 0px;
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  />
+  <h1
+    class="c2"
+  />
+  <h1
+    class="c3"
+  />
+  <h1
+    class="c4"
+  />
+  <h1
+    class="c5"
+  />
+  <h1
+    class="c6"
+  />
+  <h1
+    class="c7"
+  />
+  <h1
+    class="c8"
+  />
+</div>
+`;
+
+exports[`Heading renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  />
+</div>
+`;
+
+exports[`Heading size renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c2 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c3 {
+  font-size: 82px;
+  line-height: 88px;
+  max-width: 1968px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c4 {
+  font-size: 114px;
+  line-height: 120px;
+  max-width: 2736px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c5 {
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c6 {
+  font-size: 66px;
+  line-height: 72px;
+  max-width: 1584px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c7 {
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c8 {
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c9 {
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c10 {
+  font-size: 42px;
+  line-height: 48px;
+  max-width: 1008px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c12 {
+  font-size: 77px;
+  line-height: normal;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 50px;
+    line-height: 56px;
+    max-width: 1200px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 66px;
+    line-height: 72px;
+    max-width: 1584px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 42px;
+    line-height: 48px;
+    max-width: 1008px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  />
+  <h1
+    class="c2"
+  />
+  <h1
+    class="c3"
+  />
+  <h1
+    class="c4"
+  />
+  <h2
+    class="c5"
+  />
+  <h2
+    class="c1"
+  />
+  <h2
+    class="c2"
+  />
+  <h2
+    class="c6"
+  />
+  <h3
+    class="c7"
+  />
+  <h3
+    class="c8"
+  />
+  <h3
+    class="c9"
+  />
+  <h3
+    class="c10"
+  />
+  <h4
+    class="c11"
+  />
+  <h4
+    class="c11"
+  />
+  <h4
+    class="c11"
+  />
+  <h4
+    class="c11"
+  />
+  <h1
+    class="c12"
+  />
+</div>
+`;
+
+exports[`Heading textAlign renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+.c2 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.c3 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  text-align: right;
+}
+
+.c4 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  text-align: justify;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  />
+  <h1
+    class="c2"
+  />
+  <h1
+    class="c3"
+  />
+  <h1
+    class="c4"
+  />
+</div>
+`;
+
+exports[`Heading truncate renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c2 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  >
+    a b c d e f g h i j k l m n o p q r s t u v w x y z
+  </h1>
+  <h1
+    class="c2"
+  >
+    a b c d e f g h i j k l m n o p q r s t u v w x y z
+  </h1>
+</div>
+`;
+
+exports[`Theme based font family renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-family: Arial;
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c2 {
+  font-family: Roboto;
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c3 {
+  font-family: Ubuntu;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c4 {
+  font-family: Fira Sans;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  />
+  <h2
+    class="c2"
+  />
+  <h3
+    class="c3"
+  />
+  <h4
+    class="c4"
+  />
+</div>
+`;
+
+exports[`Theme based font weight renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 700;
+  overflow-wrap: break-word;
+}
+
+.c2 {
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
+  font-weight: 400;
+  overflow-wrap: break-word;
+}
+
+.c3 {
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 200;
+  overflow-wrap: break-word;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  />
+  <h2
+    class="c2"
+  />
+  <h3
+    class="c3"
+  />
+  <h4
+    class="c4"
+  />
+</div>
+`;
+
+exports[`Theme color renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  color: #000000;
+}
+
+.c2 {
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  color: #000000;
+}
+
+.c3 {
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  color: #000000;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  color: #000000;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  />
+  <h2
+    class="c2"
+  />
+  <h3
+    class="c3"
+  />
+  <h4
+    class="c4"
+  />
+</div>
+`;
+
+exports[`responsive renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c2 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h1
+    class="c1"
+  />
+  <h1
+    class="c2"
+  />
+</div>
+`;
+
+exports[`weight renders 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c2 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: normal;
+  overflow-wrap: break-word;
+}
+
+.c3 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: bold;
+  overflow-wrap: break-word;
+}
+
+.c4 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 700;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <h1
+      class="c1"
+    >
+      My heading
+    </h1>
+    <h1
+      class="c2"
+    >
+      My heading
+    </h1>
+    <h1
+      class="c3"
+    >
+      My heading
+    </h1>
+    <h1
+      class="c4"
+    >
+      My heading
+    </h1>
+  </div>
+</DocumentFragment>
+`;

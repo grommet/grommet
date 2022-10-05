@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { DropProps } from '../Drop';
-import { ButtonType } from '../Button';
+import { ButtonExtendedProps, ButtonType } from '../Button';
 import {
   A11yTitleType,
   AlignSelfType,
@@ -13,6 +13,7 @@ import {
 export interface MenuProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  children?: Function | React.ReactNode;
   disabled?: boolean;
   dropAlign?: {
     top?: 'top' | 'bottom';
@@ -30,7 +31,7 @@ export interface MenuProps {
   dropProps?: DropProps;
   gridArea?: GridAreaType;
   icon?: boolean | React.ReactNode;
-  items: object[];
+  items: ButtonExtendedProps[] | ButtonExtendedProps[][];
   justifyContent?: JustifyContentType;
   label?: string | React.ReactNode;
   margin?: MarginType;
@@ -41,7 +42,7 @@ export interface MenuProps {
 
 export interface MenuExtendedProps
   extends MenuProps,
-    Omit<ButtonType, 'icon' | 'size'> {}
+    Omit<ButtonType, 'icon' | 'size' | 'children'> {}
 
 declare const Menu: React.FC<MenuExtendedProps>;
 

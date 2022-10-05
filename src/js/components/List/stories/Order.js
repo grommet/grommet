@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { Grommet, Box, List } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, List } from 'grommet';
 
 const locations = [
   'Boise',
@@ -14,11 +13,9 @@ const locations = [
 export const Order = () => {
   const [ordered, setOrder] = useState(locations);
   return (
-    <Grommet theme={grommet} role="application">
-      <Box align="center" pad="large">
-        <List data={ordered} onOrder={setOrder} />
-      </Box>
-    </Grommet>
+    <Box align="center" pad="large">
+      <List aria-label="order list" data={ordered} onOrder={setOrder} />
+    </Box>
   );
 };
 

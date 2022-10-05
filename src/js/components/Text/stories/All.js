@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Text } from 'grommet';
 
 const sizes = [
   '6xl',
@@ -19,20 +18,21 @@ const sizes = [
 ];
 
 export const All = () => (
-  <Grommet theme={grommet}>
-    <>
-      {sizes.map(size => (
-        <Box key={size} margin="small">
-          <Text size={size}>{`Text ${size}`}</Text>
-        </Box>
-      ))}
-      <Box background="light-3" align="end" width="small" pad="small">
-        <Text truncate>
-          This is a long truncated string of text that is aligned to the end.
-        </Text>
+  <>
+    {sizes.map((size) => (
+      <Box key={size} margin="small">
+        <Text size={size}>{`Text ${size}`}</Text>
       </Box>
-    </>
-  </Grommet>
+    ))}
+    <Box background="light-3" align="end" width="small" pad="small">
+      <Text truncate>
+        This is a long truncated string of text that is aligned to the end.
+      </Text>
+    </Box>
+    <Box pad="small">
+      <Text color="brand">Colored Text</Text>
+    </Box>
+  </>
 );
 
 export default {

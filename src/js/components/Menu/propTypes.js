@@ -38,7 +38,10 @@ if (process.env.NODE_ENV !== 'production') {
       'stretch',
     ]),
     icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
-    items: PropTypes.arrayOf(PropTypes.object).isRequired,
+    items: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.object),
+      PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.object)),
+    ]).isRequired,
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     messages: PropTypes.shape({
       closeMenu: PropTypes.string,

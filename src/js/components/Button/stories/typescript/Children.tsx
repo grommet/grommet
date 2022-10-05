@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { grommet, Box, Button, Grommet, Text } from 'grommet';
+import { Box, Button, Text } from 'grommet';
 import { Add } from 'grommet-icons';
 
-const ButtonWithChildren = props => (
+const ButtonWithChildren = (props) => (
   <Button hoverIndicator="light-1" onClick={() => {}} {...props}>
     {({ disabled, hover, focus }) => (
       <Box pad="small" direction="row" align="center" gap="small">
@@ -18,16 +18,12 @@ const ButtonWithChildren = props => (
   </Button>
 );
 
-export const Children = () => {
-  return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="medium" gap="medium">
-        <ButtonWithChildren />
-        <ButtonWithChildren disabled />
-      </Box>
-    </Grommet>
-  );
-};
+export const Children = () => (
+  <Box align="center" pad="medium" gap="medium">
+    <ButtonWithChildren />
+    <ButtonWithChildren disabled />
+  </Box>
+);
 
 export default {
   title: 'Controls/Button/Children',

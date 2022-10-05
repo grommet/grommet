@@ -17,15 +17,25 @@ const NameValuePair = ({ children, name: nameProp }) => {
     size === 'small';
 
   const Container = column ? Box : Fragment;
-  const containerProps = column ? { width: valueProps?.width } : undefined;
 
   const nameAlign = size !== 'small' ? nameProps?.align : undefined;
   const valueAlign = size !== 'small' ? valueProps?.align : undefined;
+  // using margin to act as gap
+  // <dl> elements must only directly contain
+  // properly-ordered <dt> and <dd> groups
+  let valueGap;
+  if (column && theme.nameValuePair?.column?.gap)
+    valueGap = { bottom: theme.nameValuePair.column.gap };
 
   let name;
   if (typeof nameProp === 'string' || typeof nameProp === 'number')
     name = (
-      <Text as="dt" textAlign={nameAlign} {...theme.nameValuePair.name}>
+      <Text
+        as="dt"
+        margin={valueGap}
+        textAlign={nameAlign}
+        {...theme.nameValuePair.name}
+      >
         {nameProp}
       </Text>
     );
@@ -42,7 +52,6 @@ const NameValuePair = ({ children, name: nameProp }) => {
       // override browser default margin for dd
       <Text
         as="dd"
-        color="pink"
         margin="none"
         textAlign={valueAlign}
         {...theme.nameValuePair.value}
@@ -62,7 +71,7 @@ const NameValuePair = ({ children, name: nameProp }) => {
   const second = direction !== 'column-reverse' ? value : name;
 
   return (
-    <Container {...containerProps}>
+    <Container>
       {first}
       {second}
     </Container>

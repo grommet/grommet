@@ -2,8 +2,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import { Box, DataChart, Grommet, Stack } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataChart, Stack } from 'grommet';
 
 const keyFrameExampleOne = keyframes`
 0% {
@@ -42,101 +41,102 @@ for (let i = 0; i < 13; i += 1) {
 }
 
 export const Prediction = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" justify="start" pad="large">
-      <Stack anchor="top-right" interactiveChild="first">
-        <DataChart
-          data={data}
-          series={[
-            'date',
-            { property: 'amount', label: 'Amount' },
-            { property: 'need', label: 'Demand' },
-            { property: 'amountPredicted', label: 'Predicted Amount' },
-            { property: 'needPredicted' },
-          ]}
-          chart={[
-            {
-              property: 'amount',
-              type: 'area',
-              thickness: 'xsmall',
-              color: 'graph-3',
-              opacity: 'medium',
-            },
-            {
-              property: 'amount',
-              type: 'line',
-              thickness: 'xsmall',
-              round: true,
-            },
-            {
-              property: 'amountPredicted',
-              type: 'area',
-              thickness: 'xsmall',
-              color: 'graph-3',
-              opacity: 'medium',
-            },
-            {
-              property: 'amountPredicted',
-              type: 'line',
-              thickness: 'xsmall',
-              round: true,
-              dash: true,
-            },
-            {
-              property: 'amountPredicted',
-              type: 'point',
-              thickness: 'small',
-              point: 'circle',
-            },
-            {
-              property: 'amount',
-              type: 'point',
-              thickness: 'small',
-            },
-            // {
-            //   property: 'needPredicted',
-            //   type: 'line',
-            //   thickness: 'xxsmall',
-            //   round: true,
-            //   dash: true,
-            // },
-            {
-              property: 'need',
-              type: 'line',
-              thickness: 'xxsmall',
-              dash: true,
-              round: true,
-            },
-            {
-              property: 'need',
-              type: 'point',
-              thickness: 'small',
-            },
-          ]}
-          axis={{
-            x: 'date',
-            y: { property: 'amount', granularity: 'medium' },
-          }}
-          guide={{
-            y: { granularity: 'fine' },
-            x: { granularity: 'fine' },
-          }}
-          gap="medium"
-          pad="small"
-          legend
-          detail
-        />
-        {/* Start the prediction */}
-        <Box
-          width="small"
-          height="small"
-          border={[{ side: 'left', size: 'medium' }]}
-          background={{ color: '#FFFFFF', opacity: 0.4 }}
-        />
-        <AnimatedBox width="small" height="small" />
-      </Stack>
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
+  <Box align="center" justify="start" pad="large">
+    <Stack anchor="top-right" interactiveChild="first">
+      <DataChart
+        data={data}
+        series={[
+          'date',
+          { property: 'amount', label: 'Amount' },
+          { property: 'need', label: 'Demand' },
+          { property: 'amountPredicted', label: 'Predicted Amount' },
+          { property: 'needPredicted' },
+        ]}
+        chart={[
+          {
+            property: 'amount',
+            type: 'area',
+            thickness: 'xsmall',
+            color: 'graph-3',
+            opacity: 'medium',
+          },
+          {
+            property: 'amount',
+            type: 'line',
+            thickness: 'xsmall',
+            round: true,
+          },
+          {
+            property: 'amountPredicted',
+            type: 'area',
+            thickness: 'xsmall',
+            color: 'graph-3',
+            opacity: 'medium',
+          },
+          {
+            property: 'amountPredicted',
+            type: 'line',
+            thickness: 'xsmall',
+            round: true,
+            dash: true,
+          },
+          {
+            property: 'amountPredicted',
+            type: 'point',
+            thickness: 'small',
+            point: 'circle',
+          },
+          {
+            property: 'amount',
+            type: 'point',
+            thickness: 'small',
+          },
+          // {
+          //   property: 'needPredicted',
+          //   type: 'line',
+          //   thickness: 'xxsmall',
+          //   round: true,
+          //   dash: true,
+          // },
+          {
+            property: 'need',
+            type: 'line',
+            thickness: 'xxsmall',
+            dash: true,
+            round: true,
+          },
+          {
+            property: 'need',
+            type: 'point',
+            thickness: 'small',
+          },
+        ]}
+        axis={{
+          x: 'date',
+          y: { property: 'amount', granularity: 'medium' },
+        }}
+        guide={{
+          y: { granularity: 'fine' },
+          x: { granularity: 'fine' },
+        }}
+        gap="medium"
+        pad="small"
+        legend
+        detail
+      />
+      {/* Start the prediction */}
+      <Box
+        width="small"
+        height="small"
+        border={[{ side: 'left', size: 'medium' }]}
+        background={{ color: '#FFFFFF', opacity: 0.4 }}
+      />
+      <AnimatedBox width="small" height="small" />
+    </Stack>
+  </Box>
+  // </Grommet>
 );
 
 export default {

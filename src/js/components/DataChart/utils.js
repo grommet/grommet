@@ -32,6 +32,23 @@ export const doublePad = {
   xxsmall: 'xsmall',
 };
 
+const orderedSizes = [
+  'xlarge',
+  'large',
+  'medium',
+  'small',
+  'xsmall',
+  'xxsmall',
+  'hair',
+];
+
+export const largestSize = (size1, size2) => {
+  if (size1 && !size2) return size1;
+  if (size2 && !size1) return size2;
+  if (orderedSizes.indexOf(size1) < orderedSizes.indexOf(size2)) return size1;
+  return size2;
+};
+
 export const createDateFormat = (firstValue, lastValue, full) => {
   let dateFormat;
   const startDate = new Date(firstValue);

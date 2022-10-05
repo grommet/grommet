@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
     ...genericProps,
     color: colorPropType,
     fill: PropTypes.bool,
+    maxLines: PropTypes.number,
     responsive: PropTypes.bool,
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'xxlarge']),

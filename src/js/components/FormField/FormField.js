@@ -4,11 +4,12 @@ import React, {
   forwardRef,
   useContext,
   useState,
+  useEffect,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { containsFocus } from '../../utils/DOM';
+import { containsFocus, shouldKeepFocus } from '../../utils/DOM';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -27,10 +28,12 @@ const grommetInputNames = [
   'TextInput',
   'Select',
   'MaskedInput',
+  'SelectMultiple',
   'TextArea',
   'DateInput',
   'FileInput',
   'RadioButtonGroup',
+  'RangeInput',
 ];
 const grommetInputPadNames = [
   'CheckBox',
@@ -133,16 +136,17 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   );
 };
 
-const debounce = (func, wait) => {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      timeout = null;
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
+const useDebounce = () => {
+  const [func, setFunc] = useState();
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+
+  useEffect(() => {
+    let timer;
+    if (func) timer = setTimeout(() => func(), theme.global.debounceDelay);
+    return () => clearTimeout(timer);
+  }, [func, theme.global.debounceDelay]);
+
+  return setFunc;
 };
 
 const FormField = forwardRef(
@@ -192,6 +196,7 @@ const FormField = forwardRef(
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
+    const debounce = useDebounce();
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -223,6 +228,10 @@ const FormField = forwardRef(
             return cloneElement(child, {
               plain: true,
               focusIndicator: false,
+              pad:
+                'CheckBox'.indexOf(child.type.displayName) !== -1
+                  ? formFieldTheme?.checkBox?.pad
+                  : undefined,
             });
           }
           return child;
@@ -273,6 +282,14 @@ const FormField = forwardRef(
           isFileInputComponent = true;
       })
     );
+
+    if (
+      component &&
+      component.displayName === 'FileInput' &&
+      !isFileInputComponent
+    ) {
+      isFileInputComponent = true;
+    }
 
     if (!themeBorder) {
       contents = (
@@ -451,7 +468,7 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
-          setFocus(containsFocus(formFieldRef.current));
+          setFocus(containsFocus(formFieldRef.current) && shouldKeepFocus());
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {
@@ -464,17 +481,8 @@ const FormField = forwardRef(
             ? (event) => {
                 event.persist();
                 if (onChange) onChange(event);
-                if (contextOnChange) {
-                  const debouncedFn = debounce(() => {
-                    contextOnChange(event);
-                    // A half second (500ms) debounce can be a helpful starting
-                    // point. You want to give the user time to fill out a
-                    // field, but capture their attention before they move on
-                    // past it. 2 second (2000ms) might be too long depending
-                    // on how fast people type, and 200ms would be an eye blink
-                  }, 500);
-                  debouncedFn();
-                }
+                if (contextOnChange)
+                  debounce(() => () => contextOnChange(event));
               }
             : undefined
         }

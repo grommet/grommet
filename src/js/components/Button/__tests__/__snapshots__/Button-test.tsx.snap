@@ -288,7 +288,8 @@ exports[`Button active 1`] = `
 `;
 
 exports[`Button as 1`] = `
-.c1 {
+<DocumentFragment>
+  .c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -368,13 +369,15 @@ exports[`Button as 1`] = `
 }
 
 <div
-  class="c0"
->
-  <span
-    class="c1"
-    type="button"
-  />
-</div>
+    class="c0"
+  >
+    <span
+      class="c1"
+      type="button"
+    />
+    <a />
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Button badge should apply background 1`] = `
