@@ -128,23 +128,25 @@ const Box = forwardRef(
         return {
           ...skeleton,
           ...skeletonProp,
-          depth,
+          depth: skeletonProp?.depth || depth,
         };
       }
       return undefined;
     }, [background, skeleton, skeletonProp]);
 
-    const skeletonProps = {};
+    let skeletonProps = {};
     if (nextSkeleton) {
-      console.log('nextSkeleton', nextSkeleton);
       if (nextSkeleton.loading) {
-        const skeletonColors = 
-          theme.skeleton.colors[theme.dark ? 'dark' : 'light'];
+        const { colors: skeletonThemeColors, ...skeletonThemeProps } =
+          theme.skeleton;
+        const skeletonColors = nextSkeleton.colors
+          ? nextSkeleton.colors[theme.dark ? 'dark' : 'light']
+          : skeletonThemeColors?.[theme.dark ? 'dark' : 'light'];
+        skeletonProps = { ...skeletonThemeProps };
         background = skeletonColors[nextSkeleton.depth % 2];
         if (skeletonProp?.animation) {
           skeletonProps.animation = skeletonProp.animation;
         }
-        console.log('Box Skeleton Colors', skeletonColors, background);
       }
       contents = (
         <SkeletonContext.Provider value={nextSkeleton}>

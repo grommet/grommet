@@ -1,5 +1,6 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 
+import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { StyledText } from './StyledText';
@@ -21,12 +22,15 @@ const Text = forwardRef(
         tipProp?.content ||
         undefined,
       truncate,
+      skeleton,
       ...rest
     },
     ref,
   ) => {
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
+
+    const theme = useContext(ThemeContext) || defaultProps.theme;
 
     const { loading } = useSkeleton();
 
@@ -47,7 +51,12 @@ const Text = forwardRef(
     }, [textRef, truncate]);
 
     if (loading) {
-      return <Skeleton ref={ref} type="text" {...rest} />;
+      return <Skeleton
+        ref={ref}
+        {...theme.text.skeleton}
+        {...skeleton}
+        {...rest}
+      />;
     }
 
     const styledTextResult = (

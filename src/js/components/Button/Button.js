@@ -275,7 +275,7 @@ const Button = forwardRef(
     }, [active, disabled, kind, kindObj, plain, selected]);
 
     if (loading) {
-       return <Skeleton ref={ref} type="button" />;
+       return <Skeleton ref={ref} { ...theme.button.skeleton } />;
     }
 
     // only used when theme does not have button.default

@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { Box, Button, Grommet, Image, Text } from 'grommet';
-import { hpe } from 'grommet-theme-hpe';
+import { Box, Button, Grommet, Image, Text, ThemeContext} from 'grommet';
 import { FormAdd } from 'grommet-icons';
 
-const Item = ({title, ...rest }) => (
+const Item = ({ title, ...rest }) => (
   <Box
     width="531px"
     pad="medium"
@@ -14,7 +13,12 @@ const Item = ({title, ...rest }) => (
     flex="grow"
     {...rest}
   >
-    <Text color="text-strong" size="xlarge" weight="bold">
+    <Text
+      color="text-strong"
+      size="xlarge"
+      weight="bold"
+      skeleton={{ width: '200px' }}
+    >
       {title}
     </Text>
     <Box direction="row" gap="large" justify="between" align="center">
@@ -23,24 +27,32 @@ const Item = ({title, ...rest }) => (
           <Image />
         </Box>
         <Box>
-          <Text size="large" color="text-strong" weight="bold">
-            Aruba Network Operations
+          <Text
+            size="large"
+            color="text-strong"
+            weight="bold"
+            skeleton={{ width: '200px' }}
+          >
+            Acme Operations
           </Text>
-          <Text size="small">Aruba Networks</Text>
+          <Text size="small" skeleton={{ height: '12px' }}>
+            Acme Company Inc
+          </Text>
         </Box>
       </Box>
-      <Button label="Learn More"/>
+      <Button label="Learn More" />
     </Box>
   </Box>
 );
 
-const Item2 = ({...rest }) => (
+const Item2 = ({ ...rest }) => (
   <Box
     width="531px"
     pad="medium"
     gap="large"
     round="medium"
     flex="grow"
+    border
     {...rest}
   >
     <Box direction="row" gap="large" justify="between" align="center">
@@ -49,10 +61,17 @@ const Item2 = ({...rest }) => (
           <Image />
         </Box>
         <Box>
-          <Text size="large" color="text-strong" weight="bold">
+          <Text
+            size="large"
+            color="text-strong"
+            weight="bold"
+            skeleton={{ width: '200px' }}
+          >
             Compliance
           </Text>
-          <Text size="small">Hewlett Packard Enterprise</Text>
+          <Text size="small" skeleton={{ height: '12px' }}>
+            Acme Company Inc
+          </Text>
         </Box>
       </Box>
       <Button label="Add" reverse icon={<FormAdd />} secondary />
@@ -62,23 +81,26 @@ const Item2 = ({...rest }) => (
 
 const Content = () => (
   <Box fill align="center" pad="large" gap="medium">
-    <Item title="Unified network operations, assurance and security platform"/>
+    <Item title="Operations assurance and security platform"/>
     <Item skeleton={{ loading: true, animation: 'fadeIn' }} />
     <Item2 />
     <Item2 skeleton={{ loading: true, animation: 'fadeIn' }} />
   </Box>
 );
 
-export const Simple = () => (
-  <>
-    <Grommet theme={hpe}>
-      <Content />
-    </Grommet>
-    <Grommet theme={hpe} themeMode="dark">
-      <Content />
-    </Grommet>
-  </>
-);
+export const Simple = () => {
+  const theme = useContext(ThemeContext);
+  return (
+    <>
+      <Grommet theme={theme}>
+        <Content />
+      </Grommet>
+      <Grommet theme={theme} themeMode="dark">
+        <Content />
+      </Grommet>
+    </>
+  );
+};
 
 export default {
   title: 'Visualizations/Skeleton/Simple',

@@ -559,6 +559,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         duration: 0.1,
         properties: ['color', 'background-color', 'border-color', 'box-shadow'],
       },
+      skeleton: {
+        width: '100px',
+        height: '24px',
+        round: 'small',
+        margin: { vertical: 'xsmall' },
+      },
     },
     calendar: {
       // daySize must align with global.size
@@ -1635,21 +1641,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       maxInline: 5,
     },
     skeleton: {
+      border: false,
       colors: {
-        dark: ['background-back', 'background-front'],
-        light: ['background-front', 'background-back'],
-      },
-      text: {
-        width: '100px',
-        margin: { vertical: 'xsmall' },
-        colors: {
-          dark: ['background-front', 'border'],
-          light: ['background-back', 'background-front'],
-        },
-      },
-      button: {
-        width: '100px',
-        margin: { vertical: 'xsmall' },
+        dark: ['background', 'background-front'],
+        light: ['background', 'background-back'],
       },
     },
     skipLinks: {
@@ -1819,6 +1814,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       '4xl': { ...fontSizing(9) },
       '5xl': { ...fontSizing(13) },
       '6xl': { ...fontSizing(18) },
+      skeleton: {
+        width: { width: '100px', min: '100px' },
+        height: { min: '24px' },
+        margin: { vertical: 'xsmall' },
+        colors: {
+          dark: ['border', 'border'],
+          light: ['background-front', 'background-back'],
+        },
+      },
     },
     textArea: {
       // extend: undefined,
