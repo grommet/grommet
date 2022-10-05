@@ -741,6 +741,7 @@ var generate = function generate(baseSpacing, scale) {
             light: 'black'
           }
         } // background: undefined,
+        // extend: undefined,
 
       },
       icon: {// size: undefined,

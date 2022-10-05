@@ -21,14 +21,18 @@ var fillStyle = function fillStyle() {
 };
 
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
-var hoverStyle = (0, _styledComponents.css)([":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";}:hover{background-color:", ";}"], function (props) {
+var hoverStyle = (0, _styledComponents.css)([":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";", "}:hover{background-color:", ";}"], function (props) {
   var _props$theme$checkBox, _props$theme$checkBox2;
 
   return (0, _utils.normalizeColor)((_props$theme$checkBox = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox2 = _props$theme$checkBox.border) == null ? void 0 : _props$theme$checkBox2.color, props.theme);
 }, function (props) {
-  var _props$theme$checkBox3, _props$theme$checkBox4;
+  var _props$theme$checkBox3;
 
-  return (0, _utils.normalizeColor)(!props.disabled && ((_props$theme$checkBox3 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox4 = _props$theme$checkBox3.background) == null ? void 0 : _props$theme$checkBox4.color), props.theme);
+  return (_props$theme$checkBox3 = props.theme.checkBox.hover) == null ? void 0 : _props$theme$checkBox3.extend;
+}, function (props) {
+  var _props$theme$checkBox4, _props$theme$checkBox5;
+
+  return (0, _utils.normalizeColor)(!props.disabled && ((_props$theme$checkBox4 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox5 = _props$theme$checkBox4.background) == null ? void 0 : _props$theme$checkBox5.color), props.theme);
 });
 
 var StyledCheckBoxIcon = _styledComponents["default"].svg.withConfig({
@@ -64,9 +68,9 @@ var StyledCheckBoxContainer = _styledComponents["default"].label.withConfig({
 }, function (props) {
   return !props.disabled && 'cursor: pointer;';
 }, hoverStyle, function (props) {
-  var _props$theme$checkBox5, _props$theme$checkBox6, _props$theme$checkBox7, _props$theme$checkBox8;
+  var _props$theme$checkBox6, _props$theme$checkBox7, _props$theme$checkBox8, _props$theme$checkBox9;
 
-  return props.focus && !props.focusIndicator && "\n    input:not([disabled]) + div,\n    input:not([disabled]) + span {\n      border-color: " + (0, _utils.normalizeColor)((_props$theme$checkBox5 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox6 = _props$theme$checkBox5.border) == null ? void 0 : _props$theme$checkBox6.color, props.theme) + ";\n    }\n     \n    background-color: " + (0, _utils.normalizeColor)(!props.disabled && ((_props$theme$checkBox7 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox8 = _props$theme$checkBox7.background) == null ? void 0 : _props$theme$checkBox8.color), props.theme) + ";";
+  return props.focus && !props.focusIndicator && "\n    input:not([disabled]) + div,\n    input:not([disabled]) + span {\n      border-color: " + (0, _utils.normalizeColor)((_props$theme$checkBox6 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox7 = _props$theme$checkBox6.border) == null ? void 0 : _props$theme$checkBox7.color, props.theme) + ";\n    }\n     \n    background-color: " + (0, _utils.normalizeColor)(!props.disabled && ((_props$theme$checkBox8 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox9 = _props$theme$checkBox8.background) == null ? void 0 : _props$theme$checkBox9.color), props.theme) + ";";
 }, function (props) {
   return props.theme.checkBox.extend;
 });
