@@ -58,6 +58,7 @@ var Avatar = function Avatar(_ref) {
     }, children);
   } else if (typeof src === 'string') {
     content = /*#__PURE__*/React.createElement(Image, {
+      role: "presentation",
       fit: "contain",
       src: src
     });
@@ -65,6 +66,7 @@ var Avatar = function Avatar(_ref) {
 
   if (typeof children === 'string' || typeof src === 'string') {
     return /*#__PURE__*/React.createElement(StyledAvatar, _extends({
+      role: typeof src === 'string' ? 'figure' : undefined,
       a11yTitle: a11yTitle || ariaLabel
     }, avatarProps, rest), content);
   }

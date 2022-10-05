@@ -73,6 +73,7 @@ var Avatar = function Avatar(_ref) {
     }, children);
   } else if (typeof src === 'string') {
     content = /*#__PURE__*/_react["default"].createElement(_Image.Image, {
+      role: "presentation",
       fit: "contain",
       src: src
     });
@@ -80,6 +81,7 @@ var Avatar = function Avatar(_ref) {
 
   if (typeof children === 'string' || typeof src === 'string') {
     return /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({
+      role: typeof src === 'string' ? 'figure' : undefined,
       a11yTitle: a11yTitle || ariaLabel
     }, avatarProps, rest), content);
   }

@@ -51,9 +51,11 @@ exports[`Avatar a11yTitle renders 1`] = `
   <div
     aria-label="testing for a11ytitle"
     class="c1 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
@@ -408,49 +410,61 @@ exports[`Avatar round renders 1`] = `
 >
   <div
     class="c1 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c3 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c4 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c5 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c6 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c7 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
@@ -779,73 +793,91 @@ exports[`Avatar size 1`] = `
 >
   <div
     class="c1 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c3 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c4 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c5 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c6 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c7 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c8 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c9 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
   <div
     class="c10 StyledAvatar-sc-1suyamb-1"
+    role="figure"
   >
     <img
       class="c2"
+      role="presentation"
       src=""
     />
   </div>
@@ -1076,9 +1108,11 @@ exports[`Avatar stack renders 1`] = `
         >
           <div
             class="c5 StyledAvatar-sc-1suyamb-1"
+            role="figure"
           >
             <img
               class="c6"
+              role="presentation"
               src=""
             />
           </div>
@@ -1096,9 +1130,11 @@ exports[`Avatar stack renders 1`] = `
     >
       <div
         class="c9 StyledAvatar-sc-1suyamb-1"
+        role="figure"
       >
         <img
           class="c6"
+          role="presentation"
           src=""
         />
       </div>
