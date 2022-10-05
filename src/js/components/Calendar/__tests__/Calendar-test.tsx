@@ -38,6 +38,17 @@ describe('Calendar', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('date without time specified', () => {
+    // correct date displayed if time is not specified in ISOstring
+    const { container } = render(
+      <Grommet>
+        <Calendar date={DATE.split('T')[0]} animate={false} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('disabled', () => {
     const disabledDate = new Date(DATE);
     disabledDate.setDate(disabledDate.getDate() + 1);
