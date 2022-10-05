@@ -142,11 +142,11 @@ var Notification = function Notification(_ref) {
     }, action, theme.notification.actions)), ' ');
   });
   var Message = direction !== 'row' ? Paragraph : Text;
-  if (message || actions) message = /*#__PURE__*/React.createElement(Message, theme.notification.message, /*#__PURE__*/React.createElement(Text, {
+  if (message || actions) message = typeof message === 'string' ? /*#__PURE__*/React.createElement(Message, theme.notification.message, /*#__PURE__*/React.createElement(Text, {
     margin: {
       right: 'xsmall'
     }
-  }, message), actions);
+  }, message), actions) : message;
   var content = /*#__PURE__*/React.createElement(Box, _extends({}, theme.notification.container, global ? _extends({}, theme.notification.global.container) : {}, toast ? _extends({}, theme.notification.toast.container) : {}, {
     background: background // let internal box control pad
     ,
