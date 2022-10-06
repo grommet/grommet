@@ -31,6 +31,8 @@ import {
   getOptionLabel,
   getOptionValue,
   useDisabled,
+  getOptionIndex,
+  arrayIncludes,
 } from '../Select/utils';
 import { EmptySearchOption } from '../Select/EmptySearchOption';
 
@@ -78,7 +80,7 @@ const SelectMultipleContainer = forwardRef(
       disabled,
       disabledKey,
       options,
-      valueKey || labelKey,
+      labelKey || valueKey,
     );
 
     // for keyboard/screenreader, keep the active option in focus
@@ -143,7 +145,7 @@ const SelectMultipleContainer = forwardRef(
       (index) => (event) => {
         if (onChange) {
           const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-          const allOptionsIndex = allOptions.indexOf(options[index]);
+          const allOptionsIndex = getOptionIndex(allOptions, options[index]);
           const valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
           if (valueIndex === -1 && (!limit || value?.length < limit)) {
             nextOptionIndexesInValue.push(allOptionsIndex);
@@ -278,7 +280,8 @@ const SelectMultipleContainer = forwardRef(
             result = disabledProp.indexOf(index) !== -1;
           } else {
             result =
-              disabledProp.indexOf(
+              getOptionIndex(
+                disabledProp,
                 getOptionValue(index, options, valueKey || labelKey),
               ) !== -1;
           }
@@ -419,7 +422,8 @@ const SelectMultipleContainer = forwardRef(
                 {(option, index, optionRef) => {
                   const optionDisabled = isDisabled(index);
                   const optionSelected = value
-                    ? value.includes(
+                    ? arrayIncludes(
+                        value,
                         valueKey && valueKey.reduce
                           ? applyKey(option, valueKey)
                           : option,

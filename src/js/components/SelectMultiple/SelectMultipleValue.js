@@ -7,8 +7,9 @@ import { SelectOption } from '../Select/StyledSelect';
 import {
   applyKey,
   getOptionLabel,
-  getOptionValue,
   useDisabled,
+  arrayIncludes,
+  getOptionIndex,
 } from '../Select/utils';
 
 const SelectMultipleValue = ({
@@ -29,21 +30,24 @@ const SelectMultipleValue = ({
     disabled,
     disabledKey,
     allOptions,
-    valueKey || labelKey,
+    labelKey || valueKey,
   );
 
   const visibleValue = useCallback(
     (i) => {
       const optionValue =
         valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
-      const indexOptions = allOptions.indexOf(i);
+      const optionSelected = arrayIncludes(value, optionValue);
+      const indexOptions = getOptionIndex(allOptions, i);
       const optionLabel = getOptionLabel(
         indexOptions,
         allOptions,
         labelKey || valueKey,
       );
       const optionDisabled = isDisabled(indexOptions);
-      if (value.indexOf(optionValue) < theme.selectMultiple.maxInline) {
+      const valueIndex = getOptionIndex(value, optionValue);
+
+      if (valueIndex < theme.selectMultiple.maxInline) {
         let child;
         if (children) {
           child = children(i, indexOptions, allOptions, {
@@ -57,13 +61,13 @@ const SelectMultipleValue = ({
           <SelectOption
             role="option"
             a11yTitle={
-              value.includes(optionValue)
+              optionSelected
                 ? `${optionLabel} selected`
                 : `${optionLabel} not selected`
             }
             aria-setsize={value.length}
-            aria-posinset={value.indexOf(optionValue) + 1}
-            aria-selected={value.includes(optionValue)}
+            aria-posinset={valueIndex + 1}
+            aria-selected={optionSelected}
             aria-disabled={optionDisabled}
             plain
             hoverIndicator={!optionDisabled}
@@ -72,30 +76,26 @@ const SelectMultipleValue = ({
             onClick={(event) => {
               if (!optionDisabled) {
                 const intermediate = [...value];
-                const index = value.indexOf(optionValue);
-                if (intermediate.includes(optionValue)) {
+                if (arrayIncludes(intermediate, optionValue)) {
                   onSelectChange(event, {
                     option: optionValue,
-                    value: intermediate.filter((v) => v !== optionValue),
+                    value: intermediate.filter((v) =>
+                      typeof v === 'object'
+                        ? JSON.stringify(v) !== JSON.stringify(optionValue)
+                        : v !== optionValue,
+                    ),
                   });
-                  if (index !== intermediate.length - 1) {
+                  if (valueIndex !== intermediate.length - 1) {
                     setTimeout(() => {
                       const nextFocus = document.getElementById(
-                        `selected-${intermediate[index + 1]}`,
+                        `selected-${intermediate[valueIndex + 1]}`,
                       );
                       if (nextFocus) nextFocus.focus();
-                      const result = allOptions.find(
-                        (obj, j) =>
-                          getOptionValue(
-                            j,
-                            allOptions,
-                            valueKey || labelKey,
-                          ) === intermediate[index + 1],
-                      );
+                      const result = intermediate[valueIndex + 1];
                       setShowA11yDiv(
                         `Unselected ${optionLabel}. 
                         Focus moved to ${getOptionLabel(
-                          allOptions.indexOf(result),
+                          getOptionIndex(allOptions, result),
                           allOptions,
                           labelKey || valueKey,
                         )}`,
@@ -106,21 +106,14 @@ const SelectMultipleValue = ({
                   } else if (intermediate.length !== 1) {
                     setTimeout(() => {
                       const nextFocus = document.getElementById(
-                        `selected-${intermediate[index - 1]}`,
+                        `selected-${intermediate[valueIndex - 1]}`,
                       );
                       if (nextFocus) nextFocus.focus();
-                      const result = allOptions.find(
-                        (obj, j) =>
-                          getOptionValue(
-                            j,
-                            allOptions,
-                            valueKey || labelKey,
-                          ) === intermediate[index - 1],
-                      );
+                      const result = intermediate[valueIndex - 1];
                       setShowA11yDiv(
                         `Unselected ${optionLabel}. Focus moved to 
                           ${getOptionLabel(
-                            allOptions.indexOf(result),
+                            getOptionIndex(allOptions, result),
                             allOptions,
                             labelKey || valueKey,
                           )}`,
@@ -147,7 +140,7 @@ const SelectMultipleValue = ({
                 key={optionLabel}
                 pad="xsmall"
                 tabIndex="-1"
-                checked={value.includes(optionValue)}
+                checked={optionSelected}
               />
             )}
           </SelectOption>
@@ -188,11 +181,11 @@ const SelectMultipleValue = ({
       >
         {value &&
           allOptions
-            .filter(
-              (i) =>
-                value.indexOf(
-                  valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
-                ) !== -1,
+            .filter((i) =>
+              arrayIncludes(
+                value,
+                valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
+              ),
             )
             /* eslint-disable-next-line array-callback-return, 
                 consistent-return */

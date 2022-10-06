@@ -3,7 +3,12 @@ import React, { useCallback } from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import { applyKey, getOptionValue, useDisabled } from '../Select/utils';
+import {
+  applyKey,
+  getOptionValue,
+  useDisabled,
+  arrayIncludes,
+} from '../Select/utils';
 
 const SelectionSummary = ({
   allOptions,
@@ -26,7 +31,7 @@ const SelectionSummary = ({
     disabled,
     disabledKey,
     options,
-    valueKey || labelKey,
+    labelKey || valueKey,
   );
 
   const selectedValuesDisabled = useCallback(() => {
@@ -34,7 +39,10 @@ const SelectionSummary = ({
     if (value) {
       for (let i = 0; i < allOptions.length; i += 1) {
         if (
-          value.includes(getOptionValue(i, options, valueKey || labelKey)) &&
+          arrayIncludes(
+            value,
+            getOptionValue(i, options, valueKey || labelKey),
+          ) &&
           isDisabled(i)
         )
           disabledSelected += 1;

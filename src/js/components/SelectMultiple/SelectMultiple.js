@@ -31,6 +31,7 @@ import {
   getSelectIcon,
   getIconColor,
   getDisplayLabelKey,
+  arrayIncludes,
 } from '../Select/utils';
 import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -169,12 +170,13 @@ const SelectMultiple = forwardRef(
     useEffect(() => {
       if (sortSelectedOnClose && ((open && search) || !open)) {
         const selectedOptions = optionsProp.filter((option) =>
-          value?.includes(
+          arrayIncludes(
+            value,
             valueKey && valueKey.reduce ? applyKey(option, valueKey) : option,
           ),
         );
         const unselectedOptions = optionsProp.filter(
-          (i) => !selectedOptions.includes(i),
+          (i) => !arrayIncludes(selectedOptions, i),
         );
         const nextOrderedOptions = selectedOptions.concat(unselectedOptions);
         setOrderedOptions(nextOrderedOptions);
