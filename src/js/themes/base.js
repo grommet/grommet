@@ -561,9 +561,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       skeleton: {
         width: '100px',
-        height: '24px',
-        round: 'small',
-        margin: { vertical: 'xsmall' },
       },
     },
     calendar: {
@@ -1816,7 +1813,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       '6xl': { ...fontSizing(18) },
       skeleton: {
         width: { width: '100px', min: '100px' },
-        height: { min: '24px' },
         margin: { vertical: 'xsmall' },
         colors: {
           dark: ['border', 'border'],

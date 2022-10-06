@@ -123,7 +123,7 @@ const Box = forwardRef(
     
     const nextSkeleton = useMemo(() => {
       // console.log('skeletonProp', skeletonProp, background, skeleton);
-      if (skeletonProp || (background && skeleton?.loading) ) {
+      if (skeletonProp || ((background || border) && skeleton?.loading) ) {
         const depth = skeleton ? skeleton.depth + 1 : 0;
         return {
           ...skeleton,
@@ -132,13 +132,16 @@ const Box = forwardRef(
         };
       }
       return undefined;
-    }, [background, skeleton, skeletonProp]);
+    }, [background, border, skeleton, skeletonProp]);
 
     let skeletonProps = {};
     if (nextSkeleton) {
       if (nextSkeleton.loading) {
-        const { colors: skeletonThemeColors, ...skeletonThemeProps } =
-          theme.skeleton;
+        const { 
+          colors: skeletonThemeColors,
+          size: skeletonThemeSize,
+          ...skeletonThemeProps
+        } = theme.skeleton;
         const skeletonColors = nextSkeleton.colors
           ? nextSkeleton.colors[theme.dark ? 'dark' : 'light']
           : skeletonThemeColors?.[theme.dark ? 'dark' : 'light'];

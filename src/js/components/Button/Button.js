@@ -275,7 +275,15 @@ const Button = forwardRef(
     }, [active, disabled, kind, kindObj, plain, selected]);
 
     if (loading) {
-       return <Skeleton ref={ref} { ...theme.button.skeleton } />;
+      console.log('Button theme', size, theme.button.size[size || 'medium']);
+       return (
+         <Skeleton
+           ref={ref}
+           height={theme.text[size || 'medium']?.height}
+           { ...theme.button.size?.[size || 'medium']}
+           { ...theme.button.skeleton }
+         />
+       );
     }
 
     // only used when theme does not have button.default

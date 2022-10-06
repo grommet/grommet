@@ -7,6 +7,7 @@ import {
   MarginType,
   HeightType,
   PadType,
+  PolymorphicType,
   RoundType,
   WidthType,
 } from '../../utils';
@@ -18,6 +19,7 @@ interface ColorsType {
 export interface SkeletonProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  as?: PolymorphicType;
   colors?: ColorsType;
   gridArea?: GridAreaType;
   margin?: MarginType;

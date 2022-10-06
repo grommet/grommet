@@ -8,6 +8,7 @@ import { StyledSkeleton } from './StyledSkeleton';
 const Skeleton = forwardRef(
   (
     {
+      as,
       colors: colorsProp,
       ...rest
     },
@@ -25,6 +26,7 @@ const Skeleton = forwardRef(
     return (
       <StyledSkeleton
         ref={ref}
+        as={as}
         background={background}
         {...rest}
       />

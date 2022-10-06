@@ -22,6 +22,7 @@ const Text = forwardRef(
         tipProp?.content ||
         undefined,
       truncate,
+      size,
       skeleton,
       ...rest
     },
@@ -51,12 +52,16 @@ const Text = forwardRef(
     }, [textRef, truncate]);
 
     if (loading) {
-      return <Skeleton
-        ref={ref}
-        {...theme.text.skeleton}
-        {...skeleton}
-        {...rest}
-      />;
+      return (
+        <Skeleton
+          ref={ref}
+          as={as}
+          height={theme.text[size || 'medium']?.height}
+          {...theme.text.skeleton}
+          {...skeleton}
+          {...rest}
+        />
+      );
     }
 
     const styledTextResult = (
@@ -65,6 +70,7 @@ const Text = forwardRef(
         colorProp={color}
         aria-label={a11yTitle}
         truncate={truncate}
+        size={size}
         {...rest}
         ref={textRef}
       >
