@@ -29,6 +29,7 @@ export const OnClickItemList = () => {
   return (
     <Box align="center" pad="large" gap="large">
       <List
+        aria-label="onClickItem list"
         data={data.slice(0, 10)}
         onClickItem={(event) => {
           setShow(true);

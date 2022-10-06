@@ -6,8 +6,8 @@ export type StatusType = 'critical' | 'warning' | 'normal' | 'info' | 'unknown';
 export interface NotificationProps {
   actions?: AnchorType[];
   global?: boolean;
-  title?: string;
-  message?: string;
+  title: string;
+  message?: string | React.ReactNode;
   status?: StatusType;
   toast?:
     | boolean

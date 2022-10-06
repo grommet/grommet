@@ -14,7 +14,7 @@ const PlainDrop = () => {
     // <Grommet theme={...}>
     <Box background="light-3" fill align="center" justify="center">
       <Box
-        background="dark-3"
+        background="dark-2"
         pad="medium"
         align="center"
         justify="start"
