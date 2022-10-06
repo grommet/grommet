@@ -24,7 +24,7 @@ const OverflowDrop = () => {
     // <Grommet theme={...}>
     <Box fill align="center" justify="center">
       <Box
-        background="dark-3"
+        background="dark-2"
         pad="medium"
         align="center"
         justify="start"

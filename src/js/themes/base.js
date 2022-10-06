@@ -655,6 +655,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
         // background: undefined,
+        // extend: undefined,
       },
       icon: {
         // size: undefined,
@@ -742,6 +743,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       baseline: 500,
     },
     dateInput: {
+      container: {
+        round: 'xxsmall',
+      },
       // icon: {
       //   size: undefined,
       // },

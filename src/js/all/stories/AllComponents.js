@@ -1,7 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 
 import {
-  Grommet,
   Accordion,
   AccordionPanel,
   Anchor,
@@ -34,13 +33,6 @@ import {
   Video,
 } from 'grommet';
 import { FormNext } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
-import { generate } from 'grommet/themes/base';
-import { deepMerge } from 'grommet/utils';
-import { hpe } from 'grommet-theme-hpe';
-import { aruba } from 'grommet-theme-aruba';
-import { hp } from 'grommet-theme-hp';
-import { dxc } from 'grommet-theme-dxc';
 
 const Node = ({ id, ...rest }) => (
   <Box
@@ -64,38 +56,13 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
   ...rest,
 });
 
-const themes = {
-  grommet,
-  hpe,
-  aruba,
-  hp,
-  dxc,
-};
-
 const Components = () => {
-  const [baseSize, setBaseSize] = useState(24);
   const [checkBox, setCheckBox] = useState(true);
   const [textInput, setTextInput] = useState('');
   const [maskedInput, setMaskedInput] = useState('');
   const [radioButton, setRadioButton] = useState('RadioButton 1');
   const [rangeSelector, setRangeSelector] = useState([1, 2]);
-  const [themeMode, setThemeMode] = useState();
-  const [themeName, setThemeName] = useState('grommet');
-  const [background, setBackground] = useState(undefined);
   const [tabIndex, setTabIndex] = useState(0);
-
-  const theme = useMemo(
-    () => deepMerge(generate(baseSize), themes[themeName]),
-    [baseSize, themeName],
-  );
-
-  const themeCanMode = useMemo(
-    () =>
-      theme &&
-      theme.global.colors.background &&
-      theme.global.colors.background.dark,
-    [theme],
-  );
 
   const content = [
     <Box key="type" align="start" gap="small">
@@ -312,72 +279,11 @@ const Components = () => {
   ];
 
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Grommet theme={grommet} style={{ flex: '0 0 auto' }}>
-        <Box
-          direction="row-responsive"
-          gap="medium"
-          justify="end"
-          align="center"
-          margin="small"
-        >
-          <Box basis="small">
-            <Select
-              plain
-              size="small"
-              options={Object.keys(themes)}
-              value={themeName}
-              onChange={(event) => setThemeName(event.option)}
-            />
-          </Box>
-          {themeCanMode && (
-            <CheckBox
-              label="dark"
-              checked={themeMode === 'dark'}
-              onChange={() =>
-                setThemeMode(themeMode === 'dark' ? 'light' : 'dark')
-              }
-            />
-          )}
-          {!themeCanMode && (
-            <Box basis="small">
-              <Select
-                plain
-                placeholder="background"
-                size="small"
-                options={['default', 'dark-1', 'light-1']}
-                value={background}
-                onChange={(event) => setBackground(event.option)}
-              />
-            </Box>
-          )}
-          <Box basis="small">
-            <RangeInput
-              min={16}
-              max={36}
-              step={2}
-              value={baseSize}
-              onChange={(event) =>
-                setBaseSize(parseInt(event.target.value, 10))
-              }
-            />
-          </Box>
-          <Text size="small">{`${baseSize}px base spacing`}</Text>
-        </Box>
-      </Grommet>
-      <Grommet theme={theme} themeMode={themeMode} style={{ flex: '1 1' }}>
-        <Box
-          fill
-          pad="medium"
-          background={background || theme.global.colors.background}
-          overflow="auto"
-        >
-          <Grid columns="small" gap="medium">
-            {content}
-          </Grid>
-        </Box>
-      </Grommet>
-    </div>
+    <Box fill pad="medium" overflow="auto">
+      <Grid columns="small" gap="medium">
+        {content}
+      </Grid>
+    </Box>
   );
 };
 

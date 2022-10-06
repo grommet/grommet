@@ -7,7 +7,7 @@ export interface NotificationProps {
   actions?: AnchorType[];
   global?: boolean;
   title?: string;
-  message?: string;
+  message?: string | React.ReactNode;
   status?: StatusType;
   toast?:
     | boolean

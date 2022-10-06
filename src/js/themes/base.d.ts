@@ -595,13 +595,14 @@ export interface ThemeType {
       background?: {
         color?: ColorType;
       };
+      extend?: ExtendType;
     };
     icon?: {
       size?: string;
       extend?: ExtendType;
     };
     icons?: {
-      checked?: any;
+      checked?: React.ReactNode | Icon;
       indeterminate?: any;
     };
     pad?: PadType;
@@ -663,6 +664,9 @@ export interface ThemeType {
     baseline?: number;
   };
   dateInput?: {
+    container?: {
+      round?: RoundType;
+    };
     icon?: {
       size?: string;
     };
@@ -1293,7 +1297,7 @@ export interface ThemeType {
       size?: string;
     };
     icons?: {
-      circle?: string;
+      circle?: React.ReactNode | Icon;
     };
     gap?: string;
     size?: string;
@@ -1651,7 +1655,7 @@ export interface ThemeType {
     };
     scrubber?: {
       color?: ColorType;
-      interval: number;
+      interval?: number;
       track?: {
         color?: ColorType;
       };
