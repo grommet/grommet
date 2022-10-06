@@ -23,6 +23,7 @@ import { format, MessageContext } from '../../contexts/MessageContext';
 import defaultMessages from '../../languages/default.json';
 import { GrommetPropTypes } from './propTypes';
 import { AnalyticsProvider } from '../../contexts/AnalyticsContext';
+// import { type } from 'os';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
@@ -86,6 +87,15 @@ const Grommet = forwardRef((props, ref) => {
     } = nextTheme.global;
 
     nextTheme.dark = (themeMode || nextTheme.defaultMode) === 'dark';
+
+    if (
+      themeMode === 'auto' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      nextTheme.dark = true;
+    }
+
     const color = normalizeColor(background || themeBackground, nextTheme);
     nextTheme.dark = backgroundIsDark(color, nextTheme);
     nextTheme.baseBackground = background || themeBackground;
