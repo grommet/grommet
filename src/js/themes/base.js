@@ -652,6 +652,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
         // background: undefined,
+        // extend: undefined,
       },
       icon: {
         // size: undefined,

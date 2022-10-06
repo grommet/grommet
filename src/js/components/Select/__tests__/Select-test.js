@@ -277,7 +277,7 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
       <Grommet>
         <Test />
       </Grommet>,
@@ -296,6 +296,55 @@ describe('Select', () => {
         },
       }),
     );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('onChange without labelKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          valueKey="id"
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, asFragment } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          id: 1,
+          name: 'Value1',
+        },
+      }),
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('onChange without labelKey or valueKey', () => {
@@ -321,7 +370,7 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
       <Grommet>
         <Test />
       </Grommet>,
@@ -340,6 +389,8 @@ describe('Select', () => {
         },
       }),
     );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('onChange with valueKey string', () => {
@@ -367,7 +418,7 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
       <Grommet>
         <Test />
       </Grommet>,
@@ -386,6 +437,53 @@ describe('Select', () => {
         },
       }),
     );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('onChange with valueKey object', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          valueKey={{ key: 'id', reduce: true }}
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, asFragment } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: 1,
+      }),
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('disabled key', () => {
