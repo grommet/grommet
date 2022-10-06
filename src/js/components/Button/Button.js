@@ -275,7 +275,6 @@ const Button = forwardRef(
     }, [active, disabled, kind, kindObj, plain, selected]);
 
     if (loading) {
-      console.log('Button theme', size, theme.button.size[size || 'medium']);
        return (
          <Skeleton
            ref={ref}
