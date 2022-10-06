@@ -155,13 +155,16 @@ const Notification = ({
 
   const Message = direction !== 'row' ? Paragraph : Text;
   if (message || actions)
-    message = (
-      <Message {...theme.notification.message}>
-        <Text margin={{ right: 'xsmall' }}>{message}</Text>
-        {/* include actions with message so it wraps with message */}
-        {actions}
-      </Message>
-    );
+    message =
+      typeof message === 'string' ? (
+        <Message {...theme.notification.message}>
+          <Text margin={{ right: 'xsmall' }}>{message}</Text>
+          {/* include actions with message so it wraps with message */}
+          {actions}
+        </Message>
+      ) : (
+        message
+      );
 
   let content = (
     <Box
