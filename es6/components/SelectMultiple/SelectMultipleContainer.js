@@ -155,7 +155,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         });
       }
     };
-  }, [limit, onChange, optionIndexesInValue, options, allOptions, valueKey, value]);
+  }, [labelKey, limit, onChange, optionIndexesInValue, options, allOptions, valueKey, value]);
   var onNextOption = useCallback(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;

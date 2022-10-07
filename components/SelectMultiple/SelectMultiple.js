@@ -204,7 +204,7 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       var nextOrderedOptions = selectedOptions.concat(unselectedOptions);
       setOrderedOptions(nextOrderedOptions);
     }
-  }, [open, sortSelectedOnClose, optionsProp, value, valueKey, search]);
+  }, [labelKey, open, sortSelectedOnClose, optionsProp, value, valueKey, search]);
   var onRequestClose = (0, _react.useCallback)(function () {
     setOpen(false);
     if (onClose) onClose();

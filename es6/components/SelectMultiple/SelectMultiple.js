@@ -179,7 +179,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
       var nextOrderedOptions = selectedOptions.concat(unselectedOptions);
       setOrderedOptions(nextOrderedOptions);
     }
-  }, [open, sortSelectedOnClose, optionsProp, value, valueKey, search]);
+  }, [labelKey, open, sortSelectedOnClose, optionsProp, value, valueKey, search]);
   var onRequestClose = useCallback(function () {
     setOpen(false);
     if (onClose) onClose();

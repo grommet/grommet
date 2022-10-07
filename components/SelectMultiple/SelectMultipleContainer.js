@@ -181,7 +181,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         });
       }
     };
-  }, [limit, onChange, optionIndexesInValue, options, allOptions, valueKey, value]);
+  }, [labelKey, limit, onChange, optionIndexesInValue, options, allOptions, valueKey, value]);
   var onNextOption = (0, _react.useCallback)(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;
