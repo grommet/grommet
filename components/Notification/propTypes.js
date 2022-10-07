@@ -22,7 +22,8 @@ if (process.env.NODE_ENV !== 'production') {
       autoClose: _propTypes["default"].bool,
       position: _propTypes["default"].oneOf(['bottom', 'bottom-left', 'bottom-right', 'center', 'end', 'hidden', 'left', 'right', 'start', 'top', 'top-left', 'top-right'])
     })]),
-    onClose: _propTypes["default"].func
+    onClose: _propTypes["default"].func,
+    icon: _propTypes["default"].element
   };
 }
 

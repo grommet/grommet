@@ -23,7 +23,7 @@ var _Text = require("../Text");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["actions", "message", "onClose", "id", "global", "status", "title", "toast"];
+var _excluded = ["actions", "message", "onClose", "id", "global", "status", "title", "toast", "icon"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -86,6 +86,7 @@ var Notification = function Notification(_ref) {
       status = _ref.status,
       title = _ref.title,
       toast = _ref.toast,
+      icon = _ref.icon,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var autoClose = toast && (toast == null ? void 0 : toast.autoClose) === undefined ? true : toast.autoClose;
@@ -178,7 +179,7 @@ var Notification = function Notification(_ref) {
     direction: "row",
     pad: textPad,
     flex: true
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.notification.iconContainer, /*#__PURE__*/_react["default"].createElement(StatusIcon, {
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.notification.iconContainer, icon || /*#__PURE__*/_react["default"].createElement(StatusIcon, {
     color: color
   })), /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.notification.textContainer, /*#__PURE__*/_react["default"].createElement(TextWrapper, null, title && /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.notification.title, title), message && title && direction === 'row' && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, "\xA0"), message))), onClose &&
   /*#__PURE__*/

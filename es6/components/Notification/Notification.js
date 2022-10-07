@@ -1,4 +1,4 @@
-var _excluded = ["actions", "message", "onClose", "id", "global", "status", "title", "toast"];
+var _excluded = ["actions", "message", "onClose", "id", "global", "status", "title", "toast", "icon"];
 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -68,6 +68,7 @@ var Notification = function Notification(_ref) {
       status = _ref.status,
       title = _ref.title,
       toast = _ref.toast,
+      icon = _ref.icon,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var autoClose = toast && (toast == null ? void 0 : toast.autoClose) === undefined ? true : toast.autoClose;
@@ -158,7 +159,7 @@ var Notification = function Notification(_ref) {
     direction: "row",
     pad: textPad,
     flex: true
-  }, /*#__PURE__*/React.createElement(Box, theme.notification.iconContainer, /*#__PURE__*/React.createElement(StatusIcon, {
+  }, /*#__PURE__*/React.createElement(Box, theme.notification.iconContainer, icon || /*#__PURE__*/React.createElement(StatusIcon, {
     color: color
   })), /*#__PURE__*/React.createElement(Box, theme.notification.textContainer, /*#__PURE__*/React.createElement(TextWrapper, null, title && /*#__PURE__*/React.createElement(Text, theme.notification.title, title), message && title && direction === 'row' && /*#__PURE__*/React.createElement(React.Fragment, null, "\xA0"), message))), onClose &&
   /*#__PURE__*/

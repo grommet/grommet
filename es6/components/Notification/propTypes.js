@@ -13,7 +13,8 @@ if (process.env.NODE_ENV !== 'production') {
       autoClose: PropTypes.bool,
       position: PropTypes.oneOf(['bottom', 'bottom-left', 'bottom-right', 'center', 'end', 'hidden', 'left', 'right', 'start', 'top', 'top-left', 'top-right'])
     })]),
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
+    icon: PropTypes.element
   };
 }
 
