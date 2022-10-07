@@ -312,4 +312,22 @@ describe('SelectMultiple', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('object value', () => {
+    render(
+      <Grommet>
+        <SelectMultiple
+          showSelectedInline
+          options={[
+            { label: 'a', value: 1 },
+            { label: 'b', value: 2 },
+          ]}
+          labelKey="label"
+          valueKey="value"
+          value={[{ label: 'a', value: 1 }]}
+        />
+      </Grommet>,
+    );
+    expect(screen.getByRole('option', { name: /a selected/ })).toBeVisible();
+  });
 });
