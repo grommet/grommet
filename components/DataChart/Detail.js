@@ -134,8 +134,10 @@ var Detail = function Detail(_ref) {
     gap: "xsmall",
     align: "center"
   }, series.filter(function (_ref2) {
+    var _data$detailIndex;
+
     var property = _ref2.property;
-    return !activeProperty || activeProperty === property || axis && axis.x && axis.x.property === property;
+    return (!activeProperty || activeProperty === property) && (data == null ? void 0 : (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
   }).map(function (serie) {
     var propertyStyle = seriesStyles[serie.property];
     return /*#__PURE__*/_react["default"].createElement(_react.Fragment, {
