@@ -47,7 +47,7 @@ const normalizeBackgroundImage = (background, theme) => {
     result =
       normalizeBackground(
         background.dark
-          ? theme.global.backgrounds?.[background.image].dark
+          ? theme.global.backgrounds?.[background.image]?.dark
           : theme.global.backgrounds?.[background.image],
         theme,
       ) || background.image;
