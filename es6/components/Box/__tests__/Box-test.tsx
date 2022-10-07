@@ -241,6 +241,13 @@ describe('Box', () => {
         <Box background={{ image: 'image-2', color: 'red', opacity: true }}>
           <Text>background image from theme</Text>
         </Box>
+        <Box
+          background={{
+            image:
+              'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+            dark: true,
+          }}
+        />
       </Grommet>,
     );
 

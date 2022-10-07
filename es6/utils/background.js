@@ -44,13 +44,13 @@ var normalizeBackgroundImage = function normalizeBackgroundImage(background, the
   var result;
 
   if (background.image) {
-    var _theme$global$backgro3, _theme$global$backgro4;
+    var _theme$global$backgro3, _theme$global$backgro4, _theme$global$backgro5;
 
-    result = normalizeBackground(background.dark ? (_theme$global$backgro3 = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro3[background.image].dark : (_theme$global$backgro4 = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro4[background.image], theme) || background.image;
+    result = normalizeBackground(background.dark ? (_theme$global$backgro3 = theme.global.backgrounds) == null ? void 0 : (_theme$global$backgro4 = _theme$global$backgro3[background.image]) == null ? void 0 : _theme$global$backgro4.dark : (_theme$global$backgro5 = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro5[background.image], theme) || background.image;
   } else {
-    var _theme$global$backgro5;
+    var _theme$global$backgro6;
 
-    var normalized = normalizeBackground((_theme$global$backgro5 = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro5[background], theme);
+    var normalized = normalizeBackground((_theme$global$backgro6 = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro6[background], theme);
     result = typeof normalized === 'object' ? normalizeBackgroundImage(normalized, theme) : normalized;
   }
 
