@@ -25,12 +25,28 @@ var objectOptions = [{
 }, {
   label: 'Purple',
   value: 4
+}, {
+  label: 'Pink',
+  value: 5
+}, {
+  label: 'Grey',
+  value: 6
 }];
 
 var ObjectOptions = function ObjectOptions() {
   var _useState = (0, _react.useState)(objectOptions),
       options = _useState[0],
       setOptions = _useState[1];
+
+  var _useState2 = (0, _react.useState)([{
+    label: 'Red',
+    value: 1
+  }, {
+    label: 'Grey',
+    value: 6
+  }]),
+      value = _useState2[0],
+      setValue = _useState2[1];
 
   return (
     /*#__PURE__*/
@@ -43,6 +59,7 @@ var ObjectOptions = function ObjectOptions() {
       justify: "start",
       pad: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "SelectMultiple with Object Options"), /*#__PURE__*/_react["default"].createElement(_SelectMultiple.SelectMultiple, {
+      value: value,
       onSearch: function onSearch(text) {
         var escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&'); // Create the regular expression with modified value which
         // handles escaping special characters. Without escaping special
@@ -64,6 +81,10 @@ var ObjectOptions = function ObjectOptions() {
       options: options,
       onClose: function onClose() {
         setOptions(objectOptions);
+      },
+      onChange: function onChange(_ref) {
+        var nextValue = _ref.value;
+        setValue(nextValue);
       }
     })) // </Grommet>
 

@@ -196,10 +196,10 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   (0, _react.useEffect)(function () {
     if (sortSelectedOnClose && (open && search || !open)) {
       var selectedOptions = optionsProp.filter(function (option) {
-        return value == null ? void 0 : value.includes(valueKey && valueKey.reduce ? (0, _utils2.applyKey)(option, valueKey) : option);
+        return (0, _utils2.arrayIncludes)(value, valueKey && valueKey.reduce ? (0, _utils2.applyKey)(option, valueKey) : option, valueKey || labelKey);
       });
       var unselectedOptions = optionsProp.filter(function (i) {
-        return !selectedOptions.includes(i);
+        return !(0, _utils2.arrayIncludes)(selectedOptions, i, valueKey || labelKey);
       });
       var nextOrderedOptions = selectedOptions.concat(unselectedOptions);
       setOrderedOptions(nextOrderedOptions);

@@ -39,11 +39,13 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
   var isDisabled = (0, _utils.useDisabled)(disabled, disabledKey, allOptions, valueKey || labelKey);
   var visibleValue = (0, _react.useCallback)(function (i) {
     var optionValue = valueKey && valueKey.reduce ? (0, _utils.applyKey)(i, valueKey) : i;
-    var indexOptions = allOptions.indexOf(i);
+    var optionSelected = (0, _utils.arrayIncludes)(value, optionValue, valueKey || labelKey);
+    var indexOptions = (0, _utils.getOptionIndex)(allOptions, i, valueKey || labelKey);
     var optionLabel = (0, _utils.getOptionLabel)(indexOptions, allOptions, labelKey || valueKey);
     var optionDisabled = isDisabled(indexOptions);
+    var valueIndex = (0, _utils.getOptionIndex)(value, optionValue, valueKey || labelKey);
 
-    if (value.indexOf(optionValue) < theme.selectMultiple.maxInline) {
+    if (valueIndex < theme.selectMultiple.maxInline) {
       var child;
 
       if (children) {
@@ -56,10 +58,10 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
 
       return /*#__PURE__*/_react["default"].createElement(_StyledSelect.SelectOption, {
         role: "option",
-        a11yTitle: value.includes(optionValue) ? optionLabel + " selected" : optionLabel + " not selected",
+        a11yTitle: optionSelected ? optionLabel + " selected" : optionLabel + " not selected",
         "aria-setsize": value.length,
-        "aria-posinset": value.indexOf(optionValue) + 1,
-        "aria-selected": value.includes(optionValue),
+        "aria-posinset": valueIndex + 1,
+        "aria-selected": optionSelected,
         "aria-disabled": optionDisabled,
         plain: true,
         hoverIndicator: !optionDisabled,
@@ -68,35 +70,30 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
         onClick: function onClick(event) {
           if (!optionDisabled) {
             var intermediate = [].concat(value);
-            var index = value.indexOf(optionValue);
 
-            if (intermediate.includes(optionValue)) {
+            if ((0, _utils.arrayIncludes)(intermediate, optionValue, valueKey || labelKey)) {
               onSelectChange(event, {
                 option: optionValue,
                 value: intermediate.filter(function (v) {
-                  return v !== optionValue;
+                  return typeof v === 'object' ? (0, _utils.applyKey)(v, valueKey || labelKey) === (0, _utils.applyKey)(optionValue, valueKey || labelKey) : v !== optionValue;
                 })
               });
 
-              if (index !== intermediate.length - 1) {
+              if (valueIndex !== intermediate.length - 1) {
                 setTimeout(function () {
-                  var nextFocus = document.getElementById("selected-" + intermediate[index + 1]);
+                  var nextFocus = document.getElementById("selected-" + intermediate[valueIndex + 1]);
                   if (nextFocus) nextFocus.focus();
-                  var result = allOptions.find(function (obj, j) {
-                    return (0, _utils.getOptionValue)(j, allOptions, valueKey || labelKey) === intermediate[index + 1];
-                  });
-                  setShowA11yDiv("Unselected " + optionLabel + ". \n                        Focus moved to " + (0, _utils.getOptionLabel)(allOptions.indexOf(result), allOptions, labelKey || valueKey));
+                  var result = intermediate[valueIndex + 1];
+                  setShowA11yDiv("Unselected " + optionLabel + ". \n                        Focus moved to " + (0, _utils.getOptionLabel)((0, _utils.getOptionIndex)(allOptions, result, valueKey || labelKey), allOptions, labelKey || valueKey));
                 }, 200); // Timeout needed to allow screen reader
                 // time to announce and next item to display on
                 // screen. Based on testing, 200ms is enough time
               } else if (intermediate.length !== 1) {
                 setTimeout(function () {
-                  var nextFocus = document.getElementById("selected-" + intermediate[index - 1]);
+                  var nextFocus = document.getElementById("selected-" + intermediate[valueIndex - 1]);
                   if (nextFocus) nextFocus.focus();
-                  var result = allOptions.find(function (obj, j) {
-                    return (0, _utils.getOptionValue)(j, allOptions, valueKey || labelKey) === intermediate[index - 1];
-                  });
-                  setShowA11yDiv("Unselected " + optionLabel + ". Focus moved to \n                          " + (0, _utils.getOptionLabel)(allOptions.indexOf(result), allOptions, labelKey || valueKey));
+                  var result = intermediate[valueIndex - 1];
+                  setShowA11yDiv("Unselected " + optionLabel + ". Focus moved to \n                          " + (0, _utils.getOptionLabel)((0, _utils.getOptionIndex)(allOptions, result, valueKey || labelKey), allOptions, labelKey || valueKey));
                 }, 200); // Timeout needed to allow screen reader
                 // time to announce and next item to display on
                 // screen. Based on testing, 200ms is enough time
@@ -115,7 +112,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
         key: optionLabel,
         pad: "xsmall",
         tabIndex: "-1",
-        checked: value.includes(optionValue)
+        checked: optionSelected
       }));
     }
 
@@ -136,7 +133,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     "aria-multiselectable": true,
     a11yTitle: "Selected Options"
   }, value && allOptions.filter(function (i) {
-    return value.indexOf(valueKey && valueKey.reduce ? (0, _utils.applyKey)(i, valueKey) : i) !== -1;
+    return (0, _utils.arrayIncludes)(value, valueKey && valueKey.reduce ? (0, _utils.applyKey)(i, valueKey) : i, valueKey || labelKey);
   })
   /* eslint-disable-next-line array-callback-return, 
       consistent-return */

@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import { applyKey, getOptionValue, useDisabled } from '../Select/utils';
+import { applyKey, getOptionValue, useDisabled, arrayIncludes } from '../Select/utils';
 
 var SelectionSummary = function SelectionSummary(_ref) {
   var allOptions = _ref.allOptions,
@@ -26,7 +26,7 @@ var SelectionSummary = function SelectionSummary(_ref) {
 
     if (value) {
       for (var i = 0; i < allOptions.length; i += 1) {
-        if (value.includes(getOptionValue(i, options, valueKey || labelKey)) && isDisabled(i)) disabledSelected += 1;
+        if (arrayIncludes(value, getOptionValue(i, options, valueKey || labelKey), valueKey || labelKey) && isDisabled(i)) disabledSelected += 1;
       }
 
       if (value.length === disabledSelected) return true;

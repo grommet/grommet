@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.useDisabled = exports.getSelectIcon = exports.getOptionValue = exports.getOptionLabel = exports.getNormalizedValue = exports.getIconColor = exports.getDisplayLabelKey = exports.changeEvent = exports.applyKey = void 0;
+exports.useDisabled = exports.getSelectIcon = exports.getOptionValue = exports.getOptionLabel = exports.getOptionIndex = exports.getNormalizedValue = exports.getIconColor = exports.getDisplayLabelKey = exports.changeEvent = exports.arrayIncludes = exports.applyKey = void 0;
 
 var _react = require("react");
 
@@ -30,6 +30,32 @@ var getOptionValue = function getOptionValue(index, options, valueKey) {
 
 exports.getOptionValue = getOptionValue;
 
+var getOptionIndex = function getOptionIndex(options, i, valueKey) {
+  if (options) {
+    if (typeof i === 'object') return options.findIndex(function (x) {
+      return applyKey(x, valueKey) === applyKey(i, valueKey);
+    });
+    return options.indexOf(i);
+  }
+
+  return undefined;
+};
+
+exports.getOptionIndex = getOptionIndex;
+
+var arrayIncludes = function arrayIncludes(arr, i, valueKey) {
+  if (arr) {
+    if (typeof i === 'object') return arr.some(function (x) {
+      return applyKey(x, valueKey) === applyKey(i, valueKey);
+    });
+    return arr.includes(i);
+  }
+
+  return undefined;
+};
+
+exports.arrayIncludes = arrayIncludes;
+
 var useDisabled = function useDisabled(disabled, disabledKey, options, valueKey) {
   return (0, _react.useCallback)(function (index) {
     var option = options[index];
@@ -42,7 +68,7 @@ var useDisabled = function useDisabled(disabled, disabledKey, options, valueKey)
         result = disabled.indexOf(index) !== -1;
       } else {
         var optionVal = getOptionValue(index, options, valueKey);
-        result = disabled.indexOf(optionVal) !== -1;
+        result = getOptionIndex(disabled, options[index], valueKey) !== -1 || getOptionIndex(disabled, optionVal, valueKey) !== -1;
       }
     }
 

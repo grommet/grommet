@@ -14,6 +14,26 @@ export var getOptionLabel = function getOptionLabel(index, options, labelKey) {
 export var getOptionValue = function getOptionValue(index, options, valueKey) {
   return applyKey(options[index], valueKey);
 };
+export var getOptionIndex = function getOptionIndex(options, i, valueKey) {
+  if (options) {
+    if (typeof i === 'object') return options.findIndex(function (x) {
+      return applyKey(x, valueKey) === applyKey(i, valueKey);
+    });
+    return options.indexOf(i);
+  }
+
+  return undefined;
+};
+export var arrayIncludes = function arrayIncludes(arr, i, valueKey) {
+  if (arr) {
+    if (typeof i === 'object') return arr.some(function (x) {
+      return applyKey(x, valueKey) === applyKey(i, valueKey);
+    });
+    return arr.includes(i);
+  }
+
+  return undefined;
+};
 export var useDisabled = function useDisabled(disabled, disabledKey, options, valueKey) {
   return useCallback(function (index) {
     var option = options[index];
@@ -26,7 +46,7 @@ export var useDisabled = function useDisabled(disabled, disabledKey, options, va
         result = disabled.indexOf(index) !== -1;
       } else {
         var optionVal = getOptionValue(index, options, valueKey);
-        result = disabled.indexOf(optionVal) !== -1;
+        result = getOptionIndex(disabled, options[index], valueKey) !== -1 || getOptionIndex(disabled, optionVal, valueKey) !== -1;
       }
     }
 

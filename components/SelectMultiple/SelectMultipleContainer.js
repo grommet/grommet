@@ -161,7 +161,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     return function (event) {
       if (onChange) {
         var nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-        var allOptionsIndex = allOptions.indexOf(options[index]);
+        var allOptionsIndex = (0, _utils2.getOptionIndex)(allOptions, options[index], valueKey || labelKey);
         var valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
 
         if (valueIndex === -1 && (!limit || (value == null ? void 0 : value.length) < limit)) {
@@ -261,7 +261,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         if (typeof disabledProp[0] === 'number') {
           result = disabledProp.indexOf(index) !== -1;
         } else {
-          result = disabledProp.indexOf((0, _utils2.getOptionValue)(index, options, valueKey || labelKey)) !== -1;
+          result = (0, _utils2.getOptionIndex)(disabledProp, (0, _utils2.getOptionValue)(index, options, valueKey || labelKey), valueKey || labelKey) !== -1;
         }
       }
 
@@ -381,7 +381,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     show: activeIndex !== -1 ? activeIndex : undefined
   }, function (option, index, optionRef) {
     var optionDisabled = isDisabled(index);
-    var optionSelected = value ? value.includes(valueKey && valueKey.reduce ? (0, _utils2.applyKey)(option, valueKey) : option) : false;
+    var optionSelected = value ? (0, _utils2.arrayIncludes)(value, valueKey && valueKey.reduce ? (0, _utils2.applyKey)(option, valueKey) : option, valueKey || labelKey) : false;
     var optionActive = activeIndex === index;
     var optionLabel = (0, _utils2.getOptionLabel)(index, options, labelKey || valueKey); // Determine whether the label is done as a child or
     // as an option Button kind property.

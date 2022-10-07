@@ -39,7 +39,7 @@ var SelectionSummary = function SelectionSummary(_ref) {
 
     if (value) {
       for (var i = 0; i < allOptions.length; i += 1) {
-        if (value.includes((0, _utils.getOptionValue)(i, options, valueKey || labelKey)) && isDisabled(i)) disabledSelected += 1;
+        if ((0, _utils.arrayIncludes)(value, (0, _utils.getOptionValue)(i, options, valueKey || labelKey), valueKey || labelKey) && isDisabled(i)) disabledSelected += 1;
       }
 
       if (value.length === disabledSelected) return true;

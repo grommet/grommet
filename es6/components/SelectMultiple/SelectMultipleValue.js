@@ -3,7 +3,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { CheckBox } from '../CheckBox';
 import { SelectOption } from '../Select/StyledSelect';
-import { applyKey, getOptionLabel, getOptionValue, useDisabled } from '../Select/utils';
+import { applyKey, getOptionLabel, useDisabled, arrayIncludes, getOptionIndex } from '../Select/utils';
 
 var SelectMultipleValue = function SelectMultipleValue(_ref) {
   var allOptions = _ref.allOptions,
@@ -25,11 +25,13 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
   var isDisabled = useDisabled(disabled, disabledKey, allOptions, valueKey || labelKey);
   var visibleValue = useCallback(function (i) {
     var optionValue = valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
-    var indexOptions = allOptions.indexOf(i);
+    var optionSelected = arrayIncludes(value, optionValue, valueKey || labelKey);
+    var indexOptions = getOptionIndex(allOptions, i, valueKey || labelKey);
     var optionLabel = getOptionLabel(indexOptions, allOptions, labelKey || valueKey);
     var optionDisabled = isDisabled(indexOptions);
+    var valueIndex = getOptionIndex(value, optionValue, valueKey || labelKey);
 
-    if (value.indexOf(optionValue) < theme.selectMultiple.maxInline) {
+    if (valueIndex < theme.selectMultiple.maxInline) {
       var child;
 
       if (children) {
@@ -42,10 +44,10 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
 
       return /*#__PURE__*/React.createElement(SelectOption, {
         role: "option",
-        a11yTitle: value.includes(optionValue) ? optionLabel + " selected" : optionLabel + " not selected",
+        a11yTitle: optionSelected ? optionLabel + " selected" : optionLabel + " not selected",
         "aria-setsize": value.length,
-        "aria-posinset": value.indexOf(optionValue) + 1,
-        "aria-selected": value.includes(optionValue),
+        "aria-posinset": valueIndex + 1,
+        "aria-selected": optionSelected,
         "aria-disabled": optionDisabled,
         plain: true,
         hoverIndicator: !optionDisabled,
@@ -54,35 +56,30 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
         onClick: function onClick(event) {
           if (!optionDisabled) {
             var intermediate = [].concat(value);
-            var index = value.indexOf(optionValue);
 
-            if (intermediate.includes(optionValue)) {
+            if (arrayIncludes(intermediate, optionValue, valueKey || labelKey)) {
               onSelectChange(event, {
                 option: optionValue,
                 value: intermediate.filter(function (v) {
-                  return v !== optionValue;
+                  return typeof v === 'object' ? applyKey(v, valueKey || labelKey) === applyKey(optionValue, valueKey || labelKey) : v !== optionValue;
                 })
               });
 
-              if (index !== intermediate.length - 1) {
+              if (valueIndex !== intermediate.length - 1) {
                 setTimeout(function () {
-                  var nextFocus = document.getElementById("selected-" + intermediate[index + 1]);
+                  var nextFocus = document.getElementById("selected-" + intermediate[valueIndex + 1]);
                   if (nextFocus) nextFocus.focus();
-                  var result = allOptions.find(function (obj, j) {
-                    return getOptionValue(j, allOptions, valueKey || labelKey) === intermediate[index + 1];
-                  });
-                  setShowA11yDiv("Unselected " + optionLabel + ". \n                        Focus moved to " + getOptionLabel(allOptions.indexOf(result), allOptions, labelKey || valueKey));
+                  var result = intermediate[valueIndex + 1];
+                  setShowA11yDiv("Unselected " + optionLabel + ". \n                        Focus moved to " + getOptionLabel(getOptionIndex(allOptions, result, valueKey || labelKey), allOptions, labelKey || valueKey));
                 }, 200); // Timeout needed to allow screen reader
                 // time to announce and next item to display on
                 // screen. Based on testing, 200ms is enough time
               } else if (intermediate.length !== 1) {
                 setTimeout(function () {
-                  var nextFocus = document.getElementById("selected-" + intermediate[index - 1]);
+                  var nextFocus = document.getElementById("selected-" + intermediate[valueIndex - 1]);
                   if (nextFocus) nextFocus.focus();
-                  var result = allOptions.find(function (obj, j) {
-                    return getOptionValue(j, allOptions, valueKey || labelKey) === intermediate[index - 1];
-                  });
-                  setShowA11yDiv("Unselected " + optionLabel + ". Focus moved to \n                          " + getOptionLabel(allOptions.indexOf(result), allOptions, labelKey || valueKey));
+                  var result = intermediate[valueIndex - 1];
+                  setShowA11yDiv("Unselected " + optionLabel + ". Focus moved to \n                          " + getOptionLabel(getOptionIndex(allOptions, result, valueKey || labelKey), allOptions, labelKey || valueKey));
                 }, 200); // Timeout needed to allow screen reader
                 // time to announce and next item to display on
                 // screen. Based on testing, 200ms is enough time
@@ -101,7 +98,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
         key: optionLabel,
         pad: "xsmall",
         tabIndex: "-1",
-        checked: value.includes(optionValue)
+        checked: optionSelected
       }));
     }
 
@@ -122,7 +119,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     "aria-multiselectable": true,
     a11yTitle: "Selected Options"
   }, value && allOptions.filter(function (i) {
-    return value.indexOf(valueKey && valueKey.reduce ? applyKey(i, valueKey) : i) !== -1;
+    return arrayIncludes(value, valueKey && valueKey.reduce ? applyKey(i, valueKey) : i, valueKey || labelKey);
   })
   /* eslint-disable-next-line array-callback-return, 
       consistent-return */

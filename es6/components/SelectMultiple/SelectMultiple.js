@@ -15,7 +15,7 @@ import { FormContext } from '../Form/FormContext';
 import { SelectMultipleValue } from './SelectMultipleValue';
 import { SelectMultipleContainer } from './SelectMultipleContainer';
 import { HiddenInput, SelectTextInput, StyledSelectDropButton } from '../Select/StyledSelect';
-import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getIconColor, getDisplayLabelKey } from '../Select/utils';
+import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getIconColor, getDisplayLabelKey, arrayIncludes } from '../Select/utils';
 import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
@@ -171,10 +171,10 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   useEffect(function () {
     if (sortSelectedOnClose && (open && search || !open)) {
       var selectedOptions = optionsProp.filter(function (option) {
-        return value == null ? void 0 : value.includes(valueKey && valueKey.reduce ? applyKey(option, valueKey) : option);
+        return arrayIncludes(value, valueKey && valueKey.reduce ? applyKey(option, valueKey) : option, valueKey || labelKey);
       });
       var unselectedOptions = optionsProp.filter(function (i) {
-        return !selectedOptions.includes(i);
+        return !arrayIncludes(selectedOptions, i, valueKey || labelKey);
       });
       var nextOrderedOptions = selectedOptions.concat(unselectedOptions);
       setOrderedOptions(nextOrderedOptions);

@@ -14,7 +14,7 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { SelectionSummary } from './SelectionSummary';
 import { StyledContainer, OptionsContainer, SelectOption } from '../Select/StyledSelect';
-import { applyKey, getOptionLabel, getOptionValue, useDisabled } from '../Select/utils';
+import { applyKey, getOptionLabel, getOptionValue, useDisabled, getOptionIndex, arrayIncludes } from '../Select/utils';
 import { EmptySearchOption } from '../Select/EmptySearchOption';
 var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _optionsRef$current;
@@ -135,7 +135,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return function (event) {
       if (onChange) {
         var nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-        var allOptionsIndex = allOptions.indexOf(options[index]);
+        var allOptionsIndex = getOptionIndex(allOptions, options[index], valueKey || labelKey);
         var valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
 
         if (valueIndex === -1 && (!limit || (value == null ? void 0 : value.length) < limit)) {
@@ -235,7 +235,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         if (typeof disabledProp[0] === 'number') {
           result = disabledProp.indexOf(index) !== -1;
         } else {
-          result = disabledProp.indexOf(getOptionValue(index, options, valueKey || labelKey)) !== -1;
+          result = getOptionIndex(disabledProp, getOptionValue(index, options, valueKey || labelKey), valueKey || labelKey) !== -1;
         }
       }
 
@@ -353,7 +353,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     show: activeIndex !== -1 ? activeIndex : undefined
   }, function (option, index, optionRef) {
     var optionDisabled = isDisabled(index);
-    var optionSelected = value ? value.includes(valueKey && valueKey.reduce ? applyKey(option, valueKey) : option) : false;
+    var optionSelected = value ? arrayIncludes(value, valueKey && valueKey.reduce ? applyKey(option, valueKey) : option, valueKey || labelKey) : false;
     var optionActive = activeIndex === index;
     var optionLabel = getOptionLabel(index, options, labelKey || valueKey); // Determine whether the label is done as a child or
     // as an option Button kind property.
