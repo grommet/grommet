@@ -30,22 +30,30 @@ const SelectMultipleValue = ({
     disabled,
     disabledKey,
     allOptions,
-    labelKey || valueKey,
+    valueKey || labelKey,
   );
 
   const visibleValue = useCallback(
     (i) => {
       const optionValue =
         valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
-      const optionSelected = arrayIncludes(value, optionValue);
-      const indexOptions = getOptionIndex(allOptions, i);
+      const optionSelected = arrayIncludes(
+        value,
+        optionValue,
+        valueKey || labelKey,
+      );
+      const indexOptions = getOptionIndex(allOptions, i, valueKey || labelKey);
       const optionLabel = getOptionLabel(
         indexOptions,
         allOptions,
         labelKey || valueKey,
       );
       const optionDisabled = isDisabled(indexOptions);
-      const valueIndex = getOptionIndex(value, optionValue);
+      const valueIndex = getOptionIndex(
+        value,
+        optionValue,
+        valueKey || labelKey,
+      );
 
       if (valueIndex < theme.selectMultiple.maxInline) {
         let child;
@@ -76,12 +84,15 @@ const SelectMultipleValue = ({
             onClick={(event) => {
               if (!optionDisabled) {
                 const intermediate = [...value];
-                if (arrayIncludes(intermediate, optionValue)) {
+                if (
+                  arrayIncludes(intermediate, optionValue, valueKey || labelKey)
+                ) {
                   onSelectChange(event, {
                     option: optionValue,
                     value: intermediate.filter((v) =>
                       typeof v === 'object'
-                        ? JSON.stringify(v) !== JSON.stringify(optionValue)
+                        ? applyKey(v, valueKey || labelKey) ===
+                          applyKey(optionValue, valueKey || labelKey)
                         : v !== optionValue,
                     ),
                   });
@@ -95,7 +106,11 @@ const SelectMultipleValue = ({
                       setShowA11yDiv(
                         `Unselected ${optionLabel}. 
                         Focus moved to ${getOptionLabel(
-                          getOptionIndex(allOptions, result),
+                          getOptionIndex(
+                            allOptions,
+                            result,
+                            valueKey || labelKey,
+                          ),
                           allOptions,
                           labelKey || valueKey,
                         )}`,
@@ -113,7 +128,11 @@ const SelectMultipleValue = ({
                       setShowA11yDiv(
                         `Unselected ${optionLabel}. Focus moved to 
                           ${getOptionLabel(
-                            getOptionIndex(allOptions, result),
+                            getOptionIndex(
+                              allOptions,
+                              result,
+                              valueKey || labelKey,
+                            ),
                             allOptions,
                             labelKey || valueKey,
                           )}`,
@@ -185,6 +204,7 @@ const SelectMultipleValue = ({
               arrayIncludes(
                 value,
                 valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
+                valueKey || labelKey,
               ),
             )
             /* eslint-disable-next-line array-callback-return, 

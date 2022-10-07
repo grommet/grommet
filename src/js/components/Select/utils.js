@@ -17,25 +17,27 @@ export const getOptionLabel = (index, options, labelKey) =>
 export const getOptionValue = (index, options, valueKey) =>
   applyKey(options[index], valueKey);
 
-export const getOptionIndex = (options, i) => {
+export const getOptionIndex = (options, i, valueKey) => {
   if (options) {
     if (typeof i === 'object')
-      return options.findIndex((x) => JSON.stringify(x) === JSON.stringify(i));
+      return options.findIndex(
+        (x) => applyKey(x, valueKey) === applyKey(i, valueKey),
+      );
     return options.indexOf(i);
   }
   return undefined;
 };
 
-export const arrayIncludes = (arr, i) => {
+export const arrayIncludes = (arr, i, valueKey) => {
   if (arr) {
     if (typeof i === 'object')
-      return arr.some((x) => JSON.stringify(x) === JSON.stringify(i));
+      return arr.some((x) => applyKey(x, valueKey) === applyKey(i, valueKey));
     return arr.includes(i);
   }
   return undefined;
 };
 
-export const useDisabled = (disabled, disabledKey, options, labelKey) =>
+export const useDisabled = (disabled, disabledKey, options, valueKey) =>
   useCallback(
     (index) => {
       const option = options[index];
@@ -46,15 +48,15 @@ export const useDisabled = (disabled, disabledKey, options, labelKey) =>
         if (typeof disabled[0] === 'number') {
           result = disabled.indexOf(index) !== -1;
         } else {
-          const optionVal = getOptionValue(index, options, labelKey);
+          const optionVal = getOptionValue(index, options, valueKey);
           result =
-            getOptionIndex(disabled, options[index]) !== -1 ||
-            getOptionIndex(disabled, optionVal) !== -1;
+            getOptionIndex(disabled, options[index], valueKey) !== -1 ||
+            getOptionIndex(disabled, optionVal, valueKey) !== -1;
         }
       }
       return result;
     },
-    [disabled, disabledKey, options, labelKey],
+    [disabled, disabledKey, options, valueKey],
   );
 
 export const getNormalizedValue = (value, valueKey) => {

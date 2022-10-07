@@ -173,10 +173,11 @@ const SelectMultiple = forwardRef(
           arrayIncludes(
             value,
             valueKey && valueKey.reduce ? applyKey(option, valueKey) : option,
+            valueKey || labelKey,
           ),
         );
         const unselectedOptions = optionsProp.filter(
-          (i) => !arrayIncludes(selectedOptions, i),
+          (i) => !arrayIncludes(selectedOptions, i, valueKey || labelKey),
         );
         const nextOrderedOptions = selectedOptions.concat(unselectedOptions);
         setOrderedOptions(nextOrderedOptions);

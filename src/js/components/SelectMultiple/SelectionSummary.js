@@ -31,7 +31,7 @@ const SelectionSummary = ({
     disabled,
     disabledKey,
     options,
-    labelKey || valueKey,
+    valueKey || labelKey,
   );
 
   const selectedValuesDisabled = useCallback(() => {
@@ -42,6 +42,7 @@ const SelectionSummary = ({
           arrayIncludes(
             value,
             getOptionValue(i, options, valueKey || labelKey),
+            valueKey || labelKey,
           ) &&
           isDisabled(i)
         )

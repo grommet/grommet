@@ -80,7 +80,7 @@ const SelectMultipleContainer = forwardRef(
       disabled,
       disabledKey,
       options,
-      labelKey || valueKey,
+      valueKey || labelKey,
     );
 
     // for keyboard/screenreader, keep the active option in focus
@@ -145,7 +145,11 @@ const SelectMultipleContainer = forwardRef(
       (index) => (event) => {
         if (onChange) {
           const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-          const allOptionsIndex = getOptionIndex(allOptions, options[index]);
+          const allOptionsIndex = getOptionIndex(
+            allOptions,
+            options[index],
+            valueKey || labelKey,
+          );
           const valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
           if (valueIndex === -1 && (!limit || value?.length < limit)) {
             nextOptionIndexesInValue.push(allOptionsIndex);
@@ -283,6 +287,7 @@ const SelectMultipleContainer = forwardRef(
               getOptionIndex(
                 disabledProp,
                 getOptionValue(index, options, valueKey || labelKey),
+                valueKey || labelKey,
               ) !== -1;
           }
         }
@@ -427,6 +432,7 @@ const SelectMultipleContainer = forwardRef(
                         valueKey && valueKey.reduce
                           ? applyKey(option, valueKey)
                           : option,
+                        valueKey || labelKey,
                       )
                     : false;
                   const optionActive = activeIndex === index;
