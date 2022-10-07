@@ -170,6 +170,7 @@ const SelectMultipleContainer = forwardRef(
         }
       },
       [
+        labelKey,
         limit,
         onChange,
         optionIndexesInValue,
