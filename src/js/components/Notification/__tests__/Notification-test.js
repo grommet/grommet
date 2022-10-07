@@ -278,17 +278,16 @@ describe('Notification', () => {
     const theme = {
       notification: {
         unknown: {
-          icon: <Home />,
+          icon: Home,
           color: 'blue',
         },
       },
     };
-    const Test = () => {
+    const { asFragment } = render(
       <Grommet theme={theme}>
         <Notification data-testid="test" title="Test title" message="message" />
-      </Grommet>;
-    };
-    const { asFragment } = render(<Test />);
+      </Grommet>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 });
