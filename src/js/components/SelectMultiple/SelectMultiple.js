@@ -182,7 +182,15 @@ const SelectMultiple = forwardRef(
         const nextOrderedOptions = selectedOptions.concat(unselectedOptions);
         setOrderedOptions(nextOrderedOptions);
       }
-    }, [open, sortSelectedOnClose, optionsProp, value, valueKey, search]);
+    }, [
+      labelKey,
+      open,
+      sortSelectedOnClose,
+      optionsProp,
+      value,
+      valueKey,
+      search,
+    ]);
 
     const onRequestClose = useCallback(() => {
       setOpen(false);
