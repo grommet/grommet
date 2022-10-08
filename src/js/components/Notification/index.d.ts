@@ -16,6 +16,7 @@ export interface NotificationProps {
         position?: LayerPositionType;
       };
   onClose?: (...args: any[]) => any;
+  icon?: JSX.Element;
 }
 
 declare const Notification: React.FC<NotificationProps>;
