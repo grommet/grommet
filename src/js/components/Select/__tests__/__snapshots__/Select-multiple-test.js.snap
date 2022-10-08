@@ -221,7 +221,7 @@ exports[`Select Controlled deselect an option 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="test select; Selected: one"
+  aria-label="test select; 1 selected"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -489,7 +489,7 @@ exports[`Select Controlled multiple 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop; Selected: "
+  aria-label="Open Drop; 0 selected"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -769,7 +769,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="test select; Selected: 1"
+    aria-label="test select; 1 selected"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -3127,7 +3127,7 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
     <button
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-label="test select; Selected: [object Object],[object Object]"
+      aria-label="test select; 2 selected"
       class="c1 c2"
       id="test-select"
       type="button"
@@ -4107,7 +4107,7 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
     <button
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-label="test select; Selected: [object Object],[object Object]"
+      aria-label="test select; 2 selected"
       class="c1 c2"
       id="test-select"
       type="button"
@@ -5085,7 +5085,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
     <button
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-label="test select; Selected: [object Object],[object Object]"
+      aria-label="test select; 2 selected"
       class="c1 c2"
       id="test-select"
       type="button"
@@ -5355,7 +5355,7 @@ exports[`Select Controlled multiple values 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="test select; Selected: one,two"
+  aria-label="test select; 2 selected"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -5406,7 +5406,7 @@ exports[`Select Controlled multiple values 2`] = `
 <button
   aria-expanded="true"
   aria-haspopup="listbox"
-  aria-label="test select; Selected: one,two"
+  aria-label="test select; 2 selected"
   class="StyledButton-sc-323bzc-0 hIPuDF StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
   id="test-select"
   type="button"
@@ -5945,7 +5945,7 @@ exports[`Select Controlled multiple with empty results 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="test select; Selected: "
+    aria-label="test select; 0 selected"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -6470,7 +6470,7 @@ exports[`Select Controlled select another option 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="test select; Selected: two"
+  aria-label="test select; 1 selected"
   class="c0 c1"
   id="test-select"
   type="button"

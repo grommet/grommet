@@ -278,19 +278,35 @@ const Select = forwardRef(
 
     const iconColor = getIconColor(theme);
 
+    let ariaLabelGenerated = '';
+    if (value) {
+      if (Array.isArray(value)) {
+        ariaLabelGenerated = `; ${value.length || 0} selected`;
+      } else if (typeof value === 'object' && value !== null) {
+        ariaLabelGenerated = `; Selected: ${inputValue}`;
+      } else {
+        ariaLabelGenerated = format({
+          id: 'select.selected',
+          messages,
+          values: {
+            // eslint-disable-next-line no-nested-ternary
+            currentSelectedValue: valueKey?.reduce
+              ? inputValue
+              : displayLabelKey
+              ? value[displayLabelKey]
+              : value,
+          },
+        });
+      }
+    }
+
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
           ref={ref}
-          a11yTitle={`${ariaLabel || a11yTitle || placeholder || 'Open Drop'}${
-            value
-              ? format({
-                  id: 'select.selected',
-                  messages,
-                  values: { currentSelectedValue: value },
-                })
-              : ''
-          }`}
+          a11yTitle={`${
+            ariaLabel || a11yTitle || placeholder || 'Open Drop'
+          }${ariaLabelGenerated}`}
           aria-expanded={Boolean(open)}
           aria-haspopup="listbox"
           id={id}
