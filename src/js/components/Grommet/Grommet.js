@@ -23,7 +23,6 @@ import { format, MessageContext } from '../../contexts/MessageContext';
 import defaultMessages from '../../languages/default.json';
 import { GrommetPropTypes } from './propTypes';
 import { AnalyticsProvider } from '../../contexts/AnalyticsContext';
-// import { type } from 'os';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
