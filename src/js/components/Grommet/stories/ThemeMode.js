@@ -4,7 +4,7 @@ import { Grommet, Box, grommet } from 'grommet';
 
 export const ThemeMode = () => (
   <Grommet theme={grommet} themeMode="auto">
-    <Box pad="medium">"auto" themeMode</Box>
+    <Box pad="medium">&quot;auto&quot; themeMode</Box>
   </Grommet>
 );
 
