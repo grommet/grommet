@@ -39,7 +39,7 @@ const DataChart = forwardRef(
       a11yTitle,
       axis: axisProp = true,
       bounds: boundsProp = 'align',
-      chart,
+      chart: chartProp,
       data = [],
       detail,
       gap = 'small',
@@ -73,13 +73,13 @@ const DataChart = forwardRef(
     const getPropertySeries = (prop) =>
       series.find(({ property }) => prop === property);
 
-    // Normalize chart to an array of objects.
+    // Normalize chartProp to an array of objects.
     // Each chart has one or more properties associated with it.
     // A stacked bar or area chart has an array of properties.
     // A point chart can have x, y, thickness, and color each driven
     // by a separate property.
     const charts = useMemo(() => {
-      if (!chart) {
+      if (!chartProp) {
         if (series.length === 1)
           return series
             .filter((s) => s.property)
@@ -88,14 +88,14 @@ const DataChart = forwardRef(
         // the x-axis and we'll plot the rest
         return series.slice(1).map((s) => ({ property: s.property }));
       }
-      if (Array.isArray(chart))
-        return chart
+      if (Array.isArray(chartProp))
+        return chartProp
           .map((c) => (typeof c === 'string' ? { property: c } : c))
           .filter(({ property }) => property);
-      if (typeof chart === 'string') return [{ property: chart }];
-      if (chart) return [chart];
+      if (typeof chartProp === 'string') return [{ property: chartProp }];
+      if (chartProp) return [chartProp];
       return [];
-    }, [chart, series]);
+    }, [chartProp, series]);
 
     // map the series property values into their own arrays
     const seriesValues = useMemo(() => {
@@ -324,37 +324,43 @@ const DataChart = forwardRef(
     const seriesStyles = useMemo(() => {
       const result = {};
       // start from what we were explicitly given
-      charts.forEach(
-        ({ color, dash, point, property, round, thickness, type }, index) => {
-          const { thickness: calcThickness } = chartProps[index];
+      charts.forEach((chart, index) => {
+        const { thickness: calcThickness } = chartProps[index];
 
-          if (typeof property === 'object' && !Array.isArray(property)) {
-            // data driven point chart
-            Object.keys(property).forEach((aspect) => {
-              const prop = property[aspect];
-              if (!result[prop.property || prop])
-                result[prop.property || prop] = { aspect };
+        if (
+          typeof chart.property === 'object' &&
+          !Array.isArray(chart.property)
+        ) {
+          // data driven point chart
+          Object.keys(chart.property).forEach((aspect) => {
+            const prop = chart.property[aspect];
+            if (!result[prop.property || prop])
+              result[prop.property || prop] = { aspect };
+          });
+        } else {
+          const setPropertyStyle = ({ property, ...styles }) => {
+            // keep what we've got, use what is new
+            result[property] = {
+              ...styles,
+              ...(result[property] || {}),
+            };
+            if (styles.type === 'point') result[property].point = false;
+            if (calcThickness && !result[property].thickness)
+              result[property].thickness = calcThickness;
+          };
+
+          if (Array.isArray(chart.property))
+            chart.property.forEach((prop) => {
+              if (typeof prop === 'string')
+                setPropertyStyle({ ...chart, property: prop });
+              else if (typeof prop === 'object')
+                setPropertyStyle({ ...chart, ...prop });
             });
-          } else {
-            const props = Array.isArray(property) ? property : [property];
-            props.forEach((prop) => {
-              const p = prop.property || prop;
-              const pColor = prop.color || color;
-              if (!result[p]) result[p] = {};
-              if (pColor && !result[p].color) result[p].color = pColor;
-              if (point && !result[p].point) result[p].point = point;
-              else if (type === 'point') result[p].point = false;
-              if ((thickness || calcThickness) && !result[p].thickness)
-                result[p].thickness = thickness || calcThickness;
-              if (round !== undefined && result[p].round === undefined)
-                result[p].round = round;
-              if (dash !== undefined && result[p].dash === undefined)
-                result[p].dash = dash;
-              if (result[p].type === undefined) result[p].type = type;
-            });
-          }
-        },
-      );
+          else if (typeof chart === 'object') setPropertyStyle(chart);
+          else if (typeof chart === 'string')
+            setPropertyStyle({ property: chart });
+        }
+      });
 
       // set color for any non-aspect properties we don't have one for yet
       let colorIndex = 0;

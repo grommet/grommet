@@ -34,7 +34,10 @@ export const StackedBars = () => (
       ]}
       chart={[
         {
-          property: ['usage', 'bonus'],
+          property: [
+            { property: 'usage', thickness: 'medium' },
+            { property: 'bonus', thickness: 'large', opacity: 'medium' },
+          ],
           type: 'bars',
         },
       ]}
