@@ -30,12 +30,7 @@ const MenuWithChildren = (props) => (
 );
 
 const Example = () => (
-  <Box
-    align="center"
-    pad="large"
-    gap="small"
-    background={{ color: 'dark-3', opacity: 0.6 }}
-  >
+  <Box align="center" pad="large" gap="small" background="dark-1">
     <MenuWithChildren disabled />
     <MenuWithChildren />
   </Box>
