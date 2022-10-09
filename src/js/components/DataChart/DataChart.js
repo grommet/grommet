@@ -344,6 +344,8 @@ const DataChart = forwardRef(
               ...styles,
               ...(result[property] || {}),
             };
+            // unless the new style is has no opacity
+            if (!styles.opacity) delete result[property].opacity;
             if (styles.type === 'point') result[property].point = false;
             if (calcThickness && !result[property].thickness)
               result[property].thickness = calcThickness;
