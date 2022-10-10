@@ -30,7 +30,7 @@ const MenuWithChildren = (props) => (
 );
 
 const Example = () => (
-  <Box align="center" pad="large" gap="small" background="dark-1">
+  <Box align="center" pad="large" gap="small">
     <MenuWithChildren disabled />
     <MenuWithChildren />
   </Box>
