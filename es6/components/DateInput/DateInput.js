@@ -181,7 +181,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     date: range ? undefined : value // when caller initializes with empty array, dates should be undefined
     // allowing the user to select both begin and end of the range
     ,
-    dates: range && value.length ? [value] : undefined // places focus on days grid when Calendar opens
+    dates: range && value != null && value.length ? [value] : undefined // places focus on days grid when Calendar opens
     ,
     initialFocus: open ? 'days' : undefined,
     onSelect: disabled ? undefined : function (nextValue) {
