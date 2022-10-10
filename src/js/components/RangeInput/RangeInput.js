@@ -6,6 +6,9 @@ import React, {
   useEffect,
 } from 'react';
 
+import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
+
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 import { RangeInputPropTypes } from './propTypes';
@@ -33,8 +36,11 @@ const RangeInput = forwardRef(
     },
     ref,
   ) => {
+    const themeContext = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
     const [focus, setFocus] = useState(focusProp);
+
+    const isScrollEnabled = themeContext?.rangeInput?.wheel !== false;
 
     const [value, setValue] = formContext.useFormInput({
       name,
@@ -77,6 +83,9 @@ const RangeInput = forwardRef(
 
     const handleOnWheel = (event) => {
       const newValue = parseFloat(value);
+      if (!isScrollEnabled) {
+        return;
+      }
       if (event.deltaY < 0) {
         setRangeInputValue(newValue + step);
       } else {
@@ -86,8 +95,9 @@ const RangeInput = forwardRef(
     // This is to make sure scrollbar doesn't move
     // when user changes RangeInput value.
     const handleMouseOver = () =>
-      setScroll({ x: window.scrollX, y: window.scrollY });
-    const handleMouseOut = () => setScroll({ x: null, y: null });
+      isScrollEnabled && setScroll({ x: window.scrollX, y: window.scrollY });
+    const handleMouseOut = () =>
+      isScrollEnabled && setScroll({ x: null, y: null });
 
     return (
       <StyledRangeInput
