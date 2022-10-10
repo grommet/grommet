@@ -1415,6 +1415,7 @@ export interface ThemeType {
       color?: ColorType;
       extend?: ExtendType;
     };
+    wheel?: boolean;
     extend?: ExtendType;
   };
   rangeSelector?: {
