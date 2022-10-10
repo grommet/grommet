@@ -40,13 +40,15 @@ describe('Calendar', () => {
 
   test('date without time specified', () => {
     // correct date displayed if time is not specified in ISOstring
-    const { container } = render(
+    const { getByLabelText } = render(
       <Grommet>
         <Calendar date={DATE.split('T')[0]} animate={false} />
       </Grommet>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(
+      getByLabelText('January 2020; Currently selected January 15, 2020;'),
+    ).not.toBeUndefined();
   });
 
   test('disabled', () => {
