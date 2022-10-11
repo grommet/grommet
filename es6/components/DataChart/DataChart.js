@@ -1,6 +1,7 @@
 var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "gap", "guide", "legend", "offset", "placeholder", "pad", "series", "size"],
-    _excluded2 = ["property", "type", "x", "y"],
-    _excluded3 = ["property"];
+    _excluded2 = ["property"],
+    _excluded3 = ["property", "type", "x", "y"],
+    _excluded4 = ["property"];
 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -40,7 +41,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       axisProp = _ref$axis === void 0 ? true : _ref$axis,
       _ref$bounds = _ref.bounds,
       boundsProp = _ref$bounds === void 0 ? 'align' : _ref$bounds,
-      chart = _ref.chart,
+      chartProp = _ref.chart,
       _ref$data = _ref.data,
       data = _ref$data === void 0 ? [] : _ref$data,
       detail = _ref.detail,
@@ -82,7 +83,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       var property = _ref2.property;
       return prop === property;
     });
-  }; // Normalize chart to an array of objects.
+  }; // Normalize chartProp to an array of objects.
   // Each chart has one or more properties associated with it.
   // A stacked bar or area chart has an array of properties.
   // A point chart can have x, y, thickness, and color each driven
@@ -90,7 +91,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
 
   var charts = useMemo(function () {
-    if (!chart) {
+    if (!chartProp) {
       if (series.length === 1) return series.filter(function (s) {
         return s.property;
       }).map(function (s) {
@@ -107,7 +108,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       });
     }
 
-    if (Array.isArray(chart)) return chart.map(function (c) {
+    if (Array.isArray(chartProp)) return chartProp.map(function (c) {
       return typeof c === 'string' ? {
         property: c
       } : c;
@@ -115,12 +116,12 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       var property = _ref3.property;
       return property;
     });
-    if (typeof chart === 'string') return [{
-      property: chart
+    if (typeof chartProp === 'string') return [{
+      property: chartProp
     }];
-    if (chart) return [chart];
+    if (chartProp) return [chartProp];
     return [];
-  }, [chart, series]); // map the series property values into their own arrays
+  }, [chartProp, series]); // map the series property values into their own arrays
 
   var seriesValues = useMemo(function () {
     var result = {};
@@ -360,36 +361,36 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var seriesStyles = useMemo(function () {
     var result = {}; // start from what we were explicitly given
 
-    charts.forEach(function (_ref6, index) {
-      var color = _ref6.color,
-          dash = _ref6.dash,
-          point = _ref6.point,
-          property = _ref6.property,
-          round = _ref6.round,
-          thickness = _ref6.thickness,
-          type = _ref6.type;
+    charts.forEach(function (chart, index) {
       var calcThickness = chartProps[index].thickness;
 
-      if (typeof property === 'object' && !Array.isArray(property)) {
+      if (typeof chart.property === 'object' && !Array.isArray(chart.property)) {
         // data driven point chart
-        Object.keys(property).forEach(function (aspect) {
-          var prop = property[aspect];
+        Object.keys(chart.property).forEach(function (aspect) {
+          var prop = chart.property[aspect];
           if (!result[prop.property || prop]) result[prop.property || prop] = {
             aspect: aspect
           };
         });
       } else {
-        var props = Array.isArray(property) ? property : [property];
-        props.forEach(function (prop) {
-          var p = prop.property || prop;
-          var pColor = prop.color || color;
-          if (!result[p]) result[p] = {};
-          if (pColor && !result[p].color) result[p].color = pColor;
-          if (point && !result[p].point) result[p].point = point;else if (type === 'point') result[p].point = false;
-          if ((thickness || calcThickness) && !result[p].thickness) result[p].thickness = thickness || calcThickness;
-          if (round !== undefined && result[p].round === undefined) result[p].round = round;
-          if (dash !== undefined && result[p].dash === undefined) result[p].dash = dash;
-          if (result[p].type === undefined) result[p].type = type;
+        var setPropertyStyle = function setPropertyStyle(_ref6) {
+          var property = _ref6.property,
+              styles = _objectWithoutPropertiesLoose(_ref6, _excluded2);
+
+          // keep what we've got, use what is new
+          result[property] = _extends({}, styles, result[property] || {}); // unless the new style is has no opacity
+
+          if (!styles.opacity) delete result[property].opacity;
+          if (styles.type === 'point') result[property].point = false;
+          if (calcThickness && !result[property].thickness) result[property].thickness = calcThickness;
+        };
+
+        if (Array.isArray(chart.property)) chart.property.forEach(function (prop) {
+          if (typeof prop === 'string') setPropertyStyle(_extends({}, chart, {
+            property: prop
+          }));else if (typeof prop === 'object') setPropertyStyle(_extends({}, chart, prop));
+        });else if (typeof chart === 'object') setPropertyStyle(chart);else if (typeof chart === 'string') setPropertyStyle({
+          property: chart
         });
       }
     }); // set color for any non-aspect properties we don't have one for yet
@@ -586,7 +587,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
         type = _ref9.type,
         x = _ref9.x,
         y = _ref9.y,
-        chartRest = _objectWithoutPropertiesLoose(_ref9, _excluded2);
+        chartRest = _objectWithoutPropertiesLoose(_ref9, _excluded3);
 
     // When we offset, we increase the padding on the end for all charts
     // by the same amount and we shift each successive chart to the
@@ -609,7 +610,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
         var _ref10 = typeof cProp === 'object' ? cProp : {},
             property = _ref10.property,
-            propRest = _objectWithoutPropertiesLoose(_ref10, _excluded3);
+            propRest = _objectWithoutPropertiesLoose(_ref10, _excluded4);
 
         return /*#__PURE__*/React.createElement(Chart // eslint-disable-next-line react/no-array-index-key
         , _extends({

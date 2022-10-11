@@ -19,6 +19,7 @@ var Swatch = function Swatch(_ref) {
   var aspect = _ref.aspect,
       color = _ref.color,
       dash = _ref.dash,
+      opacityProp = _ref.opacity,
       point = _ref.point,
       round = _ref.round,
       thickness = _ref.thickness,
@@ -115,7 +116,7 @@ var Swatch = function Swatch(_ref) {
       strokeWidth: strokeWidth
     }, strokeProps));
   }
-  var opacity = color && color.opacity ? theme.global.opacity[color.opacity] : undefined;
+  var opacity = theme.global.opacity[(color == null ? void 0 : color.opacity) || opacityProp] || undefined;
   return /*#__PURE__*/_react["default"].createElement("svg", {
     width: width,
     height: height,

@@ -6,7 +6,7 @@ for (var i = 0; i < 7; i += 1) {
   data.push({
     date: "2020-07-" + (i % 31 + 1).toString().padStart(2, 0),
     usage: Math.floor(Math.abs(Math.sin(i / 2.0) * 100)),
-    bonus: Math.floor(Math.abs(Math.cos(i / 2.0) * 100))
+    forecast: Math.floor(Math.abs(Math.cos(i / 2.0) * 100))
   });
 }
 
@@ -33,9 +33,16 @@ export var StackedBars = function StackedBars() {
             day: 'numeric'
           }));
         }
-      }, 'usage', 'bonus'],
+      }, 'usage', 'forecast'],
       chart: [{
-        property: ['usage', 'bonus'],
+        property: [{
+          property: 'usage',
+          thickness: 'medium'
+        }, {
+          property: 'forecast',
+          thickness: 'medium',
+          opacity: 'medium'
+        }],
         type: 'bars'
       }],
       axis: {
