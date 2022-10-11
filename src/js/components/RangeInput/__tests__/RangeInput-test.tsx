@@ -161,10 +161,8 @@ describe('RangeInput', () => {
     const theme: ThemeType = { rangeInput: { wheel: false } };
     const onChange = jest.fn();
     const { getByDisplayValue } = render(
-      <Grommet>
-        <ThemeContext.Extend value={theme}>
+      <Grommet theme={theme}>
           <RangeInput min={0} max={10} step={1} value={5} onChange={onChange} />
-        </ThemeContext.Extend>
       </Grommet>,
     );
 
