@@ -23,7 +23,7 @@ const Text = forwardRef(
         undefined,
       truncate,
       size,
-      skeleton,
+      skeleton: skeletonProp,
       ...rest
     },
     ref,
@@ -33,7 +33,7 @@ const Text = forwardRef(
 
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
-    const { loading } = useSkeleton();
+    const skeleton = useSkeleton();
 
     useLayoutEffect(() => {
       const updateTip = () => {
@@ -51,14 +51,14 @@ const Text = forwardRef(
       return () => window.removeEventListener('resize', updateTip);
     }, [textRef, truncate]);
 
-    if (loading) {
+    if (skeleton) {
       return (
         <Skeleton
           ref={ref}
           as={as}
           height={theme.text[size || 'medium']?.height}
           {...theme.text.skeleton}
-          {...skeleton}
+          {...skeletonProp}
           {...rest}
         />
       );

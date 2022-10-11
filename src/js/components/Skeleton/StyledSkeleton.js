@@ -18,8 +18,11 @@ export const StyledSkeleton = styled.div`
  
   ${(props) =>
     props.background && backgroundStyle(props.background, props.theme)}
-  ${(props) => props.height && heightStyle(props.height, props.theme)}
-  ${(props) => props.width && widthStyle(props.width, props.theme)}
+  ${(props) => heightStyle(
+    props.height || props.theme.text?.medium?.height,
+    props.theme,
+  )}
+  ${(props) => widthStyle(props.width || '100%', props.theme)}
  
   ${(props) =>
     props.pad &&

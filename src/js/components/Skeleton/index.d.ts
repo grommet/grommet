@@ -9,18 +9,16 @@ import {
   PadType,
   PolymorphicType,
   RoundType,
+  SkeletonColorsType,
   WidthType,
 } from '../../utils';
 
-interface ColorsType {
-  dark?: string[];
-  light?: string[];
-}
+
 export interface SkeletonProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   as?: PolymorphicType;
-  colors?: ColorsType;
+  colors?: SkeletonColorsType;
   gridArea?: GridAreaType;
   margin?: MarginType;
   height?: HeightType;

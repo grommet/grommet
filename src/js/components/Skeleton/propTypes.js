@@ -5,6 +5,7 @@ import {
   heightPropType,
   padPropType,
   roundPropType,
+  skeletonColorsPropType,
   widthPropType,
 } from '../../utils/general-prop-types';
 
@@ -17,10 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.func,
       PropTypes.element,
     ]),
-    colors: PropTypes.shape({
-      dark: PropTypes.arrayOf(PropTypes.string),
-      light: PropTypes.arrayOf(PropTypes.string),
-    }),
+    colors: skeletonColorsPropType,
     height: heightPropType,
     pad: padPropType,
     round: roundPropType,

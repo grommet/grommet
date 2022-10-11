@@ -209,7 +209,7 @@ const Button = forwardRef(
       );
     }
 
-    const { loading } = useSkeleton();
+    const skeleton = useSkeleton();
 
     const sendAnalytics = useAnalytics();
 
@@ -274,11 +274,11 @@ const Button = forwardRef(
       return result;
     }, [active, disabled, kind, kindObj, plain, selected]);
 
-    if (loading) {
+    if (skeleton) {
        return (
          <Skeleton
            ref={ref}
-           height={theme.text[size || 'medium']?.height}
+           height={theme.text[size || 'medium']?.height || size}
            { ...theme.button.size?.[size || 'medium']}
            { ...theme.button.skeleton }
          />

@@ -312,3 +312,76 @@ export type WidthType =
       max?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
       min?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
     };
+
+export type AnimationType =
+  | 'fadeIn'
+  | 'fadeOut'
+  | 'jiggle'
+  | 'pulse'
+  | 'rotateLeft'
+  | 'rotateRight'
+  | 'slideUp'
+  | 'slideDown'
+  | 'slideLeft'
+  | 'slideRight'
+  | 'zoomIn'
+  | 'zoomOut'
+  | {
+      type?:
+        | 'fadeIn'
+        | 'fadeOut'
+        | 'jiggle'
+        | 'pulse'
+        | 'rotateLeft'
+        | 'rotateRight'
+        | 'slideUp'
+        | 'slideDown'
+        | 'slideLeft'
+        | 'slideRight'
+        | 'zoomIn'
+        | 'zoomOut';
+      delay?: number;
+      duration?: number;
+      size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    }
+  | (
+      | 'fadeIn'
+      | 'fadeOut'
+      | 'jiggle'
+      | 'pulse'
+      | 'slideUp'
+      | 'slideDown'
+      | 'slideLeft'
+      | 'slideRight'
+      | 'zoomIn'
+      | 'zoomOut'
+      | {
+          type?:
+            | 'fadeIn'
+            | 'fadeOut'
+            | 'jiggle'
+            | 'pulse'
+            | 'slideUp'
+            | 'slideDown'
+            | 'slideLeft'
+            | 'slideRight'
+            | 'zoomIn'
+            | 'zoomOut';
+          delay?: number;
+          duration?: number;
+          size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+        }
+    )[];
+
+export type SkeletonColorsType = {
+  dark?: string[];
+  light?: string[];
+};
+
+export type SkeletonType = 
+| boolean
+| {
+  animation?: AnimateType;
+  depth?: number;
+  colors?: SkeletonColorsType;
+};

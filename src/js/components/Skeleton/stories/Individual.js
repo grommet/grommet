@@ -34,7 +34,7 @@ const Item = ({ title, ...rest }) => (
           >
             Acme Operations
           </Text>
-          <Text size="small" skeleton={{ height: '12px' }}>
+          <Text size="small">
             Acme Company Inc
           </Text>
         </Box>
@@ -44,7 +44,7 @@ const Item = ({ title, ...rest }) => (
   </Card>
 );
 
-const skeleton = { loading: true, animation: 'fadeIn' };
+const skeleton = { animation: 'fadeIn' };
 
 const Content = () => (
   <Box fill align="center" pad="large" gap="medium">

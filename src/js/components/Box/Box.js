@@ -117,18 +117,19 @@ const Box = forwardRef(
       });
     }
 
-    // if background depth++
-    
-    // if skeletonProp || (background && skeleton.loading) create Provider
-    
     const nextSkeleton = useMemo(() => {
-      // console.log('skeletonProp', skeletonProp, background, skeleton);
-      if (skeletonProp || ((background || border) && skeleton?.loading) ) {
+      // Decide if we need to add a new SkeletonContext. We need one if:
+      //   1. skeleton info was set in a property OR
+      //   2. there already is a SkeletonContext but this box has a
+      //      background or border. This means the box probably is more
+      //      distinguishable from the area around it.
+      // We keep track of a depth so we know how to alternate backgrounds.
+      if (skeletonProp || ((background || border) && skeleton) ) {
         const depth = skeleton ? skeleton.depth + 1 : 0;
         return {
           ...skeleton,
-          ...skeletonProp,
-          depth: skeletonProp?.depth || depth,
+          depth,
+          ...(typeof skeletonProp === 'object' ? skeletonProp : {}),
         };
       }
       return undefined;
@@ -136,20 +137,18 @@ const Box = forwardRef(
 
     let skeletonProps = {};
     if (nextSkeleton) {
-      if (nextSkeleton.loading) {
-        const { 
-          colors: skeletonThemeColors,
-          size: skeletonThemeSize,
-          ...skeletonThemeProps
-        } = theme.skeleton;
-        const skeletonColors = nextSkeleton.colors
-          ? nextSkeleton.colors[theme.dark ? 'dark' : 'light']
-          : skeletonThemeColors?.[theme.dark ? 'dark' : 'light'];
-        skeletonProps = { ...skeletonThemeProps };
-        background = skeletonColors[nextSkeleton.depth % 2];
-        if (skeletonProp?.animation) {
-          skeletonProps.animation = skeletonProp.animation;
-        }
+      const { 
+        colors: skeletonThemeColors,
+        size: skeletonThemeSize,
+        ...skeletonThemeProps
+      } = theme.skeleton;
+      const skeletonColors = nextSkeleton.colors
+        ? nextSkeleton.colors[theme.dark ? 'dark' : 'light']
+        : skeletonThemeColors?.[theme.dark ? 'dark' : 'light'];
+      skeletonProps = { ...skeletonThemeProps };
+      background = skeletonColors[nextSkeleton.depth % skeletonColors.length];
+      if (skeletonProp?.animation) {
+        skeletonProps.animation = skeletonProp.animation;
       }
       contents = (
         <SkeletonContext.Provider value={nextSkeleton}>
