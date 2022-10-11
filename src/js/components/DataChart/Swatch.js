@@ -2,7 +2,16 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 
-const Swatch = ({ aspect, color, dash, point, round, thickness, type }) => {
+const Swatch = ({
+  aspect,
+  color,
+  dash,
+  opacity: opacityProp,
+  point,
+  round,
+  thickness,
+  type,
+}) => {
   const theme = useContext(ThemeContext);
   const dim = parseInt(theme.global.spacing, 10) / 2;
   const half = dim / 2;
@@ -90,7 +99,7 @@ const Swatch = ({ aspect, color, dash, point, round, thickness, type }) => {
   }
 
   const opacity =
-    color && color.opacity ? theme.global.opacity[color.opacity] : undefined;
+    theme.global.opacity[color?.opacity || opacityProp] || undefined;
 
   return (
     <svg
