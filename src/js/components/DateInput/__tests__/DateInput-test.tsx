@@ -254,6 +254,21 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('range format no value', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput id="item" name="item" format="mm/dd/yyyy-mm/dd/yyyy" />
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          inline
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('range format inline', () => {
     const { container } = render(
       <Grommet>
