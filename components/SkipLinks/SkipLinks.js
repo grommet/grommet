@@ -79,7 +79,7 @@ var SkipLinks = function SkipLinks(_ref) {
     align: "center",
     gap: "medium"
   }, _react.Children.map(children, function (child, index) {
-    return /*#__PURE__*/(0, _react.cloneElement)(child, {
+    return child && /*#__PURE__*/(0, _react.cloneElement)(child, {
       // eslint-disable-next-line react/no-array-index-key
       key: "skip-link-" + index,
       onClick: removeLayer
