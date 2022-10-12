@@ -7,7 +7,6 @@ import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { RangeInput } from '..';
-import { ThemeContext } from '../../../contexts/ThemeContext';
 import { ThemeType } from '../../../themes';
 
 describe('RangeInput', () => {
@@ -162,7 +161,7 @@ describe('RangeInput', () => {
     const onChange = jest.fn();
     const { getByDisplayValue } = render(
       <Grommet theme={theme}>
-          <RangeInput min={0} max={10} step={1} value={5} onChange={onChange} />
+        <RangeInput min={0} max={10} step={1} value={5} onChange={onChange} />
       </Grommet>,
     );
 
