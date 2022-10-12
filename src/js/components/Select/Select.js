@@ -281,7 +281,9 @@ const Select = forwardRef(
     let ariaLabelGenerated = '';
     if (value) {
       if (Array.isArray(value)) {
-        ariaLabelGenerated = `; ${value.length || 0} selected`;
+        ariaLabelGenerated = `; ${value.length || 0} ${
+          value.length === 1 ? 'option' : 'options'
+        } selected`;
       } else if (typeof value === 'object' && value !== null) {
         ariaLabelGenerated = `; Selected: ${inputValue}`;
       } else {

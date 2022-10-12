@@ -19217,7 +19217,7 @@ exports[`Select size 1`] = `
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
-  aria-label="Open Drop; 0 selected"
+  aria-label="Open Drop; 0 options selected"
   class="c0 c1"
   id="test-select"
   type="button"
