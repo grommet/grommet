@@ -42,6 +42,7 @@ const Select = forwardRef(
       a11yTitle,
       'aria-label': ariaLabel,
       alignSelf,
+      autoScroll,
       children,
       clear = false,
       closeOnChange = true,
@@ -158,14 +159,16 @@ const Select = forwardRef(
     useEffect(() => setOpen(propOpen), [propOpen]);
 
     const onRequestOpen = useCallback(() => {
-      if (open) 
-      // get selected option
-      var selectedOption=useRef(selected);
-      selectedOption.scrollIntoView({})
-      scrollIntoView
-      return;
+      if (open) return;
       setOpen(true);
-      if (onOpen) onOpen();
+      //once the drop opens
+      if (onOpen && autoScroll) {
+        //grab ref for the selected option
+        const selectedOption=useRef(selected);
+        useEffect(()=>{
+          selectedOption.scrollIntoView({behaviour:"smooth"})
+        }) 
+      }onOpen();
     }, [onOpen, open]);
 
     const onRequestClose = useCallback(() => {
@@ -294,6 +297,7 @@ const Select = forwardRef(
           }`}
           aria-expanded={Boolean(open)}
           aria-haspopup="listbox"
+          autoScroll={autoScroll}
           id={id}
           disabled={disabled === true || undefined}
           dropAlign={dropAlign}
