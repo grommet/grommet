@@ -36,11 +36,11 @@ const RangeInput = forwardRef(
     },
     ref,
   ) => {
-    const themeContext = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
     const [focus, setFocus] = useState(focusProp);
 
-    const isScrollEnabled = themeContext?.rangeInput?.wheel !== false;
+    const isScrollEnabled = theme?.rangeInput?.wheel !== false;
 
     const [value, setValue] = formContext.useFormInput({
       name,
