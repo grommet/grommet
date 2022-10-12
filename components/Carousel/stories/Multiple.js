@@ -10,6 +10,12 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var data = ['//v2.grommet.io/assets/IMG_4210.jpg', '//v2.grommet.io/assets/Wilderpeople_Ricky.jpg', '//v2.grommet.io/assets/IMG_4245.jpg', '//v2.grommet.io/assets/IMG_4210.jpg', 'https://avatars1.githubusercontent.com/u/14203820?s=280&v=4', '//v2.grommet.io/assets/Wilderpeople_Ricky.jpg', '//v2.grommet.io/assets/IMG_4245.jpg', '//v2.grommet.io/assets/IMG_4210.jpg', '//v2.grommet.io/assets/Wilderpeople_Ricky.jpg'];
+var captions = {
+  '//v2.grommet.io/assets/IMG_4210.jpg': 'Office workspace with decorations',
+  '//v2.grommet.io/assets/IMG_4245.jpg': 'Shore with a bridge and some ships',
+  '//v2.grommet.io/assets/Wilderpeople_Ricky.jpg': 'Boy hiding behind bushes',
+  'https://avatars1.githubusercontent.com/u/14203820?s=280&v=4': 'Grommet logo'
+};
 
 var View0 = function View0() {
   var imgs = data.slice(0, 3);
@@ -19,7 +25,8 @@ var View0 = function View0() {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       key: img,
       src: img,
-      fit: "contain"
+      fit: "contain",
+      alt: captions[img]
     });
   }));
 };
@@ -32,7 +39,8 @@ var View1 = function View1() {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       key: img,
       src: img,
-      fit: "contain"
+      fit: "contain",
+      alt: captions[img]
     });
   }));
 };
@@ -45,7 +53,8 @@ var View2 = function View2() {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       key: img,
       src: img,
-      fit: "contain"
+      fit: "contain",
+      alt: captions[img]
     });
   }));
 };
