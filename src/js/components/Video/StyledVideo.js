@@ -79,6 +79,9 @@ const StyledVideoScrubber = styled.div`
   width: 100%;
   height: 100%;
   ${(props) => props.value && headStyle};
+  &:focus {
+    ${focusStyle()}
+  }
 `;
 
 StyledVideoScrubber.defaultProps = {};

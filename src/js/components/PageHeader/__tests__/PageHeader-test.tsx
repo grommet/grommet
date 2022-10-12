@@ -6,8 +6,9 @@ import { Grommet } from '../../Grommet';
 import { Anchor } from '../../Anchor';
 import { Box } from '../../Box';
 import { Button } from '../../Button';
-import { Text } from '../../Text';
 import { PageHeader } from '..';
+
+const sizes = ['small', 'medium', 'large'];
 
 describe('PageHeader', () => {
   test('basic', () => {
@@ -27,25 +28,24 @@ describe('PageHeader', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('children', () => {
-    const { asFragment } = render(
-      <Grommet>
-        <PageHeader
-          title="Grommet"
-          subtitle={`Grommet helps you build responsive and accessible 
+  sizes.forEach((size?: any) => {
+    test(`size - ${size}`, () => {
+      const { asFragment } = render(
+        <Grommet>
+          <PageHeader
+            title="Grommet"
+            subtitle={`Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
             library.`}
-          actions={<Button label="Get Started" primary />}
-          parent={<Anchor label="Parent Page" />}
-        >
-          <Text>
-            You can place any content you want as a child of PageHeader
-          </Text>
-        </PageHeader>
-      </Grommet>,
-    );
+            actions={<Button label="Get Started" primary />}
+            parent={<Anchor label="Parent Page" />}
+            size={size}
+          />
+        </Grommet>,
+      );
 
-    expect(asFragment()).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
+    });
   });
 
   test('custom theme', () => {

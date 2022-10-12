@@ -47,7 +47,7 @@ describe('Carousel', () => {
   });
 
   test('arrow navigation: next', async () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const user = userEvent.setup({ delay: null });
 
     render(
@@ -65,6 +65,7 @@ describe('Carousel', () => {
      * - Expecting "Slide Two" to be visible
      */
     const nextButton = screen.getByRole('button', { name: /Go to slide 2/i });
+
     await user.click(nextButton);
     act(() => {
       jest.advanceTimersByTime(1000);
@@ -74,7 +75,7 @@ describe('Carousel', () => {
   });
 
   test('arrow navigation: previous', async () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const user = userEvent.setup({ delay: null });
 
     render(
@@ -104,7 +105,7 @@ describe('Carousel', () => {
   });
 
   test('selector navigation: forward', async () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const user = userEvent.setup({ delay: null });
 
     render(
@@ -134,7 +135,7 @@ describe('Carousel', () => {
   });
 
   test('selector navigation: backward', async () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const user = userEvent.setup({ delay: null });
 
     render(
@@ -164,7 +165,7 @@ describe('Carousel', () => {
   });
 
   test('play', async () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     render(
       <Grommet>
         <Carousel controls={false} play={500} wrap={false}>

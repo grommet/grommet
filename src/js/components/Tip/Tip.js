@@ -4,30 +4,18 @@ import React, {
   forwardRef,
   useContext,
   useState,
-  useEffect,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { Drop } from '../Drop';
-import { useForwardedRef } from '../../utils/refs';
+import { useForwardedRef, useKeyboard } from '../../utils';
 import { TipPropTypes } from './propTypes';
 
 const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const theme = useContext(ThemeContext);
   const [over, setOver] = useState(false);
-  const [usingKeyboard, setUsingKeyboard] = useState();
-
-  const onMouseDown = () => setUsingKeyboard(false);
-  const onKeyDown = () => setUsingKeyboard(true);
-  useEffect(() => {
-    document.addEventListener('mousedown', onMouseDown);
-    document.addEventListener('keydown', onKeyDown);
-    return () => {
-      document.removeEventListener('mousedown', onMouseDown);
-      document.removeEventListener('keydown', onKeyDown);
-    };
-  }, []);
+  const usingKeyboard = useKeyboard();
 
   const componentRef = useForwardedRef(tipRef);
 
@@ -43,13 +31,21 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
     Children.only(children);
 
   const clonedChild = cloneElement(child, {
-    onMouseEnter: () => setOver(true),
-    onMouseLeave: () => setOver(false),
-    onFocus: () => {
-      if (usingKeyboard) setOver(true);
+    onMouseEnter: (event) => {
+      setOver(true);
+      if (child.props?.onMouseEnter) child.props.onMouseEnter(event);
     },
-    onBlur: () => {
+    onMouseLeave: (event) => {
+      setOver(false);
+      if (child.props?.onMouseLeave) child.props.onMouseLeave(event);
+    },
+    onFocus: (event) => {
+      if (usingKeyboard) setOver(true);
+      if (child.props?.onFocus) child.props.onFocus(event);
+    },
+    onBlur: (event) => {
       if (usingKeyboard) setOver(false);
+      if (child.props?.onBlur) child.props.onBlur(event);
     },
     key: 'tip-child',
     ref: (node) => {

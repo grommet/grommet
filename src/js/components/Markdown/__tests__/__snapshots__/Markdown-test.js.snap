@@ -16,6 +16,7 @@ exports[`Markdown renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c3 {
@@ -23,6 +24,7 @@ exports[`Markdown renders 1`] = `
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c4 {
@@ -30,6 +32,7 @@ exports[`Markdown renders 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c5 {
@@ -37,6 +40,7 @@ exports[`Markdown renders 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -135,12 +139,6 @@ exports[`Markdown renders 1`] = `
     font-size: 16px;
     line-height: 22px;
     max-width: 384px;
-  }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c7 {
-    table-layout: fixed;
   }
 }
 
@@ -311,6 +309,7 @@ exports[`wrapper 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c5 {
@@ -318,6 +317,7 @@ exports[`wrapper 1`] = `
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c6 {
@@ -325,6 +325,7 @@ exports[`wrapper 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c7 {
@@ -332,6 +333,7 @@ exports[`wrapper 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c4 {
@@ -446,12 +448,6 @@ exports[`wrapper 1`] = `
 @media only screen and (max-width:768px) {
   .c3 {
     height: 6px;
-  }
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c9 {
-    table-layout: fixed;
   }
 }
 

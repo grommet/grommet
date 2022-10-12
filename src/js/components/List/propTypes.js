@@ -59,6 +59,7 @@ if (process.env.NODE_ENV !== 'production') {
     ),
     children: PropTypes.func,
     defaultItemProps: PropTypes.shape(BoxPropTypes),
+    disabled: PropTypes.arrayOf(PropTypes.string),
     itemKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     itemProps: PropTypes.shape({}),
     onActive: PropTypes.func,
@@ -67,6 +68,7 @@ if (process.env.NODE_ENV !== 'production') {
     onOrder: PropTypes.func,
     pad: PropTypes.oneOfType([padPropType]),
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+    pinned: PropTypes.arrayOf(PropTypes.string),
     primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     secondaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     show: PropTypes.oneOfType([

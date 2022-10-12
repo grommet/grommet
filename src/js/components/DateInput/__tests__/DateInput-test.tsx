@@ -6,7 +6,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
-import { Calendar as CalendarIcon } from 'grommet-icons';
+import { Calendar as CalendarIcon, Clock as ClockIcon } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
@@ -106,6 +106,83 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('reverse calendar icon', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          reverse
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as false', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          inputProps={{ reverse: false }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as true', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          inputProps={{ reverse: true }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as false with icon', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          icon={<ClockIcon />}
+          inputProps={{ reverse: false }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as true with icon', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          icon={<ClockIcon />}
+          inputProps={{ reverse: true }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('inline', () => {
     const { container } = render(
       <Grommet>
@@ -171,6 +248,21 @@ describe('DateInput', () => {
           name="item"
           format="mm/dd/yyyy-mm/dd/yyyy"
           value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('range format no value', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput id="item" name="item" format="mm/dd/yyyy-mm/dd/yyyy" />
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          inline
         />
       </Grommet>,
     );
@@ -685,10 +777,9 @@ describe('DateInput', () => {
     fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
       target: { value: '07//2020-07/27/2021' },
     });
-    expect(onChange).toHaveNthReturnedWith(3, []);
     // cannot check snapshot here as it will be relative to the current date
 
-    expect(onChange).toHaveBeenCalledTimes(3);
+    expect(onChange).toHaveBeenCalledTimes(2);
   });
 
   test('type format inline range partial without timezone', () => {
@@ -722,10 +813,9 @@ describe('DateInput', () => {
     fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
       target: { value: '07//2020-07/27/2021' },
     });
-    expect(onChange).toHaveNthReturnedWith(3, []);
     // cannot check snapshot here as it will be relative to the current date
 
-    expect(onChange).toHaveBeenCalledTimes(3);
+    expect(onChange).toHaveBeenCalledTimes(2);
   });
 
   test('controlled format inline', () => {
@@ -939,5 +1029,21 @@ describe('DateInput', () => {
       <DateInput icon={<CalendarIcon color="red" />} name="item" />,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme', () => {
+    const customTheme = {
+      dateInput: {
+        container: {
+          round: 'xsmall',
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <DateInput format="mm/dd/yyyy" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

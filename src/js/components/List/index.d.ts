@@ -45,6 +45,7 @@ export interface ListProps<ListItemType> {
   border?: BorderType;
   children?: React.ReactNode;
   data?: ListItemType[];
+  disabled?: string[];
   gridArea?: GridAreaType;
   defaultItemProps?: BoxTypes;
   itemKey?: string | ((item: ListItemType) => string | number);
@@ -60,6 +61,7 @@ export interface ListProps<ListItemType> {
   onOrder?: (orderedData: ListItemType[]) => void;
   pad?: PadType;
   paginate?: boolean | PaginationType;
+  pinned?: (string | number)[];
   primaryKey?: string | ((item: ListItemType) => React.ReactElement);
   secondaryKey?: string | ((item: ListItemType) => React.ReactElement);
   show?: number | { page?: number };

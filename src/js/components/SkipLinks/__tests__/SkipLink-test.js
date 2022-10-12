@@ -6,7 +6,7 @@ import { Grommet, SkipLinks, SkipLink, SkipLinkTarget } from '../..';
 
 describe('SkipLink', () => {
   test('basic', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <SkipLinks id="skip-links">
@@ -43,7 +43,7 @@ describe('SkipLink', () => {
   });
 
   test('should allow for single skip link', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <SkipLinks id="skip-links">
@@ -71,5 +71,17 @@ describe('SkipLink', () => {
       jest.runAllTimers();
     });
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should automatically filter out undefined children', () => {
+    const showSecondLink = false;
+    const result = render(
+      <SkipLinks>
+        {showSecondLink && <SkipLink id="nav" label="Table of Contents" />}
+        <SkipLink id="main" label="Main Content" />
+      </SkipLinks>,
+    );
+
+    expect(result).toBeDefined();
   });
 });

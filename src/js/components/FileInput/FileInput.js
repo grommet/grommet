@@ -37,6 +37,7 @@ const formatBytes = (size) => {
 // We don't use Stack because of how we need to control the positioning.
 
 const ContentsBox = styled(Box)`
+  cursor: pointer;
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
   ${(props) => props.theme.fileInput && props.theme.fileInput.extend};
@@ -229,8 +230,7 @@ const FileInput = forwardRef(
       });
     } else message = `${files.length} items`;
 
-    const removeFile = (event, index) => {
-      event.stopPropagation();
+    const removeFile = (index) => {
       let nextFiles;
       if (index === 'all') {
         nextFiles = [];
@@ -239,8 +239,29 @@ const FileInput = forwardRef(
         nextFiles.splice(index, 1);
       }
       setFiles(nextFiles);
+
+      // Need to have a way to track the files other than an array
+      // since inputRef.current.files is a read-only FileList
+      // https://stackoverflow.com/a/64019766
+      /* eslint-disable no-undef */
+      const dt = new DataTransfer();
+      const curFiles = inputRef.current.files;
+      if (index === 'all' || nextFiles.length === 0)
+        inputRef.current.value = '';
+      for (let i = 0; i < curFiles.length; i += 1) {
+        const curfile = curFiles[i];
+        if (index !== i) dt.items.add(curfile);
+      }
+
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'files',
+      ).set;
+      nativeInputValueSetter.call(inputRef.current, dt.files);
+      const event = new Event('input', { bubbles: true });
+      inputRef.current.dispatchEvent(event);
+
       if (onChange) onChange(event, { files: nextFiles });
-      if (nextFiles.length === 0) inputRef.current.value = '';
       inputRef.current.focus();
     };
 
@@ -274,6 +295,7 @@ const FileInput = forwardRef(
                   <Message {...theme.fileInput.message}>{message}</Message>
                   <Keyboard
                     onSpace={(event) => {
+                      event.preventDefault();
                       if (controlRef.current === event.target)
                         inputRef.current.click();
                     }}
@@ -339,7 +361,7 @@ const FileInput = forwardRef(
                       event.persist(); // necessary for when React < v17
                       setPendingRemoval({ event, index: 'all' });
                       setShowRemoveConfirmation(true);
-                    } else removeFile(event, 'all');
+                    } else removeFile('all');
                   }}
                 />
                 <Keyboard
@@ -430,7 +452,7 @@ const FileInput = forwardRef(
                         event.persist(); // necessary for when React < v17
                         setPendingRemoval({ event, index });
                         setShowRemoveConfirmation(true);
-                      } else removeFile(event, index);
+                      } else removeFile(index);
                     }}
                   />
                   {files.length === 1 && (
@@ -515,7 +537,7 @@ const FileInput = forwardRef(
         {showRemoveConfirmation && (
           <ConfirmRemove
             onConfirm={() => {
-              removeFile(pendingRemoval.event, pendingRemoval.index);
+              removeFile(pendingRemoval.index);
               setPendingRemoval(defaultPendingRemoval);
               setShowRemoveConfirmation(false);
             }}

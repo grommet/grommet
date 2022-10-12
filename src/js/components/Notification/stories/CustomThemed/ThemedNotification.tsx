@@ -4,7 +4,7 @@ import { Box, Grommet, Notification } from 'grommet';
 
 import { deepMerge } from 'grommet/utils';
 import { grommet, ThemeType } from 'grommet/themes';
-import { DisabledOutline, CircleQuestion } from 'grommet-icons';
+import { CircleQuestion } from 'grommet-icons';
 
 // Type annotations can only be used in TypeScript files.
 // Remove ': ThemeType' if you are not using Typescript.
@@ -18,7 +18,6 @@ const customTheme: ThemeType = deepMerge(grommet, {
     container: {
       // any BoxProps
       pad: { horizontal: 'large', vertical: '36px' },
-      background: '#87a200',
       border: { color: '#000000', size: 'large' },
     },
     iconContainer: {
@@ -46,6 +45,7 @@ const customTheme: ThemeType = deepMerge(grommet, {
     },
     unknown: {
       icon: CircleQuestion,
+      background: '#87a200',
     },
   },
 });

@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { LayerPositionType } from '../Layer';
 import { AnchorType } from '..';
-export type StatusType = 'critical' | 'warning' | 'normal' | 'unknown';
+export type StatusType = 'critical' | 'warning' | 'normal' | 'info' | 'unknown';
 
 export interface NotificationProps {
   actions?: AnchorType[];
+  global?: boolean;
   title?: string;
-  message?: string;
+  message?: string | React.ReactNode;
   status?: StatusType;
   toast?:
     | boolean
@@ -15,6 +16,7 @@ export interface NotificationProps {
         position?: LayerPositionType;
       };
   onClose?: (...args: any[]) => any;
+  icon?: JSX.Element;
 }
 
 declare const Notification: React.FC<NotificationProps>;
