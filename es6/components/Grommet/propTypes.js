@@ -15,7 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
     plain: PropTypes.bool,
     cssVars: PropTypes.bool,
     theme: PropTypes.object,
-    themeMode: PropTypes.oneOf(['dark', 'light']),
+    themeMode: PropTypes.oneOf(['dark', 'light', 'auto']),
     userAgent: PropTypes.string,
     containerTarget: PropTypes.object,
     messages: PropTypes.shape({

@@ -104,6 +104,11 @@ var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
 
     var themeBackground = nextTheme.global.colors.background;
     nextTheme.dark = (themeMode || nextTheme.defaultMode) === 'dark';
+
+    if (themeMode === 'auto' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      nextTheme.dark = true;
+    }
+
     var color = (0, _utils.normalizeColor)(background || themeBackground, nextTheme);
     nextTheme.dark = (0, _utils.backgroundIsDark)(color, nextTheme);
     nextTheme.baseBackground = background || themeBackground; // This allows DataTable to intelligently set the background of a pinned
