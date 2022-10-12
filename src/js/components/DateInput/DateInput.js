@@ -173,7 +173,7 @@ Use the icon prop instead.`,
         date={range ? undefined : value}
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
-        dates={range && value.length ? [value] : undefined}
+        dates={range && value?.length ? [value] : undefined}
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
         onSelect={
@@ -249,7 +249,7 @@ Use the icon prop instead.`,
           <Box
             ref={containerRef}
             border={!plain}
-            round="xxsmall"
+            round={theme.dateInput.container.round}
             direction="row"
             fill
           >

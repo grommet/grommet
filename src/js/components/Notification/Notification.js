@@ -60,6 +60,7 @@ const Notification = ({
   status,
   title,
   toast,
+  icon,
   ...rest
 }) => {
   const autoClose =
@@ -155,13 +156,16 @@ const Notification = ({
 
   const Message = direction !== 'row' ? Paragraph : Text;
   if (message || actions)
-    message = (
-      <Message {...theme.notification.message}>
-        <Text margin={{ right: 'xsmall' }}>{message}</Text>
-        {/* include actions with message so it wraps with message */}
-        {actions}
-      </Message>
-    );
+    message =
+      typeof message === 'string' ? (
+        <Message {...theme.notification.message}>
+          <Text margin={{ right: 'xsmall' }}>{message}</Text>
+          {/* include actions with message so it wraps with message */}
+          {actions}
+        </Message>
+      ) : (
+        message
+      );
 
   let content = (
     <Box
@@ -180,7 +184,7 @@ const Notification = ({
         avoid nested interactive elements */}
       <Box direction="row" pad={textPad} flex>
         <Box {...theme.notification.iconContainer}>
-          <StatusIcon color={color} />
+          {icon || <StatusIcon color={color} />}
         </Box>
         <Box {...theme.notification.textContainer}>
           <TextWrapper>

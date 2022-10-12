@@ -254,6 +254,21 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('range format no value', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput id="item" name="item" format="mm/dd/yyyy-mm/dd/yyyy" />
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          inline
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('range format inline', () => {
     const { container } = render(
       <Grommet>
@@ -1014,5 +1029,21 @@ describe('DateInput', () => {
       <DateInput icon={<CalendarIcon color="red" />} name="item" />,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme', () => {
+    const customTheme = {
+      dateInput: {
+        container: {
+          round: 'xsmall',
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <DateInput format="mm/dd/yyyy" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

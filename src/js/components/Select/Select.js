@@ -57,7 +57,7 @@ const Select = forwardRef(
       gridArea,
       id,
       icon,
-      labelKey,
+      labelKey: labelKeyProp,
       margin,
       messages,
       multiple,
@@ -80,7 +80,7 @@ const Select = forwardRef(
       selected,
       size,
       value: valueProp,
-      valueKey,
+      valueKey: valueKeyProp,
       valueLabel,
       ...rest
     },
@@ -90,6 +90,10 @@ const Select = forwardRef(
     const inputRef = useRef();
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);
+    // For greater resilience, use labelKey if valueKey isn't provided and
+    // vice versa. https://github.com/grommet/grommet/pull/6299
+    const valueKey = valueKeyProp || labelKeyProp;
+    const labelKey = labelKeyProp || valueKeyProp;
 
     // Determine if the Select is opened with the keyboard. If so,
     // focus should be set on the first option when the drop opens

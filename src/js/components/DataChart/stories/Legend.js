@@ -9,6 +9,7 @@ for (let i = 1; i < 8; i += 1) {
     date: `2020-07-${((i % 30) + 1).toString().padStart(2, 0)}`,
     percent: Math.abs(v * 100),
     amount: Math.round(Math.abs(v * 50)),
+    inverse: 100 - Math.round(Math.abs(v * 50)),
   });
 }
 
@@ -29,15 +30,25 @@ export const Legend = () => (
           property: 'amount',
           label: 'Amount',
         },
+        {
+          property: 'inverse',
+          label: 'Inverse',
+        },
       ]}
       chart={[
         'percent',
         {
-          type: 'line',
           property: 'amount',
+          type: 'line',
           thickness: 'xsmall',
           dash: true,
           round: true,
+        },
+        {
+          property: 'inverse',
+          type: 'point',
+          point: 'star',
+          thickness: 'medium',
         },
       ]}
       legend

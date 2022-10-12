@@ -29,6 +29,7 @@ export const hacktoberfest2022 = deepFreeze({
       'graph-3': 'pink',
       'graph-4': 'lime',
       // clear unused colors
+      icon: undefined,
       'accent-1': undefined,
       'accent-2': undefined,
       'accent-3': undefined,
@@ -42,10 +43,14 @@ export const hacktoberfest2022 = deepFreeze({
       'light-2': undefined,
       'light-3': undefined,
       'light-4': undefined,
+      'light-5': undefined,
+      'light-6': undefined,
       'dark-1': undefined,
       'dark-2': undefined,
       'dark-3': undefined,
       'dark-4': undefined,
+      'dark-5': undefined,
+      'dark-6': undefined,
     },
     backgrounds: {
       'gradient-purple-teal': {
