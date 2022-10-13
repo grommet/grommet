@@ -70,7 +70,7 @@ var normalizeInput = function normalizeInput(dateValue) {
     if (dateValue.indexOf('T') === -1) {
       var offset = adjustedDate.getTimezoneOffset();
       var hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset);
+      adjustedDate.setHours(hour, offset < 0 ? -offset : offset);
     }
 
     result = adjustedDate;
