@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.26.0",
+  "version": "2.27.0",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -53,7 +53,7 @@
     "styled-components": ">= 5.1"
   },
   "dependencies": {
-    "grommet-icons": "^4.7.0",
+    "grommet-icons": "^4.8.0",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^7.1.5",
     "prop-types": "^15.8.1"
@@ -205,7 +205,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "142 kB"
+      "maxSize": "143 kB"
     }
   ],
   "keywords": [

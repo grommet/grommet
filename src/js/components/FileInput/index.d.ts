@@ -24,8 +24,8 @@ export interface FileInputProps {
   name?: string;
   onChange?: (
     event?: React.ChangeEvent<HTMLInputElement>,
-    { files }?: { files: object },
-    { target }?: { target: { files: object } },
+    { files }?: { files: File[] },
+    { target }?: { target: { files: FileList } },
   ) => void;
   renderFile?: (...args: any[]) => void;
 }
