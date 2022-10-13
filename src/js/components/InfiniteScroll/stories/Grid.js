@@ -15,7 +15,7 @@ export const GridInfiniteScroll = () => (
         <Box key={item} as="article" pad="xsmall">
           <Image
             src="https://via.placeholder.com/350x150"
-            alt="Placeholder Text"
+            alt="Placeholder Image"
           />
           <Text>{item}</Text>
         </Box>
