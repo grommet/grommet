@@ -1617,7 +1617,7 @@ exports[`Video Play and Pause event handlers 2`] = `
       class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 hWpkJK"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eAOMnv"
+        class="StyledBox-sc-13pk1d4-0 hatIMa"
       >
         <button
           class="StyledButton-sc-323bzc-0 ijXFTb"
@@ -1679,10 +1679,10 @@ exports[`Video Play and Pause event handlers 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 kRSvMy"
+          class="StyledBox-sc-13pk1d4-0 rSXUz"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 irXXOa"
+            class="StyledBox-sc-13pk1d4-0 ebskuH"
           >
             <div
               class="StyledStack-sc-ajspsk-0 RUPca"
@@ -1720,7 +1720,7 @@ exports[`Video Play and Pause event handlers 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eRALIW"
+            class="StyledBox-sc-13pk1d4-0 kOSiEX"
           >
             <span
               class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -1737,7 +1737,7 @@ exports[`Video Play and Pause event handlers 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kXRsIU"
+            class="StyledBox-sc-13pk1d4-0 hTBNjt"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -6013,7 +6013,7 @@ exports[`Video mouse events handlers of controls 2`] = `
       class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 efPATm"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eAOMnv"
+        class="StyledBox-sc-13pk1d4-0 hatIMa"
       >
         <button
           class="StyledButton-sc-323bzc-0 ijXFTb"
@@ -6033,10 +6033,10 @@ exports[`Video mouse events handlers of controls 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 kRSvMy"
+          class="StyledBox-sc-13pk1d4-0 rSXUz"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 irXXOa"
+            class="StyledBox-sc-13pk1d4-0 ebskuH"
           >
             <div
               class="StyledStack-sc-ajspsk-0 RUPca"
@@ -6074,7 +6074,7 @@ exports[`Video mouse events handlers of controls 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eRALIW"
+            class="StyledBox-sc-13pk1d4-0 kOSiEX"
           >
             <span
               class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -6091,7 +6091,7 @@ exports[`Video mouse events handlers of controls 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kXRsIU"
+            class="StyledBox-sc-13pk1d4-0 hTBNjt"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -6137,7 +6137,7 @@ exports[`Video mouse events handlers of controls 3`] = `
       class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 efPATm"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eAOMnv"
+        class="StyledBox-sc-13pk1d4-0 hatIMa"
       >
         <button
           class="StyledButton-sc-323bzc-0 ijXFTb"
@@ -6157,10 +6157,10 @@ exports[`Video mouse events handlers of controls 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 kRSvMy"
+          class="StyledBox-sc-13pk1d4-0 rSXUz"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 irXXOa"
+            class="StyledBox-sc-13pk1d4-0 ebskuH"
           >
             <div
               class="StyledStack-sc-ajspsk-0 RUPca"
@@ -6198,7 +6198,7 @@ exports[`Video mouse events handlers of controls 3`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eRALIW"
+            class="StyledBox-sc-13pk1d4-0 kOSiEX"
           >
             <span
               class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -6215,7 +6215,7 @@ exports[`Video mouse events handlers of controls 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kXRsIU"
+            class="StyledBox-sc-13pk1d4-0 hTBNjt"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -8373,7 +8373,7 @@ exports[`Video scrubber 2`] = `
       class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 efPATm"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eAOMnv"
+        class="StyledBox-sc-13pk1d4-0 hatIMa"
       >
         <button
           class="StyledButton-sc-323bzc-0 ijXFTb"
@@ -8393,10 +8393,10 @@ exports[`Video scrubber 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 kRSvMy"
+          class="StyledBox-sc-13pk1d4-0 rSXUz"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 irXXOa"
+            class="StyledBox-sc-13pk1d4-0 ebskuH"
           >
             <div
               class="StyledStack-sc-ajspsk-0 RUPca"
@@ -8434,7 +8434,7 @@ exports[`Video scrubber 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eRALIW"
+            class="StyledBox-sc-13pk1d4-0 kOSiEX"
           >
             <span
               class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -8451,7 +8451,7 @@ exports[`Video scrubber 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kXRsIU"
+            class="StyledBox-sc-13pk1d4-0 hTBNjt"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"

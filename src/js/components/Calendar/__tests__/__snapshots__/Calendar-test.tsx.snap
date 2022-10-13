@@ -1166,13 +1166,13 @@ exports[`Calendar change months 2`] = `
     class="StyledCalendar-sc-1y4xhmp-0 iERxZS"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hUSFEE"
+      class="StyledBox-sc-13pk1d4-0 laxXoF"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hMXKog"
+        class="StyledBox-sc-13pk1d4-0 cDgtDR"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 inoQfA"
+          class="StyledBox-sc-13pk1d4-0 fhUGlJ"
         >
           <h3
             class="StyledHeading-sc-1rdh4aw-0 eGutsY"
@@ -1181,7 +1181,7 @@ exports[`Calendar change months 2`] = `
           </h3>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 ilBnMh"
+          class="StyledBox-sc-13pk1d4-0 jzFoDk"
         >
           <button
             aria-label="Go to December 2019"
@@ -15992,13 +15992,13 @@ exports[`Calendar select date 2`] = `
     class="StyledCalendar-sc-1y4xhmp-0 iERxZS"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hUSFEE"
+      class="StyledBox-sc-13pk1d4-0 laxXoF"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hMXKog"
+        class="StyledBox-sc-13pk1d4-0 cDgtDR"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 inoQfA"
+          class="StyledBox-sc-13pk1d4-0 fhUGlJ"
         >
           <h3
             class="StyledHeading-sc-1rdh4aw-0 eGutsY"
@@ -16007,7 +16007,7 @@ exports[`Calendar select date 2`] = `
           </h3>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 ilBnMh"
+          class="StyledBox-sc-13pk1d4-0 jzFoDk"
         >
           <button
             aria-label="Go to December 2019"
@@ -18011,13 +18011,13 @@ exports[`Calendar select dates 2`] = `
     class="StyledCalendar-sc-1y4xhmp-0 iERxZS"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hUSFEE"
+      class="StyledBox-sc-13pk1d4-0 laxXoF"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hMXKog"
+        class="StyledBox-sc-13pk1d4-0 cDgtDR"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 inoQfA"
+          class="StyledBox-sc-13pk1d4-0 fhUGlJ"
         >
           <h3
             class="StyledHeading-sc-1rdh4aw-0 eGutsY"
@@ -18026,7 +18026,7 @@ exports[`Calendar select dates 2`] = `
           </h3>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 ilBnMh"
+          class="StyledBox-sc-13pk1d4-0 jzFoDk"
         >
           <button
             aria-label="Go to December 2019"
