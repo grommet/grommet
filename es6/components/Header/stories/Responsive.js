@@ -8,7 +8,7 @@ export var Responsive = function Responsive() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     React.createElement(Header, {
-      background: "light-4",
+      background: "light-3",
       pad: "medium",
       height: "xsmall"
     }, /*#__PURE__*/React.createElement(Anchor, {

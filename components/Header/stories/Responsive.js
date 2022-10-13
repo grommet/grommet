@@ -17,7 +17,7 @@ var Responsive = function Responsive() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Header, {
-      background: "light-4",
+      background: "light-3",
       pad: "medium",
       height: "xsmall"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
