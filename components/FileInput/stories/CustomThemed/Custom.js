@@ -71,6 +71,7 @@ var Custom = function Custom() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, {
+    "aria-label": "Choose files",
     renderFile: function renderFile(file) {
       return /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
         weight: "bold",

@@ -18,6 +18,7 @@ var Multiple = function Multiple() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, {
+    "aria-label": "Choose files",
     multiple: {
       max: 5
     },

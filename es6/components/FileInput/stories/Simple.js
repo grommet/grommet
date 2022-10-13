@@ -9,6 +9,7 @@ export var Simple = function Simple() {
   }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
   }, /*#__PURE__*/React.createElement(FileInput, {
+    "aria-label": "Choose files",
     onChange: function onChange(event, _ref) {
       var files = _ref.files;
       var fileList = files;

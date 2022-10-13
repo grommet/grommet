@@ -24,6 +24,7 @@ var MaxFileCount = function MaxFileCount() {
     htmlFor: "fileInput",
     required: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, {
+    "aria-label": "Choose files",
     name: "fileInput",
     id: "fileInput",
     multiple: {

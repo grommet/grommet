@@ -15,6 +15,7 @@ export var MaxFileCount = function MaxFileCount() {
     htmlFor: "fileInput",
     required: true
   }, /*#__PURE__*/React.createElement(FileInput, {
+    "aria-label": "Choose files",
     name: "fileInput",
     id: "fileInput",
     multiple: {

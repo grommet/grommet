@@ -9,6 +9,7 @@ export var Multiple = function Multiple() {
   }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
   }, /*#__PURE__*/React.createElement(FileInput, {
+    "aria-label": "Choose files",
     multiple: {
       max: 5
     },

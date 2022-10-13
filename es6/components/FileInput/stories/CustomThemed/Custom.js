@@ -60,6 +60,7 @@ export var Custom = function Custom() {
   }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
   }, /*#__PURE__*/React.createElement(FileInput, {
+    "aria-label": "Choose files",
     renderFile: function renderFile(file) {
       return /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, {
         weight: "bold",
