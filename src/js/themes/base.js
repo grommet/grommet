@@ -560,7 +560,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         properties: ['color', 'background-color', 'border-color', 'box-shadow'],
       },
       skeleton: {
-        width: '100px',
+        width: { min: '100px' },
       },
     },
     calendar: {
@@ -1015,6 +1015,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       responsiveBreakpoint: 'small', // when we scale the font size down
       weight: 600,
+      skeleton: {
+        width: { min: '200px' },
+      },
     },
     layer: {
       background: {

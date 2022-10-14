@@ -883,7 +883,9 @@ exports[`Components loads 1`] = `
             },
           },
           "skeleton": {
-            "width": "100px",
+            "width": {
+              "min": "100px",
+            },
           },
           "transition": {
             "duration": 0.1,
@@ -1655,6 +1657,11 @@ exports[`Components loads 1`] = `
             },
           },
           "responsiveBreakpoint": "small",
+          "skeleton": {
+            "width": {
+              "min": "200px",
+            },
+          },
           "weight": 600,
         },
         "icon": {
@@ -2854,7 +2861,9 @@ exports[`Components loads 1`] = `
             },
           },
           "skeleton": {
-            "width": "100px",
+            "width": {
+              "min": "100px",
+            },
           },
           "transition": {
             "duration": 0.1,
@@ -3626,6 +3635,11 @@ exports[`Components loads 1`] = `
             },
           },
           "responsiveBreakpoint": "small",
+          "skeleton": {
+            "width": {
+              "min": "200px",
+            },
+          },
           "weight": 600,
         },
         "icon": {

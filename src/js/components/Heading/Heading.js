@@ -4,6 +4,8 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { StyledHeading } from './StyledHeading';
 import { HeadingPropTypes } from './propTypes';
 import { useForwardedRef } from '../../utils';
+import { useSkeleton } from '../Skeleton';
+import { HeadingSkeleton } from './HeadingSkeleton';
 
 const Heading = forwardRef(
   (
@@ -15,6 +17,8 @@ const Heading = forwardRef(
     const [overflowWrap, setOverflowWrap] = useState(
       overflowWrapProp || 'break-word',
     );
+
+    const skeleton = useSkeleton();
 
     // handle overflowWrap of heading
     useLayoutEffect(() => {
@@ -33,6 +37,16 @@ const Heading = forwardRef(
       updateOverflowWrap();
       return () => window.removeEventListener('resize', updateOverflowWrap);
     }, [headingRef, overflowWrapProp]);
+
+    if (skeleton) {
+      return (
+        <HeadingSkeleton
+          ref={headingRef}
+          level={level}
+          {...rest}
+        />
+      );
+    }
 
     return (
       // enforce level to be a number

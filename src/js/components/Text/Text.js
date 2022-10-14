@@ -1,13 +1,13 @@
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 
-import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
 import { useForwardedRef } from '../../utils';
 import { TextPropTypes } from './propTypes';
-import { Skeleton, useSkeleton } from '../Skeleton';
+import { useSkeleton } from '../Skeleton';
+import { TextSkeleton } from './TextSkeleton';
 
 const Text = forwardRef(
   (
@@ -31,8 +31,6 @@ const Text = forwardRef(
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
 
-    const theme = useContext(ThemeContext) || defaultProps.theme;
-
     const skeleton = useSkeleton();
 
     useLayoutEffect(() => {
@@ -53,11 +51,10 @@ const Text = forwardRef(
 
     if (skeleton) {
       return (
-        <Skeleton
+        <TextSkeleton
           ref={ref}
           as={as}
-          height={theme.text[size || 'medium']?.height}
-          {...theme.text.skeleton}
+          size={size}
           {...skeletonProp}
           {...rest}
         />
