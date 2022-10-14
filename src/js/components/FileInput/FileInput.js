@@ -17,9 +17,34 @@ import { Text } from '../Text';
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
 
+const getConversionFactor = () => {
+  const SI_CONVERSION_FACTOR = 1000;
+  const IEC_CONVERSION_FACTOR = 1024;
+
+  const osConversionFactor = {
+    Win: IEC_CONVERSION_FACTOR,
+    Linux: SI_CONVERSION_FACTOR,
+    Mac: SI_CONVERSION_FACTOR,
+  };
+
+  const currentOS = ['Win', 'Linux', 'Mac'].find(
+    (v) => window.navigator.userAgentData.platform.indexOf(v) >= 0,
+  );
+
+  if (osConversionFactor[currentOS]) {
+    return osConversionFactor[currentOS];
+  }
+
+  return SI_CONVERSION_FACTOR;
+};
+
 const formatBytes = (size) => {
-  const units = ['B', 'KB', 'MB', 'GB', 'TB'];
-  const factor = 1024;
+  const units =
+    getConversionFactor() === 1000
+      ? ['B', 'KB', 'MB', 'GB', 'TB']
+      : ['B', 'KiB', 'MiB', 'GiB', 'TiB'];
+  const factor = getConversionFactor();
+  console.log(factor);
   let index = 0;
   let num = size;
   while (num >= factor && index < units.length - 1) {
