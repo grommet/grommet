@@ -6,6 +6,7 @@ export const Multiple = () => (
   <Box fill align="center" justify="start" pad="large">
     <Box width="medium">
       <FileInput
+        aria-label="Choose files"
         multiple={{
           max: 5,
         }}
