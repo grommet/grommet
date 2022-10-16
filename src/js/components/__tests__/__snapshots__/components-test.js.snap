@@ -1152,7 +1152,11 @@ exports[`Components loads 1`] = `
             },
           },
         },
-        "dateInput": {},
+        "dateInput": {
+          "container": {
+            "round": "xxsmall",
+          },
+        },
         "diagram": {
           "line": {
             "color": "graph-0",
@@ -3084,7 +3088,11 @@ exports[`Components loads 1`] = `
             },
           },
         },
-        "dateInput": {},
+        "dateInput": {
+          "container": {
+            "round": "xxsmall",
+          },
+        },
         "diagram": {
           "line": {
             "color": "graph-0",
@@ -4651,7 +4659,17 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
-  "Table": [Function],
+  "Table": {
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "caption": [Function],
+      "gridArea": [Function],
+      "margin": [Function],
+    },
+    "render": [Function],
+  },
   "TableBody": {
     "$$typeof": Symbol(react.forward_ref),
     "render": [Function],

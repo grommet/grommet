@@ -25,7 +25,12 @@ export const Pinned = () => {
   const [ordered, setOrder] = useState(locations);
   return (
     <Box align="center" pad="large">
-      <List data={ordered} onOrder={setOrder} pinned={pinnedLocations} />
+      <List
+        aria-label="pinned list"
+        data={ordered}
+        onOrder={setOrder}
+        pinned={pinnedLocations}
+      />
     </Box>
   );
 };

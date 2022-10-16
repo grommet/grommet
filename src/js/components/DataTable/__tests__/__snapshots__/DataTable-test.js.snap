@@ -3453,7 +3453,7 @@ exports[`DataTable custom theme 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dmvmSa"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 buQPWH"
               disabled=""
             >
               <div
@@ -3518,7 +3518,7 @@ exports[`DataTable custom theme 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dmvmSa"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 buQPWH"
               disabled=""
             >
               <div
@@ -11381,7 +11381,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -11508,7 +11508,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -11624,7 +11624,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -11756,7 +11756,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -11848,7 +11848,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -11929,7 +11929,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -12534,7 +12534,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -12622,7 +12622,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -12705,7 +12705,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -12788,7 +12788,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -12871,7 +12871,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -12970,7 +12970,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -13031,7 +13031,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -13087,7 +13087,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -13143,7 +13143,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -13199,7 +13199,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -21068,7 +21068,7 @@ exports[`DataTable select 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -21142,7 +21142,7 @@ exports[`DataTable select 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
@@ -21197,7 +21197,7 @@ exports[`DataTable select 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jZnmBD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"

@@ -4298,7 +4298,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 dkAvei FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 sYvHP"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kDPESC"
           label="toggle"
         >
           <div
@@ -4538,7 +4538,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 dkAvei FormField__FormFieldContentBox-sc-m9hood-1 dSTFCs"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hldLpV"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hAWvdE"
           label="toggle"
         >
           <div

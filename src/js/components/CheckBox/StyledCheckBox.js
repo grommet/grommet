@@ -24,6 +24,7 @@ const hoverStyle = css`
   :hover input:not([disabled]) + span {
     border-color: ${(props) =>
       normalizeColor(props.theme.checkBox.hover?.border?.color, props.theme)};
+    ${(props) => props.theme.checkBox.hover?.extend}
   }
   :hover {
     background-color: ${(props) =>

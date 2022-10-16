@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
     actions: PropTypes.arrayOf(PropTypes.shape(AnchorPropTypes)),
     global: PropTypes.bool,
     title: PropTypes.string,
-    message: PropTypes.string,
+    message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     status: PropTypes.oneOf([
       'critical',
       'warning',
@@ -36,6 +36,7 @@ if (process.env.NODE_ENV !== 'production') {
       }),
     ]),
     onClose: PropTypes.func,
+    icon: PropTypes.element,
   };
 }
 export const NotificationType = PropType;

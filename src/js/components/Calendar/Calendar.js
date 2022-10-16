@@ -91,7 +91,7 @@ const normalizeInput = (dateValue) => {
     if (dateValue.indexOf('T') === -1) {
       const offset = adjustedDate.getTimezoneOffset();
       const hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset);
+      adjustedDate.setHours(hour, offset < 0 ? -offset : offset);
     }
     result = adjustedDate;
   } else if (Array.isArray(dateValue)) {
