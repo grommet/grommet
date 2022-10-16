@@ -30,7 +30,7 @@ export const Global = () => {
         {showGlobalNotification && (
           <Notification
             status="warning"
-            message={`Your supscription will expire in 7 days. Renew your 
+            message={`Your supscription will expire in 7 days. Renew your
             subscription to ensure you don't lose access.`}
             onClose={() => setShowGlobalNotification(false)}
             actions={[
@@ -43,10 +43,10 @@ export const Global = () => {
           />
         )}
         <Box width="large" margin="auto" pad="medium" gap="medium">
-          <Header>
+          <Box direction="row" justify="between">
             <Heading margin="none">Page Heading</Heading>
             <Button alignSelf="start" label="Page-level Action" primary />
-          </Header>
+          </Box>
           <Paragraph margin="none">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
             aliquet vitae velit non cursus. Aliquam fringilla dapibus elit, non
