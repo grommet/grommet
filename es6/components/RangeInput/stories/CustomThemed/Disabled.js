@@ -21,7 +21,8 @@ export var Disabled = function Disabled() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(RangeInput, {
     disabled: true,
-    value: 5
+    value: 5,
+    a11yTitle: "Select range value"
   }))), /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -29,7 +30,8 @@ export var Disabled = function Disabled() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(RangeInput, {
     disabled: true,
-    value: 5
+    value: 5,
+    a11yTitle: "Select range value"
   }))));
 };
 export default {

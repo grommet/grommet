@@ -42,6 +42,7 @@ export const Custom = () => {
         <Volume color="neutral-2" />
         <Box align="center" width="small">
           <RangeInput
+            a11yTitle="Select range value"
             min={0}
             max={1}
             step={0.1}

@@ -67,6 +67,7 @@ var Bounds = function Bounds() {
     align: "center",
     width: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
+    a11yTitle: "Select range value",
     min: 0,
     max: 10,
     step: 1,

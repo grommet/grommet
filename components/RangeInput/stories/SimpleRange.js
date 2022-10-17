@@ -22,6 +22,7 @@ var Simple = function Simple() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
+    a11yTitle: "Select range value",
     value: value,
     onChange: onChange
   }));

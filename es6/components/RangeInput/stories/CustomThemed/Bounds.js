@@ -57,6 +57,7 @@ export var Bounds = function Bounds() {
     align: "center",
     width: "medium"
   }, /*#__PURE__*/React.createElement(RangeInput, {
+    a11yTitle: "Select range value",
     min: 0,
     max: 10,
     step: 1,

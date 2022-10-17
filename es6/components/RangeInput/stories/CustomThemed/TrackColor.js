@@ -36,6 +36,7 @@ export var TrackColor = function TrackColor() {
     gap: "large",
     width: "large"
   }, /*#__PURE__*/React.createElement(RangeInput, {
+    a11yTitle: "Select range value",
     min: 0,
     max: 1,
     step: 0.1,
@@ -43,6 +44,7 @@ export var TrackColor = function TrackColor() {
     color: "skyblue",
     onChange: onChange1
   }), /*#__PURE__*/React.createElement(RangeInput, {
+    a11yTitle: "Select range value",
     min: 0,
     max: 10,
     step: 1,

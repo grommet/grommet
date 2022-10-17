@@ -32,7 +32,8 @@ var Disabled = function Disabled() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
     disabled: true,
-    value: 5
+    value: 5,
+    a11yTitle: "Select range value"
   }))), /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -40,7 +41,8 @@ var Disabled = function Disabled() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
     disabled: true,
-    value: 5
+    value: 5,
+    a11yTitle: "Select range value"
   }))));
 };
 

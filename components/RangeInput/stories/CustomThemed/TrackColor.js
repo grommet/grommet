@@ -46,6 +46,7 @@ var TrackColor = function TrackColor() {
     gap: "large",
     width: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
+    a11yTitle: "Select range value",
     min: 0,
     max: 1,
     step: 0.1,
@@ -53,6 +54,7 @@ var TrackColor = function TrackColor() {
     color: "skyblue",
     onChange: onChange1
   }), /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
+    a11yTitle: "Select range value",
     min: 0,
     max: 10,
     step: 1,
