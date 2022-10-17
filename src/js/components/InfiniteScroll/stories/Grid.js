@@ -13,7 +13,10 @@ export const GridInfiniteScroll = () => (
     <InfiniteScroll items={allItems} step={12}>
       {(item) => (
         <Box key={item} as="article" pad="xsmall">
-          <Image src="https://via.placeholder.com/350x150" />
+          <Image
+            src="https://via.placeholder.com/350x150"
+            alt="Placeholder Image"
+          />
           <Text>{item}</Text>
         </Box>
       )}

@@ -8,7 +8,7 @@ const gravatarLink =
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Header background="light-4" pad="small">
+  <Header background="light-3" pad="small">
     <Avatar src={gravatarLink} />
     <Nav direction="row">
       <Anchor label="Home" href="#" />

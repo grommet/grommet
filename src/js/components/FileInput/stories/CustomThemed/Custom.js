@@ -47,6 +47,7 @@ export const Custom = () => (
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <FileInput
+          aria-label="Choose files"
           renderFile={(file) => (
             <Box>
               <Text weight="bold" truncate>
