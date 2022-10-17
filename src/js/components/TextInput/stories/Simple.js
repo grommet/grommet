@@ -12,7 +12,7 @@ export const Simple = () => {
     // <Grommet theme={...}>
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
-        <TextInput value={value} onChange={onChange} />
+        <TextInput value={value} onChange={onChange} aria-label="Input Text" />
       </Box>
     </Box>
     // </Grommet>
