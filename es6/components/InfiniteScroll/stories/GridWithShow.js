@@ -21,7 +21,8 @@ export var GridWithShow = function GridWithShow() {
         as: "article",
         pad: "xsmall"
       }, /*#__PURE__*/React.createElement(Image, {
-        src: "https://via.placeholder.com/350x150"
+        src: "https://via.placeholder.com/350x150",
+        alt: "Placeholder Image"
       }), /*#__PURE__*/React.createElement(Text, null, item));
     })) // </Grommet>
 
