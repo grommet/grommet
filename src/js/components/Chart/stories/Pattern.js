@@ -15,7 +15,7 @@ export const Pattern = () => (
       'stripesDiagonalUp',
     ].map((pattern) => (
       <Chart
-        id="area"
+        id={`area-${pattern}`}
         type="area"
         pattern={pattern}
         thickness="xsmall"
