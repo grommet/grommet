@@ -131,7 +131,6 @@ describe('Box', () => {
         <Box alignSelf="center" />
         <Box alignSelf="stretch" />
         <Box alignSelf="end" />
-        <Box alignSelf="baseline" />
       </Grommet>,
     );
 

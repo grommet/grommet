@@ -715,23 +715,6 @@ exports[`Box alignSelf 1`] = `
   flex-direction: column;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: baseline;
-  -ms-flex-item-align: baseline;
-  align-self: baseline;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 <div
   class="c0"
 >
@@ -746,9 +729,6 @@ exports[`Box alignSelf 1`] = `
   />
   <div
     class="c4"
-  />
-  <div
-    class="c5"
   />
 </div>
 `;
@@ -5468,6 +5448,40 @@ exports[`Box wrap 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap-reverse;
+  -ms-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
 }
 
 <div
@@ -5477,10 +5491,10 @@ exports[`Box wrap 1`] = `
     class="c1"
   />
   <div
-    class="c1"
+    class="c2"
   />
   <div
-    class="c1"
+    class="c3"
   />
 </div>
 `;

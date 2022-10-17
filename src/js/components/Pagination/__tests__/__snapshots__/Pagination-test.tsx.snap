@@ -8113,14 +8113,14 @@ exports[`Pagination should display next page of results when "next" is
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 laxXoF Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 hUSFEE Pagination__StyledPaginationContainer-sc-rnlw6m-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 cLdbZY"
+      class="StyledBox-sc-13pk1d4-0 jKAhip"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 eEcGnt"
+        class="StyledBox-sc-13pk1d4-0 hUxOug"
       >
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -9414,14 +9414,14 @@ exports[`Pagination should display previous page of results when "previous" is
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 laxXoF Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 hUSFEE Pagination__StyledPaginationContainer-sc-rnlw6m-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 cLdbZY"
+      class="StyledBox-sc-13pk1d4-0 jKAhip"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 eEcGnt"
+        class="StyledBox-sc-13pk1d4-0 hUxOug"
       >
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"

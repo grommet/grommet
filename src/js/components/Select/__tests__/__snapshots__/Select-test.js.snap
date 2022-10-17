@@ -654,7 +654,7 @@ exports[`Select Clear option renders - bottom 1`] = `
 
 exports[`Select Clear option renders - bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -917,7 +917,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 
 exports[`Select Clear option renders correct label when wrapped in FormField 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1172,7 +1172,7 @@ exports[`Select Clear option renders custom label 1`] = `
 
 exports[`Select Clear option renders custom label 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1563,7 +1563,7 @@ exports[`Select Clear option renders- top 1`] = `
 
 exports[`Select Clear option renders- top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2911,10 +2911,10 @@ exports[`Select complex options and children 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 cDgtDR"
+    class="StyledBox-sc-13pk1d4-0 hMXKog"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hmAJgr"
+      class="StyledBox-sc-13pk1d4-0 hWKKwG"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
@@ -2932,7 +2932,7 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jiyNHS"
+      class="StyledBox-sc-13pk1d4-0 kXoZXT"
       style="min-width: auto;"
     >
       <svg
@@ -3157,7 +3157,7 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4140,7 +4140,7 @@ exports[`Select default value clear 1`] = `
 
 exports[`Select default value clear 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4711,10 +4711,10 @@ exports[`Select disabled 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 cDgtDR"
+    class="StyledBox-sc-13pk1d4-0 hMXKog"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hmAJgr"
+      class="StyledBox-sc-13pk1d4-0 hWKKwG"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
@@ -4732,7 +4732,7 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jiyNHS"
+      class="StyledBox-sc-13pk1d4-0 kXoZXT"
       style="min-width: auto;"
     >
       <svg
@@ -5330,7 +5330,7 @@ exports[`Select disabled key 2`] = `
 
 exports[`Select disabled key 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5633,7 +5633,7 @@ exports[`Select disabled option value 1`] = `
 
 exports[`Select disabled option value 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -7609,7 +7609,7 @@ exports[`Select onChange with valueKey object 2`] = `
 
 exports[`Select onChange with valueKey object 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -8442,7 +8442,7 @@ exports[`Select onChange with valueKey string 2`] = `
 
 exports[`Select onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -9222,7 +9222,7 @@ exports[`Select onChange with valueLabel 2`] = `
 
 exports[`Select onChange with valueLabel 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -9761,7 +9761,7 @@ exports[`Select onChange without labelKey 2`] = `
 
 exports[`Select onChange without labelKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -10594,7 +10594,7 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
 
 exports[`Select onChange without labelKey or valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -11427,7 +11427,7 @@ exports[`Select onChange without valueKey 2`] = `
 
 exports[`Select onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -12573,10 +12573,10 @@ exports[`Select prop: onOpen 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 cDgtDR"
+    class="StyledBox-sc-13pk1d4-0 hMXKog"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hmAJgr"
+      class="StyledBox-sc-13pk1d4-0 hWKKwG"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
@@ -12594,7 +12594,7 @@ exports[`Select prop: onOpen 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jiyNHS"
+      class="StyledBox-sc-13pk1d4-0 kXoZXT"
       style="min-width: auto;"
     >
       <svg
@@ -12862,7 +12862,7 @@ exports[`Select prop: onOpen 3`] = `
 
 exports[`Select prop: onOpen 4`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -12885,7 +12885,7 @@ exports[`Select prop: onOpen 5`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fvHehF"
+      class="StyledBox-sc-13pk1d4-0 bvLkDM"
     >
       <span
         class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -12904,7 +12904,7 @@ exports[`Select prop: onOpen 5`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fvHehF"
+      class="StyledBox-sc-13pk1d4-0 bvLkDM"
     >
       <span
         class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -12914,7 +12914,7 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <div
-    class="StyledBox-sc-13pk1d4-0 kXSPLe"
+    class="StyledBox-sc-13pk1d4-0 SWGaz"
   />
 </div>
 `;
@@ -13478,10 +13478,10 @@ exports[`Select renders custom up and down icons 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 cDgtDR"
+      class="StyledBox-sc-13pk1d4-0 hMXKog"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hmAJgr"
+        class="StyledBox-sc-13pk1d4-0 hWKKwG"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
@@ -13498,7 +13498,7 @@ exports[`Select renders custom up and down icons 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 jiyNHS"
+        class="StyledBox-sc-13pk1d4-0 kXoZXT"
         style="min-width: auto;"
       >
         .c0 {
@@ -15546,7 +15546,7 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -16194,7 +16194,7 @@ exports[`Select search and select 2`] = `
 
 exports[`Select search and select 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jiyNHS {
+  .kXoZXT {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -18064,10 +18064,10 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 cDgtDR"
+      class="StyledBox-sc-13pk1d4-0 hMXKog"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hmAJgr"
+        class="StyledBox-sc-13pk1d4-0 hWKKwG"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
@@ -18085,7 +18085,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 jiyNHS"
+        class="StyledBox-sc-13pk1d4-0 kXoZXT"
         style="min-width: auto;"
       >
         <svg

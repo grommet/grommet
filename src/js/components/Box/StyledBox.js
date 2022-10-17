@@ -123,7 +123,9 @@ const WRAP_MAP = {
   reverse: 'wrap-reverse',
 };
 
-const wrapStyle = (props) => WRAP_MAP[props.wrapProp];
+const wrapStyle = css`
+  flex-wrap: ${(props) => WRAP_MAP[props.wrapProp]};
+`;
 
 const animationItemStyle = (item, theme) => {
   if (typeof item === 'string') {
@@ -199,11 +201,7 @@ const interactiveStyle = css`
 `;
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-const StyledBox = styled.div.attrs((props) => ({
-  style: {
-    wrap: props.wrapProp && wrapStyle(props),
-  },
-}))`
+const StyledBox = styled.div`
   display: flex;
   box-sizing: border-box;
   ${(props) => !props.basis && 'max-width: 100%;'};
@@ -234,6 +232,7 @@ const StyledBox = styled.div.attrs((props) => ({
     )}
   ${(props) =>
     props.round && roundStyle(props.round, props.responsive, props.theme)}
+  ${(props) => props.wrapProp && wrapStyle}
   ${(props) => props.overflowProp && overflowStyle(props.overflowProp)}
   ${(props) => props.elevationProp && elevationStyle(props.elevationProp)}
   ${(props) => props.animation && animationStyle}
