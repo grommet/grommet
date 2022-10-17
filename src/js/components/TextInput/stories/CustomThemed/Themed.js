@@ -77,6 +77,7 @@ export const Themed = () => {
             onSelect={onSelect}
             suggestions={suggestions}
             placeholder={<span>Enter something...</span>}
+            aria-label="Input Text"
           />
         </Box>
       </Box>

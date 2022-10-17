@@ -23,6 +23,7 @@ export const Password = () => {
         type={reveal ? 'text' : 'password'}
         value={value}
         onChange={(event) => setValue(event.target.value)}
+        aria-label="Input Password"
       />
       <Button
         icon={reveal ? <View size="medium" /> : <Hide size="medium" />}

@@ -11,15 +11,17 @@ type ChartType =
       opacity?: ChartProps['opacity'];
       point?: ChartProps['point']; // default across points
       // property to get values from objects in data
-      property:
+      property?:
         | string
-        | string[]
-        | {
-            property: string;
-            color?: string;
-            opacity?: string;
-            thickness?: string;
-          }[]
+        | (
+            | string
+            | {
+                property: string;
+                color?: string;
+                opacity?: string;
+                thickness?: string;
+              }
+          )[]
         | {
             color?:
               | string
@@ -46,7 +48,7 @@ type SeriesType =
   | {
       label?: string | React.ReactNode; // used for legend and/or hover/touch detail
       prefix?: string; // used for values in axes and hover/touch detail
-      property: string; // property key to get values from objects in data
+      property?: string; // property key to get values from objects in data
       render?: (value: any, datum: {}, property: string) => React.ReactNode; // used for hover/touch detail
       suffix?: string; // used for values in axes and hover/touch detail
     };
@@ -104,7 +106,7 @@ export interface DataChartProps {
   pad?: GridProps['pad'];
   placeholder?: string | React.ReactNode;
   // series - the data item properties and any
-  series: SeriesType | SeriesType[];
+  series?: SeriesType | SeriesType[];
   margin?: MarginType; // generic
   size?: ChartProps['size']; // width and height, defaults to 'fill'
 }
