@@ -42,6 +42,7 @@ export const Bounds = () => {
         />
         <Box align="center" width="medium">
           <RangeInput
+            a11yTitle="Select range value"
             min={0}
             max={10}
             step={1}
