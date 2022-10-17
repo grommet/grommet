@@ -16,7 +16,8 @@ var StyledPlaceholder = function StyledPlaceholder() {
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Form, null, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
       name: "name",
-      placeholder: /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "placeholder")
+      placeholder: /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "placeholder"),
+      "aria-label": "Input Text"
     }))) // </Grommet>
 
   );

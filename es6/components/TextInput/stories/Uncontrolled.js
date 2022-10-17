@@ -15,7 +15,8 @@ export var Uncontrolled = function Uncontrolled() {
     }, /*#__PURE__*/React.createElement(TextInput, {
       onChange: function onChange(event) {
         return console.log('Change', event.target.value);
-      }
+      },
+      "aria-label": "Input Text"
     }))) // </Grommet>
 
   );

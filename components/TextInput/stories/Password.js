@@ -37,7 +37,8 @@ var Password = function Password() {
       value: value,
       onChange: function onChange(event) {
         return setValue(event.target.value);
-      }
+      },
+      "aria-label": "Input Password"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       icon: reveal ? /*#__PURE__*/_react["default"].createElement(_grommetIcons.View, {
         size: "medium"

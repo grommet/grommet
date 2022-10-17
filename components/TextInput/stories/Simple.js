@@ -31,7 +31,8 @@ var Simple = function Simple() {
       width: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
       value: value,
-      onChange: onChange
+      onChange: onChange,
+      "aria-label": "Input Text"
     }))) // </Grommet>
 
   );

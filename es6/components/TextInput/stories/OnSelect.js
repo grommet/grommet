@@ -38,7 +38,8 @@ export var OnSelect = function OnSelect() {
       onChange: onChange,
       onSelect: onHighlight,
       onSuggestionSelect: onSelect,
-      suggestions: suggestions
+      suggestions: suggestions,
+      "aria-label": "Input text"
     }))) // </Grommet>
 
   );

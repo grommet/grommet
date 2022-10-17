@@ -43,7 +43,8 @@ export var Suggestions = function Suggestions() {
       value: value,
       onChange: onChange,
       onSuggestionSelect: onSuggestionSelect,
-      suggestions: suggestions
+      suggestions: suggestions,
+      "aria-label": "Input Text"
     }))) // </Grommet>
 
   );

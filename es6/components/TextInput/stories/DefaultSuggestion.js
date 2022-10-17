@@ -33,7 +33,8 @@ export var DefaultSuggestion = function DefaultSuggestion() {
       onChange: onChange,
       onSelect: onSelect,
       suggestions: suggestions,
-      defaultSuggestion: 1
+      defaultSuggestion: 1,
+      "aria-label": "Input Text"
     }))) // </Grommet>
 
   );

@@ -24,7 +24,8 @@ var Uncontrolled = function Uncontrolled() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
       onChange: function onChange(event) {
         return console.log('Change', event.target.value);
-      }
+      },
+      "aria-label": "Input Text"
     }))) // </Grommet>
 
   );

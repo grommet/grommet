@@ -22,7 +22,8 @@ export var Simple = function Simple() {
       width: "medium"
     }, /*#__PURE__*/React.createElement(TextInput, {
       value: value,
-      onChange: onChange
+      onChange: onChange,
+      "aria-label": "Input Text"
     }))) // </Grommet>
 
   );

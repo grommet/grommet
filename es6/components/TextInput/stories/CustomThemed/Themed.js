@@ -67,7 +67,8 @@ export var Themed = function Themed() {
     onChange: onChange,
     onSelect: onSelect,
     suggestions: suggestions,
-    placeholder: /*#__PURE__*/React.createElement("span", null, "Enter something...")
+    placeholder: /*#__PURE__*/React.createElement("span", null, "Enter something..."),
+    "aria-label": "Input Text"
   }))));
 };
 export default {

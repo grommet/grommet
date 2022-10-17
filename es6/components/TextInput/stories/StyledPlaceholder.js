@@ -7,7 +7,8 @@ export var StyledPlaceholder = function StyledPlaceholder() {
     // <Grommet theme={...}>
     React.createElement(Box, null, /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(TextInput, {
       name: "name",
-      placeholder: /*#__PURE__*/React.createElement(Text, null, "placeholder")
+      placeholder: /*#__PURE__*/React.createElement(Text, null, "placeholder"),
+      "aria-label": "Input Text"
     }))) // </Grommet>
 
   );
