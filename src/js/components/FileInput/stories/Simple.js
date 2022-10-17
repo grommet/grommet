@@ -6,6 +6,7 @@ export const Simple = () => (
   <Box fill align="center" justify="start" pad="large">
     <Box width="medium">
       <FileInput
+        aria-label="Choose files"
         onChange={(event, { files }) => {
           const fileList = files;
           for (let i = 0; i < fileList.length; i += 1) {
