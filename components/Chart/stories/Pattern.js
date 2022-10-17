@@ -20,7 +20,7 @@ var Pattern = function Pattern() {
       gap: "medium"
     }, ['squares', 'circles', 'stripesHorizontal', 'stripesVertical', 'stripesDiagonalDown', 'stripesDiagonalUp'].map(function (pattern) {
       return /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
-        id: "area",
+        id: "area-" + pattern,
         type: "area",
         pattern: pattern,
         thickness: "xsmall",
