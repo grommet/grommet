@@ -20,7 +20,7 @@ community include:
 - Demonstrating empathy and kindness toward other people
 - Being respectful of differing opinions, viewpoints, and experiences
 - Giving and gracefully accepting constructive feedback
-- Use welcoming and inclusive language
+- Using welcoming and inclusive language
 - Focusing on what is best not just for us as individuals, but for the overall
   community
 
