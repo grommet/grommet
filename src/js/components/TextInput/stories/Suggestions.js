@@ -35,6 +35,7 @@ export const Suggestions = () => {
           onChange={onChange}
           onSuggestionSelect={onSuggestionSelect}
           suggestions={suggestions}
+          aria-label="Input Text"
         />
       </Box>
     </Box>
