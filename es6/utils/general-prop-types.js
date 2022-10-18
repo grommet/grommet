@@ -42,7 +42,7 @@ export var padPropType = PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(PA
 }), PropTypes.string]);
 export var genericProps = {
   a11yTitle: a11yTitlePropType,
-  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch', 'baseline']),
   gridArea: PropTypes.string,
   margin: marginProp
 };

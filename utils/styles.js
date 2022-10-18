@@ -325,7 +325,8 @@ var ALIGN_SELF_MAP = {
   center: 'center',
   end: 'flex-end',
   start: 'flex-start',
-  stretch: 'stretch'
+  stretch: 'stretch',
+  baseline: 'baseline'
 };
 var genericStyles = (0, _styledComponents.css)(["", " ", " ", ""], function (props) {
   return props.alignSelf && "align-self: " + ALIGN_SELF_MAP[props.alignSelf] + ";";

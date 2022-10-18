@@ -68,7 +68,7 @@ var padPropType = _propTypes["default"].oneOfType([_propTypes["default"].oneOf([
 exports.padPropType = padPropType;
 var genericProps = {
   a11yTitle: a11yTitlePropType,
-  alignSelf: _propTypes["default"].oneOf(['start', 'center', 'end', 'stretch']),
+  alignSelf: _propTypes["default"].oneOf(['start', 'center', 'end', 'stretch', 'baseline']),
   gridArea: _propTypes["default"].string,
   margin: marginProp
 };
