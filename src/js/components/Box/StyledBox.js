@@ -248,14 +248,12 @@ const boxStyles = css`
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div.attrs((props) => ({
   directionProp: props.directionProp || 'column',
-  // Every <Button /> will now have type="button" as default
 }))`
   ${boxStyles}
 `;
 
 const StyledRowBox = styled.div.attrs((props) => ({
   directionProp: props.directionProp || 'row',
-  // Every <Button /> will now have type="button" as default
 }))`
   ${boxStyles}
 `;
