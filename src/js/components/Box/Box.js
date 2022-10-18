@@ -11,7 +11,7 @@ import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
-import { StyledBox, StyledBoxGap } from './StyledBox';
+import { StyledBox, StyledBoxGap, StyledRowBox } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
 
 const Box = forwardRef(
@@ -21,7 +21,7 @@ const Box = forwardRef(
       background,
       border,
       children,
-      direction = 'column',
+      direction,
       elevation, // munged to avoid styled-components putting it in the DOM
       fill, // munged to avoid styled-components putting it in the DOM
       gap,
@@ -132,8 +132,10 @@ const Box = forwardRef(
       return result || theme;
     }, [background, theme]);
 
+    const StyledComp = direction === 'row' ? StyledRowBox : StyledBox;
+
     let content = (
-      <StyledBox
+      <StyledComp
         as={!as && tag ? tag : as}
         aria-label={a11yTitle}
         background={background}
@@ -156,7 +158,7 @@ const Box = forwardRef(
         <ThemeContext.Provider value={nextTheme}>
           {contents}
         </ThemeContext.Provider>
-      </StyledBox>
+      </StyledComp>
     );
 
     if (onClick) {

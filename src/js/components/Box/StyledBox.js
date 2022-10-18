@@ -200,8 +200,7 @@ const interactiveStyle = css`
   }
 `;
 
-// NOTE: basis must be after flex! Otherwise, flex overrides basis
-const StyledBox = styled.div`
+const boxStyles = css`
   display: flex;
   box-sizing: border-box;
   ${(props) => !props.basis && 'max-width: 100%;'};
@@ -244,6 +243,21 @@ const StyledBox = styled.div`
     focusStyle()}
   ${(props) => props.theme.box && props.theme.box.extend}
   ${(props) => props.kindProp && props.kindProp.extend}
+`;
+
+// NOTE: basis must be after flex! Otherwise, flex overrides basis
+const StyledBox = styled.div.attrs((props) => ({
+  directionProp: props.directionProp || 'column',
+  // Every <Button /> will now have type="button" as default
+}))`
+  ${boxStyles}
+`;
+
+const StyledRowBox = styled.div.attrs((props) => ({
+  directionProp: props.directionProp || 'row',
+  // Every <Button /> will now have type="button" as default
+}))`
+  ${boxStyles}
 `;
 
 const gapStyle = (directionProp, gap, responsive, border, theme) => {
@@ -376,7 +390,10 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
 StyledBox.defaultProps = {};
 Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 
-const StyledBoxGap = styled.div`
+const StyledBoxGap = styled.div.attrs((props) => ({
+  directionProp: props.directionProp || 'column',
+  // Every <Button /> will now have type="button" as default
+}))`
   flex: 0 0 auto;
   align-self: stretch;
   ${(props) =>
@@ -393,4 +410,4 @@ const StyledBoxGap = styled.div`
 StyledBoxGap.defaultProps = {};
 Object.setPrototypeOf(StyledBoxGap.defaultProps, defaultProps);
 
-export { StyledBox, StyledBoxGap };
+export { StyledBox, StyledBoxGap, StyledRowBox };

@@ -49,6 +49,26 @@ exports[`SelectMultiple children 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: auto;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -88,26 +108,6 @@ exports[`SelectMultiple children 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: auto;
 }
 
 .c2 {
@@ -347,6 +347,26 @@ exports[`SelectMultiple defaultValue 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: auto;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -386,26 +406,6 @@ exports[`SelectMultiple defaultValue 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: auto;
 }
 
 .c2 {
@@ -646,6 +646,26 @@ exports[`SelectMultiple disabled 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: auto;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -685,26 +705,6 @@ exports[`SelectMultiple disabled 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: auto;
 }
 
 .c2 {
@@ -933,6 +933,26 @@ exports[`SelectMultiple disabled option 1`] = `
   stroke: none;
 }
 
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: auto;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -972,26 +992,6 @@ exports[`SelectMultiple disabled option 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: auto;
 }
 
 .c0 {
@@ -1313,6 +1313,26 @@ exports[`SelectMultiple keyboard interactions 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: auto;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1352,26 +1372,6 @@ exports[`SelectMultiple keyboard interactions 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: auto;
 }
 
 .c2 {
@@ -1632,6 +1632,26 @@ exports[`SelectMultiple limit 1`] = `
   stroke: none;
 }
 
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: auto;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1671,26 +1691,6 @@ exports[`SelectMultiple limit 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: auto;
 }
 
 .c0 {
@@ -2013,6 +2013,26 @@ exports[`SelectMultiple null value 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: auto;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2052,26 +2072,6 @@ exports[`SelectMultiple null value 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: auto;
 }
 
 .c2 {
@@ -2312,6 +2312,26 @@ exports[`SelectMultiple placeholder 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: auto;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2351,26 +2371,6 @@ exports[`SelectMultiple placeholder 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: auto;
 }
 
 .c2 {
@@ -2597,6 +2597,26 @@ exports[`SelectMultiple select all and clear 1`] = `
   stroke: none;
 }
 
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: auto;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2636,26 +2656,6 @@ exports[`SelectMultiple select all and clear 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: auto;
 }
 
 .c0 {
@@ -2940,10 +2940,10 @@ exports[`SelectMultiple select all and clear 3`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hMXKog"
+    class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hWKKwG"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 jxJiFj"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
@@ -3093,6 +3093,26 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: auto;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3132,26 +3152,6 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: auto;
 }
 
 .c2 {
@@ -3378,26 +3378,6 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   stroke: none;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3411,20 +3391,6 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
 }
 
 .c9 {
@@ -3515,6 +3481,40 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .c4 {
@@ -3792,14 +3792,6 @@ exports[`SelectMultiple showSelectionInline 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
   .c15 {
     margin-right: 6px;
   }
@@ -3813,6 +3805,14 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   .c18 {
     border: solid 2px #7D4CDB;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -4069,26 +4069,6 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
   stroke: none;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4102,20 +4082,6 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
 }
 
 .c9 {
@@ -4151,6 +4117,40 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .c4 {
@@ -4376,17 +4376,17 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
   .c14 {
     padding: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -4526,7 +4526,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fGERXT SelectMultiple__StyledSelectBox-sc-18zwyth-0 bbEBKn"
+    class="StyledBox__StyledRowBox-sc-13pk1d4-1 hGahzy SelectMultiple__StyledSelectBox-sc-18zwyth-0 bbEBKn"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 dsRaTX"
@@ -4539,7 +4539,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 euWtCA"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 kDEaft"
         >
           .c1 {
   box-sizing: border-box;
@@ -4705,26 +4705,6 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   stroke: none;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4738,20 +4718,6 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
 }
 
 .c9 {
@@ -4842,6 +4808,40 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .c4 {
@@ -5274,26 +5274,6 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
   stroke: none;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5307,20 +5287,6 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
 }
 
 .c9 {
@@ -5411,6 +5377,40 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .c4 {

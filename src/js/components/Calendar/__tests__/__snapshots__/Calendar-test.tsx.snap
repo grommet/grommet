@@ -49,6 +49,25 @@ exports[`Calendar change months 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -69,25 +88,6 @@ exports[`Calendar change months 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -1169,7 +1169,7 @@ exports[`Calendar change months 2`] = `
       class="StyledBox-sc-13pk1d4-0 hUSFEE"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hMXKog"
+        class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 inoQfA"
@@ -1181,7 +1181,7 @@ exports[`Calendar change months 2`] = `
           </h3>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 ilBnMh"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 bmRLFM"
         >
           <button
             aria-label="Go to December 2019"
@@ -2487,6 +2487,39 @@ exports[`Calendar children 1`] = `
   height: 100%;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2509,25 +2542,6 @@ exports[`Calendar children 1`] = `
   justify-content: space-between;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2547,20 +2561,6 @@ exports[`Calendar children 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c7 {
@@ -3285,6 +3285,25 @@ exports[`Calendar date 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3305,25 +3324,6 @@ exports[`Calendar date 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -4463,6 +4463,25 @@ exports[`Calendar dates 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4483,25 +4502,6 @@ exports[`Calendar dates 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -5659,6 +5659,25 @@ exports[`Calendar daysOfWeek 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5679,25 +5698,6 @@ exports[`Calendar daysOfWeek 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -6931,6 +6931,25 @@ exports[`Calendar disabled 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6951,25 +6970,6 @@ exports[`Calendar disabled 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -8173,6 +8173,25 @@ exports[`Calendar fill 1`] = `
   height: 100%;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -8193,25 +8212,6 @@ exports[`Calendar fill 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -9370,6 +9370,25 @@ exports[`Calendar first day sunday week monday 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9390,25 +9409,6 @@ exports[`Calendar first day sunday week monday 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -10548,6 +10548,25 @@ exports[`Calendar firstDayOfWeek 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10568,25 +10587,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -13697,6 +13697,25 @@ exports[`Calendar reference 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -13717,25 +13736,6 @@ exports[`Calendar reference 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -14855,6 +14855,25 @@ exports[`Calendar select date 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -14875,25 +14894,6 @@ exports[`Calendar select date 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -15995,7 +15995,7 @@ exports[`Calendar select date 2`] = `
       class="StyledBox-sc-13pk1d4-0 hUSFEE"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hMXKog"
+        class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 inoQfA"
@@ -16007,7 +16007,7 @@ exports[`Calendar select date 2`] = `
           </h3>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 ilBnMh"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 bmRLFM"
         >
           <button
             aria-label="Go to December 2019"
@@ -16856,6 +16856,25 @@ exports[`Calendar select dates 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -16876,25 +16895,6 @@ exports[`Calendar select dates 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -18014,7 +18014,7 @@ exports[`Calendar select dates 2`] = `
       class="StyledBox-sc-13pk1d4-0 hUSFEE"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hMXKog"
+        class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 inoQfA"
@@ -18026,7 +18026,7 @@ exports[`Calendar select dates 2`] = `
           </h3>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 ilBnMh"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 bmRLFM"
         >
           <button
             aria-label="Go to December 2019"
@@ -18875,6 +18875,25 @@ exports[`Calendar showAdjacentDays 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -18895,25 +18914,6 @@ exports[`Calendar showAdjacentDays 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -21537,28 +21537,6 @@ exports[`Calendar size 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -21576,27 +21554,6 @@ exports[`Calendar size 1`] = `
   flex: 1 1;
   padding-left: 6px;
   padding-right: 6px;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c18 {
@@ -21635,6 +21592,49 @@ exports[`Calendar size 1`] = `
   flex: 1 1;
   padding-left: 24px;
   padding-right: 24px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c7 {

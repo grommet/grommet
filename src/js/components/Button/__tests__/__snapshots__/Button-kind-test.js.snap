@@ -2658,7 +2658,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 idSNkE"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 kQyfdp"
     >
       <svg
         aria-label="Add"
@@ -2673,7 +2673,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jrZoMa"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-2 ghkzoZ"
       />
       label
     </div>

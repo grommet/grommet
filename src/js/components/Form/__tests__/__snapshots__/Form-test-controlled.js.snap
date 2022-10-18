@@ -286,28 +286,6 @@ exports[`Form controlled controlled Array of Form Fields 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -336,6 +314,28 @@ exports[`Form controlled controlled Array of Form Fields 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c6 {
@@ -617,7 +617,7 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
@@ -659,7 +659,7 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
@@ -701,7 +701,7 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
@@ -758,7 +758,7 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
@@ -800,7 +800,7 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
@@ -842,7 +842,7 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
@@ -904,28 +904,6 @@ exports[`Form controlled controlled Array of Form Fields onValidate 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -954,6 +932,28 @@ exports[`Form controlled controlled Array of Form Fields onValidate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c6 {
@@ -1193,7 +1193,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
@@ -1262,7 +1262,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
@@ -1351,28 +1351,6 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1401,6 +1379,28 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c6 {
@@ -1640,7 +1640,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
@@ -1682,7 +1682,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"

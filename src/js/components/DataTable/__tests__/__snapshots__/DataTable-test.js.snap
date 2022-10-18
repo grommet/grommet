@@ -2710,29 +2710,6 @@ exports[`DataTable custom theme 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  height: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2749,24 +2726,6 @@ exports[`DataTable custom theme 1`] = `
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   height: 100%;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
 }
 
 .c13 {
@@ -2928,6 +2887,47 @@ exports[`DataTable custom theme 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .c11 {
@@ -3391,7 +3391,7 @@ exports[`DataTable custom theme 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dKXxli"
+            class="StyledBox__StyledRowBox-sc-13pk1d4-1 cgnTrv"
             style="position: relative;"
           >
             <div
@@ -3402,7 +3402,7 @@ exports[`DataTable custom theme 2`] = `
                 type="button"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                  class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
                 >
                   <span
                     class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -13277,6 +13277,20 @@ exports[`DataTable onSort 1`] = `
   flex: 1 0 auto;
 }
 
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -13293,20 +13307,6 @@ exports[`DataTable onSort 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c8 {
@@ -13612,7 +13612,7 @@ exports[`DataTable onSort 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13704,7 +13704,7 @@ exports[`DataTable onSort 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13880,6 +13880,20 @@ exports[`DataTable onSort external 1`] = `
   flex: 1 0 auto;
 }
 
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -13896,20 +13910,6 @@ exports[`DataTable onSort external 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c9 {
@@ -14246,7 +14246,7 @@ exports[`DataTable onSort external 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -14254,7 +14254,7 @@ exports[`DataTable onSort external 2`] = `
                   A
                 </span>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jXLGQg"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cJZkkL"
                 />
                 .c0 {
   display: inline-block;
@@ -14322,7 +14322,7 @@ exports[`DataTable onSort external 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -18214,29 +18214,6 @@ exports[`DataTable resizeable 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  height: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -18321,6 +18298,29 @@ exports[`DataTable resizeable 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c7 {
@@ -20113,29 +20113,6 @@ exports[`DataTable search 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  height: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -20166,6 +20143,29 @@ exports[`DataTable search 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c7 {
@@ -20439,7 +20439,7 @@ exports[`DataTable search 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dKXxli"
+            class="StyledBox__StyledRowBox-sc-13pk1d4-1 cgnTrv"
           >
             <div
               class="StyledBox-sc-13pk1d4-0 cLnqZy"
@@ -20451,7 +20451,7 @@ exports[`DataTable search 2`] = `
               </span>
             </div>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ilMzAg"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-2 JomiD"
             />
             .c0 {
   display: -webkit-box;
@@ -31450,7 +31450,7 @@ exports[`DataTable should render new data when page changes 2`] = `
       </table>
     </div>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 grsgKE"
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-2 llVdvz"
     />
     <div
       class="StyledBox-sc-13pk1d4-0 dQObhs Pagination__StyledPaginationContainer-sc-rnlw6m-0"
@@ -31460,7 +31460,7 @@ exports[`DataTable should render new data when page changes 2`] = `
         class="StyledBox-sc-13pk1d4-0 jKAhip"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 hUxOug"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 kpdkFV"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -31485,7 +31485,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
           />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -31499,7 +31499,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
           />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -31514,7 +31514,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
           />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -36130,6 +36130,20 @@ exports[`DataTable sort 1`] = `
   flex: 1 0 auto;
 }
 
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -36146,20 +36160,6 @@ exports[`DataTable sort 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c9 {
@@ -36534,6 +36534,20 @@ exports[`DataTable sort controlled 1`] = `
   flex: 1 0 auto;
 }
 
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -36550,20 +36564,6 @@ exports[`DataTable sort controlled 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c10 {
@@ -37014,6 +37014,20 @@ exports[`DataTable sort controlled 2`] = `
   flex: 1 0 auto;
 }
 
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -37030,20 +37044,6 @@ exports[`DataTable sort controlled 2`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c10 {
@@ -37493,6 +37493,20 @@ exports[`DataTable sort external 1`] = `
   flex: 1 0 auto;
 }
 
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -37509,20 +37523,6 @@ exports[`DataTable sort external 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c9 {
@@ -37896,6 +37896,20 @@ exports[`DataTable sort nested object 1`] = `
   flex: 1 0 auto;
 }
 
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -37912,20 +37926,6 @@ exports[`DataTable sort nested object 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c9 {
@@ -38299,6 +38299,20 @@ exports[`DataTable sort nested object with onSort 1`] = `
   flex: 1 0 auto;
 }
 
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -38315,20 +38329,6 @@ exports[`DataTable sort nested object with onSort 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c9 {
@@ -38668,6 +38668,20 @@ exports[`DataTable sort null data 1`] = `
   flex: 1 0 auto;
 }
 
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -38684,20 +38698,6 @@ exports[`DataTable sort null data 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c8 {
@@ -39148,7 +39148,7 @@ exports[`DataTable sort null data 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -39240,7 +39240,7 @@ exports[`DataTable sort null data 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -39263,7 +39263,7 @@ exports[`DataTable sort null data 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -39286,7 +39286,7 @@ exports[`DataTable sort null data 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -39552,7 +39552,7 @@ exports[`DataTable sort null data 3`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -39575,7 +39575,7 @@ exports[`DataTable sort null data 3`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -39598,7 +39598,7 @@ exports[`DataTable sort null data 3`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -39690,7 +39690,7 @@ exports[`DataTable sort null data 3`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -39956,7 +39956,7 @@ exports[`DataTable sort null data 4`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -39979,7 +39979,7 @@ exports[`DataTable sort null data 4`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -40002,7 +40002,7 @@ exports[`DataTable sort null data 4`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -40025,7 +40025,7 @@ exports[`DataTable sort null data 4`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -40363,6 +40363,20 @@ exports[`DataTable sortable 1`] = `
   flex: 1 0 auto;
 }
 
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -40379,20 +40393,6 @@ exports[`DataTable sortable 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c8 {
@@ -40698,7 +40698,7 @@ exports[`DataTable sortable 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -40790,7 +40790,7 @@ exports[`DataTable sortable 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox__StyledRowBox-sc-13pk1d4-1 kYgREZ"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41180,20 +41180,6 @@ exports[`DataTable units 1`] = `
   flex: 1 0 auto;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
 .c10 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -41206,6 +41192,20 @@ exports[`DataTable units 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .c5 {

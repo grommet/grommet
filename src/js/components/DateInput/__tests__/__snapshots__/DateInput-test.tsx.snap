@@ -322,6 +322,25 @@ exports[`DateInput controlled format inline 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -360,25 +379,6 @@ exports[`DateInput controlled format inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -815,6 +815,13 @@ exports[`DateInput controlled format inline 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -823,13 +830,6 @@ exports[`DateInput controlled format inline 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -1720,7 +1720,7 @@ exports[`DateInput controlled format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 hUSFEE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gqWMWi"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 QIUTb"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hSnINN"
@@ -1759,7 +1759,7 @@ exports[`DateInput controlled format inline 2`] = `
         class="StyledBox-sc-13pk1d4-0 hUSFEE"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hMXKog"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 inoQfA"
@@ -1771,7 +1771,7 @@ exports[`DateInput controlled format inline 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ilBnMh"
+            class="StyledBox__StyledRowBox-sc-13pk1d4-1 bmRLFM"
           >
             <button
               aria-label="Go to June 2020"
@@ -2638,6 +2638,25 @@ exports[`DateInput controlled format inline without timezone 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2676,25 +2695,6 @@ exports[`DateInput controlled format inline without timezone 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -3131,6 +3131,13 @@ exports[`DateInput controlled format inline without timezone 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -3139,13 +3146,6 @@ exports[`DateInput controlled format inline without timezone 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -4089,6 +4089,25 @@ exports[`DateInput controlled format inline without timezone 2`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4127,25 +4146,6 @@ exports[`DateInput controlled format inline without timezone 2`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -4582,6 +4582,13 @@ exports[`DateInput controlled format inline without timezone 2`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -4590,13 +4597,6 @@ exports[`DateInput controlled format inline without timezone 2`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -6885,6 +6885,25 @@ exports[`DateInput format inline 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6923,25 +6942,6 @@ exports[`DateInput format inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -7309,6 +7309,13 @@ exports[`DateInput format inline 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -7317,13 +7324,6 @@ exports[`DateInput format inline 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -8930,6 +8930,25 @@ exports[`DateInput inline 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -8950,25 +8969,6 @@ exports[`DateInput inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -11462,6 +11462,25 @@ exports[`DateInput range format inline 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -11500,25 +11519,6 @@ exports[`DateInput range format inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -11904,6 +11904,13 @@ exports[`DateInput range format inline 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -11912,13 +11919,6 @@ exports[`DateInput range format inline 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -12840,6 +12840,39 @@ exports[`DateInput range format no value 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -12856,20 +12889,6 @@ exports[`DateInput range format no value 1`] = `
   width: 100%;
   height: 100%;
   border-radius: 3px;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c8 {
@@ -12892,25 +12911,6 @@ exports[`DateInput range format no value 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -13258,6 +13258,13 @@ exports[`DateInput range format no value 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -13266,13 +13273,6 @@ exports[`DateInput range format no value 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -14241,6 +14241,25 @@ exports[`DateInput range inline 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -14261,25 +14280,6 @@ exports[`DateInput range inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -16235,7 +16235,7 @@ exports[`DateInput select format 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gqWMWi"
+    class="StyledBox__StyledRowBox-sc-13pk1d4-1 QIUTb"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hSnINN"
@@ -16335,6 +16335,25 @@ exports[`DateInput select format 3`] = `
   flex-direction: column;
 }
 
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -16355,25 +16374,6 @@ exports[`DateInput select format 3`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c7 {
@@ -16713,18 +16713,18 @@ exports[`DateInput select format 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
   .c5 {
     padding-left: 6px;
     padding-right: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -17582,19 +17582,19 @@ exports[`DateInput select format 3`] = `
 
 exports[`DateInput select format 4`] = `
 "@media only screen and (max-width: 768px) {
-  .gqWMWi {
+  .inoQfA {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .QIUTb {
     border: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gqWMWi {
+  .QIUTb {
     border-radius: 2px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .inoQfA {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -17670,6 +17670,25 @@ exports[`DateInput select format inline 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -17708,25 +17727,6 @@ exports[`DateInput select format inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -18094,6 +18094,13 @@ exports[`DateInput select format inline 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -18102,13 +18109,6 @@ exports[`DateInput select format inline 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -18993,7 +18993,7 @@ exports[`DateInput select format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 hUSFEE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gqWMWi"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 QIUTb"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hSnINN"
@@ -19032,7 +19032,7 @@ exports[`DateInput select format inline 2`] = `
         class="StyledBox-sc-13pk1d4-0 hUSFEE"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hMXKog"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 inoQfA"
@@ -19044,7 +19044,7 @@ exports[`DateInput select format inline 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ilBnMh"
+            class="StyledBox__StyledRowBox-sc-13pk1d4-1 bmRLFM"
           >
             <button
               aria-label="Go to June 2020"
@@ -19905,6 +19905,25 @@ exports[`DateInput select format inline 3`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -19943,25 +19962,6 @@ exports[`DateInput select format inline 3`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -20329,6 +20329,13 @@ exports[`DateInput select format inline 3`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -20337,13 +20344,6 @@ exports[`DateInput select format inline 3`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -21281,6 +21281,25 @@ exports[`DateInput select format inline 4`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -21319,25 +21338,6 @@ exports[`DateInput select format inline 4`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -21782,6 +21782,13 @@ exports[`DateInput select format inline 4`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -21790,13 +21797,6 @@ exports[`DateInput select format inline 4`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -22733,6 +22733,25 @@ exports[`DateInput select format inline range 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -22771,25 +22790,6 @@ exports[`DateInput select format inline range 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -23175,6 +23175,13 @@ exports[`DateInput select format inline range 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -23183,13 +23190,6 @@ exports[`DateInput select format inline range 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -24074,7 +24074,7 @@ exports[`DateInput select format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 hUSFEE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gqWMWi"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 QIUTb"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hSnINN"
@@ -24113,7 +24113,7 @@ exports[`DateInput select format inline range 2`] = `
         class="StyledBox-sc-13pk1d4-0 hUSFEE"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hMXKog"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 inoQfA"
@@ -24125,7 +24125,7 @@ exports[`DateInput select format inline range 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ilBnMh"
+            class="StyledBox__StyledRowBox-sc-13pk1d4-1 bmRLFM"
           >
             <button
               aria-label="Go to June 2020"
@@ -24986,6 +24986,25 @@ exports[`DateInput select format inline range without timezone 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -25024,25 +25043,6 @@ exports[`DateInput select format inline range without timezone 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -25428,6 +25428,13 @@ exports[`DateInput select format inline range without timezone 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -25436,13 +25443,6 @@ exports[`DateInput select format inline range without timezone 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -26380,6 +26380,25 @@ exports[`DateInput select format inline range without timezone 2`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -26418,25 +26437,6 @@ exports[`DateInput select format inline range without timezone 2`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -26881,6 +26881,13 @@ exports[`DateInput select format inline range without timezone 2`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -26889,13 +26896,6 @@ exports[`DateInput select format inline range without timezone 2`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -28328,6 +28328,25 @@ exports[`DateInput select format no timezone 3`] = `
   flex-direction: column;
 }
 
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -28348,25 +28367,6 @@ exports[`DateInput select format no timezone 3`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c7 {
@@ -28706,18 +28706,18 @@ exports[`DateInput select format no timezone 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
   .c5 {
     padding-left: 6px;
     padding-right: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -29575,19 +29575,19 @@ exports[`DateInput select format no timezone 3`] = `
 
 exports[`DateInput select format no timezone 4`] = `
 "@media only screen and (max-width: 768px) {
-  .gqWMWi {
+  .inoQfA {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .QIUTb {
     border: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gqWMWi {
+  .QIUTb {
     border-radius: 2px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .inoQfA {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -29663,6 +29663,25 @@ exports[`DateInput select inline 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -29683,25 +29702,6 @@ exports[`DateInput select inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -30842,6 +30842,25 @@ exports[`DateInput select inline without timezone 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -30862,25 +30881,6 @@ exports[`DateInput select inline without timezone 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c6 {
@@ -32021,6 +32021,25 @@ exports[`DateInput type format inline 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -32059,25 +32078,6 @@ exports[`DateInput type format inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -32445,6 +32445,13 @@ exports[`DateInput type format inline 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -32453,13 +32460,6 @@ exports[`DateInput type format inline 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -33344,7 +33344,7 @@ exports[`DateInput type format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 hUSFEE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gqWMWi"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 QIUTb"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hSnINN"
@@ -33383,7 +33383,7 @@ exports[`DateInput type format inline 2`] = `
         class="StyledBox-sc-13pk1d4-0 hUSFEE"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hMXKog"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 inoQfA"
@@ -33395,7 +33395,7 @@ exports[`DateInput type format inline 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ilBnMh"
+            class="StyledBox__StyledRowBox-sc-13pk1d4-1 bmRLFM"
           >
             <button
               aria-label="Go to June 2020"
@@ -34255,6 +34255,25 @@ exports[`DateInput type format inline partial 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -34293,25 +34312,6 @@ exports[`DateInput type format inline partial 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -34679,6 +34679,13 @@ exports[`DateInput type format inline partial 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -34687,13 +34694,6 @@ exports[`DateInput type format inline partial 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -35630,6 +35630,25 @@ exports[`DateInput type format inline partial without timezone 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -35668,25 +35687,6 @@ exports[`DateInput type format inline partial without timezone 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -36054,6 +36054,13 @@ exports[`DateInput type format inline partial without timezone 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -36062,13 +36069,6 @@ exports[`DateInput type format inline partial without timezone 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -37005,6 +37005,25 @@ exports[`DateInput type format inline range 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -37043,25 +37062,6 @@ exports[`DateInput type format inline range 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -37447,6 +37447,13 @@ exports[`DateInput type format inline range 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -37455,13 +37462,6 @@ exports[`DateInput type format inline range 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -38346,7 +38346,7 @@ exports[`DateInput type format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 hUSFEE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gqWMWi"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 QIUTb"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hSnINN"
@@ -38385,7 +38385,7 @@ exports[`DateInput type format inline range 2`] = `
         class="StyledBox-sc-13pk1d4-0 hUSFEE"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hMXKog"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 inoQfA"
@@ -38397,7 +38397,7 @@ exports[`DateInput type format inline range 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ilBnMh"
+            class="StyledBox__StyledRowBox-sc-13pk1d4-1 bmRLFM"
           >
             <button
               aria-label="Go to June 2020"
@@ -39257,6 +39257,25 @@ exports[`DateInput type format inline range partial 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -39295,25 +39314,6 @@ exports[`DateInput type format inline range partial 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -39699,6 +39699,13 @@ exports[`DateInput type format inline range partial 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -39707,13 +39714,6 @@ exports[`DateInput type format inline range partial 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -40598,7 +40598,7 @@ exports[`DateInput type format inline range partial 2`] = `
     class="StyledBox-sc-13pk1d4-0 hUSFEE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gqWMWi"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 QIUTb"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hSnINN"
@@ -40637,7 +40637,7 @@ exports[`DateInput type format inline range partial 2`] = `
         class="StyledBox-sc-13pk1d4-0 hUSFEE"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hMXKog"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 inoQfA"
@@ -40649,7 +40649,7 @@ exports[`DateInput type format inline range partial 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ilBnMh"
+            class="StyledBox__StyledRowBox-sc-13pk1d4-1 bmRLFM"
           >
             <button
               aria-label="Go to June 2020"
@@ -41458,7 +41458,7 @@ exports[`DateInput type format inline range partial 3`] = `
     class="StyledBox-sc-13pk1d4-0 hUSFEE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gqWMWi"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 QIUTb"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hSnINN"
@@ -41497,7 +41497,7 @@ exports[`DateInput type format inline range partial 3`] = `
         class="StyledBox-sc-13pk1d4-0 hUSFEE"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hMXKog"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 inoQfA"
@@ -41509,7 +41509,7 @@ exports[`DateInput type format inline range partial 3`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ilBnMh"
+            class="StyledBox__StyledRowBox-sc-13pk1d4-1 bmRLFM"
           >
             <button
               aria-label="Go to June 2020"
@@ -42370,6 +42370,25 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -42408,25 +42427,6 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -42812,6 +42812,13 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -42820,13 +42827,6 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -43764,6 +43764,25 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -43802,25 +43821,6 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -44188,6 +44188,13 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -44196,13 +44203,6 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -45140,6 +45140,25 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -45178,25 +45197,6 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -45564,6 +45564,13 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -45572,13 +45579,6 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -46516,6 +46516,25 @@ exports[`DateInput type format inline range without timezone 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -46554,25 +46573,6 @@ exports[`DateInput type format inline range without timezone 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -46958,6 +46958,13 @@ exports[`DateInput type format inline range without timezone 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -46966,13 +46973,6 @@ exports[`DateInput type format inline range without timezone 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -47910,6 +47910,25 @@ exports[`DateInput type format inline range without timezone 2`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -47948,25 +47967,6 @@ exports[`DateInput type format inline range without timezone 2`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -48352,6 +48352,13 @@ exports[`DateInput type format inline range without timezone 2`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -48360,13 +48367,6 @@ exports[`DateInput type format inline range without timezone 2`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -49303,6 +49303,25 @@ exports[`DateInput type format inline short 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -49341,25 +49360,6 @@ exports[`DateInput type format inline short 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -49727,6 +49727,13 @@ exports[`DateInput type format inline short 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -49735,13 +49742,6 @@ exports[`DateInput type format inline short 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -50626,7 +50626,7 @@ exports[`DateInput type format inline short 2`] = `
     class="StyledBox-sc-13pk1d4-0 hUSFEE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gqWMWi"
+      class="StyledBox__StyledRowBox-sc-13pk1d4-1 QIUTb"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hSnINN"
@@ -50665,7 +50665,7 @@ exports[`DateInput type format inline short 2`] = `
         class="StyledBox-sc-13pk1d4-0 hUSFEE"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hMXKog"
+          class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 inoQfA"
@@ -50677,7 +50677,7 @@ exports[`DateInput type format inline short 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ilBnMh"
+            class="StyledBox__StyledRowBox-sc-13pk1d4-1 bmRLFM"
           >
             <button
               aria-label="Go to June 2020"
@@ -51538,6 +51538,25 @@ exports[`DateInput type format inline short without timezone 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -51576,25 +51595,6 @@ exports[`DateInput type format inline short without timezone 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -51962,6 +51962,13 @@ exports[`DateInput type format inline short without timezone 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -51970,13 +51977,6 @@ exports[`DateInput type format inline short without timezone 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -52914,6 +52914,25 @@ exports[`DateInput type format inline short without timezone 2`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -52952,25 +52971,6 @@ exports[`DateInput type format inline short without timezone 2`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -53338,6 +53338,13 @@ exports[`DateInput type format inline short without timezone 2`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -53346,13 +53353,6 @@ exports[`DateInput type format inline short without timezone 2`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -54290,6 +54290,25 @@ exports[`DateInput type format inline without timezone 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -54328,25 +54347,6 @@ exports[`DateInput type format inline without timezone 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -54714,6 +54714,13 @@ exports[`DateInput type format inline without timezone 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -54722,13 +54729,6 @@ exports[`DateInput type format inline without timezone 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
@@ -55666,6 +55666,25 @@ exports[`DateInput type format inline without timezone 2`] = `
   flex-direction: column;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -55704,25 +55723,6 @@ exports[`DateInput type format inline without timezone 2`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c11 {
@@ -56090,6 +56090,13 @@ exports[`DateInput type format inline without timezone 2`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px rgba(0,0,0,0.33);
   }
@@ -56098,13 +56105,6 @@ exports[`DateInput type format inline without timezone 2`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 2px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
   }
 }
 
