@@ -27,6 +27,7 @@ import {
   valuesAreEqual,
   valueToText,
   textToValue,
+  validateDateBounds,
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
@@ -164,6 +165,8 @@ Use the icon prop instead.`,
       [range, value],
     );
 
+    const bounds = calendarProps?.bounds;
+
     const calendar = (
       <Calendar
         ref={inline ? ref : undefined}
@@ -274,14 +277,20 @@ Use the icon prop instead.`,
                   reference,
                   outputFormat,
                 );
-                if (nextValue !== undefined)
-                  setReference(getReference(nextValue));
+
+                const validatedNextValue = validateDateBounds({
+                  dateBounds: bounds,
+                  selectedDate: nextValue,
+                });
+
+                if (validatedNextValue !== undefined)
+                  setReference(getReference(validatedNextValue));
                 // update value even when undefined
-                setValue(nextValue);
+                setValue(validatedNextValue);
                 if (onChange) {
                   event.persist(); // extract from React synthetic event pool
                   const adjustedEvent = event;
-                  adjustedEvent.value = nextValue;
+                  adjustedEvent.value = validatedNextValue;
                   onChange(adjustedEvent);
                 }
               }}
