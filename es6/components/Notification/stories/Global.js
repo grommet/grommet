@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, NameValueList, NameValuePair, Notification, Header, Heading, Paragraph } from 'grommet';
+import { Button, NameValueList, NameValuePair, Notification, Header, Heading, Paragraph, Main } from 'grommet';
 import { Grommet as GrommetIcon } from "grommet-icons/es6/icons/Grommet";
 import { AppsRounded } from "grommet-icons/es6/icons/AppsRounded";
 import { Box } from '../../Box';
@@ -27,11 +27,11 @@ export var Global = function Global() {
     weight: "bold"
   }, "Company Name")), /*#__PURE__*/React.createElement(Button, {
     icon: /*#__PURE__*/React.createElement(AppsRounded, null)
-  })), /*#__PURE__*/React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Main, {
     gap: "medium"
   }, showGlobalNotification && /*#__PURE__*/React.createElement(Notification, {
     status: "warning",
-    message: "Your supscription will expire in 7 days. Renew your \n            subscription to ensure you don't lose access.",
+    message: "Your supscription will expire in 7 days. Renew your\n            subscription to ensure you don't lose access.",
     onClose: function onClose() {
       return setShowGlobalNotification(false);
     },

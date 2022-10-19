@@ -41,11 +41,11 @@ var Global = function Global() {
     weight: "bold"
   }, "Company Name")), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.AppsRounded, null)
-  })), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Main, {
     gap: "medium"
   }, showGlobalNotification && /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
     status: "warning",
-    message: "Your supscription will expire in 7 days. Renew your \n            subscription to ensure you don't lose access.",
+    message: "Your supscription will expire in 7 days. Renew your\n            subscription to ensure you don't lose access.",
     onClose: function onClose() {
       return setShowGlobalNotification(false);
     },
