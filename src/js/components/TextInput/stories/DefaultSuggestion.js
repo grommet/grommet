@@ -25,6 +25,7 @@ export const DefaultSuggestion = () => {
           onSelect={onSelect}
           suggestions={suggestions}
           defaultSuggestion={1}
+          aria-label="Input Text"
         />
       </Box>
     </Box>
