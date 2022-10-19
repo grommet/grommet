@@ -19,7 +19,7 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
-import { useForwardedRef } from '../../utils';
+import { useForwardedRef, setHoursWithOffset } from '../../utils';
 import { formatToSchema, schemaToMask, valuesAreEqual, valueToText, textToValue } from './utils';
 import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
@@ -34,15 +34,7 @@ var getReference = function getReference(value) {
   }
 
   if (res) {
-    var _res;
-
-    adjustedDate = new Date(res); // if time is not specified in ISOstring, normalize to midnight
-
-    if (((_res = res) == null ? void 0 : _res.indexOf('T')) === -1) {
-      var offset = adjustedDate.getTimezoneOffset();
-      var hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset);
-    }
+    adjustedDate = setHoursWithOffset(res);
   }
 
   return adjustedDate;
@@ -132,7 +124,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       restOfInputProps = _objectWithoutPropertiesLoose(_ref2, _excluded2);
 
   if (MaskedInputIcon) {
-    console.warn("Customizing the DateInput icon through inputProps is deprecated. \nUse the icon prop instead.");
+    console.warn("Customizing the DateInput icon through inputProps is deprecated.\nUse the icon prop instead.");
   }
 
   var reverse = reverseProp || restOfInputProps.reverse;

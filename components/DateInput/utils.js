@@ -3,7 +3,9 @@
 exports.__esModule = true;
 exports.valuesAreEqual = exports.valueToText = exports.textToValue = exports.schemaToMask = exports.formatToSchema = void 0;
 
-var _utils = require("../Calendar/utils");
+var _utils = require("../../utils");
+
+var _utils2 = require("../Calendar/utils");
 
 function _construct(Parent, args, Class) { if (_isNativeReflectConstruct()) { _construct = Reflect.construct.bind(); } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
 
@@ -88,16 +90,7 @@ var valueToText = function valueToText(value, schema) {
 
   if (!value || Array.isArray(value) && !value.length) return text;
   var dates = (Array.isArray(value) ? value : [value]).map(function (v) {
-    // TO DO should we extract this to a reusable function?
-    var adjustedDate = new Date(v); // if time is not specified in ISOstring, normalize to midnight
-
-    if (v.indexOf('T') === -1) {
-      var offset = adjustedDate.getTimezoneOffset();
-      var hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset);
-    }
-
-    return adjustedDate;
+    return (0, _utils.setHoursWithOffset)(v);
   });
   var dateIndex = 0;
   var parts = {};
@@ -170,7 +163,7 @@ var textToValue = function textToValue(text, schema, range, reference, outputFor
     var date = _construct(Date, [parts.y, parts.m - 1, parts.d].concat(time)).toISOString();
 
     if (date && outputFormat === 'no timezone') {
-      var _handleOffset$toISOSt = (0, _utils.handleOffset)(date).toISOString().split('T');
+      var _handleOffset$toISOSt = (0, _utils2.handleOffset)(date).toISOString().split('T');
 
       date = _handleOffset$toISOSt[0];
     }

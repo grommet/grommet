@@ -6,6 +6,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Objec
 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
+import { setHoursWithOffset } from '../../utils';
 import { handleOffset } from '../Calendar/utils'; // Converting between Date and String types is handled via a "schema".
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
@@ -76,16 +77,7 @@ export var valueToText = function valueToText(value, schema) {
 
   if (!value || Array.isArray(value) && !value.length) return text;
   var dates = (Array.isArray(value) ? value : [value]).map(function (v) {
-    // TO DO should we extract this to a reusable function?
-    var adjustedDate = new Date(v); // if time is not specified in ISOstring, normalize to midnight
-
-    if (v.indexOf('T') === -1) {
-      var offset = adjustedDate.getTimezoneOffset();
-      var hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset);
-    }
-
-    return adjustedDate;
+    return setHoursWithOffset(v);
   });
   var dateIndex = 0;
   var parts = {};

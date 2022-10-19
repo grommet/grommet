@@ -60,15 +60,7 @@ var getReference = function getReference(value) {
   }
 
   if (res) {
-    var _res;
-
-    adjustedDate = new Date(res); // if time is not specified in ISOstring, normalize to midnight
-
-    if (((_res = res) == null ? void 0 : _res.indexOf('T')) === -1) {
-      var offset = adjustedDate.getTimezoneOffset();
-      var hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset);
-    }
+    adjustedDate = (0, _utils.setHoursWithOffset)(res);
   }
 
   return adjustedDate;
@@ -159,7 +151,7 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       restOfInputProps = _objectWithoutPropertiesLoose(_ref2, _excluded2);
 
   if (MaskedInputIcon) {
-    console.warn("Customizing the DateInput icon through inputProps is deprecated. \nUse the icon prop instead.");
+    console.warn("Customizing the DateInput icon through inputProps is deprecated.\nUse the icon prop instead.");
   }
 
   var reverse = reverseProp || restOfInputProps.reverse;

@@ -16,6 +16,7 @@ import { Keyboard } from '../Keyboard';
 import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
 import { addDays, addMonths, betweenDates, daysApart, endOfMonth, handleOffset, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
 import { CalendarPropTypes } from './propTypes';
+import { setHoursWithOffset } from '../../utils/dates';
 var headingPadMap = {
   small: 'xsmall',
   medium: 'small',
@@ -65,15 +66,7 @@ var normalizeInput = function normalizeInput(dateValue) {
     result = dateValue;
   } // date may be an empty string ''
   else if (typeof dateValue === 'string' && dateValue.length) {
-    var adjustedDate = new Date(dateValue); // if time is not specified in ISOstring, normalize to midnight
-
-    if (dateValue.indexOf('T') === -1) {
-      var offset = adjustedDate.getTimezoneOffset();
-      var hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset < 0 ? -offset : offset);
-    }
-
-    result = adjustedDate;
+    result = setHoursWithOffset(dateValue);
   } else if (Array.isArray(dateValue)) {
     result = dateValue.map(function (d) {
       return normalizeInput(d);

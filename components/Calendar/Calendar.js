@@ -27,6 +27,8 @@ var _utils = require("./utils");
 
 var _propTypes = require("./propTypes");
 
+var _dates = require("../../utils/dates");
+
 var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -86,15 +88,7 @@ var normalizeInput = function normalizeInput(dateValue) {
     result = dateValue;
   } // date may be an empty string ''
   else if (typeof dateValue === 'string' && dateValue.length) {
-    var adjustedDate = new Date(dateValue); // if time is not specified in ISOstring, normalize to midnight
-
-    if (dateValue.indexOf('T') === -1) {
-      var offset = adjustedDate.getTimezoneOffset();
-      var hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset < 0 ? -offset : offset);
-    }
-
-    result = adjustedDate;
+    result = (0, _dates.setHoursWithOffset)(dateValue);
   } else if (Array.isArray(dateValue)) {
     result = dateValue.map(function (d) {
       return normalizeInput(d);
