@@ -8,6 +8,7 @@ import {
   Header,
   Heading,
   Paragraph,
+  Main,
 } from 'grommet';
 import { Grommet as GrommetIcon, AppsRounded } from 'grommet-icons';
 import { Box } from '../../Box';
@@ -26,7 +27,7 @@ export const Global = () => {
         </Box>
         <Button icon={<AppsRounded />} />
       </Header>
-      <Box gap="medium">
+      <Main gap="medium">
         {showGlobalNotification && (
           <Notification
             status="warning"
@@ -43,10 +44,10 @@ export const Global = () => {
           />
         )}
         <Box width="large" margin="auto" pad="medium" gap="medium">
-          <Box direction="row" justify="between">
+          <Header>
             <Heading margin="none">Page Heading</Heading>
             <Button alignSelf="start" label="Page-level Action" primary />
-          </Box>
+          </Header>
           <Paragraph margin="none">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
             aliquet vitae velit non cursus. Aliquam fringilla dapibus elit, non
@@ -64,7 +65,7 @@ export const Global = () => {
             ))}
           </NameValueList>
         </Box>
-      </Box>
+      </Main>
     </>
   );
 };
