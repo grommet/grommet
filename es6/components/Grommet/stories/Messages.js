@@ -26,8 +26,11 @@ export var Messages = function Messages() {
   }, /*#__PURE__*/React.createElement(FormField, {
     name: "name",
     label: "Name",
+    "aria-label": "form field",
     required: true
-  }), /*#__PURE__*/React.createElement(FileInput, null)))), /*#__PURE__*/React.createElement(Grommet, {
+  }), /*#__PURE__*/React.createElement(FileInput, {
+    "aria-label": "file input"
+  })))), /*#__PURE__*/React.createElement(Grommet, {
     messages: {
       format: function format(options) {
         return messageBundle[options.id];
@@ -42,8 +45,11 @@ export var Messages = function Messages() {
   }, /*#__PURE__*/React.createElement(FormField, {
     name: "name",
     label: "Name",
+    "aria-label": "form field",
     required: true
-  }), /*#__PURE__*/React.createElement(FileInput, null)))));
+  }), /*#__PURE__*/React.createElement(FileInput, {
+    "aria-label": "file input"
+  })))));
 };
 export default {
   title: 'Utilities/Grommet/Messages'

@@ -36,8 +36,11 @@ var Messages = function Messages() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     name: "name",
     label: "Name",
+    "aria-label": "form field",
     required: true
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, null)))), /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, {
+    "aria-label": "file input"
+  })))), /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     messages: {
       format: function format(options) {
         return messageBundle[options.id];
@@ -52,8 +55,11 @@ var Messages = function Messages() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     name: "name",
     label: "Name",
+    "aria-label": "form field",
     required: true
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, null)))));
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, {
+    "aria-label": "file input"
+  })))));
 };
 
 exports.Messages = Messages;
