@@ -1,3 +1,4 @@
+import { setHoursWithOffset } from '../../utils';
 import { handleOffset } from '../Calendar/utils';
 
 // Converting between Date and String types is handled via a "schema".
@@ -53,17 +54,9 @@ export const valueToText = (value, schema) => {
   // show the placeholder text
   if (!value || (Array.isArray(value) && !value.length)) return text;
 
-  const dates = (Array.isArray(value) ? value : [value]).map((v) => {
-    // TO DO should we extract this to a reusable function?
-    const adjustedDate = new Date(v);
-    // if time is not specified in ISOstring, normalize to midnight
-    if (v.indexOf('T') === -1) {
-      const offset = adjustedDate.getTimezoneOffset();
-      const hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset);
-    }
-    return adjustedDate;
-  });
+  const dates = (Array.isArray(value) ? value : [value]).map((v) =>
+    setHoursWithOffset(v),
+  );
 
   let dateIndex = 0;
   let parts = {};
