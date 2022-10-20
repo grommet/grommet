@@ -50,13 +50,15 @@ export var ControlledDataTable = function ControlledDataTable() {
             checked: checked.indexOf(name) !== -1,
             onChange: function onChange(e) {
               return onCheck(e, name);
-            }
+            },
+            "aria-label": "row checkbox"
           });
         },
         header: /*#__PURE__*/React.createElement(CheckBox, {
           checked: checked.length === DATA.length,
           indeterminate: checked.length > 0 && checked.length < DATA.length,
-          onChange: onCheckAll
+          onChange: onCheckAll,
+          "aria-label": "header checkbox"
         }),
         sortable: false
       }].concat(controlledColumns).map(function (col) {
