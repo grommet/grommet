@@ -82,7 +82,7 @@ export const Simple = () => (
       <SkipLink id="footer" label="Footer" />
     </SkipLinks>
     <Box gap="large" margin={{ bottom: 'xlarge' }}>
-      <Box background="light-4" pad="small" fill="horizontal">
+      <Box background="light-3" pad="small" fill="horizontal">
         <Header pad={{ horizontal: 'large' }}>
           <Avatar src={avatarSrc} />
           <Nav direction="row">
