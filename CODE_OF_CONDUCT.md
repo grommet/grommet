@@ -21,9 +21,8 @@ community include:
 - Being respectful of differing opinions, viewpoints, and experiences
 - Giving and gracefully accepting constructive feedback
 - Using welcoming and inclusive language
-- Focusing on what is best not just for us as individuals, but for the overall
+- Focusing on what is best not just for us as individuals, but for the overall community
 - Embracing curiosity, learning, and personal growth
-  community
 
 Examples of unacceptable behavior include:
 
@@ -63,6 +62,7 @@ reported either through Github or by reaching out to one of the following worksp
 
 - Jessica Filben (@Jessica Filben on Slack)
 - Matt Glissmann (@gliss on Slack)
+- Eric Soderberg (@ericsoderberg on Slack)
 
 All complaints will be reviewed and investigated promptly and fairly.
 
