@@ -28,7 +28,7 @@ export var Simple = function Simple() {
         bottom: 'xlarge'
       }
     }, /*#__PURE__*/React.createElement(Box, {
-      background: "light-4",
+      background: "light-3",
       pad: "small",
       fill: "horizontal"
     }, /*#__PURE__*/React.createElement(Header, {

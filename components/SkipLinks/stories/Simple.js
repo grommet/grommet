@@ -37,7 +37,7 @@ var Simple = function Simple() {
         bottom: 'xlarge'
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      background: "light-4",
+      background: "light-3",
       pad: "small",
       fill: "horizontal"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Header, {
