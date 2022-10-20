@@ -22,6 +22,7 @@ community include:
 - Giving and gracefully accepting constructive feedback
 - Using welcoming and inclusive language
 - Focusing on what is best not just for us as individuals, but for the overall
+- Embracing curiosity, learning, and personal growth
   community
 
 Examples of unacceptable behavior include:
