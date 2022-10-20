@@ -263,6 +263,8 @@ const DropContainer = forwardRef(
           containerTarget === document.body
             ? event.target
             : event?.composedPath()[0];
+        
+        console.log(node);
           
         while (clickedPortalId === null && node !== document) {
           const attr = node.getAttribute('data-g-portal-id');
