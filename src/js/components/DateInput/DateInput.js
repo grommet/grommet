@@ -159,6 +159,11 @@ Use the icon prop instead.`,
       announce(formatMessage({ id: 'dateInput.exitCalendar', messages }));
     }, [announce, formatMessage, messages]);
 
+    const dates = useMemo(
+      () => (range && value?.length ? [value] : undefined),
+      [range, value],
+    );
+
     const calendar = (
       <Calendar
         ref={inline ? ref : undefined}
@@ -167,7 +172,7 @@ Use the icon prop instead.`,
         date={range ? undefined : value}
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
-        dates={range && value?.length ? [value] : undefined}
+        dates={dates}
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
         onSelect={
