@@ -127,7 +127,7 @@ var DateTimeDropButton = function DateTimeDropButton() {
       align: "center",
       pad: "small"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      color: date ? undefined : 'dark-5'
+      color: date ? undefined : 'dark-2'
     }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/_react["default"].createElement(_grommetIcons.Schedule, null)))) // </Grommet>
 
   );
