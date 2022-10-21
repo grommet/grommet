@@ -27,7 +27,7 @@ import {
   valuesAreEqual,
   valueToText,
   textToValue,
-  validateDateBounds,
+  validateBounds,
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
@@ -165,8 +165,6 @@ Use the icon prop instead.`,
       [range, value],
     );
 
-    const bounds = calendarProps?.bounds;
-
     const calendar = (
       <Calendar
         ref={inline ? ref : undefined}
@@ -278,10 +276,10 @@ Use the icon prop instead.`,
                   outputFormat,
                 );
 
-                const validatedNextValue = validateDateBounds({
-                  dateBounds: bounds,
-                  selectedDate: nextValue,
-                });
+                const validatedNextValue = validateBounds(
+                  calendarProps?.bounds,
+                  nextValue,
+                );
 
                 if (validatedNextValue !== undefined)
                   setReference(getReference(validatedNextValue));
