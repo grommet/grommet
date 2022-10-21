@@ -899,51 +899,6 @@ describe('DateInput', () => {
     expect(dateInputValue).toEqual('07/02/2020-07/07/2020');
   });
 
-  test('should be working with blur validation', async () => {
-    const Test = () => {
-      return (
-        <Grommet>
-          <Form validate="blur">
-            <FormField name="value">
-              <DateInput name="value" format="mm/dd/yyyy-mm/dd/yyyy" />
-            </FormField>
-          </Form>
-          <Button type="submit" label="submit" />
-        </Grommet>
-      );
-    };
-
-    render(<Test />);
-
-    await userEvent.click(screen.getByRole('button', { name: /calendar/i }));
-
-    await userEvent.click(
-      screen.getByRole('button', {
-        name: /fri oct 07 2022/i,
-      }),
-    );
-
-    await userEvent.click(
-      screen.getByRole('button', {
-        name: /go to november 2022/i,
-      }),
-    );
-
-    expect(
-      screen.getByRole('heading', {
-        name: /november 2022/i,
-      }),
-    ).toBeInTheDocument();
-
-    await userEvent.click(
-      screen.getByRole('button', {
-        name: /wed nov 16 2022/i,
-      }),
-    );
-
-    expect(screen.getByText('Selected November 16, 2022')).toBeInTheDocument();
-  });
-
   test('should be displayed when value is controlled without timezone', async () => {
     const Test = () => {
       const [value, setValue] = React.useState<string[] | []>([]);
