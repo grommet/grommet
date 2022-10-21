@@ -166,6 +166,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       messages: messages
     }));
   }, [announce, formatMessage, messages]);
+  var dates = useMemo(function () {
+    return range && value != null && value.length ? [value] : undefined;
+  }, [range, value]);
   var calendar = /*#__PURE__*/React.createElement(Calendar, _extends({
     ref: inline ? ref : undefined,
     id: inline && !format ? id : undefined,
@@ -173,7 +176,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     date: range ? undefined : value // when caller initializes with empty array, dates should be undefined
     // allowing the user to select both begin and end of the range
     ,
-    dates: range && value != null && value.length ? [value] : undefined // places focus on days grid when Calendar opens
+    dates: dates // places focus on days grid when Calendar opens
     ,
     initialFocus: open ? 'days' : undefined,
     onSelect: disabled ? undefined : function (nextValue) {
