@@ -9,7 +9,7 @@ const colorStyle = css`
 
 const sizeStyle = (props) => {
   const size = props.size || 'medium';
-  const data = props.theme.paragraph[size];
+  const data = props.theme.paragraph.fontSize[size];
   return css`
     font-size: ${data ? data.size : size};
     line-height: ${data ? data.height : 'normal'};

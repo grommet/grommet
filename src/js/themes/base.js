@@ -1489,11 +1489,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       font: {
         // family: undefined
       },
-      small: { ...fontSizing(-1) },
-      medium: { ...fontSizing(0) },
-      large: { ...fontSizing(1) },
-      xlarge: { ...fontSizing(2) },
-      xxlarge: { ...fontSizing(4) },
+      fontSize: {
+        small: { ...fontSizing(-1) },
+        medium: { ...fontSizing(0) },
+        large: { ...fontSizing(1) },
+        xlarge: { ...fontSizing(2) },
+        xxlarge: { ...fontSizing(4) },
+      },
+      responsiveBreakpoint: 'small', // matches Heading breakpoint
     },
     spinner: {
       container: {
