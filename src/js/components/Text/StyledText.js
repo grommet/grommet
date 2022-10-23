@@ -1,22 +1,50 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles, normalizeColor, textAlignStyle } from '../../utils';
+import {
+  breakpointStyle,
+  genericStyles,
+  normalizeColor,
+  textAlignStyle,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const sizeStyle = (props) => {
   const size = props.size || 'medium';
   const textTheme = props.theme.text;
   const data = textTheme.fontSize[size];
-  if (data) {
-    return css`
-      font-size: ${data.size};
-      line-height: ${data.height};
-    `;
+  const styles = [
+    css`
+      font-size: ${data ? data.size : size};
+      line-height: ${data ? data.height : 'normal'};
+    `,
+  ];
+  if (props.responsive && textTheme.responsiveBreakpoint) {
+    const breakpoint =
+      props.theme.global.breakpoints[textTheme.responsiveBreakpoint];
+    // create (ordered) Array of sizes to loop through
+    const allSizes = Object.keys(textTheme.fontSize);
+    const sizePosition = allSizes.findIndex(
+      (elementSize) => elementSize === size,
+    );
+    if (breakpoint) {
+      const responsiveData = textTheme.fontSize[allSizes[sizePosition - 1]]
+        ? textTheme.fontSize[allSizes[sizePosition - 1]]
+        : textTheme.fontSize[allSizes[sizePosition]];
+      console.log(responsiveData);
+      if (responsiveData) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+              font-size: ${responsiveData.size};
+              line-height: ${responsiveData.height};
+            `,
+          ),
+        );
+      }
+    }
   }
-  return css`
-    font-size: ${size};
-    line-height: normal;
-  `;
+  return styles;
 };
 
 const truncateStyle = `
