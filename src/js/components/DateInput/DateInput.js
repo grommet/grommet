@@ -249,7 +249,7 @@ Use the icon prop instead.`,
           <Box
             ref={containerRef}
             border={!plain}
-            round="xxsmall"
+            round={theme.dateInput.container.round}
             direction="row"
             fill
           >
