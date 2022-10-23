@@ -3,9 +3,10 @@ import styled, { css } from 'styled-components';
 import { genericStyles, normalizeColor, textAlignStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const sizeStyle = props => {
+const sizeStyle = (props) => {
   const size = props.size || 'medium';
-  const data = props.theme.text[size];
+  const textTheme = props.theme.text;
+  const data = textTheme.fontSize[size];
   if (data) {
     return css`
       font-size: ${data.size};
@@ -26,19 +27,19 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  color: ${props => normalizeColor(props.colorProp, props.theme)};
+  color: ${(props) => normalizeColor(props.colorProp, props.theme)};
 `;
 
 const weightStyle = css`
-  font-weight: ${props => props.weight};
+  font-weight: ${(props) => props.weight};
 `;
 
 const wordBreakStyle = css`
-  word-break: ${props => props.wordBreak};
+  word-break: ${(props) => props.wordBreak};
 `;
 
 const fontFamily = css`
-  font-family: ${props => props.theme.text.font.family};
+  font-family: ${(props) => props.theme.text.font.family};
 `;
 
 const StyledText = styled('span').withConfig({
@@ -46,16 +47,16 @@ const StyledText = styled('span').withConfig({
     defaultValidatorFn(prop) && prop !== 'size',
 })`
   ${genericStyles}
-  ${props => sizeStyle(props)}
-  ${props => props.textAlign && textAlignStyle}
-  ${props => props.truncate && truncateStyle}
-  ${props => props.colorProp && colorStyle}
-  ${props => props.weight && weightStyle}
-  ${props => props.wordBreak && wordBreakStyle}
-  ${props =>
+  ${(props) => sizeStyle(props)}
+  ${(props) => props.textAlign && textAlignStyle}
+  ${(props) => props.truncate && truncateStyle}
+  ${(props) => props.colorProp && colorStyle}
+  ${(props) => props.weight && weightStyle}
+  ${(props) => props.wordBreak && wordBreakStyle}
+  ${(props) =>
     props.theme.text.font && props.theme.text.font.family && fontFamily}
 
-  ${props => props.theme.text && props.theme.text.extend}
+  ${(props) => props.theme.text && props.theme.text.extend}
 `;
 
 StyledText.defaultProps = {};

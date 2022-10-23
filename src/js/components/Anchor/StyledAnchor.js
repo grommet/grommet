@@ -12,7 +12,7 @@ const disabledStyle = `
 const sizeStyle = (props) => {
   if (props.size) {
     const size = props.size || 'medium';
-    const data = props.theme.text[size];
+    const data = props.theme.text.fontSize[size];
     return css`
       font-size: ${data ? data.size : size};
       line-height: ${data ? data.height : 'normal'};

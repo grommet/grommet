@@ -421,7 +421,7 @@ const placeholderStyle = css`
 `;
 
 const inputSizeStyle = (props) => {
-  const data = props.theme.text[props.size];
+  const data = props.theme.text.fontSize[props.size];
 
   if (!data) {
     return css`
@@ -440,7 +440,7 @@ export const inputStyle = css`
   ${(props) =>
     `font-size: ${
       props.theme.global.input.font.size
-        ? props.theme.text[props.theme.global.input.font.size]?.size ||
+        ? props.theme.text.fontSize[props.theme.global.input.font.size]?.size ||
           props.theme.global.input.font.size
         : 'inherit'
     };`}
