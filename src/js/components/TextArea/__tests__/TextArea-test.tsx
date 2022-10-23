@@ -186,13 +186,10 @@ describe('TextArea', () => {
           <TextArea name="item" placeholder="item" onChange={onChange} />
         </Grommet>,
       );
-      const input = getByPlaceholderText('item');
+      const input = getByPlaceholderText('item') as HTMLInputElement;
       fireEvent.change(input, {
         target: { value: 'Test' },
       });
-      if (!(input instanceof HTMLTextAreaElement)) {
-        fail("node 'input' is not of type 'HTMLTextAreaElement'");
-      }
       expect(input.value).toEqual('Test');
       expect(onChange).toHaveBeenCalledTimes(1);
     });
