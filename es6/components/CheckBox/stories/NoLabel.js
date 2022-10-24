@@ -29,7 +29,9 @@ var SimpleCheckBox = function SimpleCheckBox(_ref) {
 };
 
 export var NoLabel = function NoLabel() {
-  return /*#__PURE__*/React.createElement(SimpleCheckBox, null);
+  return /*#__PURE__*/React.createElement(SimpleCheckBox, {
+    a11yTitle: "Checkbox without a label"
+  });
 };
 NoLabel.storyName = 'No label';
 export default {
