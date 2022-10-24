@@ -14,7 +14,7 @@ const SimpleCheckBox = ({ checked: checkedProp, ...rest }) => {
 };
 
 export const NoLabel = () => (
-  <SimpleCheckBox a11yTitle="No label, but an aria-label" />
+  <SimpleCheckBox a11yTitle="Checkbox without a label" />
 );
 
 NoLabel.storyName = 'No label';
