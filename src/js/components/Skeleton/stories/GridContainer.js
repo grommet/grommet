@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Box, Button, Card, Grid, Image, Text} from 'grommet';
 import { FormAdd } from 'grommet-icons';
@@ -39,15 +39,35 @@ const Item = ({ title, ...rest }) => (
   </Card>
 );
 
-export const GridContainer = () => (
-  <Box skeleton>
-    <Grid pad="small" gap="small" columns={ ['medium', 'medium'] }>
-      {labels.map(label =>
-        <Item key={label} title={label} skeleton={{ animation: 'fadeIn' }} />,
-      )}
-    </Grid>
-  </Box>
-);
+export const GridContainer = () => {
+  const [skeleton, setSkeleton] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setSkeleton(!skeleton), 3000);
+  }, [skeleton]);
+
+  return (
+    <Box skeleton={skeleton}>
+      <Button label="Reload" onClick={() => setSkeleton(true)} />
+      <Grid pad="small" gap="small" columns={['medium', 'medium']}>
+        {labels.map((label, index) => (
+          <Item
+            key={label}
+            title={label}
+            skeleton={
+              skeleton
+                ? {
+                    animation: [
+                      { type: 'fadeIn', delay: index * 200},
+                    ],
+                  }
+                : undefined
+            }
+          />
+        ))}
+      </Grid>
+    </Box>
+  );
+};
 
 export default {
   title: 'Visualizations/Skeleton/GridContainer',
