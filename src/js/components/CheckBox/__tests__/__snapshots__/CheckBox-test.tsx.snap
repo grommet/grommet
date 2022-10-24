@@ -318,7 +318,7 @@ exports[`CheckBox controlled 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 sYvHP"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kDPESC"
     label="test-label"
   >
     <div

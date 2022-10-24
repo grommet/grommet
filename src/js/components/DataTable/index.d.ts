@@ -91,12 +91,12 @@ export interface DataTableProps<TRowType = any> {
   groupBy?:
     | string
     | {
-        property: string;
-        expand: Array<string>;
-        expandable: Array<string>;
-        select: { [key: string]: 'all' | 'some' | 'none' };
-        onExpand: (expandedKeys: string[]) => void;
-        onSelect: (select: (string | number)[], datum: TRowType) => void;
+        property?: string;
+        expand?: Array<string>;
+        expandable?: Array<string>;
+        select?: { [key: string]: 'all' | 'some' | 'none' };
+        onExpand?: (expandedKeys: string[]) => void;
+        onSelect?: (select: (string | number)[], datum: TRowType) => void;
       };
   primaryKey?: string | boolean;
   select?: (string | number)[];

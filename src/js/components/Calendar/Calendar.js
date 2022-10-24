@@ -38,6 +38,7 @@ import {
   withinDates,
 } from './utils';
 import { CalendarPropTypes } from './propTypes';
+import { setHoursWithOffset } from '../../utils/dates';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -86,14 +87,7 @@ const normalizeInput = (dateValue) => {
   }
   // date may be an empty string ''
   else if (typeof dateValue === 'string' && dateValue.length) {
-    const adjustedDate = new Date(dateValue);
-    // if time is not specified in ISOstring, normalize to midnight
-    if (dateValue.indexOf('T') === -1) {
-      const offset = adjustedDate.getTimezoneOffset();
-      const hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset);
-    }
-    result = adjustedDate;
+    result = setHoursWithOffset(dateValue);
   } else if (Array.isArray(dateValue)) {
     result = dateValue.map((d) => normalizeInput(d));
   }

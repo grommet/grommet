@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sidebar all 1`] = `
+.c3 {
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: hidden;
+  object-fit: contain;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -30,8 +38,6 @@ exports[`Sidebar all 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: url() no-repeat center center;
-  background-size: cover;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -47,7 +53,7 @@ exports[`Sidebar all 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64,33 +70,7 @@ exports[`Sidebar all 1`] = `
   flex: 1 1;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 48px;
-  width: 48px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 100%;
-  overflow: hidden;
-}
-
-.c3 {
+.c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -125,7 +105,7 @@ exports[`Sidebar all 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     height: 24px;
   }
 }
@@ -138,20 +118,27 @@ exports[`Sidebar all 1`] = `
   >
     <div
       class="c2 StyledAvatar-sc-1suyamb-1"
-    />
-    <div
-      class="c3"
-    />
+      role="figure"
+    >
+      <img
+        class="c3"
+        role="presentation"
+        src=""
+      />
+    </div>
     <div
       class="c4"
+    />
+    <div
+      class="c5"
     >
       test all props and children
     </div>
     <div
-      class="c3"
+      class="c4"
     />
     <div
-      class="c5 StyledAvatar-sc-1suyamb-1"
+      class="c2 StyledAvatar-sc-1suyamb-1"
     >
       <span
         class="c6 "
@@ -164,6 +151,14 @@ exports[`Sidebar all 1`] = `
 `;
 
 exports[`Sidebar children 1`] = `
+.c4 {
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: hidden;
+  object-fit: contain;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -208,8 +203,6 @@ exports[`Sidebar children 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: url() no-repeat center center;
-  background-size: cover;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -252,7 +245,14 @@ exports[`Sidebar children 1`] = `
     >
       <div
         class="c3 StyledAvatar-sc-1suyamb-1"
-      />
+        role="figure"
+      >
+        <img
+          class="c4"
+          role="presentation"
+          src=""
+        />
+      </div>
       children test
     </div>
   </div>
@@ -260,6 +260,14 @@ exports[`Sidebar children 1`] = `
 `;
 
 exports[`Sidebar footer 1`] = `
+.c5 {
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: hidden;
+  object-fit: contain;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -304,8 +312,6 @@ exports[`Sidebar footer 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: url() no-repeat center center;
-  background-size: cover;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -367,12 +373,27 @@ exports[`Sidebar footer 1`] = `
     />
     <div
       class="c4 StyledAvatar-sc-1suyamb-1"
-    />
+      role="figure"
+    >
+      <img
+        class="c5"
+        role="presentation"
+        src=""
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Sidebar header 1`] = `
+.c3 {
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: hidden;
+  object-fit: contain;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -400,8 +421,6 @@ exports[`Sidebar header 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: url() no-repeat center center;
-  background-size: cover;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -417,7 +436,7 @@ exports[`Sidebar header 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -434,7 +453,7 @@ exports[`Sidebar header 1`] = `
   flex: 1 1;
 }
 
-.c3 {
+.c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -461,7 +480,7 @@ exports[`Sidebar header 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     height: 24px;
   }
 }
@@ -474,12 +493,19 @@ exports[`Sidebar header 1`] = `
   >
     <div
       class="c2 StyledAvatar-sc-1suyamb-1"
-    />
-    <div
-      class="c3"
-    />
+      role="figure"
+    >
+      <img
+        class="c3"
+        role="presentation"
+        src=""
+      />
+    </div>
     <div
       class="c4"
+    />
+    <div
+      class="c5"
     />
   </div>
 </div>

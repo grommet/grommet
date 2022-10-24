@@ -6,7 +6,7 @@ import { Grommet as GrommetIcon, Menu as MenuIcon } from 'grommet-icons';
 export const Responsive = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Header background="light-4" pad="medium" height="xsmall">
+  <Header background="light-3" pad="medium" height="xsmall">
     <Anchor
       href="https://tools.grommet.io/"
       icon={<GrommetIcon color="brand" />}
