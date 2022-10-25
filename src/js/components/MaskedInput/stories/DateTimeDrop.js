@@ -103,7 +103,7 @@ export const DateTimeDropButton = () => {
         dropContent={<DropContent date={date} time={time} onClose={onClose} />}
       >
         <Box direction="row" gap="medium" align="center" pad="small">
-          <Text color={date ? undefined : 'dark-5'}>
+          <Text color={date ? undefined : 'dark-2'}>
             {date
               ? `${new Date(date).toLocaleDateString()} ${time}`
               : 'Select date & time'}
