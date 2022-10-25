@@ -562,14 +562,13 @@ const DataTable = ({
             </StyledPlaceholder>
           )}
         </StyledDataTable>
-
-        {paginate &&
-        adjustedData.length > paginationStep &&
-        items &&
-        items.length ? (
-          <Pagination alignSelf="end" {...paginationProps} />
-        ) : null}
       </OverflowContainer>
+      {paginate &&
+      adjustedData.length > paginationStep &&
+      items &&
+      items.length ? (
+        <Pagination alignSelf="end" {...paginationProps} />
+      ) : null}
     </Container>
   );
 };
