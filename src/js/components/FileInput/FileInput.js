@@ -16,43 +16,7 @@ import { Text } from '../Text';
 
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
-
-const getConversionFactor = () => {
-  const SI_CONVERSION_FACTOR = 1000;
-  const IEC_CONVERSION_FACTOR = 1024;
-
-  const osConversionFactor = {
-    Win: IEC_CONVERSION_FACTOR,
-    Linux: SI_CONVERSION_FACTOR,
-    Mac: SI_CONVERSION_FACTOR,
-  };
-
-  const currentOS = ['Win', 'Linux', 'Mac'].find(
-    (v) => window.navigator.userAgent.indexOf(v) >= 0,
-  );
-
-  if (osConversionFactor[currentOS]) {
-    return osConversionFactor[currentOS];
-  }
-
-  return SI_CONVERSION_FACTOR;
-};
-
-const formatBytes = (size) => {
-  const units =
-    getConversionFactor() === 1000
-      ? ['B', 'KB', 'MB', 'GB', 'TB']
-      : ['B', 'KiB', 'MiB', 'GiB', 'TiB'];
-  const factor = getConversionFactor();
-  let index = 0;
-  let num = size;
-  while (num >= factor && index < units.length - 1) {
-    num /= factor;
-    index += 1;
-  }
-  return `${num.toFixed(1)} ${units[index]}`;
-};
-
+import { formatBytes } from './utils/formatBytes';
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
 // position the <input /> on top with an opacity of zero.
