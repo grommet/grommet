@@ -305,7 +305,7 @@ describe('SelectMultiple', () => {
   test('null value', () => {
     const { asFragment } = render(
       <Grommet>
-        {/* @ts-expect-error */}
+        {/* @ts-ignore */}
         <SelectMultiple options={['a', 'b']} value={null} />
       </Grommet>,
     );

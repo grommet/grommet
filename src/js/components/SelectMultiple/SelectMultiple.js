@@ -144,7 +144,7 @@ const SelectMultiple = forwardRef(
     }, [optionsProp, search]);
 
     useEffect(() => {
-      if (!search && sortSelectedOnClose) setOrderedOptions(optionsProp);
+      if (sortSelectedOnClose) setOrderedOptions(optionsProp);
     }, [optionsProp, search, sortSelectedOnClose]);
 
     // the option indexes present in the value
@@ -168,7 +168,7 @@ const SelectMultiple = forwardRef(
     }, [onOpen, open]);
 
     useEffect(() => {
-      if (sortSelectedOnClose && ((open && search) || !open)) {
+      if (sortSelectedOnClose && value && !open) {
         const selectedOptions = optionsProp.filter((option) =>
           arrayIncludes(
             value,
