@@ -16,7 +16,7 @@ var CONTENT = "\n  # Out of Breath\n\n  You know, sometimes in life it seems lik
 var StyledPre = _styledComponents["default"].pre.withConfig({
   displayName: "Override__StyledPre",
   componentId: "sc-13lo9xg-0"
-})(["background-color:#7d4cdb;"]);
+})(["background-color:#ffca58;"]);
 
 var ComponentOverrideMarkdown = function ComponentOverrideMarkdown() {
   return (
