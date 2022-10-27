@@ -21,12 +21,12 @@ export var StyledDataTable = function StyledDataTable() {
       },
       background: {
         header: {
-          color: 'dark-3',
+          color: 'dark-1',
           opacity: 'strong'
         },
         body: ['light-1', 'light-3'],
         footer: {
-          color: 'dark-3',
+          color: 'dark-1',
           opacity: 'strong'
         }
       },
