@@ -14,7 +14,7 @@ export interface PaginationProps {
   numberEdgePages?: number;
   numberItems?: number;
   numberMiddlePages?: number;
-  onChange?: (...args: any[]) => void;
+  onChange?: (event: React.ChangeEvent) => void;
   page?: number;
   size?: 'small' | 'medium' | 'large';
   step?: number;
