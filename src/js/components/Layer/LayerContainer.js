@@ -126,7 +126,7 @@ const LayerContainer = forwardRef(
         let node =
           containerTarget === document.body
             ? event.target
-            : event.composedPath();
+            : event?.composedPath();
 
         while (clickedPortalId === null && node !== document && node !== null) {
           // check if user click occurred within the layer
