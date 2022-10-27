@@ -1,7 +1,7 @@
 const SI_CONVERSION_FACTOR = 1000;
 const IEC_CONVERSION_FACTOR = 1024;
 
-const getBrowser = () => {
+const getCurrentOS = () => {
   const currentOS = ['Win', 'Linux', 'Mac'].find(
     (v) => window.navigator.userAgent.indexOf(v) >= 0,
   );
@@ -24,15 +24,11 @@ const defaultFormat = (size) => {
 const windowsFormat = (size) => {
   const num = Math.ceil(size / IEC_CONVERSION_FACTOR);
 
-  function formatNumber(number) {
-    return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
-  }
-
-  return `${formatNumber(num)} ${'KB'}`;
+  return `${Intl.NumberFormat().format(num)} KB`;
 };
 
-const makeFormatBytes = (browser) => (size) => {
-  switch (browser) {
+const makeFormatBytes = (OS) => (size) => {
+  switch (OS) {
     case 'Win':
       return windowsFormat(size);
     default:
@@ -40,6 +36,6 @@ const makeFormatBytes = (browser) => (size) => {
   }
 };
 
-const formatBytes = makeFormatBytes(getBrowser());
+const formatBytes = makeFormatBytes(getCurrentOS());
 
 export { formatBytes };
