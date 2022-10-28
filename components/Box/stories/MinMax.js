@@ -51,7 +51,8 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
       align: "center",
       justify: "center",
       background: "brand",
-      overflow: "auto"
+      overflow: "auto",
+      tabIndex: 0
     }, Array(20).fill().map(function (_, i) {
       return (
         /*#__PURE__*/
@@ -69,7 +70,8 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
       align: "center",
       justify: "center",
       background: "brand",
-      overflow: "auto"
+      overflow: "auto",
+      tabIndex: 0
     }, Array(20).fill().map(function (_, i) {
       return (
         /*#__PURE__*/
