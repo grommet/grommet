@@ -1,12 +1,5 @@
-import React, {
-  forwardRef,
-  useContext,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useContext, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
@@ -19,7 +12,13 @@ import { XAxis } from './XAxis';
 import { YAxis } from './YAxis';
 import { XGuide } from './XGuide';
 import { YGuide } from './YGuide';
-import { createDateFormat, halfPad, heightYGranularity, points } from './utils';
+import {
+  createDateFormat,
+  halfPad,
+  heightYGranularity,
+  largestSize,
+  points,
+} from './utils';
 import { DataChartPropTypes } from './propTypes';
 
 const stackedChartType = {
@@ -40,7 +39,7 @@ const DataChart = forwardRef(
       a11yTitle,
       axis: axisProp = true,
       bounds: boundsProp = 'align',
-      chart,
+      chart: chartProp,
       data = [],
       detail,
       gap = 'small',
@@ -60,10 +59,6 @@ const DataChart = forwardRef(
     // legend interaction, if any
     const [activeProperty, setActiveProperty] = useState();
 
-    // refs used for ie11 not having Grid
-    const xRef = useRef();
-    const spacerRef = useRef();
-
     // normalize seriesProp to an array of objects, one per property
     const series = useMemo(() => {
       if (Array.isArray(seriesProp))
@@ -78,13 +73,13 @@ const DataChart = forwardRef(
     const getPropertySeries = (prop) =>
       series.find(({ property }) => prop === property);
 
-    // Normalize chart to an array of objects.
+    // Normalize chartProp to an array of objects.
     // Each chart has one or more properties associated with it.
     // A stacked bar or area chart has an array of properties.
     // A point chart can have x, y, thickness, and color each driven
     // by a separate property.
     const charts = useMemo(() => {
-      if (!chart) {
+      if (!chartProp) {
         if (series.length === 1)
           return series
             .filter((s) => s.property)
@@ -93,14 +88,14 @@ const DataChart = forwardRef(
         // the x-axis and we'll plot the rest
         return series.slice(1).map((s) => ({ property: s.property }));
       }
-      if (Array.isArray(chart))
-        return chart
+      if (Array.isArray(chartProp))
+        return chartProp
           .map((c) => (typeof c === 'string' ? { property: c } : c))
           .filter(({ property }) => property);
-      if (typeof chart === 'string') return [{ property: chart }];
-      if (chart) return [chart];
+      if (typeof chartProp === 'string') return [{ property: chartProp }];
+      if (chartProp) return [chartProp];
       return [];
-    }, [chart, series]);
+    }, [chartProp, series]);
 
     // map the series property values into their own arrays
     const seriesValues = useMemo(() => {
@@ -329,28 +324,43 @@ const DataChart = forwardRef(
     const seriesStyles = useMemo(() => {
       const result = {};
       // start from what we were explicitly given
-      charts.forEach(({ color, point, property, thickness, type }, index) => {
+      charts.forEach((chart, index) => {
         const { thickness: calcThickness } = chartProps[index];
 
-        if (typeof property === 'object' && !Array.isArray(property)) {
+        if (
+          typeof chart.property === 'object' &&
+          !Array.isArray(chart.property)
+        ) {
           // data driven point chart
-          Object.keys(property).forEach((aspect) => {
-            const prop = property[aspect];
+          Object.keys(chart.property).forEach((aspect) => {
+            const prop = chart.property[aspect];
             if (!result[prop.property || prop])
               result[prop.property || prop] = { aspect };
           });
         } else {
-          const props = Array.isArray(property) ? property : [property];
-          props.forEach((prop) => {
-            const p = prop.property || prop;
-            const pColor = prop.color || color;
-            if (!result[p]) result[p] = {};
-            if (pColor && !result[p].color) result[p].color = pColor;
-            if (point && !result[p].point) result[p].point = point;
-            else if (type === 'point') result[p].point = false;
-            if ((thickness || calcThickness) && !result[p].thickness)
-              result[p].thickness = thickness || calcThickness;
-          });
+          const setPropertyStyle = ({ property, ...styles }) => {
+            // keep what we've got, use what is new
+            result[property] = {
+              ...styles,
+              ...(result[property] || {}),
+            };
+            // unless the new style is has no opacity
+            if (!styles.opacity) delete result[property].opacity;
+            if (styles.type === 'point') result[property].point = false;
+            if (calcThickness && !result[property].thickness)
+              result[property].thickness = calcThickness;
+          };
+
+          if (Array.isArray(chart.property))
+            chart.property.forEach((prop) => {
+              if (typeof prop === 'string')
+                setPropertyStyle({ ...chart, property: prop });
+              else if (typeof prop === 'object')
+                setPropertyStyle({ ...chart, ...prop });
+            });
+          else if (typeof chart === 'object') setPropertyStyle(chart);
+          else if (typeof chart === 'string')
+            setPropertyStyle({ property: chart });
         }
       });
 
@@ -413,8 +423,9 @@ const DataChart = forwardRef(
 
       charts.forEach(({ type }, index) => {
         const { thickness } = chartProps[index];
-        result.horizontal = halfPad[thickness];
-        if (type && type !== 'bar') result.vertical = halfPad[thickness];
+        result.horizontal = largestSize(result.horizontal, halfPad[thickness]);
+        if (type && type !== 'bar')
+          result.vertical = largestSize(result.vertical, halfPad[thickness]);
       });
       return result;
     }, [chartProps, charts, padProp]);
@@ -466,22 +477,20 @@ const DataChart = forwardRef(
       [offsets, thicknesses],
     );
 
-    // The thickness of the Detail segments. We need to convert to numbers
+    // The thickness of the segments. We need to convert to numbers
     // to be able to compare across charts where some might be using T-shirt
     // labels and others might be pixel values.
-    const detailThickness = useMemo(() => {
+    const segmentThickness = useMemo(() => {
       let result = 0;
-      if (detail) {
-        charts.forEach((_, index) => {
-          const { thickness } = chartProps[index];
-          result = Math.max(
-            result,
-            parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
-          );
-        });
-      }
+      charts.forEach((_, index) => {
+        const { thickness } = chartProps[index];
+        result = Math.max(
+          result,
+          parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
+        );
+      });
       return `${result}px`;
-    }, [charts, chartProps, detail, theme]);
+    }, [charts, chartProps, theme]);
 
     const dateFormats = useMemo(() => {
       const result = {};
@@ -501,14 +510,6 @@ const DataChart = forwardRef(
       });
       return result;
     }, [axis, data, series]);
-
-    // for ie11, align the spacer Box height to the x-axis height
-    useLayoutEffect(() => {
-      if (xRef.current && spacerRef.current) {
-        const rect = xRef.current.getBoundingClientRect();
-        spacerRef.current.style.height = `${rect.height}px`;
-      }
-    }, []);
 
     const renderValue = (serie, dataIndex, valueArg) => {
       let value;
@@ -535,7 +536,6 @@ const DataChart = forwardRef(
     const xAxisElement =
       axis && axis.x && chartProps.length ? (
         <XAxis
-          ref={xRef}
           axis={axis}
           values={
             (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
@@ -543,6 +543,7 @@ const DataChart = forwardRef(
           }
           pad={offsetPad ? { ...pad, end: offsetPad } : pad}
           renderValue={renderValue}
+          thickness={segmentThickness}
           serie={axis.x.property && getPropertySeries(axis.x.property)}
           style={
             offsetPad
@@ -553,6 +554,7 @@ const DataChart = forwardRef(
                 }
               : {}
           }
+          theme={theme}
         />
       ) : null;
 
@@ -670,7 +672,7 @@ const DataChart = forwardRef(
             series={series}
             seriesStyles={seriesStyles}
             renderValue={renderValue}
-            thickness={detailThickness}
+            thickness={segmentThickness}
           />
         )}
       </Stack>
@@ -684,39 +686,6 @@ const DataChart = forwardRef(
         setActiveProperty={setActiveProperty}
       />
     ) : null;
-
-    // IE11
-    if (!Grid.available) {
-      let content = stackElement;
-      if (xAxisElement) {
-        content = (
-          <Box>
-            {content}
-            {xAxisElement}
-          </Box>
-        );
-      }
-      if (yAxisElement) {
-        content = (
-          <Box direction="row">
-            <Box>
-              {yAxisElement}
-              <Box ref={spacerRef} flex={false} />
-            </Box>
-            {content}
-          </Box>
-        );
-      }
-      if (legendElement) {
-        content = (
-          <Box>
-            {content}
-            {legendElement}
-          </Box>
-        );
-      }
-      return content;
-    }
 
     let content = (
       <Grid

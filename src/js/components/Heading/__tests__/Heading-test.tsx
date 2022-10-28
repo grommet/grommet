@@ -134,6 +134,19 @@ test('responsive renders', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+test('weight renders', () => {
+  const { asFragment } = render(
+    <Grommet>
+      <Heading>My heading</Heading>
+      <Heading weight="normal">My heading</Heading>
+      <Heading weight="bold">My heading</Heading>
+      <Heading weight={700}>My heading</Heading>
+    </Grommet>,
+  );
+
+  expect(asFragment()).toMatchSnapshot();
+});
+
 test('Theme based font family renders', () => {
   const customTheme = {
     heading: {

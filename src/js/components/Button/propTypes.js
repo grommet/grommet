@@ -16,7 +16,11 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.node,
     ]),
     active: PropTypes.bool,
-    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    as: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+      PropTypes.elementType,
+    ]),
     badge: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.element,
@@ -64,7 +68,10 @@ if (process.env.NODE_ENV !== 'production') {
     primary: PropTypes.bool,
     reverse: PropTypes.bool,
     secondary: PropTypes.bool,
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large']),
+      PropTypes.string,
+    ]),
     target: PropTypes.oneOfType([
       PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
       PropTypes.string,

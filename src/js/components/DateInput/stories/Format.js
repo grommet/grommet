@@ -12,8 +12,11 @@ export const Format = () => {
   };
   return (
     <Box align="center" pad="large">
-      <Box width="medium">
+      <Box width="medium" margin={{ vertical: 'small' }}>
         <DateInput format="m/d/yy" value={value} onChange={onChange} />
+      </Box>
+      <Box width="medium" margin={{ vertical: 'small' }}>
+        <DateInput format="m/d/yy" value={value} reverse onChange={onChange} />
       </Box>
     </Box>
   );

@@ -9,7 +9,11 @@ export const Simple = () => {
 
   return (
     <Box align="center" pad="large">
-      <RangeInput value={value} onChange={onChange} />
+      <RangeInput
+        a11yTitle="Select range value"
+        value={value}
+        onChange={onChange}
+      />
     </Box>
   );
 };

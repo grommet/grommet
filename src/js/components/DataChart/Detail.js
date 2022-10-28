@@ -1,12 +1,18 @@
-import React, { Fragment, useCallback, useMemo, useRef, useState } from 'react';
-import styled from 'styled-components';
+import React, {
+  Fragment,
+  useCallback,
+  useContext,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Grid } from '../Grid';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle, unfocusStyle } from '../../utils';
-import { halfPad } from './utils';
+import { focusStyle, parseMetricToNum, unfocusStyle } from '../../utils';
 import { Swatch } from './Swatch';
 
 const DetailControl = styled(Box)`
@@ -22,15 +28,33 @@ const Detail = ({
   activeProperty,
   axis,
   data,
-  pad,
+  pad: padProp,
   series,
   seriesStyles,
   renderValue,
   thickness,
 }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const [detailIndex, setDetailIndex] = useState();
   const activeIndex = useRef();
   const detailRefs = useMemo(() => [], []);
+
+  const pad = useMemo(() => {
+    // ensure the hit targets and center lines align with
+    // the data/guide lines
+    let horizontal =
+      padProp?.horizontal || (typeof padProp === 'string' && padProp) || 0;
+    horizontal = theme.global.edgeSize[horizontal] || horizontal;
+    horizontal = parseMetricToNum(horizontal);
+    let vertical =
+      padProp?.vertical || (typeof padProp === 'string' && padProp) || 0;
+    vertical = theme.global.edgeSize[vertical] || vertical;
+    vertical = parseMetricToNum(vertical);
+    return {
+      horizontal: `${horizontal - parseMetricToNum(thickness) / 2}px`,
+      vertical: `${vertical}px`,
+    };
+  }, [padProp, theme.global.edgeSize, thickness]);
 
   const onMouseLeave = useCallback((event) => {
     // Only remove detail if the mouse isn't over the active index.
@@ -66,15 +90,7 @@ const Detail = ({
           tabIndex={0}
           direction="row"
           fill
-          pad={
-            // ensure the hit targets and center lines align with
-            // the data/guide lines
-            (pad?.horizontal &&
-              halfPad[pad.horizontal] && {
-                horizontal: halfPad[pad.horizontal],
-              }) ||
-            pad
-          }
+          pad={pad}
           justify="between"
           responsive={false}
           onFocus={() => {}}
@@ -127,8 +143,8 @@ const Detail = ({
               {series
                 .filter(
                   ({ property }) =>
-                    !activeProperty ||
-                    activeProperty === property ||
+                    ((!activeProperty || activeProperty === property) &&
+                      data?.[detailIndex]?.[property] !== undefined) ||
                     (axis && axis.x && axis.x.property === property),
                 )
                 .map((serie) => {

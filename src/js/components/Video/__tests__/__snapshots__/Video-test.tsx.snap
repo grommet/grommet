@@ -372,6 +372,26 @@ exports[`Video Configure Menu Button 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -892,6 +912,26 @@ exports[`Video End event handler 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -1400,6 +1440,26 @@ exports[`Video Play and Pause event handlers 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -1538,14 +1598,14 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 exports[`Video Play and Pause event handlers 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 eKRKEJ"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hurLkG"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 fLrMDE"
+      class="StyledVideo-sc-w4v8h9-0 iloZar"
     >
       <source
         src="small.mp4"
@@ -1554,13 +1614,13 @@ exports[`Video Play and Pause event handlers 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 ktbAeZ"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 hWpkJK"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bUvXbw"
+        class="StyledBox-sc-13pk1d4-0 eAOMnv"
       >
         <button
-          class="StyledButton-sc-323bzc-0 dCpDhA"
+          class="StyledButton-sc-323bzc-0 ijXFTb"
           type="button"
         >
           .c0 {
@@ -1619,20 +1679,20 @@ exports[`Video Play and Pause event handlers 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 khSOdN"
+          class="StyledBox-sc-13pk1d4-0 kRSvMy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kGMroR"
+            class="StyledBox-sc-13pk1d4-0 irXXOa"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 DIRUt"
+              class="StyledStack-sc-ajspsk-0 RUPca"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bBReQo"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jvatDH"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 woljL"
+                  class="StyledMeter-sc-nsxarx-0 kCzifM"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -1648,11 +1708,11 @@ exports[`Video Play and Pause event handlers 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jzjNT"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 lpszlE"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ecdYvb"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 bLTABk"
                   role="button"
                   tabindex="0"
                 />
@@ -1660,10 +1720,10 @@ exports[`Video Play and Pause event handlers 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 fLpZkZ"
+            class="StyledBox-sc-13pk1d4-0 eRALIW"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fuZiZD"
+              class="StyledText-sc-1sadyjn-0 dJnVGQ"
             >
               NaN:NaN
             </span>
@@ -1673,18 +1733,18 @@ exports[`Video Play and Pause event handlers 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 iqZbKa"
+          class="StyledButton-sc-323bzc-0 hIPuDF"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hOAJOL"
+            class="StyledBox-sc-13pk1d4-0 kXRsIU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hpCRgD"
+              class="StyledText-sc-1sadyjn-0 jbJJSg"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 cnewlt"
+              class="StyledIcon-sc-ofa7kd-0 wnZwe"
               viewBox="0 0 24 24"
             >
               <path
@@ -2072,6 +2132,26 @@ exports[`Video autoPlay renders 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -2574,6 +2654,26 @@ exports[`Video controls below renders 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -3085,6 +3185,26 @@ exports[`Video controls over renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -3591,6 +3711,26 @@ exports[`Video duration event handler 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -4106,6 +4246,26 @@ exports[`Video fit  cover renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -4619,6 +4779,26 @@ exports[`Video fit contain renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -5125,6 +5305,26 @@ exports[`Video loop renders 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -5636,6 +5836,26 @@ exports[`Video mouse events handlers of controls 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -5774,14 +5994,14 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 exports[`Video mouse events handlers of controls 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 eKRKEJ"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hurLkG"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 fLrMDE"
+      class="StyledVideo-sc-w4v8h9-0 iloZar"
     >
       <source
         src="small.mp4"
@@ -5790,18 +6010,18 @@ exports[`Video mouse events handlers of controls 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 jcBnZh"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 efPATm"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bUvXbw"
+        class="StyledBox-sc-13pk1d4-0 eAOMnv"
       >
         <button
-          class="StyledButton-sc-323bzc-0 dCpDhA"
+          class="StyledButton-sc-323bzc-0 ijXFTb"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 cnewlt"
+            class="StyledIcon-sc-ofa7kd-0 wnZwe"
             viewBox="0 0 24 24"
           >
             <path
@@ -5813,20 +6033,20 @@ exports[`Video mouse events handlers of controls 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 khSOdN"
+          class="StyledBox-sc-13pk1d4-0 kRSvMy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kGMroR"
+            class="StyledBox-sc-13pk1d4-0 irXXOa"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 DIRUt"
+              class="StyledStack-sc-ajspsk-0 RUPca"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bBReQo"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jvatDH"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 woljL"
+                  class="StyledMeter-sc-nsxarx-0 kCzifM"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -5842,11 +6062,11 @@ exports[`Video mouse events handlers of controls 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jzjNT"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 lpszlE"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ecdYvb"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 bLTABk"
                   role="button"
                   tabindex="0"
                 />
@@ -5854,10 +6074,10 @@ exports[`Video mouse events handlers of controls 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 fLpZkZ"
+            class="StyledBox-sc-13pk1d4-0 eRALIW"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fuZiZD"
+              class="StyledText-sc-1sadyjn-0 dJnVGQ"
             >
               NaN:NaN
             </span>
@@ -5867,18 +6087,18 @@ exports[`Video mouse events handlers of controls 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 iqZbKa"
+          class="StyledButton-sc-323bzc-0 hIPuDF"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hOAJOL"
+            class="StyledBox-sc-13pk1d4-0 kXRsIU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hpCRgD"
+              class="StyledText-sc-1sadyjn-0 jbJJSg"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 cnewlt"
+              class="StyledIcon-sc-ofa7kd-0 wnZwe"
               viewBox="0 0 24 24"
             >
               <path
@@ -5898,14 +6118,14 @@ exports[`Video mouse events handlers of controls 2`] = `
 
 exports[`Video mouse events handlers of controls 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 eKRKEJ"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hurLkG"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 fLrMDE"
+      class="StyledVideo-sc-w4v8h9-0 iloZar"
     >
       <source
         src="small.mp4"
@@ -5914,18 +6134,18 @@ exports[`Video mouse events handlers of controls 3`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 jcBnZh"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 efPATm"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bUvXbw"
+        class="StyledBox-sc-13pk1d4-0 eAOMnv"
       >
         <button
-          class="StyledButton-sc-323bzc-0 dCpDhA"
+          class="StyledButton-sc-323bzc-0 ijXFTb"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 cnewlt"
+            class="StyledIcon-sc-ofa7kd-0 wnZwe"
             viewBox="0 0 24 24"
           >
             <path
@@ -5937,20 +6157,20 @@ exports[`Video mouse events handlers of controls 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 khSOdN"
+          class="StyledBox-sc-13pk1d4-0 kRSvMy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kGMroR"
+            class="StyledBox-sc-13pk1d4-0 irXXOa"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 DIRUt"
+              class="StyledStack-sc-ajspsk-0 RUPca"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bBReQo"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jvatDH"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 woljL"
+                  class="StyledMeter-sc-nsxarx-0 kCzifM"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -5966,11 +6186,11 @@ exports[`Video mouse events handlers of controls 3`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jzjNT"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 lpszlE"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ecdYvb"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 bLTABk"
                   role="button"
                   tabindex="0"
                 />
@@ -5978,10 +6198,10 @@ exports[`Video mouse events handlers of controls 3`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 fLpZkZ"
+            class="StyledBox-sc-13pk1d4-0 eRALIW"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fuZiZD"
+              class="StyledText-sc-1sadyjn-0 dJnVGQ"
             >
               NaN:NaN
             </span>
@@ -5991,18 +6211,18 @@ exports[`Video mouse events handlers of controls 3`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 iqZbKa"
+          class="StyledButton-sc-323bzc-0 hIPuDF"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hOAJOL"
+            class="StyledBox-sc-13pk1d4-0 kXRsIU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hpCRgD"
+              class="StyledText-sc-1sadyjn-0 jbJJSg"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 cnewlt"
+              class="StyledIcon-sc-ofa7kd-0 wnZwe"
               viewBox="0 0 24 24"
             >
               <path
@@ -6390,6 +6610,26 @@ exports[`Video mute renders 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -6900,6 +7140,26 @@ exports[`Video renders 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -7406,6 +7666,26 @@ exports[`Video renders with theme 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -7916,6 +8196,26 @@ exports[`Video scrubber 1`] = `
   height: 100%;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
@@ -8054,14 +8354,14 @@ exports[`Video scrubber 1`] = `
 
 exports[`Video scrubber 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bFgzgw"
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 eKRKEJ"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hurLkG"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 fLrMDE"
+      class="StyledVideo-sc-w4v8h9-0 iloZar"
     >
       <source
         src="small.mp4"
@@ -8070,18 +8370,18 @@ exports[`Video scrubber 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 jcBnZh"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 efPATm"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bUvXbw"
+        class="StyledBox-sc-13pk1d4-0 eAOMnv"
       >
         <button
-          class="StyledButton-sc-323bzc-0 dCpDhA"
+          class="StyledButton-sc-323bzc-0 ijXFTb"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 cnewlt"
+            class="StyledIcon-sc-ofa7kd-0 wnZwe"
             viewBox="0 0 24 24"
           >
             <path
@@ -8093,20 +8393,20 @@ exports[`Video scrubber 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 khSOdN"
+          class="StyledBox-sc-13pk1d4-0 kRSvMy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kGMroR"
+            class="StyledBox-sc-13pk1d4-0 irXXOa"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 DIRUt"
+              class="StyledStack-sc-ajspsk-0 RUPca"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bBReQo"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jvatDH"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 woljL"
+                  class="StyledMeter-sc-nsxarx-0 kCzifM"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -8122,11 +8422,11 @@ exports[`Video scrubber 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jzjNT"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 lpszlE"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ecdYvb"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 bLTABk"
                   role="button"
                   tabindex="0"
                 />
@@ -8134,10 +8434,10 @@ exports[`Video scrubber 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 fLpZkZ"
+            class="StyledBox-sc-13pk1d4-0 eRALIW"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fuZiZD"
+              class="StyledText-sc-1sadyjn-0 dJnVGQ"
             >
               NaN:NaN
             </span>
@@ -8147,18 +8447,18 @@ exports[`Video scrubber 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 iqZbKa"
+          class="StyledButton-sc-323bzc-0 hIPuDF"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hOAJOL"
+            class="StyledBox-sc-13pk1d4-0 kXRsIU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hpCRgD"
+              class="StyledText-sc-1sadyjn-0 jbJJSg"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 cnewlt"
+              class="StyledIcon-sc-ofa7kd-0 wnZwe"
               viewBox="0 0 24 24"
             >
               <path
@@ -8546,6 +8846,26 @@ exports[`Video timeUpdate event handler 1`] = `
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width:768px) {

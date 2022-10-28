@@ -5,15 +5,17 @@ import { Box, Chart, Keyboard, Stack, Text } from 'grommet';
 import { calcs } from '../calcs';
 import { generateData } from './data';
 
-const ScanChart = (props) => {
+const [count, max, min] = [30, 100, 0];
+
+const ScanChart = () => {
   const [active, setActive] = useState(undefined);
 
-  const { data, max } = props;
+  const data = useMemo(() => generateData(count, max, min), []);
 
   const values = data.map((d) => [d.time, d.value]);
   const { axis, bounds, pad, thickness } = useMemo(
-    () => calcs(values, { min: 0, max }),
-    [values, max],
+    () => calcs(values, { min, max }),
+    [values],
   );
 
   return (
@@ -121,7 +123,7 @@ const ScanChart = (props) => {
   );
 };
 
-export const Scan = () => <ScanChart data={generateData(30, 100)} max={100} />;
+export const Scan = () => <ScanChart />;
 
 Scan.parameters = {
   chromatic: { disable: true },

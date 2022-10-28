@@ -234,7 +234,6 @@ describe('Button', () => {
     expect(document.body).toHaveFocus();
 
     await user.tab();
-
     expect(button).toHaveFocus();
     expect(document.body).not.toHaveFocus();
 
@@ -444,14 +443,17 @@ describe('Button', () => {
   });
 
   test('as', () => {
-    const { container } = render(
+    const Anchor = () => <a />;
+
+    const { asFragment } = render(
       <Grommet>
         <Button as="span" />
+        <Button as={Anchor} />
       </Grommet>,
     );
 
     expect(screen.queryByRole('button')).not.toBeInTheDocument();
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('a11yTitle', () => {

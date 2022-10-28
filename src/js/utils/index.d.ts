@@ -128,7 +128,7 @@ export type AlignContentType =
   | 'start'
   | 'stretch'
   | string;
-export type AlignSelfType = 'start' | 'center' | 'end' | 'stretch';
+export type AlignSelfType = 'start' | 'center' | 'end' | 'stretch' | 'baseline';
 export type AnimateType = boolean;
 export interface BackgroundObject {
   color?: ColorType;
@@ -139,6 +139,8 @@ export interface BackgroundObject {
   repeat?: 'no-repeat' | 'repeat' | string;
   size?: 'cover' | 'contain' | string;
   light?: string;
+  clip?: 'text' | string;
+  rotate?: number | string;
 }
 export type BackgroundType = string | BackgroundObject;
 export type HoverIndicatorType =

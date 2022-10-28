@@ -4,6 +4,7 @@ import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Box, BoxProps } from '..';
+import { Text } from '../../Text';
 
 describe('Box', () => {
   test('default', () => {
@@ -123,13 +124,15 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('alignSelf', () => {
+  // the test is being skipped until we change styled box to use attrs
+  test.skip('alignSelf', () => {
     const { container } = render(
       <Grommet>
         <Box alignSelf="start" />
         <Box alignSelf="center" />
         <Box alignSelf="stretch" />
         <Box alignSelf="end" />
+        <Box alignSelf="baseline" />
       </Grommet>,
     );
 
@@ -215,6 +218,89 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
   /* eslint-enable max-len */
+
+  test('background from theme', () => {
+    const customTheme = {
+      global: {
+        backgrounds: {
+          'image-2': {
+            dark: `url(https://images.unsplash.com/photo-1614292253389-bd2c1f89cd0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80)`,
+            light: `url(https://images.unsplash.com/photo-1603484477859-abe6a73f9366?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80)`,
+          },
+          'gradient-1': `linear-gradient(
+            hsl(240deg 90% 55%) 0%,
+            hsl(341deg 90% 55%) 50%,
+            hsl(60deg 90% 55%) 100%)`,
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Box background="gradient-1">
+          <Text>background gradient from theme</Text>
+        </Box>
+        <Box background={{ image: 'image-2', color: 'red', opacity: true }}>
+          <Text>background image from theme</Text>
+        </Box>
+        <Box
+          background={{
+            image:
+              'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+            dark: true,
+          }}
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('background clip', () => {
+    const customTheme = {
+      global: {
+        backgrounds: {
+          'gradient-1': `linear-gradient(
+            hsl(240deg 90% 55%) 0%,
+            hsl(341deg 90% 55%) 50%,
+            hsl(60deg 90% 55%) 100%)`,
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Box background={{ image: 'gradient-1', clip: 'text' }}>
+          <Text weight="bold">background with clipped text</Text>
+        </Box>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('background rotate', () => {
+    const customTheme = {
+      global: {
+        backgrounds: {
+          'gradient-1': `linear-gradient(
+            hsl(240deg 90% 55%) 0%,
+            hsl(341deg 90% 55%) 50%,
+            hsl(60deg 90% 55%) 100%)`,
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Box background={{ image: 'gradient-1', rotate: -45 }}>
+          <Text weight="bold">background gradient rotated</Text>
+        </Box>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 
   test('basis', () => {
     const { container } = render(

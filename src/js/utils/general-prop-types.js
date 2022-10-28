@@ -15,6 +15,7 @@ export const colorPropType = PropTypes.oneOfType([
 export const backgroundPropType = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.shape({
+    clip: PropTypes.oneOfType([PropTypes.oneOf(['text']), PropTypes.string]),
     color: colorPropType,
     dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     image: PropTypes.string,
@@ -29,6 +30,7 @@ export const backgroundPropType = PropTypes.oneOfType([
       PropTypes.oneOf(['no-repeat', 'repeat']),
       PropTypes.string,
     ]),
+    rotate: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['cover', 'contain']),
       PropTypes.string,
@@ -106,7 +108,7 @@ export const padPropType = PropTypes.oneOfType([
 
 export const genericProps = {
   a11yTitle: a11yTitlePropType,
-  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch', 'baseline']),
   gridArea: PropTypes.string,
   margin: marginProp,
 };

@@ -100,7 +100,7 @@ const RadioButton = forwardRef(
             >
               {checked &&
                 (Icon ? (
-                  <Icon as={StyledRadioButtonIcon} />
+                  <Icon theme={theme} as={StyledRadioButtonIcon} />
                 ) : (
                   <StyledRadioButtonIcon
                     viewBox="0 0 24 24"

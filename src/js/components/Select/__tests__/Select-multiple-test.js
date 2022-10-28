@@ -172,7 +172,7 @@ describe('Select Controlled', () => {
         />
       );
     };
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
       <Grommet>
         <Test />
       </Grommet>,
@@ -211,6 +211,151 @@ describe('Select Controlled', () => {
         ],
       }),
     );
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('multiple onChange without labelKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          valueKey="id"
+          value={value}
+          multiple
+          closeOnChange={false}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, asFragment } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: [
+          {
+            id: 1,
+            name: 'Value1',
+          },
+        ],
+      }),
+    );
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('2'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: [
+          {
+            id: 1,
+            name: 'Value1',
+          },
+          {
+            id: 2,
+            name: 'Value2',
+          },
+        ],
+      }),
+    );
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('multiple onChange without valueKey or labelKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          multiple
+          closeOnChange={false}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, asFragment } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: [
+          {
+            id: 1,
+            name: 'Value1',
+          },
+        ],
+      }),
+    );
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('2'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: [
+          {
+            id: 1,
+            name: 'Value1',
+          },
+          {
+            id: 2,
+            name: 'Value2',
+          },
+        ],
+      }),
+    );
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('multiple onChange with valueKey string', () => {
@@ -360,7 +505,7 @@ describe('Select Controlled', () => {
   });
 
   test('should allow multiple selections when using search', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onChange = jest.fn();
     const onSearch = jest.fn();
     const defaultOptions = [
@@ -459,7 +604,7 @@ describe('Select Controlled', () => {
 
   test(`should allow multiple selections when options are
   loaded lazily`, () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onChange = jest.fn();
     const optionsFromServer = [
       {

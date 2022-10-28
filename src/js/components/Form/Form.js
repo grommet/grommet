@@ -7,7 +7,10 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { useAnalytics } from '../../contexts';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useForwardedRef } from '../../utils';
+
 import { FormContext } from './FormContext';
 import { FormPropTypes } from './propTypes';
 
@@ -176,6 +179,7 @@ const Form = forwardRef(
     },
     ref,
   ) => {
+    const formRef = useForwardedRef(ref);
     const { format } = useContext(MessageContext);
     const [valueState, setValueState] = useState(valueProp || defaultValue);
     const value = useMemo(
@@ -205,6 +209,9 @@ const Form = forwardRef(
 
     const validationRulesRef = useRef({});
     const requiredFields = useRef([]);
+    const analyticsRef = useRef({ start: new Date(), errors: {} });
+
+    const sendAnalytics = useAnalytics();
 
     const buildValid = useCallback(
       (nextErrors) => {
@@ -233,6 +240,17 @@ const Form = forwardRef(
             !validationRulesRef.current[n] || nextValidations[n] === undefined,
         )
         .forEach((n) => delete nextValidations[n]);
+    };
+
+    const updateAnalytics = () => {
+      const errorFields = Object.keys(validationResultsRef.current?.errors);
+      const errorCounts = analyticsRef.current.errors;
+
+      if (errorFields.length > 0) {
+        errorFields.forEach((key) => {
+          errorCounts[key] = (errorCounts[key] || 0) + 1;
+        });
+      }
     };
 
     const applyValidationRules = useCallback(
@@ -269,6 +287,7 @@ const Form = forwardRef(
               valid: buildValid(nextErrors),
             });
           validationResultsRef.current = nextValidationResults;
+          updateAnalytics();
           return nextValidationResults;
         });
       },
@@ -347,6 +366,26 @@ const Form = forwardRef(
         );
       }
     }, [applyValidationRules, touched]);
+
+    useEffect(() => {
+      const element = formRef.current;
+      analyticsRef.current = { start: new Date(), errors: {} };
+      sendAnalytics({
+        type: 'formOpen',
+        element,
+      });
+      return () => {
+        if (!analyticsRef.current.submitted) {
+          sendAnalytics({
+            type: 'formClose',
+            element,
+            errors: analyticsRef.current.errors,
+            elapsed:
+              new Date().getTime() - analyticsRef.current.start.getTime(),
+          });
+        }
+      };
+    }, [sendAnalytics, formRef]);
 
     // There are three basic patterns of handling form input value state:
     //
@@ -531,6 +570,10 @@ const Form = forwardRef(
             return () => {
               delete validationRulesRef.current[name].field;
               delete validationRulesRef.current[name].validateOn;
+              const requiredFieldIndex = requiredFields.current.indexOf(name);
+              if (requiredFieldIndex !== -1) {
+                requiredFields.current.splice(requiredFieldIndex, 1);
+              }
             };
           }
 
@@ -572,9 +615,17 @@ const Form = forwardRef(
 
     return (
       <form
-        ref={ref}
+        ref={formRef}
         {...rest}
         onReset={(event) => {
+          sendAnalytics({
+            type: 'formReset',
+            element: formRef.current,
+            data: event,
+            errors: analyticsRef.current.errors,
+            elapsed:
+              new Date().getTime() - analyticsRef.current.start.getTime(),
+          });
           setPendingValidation(undefined);
           if (!valueProp) {
             setValueState(defaultValue);
@@ -582,6 +633,7 @@ const Form = forwardRef(
           }
           setTouched(defaultTouched);
           setValidationResults(defaultValidationResults);
+          analyticsRef.current = { start: new Date(), errors: {} };
           if (onReset) {
             event.persist(); // extract from React's synthetic event pool
             const adjustedEvent = event;
@@ -627,6 +679,7 @@ const Form = forwardRef(
             };
             if (onValidate) onValidate(nextValidationResults);
             validationResultsRef.current = nextValidationResults;
+            updateAnalytics();
             return nextValidationResults;
           });
 
@@ -636,6 +689,16 @@ const Form = forwardRef(
             adjustedEvent.value = value;
             adjustedEvent.touched = touched;
             onSubmit(adjustedEvent);
+            sendAnalytics({
+              type: 'formSubmit',
+              element: formRef.current,
+              data: adjustedEvent,
+              errors: analyticsRef.current.errors,
+              elapsed:
+                new Date().getTime() - analyticsRef.current.start.getTime(),
+            });
+            analyticsRef.current.errors = {};
+            analyticsRef.current.submitted = true;
           }
         }}
       >

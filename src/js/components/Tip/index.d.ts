@@ -1,11 +1,10 @@
 import * as React from 'react';
-// import { Omit } from "../../utils";
-import { DropProps } from '../Drop';
+import { DropType } from '../Drop';
 
 export interface TipProps {
   children?: React.ReactNode;
   content?: React.ReactNode;
-  dropProps?: DropProps;
+  dropProps?: DropType;
   plain?: boolean;
 }
 

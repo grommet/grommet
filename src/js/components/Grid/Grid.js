@@ -37,10 +37,8 @@ const Grid = forwardRef((props, ref) => {
 Grid.displayName = 'Grid';
 Grid.propTypes = GridPropTypes;
 
-Grid.available =
-  typeof window !== 'undefined' &&
-  window.CSS &&
-  window.CSS.supports &&
-  window.CSS.supports('display', 'grid');
+// Defualting to true to support existing code that relies on
+// grid.available to create a fallback option
+Grid.available = true;
 
 export { Grid };
