@@ -127,6 +127,49 @@ describe('Notification', () => {
     expect(onClose).toHaveBeenCalled();
   });
 
+  test('custom time', async () => {
+    const user = userEvent.setup({ delay: null });
+    const time = 3000;
+
+    jest.useFakeTimers();
+    const onOpen = jest.fn();
+    const onClose = jest.fn();
+    const Test = () => {
+      const [visible, setVisible] = useState(false);
+      return (
+        <Grommet>
+          <Button
+            label="Show Notification"
+            onClick={() => {
+              onOpen();
+              setVisible(true);
+            }}
+          />
+          {visible && (
+            <Notification
+              toast={{ autoClose: true }}
+              title="Status Title"
+              message="Messages should be at max two lines of text."
+              onClose={() => {
+                onClose();
+                setVisible(false);
+              }}
+              time={time}
+            />
+          )}
+        </Grommet>
+      );
+    };
+    render(<Test />);
+    await user.click(screen.getByRole('button', { name: 'Show Notification' }));
+    expect(screen.getByText('Status Title')).toBeInTheDocument();
+    expect(onOpen).toHaveBeenCalled();
+    act(() => {
+      jest.advanceTimersByTime(4000);
+    });
+    expect(onClose).toHaveBeenCalled();
+  });
+
   test('autoClose false', async () => {
     const user = userEvent.setup({ delay: null });
 
