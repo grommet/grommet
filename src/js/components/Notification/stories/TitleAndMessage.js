@@ -21,6 +21,7 @@ const TitleAndMessageNotification = () => {
           title="Status Title"
           message="Messages should be at max two lines of text."
           onClose={onClose}
+          time={4000}
         />
       )}
     </>
