@@ -145,7 +145,7 @@ const SelectMultiple = forwardRef(
 
     useEffect(() => {
       if (sortSelectedOnClose) setOrderedOptions(optionsProp);
-    }, [optionsProp, search, sortSelectedOnClose]);
+    }, [optionsProp, sortSelectedOnClose]);
 
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
@@ -167,6 +167,8 @@ const SelectMultiple = forwardRef(
       if (onOpen) onOpen();
     }, [onOpen, open]);
 
+    // On drop close if sortSelectedOnClose is true, sort options so that
+    // selected options appear first, followed by unselected options.
     useEffect(() => {
       if (sortSelectedOnClose && value && !open) {
         const selectedOptions = optionsProp.filter((option) =>
@@ -182,15 +184,7 @@ const SelectMultiple = forwardRef(
         const nextOrderedOptions = selectedOptions.concat(unselectedOptions);
         setOrderedOptions(nextOrderedOptions);
       }
-    }, [
-      labelKey,
-      open,
-      sortSelectedOnClose,
-      optionsProp,
-      value,
-      valueKey,
-      search,
-    ]);
+    }, [labelKey, open, sortSelectedOnClose, optionsProp, value, valueKey]);
 
     const onRequestClose = useCallback(() => {
       setOpen(false);

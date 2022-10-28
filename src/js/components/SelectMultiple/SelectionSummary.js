@@ -67,6 +67,45 @@ const SelectionSummary = ({
     !value ||
     selectedInSearch().length === 0
   );
+
+  const summaryText =
+    value?.length === 0 ||
+    onMore ||
+    !value ||
+    (search !== '' && search !== undefined)
+      ? `${value?.length || 0} selected`
+      : `${value?.length || 0} selected of ${options.length}`;
+
+  const summaryButtonClick = (event) => {
+    if (onChange) {
+      let nextSelected = options.filter((i, index) =>
+        showSelectAll
+          ? !isDisabled(index) || isSelected(index)
+          : isDisabled(index) && isSelected(index),
+      );
+      if (search !== '' && search !== undefined && value) {
+        if (showSelectAll) {
+          nextSelected = nextSelected.concat(value);
+        } else {
+          value.forEach((item) => {
+            if (!arrayIncludes(options, item, valueKey || labelKey)) {
+              nextSelected.push(item);
+            }
+          });
+        }
+      }
+      const nextValue = nextSelected.map((i) =>
+        valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
+      );
+      onChange(event, {
+        option: options,
+        value: nextValue,
+        selected: nextSelected,
+      });
+    }
+    if (limit && !showSelectAll) setActiveIndex(0);
+  };
+
   return (
     <Box
       pad={
@@ -77,17 +116,10 @@ const SelectionSummary = ({
       gap="small"
       fill="horizontal"
       flex={showSelectedInline}
+      align="center"
+      height={{ min: 'xxsmall' }}
     >
-      <Box pad={{ vertical: 'xsmall' }} alignSelf="center">
-        <Text size="small">
-          {value?.length === 0 ||
-          onMore ||
-          !value ||
-          (search !== '' && search !== undefined)
-            ? `${value?.length || 0} selected`
-            : `${value?.length || 0} selected of ${options.length}`}
-        </Text>
-      </Box>
+      <Text size="small">{summaryText}</Text>
       {(options.length &&
         (!limit ||
           !(!value || (value?.length === 0 && selectedValuesDisabled())))) >
@@ -100,35 +132,7 @@ const SelectionSummary = ({
                 : `${value?.length} options selected. Clear all?`
             }
             label={showSelectAll ? 'Select All' : 'Clear All'}
-            onClick={(event) => {
-              if (onChange) {
-                let nextSelected = options.filter((i, index) =>
-                  showSelectAll
-                    ? !isDisabled(index) || isSelected(index)
-                    : isDisabled(index) && isSelected(index),
-                );
-                if (search !== '' && search !== undefined && value) {
-                  if (showSelectAll) {
-                    nextSelected = nextSelected.concat(value);
-                  } else {
-                    value.forEach((item) => {
-                      if (!arrayIncludes(options, item, valueKey || labelKey)) {
-                        nextSelected.push(item);
-                      }
-                    });
-                  }
-                }
-                const nextValue = nextSelected.map((i) =>
-                  valueKey && valueKey.reduce ? applyKey(i, valueKey) : i,
-                );
-                onChange(event, {
-                  option: options,
-                  value: nextValue,
-                  selected: nextSelected,
-                });
-              }
-              if (limit && !showSelectAll) setActiveIndex(0);
-            }}
+            onClick={(event) => summaryButtonClick(event)}
             onFocus={() => setActiveIndex(-1)}
             ref={clearRef}
           />
