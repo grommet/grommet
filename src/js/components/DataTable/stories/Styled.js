@@ -16,9 +16,9 @@ export const StyledDataTable = () => (
       step={10}
       pad={{ horizontal: 'small', vertical: 'xsmall' }}
       background={{
-        header: { color: 'dark-3', opacity: 'strong' },
+        header: { color: 'dark-1', opacity: 'strong' },
         body: ['light-1', 'light-3'],
-        footer: { color: 'dark-3', opacity: 'strong' },
+        footer: { color: 'dark-1', opacity: 'strong' },
       }}
       border={{ body: 'bottom' }}
       groupBy={{ property: 'location', expand: ['Palo Alto'] }}
