@@ -16,6 +16,7 @@ const HeadingSkeleton = forwardRef(
     const height = data ? data.size : props.size;
     return (
       <Skeleton
+        as={props.as}
         ref={ref}
         height={height}
         {...theme.heading.skeleton}

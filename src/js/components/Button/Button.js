@@ -276,13 +276,15 @@ const Button = forwardRef(
 
     if (skeleton) {
        return (
-         <Skeleton
-           ref={ref}
-           height={theme.text[size || 'medium']?.height || size}
-           { ...theme.button.size?.[size || 'medium']}
-           { ...theme.button.skeleton }
-         />
-       );
+        <Skeleton
+          ref={ref}
+          height={theme.text[size || 'medium']?.height || size}
+          a11yTitle={a11yTitle}
+          { ...rest }
+          { ...theme.button.size?.[size || 'medium']}
+          { ...theme.button.skeleton }
+        />
+      );
     }
 
     // only used when theme does not have button.default

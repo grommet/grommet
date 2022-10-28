@@ -10,6 +10,8 @@ const Skeleton = forwardRef(
     {
       as,
       colors: colorsProp,
+      width: widthProp,
+      height: heightProp,
       ...rest
     },
     ref,
@@ -28,6 +30,8 @@ const Skeleton = forwardRef(
         ref={ref}
         as={as}
         background={background}
+        widthProp={widthProp}
+        heightProp={heightProp}
         {...rest}
       />
     );

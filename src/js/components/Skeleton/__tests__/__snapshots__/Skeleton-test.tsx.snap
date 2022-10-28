@@ -156,7 +156,7 @@ exports[`Sidebar Box skeleton loaded 1`] = `
 
 exports[`Sidebar Box skeleton loading 1`] = `
 <DocumentFragment>
-  .c2 {
+  .c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -168,7 +168,7 @@ exports[`Sidebar Box skeleton loading 1`] = `
   min-width: 200px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -183,7 +183,7 @@ exports[`Sidebar Box skeleton loading 1`] = `
   width: 100px;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -195,7 +195,7 @@ exports[`Sidebar Box skeleton loading 1`] = `
   width: 100%;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -207,7 +207,7 @@ exports[`Sidebar Box skeleton loading 1`] = `
   width: 30%;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -248,7 +248,7 @@ exports[`Sidebar Box skeleton loading 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -263,7 +263,7 @@ exports[`Sidebar Box skeleton loading 1`] = `
   max-width: 432px;
 }
 
-.c6 {
+.c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -273,9 +273,25 @@ exports[`Sidebar Box skeleton loading 1`] = `
   height: 6px;
 }
 
+.c2 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     height: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
   }
 }
 
@@ -285,43 +301,37 @@ exports[`Sidebar Box skeleton loading 1`] = `
     <div
       class="c1"
     >
-      <div
+      <h1
         class="c2"
-        height="50px"
-        width="[object Object]"
-      />
-      <div
-        class="c3"
-        height="18px"
-        width="[object Object]"
-      />
-      <div
-        class="c4"
       >
         <div
-          class="c5"
-          height="18px"
+          class="c3"
         />
+      </h1>
+      <div
+        class="c4"
+      />
+      <div
+        class="c5"
+      >
         <div
           class="c6"
         />
         <div
-          class="c5"
-          height="18px"
+          class="c7"
         />
         <div
           class="c6"
         />
         <div
           class="c7"
-          height="18px"
-          width="30%"
+        />
+        <div
+          class="c8"
         />
       </div>
       <div
-        class="c8"
-        height="24px"
-        width="[object Object]"
+        class="c9"
       />
     </div>
   </div>
@@ -330,7 +340,7 @@ exports[`Sidebar Box skeleton loading 1`] = `
 
 exports[`Sidebar Box skeleton sizes loading 1`] = `
 <DocumentFragment>
-  .c2 {
+  .c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -338,11 +348,11 @@ exports[`Sidebar Box skeleton sizes loading 1`] = `
   box-sizing: border-box;
   background-color: #EDEDED;
   color: #444444;
-  height: 26px;
+  height: 34px;
   min-width: 200px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -357,7 +367,7 @@ exports[`Sidebar Box skeleton sizes loading 1`] = `
   width: 100px;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -369,7 +379,7 @@ exports[`Sidebar Box skeleton sizes loading 1`] = `
   width: 100%;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -381,7 +391,7 @@ exports[`Sidebar Box skeleton sizes loading 1`] = `
   width: 30%;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -422,7 +432,7 @@ exports[`Sidebar Box skeleton sizes loading 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -437,7 +447,7 @@ exports[`Sidebar Box skeleton sizes loading 1`] = `
   max-width: 528px;
 }
 
-.c6 {
+.c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -447,9 +457,25 @@ exports[`Sidebar Box skeleton sizes loading 1`] = `
   height: 6px;
 }
 
+.c2 {
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     height: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
   }
 }
 
@@ -459,43 +485,37 @@ exports[`Sidebar Box skeleton sizes loading 1`] = `
     <div
       class="c1"
     >
-      <div
+      <h2
         class="c2"
-        height="26px"
-        width="[object Object]"
-      />
-      <div
-        class="c3"
-        height="12px"
-        width="[object Object]"
-      />
-      <div
-        class="c4"
       >
         <div
-          class="c5"
-          height="22px"
+          class="c3"
         />
+      </h2>
+      <div
+        class="c4"
+      />
+      <div
+        class="c5"
+      >
         <div
           class="c6"
         />
         <div
-          class="c5"
-          height="22px"
+          class="c7"
         />
         <div
           class="c6"
         />
         <div
           class="c7"
-          height="22px"
-          width="30%"
+        />
+        <div
+          class="c8"
         />
       </div>
       <div
-        class="c8"
-        height="28px"
-        width="[object Object]"
+        class="c9"
       />
     </div>
   </div>
@@ -554,8 +574,6 @@ exports[`Sidebar Box skeleton with specific dimensions 1`] = `
     >
       <div
         class="c2"
-        height="18px"
-        width="[object Object]"
       />
     </div>
   </div>
@@ -598,7 +616,6 @@ exports[`Sidebar Skeleton with styling props 1`] = `
   >
     <div
       class="c1"
-      height="small"
     />
   </div>
 </DocumentFragment>

@@ -9,7 +9,15 @@ import { HeadingSkeleton } from './HeadingSkeleton';
 
 const Heading = forwardRef(
   (
-    { color, fill, level, overflowWrap: overflowWrapProp, weight, ...rest },
+    {
+      children,
+      color,
+      fill,
+      level,
+      overflowWrap: overflowWrapProp,
+      weight,
+      ...rest
+    },
 
     ref, // munged to avoid styled-components putting it in the DOM
   ) => {
@@ -38,14 +46,11 @@ const Heading = forwardRef(
       return () => window.removeEventListener('resize', updateOverflowWrap);
     }, [headingRef, overflowWrapProp]);
 
+    let content = children;
     if (skeleton) {
-      return (
-        <HeadingSkeleton
-          ref={headingRef}
-          level={level}
-          {...rest}
-        />
-      );
+      content = (
+        <HeadingSkeleton level={level} />
+      ); 
     }
 
     return (
@@ -59,7 +64,9 @@ const Heading = forwardRef(
         weight={weight}
         {...rest}
         ref={headingRef}
-      />
+      >
+        {content}
+      </StyledHeading>
     );
   },
 );
