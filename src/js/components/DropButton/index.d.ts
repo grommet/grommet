@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ButtonProps } from '../Button';
-import { DropProps } from '../Drop';
+import { DropType } from '../Drop';
 import { Omit } from '../../utils';
 
 export interface DropButtonProps {
@@ -12,7 +12,7 @@ export interface DropButtonProps {
   };
   dropContent: JSX.Element;
   dropTarget?: object;
-  dropProps?: DropProps;
+  dropProps?: DropType;
   onClose?: React.MouseEventHandler<HTMLDocument | HTMLButtonElement>;
   onOpen?: React.MouseEventHandler<HTMLButtonElement>;
   open?: boolean;
