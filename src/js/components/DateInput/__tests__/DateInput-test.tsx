@@ -255,18 +255,13 @@ describe('DateInput', () => {
   });
 
   test('range format no value', () => {
-    const { container } = render(
+    render(
       <Grommet>
         <DateInput id="item" name="item" format="mm/dd/yyyy-mm/dd/yyyy" />
-        <DateInput
-          id="item"
-          name="item"
-          format="mm/dd/yyyy-mm/dd/yyyy"
-          inline
-        />
       </Grommet>,
     );
-    expect(container.firstChild).toMatchSnapshot();
+
+    expect(screen.queryByRole('button', { name: /Calendar/ })).not.toBeNull();
   });
 
   test('range format inline', () => {
