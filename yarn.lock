@@ -3843,9 +3843,9 @@ axe-core@^3.5.5:
   integrity sha512-LEUDjgmdJoA3LqklSTwKYqkjcZ4HKc4ddIYGSAiSkr46NTjzg2L9RNB+lekO9P7Dlpa87+hBtzc2Fzn/+GUWMQ==
 
 axe-core@^4.2.0, axe-core@^4.4.3:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.5.0.tgz#6efe2ecdba205fcc9d7ddb3d48c2cf630f70eb5e"
-  integrity sha512-4+rr8eQ7+XXS5nZrKcMO/AikHL0hVqy+lHWAnE3xdHl+aguag8SOQ6eEqLexwLNWgXIMfunGuD3ON1/6Kyet0A==
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.5.1.tgz#04d561c11b6d76d096d34e9d14ba2c294fb20cdc"
+  integrity sha512-1exVbW0X1O/HSr/WMwnaweyqcWOgZgLiVxdLG34pvSQk4NlYQr9OUy0JLwuhFfuVNQzzqgH57eYzkFBCb3bIsQ==
 
 axobject-query@^2.2.0:
   version "2.2.0"
@@ -7296,10 +7296,10 @@ grommet-theme-hp@^0.1.2:
   resolved "https://registry.yarnpkg.com/grommet-theme-hp/-/grommet-theme-hp-0.1.2.tgz#52eac70d7cce2136b9ca6d7f6bf37649a40208a8"
   integrity sha512-pRJxgzJ6oWKNg4hq8csi7hEgH0qeMyP3m/cjQVTk473lH1OdgzqNfjyjQXJf80Fnp6Azm+ovwuNNGCKWCZxcvg==
 
-grommet-theme-hpe@3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-3.2.1.tgz#da5b2aa35c0c0cf928f4f428ec5649da7620f48b"
-  integrity sha512-i1q5skqndeIaU4IUTK54yQqsmu2xs2LAHiP2IvoOcwHV4GOPY2fpJZzQ7y37FQcj5fxmCqqYtJ7GE1Kd0uvNpg==
+grommet-theme-hpe@^3.2.1:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-3.3.0.tgz#04ea8e04967d81617ee4066f031805b21fb8993b"
+  integrity sha512-YSPSoZbsRr9hkvqD2KjOfd35jf4Jf7LmK46OrPC7n6FwYvQg4OC+OkeJrzCKmShBCQYKWcU/wwWXUovpZFvbJQ==
 
 gzip-size@^5.1.1:
   version "5.1.1"
