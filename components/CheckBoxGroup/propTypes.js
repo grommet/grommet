@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports.CheckBoxGroupPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     value: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string])),
@@ -21,6 +17,5 @@ if (process.env.NODE_ENV !== 'production') {
     valueKey: _propTypes["default"].string
   };
 }
-
 var CheckBoxGroupPropTypes = PropType;
 exports.CheckBoxGroupPropTypes = CheckBoxGroupPropTypes;

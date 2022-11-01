@@ -2,29 +2,19 @@
 
 exports.__esModule = true;
 exports["default"] = exports.WithTags = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 var _excluded = ["children", "onRemove"],
-    _excluded2 = ["value", "onAdd", "onChange", "onRemove"];
-
+  _excluded2 = ["value", "onAdd", "onChange", "onRemove"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var allSuggestions = ['sony', 'sonar', 'foo', 'bar'];
-
 var Tag = function Tag(_ref) {
   var children = _ref.children,
-      onRemove = _ref.onRemove,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    onRemove = _ref.onRemove,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var tag = /*#__PURE__*/_react["default"].createElement(_grommet.Box, _extends({
     direction: "row",
     align: "center",
@@ -46,51 +36,41 @@ var Tag = function Tag(_ref) {
     size: "small",
     color: "white"
   }));
-
   if (onRemove) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       onClick: onRemove
     }, tag);
   }
-
   return tag;
 };
-
 var TagInput = function TagInput(_ref2) {
   var _ref2$value = _ref2.value,
-      value = _ref2$value === void 0 ? [] : _ref2$value,
-      onAdd = _ref2.onAdd,
-      onChange = _ref2.onChange,
-      _onRemove = _ref2.onRemove,
-      rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-
+    value = _ref2$value === void 0 ? [] : _ref2$value,
+    onAdd = _ref2.onAdd,
+    onChange = _ref2.onChange,
+    _onRemove = _ref2.onRemove,
+    rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
   var _React$useState = _react["default"].useState(''),
-      currentTag = _React$useState[0],
-      setCurrentTag = _React$useState[1];
-
+    currentTag = _React$useState[0],
+    setCurrentTag = _React$useState[1];
   var boxRef = _react["default"].useRef();
-
   var updateCurrentTag = function updateCurrentTag(event) {
     setCurrentTag(event.target.value);
-
     if (onChange) {
       onChange(event);
     }
   };
-
   var onAddTag = function onAddTag(tag) {
     if (onAdd) {
       onAdd(tag);
     }
   };
-
   var onEnter = function onEnter() {
     if (currentTag.length) {
       onAddTag(currentTag);
       setCurrentTag('');
     }
   };
-
   var renderValue = function renderValue() {
     return value.map(function (v, index) {
       return /*#__PURE__*/_react["default"].createElement(Tag, {
@@ -102,7 +82,6 @@ var TagInput = function TagInput(_ref2) {
       }, v);
     });
   };
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Keyboard, {
     onEnter: onEnter
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -131,37 +110,29 @@ var TagInput = function TagInput(_ref2) {
     }
   })))));
 };
-
 var WithTags = function WithTags() {
   var _React$useState2 = _react["default"].useState(['foo', 'sony']),
-      selectedTags = _React$useState2[0],
-      setSelectedTags = _React$useState2[1];
-
+    selectedTags = _React$useState2[0],
+    setSelectedTags = _React$useState2[1];
   var _React$useState3 = _react["default"].useState(allSuggestions),
-      suggestions = _React$useState3[0],
-      setSuggestions = _React$useState3[1];
-
+    suggestions = _React$useState3[0],
+    setSuggestions = _React$useState3[1];
   var onRemoveTag = function onRemoveTag(tag) {
     var removeIndex = selectedTags.indexOf(tag);
     var newTags = [].concat(selectedTags);
-
     if (removeIndex >= 0) {
       newTags.splice(removeIndex, 1);
     }
-
     setSelectedTags(newTags);
   };
-
   var onAddTag = function onAddTag(tag) {
     return setSelectedTags([].concat(selectedTags, [tag]));
   };
-
   var onFilterSuggestion = function onFilterSuggestion(value) {
     return setSuggestions(allSuggestions.filter(function (suggestion) {
       return suggestion.toLowerCase().indexOf(value.toLowerCase()) >= 0;
     }));
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -178,11 +149,10 @@ var WithTags = function WithTags() {
         var value = _ref3.target.value;
         return onFilterSuggestion(value);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.WithTags = WithTags;
 WithTags.storyName = 'With tags';
 var _default = {

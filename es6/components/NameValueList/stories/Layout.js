@@ -19,7 +19,7 @@ export var Layout = function Layout() {
       }
     }, Object.entries(data).map(function (_ref) {
       var name = _ref[0],
-          value = _ref[1];
+        value = _ref[1];
       return /*#__PURE__*/React.createElement(NameValuePair, {
         key: name,
         name: name
@@ -37,15 +37,16 @@ export var Layout = function Layout() {
       layout: "grid"
     }, Object.entries(metricData).map(function (_ref2) {
       var name = _ref2[0],
-          value = _ref2[1];
+        value = _ref2[1];
       return /*#__PURE__*/React.createElement(NameValuePair, {
         key: name,
         name: name
       }, /*#__PURE__*/React.createElement(Text, null, value));
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/NameValueList/Layout'
 };

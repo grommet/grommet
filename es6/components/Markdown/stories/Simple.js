@@ -12,10 +12,11 @@ export var Simple = function Simple() {
       pad: "large"
     }, /*#__PURE__*/React.createElement(Markdown, {
       ref: ref
-    }, CONTENT)) // </Grommet>
-
+    }, CONTENT))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Type/Markdown/Simple'
 };

@@ -42,10 +42,11 @@ export var ScrollBodyLayer = function ScrollBodyLayer() {
     }, /*#__PURE__*/React.createElement(Button, {
       primary: true,
       label: "Save"
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 ScrollBodyLayer.storyName = 'Fixed header, scroll body';
 export default {
   title: 'Layout/Layer/Fixed header, scroll body'

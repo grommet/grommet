@@ -22,10 +22,11 @@ export var Range = function Range() {
         values: values,
         thickness: "small"
       }));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Chart/Range'
 };

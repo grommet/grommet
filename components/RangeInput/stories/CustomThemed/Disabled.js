@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Disabled = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var customThemeRangeInput = {
   rangeInput: {
     disabled: {
@@ -23,7 +18,6 @@ var customThemeRangeInput = {
     }
   }
 };
-
 var Disabled = function Disabled() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customThemeRangeInput
@@ -45,7 +39,6 @@ var Disabled = function Disabled() {
     a11yTitle: "Select range value"
   }))));
 };
-
 exports.Disabled = Disabled;
 var _default = {
   title: 'Input/RangeInput/Custom Themed/Disabled'

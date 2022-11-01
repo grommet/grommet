@@ -2,26 +2,18 @@
 
 exports.__esModule = true;
 exports.BoxPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _generalPropTypes = require("../../utils/general-prop-types");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
-
 var ANIMATION_TYPE = _propTypes["default"].oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'rotateLeft', 'rotateRight', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);
-
 var ANIMATION_SHAPE = _propTypes["default"].shape({
   type: ANIMATION_TYPE,
   delay: _propTypes["default"].number,
   duration: _propTypes["default"].number,
   size: _propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge'])
 });
-
 var BORDER_SHAPE = _propTypes["default"].shape({
   color: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
     dark: _propTypes["default"].string,
@@ -30,16 +22,14 @@ var BORDER_SHAPE = _propTypes["default"].shape({
   side: _propTypes["default"].oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all', 'between']),
   size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
   style: _propTypes["default"].oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden'])
-}); // if you update values here, make sure to update in Drop/doc too.
+});
 
-
+// if you update values here, make sure to update in Drop/doc too.
 var overflowPropType = _propTypes["default"].oneOfType([_propTypes["default"].oneOf(OVERFLOW_VALUES), _propTypes["default"].shape({
   horizontal: _propTypes["default"].oneOf(OVERFLOW_VALUES),
   vertical: _propTypes["default"].oneOf(OVERFLOW_VALUES)
 }), _propTypes["default"].string]);
-
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, _generalPropTypes.genericProps, {
     align: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['baseline', 'center', 'end', 'start', 'stretch']), _propTypes["default"].string]),
@@ -71,6 +61,5 @@ if (process.env.NODE_ENV !== 'production') {
     wrap: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['reverse'])])
   });
 }
-
 var BoxPropTypes = PropType;
 exports.BoxPropTypes = BoxPropTypes;

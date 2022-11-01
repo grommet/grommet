@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 import { Box, RangeSelector, Stack, Text } from 'grommet';
 export var Simple = function Simple(_ref) {
   var _ref$direction = _ref.direction,
-      direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction;
-
+    direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction;
   var _useState = useState([12, 16]),
-      range = _useState[0],
-      setRange = _useState[1];
-
+    range = _useState[0],
+    setRange = _useState[1];
   var onChange = function onChange(values) {
     setRange(values);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -42,10 +39,11 @@ export var Simple = function Simple(_ref) {
       size: "full",
       values: range,
       onChange: onChange
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Input/RangeSelector/Simple'
 };

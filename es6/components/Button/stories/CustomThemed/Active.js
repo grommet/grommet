@@ -12,7 +12,6 @@ export var Active = function Active() {
       button: {
         "default": {}
       } // enabling kind button functionality
-
     }
   }, /*#__PURE__*/React.createElement(Box, {
     pad: "large",

@@ -28,10 +28,11 @@ export var Point = function Point() {
         values: values,
         point: point
       }));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Chart/Point'
 };

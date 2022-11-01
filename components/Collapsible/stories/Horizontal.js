@@ -2,20 +2,14 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Horizontal = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Horizontal = function Horizontal() {
   var _React$useState = _react["default"].useState(),
-      openNotification = _React$useState[0],
-      setOpenNotification = _React$useState[1];
-
+    openNotification = _React$useState[0],
+    setOpenNotification = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -65,11 +59,10 @@ var Horizontal = function Horizontal() {
       elevation: "small"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "xlarge"
-    }, "Sidebar"))))) // </Grommet>
-
+    }, "Sidebar")))))
+    // </Grommet>
   );
 };
-
 exports.Horizontal = Horizontal;
 Horizontal.args = {
   full: true

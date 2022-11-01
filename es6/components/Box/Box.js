@@ -1,9 +1,6 @@
 var _excluded = ["a11yTitle", "background", "border", "children", "direction", "elevation", "fill", "gap", "kind", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { Children, forwardRef, useContext, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -13,38 +10,35 @@ import { StyledBox, StyledBoxGap } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
 var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
-      background = _ref.background,
-      border = _ref.border,
-      children = _ref.children,
-      _ref$direction = _ref.direction,
-      direction = _ref$direction === void 0 ? 'column' : _ref$direction,
-      elevation = _ref.elevation,
-      fill = _ref.fill,
-      gap = _ref.gap,
-      kind = _ref.kind,
-      _onBlur = _ref.onBlur,
-      onClick = _ref.onClick,
-      _onFocus = _ref.onFocus,
-      overflow = _ref.overflow,
-      _ref$responsive = _ref.responsive,
-      responsive = _ref$responsive === void 0 ? true : _ref$responsive,
-      tag = _ref.tag,
-      as = _ref.as,
-      wrap = _ref.wrap,
-      width = _ref.width,
-      height = _ref.height,
-      tabIndex = _ref.tabIndex,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    background = _ref.background,
+    border = _ref.border,
+    children = _ref.children,
+    _ref$direction = _ref.direction,
+    direction = _ref$direction === void 0 ? 'column' : _ref$direction,
+    elevation = _ref.elevation,
+    fill = _ref.fill,
+    gap = _ref.gap,
+    kind = _ref.kind,
+    _onBlur = _ref.onBlur,
+    onClick = _ref.onClick,
+    _onFocus = _ref.onFocus,
+    overflow = _ref.overflow,
+    _ref$responsive = _ref.responsive,
+    responsive = _ref$responsive === void 0 ? true : _ref$responsive,
+    tag = _ref.tag,
+    as = _ref.as,
+    wrap = _ref.wrap,
+    width = _ref.width,
+    height = _ref.height,
+    tabIndex = _ref.tabIndex,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var focusable = useMemo(function () {
     return onClick && !(tabIndex < 0);
   }, [onClick, tabIndex]);
-
   var _useState = useState(),
-      focus = _useState[0],
-      setFocus = _useState[1];
-
+    focus = _useState[0],
+    setFocus = _useState[1];
   var clickProps = useMemo(function () {
     if (focusable) {
       return {
@@ -59,7 +53,6 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
         }
       };
     }
-
     var result = {};
     if (_onBlur) result.onBlur = _onBlur;
     if (onClick) result.onClick = onClick;
@@ -71,13 +64,10 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (focusable) return 0;
     return undefined;
   }, [focusable, tabIndex]);
-
   if ((border === 'between' || border && border.side === 'between') && !gap) {
     console.warn('Box must have a gap to use border between');
   }
-
   var contents = children;
-
   if (gap && gap !== 'none') {
     var boxAs = !as && tag ? tag : as;
     contents = [];
@@ -87,7 +77,8 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
         if (firstIndex === undefined) {
           firstIndex = index;
         } else {
-          contents.push( /*#__PURE__*/React.createElement(StyledBoxGap // eslint-disable-next-line react/no-array-index-key
+          contents.push( /*#__PURE__*/React.createElement(StyledBoxGap
+          // eslint-disable-next-line react/no-array-index-key
           , {
             key: "gap-" + index,
             as: boxAs === 'span' ? boxAs : 'div',
@@ -98,20 +89,17 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
           }));
         }
       }
-
       contents.push(child);
     });
-  } // construct a new theme object in case we have a background that wants
+  }
+
+  // construct a new theme object in case we have a background that wants
   // to change the background color context
-
-
   var nextTheme = useMemo(function () {
     var result;
-
     if (background || theme.darkChanged) {
       var dark = backgroundIsDark(background, theme);
       var darkChanged = dark !== undefined && dark !== theme.dark;
-
       if (darkChanged || theme.darkChanged) {
         result = _extends({}, theme);
         result.dark = dark === undefined ? theme.dark : dark;
@@ -123,7 +111,6 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
         result.background = background;
       }
     }
-
     return result || theme;
   }, [background, theme]);
   var content = /*#__PURE__*/React.createElement(StyledBox, _extends({
@@ -146,13 +133,11 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, clickProps, rest), /*#__PURE__*/React.createElement(ThemeContext.Provider, {
     value: nextTheme
   }, contents));
-
   if (onClick) {
     content = /*#__PURE__*/React.createElement(Keyboard, {
       onEnter: onClick
     }, content);
   }
-
   return content;
 });
 Box.displayName = 'Box';

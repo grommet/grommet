@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, DataChart } from 'grommet';
 var data = [];
-
 for (var i = 1; i <= 7; i += 1) {
   var v = Math.sin(i / 2.0);
   var digits = (i % 12 + 1).toString().padStart(2, 0);
@@ -19,7 +18,6 @@ for (var i = 1; i <= 7; i += 1) {
     percent: Math.abs(v * 100),
     // make yAxis suffix '%'
     amount: i * 111111 // make yAxis prefix '$'
-
   });
 }
 
@@ -49,10 +47,11 @@ export var Axis = function Axis() {
           granularity: 'medium'
         }
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/DataChart/Axis'
 };

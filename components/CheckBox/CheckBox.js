@@ -2,35 +2,20 @@
 
 exports.__esModule = true;
 exports.CheckBox = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _styledComponents = require("styled-components");
-
 var _object = require("../../utils/object");
-
 var _defaultProps = require("../../default-props");
-
 var _Box = require("../Box");
-
 var _FormContext = require("../Form/FormContext");
-
 var _propTypes = require("./propTypes");
-
 var _StyledCheckBox = require("./StyledCheckBox");
-
 var _utils = require("../../utils");
-
 var _excluded = ["a11yTitle", "aria-label", "checked", "children", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var stopLabelClick = function stopLabelClick(event) {
   // prevents clicking on the label trigging the event twice
   // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
@@ -38,53 +23,46 @@ var stopLabelClick = function stopLabelClick(event) {
     event.stopPropagation();
   }
 };
-
 var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _ref2;
-
   var a11yTitle = _ref.a11yTitle,
-      ariaLabel = _ref['aria-label'],
-      checkedProp = _ref.checked,
-      children = _ref.children,
-      _ref$defaultChecked = _ref.defaultChecked,
-      defaultChecked = _ref$defaultChecked === void 0 ? false : _ref$defaultChecked,
-      disabled = _ref.disabled,
-      fill = _ref.fill,
-      focusProp = _ref.focus,
-      _ref$focusIndicator = _ref.focusIndicator,
-      focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
-      id = _ref.id,
-      label = _ref.label,
-      name = _ref.name,
-      _onBlur = _ref.onBlur,
-      _onChange = _ref.onChange,
-      _onFocus = _ref.onFocus,
-      _onMouseEnter = _ref.onMouseEnter,
-      _onMouseLeave = _ref.onMouseLeave,
-      _onMouseOut = _ref.onMouseOut,
-      _onMouseOver = _ref.onMouseOver,
-      pad = _ref.pad,
-      reverse = _ref.reverse,
-      toggle = _ref.toggle,
-      indeterminate = _ref.indeterminate,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    ariaLabel = _ref['aria-label'],
+    checkedProp = _ref.checked,
+    children = _ref.children,
+    _ref$defaultChecked = _ref.defaultChecked,
+    defaultChecked = _ref$defaultChecked === void 0 ? false : _ref$defaultChecked,
+    disabled = _ref.disabled,
+    fill = _ref.fill,
+    focusProp = _ref.focus,
+    _ref$focusIndicator = _ref.focusIndicator,
+    focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
+    id = _ref.id,
+    label = _ref.label,
+    name = _ref.name,
+    _onBlur = _ref.onBlur,
+    _onChange = _ref.onChange,
+    _onFocus = _ref.onFocus,
+    _onMouseEnter = _ref.onMouseEnter,
+    _onMouseLeave = _ref.onMouseLeave,
+    _onMouseOut = _ref.onMouseOut,
+    _onMouseOver = _ref.onMouseOver,
+    pad = _ref.pad,
+    reverse = _ref.reverse,
+    toggle = _ref.toggle,
+    indeterminate = _ref.indeterminate,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
-
   var _formContext$useFormI = formContext.useFormInput({
-    name: name,
-    value: checkedProp,
-    initialValue: defaultChecked
-  }),
-      checked = _formContext$useFormI[0],
-      setChecked = _formContext$useFormI[1];
-
+      name: name,
+      value: checkedProp,
+      initialValue: defaultChecked
+    }),
+    checked = _formContext$useFormI[0],
+    setChecked = _formContext$useFormI[1];
   var _useState = (0, _react.useState)(focusProp),
-      focus = _useState[0],
-      setFocus = _useState[1];
-
+    focus = _useState[0],
+    setFocus = _useState[1];
   (0, _react.useEffect)(function () {
     // don't allow checkbox to have focus when disabled
     if (disabled && focusProp) setFocus(false);else setFocus(focusProp);
@@ -93,7 +71,6 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     if (checkedProp && indeterminate) {
       console.warn('Checkbox cannot be "checked" and "indeterminate" at the same time.');
     }
-
     if (toggle && indeterminate) {
       console.warn('Checkbox of type toggle does not have "indeterminate" state.');
     }
@@ -113,7 +90,6 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     indeterminate: indeterminate
   };
   var hidden;
-
   if (disabled && checked) {
     hidden = /*#__PURE__*/_react["default"].createElement("input", {
       name: name,
@@ -121,16 +97,13 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       value: "true"
     });
   }
-
   var _theme$checkBox$icons = theme.checkBox.icons,
-      CheckedIcon = _theme$checkBox$icons.checked,
-      IndeterminateIcon = _theme$checkBox$icons.indeterminate;
+    CheckedIcon = _theme$checkBox$icons.checked,
+    IndeterminateIcon = _theme$checkBox$icons.indeterminate;
   var borderColor = (0, _utils.normalizeColor)(theme.checkBox.border.color, theme);
-
   if (checked) {
     borderColor = (0, _utils.normalizeColor)(theme.checkBox.color || 'control', theme);
   }
-
   var visual = toggle ? /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxToggle, themeableProps, /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxKnob, themeableProps)) : /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxBox, _extends({
     as: _Box.Box,
     align: "center",
@@ -164,7 +137,6 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     d: "M6,12 L18,12"
   }))));
   var side = !reverse !== !theme.dir ? 'left' : 'right';
-
   var checkBoxNode = /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBox, _extends({
     as: _Box.Box,
     align: "center",
@@ -197,7 +169,6 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     checked: checked,
     indeterminate: indeterminate
   }) : visual, hidden);
-
   var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/_react["default"].createElement("span", null, label) : label;
   var first = reverse ? normalizedLabel : checkBoxNode;
   var second = reverse ? checkBoxNode : normalizedLabel;

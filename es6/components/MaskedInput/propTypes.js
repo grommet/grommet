@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     a11yTitle: PropTypes.string,
@@ -18,13 +17,12 @@ if (process.env.NODE_ENV !== 'production') {
       options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
       restrictToOptions: PropTypes.bool,
       regexp: PropTypes.shape({}) // RegExp
-
     })),
+
     reverse: PropTypes.bool,
     size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), PropTypes.string]),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   };
 }
-
 export var MaskedInputPropTypes = PropType;

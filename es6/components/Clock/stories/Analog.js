@@ -20,10 +20,11 @@ export var Analog = function Analog() {
       }));
     })), /*#__PURE__*/React.createElement(Box, {
       pad: "large"
-    }, /*#__PURE__*/React.createElement(Text, null, "xxlarge and huge sizes are equal. The latter is kept for beckwards compatibility."))) // </Grommet>
-
+    }, /*#__PURE__*/React.createElement(Text, null, "xxlarge and huge sizes are equal. The latter is kept for beckwards compatibility.")))
+    // </Grommet>
   );
 };
+
 Analog.parameters = {
   chromatic: {
     disable: true

@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ThemedButtons = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var kindButtonTheme = {
   global: {
     colors: {
@@ -120,11 +116,9 @@ var customTheme = {
     },
     extend: function extend(props) {
       var extraStyles = '';
-
       if (props.primary) {
         extraStyles = "\n            text-transform: uppercase;\n          ";
       }
-
       return "\n          font-size: 12px;\n          font-weight: bold;\n          " + extraStyles + "\n        ";
     }
   }
@@ -143,7 +137,6 @@ var coloredButton = {
     }
   }
 };
-
 var ThemedButtons = function ThemedButtons() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: kindButtonTheme
@@ -252,7 +245,6 @@ var ThemedButtons = function ThemedButtons() {
     label: "Custom as=span"
   })));
 };
-
 exports.ThemedButtons = ThemedButtons;
 ThemedButtons.storyName = 'Themed Buttons';
 var _default = {

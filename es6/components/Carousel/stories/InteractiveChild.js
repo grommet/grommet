@@ -51,10 +51,11 @@ export var InteractiveSlides = function InteractiveSlides() {
       label: "Button"
     }), /*#__PURE__*/React.createElement(Button, {
       label: "Button"
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 InteractiveSlides.storyName = 'Interactive slides';
 export default {
   title: 'Media/Carousel/Interactive slides'

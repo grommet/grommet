@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Labelled = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Labelled = function Labelled() {
   var meterValue = 30;
   return (
@@ -39,11 +35,10 @@ var Labelled = function Labelled() {
       weight: "bold"
     }, meterValue), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "small"
-    }, "%")))) // </Grommet>
-
+    }, "%"))))
+    // </Grommet>
   );
 };
-
 exports.Labelled = Labelled;
 var _default = {
   title: 'Visualizations/Meter/Labelled'

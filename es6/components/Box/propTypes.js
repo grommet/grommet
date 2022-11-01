@@ -1,5 +1,4 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import PropTypes from 'prop-types';
 import { backgroundDoc, elevationPropType, genericProps, heightPropType, hoverIndicatorPropType, padPropType, roundPropType, widthPropType } from '../../utils/general-prop-types';
 var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
@@ -18,14 +17,14 @@ var BORDER_SHAPE = PropTypes.shape({
   side: PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all', 'between']),
   size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]),
   style: PropTypes.oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden'])
-}); // if you update values here, make sure to update in Drop/doc too.
+});
 
+// if you update values here, make sure to update in Drop/doc too.
 var overflowPropType = PropTypes.oneOfType([PropTypes.oneOf(OVERFLOW_VALUES), PropTypes.shape({
   horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
   vertical: PropTypes.oneOf(OVERFLOW_VALUES)
 }), PropTypes.string]);
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, genericProps, {
     align: PropTypes.oneOfType([PropTypes.oneOf(['baseline', 'center', 'end', 'start', 'stretch']), PropTypes.string]),
@@ -57,5 +56,4 @@ if (process.env.NODE_ENV !== 'production') {
     wrap: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['reverse'])])
   });
 }
-
 export var BoxPropTypes = PropType;

@@ -2,17 +2,11 @@
 
 exports.__esModule = true;
 exports.ListPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _generalPropTypes = require("../../utils/general-prop-types");
-
 var _propTypes2 = require("../Box/propTypes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var sizes = ['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right', 'start', 'end'];
 var padShapeSides = {};
@@ -28,7 +22,6 @@ var borderTypes = [_propTypes["default"].bool, _propTypes["default"].oneOf(sides
   size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(sizes), _propTypes["default"].string])
 })];
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, _generalPropTypes.genericProps, {
     action: _propTypes["default"].func,
@@ -56,6 +49,5 @@ if (process.env.NODE_ENV !== 'production') {
     step: _propTypes["default"].number
   });
 }
-
 var ListPropTypes = PropType;
 exports.ListPropTypes = ListPropTypes;

@@ -2,32 +2,23 @@
 
 exports.__esModule = true;
 exports["default"] = exports.DateTimeDropButton = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var DropContent = function DropContent(_ref) {
   var initialDate = _ref.date,
-      initialTime = _ref.time,
-      onClose = _ref.onClose;
-
+    initialTime = _ref.time,
+    onClose = _ref.onClose;
   var _React$useState = _react["default"].useState(),
-      date = _React$useState[0],
-      setDate = _React$useState[1];
-
+    date = _React$useState[0],
+    setDate = _React$useState[1];
   var _React$useState2 = _react["default"].useState(),
-      time = _React$useState2[0],
-      setTime = _React$useState2[1];
-
+    time = _React$useState2[0],
+    setTime = _React$useState2[1];
   var close = function close() {
     return onClose(date || initialDate, time || initialTime);
   };
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
@@ -42,7 +33,6 @@ var DropContent = function DropContent(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Keyboard, {
     onEnter: function onEnter(event) {
       event.preventDefault(); // so drop doesn't re-open
-
       close();
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
@@ -78,20 +68,16 @@ var DropContent = function DropContent(_ref) {
     onClick: close
   }))));
 };
-
 var DateTimeDropButton = function DateTimeDropButton() {
   var _React$useState3 = _react["default"].useState(),
-      date = _React$useState3[0],
-      setDate = _React$useState3[1];
-
+    date = _React$useState3[0],
+    setDate = _React$useState3[1];
   var _React$useState4 = _react["default"].useState(''),
-      time = _React$useState4[0],
-      setTime = _React$useState4[1];
-
+    time = _React$useState4[0],
+    setTime = _React$useState4[1];
   var _React$useState5 = _react["default"].useState(),
-      open = _React$useState5[0],
-      setOpen = _React$useState5[1];
-
+    open = _React$useState5[0],
+    setOpen = _React$useState5[1];
   var onClose = function onClose(nextDate, nextTime) {
     setDate(nextDate);
     setTime(nextTime);
@@ -100,7 +86,6 @@ var DateTimeDropButton = function DateTimeDropButton() {
       return setOpen(undefined);
     }, 1);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -128,11 +113,10 @@ var DateTimeDropButton = function DateTimeDropButton() {
       pad: "small"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       color: date ? undefined : 'dark-2'
-    }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/_react["default"].createElement(_grommetIcons.Schedule, null)))) // </Grommet>
-
+    }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/_react["default"].createElement(_grommetIcons.Schedule, null))))
+    // </Grommet>
   );
 };
-
 exports.DateTimeDropButton = DateTimeDropButton;
 DateTimeDropButton.storyName = 'Date time drop';
 var _default = {

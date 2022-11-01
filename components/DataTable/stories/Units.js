@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.UnitsDataTable = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var DATA = [{
   name: 'Boot',
   free: 24,
@@ -73,7 +69,6 @@ var sortableColumns = [{
   align: 'end',
   units: 'TiB'
 }];
-
 var UnitsDataTable = function UnitsDataTable() {
   return (
     /*#__PURE__*/
@@ -93,11 +88,10 @@ var UnitsDataTable = function UnitsDataTable() {
       sortable: true,
       columns: sortableColumns,
       data: SORTABLE_DATA
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.UnitsDataTable = UnitsDataTable;
 UnitsDataTable.storyName = 'Units';
 var _default = {

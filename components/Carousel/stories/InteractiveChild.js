@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.InteractiveSlides = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var InteractiveSlides = function InteractiveSlides() {
   return (
     /*#__PURE__*/
@@ -60,11 +56,10 @@ var InteractiveSlides = function InteractiveSlides() {
       label: "Button"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       label: "Button"
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
-
 exports.InteractiveSlides = InteractiveSlides;
 InteractiveSlides.storyName = 'Interactive slides';
 var _default = {

@@ -2,19 +2,12 @@
 
 exports.__esModule = true;
 exports.StyledSelectDropButton = exports.StyledContainer = exports.SelectTextInput = exports.SelectOption = exports.OptionsContainer = exports.HiddenInput = void 0;
-
 var _styledComponents = _interopRequireDefault(require("styled-components"));
-
 var _Button = require("../Button");
-
 var _DropButton = require("../DropButton");
-
 var _TextInput = require("../TextInput");
-
 var _utils = require("../../utils");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var StyledContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledSelect__StyledContainer",
   componentId: "sc-znp66n-0"
@@ -22,23 +15,19 @@ var StyledContainer = _styledComponents["default"].div.withConfig({
   return props.dropHeight ? (0, _utils.sizeStyle)('max-height', props.dropHeight, props.theme) : 'max-height: inherit;';
 }, function (props) {
   return props.theme.select.container && props.theme.select.container.extend;
-}); // position relative is so scroll can be managed correctly
+});
 
-
+// position relative is so scroll can be managed correctly
 exports.StyledContainer = StyledContainer;
-
 var OptionsContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledSelect__OptionsContainer",
   componentId: "sc-znp66n-1"
 })(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;"]);
-
 exports.OptionsContainer = OptionsContainer;
-
 var HiddenInput = _styledComponents["default"].input.withConfig({
   displayName: "StyledSelect__HiddenInput",
   componentId: "sc-znp66n-2"
 })(["display:none;"]);
-
 exports.HiddenInput = HiddenInput;
 var SelectOption = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "StyledSelect__SelectOption",
@@ -67,11 +56,9 @@ var StyledSelectDropButton = (0, _styledComponents["default"])(_DropButton.DropB
   return !props.plainSelect && _utils.controlBorderStyle;
 }, function (props) {
   var _props$theme$select, _props$theme$select$c;
-
   return (_props$theme$select = props.theme.select) == null ? void 0 : (_props$theme$select$c = _props$theme$select.control) == null ? void 0 : _props$theme$select$c.extend;
 }, function (props) {
   var _props$theme$select2, _props$theme$select2$;
-
   return props.open && ((_props$theme$select2 = props.theme.select) == null ? void 0 : (_props$theme$select2$ = _props$theme$select2.control) == null ? void 0 : _props$theme$select2$.open);
 });
 exports.StyledSelectDropButton = StyledSelectDropButton;

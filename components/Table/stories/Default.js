@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Default = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _data = require("./data");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Default = function Default() {
   return (
     /*#__PURE__*/
@@ -42,11 +37,10 @@ var Default = function Default() {
         key: c.property,
         align: c.align
       }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, c.footer));
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.Default = Default;
 var _default = {
   title: 'Visualizations/Table/Default'

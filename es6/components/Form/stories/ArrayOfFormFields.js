@@ -1,20 +1,18 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React, { useState } from 'react';
 import { Box, Form, Button, FormField } from 'grommet';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { Trash } from "grommet-icons/es6/icons/Trash";
 export var ArrayOfFormFields = function ArrayOfFormFields() {
   var _useState = useState({
-    name: '',
-    phones: [{
-      number: '',
-      ext: ''
-    }]
-  }),
-      values = _useState[0],
-      setValues = _useState[1];
-
+      name: '',
+      phones: [{
+        number: '',
+        ext: ''
+      }]
+    }),
+    values = _useState[0],
+    setValues = _useState[1];
   var addPhone = function addPhone() {
     var newPhone = {
       number: '',
@@ -25,7 +23,6 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
       phones: newPhones
     }));
   };
-
   var removePhone = function removePhone(index) {
     if (values.phones && values.phones.length > 0) {
       setValues(_extends({}, values, {
@@ -35,22 +32,19 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
       }));
     }
   };
-
   var handleFormChange = function handleFormChange(newFormState) {
     console.log({
       newFormState: newFormState
     });
-
     if (newFormState) {
       setValues(newFormState);
     }
   };
-
   var PhoneNumberGroup = null;
-
   if (values.phones !== undefined) {
     PhoneNumberGroup = values.phones.map(function (phone, index) {
-      return /*#__PURE__*/React.createElement(Box // eslint-disable-next-line react/no-array-index-key
+      return /*#__PURE__*/React.createElement(Box
+      // eslint-disable-next-line react/no-array-index-key
       , {
         key: index,
         direction: "row",
@@ -86,7 +80,6 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
       })));
     });
   }
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -142,10 +135,11 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
       type: "submit",
       label: "Submit",
       primary: true
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Input/Form/Array Of Form Fields'
 };

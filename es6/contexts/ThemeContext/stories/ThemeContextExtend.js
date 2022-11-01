@@ -16,15 +16,12 @@ var customTheme = deepMerge(grommet, {
 });
 export var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
   var options = ['one', 'two', 'three'];
-
   var _useState = useState(''),
-      valueRed = _useState[0],
-      setValueRed = _useState[1];
-
+    valueRed = _useState[0],
+    setValueRed = _useState[1];
   var _useState2 = useState(''),
-      valueBlue = _useState2[0],
-      setValueBlue = _useState2[1];
-
+    valueBlue = _useState2[0],
+    setValueBlue = _useState2[1];
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
   }, /*#__PURE__*/React.createElement(Box, {

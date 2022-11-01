@@ -1,15 +1,12 @@
 import React from 'react';
 import { Box, MaskedInput } from 'grommet';
-
 var daysInMonth = function daysInMonth(month) {
   return new Date(2019, month, 0).getDate();
 };
-
 export var DateRange = function DateRange() {
   var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -91,10 +88,11 @@ export var DateRange = function DateRange() {
       onChange: function onChange(event) {
         return setValue(event.target.value);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 DateRange.storyName = 'Date range';
 DateRange.args = {
   full: true

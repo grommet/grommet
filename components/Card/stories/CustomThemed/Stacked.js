@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Stacked = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var theme = {
   global: {
     font: {
@@ -42,7 +38,6 @@ var data = [{
   image: "https://img.jakpost.net/c/2020/04/07/2020_04_07_92088_1586233705._large.jpg",
   state: 'Australia'
 }];
-
 var Stacked = function Stacked() {
   var avatarSrc = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
@@ -72,7 +67,8 @@ var Stacked = function Stacked() {
       pad: {
         horizontal: 'small',
         vertical: 'small'
-      } // https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4#all-hex-value-from-100-to-0-alpha
+      }
+      // https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4#all-hex-value-from-100-to-0-alpha
       ,
       background: "#000000A0",
       width: "medium",
@@ -88,7 +84,6 @@ var Stacked = function Stacked() {
     }, item.state)))));
   }))));
 };
-
 exports.Stacked = Stacked;
 var _default = {
   title: 'Layout/Card/Custom Themed/Stacked'

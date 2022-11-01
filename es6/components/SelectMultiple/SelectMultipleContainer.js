@@ -1,5 +1,4 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { FormUp } from 'grommet-icons/icons/FormUp';
@@ -18,78 +17,69 @@ import { applyKey, getOptionLabel, getOptionValue, useDisabled, getOptionIndex, 
 import { EmptySearchOption } from '../Select/EmptySearchOption';
 var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _optionsRef$current;
-
   var allOptions = _ref.allOptions,
-      _ref$children = _ref.children,
-      children = _ref$children === void 0 ? null : _ref$children,
-      disabledProp = _ref.disabled,
-      disabledKey = _ref.disabledKey,
-      dropHeight = _ref.dropHeight,
-      _ref$emptySearchMessa = _ref.emptySearchMessage,
-      emptySearchMessage = _ref$emptySearchMessa === void 0 ? 'No matches found' : _ref$emptySearchMessa,
-      help = _ref.help,
-      id = _ref.id,
-      labelKey = _ref.labelKey,
-      limit = _ref.limit,
-      onChange = _ref.onChange,
-      onClose = _ref.onClose,
-      onKeyDown = _ref.onKeyDown,
-      onMore = _ref.onMore,
-      onSearch = _ref.onSearch,
-      optionIndexesInValue = _ref.optionIndexesInValue,
-      options = _ref.options,
-      _ref$replace = _ref.replace,
-      replace = _ref$replace === void 0 ? true : _ref$replace,
-      searchPlaceholder = _ref.searchPlaceholder,
-      search = _ref.search,
-      setSearch = _ref.setSearch,
-      usingKeyboard = _ref.usingKeyboard,
-      _ref$value = _ref.value,
-      value = _ref$value === void 0 ? [] : _ref$value,
-      valueKey = _ref.valueKey,
-      showSelectedInline = _ref.showSelectedInline;
+    _ref$children = _ref.children,
+    children = _ref$children === void 0 ? null : _ref$children,
+    disabledProp = _ref.disabled,
+    disabledKey = _ref.disabledKey,
+    dropHeight = _ref.dropHeight,
+    _ref$emptySearchMessa = _ref.emptySearchMessage,
+    emptySearchMessage = _ref$emptySearchMessa === void 0 ? 'No matches found' : _ref$emptySearchMessa,
+    help = _ref.help,
+    id = _ref.id,
+    labelKey = _ref.labelKey,
+    limit = _ref.limit,
+    onChange = _ref.onChange,
+    onClose = _ref.onClose,
+    onKeyDown = _ref.onKeyDown,
+    onMore = _ref.onMore,
+    onSearch = _ref.onSearch,
+    optionIndexesInValue = _ref.optionIndexesInValue,
+    options = _ref.options,
+    _ref$replace = _ref.replace,
+    replace = _ref$replace === void 0 ? true : _ref$replace,
+    searchPlaceholder = _ref.searchPlaceholder,
+    search = _ref.search,
+    setSearch = _ref.setSearch,
+    usingKeyboard = _ref.usingKeyboard,
+    _ref$value = _ref.value,
+    value = _ref$value === void 0 ? [] : _ref$value,
+    valueKey = _ref.valueKey,
+    showSelectedInline = _ref.showSelectedInline;
   var theme = useContext(ThemeContext) || defaultProps.theme;
-
   var _useState = useState(-1),
-      activeIndex = _useState[0],
-      setActiveIndex = _useState[1];
-
+    activeIndex = _useState[0],
+    setActiveIndex = _useState[1];
   var _useState2 = useState(usingKeyboard),
-      keyboardNavigation = _useState2[0],
-      setKeyboardNavigation = _useState2[1];
-
+    keyboardNavigation = _useState2[0],
+    setKeyboardNavigation = _useState2[1];
   var searchRef = useRef();
   var optionsRef = useRef();
-
   var _useState3 = useState(disabledProp),
-      disabled = _useState3[0],
-      setDisabled = _useState3[1];
-
+    disabled = _useState3[0],
+    setDisabled = _useState3[1];
   var activeRef = useRef();
-
   var _useState4 = useState(),
-      showA11yLimit = _useState4[0],
-      setShowA11yLimit = _useState4[1];
-
+    showA11yLimit = _useState4[0],
+    setShowA11yLimit = _useState4[1];
   var clearRef = useRef();
-  var isDisabled = useDisabled(disabled, disabledKey, options, valueKey || labelKey); // for keyboard/screenreader, keep the active option in focus
+  var isDisabled = useDisabled(disabled, disabledKey, options, valueKey || labelKey);
 
+  // for keyboard/screenreader, keep the active option in focus
   useEffect(function () {
     var _activeRef$current;
-
     if (activeIndex) (_activeRef$current = activeRef.current) == null ? void 0 : _activeRef$current.focus();
-  }, [activeIndex]); // set initial focus
+  }, [activeIndex]);
 
+  // set initial focus
   useEffect(function () {
     // need to wait for Drop to be ready
     var timer = setTimeout(function () {
       var clearButton = clearRef.current;
-
       if (clearButton && clearButton.focus) {
         setFocusWithoutScroll(clearButton);
       } else if (searchRef && searchRef.current) {
         var searchInput = searchRef.current;
-
         if (searchInput && searchInput.focus) {
           setFocusWithoutScroll(searchInput);
         }
@@ -99,14 +89,12 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         setActiveIndex(0);
       }
     }, 100); // Drop should be open after 100ms
-
     return function () {
       return clearTimeout(timer);
     };
   }, []);
   useEffect(function () {
     var optionsNode = optionsRef.current;
-
     if (optionsNode.children) {
       var optionNode = optionsNode.children[activeIndex];
       if (optionNode) optionNode.focus();
@@ -115,7 +103,6 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var isSelected = useCallback(function (index) {
     var result;
     var optionVal = getOptionValue(index, options, valueKey || labelKey);
-
     if (value) {
       if (value.length === 0) {
         result = false;
@@ -128,7 +115,6 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         });
       }
     }
-
     return result;
   }, [value, valueKey, options, labelKey]);
   var selectOption = useCallback(function (index) {
@@ -137,13 +123,11 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         var nextOptionIndexesInValue = optionIndexesInValue.slice(0);
         var allOptionsIndex = getOptionIndex(allOptions, options[index], valueKey || labelKey);
         var valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
-
         if (valueIndex === -1 && (!limit || (value == null ? void 0 : value.length) < limit)) {
           nextOptionIndexesInValue.push(allOptionsIndex);
         } else {
           nextOptionIndexesInValue.splice(valueIndex, 1);
         }
-
         var nextValue = nextOptionIndexesInValue.map(function (i) {
           return valueKey && valueKey.reduce ? applyKey(allOptions[i], valueKey) : allOptions[i];
         });
@@ -159,7 +143,6 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var onNextOption = useCallback(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;
-
     if (nextActiveIndex !== options.length) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
@@ -168,16 +151,13 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var onPreviousOption = useCallback(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex - 1;
-
     if (nextActiveIndex === -1) {
       var searchInput = searchRef.current;
-
       if (searchInput && searchInput.focus) {
         setActiveIndex(nextActiveIndex);
         setFocusWithoutScroll(searchInput);
       }
     }
-
     if (nextActiveIndex >= 0) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
@@ -187,23 +167,19 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (!onSearch) {
       var nextActiveIndex = options.findIndex(function (e) {
         var label;
-
         if (typeof e === 'object') {
           label = e.label || applyKey(e, labelKey);
         } else {
           label = e;
         }
-
         return typeof label === 'string' && label.charAt(0).toLowerCase() === event.key.toLowerCase();
       });
-
       if (nextActiveIndex >= 0) {
         event.preventDefault();
         setActiveIndex(nextActiveIndex);
         setKeyboardNavigation(true);
       }
     }
-
     if (onKeyDown) {
       onKeyDown(event);
     }
@@ -216,19 +192,18 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var onSelectOption = useCallback(function (event) {
     if (!isDisabled(activeIndex) && activeIndex >= 0 && activeIndex < options.length) {
       event.preventDefault(); // prevent submitting forms
-
       selectOption(activeIndex)(event);
     }
   }, [activeIndex, selectOption, options, isDisabled]);
   var customSearchInput = theme.select.searchInput;
   var SelectTextInput = customSearchInput || TextInput;
-  var selectOptionsStyle = theme.select.options ? _extends({}, theme.select.options.box, theme.select.options.container) : {}; // handle when limit is reached
+  var selectOptionsStyle = theme.select.options ? _extends({}, theme.select.options.box, theme.select.options.container) : {};
 
+  // handle when limit is reached
   useEffect(function () {
     var originallyDisabled = function originallyDisabled(index) {
       var option = allOptions[index];
       var result;
-
       if (disabledKey) {
         result = applyKey(option, disabledKey);
       } else if (Array.isArray(disabledProp)) {
@@ -238,20 +213,17 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
           result = getOptionIndex(disabledProp, getOptionValue(index, options, valueKey || labelKey), valueKey || labelKey) !== -1;
         }
       }
-
       return result;
     };
-
     if (value && limit) {
       if (value.length === limit) {
-        var newDisabled = [].concat(disabledProp); // disable everything that is not selected
-
+        var newDisabled = [].concat(disabledProp);
+        // disable everything that is not selected
         for (var i = 0; i < options.length; i += 1) {
           if (!isSelected(i) && !originallyDisabled(i)) {
             newDisabled.push(options[i]);
           }
         }
-
         if (usingKeyboard) setShowA11yLimit('Selected. Maximum selection limit reached.');
         setDisabled(newDisabled);
       } else {
@@ -259,8 +231,9 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         setDisabled(disabledProp);
       }
     }
-  }, [isSelected, value, limit, disabledProp, allOptions, disabledKey, labelKey, options, usingKeyboard, valueKey]); // reset showA11yLimit after announcement is read
+  }, [isSelected, value, limit, disabledProp, allOptions, disabledKey, labelKey, options, usingKeyboard, valueKey]);
 
+  // reset showA11yLimit after announcement is read
   useEffect(function () {
     if (showA11yLimit !== undefined) {
       setTimeout(function () {
@@ -355,12 +328,12 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var optionDisabled = isDisabled(index);
     var optionSelected = value ? arrayIncludes(value, valueKey && valueKey.reduce ? applyKey(option, valueKey) : option, valueKey || labelKey) : false;
     var optionActive = activeIndex === index;
-    var optionLabel = getOptionLabel(index, options, labelKey || valueKey); // Determine whether the label is done as a child or
-    // as an option Button kind property.
+    var optionLabel = getOptionLabel(index, options, labelKey || valueKey);
 
+    // Determine whether the label is done as a child or
+    // as an option Button kind property.
     var child;
     var textComponent = false;
-
     if (children) {
       child = children(option, index, options, {
         active: optionActive,
@@ -381,10 +354,8 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         disabled: optionDisabled
       });
     }
-
     if (!children && search) {
       var searchText = search.toLowerCase();
-
       if (typeof optionLabel === 'string' && optionLabel.toLowerCase().indexOf(searchText) >= 0) {
         // code to bold search term in matching options
         var boldIndex = optionLabel.toLowerCase().indexOf(searchText);
@@ -405,13 +376,15 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
           disabled: optionDisabled
         });
       }
-    } // if we have a child, turn on plain, and hoverIndicator
+    }
 
-
+    // if we have a child, turn on plain, and hoverIndicator
     return /*#__PURE__*/React.createElement(SelectOption, {
-      a11yTitle: optionSelected ? optionLabel + " selected" : optionLabel + " not selected" // eslint-disable-next-line react/no-array-index-key
+      a11yTitle: optionSelected ? optionLabel + " selected" : optionLabel + " not selected"
+      // eslint-disable-next-line react/no-array-index-key
       ,
-      key: index // merge optionRef and activeRef
+      key: index
+      // merge optionRef and activeRef
       ,
       ref: function ref(node) {
         // eslint-disable-next-line no-param-reassign
@@ -445,7 +418,8 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   })), usingKeyboard && showA11yLimit && /*#__PURE__*/React.createElement(Box, {
     height: "0px",
     width: "0px",
-    overflow: "hidden" // announce when we reach the limit of items
+    overflow: "hidden"
+    // announce when we reach the limit of items
     // that can be selected
     ,
     "aria-live": "assertive",

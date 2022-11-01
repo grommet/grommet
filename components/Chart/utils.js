@@ -2,7 +2,6 @@
 
 exports.__esModule = true;
 exports.normalizeValues = exports.normalizeBounds = exports.areNormalizedValuesEquals = exports.areNormalizedBoundsEquals = void 0;
-
 var normalizeValues = function normalizeValues(values) {
   return (values || []).map(function (value, index) {
     if (value === undefined) return {
@@ -17,12 +16,9 @@ var normalizeValues = function normalizeValues(values) {
     };
   });
 };
-
 exports.normalizeValues = normalizeValues;
-
 var normalizeBounds = function normalizeBounds(bounds, values) {
   var result = bounds;
-
   if (!result) {
     result = [[0, 1], [0, 1]];
     (values || []).forEach(function (value) {
@@ -30,24 +26,19 @@ var normalizeBounds = function normalizeBounds(bounds, values) {
         result[0][0] = Math.min(result[0][0], value.value[0]);
         result[0][1] = Math.max(result[0][1], value.value[0]);
       }
-
       if (value.value[1] !== undefined) {
         result[1][0] = Math.min(result[1][0], value.value[1]);
         result[1][1] = Math.max(result[1][1], value.value[1]);
       }
-
       if (value.value[2] !== undefined) {
         result[1][0] = Math.min(result[1][0], value.value[2]);
         result[1][1] = Math.max(result[1][1], value.value[2]);
       }
     });
   }
-
   return result;
 };
-
 exports.normalizeBounds = normalizeBounds;
-
 var areNormalizedValuesEquals = function areNormalizedValuesEquals(valuesX, valuesY) {
   console.warn("This function will be removed in the upcoming releases.\nPlease get in touch with us if you have concerns.");
   if (!valuesX || !valuesY) return false;
@@ -60,9 +51,7 @@ var areNormalizedValuesEquals = function areNormalizedValuesEquals(valuesX, valu
     });
   });
 };
-
 exports.areNormalizedValuesEquals = areNormalizedValuesEquals;
-
 var areNormalizedBoundsEquals = function areNormalizedBoundsEquals(boundsX, boundsY) {
   console.warn("This function will be removed in the upcoming releases.\nPlease get in touch with us if you have concerns.");
   if (!boundsX || !boundsY) return false;
@@ -73,5 +62,4 @@ var areNormalizedBoundsEquals = function areNormalizedBoundsEquals(boundsX, boun
     });
   });
 };
-
 exports.areNormalizedBoundsEquals = areNormalizedBoundsEquals;

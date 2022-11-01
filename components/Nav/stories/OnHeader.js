@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.OnHeader = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var items = [{
   label: 'HTML',
   href: '#'
@@ -23,7 +19,6 @@ var items = [{
   href: '#'
 }];
 var gravatarSrc = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
-
 var OnHeaderNav = function OnHeaderNav() {
   return (
     /*#__PURE__*/
@@ -49,15 +44,14 @@ var OnHeaderNav = function OnHeaderNav() {
         label: item.label,
         key: item.label
       });
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
 
 var OnHeader = function OnHeader() {
   return /*#__PURE__*/_react["default"].createElement(OnHeaderNav, null);
 };
-
 exports.OnHeader = OnHeader;
 OnHeader.storyName = 'On Header';
 var _default = {

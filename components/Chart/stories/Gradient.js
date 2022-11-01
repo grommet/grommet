@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.GradientCharts = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var gradient = [{
   value: 0,
   color: 'status-ok'
@@ -22,7 +18,6 @@ var gradient = [{
   value: 30,
   color: 'status-critical'
 }];
-
 var GradientCharts = function GradientCharts() {
   return (
     /*#__PURE__*/
@@ -59,11 +54,10 @@ var GradientCharts = function GradientCharts() {
       color: gradient,
       values: [[10, 20], [20, 30], [30, 15]],
       round: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.GradientCharts = GradientCharts;
 GradientCharts.storyName = 'Gradient';
 var _default = {

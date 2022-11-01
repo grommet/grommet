@@ -20,10 +20,11 @@ export var Height = function Height() {
         },
         align: "center"
       }, /*#__PURE__*/React.createElement(Text, null, "item ", item));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 Height.storyName = 'Variable item height';
 Height.parameters = {
   chromatic: {

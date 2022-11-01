@@ -5,15 +5,12 @@ export var ValidateOnMount = function ValidateOnMount() {
     firstName: 'J',
     lastName: ''
   };
-
   var _useState = useState(false),
-      valid = _useState[0],
-      setValid = _useState[1];
-
+    valid = _useState[0],
+    setValid = _useState[1];
   var _useState2 = useState(defaultValue),
-      value = _useState2[0],
-      setValue = _useState2[1];
-
+    value = _useState2[0],
+    setValue = _useState2[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -75,10 +72,11 @@ export var ValidateOnMount = function ValidateOnMount() {
       label: "Update",
       disabled: !valid,
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 ValidateOnMount.storyName = 'Validate on mount';
 ValidateOnMount.args = {
   full: true

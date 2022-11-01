@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports.TextInputPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     a11yTitle: _propTypes["default"].string,
@@ -45,12 +41,10 @@ if (process.env.NODE_ENV !== 'production') {
       label: _propTypes["default"].node,
       // eslint-disable-next-line
       value: _propTypes["default"].any // this is intentional any
-
     }), _propTypes["default"].string])),
     textAlign: _propTypes["default"].oneOf(['start', 'center', 'end']),
     value: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])
   };
 }
-
 var TextInputPropTypes = PropType;
 exports.TextInputPropTypes = TextInputPropTypes;

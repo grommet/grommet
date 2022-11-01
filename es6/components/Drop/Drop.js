@@ -1,9 +1,6 @@
 var _excluded = ["inline", "restrictFocus", "target", "trapFocus"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef, useEffect, useState, useContext } from 'react';
 import { createPortal } from 'react-dom';
 import { ThemeContext } from 'styled-components';
@@ -14,31 +11,27 @@ import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { DropPropTypes } from './propTypes';
 var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var inline = _ref.inline,
-      restrictFocus = _ref.restrictFocus,
-      dropTarget = _ref.target,
-      _ref$trapFocus = _ref.trapFocus,
-      trapFocus = _ref$trapFocus === void 0 ? true : _ref$trapFocus,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    restrictFocus = _ref.restrictFocus,
+    dropTarget = _ref.target,
+    _ref$trapFocus = _ref.trapFocus,
+    trapFocus = _ref$trapFocus === void 0 ? true : _ref$trapFocus,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
-
   var _useState = useState(),
-      originalFocusedElement = _useState[0],
-      setOriginalFocusedElement = _useState[1];
-
+    originalFocusedElement = _useState[0],
+    setOriginalFocusedElement = _useState[1];
   useEffect(function () {
     return setOriginalFocusedElement(document.activeElement);
   }, []);
-
   var _useState2 = useState(),
-      dropContainer = _useState2[0],
-      setDropContainer = _useState2[1];
-
+    dropContainer = _useState2[0],
+    setDropContainer = _useState2[1];
   var containerTarget = useContext(ContainerTargetContext);
   useEffect(function () {
     return setDropContainer(!inline ? getNewContainer(containerTarget) : undefined);
-  }, [containerTarget, inline]); // just a few things to clean up when the Drop is unmounted
+  }, [containerTarget, inline]);
 
+  // just a few things to clean up when the Drop is unmounted
   useEffect(function () {
     return function () {
       if (restrictFocus && originalFocusedElement) {
@@ -49,7 +42,6 @@ var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
           setFocusWithoutScroll(originalFocusedElement.parentNode);
         }
       }
-
       if (dropContainer) {
         containerTarget.removeChild(dropContainer);
       }

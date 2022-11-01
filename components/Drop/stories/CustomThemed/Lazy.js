@@ -2,19 +2,12 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Lazy = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 var _themes = require("grommet/themes");
-
 var _utils = require("grommet/utils");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var lazyTheme = (0, _utils.deepMerge)(_themes.grommet, {
   global: {
     drop: {
@@ -39,12 +32,10 @@ var alignBottomRight = {
   top: 'bottom',
   right: 'right'
 };
-
 var LazyDrop = function LazyDrop() {
   var _useState = (0, _react.useState)(null),
-      pad = _useState[0],
-      setPad = _useState[1];
-
+    pad = _useState[0],
+    setPad = _useState[1];
   var topLeftTargetRef = (0, _react.useRef)();
   var topRightTargetRef = (0, _react.useRef)();
   var bottomLeftTargetRef = (0, _react.useRef)();
@@ -132,11 +123,9 @@ var LazyDrop = function LazyDrop() {
     }
   }, "align top to bottom")))));
 };
-
 var Lazy = function Lazy() {
   return /*#__PURE__*/_react["default"].createElement(LazyDrop, null);
 };
-
 exports.Lazy = Lazy;
 Lazy.parameters = {
   chromatic: {

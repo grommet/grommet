@@ -5,10 +5,9 @@ import { Currency } from "grommet-icons/es6/icons/Currency";
 import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
-
 var RichTabTitle = function RichTabTitle(_ref) {
   var icon = _ref.icon,
-      label = _ref.label;
+    label = _ref.label;
   return /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     align: "center",
@@ -18,7 +17,6 @@ var RichTabTitle = function RichTabTitle(_ref) {
     size: "small"
   }, /*#__PURE__*/React.createElement("strong", null, label)));
 };
-
 var customTheme = deepMerge(grommet, {
   global: {
     edgeSize: {
@@ -70,7 +68,6 @@ var customTheme = deepMerge(grommet, {
     }
   }
 });
-
 var CustomTabs = function CustomTabs() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
@@ -100,7 +97,6 @@ var CustomTabs = function CustomTabs() {
     title: "Simple Tab"
   }, "This Tab has a different styling than the RichTabTitle (e.g tab.active.color)")));
 };
-
 export var Custom = function Custom() {
   return /*#__PURE__*/React.createElement(CustomTabs, null);
 };

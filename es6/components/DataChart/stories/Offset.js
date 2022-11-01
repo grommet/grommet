@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, DataChart, Text } from 'grommet';
 var data = [];
-
 for (var i = 0; i < 7; i += 1) {
   data.push({
     date: "2020-07-" + (i % 31 + 1).toString().padStart(2, 0),
@@ -10,7 +9,6 @@ for (var i = 0; i < 7; i += 1) {
     over: Math.floor(Math.abs(Math.sin(i / 2.0) * 50))
   });
 }
-
 export var Offset = function Offset() {
   return (
     /*#__PURE__*/
@@ -62,10 +60,11 @@ export var Offset = function Offset() {
         y: true
       },
       legend: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 Offset.storyName = 'Offset';
 Offset.args = {
   full: true

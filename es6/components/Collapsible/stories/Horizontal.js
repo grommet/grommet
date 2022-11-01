@@ -3,9 +3,8 @@ import { Notification } from "grommet-icons/es6/icons/Notification";
 import { Box, Button, Collapsible, Heading, Text } from 'grommet';
 export var Horizontal = function Horizontal() {
   var _React$useState = React.useState(),
-      openNotification = _React$useState[0],
-      setOpenNotification = _React$useState[1];
-
+    openNotification = _React$useState[0],
+    setOpenNotification = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -55,10 +54,11 @@ export var Horizontal = function Horizontal() {
       elevation: "small"
     }, /*#__PURE__*/React.createElement(Text, {
       size: "xlarge"
-    }, "Sidebar"))))) // </Grommet>
-
+    }, "Sidebar")))))
+    // </Grommet>
   );
 };
+
 Horizontal.args = {
   full: true
 };

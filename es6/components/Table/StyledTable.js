@@ -10,7 +10,8 @@ var SIZE_MAP = {
   '2/3': '66.66%'
 };
 var sizeStyle = css(["width:", ";max-width:", ";overflow:hidden;"], function (props) {
-  return props.size === 'auto' ? // setting width to a small value will allow
+  return props.size === 'auto' ?
+  // setting width to a small value will allow
   // the cell to fit width of its content. this
   // is a commonly implemented CSS pattern to
   // allow an auto-width behavior on fixed table

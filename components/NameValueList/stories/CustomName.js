@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.CustomName = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _data = require("./data");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var CustomName = function CustomName() {
   return (
     /*#__PURE__*/
@@ -24,7 +19,7 @@ var CustomName = function CustomName() {
       size: "3xl"
     }, "Custom Name"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, null, Object.entries(_data.data).map(function (_ref) {
       var name = _ref[0],
-          value = _ref[1];
+        value = _ref[1];
       return /*#__PURE__*/_react["default"].createElement(_grommet.NameValuePair, {
         name: /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
           size: "small",
@@ -32,11 +27,10 @@ var CustomName = function CustomName() {
         }, name),
         key: name
       }, value);
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
-
 exports.CustomName = CustomName;
 var _default = {
   title: 'Visualizations/NameValueList/Custom Name'

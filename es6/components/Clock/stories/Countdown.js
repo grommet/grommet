@@ -13,10 +13,11 @@ export var Countdown = function Countdown() {
       type: "digital",
       time: "PT0H0M20S",
       run: "backward"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 Countdown.parameters = {
   chromatic: {
     disable: true

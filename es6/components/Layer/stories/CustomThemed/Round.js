@@ -13,25 +13,20 @@ var customTheme = deepMerge(grommet, {
 });
 export var RoundLayer = function RoundLayer() {
   var _React$useState = React.useState(false),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var _React$useState2 = React.useState(),
-      position = _React$useState2[0],
-      setPosition = _React$useState2[1];
-
+    position = _React$useState2[0],
+    setPosition = _React$useState2[1];
   var _React$useState3 = React.useState(),
-      full = _React$useState3[0],
-      setFull = _React$useState3[1];
-
+    full = _React$useState3[0],
+    setFull = _React$useState3[1];
   var onOpen = function onOpen() {
     return setOpen(true);
   };
-
   var onClose = function onClose() {
     return setOpen(undefined);
   };
-
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme,
     full: true

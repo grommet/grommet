@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Pattern = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Pattern = function Pattern() {
   return (
     /*#__PURE__*/
@@ -32,11 +28,10 @@ var Pattern = function Pattern() {
           value: [30, 15]
         }]
       });
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Pattern = Pattern;
 var _default = {
   title: 'Visualizations/Chart/Pattern'

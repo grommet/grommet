@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text } from 'grommet'; // Always should store amount in cents to avoid precision errors
+import { Text } from 'grommet';
 
+// Always should store amount in cents to avoid precision errors
 export var data = [{
   id: 1,
   name: 'Eric',

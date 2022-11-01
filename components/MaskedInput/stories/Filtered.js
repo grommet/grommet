@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Filtered = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = {
   Cummings: ['a pretty day', 'i carry your heart with me', 'if you like my poems let them'],
   Chaucer: ["The Knight's Tale", 'The General Prologue', "The Friar's Tale"],
@@ -16,16 +12,13 @@ var data = {
   Poe: ['The Raven', 'Romance', 'Song'],
   Whitman: ['To You', 'O Captain! My Captain!', 'O Me! O Life!']
 };
-
 var Filtered = function Filtered() {
   var _React$useState = _react["default"].useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var _value$split = value.split(':'),
-      first = _value$split[0],
-      second = _value$split[1];
-
+    first = _value$split[0],
+    second = _value$split[1];
   var poets = first ? Object.keys(data).filter(function (k) {
     return k.toLowerCase().startsWith(first.toLowerCase());
   }) : Object.keys(data);
@@ -62,11 +55,10 @@ var Filtered = function Filtered() {
       onChange: function onChange(event) {
         return setValue(event.target.value);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.Filtered = Filtered;
 Filtered.parameters = {
   chromatic: {

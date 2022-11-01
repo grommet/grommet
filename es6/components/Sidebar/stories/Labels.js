@@ -1,9 +1,6 @@
 var _excluded = ["icon", "label"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React from 'react';
 import { Avatar, Button, Box, Nav, Stack, Text } from 'grommet';
 import { Analytics } from "grommet-icons/es6/icons/Analytics";
@@ -16,7 +13,6 @@ import { Split } from "grommet-icons/es6/icons/Split";
 import { StatusInfoSmall } from "grommet-icons/es6/icons/StatusInfoSmall";
 import { Sidebar } from '../Sidebar';
 var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
-
 var SidebarHeader = function SidebarHeader() {
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
@@ -38,12 +34,10 @@ var SidebarHeader = function SidebarHeader() {
     responsive: false
   })), /*#__PURE__*/React.createElement(Text, null, "Shimrit Yacobi"));
 };
-
 var SidebarButton = function SidebarButton(_ref) {
   var icon = _ref.icon,
-      label = _ref.label,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    label = _ref.label,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   return /*#__PURE__*/React.createElement(Box, {
     pad: "small"
   }, /*#__PURE__*/React.createElement(Button, _extends({
@@ -54,7 +48,6 @@ var SidebarButton = function SidebarButton(_ref) {
     label: label
   }, rest)));
 };
-
 var SidebarFooter = function SidebarFooter() {
   return /*#__PURE__*/React.createElement(Nav, {
     "aria-label": "sidebar footer"
@@ -64,7 +57,6 @@ var SidebarFooter = function SidebarFooter() {
     icon: /*#__PURE__*/React.createElement(Help, null)
   }));
 };
-
 var MainNavigation = function MainNavigation() {
   return /*#__PURE__*/React.createElement(Nav, {
     "aria-label": "main navigation",
@@ -90,7 +82,6 @@ var MainNavigation = function MainNavigation() {
     label: "Configure"
   }));
 };
-
 export var Labels = function Labels() {
   return (
     /*#__PURE__*/
@@ -111,10 +102,11 @@ export var Labels = function Labels() {
         right: 'large',
         vertical: 'medium'
       }
-    }, /*#__PURE__*/React.createElement(MainNavigation, null))) // </Grommet>
-
+    }, /*#__PURE__*/React.createElement(MainNavigation, null)))
+    // </Grommet>
   );
 };
+
 Labels.args = {
   full: true
 };

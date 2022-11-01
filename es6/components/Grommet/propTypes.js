@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { backgroundDoc } from '../../utils/general-prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     background: backgroundDoc,
@@ -72,5 +71,4 @@ if (process.env.NODE_ENV !== 'production') {
     })
   };
 }
-
 export var GrommetPropTypes = PropType;

@@ -111,11 +111,9 @@ var customTheme = {
     },
     extend: function extend(props) {
       var extraStyles = '';
-
       if (props.primary) {
         extraStyles = "\n            text-transform: uppercase;\n          ";
       }
-
       return "\n          font-size: 12px;\n          font-weight: bold;\n          " + extraStyles + "\n        ";
     }
   }

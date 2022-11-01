@@ -4,24 +4,21 @@ import { Button } from '../Button';
 import { CheckBox } from '../CheckBox';
 import { SelectOption } from '../Select/StyledSelect';
 import { applyKey, getOptionLabel, useDisabled, arrayIncludes, getOptionIndex } from '../Select/utils';
-
 var SelectMultipleValue = function SelectMultipleValue(_ref) {
   var allOptions = _ref.allOptions,
-      children = _ref.children,
-      disabled = _ref.disabled,
-      disabledKey = _ref.disabledKey,
-      dropButtonRef = _ref.dropButtonRef,
-      labelKey = _ref.labelKey,
-      onRequestOpen = _ref.onRequestOpen,
-      onSelectChange = _ref.onSelectChange,
-      theme = _ref.theme,
-      value = _ref.value,
-      valueKey = _ref.valueKey;
-
+    children = _ref.children,
+    disabled = _ref.disabled,
+    disabledKey = _ref.disabledKey,
+    dropButtonRef = _ref.dropButtonRef,
+    labelKey = _ref.labelKey,
+    onRequestOpen = _ref.onRequestOpen,
+    onSelectChange = _ref.onSelectChange,
+    theme = _ref.theme,
+    value = _ref.value,
+    valueKey = _ref.valueKey;
   var _useState = useState(false),
-      showA11yDiv = _useState[0],
-      setShowA11yDiv = _useState[1];
-
+    showA11yDiv = _useState[0],
+    setShowA11yDiv = _useState[1];
   var isDisabled = useDisabled(disabled, disabledKey, allOptions, valueKey || labelKey);
   var visibleValue = useCallback(function (i) {
     var optionValue = valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
@@ -30,10 +27,8 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     var optionLabel = getOptionLabel(indexOptions, allOptions, labelKey || valueKey);
     var optionDisabled = isDisabled(indexOptions);
     var valueIndex = getOptionIndex(value, optionValue, valueKey || labelKey);
-
     if (valueIndex < theme.selectMultiple.maxInline) {
       var child;
-
       if (children) {
         child = children(i, indexOptions, allOptions, {
           active: false,
@@ -41,7 +36,6 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
           selected: true
         });
       }
-
       return /*#__PURE__*/React.createElement(SelectOption, {
         role: "option",
         a11yTitle: optionSelected ? optionLabel + " selected" : optionLabel + " not selected",
@@ -56,7 +50,6 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
         onClick: function onClick(event) {
           if (!optionDisabled) {
             var intermediate = [].concat(value);
-
             if (arrayIncludes(intermediate, optionValue, valueKey || labelKey)) {
               onSelectChange(event, {
                 option: optionValue,
@@ -64,7 +57,6 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
                   return typeof v === 'object' ? applyKey(v, valueKey || labelKey) === applyKey(optionValue, valueKey || labelKey) : v !== optionValue;
                 })
               });
-
               if (valueIndex !== intermediate.length - 1) {
                 setTimeout(function () {
                   var nextFocus = document.getElementById("selected-" + intermediate[valueIndex + 1]);
@@ -101,11 +93,11 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
         checked: optionSelected
       }));
     }
-
     return undefined;
-  }, [valueKey, allOptions, children, dropButtonRef, isDisabled, labelKey, onSelectChange, value, theme.selectMultiple.maxInline]); // After announcing set showA11yDiv to undefined so it won't
-  // be read out again
+  }, [valueKey, allOptions, children, dropButtonRef, isDisabled, labelKey, onSelectChange, value, theme.selectMultiple.maxInline]);
 
+  // After announcing set showA11yDiv to undefined so it won't
+  // be read out again
   useEffect(function () {
     if (showA11yDiv !== undefined) {
       setTimeout(function () {
@@ -122,13 +114,13 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     return arrayIncludes(value, valueKey && valueKey.reduce ? applyKey(i, valueKey) : i, valueKey || labelKey);
   })
   /* eslint-disable-next-line array-callback-return, 
-      consistent-return */
-  .map(function (i) {
+      consistent-return */.map(function (i) {
     return visibleValue(i);
   }), showA11yDiv && /*#__PURE__*/React.createElement(Box, {
     height: "0px",
     width: "0px",
-    overflow: "hidden" // announce when an item is removed from selected options
+    overflow: "hidden"
+    // announce when an item is removed from selected options
     ,
     "aria-live": "assertive",
     role: "alert"
@@ -145,5 +137,4 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     label: "+ " + (value.length - theme.selectMultiple.maxInline) + " more"
   })));
 };
-
 export { SelectMultipleValue };

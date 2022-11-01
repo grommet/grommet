@@ -1,9 +1,6 @@
 var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "help", "id", "icon", "labelKey", "limit", "margin", "messages", "name", "onBlur", "onChange", "onClick", "onClose", "onFocus", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "size", "sortSelectedOnClose", "value", "valueKey", "valueLabel", "showSelectedInline", "width"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef, isValidElement, useCallback, useContext, useMemo, useState, useRef, useEffect } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { controlBorderStyle, useKeyboard, useForwardedRef } from '../../utils';
@@ -26,74 +23,71 @@ var StyledSelectBox = styled(Box).withConfig({
   return !props.plainSelect && controlBorderStyle;
 }, function (props) {
   var _props$theme$select, _props$theme$select$c;
-
   return (_props$theme$select = props.theme.select) == null ? void 0 : (_props$theme$select$c = _props$theme$select.control) == null ? void 0 : _props$theme$select$c.extend;
 }, function (props) {
   var _props$theme$select$c2;
-
   return props.open && ((_props$theme$select$c2 = props.theme.select.control) == null ? void 0 : _props$theme$select$c2.open);
 });
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
 var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
-      ariaLabel = _ref['aria-label'],
-      alignSelf = _ref.alignSelf,
-      children = _ref.children,
-      defaultValue = _ref.defaultValue,
-      disabled = _ref.disabled,
-      disabledKey = _ref.disabledKey,
-      dropAlign = _ref.dropAlign,
-      dropHeight = _ref.dropHeight,
-      dropProps = _ref.dropProps,
-      dropTarget = _ref.dropTarget,
-      emptySearchMessage = _ref.emptySearchMessage,
-      focusIndicator = _ref.focusIndicator,
-      gridArea = _ref.gridArea,
-      help = _ref.help,
-      id = _ref.id,
-      icon = _ref.icon,
-      labelKey = _ref.labelKey,
-      limit = _ref.limit,
-      margin = _ref.margin,
-      messages = _ref.messages,
-      name = _ref.name,
-      onBlur = _ref.onBlur,
-      onChange = _ref.onChange,
-      onClick = _ref.onClick,
-      onClose = _ref.onClose,
-      onFocus = _ref.onFocus,
-      onKeyDown = _ref.onKeyDown,
-      onMore = _ref.onMore,
-      onOpen = _ref.onOpen,
-      onSearch = _ref.onSearch,
-      openProp = _ref.open,
-      optionsProp = _ref.options,
-      placeholder = _ref.placeholder,
-      plain = _ref.plain,
-      replace = _ref.replace,
-      searchPlaceholder = _ref.searchPlaceholder,
-      size = _ref.size,
-      _ref$sortSelectedOnCl = _ref.sortSelectedOnClose,
-      sortSelectedOnClose = _ref$sortSelectedOnCl === void 0 ? true : _ref$sortSelectedOnCl,
-      valueProp = _ref.value,
-      valueKey = _ref.valueKey,
-      valueLabel = _ref.valueLabel,
-      _ref$showSelectedInli = _ref.showSelectedInline,
-      showSelectedInline = _ref$showSelectedInli === void 0 ? false : _ref$showSelectedInli,
-      width = _ref.width,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    ariaLabel = _ref['aria-label'],
+    alignSelf = _ref.alignSelf,
+    children = _ref.children,
+    defaultValue = _ref.defaultValue,
+    disabled = _ref.disabled,
+    disabledKey = _ref.disabledKey,
+    dropAlign = _ref.dropAlign,
+    dropHeight = _ref.dropHeight,
+    dropProps = _ref.dropProps,
+    dropTarget = _ref.dropTarget,
+    emptySearchMessage = _ref.emptySearchMessage,
+    focusIndicator = _ref.focusIndicator,
+    gridArea = _ref.gridArea,
+    help = _ref.help,
+    id = _ref.id,
+    icon = _ref.icon,
+    labelKey = _ref.labelKey,
+    limit = _ref.limit,
+    margin = _ref.margin,
+    messages = _ref.messages,
+    name = _ref.name,
+    onBlur = _ref.onBlur,
+    onChange = _ref.onChange,
+    onClick = _ref.onClick,
+    onClose = _ref.onClose,
+    onFocus = _ref.onFocus,
+    onKeyDown = _ref.onKeyDown,
+    onMore = _ref.onMore,
+    onOpen = _ref.onOpen,
+    onSearch = _ref.onSearch,
+    openProp = _ref.open,
+    optionsProp = _ref.options,
+    placeholder = _ref.placeholder,
+    plain = _ref.plain,
+    replace = _ref.replace,
+    searchPlaceholder = _ref.searchPlaceholder,
+    size = _ref.size,
+    _ref$sortSelectedOnCl = _ref.sortSelectedOnClose,
+    sortSelectedOnClose = _ref$sortSelectedOnCl === void 0 ? true : _ref$sortSelectedOnCl,
+    valueProp = _ref.value,
+    valueKey = _ref.valueKey,
+    valueLabel = _ref.valueLabel,
+    _ref$showSelectedInli = _ref.showSelectedInline,
+    showSelectedInline = _ref$showSelectedInli === void 0 ? false : _ref$showSelectedInli,
+    width = _ref.width,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var inputRef = useRef();
   var formContext = useContext(FormContext);
-
   var _useContext = useContext(MessageContext),
-      format = _useContext.format;
-
+    format = _useContext.format;
   var selectBoxRef = useRef();
   var dropButtonRef = useForwardedRef(ref);
-  var usingKeyboard = useKeyboard(); // value is used for what we receive in valueProp and the basis for
+  var usingKeyboard = useKeyboard();
+
+  // value is used for what we receive in valueProp and the basis for
   // what we send with onChange
   // When 'valueKey' sets 'reduce', the value(s) here should match
   // what the 'valueKey' would return for the corresponding
@@ -101,12 +95,14 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // Otherwise, the value(s) should match the selected options.
 
   var _formContext$useFormI = formContext.useFormInput({
-    name: name,
-    value: valueProp,
-    initialValue: defaultValue || ''
-  }),
-      value = _formContext$useFormI[0],
-      setValue = _formContext$useFormI[1]; // normalizedValue is the value mapped with any valueKey applied
+      name: name,
+      value: valueProp,
+      initialValue: defaultValue || ''
+    }),
+    value = _formContext$useFormI[0],
+    setValue = _formContext$useFormI[1];
+
+  // normalizedValue is the value mapped with any valueKey applied
   // When the options array contains objects, this property indicates how
   // to retrieve the value of each option.
   // If a string is provided, it is used as the key to retrieve a
@@ -115,35 +111,31 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // return the value.
   // If reduce is true, this value will be used for the 'value'
   // delivered via 'onChange'.
-
-
   var normalizedValue = useMemo(function () {
     return getNormalizedValue(value, valueKey);
-  }, [value, valueKey]); // search input value
-
+  }, [value, valueKey]);
+  // search input value
   var _useState = useState(),
-      search = _useState[0],
-      setSearch = _useState[1]; // All select option indices and values
-
-
+    search = _useState[0],
+    setSearch = _useState[1];
+  // All select option indices and values
   var _useState2 = useState(optionsProp),
-      allOptions = _useState2[0],
-      setAllOptions = _useState2[1];
-
+    allOptions = _useState2[0],
+    setAllOptions = _useState2[1];
   var _useState3 = useState(),
-      orderedOptions = _useState3[0],
-      setOrderedOptions = _useState3[1]; // Track changes to options property, except when options are being
+    orderedOptions = _useState3[0],
+    setOrderedOptions = _useState3[1];
+  // Track changes to options property, except when options are being
   // updated due to search activity. Allows option's initial index value
   // to be referenced when filtered by search.
-
-
   useEffect(function () {
     if (!search) setAllOptions(optionsProp);
   }, [optionsProp, search]);
   useEffect(function () {
     if (!search && sortSelectedOnClose) setOrderedOptions(optionsProp);
-  }, [optionsProp, search, sortSelectedOnClose]); // the option indexes present in the value
+  }, [optionsProp, search, sortSelectedOnClose]);
 
+  // the option indexes present in the value
   var optionIndexesInValue = useMemo(function () {
     var result = [];
     allOptions.forEach(function (option, index) {
@@ -155,11 +147,9 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
     return result;
   }, [allOptions, valueKey, normalizedValue]);
-
   var _useState4 = useState(openProp),
-      open = _useState4[0],
-      setOpen = _useState4[1];
-
+    open = _useState4[0],
+    setOpen = _useState4[1];
   useEffect(function () {
     return setOpen(openProp);
   }, [openProp]);
@@ -190,8 +180,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, []);
   var onSelectChange = useCallback(function (event, _ref2) {
     var option = _ref2.option,
-        nextValue = _ref2.value;
-
+      nextValue = _ref2.value;
     // nextValue must not be of type object to set value directly on the
     // input. if it is an object, then the user has not provided necessary
     // props to reduce object option
@@ -202,13 +191,11 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
       // necessary for change validation in form
       triggerChangeEvent(nextValue);
     }
-
     setValue(nextValue);
-
     if (onChange) {
       event.persist();
-      var adjustedEvent; // support for native event used by Preact
-
+      var adjustedEvent;
+      // support for native event used by Preact
       if (event instanceof Event) {
         adjustedEvent = new event.constructor(event.type, event);
         Object.defineProperties(adjustedEvent, {
@@ -228,15 +215,14 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
         adjustedEvent.value = nextValue;
         adjustedEvent.option = option;
       }
-
       onChange(adjustedEvent);
     }
   }, [onChange, setValue, triggerChangeEvent]);
-  var SelectIcon = getSelectIcon(icon, theme, open); // element to show, trumps inputValue
+  var SelectIcon = getSelectIcon(icon, theme, open);
 
+  // element to show, trumps inputValue
   var selectValue = useMemo(function () {
     var result;
-
     if (valueLabel) {
       result = value && valueLabel instanceof Function ? valueLabel(value) : valueLabel;
     } else if ((value == null ? void 0 : value.length) > 0 && showSelectedInline) {
@@ -253,12 +239,13 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
         valueKey: valueKey
       }, children);
     }
-
     return result;
   }, [valueKey, value, valueLabel, showSelectedInline, onRequestOpen, allOptions, children, labelKey, onSelectChange, disabled, disabledKey, dropButtonRef, theme]);
   var displayLabelKey = useMemo(function () {
     return getDisplayLabelKey(labelKey, allOptions, optionIndexesInValue, selectValue);
-  }, [labelKey, allOptions, optionIndexesInValue, selectValue]); // text to show
+  }, [labelKey, allOptions, optionIndexesInValue, selectValue]);
+
+  // text to show
   // When the options array contains objects, this property indicates how
   // to retrieve the value of each option.
   // If a string is provided, it is used as the key to retrieve a
@@ -267,7 +254,6 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // return the value.
   // If reduce is true, this value will be used for the 'value'
   // delivered via 'onChange'.
-
   var inputValue = useMemo(function () {
     if (!selectValue) {
       if (optionIndexesInValue.length === 0) return '';
@@ -278,7 +264,6 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
       });
       return optionIndexesInValue.length + " selected";
     }
-
     return undefined;
   }, [labelKey, messages, format, optionIndexesInValue, allOptions, selectValue]);
   var iconColor = getIconColor(theme);
@@ -378,7 +363,8 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, rest, {
     tabIndex: "-1",
     type: "text",
-    placeholder: // eslint-disable-next-line no-nested-ternary
+    placeholder:
+    // eslint-disable-next-line no-nested-ternary
     !value || (value == null ? void 0 : value.length) === 0 ? placeholder || selectValue || displayLabelKey : onMore ? ((value == null ? void 0 : value.length) || '0') + " selected" : ((value == null ? void 0 : value.length) || '0') + " selected of " + allOptions.length,
     plain: true,
     readOnly: true,

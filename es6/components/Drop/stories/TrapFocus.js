@@ -6,15 +6,12 @@ import { Achievement } from "grommet-icons/es6/icons/Achievement";
 var align = {
   left: 'right'
 };
-
 var TooltipButton = function TooltipButton(_ref) {
   var icon = _ref.icon,
-      name = _ref.name;
-
+    name = _ref.name;
   var _useState = useState(false),
-      over = _useState[0],
-      setOver = _useState[1];
-
+    over = _useState[0],
+    setOver = _useState[1];
   var ref = useRef();
   return /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Button, {
     ref: ref,
@@ -42,7 +39,8 @@ var TooltipButton = function TooltipButton(_ref) {
     target: ref.current,
     margin: {
       horizontal: 'small'
-    } // trapFocus set to false allows tabbing through the buttons
+    }
+    // trapFocus set to false allows tabbing through the buttons
     ,
     trapFocus: false
   }, /*#__PURE__*/React.createElement(Box, {
@@ -52,7 +50,6 @@ var TooltipButton = function TooltipButton(_ref) {
     color: "white"
   }, name))));
 };
-
 export var TrapFocus = function TrapFocus() {
   return (
     /*#__PURE__*/
@@ -70,10 +67,11 @@ export var TrapFocus = function TrapFocus() {
     }), /*#__PURE__*/React.createElement(TooltipButton, {
       icon: /*#__PURE__*/React.createElement(Achievement, null),
       name: "Achievement"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 TrapFocus.parameters = {
   chromatic: {
     disable: true

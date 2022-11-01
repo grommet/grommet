@@ -23,10 +23,11 @@ export var NColumnGrid = function NColumnGrid() {
       background: "brand"
     }, "Item 5"), /*#__PURE__*/React.createElement(Box, {
       background: "brand"
-    }, "Item 6")) // </Grommet>
-
+    }, "Item 6"))
+    // </Grommet>
   );
 };
+
 NColumnGrid.storyName = 'N-column layout';
 NColumnGrid.args = {
   full: true

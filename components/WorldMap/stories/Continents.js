@@ -2,18 +2,13 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Continents = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Continents = function Continents() {
   var _React$useState = _react["default"].useState(),
-      active = _React$useState[0],
-      setActive = _React$useState[1];
-
+    active = _React$useState[0],
+    setActive = _React$useState[1];
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
@@ -29,7 +24,6 @@ var Continents = function Continents() {
     margin: "large"
   }, "Africa"));
 };
-
 exports.Continents = Continents;
 var _default = {
   title: 'Visualizations/WorldMap/Continents'

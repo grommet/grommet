@@ -1,18 +1,14 @@
 import styled, { css } from 'styled-components';
 import { genericStyles, normalizeColor, textAlignStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
-
 var sizeStyle = function sizeStyle(props) {
   var size = props.size || 'medium';
   var data = props.theme.text[size];
-
   if (data) {
     return css(["font-size:", ";line-height:", ";"], data.size, data.height);
   }
-
   return css(["font-size:", ";line-height:normal;"], size);
 };
-
 var truncateStyle = "\n  white-space: nowrap;\n  max-width: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n";
 var colorStyle = css(["color:", ";"], function (props) {
   return normalizeColor(props.colorProp, props.theme);

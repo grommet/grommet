@@ -83,10 +83,11 @@ export var UnitsDataTable = function UnitsDataTable() {
       sortable: true,
       columns: sortableColumns,
       data: SORTABLE_DATA
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 UnitsDataTable.storyName = 'Units';
 export default {
   title: 'Visualizations/DataTable/Units'

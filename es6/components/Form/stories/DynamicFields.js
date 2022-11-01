@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Box, Button, CheckBox, Form, FormField, TextInput } from 'grommet';
 export var DynamicFields = function DynamicFields() {
   var _useState = useState(),
-      haveAlias = _useState[0],
-      setHaveAlias = _useState[1];
-
+    haveAlias = _useState[0],
+    setHaveAlias = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -61,10 +60,11 @@ export var DynamicFields = function DynamicFields() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 DynamicFields.storyName = 'Dynamic fields';
 DynamicFields.args = {
   full: true

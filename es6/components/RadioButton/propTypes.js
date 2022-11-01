@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     a11yTitle: PropTypes.string,
@@ -13,5 +12,4 @@ if (process.env.NODE_ENV !== 'production') {
     onChange: PropTypes.func
   };
 }
-
 export var RadioButtonPropTypes = PropType;

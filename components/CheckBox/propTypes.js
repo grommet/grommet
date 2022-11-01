@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports.CheckBoxPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _generalPropTypes = require("../../utils/general-prop-types");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     a11yTitle: _propTypes["default"].string,
@@ -27,6 +22,5 @@ if (process.env.NODE_ENV !== 'production') {
     indeterminate: _propTypes["default"].bool
   };
 }
-
 var CheckBoxPropTypes = PropType;
 exports.CheckBoxPropTypes = CheckBoxPropTypes;

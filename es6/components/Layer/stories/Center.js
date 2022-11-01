@@ -3,29 +3,23 @@ import { Trash } from "grommet-icons/es6/icons/Trash";
 import { Box, Button, Heading, Layer, Select, Text } from 'grommet';
 export var CenterLayer = function CenterLayer() {
   var _React$useState = React.useState(),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var _React$useState2 = React.useState(),
-      open2 = _React$useState2[0],
-      setOpen2 = _React$useState2[1];
-
+    open2 = _React$useState2[0],
+    setOpen2 = _React$useState2[1];
   var onOpen = function onOpen() {
     return setOpen(true);
   };
-
   var onClose = function onClose() {
     return setOpen(undefined);
   };
-
   var onOpen2 = function onOpen2() {
     return setOpen2(true);
   };
-
   var onClose2 = function onClose2() {
     return setOpen2(undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -99,10 +93,11 @@ export var CenterLayer = function CenterLayer() {
       label: "Close",
       onClick: onClose2,
       color: "dark-3"
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 CenterLayer.storyName = 'Center';
 CenterLayer.parameters = {
   chromatic: {

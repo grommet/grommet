@@ -2,27 +2,19 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ThinStory = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var RANGE_MIN = 0;
 var RANGE_MAX = 100;
-
 function Thin(_ref) {
   var _ref$initialRange = _ref.initialRange,
-      initialRange = _ref$initialRange === void 0 ? [0, 100] : _ref$initialRange,
-      label = _ref.label;
-
+    initialRange = _ref$initialRange === void 0 ? [0, 100] : _ref$initialRange,
+    label = _ref.label;
   var _useState = (0, _react.useState)(initialRange),
-      range = _useState[0],
-      setRange = _useState[1];
-
+    range = _useState[0],
+    setRange = _useState[1];
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "small",
     pad: "xlarge"
@@ -45,7 +37,6 @@ function Thin(_ref) {
     size: "small"
   }, range[0] + "% - " + range[1] + "%")));
 }
-
 var ThinStory = function ThinStory() {
   return (
     /*#__PURE__*/
@@ -55,11 +46,10 @@ var ThinStory = function ThinStory() {
       pad: "small"
     }, /*#__PURE__*/_react["default"].createElement(Thin, {
       label: "My Range Selector"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.ThinStory = ThinStory;
 ThinStory.storyName = 'Thin';
 var _default = {

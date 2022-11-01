@@ -24,7 +24,6 @@ var listData = [{
   entry: '29 TB (67.6 %)',
   action: 'Free'
 }];
-
 var TipContent = function TipContent(_ref) {
   var size = _ref.size;
   return /*#__PURE__*/React.createElement(Box, {
@@ -89,7 +88,6 @@ var TipContent = function TipContent(_ref) {
     }, datum.entry));
   }))));
 };
-
 export var ResponsiveTip = function ResponsiveTip() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme,

@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.DSTCalendar = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 // DSTCalendar has dates specifically chosen to identify issues with
 // crossing the daylight savings time boundary (from California).
 var DSTCalendar = function DSTCalendar() {
@@ -64,11 +60,10 @@ var DSTCalendar = function DSTCalendar() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
       date: "2019-03-15T06:00:01.409Z",
       bounds: ['2019-03-01', '2019-03-31']
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
-
 exports.DSTCalendar = DSTCalendar;
 DSTCalendar.storyName = 'Daylight savings time';
 var _default = {

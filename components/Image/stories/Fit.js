@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Fit = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Fit = function Fit() {
   return (
     /*#__PURE__*/
@@ -31,11 +27,10 @@ var Fit = function Fit() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg",
       fit: "cover"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.Fit = Fit;
 var _default = {
   title: 'Media/Image/Fit'

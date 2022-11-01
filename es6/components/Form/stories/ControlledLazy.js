@@ -11,9 +11,8 @@ var defaultValue = {
 };
 export var ControlledLazy = function ControlledLazy() {
   var _useState = useState(defaultValue),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   useEffect(function () {
     return setValue({
       name: 'initial',
@@ -116,10 +115,11 @@ export var ControlledLazy = function ControlledLazy() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 ControlledLazy.storyName = 'Controlled lazy';
 ControlledLazy.parameters = {
   // chromatic disabled because snapshot is the same as Controlled

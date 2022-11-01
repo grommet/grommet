@@ -1,9 +1,6 @@
 var _excluded = ["alignControls", "children", "flex", "justify", "messages", "responsive"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef, useCallback, useContext, useState, useEffect, useRef, useMemo } from 'react';
 import { Previous } from 'grommet-icons/icons/Previous';
 import { Next } from 'grommet-icons/icons/Next';
@@ -21,66 +18,54 @@ import { TabsPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext/AnalyticsContext';
 var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var alignControls = _ref.alignControls,
-      children = _ref.children,
-      flex = _ref.flex,
-      _ref$justify = _ref.justify,
-      justify = _ref$justify === void 0 ? 'center' : _ref$justify,
-      messages = _ref.messages,
-      _ref$responsive = _ref.responsive,
-      responsive = _ref$responsive === void 0 ? true : _ref$responsive,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    children = _ref.children,
+    flex = _ref.flex,
+    _ref$justify = _ref.justify,
+    justify = _ref$justify === void 0 ? 'center' : _ref$justify,
+    messages = _ref.messages,
+    _ref$responsive = _ref.responsive,
+    responsive = _ref$responsive === void 0 ? true : _ref$responsive,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
-
   var _useContext = useContext(MessageContext),
-      format = _useContext.format;
-
+    format = _useContext.format;
   var propsActiveIndex = rest.activeIndex,
-      onActive = rest.onActive;
-
+    onActive = rest.onActive;
   var _useState = useState(rest.activeIndex || 0),
-      activeIndex = _useState[0],
-      setActiveIndex = _useState[1];
-
+    activeIndex = _useState[0],
+    setActiveIndex = _useState[1];
   var _useState2 = useState(),
-      activeContent = _useState2[0],
-      setActiveContent = _useState2[1];
-
+    activeContent = _useState2[0],
+    setActiveContent = _useState2[1];
   var _useState3 = useState(),
-      activeTitle = _useState3[0],
-      setActiveTitle = _useState3[1];
-
+    activeTitle = _useState3[0],
+    setActiveTitle = _useState3[1];
   var _useState4 = useState(),
-      disableLeftArrow = _useState4[0],
-      setDisableLeftArrow = _useState4[1];
-
+    disableLeftArrow = _useState4[0],
+    setDisableLeftArrow = _useState4[1];
   var _useState5 = useState(),
-      disableRightArrow = _useState5[0],
-      setDisableRightArrow = _useState5[1];
-
+    disableRightArrow = _useState5[0],
+    setDisableRightArrow = _useState5[1];
   var _useState6 = useState(),
-      overflow = _useState6[0],
-      setOverflow = _useState6[1];
-
+    overflow = _useState6[0],
+    setOverflow = _useState6[1];
   var _useState7 = useState(-1),
-      focusIndex = _useState7[0],
-      setFocusIndex = _useState7[1];
-
+    focusIndex = _useState7[0],
+    setFocusIndex = _useState7[1];
   var headerRef = useRef();
   var size = useContext(ResponsiveContext);
   var sendAnalytics = useAnalytics();
-
   if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
     setActiveIndex(propsActiveIndex);
-  } // Safari v15.5 has an issue with scrolling when overflow='hidden'
+  }
+
+  // Safari v15.5 has an issue with scrolling when overflow='hidden'
   // and scroll-behavior='smooth'. For now we are detecting if the browser
   // is safari to workaround this issue. The issue should be resolved soon
   // and we can remove this. https://github.com/WebKit/WebKit/pull/1387
-
-
   var isSafari = typeof window !== 'undefined' ? /^((?!chrome|android).)*safari/i.test(window.navigator.userAgent) : true;
-  /* eslint-disable no-param-reassign */
 
+  /* eslint-disable no-param-reassign */
   delete rest.activeIndex;
   delete rest.onActive;
   /* eslint-enable no-param-reassign */
@@ -89,15 +74,14 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return React.Children.map(children, function () {
       return /*#__PURE__*/React.createRef();
     });
-  }, [children]); // check if tab is in view
+  }, [children]);
 
+  // check if tab is in view
   var isVisible = useCallback(function (index) {
     if (tabRefs[index].current) {
       var _headerRef$current;
-
       var tabRect = tabRefs[index].current.getBoundingClientRect();
       var headerRect = (_headerRef$current = headerRef.current) == null ? void 0 : _headerRef$current.getBoundingClientRect();
-
       if (tabRect && headerRect) {
         // the -1 and +1 allow a little leniency when calculating if a tab
         // is in view. Without the -1 and +1 a tab could be fully in view
@@ -105,7 +89,6 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
         return tabRect.left >= headerRect.left - 1 && tabRect.right <= headerRect.right + 1;
       }
     }
-
     return undefined;
   }, [headerRef, tabRefs]);
   var updateArrowState = useCallback(function () {
@@ -116,7 +99,6 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var tabRect = tabRefs[index].current.getBoundingClientRect();
     var headerRect = headerRef.current.getBoundingClientRect();
     var amountHidden = 0;
-
     if (tabRect.left >= headerRect.left && tabRect.left <= headerRect.right) {
       amountHidden = tabRect.width - (headerRect.right - tabRect.left);
     } else if (tabRect.right >= headerRect.left && tabRect.right <= headerRect.right) {
@@ -127,16 +109,14 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     } else if (tabRect.right <= headerRect.left) {
       amountHidden = headerRect.left - tabRect.left;
       amountHidden = 0 - amountHidden;
-    } // We are adding or subtracting 2 from amountHidden to
+    }
+    // We are adding or subtracting 2 from amountHidden to
     // ensure the focusIndicator is visible when navigating
     // by keyboard
-
-
     if (keyboard) {
       if (amountHidden < 0) amountHidden -= 2;
       if (amountHidden > 0) amountHidden += 2;
     }
-
     if (isSafari) {
       headerRef.current.scrollBy({
         left: amountHidden
@@ -146,13 +126,13 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
         left: amountHidden,
         behavior: 'smooth'
       });
-    } // wait for scroll animation to finish
+    }
+
+    // wait for scroll animation to finish
     // checks every 50 milliseconds for 1000 milliseconds
     // if the scroll animation has finished. Most scroll
     // animations will finish in 1000 milliseconds unless
     // the tab name is very long.
-
-
     if (isSafari) {
       updateArrowState();
     } else {
@@ -168,13 +148,11 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }, 1000);
     }
   }, [tabRefs, headerRef, isVisible, updateArrowState, isSafari]);
-
   var moveByArrowKey = function moveByArrowKey(direction) {
     var previous = direction === 'previous';
     var index = direction === 'previous' ? 0 : tabRefs.length - 1;
     var scrolledToIndex;
     var moveBy = theme.tabs.step[size] - 1 || 0;
-
     while (scrolledToIndex === undefined && (previous && index < tabRefs.length - 1 || !previous && index > 0)) {
       if (!isVisible(index) && (previous && isVisible(index + 1) || !previous && isVisible(index - 1))) {
         if (previous) {
@@ -193,11 +171,9 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
           scrolledToIndex = tabRefs.length - 1;
         }
       }
-
       index = previous ? index + 1 : index - 1;
     }
   };
-
   useEffect(function () {
     // if the active tab isn't visible scroll to it
     if (overflow && tabRefs && tabRefs[activeIndex].current && !isVisible(activeIndex)) scrollTo(activeIndex, true);
@@ -223,10 +199,8 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
       if (headerRef.current.scrollWidth > headerRef.current.offsetWidth) {
         setOverflow(true);
       } else setOverflow(false);
-
       updateArrowState();
     };
-
     onResize();
     window.addEventListener('resize', onResize);
     return function () {
@@ -239,16 +213,13 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
         type: 'activateTab',
         element: tabRefs[nextIndex].current
       });
-
       if (propsActiveIndex === undefined) {
         setActiveIndex(nextIndex);
       }
-
       if (onActive) {
         onActive(nextIndex);
       }
     };
-
     return {
       activeIndex: activeIndex,
       active: activeIndex === index,
@@ -275,7 +246,6 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }) : child);
   });
   var tabsHeaderStyles = {};
-
   if (theme.tabs.header && theme.tabs.header.border) {
     var borderColor = theme.tabs.header.border.color || theme.global.control.border.color;
     borderColor = normalizeColor(borderColor, theme);
@@ -286,7 +256,6 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
       color: borderColor
     };
   }
-
   var tabContentTitle = (activeTitle || '') + " " + format({
     id: 'tabs.tabContents',
     messages: messages
@@ -304,7 +273,8 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     direction: overflow ? 'row' : 'column'
   }, tabsHeaderStyles), overflow && /*#__PURE__*/React.createElement(Button, {
     a11yTitle: "Previous Tab",
-    disabled: disableLeftArrow // removed from tabIndex, button is redundant for keyboard users
+    disabled: disableLeftArrow
+    // removed from tabIndex, button is redundant for keyboard users
     ,
     tabIndex: -1,
     onClick: function onClick() {
@@ -332,7 +302,8 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     margin: overflow ? '-2px' : undefined
   }, tabs), overflow && /*#__PURE__*/React.createElement(Button, {
     a11yTitle: "Next Tab",
-    disabled: disableRightArrow // removed from tabIndex, button is redundant for keyboard users
+    disabled: disableRightArrow
+    // removed from tabIndex, button is redundant for keyboard users
     ,
     tabIndex: -1,
     onClick: function onClick() {

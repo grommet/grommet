@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Text, Heading } from 'grommet';
 var wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
-/* eslint-disable max-len */
 
+/* eslint-disable max-len */
 export var WordBreak = function WordBreak() {
   return /*#__PURE__*/React.createElement(React.Fragment, null, wordBreakValues.map(function (value) {
     return /*#__PURE__*/React.createElement(Box, {
@@ -17,7 +17,6 @@ export var WordBreak = function WordBreak() {
   }));
 };
 /* eslint-enable max-len */
-
 WordBreak.storyName = 'Word break';
 export default {
   title: 'Type/Text/Word break'

@@ -8,13 +8,12 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { normalizeColor } from '../../utils';
-
 var Searcher = function Searcher(_ref) {
   var filtering = _ref.filtering,
-      filters = _ref.filters,
-      onFilter = _ref.onFilter,
-      onFiltering = _ref.onFiltering,
-      property = _ref.property;
+    filters = _ref.filters,
+    onFilter = _ref.onFilter,
+    onFiltering = _ref.onFiltering,
+    property = _ref.property;
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var inputRef = useRef();
   var needsFocus = filtering === property;
@@ -64,7 +63,6 @@ var Searcher = function Searcher(_ref) {
     }
   }));
 };
-
 Searcher.displayName = 'Searcher';
 Searcher.defaultProps = {};
 Object.setPrototypeOf(Searcher.defaultProps, defaultProps);

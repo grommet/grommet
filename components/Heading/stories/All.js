@@ -2,32 +2,24 @@
 
 exports.__esModule = true;
 exports["default"] = exports.All = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var headingFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
 var longWord = 'Supercalifragilisticexpialidocious';
-
 var H = function H(_ref) {
   var level = _ref.level,
-      size = _ref.size;
+    size = _ref.size;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: level,
     size: size
   }, "Heading " + level + " " + size);
 };
-
 H.propTypes = {
   level: _propTypes["default"].number.isRequired,
   size: _propTypes["default"].string.isRequired
 };
-
 var Set = function Set(_ref2) {
   var size = _ref2.size;
   return /*#__PURE__*/_react["default"].createElement("div", null, [1, 2, 3, 4, 5, 6].map(function (level) {
@@ -38,11 +30,9 @@ var Set = function Set(_ref2) {
     });
   }));
 };
-
 Set.propTypes = {
   size: _propTypes["default"].string.isRequired
 };
-
 var All = function All() {
   return (
     /*#__PURE__*/
@@ -63,11 +53,10 @@ var All = function All() {
       fill: true
     }, headingFiller), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
       fill: true
-    }, longWord)) // </Grommet>
-
+    }, longWord))
+    // </Grommet>
   );
 };
-
 exports.All = All;
 var _default = {
   title: 'Type/Heading/All'

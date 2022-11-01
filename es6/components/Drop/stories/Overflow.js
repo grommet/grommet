@@ -4,27 +4,21 @@ var align = {
   top: 'bottom',
   left: 'left'
 };
-
 var OverflowDrop = function OverflowDrop() {
   var targetRef = useRef();
   var inputRef = useRef();
-
   var _useState = useState(undefined),
-      date = _useState[0],
-      setDate = _useState[1];
-
+    date = _useState[0],
+    setDate = _useState[1];
   var _useState2 = useState(false),
-      showCalendar = _useState2[0],
-      setShowCalendar = _useState2[1];
-
+    showCalendar = _useState2[0],
+    setShowCalendar = _useState2[1];
   var onSelect = function onSelect(nextDate) {
     setDate(nextDate !== date ? nextDate : undefined);
     setShowCalendar(false);
   };
-
   var _useState3 = useState(false),
-      setShowDrop = _useState3[1];
-
+    setShowDrop = _useState3[1];
   useEffect(function () {
     return setShowDrop(true);
   }, []);
@@ -74,8 +68,8 @@ var OverflowDrop = function OverflowDrop() {
       date: date,
       onSelect: onSelect,
       size: "small"
-    })))))) // </Grommet>
-
+    }))))))
+    // </Grommet>
   );
 };
 

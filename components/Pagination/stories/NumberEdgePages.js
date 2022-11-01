@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.NumberEdgePages = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var NumberEdgePages = function NumberEdgePages() {
   return (
     /*#__PURE__*/
@@ -25,11 +21,10 @@ var NumberEdgePages = function NumberEdgePages() {
       numberItems: 237,
       page: 10,
       numberEdgePages: 0
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.NumberEdgePages = NumberEdgePages;
 NumberEdgePages.storyName = 'Number edge pages';
 var _default = {

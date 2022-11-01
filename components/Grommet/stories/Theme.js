@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Theme = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var customTheme = {
   global: {
     colors: {
@@ -18,7 +13,6 @@ var customTheme = {
     }
   }
 };
-
 var Theme = function Theme() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
@@ -30,7 +24,6 @@ var Theme = function Theme() {
     color: "custom"
   })));
 };
-
 exports.Theme = Theme;
 var _default = {
   title: 'Utilities/Grommet/Theme'

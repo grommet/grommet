@@ -5,21 +5,17 @@ import { Box, Button, FormField, Heading, Layer, Select, TextArea, TextInput } f
 var suggestions = ['alpha', 'beta'];
 export var FormLayer = function FormLayer() {
   var _React$useState = React.useState(false),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var _React$useState2 = React.useState(''),
-      select = _React$useState2[0],
-      setSelect = _React$useState2[1];
-
+    select = _React$useState2[0],
+    setSelect = _React$useState2[1];
   var onOpen = function onOpen() {
     return setOpen(true);
   };
-
   var onClose = function onClose() {
     return setOpen(undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -86,10 +82,11 @@ export var FormLayer = function FormLayer() {
       label: "Submit",
       onClick: onClose,
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 FormLayer.storyName = 'Form';
 FormLayer.parameters = {
   chromatic: {

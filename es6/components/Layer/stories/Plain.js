@@ -19,10 +19,11 @@ export var PlainLayer = function PlainLayer() {
       }
     }, /*#__PURE__*/React.createElement(Text, {
       color: "accent-2"
-    }, "Text")))) // </Grommet>
-
+    }, "Text"))))
+    // </Grommet>
   );
 };
+
 PlainLayer.storyName = 'Plain';
 PlainLayer.args = {
   full: true

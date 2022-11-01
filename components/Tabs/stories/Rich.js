@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.TabsWithIcons = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var TabsWithIcons = function TabsWithIcons() {
   return (
     /*#__PURE__*/
@@ -39,11 +34,10 @@ var TabsWithIcons = function TabsWithIcons() {
       icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Notification, null)
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       margin: "small"
-    }, "Notifications will show here.")))) // </Grommet>
-
+    }, "Notifications will show here."))))
+    // </Grommet>
   );
 };
-
 exports.TabsWithIcons = TabsWithIcons;
 TabsWithIcons.storyName = 'Tabs with icons';
 var _default = {

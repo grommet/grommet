@@ -2,16 +2,12 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ItemWithIcon = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 // This story offers a suggested workaround for issue #3209.
+
 var IconItemsMenu = function IconItemsMenu() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
@@ -46,11 +42,9 @@ var IconItemsMenu = function IconItemsMenu() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormDown, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Menu with Icon on the left"))));
 };
-
 var ItemWithIcon = function ItemWithIcon() {
   return /*#__PURE__*/_react["default"].createElement(IconItemsMenu, null);
 };
-
 exports.ItemWithIcon = ItemWithIcon;
 ItemWithIcon.storyName = 'Item with icon';
 var _default = {

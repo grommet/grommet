@@ -2,31 +2,18 @@
 
 exports.__esModule = true;
 exports.StyledPlaceholder = exports.StyledDataTableRow = exports.StyledDataTableHeader = exports.StyledDataTableFooter = exports.StyledDataTableCell = exports.StyledDataTableBody = exports.StyledDataTable = exports.StyledContainer = void 0;
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
-
 var _utils = require("../../utils");
-
 var _defaultProps = require("../../default-props");
-
 var _Box = require("../Box");
-
 var _TableRow = require("../TableRow");
-
 var _Table = require("../Table");
-
 var _TableBody = require("../TableBody");
-
 var _TableCell = require("../TableCell");
-
 var _TableHeader = require("../TableHeader");
-
 var _TableFooter = require("../TableFooter");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 // border-collapse: separate is needed so pinned header/footer borders work
 var StyledDataTable = (0, _styledComponents["default"])(_Table.Table).withConfig({
   displayName: "StyledDataTable",
@@ -38,8 +25,9 @@ var StyledDataTable = (0, _styledComponents["default"])(_Table.Table).withConfig
 });
 exports.StyledDataTable = StyledDataTable;
 StyledDataTable.defaultProps = {};
-Object.setPrototypeOf(StyledDataTable.defaultProps, _defaultProps.defaultProps); // when paginated, this wraps the data table and pagination component
+Object.setPrototypeOf(StyledDataTable.defaultProps, _defaultProps.defaultProps);
 
+// when paginated, this wraps the data table and pagination component
 var StyledContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "StyledDataTable__StyledContainer",
   componentId: "sc-xrlyjm-1"
@@ -66,8 +54,9 @@ var StyledDataTableRow = (0, _styledComponents["default"])(_TableRow.TableRow).w
 });
 exports.StyledDataTableRow = StyledDataTableRow;
 StyledDataTableRow.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableRow.defaultProps, _defaultProps.defaultProps); // focus styling other than outline doesn't work on <tbody />
+Object.setPrototypeOf(StyledDataTableRow.defaultProps, _defaultProps.defaultProps);
 
+// focus styling other than outline doesn't work on <tbody />
 var StyledDataTableBody = (0, _styledComponents["default"])(_TableBody.TableBody).withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
   componentId: "sc-xrlyjm-3"

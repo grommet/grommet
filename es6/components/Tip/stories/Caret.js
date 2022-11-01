@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Button, Heading, Text, Tip } from 'grommet';
 import { Trash } from "grommet-icons/es6/icons/Trash";
-
 var TipContent = function TipContent(_ref) {
   var message = _ref.message;
   return /*#__PURE__*/React.createElement(Box, {
@@ -23,7 +22,6 @@ var TipContent = function TipContent(_ref) {
     round: "xsmall"
   }, /*#__PURE__*/React.createElement(Text, null, message)));
 };
-
 export var Caret = function Caret() {
   return (
     /*#__PURE__*/
@@ -56,10 +54,11 @@ export var Caret = function Caret() {
     }, /*#__PURE__*/React.createElement(Button, {
       icon: /*#__PURE__*/React.createElement(Trash, null),
       plain: false
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 Caret.args = {
   full: true
 };

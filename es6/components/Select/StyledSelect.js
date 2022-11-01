@@ -10,8 +10,9 @@ export var StyledContainer = styled.div.withConfig({
   return props.dropHeight ? sizeStyle('max-height', props.dropHeight, props.theme) : 'max-height: inherit;';
 }, function (props) {
   return props.theme.select.container && props.theme.select.container.extend;
-}); // position relative is so scroll can be managed correctly
+});
 
+// position relative is so scroll can be managed correctly
 export var OptionsContainer = styled.div.withConfig({
   displayName: "StyledSelect__OptionsContainer",
   componentId: "sc-znp66n-1"
@@ -45,10 +46,8 @@ export var StyledSelectDropButton = styled(DropButton).withConfig({
   return !props.plainSelect && controlBorderStyle;
 }, function (props) {
   var _props$theme$select, _props$theme$select$c;
-
   return (_props$theme$select = props.theme.select) == null ? void 0 : (_props$theme$select$c = _props$theme$select.control) == null ? void 0 : _props$theme$select$c.extend;
 }, function (props) {
   var _props$theme$select2, _props$theme$select2$;
-
   return props.open && ((_props$theme$select2 = props.theme.select) == null ? void 0 : (_props$theme$select2$ = _props$theme$select2.control) == null ? void 0 : _props$theme$select2$.open);
 });

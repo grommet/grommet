@@ -1,12 +1,10 @@
 import styled, { css } from 'styled-components';
 import { baseStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
-
 var fullStyle = function fullStyle(full) {
   if (full === 'min') return css(["min-height:100vh;"]);
   return css(["width:100vw;height:100vh;overflow:auto;"]);
 };
-
 var StyledGrommet = styled.div.withConfig({
   displayName: "StyledGrommet",
   componentId: "sc-19lkkz7-0"

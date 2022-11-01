@@ -19,13 +19,11 @@ var letterSpace = {
     large: '-0.47px'
   }
 };
-
 var letterSpacing = function letterSpacing(_ref) {
   var level = _ref.level,
-      size = _ref.size;
+    size = _ref.size;
   return level && size ? "letter-spacing: " + letterSpace[level][size] : '';
 };
-
 var customTheme = deepMerge(grommet, {
   heading: {
     extend: function extend(props) {

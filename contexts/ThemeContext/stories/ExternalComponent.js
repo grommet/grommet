@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ExternalComponentWithTheme = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _themes = require("grommet/themes");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var ExternalComponentWithTheme = function ExternalComponentWithTheme() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
@@ -30,7 +25,6 @@ var ExternalComponentWithTheme = function ExternalComponentWithTheme() {
     }, "This component is leveraging the grommet theme capabilities although it is not a grommet component"));
   }));
 };
-
 exports.ExternalComponentWithTheme = ExternalComponentWithTheme;
 ExternalComponentWithTheme.storyName = 'External components';
 var _default = {

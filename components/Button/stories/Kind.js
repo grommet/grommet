@@ -2,17 +2,11 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Kind = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var darks = [false, true];
 var kinds = [{
   name: 'default',
@@ -56,7 +50,6 @@ var contents = [{
     color: "orange"
   }, "label"))
 }];
-
 var Kind = function Kind() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
@@ -90,7 +83,8 @@ var Kind = function Kind() {
             },
             pad: "small"
           }, contents.map(function (content, index2) {
-            return /*#__PURE__*/_react["default"].createElement(_grommet.Button // eslint-disable-next-line react/no-array-index-key
+            return /*#__PURE__*/_react["default"].createElement(_grommet.Button
+            // eslint-disable-next-line react/no-array-index-key
             , _extends({
               key: index2
             }, kind.props, content, state));
@@ -100,7 +94,6 @@ var Kind = function Kind() {
     }));
   })));
 };
-
 exports.Kind = Kind;
 var _default = {
   title: 'Controls/Button/Kind'

@@ -2,28 +2,18 @@
 
 exports.__esModule = true;
 exports["default"] = exports.All = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 var _excluded = ["id"],
-    _excluded2 = ["color"];
-
+  _excluded2 = ["color"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var Node = function Node(_ref) {
   var id = _ref.id,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, _extends({
     id: id,
     basis: "xxsmall",
@@ -33,12 +23,10 @@ var Node = function Node(_ref) {
     background: "light-4"
   }, rest));
 };
-
 var connection = function connection(fromTarget, toTarget, _temp) {
   var _ref2 = _temp === void 0 ? {} : _temp,
-      color = _ref2.color,
-      rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-
+    color = _ref2.color,
+    rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
   return _extends({
     fromTarget: fromTarget,
     toTarget: toTarget,
@@ -48,32 +36,25 @@ var connection = function connection(fromTarget, toTarget, _temp) {
     type: 'rectilinear'
   }, rest);
 };
-
 var Components = function Components() {
   var _useState = (0, _react.useState)(true),
-      checkBox = _useState[0],
-      setCheckBox = _useState[1];
-
+    checkBox = _useState[0],
+    setCheckBox = _useState[1];
   var _useState2 = (0, _react.useState)(''),
-      textInput = _useState2[0],
-      setTextInput = _useState2[1];
-
+    textInput = _useState2[0],
+    setTextInput = _useState2[1];
   var _useState3 = (0, _react.useState)(''),
-      maskedInput = _useState3[0],
-      setMaskedInput = _useState3[1];
-
+    maskedInput = _useState3[0],
+    setMaskedInput = _useState3[1];
   var _useState4 = (0, _react.useState)('RadioButton 1'),
-      radioButton = _useState4[0],
-      setRadioButton = _useState4[1];
-
+    radioButton = _useState4[0],
+    setRadioButton = _useState4[1];
   var _useState5 = (0, _react.useState)([1, 2]),
-      rangeSelector = _useState5[0],
-      setRangeSelector = _useState5[1];
-
+    rangeSelector = _useState5[0],
+    setRangeSelector = _useState5[1];
   var _useState6 = (0, _react.useState)(0),
-      tabIndex = _useState6[0],
-      setTabIndex = _useState6[1];
-
+    tabIndex = _useState6[0],
+    setTabIndex = _useState6[1];
   var content = [/*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     key: "type",
     align: "start",
@@ -341,11 +322,9 @@ var Components = function Components() {
     gap: "medium"
   }, content));
 };
-
 var All = function All() {
   return /*#__PURE__*/_react["default"].createElement(Components, null);
 };
-
 exports.All = All;
 var _default = {
   title: 'All'

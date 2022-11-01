@@ -1,9 +1,6 @@
 var _excluded = ["children", "components", "options", "theme"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef, Fragment } from 'react';
 import Markdown from 'markdown-to-jsx';
 import { deepMerge } from '../../utils';
@@ -20,14 +17,12 @@ import { TableRow } from '../TableRow';
 import { MarkdownPropTypes } from './propTypes';
 var GrommetMarkdown = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
-      components = _ref.components,
-      options = _ref.options,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    components = _ref.components,
+    options = _ref.options,
+    theme = _ref.theme,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var heading = [1, 2, 3, 4].reduce(function (obj, level) {
     var result = _extends({}, obj);
-
     result["h" + level] = {
       component: Heading,
       props: {
@@ -70,9 +65,10 @@ var GrommetMarkdown = /*#__PURE__*/forwardRef(function (_ref, ref) {
     tr: {
       component: TableRow
     }
-  }, heading, components, options && options.overrides); // we use Fragment as the wrapper so we can assign the ref with the div
-  // wrapper can still be overridden with the options.
+  }, heading, components, options && options.overrides);
 
+  // we use Fragment as the wrapper so we can assign the ref with the div
+  // wrapper can still be overridden with the options.
   return /*#__PURE__*/React.createElement("div", _extends({
     ref: ref
   }, rest), /*#__PURE__*/React.createElement(Markdown, {

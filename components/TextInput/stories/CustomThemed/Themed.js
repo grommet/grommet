@@ -2,17 +2,11 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Themed = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _themes = require("grommet/themes");
-
 var _utils = require("grommet/utils");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var suggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
@@ -46,20 +40,16 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-
 var Themed = function Themed() {
   var _React$useState = _react["default"].useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var onChange = function onChange(event) {
     return setValue(event.target.value);
   };
-
   var onSelect = function onSelect(event) {
     return setValue(event.suggestion);
   };
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: customTheme
@@ -83,7 +73,6 @@ var Themed = function Themed() {
     "aria-label": "Input Text"
   }))));
 };
-
 exports.Themed = Themed;
 var _default = {
   title: 'Input/TextInput/Custom Themed/Themed'

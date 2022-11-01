@@ -2,22 +2,16 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Modal = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Modal = function Modal() {
   var _React$useState = _react["default"].useState(),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var _React$useState2 = _react["default"].useState(false),
-      isDataLoaded = _React$useState2[0],
-      setIsDataLoaded = _React$useState2[1];
-
+    isDataLoaded = _React$useState2[0],
+    setIsDataLoaded = _React$useState2[1];
   var onOpen = function onOpen() {
     setOpen(true);
     setTimeout(function () {
@@ -25,7 +19,6 @@ var Modal = function Modal() {
       setIsDataLoaded(true);
     }, 2000);
   };
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
       vertical: 'xlarge'
@@ -50,7 +43,6 @@ var Modal = function Modal() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Spinner, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Loading..."))));
 };
-
 exports.Modal = Modal;
 Modal.parameters = {
   chromatic: {

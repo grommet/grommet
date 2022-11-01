@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import { Box, CheckBoxGroup } from 'grommet';
 export var InitialValues = function InitialValues() {
   var _useState = useState(['First', 'Second']),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   var _useState2 = useState(['M']),
-      value2 = _useState2[0],
-      setValue2 = _useState2[1];
-
+    value2 = _useState2[0],
+    setValue2 = _useState2[1];
   return /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     gap: "large"
@@ -26,7 +24,7 @@ export var InitialValues = function InitialValues() {
     value: value2,
     onChange: function onChange(_ref) {
       var nextValue = _ref.value,
-          option = _ref.option;
+        option = _ref.option;
       console.log('nextValue: ', nextValue);
       console.log('option: ', option);
       setValue2(nextValue);

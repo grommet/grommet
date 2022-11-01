@@ -18,10 +18,11 @@ export var Size = function Size() {
     })), /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, null, "Large"), /*#__PURE__*/React.createElement(Pagination, {
       numberItems: 237,
       size: "large"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Controls/Pagination/Size'
 };

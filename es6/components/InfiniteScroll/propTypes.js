@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     children: PropTypes.func,
@@ -12,5 +11,4 @@ if (process.env.NODE_ENV !== 'production') {
     step: PropTypes.number
   };
 }
-
 export var InfiniteScrollPropTypes = PropType;

@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.FieldWithChildren = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var passwordRulesStrong = [{
   regexp: /(?=.*?[A-Z])/,
   message: 'One uppercase letter',
@@ -26,7 +22,6 @@ var passwordRulesStrong = [{
   message: 'At least 8 characters',
   status: 'error'
 }];
-
 var FieldWithChildren = function FieldWithChildren() {
   return (
     /*#__PURE__*/
@@ -48,7 +43,7 @@ var FieldWithChildren = function FieldWithChildren() {
       },
       onValidate: function onValidate(_ref2) {
         var errors = _ref2.errors,
-            infos = _ref2.infos;
+          infos = _ref2.infos;
         return console.log('Validate', errors, infos);
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
@@ -131,11 +126,10 @@ var FieldWithChildren = function FieldWithChildren() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.FieldWithChildren = FieldWithChildren;
 FieldWithChildren.storyName = 'Field with children';
 FieldWithChildren.args = {

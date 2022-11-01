@@ -18,7 +18,7 @@ export var CustomValue = function CustomValue() {
       size: "3xl"
     }, "Custom Value"), /*#__PURE__*/React.createElement(NameValueList, null, Object.entries(statusData).map(function (_ref) {
       var name = _ref[0],
-          value = _ref[1];
+        value = _ref[1];
       var icon;
       if (value === 'Ok') icon = /*#__PURE__*/React.createElement(StatusGoodSmall, {
         color: "green",
@@ -45,7 +45,7 @@ export var CustomValue = function CustomValue() {
       size: "3xl"
     }, "Custom Multi-Line Value"), /*#__PURE__*/React.createElement(NameValueList, null, Object.entries(languageData).map(function (_ref2) {
       var name = _ref2[0],
-          value = _ref2[1];
+        value = _ref2[1];
       var icon;
       if (name === 'Languages') icon = /*#__PURE__*/React.createElement(Language, {
         size: "small"
@@ -67,10 +67,11 @@ export var CustomValue = function CustomValue() {
       }, icon), /*#__PURE__*/React.createElement(Text, {
         color: "text-strong"
       }, value)));
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/NameValueList/Custom Value'
 };

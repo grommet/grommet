@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Multiple = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Multiple = function Multiple() {
   return (
     /*#__PURE__*/
@@ -39,11 +35,10 @@ var Multiple = function Multiple() {
       style: {
         height: '300px'
       }
-    }, "Panel 3 contents")))) // </Grommet>
-
+    }, "Panel 3 contents"))))
+    // </Grommet>
   );
 };
-
 exports.Multiple = Multiple;
 Multiple.parameters = {
   chromatic: {

@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Responsive = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Responsive = function Responsive() {
   return (
     /*#__PURE__*/
@@ -62,11 +57,10 @@ var Responsive = function Responsive() {
         href: "https://github.com/grommet/grommet/issues",
         label: "Feedback"
       }));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Responsive = Responsive;
 var _default = {
   title: 'Layout/Header/Responsive'

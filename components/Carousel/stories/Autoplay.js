@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Autoplay = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Autoplay = function Autoplay() {
   return (
     /*#__PURE__*/
@@ -43,11 +38,10 @@ var Autoplay = function Autoplay() {
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
       color: "light-2",
       size: "xlarge"
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
-
 exports.Autoplay = Autoplay;
 var _default = {
   title: 'Media/Carousel/Autoplay'

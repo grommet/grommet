@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Bar = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Bar = function Bar() {
   var value = 30;
   return (
@@ -21,11 +17,10 @@ var Bar = function Bar() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
       type: "bar",
       value: value
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Bar = Bar;
 var _default = {
   title: 'Visualizations/Meter/Bar'

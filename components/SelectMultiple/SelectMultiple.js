@@ -2,47 +2,26 @@
 
 exports.__esModule = true;
 exports.SelectMultiple = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
-
 var _utils = require("../../utils");
-
 var _defaultProps = require("../../default-props");
-
 var _Box = require("../Box");
-
 var _DropButton = require("../DropButton");
-
 var _Keyboard = require("../Keyboard");
-
 var _FormContext = require("../Form/FormContext");
-
 var _SelectMultipleValue = require("./SelectMultipleValue");
-
 var _SelectMultipleContainer = require("./SelectMultipleContainer");
-
 var _StyledSelect = require("../Select/StyledSelect");
-
 var _utils2 = require("../Select/utils");
-
 var _DefaultSelectTextInput = require("../Select/DefaultSelectTextInput");
-
 var _MessageContext = require("../../contexts/MessageContext");
-
 var _propTypes = require("./propTypes");
-
 var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "help", "id", "icon", "labelKey", "limit", "margin", "messages", "name", "onBlur", "onChange", "onClick", "onClose", "onFocus", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "size", "sortSelectedOnClose", "value", "valueKey", "valueLabel", "showSelectedInline", "width"];
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var StyledSelectBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "SelectMultiple__StyledSelectBox",
   componentId: "sc-18zwyth-0"
@@ -50,75 +29,71 @@ var StyledSelectBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   return !props.plainSelect && _utils.controlBorderStyle;
 }, function (props) {
   var _props$theme$select, _props$theme$select$c;
-
   return (_props$theme$select = props.theme.select) == null ? void 0 : (_props$theme$select$c = _props$theme$select.control) == null ? void 0 : _props$theme$select$c.extend;
 }, function (props) {
   var _props$theme$select$c2;
-
   return props.open && ((_props$theme$select$c2 = props.theme.select.control) == null ? void 0 : _props$theme$select$c2.open);
 });
 _StyledSelect.StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(_StyledSelect.StyledSelectDropButton.defaultProps, _defaultProps.defaultProps);
 var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
-      ariaLabel = _ref['aria-label'],
-      alignSelf = _ref.alignSelf,
-      children = _ref.children,
-      defaultValue = _ref.defaultValue,
-      disabled = _ref.disabled,
-      disabledKey = _ref.disabledKey,
-      dropAlign = _ref.dropAlign,
-      dropHeight = _ref.dropHeight,
-      dropProps = _ref.dropProps,
-      dropTarget = _ref.dropTarget,
-      emptySearchMessage = _ref.emptySearchMessage,
-      focusIndicator = _ref.focusIndicator,
-      gridArea = _ref.gridArea,
-      help = _ref.help,
-      id = _ref.id,
-      icon = _ref.icon,
-      labelKey = _ref.labelKey,
-      limit = _ref.limit,
-      margin = _ref.margin,
-      messages = _ref.messages,
-      name = _ref.name,
-      onBlur = _ref.onBlur,
-      onChange = _ref.onChange,
-      onClick = _ref.onClick,
-      onClose = _ref.onClose,
-      onFocus = _ref.onFocus,
-      onKeyDown = _ref.onKeyDown,
-      onMore = _ref.onMore,
-      onOpen = _ref.onOpen,
-      onSearch = _ref.onSearch,
-      openProp = _ref.open,
-      optionsProp = _ref.options,
-      placeholder = _ref.placeholder,
-      plain = _ref.plain,
-      replace = _ref.replace,
-      searchPlaceholder = _ref.searchPlaceholder,
-      size = _ref.size,
-      _ref$sortSelectedOnCl = _ref.sortSelectedOnClose,
-      sortSelectedOnClose = _ref$sortSelectedOnCl === void 0 ? true : _ref$sortSelectedOnCl,
-      valueProp = _ref.value,
-      valueKey = _ref.valueKey,
-      valueLabel = _ref.valueLabel,
-      _ref$showSelectedInli = _ref.showSelectedInline,
-      showSelectedInline = _ref$showSelectedInli === void 0 ? false : _ref$showSelectedInli,
-      width = _ref.width,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    ariaLabel = _ref['aria-label'],
+    alignSelf = _ref.alignSelf,
+    children = _ref.children,
+    defaultValue = _ref.defaultValue,
+    disabled = _ref.disabled,
+    disabledKey = _ref.disabledKey,
+    dropAlign = _ref.dropAlign,
+    dropHeight = _ref.dropHeight,
+    dropProps = _ref.dropProps,
+    dropTarget = _ref.dropTarget,
+    emptySearchMessage = _ref.emptySearchMessage,
+    focusIndicator = _ref.focusIndicator,
+    gridArea = _ref.gridArea,
+    help = _ref.help,
+    id = _ref.id,
+    icon = _ref.icon,
+    labelKey = _ref.labelKey,
+    limit = _ref.limit,
+    margin = _ref.margin,
+    messages = _ref.messages,
+    name = _ref.name,
+    onBlur = _ref.onBlur,
+    onChange = _ref.onChange,
+    onClick = _ref.onClick,
+    onClose = _ref.onClose,
+    onFocus = _ref.onFocus,
+    onKeyDown = _ref.onKeyDown,
+    onMore = _ref.onMore,
+    onOpen = _ref.onOpen,
+    onSearch = _ref.onSearch,
+    openProp = _ref.open,
+    optionsProp = _ref.options,
+    placeholder = _ref.placeholder,
+    plain = _ref.plain,
+    replace = _ref.replace,
+    searchPlaceholder = _ref.searchPlaceholder,
+    size = _ref.size,
+    _ref$sortSelectedOnCl = _ref.sortSelectedOnClose,
+    sortSelectedOnClose = _ref$sortSelectedOnCl === void 0 ? true : _ref$sortSelectedOnCl,
+    valueProp = _ref.value,
+    valueKey = _ref.valueKey,
+    valueLabel = _ref.valueLabel,
+    _ref$showSelectedInli = _ref.showSelectedInline,
+    showSelectedInline = _ref$showSelectedInli === void 0 ? false : _ref$showSelectedInli,
+    width = _ref.width,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-
   var inputRef = (0, _react.useRef)();
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
-
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
-      format = _useContext.format;
-
+    format = _useContext.format;
   var selectBoxRef = (0, _react.useRef)();
   var dropButtonRef = (0, _utils.useForwardedRef)(ref);
-  var usingKeyboard = (0, _utils.useKeyboard)(); // value is used for what we receive in valueProp and the basis for
+  var usingKeyboard = (0, _utils.useKeyboard)();
+
+  // value is used for what we receive in valueProp and the basis for
   // what we send with onChange
   // When 'valueKey' sets 'reduce', the value(s) here should match
   // what the 'valueKey' would return for the corresponding
@@ -126,12 +101,14 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   // Otherwise, the value(s) should match the selected options.
 
   var _formContext$useFormI = formContext.useFormInput({
-    name: name,
-    value: valueProp,
-    initialValue: defaultValue || ''
-  }),
-      value = _formContext$useFormI[0],
-      setValue = _formContext$useFormI[1]; // normalizedValue is the value mapped with any valueKey applied
+      name: name,
+      value: valueProp,
+      initialValue: defaultValue || ''
+    }),
+    value = _formContext$useFormI[0],
+    setValue = _formContext$useFormI[1];
+
+  // normalizedValue is the value mapped with any valueKey applied
   // When the options array contains objects, this property indicates how
   // to retrieve the value of each option.
   // If a string is provided, it is used as the key to retrieve a
@@ -140,35 +117,31 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   // return the value.
   // If reduce is true, this value will be used for the 'value'
   // delivered via 'onChange'.
-
-
   var normalizedValue = (0, _react.useMemo)(function () {
     return (0, _utils2.getNormalizedValue)(value, valueKey);
-  }, [value, valueKey]); // search input value
-
+  }, [value, valueKey]);
+  // search input value
   var _useState = (0, _react.useState)(),
-      search = _useState[0],
-      setSearch = _useState[1]; // All select option indices and values
-
-
+    search = _useState[0],
+    setSearch = _useState[1];
+  // All select option indices and values
   var _useState2 = (0, _react.useState)(optionsProp),
-      allOptions = _useState2[0],
-      setAllOptions = _useState2[1];
-
+    allOptions = _useState2[0],
+    setAllOptions = _useState2[1];
   var _useState3 = (0, _react.useState)(),
-      orderedOptions = _useState3[0],
-      setOrderedOptions = _useState3[1]; // Track changes to options property, except when options are being
+    orderedOptions = _useState3[0],
+    setOrderedOptions = _useState3[1];
+  // Track changes to options property, except when options are being
   // updated due to search activity. Allows option's initial index value
   // to be referenced when filtered by search.
-
-
   (0, _react.useEffect)(function () {
     if (!search) setAllOptions(optionsProp);
   }, [optionsProp, search]);
   (0, _react.useEffect)(function () {
     if (!search && sortSelectedOnClose) setOrderedOptions(optionsProp);
-  }, [optionsProp, search, sortSelectedOnClose]); // the option indexes present in the value
+  }, [optionsProp, search, sortSelectedOnClose]);
 
+  // the option indexes present in the value
   var optionIndexesInValue = (0, _react.useMemo)(function () {
     var result = [];
     allOptions.forEach(function (option, index) {
@@ -180,11 +153,9 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     });
     return result;
   }, [allOptions, valueKey, normalizedValue]);
-
   var _useState4 = (0, _react.useState)(openProp),
-      open = _useState4[0],
-      setOpen = _useState4[1];
-
+    open = _useState4[0],
+    setOpen = _useState4[1];
   (0, _react.useEffect)(function () {
     return setOpen(openProp);
   }, [openProp]);
@@ -215,8 +186,7 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, []);
   var onSelectChange = (0, _react.useCallback)(function (event, _ref2) {
     var option = _ref2.option,
-        nextValue = _ref2.value;
-
+      nextValue = _ref2.value;
     // nextValue must not be of type object to set value directly on the
     // input. if it is an object, then the user has not provided necessary
     // props to reduce object option
@@ -227,13 +197,11 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       // necessary for change validation in form
       triggerChangeEvent(nextValue);
     }
-
     setValue(nextValue);
-
     if (onChange) {
       event.persist();
-      var adjustedEvent; // support for native event used by Preact
-
+      var adjustedEvent;
+      // support for native event used by Preact
       if (event instanceof Event) {
         adjustedEvent = new event.constructor(event.type, event);
         Object.defineProperties(adjustedEvent, {
@@ -253,15 +221,14 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         adjustedEvent.value = nextValue;
         adjustedEvent.option = option;
       }
-
       onChange(adjustedEvent);
     }
   }, [onChange, setValue, triggerChangeEvent]);
-  var SelectIcon = (0, _utils2.getSelectIcon)(icon, theme, open); // element to show, trumps inputValue
+  var SelectIcon = (0, _utils2.getSelectIcon)(icon, theme, open);
 
+  // element to show, trumps inputValue
   var selectValue = (0, _react.useMemo)(function () {
     var result;
-
     if (valueLabel) {
       result = value && valueLabel instanceof Function ? valueLabel(value) : valueLabel;
     } else if ((value == null ? void 0 : value.length) > 0 && showSelectedInline) {
@@ -278,12 +245,13 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         valueKey: valueKey
       }, children);
     }
-
     return result;
   }, [valueKey, value, valueLabel, showSelectedInline, onRequestOpen, allOptions, children, labelKey, onSelectChange, disabled, disabledKey, dropButtonRef, theme]);
   var displayLabelKey = (0, _react.useMemo)(function () {
     return (0, _utils2.getDisplayLabelKey)(labelKey, allOptions, optionIndexesInValue, selectValue);
-  }, [labelKey, allOptions, optionIndexesInValue, selectValue]); // text to show
+  }, [labelKey, allOptions, optionIndexesInValue, selectValue]);
+
+  // text to show
   // When the options array contains objects, this property indicates how
   // to retrieve the value of each option.
   // If a string is provided, it is used as the key to retrieve a
@@ -292,7 +260,6 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   // return the value.
   // If reduce is true, this value will be used for the 'value'
   // delivered via 'onChange'.
-
   var inputValue = (0, _react.useMemo)(function () {
     if (!selectValue) {
       if (optionIndexesInValue.length === 0) return '';
@@ -303,11 +270,9 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       });
       return optionIndexesInValue.length + " selected";
     }
-
     return undefined;
   }, [labelKey, messages, format, optionIndexesInValue, allOptions, selectValue]);
   var iconColor = (0, _utils2.getIconColor)(theme);
-
   var dropContent = /*#__PURE__*/_react["default"].createElement(_SelectMultipleContainer.SelectMultipleContainer, {
     allOptions: allOptions,
     disabled: disabled,
@@ -334,7 +299,6 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     valueKey: valueKey,
     showSelectedInline: showSelectedInline
   }, children);
-
   var dropButtonProps = {
     ref: dropButtonRef,
     a11yTitle: (ariaLabel || a11yTitle || placeholder || 'Open Drop') + ". " + ((value == null ? void 0 : value.length) || 0) + " selected.",
@@ -358,7 +322,6 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     dropContent: dropContent,
     theme: theme
   };
-
   var displaySelectIcon = SelectIcon && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     alignSelf: "center",
     margin: theme.select.icons.margin,
@@ -369,7 +332,6 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     color: iconColor,
     size: size
   }));
-
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onDown: onRequestOpen,
     onUp: onRequestOpen
@@ -407,7 +369,8 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, rest, {
     tabIndex: "-1",
     type: "text",
-    placeholder: // eslint-disable-next-line no-nested-ternary
+    placeholder:
+    // eslint-disable-next-line no-nested-ternary
     !value || (value == null ? void 0 : value.length) === 0 ? placeholder || selectValue || displayLabelKey : onMore ? ((value == null ? void 0 : value.length) || '0') + " selected" : ((value == null ? void 0 : value.length) || '0') + " selected of " + allOptions.length,
     plain: true,
     readOnly: true,

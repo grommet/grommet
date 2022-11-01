@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Round = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var values = [{
   value: [10, 20]
 }, {
@@ -16,7 +12,6 @@ var values = [{
 }, {
   value: [30, 15]
 }];
-
 var Round = function Round() {
   return (
     /*#__PURE__*/
@@ -38,11 +33,10 @@ var Round = function Round() {
         values: values,
         round: true
       }));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Round = Round;
 var _default = {
   title: 'Visualizations/Chart/Round'

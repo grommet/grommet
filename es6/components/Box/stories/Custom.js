@@ -13,10 +13,11 @@ export var GradientColorBox = function GradientColorBox() {
       round: "large"
     }, /*#__PURE__*/React.createElement(Text, {
       color: "white"
-    }, "I have a linear gradient background")) // </Grommet>
-
+    }, "I have a linear gradient background"))
+    // </Grommet>
   );
 };
+
 GradientColorBox.storyName = 'Gradient';
 export default {
   title: 'Layout/Box/Gradient'

@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Themed = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var theme = {
   avatar: {
     size: {
@@ -26,7 +21,6 @@ var theme = {
     extend: "border: 2px solid white;\n            box-shadow: 2px 2px 15px 1px white;"
   }
 };
-
 var Themed = function Themed() {
   var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
@@ -55,7 +49,6 @@ var Themed = function Themed() {
     background: "brand"
   }, "SY")));
 };
-
 exports.Themed = Themed;
 var _default = {
   title: 'Visualizations/Avatar/Custom Themed/Themed'

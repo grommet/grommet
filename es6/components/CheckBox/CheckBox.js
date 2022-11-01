@@ -1,9 +1,6 @@
 var _excluded = ["a11yTitle", "aria-label", "checked", "children", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { removeUndefined } from '../../utils/object';
@@ -13,7 +10,6 @@ import { FormContext } from '../Form/FormContext';
 import { CheckBoxPropTypes } from './propTypes';
 import { StyledCheckBox, StyledCheckBoxBox, StyledCheckBoxIcon, StyledCheckBoxContainer, StyledCheckBoxInput, StyledCheckBoxToggle, StyledCheckBoxKnob } from './StyledCheckBox';
 import { normalizeColor } from '../../utils';
-
 var stopLabelClick = function stopLabelClick(event) {
   // prevents clicking on the label trigging the event twice
   // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
@@ -21,52 +17,46 @@ var stopLabelClick = function stopLabelClick(event) {
     event.stopPropagation();
   }
 };
-
 var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _ref2;
-
   var a11yTitle = _ref.a11yTitle,
-      ariaLabel = _ref['aria-label'],
-      checkedProp = _ref.checked,
-      children = _ref.children,
-      _ref$defaultChecked = _ref.defaultChecked,
-      defaultChecked = _ref$defaultChecked === void 0 ? false : _ref$defaultChecked,
-      disabled = _ref.disabled,
-      fill = _ref.fill,
-      focusProp = _ref.focus,
-      _ref$focusIndicator = _ref.focusIndicator,
-      focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
-      id = _ref.id,
-      label = _ref.label,
-      name = _ref.name,
-      _onBlur = _ref.onBlur,
-      _onChange = _ref.onChange,
-      _onFocus = _ref.onFocus,
-      _onMouseEnter = _ref.onMouseEnter,
-      _onMouseLeave = _ref.onMouseLeave,
-      _onMouseOut = _ref.onMouseOut,
-      _onMouseOver = _ref.onMouseOver,
-      pad = _ref.pad,
-      reverse = _ref.reverse,
-      toggle = _ref.toggle,
-      indeterminate = _ref.indeterminate,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    ariaLabel = _ref['aria-label'],
+    checkedProp = _ref.checked,
+    children = _ref.children,
+    _ref$defaultChecked = _ref.defaultChecked,
+    defaultChecked = _ref$defaultChecked === void 0 ? false : _ref$defaultChecked,
+    disabled = _ref.disabled,
+    fill = _ref.fill,
+    focusProp = _ref.focus,
+    _ref$focusIndicator = _ref.focusIndicator,
+    focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
+    id = _ref.id,
+    label = _ref.label,
+    name = _ref.name,
+    _onBlur = _ref.onBlur,
+    _onChange = _ref.onChange,
+    _onFocus = _ref.onFocus,
+    _onMouseEnter = _ref.onMouseEnter,
+    _onMouseLeave = _ref.onMouseLeave,
+    _onMouseOut = _ref.onMouseOut,
+    _onMouseOver = _ref.onMouseOver,
+    pad = _ref.pad,
+    reverse = _ref.reverse,
+    toggle = _ref.toggle,
+    indeterminate = _ref.indeterminate,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
-
   var _formContext$useFormI = formContext.useFormInput({
-    name: name,
-    value: checkedProp,
-    initialValue: defaultChecked
-  }),
-      checked = _formContext$useFormI[0],
-      setChecked = _formContext$useFormI[1];
-
+      name: name,
+      value: checkedProp,
+      initialValue: defaultChecked
+    }),
+    checked = _formContext$useFormI[0],
+    setChecked = _formContext$useFormI[1];
   var _useState = useState(focusProp),
-      focus = _useState[0],
-      setFocus = _useState[1];
-
+    focus = _useState[0],
+    setFocus = _useState[1];
   useEffect(function () {
     // don't allow checkbox to have focus when disabled
     if (disabled && focusProp) setFocus(false);else setFocus(focusProp);
@@ -75,7 +65,6 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (checkedProp && indeterminate) {
       console.warn('Checkbox cannot be "checked" and "indeterminate" at the same time.');
     }
-
     if (toggle && indeterminate) {
       console.warn('Checkbox of type toggle does not have "indeterminate" state.');
     }
@@ -95,7 +84,6 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
     indeterminate: indeterminate
   };
   var hidden;
-
   if (disabled && checked) {
     hidden = /*#__PURE__*/React.createElement("input", {
       name: name,
@@ -103,16 +91,13 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
       value: "true"
     });
   }
-
   var _theme$checkBox$icons = theme.checkBox.icons,
-      CheckedIcon = _theme$checkBox$icons.checked,
-      IndeterminateIcon = _theme$checkBox$icons.indeterminate;
+    CheckedIcon = _theme$checkBox$icons.checked,
+    IndeterminateIcon = _theme$checkBox$icons.indeterminate;
   var borderColor = normalizeColor(theme.checkBox.border.color, theme);
-
   if (checked) {
     borderColor = normalizeColor(theme.checkBox.color || 'control', theme);
   }
-
   var visual = toggle ? /*#__PURE__*/React.createElement(StyledCheckBoxToggle, themeableProps, /*#__PURE__*/React.createElement(StyledCheckBoxKnob, themeableProps)) : /*#__PURE__*/React.createElement(StyledCheckBoxBox, _extends({
     as: Box,
     align: "center",

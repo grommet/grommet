@@ -2,17 +2,14 @@ import styled, { css } from 'styled-components';
 import { focusStyle, genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 var disabledStyle = "\n  opacity: 0.3;\n  cursor: default;\n  text-decoration: none;\n";
-
 var sizeStyle = function sizeStyle(props) {
   if (props.size) {
     var size = props.size || 'medium';
     var data = props.theme.text[size];
     return css(["font-size:", ";line-height:", ";"], data ? data.size : size, data ? data.height : 'normal');
   }
-
   return css(["font-size:inherit;line-height:inherit;"]);
 };
-
 var StyledAnchor = styled.a.withConfig({
   // prevent custom props from bleeding into DOM
   // https://styled-components.com/docs/api#shouldforwardprop

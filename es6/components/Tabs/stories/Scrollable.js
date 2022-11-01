@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Heading, Tab, Tabs, Text, Paragraph } from 'grommet';
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
-
 var ScrollableTabs = function ScrollableTabs() {
   return (
     /*#__PURE__*/
@@ -30,8 +29,8 @@ var ScrollableTabs = function ScrollableTabs() {
       background: "brand"
     }, /*#__PURE__*/React.createElement(TreeOption, {
       size: "xlarge"
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
 

@@ -2,9 +2,8 @@ import React from 'react';
 import { Box, Button, Layer } from 'grommet';
 export var FullLayer = function FullLayer() {
   var _React$useState = React.useState(false),
-      showLayer = _React$useState[0],
-      setShowLayer = _React$useState[1];
-
+    showLayer = _React$useState[0],
+    setShowLayer = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -36,10 +35,11 @@ export var FullLayer = function FullLayer() {
       onClick: function onClick() {
         return setShowLayer(false);
       }
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 FullLayer.storyName = 'Full';
 FullLayer.parameters = {
   chromatic: {

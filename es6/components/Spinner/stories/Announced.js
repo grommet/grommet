@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Box, Button, Paragraph, Spinner } from 'grommet';
-
 var PageContent = function PageContent() {
   // 'show=true' will trigger the announcement
   var _useState = useState(false),
-      show = _useState[0],
-      setShow = _useState[1];
-
+    show = _useState[0],
+    setShow = _useState[1];
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     gap: "small"
@@ -24,7 +22,6 @@ var PageContent = function PageContent() {
     message: "Start Built-in Spinner Announcement"
   }));
 };
-
 export var Announced = function Announced() {
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",

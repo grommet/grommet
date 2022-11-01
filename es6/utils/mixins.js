@@ -1,11 +1,9 @@
 import { css } from 'styled-components';
 export var parseMetricToNum = function parseMetricToNum(metric) {
   if (typeof metric === 'number') return metric;
-
   if (metric.match(/\s/) && process.env.NODE_ENV !== 'production') {
     console.warn("Invalid single measurement value: \"" + metric + "\"");
   }
-
   return parseFloat(metric.match(/\d+(\.\d+)?/), 10);
 };
 export var edgeToNum = function edgeToNum(size, theme) {
@@ -23,17 +21,14 @@ export var breakpointStyle = function breakpointStyle(breakpoint, content) {
 };
 export var findAllByType = function findAllByType(component, type) {
   var matches = [];
-
   if (component.type === type) {
     matches.push(component);
   }
-
   if (component.children) {
     component.children.forEach(function (child) {
       matches = matches.concat(findAllByType(child, type));
     });
   }
-
   return matches;
 };
 export var getAvailableAtBadge = function getAvailableAtBadge(availableAt, componentType) {

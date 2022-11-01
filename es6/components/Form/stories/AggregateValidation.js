@@ -1,14 +1,14 @@
 import React from 'react';
-import { Box, Button, Form, FormField, Text, TextInput } from 'grommet'; // This example shows a way to perform validation across multiple fields.
+import { Box, Button, Form, FormField, Text, TextInput } from 'grommet';
 
+// This example shows a way to perform validation across multiple fields.
 export var AggregateValidation = function AggregateValidation() {
   var _React$useState = React.useState({
-    name: 'a',
-    email: 'b'
-  }),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+      name: 'a',
+      email: 'b'
+    }),
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var message = value.name && value.email && value.name[0] !== value.email[0] ? 'Mismatched first character' : undefined;
   return (
     /*#__PURE__*/
@@ -68,10 +68,11 @@ export var AggregateValidation = function AggregateValidation() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 AggregateValidation.storyName = 'Aggregate validation';
 AggregateValidation.args = {
   full: true

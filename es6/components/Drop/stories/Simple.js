@@ -4,13 +4,10 @@ var align = {
   top: 'bottom',
   left: 'left'
 };
-
 var SimpleDrop = function SimpleDrop() {
   var targetRef = useRef();
-
   var _useState = useState(false),
-      setShowDrop = _useState[1];
-
+    setShowDrop = _useState[1];
   useEffect(function () {
     setShowDrop(true);
   }, []);
@@ -33,8 +30,8 @@ var SimpleDrop = function SimpleDrop() {
       target: targetRef.current
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "large"
-    }, "Drop Contents"))) // </Grommet>
-
+    }, "Drop Contents")))
+    // </Grommet>
   );
 };
 

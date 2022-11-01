@@ -27,10 +27,11 @@ export var OnClickBox = function OnClickBox() {
       }
     }, /*#__PURE__*/React.createElement(Attraction, {
       size: "large"
-    }), /*#__PURE__*/React.createElement(Text, null, "Party"))) // </Grommet>
-
+    }), /*#__PURE__*/React.createElement(Text, null, "Party")))
+    // </Grommet>
   );
 };
+
 OnClickBox.storyName = 'onClick';
 export default {
   title: 'Layout/Box/onClick'

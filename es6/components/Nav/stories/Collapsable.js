@@ -1,6 +1,5 @@
 import React from 'react';
 import { Anchor, Box, Header, Menu, Nav, ResponsiveContext } from 'grommet';
-
 var CollapsableNav = function CollapsableNav() {
   return (
     /*#__PURE__*/
@@ -38,8 +37,8 @@ var CollapsableNav = function CollapsableNav() {
         href: "#",
         label: "Component"
       }));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
 

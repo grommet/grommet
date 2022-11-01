@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.TrackColor = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var rangeInputTheme = {
   rangeInput: {
     pad: '12px',
@@ -20,24 +16,19 @@ var rangeInputTheme = {
     }
   }
 };
-
 var TrackColor = function TrackColor() {
   var _React$useState = _react["default"].useState(0.4),
-      value1 = _React$useState[0],
-      setValue1 = _React$useState[1];
-
+    value1 = _React$useState[0],
+    setValue1 = _React$useState[1];
   var onChange1 = function onChange1(event) {
     return setValue1(event.target.value);
   };
-
   var _React$useState2 = _react["default"].useState(8),
-      value2 = _React$useState2[0],
-      setValue2 = _React$useState2[1];
-
+    value2 = _React$useState2[0],
+    setValue2 = _React$useState2[1];
   var onChange2 = function onChange2(event) {
     return setValue2(event.target.value);
   };
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: rangeInputTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -76,7 +67,6 @@ var TrackColor = function TrackColor() {
     }]
   })));
 };
-
 exports.TrackColor = TrackColor;
 TrackColor.storyName = 'Track Color';
 var _default = {

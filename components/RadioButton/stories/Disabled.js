@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Disabled = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Disabled = function Disabled() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
@@ -22,7 +18,6 @@ var Disabled = function Disabled() {
     disabled: true
   }));
 };
-
 exports.Disabled = Disabled;
 var _default = {
   title: 'Input/RadioButton/Disabled'

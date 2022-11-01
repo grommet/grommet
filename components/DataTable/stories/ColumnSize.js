@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ColumnSize = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var DATA = [{
   name: 'Alan Josiah Werner Shirleen Foy',
   location: 'Winston Salem',
@@ -138,7 +134,6 @@ var columnsDefault = [{
   header: 'Paid',
   align: 'end'
 }];
-
 var ColumnSize = function ColumnSize() {
   return (
     /*#__PURE__*/
@@ -200,11 +195,10 @@ var ColumnSize = function ColumnSize() {
         side: 'vertical',
         size: '1px'
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.ColumnSize = ColumnSize;
 ColumnSize.storyName = 'Column sizes';
 var _default = {

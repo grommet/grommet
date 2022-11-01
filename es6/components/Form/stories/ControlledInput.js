@@ -2,33 +2,26 @@ import React, { useState } from 'react';
 import { Box, Button, CheckBox, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
 export var ControlledInput = function ControlledInput() {
   var _useState = useState(''),
-      name = _useState[0],
-      setName = _useState[1];
-
+    name = _useState[0],
+    setName = _useState[1];
   var _useState2 = useState(''),
-      email = _useState2[0],
-      setEmail = _useState2[1];
-
+    email = _useState2[0],
+    setEmail = _useState2[1];
   var _useState3 = useState(false),
-      subscribe = _useState3[0],
-      setSubscribe = _useState3[1];
-
+    subscribe = _useState3[0],
+    setSubscribe = _useState3[1];
   var _useState4 = useState(''),
-      ampm = _useState4[0],
-      setAmpm = _useState4[1];
-
+    ampm = _useState4[0],
+    setAmpm = _useState4[1];
   var _useState5 = useState(''),
-      size = _useState5[0],
-      setSize = _useState5[1];
-
+    size = _useState5[0],
+    setSize = _useState5[1];
   var _useState6 = useState(''),
-      comments = _useState6[0],
-      setComments = _useState6[1];
-
+    comments = _useState6[0],
+    setComments = _useState6[1];
   var _useState7 = useState(''),
-      age = _useState7[0],
-      setAge = _useState7[1];
-
+    age = _useState7[0],
+    setAge = _useState7[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -152,10 +145,11 @@ export var ControlledInput = function ControlledInput() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 ControlledInput.storyName = 'Controlled input';
 ControlledInput.parameters = {
   // chromatic disabled because snapshot is the same as ControlledInputLazy

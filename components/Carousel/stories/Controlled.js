@@ -2,20 +2,14 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Controlled = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Controlled = function Controlled() {
   var _React$useState = _react["default"].useState(0),
-      activeSlide = _React$useState[0],
-      setActiveSlide = _React$useState[1];
-
+    activeSlide = _React$useState[0],
+    setActiveSlide = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -55,11 +49,10 @@ var Controlled = function Controlled() {
       background: "light-3"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
-
 exports.Controlled = Controlled;
 Controlled.parameters = {
   chromatic: {

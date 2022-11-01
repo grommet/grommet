@@ -6,16 +6,13 @@ var alignRight = {
 var alignLeft = {
   right: 'left'
 };
-
 var MultipleDrop = function MultipleDrop() {
   var _useState = useState(false),
-      showDrop = _useState[0],
-      setShowDrop = _useState[1];
-
+    showDrop = _useState[0],
+    setShowDrop = _useState[1];
   var _useState2 = useState(false),
-      showLayer = _useState2[0],
-      setShowLayer = _useState2[1];
-
+    showLayer = _useState2[0],
+    setShowLayer = _useState2[1];
   var targetRef = useRef();
   return (
     /*#__PURE__*/
@@ -79,8 +76,8 @@ var MultipleDrop = function MultipleDrop() {
       onClick: function onClick() {
         return setShowLayer(!showLayer);
       }
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
 

@@ -2,17 +2,13 @@
 
 exports.__esModule = true;
 exports["default"] = exports.LabelledCharts = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var LabelledChart = function LabelledChart(_ref) {
   var color = _ref.color,
-      label = _ref.label,
-      value = _ref.value;
+    label = _ref.label,
+    value = _ref.value;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     flex: false,
     basis: "xsmall",
@@ -36,7 +32,6 @@ var LabelledChart = function LabelledChart(_ref) {
     weight: "bold"
   }, value, " TiB")));
 };
-
 var LabelledCharts = function LabelledCharts() {
   return (
     /*#__PURE__*/
@@ -57,11 +52,10 @@ var LabelledCharts = function LabelledCharts() {
       label: "Used",
       value: 98.2,
       color: "graph-2"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.LabelledCharts = LabelledCharts;
 LabelledCharts.storyName = 'Labelled';
 var _default = {

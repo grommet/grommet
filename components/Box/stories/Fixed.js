@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.FixedSizesBox = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var FixedSizesBox = function FixedSizesBox() {
   return (
     /*#__PURE__*/
@@ -50,11 +46,10 @@ var FixedSizesBox = function FixedSizesBox() {
       align: "center",
       justify: "center",
       background: "brand"
-    }, "Large")) // </Grommet>
-
+    }, "Large"))
+    // </Grommet>
   );
 };
-
 exports.FixedSizesBox = FixedSizesBox;
 FixedSizesBox.storyName = 'Fixed sizes';
 var _default = {

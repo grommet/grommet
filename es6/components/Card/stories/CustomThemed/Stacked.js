@@ -62,7 +62,8 @@ export var Stacked = function Stacked() {
       pad: {
         horizontal: 'small',
         vertical: 'small'
-      } // https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4#all-hex-value-from-100-to-0-alpha
+      }
+      // https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4#all-hex-value-from-100-to-0-alpha
       ,
       background: "#000000A0",
       width: "medium",

@@ -2,18 +2,13 @@
 
 exports.__esModule = true;
 exports["default"] = exports.FullLayer = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var FullLayer = function FullLayer() {
   var _React$useState = _react["default"].useState(false),
-      showLayer = _React$useState[0],
-      setShowLayer = _React$useState[1];
-
+    showLayer = _React$useState[0],
+    setShowLayer = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -45,11 +40,10 @@ var FullLayer = function FullLayer() {
       onClick: function onClick() {
         return setShowLayer(false);
       }
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
-
 exports.FullLayer = FullLayer;
 FullLayer.storyName = 'Full';
 FullLayer.parameters = {

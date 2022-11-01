@@ -1,5 +1,4 @@
 var _FLEX_MAP;
-
 import styled, { css } from 'styled-components';
 import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';

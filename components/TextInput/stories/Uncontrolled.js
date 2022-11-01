@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Uncontrolled = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Uncontrolled = function Uncontrolled() {
   return (
     /*#__PURE__*/
@@ -26,11 +22,10 @@ var Uncontrolled = function Uncontrolled() {
         return console.log('Change', event.target.value);
       },
       "aria-label": "Input Text"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.Uncontrolled = Uncontrolled;
 Uncontrolled.parameters = {
   chromatic: {

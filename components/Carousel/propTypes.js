@@ -2,17 +2,11 @@
 
 exports.__esModule = true;
 exports.CarouselPropTypes = exports.CarouselChildPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _generalPropTypes = require("../../utils/general-prop-types");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var CarouselPropType;
-
 if (process.env.NODE_ENV !== 'production') {
   CarouselPropType = _extends({}, _generalPropTypes.genericProps, {
     activeChild: _propTypes["default"].number,
@@ -26,11 +20,9 @@ if (process.env.NODE_ENV !== 'production') {
     play: _propTypes["default"].number
   });
 }
-
 var CarouselPropTypes = CarouselPropType;
 exports.CarouselPropTypes = CarouselPropTypes;
 var CarouselChildPropType;
-
 if (process.env.NODE_ENV !== 'production') {
   CarouselChildPropType = {
     animationDuration: _propTypes["default"].number.isRequired,
@@ -41,6 +33,5 @@ if (process.env.NODE_ENV !== 'production') {
     direction: _propTypes["default"].oneOf(['left', 'right'])
   };
 }
-
 var CarouselChildPropTypes = CarouselChildPropType;
 exports.CarouselChildPropTypes = CarouselChildPropTypes;

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, DataTable } from 'grommet'; // Source code for the data can be found here
-// https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
+import { Box, DataTable } from 'grommet';
 
+// Source code for the data can be found here
+// https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 import { DATA } from './data';
 var columns = [{
   property: 'name',
@@ -23,10 +24,11 @@ export var NoPrimaryKeyDataTable = function NoPrimaryKeyDataTable() {
       data: DATA,
       step: 10,
       primaryKey: false
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 NoPrimaryKeyDataTable.storyName = 'No primary';
 export default {
   title: 'Visualizations/DataTable/No primary'

@@ -23,10 +23,11 @@ export var GridInfiniteScroll = function GridInfiniteScroll() {
         src: "https://via.placeholder.com/350x150",
         alt: "Placeholder Image"
       }), /*#__PURE__*/React.createElement(Text, null, item));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 GridInfiniteScroll.storyName = 'Grid';
 export default {
   title: 'Utilities/InfiniteScroll/Grid'

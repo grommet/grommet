@@ -2,25 +2,15 @@
 
 exports.__esModule = true;
 exports.StyledBoxGap = exports.StyledBox = void 0;
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
-
 var _defaultProps = require("../../default-props");
-
 var _utils = require("../../utils");
-
 var _styles = require("../../utils/styles");
-
 var _animation = require("../../utils/animation");
-
 var _FLEX_MAP;
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var BASIS_MAP = {
   auto: 'auto',
   full: '100%',
@@ -33,41 +23,34 @@ var BASIS_MAP = {
 };
 var basisStyle = (0, _styledComponents.css)(["flex-basis:", ";"], function (props) {
   return BASIS_MAP[props.basis] || props.theme.global.size[props.basis] || props.basis;
-}); // min-width and min-height needed because of this
+});
+
+// min-width and min-height needed because of this
 // https://stackoverflow.com/questions/36247140/why-doesnt-flex-item-shrink-past-content-size
 // we assume we are in the context of a Box going the other direction
 // TODO: revisit this
-
 var directionStyle = function directionStyle(direction, theme) {
   var styles = [(0, _styledComponents.css)(["min-width:0;min-height:0;flex-direction:", ";"], direction === 'row-responsive' ? 'row' : direction)];
-
   if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
     var breakpoint = (0, _utils.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
-
     if (breakpoint) {
       styles.push((0, _utils.breakpointStyle)(breakpoint, "\n        flex-direction: column;\n        flex-basis: auto;\n        justify-content: flex-start;\n        align-items: stretch;\n      "));
     }
   }
-
   return styles;
 };
-
 var elevationStyle = function elevationStyle(elevation) {
   return (0, _styledComponents.css)(["box-shadow:", ";"], function (props) {
     return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][elevation];
   });
 };
-
 var FLEX_MAP = (_FLEX_MAP = {}, _FLEX_MAP[true] = '1 1', _FLEX_MAP[false] = '0 0', _FLEX_MAP.grow = '1 0', _FLEX_MAP.shrink = '0 1', _FLEX_MAP);
-
 var flexGrowShrinkProp = function flexGrowShrinkProp(flex) {
   if (typeof flex === 'boolean' || typeof flex === 'string') {
     return FLEX_MAP[flex];
   }
-
   return (flex.grow ? flex.grow : 0) + " " + (flex.shrink ? flex.shrink : 0);
 };
-
 var flexStyle = (0, _styledComponents.css)(["flex:", ";"], function (props) {
   return "" + flexGrowShrinkProp(props.flex) + (props.flex !== true && !props.basis ? ' auto' : '');
 });
@@ -89,52 +72,41 @@ var WRAP_MAP = {
 var wrapStyle = (0, _styledComponents.css)(["flex-wrap:", ";"], function (props) {
   return WRAP_MAP[props.wrapProp];
 });
-
 var animationItemStyle = function animationItemStyle(item, theme) {
   if (typeof item === 'string') {
     return (0, _animation.animationObjectStyle)({
       type: item
     }, theme);
   }
-
   if (Array.isArray(item)) {
     return item.reduce(function (style, a, index) {
       return (0, _styledComponents.css)(["", "", " ", ""], style, index > 0 ? ',' : '', animationItemStyle(a, theme));
     }, '');
   }
-
   if (typeof item === 'object') {
     return (0, _animation.animationObjectStyle)(item, theme);
   }
-
   return '';
 };
-
 var animationAncilaries = function animationAncilaries(animation) {
   if (animation.type === 'flipIn' || animation.type === 'flipOut') {
     return 'perspective: 1000px; transform-style: preserve-3d;';
   }
-
   return '';
 };
-
 var animationObjectInitialStyle = function animationObjectInitialStyle(animation) {
   var bounds = (0, _animation.animationBounds)(animation.type, animation.size);
-
   if (bounds) {
     return bounds[0] + " " + animationAncilaries(animation);
   }
-
   return '';
 };
-
 var animationInitialStyle = function animationInitialStyle(item) {
   if (typeof item === 'string') {
     return animationObjectInitialStyle({
       type: item
     });
   }
-
   if (Array.isArray(item)) {
     return item.map(function (a) {
       return typeof a === 'string' ? animationObjectInitialStyle({
@@ -142,25 +114,22 @@ var animationInitialStyle = function animationInitialStyle(item) {
       }) : animationObjectInitialStyle(a);
     }).join('');
   }
-
   if (typeof item === 'object') {
     return animationObjectInitialStyle(item);
   }
-
   return '';
 };
-
 var animationStyle = (0, _styledComponents.css)(["", ";"], function (props) {
   return (0, _styledComponents.css)(["", " animation:", ";"], animationInitialStyle(props.animation), animationItemStyle(props.animation, props.theme));
 });
 var interactiveStyle = (0, _styledComponents.css)(["cursor:pointer;&:hover{", " ", "}"], function (props) {
   var _props$kindProp;
-
   return ((_props$kindProp = props.kindProp) == null ? void 0 : _props$kindProp.hover) && (0, _utils.getHoverIndicatorStyle)(props.kindProp.hover, props.theme);
 }, function (props) {
   return props.hoverIndicator && (0, _utils.getHoverIndicatorStyle)(props.hoverIndicator, props.theme);
-}); // NOTE: basis must be after flex! Otherwise, flex overrides basis
+});
 
+// NOTE: basis must be after flex! Otherwise, flex overrides basis
 var StyledBox = _styledComponents["default"].div.withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
@@ -209,24 +178,19 @@ var StyledBox = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.kindProp && props.kindProp.extend;
 });
-
 exports.StyledBox = StyledBox;
-
 var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) {
   var metric = theme.global.edgeSize[gap] || gap;
   var breakpoint = (0, _utils.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
   var responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
   var styles = [];
-
   if (directionProp === 'column' || directionProp === 'column-reverse') {
     styles.push("height: " + metric + ";");
-
     if (responsiveMetric) {
       styles.push((0, _utils.breakpointStyle)(breakpoint, "height: " + responsiveMetric + ";"));
     }
   } else {
     styles.push("width: " + metric + ";");
-
     if (responsiveMetric) {
       if (directionProp === 'row' || directionProp === 'row-reverse') {
         styles.push((0, _utils.breakpointStyle)(breakpoint, "width: " + responsiveMetric + ";"));
@@ -235,20 +199,17 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) 
       }
     }
   }
-
   if (border === 'between' || border && border.side === 'between') {
     var borderSize = border.size || 'xsmall';
     var borderMetric = theme.global.borderSize[borderSize] || borderSize;
     var borderOffset = (0, _utils.parseMetricToNum)(metric) / 2 - (0, _utils.parseMetricToNum)(borderMetric) / 2 + "px";
     var responsiveBorderMetric = responsive && breakpoint && (breakpoint.borderSize[borderSize] || borderSize);
     var responsiveBorderOffset = responsiveBorderMetric && (0, _utils.parseMetricToNum)(responsiveMetric) / 2 - (0, _utils.parseMetricToNum)(responsiveBorderMetric) / 2 + "px";
-
     if (directionProp === 'column' || directionProp === 'column-reverse') {
       var adjustedBorder = typeof border === 'string' ? 'top' : _extends({}, border, {
         side: 'top'
       });
       styles.push((0, _styledComponents.css)(["position:relative;&:after{content:'';position:absolute;width:100%;top:", ";", "}"], borderOffset, (0, _utils.borderStyle)(adjustedBorder, responsive, theme)));
-
       if (responsiveBorderOffset) {
         styles.push((0, _utils.breakpointStyle)(breakpoint, "\n            &:after {\n              content: '';\n              top: " + responsiveBorderOffset + ";\n            }"));
       }
@@ -256,9 +217,7 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) 
       var _adjustedBorder = typeof border === 'string' ? 'left' : _extends({}, border, {
         side: 'left'
       });
-
       styles.push((0, _styledComponents.css)(["position:relative;&:after{content:'';position:absolute;height:100%;left:", ";", "}"], borderOffset, (0, _utils.borderStyle)(_adjustedBorder, directionProp !== 'row-responsive' && responsive, theme)));
-
       if (responsiveBorderOffset) {
         if (directionProp === 'row' || directionProp === 'row-reverse') {
           styles.push((0, _utils.breakpointStyle)(breakpoint, "\n              &:after {\n                content: '';\n                left: " + responsiveBorderOffset + ";\n              }"));
@@ -271,20 +230,16 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) 
       }
     }
   }
-
   return styles;
 };
-
 StyledBox.defaultProps = {};
 Object.setPrototypeOf(StyledBox.defaultProps, _defaultProps.defaultProps);
-
 var StyledBoxGap = _styledComponents["default"].div.withConfig({
   displayName: "StyledBox__StyledBoxGap",
   componentId: "sc-13pk1d4-1"
 })(["flex:0 0 auto;align-self:stretch;", ";"], function (props) {
   return props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.border, props.theme);
 });
-
 exports.StyledBoxGap = StyledBoxGap;
 StyledBoxGap.defaultProps = {};
 Object.setPrototypeOf(StyledBoxGap.defaultProps, _defaultProps.defaultProps);

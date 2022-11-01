@@ -2,46 +2,30 @@
 
 exports.__esModule = true;
 exports.Menu = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
-
 var _defaultProps = require("../../default-props");
-
 var _Box = require("../Box");
-
 var _Button = require("../Button");
-
 var _DropButton = require("../DropButton");
-
 var _Keyboard = require("../Keyboard");
-
 var _Text = require("../Text");
-
 var _utils = require("../../utils");
-
 var _MessageContext = require("../../contexts/MessageContext");
-
 var _propTypes = require("./propTypes");
-
 var _excluded = ["a11yTitle", "aria-label", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"],
-    _excluded2 = ["align"];
-
+  _excluded2 = ["align"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "Menu__ContainerBox",
   componentId: "sc-17fcys9-0"
 })(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}:focus{outline:none;}", ";"], function (props) {
   return props.theme.menu.extend;
 });
+
 /* Notes on keyboard interactivity (based on W3) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
 
 To open menu when menu button is focused:
@@ -65,47 +49,42 @@ To make a selection:
 
 var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var a11yTitle = props.a11yTitle,
-      ariaLabel = props['aria-label'],
-      children = props.children,
-      disabled = props.disabled,
-      dropAlign = props.dropAlign,
-      dropBackground = props.dropBackground,
-      dropProps = props.dropProps,
-      dropTarget = props.dropTarget,
-      justifyContent = props.justifyContent,
-      icon = props.icon,
-      items = props.items,
-      label = props.label,
-      messages = props.messages,
-      onKeyDown = props.onKeyDown,
-      open = props.open,
-      plain = props.plain,
-      size = props.size,
-      rest = _objectWithoutPropertiesLoose(props, _excluded);
-
+    ariaLabel = props['aria-label'],
+    children = props.children,
+    disabled = props.disabled,
+    dropAlign = props.dropAlign,
+    dropBackground = props.dropBackground,
+    dropProps = props.dropProps,
+    dropTarget = props.dropTarget,
+    justifyContent = props.justifyContent,
+    icon = props.icon,
+    items = props.items,
+    label = props.label,
+    messages = props.messages,
+    onKeyDown = props.onKeyDown,
+    open = props.open,
+    plain = props.plain,
+    size = props.size,
+    rest = _objectWithoutPropertiesLoose(props, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
-      format = _useContext.format;
-
-  var iconColor = (0, _utils.normalizeColor)(theme.menu.icons.color || 'control', theme); // need to destructure the align otherwise it will get passed through
+    format = _useContext.format;
+  var iconColor = (0, _utils.normalizeColor)(theme.menu.icons.color || 'control', theme);
+  // need to destructure the align otherwise it will get passed through
   // to DropButton and override prop values
-
   var _theme$menu$drop = theme.menu.drop,
-      themeDropAlign = _theme$menu$drop.align,
-      themeDropProps = _objectWithoutPropertiesLoose(_theme$menu$drop, _excluded2);
+    themeDropAlign = _theme$menu$drop.align,
+    themeDropProps = _objectWithoutPropertiesLoose(_theme$menu$drop, _excluded2);
+  var a11y = ariaLabel || a11yTitle;
 
-  var a11y = ariaLabel || a11yTitle; // total number of menu items
-
+  // total number of menu items
   var itemCount = (0, _react.useMemo)(function () {
     var count = 0;
-
     if (items && Array.isArray(items[0])) {
       items.forEach(function (group) {
         count += group.length;
       });
     } else count = items.length;
-
     return count;
   }, [items]);
   var align = dropProps && dropProps.align || dropAlign || themeDropAlign;
@@ -113,14 +92,14 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     if (align.top === 'top') return -1;
     if (align.bottom === 'bottom') return itemCount;
     return undefined;
-  }, [align, itemCount]); // Keeps track of whether menu options should be mirrored
+  }, [align, itemCount]);
+
+  // Keeps track of whether menu options should be mirrored
   // when there's not enough space below DropButton. This state
   // is modified on /Drop/DropContainer.js.
-
   var _useState = (0, _react.useState)(),
-      alignControlMirror = _useState[0],
-      setAlignControlMirror = _useState[1];
-
+    alignControlMirror = _useState[0],
+    setAlignControlMirror = _useState[1];
   var initialAlignTop = alignControlMirror === align.top;
   var dropContainerRef = (0, _react.useRef)();
   var buttonRefs = (0, _react.useRef)([]);
@@ -135,15 +114,12 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       controlButtonIndex: controlButtonIndex
     };
   }, [align, controlButtonIndex]);
-
   var _useState2 = (0, _react.useState)(constants.none),
-      activeItemIndex = _useState2[0],
-      setActiveItemIndex = _useState2[1];
-
+    activeItemIndex = _useState2[0],
+    setActiveItemIndex = _useState2[1];
   var _useState3 = (0, _react.useState)(open || false),
-      isOpen = _useState3[0],
-      setOpen = _useState3[1];
-
+    isOpen = _useState3[0],
+    setOpen = _useState3[1];
   var MenuIcon = isOpen && theme.menu.icons.up ? theme.menu.icons.up : theme.menu.icons.down;
   var onDropClose = (0, _react.useCallback)(function () {
     setActiveItemIndex(constants.none);
@@ -157,7 +133,6 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     var timer = setTimeout(function () {
       if (isOpen) {
         var optionsNode = dropContainerRef.current;
-
         if (optionsNode) {
           optionsNode.focus();
         }
@@ -167,7 +142,6 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       return clearTimeout(timer);
     };
   }, [isOpen]);
-
   var onSelectMenuItem = function onSelectMenuItem(event) {
     if (isOpen) {
       if (activeItemIndex >= 0) {
@@ -179,14 +153,11 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       onDropOpen();
     }
   };
-
   var isTab = function isTab(event) {
     return event.keyCode === constants.tab || event.which === constants.tab;
   };
-
   var onNextMenuItem = function onNextMenuItem(event) {
     event.preventDefault();
-
     if (!isOpen) {
       onDropOpen();
     } else if (isTab(event) && (!constants.controlBottom && activeItemIndex === itemCount - 1 || constants.controlBottom && activeItemIndex === controlButtonIndex)) {
@@ -195,8 +166,8 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       onDropClose();
     } else {
       var index;
-
-      if ( // This checks if the user has reached the end of the menu.
+      if (
+      // This checks if the user has reached the end of the menu.
       // In the case the the menu control button is located at the
       // bottom of the menu, it checks if the user has reached the button.
       // Otherwise, it checks if the user is at the last menu item.
@@ -206,18 +177,14 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       } else {
         index = activeItemIndex + 1;
       }
-
       setActiveItemIndex(index);
-
       if (buttonRefs.current[index]) {
         buttonRefs.current[index].focus();
       }
     }
   };
-
   var onPreviousMenuItem = function onPreviousMenuItem(event) {
     event.preventDefault();
-
     if (!isOpen) {
       onDropOpen();
     } else if (isTab(event) && (constants.controlTop && activeItemIndex === controlButtonIndex || !constants.controlTop && activeItemIndex - 1 < 0)) {
@@ -226,7 +193,6 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       onDropClose();
     } else {
       var index;
-
       if (activeItemIndex === 'none') {
         index = itemCount - 1;
       } else if (activeItemIndex - 1 < 0) {
@@ -238,15 +204,12 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       } else {
         index = activeItemIndex - 1;
       }
-
       setActiveItemIndex(index);
-
       if (buttonRefs.current[index]) {
         buttonRefs.current[index].focus();
       }
     }
   };
-
   var menuIcon = icon !== false ? icon !== true && icon || /*#__PURE__*/_react["default"].createElement(MenuIcon, {
     color: iconColor,
     size: size
@@ -256,7 +219,6 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     size: size
   };
   var content;
-
   if (children) {
     content = children;
   } else if (!theme.button["default"]) {
@@ -281,7 +243,6 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     };
     content = undefined;
   }
-
   var controlMirror = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     flex: false
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
@@ -299,7 +260,8 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     onClick: onDropClose,
     onFocus: function onFocus() {
       return setActiveItemIndex(controlButtonIndex);
-    } // On first tab into menu, the control button should not
+    }
+    // On first tab into menu, the control button should not
     // be able to receive tab focus because the focus should
     // go to the first menu item instead.
     ,
@@ -309,10 +271,8 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       drop: true
     }));
   } : content));
-
   var menuItem = function menuItem(item, index) {
     var _theme$menu$item, _theme$menu$item2, _theme$menu$item3;
-
     // Determine whether the label is done as a child or
     // as an option Button kind property.
     var child = !theme.button.option ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
@@ -321,8 +281,9 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       direction: "row",
       gap: item.gap || ((_theme$menu$item = theme.menu.item) == null ? void 0 : _theme$menu$item.gap),
       justify: item.justify || ((_theme$menu$item2 = theme.menu.item) == null ? void 0 : _theme$menu$item2.justify)
-    }, item.reverse && item.label, item.icon, !item.reverse && item.label) : undefined; // if we have a child, turn on plain, and hoverIndicator
+    }, item.reverse && item.label, item.icon, !item.reverse && item.label) : undefined;
 
+    // if we have a child, turn on plain, and hoverIndicator
     return (
       /*#__PURE__*/
       // eslint-disable-next-line react/no-array-index-key
@@ -356,7 +317,6 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
           if (item.onClick) {
             item.onClick.apply(item, arguments);
           }
-
           if (item.close !== false) {
             onDropClose();
           }
@@ -364,15 +324,13 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       }), child))
     );
   };
-
   var menuContent;
-
   if (itemCount && Array.isArray(items[0])) {
     var index = 0;
     menuContent = items.map(function (group, groupIndex) {
       var _theme$menu$group, _theme$menu$group$sep, _theme$menu$group2, _theme$menu$group2$se, _theme$menu$group3;
-
-      return /*#__PURE__*/_react["default"].createElement(_Box.Box // eslint-disable-next-line react/no-array-index-key
+      return /*#__PURE__*/_react["default"].createElement(_Box.Box
+      // eslint-disable-next-line react/no-array-index-key
       , {
         key: groupIndex
       }, groupIndex > 0 && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
@@ -394,7 +352,6 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   } else menuContent = items.map(function (item, index) {
     return menuItem(item, index);
   });
-
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onDown: onDropOpen,
     onUp: onDropOpen,

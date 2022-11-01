@@ -2,21 +2,13 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Custom = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 var _excluded = ["animate", "multiple"];
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var customAccordionTheme = {
   global: {
     font: {
@@ -45,12 +37,10 @@ var customAccordionTheme = {
     border: undefined
   }
 };
-
 var CustomAccordion = function CustomAccordion(_ref) {
   var animate = _ref.animate,
-      multiple = _ref.multiple,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    multiple = _ref.multiple,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customAccordionTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, _extends({}, rest, {
@@ -86,11 +76,9 @@ var CustomAccordion = function CustomAccordion(_ref) {
     size: "small"
   }, "Important Info"))))));
 };
-
 var Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(CustomAccordion, null);
 };
-
 exports.Custom = Custom;
 var _default = {
   title: 'Controls/Accordion/Custom Themed/Custom'

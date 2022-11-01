@@ -2,22 +2,17 @@
 
 exports.__esModule = true;
 exports["default"] = exports.AggregateValidation = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 // This example shows a way to perform validation across multiple fields.
 var AggregateValidation = function AggregateValidation() {
   var _React$useState = _react["default"].useState({
-    name: 'a',
-    email: 'b'
-  }),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+      name: 'a',
+      email: 'b'
+    }),
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var message = value.name && value.email && value.name[0] !== value.email[0] ? 'Mismatched first character' : undefined;
   return (
     /*#__PURE__*/
@@ -77,11 +72,10 @@ var AggregateValidation = function AggregateValidation() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.AggregateValidation = AggregateValidation;
 AggregateValidation.storyName = 'Aggregate validation';
 AggregateValidation.args = {

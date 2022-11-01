@@ -8,7 +8,6 @@ var AnimatedBox = styled(Box).withConfig({
   componentId: "sc-2m8o8b-0"
 })(["animation:", " 3s linear;"], keyFrameExampleOne);
 var data = [];
-
 for (var i = 0; i < 13; i += 1) {
   var v = -Math.sin(i / 2.0);
   var v2 = Math.cos(i / 2.0);
@@ -18,19 +17,15 @@ for (var i = 0; i < 13; i += 1) {
     need: Math.floor(v2 * 10)
   });
 }
-
 for (var _i = 0; _i < 13; _i += 1) {
   var _v = -Math.sin(_i / 2.0);
-
   var _v2 = Math.cos(_i / 2.0);
-
   data.push({
     date: "2020-08-" + (_i % 30 + 1).toString().padStart(2, 0),
     amountPredicted: Math.floor(_v * 100),
     needPredicted: Math.floor(_v2 * 10)
   });
 }
-
 export var Prediction = function Prediction() {
   return (
     /*#__PURE__*/
@@ -89,7 +84,8 @@ export var Prediction = function Prediction() {
         property: 'amount',
         type: 'point',
         thickness: 'small'
-      }, // {
+      },
+      // {
       //   property: 'needPredicted',
       //   type: 'line',
       //   thickness: 'xxsmall',
@@ -140,10 +136,11 @@ export var Prediction = function Prediction() {
     }), /*#__PURE__*/React.createElement(AnimatedBox, {
       width: "small",
       height: "small"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/DataChart/Prediction'
 };

@@ -2,16 +2,14 @@ import React from 'react';
 import { Box, Button, Form, FormField, MaskedInput } from 'grommet';
 export var MaskedInputForm = function MaskedInputForm() {
   var _React$useState = React.useState({
-    value: ''
-  }),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+      value: ''
+    }),
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var onChange = function onChange(nextValue) {
     console.log('onChange', nextValue);
     setValue(nextValue);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -43,10 +41,11 @@ export var MaskedInputForm = function MaskedInputForm() {
     })), /*#__PURE__*/React.createElement(Button, {
       type: "submit",
       label: "submit"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 MaskedInputForm.storyName = 'Form';
 export default {
   title: 'Input/MaskedInput/Form'

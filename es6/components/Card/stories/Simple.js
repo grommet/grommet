@@ -24,10 +24,11 @@ export var Simple = function Simple() {
       pad: "small",
       gap: "medium",
       background: "light-1"
-    }, /*#__PURE__*/React.createElement(Text, null, "text - random component"), /*#__PURE__*/React.createElement(Box, null, "box - random component"))) // </Grommet>
-
+    }, /*#__PURE__*/React.createElement(Text, null, "text - random component"), /*#__PURE__*/React.createElement(Box, null, "box - random component")))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Layout/Card/Simple'
 };

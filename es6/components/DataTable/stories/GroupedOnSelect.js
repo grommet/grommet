@@ -1,9 +1,8 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React from 'react';
-import { Box, DataTable } from 'grommet'; // Source code for the data can be found here
+import { Box, DataTable } from 'grommet';
+// Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
-
 import { columns, DATA } from './data';
 var groupColumns = [].concat(columns);
 var first = groupColumns[0];
@@ -25,10 +24,11 @@ export var GroupedOnSelectDataTable = function GroupedOnSelectDataTable() {
       groupBy: "location",
       onSelect: function onSelect() {},
       sortable: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 GroupedOnSelectDataTable.storyName = 'Grouped and onSelect';
 export default {
   title: 'Visualizations/DataTable/Grouped and onSelect'

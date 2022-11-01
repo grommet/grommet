@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Placeholder = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Placeholder = function Placeholder() {
   return (
     /*#__PURE__*/
@@ -36,11 +32,10 @@ var Placeholder = function Placeholder() {
         }
       },
       placeholder: "no data"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Placeholder = Placeholder;
 var _default = {
   title: 'Visualizations/DataChart/Placeholder'

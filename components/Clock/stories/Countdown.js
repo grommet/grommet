@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Countdown = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Countdown = function Countdown() {
   return (
     /*#__PURE__*/
@@ -22,11 +18,10 @@ var Countdown = function Countdown() {
       type: "digital",
       time: "PT0H0M20S",
       run: "backward"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Countdown = Countdown;
 Countdown.parameters = {
   chromatic: {

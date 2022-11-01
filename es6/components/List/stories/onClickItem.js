@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, List, Layer, Button, Text } from 'grommet';
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 var data = [];
-
 for (var i = 0; i < 40; i += 1) {
   data.push({
     entry: "entry-" + (i + 1),
@@ -12,16 +11,13 @@ for (var i = 0; i < 40; i += 1) {
     paid: (i + 1) * 17 % 1000
   });
 }
-
 export var OnClickItemList = function OnClickItemList() {
   var _React$useState = React.useState(),
-      clicked = _React$useState[0],
-      setClicked = _React$useState[1];
-
+    clicked = _React$useState[0],
+    setClicked = _React$useState[1];
   var _React$useState2 = React.useState(),
-      show = _React$useState2[0],
-      setShow = _React$useState2[1];
-
+    show = _React$useState2[0],
+    setShow = _React$useState2[1];
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",

@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Analog = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'huge'];
-
 var Analog = function Analog() {
   return (
     /*#__PURE__*/
@@ -30,11 +25,10 @@ var Analog = function Analog() {
       }));
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "xxlarge and huge sizes are equal. The latter is kept for beckwards compatibility."))) // </Grommet>
-
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "xxlarge and huge sizes are equal. The latter is kept for beckwards compatibility.")))
+    // </Grommet>
   );
 };
-
 exports.Analog = Analog;
 Analog.parameters = {
   chromatic: {

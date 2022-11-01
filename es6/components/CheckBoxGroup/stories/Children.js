@@ -12,9 +12,8 @@ var optionsObjects = [{
 }];
 export var Children = function Children() {
   var _useState = useState(),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"

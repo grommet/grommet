@@ -11,13 +11,11 @@ var customTheme = deepMerge(grommet, {
 });
 export var Themed = function Themed() {
   var _useState = useState(''),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   var onChange = function onChange(event) {
     return setValue(event.target.value);
   };
-
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
   }, /*#__PURE__*/React.createElement(Box, {

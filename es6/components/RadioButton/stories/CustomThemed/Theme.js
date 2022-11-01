@@ -29,9 +29,8 @@ var theme = deepMerge(grommet, {
 });
 export var ThemeRadioButton = function ThemeRadioButton() {
   var _React$useState = React.useState(),
-      selected = _React$useState[0],
-      setSelected = _React$useState[1];
-
+    selected = _React$useState[0],
+    setSelected = _React$useState[1];
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme
   }, /*#__PURE__*/React.createElement(Box, {

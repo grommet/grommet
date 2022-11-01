@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Uncontrolled = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Uncontrolled = function Uncontrolled() {
   return (
     /*#__PURE__*/
@@ -28,11 +24,10 @@ var Uncontrolled = function Uncontrolled() {
         var option = _ref.option;
         return console.log(option);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Uncontrolled = Uncontrolled;
 Uncontrolled.parameters = {
   chromatic: {

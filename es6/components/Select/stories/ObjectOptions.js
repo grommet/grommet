@@ -15,9 +15,8 @@ var objectOptions = [{
 }];
 export var ObjectOptions = function ObjectOptions() {
   var _useState = useState(''),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -42,10 +41,11 @@ export var ObjectOptions = function ObjectOptions() {
         var nextValue = _ref.value;
         return setValue(nextValue);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 ObjectOptions.storyName = 'Object options';
 ObjectOptions.parameters = {
   chromatic: {

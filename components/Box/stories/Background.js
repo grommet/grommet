@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.BackgroundBox = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var BackgroundBox = function BackgroundBox() {
   return (
     /*#__PURE__*/
@@ -103,11 +99,10 @@ var BackgroundBox = function BackgroundBox() {
       pad: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       color: "brand"
-    }, "force light background with color as object")))) // </Grommet>
-
+    }, "force light background with color as object"))))
+    // </Grommet>
   );
 };
-
 exports.BackgroundBox = BackgroundBox;
 BackgroundBox.storyName = 'Background';
 var _default = {

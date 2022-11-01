@@ -2,30 +2,23 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Range = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var dateFormat = new Intl.DateTimeFormat(undefined, {
   month: 'short',
   day: 'numeric'
 });
-
 var Range = function Range() {
   var _React$useState = _react["default"].useState(['2020-07-31T15:27:42.920Z', '2020-08-07T15:27:42.920Z']),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var onChange = function onChange(event) {
     var nextValue = event.value;
     console.log('onChange iso date:', nextValue);
     console.log('onChange utc date:', new Date(nextValue));
     setValue(nextValue);
   };
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
@@ -37,7 +30,6 @@ var Range = function Range() {
     onChange: onChange
   }));
 };
-
 exports.Range = Range;
 Range.parameters = {
   chromatic: {

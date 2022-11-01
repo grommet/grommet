@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ResponsiveTip = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _utils = require("grommet/utils");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var tooltipColor = 'white';
 var theme = (0, _utils.deepMerge)(_grommet.grommet, {
   list: {
@@ -34,7 +29,6 @@ var listData = [{
   entry: '29 TB (67.6 %)',
   action: 'Free'
 }];
-
 var TipContent = function TipContent(_ref) {
   var size = _ref.size;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -99,7 +93,6 @@ var TipContent = function TipContent(_ref) {
     }, datum.entry));
   }))));
 };
-
 var ResponsiveTip = function ResponsiveTip() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme,
@@ -140,7 +133,6 @@ var ResponsiveTip = function ResponsiveTip() {
     })));
   }));
 };
-
 exports.ResponsiveTip = ResponsiveTip;
 ResponsiveTip.storyName = 'Responsive';
 ResponsiveTip.parameters = {

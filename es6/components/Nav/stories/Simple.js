@@ -13,7 +13,6 @@ var items = [{
   label: 'Item D',
   href: '#'
 }];
-
 var SimpleNav = function SimpleNav() {
   return (
     /*#__PURE__*/
@@ -27,8 +26,8 @@ var SimpleNav = function SimpleNav() {
         label: item.label,
         key: item.label
       });
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
 

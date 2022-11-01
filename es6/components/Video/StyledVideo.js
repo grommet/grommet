@@ -7,8 +7,9 @@ var FIT_MAP = {
 };
 var fitStyle = css(["flex:1 1;min-height:0;object-fit:", ";"], function (props) {
   return FIT_MAP[props.fit];
-}); // z-index is for Safari so controls aren't hidden
+});
 
+// z-index is for Safari so controls aren't hidden
 var StyledVideo = styled.video.withConfig({
   displayName: "StyledVideo",
   componentId: "sc-w4v8h9-0"
@@ -26,8 +27,9 @@ var StyledVideoContainer = styled.div.withConfig({
   componentId: "sc-w4v8h9-1"
 })(["flex:1 1;display:flex;flex-direction:column;overflow:hidden;position:relative;", ";&:focus{", "}"], genericStyles, focusStyle());
 StyledVideoContainer.defaultProps = {};
-Object.setPrototypeOf(StyledVideoContainer.defaultProps, defaultProps); // z-index is for Safari so controls aren't hidden
+Object.setPrototypeOf(StyledVideoContainer.defaultProps, defaultProps);
 
+// z-index is for Safari so controls aren't hidden
 var positionStyle = css(["position:absolute;left:0;right:0;bottom:0;z-index:1;"]);
 var StyledVideoControls = styled.div.withConfig({
   displayName: "StyledVideo__StyledVideoControls",

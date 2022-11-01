@@ -7,10 +7,11 @@ export var Simple = function Simple() {
     // <Grommet theme={...}>
     React.createElement(Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
-    }) // </Grommet>
-
+    })
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Media/Image/Simple'
 };

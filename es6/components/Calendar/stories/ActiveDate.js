@@ -2,13 +2,11 @@ import React, { useRef, useState } from 'react';
 import { Box, Button, Calendar, Text } from 'grommet';
 export var ActiveDate = function ActiveDate() {
   var _useState = useState(),
-      datesD = _useState[0],
-      setDatesD = _useState[1];
-
+    datesD = _useState[0],
+    setDatesD = _useState[1];
   var _useState2 = useState(undefined),
-      activeDate = _useState2[0],
-      setActiveDate = _useState2[1];
-
+    activeDate = _useState2[0],
+    setActiveDate = _useState2[1];
   var startDateButton = useRef();
   var endDateButton = useRef();
   return (
@@ -43,10 +41,11 @@ export var ActiveDate = function ActiveDate() {
         setActiveDate('end');
       },
       range: "array"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 ActiveDate.storyName = 'Active date';
 export default {
   title: "Visualizations/Calendar/Active date"

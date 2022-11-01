@@ -21,7 +21,6 @@ export var getOptionIndex = function getOptionIndex(options, i, valueKey) {
     });
     return options.indexOf(i);
   }
-
   return undefined;
 };
 export var arrayIncludes = function arrayIncludes(arr, i, valueKey) {
@@ -31,14 +30,12 @@ export var arrayIncludes = function arrayIncludes(arr, i, valueKey) {
     });
     return arr.includes(i);
   }
-
   return undefined;
 };
 export var useDisabled = function useDisabled(disabled, disabledKey, options, valueKey) {
   return useCallback(function (index) {
     var option = options[index];
     var result;
-
     if (disabledKey) {
       result = applyKey(option, disabledKey);
     } else if (Array.isArray(disabled)) {
@@ -49,7 +46,6 @@ export var useDisabled = function useDisabled(disabled, disabledKey, options, va
         result = getOptionIndex(disabled, options[index], valueKey) !== -1 || getOptionIndex(disabled, optionVal, valueKey) !== -1;
       }
     }
-
     return result;
   }, [disabled, disabledKey, options, valueKey]);
 };
@@ -73,25 +69,22 @@ export var changeEvent = function changeEvent(inputRef, nextValue) {
 };
 export var getSelectIcon = function getSelectIcon(icon, theme, open) {
   var SelectIcon;
-
   switch (icon) {
     case false:
       break;
-
     case true:
     case undefined:
       SelectIcon = open && theme.select.icons.up ? theme.select.icons.up : theme.select.icons.down;
       break;
-
     default:
       SelectIcon = icon;
   }
-
   return SelectIcon;
-}; // if labelKey is a function and valueLabel is not defined
+};
+
+// if labelKey is a function and valueLabel is not defined
 // we should use the labelKey function to display the
 // selected value
-
 export var getDisplayLabelKey = function getDisplayLabelKey(labelKey, allOptions, optionIndexesInValue, selectValue) {
   var optionLabelKey = applyKey(allOptions[optionIndexesInValue[0]], labelKey);
   if (!selectValue && optionIndexesInValue.length === 1 && typeof optionLabelKey === 'object') return optionLabelKey;

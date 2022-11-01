@@ -9,7 +9,6 @@ var BORDER_SHAPE = PropTypes.shape({
   style: PropTypes.oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden'])
 });
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     border: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all']), BORDER_SHAPE, PropTypes.arrayOf(BORDER_SHAPE)]),
@@ -20,5 +19,4 @@ if (process.env.NODE_ENV !== 'production') {
     align: PropTypes.oneOfType([PropTypes.oneOf(['left', 'right', 'center', 'justify', 'inherit', 'start', 'end']), PropTypes.string])
   };
 }
-
 export var TableCellPropTypes = PropType;

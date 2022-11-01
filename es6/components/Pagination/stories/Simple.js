@@ -17,10 +17,11 @@ export var Simple = function Simple() {
       background: "brand",
       pad: "medium",
       margin: "small"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Controls/Pagination/Simple'
 };

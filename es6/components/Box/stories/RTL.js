@@ -30,10 +30,11 @@ export var RTLBox = function RTLBox() {
         start: 'large'
       },
       background: "brand"
-    }, "margin start")) // </Grommet>
-
+    }, "margin start"))
+    // </Grommet>
   );
 };
+
 RTLBox.storyName = 'RTL';
 RTLBox.args = {
   dir: 'rtl'

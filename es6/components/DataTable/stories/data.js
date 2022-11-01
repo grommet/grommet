@@ -1,5 +1,4 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React from 'react';
 import { Box, Meter, Text, Tip } from 'grommet';
 var amountFormatter = new Intl.NumberFormat('en-US', {
@@ -59,7 +58,6 @@ groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 export var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 export var data = [];
-
 for (var i = 0; i < 40; i += 1) {
   data.push({
     name: "Name " + (i + 1),
@@ -69,7 +67,6 @@ for (var i = 0; i < 40; i += 1) {
     paid: (i + 1) * 17 % 1000
   });
 }
-
 export var DATA = [{
   name: 'Alan',
   location: '',
@@ -239,7 +236,8 @@ export var storageColumns = [{
     color: "text"
   }, "(TiB)")),
   render: function render(datum) {
-    return (// bytes to tebibytes
+    return (
+      // bytes to tebibytes
       (datum.size / Math.pow(2, 40)).toFixed([1])
     );
   },
@@ -261,7 +259,7 @@ export var storageColumns = [{
   }, "%"))),
   render: function render(_ref3) {
     var pinnable = _ref3.pinnable,
-        pinned = _ref3.pinned;
+      pinned = _ref3.pinned;
     return /*#__PURE__*/React.createElement(Tip, {
       plain: true,
       dropProps: {

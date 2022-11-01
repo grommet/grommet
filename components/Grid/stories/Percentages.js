@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Percentages = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Percentages = function Percentages() {
   return (
     /*#__PURE__*/
@@ -34,11 +30,10 @@ var Percentages = function Percentages() {
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       gridArea: "main",
       background: "brand"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Percentages = Percentages;
 Percentages.args = {
   full: true

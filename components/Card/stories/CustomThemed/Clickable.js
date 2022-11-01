@@ -2,21 +2,13 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Clickable = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 var _excluded = ["children", "title", "subTitle", "size"];
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var theme = {
   themeMode: 'dark',
   global: {
@@ -78,7 +70,6 @@ var data = [{
   message: 'Past 12hrs',
   type: 'point'
 }];
-
 var ChartPreview = function ChartPreview(_ref) {
   var type = _ref.type;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
@@ -117,14 +108,12 @@ var ChartPreview = function ChartPreview(_ref) {
     }
   }));
 };
-
 var Identifier = function Identifier(_ref2) {
   var children = _ref2.children,
-      title = _ref2.title,
-      subTitle = _ref2.subTitle,
-      size = _ref2.size,
-      rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
-
+    title = _ref2.title,
+    subTitle = _ref2.subTitle,
+    size = _ref2.size,
+    rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, _extends({
     gap: "small",
     align: "center",
@@ -137,7 +126,6 @@ var Identifier = function Identifier(_ref2) {
     size: size
   }, subTitle)));
 };
-
 var Clickable = function Clickable() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme,
@@ -176,7 +164,6 @@ var Clickable = function Clickable() {
     }, value.message)));
   }))));
 };
-
 exports.Clickable = Clickable;
 Clickable.parameters = {
   chromatic: {

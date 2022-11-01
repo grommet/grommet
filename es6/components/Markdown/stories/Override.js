@@ -18,10 +18,11 @@ export var ComponentOverrideMarkdown = function ComponentOverrideMarkdown() {
       components: {
         pre: StyledPre
       }
-    }, CONTENT)) // </Grommet>
-
+    }, CONTENT))
+    // </Grommet>
   );
 };
+
 ComponentOverrideMarkdown.storyName = 'Component override markdown';
 export default {
   title: 'Type/Markdown/Component override markdown'

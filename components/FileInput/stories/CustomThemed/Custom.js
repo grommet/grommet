@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Custom = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var customTheme = {
   fileInput: {
     button: {
@@ -58,7 +53,6 @@ var customTheme = {
     }
   }
 };
-
 var Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
@@ -89,7 +83,6 @@ var Custom = function Custom() {
     onChange: function onChange(event, _ref) {
       var files = _ref.files;
       var fileList = files;
-
       for (var i = 0; i < fileList.length; i += 1) {
         var file = fileList[i];
         console.log(file.name);
@@ -97,7 +90,6 @@ var Custom = function Custom() {
     }
   }))));
 };
-
 exports.Custom = Custom;
 var _default = {
   title: 'Input/FileInput/Custom Themed/Custom'

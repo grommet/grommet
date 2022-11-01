@@ -5,24 +5,20 @@ import { Power } from "grommet-icons/es6/icons/Power";
 import { User } from "grommet-icons/es6/icons/User";
 export var Sticky = function Sticky() {
   var _useState = useState(false),
-      open = _useState[0],
-      setOpen = _useState[1];
-
+    open = _useState[0],
+    setOpen = _useState[1];
   var onOpen = function onOpen() {
     return setOpen(true);
   };
-
   var onClose = function onClose() {
     return setOpen(undefined);
-  }; // eslint-disable-next-line no-unused-vars
-
-
-  var onSubmit = function onSubmit(_ref) {// Your submission logic here
-
-    var value = _ref.value,
-        touched = _ref.touched;
   };
 
+  // eslint-disable-next-line no-unused-vars
+  var onSubmit = function onSubmit(_ref) {
+    var value = _ref.value,
+      touched = _ref.touched;
+  };
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -111,10 +107,11 @@ export var Sticky = function Sticky() {
       pad: {
         horizontal: 'medium'
       }
-    }, /*#__PURE__*/React.createElement(Paragraph, null, "To maximize screen real-estate, the Header on this page scrolls out of view as the user moves down the page. However if the user scrolls upwards, the Header is revealed and fixed atop the window. On long pages this behavior allows easy access to the Headers content, such as navigation or menus, while preventing the Header from obscuring content on mobile devices or in smaller windows."), /*#__PURE__*/React.createElement(Paragraph, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt."), /*#__PURE__*/React.createElement(Paragraph, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt."))))) // </Grommet>
-
+    }, /*#__PURE__*/React.createElement(Paragraph, null, "To maximize screen real-estate, the Header on this page scrolls out of view as the user moves down the page. However if the user scrolls upwards, the Header is revealed and fixed atop the window. On long pages this behavior allows easy access to the Headers content, such as navigation or menus, while preventing the Header from obscuring content on mobile devices or in smaller windows."), /*#__PURE__*/React.createElement(Paragraph, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt."), /*#__PURE__*/React.createElement(Paragraph, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt.")))))
+    // </Grommet>
   );
 };
+
 Sticky.storyName = 'Sticky';
 export default {
   title: 'Layout/Header/Sticky'

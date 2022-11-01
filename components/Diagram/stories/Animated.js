@@ -2,25 +2,17 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Animated = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 var _data = require("./data");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var connection = function connection(fromTarget, toTarget, _temp) {
   var _ref = _temp === void 0 ? {} : _temp,
-      rest = _extends({}, _ref);
-
+    rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   return _extends({
     fromTarget: fromTarget,
     toTarget: toTarget,
@@ -31,15 +23,14 @@ var connection = function connection(fromTarget, toTarget, _temp) {
     type: 'curved'
   }, rest);
 };
-
 var DiamondContainer = function DiamondContainer(_ref2) {
   var carat = _ref2.carat,
-      color = _ref2.color,
-      cut = _ref2.cut,
-      align = _ref2.align,
-      id = _ref2.id,
-      name = _ref2.name,
-      textSize = _ref2.textSize;
+    color = _ref2.color,
+    cut = _ref2.cut,
+    align = _ref2.align,
+    id = _ref2.id,
+    name = _ref2.name,
+    textSize = _ref2.textSize;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: align || 'center',
     alignSelf: "center",
@@ -63,10 +54,9 @@ var DiamondContainer = function DiamondContainer(_ref2) {
     size: textSize
   }, " Cut: ", cut, " ")));
 };
-
 var Container = function Container(_ref3) {
   var node = _ref3.node,
-      index = _ref3.index;
+    index = _ref3.index;
   return /*#__PURE__*/_react["default"].createElement(DiamondContainer, {
     carat: node.carat,
     color: node.color,
@@ -77,16 +67,13 @@ var Container = function Container(_ref3) {
     textSize: "small"
   });
 };
-
 var Animated = function Animated() {
   var reducer = function reducer(draw) {
     return !draw;
   };
-
   var _useReducer = (0, _react.useReducer)(reducer, true),
-      draw = _useReducer[0],
-      toogleDraw = _useReducer[1];
-
+    draw = _useReducer[0],
+    toogleDraw = _useReducer[1];
   (0, _react.useEffect)(function () {
     var timer = setInterval(function () {
       toogleDraw();
@@ -96,7 +83,6 @@ var Animated = function Animated() {
     };
   }, [toogleDraw]);
   var connections = [];
-
   if (draw) {
     connections.push(connection('4', '1', {
       anchor: 'vertical'
@@ -108,7 +94,6 @@ var Animated = function Animated() {
       anchor: 'vertical'
     }));
   }
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -149,11 +134,10 @@ var Animated = function Animated() {
         duration: 3000
       },
       connections: connections
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
-
 exports.Animated = Animated;
 var _default = {
   title: 'Visualizations/Diagram/Animated'

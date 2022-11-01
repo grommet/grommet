@@ -22,10 +22,11 @@ export var GridAreasAlternative = function GridAreasAlternative() {
     }, "Main"), /*#__PURE__*/React.createElement(Box, {
       background: "dark-2",
       gridArea: "footer"
-    }, "Footer")) // </Grommet>
-
+    }, "Footer"))
+    // </Grommet>
   );
 };
+
 GridAreasAlternative.args = {
   full: true
 };

@@ -1,9 +1,6 @@
 var _excluded = ["direction"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { useState } from 'react';
 import { Gremlin } from "grommet-icons/es6/icons/Gremlin";
 import { Grommet as GrommetIcon } from "grommet-icons/es6/icons/Grommet";
@@ -16,25 +13,23 @@ var customEdge = deepMerge(grommet, {
       type: /*#__PURE__*/React.createElement(Gremlin, {
         size: "large",
         color: "neutral-2"
-      }) // it is also possible to use an actual node
+      })
+      // it is also possible to use an actual node
       // type:  <div style={{ padding: '24px', background: 'red' }} />,
-
     }
   }
 });
+
 export var CustomEdgeControl = function CustomEdgeControl(_ref) {
   var _ref$direction = _ref.direction,
-      direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useState = useState([2, 7]),
-      range = _useState[0],
-      setRange = _useState[1];
-
+    range = _useState[0],
+    setRange = _useState[1];
   var onChange = function onChange(values) {
     setRange(values);
   };
-
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customEdge
   }, /*#__PURE__*/React.createElement(Box, {

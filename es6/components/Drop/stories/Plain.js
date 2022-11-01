@@ -4,13 +4,10 @@ var align = {
   top: 'bottom',
   left: 'left'
 };
-
 var PlainDrop = function PlainDrop() {
   var targetRef = useRef();
-
   var _useState = useState(false),
-      setShowDrop = _useState[1];
-
+    setShowDrop = _useState[1];
   useEffect(function () {
     return setShowDrop(true);
   }, []);
@@ -35,8 +32,8 @@ var PlainDrop = function PlainDrop() {
       target: targetRef.current
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "large"
-    }, "No background no shadow"))) // </Grommet>
-
+    }, "No background no shadow")))
+    // </Grommet>
   );
 };
 

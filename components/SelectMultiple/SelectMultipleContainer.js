@@ -2,120 +2,90 @@
 
 exports.__esModule = true;
 exports.SelectMultipleContainer = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _styledComponents = require("styled-components");
-
 var _FormUp = require("grommet-icons/icons/FormUp");
-
 var _utils = require("../../utils");
-
 var _defaultProps = require("../../default-props");
-
 var _Box = require("../Box");
-
 var _Button = require("../Button");
-
 var _CheckBox = require("../CheckBox");
-
 var _InfiniteScroll = require("../InfiniteScroll");
-
 var _Keyboard = require("../Keyboard");
-
 var _Text = require("../Text");
-
 var _TextInput = require("../TextInput");
-
 var _SelectionSummary = require("./SelectionSummary");
-
 var _StyledSelect = require("../Select/StyledSelect");
-
 var _utils2 = require("../Select/utils");
-
 var _EmptySearchOption = require("../Select/EmptySearchOption");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _optionsRef$current;
-
   var allOptions = _ref.allOptions,
-      _ref$children = _ref.children,
-      children = _ref$children === void 0 ? null : _ref$children,
-      disabledProp = _ref.disabled,
-      disabledKey = _ref.disabledKey,
-      dropHeight = _ref.dropHeight,
-      _ref$emptySearchMessa = _ref.emptySearchMessage,
-      emptySearchMessage = _ref$emptySearchMessa === void 0 ? 'No matches found' : _ref$emptySearchMessa,
-      help = _ref.help,
-      id = _ref.id,
-      labelKey = _ref.labelKey,
-      limit = _ref.limit,
-      onChange = _ref.onChange,
-      onClose = _ref.onClose,
-      onKeyDown = _ref.onKeyDown,
-      onMore = _ref.onMore,
-      onSearch = _ref.onSearch,
-      optionIndexesInValue = _ref.optionIndexesInValue,
-      options = _ref.options,
-      _ref$replace = _ref.replace,
-      replace = _ref$replace === void 0 ? true : _ref$replace,
-      searchPlaceholder = _ref.searchPlaceholder,
-      search = _ref.search,
-      setSearch = _ref.setSearch,
-      usingKeyboard = _ref.usingKeyboard,
-      _ref$value = _ref.value,
-      value = _ref$value === void 0 ? [] : _ref$value,
-      valueKey = _ref.valueKey,
-      showSelectedInline = _ref.showSelectedInline;
-
+    _ref$children = _ref.children,
+    children = _ref$children === void 0 ? null : _ref$children,
+    disabledProp = _ref.disabled,
+    disabledKey = _ref.disabledKey,
+    dropHeight = _ref.dropHeight,
+    _ref$emptySearchMessa = _ref.emptySearchMessage,
+    emptySearchMessage = _ref$emptySearchMessa === void 0 ? 'No matches found' : _ref$emptySearchMessa,
+    help = _ref.help,
+    id = _ref.id,
+    labelKey = _ref.labelKey,
+    limit = _ref.limit,
+    onChange = _ref.onChange,
+    onClose = _ref.onClose,
+    onKeyDown = _ref.onKeyDown,
+    onMore = _ref.onMore,
+    onSearch = _ref.onSearch,
+    optionIndexesInValue = _ref.optionIndexesInValue,
+    options = _ref.options,
+    _ref$replace = _ref.replace,
+    replace = _ref$replace === void 0 ? true : _ref$replace,
+    searchPlaceholder = _ref.searchPlaceholder,
+    search = _ref.search,
+    setSearch = _ref.setSearch,
+    usingKeyboard = _ref.usingKeyboard,
+    _ref$value = _ref.value,
+    value = _ref$value === void 0 ? [] : _ref$value,
+    valueKey = _ref.valueKey,
+    showSelectedInline = _ref.showSelectedInline;
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-
   var _useState = (0, _react.useState)(-1),
-      activeIndex = _useState[0],
-      setActiveIndex = _useState[1];
-
+    activeIndex = _useState[0],
+    setActiveIndex = _useState[1];
   var _useState2 = (0, _react.useState)(usingKeyboard),
-      keyboardNavigation = _useState2[0],
-      setKeyboardNavigation = _useState2[1];
-
+    keyboardNavigation = _useState2[0],
+    setKeyboardNavigation = _useState2[1];
   var searchRef = (0, _react.useRef)();
   var optionsRef = (0, _react.useRef)();
-
   var _useState3 = (0, _react.useState)(disabledProp),
-      disabled = _useState3[0],
-      setDisabled = _useState3[1];
-
+    disabled = _useState3[0],
+    setDisabled = _useState3[1];
   var activeRef = (0, _react.useRef)();
-
   var _useState4 = (0, _react.useState)(),
-      showA11yLimit = _useState4[0],
-      setShowA11yLimit = _useState4[1];
-
+    showA11yLimit = _useState4[0],
+    setShowA11yLimit = _useState4[1];
   var clearRef = (0, _react.useRef)();
-  var isDisabled = (0, _utils2.useDisabled)(disabled, disabledKey, options, valueKey || labelKey); // for keyboard/screenreader, keep the active option in focus
+  var isDisabled = (0, _utils2.useDisabled)(disabled, disabledKey, options, valueKey || labelKey);
 
+  // for keyboard/screenreader, keep the active option in focus
   (0, _react.useEffect)(function () {
     var _activeRef$current;
-
     if (activeIndex) (_activeRef$current = activeRef.current) == null ? void 0 : _activeRef$current.focus();
-  }, [activeIndex]); // set initial focus
+  }, [activeIndex]);
 
+  // set initial focus
   (0, _react.useEffect)(function () {
     // need to wait for Drop to be ready
     var timer = setTimeout(function () {
       var clearButton = clearRef.current;
-
       if (clearButton && clearButton.focus) {
         (0, _utils.setFocusWithoutScroll)(clearButton);
       } else if (searchRef && searchRef.current) {
         var searchInput = searchRef.current;
-
         if (searchInput && searchInput.focus) {
           (0, _utils.setFocusWithoutScroll)(searchInput);
         }
@@ -125,14 +95,12 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         setActiveIndex(0);
       }
     }, 100); // Drop should be open after 100ms
-
     return function () {
       return clearTimeout(timer);
     };
   }, []);
   (0, _react.useEffect)(function () {
     var optionsNode = optionsRef.current;
-
     if (optionsNode.children) {
       var optionNode = optionsNode.children[activeIndex];
       if (optionNode) optionNode.focus();
@@ -141,7 +109,6 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   var isSelected = (0, _react.useCallback)(function (index) {
     var result;
     var optionVal = (0, _utils2.getOptionValue)(index, options, valueKey || labelKey);
-
     if (value) {
       if (value.length === 0) {
         result = false;
@@ -154,7 +121,6 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         });
       }
     }
-
     return result;
   }, [value, valueKey, options, labelKey]);
   var selectOption = (0, _react.useCallback)(function (index) {
@@ -163,13 +129,11 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         var nextOptionIndexesInValue = optionIndexesInValue.slice(0);
         var allOptionsIndex = (0, _utils2.getOptionIndex)(allOptions, options[index], valueKey || labelKey);
         var valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
-
         if (valueIndex === -1 && (!limit || (value == null ? void 0 : value.length) < limit)) {
           nextOptionIndexesInValue.push(allOptionsIndex);
         } else {
           nextOptionIndexesInValue.splice(valueIndex, 1);
         }
-
         var nextValue = nextOptionIndexesInValue.map(function (i) {
           return valueKey && valueKey.reduce ? (0, _utils2.applyKey)(allOptions[i], valueKey) : allOptions[i];
         });
@@ -185,7 +149,6 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   var onNextOption = (0, _react.useCallback)(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;
-
     if (nextActiveIndex !== options.length) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
@@ -194,16 +157,13 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   var onPreviousOption = (0, _react.useCallback)(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex - 1;
-
     if (nextActiveIndex === -1) {
       var searchInput = searchRef.current;
-
       if (searchInput && searchInput.focus) {
         setActiveIndex(nextActiveIndex);
         (0, _utils.setFocusWithoutScroll)(searchInput);
       }
     }
-
     if (nextActiveIndex >= 0) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
@@ -213,23 +173,19 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     if (!onSearch) {
       var nextActiveIndex = options.findIndex(function (e) {
         var label;
-
         if (typeof e === 'object') {
           label = e.label || (0, _utils2.applyKey)(e, labelKey);
         } else {
           label = e;
         }
-
         return typeof label === 'string' && label.charAt(0).toLowerCase() === event.key.toLowerCase();
       });
-
       if (nextActiveIndex >= 0) {
         event.preventDefault();
         setActiveIndex(nextActiveIndex);
         setKeyboardNavigation(true);
       }
     }
-
     if (onKeyDown) {
       onKeyDown(event);
     }
@@ -242,19 +198,18 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   var onSelectOption = (0, _react.useCallback)(function (event) {
     if (!isDisabled(activeIndex) && activeIndex >= 0 && activeIndex < options.length) {
       event.preventDefault(); // prevent submitting forms
-
       selectOption(activeIndex)(event);
     }
   }, [activeIndex, selectOption, options, isDisabled]);
   var customSearchInput = theme.select.searchInput;
   var SelectTextInput = customSearchInput || _TextInput.TextInput;
-  var selectOptionsStyle = theme.select.options ? _extends({}, theme.select.options.box, theme.select.options.container) : {}; // handle when limit is reached
+  var selectOptionsStyle = theme.select.options ? _extends({}, theme.select.options.box, theme.select.options.container) : {};
 
+  // handle when limit is reached
   (0, _react.useEffect)(function () {
     var originallyDisabled = function originallyDisabled(index) {
       var option = allOptions[index];
       var result;
-
       if (disabledKey) {
         result = (0, _utils2.applyKey)(option, disabledKey);
       } else if (Array.isArray(disabledProp)) {
@@ -264,20 +219,17 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
           result = (0, _utils2.getOptionIndex)(disabledProp, (0, _utils2.getOptionValue)(index, options, valueKey || labelKey), valueKey || labelKey) !== -1;
         }
       }
-
       return result;
     };
-
     if (value && limit) {
       if (value.length === limit) {
-        var newDisabled = [].concat(disabledProp); // disable everything that is not selected
-
+        var newDisabled = [].concat(disabledProp);
+        // disable everything that is not selected
         for (var i = 0; i < options.length; i += 1) {
           if (!isSelected(i) && !originallyDisabled(i)) {
             newDisabled.push(options[i]);
           }
         }
-
         if (usingKeyboard) setShowA11yLimit('Selected. Maximum selection limit reached.');
         setDisabled(newDisabled);
       } else {
@@ -285,8 +237,9 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         setDisabled(disabledProp);
       }
     }
-  }, [isSelected, value, limit, disabledProp, allOptions, disabledKey, labelKey, options, usingKeyboard, valueKey]); // reset showA11yLimit after announcement is read
+  }, [isSelected, value, limit, disabledProp, allOptions, disabledKey, labelKey, options, usingKeyboard, valueKey]);
 
+  // reset showA11yLimit after announcement is read
   (0, _react.useEffect)(function () {
     if (showA11yLimit !== undefined) {
       setTimeout(function () {
@@ -294,7 +247,6 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       }, 2000); // value chosen based on length of a11yLimit message
     }
   }, [showA11yLimit]);
-
   var summaryContent = /*#__PURE__*/_react["default"].createElement(_SelectionSummary.SelectionSummary, {
     allOptions: allOptions,
     clearRef: clearRef,
@@ -312,7 +264,6 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     value: value,
     valueKey: valueKey
   });
-
   if (showSelectedInline) summaryContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     direction: "row",
     justify: "between",
@@ -383,12 +334,12 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     var optionDisabled = isDisabled(index);
     var optionSelected = value ? (0, _utils2.arrayIncludes)(value, valueKey && valueKey.reduce ? (0, _utils2.applyKey)(option, valueKey) : option, valueKey || labelKey) : false;
     var optionActive = activeIndex === index;
-    var optionLabel = (0, _utils2.getOptionLabel)(index, options, labelKey || valueKey); // Determine whether the label is done as a child or
-    // as an option Button kind property.
+    var optionLabel = (0, _utils2.getOptionLabel)(index, options, labelKey || valueKey);
 
+    // Determine whether the label is done as a child or
+    // as an option Button kind property.
     var child;
     var textComponent = false;
-
     if (children) {
       child = children(option, index, options, {
         active: optionActive,
@@ -409,10 +360,8 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         disabled: optionDisabled
       });
     }
-
     if (!children && search) {
       var searchText = search.toLowerCase();
-
       if (typeof optionLabel === 'string' && optionLabel.toLowerCase().indexOf(searchText) >= 0) {
         // code to bold search term in matching options
         var boldIndex = optionLabel.toLowerCase().indexOf(searchText);
@@ -433,13 +382,15 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
           disabled: optionDisabled
         });
       }
-    } // if we have a child, turn on plain, and hoverIndicator
+    }
 
-
+    // if we have a child, turn on plain, and hoverIndicator
     return /*#__PURE__*/_react["default"].createElement(_StyledSelect.SelectOption, {
-      a11yTitle: optionSelected ? optionLabel + " selected" : optionLabel + " not selected" // eslint-disable-next-line react/no-array-index-key
+      a11yTitle: optionSelected ? optionLabel + " selected" : optionLabel + " not selected"
+      // eslint-disable-next-line react/no-array-index-key
       ,
-      key: index // merge optionRef and activeRef
+      key: index
+      // merge optionRef and activeRef
       ,
       ref: function ref(node) {
         // eslint-disable-next-line no-param-reassign
@@ -473,7 +424,8 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   })), usingKeyboard && showA11yLimit && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     height: "0px",
     width: "0px",
-    overflow: "hidden" // announce when we reach the limit of items
+    overflow: "hidden"
+    // announce when we reach the limit of items
     // that can be selected
     ,
     "aria-live": "assertive",

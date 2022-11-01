@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     children: PropTypes.node.isRequired,
@@ -9,5 +8,4 @@ if (process.env.NODE_ENV !== 'production') {
     })
   };
 }
-
 export var SkipLinksPropTypes = PropType;

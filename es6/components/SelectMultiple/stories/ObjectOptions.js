@@ -22,19 +22,17 @@ var objectOptions = [{
 }];
 export var ObjectOptions = function ObjectOptions() {
   var _useState = useState(objectOptions),
-      options = _useState[0],
-      setOptions = _useState[1];
-
+    options = _useState[0],
+    setOptions = _useState[1];
   var _useState2 = useState([{
-    label: 'Red',
-    value: 1
-  }, {
-    label: 'Grey',
-    value: 6
-  }]),
-      value = _useState2[0],
-      setValue = _useState2[1];
-
+      label: 'Red',
+      value: 1
+    }, {
+      label: 'Grey',
+      value: 6
+    }]),
+    value = _useState2[0],
+    setValue = _useState2[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -48,10 +46,10 @@ export var ObjectOptions = function ObjectOptions() {
     }, /*#__PURE__*/React.createElement(Text, null, "SelectMultiple with Object Options"), /*#__PURE__*/React.createElement(SelectMultiple, {
       value: value,
       onSearch: function onSearch(text) {
-        var escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&'); // Create the regular expression with modified value which
+        var escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+        // Create the regular expression with modified value which
         // handles escaping special characters. Without escaping special
         // characters, errors will appear in the console
-
         var exp = new RegExp(escapedText, 'i');
         setOptions(objectOptions.filter(function (o) {
           return exp.test(o.label);
@@ -73,10 +71,11 @@ export var ObjectOptions = function ObjectOptions() {
         var nextValue = _ref.value;
         setValue(nextValue);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 ObjectOptions.storyName = 'Object options';
 ObjectOptions.parameters = {
   chromatic: {

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { alignPropType, widthPropType } from '../../utils/general-prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     align: alignPropType,
@@ -19,5 +18,4 @@ if (process.env.NODE_ENV !== 'production') {
     })
   };
 }
-
 export var NameValueListType = PropType;

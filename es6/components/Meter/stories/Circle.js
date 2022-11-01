@@ -2,9 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Box, Meter } from 'grommet';
 export var Circle = function Circle() {
   var _useState = useState(20),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   var timer = useRef();
   clearTimeout(timer.current);
   timer.current = setTimeout(function () {
@@ -29,10 +28,11 @@ export var Circle = function Circle() {
         value: value,
         color: value > 50 ? 'accent-2' : 'accent-1'
       }]
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Meter/Circle'
 };

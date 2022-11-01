@@ -7,9 +7,8 @@ import { Text } from '../../Text';
 import { data } from '../../NameValueList/stories/data';
 export var Global = function Global() {
   var _useState = useState(true),
-      showGlobalNotification = _useState[0],
-      setShowGlobalNotification = _useState[1];
-
+    showGlobalNotification = _useState[0],
+    setShowGlobalNotification = _useState[1];
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, {
     border: "bottom",
     pad: {
@@ -58,7 +57,7 @@ export var Global = function Global() {
     level: 2
   }, "Details"), /*#__PURE__*/React.createElement(NameValueList, null, Object.entries(data).map(function (_ref) {
     var name = _ref[0],
-        value = _ref[1];
+      value = _ref[1];
     return /*#__PURE__*/React.createElement(NameValuePair, {
       key: name,
       name: name

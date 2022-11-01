@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Simple = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Simple = function Simple() {
   return (
     /*#__PURE__*/
@@ -24,11 +20,10 @@ var Simple = function Simple() {
       parent: /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
         label: "Parent Page"
       })
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.Simple = Simple;
 var _default = {
   title: 'Layout/PageHeader/Simple'

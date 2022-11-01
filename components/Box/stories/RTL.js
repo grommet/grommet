@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.RTLBox = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var RTLBox = function RTLBox() {
   return (
     /*#__PURE__*/
@@ -39,11 +35,10 @@ var RTLBox = function RTLBox() {
         start: 'large'
       },
       background: "brand"
-    }, "margin start")) // </Grommet>
-
+    }, "margin start"))
+    // </Grommet>
   );
 };
-
 exports.RTLBox = RTLBox;
 RTLBox.storyName = 'RTL';
 RTLBox.args = {

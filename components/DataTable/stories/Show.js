@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Show = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'NIS',
@@ -39,7 +35,7 @@ var columns = [{
   header: 'Percent Complete',
   render: function render(_ref) {
     var key = _ref.key,
-        percent = _ref.percent;
+      percent = _ref.percent;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: {
         vertical: 'xsmall'
@@ -278,7 +274,6 @@ var DATA = [{
   percent: 40,
   paid: 2345
 }];
-
 var Show = function Show() {
   var step = 10;
   return (
@@ -300,11 +295,10 @@ var Show = function Show() {
       onMore: function onMore() {
         return console.log('loading more data');
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Show = Show;
 var _default = {
   title: 'Visualizations/DataTable/Show'

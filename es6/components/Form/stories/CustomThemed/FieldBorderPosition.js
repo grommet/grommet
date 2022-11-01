@@ -48,16 +48,13 @@ var borderPositions = [{
     }
   })
 }];
-
 var FormExample = function FormExample(_ref) {
   var index = _ref.index,
-      borderPosition = _ref.borderPosition,
-      theme = _ref.theme;
-
+    borderPosition = _ref.borderPosition,
+    theme = _ref.theme;
   var _useState = useState(''),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   return /*#__PURE__*/React.createElement(Box, {
     background: "#F7F7F7",
     gap: "medium",
@@ -120,7 +117,6 @@ var FormExample = function FormExample(_ref) {
     name: "textArea"
   })))));
 };
-
 export var FieldBorderPosition = function FieldBorderPosition() {
   return (
     /*#__PURE__*/
@@ -141,10 +137,11 @@ export var FieldBorderPosition = function FieldBorderPosition() {
         theme: example.theme,
         index: index
       });
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 FieldBorderPosition.storyName = 'Field border position';
 export default {
   title: 'Input/Form/Custom Themed/Field border position'

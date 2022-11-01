@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import { Box, Select, Text } from 'grommet';
 export var Disabled = function Disabled() {
   var options = ['one', 'two'];
-
   var _useState = useState(''),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -30,10 +28,11 @@ export var Disabled = function Disabled() {
         return setValue(option);
       },
       disabled: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 Disabled.args = {
   full: true
 };

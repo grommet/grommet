@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Social = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Media = function Media() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
@@ -36,7 +31,6 @@ var Media = function Media() {
     })
   }));
 };
-
 var Social = function Social() {
   return (
     /*#__PURE__*/
@@ -69,11 +63,10 @@ var Social = function Social() {
     }, "Grommet")), /*#__PURE__*/_react["default"].createElement(Media, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       textAlign: "center",
       size: "xsmall"
-    }, "\xA9Copyright"))) // </Grommet>
-
+    }, "\xA9Copyright")))
+    // </Grommet>
   );
 };
-
 exports.Social = Social;
 var _default = {
   title: 'Layout/Footer/Social'

@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.SidebarTip = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 var customTheme = {
   global: {
@@ -40,7 +35,6 @@ var customTheme = {
         corner: 'right'
       },
       flex: false // so Tip won't get cut on a window resize
-
     }
   }
 };
@@ -69,7 +63,6 @@ var NotificationAlert = function NotificationAlert() {
     }))
   }));
 };
-
 var SidebarHeader = function SidebarHeader() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
@@ -84,7 +77,6 @@ var SidebarHeader = function SidebarHeader() {
     color: "white"
   })));
 };
-
 var iconsMap = function iconsMap(color) {
   return [/*#__PURE__*/_react["default"].createElement(_grommetIcons.Analytics, {
     color: color
@@ -94,10 +86,9 @@ var iconsMap = function iconsMap(color) {
     color: color
   })];
 };
-
 var SidebarButton = function SidebarButton(_ref) {
   var iconName = _ref.iconName,
-      index = _ref.index;
+    index = _ref.index;
   var hoverColor = {
     color: 'accent-1',
     opacity: 0.9
@@ -124,7 +115,6 @@ var SidebarButton = function SidebarButton(_ref) {
     }, iconsMap(hover ? 'black' : 'white')[index]);
   })));
 };
-
 var SidebarTip = function SidebarTip() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme,
@@ -152,7 +142,6 @@ var SidebarTip = function SidebarTip() {
     });
   })))));
 };
-
 exports.SidebarTip = SidebarTip;
 SidebarTip.storyName = 'Sidebar';
 var _default = {

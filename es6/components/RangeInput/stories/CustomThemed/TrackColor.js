@@ -13,21 +13,17 @@ var rangeInputTheme = {
 };
 export var TrackColor = function TrackColor() {
   var _React$useState = React.useState(0.4),
-      value1 = _React$useState[0],
-      setValue1 = _React$useState[1];
-
+    value1 = _React$useState[0],
+    setValue1 = _React$useState[1];
   var onChange1 = function onChange1(event) {
     return setValue1(event.target.value);
   };
-
   var _React$useState2 = React.useState(8),
-      value2 = _React$useState2[0],
-      setValue2 = _React$useState2[1];
-
+    value2 = _React$useState2[0],
+    setValue2 = _React$useState2[1];
   var onChange2 = function onChange2(event) {
     return setValue2(event.target.value);
   };
-
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: rangeInputTheme
   }, /*#__PURE__*/React.createElement(Box, {

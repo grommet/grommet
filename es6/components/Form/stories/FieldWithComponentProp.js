@@ -20,7 +20,7 @@ export var FieldWithComponentProp = function FieldWithComponentProp() {
       },
       onSubmit: function onSubmit(_ref) {
         var value = _ref.value,
-            touched = _ref.touched;
+          touched = _ref.touched;
         return console.log('Submit', value, touched);
       }
     }, /*#__PURE__*/React.createElement(FormField, {
@@ -104,10 +104,11 @@ export var FieldWithComponentProp = function FieldWithComponentProp() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 FieldWithComponentProp.storyName = 'Field with component prop';
 FieldWithComponentProp.args = {
   full: true

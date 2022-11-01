@@ -27,10 +27,11 @@ export var RTLLayer = function RTLLayer() {
       pad: "xlarge"
     }, "text"), /*#__PURE__*/React.createElement(Box, {
       pad: "xlarge"
-    }, "text"))) // </Grommet>
-
+    }, "text")))
+    // </Grommet>
   );
 };
+
 RTLLayer.storyName = 'RTL';
 RTLLayer.args = {
   dir: 'rtl'

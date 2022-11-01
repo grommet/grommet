@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.StyledPlaceholder = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var StyledPlaceholder = function StyledPlaceholder() {
   return (
     /*#__PURE__*/
@@ -18,11 +14,10 @@ var StyledPlaceholder = function StyledPlaceholder() {
       name: "name",
       placeholder: /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "placeholder"),
       "aria-label": "Input Text"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.StyledPlaceholder = StyledPlaceholder;
 StyledPlaceholder.storyName = 'Styled placeholder';
 var _default = {

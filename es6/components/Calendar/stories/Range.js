@@ -11,10 +11,11 @@ export var Range = function Range() {
     }, /*#__PURE__*/React.createElement(Calendar, {
       date: [['2020-04-03', '2020-04-08']],
       range: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Calendar/Range'
 };

@@ -61,10 +61,11 @@ export var Info = function Info() {
       icon: /*#__PURE__*/React.createElement(HelpOption, {
         size: "large"
       })
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 Info.parameters = {
   chromatic: {
     disable: true

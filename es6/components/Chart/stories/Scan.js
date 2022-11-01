@@ -3,32 +3,28 @@ import { Box, Chart, Keyboard, Stack, Text } from 'grommet';
 import { calcs } from '../calcs';
 import { generateData } from './data';
 var count = 30,
-    max = 100,
-    min = 0;
-
+  max = 100,
+  min = 0;
 var ScanChart = function ScanChart() {
   var _useState = useState(undefined),
-      active = _useState[0],
-      setActive = _useState[1];
-
+    active = _useState[0],
+    setActive = _useState[1];
   var data = useMemo(function () {
     return generateData(count, max, min);
   }, []);
   var values = data.map(function (d) {
     return [d.time, d.value];
   });
-
   var _useMemo = useMemo(function () {
-    return calcs(values, {
-      min: min,
-      max: max
-    });
-  }, [values]),
-      axis = _useMemo.axis,
-      bounds = _useMemo.bounds,
-      pad = _useMemo.pad,
-      thickness = _useMemo.thickness;
-
+      return calcs(values, {
+        min: min,
+        max: max
+      });
+    }, [values]),
+    axis = _useMemo.axis,
+    bounds = _useMemo.bounds,
+    pad = _useMemo.pad,
+    thickness = _useMemo.thickness;
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -143,8 +139,8 @@ var ScanChart = function ScanChart() {
         className: "chromatic-ignore",
         key: t
       }, new Date(t).toLocaleDateString());
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
 

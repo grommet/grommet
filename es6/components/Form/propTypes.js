@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     errors: PropTypes.shape({}),
@@ -17,5 +16,4 @@ if (process.env.NODE_ENV !== 'production') {
     value: PropTypes.shape({})
   };
 }
-
 export var FormPropTypes = PropType;

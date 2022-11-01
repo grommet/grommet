@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ValidateOnBlur = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var ValidateOnBlur = function ValidateOnBlur() {
   return (
     /*#__PURE__*/
@@ -71,11 +66,10 @@ var ValidateOnBlur = function ValidateOnBlur() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.ValidateOnBlur = ValidateOnBlur;
 ValidateOnBlur.storyName = 'Validate on blur';
 ValidateOnBlur.args = {

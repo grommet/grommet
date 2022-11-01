@@ -1,9 +1,6 @@
 var _excluded = ["cellProps", "columns", "data", "disabled", "onMore", "replace", "onClickRow", "onSelect", "pinnedOffset", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand", "verticalAlign"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 /* eslint-disable no-underscore-dangle */
 import React, { forwardRef, memo, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
@@ -20,27 +17,27 @@ import { datumValue, normalizeRowCellProps } from './buildState';
 import { defaultProps } from '../../default-props';
 var Row = /*#__PURE__*/memo(function (_ref) {
   var cellProps = _ref.cellProps,
-      primaryValue = _ref.primaryValue,
-      index = _ref.index,
-      rowRef = _ref.rowRef,
-      size = _ref.size,
-      active = _ref.active,
-      onClickRow = _ref.onClickRow,
-      datum = _ref.datum,
-      selected = _ref.selected,
-      onSelect = _ref.onSelect,
-      isDisabled = _ref.isDisabled,
-      isSelected = _ref.isSelected,
-      rowDetails = _ref.rowDetails,
-      isRowExpanded = _ref.isRowExpanded,
-      setActive = _ref.setActive,
-      setRowExpand = _ref.setRowExpand,
-      rowExpand = _ref.rowExpand,
-      columns = _ref.columns,
-      pinnedOffset = _ref.pinnedOffset,
-      primaryProperty = _ref.primaryProperty,
-      data = _ref.data,
-      verticalAlign = _ref.verticalAlign;
+    primaryValue = _ref.primaryValue,
+    index = _ref.index,
+    rowRef = _ref.rowRef,
+    size = _ref.size,
+    active = _ref.active,
+    onClickRow = _ref.onClickRow,
+    datum = _ref.datum,
+    selected = _ref.selected,
+    onSelect = _ref.onSelect,
+    isDisabled = _ref.isDisabled,
+    isSelected = _ref.isSelected,
+    rowDetails = _ref.rowDetails,
+    isRowExpanded = _ref.isRowExpanded,
+    setActive = _ref.setActive,
+    setRowExpand = _ref.setRowExpand,
+    rowExpand = _ref.rowExpand,
+    columns = _ref.columns,
+    pinnedOffset = _ref.pinnedOffset,
+    primaryProperty = _ref.primaryProperty,
+    data = _ref.data,
+    verticalAlign = _ref.verticalAlign;
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(StyledDataTableRow, {
     ref: rowRef,
     size: size,
@@ -132,54 +129,46 @@ var Row = /*#__PURE__*/memo(function (_ref) {
 });
 var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var _ref3;
-
   var cellPropsProp = _ref2.cellProps,
-      columns = _ref2.columns,
-      data = _ref2.data,
-      disabled = _ref2.disabled,
-      onMore = _ref2.onMore,
-      replace = _ref2.replace,
-      onClickRow = _ref2.onClickRow,
-      onSelect = _ref2.onSelect,
-      pinnedOffset = _ref2.pinnedOffset,
-      primaryProperty = _ref2.primaryProperty,
-      rowProps = _ref2.rowProps,
-      selected = _ref2.selected,
-      rowDetails = _ref2.rowDetails,
-      show = _ref2.show,
-      size = _ref2.size,
-      step = _ref2.step,
-      rowExpand = _ref2.rowExpand,
-      setRowExpand = _ref2.setRowExpand,
-      verticalAlign = _ref2.verticalAlign,
-      rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
-
+    columns = _ref2.columns,
+    data = _ref2.data,
+    disabled = _ref2.disabled,
+    onMore = _ref2.onMore,
+    replace = _ref2.replace,
+    onClickRow = _ref2.onClickRow,
+    onSelect = _ref2.onSelect,
+    pinnedOffset = _ref2.pinnedOffset,
+    primaryProperty = _ref2.primaryProperty,
+    rowProps = _ref2.rowProps,
+    selected = _ref2.selected,
+    rowDetails = _ref2.rowDetails,
+    show = _ref2.show,
+    size = _ref2.size,
+    step = _ref2.step,
+    rowExpand = _ref2.rowExpand,
+    setRowExpand = _ref2.setRowExpand,
+    verticalAlign = _ref2.verticalAlign,
+    rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
-
   var _React$useState = React.useState(),
-      active = _React$useState[0],
-      setActive = _React$useState[1];
-
+    active = _React$useState[0],
+    setActive = _React$useState[1];
   var _React$useState2 = React.useState(),
-      lastActive = _React$useState2[0],
-      setLastActive = _React$useState2[1]; // Determine if using a keyboard to cover focus behavior
+    lastActive = _React$useState2[0],
+    setLastActive = _React$useState2[1];
 
-
+  // Determine if using a keyboard to cover focus behavior
   var usingKeyboard = useKeyboard();
   var onFocusActive = (_ref3 = active != null ? active : lastActive) != null ? _ref3 : usingKeyboard ? 0 : undefined;
-
   var selectRow = function selectRow() {
     var _data$active;
-
     var primaryValue = (_data$active = data[active]) == null ? void 0 : _data$active[primaryProperty];
-
     if (selected && selected.includes(primaryValue)) {
       onSelect(selected.filter(function (s) {
         return s !== primaryValue;
       }));
     } else onSelect([].concat(selected, [primaryValue]));
   };
-
   var clickableRow = onClickRow && active >= 0 && (!disabled || !disabled.includes(datumValue(data[active], primaryProperty)));
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: clickableRow ? function (event) {
@@ -193,7 +182,8 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
           selectRow();
         }
       }
-    } : undefined // The WCAG recommendation for checkboxes is to select them with "Space"
+    } : undefined
+    // The WCAG recommendation for checkboxes is to select them with "Space"
     ,
     onSpace: function onSpace() {
       if (clickableRow) {

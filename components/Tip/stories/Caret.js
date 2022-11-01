@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Caret = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var TipContent = function TipContent(_ref) {
   var message = _ref.message;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -32,7 +27,6 @@ var TipContent = function TipContent(_ref) {
     round: "xsmall"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, message)));
 };
-
 var Caret = function Caret() {
   return (
     /*#__PURE__*/
@@ -65,11 +59,10 @@ var Caret = function Caret() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Trash, null),
       plain: false
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.Caret = Caret;
 Caret.args = {
   full: true

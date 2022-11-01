@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Layout = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var type = 'bar';
 var value = 10;
 var values = Array(14).fill(0).map(function (_, index) {
@@ -16,7 +12,6 @@ var values = Array(14).fill(0).map(function (_, index) {
   value += delta % 2 ? delta : -delta;
   return [index, value];
 });
-
 var Layout = function Layout() {
   return (
     /*#__PURE__*/
@@ -58,11 +53,10 @@ var Layout = function Layout() {
       type: type,
       values: values,
       round: true
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.Layout = Layout;
 var _default = {
   title: 'Visualizations/Chart/Layout'

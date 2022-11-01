@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import { Box, Select } from 'grommet';
 export var Simple = function Simple() {
   var options = ['one', 'two'];
-
   var _useState = useState(''),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -27,10 +25,11 @@ export var Simple = function Simple() {
         var option = _ref.option;
         return setValue(option);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 Simple.args = {
   full: true
 };

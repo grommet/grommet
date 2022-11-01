@@ -2,16 +2,12 @@
 
 exports.__esModule = true;
 exports["default"] = exports.MeterInTable = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 /* eslint-disable react/no-array-index-key */
-var values = [20, 40, 60, 80, 100];
 
+var values = [20, 40, 60, 80, 100];
 var MeterInTable = function MeterInTable() {
   return (
     /*#__PURE__*/
@@ -36,11 +32,10 @@ var MeterInTable = function MeterInTable() {
           value: val
         }]
       })), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, val, "% complete")));
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.MeterInTable = MeterInTable;
 MeterInTable.storyName = 'Meter inside table';
 var _default = {

@@ -2,27 +2,20 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Prediction = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
-
 var _grommet = require("grommet");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 /* eslint-disable max-len */
+
 var keyFrameExampleOne = (0, _styledComponents.keyframes)(["0%{width:200px;background-color:#FFFFFF;}100%{width:0px;background-color:#FFFFFF;}"]);
 var AnimatedBox = (0, _styledComponents["default"])(_grommet.Box).withConfig({
   displayName: "Prediction__AnimatedBox",
   componentId: "sc-2m8o8b-0"
 })(["animation:", " 3s linear;"], keyFrameExampleOne);
 var data = [];
-
 for (var i = 0; i < 13; i += 1) {
   var v = -Math.sin(i / 2.0);
   var v2 = Math.cos(i / 2.0);
@@ -32,19 +25,15 @@ for (var i = 0; i < 13; i += 1) {
     need: Math.floor(v2 * 10)
   });
 }
-
 for (var _i = 0; _i < 13; _i += 1) {
   var _v = -Math.sin(_i / 2.0);
-
   var _v2 = Math.cos(_i / 2.0);
-
   data.push({
     date: "2020-08-" + (_i % 30 + 1).toString().padStart(2, 0),
     amountPredicted: Math.floor(_v * 100),
     needPredicted: Math.floor(_v2 * 10)
   });
 }
-
 var Prediction = function Prediction() {
   return (
     /*#__PURE__*/
@@ -103,7 +92,8 @@ var Prediction = function Prediction() {
         property: 'amount',
         type: 'point',
         thickness: 'small'
-      }, // {
+      },
+      // {
       //   property: 'needPredicted',
       //   type: 'line',
       //   thickness: 'xxsmall',
@@ -154,11 +144,10 @@ var Prediction = function Prediction() {
     }), /*#__PURE__*/_react["default"].createElement(AnimatedBox, {
       width: "small",
       height: "small"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.Prediction = Prediction;
 var _default = {
   title: 'Visualizations/DataChart/Prediction'

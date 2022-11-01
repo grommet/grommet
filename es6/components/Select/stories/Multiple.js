@@ -3,9 +3,8 @@ import { Box, Select } from 'grommet';
 var options = ['one', 'two'];
 export var Multiple = function Multiple() {
   var _useState = useState(['one']),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -25,10 +24,11 @@ export var Multiple = function Multiple() {
         var nextValue = _ref.value;
         return setValue(nextValue);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 Multiple.parameters = {
   chromatic: {
     disable: true

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, DataChart } from 'grommet';
 var data = [];
-
 for (var i = 1; i < 32; i += 1) {
   data.push({
     name: "Name " + i,
@@ -11,7 +10,6 @@ for (var i = 1; i < 32; i += 1) {
     effort: i % 16
   });
 }
-
 export var FourDimensionDataChart = function FourDimensionDataChart() {
   return (
     /*#__PURE__*/
@@ -52,10 +50,11 @@ export var FourDimensionDataChart = function FourDimensionDataChart() {
       },
       guide: true,
       legend: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 FourDimensionDataChart.storyName = 'Four dimensions';
 export default {
   title: 'Visualizations/DataChart/Four dimensions'

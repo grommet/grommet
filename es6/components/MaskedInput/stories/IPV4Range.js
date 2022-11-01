@@ -3,9 +3,8 @@ import { Box, MaskedInput } from 'grommet';
 var IPv4ElementExp = /^[0-1][0-9][0-9]$|^2[0-4][0-9]$|^25[0-5]$|^[0-9][0-9]$|^[0-9]$/;
 export var IPv4RangeMaskedInput = function IPv4RangeMaskedInput() {
   var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -69,10 +68,11 @@ export var IPv4RangeMaskedInput = function IPv4RangeMaskedInput() {
       onChange: function onChange(event) {
         return setValue(event.target.value);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 IPv4RangeMaskedInput.storyName = 'IPv4 range';
 IPv4RangeMaskedInput.args = {
   full: true

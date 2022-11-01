@@ -20,10 +20,11 @@ export var Replace = function Replace() {
         },
         align: "center"
       }, /*#__PURE__*/React.createElement(Text, null, item));
-    }) // </Grommet>
-
+    })
+    // </Grommet>
   );
 };
+
 Replace.parameters = {
   chromatic: {
     disable: true

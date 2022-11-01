@@ -38,7 +38,7 @@ export var FieldWithChildren = function FieldWithChildren() {
       },
       onValidate: function onValidate(_ref2) {
         var errors = _ref2.errors,
-            infos = _ref2.infos;
+          infos = _ref2.infos;
         return console.log('Validate', errors, infos);
       }
     }, /*#__PURE__*/React.createElement(FormField, {
@@ -121,10 +121,11 @@ export var FieldWithChildren = function FieldWithChildren() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 FieldWithChildren.storyName = 'Field with children';
 FieldWithChildren.args = {
   full: true

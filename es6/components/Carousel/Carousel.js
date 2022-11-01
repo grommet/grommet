@@ -1,9 +1,6 @@
 var _excluded = ["activeChild", "initialChild", "onChild", "play", "children", "controls", "height", "fill", "width", "onFocus", "onBlur", "wrap"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { Children, useCallback, useContext, useEffect, useMemo, useState, useRef } from 'react';
 import { normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -15,52 +12,43 @@ import { Keyboard } from '../Keyboard';
 import { StyledCarouselContainer, StyledControl } from './StyledCarousel';
 import { CarouselChild } from './CarouselChild';
 import { CarouselPropTypes } from './propTypes';
-
 var Carousel = function Carousel(_ref) {
   var activeChild = _ref.activeChild,
-      initialChild = _ref.initialChild,
-      onChild = _ref.onChild,
-      play = _ref.play,
-      children = _ref.children,
-      controls = _ref.controls,
-      height = _ref.height,
-      fill = _ref.fill,
-      width = _ref.width,
-      onFocus = _ref.onFocus,
-      onBlur = _ref.onBlur,
-      wrap = _ref.wrap,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    initialChild = _ref.initialChild,
+    onChild = _ref.onChild,
+    play = _ref.play,
+    children = _ref.children,
+    controls = _ref.controls,
+    height = _ref.height,
+    fill = _ref.fill,
+    width = _ref.width,
+    onFocus = _ref.onFocus,
+    onBlur = _ref.onBlur,
+    wrap = _ref.wrap,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
-
   var _useContext = useContext(MessageContext),
-      format = _useContext.format;
-
+    format = _useContext.format;
   var timerRef = useRef();
   var animationDuration = useMemo(function () {
     return play && play < theme.carousel.animation.duration ? play : theme.carousel.animation.duration;
   }, [play, theme.carousel.animation.duration]);
-
   var _useState = useState({
-    activeIndex: activeChild !== undefined ? activeChild : initialChild
-  }),
-      indexes = _useState[0],
-      setIndexes = _useState[1];
-
+      activeIndex: activeChild !== undefined ? activeChild : initialChild
+    }),
+    indexes = _useState[0],
+    setIndexes = _useState[1];
   var _useState2 = useState(activeChild),
-      activeChildState = _useState2[0],
-      setActiveChildState = _useState2[1];
-
+    activeChildState = _useState2[0],
+    setActiveChildState = _useState2[1];
   var _useState3 = useState(),
-      direction = _useState3[0],
-      setDirection = _useState3[1];
-
+    direction = _useState3[0],
+    setDirection = _useState3[1];
   var _useState4 = useState(false),
-      inTransition = _useState4[0],
-      setInTransition = _useState4[1];
-
+    inTransition = _useState4[0],
+    setInTransition = _useState4[1];
   var activeIndex = indexes.activeIndex,
-      priorActiveIndex = indexes.priorActiveIndex;
+    priorActiveIndex = indexes.priorActiveIndex;
   var lastIndex = Children.count(children) - 1;
   var onChildChange = useCallback(function (index) {
     if (onChild) {
@@ -116,26 +104,25 @@ var Carousel = function Carousel(_ref) {
     setActiveChildState(activeChild);
     onChildChange(activeChild);
   }, [activeChild, activeChildState, activeIndex, inTransition, lastIndex, onChildChange]);
+
   /**
    * Delays the transitions between Carousel slides. This is needed to
    * avoid users "spamming" the controls which results in jarring animations
    * and a bad user experience.
    */
-
   useEffect(function () {
     var transitionTimer;
-
     if (inTransition) {
       transitionTimer = setTimeout(function () {
         setInTransition(false);
       }, animationDuration);
     }
-
     return function () {
       return clearTimeout(transitionTimer);
     };
-  }, [inTransition, setInTransition, animationDuration]); // Handles auto-playing Carousel slides
+  }, [inTransition, setInTransition, animationDuration]);
 
+  // Handles auto-playing Carousel slides
   useEffect(function () {
     // stop playing if wrap is explicitly false and we're at the end
     if (play && (wrap !== false || activeIndex < lastIndex)) {
@@ -154,10 +141,10 @@ var Carousel = function Carousel(_ref) {
         clearTimeout(timer);
       };
     }
-
     return function () {};
-  }, [activeIndex, play, children, lastIndex, onChildChange, wrap]); // Allow Carousel slides to be controlled outside the component
+  }, [activeIndex, play, children, lastIndex, onChildChange, wrap]);
 
+  // Allow Carousel slides to be controlled outside the component
   useEffect(function () {
     onControlledNavigation(activeIndex, activeChild, activeChildState, inTransition);
   }, [onControlledNavigation, activeIndex, activeChild, activeChildState, inTransition]);
@@ -173,7 +160,8 @@ var Carousel = function Carousel(_ref) {
         values: {
           slide: index + 1
         }
-      }) // eslint-disable-next-line react/no-array-index-key
+      })
+      // eslint-disable-next-line react/no-array-index-key
       ,
       key: index,
       icon: /*#__PURE__*/React.createElement(CurrentIcon, {
@@ -248,7 +236,6 @@ var Carousel = function Carousel(_ref) {
     hoverIndicator: true
   }))));
 };
-
 Carousel.defaultProps = {
   initialChild: 0,
   controls: true

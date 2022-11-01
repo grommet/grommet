@@ -5,23 +5,19 @@ var suggestions = Array(100).fill().map(function (_, i) {
 });
 export var OnSelect = function OnSelect() {
   var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var onChange = function onChange(event) {
     return setValue(event.target.value);
   };
-
   var onSelect = function onSelect(event) {
     return setValue(event.suggestion);
   };
-
   var onHighlight = function onHighlight(event) {
     if (event.target.selectionStart !== event.target.selectionEnd) {
       console.log(event.target.value.substring(event.target.selectionStart, event.target.selectionEnd));
     }
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -40,10 +36,11 @@ export var OnSelect = function OnSelect() {
       onSuggestionSelect: onSelect,
       suggestions: suggestions,
       "aria-label": "Input text"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 OnSelect.storyName = 'onSelect and onSuggestionSelect';
 OnSelect.parameters = {
   chromatic: {

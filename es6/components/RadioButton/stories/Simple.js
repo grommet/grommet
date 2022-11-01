@@ -2,9 +2,8 @@ import React from 'react';
 import { Box, Button, RadioButton } from 'grommet';
 export var Simple = function Simple() {
   var _React$useState = React.useState(),
-      selected = _React$useState[0],
-      setSelected = _React$useState[1];
-
+    selected = _React$useState[0],
+    setSelected = _React$useState[1];
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",

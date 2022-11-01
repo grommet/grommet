@@ -1,6 +1,5 @@
 import React from 'react';
 import { Anchor, Box } from 'grommet';
-
 var SizeAnchor = function SizeAnchor() {
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
@@ -16,7 +15,6 @@ var SizeAnchor = function SizeAnchor() {
     }));
   }));
 };
-
 export var Size = function Size() {
   return /*#__PURE__*/React.createElement(SizeAnchor, null);
 };

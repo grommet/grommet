@@ -1,23 +1,20 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React, { useEffect, useState } from 'react';
 import { Box, Chart, Stack, Text } from 'grommet';
 import { calcs } from '../calcs';
 export var Rich = function Rich() {
   var _useState = useState({
-    values: [],
-    yAxis: [],
-    xAxis: []
-  }),
-      state = _useState[0],
-      setState = _useState[1];
-
+      values: [],
+      yAxis: [],
+      xAxis: []
+    }),
+    state = _useState[0],
+    setState = _useState[1];
   useEffect(function () {
     // generate data as a server might
     var date = new Date(2018, 5, 9);
     var value = 12345.678;
     var averages = [];
-
     while (averages.length < 21) {
       averages.unshift({
         date: date.toISOString(),
@@ -26,22 +23,20 @@ export var Rich = function Rich() {
       date.setTime(date.getTime() - 1000 * 3600 * 24);
       var factor = date.getDate() % 3;
       value = factor === 0 ? value + 12.34 : value - 123.45 * factor;
-    } // convert for displaying
+    }
 
-
+    // convert for displaying
     var values = averages.map(function (avg) {
       return {
         value: [new Date(avg.date).getTime(), avg.value]
       };
     });
-
     var _calcs = calcs(values, {
-      coarseness: 5,
-      steps: [3, 3]
-    }),
-        axis = _calcs.axis,
-        bounds = _calcs.bounds;
-
+        coarseness: 5,
+        steps: [3, 3]
+      }),
+      axis = _calcs.axis,
+      bounds = _calcs.bounds;
     var xAxis = axis[0].map(function (x) {
       return new Date(x).toLocaleDateString('en-US', {
         month: 'short',
@@ -57,9 +52,9 @@ export var Rich = function Rich() {
     });
   }, []);
   var bounds = state.bounds,
-      values = state.values,
-      yAxis = state.yAxis,
-      xAxis = state.xAxis;
+    values = state.values,
+    yAxis = state.yAxis,
+    xAxis = state.xAxis;
   var chartProps = {
     size: {
       width: 'medium',
@@ -96,7 +91,6 @@ export var Rich = function Rich() {
       var first = index === 0;
       var last = index === yAxis.length - 1 && !first;
       var align;
-
       if (first) {
         align = 'start';
       } else if (last) {
@@ -104,7 +98,6 @@ export var Rich = function Rich() {
       } else {
         align = 'center';
       }
-
       return /*#__PURE__*/React.createElement(Box, {
         key: y,
         direction: "row",
@@ -132,10 +125,11 @@ export var Rich = function Rich() {
         opacity: 'strong'
       },
       thickness: "small"
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Chart/Rich'
 };

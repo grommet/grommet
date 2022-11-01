@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Messages = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var messageBundle = {
   'form.required': '必填项目',
   'fileInput.browse': '浏览'
@@ -23,7 +19,6 @@ var customMessages = {
     }
   }
 };
-
 var Messages = function Messages() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     messages: customMessages
@@ -61,7 +56,6 @@ var Messages = function Messages() {
     "aria-label": "file input"
   })))));
 };
-
 exports.Messages = Messages;
 var _default = {
   title: 'Utilities/Grommet/Messages'

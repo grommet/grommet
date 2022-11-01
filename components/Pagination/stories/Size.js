@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Size = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Size = function Size() {
   return (
     /*#__PURE__*/
@@ -27,11 +23,10 @@ var Size = function Size() {
     })), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Large"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
       numberItems: 237,
       size: "large"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.Size = Size;
 var _default = {
   title: 'Controls/Pagination/Size'

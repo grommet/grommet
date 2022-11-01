@@ -34,10 +34,11 @@ export var Size = function Size() {
         label: "Parent Page"
       }),
       size: "large"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Layout/PageHeader/Size'
 };

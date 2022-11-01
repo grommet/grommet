@@ -16,10 +16,11 @@ export var NumberEdgePages = function NumberEdgePages() {
       numberItems: 237,
       page: 10,
       numberEdgePages: 0
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 NumberEdgePages.storyName = 'Number edge pages';
 export default {
   title: 'Controls/Pagination/Number edge pages'

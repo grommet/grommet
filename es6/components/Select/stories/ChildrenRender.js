@@ -4,16 +4,14 @@ import { Box, Button, Select, Text } from 'grommet';
 var allSeasons = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10'];
 export var Children = function Children() {
   var _useState = useState([]),
-      selected = _useState[0],
-      setSelected = _useState[1];
-
+    selected = _useState[0],
+    setSelected = _useState[1];
   var onRemoveSeason = function onRemoveSeason(season) {
     var seasonIndex = allSeasons.indexOf(season);
     setSelected(selected.filter(function (selectedSeason) {
       return selectedSeason !== seasonIndex;
     }));
   };
-
   var renderSeason = function renderSeason(season) {
     return /*#__PURE__*/React.createElement(Button, {
       key: "season_tag_" + season,
@@ -52,14 +50,12 @@ export var Children = function Children() {
       }
     }))));
   };
-
   var renderOption = function renderOption(option, state) {
     return /*#__PURE__*/React.createElement(Box, {
       pad: "small",
       background: state.active ? 'active' : undefined
     }, option);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -91,10 +87,11 @@ export var Children = function Children() {
         var nextSelected = _ref.selected;
         setSelected([].concat(nextSelected).sort());
       }
-    }, renderOption)) // </Grommet>
-
+    }, renderOption))
+    // </Grommet>
   );
 };
+
 Children.parameters = {
   chromatic: {
     disable: true

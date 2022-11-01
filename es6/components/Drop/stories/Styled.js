@@ -8,13 +8,10 @@ var alignTopLeft = {
   bottom: 'top',
   left: 'left'
 };
-
 var StyledDrop = function StyledDrop() {
   var targetRef = useRef();
-
   var _useState = useState(false),
-      setShowDrop = _useState[1];
-
+    setShowDrop = _useState[1];
   useEffect(function () {
     setShowDrop(true);
   }, []);
@@ -51,8 +48,8 @@ var StyledDrop = function StyledDrop() {
       }
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "large"
-    }, "Drop Contents with round, background and margin")))) // </Grommet>
-
+    }, "Drop Contents with round, background and margin"))))
+    // </Grommet>
   );
 };
 

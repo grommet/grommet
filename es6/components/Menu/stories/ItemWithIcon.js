@@ -3,7 +3,6 @@ import { Box, Menu, Text } from 'grommet';
 import { FormDown } from "grommet-icons/es6/icons/FormDown";
 import { Github } from "grommet-icons/es6/icons/Github";
 import { Slack } from "grommet-icons/es6/icons/Slack"; // This story offers a suggested workaround for issue #3209.
-
 var IconItemsMenu = function IconItemsMenu() {
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
@@ -38,7 +37,6 @@ var IconItemsMenu = function IconItemsMenu() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(FormDown, null), /*#__PURE__*/React.createElement(Text, null, "Menu with Icon on the left"))));
 };
-
 export var ItemWithIcon = function ItemWithIcon() {
   return /*#__PURE__*/React.createElement(IconItemsMenu, null);
 };

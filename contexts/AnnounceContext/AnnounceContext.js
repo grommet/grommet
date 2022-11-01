@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports.AnnounceContext = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = require("./propTypes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var createAnnouncer = function createAnnouncer() {
   var announcer = document.createElement('div');
   announcer.id = 'grommet-announcer';
@@ -19,16 +15,13 @@ var createAnnouncer = function createAnnouncer() {
   document.body.insertBefore(announcer, document.body.firstChild);
   return announcer;
 };
-
 var AnnounceContext = /*#__PURE__*/_react["default"].createContext(function (message, mode, timeout) {
   if (mode === void 0) {
     mode = 'polite';
   }
-
   if (timeout === void 0) {
     timeout = 500;
   }
-
   // we only create a new container if we don't have one already
   // we create a separate node so that grommet does not set aria-hidden to it
   var announcer = document.body.querySelector("#grommet-announcer[aria-live]") || createAnnouncer();
@@ -39,6 +32,5 @@ var AnnounceContext = /*#__PURE__*/_react["default"].createContext(function (mes
     announcer.innerHTML = '';
   }, timeout);
 });
-
 exports.AnnounceContext = AnnounceContext;
 AnnounceContext.propTypes = _propTypes.AnnounceContextPropTypes;

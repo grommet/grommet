@@ -1,9 +1,6 @@
 var _excluded = ["children", "title", "subTitle", "size"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React from 'react';
 import { Location } from "grommet-icons/es6/icons/Location";
 import { System } from "grommet-icons/es6/icons/System";
@@ -86,14 +83,12 @@ var theme = {
     }
   }
 };
-
 var Identifier = function Identifier(_ref) {
   var children = _ref.children,
-      title = _ref.title,
-      subTitle = _ref.subTitle,
-      size = _ref.size,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    title = _ref.title,
+    subTitle = _ref.subTitle,
+    size = _ref.size,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   return /*#__PURE__*/React.createElement(Box, _extends({
     gap: "small",
     align: "center"
@@ -104,7 +99,6 @@ var Identifier = function Identifier(_ref) {
     size: size
   }, subTitle)));
 };
-
 export var Themed = function Themed() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme,

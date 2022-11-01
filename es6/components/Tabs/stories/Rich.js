@@ -32,10 +32,11 @@ export var TabsWithIcons = function TabsWithIcons() {
       icon: /*#__PURE__*/React.createElement(Notification, null)
     }, /*#__PURE__*/React.createElement(Box, {
       margin: "small"
-    }, "Notifications will show here.")))) // </Grommet>
-
+    }, "Notifications will show here."))))
+    // </Grommet>
   );
 };
+
 TabsWithIcons.storyName = 'Tabs with icons';
 export default {
   title: 'Controls/Tabs/Tabs with icons'

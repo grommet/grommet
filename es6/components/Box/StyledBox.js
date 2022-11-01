@@ -1,7 +1,5 @@
 var _FLEX_MAP;
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import styled, { css } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { alignContentStyle, alignStyle, backgroundStyle, borderStyle, breakpointStyle, edgeStyle, fillStyle, focusStyle, genericStyles, getBreakpointStyle, getHoverIndicatorStyle, heightStyle, overflowStyle, parseMetricToNum, responsiveBorderStyle, widthStyle } from '../../utils';
@@ -19,41 +17,34 @@ var BASIS_MAP = {
 };
 var basisStyle = css(["flex-basis:", ";"], function (props) {
   return BASIS_MAP[props.basis] || props.theme.global.size[props.basis] || props.basis;
-}); // min-width and min-height needed because of this
+});
+
+// min-width and min-height needed because of this
 // https://stackoverflow.com/questions/36247140/why-doesnt-flex-item-shrink-past-content-size
 // we assume we are in the context of a Box going the other direction
 // TODO: revisit this
-
 var directionStyle = function directionStyle(direction, theme) {
   var styles = [css(["min-width:0;min-height:0;flex-direction:", ";"], direction === 'row-responsive' ? 'row' : direction)];
-
   if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
     var breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
-
     if (breakpoint) {
       styles.push(breakpointStyle(breakpoint, "\n        flex-direction: column;\n        flex-basis: auto;\n        justify-content: flex-start;\n        align-items: stretch;\n      "));
     }
   }
-
   return styles;
 };
-
 var elevationStyle = function elevationStyle(elevation) {
   return css(["box-shadow:", ";"], function (props) {
     return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][elevation];
   });
 };
-
 var FLEX_MAP = (_FLEX_MAP = {}, _FLEX_MAP[true] = '1 1', _FLEX_MAP[false] = '0 0', _FLEX_MAP.grow = '1 0', _FLEX_MAP.shrink = '0 1', _FLEX_MAP);
-
 var flexGrowShrinkProp = function flexGrowShrinkProp(flex) {
   if (typeof flex === 'boolean' || typeof flex === 'string') {
     return FLEX_MAP[flex];
   }
-
   return (flex.grow ? flex.grow : 0) + " " + (flex.shrink ? flex.shrink : 0);
 };
-
 var flexStyle = css(["flex:", ";"], function (props) {
   return "" + flexGrowShrinkProp(props.flex) + (props.flex !== true && !props.basis ? ' auto' : '');
 });
@@ -75,52 +66,41 @@ var WRAP_MAP = {
 var wrapStyle = css(["flex-wrap:", ";"], function (props) {
   return WRAP_MAP[props.wrapProp];
 });
-
 var animationItemStyle = function animationItemStyle(item, theme) {
   if (typeof item === 'string') {
     return animationObjectStyle({
       type: item
     }, theme);
   }
-
   if (Array.isArray(item)) {
     return item.reduce(function (style, a, index) {
       return css(["", "", " ", ""], style, index > 0 ? ',' : '', animationItemStyle(a, theme));
     }, '');
   }
-
   if (typeof item === 'object') {
     return animationObjectStyle(item, theme);
   }
-
   return '';
 };
-
 var animationAncilaries = function animationAncilaries(animation) {
   if (animation.type === 'flipIn' || animation.type === 'flipOut') {
     return 'perspective: 1000px; transform-style: preserve-3d;';
   }
-
   return '';
 };
-
 var animationObjectInitialStyle = function animationObjectInitialStyle(animation) {
   var bounds = animationBounds(animation.type, animation.size);
-
   if (bounds) {
     return bounds[0] + " " + animationAncilaries(animation);
   }
-
   return '';
 };
-
 var animationInitialStyle = function animationInitialStyle(item) {
   if (typeof item === 'string') {
     return animationObjectInitialStyle({
       type: item
     });
   }
-
   if (Array.isArray(item)) {
     return item.map(function (a) {
       return typeof a === 'string' ? animationObjectInitialStyle({
@@ -128,25 +108,22 @@ var animationInitialStyle = function animationInitialStyle(item) {
       }) : animationObjectInitialStyle(a);
     }).join('');
   }
-
   if (typeof item === 'object') {
     return animationObjectInitialStyle(item);
   }
-
   return '';
 };
-
 var animationStyle = css(["", ";"], function (props) {
   return css(["", " animation:", ";"], animationInitialStyle(props.animation), animationItemStyle(props.animation, props.theme));
 });
 var interactiveStyle = css(["cursor:pointer;&:hover{", " ", "}"], function (props) {
   var _props$kindProp;
-
   return ((_props$kindProp = props.kindProp) == null ? void 0 : _props$kindProp.hover) && getHoverIndicatorStyle(props.kindProp.hover, props.theme);
 }, function (props) {
   return props.hoverIndicator && getHoverIndicatorStyle(props.hoverIndicator, props.theme);
-}); // NOTE: basis must be after flex! Otherwise, flex overrides basis
+});
 
+// NOTE: basis must be after flex! Otherwise, flex overrides basis
 var StyledBox = styled.div.withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
@@ -195,22 +172,18 @@ var StyledBox = styled.div.withConfig({
 }, function (props) {
   return props.kindProp && props.kindProp.extend;
 });
-
 var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) {
   var metric = theme.global.edgeSize[gap] || gap;
   var breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   var responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
   var styles = [];
-
   if (directionProp === 'column' || directionProp === 'column-reverse') {
     styles.push("height: " + metric + ";");
-
     if (responsiveMetric) {
       styles.push(breakpointStyle(breakpoint, "height: " + responsiveMetric + ";"));
     }
   } else {
     styles.push("width: " + metric + ";");
-
     if (responsiveMetric) {
       if (directionProp === 'row' || directionProp === 'row-reverse') {
         styles.push(breakpointStyle(breakpoint, "width: " + responsiveMetric + ";"));
@@ -219,20 +192,17 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) 
       }
     }
   }
-
   if (border === 'between' || border && border.side === 'between') {
     var borderSize = border.size || 'xsmall';
     var borderMetric = theme.global.borderSize[borderSize] || borderSize;
     var borderOffset = parseMetricToNum(metric) / 2 - parseMetricToNum(borderMetric) / 2 + "px";
     var responsiveBorderMetric = responsive && breakpoint && (breakpoint.borderSize[borderSize] || borderSize);
     var responsiveBorderOffset = responsiveBorderMetric && parseMetricToNum(responsiveMetric) / 2 - parseMetricToNum(responsiveBorderMetric) / 2 + "px";
-
     if (directionProp === 'column' || directionProp === 'column-reverse') {
       var adjustedBorder = typeof border === 'string' ? 'top' : _extends({}, border, {
         side: 'top'
       });
       styles.push(css(["position:relative;&:after{content:'';position:absolute;width:100%;top:", ";", "}"], borderOffset, borderStyle(adjustedBorder, responsive, theme)));
-
       if (responsiveBorderOffset) {
         styles.push(breakpointStyle(breakpoint, "\n            &:after {\n              content: '';\n              top: " + responsiveBorderOffset + ";\n            }"));
       }
@@ -240,9 +210,7 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) 
       var _adjustedBorder = typeof border === 'string' ? 'left' : _extends({}, border, {
         side: 'left'
       });
-
       styles.push(css(["position:relative;&:after{content:'';position:absolute;height:100%;left:", ";", "}"], borderOffset, borderStyle(_adjustedBorder, directionProp !== 'row-responsive' && responsive, theme)));
-
       if (responsiveBorderOffset) {
         if (directionProp === 'row' || directionProp === 'row-reverse') {
           styles.push(breakpointStyle(breakpoint, "\n              &:after {\n                content: '';\n                left: " + responsiveBorderOffset + ";\n              }"));
@@ -255,10 +223,8 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) 
       }
     }
   }
-
   return styles;
 };
-
 StyledBox.defaultProps = {};
 Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 var StyledBoxGap = styled.div.withConfig({

@@ -30,10 +30,11 @@ export var Multiple = function Multiple() {
       style: {
         height: '300px'
       }
-    }, "Panel 3 contents")))) // </Grommet>
-
+    }, "Panel 3 contents"))))
+    // </Grommet>
   );
 };
+
 Multiple.parameters = {
   chromatic: {
     disable: true

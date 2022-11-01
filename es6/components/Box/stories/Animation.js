@@ -21,10 +21,11 @@ export var Animation = function Animation() {
         },
         align: "center"
       }, animation);
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Layout/Box/Animation'
 };

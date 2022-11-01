@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ValueStyleChart = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var values = [{
   value: [10, 20],
   thickness: 12,
@@ -46,7 +42,6 @@ var values = [{
   thickness: 'large',
   color: 'status-warning'
 }];
-
 var ValueStyleChart = function ValueStyleChart() {
   return (
     /*#__PURE__*/
@@ -63,11 +58,10 @@ var ValueStyleChart = function ValueStyleChart() {
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
       type: "bar",
       values: values
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.ValueStyleChart = ValueStyleChart;
 ValueStyleChart.storyName = 'Value style';
 var _default = {

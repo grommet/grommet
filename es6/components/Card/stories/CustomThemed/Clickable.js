@@ -1,9 +1,6 @@
 var _excluded = ["children", "title", "subTitle", "size"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React from 'react';
 import { Bluetooth as Memory } from "grommet-icons/es6/icons/Bluetooth";
 import { Storage } from "grommet-icons/es6/icons/Storage";
@@ -70,7 +67,6 @@ var data = [{
   message: 'Past 12hrs',
   type: 'point'
 }];
-
 var ChartPreview = function ChartPreview(_ref) {
   var type = _ref.type;
   return /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Chart, {
@@ -109,14 +105,12 @@ var ChartPreview = function ChartPreview(_ref) {
     }
   }));
 };
-
 var Identifier = function Identifier(_ref2) {
   var children = _ref2.children,
-      title = _ref2.title,
-      subTitle = _ref2.subTitle,
-      size = _ref2.size,
-      rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
-
+    title = _ref2.title,
+    subTitle = _ref2.subTitle,
+    size = _ref2.size,
+    rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
   return /*#__PURE__*/React.createElement(Box, _extends({
     gap: "small",
     align: "center",
@@ -129,7 +123,6 @@ var Identifier = function Identifier(_ref2) {
     size: size
   }, subTitle)));
 };
-
 export var Clickable = function Clickable() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme,

@@ -12,9 +12,8 @@ var defaultValue = {
 var suggestions = ['Shimi', 'Eric'];
 export var Controlled = function Controlled() {
   var _useState = useState(defaultValue),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -108,10 +107,11 @@ export var Controlled = function Controlled() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 Controlled.args = {
   full: true
 };

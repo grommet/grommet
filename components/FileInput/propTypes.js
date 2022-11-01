@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports.FileInputPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     confirmRemove: _propTypes["default"].func,
@@ -30,6 +26,5 @@ if (process.env.NODE_ENV !== 'production') {
     renderFile: _propTypes["default"].func
   };
 }
-
 var FileInputPropTypes = PropType;
 exports.FileInputPropTypes = FileInputPropTypes;

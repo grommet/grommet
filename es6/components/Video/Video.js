@@ -1,9 +1,6 @@
 var _excluded = ["alignSelf", "autoPlay", "children", "controls", "gridArea", "loop", "margin", "messages", "mute", "onDurationChange", "onEnded", "onPause", "onPlay", "onTimeUpdate", "onVolumeChange", "skipInterval"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
@@ -19,106 +16,84 @@ import { Keyboard } from '../Keyboard';
 import { containsFocus, useForwardedRef } from '../../utils';
 import { StyledVideo, StyledVideoContainer, StyledVideoControls, StyledVideoScrubber } from './StyledVideo';
 import { MessageContext } from '../../contexts/MessageContext';
-import { VideoPropTypes } from './propTypes'; // Split the volume control into 6 segments. Empirically determined.
+import { VideoPropTypes } from './propTypes';
 
+// Split the volume control into 6 segments. Empirically determined.
 var VOLUME_STEP = 0.166667;
-
 var formatTime = function formatTime(time) {
   var minutes = Math.round(time / 60);
-
   if (minutes < 10) {
     minutes = "0" + minutes;
   }
-
   var seconds = Math.round(time) % 60;
-
   if (seconds < 10) {
     seconds = "0" + seconds;
   }
-
   return minutes + ":" + seconds;
 };
-
 var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var alignSelf = _ref.alignSelf,
-      autoPlay = _ref.autoPlay,
-      children = _ref.children,
-      controlsProp = _ref.controls,
-      gridArea = _ref.gridArea,
-      loop = _ref.loop,
-      margin = _ref.margin,
-      messages = _ref.messages,
-      mute = _ref.mute,
-      _onDurationChange = _ref.onDurationChange,
-      _onEnded = _ref.onEnded,
-      _onPause = _ref.onPause,
-      _onPlay = _ref.onPlay,
-      _onTimeUpdate = _ref.onTimeUpdate,
-      _onVolumeChange = _ref.onVolumeChange,
-      skipInterval = _ref.skipInterval,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    autoPlay = _ref.autoPlay,
+    children = _ref.children,
+    controlsProp = _ref.controls,
+    gridArea = _ref.gridArea,
+    loop = _ref.loop,
+    margin = _ref.margin,
+    messages = _ref.messages,
+    mute = _ref.mute,
+    _onDurationChange = _ref.onDurationChange,
+    _onEnded = _ref.onEnded,
+    _onPause = _ref.onPause,
+    _onPlay = _ref.onPlay,
+    _onTimeUpdate = _ref.onTimeUpdate,
+    _onVolumeChange = _ref.onVolumeChange,
+    skipInterval = _ref.skipInterval,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
-
   var _useContext = useContext(MessageContext),
-      format = _useContext.format;
-
+    format = _useContext.format;
   var announce = useContext(AnnounceContext);
-
   var _useState = useState([]),
-      captions = _useState[0],
-      setCaptions = _useState[1];
-
+    captions = _useState[0],
+    setCaptions = _useState[1];
   var _useState2 = useState(),
-      currentTime = _useState2[0],
-      setCurrentTime = _useState2[1];
-
+    currentTime = _useState2[0],
+    setCurrentTime = _useState2[1];
   var _useState3 = useState(),
-      duration = _useState3[0],
-      setDuration = _useState3[1];
-
+    duration = _useState3[0],
+    setDuration = _useState3[1];
   var _useState4 = useState(),
-      percentagePlayed = _useState4[0],
-      setPercentagePlayed = _useState4[1];
-
+    percentagePlayed = _useState4[0],
+    setPercentagePlayed = _useState4[1];
   var _useState5 = useState(false),
-      playing = _useState5[0],
-      setPlaying = _useState5[1];
-
+    playing = _useState5[0],
+    setPlaying = _useState5[1];
   var _useState6 = useState(false),
-      announceAudioDescription = _useState6[0],
-      setAnnounceAudioDescription = _useState6[1];
-
+    announceAudioDescription = _useState6[0],
+    setAnnounceAudioDescription = _useState6[1];
   var _useState7 = useState(),
-      scrubTime = _useState7[0],
-      setScrubTime = _useState7[1];
-
+    scrubTime = _useState7[0],
+    setScrubTime = _useState7[1];
   var _useState8 = useState(),
-      volume = _useState8[0],
-      setVolume = _useState8[1];
-
+    volume = _useState8[0],
+    setVolume = _useState8[1];
   var _useState9 = useState(false),
-      hasPlayed = _useState9[0],
-      setHasPlayed = _useState9[1];
-
+    hasPlayed = _useState9[0],
+    setHasPlayed = _useState9[1];
   var _useState10 = useState(),
-      interacting = _useState10[0],
-      setInteracting = _useState10[1];
-
+    interacting = _useState10[0],
+    setInteracting = _useState10[1];
   var _useState11 = useState(),
-      height = _useState11[0],
-      setHeight = _useState11[1];
-
+    height = _useState11[0],
+    setHeight = _useState11[1];
   var _useState12 = useState(),
-      width = _useState12[0],
-      setWidth = _useState12[1];
-
+    width = _useState12[0],
+    setWidth = _useState12[1];
   var containerRef = useRef();
   var scrubberRef = useRef();
   var videoRef = useForwardedRef(ref);
   var controls = useMemo(function () {
     var result;
-
     if (typeof controlsProp === 'string' || typeof controlsProp === 'boolean') {
       result = {
         items: ['volume', 'fullScreen'],
@@ -130,32 +105,31 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
         position: (controlsProp == null ? void 0 : controlsProp.position) || 'over'
       };
     }
-
     return result;
-  }, [controlsProp]); // mute if needed
+  }, [controlsProp]);
 
+  // mute if needed
   useEffect(function () {
     var video = videoRef.current;
     if (video && mute) video.muted = true;
-  }, [mute, videoRef]); // when the video is first rendered, set state from it where needed
+  }, [mute, videoRef]);
 
+  // when the video is first rendered, set state from it where needed
   useEffect(function () {
     var video = videoRef.current;
-
     if (video) {
       // hide all captioning to start with
       var textTracks = video.textTracks;
-
       for (var i = 0; i < textTracks.length; i += 1) {
         textTracks[i].mode = 'hidden';
       }
-
       setCurrentTime(video.currentTime);
       setPercentagePlayed(video.currentTime / video.duration * 100);
       setVolume(videoRef.current.volume);
     }
-  }, [videoRef]); // turn off interacting after a while
+  }, [videoRef]);
 
+  // turn off interacting after a while
   useEffect(function () {
     var timer = setTimeout(function () {
       if (interacting && !containsFocus(containerRef.current)) {
@@ -165,96 +139,84 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return function () {
       return clearTimeout(timer);
     };
-  }, [interacting]); // track which audio description track is active
+  }, [interacting]);
 
+  // track which audio description track is active
   var _useState13 = useState(),
-      activeTrack = _useState13[0],
-      setActiveTrack = _useState13[1];
-
+    activeTrack = _useState13[0],
+    setActiveTrack = _useState13[1];
   useLayoutEffect(function () {
     var video = videoRef.current;
-
     if (video) {
       if (video.videoHeight) {
         // set the size based on the video aspect ratio
         var rect = video.getBoundingClientRect();
         var ratio = rect.width / rect.height;
         var videoRatio = video.videoWidth / video.videoHeight;
-
         if (videoRatio > ratio) {
           var nextHeight = rect.width / videoRatio;
-
           if (nextHeight !== height) {
             setHeight(nextHeight);
             setWidth(undefined);
           }
         } else {
           var nextWidth = rect.height * videoRatio;
-
           if (nextWidth !== width) {
             setHeight(undefined);
             setWidth(nextWidth);
           }
         }
-      } // remember the state of the text tracks for subsequent rendering
+      }
 
-
+      // remember the state of the text tracks for subsequent rendering
       var textTracks = video.textTracks;
       var nextCaptions = [];
-      var set = false; // iterate through all of the tracks provided
-
+      var set = false;
+      // iterate through all of the tracks provided
       var _loop = function _loop(i) {
         var track = textTracks[i];
         var active = track.mode === 'showing';
-
         var getActiveTrack = function getActiveTrack(currentVideoTime) {
           var nextActiveTrack;
-
           for (var j = 0; j < track.cues.length; j += 1) {
             var _track$cues$j, _track$cues$j2;
-
             if (currentVideoTime > (track == null ? void 0 : (_track$cues$j = track.cues[j]) == null ? void 0 : _track$cues$j.startTime) && currentVideoTime < (track == null ? void 0 : (_track$cues$j2 = track.cues[j]) == null ? void 0 : _track$cues$j2.endTime)) {
               var _track$cues$j3;
-
               nextActiveTrack = track == null ? void 0 : (_track$cues$j3 = track.cues[j]) == null ? void 0 : _track$cues$j3.text;
             }
           }
-
           return nextActiveTrack;
-        }; // track is an audio description
+        };
 
-
+        // track is an audio description
         if (track.kind === 'descriptions') {
           if (announceAudioDescription) {
             video.ontimeupdate = function () {
               var nextActiveTrack = getActiveTrack(video.currentTime);
-
               if (activeTrack !== nextActiveTrack) {
                 if (nextActiveTrack) {
                   announce(nextActiveTrack, 'assertive');
                 }
-
                 setActiveTrack(nextActiveTrack);
               }
             };
           }
-        } // otherwise treat as captions
+        }
+
+        // otherwise treat as captions
         else {
           nextCaptions.push({
             label: track.label,
             active: active
           });
-
           if (!captions || !captions[i] || captions[i].active !== active) {
             set = true;
           }
-
           if (set) {
             setCaptions(nextCaptions);
           }
         }
       };
-
       for (var i = 0; i < textTracks.length; i += 1) {
         _loop(i);
       }
@@ -296,14 +258,12 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [videoRef]);
   var showCaptions = useCallback(function (index) {
     var textTracks = videoRef.current.textTracks;
-
     for (var i = 0; i < textTracks.length; i += 1) {
       textTracks[i].mode = i === index ? 'showing' : 'hidden';
     }
   }, [videoRef]);
   var fullscreen = useCallback(function () {
     var video = videoRef.current;
-
     if (video.requestFullscreen) {
       video.requestFullscreen();
     } else if (video.msRequestFullscreen) {
@@ -317,10 +277,8 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   }, [videoRef]);
   var controlsElement;
-
   if (controls != null && controls.position) {
     var _controls$items;
-
     var over = controls.position === 'over';
     var background = over ? theme.video.controls && theme.video.controls.background || {
       color: 'background-back',
@@ -353,14 +311,13 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
         onClick: function onClick() {
           showCaptions(caption.active ? -1 : index);
           var updatedCaptions = [];
-
           for (var i = 0; i < captions.length; i += 1) {
-            updatedCaptions.push(captions[i]); // set other captions to active=false
-
-            if (i !== index && updatedCaptions[i].active) updatedCaptions[i].active = false; // set the currently selected captions to active
+            updatedCaptions.push(captions[i]);
+            // set other captions to active=false
+            if (i !== index && updatedCaptions[i].active) updatedCaptions[i].active = false;
+            // set the currently selected captions to active
             else if (i === index) updatedCaptions[i].active = !captions[index].active;
           }
-
           setCaptions(updatedCaptions);
         }
       };
@@ -393,11 +350,9 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
           if (volume <= 1 - VOLUME_STEP && control === 'volume') {
             return louder();
           }
-
           if (volume >= VOLUME_STEP && control === 'reduceVolume') {
             return quieter();
           }
-
           return undefined;
         },
         close: false
@@ -448,24 +403,19 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
         });
         return undefined;
       }
-
       if (item === 'captions' && typeof buttonProps[item] === 'object') {
         for (var i = 0; i < buttonProps[item].length; i += 1) {
           controlsMenuItems.push(buttonProps[item][i]);
         }
-
         return undefined;
       }
-
       if (item === 'descriptions') {
         controlsMenuItems.push(buttonProps[item]);
         return undefined;
       }
-
       if (typeof item === 'string') {
         return controlsMenuItems.push(buttonProps[item]);
       }
-
       return controlsMenuItems.push(item);
     });
     controlsElement = /*#__PURE__*/React.createElement(StyledVideoControls, {
@@ -563,9 +513,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }
     })));
   }
-
   var mouseEventListeners;
-
   if ((controls == null ? void 0 : controls.position) === 'over') {
     mouseEventListeners = {
       onMouseEnter: function onMouseEnter() {
@@ -579,9 +527,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }
     };
   }
-
   var style;
-
   if (rest.fit === 'contain' && (controls == null ? void 0 : controls.position) === 'over') {
     // constrain the size to fit the aspect ratio so the controls
     // overlap correctly
@@ -595,7 +541,6 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       };
     }
   }
-
   return /*#__PURE__*/React.createElement(Keyboard, {
     onLeft: seekBackward,
     onRight: seekForward

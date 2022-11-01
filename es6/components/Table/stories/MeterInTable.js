@@ -26,10 +26,11 @@ export var MeterInTable = function MeterInTable() {
           value: val
         }]
       })), /*#__PURE__*/React.createElement(TableCell, null, /*#__PURE__*/React.createElement(Text, null, val, "% complete")));
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 MeterInTable.storyName = 'Meter inside table';
 export default {
   title: 'Visualizations/Table/Meter inside table'

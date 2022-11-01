@@ -2,46 +2,34 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Progressive = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var align = {
   top: 'bottom',
   right: 'right'
 };
-
 var ProgressiveDrop = function ProgressiveDrop() {
   var boxRef = (0, _react.useRef)();
   var innerBoxRef = (0, _react.useRef)();
-
   var _useState = (0, _react.useState)(false),
-      openDrop = _useState[0],
-      setOpenDrop = _useState[1];
-
+    openDrop = _useState[0],
+    setOpenDrop = _useState[1];
   var _useState2 = (0, _react.useState)(false),
-      openInnerDrop = _useState2[0],
-      setOpenInnerDrop = _useState2[1];
-
+    openInnerDrop = _useState2[0],
+    setOpenInnerDrop = _useState2[1];
   var _useState3 = (0, _react.useState)(false),
-      interactedWithInnerButton = _useState3[0],
-      setInteractedWithInnerButton = _useState3[1];
-
+    interactedWithInnerButton = _useState3[0],
+    setInteractedWithInnerButton = _useState3[1];
   var onCloseDrop = function onCloseDrop() {
     setOpenDrop(false);
     setOpenInnerDrop(false);
   };
-
   var onOpenDrop = function onOpenDrop() {
     setOpenDrop(true);
     setOpenInnerDrop(false);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -85,15 +73,14 @@ var ProgressiveDrop = function ProgressiveDrop() {
       onClick: function onClick() {
         return setInteractedWithInnerButton(true);
       }
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
 
 var Progressive = function Progressive() {
   return /*#__PURE__*/_react["default"].createElement(ProgressiveDrop, null);
 };
-
 exports.Progressive = Progressive;
 Progressive.parameters = {
   chromatic: {

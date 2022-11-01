@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Page, PageContent, Heading, Paragraph, Grid, Card, Box, Button, Notification } from 'grommet';
 export var PageNotification = function PageNotification() {
   var _useState = useState('narrow'),
-      kind = _useState[0],
-      setKind = _useState[1];
-
+    kind = _useState[0],
+    setKind = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -68,10 +67,11 @@ export var PageNotification = function PageNotification() {
     }, "Card"), /*#__PURE__*/React.createElement(Card, {
       background: "white",
       pad: "large"
-    }, "Card")), /*#__PURE__*/React.createElement(Paragraph, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt."))) // </Grommet>
-
+    }, "Card")), /*#__PURE__*/React.createElement(Paragraph, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt.")))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Layout/Page/Page Notification'
 };

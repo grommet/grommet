@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 import { Box, RangeSelector, Stack, Text } from 'grommet';
 var RANGE_MIN = 0;
 var RANGE_MAX = 100;
-
 function Thin(_ref) {
   var _ref$initialRange = _ref.initialRange,
-      initialRange = _ref$initialRange === void 0 ? [0, 100] : _ref$initialRange,
-      label = _ref.label;
-
+    initialRange = _ref$initialRange === void 0 ? [0, 100] : _ref$initialRange,
+    label = _ref.label;
   var _useState = useState(initialRange),
-      range = _useState[0],
-      setRange = _useState[1];
-
+    range = _useState[0],
+    setRange = _useState[1];
   return /*#__PURE__*/React.createElement(Box, {
     gap: "small",
     pad: "xlarge"
@@ -34,7 +31,6 @@ function Thin(_ref) {
     size: "small"
   }, range[0] + "% - " + range[1] + "%")));
 }
-
 export var ThinStory = function ThinStory() {
   return (
     /*#__PURE__*/
@@ -44,10 +40,11 @@ export var ThinStory = function ThinStory() {
       pad: "small"
     }, /*#__PURE__*/React.createElement(Thin, {
       label: "My Range Selector"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 ThinStory.storyName = 'Thin';
 export default {
   title: 'Input/RangeSelector/Thin'

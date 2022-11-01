@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { Box, Button, Form, FormField, Text, TextArea } from 'grommet';
 export var InsideFormField = function InsideFormField() {
   var _useState = useState({
-    name: '',
-    email: '',
-    value: ''
-  }),
-      value = _useState[0],
-      setValue = _useState[1];
-
+      name: '',
+      email: '',
+      value: ''
+    }),
+    value = _useState[0],
+    setValue = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -49,10 +48,11 @@ export var InsideFormField = function InsideFormField() {
     })), /*#__PURE__*/React.createElement(Button, {
       type: "submit",
       label: "submit"
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 InsideFormField.storyName = 'Inside a FormField';
 export default {
   title: 'Input/TextArea/Inside a FormField'

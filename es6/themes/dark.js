@@ -33,13 +33,11 @@ var colors = {
   },
   white: '#FFFFFF'
 };
-
 var colorArray = function colorArray(array, prefix) {
   return array.forEach(function (color, index) {
     colors[prefix + "-" + (index + 1)] = color;
   });
 };
-
 colorArray(accentColors, 'accent');
 colorArray(neutralColors, 'neutral');
 Object.keys(statusColors).forEach(function (color) {

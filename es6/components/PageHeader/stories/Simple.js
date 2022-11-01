@@ -15,10 +15,11 @@ export var Simple = function Simple() {
       parent: /*#__PURE__*/React.createElement(Anchor, {
         label: "Parent Page"
       })
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Layout/PageHeader/Simple'
 };

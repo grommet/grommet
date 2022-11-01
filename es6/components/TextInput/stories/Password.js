@@ -4,13 +4,11 @@ import { View } from "grommet-icons/es6/icons/View";
 import { Box, Button, TextInput } from 'grommet';
 export var Password = function Password() {
   var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var _React$useState2 = React.useState(false),
-      reveal = _React$useState2[0],
-      setReveal = _React$useState2[1];
-
+    reveal = _React$useState2[0],
+    setReveal = _React$useState2[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -39,10 +37,11 @@ export var Password = function Password() {
       onClick: function onClick() {
         return setReveal(!reveal);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Input/TextInput/Password'
 };

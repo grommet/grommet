@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, DataChart, Text } from 'grommet';
 var data = [];
-
 for (var i = 0; i < 7; i += 1) {
   data.push({
     date: "2020-07-" + (i % 31 + 1).toString().padStart(2, 0),
@@ -9,7 +8,6 @@ for (var i = 0; i < 7; i += 1) {
     bonus: Math.floor(Math.abs(Math.cos(i / 2.0) * 100))
   });
 }
-
 export var StackedAreas = function StackedAreas() {
   return (
     /*#__PURE__*/
@@ -55,10 +53,11 @@ export var StackedAreas = function StackedAreas() {
         }
       },
       legend: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 StackedAreas.storyName = 'Stacked areas';
 export default {
   title: 'Visualizations/DataChart/Stacked areas'

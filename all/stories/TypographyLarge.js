@@ -2,17 +2,11 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Large = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var paragraphFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
-
 var Large = function Large() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
@@ -41,7 +35,6 @@ var Large = function Large() {
     size: "large"
   }, "Heading 4 - Large"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Text Medium"), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Paragraph - Medium", paragraphFiller))));
 };
-
 exports.Large = Large;
 var _default = {
   title: 'Type/Typography/Large'

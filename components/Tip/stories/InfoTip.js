@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Info = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Info = function Info() {
   return (
     /*#__PURE__*/
@@ -70,11 +65,10 @@ var Info = function Info() {
       icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.HelpOption, {
         size: "large"
       })
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.Info = Info;
 Info.parameters = {
   chromatic: {

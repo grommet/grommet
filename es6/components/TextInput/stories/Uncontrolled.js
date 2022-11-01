@@ -17,10 +17,11 @@ export var Uncontrolled = function Uncontrolled() {
         return console.log('Change', event.target.value);
       },
       "aria-label": "Input Text"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 Uncontrolled.parameters = {
   chromatic: {
     disable: true

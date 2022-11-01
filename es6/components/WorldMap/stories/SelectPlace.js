@@ -2,9 +2,8 @@ import React from 'react';
 import { Box, WorldMap } from 'grommet';
 export var SelectPlace = function SelectPlace() {
   var _React$useState = React.useState(),
-      places = _React$useState[0],
-      setPlaces = _React$useState[1];
-
+    places = _React$useState[0],
+    setPlaces = _React$useState[1];
   var onSelectPlace = function onSelectPlace(place) {
     console.log('Selected', place);
     setPlaces([{
@@ -12,7 +11,6 @@ export var SelectPlace = function SelectPlace() {
       location: place
     }]);
   };
-
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"

@@ -2,40 +2,29 @@
 
 exports.__esModule = true;
 exports.SelectMultipleValue = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _Box = require("../Box");
-
 var _Button = require("../Button");
-
 var _CheckBox = require("../CheckBox");
-
 var _StyledSelect = require("../Select/StyledSelect");
-
 var _utils = require("../Select/utils");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var SelectMultipleValue = function SelectMultipleValue(_ref) {
   var allOptions = _ref.allOptions,
-      children = _ref.children,
-      disabled = _ref.disabled,
-      disabledKey = _ref.disabledKey,
-      dropButtonRef = _ref.dropButtonRef,
-      labelKey = _ref.labelKey,
-      onRequestOpen = _ref.onRequestOpen,
-      onSelectChange = _ref.onSelectChange,
-      theme = _ref.theme,
-      value = _ref.value,
-      valueKey = _ref.valueKey;
-
+    children = _ref.children,
+    disabled = _ref.disabled,
+    disabledKey = _ref.disabledKey,
+    dropButtonRef = _ref.dropButtonRef,
+    labelKey = _ref.labelKey,
+    onRequestOpen = _ref.onRequestOpen,
+    onSelectChange = _ref.onSelectChange,
+    theme = _ref.theme,
+    value = _ref.value,
+    valueKey = _ref.valueKey;
   var _useState = (0, _react.useState)(false),
-      showA11yDiv = _useState[0],
-      setShowA11yDiv = _useState[1];
-
+    showA11yDiv = _useState[0],
+    setShowA11yDiv = _useState[1];
   var isDisabled = (0, _utils.useDisabled)(disabled, disabledKey, allOptions, valueKey || labelKey);
   var visibleValue = (0, _react.useCallback)(function (i) {
     var optionValue = valueKey && valueKey.reduce ? (0, _utils.applyKey)(i, valueKey) : i;
@@ -44,10 +33,8 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     var optionLabel = (0, _utils.getOptionLabel)(indexOptions, allOptions, labelKey || valueKey);
     var optionDisabled = isDisabled(indexOptions);
     var valueIndex = (0, _utils.getOptionIndex)(value, optionValue, valueKey || labelKey);
-
     if (valueIndex < theme.selectMultiple.maxInline) {
       var child;
-
       if (children) {
         child = children(i, indexOptions, allOptions, {
           active: false,
@@ -55,7 +42,6 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
           selected: true
         });
       }
-
       return /*#__PURE__*/_react["default"].createElement(_StyledSelect.SelectOption, {
         role: "option",
         a11yTitle: optionSelected ? optionLabel + " selected" : optionLabel + " not selected",
@@ -70,7 +56,6 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
         onClick: function onClick(event) {
           if (!optionDisabled) {
             var intermediate = [].concat(value);
-
             if ((0, _utils.arrayIncludes)(intermediate, optionValue, valueKey || labelKey)) {
               onSelectChange(event, {
                 option: optionValue,
@@ -78,7 +63,6 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
                   return typeof v === 'object' ? (0, _utils.applyKey)(v, valueKey || labelKey) === (0, _utils.applyKey)(optionValue, valueKey || labelKey) : v !== optionValue;
                 })
               });
-
               if (valueIndex !== intermediate.length - 1) {
                 setTimeout(function () {
                   var nextFocus = document.getElementById("selected-" + intermediate[valueIndex + 1]);
@@ -115,11 +99,11 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
         checked: optionSelected
       }));
     }
-
     return undefined;
-  }, [valueKey, allOptions, children, dropButtonRef, isDisabled, labelKey, onSelectChange, value, theme.selectMultiple.maxInline]); // After announcing set showA11yDiv to undefined so it won't
-  // be read out again
+  }, [valueKey, allOptions, children, dropButtonRef, isDisabled, labelKey, onSelectChange, value, theme.selectMultiple.maxInline]);
 
+  // After announcing set showA11yDiv to undefined so it won't
+  // be read out again
   (0, _react.useEffect)(function () {
     if (showA11yDiv !== undefined) {
       setTimeout(function () {
@@ -136,13 +120,13 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     return (0, _utils.arrayIncludes)(value, valueKey && valueKey.reduce ? (0, _utils.applyKey)(i, valueKey) : i, valueKey || labelKey);
   })
   /* eslint-disable-next-line array-callback-return, 
-      consistent-return */
-  .map(function (i) {
+      consistent-return */.map(function (i) {
     return visibleValue(i);
   }), showA11yDiv && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     height: "0px",
     width: "0px",
-    overflow: "hidden" // announce when an item is removed from selected options
+    overflow: "hidden"
+    // announce when an item is removed from selected options
     ,
     "aria-live": "assertive",
     role: "alert"
@@ -159,5 +143,4 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     label: "+ " + (value.length - theme.selectMultiple.maxInline) + " more"
   })));
 };
-
 exports.SelectMultipleValue = SelectMultipleValue;

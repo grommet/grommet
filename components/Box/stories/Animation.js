@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Animation = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Animation = function Animation() {
   return (
     /*#__PURE__*/
@@ -30,11 +26,10 @@ var Animation = function Animation() {
         },
         align: "center"
       }, animation);
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.Animation = Animation;
 var _default = {
   title: 'Layout/Box/Animation'

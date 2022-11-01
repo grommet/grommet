@@ -2,17 +2,11 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Status = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _Box = require("../../Box");
-
 var _Text = require("../../Text");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var StatusNotification = function StatusNotification() {
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: "large",
@@ -59,11 +53,9 @@ var StatusNotification = function StatusNotification() {
     message: "This is an example of message text"
   })));
 };
-
 var Status = function Status() {
   return /*#__PURE__*/_react["default"].createElement(StatusNotification, null);
 };
-
 exports.Status = Status;
 var _default = {
   title: 'Visualizations/Notification/Status'

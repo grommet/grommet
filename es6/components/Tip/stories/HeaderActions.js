@@ -4,12 +4,10 @@ import { Trash } from "grommet-icons/es6/icons/Trash";
 import { Refresh } from "grommet-icons/es6/icons/Refresh";
 import { Info } from "grommet-icons/es6/icons/Info"; // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
-
 import { storageColumns, storageData } from '../../DataTable/stories/data';
-
 var TipContent = function TipContent(_ref) {
   var message = _ref.message,
-      icon = _ref.icon;
+    icon = _ref.icon;
   return /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     gap: "small"
@@ -19,16 +17,13 @@ var TipContent = function TipContent(_ref) {
     color: "accent-1"
   }, message));
 };
-
 export var HeaderActions = function HeaderActions() {
   var _useState = useState(storageData),
-      data = _useState[0],
-      setData = _useState[1];
-
+    data = _useState[0],
+    setData = _useState[1];
   var _useState2 = useState(),
-      selected = _useState2[0],
-      setSelected = _useState2[1];
-
+    selected = _useState2[0],
+    setSelected = _useState2[1];
   var removeRow = function removeRow() {
     var filteredData = data.filter(function (item) {
       return item.id !== selected.id;
@@ -36,7 +31,6 @@ export var HeaderActions = function HeaderActions() {
     setData(filteredData);
     setSelected(undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -99,10 +93,11 @@ export var HeaderActions = function HeaderActions() {
       onClickRow: function onClickRow(event) {
         return setSelected(event.datum);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 HeaderActions.args = {
   full: true
 };

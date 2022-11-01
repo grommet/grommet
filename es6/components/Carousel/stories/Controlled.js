@@ -5,9 +5,8 @@ import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
 import { Box, Button, Carousel, Text } from 'grommet';
 export var Controlled = function Controlled() {
   var _React$useState = React.useState(0),
-      activeSlide = _React$useState[0],
-      setActiveSlide = _React$useState[1];
-
+    activeSlide = _React$useState[0],
+    setActiveSlide = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -47,10 +46,11 @@ export var Controlled = function Controlled() {
       background: "light-3"
     }, /*#__PURE__*/React.createElement(Car, {
       size: "xlarge"
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 Controlled.parameters = {
   chromatic: {
     disable: true

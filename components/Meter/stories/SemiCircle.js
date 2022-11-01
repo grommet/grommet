@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.SemiCircle = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var SemiCircle = function SemiCircle() {
   return (
     /*#__PURE__*/
@@ -22,11 +18,10 @@ var SemiCircle = function SemiCircle() {
       type: "semicircle",
       background: "light-2",
       value: 60
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.SemiCircle = SemiCircle;
 var _default = {
   title: 'Visualizations/Meter/Semi Circle'

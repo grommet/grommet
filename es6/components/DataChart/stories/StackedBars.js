@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, DataChart, Text } from 'grommet';
 var data = [];
-
 for (var i = 0; i < 7; i += 1) {
   data.push({
     date: "2020-07-" + (i % 31 + 1).toString().padStart(2, 0),
@@ -9,7 +8,6 @@ for (var i = 0; i < 7; i += 1) {
     forecast: Math.floor(Math.abs(Math.cos(i / 2.0) * 100))
   });
 }
-
 export var StackedBars = function StackedBars() {
   return (
     /*#__PURE__*/
@@ -56,10 +54,11 @@ export var StackedBars = function StackedBars() {
         y: true
       },
       legend: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 StackedBars.storyName = 'Stacked bars';
 export default {
   title: 'Visualizations/DataChart/Stacked bars'

@@ -1,22 +1,22 @@
 // Utility functions for the Calendar.
 // Just what's needed to avoid having to include a dependency like momentjs.
+
 var DAY_MILLISECONDS = 24 * 60 * 60 * 1000;
 export var addDays = function addDays(date, days) {
-  var result = new Date(date.getTime() + DAY_MILLISECONDS * days); // Deal with crossing the daylight savings time boundary,
+  var result = new Date(date.getTime() + DAY_MILLISECONDS * days);
+  // Deal with crossing the daylight savings time boundary,
   // where adding a day's worth when the time is midnight results in
   // being a day off.
-
-  var hourDelta = result.getHours() - date.getHours(); // At this point, hourDelta is typically 0 (normal day),
+  var hourDelta = result.getHours() - date.getHours();
+  // At this point, hourDelta is typically 0 (normal day),
   // +23 (November daylight saving), or -23 (March Daylight saving)
   // depending on which side of the switch we are on.
   // Convert so that hourDelta is either +1 or -1.
-
   if (hourDelta === 23) {
     hourDelta -= 24;
   } else if (hourDelta === -23) {
     hourDelta += 24;
   }
-
   result.setHours(result.getHours() - hourDelta);
   return result;
 };
@@ -55,20 +55,19 @@ export var sameDayOrBefore = function sameDayOrBefore(date1, date2) {
 };
 export var daysApart = function daysApart(date1, date2) {
   return Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
-}; // betweenDates takes an array of two elements and checks if the
+};
+
+// betweenDates takes an array of two elements and checks if the
 // supplied date lies between them, inclusive.
 // returns 2 if exact match to one end, 1 if between, undefined otherwise
-
 export var betweenDates = function betweenDates(date, dates) {
   var result;
-
   if (dates) {
     var _ref = Array.isArray(dates) ? dates.map(function (d) {
-      return d ? new Date(d) : undefined;
-    }) : [dates, undefined],
-        from = _ref[0],
-        to = _ref[1];
-
+        return d ? new Date(d) : undefined;
+      }) : [dates, undefined],
+      from = _ref[0],
+      to = _ref[1];
     if (from && sameDay(date, from) || to && sameDay(date, to)) {
       result = 2;
     } else if (from && sameDayOrAfter(date, from) && to && sameDayOrBefore(date, to)) {
@@ -77,16 +76,15 @@ export var betweenDates = function betweenDates(date, dates) {
   } else {
     result = 1;
   }
-
   return result;
-}; // withinDates takes an array of string dates or 2 element arrays and
+};
+
+// withinDates takes an array of string dates or 2 element arrays and
 // checks whether the supplied date matches any string or is between
 // any dates in arrays.
 // returns 2 if exact match, 1 if between, undefined otherwise
-
 export var withinDates = function withinDates(date, dates) {
   var result;
-
   if (dates) {
     if (Array.isArray(dates)) {
       dates.some(function (d) {
@@ -97,21 +95,19 @@ export var withinDates = function withinDates(date, dates) {
         } else {
           result = betweenDates(date, d);
         }
-
         return result;
       });
     } else if (sameDay(date, dates)) {
       result = 2;
     }
   }
-
   return result;
 };
 export var handleOffset = function handleOffset(date) {
   var normalizedDate = new Date(date);
   var offset = normalizedDate.getTimezoneOffset();
-  var hour = normalizedDate.getHours(); // add back offset
-
+  var hour = normalizedDate.getHours();
+  // add back offset
   normalizedDate.setHours(hour, offset < 0 ? -offset : offset);
   return normalizedDate;
 };

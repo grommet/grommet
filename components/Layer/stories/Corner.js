@@ -2,28 +2,20 @@
 
 exports.__esModule = true;
 exports["default"] = exports.CornerLayer = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var CornerLayer = function CornerLayer() {
   var _React$useState = _react["default"].useState(),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var onOpen = function onOpen() {
     return setOpen(true);
   };
-
   var onClose = function onClose() {
     return setOpen(undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -47,11 +39,10 @@ var CornerLayer = function CornerLayer() {
       overflow: "auto"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "xlarge"
-    }, "Corner top-right position")))) // </Grommet>
-
+    }, "Corner top-right position"))))
+    // </Grommet>
   );
 };
-
 exports.CornerLayer = CornerLayer;
 CornerLayer.storyName = 'Corner';
 CornerLayer.parameters = {

@@ -30,7 +30,7 @@ var columns = [{
   header: 'Percent Complete',
   render: function render(_ref) {
     var key = _ref.key,
-        percent = _ref.percent;
+      percent = _ref.percent;
     return /*#__PURE__*/React.createElement(Box, {
       pad: {
         vertical: 'xsmall'
@@ -290,10 +290,11 @@ export var Show = function Show() {
       onMore: function onMore() {
         return console.log('loading more data');
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/DataTable/Show'
 };

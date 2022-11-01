@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Reverse = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var ReverseMenu = function ReverseMenu() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
@@ -37,11 +32,9 @@ var ReverseMenu = function ReverseMenu() {
     }]
   }));
 };
-
 var Reverse = function Reverse() {
   return /*#__PURE__*/_react["default"].createElement(ReverseMenu, null);
 };
-
 exports.Reverse = Reverse;
 Reverse.parameters = {
   chromatic: {

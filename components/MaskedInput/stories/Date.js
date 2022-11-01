@@ -2,22 +2,16 @@
 
 exports.__esModule = true;
 exports["default"] = exports.DateMaskedInput = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var daysInMonth = function daysInMonth(month) {
   return new Date(2019, month, 0).getDate();
 };
-
 var DateMaskedInput = function DateMaskedInput() {
   var _React$useState = _react["default"].useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -66,11 +60,10 @@ var DateMaskedInput = function DateMaskedInput() {
       onChange: function onChange(event) {
         return setValue(event.target.value);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.DateMaskedInput = DateMaskedInput;
 DateMaskedInput.storyName = 'Date';
 DateMaskedInput.parameters = {

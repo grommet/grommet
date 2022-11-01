@@ -4,13 +4,12 @@ var align = {
   top: 'bottom',
   left: 'left'
 };
-
 var InlineDrop = function InlineDrop() {
-  var targetRef = useRef(); // trigger re-render so we have the targetRef
+  var targetRef = useRef();
 
+  // trigger re-render so we have the targetRef
   var _useState = useState(false),
-      setShowDrop = _useState[1];
-
+    setShowDrop = _useState[1];
   useEffect(function () {
     setShowDrop(true);
   }, []);
@@ -34,8 +33,8 @@ var InlineDrop = function InlineDrop() {
       target: targetRef.current
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "large"
-    }, "Drop Contents")))) // </Grommet>
-
+    }, "Drop Contents"))))
+    // </Grommet>
   );
 };
 

@@ -2,44 +2,32 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ControlledInput = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var ControlledInput = function ControlledInput() {
   var _useState = (0, _react.useState)(''),
-      name = _useState[0],
-      setName = _useState[1];
-
+    name = _useState[0],
+    setName = _useState[1];
   var _useState2 = (0, _react.useState)(''),
-      email = _useState2[0],
-      setEmail = _useState2[1];
-
+    email = _useState2[0],
+    setEmail = _useState2[1];
   var _useState3 = (0, _react.useState)(false),
-      subscribe = _useState3[0],
-      setSubscribe = _useState3[1];
-
+    subscribe = _useState3[0],
+    setSubscribe = _useState3[1];
   var _useState4 = (0, _react.useState)(''),
-      ampm = _useState4[0],
-      setAmpm = _useState4[1];
-
+    ampm = _useState4[0],
+    setAmpm = _useState4[1];
   var _useState5 = (0, _react.useState)(''),
-      size = _useState5[0],
-      setSize = _useState5[1];
-
+    size = _useState5[0],
+    setSize = _useState5[1];
   var _useState6 = (0, _react.useState)(''),
-      comments = _useState6[0],
-      setComments = _useState6[1];
-
+    comments = _useState6[0],
+    setComments = _useState6[1];
   var _useState7 = (0, _react.useState)(''),
-      age = _useState7[0],
-      setAge = _useState7[1];
-
+    age = _useState7[0],
+    setAge = _useState7[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -163,11 +151,10 @@ var ControlledInput = function ControlledInput() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.ControlledInput = ControlledInput;
 ControlledInput.storyName = 'Controlled input';
 ControlledInput.parameters = {

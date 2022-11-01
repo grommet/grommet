@@ -1,5 +1,4 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React, { useState } from 'react';
 import { Box, Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -17,7 +16,7 @@ var customCheckBoxTheme = {
     check: {
       extend: function extend(_ref) {
         var theme = _ref.theme,
-            checked = _ref.checked;
+          checked = _ref.checked;
         return "\n        " + (checked && "background-color: " + normalizeColor('neutral-1', theme) + ";") + "\n        ";
       }
     },
@@ -44,9 +43,8 @@ var customCheckBoxTheme = {
 };
 export var Custom = function Custom(props) {
   var _useState = useState(false),
-      checked = _useState[0],
-      setChecked = _useState[1];
-
+    checked = _useState[0],
+    setChecked = _useState[1];
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: deepMerge(grommet, customCheckBoxTheme)
   }, /*#__PURE__*/React.createElement(Box, {

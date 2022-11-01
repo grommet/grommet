@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Calendar, Text } from 'grommet'; // DSTCalendar has dates specifically chosen to identify issues with
-// crossing the daylight savings time boundary (from California).
+import { Box, Calendar, Text } from 'grommet';
 
+// DSTCalendar has dates specifically chosen to identify issues with
+// crossing the daylight savings time boundary (from California).
 export var DSTCalendar = function DSTCalendar() {
   return (
     /*#__PURE__*/
@@ -55,10 +56,11 @@ export var DSTCalendar = function DSTCalendar() {
     }, /*#__PURE__*/React.createElement(Calendar, {
       date: "2019-03-15T06:00:01.409Z",
       bounds: ['2019-03-01', '2019-03-31']
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 DSTCalendar.storyName = 'Daylight savings time';
 export default {
   title: "Visualizations/Calendar/Daylight savings time"

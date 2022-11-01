@@ -2,24 +2,17 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ActiveDate = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var ActiveDate = function ActiveDate() {
   var _useState = (0, _react.useState)(),
-      datesD = _useState[0],
-      setDatesD = _useState[1];
-
+    datesD = _useState[0],
+    setDatesD = _useState[1];
   var _useState2 = (0, _react.useState)(undefined),
-      activeDate = _useState2[0],
-      setActiveDate = _useState2[1];
-
+    activeDate = _useState2[0],
+    setActiveDate = _useState2[1];
   var startDateButton = (0, _react.useRef)();
   var endDateButton = (0, _react.useRef)();
   return (
@@ -54,11 +47,10 @@ var ActiveDate = function ActiveDate() {
         setActiveDate('end');
       },
       range: "array"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.ActiveDate = ActiveDate;
 ActiveDate.storyName = 'Active date';
 var _default = {

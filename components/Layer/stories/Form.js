@@ -2,34 +2,24 @@
 
 exports.__esModule = true;
 exports["default"] = exports.FormLayer = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var suggestions = ['alpha', 'beta'];
-
 var FormLayer = function FormLayer() {
   var _React$useState = _react["default"].useState(false),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var _React$useState2 = _react["default"].useState(''),
-      select = _React$useState2[0],
-      setSelect = _React$useState2[1];
-
+    select = _React$useState2[0],
+    setSelect = _React$useState2[1];
   var onOpen = function onOpen() {
     return setOpen(true);
   };
-
   var onClose = function onClose() {
     return setOpen(undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -96,11 +86,10 @@ var FormLayer = function FormLayer() {
       label: "Submit",
       onClick: onClose,
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.FormLayer = FormLayer;
 FormLayer.storyName = 'Form';
 FormLayer.parameters = {

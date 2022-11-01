@@ -5,9 +5,8 @@ var allOptions = Array(100).fill().map(function (_, i) {
 });
 export var Simple = function Simple() {
   var _useState = useState(''),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -27,10 +26,11 @@ export var Simple = function Simple() {
         var option = _ref.option;
         return setValue(option);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Input/FormField/Simple'
 };

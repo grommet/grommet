@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.IconLabel = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var IconLabel = function IconLabel() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
@@ -48,7 +43,6 @@ var IconLabel = function IconLabel() {
     onClick: function onClick() {}
   })));
 };
-
 exports.IconLabel = IconLabel;
 IconLabel.storyName = 'Icon label';
 var _default = {

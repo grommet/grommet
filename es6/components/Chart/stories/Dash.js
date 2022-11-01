@@ -33,10 +33,11 @@ export var Dash = function Dash() {
       type: "bar",
       dash: true,
       values: [[10, 20], [20, 30], [30, 15]]
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Chart/Dash'
 };

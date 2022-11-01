@@ -2,20 +2,14 @@
 
 exports.__esModule = true;
 exports["default"] = exports.CustomSearch = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 var _theme = require("../theme");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 // https://github.com/grommet/grommet/blob/master/src/js/components/Select/stories/theme.js
+
 var allContentPartners = [{
   name: 'Test Partner',
   id: '32131232'
@@ -53,30 +47,23 @@ var allContentPartners = [{
   name: 'Test Partner 11',
   id: '32131244'
 }];
-
 var CustomSearch = function CustomSearch() {
   var _useState = (0, _react.useState)([]),
-      selectedContentPartners = _useState[0],
-      setSelectedContentPartners = _useState[1];
-
+    selectedContentPartners = _useState[0],
+    setSelectedContentPartners = _useState[1];
   var _useState2 = (0, _react.useState)(allContentPartners),
-      contentPartners = _useState2[0],
-      setContentPartners = _useState2[1];
-
+    contentPartners = _useState2[0],
+    setContentPartners = _useState2[1];
   var _useState3 = (0, _react.useState)(false),
-      searching = _useState3[0],
-      setSearching = _useState3[1];
-
+    searching = _useState3[0],
+    setSearching = _useState3[1];
   var _useState4 = (0, _react.useState)(''),
-      searchQuery = _useState4[0],
-      setSearchQuery = _useState4[1];
-
+    searchQuery = _useState4[0],
+    setSearchQuery = _useState4[1];
   var selectRef = (0, _react.useRef)();
-
   var clearContentPartners = function clearContentPartners() {
     setSelectedContentPartners([]);
   };
-
   (0, _react.useEffect)(function () {
     var filterContentPartners = allContentPartners.filter(function (s) {
       return s.name.toLowerCase().indexOf(searchQuery.toLowerCase()) >= 0;
@@ -86,7 +73,6 @@ var CustomSearch = function CustomSearch() {
       setContentPartners(filterContentPartners);
     }, 500);
   }, [searching, searchQuery]);
-
   var renderOption = function renderOption(_ref) {
     var name = _ref.name;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -105,7 +91,6 @@ var CustomSearch = function CustomSearch() {
       onChange: function onChange() {}
     }));
   };
-
   var renderContentPartners = function renderContentPartners() {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",
@@ -158,28 +143,22 @@ var CustomSearch = function CustomSearch() {
       }
     }))));
   };
-
   var sortContentPartners = function sortContentPartners(selectedPartnerNames) {
     return function (p1, p2) {
       var p1Exists = selectedPartnerNames.includes(p1.name);
       var p2Exists = selectedPartnerNames.includes(p2.name);
-
       if (!p1Exists && p2Exists) {
         return 1;
       }
-
       if (p1Exists && !p2Exists) {
         return -1;
       }
-
       if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
         return -1;
       }
-
       return 1;
     };
   };
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _theme.theme
@@ -208,13 +187,11 @@ var CustomSearch = function CustomSearch() {
         var name = _ref4.name;
         return name;
       }).indexOf(option.name);
-
       if (seasonIndex >= 0) {
         newSelectedPartners.splice(seasonIndex, 1);
       } else {
         newSelectedPartners.push(option);
       }
-
       var selectedPartnerNames = newSelectedPartners.map(function (_ref5) {
         var name = _ref5.name;
         return name;
@@ -229,7 +206,6 @@ var CustomSearch = function CustomSearch() {
     }
   }, renderOption)));
 };
-
 exports.CustomSearch = CustomSearch;
 CustomSearch.storyName = 'Custom search';
 var _default = {

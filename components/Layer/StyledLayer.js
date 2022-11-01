@@ -2,21 +2,14 @@
 
 exports.__esModule = true;
 exports.animationDuration = exports.StyledOverlay = exports.StyledLayer = exports.StyledContainer = void 0;
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
-
 var _utils = require("../../utils");
-
 var _defaultProps = require("../../default-props");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var hiddenPositionStyle = (0, _styledComponents.css)(["left:-100%;right:100%;z-index:-1;position:fixed;"]);
 var desktopLayerStyle = "\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n";
 var responsiveLayerStyle = "\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n";
-
 var StyledLayer = _styledComponents["default"].div.withConfig({
   displayName: "StyledLayer",
   componentId: "sc-rmtehz-0"
@@ -26,24 +19,19 @@ var StyledLayer = _styledComponents["default"].div.withConfig({
   if (props.position === 'hidden') {
     return hiddenPositionStyle;
   }
-
   var styles = [];
   styles.push(desktopLayerStyle);
-
   if (props.responsive && props.theme.layer.responsiveBreakpoint && !props.layerTarget) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
     styles.push((0, _utils.breakpointStyle)(breakpoint, responsiveLayerStyle));
   }
-
   return styles;
 }, function (props) {
   return props.theme.layer && props.theme.layer.extend;
 });
-
 exports.StyledLayer = StyledLayer;
 StyledLayer.defaultProps = {};
 Object.setPrototypeOf(StyledLayer.defaultProps, _defaultProps.defaultProps);
-
 var StyledOverlay = _styledComponents["default"].div.withConfig({
   displayName: "StyledLayer__StyledOverlay",
   componentId: "sc-rmtehz-1"
@@ -52,14 +40,11 @@ var StyledOverlay = _styledComponents["default"].div.withConfig({
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
     return (0, _utils.breakpointStyle)(breakpoint, 'position: relative;');
   }
-
   return '';
 }, function (props) {
   return !props.plain && props.theme.layer.overlay.background && (0, _utils.backgroundStyle)(props.theme.layer.overlay.background, props.theme);
 });
-
 exports.StyledOverlay = StyledOverlay;
-
 var getMargin = function getMargin(margin, theme, position) {
   var axis = position.indexOf('top') !== -1 || position.indexOf('bottom') !== -1 ? 'vertical' : 'horizontal';
   var marginValue = margin[position] || margin[axis] || margin;
@@ -67,16 +52,13 @@ var getMargin = function getMargin(margin, theme, position) {
   var marginInTheme = !!theme.global.edgeSize[marginValue];
   return !marginInTheme && typeof marginValue !== 'string' ? 0 : (0, _utils.parseMetricToNum)(marginApplied);
 };
-
 var getBounds = function getBounds(bounds, margin, theme, position) {
   if (position === void 0) {
     position = undefined;
   }
-
   if (position) {
     return bounds[position] + getMargin(margin, theme, position);
   }
-
   return {
     bottom: bounds.bottom + getMargin(margin, theme, 'bottom'),
     // 'bottom-left': getMargin(margin, theme, 'bottom-left'),
@@ -85,9 +67,9 @@ var getBounds = function getBounds(bounds, margin, theme, position) {
     left: bounds.left + getMargin(margin, theme, 'left'),
     right: bounds.right + getMargin(margin, theme, 'right'),
     start: bounds.left + getMargin(margin, theme, 'start'),
-    top: bounds.top + getMargin(margin, theme, 'top') // 'top-right': getMargin(margin, theme, 'top-right'),
+    top: bounds.top + getMargin(margin, theme, 'top')
+    // 'top-right': getMargin(margin, theme, 'top-right'),
     // 'top-left': getMargin(margin, theme, 'top-left'),
-
   };
 };
 
@@ -137,27 +119,24 @@ var KEYFRAMES = {
 };
 var animationDuration = 200;
 exports.animationDuration = animationDuration;
-
 var getAnimationStyle = function getAnimationStyle(props, position, full) {
   var animation = props.animation !== undefined ? props.animation : props.animate;
   if (animation === undefined) animation = 'slide';
   var keys;
-
   if (animation === 'slide' || animation === true) {
     keys = KEYFRAMES[position][full];
   } else if (animation === 'fadeIn') {
     keys = (0, _styledComponents.keyframes)(["0%{opacity:0}100%{opacity:1}"]);
   }
-
   return keys ? (0, _styledComponents.css)(["animation:", " ", "s ease-in-out forwards;"], keys, animationDuration / 1000.0) : '';
-}; // POSITIONS combines 'position', 'full', and 'margin' properties, since
+};
+
+// POSITIONS combines 'position', 'full', and 'margin' properties, since
 // they are all interdependent.
 // Basically, non-full axes combine 50% position with -50% translation.
 // full axes pin to the window edges offset by any margin.
 // The keyframe animations are included as they are done via translations
 // as well so they must take into account the non-animated positioning.
-
-
 var POSITIONS = {
   center: {
     vertical: function vertical(bounds) {
@@ -402,14 +381,12 @@ var POSITIONS = {
     }
   }
 };
-
 var roundStyle = function roundStyle(data, theme, position, margin) {
   var styles = [];
   var size = data === true ? 'medium' : data;
-  var round = theme.global.edgeSize[size] || size; // if user provides CSS string such as '50px 12px', apply that always
-
+  var round = theme.global.edgeSize[size] || size;
+  // if user provides CSS string such as '50px 12px', apply that always
   var customCSS = round.split(' ').length > 1;
-
   if (margin === 'none' && !customCSS && theme.layer.border.intelligentRounding === true) {
     if (position === 'bottom') {
       styles.push((0, _styledComponents.css)(["border-radius:", " ", " 0 0;"], round, round));
@@ -442,10 +419,8 @@ var roundStyle = function roundStyle(data, theme, position, margin) {
     // a complex CSS string such as "50px 20px" apply this
     styles.push((0, _styledComponents.css)(["border-radius:", ";"], round));
   }
-
   return styles;
 };
-
 var bounds = {
   left: 0,
   right: 0,
@@ -456,7 +431,6 @@ var desktopContainerStyle = (0, _styledComponents.css)(["", " max-height:", ";ma
   if (!props.modal && props.position === 'hidden') {
     return hiddenPositionStyle;
   }
-
   return (0, _styledComponents.css)(["position:", ";"], props.modal || props.layerTarget ? 'absolute' : 'fixed');
 }, function (props) {
   return "calc(100% - " + getBounds(bounds, props.margin, props.theme, 'top') + "px - " + getBounds(bounds, props.margin, props.theme, 'bottom') + "px)";
@@ -467,15 +441,12 @@ var desktopContainerStyle = (0, _styledComponents.css)(["", " max-height:", ";ma
 }, function (props) {
   return props.position !== 'hidden' && POSITIONS[props.position][props.full](getBounds(bounds, props.margin, props.theme), bounds) || '';
 });
-
 var responsiveContainerStyle = function responsiveContainerStyle(props) {
   return (0, _styledComponents.css)(["position:relative;max-height:none;max-width:none;border-radius:0;height:", ";width:", ";"], !props.layerTarget ? '100vh' : '100%', !props.layerTarget ? '100vw' : '100%');
 };
-
 var elevationStyle = (0, _styledComponents.css)(["box-shadow:", ";"], function (props) {
   return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.theme.layer.container.elevation];
 });
-
 var StyledContainer = _styledComponents["default"].div.withConfig({
   // don't let elevation leak to DOM
   // https://styled-components.com/docs/api#shouldforwardprop
@@ -498,17 +469,14 @@ var StyledContainer = _styledComponents["default"].div.withConfig({
 }, desktopContainerStyle, function (props) {
   if (props.responsive && props.theme.layer.responsiveBreakpoint) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
-
     if (breakpoint) {
       return (0, _utils.breakpointStyle)(breakpoint, responsiveContainerStyle);
     }
   }
-
   return '';
 }, function (props) {
   return props.theme.layer.container && props.theme.layer.container.extend;
 });
-
 exports.StyledContainer = StyledContainer;
 StyledContainer.defaultProps = {};
 Object.setPrototypeOf(StyledContainer.defaultProps, _defaultProps.defaultProps);

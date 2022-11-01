@@ -23,10 +23,11 @@ export var Basic = function Basic() {
       background: "dark-2"
     }, "R"), /*#__PURE__*/React.createElement(Avatar, {
       background: "brand"
-    }, "SY")) // </Grommed>
-
+    }, "SY"))
+    // </Grommed>
   );
 };
+
 export default {
   title: 'Visualizations/Avatar/Basic'
 };

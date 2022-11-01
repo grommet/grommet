@@ -1,5 +1,4 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React from 'react';
 import { User } from "grommet-icons/es6/icons/User";
 import { Box, Button, Heading, Text } from 'grommet';
@@ -79,7 +78,8 @@ export var Kind = function Kind() {
             },
             pad: "small"
           }, contents.map(function (content, index2) {
-            return /*#__PURE__*/React.createElement(Button // eslint-disable-next-line react/no-array-index-key
+            return /*#__PURE__*/React.createElement(Button
+            // eslint-disable-next-line react/no-array-index-key
             , _extends({
               key: index2
             }, kind.props, content, state));

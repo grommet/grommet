@@ -2,17 +2,12 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Height = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var allItems = Array(240).fill().map(function (_, i) {
   return i + 1;
 });
-
 var Height = function Height() {
   return (
     /*#__PURE__*/
@@ -30,11 +25,10 @@ var Height = function Height() {
         },
         align: "center"
       }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "item ", item));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Height = Height;
 Height.storyName = 'Variable item height';
 Height.parameters = {

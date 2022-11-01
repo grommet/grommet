@@ -16,10 +16,11 @@ export var Responsive = function Responsive() {
         label: "Parent Page"
       }),
       responsive: true
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Layout/PageHeader/Responsive'
 };

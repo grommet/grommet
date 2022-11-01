@@ -2,9 +2,8 @@ import React from 'react';
 import { Box, MaskedInput } from 'grommet';
 export var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
   var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var boxRef = React.useRef();
   return (
     /*#__PURE__*/
@@ -48,10 +47,11 @@ export var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
       onChange: function onChange(event) {
         return setValue(event.target.value);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 CustomBoxMaskedInput.storyName = 'Custom box';
 CustomBoxMaskedInput.parameters = {
   chromatic: {

@@ -2,18 +2,13 @@
 
 exports.__esModule = true;
 exports["default"] = exports.SizeUnitsMaskedInput = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
   var _React$useState = _react["default"].useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -43,11 +38,10 @@ var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
       onChange: function onChange(event) {
         return setValue(event.target.value);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.SizeUnitsMaskedInput = SizeUnitsMaskedInput;
 SizeUnitsMaskedInput.storyName = 'Size + units';
 SizeUnitsMaskedInput.parameters = {

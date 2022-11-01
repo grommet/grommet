@@ -70,18 +70,14 @@ var customThemeWithButtonDefault = {
     }
   }
 };
-
 var TabsExample = function TabsExample(_ref) {
   var label = _ref.label;
-
   var _useState = useState(0),
-      index = _useState[0],
-      setIndex = _useState[1];
-
+    index = _useState[0],
+    setIndex = _useState[1];
   var onActive = function onActive(nextIndex) {
     return setIndex(nextIndex);
   };
-
   return /*#__PURE__*/React.createElement(Box, {
     border: true,
     gap: "medium",
@@ -110,7 +106,6 @@ var TabsExample = function TabsExample(_ref) {
     margin: "small"
   }, "This tab is disabled."))));
 };
-
 var TabStates = function TabStates() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
@@ -132,7 +127,6 @@ var TabStates = function TabStates() {
     label: "Customized Disabled State with 'theme.button.default' Defined"
   }))));
 };
-
 export var States = function States() {
   return /*#__PURE__*/React.createElement(TabStates, null);
 };

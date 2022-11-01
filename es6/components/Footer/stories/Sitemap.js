@@ -1,20 +1,17 @@
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React from 'react';
 import { Grommet as GrommetIcon } from "grommet-icons/es6/icons/Grommet";
 import { Anchor, Box, Footer, Main, Text } from 'grommet';
 import { threeColumns as data } from './data';
-
 var FooterAnchor = function FooterAnchor(_ref) {
-  var rest = _extends({}, _ref);
-
+  var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   return /*#__PURE__*/React.createElement(Anchor, _extends({
     href: "/",
     size: "small",
     color: "white"
   }, rest));
 };
-
 var FooterContent = function FooterContent() {
   return data.map(function (item) {
     return /*#__PURE__*/React.createElement(Box, {
@@ -30,7 +27,6 @@ var FooterContent = function FooterContent() {
     })));
   });
 };
-
 export var Sitemap = function Sitemap() {
   return (
     /*#__PURE__*/
@@ -63,10 +59,11 @@ export var Sitemap = function Sitemap() {
       alignSelf: "center",
       color: "brand",
       weight: "bold"
-    }, "grommet.io"))), /*#__PURE__*/React.createElement(FooterContent, null))) // </Grommet>
-
+    }, "grommet.io"))), /*#__PURE__*/React.createElement(FooterContent, null)))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Layout/Footer/Sitemap'
 };

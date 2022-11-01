@@ -1,5 +1,4 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import PropTypes from 'prop-types';
 import { genericProps, padPropType } from '../../utils/general-prop-types';
 import { BoxPropTypes } from '../Box/propTypes';
@@ -18,7 +17,6 @@ var borderTypes = [PropTypes.bool, PropTypes.oneOf(sides), PropTypes.shape({
   size: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string])
 })];
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, genericProps, {
     action: PropTypes.func,
@@ -46,5 +44,4 @@ if (process.env.NODE_ENV !== 'production') {
     step: PropTypes.number
   });
 }
-
 export var ListPropTypes = PropType;

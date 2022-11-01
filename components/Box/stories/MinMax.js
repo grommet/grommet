@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.MinMaxSizesBox = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var MinMaxSizesBox = function MinMaxSizesBox() {
   return (
     /*#__PURE__*/
@@ -215,11 +211,10 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
       justify: "center",
       background: "brand",
       overflow: "auto"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "min-width=small, min-width=small")))) // </Grommet>
-
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "min-width=small, min-width=small"))))
+    // </Grommet>
   );
 };
-
 exports.MinMaxSizesBox = MinMaxSizesBox;
 MinMaxSizesBox.storyName = 'Min and max sizes';
 var _default = {

@@ -13,10 +13,11 @@ export var VerticalBar = function VerticalBar() {
       type: "bar",
       value: value,
       direction: "vertical"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Meter/Vertical Bar'
 };

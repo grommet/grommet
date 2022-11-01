@@ -2,84 +2,59 @@
 
 exports.__esModule = true;
 exports.Carousel = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _utils = require("../../utils");
-
 var _defaultProps = require("../../default-props");
-
 var _contexts = require("../../contexts");
-
 var _MessageContext = require("../../contexts/MessageContext");
-
 var _Box = require("../Box");
-
 var _Button = require("../Button");
-
 var _Keyboard = require("../Keyboard");
-
 var _StyledCarousel = require("./StyledCarousel");
-
 var _CarouselChild = require("./CarouselChild");
-
 var _propTypes = require("./propTypes");
-
 var _excluded = ["activeChild", "initialChild", "onChild", "play", "children", "controls", "height", "fill", "width", "onFocus", "onBlur", "wrap"];
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var Carousel = function Carousel(_ref) {
   var activeChild = _ref.activeChild,
-      initialChild = _ref.initialChild,
-      onChild = _ref.onChild,
-      play = _ref.play,
-      children = _ref.children,
-      controls = _ref.controls,
-      height = _ref.height,
-      fill = _ref.fill,
-      width = _ref.width,
-      onFocus = _ref.onFocus,
-      onBlur = _ref.onBlur,
-      wrap = _ref.wrap,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    initialChild = _ref.initialChild,
+    onChild = _ref.onChild,
+    play = _ref.play,
+    children = _ref.children,
+    controls = _ref.controls,
+    height = _ref.height,
+    fill = _ref.fill,
+    width = _ref.width,
+    onFocus = _ref.onFocus,
+    onBlur = _ref.onBlur,
+    wrap = _ref.wrap,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_contexts.ThemeContext) || _defaultProps.defaultProps.theme;
-
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
-      format = _useContext.format;
-
+    format = _useContext.format;
   var timerRef = (0, _react.useRef)();
   var animationDuration = (0, _react.useMemo)(function () {
     return play && play < theme.carousel.animation.duration ? play : theme.carousel.animation.duration;
   }, [play, theme.carousel.animation.duration]);
-
   var _useState = (0, _react.useState)({
-    activeIndex: activeChild !== undefined ? activeChild : initialChild
-  }),
-      indexes = _useState[0],
-      setIndexes = _useState[1];
-
+      activeIndex: activeChild !== undefined ? activeChild : initialChild
+    }),
+    indexes = _useState[0],
+    setIndexes = _useState[1];
   var _useState2 = (0, _react.useState)(activeChild),
-      activeChildState = _useState2[0],
-      setActiveChildState = _useState2[1];
-
+    activeChildState = _useState2[0],
+    setActiveChildState = _useState2[1];
   var _useState3 = (0, _react.useState)(),
-      direction = _useState3[0],
-      setDirection = _useState3[1];
-
+    direction = _useState3[0],
+    setDirection = _useState3[1];
   var _useState4 = (0, _react.useState)(false),
-      inTransition = _useState4[0],
-      setInTransition = _useState4[1];
-
+    inTransition = _useState4[0],
+    setInTransition = _useState4[1];
   var activeIndex = indexes.activeIndex,
-      priorActiveIndex = indexes.priorActiveIndex;
+    priorActiveIndex = indexes.priorActiveIndex;
   var lastIndex = _react.Children.count(children) - 1;
   var onChildChange = (0, _react.useCallback)(function (index) {
     if (onChild) {
@@ -135,26 +110,25 @@ var Carousel = function Carousel(_ref) {
     setActiveChildState(activeChild);
     onChildChange(activeChild);
   }, [activeChild, activeChildState, activeIndex, inTransition, lastIndex, onChildChange]);
+
   /**
    * Delays the transitions between Carousel slides. This is needed to
    * avoid users "spamming" the controls which results in jarring animations
    * and a bad user experience.
    */
-
   (0, _react.useEffect)(function () {
     var transitionTimer;
-
     if (inTransition) {
       transitionTimer = setTimeout(function () {
         setInTransition(false);
       }, animationDuration);
     }
-
     return function () {
       return clearTimeout(transitionTimer);
     };
-  }, [inTransition, setInTransition, animationDuration]); // Handles auto-playing Carousel slides
+  }, [inTransition, setInTransition, animationDuration]);
 
+  // Handles auto-playing Carousel slides
   (0, _react.useEffect)(function () {
     // stop playing if wrap is explicitly false and we're at the end
     if (play && (wrap !== false || activeIndex < lastIndex)) {
@@ -173,10 +147,10 @@ var Carousel = function Carousel(_ref) {
         clearTimeout(timer);
       };
     }
-
     return function () {};
-  }, [activeIndex, play, children, lastIndex, onChildChange, wrap]); // Allow Carousel slides to be controlled outside the component
+  }, [activeIndex, play, children, lastIndex, onChildChange, wrap]);
 
+  // Allow Carousel slides to be controlled outside the component
   (0, _react.useEffect)(function () {
     onControlledNavigation(activeIndex, activeChild, activeChildState, inTransition);
   }, [onControlledNavigation, activeIndex, activeChild, activeChildState, inTransition]);
@@ -185,7 +159,6 @@ var Carousel = function Carousel(_ref) {
   var CurrentIcon = theme.carousel.icons.current;
   var iconColor = (0, _utils.normalizeColor)(theme.carousel.icons.color || 'control', theme);
   var selectors = [];
-
   var wrappedChildren = _react.Children.map(children, function (child, index) {
     selectors.push( /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       a11yTitle: format({
@@ -193,7 +166,8 @@ var Carousel = function Carousel(_ref) {
         values: {
           slide: index + 1
         }
-      }) // eslint-disable-next-line react/no-array-index-key
+      })
+      // eslint-disable-next-line react/no-array-index-key
       ,
       key: index,
       icon: /*#__PURE__*/_react["default"].createElement(CurrentIcon, {
@@ -210,7 +184,6 @@ var Carousel = function Carousel(_ref) {
       direction: direction
     }, child);
   });
-
   var NextIcon = theme.carousel.icons.next;
   var PreviousIcon = theme.carousel.icons.previous;
   var nextIconDisabled = !wrap && activeIndex >= lastIndex;
@@ -269,7 +242,6 @@ var Carousel = function Carousel(_ref) {
     hoverIndicator: true
   }))));
 };
-
 exports.Carousel = Carousel;
 Carousel.defaultProps = {
   initialChild: 0,

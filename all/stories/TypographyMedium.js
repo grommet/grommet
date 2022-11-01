@@ -2,17 +2,11 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Medium = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var paragraphFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
-
 var Medium = function Medium() {
   var margin = undefined;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
@@ -48,7 +42,6 @@ var Medium = function Medium() {
     margin: margin
   }, "Paragraph - Small", paragraphFiller))));
 };
-
 exports.Medium = Medium;
 var _default = {
   title: 'Type/Typography/Medium'

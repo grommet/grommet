@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Bounds = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var rangeInputTheme = {
   rangeInput: {
     track: {
@@ -26,24 +21,19 @@ var rangeInputTheme = {
     }
   }
 };
-
 var Bounds = function Bounds() {
   var _React$useState = _react["default"].useState(3),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var _React$useState2 = _react["default"].useState(),
-      isAddDisabled = _React$useState2[0],
-      setIsAddDisabled = _React$useState2[1];
-
+    isAddDisabled = _React$useState2[0],
+    setIsAddDisabled = _React$useState2[1];
   var _React$useState3 = _react["default"].useState(),
-      isSubtractDisabled = _React$useState3[0],
-      setIsSubtractDisabled = _React$useState3[1];
-
+    isSubtractDisabled = _React$useState3[0],
+    setIsSubtractDisabled = _React$useState3[1];
   var onChange = function onChange(event) {
     return setValue(event.target.value);
   };
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: rangeInputTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -87,7 +77,6 @@ var Bounds = function Bounds() {
     }
   })));
 };
-
 exports.Bounds = Bounds;
 var _default = {
   title: 'Input/RangeInput/Custom Themed/Bounds'

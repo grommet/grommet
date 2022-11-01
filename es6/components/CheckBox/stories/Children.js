@@ -3,9 +3,8 @@ import { Box, CheckBox } from 'grommet';
 import { Ascend } from "grommet-icons/es6/icons/Ascend";
 export var Children = function Children() {
   var _React$useState = React.useState(false),
-      checkedState = _React$useState[0],
-      setChecked = _React$useState[1];
-
+    checkedState = _React$useState[0],
+    setChecked = _React$useState[1];
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",

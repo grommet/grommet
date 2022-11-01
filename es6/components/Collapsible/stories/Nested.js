@@ -1,20 +1,15 @@
 var _excluded = ["label", "open", "submenu"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React from 'react';
 import { FormDown } from "grommet-icons/es6/icons/FormDown";
 import { FormNext } from "grommet-icons/es6/icons/FormNext";
 import { Box, Button, Collapsible, Text } from 'grommet';
-
 var MenuButton = function MenuButton(_ref) {
   var label = _ref.label,
-      open = _ref.open,
-      submenu = _ref.submenu,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    open = _ref.open,
+    submenu = _ref.submenu,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var Icon = open ? FormDown : FormNext;
   return /*#__PURE__*/React.createElement(Button, _extends({
     hoverIndicator: "background"
@@ -31,20 +26,16 @@ var MenuButton = function MenuButton(_ref) {
     size: "small"
   }, label)));
 };
-
 export var Nested = function Nested() {
   var _React$useState = React.useState(false),
-      openMenu1 = _React$useState[0],
-      setOpenMenu1 = _React$useState[1];
-
+    openMenu1 = _React$useState[0],
+    setOpenMenu1 = _React$useState[1];
   var _React$useState2 = React.useState(false),
-      openSubmenu1 = _React$useState2[0],
-      setOpenSubmenu1 = _React$useState2[1];
-
+    openSubmenu1 = _React$useState2[0],
+    setOpenSubmenu1 = _React$useState2[1];
   var _React$useState3 = React.useState(false),
-      openMenu2 = _React$useState3[0],
-      setOpenMenu2 = _React$useState3[1];
-
+    openMenu2 = _React$useState3[0],
+    setOpenMenu2 = _React$useState3[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -120,10 +111,11 @@ export var Nested = function Nested() {
       pad: "xsmall"
     }, /*#__PURE__*/React.createElement(Text, {
       size: "small"
-    }, "Submenu item 1"))))) // </Grommet>
-
+    }, "Submenu item 1")))))
+    // </Grommet>
   );
 };
+
 Nested.parameters = {
   chromatic: {
     disable: true

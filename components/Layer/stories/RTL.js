@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.RTLLayer = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var RTLLayer = function RTLLayer() {
   return (
     /*#__PURE__*/
@@ -36,11 +32,10 @@ var RTLLayer = function RTLLayer() {
       pad: "xlarge"
     }, "text"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "xlarge"
-    }, "text"))) // </Grommet>
-
+    }, "text")))
+    // </Grommet>
   );
 };
-
 exports.RTLLayer = RTLLayer;
 RTLLayer.storyName = 'RTL';
 RTLLayer.args = {

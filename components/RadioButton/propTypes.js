@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports.RadioButtonPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     a11yTitle: _propTypes["default"].string,
@@ -21,6 +17,5 @@ if (process.env.NODE_ENV !== 'production') {
     onChange: _propTypes["default"].func
   };
 }
-
 var RadioButtonPropTypes = PropType;
 exports.RadioButtonPropTypes = RadioButtonPropTypes;

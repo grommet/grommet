@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { backgroundDoc } from '../../utils/general-prop-types';
 var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     animate: PropTypes.bool,
@@ -28,5 +27,4 @@ if (process.env.NODE_ENV !== 'production') {
     target: PropTypes.object
   };
 }
-
 export var LayerPropTypes = PropType;

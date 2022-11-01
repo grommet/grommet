@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Plain = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Plain = function Plain() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
@@ -35,7 +30,6 @@ var Plain = function Plain() {
       button: {
         "default": {}
       } // enabling kind button functionality
-
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center"
@@ -49,7 +43,6 @@ var Plain = function Plain() {
     gap: "small"
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Kind"))))));
 };
-
 exports.Plain = Plain;
 var _default = {
   title: 'Controls/Button/Custom Themed/Plain'

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Menu } from 'grommet';
-
 var ControlBottomMenu = function ControlBottomMenu() {
   return /*#__PURE__*/React.createElement(Box, {
     height: "medium",
@@ -27,7 +26,6 @@ var ControlBottomMenu = function ControlBottomMenu() {
     }]
   }));
 };
-
 export var BottomControlButton = function BottomControlButton() {
   return /*#__PURE__*/React.createElement(ControlBottomMenu, null);
 };

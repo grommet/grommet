@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.FourDimensionDataChart = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 1; i < 32; i += 1) {
   data.push({
     name: "Name " + i,
@@ -20,7 +15,6 @@ for (var i = 1; i < 32; i += 1) {
     effort: i % 16
   });
 }
-
 var FourDimensionDataChart = function FourDimensionDataChart() {
   return (
     /*#__PURE__*/
@@ -61,11 +55,10 @@ var FourDimensionDataChart = function FourDimensionDataChart() {
       },
       guide: true,
       legend: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.FourDimensionDataChart = FourDimensionDataChart;
 FourDimensionDataChart.storyName = 'Four dimensions';
 var _default = {

@@ -2,25 +2,19 @@
 
 exports.__esModule = true;
 exports["default"] = exports.MaskedInputForm = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var MaskedInputForm = function MaskedInputForm() {
   var _React$useState = _react["default"].useState({
-    value: ''
-  }),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+      value: ''
+    }),
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var onChange = function onChange(nextValue) {
     console.log('onChange', nextValue);
     setValue(nextValue);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -52,11 +46,10 @@ var MaskedInputForm = function MaskedInputForm() {
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       type: "submit",
       label: "submit"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.MaskedInputForm = MaskedInputForm;
 MaskedInputForm.storyName = 'Form';
 var _default = {

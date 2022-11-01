@@ -2,56 +2,33 @@
 
 exports.__esModule = true;
 exports.FormField = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
-
 var _defaultProps = require("../../default-props");
-
 var _DOM = require("../../utils/DOM");
-
 var _styles = require("../../utils/styles");
-
 var _mixins = require("../../utils/mixins");
-
 var _refs = require("../../utils/refs");
-
 var _Box = require("../Box");
-
 var _CheckBox = require("../CheckBox");
-
 var _CheckBoxGroup = require("../CheckBoxGroup");
-
 var _RadioButtonGroup = require("../RadioButtonGroup");
-
 var _Text = require("../Text");
-
 var _TextInput = require("../TextInput");
-
 var _FormContext = require("../Form/FormContext");
-
 var _propTypes = require("./propTypes");
-
 var _excluded = ["error", "info", "message", "type"],
-    _excluded2 = ["component", "disabled", "invalid", "name", "onChange"],
-    _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate"];
-
+  _excluded2 = ["component", "disabled", "invalid", "name", "onChange"],
+  _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var grommetInputNames = ['CheckBox', 'CheckBoxGroup', 'TextInput', 'Select', 'MaskedInput', 'SelectMultiple', 'TextArea', 'DateInput', 'FileInput', 'RadioButtonGroup', 'RangeInput'];
 var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButtonGroup', 'RangeInput'];
-
 var isGrommetInput = function isGrommetInput(comp) {
   return comp && (grommetInputNames.indexOf(comp.displayName) !== -1 || grommetInputPadNames.indexOf(comp.displayName) !== -1);
 };
-
 var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "sc-m9hood-0"
@@ -80,25 +57,20 @@ var RequiredText = (0, _styledComponents["default"])(_Text.Text).withConfig({
   displayName: "FormField__RequiredText",
   componentId: "sc-m9hood-3"
 })(["color:inherit;font-weight:inherit;line-height:inherit;"]);
-
 var Message = function Message(_ref) {
   var error = _ref.error,
-      info = _ref.info,
-      message = _ref.message,
-      type = _ref.type,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    info = _ref.info,
+    message = _ref.message,
+    type = _ref.type,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-
   if (message) {
     var icon;
     var containerProps;
-
     if (type) {
       icon = theme.formField[type] && theme.formField[type].icon;
       containerProps = theme.formField[type] && theme.formField[type].container;
     }
-
     var messageContent;
     if (typeof message === 'string') messageContent = /*#__PURE__*/_react["default"].createElement(_Text.Text, rest, message);else messageContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, rest, message);
     return icon || containerProps ? /*#__PURE__*/_react["default"].createElement(StyledMessageContainer, _extends({
@@ -108,33 +80,28 @@ var Message = function Message(_ref) {
       flex: false
     }, icon), messageContent) : messageContent;
   }
-
   return null;
 };
-
 var Input = function Input(_ref2) {
   var component = _ref2.component,
-      disabled = _ref2.disabled,
-      invalid = _ref2.invalid,
-      name = _ref2.name,
-      _onChange = _ref2.onChange,
-      rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-
+    disabled = _ref2.disabled,
+    invalid = _ref2.invalid,
+    name = _ref2.name,
+    _onChange = _ref2.onChange,
+    rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
-
   var _formContext$useFormI = formContext.useFormInput({
-    name: name,
-    value: rest.value
-  }),
-      value = _formContext$useFormI[0],
-      setValue = _formContext$useFormI[1];
-
-  var InputComponent = component || _TextInput.TextInput; // Grommet input components already check for FormContext
+      name: name,
+      value: rest.value
+    }),
+    value = _formContext$useFormI[0],
+    setValue = _formContext$useFormI[1];
+  var InputComponent = component || _TextInput.TextInput;
+  // Grommet input components already check for FormContext
   // and, using their `name`, end up calling the useFormInput.setValue()
   // already. For custom components, we expect they will call
   // this onChange() and we'll call setValue() here, primarily
   // for backwards compatibility.
-
   var extraProps = isGrommetInput(InputComponent) ? {
     focusIndicator: false,
     onChange: _onChange,
@@ -152,14 +119,11 @@ var Input = function Input(_ref2) {
     "aria-invalid": invalid || undefined
   }, rest, extraProps));
 };
-
 var useDebounce = function useDebounce() {
   var _useState = (0, _react.useState)(),
-      func = _useState[0],
-      setFunc = _useState[1];
-
+    func = _useState[0],
+    setFunc = _useState[1];
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-
   (0, _react.useEffect)(function () {
     var timer;
     if (func) timer = setTimeout(function () {
@@ -171,79 +135,71 @@ var useDebounce = function useDebounce() {
   }, [func, theme.global.debounceDelay]);
   return setFunc;
 };
-
 var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   var children = _ref3.children,
-      className = _ref3.className,
-      component = _ref3.component,
-      contentProps = _ref3.contentProps,
-      disabled = _ref3.disabled,
-      errorProp = _ref3.error,
-      help = _ref3.help,
-      htmlFor = _ref3.htmlFor,
-      infoProp = _ref3.info,
-      label = _ref3.label,
-      margin = _ref3.margin,
-      name = _ref3.name,
-      _onBlur = _ref3.onBlur,
-      onChange = _ref3.onChange,
-      _onFocus = _ref3.onFocus,
-      pad = _ref3.pad,
-      required = _ref3.required,
-      style = _ref3.style,
-      validate = _ref3.validate,
-      rest = _objectWithoutPropertiesLoose(_ref3, _excluded3);
-
+    className = _ref3.className,
+    component = _ref3.component,
+    contentProps = _ref3.contentProps,
+    disabled = _ref3.disabled,
+    errorProp = _ref3.error,
+    help = _ref3.help,
+    htmlFor = _ref3.htmlFor,
+    infoProp = _ref3.info,
+    label = _ref3.label,
+    margin = _ref3.margin,
+    name = _ref3.name,
+    _onBlur = _ref3.onBlur,
+    onChange = _ref3.onChange,
+    _onFocus = _ref3.onFocus,
+    pad = _ref3.pad,
+    required = _ref3.required,
+    style = _ref3.style,
+    validate = _ref3.validate,
+    rest = _objectWithoutPropertiesLoose(_ref3, _excluded3);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
-
   var _formContext$useFormF = formContext.useFormField({
-    disabled: disabled,
-    error: errorProp,
-    info: infoProp,
-    name: name,
-    required: required,
-    validate: validate
-  }),
-      error = _formContext$useFormF.error,
-      info = _formContext$useFormF.info,
-      inForm = _formContext$useFormF.inForm,
-      contextOnBlur = _formContext$useFormF.onBlur,
-      contextOnChange = _formContext$useFormF.onChange;
-
+      disabled: disabled,
+      error: errorProp,
+      info: infoProp,
+      name: name,
+      required: required,
+      validate: validate
+    }),
+    error = _formContext$useFormF.error,
+    info = _formContext$useFormF.info,
+    inForm = _formContext$useFormF.inForm,
+    contextOnBlur = _formContext$useFormF.onBlur,
+    contextOnChange = _formContext$useFormF.onChange;
   var _useState2 = (0, _react.useState)(),
-      focus = _useState2[0],
-      setFocus = _useState2[1];
-
+    focus = _useState2[0],
+    setFocus = _useState2[1];
   var formFieldRef = (0, _refs.useForwardedRef)(ref);
   var formFieldTheme = theme.formField;
   var themeBorder = formFieldTheme.border;
-  var debounce = useDebounce(); // This is here for backwards compatibility. In case the child is a grommet
+  var debounce = useDebounce();
+
+  // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
   // already set.
-
   var wantContentPad = component && (component === _CheckBox.CheckBox || component === _CheckBoxGroup.CheckBoxGroup || component === _RadioButtonGroup.RadioButtonGroup);
   var contents = themeBorder && children && _react.Children.map(children, function (child) {
     if (child && child.type && grommetInputPadNames.indexOf(child.type.displayName) !== -1) {
       wantContentPad = true;
     }
-
     if (child && child.type && grommetInputNames.indexOf(child.type.displayName) !== -1 && child.props.plain === undefined && child.props.focusIndicator === undefined) {
       var _formFieldTheme$check;
-
       return /*#__PURE__*/(0, _react.cloneElement)(child, {
         plain: true,
         focusIndicator: false,
         pad: 'CheckBox'.indexOf(child.type.displayName) !== -1 ? formFieldTheme == null ? void 0 : (_formFieldTheme$check = formFieldTheme.checkBox) == null ? void 0 : _formFieldTheme$check.pad : undefined
       });
     }
-
     return child;
-  }) || children; // put rest on container, unless we use internal Input
+  }) || children;
 
+  // put rest on container, unless we use internal Input
   var containerRest = rest;
-
   if (inForm) {
     if (!contents) containerRest = {};
     contents = contents || /*#__PURE__*/_react["default"].createElement(Input, _extends({
@@ -254,41 +210,35 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       label: component === _CheckBox.CheckBox ? label : undefined
     }, rest));
   }
-
   var themeContentProps = _extends({}, formFieldTheme.content);
-
   if (!pad && !wantContentPad) {
     themeContentProps.pad = undefined;
   }
-
   if (themeBorder && themeBorder.position === 'inner') {
     if (error && formFieldTheme.error) {
       themeContentProps.background = formFieldTheme.error.background;
     } else if (disabled && formFieldTheme.disabled) {
       themeContentProps.background = formFieldTheme.disabled.background;
     }
-  } // fileinput handle
+  }
+
+  // fileinput handle
   // use fileinput plain use formfield to drive the border
-
-
   var isFileInputComponent;
   if (children && _react.Children.forEach(children, function (child) {
     if (child && child.type && 'FileInput'.indexOf(child.type.displayName) !== -1) isFileInputComponent = true;
   })) ;
-
   if (component && component.displayName === 'FileInput' && !isFileInputComponent) {
     isFileInputComponent = true;
   }
-
   if (!themeBorder) {
     contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, themeContentProps, contentProps), contents);
   }
-
   var borderColor;
-
   if (disabled && formFieldTheme.disabled.border && formFieldTheme.disabled.border.color) {
     borderColor = formFieldTheme.disabled.border.color;
-  } else if ( // backward compatibility check
+  } else if (
+  // backward compatibility check
   error && themeBorder && themeBorder.error.color || error && formFieldTheme.error && formFieldTheme.error.border) {
     if (themeBorder.error.color && formFieldTheme.error.border === undefined) {
       borderColor = themeBorder.error.color || 'status-critical';
@@ -300,16 +250,15 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   } else {
     borderColor = themeBorder && themeBorder.color || 'border';
   }
-
   var labelStyle = _extends({}, formFieldTheme.label);
-
   if (disabled) {
     labelStyle.color = formFieldTheme.disabled && formFieldTheme.disabled.label ? formFieldTheme.disabled.label.color : labelStyle.color;
   }
-
   var abut;
   var abutMargin;
-  var outerStyle = style; // If fileinput is wrapped in a formfield we want to use
+  var outerStyle = style;
+
+  // If fileinput is wrapped in a formfield we want to use
   // the border style from the fileInput.theme. We also do not
   // want the foocus around the formfield since the the focus
   // is on the anchor/button inside fileinput
@@ -328,13 +277,11 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     contents = /*#__PURE__*/_react["default"].createElement(FormFieldContentBox, _extends({}, themeContentProps, innerProps, contentProps), contents);
     var mergedMargin = margin || formFieldTheme.margin;
     abut = themeBorder.position === 'outer' && (themeBorder.side === 'all' || themeBorder.side === 'horizontal' || !themeBorder.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
-
     if (abut) {
       // marginBottom is set to overlap adjacent fields
       abutMargin = {
         bottom: '-1px'
       };
-
       if (margin) {
         abutMargin = margin;
       } else if (themeBorder.size) {
@@ -344,16 +291,13 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
           bottom: "-" + (0, _mixins.parseMetricToNum)(theme.global.borderSize[themeBorder.size] || themeBorder.size) + "px"
         };
       }
-
       outerStyle = _extends({
         position: focus ? 'relative' : undefined,
         zIndex: focus ? 10 : undefined
       }, style);
     }
   }
-
   var outerBackground;
-
   if (themeBorder && themeBorder.position === 'outer') {
     if (error && formFieldTheme.error && formFieldTheme.error.background) {
       outerBackground = formFieldTheme.error.background;
@@ -363,7 +307,6 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       outerBackground = formFieldTheme.disabled.background;
     }
   }
-
   var outerProps = themeBorder && themeBorder.position === 'outer' ? {
     border: _extends({}, themeBorder, {
       color: borderColor
@@ -372,7 +315,8 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     focus: focus
   } : {};
   var requiredIndicator = theme.formField.label.requiredIndicator;
-  if (requiredIndicator === true) // a11yTitle necessary so screenreader announces as "required"
+  if (requiredIndicator === true)
+    // a11yTitle necessary so screenreader announces as "required"
     // as opposed to "star"
     // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
     requiredIndicator = /*#__PURE__*/_react["default"].createElement(RequiredText, {

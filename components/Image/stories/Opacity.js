@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Opacity = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Opacity = function Opacity() {
   return (
     /*#__PURE__*/
@@ -46,11 +42,10 @@ var Opacity = function Opacity() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       opacity: "0.6",
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.Opacity = Opacity;
 var _default = {
   title: 'Media/Image/Opacity'

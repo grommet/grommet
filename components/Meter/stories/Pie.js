@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Pie = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Pie = function Pie() {
   return (
     /*#__PURE__*/
@@ -28,11 +24,10 @@ var Pie = function Pie() {
       }, {
         value: 10
       }]
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Pie = Pie;
 var _default = {
   title: 'Visualizations/Meter/Pie'

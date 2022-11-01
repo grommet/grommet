@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Accordion, AccordionPanel, Box, Text, TextInput } from 'grommet';
-
 var renderPanelHeader = function renderPanelHeader(title, active) {
   return /*#__PURE__*/React.createElement(Box, {
     direction: "row",
@@ -11,12 +10,10 @@ var renderPanelHeader = function renderPanelHeader(title, active) {
     color: "brand"
   }, active ? '-' : '+'));
 };
-
 var CustomHeaderAccordion = function CustomHeaderAccordion() {
   var _useState = useState([0]),
-      activeIndex = _useState[0],
-      setActiveIndex = _useState[1];
-
+    activeIndex = _useState[0],
+    setActiveIndex = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -52,8 +49,8 @@ var CustomHeaderAccordion = function CustomHeaderAccordion() {
       style: {
         height: '300px'
       }
-    }, /*#__PURE__*/React.createElement(Text, null, "Panel 3 contents")))) // </Grommet>
-
+    }, /*#__PURE__*/React.createElement(Text, null, "Panel 3 contents"))))
+    // </Grommet>
   );
 };
 

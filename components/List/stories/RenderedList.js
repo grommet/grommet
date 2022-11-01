@@ -2,23 +2,17 @@
 
 exports.__esModule = true;
 exports["default"] = exports.RenderedList = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 var data = [];
-
 for (var i = 0; i < 40; i += 1) {
   data.push({
     entry: "entry-" + (i + 1),
     location: locations[i % locations.length]
   });
 }
-
 var RenderedList = function RenderedList() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
@@ -41,7 +35,6 @@ var RenderedList = function RenderedList() {
     }
   }));
 };
-
 exports.RenderedList = RenderedList;
 RenderedList.storyName = 'Key render';
 var _default = {

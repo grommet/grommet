@@ -30,7 +30,7 @@ var columns = [{
   header: 'Percent Complete',
   render: function render(_ref) {
     var key = _ref.key,
-        percent = _ref.percent;
+      percent = _ref.percent;
     return /*#__PURE__*/React.createElement(Box, {
       pad: {
         vertical: 'xsmall'
@@ -271,11 +271,9 @@ var DATA = [{
 }];
 export var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
   var step = 10;
-
   var load = function load() {
     console.log("InfiniteScroll fires onMore after loading " + step + " items");
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -294,10 +292,11 @@ export var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
       onMore: function onMore() {
         return load();
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 InfiniteScrollDataTable.storyName = 'Infinite Scroll';
 export default {
   title: 'Visualizations/DataTable/Infinite Scroll'

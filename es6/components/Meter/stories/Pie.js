@@ -19,10 +19,11 @@ export var Pie = function Pie() {
       }, {
         value: 10
       }]
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Meter/Pie'
 };

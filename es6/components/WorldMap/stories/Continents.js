@@ -2,9 +2,8 @@ import React from 'react';
 import { Box, WorldMap } from 'grommet';
 export var Continents = function Continents() {
   var _React$useState = React.useState(),
-      active = _React$useState[0],
-      setActive = _React$useState[1];
-
+    active = _React$useState[0],
+    setActive = _React$useState[1];
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"

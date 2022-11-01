@@ -34,10 +34,11 @@ export var Round = function Round() {
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "large",
       src: src
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Avatar/Round'
 };

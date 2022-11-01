@@ -79,10 +79,11 @@ export var BorderGrid = function BorderGrid() {
           style: type
         }
       }, type);
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 BorderGrid.storyName = 'Border';
 export default {
   title: 'Layout/Grid/Border'

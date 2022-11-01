@@ -2,34 +2,25 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Rich = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 var _calcs2 = require("../calcs");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var Rich = function Rich() {
   var _useState = (0, _react.useState)({
-    values: [],
-    yAxis: [],
-    xAxis: []
-  }),
-      state = _useState[0],
-      setState = _useState[1];
-
+      values: [],
+      yAxis: [],
+      xAxis: []
+    }),
+    state = _useState[0],
+    setState = _useState[1];
   (0, _react.useEffect)(function () {
     // generate data as a server might
     var date = new Date(2018, 5, 9);
     var value = 12345.678;
     var averages = [];
-
     while (averages.length < 21) {
       averages.unshift({
         date: date.toISOString(),
@@ -38,22 +29,20 @@ var Rich = function Rich() {
       date.setTime(date.getTime() - 1000 * 3600 * 24);
       var factor = date.getDate() % 3;
       value = factor === 0 ? value + 12.34 : value - 123.45 * factor;
-    } // convert for displaying
+    }
 
-
+    // convert for displaying
     var values = averages.map(function (avg) {
       return {
         value: [new Date(avg.date).getTime(), avg.value]
       };
     });
-
     var _calcs = (0, _calcs2.calcs)(values, {
-      coarseness: 5,
-      steps: [3, 3]
-    }),
-        axis = _calcs.axis,
-        bounds = _calcs.bounds;
-
+        coarseness: 5,
+        steps: [3, 3]
+      }),
+      axis = _calcs.axis,
+      bounds = _calcs.bounds;
     var xAxis = axis[0].map(function (x) {
       return new Date(x).toLocaleDateString('en-US', {
         month: 'short',
@@ -69,9 +58,9 @@ var Rich = function Rich() {
     });
   }, []);
   var bounds = state.bounds,
-      values = state.values,
-      yAxis = state.yAxis,
-      xAxis = state.xAxis;
+    values = state.values,
+    yAxis = state.yAxis,
+    xAxis = state.xAxis;
   var chartProps = {
     size: {
       width: 'medium',
@@ -108,7 +97,6 @@ var Rich = function Rich() {
       var first = index === 0;
       var last = index === yAxis.length - 1 && !first;
       var align;
-
       if (first) {
         align = 'start';
       } else if (last) {
@@ -116,7 +104,6 @@ var Rich = function Rich() {
       } else {
         align = 'center';
       }
-
       return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
         key: y,
         direction: "row",
@@ -144,11 +131,10 @@ var Rich = function Rich() {
         opacity: 'strong'
       },
       thickness: "small"
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
-
 exports.Rich = Rich;
 var _default = {
   title: 'Visualizations/Chart/Rich'

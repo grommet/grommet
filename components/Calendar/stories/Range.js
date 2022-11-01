@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Range = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Range = function Range() {
   return (
     /*#__PURE__*/
@@ -20,11 +16,10 @@ var Range = function Range() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
       date: [['2020-04-03', '2020-04-08']],
       range: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Range = Range;
 var _default = {
   title: 'Visualizations/Calendar/Range'

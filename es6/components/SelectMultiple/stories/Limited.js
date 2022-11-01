@@ -3,9 +3,8 @@ import { Box, SelectMultiple, Text } from 'grommet';
 var defaultOptions = ['Apple', 'Orange', 'Banana', 'Grape', 'Melon', 'Strawberry', 'Kiwi', 'Mango', 'Raspberry', 'Rhubarb'];
 export var SelectMultipleLimited = function SelectMultipleLimited() {
   var _useState = useState([]),
-      valueMultiple = _useState[0],
-      setValueMultiple = _useState[1];
-
+    valueMultiple = _useState[0],
+    setValueMultiple = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -35,10 +34,11 @@ export var SelectMultipleLimited = function SelectMultipleLimited() {
         var value = _ref.value;
         setValueMultiple(value);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 SelectMultipleLimited.parameters = {
   chromatic: {
     disable: true

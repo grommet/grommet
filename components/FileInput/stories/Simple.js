@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Simple = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
@@ -22,7 +18,6 @@ var Simple = function Simple() {
     onChange: function onChange(event, _ref) {
       var files = _ref.files;
       var fileList = files;
-
       for (var i = 0; i < fileList.length; i += 1) {
         var file = fileList[i];
         console.log(file.name);
@@ -30,7 +25,6 @@ var Simple = function Simple() {
     }
   })));
 };
-
 exports.Simple = Simple;
 var _default = {
   title: 'Input/FileInput/Simple'

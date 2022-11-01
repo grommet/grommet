@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import { Box, Heading, InfiniteScroll, Table, TableRow, TableBody, TableCell, TableHeader, Text } from 'grommet';
 export var InfiniteScrollInTable = function InfiniteScrollInTable() {
   var step = 25;
-
   var _useState = useState(Array.from({
-    length: 50
-  }, function () {
-    return Math.floor(Math.random() * 1000000);
-  })),
-      results = _useState[0],
-      setResults = _useState[1];
-
+      length: 50
+    }, function () {
+      return Math.floor(Math.random() * 1000000);
+    })),
+    results = _useState[0],
+    setResults = _useState[1];
   var load = function load() {
     console.log("InfiniteScroll fires onMore after loading " + step + " items");
     setResults([].concat(results, Array.from({
@@ -19,7 +17,6 @@ export var InfiniteScrollInTable = function InfiniteScrollInTable() {
       return Math.floor(Math.random() * 1000000);
     })));
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -56,10 +53,11 @@ export var InfiniteScrollInTable = function InfiniteScrollInTable() {
       return /*#__PURE__*/React.createElement(TableRow, {
         key: result
       }, /*#__PURE__*/React.createElement(TableCell, null, result), /*#__PURE__*/React.createElement(TableCell, null, "cartoon"), /*#__PURE__*/React.createElement(TableCell, null, "movie name"), /*#__PURE__*/React.createElement(TableCell, null, "year"));
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 InfiniteScrollInTable.storyName = 'InfiniteScroll';
 InfiniteScrollInTable.parameters = {
   chromatic: {

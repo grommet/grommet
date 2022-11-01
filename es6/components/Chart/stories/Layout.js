@@ -48,10 +48,11 @@ export var Layout = function Layout() {
       type: type,
       values: values,
       round: true
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Chart/Layout'
 };

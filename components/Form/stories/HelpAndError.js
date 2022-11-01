@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.HelpAndError = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var HelpAndError = function HelpAndError() {
   return (
     /*#__PURE__*/
@@ -46,11 +42,10 @@ var HelpAndError = function HelpAndError() {
       id: "email",
       value: "jane@hpe",
       onChange: function onChange() {}
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
-
 exports.HelpAndError = HelpAndError;
 HelpAndError.storyName = 'Help and error';
 var _default = {

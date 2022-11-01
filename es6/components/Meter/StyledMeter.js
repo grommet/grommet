@@ -3,8 +3,9 @@ import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 var roundStyle = css(["border-radius:", ";"], function (props) {
   return props.theme.global.edgeSize[props.round.size];
-}); // overflow: hidden is needed for ie11
+});
 
+// overflow: hidden is needed for ie11
 var StyledMeter = styled.svg.withConfig({
   displayName: "StyledMeter",
   componentId: "sc-nsxarx-0"

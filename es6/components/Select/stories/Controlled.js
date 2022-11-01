@@ -2,15 +2,12 @@ import React, { useState } from 'react';
 import { Box, Button, Select } from 'grommet';
 export var Controlled = function Controlled() {
   var options = ['one', 'two'];
-
   var _useState = useState(''),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   var _useState2 = useState(false),
-      open = _useState2[0],
-      setOpen = _useState2[1];
-
+    open = _useState2[0],
+    setOpen = _useState2[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -37,10 +34,11 @@ export var Controlled = function Controlled() {
         var option = _ref.option;
         return setValue(option);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 Controlled.args = {
   full: true
 };

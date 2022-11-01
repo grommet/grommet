@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports.format = exports.MessageContext = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _default = _interopRequireDefault(require("../../languages/default.json"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 // options:
 //   id: message id
 //   messages: (optional) an object of message overrides
@@ -19,7 +15,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 //     the message isn't found elsewhere.
 var _format = function format(options, messages) {
   var _options$id;
-
   // Message id's are hierarchical. For the component-specific
   // message objects passed as options.messages, just use the last
   // component in the id for backwards compatibility.
@@ -33,8 +28,8 @@ var _format = function format(options, messages) {
   // this format function to get the grommet messages from
   // their bundles that way and don't need to pass the messages
   // themselves in this property, just the format function.
-  var idParts = ((_options$id = options.id) == null ? void 0 : _options$id.split('.')) || []; // eslint-disable-next-line no-unsafe-optional-chaining
-
+  var idParts = ((_options$id = options.id) == null ? void 0 : _options$id.split('.')) || [];
+  // eslint-disable-next-line no-unsafe-optional-chaining
   var baseId = idParts[(idParts == null ? void 0 : idParts.length) - 1];
   var messageObj = messages;
   idParts.forEach(function (idPart) {
@@ -53,7 +48,6 @@ var _format = function format(options, messages) {
   });
   return values ? newMessage : message;
 };
-
 exports.format = _format;
 var defaultValue = {
   messages: _default["default"],
@@ -61,7 +55,5 @@ var defaultValue = {
     return _format(options, _default["default"]);
   }
 };
-
 var MessageContext = /*#__PURE__*/_react["default"].createContext(defaultValue);
-
 exports.MessageContext = MessageContext;

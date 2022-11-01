@@ -7,8 +7,9 @@ import { Table } from '../Table';
 import { TableBody } from '../TableBody';
 import { TableCell } from '../TableCell';
 import { TableHeader } from '../TableHeader';
-import { TableFooter } from '../TableFooter'; // border-collapse: separate is needed so pinned header/footer borders work
+import { TableFooter } from '../TableFooter';
 
+// border-collapse: separate is needed so pinned header/footer borders work
 var StyledDataTable = styled(Table).withConfig({
   displayName: "StyledDataTable",
   componentId: "sc-xrlyjm-0"
@@ -18,8 +19,9 @@ var StyledDataTable = styled(Table).withConfig({
   return props.theme.dataTable && props.theme.dataTable.body && props.theme.dataTable.body.extend;
 });
 StyledDataTable.defaultProps = {};
-Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps); // when paginated, this wraps the data table and pagination component
+Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
 
+// when paginated, this wraps the data table and pagination component
 var StyledContainer = styled(Box).withConfig({
   displayName: "StyledDataTable__StyledContainer",
   componentId: "sc-xrlyjm-1"
@@ -44,8 +46,9 @@ var StyledDataTableRow = styled(TableRow).withConfig({
   return props.active && hoverStyle;
 });
 StyledDataTableRow.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps); // focus styling other than outline doesn't work on <tbody />
+Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps);
 
+// focus styling other than outline doesn't work on <tbody />
 var StyledDataTableBody = styled(TableBody).withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
   componentId: "sc-xrlyjm-3"

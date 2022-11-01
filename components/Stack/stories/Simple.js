@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Simple = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Simple = function Simple() {
   return (
     /*#__PURE__*/
@@ -31,11 +26,10 @@ var Simple = function Simple() {
       round: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "small"
-    }, "4")))) // </Grommet>
-
+    }, "4"))))
+    // </Grommet>
   );
 };
-
 exports.Simple = Simple;
 var _default = {
   title: 'Layout/Stack/Simple'

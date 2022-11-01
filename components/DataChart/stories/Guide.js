@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Guide = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 1; i < 8; i += 1) {
   var v = Math.sin(i / 2.0);
   data.push({
@@ -18,7 +13,6 @@ for (var i = 1; i < 8; i += 1) {
     percent: Math.round(Math.abs(v * 100))
   });
 }
-
 var Guide = function Guide() {
   return (
     /*#__PURE__*/
@@ -57,11 +51,10 @@ var Guide = function Guide() {
         width: 'fill'
       },
       detail: true
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.Guide = Guide;
 var _default = {
   title: 'Visualizations/DataChart/Guide'

@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Dash = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Dash = function Dash() {
   return (
     /*#__PURE__*/
@@ -42,11 +38,10 @@ var Dash = function Dash() {
       type: "bar",
       dash: true,
       values: [[10, 20], [20, 30], [30, 15]]
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Dash = Dash;
 var _default = {
   title: 'Visualizations/Chart/Dash'

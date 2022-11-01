@@ -1,20 +1,16 @@
 import React from 'react';
 import { Box, List } from 'grommet';
 var data = [];
-
 for (var i = 0; i < 40; i += 1) {
   data.push({
     entry: "entry-" + (i + 1)
   });
 }
-
 export var Selection = function Selection() {
   var _ref;
-
   var _React$useState = React.useState(),
-      selected = _React$useState[0],
-      setSelected = _React$useState[1];
-
+    selected = _React$useState[0],
+    setSelected = _React$useState[1];
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",

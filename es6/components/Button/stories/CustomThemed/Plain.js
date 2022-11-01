@@ -25,7 +25,6 @@ export var Plain = function Plain() {
       button: {
         "default": {}
       } // enabling kind button functionality
-
     }
   }, /*#__PURE__*/React.createElement(Box, {
     align: "center"

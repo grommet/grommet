@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import { backgroundDoc, roundPropType, marginProp, OVERFLOW_VALUES } from '../../utils/general-prop-types'; // if you update values here, make sure to update in Box too.
+import { backgroundDoc, roundPropType, marginProp, OVERFLOW_VALUES } from '../../utils/general-prop-types';
 
+// if you update values here, make sure to update in Box too.
 var dropOverflowPropTypes = PropTypes.oneOfType([PropTypes.oneOf(OVERFLOW_VALUES), PropTypes.shape({
   horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
   vertical: PropTypes.oneOf(OVERFLOW_VALUES)
 }), PropTypes.string]);
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     align: PropTypes.shape({
@@ -31,5 +31,4 @@ if (process.env.NODE_ENV !== 'production') {
     trapFocus: PropTypes.bool
   };
 }
-
 export var DropPropTypes = PropType;

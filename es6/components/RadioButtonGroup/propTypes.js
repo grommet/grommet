@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     children: PropTypes.func,
@@ -16,5 +15,4 @@ if (process.env.NODE_ENV !== 'production') {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool, PropTypes.object])
   };
 }
-
 export var RadioButtonGroupPropTypes = PropType;

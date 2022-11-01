@@ -2,40 +2,29 @@
 
 exports.__esModule = true;
 exports["default"] = exports.CenterLayer = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var CenterLayer = function CenterLayer() {
   var _React$useState = _react["default"].useState(),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var _React$useState2 = _react["default"].useState(),
-      open2 = _React$useState2[0],
-      setOpen2 = _React$useState2[1];
-
+    open2 = _React$useState2[0],
+    setOpen2 = _React$useState2[1];
   var onOpen = function onOpen() {
     return setOpen(true);
   };
-
   var onClose = function onClose() {
     return setOpen(undefined);
   };
-
   var onOpen2 = function onOpen2() {
     return setOpen2(true);
   };
-
   var onClose2 = function onClose2() {
     return setOpen2(undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -109,11 +98,10 @@ var CenterLayer = function CenterLayer() {
       label: "Close",
       onClick: onClose2,
       color: "dark-3"
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.CenterLayer = CenterLayer;
 CenterLayer.storyName = 'Center';
 CenterLayer.parameters = {

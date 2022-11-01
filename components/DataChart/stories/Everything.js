@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Everything = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 0; i < 13; i += 1) {
   var v = -Math.sin(i / 2.0);
   var v2 = Math.cos(i / 2.0);
@@ -23,7 +18,6 @@ for (var i = 0; i < 13; i += 1) {
     growth: i
   });
 }
-
 var Everything = function Everything() {
   return (
     /*#__PURE__*/
@@ -96,11 +90,10 @@ var Everything = function Everything() {
       pad: "small",
       legend: true,
       detail: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Everything = Everything;
 var _default = {
   title: 'Visualizations/DataChart/Everything'

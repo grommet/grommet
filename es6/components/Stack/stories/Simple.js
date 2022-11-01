@@ -21,10 +21,11 @@ export var Simple = function Simple() {
       round: true
     }, /*#__PURE__*/React.createElement(Text, {
       size: "small"
-    }, "4")))) // </Grommet>
-
+    }, "4"))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Layout/Stack/Simple'
 };

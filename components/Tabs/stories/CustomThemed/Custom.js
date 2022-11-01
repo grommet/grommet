@@ -2,24 +2,16 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Custom = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _styledComponents = require("styled-components");
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 var _themes = require("grommet/themes");
-
 var _utils = require("grommet/utils");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var RichTabTitle = function RichTabTitle(_ref) {
   var icon = _ref.icon,
-      label = _ref.label;
+    label = _ref.label;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     align: "center",
@@ -29,7 +21,6 @@ var RichTabTitle = function RichTabTitle(_ref) {
     size: "small"
   }, /*#__PURE__*/_react["default"].createElement("strong", null, label)));
 };
-
 var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   global: {
     edgeSize: {
@@ -81,7 +72,6 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-
 var CustomTabs = function CustomTabs() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
@@ -111,11 +101,9 @@ var CustomTabs = function CustomTabs() {
     title: "Simple Tab"
   }, "This Tab has a different styling than the RichTabTitle (e.g tab.active.color)")));
 };
-
 var Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(CustomTabs, null);
 };
-
 exports.Custom = Custom;
 var _default = {
   title: 'Controls/Tabs/Custom Themed/Custom'

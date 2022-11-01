@@ -9,65 +9,53 @@ var intervalDays = {
   '30 days': 30,
   '1 year': 365
 };
-
 var ZoomChart = function ZoomChart(_ref) {
   var data = _ref.data,
-      max = _ref.max;
-
+    max = _ref.max;
   var _useState = useState(new Date(data[data.length - 1].time)),
-      reference = _useState[0],
-      setReference = _useState[1];
-
+    reference = _useState[0],
+    setReference = _useState[1];
   var _useState2 = useState(Object.keys(intervalDays)[1]),
-      interval = _useState2[0],
-      setInterval = _useState2[1];
-
+    interval = _useState2[0],
+    setInterval = _useState2[1];
   var startDate = new Date(reference);
   startDate.setDate(reference.getDate() - intervalDays[interval]);
   var values = [];
   data.some(function (d) {
     var date = new Date(d.time);
-
     if (date > reference) {
       return true;
     }
-
     if (date >= startDate) {
       values.push({
         value: [d.time, d.value]
       });
     }
-
     return false;
   });
-
   var _calcs = calcs(values, {
-    min: 0,
-    max: max
-  }),
-      axis = _calcs.axis,
-      bounds = _calcs.bounds,
-      thickness = _calcs.thickness; // calculate next and previous references
+      min: 0,
+      max: max
+    }),
+    axis = _calcs.axis,
+    bounds = _calcs.bounds,
+    thickness = _calcs.thickness;
 
-
+  // calculate next and previous references
   var days = intervalDays[interval];
   var nextReference = new Date(reference);
   nextReference.setDate(reference.getDate() + days);
   var firstReference = new Date(data[data.length - 1].time);
-
   if (nextReference > firstReference) {
     nextReference = firstReference;
   }
-
   var previousReference = new Date(reference);
   previousReference.setDate(reference.getDate() - days);
   var lastReference = new Date(data[0].time);
   lastReference.setDate(lastReference.getDate() + days);
-
   if (previousReference < lastReference) {
     previousReference = lastReference;
   }
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -149,8 +137,8 @@ var ZoomChart = function ZoomChart(_ref) {
       onClick: function onClick() {
         return setReference(nextReference);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
 

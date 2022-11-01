@@ -2,23 +2,14 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ResponsiveGridExample = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _utils = require("grommet/utils");
-
 var _themes = require("grommet/themes");
-
 var _grommet = require("grommet");
-
 var _excluded = ["children", "areas"];
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var customBreakpoints = (0, _utils.deepMerge)(_themes.grommet, {
   global: {
     breakpoints: {
@@ -35,19 +26,15 @@ var customBreakpoints = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-
 var ResponsiveGrid = function ResponsiveGrid(_ref) {
   var children = _ref.children,
-      areas = _ref.areas,
-      props = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    areas = _ref.areas,
+    props = _objectWithoutPropertiesLoose(_ref, _excluded);
   var size = _react["default"].useContext(_grommet.ResponsiveContext);
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grid, _extends({
     areas: areas[size]
   }, props), children);
 };
-
 var ResponsiveGridExample = function ResponsiveGridExample() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customBreakpoints,
@@ -139,7 +126,6 @@ var ResponsiveGridExample = function ResponsiveGridExample() {
     background: "dark-3"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Below a certain threshold, Columns 1 & 2 switch to 50% and Column 3 moves down to a new spot in the grid."));
 };
-
 exports.ResponsiveGridExample = ResponsiveGridExample;
 ResponsiveGridExample.storyName = 'Responsive grid';
 var _default = {

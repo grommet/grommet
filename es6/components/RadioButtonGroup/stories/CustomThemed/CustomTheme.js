@@ -1,9 +1,6 @@
 var _excluded = ["value"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { useState } from 'react';
 import { Box, Grommet, RadioButtonGroup, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -32,8 +29,8 @@ var customTheme = deepMerge(grommet, {
     // affects the size of the outer circle
     icon: {
       size: '15px' // affects the size of the inner circle
-
     },
+
     check: {
       radius: '20%'
     }
@@ -41,12 +38,10 @@ var customTheme = deepMerge(grommet, {
 });
 export var CustomRadioButtonGroup = function CustomRadioButtonGroup(_ref) {
   var initialValue = _ref.value,
-      props = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    props = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useState = useState(initialValue),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
   }, /*#__PURE__*/React.createElement(ThemeContext.Consumer, null, function (theme) {

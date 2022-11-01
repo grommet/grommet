@@ -34,7 +34,6 @@ var customTheme = {
         corner: 'right'
       },
       flex: false // so Tip won't get cut on a window resize
-
     }
   }
 };
@@ -63,7 +62,6 @@ var NotificationAlert = function NotificationAlert() {
     }))
   }));
 };
-
 var SidebarHeader = function SidebarHeader() {
   return /*#__PURE__*/React.createElement(Box, {
     pad: "small"
@@ -78,7 +76,6 @@ var SidebarHeader = function SidebarHeader() {
     color: "white"
   })));
 };
-
 var iconsMap = function iconsMap(color) {
   return [/*#__PURE__*/React.createElement(Analytics, {
     color: color
@@ -88,10 +85,9 @@ var iconsMap = function iconsMap(color) {
     color: color
   })];
 };
-
 var SidebarButton = function SidebarButton(_ref) {
   var iconName = _ref.iconName,
-      index = _ref.index;
+    index = _ref.index;
   var hoverColor = {
     color: 'accent-1',
     opacity: 0.9
@@ -118,7 +114,6 @@ var SidebarButton = function SidebarButton(_ref) {
     }, iconsMap(hover ? 'black' : 'white')[index]);
   })));
 };
-
 export var SidebarTip = function SidebarTip() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme,

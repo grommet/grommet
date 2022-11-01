@@ -14,7 +14,6 @@ export var normalizeValues = function normalizeValues(values) {
 };
 export var normalizeBounds = function normalizeBounds(bounds, values) {
   var result = bounds;
-
   if (!result) {
     result = [[0, 1], [0, 1]];
     (values || []).forEach(function (value) {
@@ -22,19 +21,16 @@ export var normalizeBounds = function normalizeBounds(bounds, values) {
         result[0][0] = Math.min(result[0][0], value.value[0]);
         result[0][1] = Math.max(result[0][1], value.value[0]);
       }
-
       if (value.value[1] !== undefined) {
         result[1][0] = Math.min(result[1][0], value.value[1]);
         result[1][1] = Math.max(result[1][1], value.value[1]);
       }
-
       if (value.value[2] !== undefined) {
         result[1][0] = Math.min(result[1][0], value.value[2]);
         result[1][1] = Math.max(result[1][1], value.value[2]);
       }
     });
   }
-
   return result;
 };
 export var areNormalizedValuesEquals = function areNormalizedValuesEquals(valuesX, valuesY) {

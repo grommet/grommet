@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Axis = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 1; i <= 7; i += 1) {
   var v = Math.sin(i / 2.0);
   var digits = (i % 12 + 1).toString().padStart(2, 0);
@@ -28,7 +23,6 @@ for (var i = 1; i <= 7; i += 1) {
     percent: Math.abs(v * 100),
     // make yAxis suffix '%'
     amount: i * 111111 // make yAxis prefix '$'
-
   });
 }
 
@@ -58,11 +52,10 @@ var Axis = function Axis() {
           granularity: 'medium'
         }
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Axis = Axis;
 var _default = {
   title: 'Visualizations/DataChart/Axis'

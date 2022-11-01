@@ -2,9 +2,8 @@ import React from 'react';
 import { Box, MaskedInput } from 'grommet';
 export var UrlMaskedInput = function UrlMaskedInput() {
   var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -27,10 +26,11 @@ export var UrlMaskedInput = function UrlMaskedInput() {
       onChange: function onChange(event) {
         return setValue(event.target.value);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 UrlMaskedInput.storyName = 'URL';
 UrlMaskedInput.parameters = {
   chromatic: {

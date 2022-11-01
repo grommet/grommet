@@ -1,14 +1,11 @@
 var _excluded = ["animate", "multiple"];
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React from 'react';
 import { Accordion, AccordionPanel, Box } from 'grommet';
 export var Simple = function Simple(props) {
   var animate = props.animate,
-      multiple = props.multiple,
-      rest = _objectWithoutPropertiesLoose(props, _excluded);
-
+    multiple = props.multiple,
+    rest = _objectWithoutPropertiesLoose(props, _excluded);
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -39,10 +36,11 @@ export var Simple = function Simple(props) {
       style: {
         height: '300px'
       }
-    }, "Panel 3 contents")))) // </Grommet>
-
+    }, "Panel 3 contents"))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Controls/Accordion/Simple'
 };

@@ -2,21 +2,15 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Menu = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var renderItems = function renderItems() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-1"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "hi"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "hi"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "hi"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "hi"));
 };
-
 var MenuItem = function MenuItem() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "36px",
@@ -24,11 +18,9 @@ var MenuItem = function MenuItem() {
     align: "center"
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Gremlin, null));
 };
-
 var align = {
   top: 'bottom'
 };
-
 var GremlinDropButton = function GremlinDropButton() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.DropButton, {
     alignSelf: "center",
@@ -41,7 +33,6 @@ var GremlinDropButton = function GremlinDropButton() {
     }
   }, /*#__PURE__*/_react["default"].createElement(MenuItem, null));
 };
-
 var MenuDropButton = function MenuDropButton() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true
@@ -53,11 +44,9 @@ var MenuDropButton = function MenuDropButton() {
     flex: true
   }), /*#__PURE__*/_react["default"].createElement(GremlinDropButton, null)));
 };
-
 var Menu = function Menu() {
   return /*#__PURE__*/_react["default"].createElement(MenuDropButton, null);
 };
-
 exports.Menu = Menu;
 Menu.parameters = {
   chromatic: {

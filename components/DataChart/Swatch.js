@@ -2,28 +2,21 @@
 
 exports.__esModule = true;
 exports.Swatch = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _styledComponents = require("styled-components");
-
 var _utils = require("../../utils");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var Swatch = function Swatch(_ref) {
   var aspect = _ref.aspect,
-      color = _ref.color,
-      dash = _ref.dash,
-      opacityProp = _ref.opacity,
-      point = _ref.point,
-      round = _ref.round,
-      thickness = _ref.thickness,
-      type = _ref.type;
+    color = _ref.color,
+    dash = _ref.dash,
+    opacityProp = _ref.opacity,
+    point = _ref.point,
+    round = _ref.round,
+    thickness = _ref.thickness,
+    type = _ref.type;
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
   var dim = parseInt(theme.global.spacing, 10) / 2;
   var half = dim / 2;
@@ -94,9 +87,7 @@ var Swatch = function Swatch(_ref) {
   } else {
     // draw a line oriented based on the type and then match style
     var strokeWidth = (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness]) || dim;
-
     var _d;
-
     if (type === 'line' || type === 'area') {
       width = Math.max(width, strokeWidth * 4);
       height = strokeWidth;
@@ -105,7 +96,6 @@ var Swatch = function Swatch(_ref) {
       width = strokeWidth;
       _d = "M " + width / 2 + " 0 L " + width / 2 + " " + dim;
     }
-
     fill = 'none';
     stroke = normalizedColor;
     var strokeProps = {};
@@ -126,5 +116,4 @@ var Swatch = function Swatch(_ref) {
     stroke: stroke
   }, content);
 };
-
 exports.Swatch = Swatch;

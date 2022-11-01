@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Offset = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 0; i < 7; i += 1) {
   data.push({
     date: "2020-07-" + (i % 31 + 1).toString().padStart(2, 0),
@@ -19,7 +14,6 @@ for (var i = 0; i < 7; i += 1) {
     over: Math.floor(Math.abs(Math.sin(i / 2.0) * 50))
   });
 }
-
 var Offset = function Offset() {
   return (
     /*#__PURE__*/
@@ -71,11 +65,10 @@ var Offset = function Offset() {
         y: true
       },
       legend: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Offset = Offset;
 Offset.storyName = 'Offset';
 Offset.args = {

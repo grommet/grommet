@@ -2,47 +2,34 @@
 
 exports.__esModule = true;
 exports["default"] = exports.TargetLayer = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var positions = ['left', 'right', 'top', 'bottom', 'center'];
-
 var TargetLayer = function TargetLayer() {
   var _React$useState = _react["default"].useState(),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var _React$useState2 = _react["default"].useState('small'),
-      gutter = _React$useState2[0],
-      setGutter = _React$useState2[1];
-
+    gutter = _React$useState2[0],
+    setGutter = _React$useState2[1];
   var _React$useState3 = _react["default"].useState(true),
-      modal = _React$useState3[0],
-      setModal = _React$useState3[1];
-
+    modal = _React$useState3[0],
+    setModal = _React$useState3[1];
   var _React$useState4 = _react["default"].useState(positions[0]),
-      position = _React$useState4[0],
-      setPosition = _React$useState4[1];
-
+    position = _React$useState4[0],
+    setPosition = _React$useState4[1];
   _react["default"].useEffect(function () {
     window.dispatchEvent(new Event('resize'));
     return undefined;
   }, [gutter]);
-
   var ref = _react["default"].useRef();
-
   var onOpen = function onOpen() {
     return setOpen(true);
   };
-
   var onClose = function onClose() {
     return setOpen(undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -111,11 +98,10 @@ var TargetLayer = function TargetLayer() {
         var option = _ref2.option;
         return setPosition(option);
       }
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
-
 exports.TargetLayer = TargetLayer;
 TargetLayer.storyName = 'Target';
 TargetLayer.args = {

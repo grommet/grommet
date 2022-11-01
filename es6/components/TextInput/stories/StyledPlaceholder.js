@@ -9,10 +9,11 @@ export var StyledPlaceholder = function StyledPlaceholder() {
       name: "name",
       placeholder: /*#__PURE__*/React.createElement(Text, null, "placeholder"),
       "aria-label": "Input Text"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 StyledPlaceholder.storyName = 'Styled placeholder';
 export default {
   title: 'Input/TextInput/Styled placeholder'

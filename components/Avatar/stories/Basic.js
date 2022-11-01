@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Basic = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Basic = function Basic() {
   var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return (
@@ -33,11 +28,10 @@ var Basic = function Basic() {
       background: "dark-2"
     }, "R"), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       background: "brand"
-    }, "SY")) // </Grommed>
-
+    }, "SY"))
+    // </Grommed>
   );
 };
-
 exports.Basic = Basic;
 var _default = {
   title: 'Visualizations/Avatar/Basic'

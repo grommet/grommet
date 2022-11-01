@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Spinner } from 'grommet';
-
 var RoundSpinner = function RoundSpinner(_ref) {
   var round = _ref.round;
   return /*#__PURE__*/React.createElement(Spinner, {
@@ -10,7 +9,6 @@ var RoundSpinner = function RoundSpinner(_ref) {
     background: "linear-gradient(to right, #fc466b, #3f5efb)"
   });
 };
-
 export var Round = function Round() {
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",

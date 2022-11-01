@@ -28,10 +28,11 @@ export var Round = function Round() {
         values: values,
         round: true
       }));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Chart/Round'
 };

@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Range = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var values = [[10, 20, 30], [20, 30, 60], [30, 15, 20]];
-
 var Range = function Range() {
   return (
     /*#__PURE__*/
@@ -32,11 +27,10 @@ var Range = function Range() {
         values: values,
         thickness: "small"
       }));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Range = Range;
 var _default = {
   title: 'Visualizations/Chart/Range'

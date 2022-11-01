@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { AnchorPropTypes } from '../Anchor/propTypes';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     actions: PropTypes.arrayOf(PropTypes.shape(AnchorPropTypes)),
@@ -17,5 +16,4 @@ if (process.env.NODE_ENV !== 'production') {
     icon: PropTypes.element
   };
 }
-
 export var NotificationType = PropType;

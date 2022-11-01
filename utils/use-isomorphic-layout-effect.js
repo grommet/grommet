@@ -2,9 +2,7 @@
 
 exports.__esModule = true;
 exports.useLayoutEffect = exports["default"] = void 0;
-
 var _react = require("react");
-
 /* eslint-disable no-restricted-imports */
 
 /**

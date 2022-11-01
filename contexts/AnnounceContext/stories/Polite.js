@@ -2,22 +2,15 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Polite = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _themes = require("grommet/themes");
-
 var _grommet = require("grommet");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 // used only for the grommet's font
-var message = "Thank you for clicking the Announce Button,\nthis announcement is being broadcast on the Button's click.";
 
+var message = "Thank you for clicking the Announce Button,\nthis announcement is being broadcast on the Button's click.";
 var PageContent = function PageContent(_ref) {
   var mode = _ref.mode;
   var announce = (0, _react.useContext)(_grommet.AnnounceContext);
@@ -39,7 +32,6 @@ var PageContent = function PageContent(_ref) {
     }
   }));
 };
-
 var Polite = function Polite() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
@@ -53,7 +45,6 @@ var Polite = function Polite() {
     role: "log"
   })));
 };
-
 exports.Polite = Polite;
 var _default = {
   title: 'Utilities/AnnounceContext/Polite'

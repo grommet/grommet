@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.FieldWithComponentProp = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var FieldWithComponentProp = function FieldWithComponentProp() {
   return (
     /*#__PURE__*/
@@ -29,7 +25,7 @@ var FieldWithComponentProp = function FieldWithComponentProp() {
       },
       onSubmit: function onSubmit(_ref) {
         var value = _ref.value,
-            touched = _ref.touched;
+          touched = _ref.touched;
         return console.log('Submit', value, touched);
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
@@ -113,11 +109,10 @@ var FieldWithComponentProp = function FieldWithComponentProp() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.FieldWithComponentProp = FieldWithComponentProp;
 FieldWithComponentProp.storyName = 'Field with component prop';
 FieldWithComponentProp.args = {

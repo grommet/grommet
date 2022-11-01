@@ -7,7 +7,6 @@ var animationPropType = PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['p
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge'])
 })]);
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     animation: animationPropType,
@@ -25,5 +24,4 @@ if (process.env.NODE_ENV !== 'production') {
     })).isRequired
   };
 }
-
 export var DiagramPropTypes = PropType;

@@ -41,10 +41,11 @@ export var FixedSizesBox = function FixedSizesBox() {
       align: "center",
       justify: "center",
       background: "brand"
-    }, "Large")) // </Grommet>
-
+    }, "Large"))
+    // </Grommet>
   );
 };
+
 FixedSizesBox.storyName = 'Fixed sizes';
 export default {
   title: "Layout/Box/Fixed sizes"

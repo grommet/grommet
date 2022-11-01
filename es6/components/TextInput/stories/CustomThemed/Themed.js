@@ -37,17 +37,14 @@ var customTheme = deepMerge(grommet, {
 });
 export var Themed = function Themed() {
   var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var onChange = function onChange(event) {
     return setValue(event.target.value);
   };
-
   var onSelect = function onSelect(event) {
     return setValue(event.suggestion);
   };
-
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: customTheme

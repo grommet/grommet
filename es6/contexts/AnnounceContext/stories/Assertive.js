@@ -1,15 +1,13 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { grommet } from 'grommet/themes';
 import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
-
 var Announcer = function Announcer(_ref) {
   var announce = _ref.announce,
-      message = _ref.message,
-      mode = _ref.mode,
-      role = _ref.role;
+    message = _ref.message,
+    mode = _ref.mode,
+    role = _ref.role;
   React.useEffect(function () {
     var timeout = 3000;
     announce(message, mode, timeout);
@@ -20,7 +18,6 @@ var Announcer = function Announcer(_ref) {
     "aria-live": mode
   }, message);
 };
-
 Announcer.propTypes = {
   announce: PropTypes.func.isRequired,
   message: PropTypes.string,
@@ -32,7 +29,6 @@ Announcer.defaultProps = {
   mode: 'polite',
   role: 'log'
 };
-
 var AnnounceContextComponent = function AnnounceContextComponent(props) {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
@@ -48,7 +44,6 @@ var AnnounceContextComponent = function AnnounceContextComponent(props) {
     }, props));
   })));
 };
-
 export var Assertive = function Assertive() {
   return /*#__PURE__*/React.createElement(AnnounceContextComponent, {
     message: "Turn on Accessibility feature to listen to this announcement. This will soon disappear",

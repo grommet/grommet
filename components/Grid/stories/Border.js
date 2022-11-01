@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.BorderGrid = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var BorderGrid = function BorderGrid() {
   return (
     /*#__PURE__*/
@@ -88,11 +84,10 @@ var BorderGrid = function BorderGrid() {
           style: type
         }
       }, type);
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.BorderGrid = BorderGrid;
 BorderGrid.storyName = 'Border';
 var _default = {

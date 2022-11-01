@@ -1,9 +1,6 @@
 var _excluded = ["cellProps", "columns", "data", "disabled", "groupBy", "groups", "groupState", "pinnedOffset", "primaryProperty", "onMore", "onSelect", "onToggle", "onUpdate", "replace", "rowProps", "selected", "size", "step", "verticalAlign"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef, useMemo } from 'react';
 import { Cell } from './Cell';
 import { ExpanderCell } from './ExpanderCell';
@@ -15,40 +12,37 @@ import { TableCell } from '../TableCell';
 import { datumValue, normalizeRowCellProps } from './buildState';
 export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var cellPropsProp = _ref.cellProps,
-      columns = _ref.columns,
-      data = _ref.data,
-      disabled = _ref.disabled,
-      groupBy = _ref.groupBy,
-      groups = _ref.groups,
-      groupState = _ref.groupState,
-      pinnedOffset = _ref.pinnedOffset,
-      primaryProperty = _ref.primaryProperty,
-      onMore = _ref.onMore,
-      onSelect = _ref.onSelect,
-      onToggle = _ref.onToggle,
-      onUpdate = _ref.onUpdate,
-      replace = _ref.replace,
-      rowProps = _ref.rowProps,
-      selected = _ref.selected,
-      size = _ref.size,
-      step = _ref.step,
-      verticalAlign = _ref.verticalAlign,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    columns = _ref.columns,
+    data = _ref.data,
+    disabled = _ref.disabled,
+    groupBy = _ref.groupBy,
+    groups = _ref.groups,
+    groupState = _ref.groupState,
+    pinnedOffset = _ref.pinnedOffset,
+    primaryProperty = _ref.primaryProperty,
+    onMore = _ref.onMore,
+    onSelect = _ref.onSelect,
+    onToggle = _ref.onToggle,
+    onUpdate = _ref.onUpdate,
+    replace = _ref.replace,
+    rowProps = _ref.rowProps,
+    selected = _ref.selected,
+    size = _ref.size,
+    step = _ref.step,
+    verticalAlign = _ref.verticalAlign,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var items = useMemo(function () {
     var nextItems = [];
     groups.forEach(function (group) {
       var _ref2 = groupState[group.key] || {
-        expanded: true
-      },
-          expanded = _ref2.expanded;
-
+          expanded: true
+        },
+        expanded = _ref2.expanded;
       var memberCount = group.data.length;
       var groupSelected = [];
       var isGroupSelected = false;
       var groupDisabled = [];
       var isGroupDisabled = false;
-
       if (memberCount > 1 || onUpdate && group.key) {
         // need a header
         var primaryKeys = group.data.map(function (datum) {
@@ -75,7 +69,6 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
             var nextSelected = isGroupSelected || indeterminate ? selected.filter(function (s) {
               return !groupSelected.includes(s);
             }) : [].concat(selected, primaryKeys);
-
             if (groupBy.onSelect) {
               groupBy.onSelect(nextSelected, group.datum, groupBy.select);
             } else {
@@ -84,7 +77,6 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
           }
         });
       }
-
       if (!onUpdate && memberCount === 1 || expanded) {
         // add the group members
         group.data.forEach(function (datum, index) {
@@ -123,14 +115,14 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
     step: step
   }, function (row, index, rowRef) {
     var context = row.context,
-        datum = row.datum,
-        expanded = row.expanded,
-        indeterminate = row.indeterminate,
-        isDisabled = row.isDisabled,
-        isSelected = row.isSelected,
-        key = row.key,
-        onChange = row.onChange,
-        primaryValue = row.primaryValue;
+      datum = row.datum,
+      expanded = row.expanded,
+      indeterminate = row.indeterminate,
+      isDisabled = row.isDisabled,
+      isSelected = row.isSelected,
+      key = row.key,
+      onChange = row.onChange,
+      primaryValue = row.primaryValue;
     var cellProps = normalizeRowCellProps(rowProps, cellPropsProp, primaryValue, index);
     return /*#__PURE__*/React.createElement(StyledDataTableRow, {
       ref: rowRef,
@@ -159,13 +151,11 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
       pad: cellProps.pad
     })), columns.map(function (column) {
       var scope;
-
       if (context === 'groupHeader') {
         scope = column.property === groupBy.property ? 'row' : undefined;
       } else {
         scope = column.primary ? 'row' : undefined;
       }
-
       return /*#__PURE__*/React.createElement(Cell, {
         key: column.property,
         background: cellProps.background,

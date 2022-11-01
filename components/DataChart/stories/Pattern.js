@@ -2,22 +2,16 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Pattern = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 1; i < 8; i += 1) {
   var v = Math.sin(i / 2.0);
   data.push({
     percent: Math.abs(v * 100)
   });
 }
-
 var Pattern = function Pattern() {
   return (
     /*#__PURE__*/
@@ -38,11 +32,10 @@ var Pattern = function Pattern() {
         opacity: 'strong',
         pattern: 'squares'
       }]
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Pattern = Pattern;
 var _default = {
   title: 'Visualizations/DataChart/Pattern'

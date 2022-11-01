@@ -2,71 +2,53 @@
 
 exports.__esModule = true;
 exports.GroupedBody = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _Cell = require("./Cell");
-
 var _ExpanderCell = require("./ExpanderCell");
-
 var _StyledDataTable = require("./StyledDataTable");
-
 var _CheckBox = require("../CheckBox/CheckBox");
-
 var _InfiniteScroll = require("../InfiniteScroll");
-
 var _TableRow = require("../TableRow");
-
 var _TableCell = require("../TableCell");
-
 var _buildState = require("./buildState");
-
 var _excluded = ["cellProps", "columns", "data", "disabled", "groupBy", "groups", "groupState", "pinnedOffset", "primaryProperty", "onMore", "onSelect", "onToggle", "onUpdate", "replace", "rowProps", "selected", "size", "step", "verticalAlign"];
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var cellPropsProp = _ref.cellProps,
-      columns = _ref.columns,
-      data = _ref.data,
-      disabled = _ref.disabled,
-      groupBy = _ref.groupBy,
-      groups = _ref.groups,
-      groupState = _ref.groupState,
-      pinnedOffset = _ref.pinnedOffset,
-      primaryProperty = _ref.primaryProperty,
-      onMore = _ref.onMore,
-      onSelect = _ref.onSelect,
-      onToggle = _ref.onToggle,
-      onUpdate = _ref.onUpdate,
-      replace = _ref.replace,
-      rowProps = _ref.rowProps,
-      selected = _ref.selected,
-      size = _ref.size,
-      step = _ref.step,
-      verticalAlign = _ref.verticalAlign,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    columns = _ref.columns,
+    data = _ref.data,
+    disabled = _ref.disabled,
+    groupBy = _ref.groupBy,
+    groups = _ref.groups,
+    groupState = _ref.groupState,
+    pinnedOffset = _ref.pinnedOffset,
+    primaryProperty = _ref.primaryProperty,
+    onMore = _ref.onMore,
+    onSelect = _ref.onSelect,
+    onToggle = _ref.onToggle,
+    onUpdate = _ref.onUpdate,
+    replace = _ref.replace,
+    rowProps = _ref.rowProps,
+    selected = _ref.selected,
+    size = _ref.size,
+    step = _ref.step,
+    verticalAlign = _ref.verticalAlign,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var items = (0, _react.useMemo)(function () {
     var nextItems = [];
     groups.forEach(function (group) {
       var _ref2 = groupState[group.key] || {
-        expanded: true
-      },
-          expanded = _ref2.expanded;
-
+          expanded: true
+        },
+        expanded = _ref2.expanded;
       var memberCount = group.data.length;
       var groupSelected = [];
       var isGroupSelected = false;
       var groupDisabled = [];
       var isGroupDisabled = false;
-
       if (memberCount > 1 || onUpdate && group.key) {
         // need a header
         var primaryKeys = group.data.map(function (datum) {
@@ -93,7 +75,6 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
             var nextSelected = isGroupSelected || indeterminate ? selected.filter(function (s) {
               return !groupSelected.includes(s);
             }) : [].concat(selected, primaryKeys);
-
             if (groupBy.onSelect) {
               groupBy.onSelect(nextSelected, group.datum, groupBy.select);
             } else {
@@ -102,7 +83,6 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           }
         });
       }
-
       if (!onUpdate && memberCount === 1 || expanded) {
         // add the group members
         group.data.forEach(function (datum, index) {
@@ -141,14 +121,14 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     step: step
   }, function (row, index, rowRef) {
     var context = row.context,
-        datum = row.datum,
-        expanded = row.expanded,
-        indeterminate = row.indeterminate,
-        isDisabled = row.isDisabled,
-        isSelected = row.isSelected,
-        key = row.key,
-        onChange = row.onChange,
-        primaryValue = row.primaryValue;
+      datum = row.datum,
+      expanded = row.expanded,
+      indeterminate = row.indeterminate,
+      isDisabled = row.isDisabled,
+      isSelected = row.isSelected,
+      key = row.key,
+      onChange = row.onChange,
+      primaryValue = row.primaryValue;
     var cellProps = (0, _buildState.normalizeRowCellProps)(rowProps, cellPropsProp, primaryValue, index);
     return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
       ref: rowRef,
@@ -177,13 +157,11 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       pad: cellProps.pad
     })), columns.map(function (column) {
       var scope;
-
       if (context === 'groupHeader') {
         scope = column.property === groupBy.property ? 'row' : undefined;
       } else {
         scope = column.primary ? 'row' : undefined;
       }
-
       return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
         key: column.property,
         background: cellProps.background,

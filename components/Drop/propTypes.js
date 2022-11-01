@@ -2,21 +2,15 @@
 
 exports.__esModule = true;
 exports.DropPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _generalPropTypes = require("../../utils/general-prop-types");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 // if you update values here, make sure to update in Box too.
 var dropOverflowPropTypes = _propTypes["default"].oneOfType([_propTypes["default"].oneOf(_generalPropTypes.OVERFLOW_VALUES), _propTypes["default"].shape({
   horizontal: _propTypes["default"].oneOf(_generalPropTypes.OVERFLOW_VALUES),
   vertical: _propTypes["default"].oneOf(_generalPropTypes.OVERFLOW_VALUES)
 }), _propTypes["default"].string]);
-
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     align: _propTypes["default"].shape({
@@ -41,6 +35,5 @@ if (process.env.NODE_ENV !== 'production') {
     trapFocus: _propTypes["default"].bool
   };
 }
-
 var DropPropTypes = PropType;
 exports.DropPropTypes = DropPropTypes;

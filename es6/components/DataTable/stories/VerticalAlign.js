@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, DataTable } from 'grommet'; // Source code for the data can be found here
-// https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
+import { Box, DataTable } from 'grommet';
 
+// Source code for the data can be found here
+// https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 import { columns, DATA } from './data';
 export var VerticalAlign = function VerticalAlign() {
   return (
@@ -28,10 +29,11 @@ export var VerticalAlign = function VerticalAlign() {
         body: 'top',
         footer: 'top'
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 VerticalAlign.storyName = 'Vertical Align';
 export default {
   title: 'Visualizations/DataTable/Vertical Align'

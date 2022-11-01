@@ -22,10 +22,11 @@ export var Fit = function Fit() {
     }, /*#__PURE__*/React.createElement(Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg",
       fit: "cover"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Media/Image/Fit'
 };

@@ -1,8 +1,6 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React from 'react';
 import { Box, CheckBox, Text, WorldMap } from 'grommet';
-
 var placeProps = function placeProps(name, color, showDrop) {
   return _extends({
     name: name,
@@ -30,12 +28,10 @@ var placeProps = function placeProps(name, color, showDrop) {
     }
   } : {});
 };
-
 export var Places = function Places() {
   var _React$useState = React.useState(true),
-      showDrops = _React$useState[0],
-      setShowDrops = _React$useState[1];
-
+    showDrops = _React$useState[0],
+    setShowDrops = _React$useState[1];
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"

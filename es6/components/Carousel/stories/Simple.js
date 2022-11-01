@@ -26,10 +26,11 @@ export var Simple = function Simple() {
       background: "light-3"
     }, /*#__PURE__*/React.createElement(Car, {
       size: "xlarge"
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 Simple.parameters = {
   chromatic: {
     disable: true

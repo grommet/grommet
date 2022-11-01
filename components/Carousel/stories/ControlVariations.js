@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ControlVariations = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var ControlVariations = function ControlVariations() {
   return (
     /*#__PURE__*/
@@ -157,11 +152,10 @@ var ControlVariations = function ControlVariations() {
       justify: "center"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Amazon, {
       size: "xlarge"
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.ControlVariations = ControlVariations;
 ControlVariations.storyName = 'Control variations';
 var _default = {

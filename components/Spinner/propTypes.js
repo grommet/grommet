@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports.SpinnerPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
@@ -22,6 +18,5 @@ if (process.env.NODE_ENV !== 'production') {
     })])
   };
 }
-
 var SpinnerPropTypes = PropType;
 exports.SpinnerPropTypes = SpinnerPropTypes;

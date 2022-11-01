@@ -26,10 +26,11 @@ export var Grouped = function Grouped() {
       }], [{
         label: 'Delete'
       }]]
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 Grouped.parameters = {
   chromatic: {
     disable: true

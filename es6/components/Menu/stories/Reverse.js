@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Menu } from 'grommet';
 import { Power } from "grommet-icons/es6/icons/Power";
 import { User } from "grommet-icons/es6/icons/User";
-
 var ReverseMenu = function ReverseMenu() {
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
@@ -29,7 +28,6 @@ var ReverseMenu = function ReverseMenu() {
     }]
   }));
 };
-
 export var Reverse = function Reverse() {
   return /*#__PURE__*/React.createElement(ReverseMenu, null);
 };

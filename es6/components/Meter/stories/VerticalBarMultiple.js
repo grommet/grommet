@@ -2,19 +2,15 @@ import React, { useState } from 'react';
 import { Box, Meter, Text } from 'grommet';
 export var MultipleValues = function MultipleValues() {
   var total = 100;
-
   var _useState = useState(0),
-      active = _useState[0],
-      setActive = _useState[1];
-
+    active = _useState[0],
+    setActive = _useState[1];
   var _useState2 = useState(''),
-      label = _useState2[0],
-      setLabel = _useState2[1];
-
+    label = _useState2[0],
+    setLabel = _useState2[1];
   var _useState3 = useState(false),
-      highlight = _useState3[0],
-      setHighlight = _useState3[1];
-
+    highlight = _useState3[0],
+    setHighlight = _useState3[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -60,10 +56,11 @@ export var MultipleValues = function MultipleValues() {
     }, /*#__PURE__*/React.createElement(Text, {
       size: "xxlarge",
       weight: "bold"
-    }, active || total), /*#__PURE__*/React.createElement(Text, null, "GB")), /*#__PURE__*/React.createElement(Text, null, label || 'total'))) // </Grommet>
-
+    }, active || total), /*#__PURE__*/React.createElement(Text, null, "GB")), /*#__PURE__*/React.createElement(Text, null, label || 'total')))
+    // </Grommet>
   );
 };
+
 MultipleValues.storyName = 'Vertical Bar Multiple';
 export default {
   title: 'Visualizations/Meter/Vertical Bar Multiple'

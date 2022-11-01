@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.MultipleTypes = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 0; i < 13; i += 1) {
   var v = -Math.sin(i / 2.0);
   data.push({
@@ -18,7 +13,6 @@ for (var i = 0; i < 13; i += 1) {
     amount: Math.floor(v * 100)
   });
 }
-
 var MultipleTypes = function MultipleTypes() {
   return (
     /*#__PURE__*/
@@ -75,11 +69,10 @@ var MultipleTypes = function MultipleTypes() {
       },
       gap: "medium",
       pad: "small"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.MultipleTypes = MultipleTypes;
 MultipleTypes.storyName = 'Multiple types';
 var _default = {

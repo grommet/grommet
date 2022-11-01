@@ -23,10 +23,11 @@ export var Pattern = function Pattern() {
           value: [30, 15]
         }]
       });
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Chart/Pattern'
 };

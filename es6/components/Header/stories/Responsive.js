@@ -53,10 +53,11 @@ export var Responsive = function Responsive() {
         href: "https://github.com/grommet/grommet/issues",
         label: "Feedback"
       }));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Layout/Header/Responsive'
 };

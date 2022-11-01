@@ -2,22 +2,16 @@
 
 exports.__esModule = true;
 exports.DiagramPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _generalPropTypes = require("../../utils/general-prop-types");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var animationPropType = _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['pulse', 'draw']), _propTypes["default"].shape({
   type: _propTypes["default"].oneOf(['pulse', 'draw']),
   delay: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]),
   duration: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]),
   size: _propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge'])
 })]);
-
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     animation: animationPropType,
@@ -35,6 +29,5 @@ if (process.env.NODE_ENV !== 'production') {
     })).isRequired
   };
 }
-
 var DiagramPropTypes = PropType;
 exports.DiagramPropTypes = DiagramPropTypes;

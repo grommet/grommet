@@ -5,13 +5,11 @@ var DATE = '2020-07-02T00:00:00-08:00';
 var DATES = ['2020-07-02T00:00:00-08:00', '2020-07-07T00:00:00-08:00'];
 export var ResetDateWithString = function ResetDateWithString() {
   var _React$useState = React.useState(DATE),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var onChange = function onChange(event) {
     return setValue(event.value);
   };
-
   return /*#__PURE__*/React.createElement(Box, {
     direction: "column",
     align: "center",
@@ -33,13 +31,11 @@ export var ResetDateWithString = function ResetDateWithString() {
 };
 export var ResetDateWithArray = function ResetDateWithArray() {
   var _React$useState2 = React.useState(DATES),
-      value = _React$useState2[0],
-      setValue = _React$useState2[1];
-
+    value = _React$useState2[0],
+    setValue = _React$useState2[1];
   var onChange = function onChange(event) {
     return setValue(event.value);
   };
-
   return /*#__PURE__*/React.createElement(Box, {
     direction: "column",
     align: "center",

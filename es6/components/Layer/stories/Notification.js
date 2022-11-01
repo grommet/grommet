@@ -5,20 +5,17 @@ import { StatusGood } from "grommet-icons/es6/icons/StatusGood";
 import { Box, Button, Layer, Text } from 'grommet';
 export var NotificationLayer = function NotificationLayer() {
   var _React$useState = React.useState(),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var onOpen = function onOpen() {
     setOpen(true);
     setTimeout(function () {
       setOpen(undefined);
     }, 3000);
   };
-
   var onClose = function onClose() {
     return setOpen(undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -64,10 +61,11 @@ export var NotificationLayer = function NotificationLayer() {
       icon: /*#__PURE__*/React.createElement(FormClose, null),
       onClick: onClose,
       plain: true
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 NotificationLayer.storyName = 'Notification';
 NotificationLayer.parameters = {
   chromatic: {

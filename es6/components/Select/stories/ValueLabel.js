@@ -3,11 +3,9 @@ import { CaretDown } from "grommet-icons/es6/icons/CaretDown";
 import { Box, Select } from 'grommet';
 export var ValueLabel = function ValueLabel() {
   var options = ['one', 'two'];
-
   var _useState = useState(''),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -43,10 +41,11 @@ export var ValueLabel = function ValueLabel() {
         size: "small",
         color: "black"
       }))
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 ValueLabel.args = {
   full: true
 };

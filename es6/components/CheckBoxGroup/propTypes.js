@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     value: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
@@ -13,5 +12,4 @@ if (process.env.NODE_ENV !== 'production') {
     valueKey: PropTypes.string
   };
 }
-
 export var CheckBoxGroupPropTypes = PropType;

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Box, Chart, Text } from 'grommet';
-
 var LabelledChart = function LabelledChart(_ref) {
   var color = _ref.color,
-      label = _ref.label,
-      value = _ref.value;
+    label = _ref.label,
+    value = _ref.value;
   return /*#__PURE__*/React.createElement(Box, {
     flex: false,
     basis: "xsmall",
@@ -28,7 +27,6 @@ var LabelledChart = function LabelledChart(_ref) {
     weight: "bold"
   }, value, " TiB")));
 };
-
 export var LabelledCharts = function LabelledCharts() {
   return (
     /*#__PURE__*/
@@ -49,10 +47,11 @@ export var LabelledCharts = function LabelledCharts() {
       label: "Used",
       value: 98.2,
       color: "graph-2"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 LabelledCharts.storyName = 'Labelled';
 export default {
   title: 'Visualizations/Chart/Labelled'

@@ -32,10 +32,11 @@ export var Default = function Default() {
         key: c.property,
         align: c.align
       }, /*#__PURE__*/React.createElement(Text, null, c.footer));
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Table/Default'
 };

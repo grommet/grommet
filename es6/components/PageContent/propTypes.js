@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { colorPropType } from '../../utils/general-prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     background: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
@@ -17,5 +16,4 @@ if (process.env.NODE_ENV !== 'production') {
     })])
   };
 }
-
 export var PageContentPropTypes = PropType;

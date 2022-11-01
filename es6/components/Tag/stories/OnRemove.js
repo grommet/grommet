@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Tag } from 'grommet';
 export var OnRemove = function OnRemove() {
   var onRemove = function onRemove() {};
-
   return /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     gap: "medium",

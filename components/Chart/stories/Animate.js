@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.AnimatedChart = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var values = [{
   value: [10, 20]
 }, {
@@ -16,7 +12,6 @@ var values = [{
 }, {
   value: [30, 15]
 }];
-
 var AnimatedChart = function AnimatedChart() {
   return (
     /*#__PURE__*/
@@ -38,11 +33,10 @@ var AnimatedChart = function AnimatedChart() {
         values: values,
         animate: true
       }));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.AnimatedChart = AnimatedChart;
 AnimatedChart.storyName = 'Animate';
 AnimatedChart.parameters = {

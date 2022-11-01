@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
 import { Announce } from "grommet-icons/es6/icons/Announce";
 import { grommet } from 'grommet/themes'; // used only for the grommet's font
-
 import { Anchor, AnnounceContext, Box, Button, Grommet, Paragraph } from 'grommet';
 var message = "Thank you for clicking the Announce Button,\nthis announcement is being broadcast on the Button's click.";
-
 var PageContent = function PageContent(_ref) {
   var mode = _ref.mode;
   var announce = useContext(AnnounceContext);
@@ -26,7 +24,6 @@ var PageContent = function PageContent(_ref) {
     }
   }));
 };
-
 export var Polite = function Polite() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,

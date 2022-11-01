@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.GuideDefault = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 1; i < 8; i += 1) {
   var v = Math.sin(i / 2.0);
   data.push({
@@ -18,7 +13,6 @@ for (var i = 1; i < 8; i += 1) {
     percent: Math.abs(v * 100)
   });
 }
-
 var GuideDefault = function GuideDefault() {
   return (
     /*#__PURE__*/
@@ -32,11 +26,10 @@ var GuideDefault = function GuideDefault() {
       data: data,
       series: "percent",
       guide: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.GuideDefault = GuideDefault;
 GuideDefault.storyName = 'Guide default';
 var _default = {

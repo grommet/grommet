@@ -11,22 +11,19 @@ var DetailControl = styled(Box).withConfig({
   displayName: "Detail__DetailControl",
   componentId: "sc-huiwg9-0"
 })(["&:focus{", "}&:focus:not(:focus-visible){", "}"], focusStyle(), unfocusStyle());
-
 var Detail = function Detail(_ref) {
   var activeProperty = _ref.activeProperty,
-      axis = _ref.axis,
-      data = _ref.data,
-      padProp = _ref.pad,
-      series = _ref.series,
-      seriesStyles = _ref.seriesStyles,
-      renderValue = _ref.renderValue,
-      thickness = _ref.thickness;
+    axis = _ref.axis,
+    data = _ref.data,
+    padProp = _ref.pad,
+    series = _ref.series,
+    seriesStyles = _ref.seriesStyles,
+    renderValue = _ref.renderValue,
+    thickness = _ref.thickness;
   var theme = useContext(ThemeContext) || defaultProps.theme;
-
   var _useState = useState(),
-      detailIndex = _useState[0],
-      setDetailIndex = _useState[1];
-
+    detailIndex = _useState[0],
+    setDetailIndex = _useState[1];
   var activeIndex = useRef();
   var detailRefs = useMemo(function () {
     return [];
@@ -50,7 +47,6 @@ var Detail = function Detail(_ref) {
     // This helps distinguish leaving the drop on the edge where it is
     // anchored.
     var rect = activeIndex.current.getBoundingClientRect();
-
     if (event.pageX < rect.left || event.pageX > rect.right || event.pageY < rect.top || event.pageY > rect.bottom) {
       activeIndex.current = undefined;
       setDetailIndex(undefined);
@@ -76,7 +72,8 @@ var Detail = function Detail(_ref) {
       return setDetailIndex(undefined);
     }
   }, data.map(function (_, i) {
-    return /*#__PURE__*/React.createElement(Box // eslint-disable-next-line react/no-array-index-key
+    return /*#__PURE__*/React.createElement(Box
+    // eslint-disable-next-line react/no-array-index-key
     , {
       key: i,
       align: "center",
@@ -117,7 +114,6 @@ var Detail = function Detail(_ref) {
     align: "center"
   }, series.filter(function (_ref2) {
     var _data$detailIndex;
-
     var property = _ref2.property;
     return (!activeProperty || activeProperty === property) && (data == null ? void 0 : (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
   }).map(function (serie) {
@@ -132,5 +128,4 @@ var Detail = function Detail(_ref) {
     }, renderValue(serie, detailIndex)));
   })))));
 };
-
 export { Detail };

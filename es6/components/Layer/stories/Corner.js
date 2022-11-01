@@ -3,17 +3,14 @@ import { Add } from "grommet-icons/es6/icons/Add";
 import { Box, Button, Layer, Text } from 'grommet';
 export var CornerLayer = function CornerLayer() {
   var _React$useState = React.useState(),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var onOpen = function onOpen() {
     return setOpen(true);
   };
-
   var onClose = function onClose() {
     return setOpen(undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -37,10 +34,11 @@ export var CornerLayer = function CornerLayer() {
       overflow: "auto"
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "xlarge"
-    }, "Corner top-right position")))) // </Grommet>
-
+    }, "Corner top-right position"))))
+    // </Grommet>
   );
 };
+
 CornerLayer.storyName = 'Corner';
 CornerLayer.parameters = {
   chromatic: {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { Anchor, Box } from 'grommet';
-
 var ColorAnchor = function ColorAnchor() {
   return /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
@@ -36,7 +35,6 @@ var ColorAnchor = function ColorAnchor() {
     href: "#"
   })));
 };
-
 export var Color = function Color() {
   return /*#__PURE__*/React.createElement(ColorAnchor, null);
 };

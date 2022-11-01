@@ -2,20 +2,14 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Children = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Children = function Children() {
   var _React$useState = _react["default"].useState(),
-      selected = _React$useState[0],
-      setSelected = _React$useState[1];
-
+    selected = _React$useState[0],
+    setSelected = _React$useState[1];
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
@@ -39,7 +33,6 @@ var Children = function Children() {
     }
   }));
 };
-
 exports.Children = Children;
 var _default = {
   title: 'Input/RadioButton/Children'

@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     a11yTitle: PropTypes.string,
@@ -37,11 +36,9 @@ if (process.env.NODE_ENV !== 'production') {
       label: PropTypes.node,
       // eslint-disable-next-line
       value: PropTypes.any // this is intentional any
-
     }), PropTypes.string])),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   };
 }
-
 export var TextInputPropTypes = PropType;

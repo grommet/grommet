@@ -2,64 +2,43 @@
 
 exports.__esModule = true;
 exports.FileInput = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
-
 var _CircleAlert = require("grommet-icons/icons/CircleAlert");
-
 var _MessageContext = require("../../contexts/MessageContext");
-
 var _defaultProps = require("../../default-props");
-
 var _utils = require("../../utils");
-
 var _Anchor = require("../Anchor");
-
 var _Box = require("../Box");
-
 var _Button = require("../Button");
-
 var _FormContext = require("../Form/FormContext");
-
 var _Keyboard = require("../Keyboard");
-
 var _Text = require("../Text");
-
 var _StyledFileInput = require("./StyledFileInput");
-
 var _propTypes = require("./propTypes");
-
 var _excluded = ["a11yTitle", "background", "border", "confirmRemove", "disabled", "id", "plain", "renderFile", "maxSize", "messages", "margin", "multiple", "name", "onChange", "pad", "value"];
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var formatBytes = function formatBytes(size) {
   var units = ['B', 'KB', 'MB', 'GB', 'TB'];
   var factor = 1024;
   var index = 0;
   var num = size;
-
   while (num >= factor && index < units.length - 1) {
     num /= factor;
     index += 1;
   }
-
   return num.toFixed(1) + " " + units[index];
-}; // We want the interaction of <input type="file" /> but none of its styling.
+};
+
+// We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
 // position the <input /> on top with an opacity of zero.
 // If there are any files selected, we need to show the buttons to remove them.
 // So, we offset the <input /> from the right by the appropriate width.
 // We don't use Stack because of how we need to control the positioning.
-
 
 var ContentsBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FileInput__ContentsBox",
@@ -91,46 +70,38 @@ var defaultPendingRemoval = {
 };
 var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
-      background = _ref.background,
-      border = _ref.border,
-      confirmRemove = _ref.confirmRemove,
-      disabled = _ref.disabled,
-      id = _ref.id,
-      plain = _ref.plain,
-      renderFile = _ref.renderFile,
-      maxSize = _ref.maxSize,
-      messages = _ref.messages,
-      margin = _ref.margin,
-      multiple = _ref.multiple,
-      name = _ref.name,
-      _onChange = _ref.onChange,
-      pad = _ref.pad,
-      valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    background = _ref.background,
+    border = _ref.border,
+    confirmRemove = _ref.confirmRemove,
+    disabled = _ref.disabled,
+    id = _ref.id,
+    plain = _ref.plain,
+    renderFile = _ref.renderFile,
+    maxSize = _ref.maxSize,
+    messages = _ref.messages,
+    margin = _ref.margin,
+    multiple = _ref.multiple,
+    name = _ref.name,
+    _onChange = _ref.onChange,
+    pad = _ref.pad,
+    valueProp = _ref.value,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
-
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
-      format = _useContext.format;
-
+    format = _useContext.format;
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
-
   var _React$useState = _react["default"].useState(),
-      hover = _React$useState[0],
-      setHover = _React$useState[1];
-
+    hover = _React$useState[0],
+    setHover = _React$useState[1];
   var _React$useState2 = _react["default"].useState(),
-      dragOver = _React$useState2[0],
-      setDragOver = _React$useState2[1];
-
+    dragOver = _React$useState2[0],
+    setDragOver = _React$useState2[1];
   var _useState = (0, _react.useState)(false),
-      showRemoveConfirmation = _useState[0],
-      setShowRemoveConfirmation = _useState[1];
-
+    showRemoveConfirmation = _useState[0],
+    setShowRemoveConfirmation = _useState[1];
   var _useState2 = (0, _react.useState)(defaultPendingRemoval),
-      pendingRemoval = _useState2[0],
-      setPendingRemoval = _useState2[1];
-
+    pendingRemoval = _useState2[0],
+    setPendingRemoval = _useState2[1];
   var aggregateThreshold = multiple && multiple.aggregateThreshold || 10;
   var max = multiple == null ? void 0 : multiple.max;
   var inputRef = (0, _utils.useForwardedRef)(ref);
@@ -138,57 +109,49 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var removeRef = (0, _react.useRef)();
   var ConfirmRemove = confirmRemove;
   var RemoveIcon = theme.fileInput.icons.remove;
-
   var _formContext$useFormI = formContext.useFormInput({
-    name: name,
-    value: valueProp,
-    initialValue: [],
-    validate: [maxSize ? function () {
-      var fileList = [].concat(files);
-      var message = '';
-      var numOfInvalidFiles = fileList.filter(function (_ref2) {
-        var size = _ref2.size;
-        return size > maxSize;
-      }).length;
-
-      if (numOfInvalidFiles) {
-        var messageId = 'fileInput.maxSizeSingle';
-
-        if (multiple) {
-          messageId = "fileInput.maxSizeMultiple." + (numOfInvalidFiles === 1 ? 'singular' : 'plural');
+      name: name,
+      value: valueProp,
+      initialValue: [],
+      validate: [maxSize ? function () {
+        var fileList = [].concat(files);
+        var message = '';
+        var numOfInvalidFiles = fileList.filter(function (_ref2) {
+          var size = _ref2.size;
+          return size > maxSize;
+        }).length;
+        if (numOfInvalidFiles) {
+          var messageId = 'fileInput.maxSizeSingle';
+          if (multiple) {
+            messageId = "fileInput.maxSizeMultiple." + (numOfInvalidFiles === 1 ? 'singular' : 'plural');
+          }
+          message = format({
+            id: messageId,
+            messages: messages,
+            values: {
+              maxSize: formatBytes(maxSize),
+              numOfFiles: numOfInvalidFiles
+            }
+          });
         }
-
-        message = format({
-          id: messageId,
-          messages: messages,
-          values: {
-            maxSize: formatBytes(maxSize),
-            numOfFiles: numOfInvalidFiles
-          }
-        });
-      }
-
-      return message;
-    } : '', max ? function () {
-      var fileList = [].concat(files);
-      var message = '';
-
-      if (fileList.length > max) {
-        message = format({
-          id: 'fileInput.maxFile',
-          messages: messages,
-          values: {
-            max: max
-          }
-        });
-      }
-
-      return message;
-    } : '']
-  }),
-      files = _formContext$useFormI[0],
-      setFiles = _formContext$useFormI[1];
-
+        return message;
+      } : '', max ? function () {
+        var fileList = [].concat(files);
+        var message = '';
+        if (fileList.length > max) {
+          message = format({
+            id: 'fileInput.maxFile',
+            messages: messages,
+            values: {
+              max: max
+            }
+          });
+        }
+        return message;
+      } : '']
+    }),
+    files = _formContext$useFormI[0],
+    setFiles = _formContext$useFormI[1];
   var mergeTheme = function mergeTheme(propertyName, defaultKey) {
     var result = {};
     var themeProp = theme.fileInput[propertyName];
@@ -205,33 +168,28 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     } else result = _extends({}, result, dragOverThemeProp);
     return typeof result === 'object' && Object.keys(result).length === 0 ? undefined : result;
   };
-
   var rightPad;
-
   if (mergeTheme('pad')) {
     var _mergeTheme = mergeTheme('pad'),
-        horizontal = _mergeTheme.horizontal,
-        right = _mergeTheme.right;
-
+      horizontal = _mergeTheme.horizontal,
+      right = _mergeTheme.right;
     if (right) {
       rightPad = theme.global.edgeSize[right] || right;
     } else if (horizontal) {
       rightPad = theme.global.edgeSize[horizontal] || horizontal;
     }
-  } // rightPad needs to be included in the rightOffset
+  }
+
+  // rightPad needs to be included in the rightOffset
   // otherwise input may cover the RemoveButton, making it
   // unreachable by mouse click.
   // If browse anchor or button is greater than remove button then
   // rightoffset will take the larger width
-
-
   var rightOffset;
-
   if (removeRef.current && controlRef.current) {
     var rightOffsetBrowse = controlRef.current.getBoundingClientRect().width;
     var rightOffsetRemove = removeRef.current.getBoundingClientRect().width;
     if (rightPad && typeof rightPad === 'string') rightOffset = rightOffsetRemove + (0, _utils.parseMetricToNum)(rightPad);
-
     if (files.length === 1 || files.length > aggregateThreshold) {
       rightOffset = rightOffsetBrowse + rightOffsetRemove + (0, _utils.parseMetricToNum)(theme.global.edgeSize.small) * 2;
     } else if (rightOffsetBrowse > rightOffsetRemove) {
@@ -239,43 +197,38 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     } else rightOffset = rightOffsetRemove;
   } else if (!files.length && controlRef.current) {
     rightOffset = controlRef.current.getBoundingClientRect().width + (0, _utils.parseMetricToNum)(theme.global.edgeSize.small) * 2;
-  } // Show the number of files when more than one
+  }
 
+  // Show the number of files when more than one
 
   var message;
-
   if (!files.length) {
     message = format({
       id: multiple ? 'fileInput.dropPromptMultiple' : 'fileInput.dropPrompt',
       messages: messages
     });
   } else message = files.length + " items";
-
   var removeFile = function removeFile(index) {
     var nextFiles;
-
     if (index === 'all') {
       nextFiles = [];
     } else {
       nextFiles = [].concat(files);
       nextFiles.splice(index, 1);
     }
+    setFiles(nextFiles);
 
-    setFiles(nextFiles); // Need to have a way to track the files other than an array
+    // Need to have a way to track the files other than an array
     // since inputRef.current.files is a read-only FileList
     // https://stackoverflow.com/a/64019766
-
     /* eslint-disable no-undef */
-
     var dt = new DataTransfer();
     var curFiles = inputRef.current.files;
     if (index === 'all' || nextFiles.length === 0) inputRef.current.value = '';
-
     for (var i = 0; i < curFiles.length; i += 1) {
       var curfile = curFiles[i];
       if (index !== i) dt.items.add(curfile);
     }
-
     var nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'files').set;
     nativeInputValueSetter.call(inputRef.current, dt.files);
     var event = new Event('input', {
@@ -287,7 +240,6 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     });
     inputRef.current.focus();
   };
-
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(ContentsBox, {
     theme: theme,
     flex: false,
@@ -366,7 +318,6 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onClick: function onClick(event) {
       if (confirmRemove) {
         event.persist(); // necessary for when React < v17
-
         setPendingRemoval({
           event: event,
           index: 'all'
@@ -433,7 +384,6 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onClick: function onClick(event) {
         if (confirmRemove) {
           event.persist(); // necessary for when React < v17
-
           setPendingRemoval({
             event: event,
             index: index
@@ -493,22 +443,18 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       event.persist();
       var fileList = event.target.files;
       var nextFiles = multiple ? [].concat(files) : [];
-
       var _loop = function _loop(i) {
         // avoid duplicates
         var existing = nextFiles.filter(function (file) {
           return file.name === fileList[i].name && file.size === fileList[i].size;
         }).length > 0;
-
         if (!existing) {
           nextFiles.push(fileList[i]);
         }
       };
-
       for (var i = 0; i < fileList.length; i += 1) {
         _loop(i);
       }
-
       setFiles(nextFiles);
       setDragOver(false);
       if (_onChange) _onChange(event, {

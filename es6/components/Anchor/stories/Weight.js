@@ -1,6 +1,5 @@
 import React from 'react';
 import { Anchor, Box } from 'grommet';
-
 var WeightAnchor = function WeightAnchor() {
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
@@ -55,7 +54,6 @@ var WeightAnchor = function WeightAnchor() {
     weight: "unset"
   }));
 };
-
 export var Weight = function Weight() {
   return /*#__PURE__*/React.createElement(WeightAnchor, null);
 };

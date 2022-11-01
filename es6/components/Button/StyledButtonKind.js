@@ -1,104 +1,88 @@
 import styled, { css } from 'styled-components';
 import { activeStyle, disabledStyle, focusStyle, unfocusStyle, genericStyles, kindPartStyles, parseMetricToNum } from '../../utils';
 import { defaultProps } from '../../default-props';
-
 var radiusStyle = function radiusStyle(props) {
-  var size = props.sizeProp; // caller has specified a themeObj to use for styling
+  var size = props.sizeProp;
+  // caller has specified a themeObj to use for styling
   // relevant for cases like pagination which looks to theme.pagination.button
-
   var themeObj = typeof props.kind === 'object' ? props.kind : props.theme.button;
   if (size && themeObj.size && themeObj.size[size]) return css(["border-radius:", ";"], themeObj.size[size].border.radius);
   if (themeObj.border && themeObj.border.radius) return css(["border-radius:", ";"], themeObj.border.radius);
   return '';
 };
-
 var fontStyle = function fontStyle(props) {
   var size = props.sizeProp || 'medium';
   var data = props.theme.text[size];
   return css(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
-
 var padFromTheme = function padFromTheme(size, theme, themeObj, kind) {
   var _themeObj$size, _themeObj$size$size, _themeObj$size$size$k;
-
   if (size === void 0) {
     size = 'medium';
   }
-
   if (size && themeObj != null && (_themeObj$size = themeObj.size) != null && (_themeObj$size$size = _themeObj$size[size]) != null && (_themeObj$size$size$k = _themeObj$size$size[kind]) != null && _themeObj$size$size$k.pad) {
     return themeObj.size[size][kind].pad;
   }
-
   if (size && themeObj.size && themeObj.size[size] && themeObj.size[size].pad) {
     return {
       vertical: themeObj.size[size].pad.vertical,
       horizontal: themeObj.size[size].pad.horizontal
     };
   }
-
   if (theme.button.padding) {
     return {
       vertical: theme.global.edgeSize[theme.button.padding.vertical] || theme.button.padding.vertical,
       horizontal: theme.global.edgeSize[theme.button.padding.horizontal] || theme.button.padding.horizontal
     };
   }
-
   return undefined;
 };
-
 var padStyle = function padStyle(_ref) {
   var size = _ref.sizeProp,
-      theme = _ref.theme,
-      kind = _ref.kind;
+    theme = _ref.theme,
+    kind = _ref.kind;
   // caller has specified a themeObj to use for styling
   // relevant for cases like pagination which looks to theme.pagination.button
   var themeObj = typeof kind === 'object' ? kind : theme.button;
   var pad = padFromTheme(size, theme, themeObj, kind);
   return pad ? css(["padding:", " ", ";"], pad.vertical, pad.horizontal) : '';
 };
-
 var basicStyle = function basicStyle(props) {
   return css(["border:none;", ";", " ", " ", ""], radiusStyle(props), padStyle(props), fontStyle(props), props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n      vertical-align: middle;\n    }\n  ");
 };
-
 var getPath = function getPath(theme, path) {
   var obj;
-
   if (path) {
     obj = theme;
     var parts = path.split('.');
-
     while (obj && parts.length) {
       obj = obj[parts.shift()];
     }
   }
-
   return obj;
 };
-
 var adjustPadStyle = function adjustPadStyle(pad, width) {
   var offset = parseMetricToNum(width);
   return css(["padding:", "px ", "px;"], Math.max(parseMetricToNum(pad.vertical) - offset, 0), Math.max(parseMetricToNum(pad.horizontal) - offset, 0));
-}; // build up CSS from basic to specific based on the supplied sub-object paths
+};
 
-
+// build up CSS from basic to specific based on the supplied sub-object paths
 var kindStyle = function kindStyle(_ref2) {
   var colorValue = _ref2.colorValue,
-      kind = _ref2.kind,
-      size = _ref2.sizeProp,
-      themePaths = _ref2.themePaths,
-      theme = _ref2.theme;
-  var styles = []; // caller has specified a themeObj to use for styling
-  // relevant for cases like pagination which looks to theme.pagination.button
+    kind = _ref2.kind,
+    size = _ref2.sizeProp,
+    themePaths = _ref2.themePaths,
+    theme = _ref2.theme;
+  var styles = [];
 
+  // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
   var themeObj = typeof kind === 'object' ? kind : theme.button;
   var pad = padFromTheme(size, theme, themeObj, kind);
   themePaths.base.forEach(function (themePath) {
     var obj = getPath(themeObj, themePath);
-
     if (obj) {
       styles.push(kindPartStyles(obj, theme, colorValue));
-
       if (obj.border && obj.border.width && pad && !obj.padding) {
         // Adjust padding from the button.size or just top button.padding
         // to deal with the kind's border width. But don't override any
@@ -106,14 +90,13 @@ var kindStyle = function kindStyle(_ref2) {
         styles.push(adjustPadStyle(pad, obj.border.width));
       }
     }
-  }); // do the styling from the root of the object if caller passes one
+  });
 
+  // do the styling from the root of the object if caller passes one
   if (!themePaths.base.length && typeof kind === 'object') {
     var obj = kind;
-
     if (obj) {
       styles.push(kindPartStyles(obj, theme, colorValue));
-
       if (obj.border && obj.border.width && pad && !obj.padding) {
         // Adjust padding from the button.size or just top button.padding
         // to deal with the kind's border width. But don't override any
@@ -122,21 +105,17 @@ var kindStyle = function kindStyle(_ref2) {
       }
     }
   }
-
   themePaths.hover.forEach(function (themePath) {
     var obj = getPath(themeObj, themePath);
-
     if (obj) {
       var partStyles = kindPartStyles(obj, theme);
       var adjPadStyles = '';
-
       if (obj.border && obj.border.width && pad && !obj.padding) {
         // Adjust padding from the button.size or just top button.padding
         // to deal with the hover's border width. But don't override any
         // padding in the hover or hover.kind itself for backward compatibility
         adjPadStyles = adjustPadStyle(pad, obj.border.width);
       }
-
       if (partStyles.length > 0) {
         styles.push(css(["&:hover{", " ", "}"], partStyles, adjPadStyles));
       }
@@ -144,10 +123,9 @@ var kindStyle = function kindStyle(_ref2) {
   });
   return styles;
 };
-
 var hoverIndicatorStyle = function hoverIndicatorStyle(_ref3) {
   var hoverIndicator = _ref3.hoverIndicator,
-      theme = _ref3.theme;
+    theme = _ref3.theme;
   var themishObj = {};
   if (hoverIndicator === true || hoverIndicator === 'background') themishObj.background = theme.global.hover.background;else if (hoverIndicator.color || hoverIndicator.background) {
     if (hoverIndicator.background) themishObj.background = hoverIndicator.background;
@@ -157,27 +135,21 @@ var hoverIndicatorStyle = function hoverIndicatorStyle(_ref3) {
   if (styles.length > 0) return css(["&:hover{", "}"], styles);
   return '';
 };
-
 var fillStyle = function fillStyle(fillContainer) {
   if (fillContainer === 'horizontal') {
     return 'width: 100%;';
   }
-
   if (fillContainer === 'vertical') {
     return 'height: 100%;';
   }
-
   if (fillContainer) {
     return "\n      width: 100%;\n      height: 100%;\n      max-width: none;\n      flex: 1 0 auto;\n    ";
   }
-
   return undefined;
 };
-
 var plainStyle = function plainStyle(props) {
   return css(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;", ""], props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n      vertical-align: middle;\n    }\n  ");
 };
-
 var StyledButtonKind = styled.button.withConfig({
   // don't let kind attribute leak to DOM
   // https://styled-components.com/docs/api#shouldforwardprop

@@ -2,17 +2,11 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Extend = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _utils = require("grommet/utils");
-
 var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var letterSpace = {
   1: {
     small: '-1px',
@@ -30,13 +24,11 @@ var letterSpace = {
     large: '-0.47px'
   }
 };
-
 var letterSpacing = function letterSpacing(_ref) {
   var level = _ref.level,
-      size = _ref.size;
+    size = _ref.size;
   return level && size ? "letter-spacing: " + letterSpace[level][size] : '';
 };
-
 var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   heading: {
     extend: function extend(props) {
@@ -44,7 +36,6 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-
 var Extend = function Extend() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
@@ -59,7 +50,6 @@ var Extend = function Extend() {
     size: "small"
   }, "This is using the extend property on Heading"));
 };
-
 exports.Extend = Extend;
 var _default = {
   title: 'Type/Heading/Custom Themed/Extend'

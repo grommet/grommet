@@ -21,10 +21,11 @@ export var HeightReplace = function HeightReplace() {
         },
         align: "center"
       }, /*#__PURE__*/React.createElement(Text, null, "item ", item));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 HeightReplace.storyName = 'Variable item height with replace';
 HeightReplace.parameters = {
   chromatic: {

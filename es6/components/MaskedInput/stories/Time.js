@@ -2,9 +2,8 @@ import React from 'react';
 import { Box, MaskedInput } from 'grommet';
 export var Time = function Time() {
   var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -45,10 +44,11 @@ export var Time = function Time() {
       onChange: function onChange(event) {
         return setValue(event.target.value);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 Time.args = {
   full: true
 };

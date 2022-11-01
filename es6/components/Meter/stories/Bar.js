@@ -12,10 +12,11 @@ export var Bar = function Bar() {
     }, /*#__PURE__*/React.createElement(Meter, {
       type: "bar",
       value: value
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Meter/Bar'
 };

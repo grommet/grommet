@@ -1,6 +1,5 @@
 import React from 'react';
 import { Anchor, Box, Paragraph } from 'grommet';
-
 var SimpleAnchor = function SimpleAnchor() {
   return /*#__PURE__*/React.createElement(Box, {
     gap: "medium",
@@ -18,7 +17,6 @@ var SimpleAnchor = function SimpleAnchor() {
     href: "#"
   }), " with surrounding text."));
 };
-
 export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleAnchor, null);
 };

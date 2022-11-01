@@ -2,28 +2,19 @@
 
 exports.__esModule = true;
 exports["default"] = exports.CustomDayCalendar = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var CustomDayCalendar = function CustomDayCalendar() {
   var calendarContent = [7, 8, 9];
-
   var _useState = (0, _react.useState)(),
-      selectedDay = _useState[0],
-      setSelectedDay = _useState[1];
-
+    selectedDay = _useState[0],
+    setSelectedDay = _useState[1];
   var onSelect = function onSelect(value) {
     setSelectedDay(value);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -38,8 +29,8 @@ var CustomDayCalendar = function CustomDayCalendar() {
       fill: true
     }, function (_ref) {
       var date = _ref.date,
-          day = _ref.day,
-          isSelected = _ref.isSelected;
+        day = _ref.day,
+        isSelected = _ref.isSelected;
       var hasContent = calendarContent.includes(day);
       return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
         background: isSelected ? 'light-3' : 'white',
@@ -81,7 +72,7 @@ var CustomDayCalendar = function CustomDayCalendar() {
       fill: true
     }, function (_ref2) {
       var day = _ref2.day,
-          isSelected = _ref2.isSelected;
+        isSelected = _ref2.isSelected;
       return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
         background: isSelected ? 'light-3' : 'white',
         border: true,
@@ -94,11 +85,10 @@ var CustomDayCalendar = function CustomDayCalendar() {
       }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
         size: "large"
       }, day)));
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.CustomDayCalendar = CustomDayCalendar;
 CustomDayCalendar.storyName = 'Custom day';
 var _default = {

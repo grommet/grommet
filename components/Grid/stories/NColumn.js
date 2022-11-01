@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.NColumnGrid = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var NColumnGrid = function NColumnGrid() {
   return (
     /*#__PURE__*/
@@ -32,11 +28,10 @@ var NColumnGrid = function NColumnGrid() {
       background: "brand"
     }, "Item 5"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       background: "brand"
-    }, "Item 6")) // </Grommet>
-
+    }, "Item 6"))
+    // </Grommet>
   );
 };
-
 exports.NColumnGrid = NColumnGrid;
 NColumnGrid.storyName = 'N-column layout';
 NColumnGrid.args = {

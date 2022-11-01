@@ -2,13 +2,11 @@ import React from 'react';
 import { Box, Button, Layer, Spinner, Text } from 'grommet';
 export var Modal = function Modal() {
   var _React$useState = React.useState(),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var _React$useState2 = React.useState(false),
-      isDataLoaded = _React$useState2[0],
-      setIsDataLoaded = _React$useState2[1];
-
+    isDataLoaded = _React$useState2[0],
+    setIsDataLoaded = _React$useState2[1];
   var onOpen = function onOpen() {
     setOpen(true);
     setTimeout(function () {
@@ -16,7 +14,6 @@ export var Modal = function Modal() {
       setIsDataLoaded(true);
     }, 2000);
   };
-
   return /*#__PURE__*/React.createElement(Box, {
     pad: {
       vertical: 'xlarge'

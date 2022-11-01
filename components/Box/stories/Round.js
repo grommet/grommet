@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.RoundBox = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var RoundBox = function RoundBox() {
   return (
     /*#__PURE__*/
@@ -66,11 +62,10 @@ var RoundBox = function RoundBox() {
         corner: 'left',
         size: '15px'
       }
-    }, "left rounded corner px value"))) // </Grommet>
-
+    }, "left rounded corner px value")))
+    // </Grommet>
   );
 };
-
 exports.RoundBox = RoundBox;
 RoundBox.storyName = 'Round';
 var _default = {

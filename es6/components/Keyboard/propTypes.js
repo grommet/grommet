@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     target: PropTypes.oneOf(['component', 'document']),
@@ -18,5 +17,4 @@ if (process.env.NODE_ENV !== 'production') {
     onUp: PropTypes.func
   };
 }
-
 export var KeyboardPropTypes = PropType;

@@ -2,17 +2,12 @@
 
 exports.__esModule = true;
 exports["default"] = exports.HeightReplace = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var allItems = Array(240).fill().map(function (_, i) {
   return i + 1;
 });
-
 var HeightReplace = function HeightReplace() {
   return (
     /*#__PURE__*/
@@ -31,11 +26,10 @@ var HeightReplace = function HeightReplace() {
         },
         align: "center"
       }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "item ", item));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.HeightReplace = HeightReplace;
 HeightReplace.storyName = 'Variable item height with replace';
 HeightReplace.parameters = {

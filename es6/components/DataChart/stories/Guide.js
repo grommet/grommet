@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, DataChart } from 'grommet';
 var data = [];
-
 for (var i = 1; i < 8; i += 1) {
   var v = Math.sin(i / 2.0);
   data.push({
@@ -9,7 +8,6 @@ for (var i = 1; i < 8; i += 1) {
     percent: Math.round(Math.abs(v * 100))
   });
 }
-
 export var Guide = function Guide() {
   return (
     /*#__PURE__*/
@@ -48,10 +46,11 @@ export var Guide = function Guide() {
         width: 'fill'
       },
       detail: true
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/DataChart/Guide'
 };

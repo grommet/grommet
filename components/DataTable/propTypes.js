@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports.DataTablePropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _generalPropTypes = require("../../utils/general-prop-types");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 var parts = ['header', 'body', 'footer'];
@@ -46,7 +41,6 @@ parts.forEach(function (part) {
   borderShape[part] = _propTypes["default"].oneOfType(borderTypes);
 });
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, _generalPropTypes.genericProps, {
     background: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].arrayOf(_propTypes["default"].string), _propTypes["default"].shape(backgroundShape)]),
@@ -116,6 +110,5 @@ if (process.env.NODE_ENV !== 'production') {
     })])
   });
 }
-
 var DataTablePropTypes = PropType;
 exports.DataTablePropTypes = DataTablePropTypes;

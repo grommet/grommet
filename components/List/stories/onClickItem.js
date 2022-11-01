@@ -2,16 +2,11 @@
 
 exports.__esModule = true;
 exports["default"] = exports.OnClickItemList = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 var data = [];
-
 for (var i = 0; i < 40; i += 1) {
   data.push({
     entry: "entry-" + (i + 1),
@@ -21,16 +16,13 @@ for (var i = 0; i < 40; i += 1) {
     paid: (i + 1) * 17 % 1000
   });
 }
-
 var OnClickItemList = function OnClickItemList() {
   var _React$useState = _react["default"].useState(),
-      clicked = _React$useState[0],
-      setClicked = _React$useState[1];
-
+    clicked = _React$useState[0],
+    setClicked = _React$useState[1];
   var _React$useState2 = _react["default"].useState(),
-      show = _React$useState2[0],
-      setShow = _React$useState2[1];
-
+    show = _React$useState2[0],
+    setShow = _React$useState2[1];
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
@@ -62,7 +54,6 @@ var OnClickItemList = function OnClickItemList() {
     }
   }))));
 };
-
 exports.OnClickItemList = OnClickItemList;
 OnClickItemList.storyName = 'onClickItem';
 OnClickItemList.parameters = {

@@ -2,11 +2,8 @@
 
 exports.__esModule = true;
 exports.hacktoberfest2022 = void 0;
-
 var _styledComponents = require("styled-components");
-
 var _object = require("../utils/object");
-
 var hacktoberfest2022 = (0, _object.deepFreeze)({
   defaultMode: 'dark',
   global: {

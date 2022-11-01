@@ -22,10 +22,11 @@ export var Simple = function Simple() {
     }, /*#__PURE__*/React.createElement(Text, {
       textAlign: "center",
       size: "small"
-    }, "\xA9 2019 Copyright Grommet"))) // </Grommet>
-
+    }, "\xA9 2019 Copyright Grommet")))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Layout/Footer/Simple'
 };

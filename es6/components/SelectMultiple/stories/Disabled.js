@@ -4,13 +4,11 @@ import { SelectMultiple } from '../SelectMultiple';
 var defaultOptions = ['French Vanilla Cake with Buttercream', 'Sweet Grilled Peaches', 'Chocolate Chip Cookies', 'Pineapple Upside-Down Cake', 'Peanut Butter Chocolate Fondue', 'Strawberry Shortcake', 'Peach Cobbler', 'German Chocolate Cake', 'Carrot Cake with Cream Cheese Frosting', 'Cinnamon Coffee Cake'];
 export var Disabled = function Disabled() {
   var _useState = useState(defaultOptions),
-      options = _useState[0],
-      setOptions = _useState[1];
-
+    options = _useState[0],
+    setOptions = _useState[1];
   var _useState2 = useState(['Chocolate Chip Cookies', 'Strawberry Shortcake']),
-      valueMultiple = _useState2[0],
-      setValueMultiple = _useState2[1];
-
+    valueMultiple = _useState2[0],
+    setValueMultiple = _useState2[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -25,7 +23,8 @@ export var Disabled = function Disabled() {
       showSelectedInline: true,
       dropProps: {
         width: 'medium'
-      } // icon={<CaretDown />}
+      }
+      // icon={<CaretDown />}
       // icon={false}
       ,
       disabled: ['Chocolate Chip Cookies', 'Pineapple Upside-Down Cake'],
@@ -35,10 +34,11 @@ export var Disabled = function Disabled() {
       onSearch: function onSearch(text) {
         // The line below escapes regular expression special characters:
         // [ \ ^ $ . | ? * + ( )
-        var escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&'); // Create the regular expression with modified value which
+        var escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+
+        // Create the regular expression with modified value which
         // handles escaping special characters. Without escaping special
         // characters, errors will appear in the console
-
         var exp = new RegExp(escapedText, 'i');
         setOptions(defaultOptions.filter(function (o) {
           return exp.test(o);
@@ -51,10 +51,11 @@ export var Disabled = function Disabled() {
         var value = _ref.value;
         setValueMultiple(value);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 Disabled.parameters = {
   chromatic: {
     disable: true

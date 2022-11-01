@@ -14,7 +14,7 @@ export var CustomName = function CustomName() {
       size: "3xl"
     }, "Custom Name"), /*#__PURE__*/React.createElement(NameValueList, null, Object.entries(data).map(function (_ref) {
       var name = _ref[0],
-          value = _ref[1];
+        value = _ref[1];
       return /*#__PURE__*/React.createElement(NameValuePair, {
         name: /*#__PURE__*/React.createElement(Text, {
           size: "small",
@@ -22,10 +22,11 @@ export var CustomName = function CustomName() {
         }, name),
         key: name
       }, value);
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/NameValueList/Custom Name'
 };

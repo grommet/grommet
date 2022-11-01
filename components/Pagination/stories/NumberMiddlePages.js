@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.NumberMiddlePages = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var NumberMiddlePages = function NumberMiddlePages() {
   return (
     /*#__PURE__*/
@@ -25,11 +21,10 @@ var NumberMiddlePages = function NumberMiddlePages() {
       numberItems: 237,
       page: 10,
       numberMiddlePages: 5
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.NumberMiddlePages = NumberMiddlePages;
 NumberMiddlePages.storyName = 'Number middle pages';
 var _default = {

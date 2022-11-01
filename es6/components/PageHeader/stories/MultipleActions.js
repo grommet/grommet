@@ -53,10 +53,11 @@ export var MultipleActions = function MultipleActions() {
       parent: /*#__PURE__*/React.createElement(Anchor, {
         label: "Parent Page"
       })
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 MultipleActions.storyName = 'Multiple Actions';
 export default {
   title: 'Layout/PageHeader/Multiple Actions'

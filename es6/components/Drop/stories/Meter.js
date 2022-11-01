@@ -4,13 +4,10 @@ var align = {
   top: 'bottom',
   left: 'left'
 };
-
 var TestDrop = function TestDrop() {
   var targetRef = useRef();
-
   var _useState = useState(false),
-      setShowDrop = _useState[1];
-
+    setShowDrop = _useState[1];
   useEffect(function () {
     return setShowDrop(true);
   }, []);
@@ -38,8 +35,8 @@ var TestDrop = function TestDrop() {
       target: targetRef.current
     }, /*#__PURE__*/React.createElement(Box, {
       pad: "large"
-    }, "target is an svg"))) // </Grommet>
-
+    }, "target is an svg")))
+    // </Grommet>
   );
 };
 

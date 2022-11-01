@@ -35,10 +35,11 @@ export var Autoplay = function Autoplay() {
     }, /*#__PURE__*/React.createElement(Car, {
       color: "light-2",
       size: "xlarge"
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Media/Carousel/Autoplay'
 };

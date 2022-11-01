@@ -49,10 +49,11 @@ export var GradientCharts = function GradientCharts() {
       color: gradient,
       values: [[10, 20], [20, 30], [30, 15]],
       round: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 GradientCharts.storyName = 'Gradient';
 export default {
   title: 'Visualizations/Chart/Gradient'

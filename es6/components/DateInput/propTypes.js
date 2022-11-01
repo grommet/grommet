@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     buttonProps: PropTypes.shape({}),
@@ -19,5 +18,4 @@ if (process.env.NODE_ENV !== 'production') {
     size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), PropTypes.string])
   };
 }
-
 export var DateInputPropTypes = PropType;

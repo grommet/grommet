@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Legend = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 1; i < 8; i += 1) {
   var v = Math.sin(i / 2.0);
   data.push({
@@ -20,7 +15,6 @@ for (var i = 1; i < 8; i += 1) {
     inverse: 100 - Math.round(Math.abs(v * 50))
   });
 }
-
 var Legend = function Legend() {
   return (
     /*#__PURE__*/
@@ -68,11 +62,10 @@ var Legend = function Legend() {
           granularity: 'medium'
         }
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Legend = Legend;
 var _default = {
   title: 'Visualizations/DataChart/Legend'

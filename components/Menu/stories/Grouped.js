@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Grouped = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Grouped = function Grouped() {
   return (
     /*#__PURE__*/
@@ -35,11 +31,10 @@ var Grouped = function Grouped() {
       }], [{
         label: 'Delete'
       }]]
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Grouped = Grouped;
 Grouped.parameters = {
   chromatic: {

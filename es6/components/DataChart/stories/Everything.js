@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, DataChart } from 'grommet';
 var data = [];
-
 for (var i = 0; i < 13; i += 1) {
   var v = -Math.sin(i / 2.0);
   var v2 = Math.cos(i / 2.0);
@@ -14,7 +13,6 @@ for (var i = 0; i < 13; i += 1) {
     growth: i
   });
 }
-
 export var Everything = function Everything() {
   return (
     /*#__PURE__*/
@@ -87,10 +85,11 @@ export var Everything = function Everything() {
       pad: "small",
       legend: true,
       detail: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/DataChart/Everything'
 };

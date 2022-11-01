@@ -1,14 +1,12 @@
 import React from 'react';
 import { Box, DataChart } from 'grommet';
 var data = [];
-
 for (var i = 1; i < 3; i += 1) {
   var v = Math.sin(i / 2.0);
   data.push({
     percent: Math.abs(v * 100)
   });
 }
-
 export var Pad = function Pad() {
   return (
     /*#__PURE__*/
@@ -33,10 +31,11 @@ export var Pad = function Pad() {
         property: 'percent',
         thickness: 'medium'
       }]
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/DataChart/Pad'
 };

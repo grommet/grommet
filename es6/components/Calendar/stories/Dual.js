@@ -5,21 +5,17 @@ import { Previous } from "grommet-icons/es6/icons/Previous";
 import { Next } from "grommet-icons/es6/icons/Next";
 export var Dual = function Dual() {
   var _useState = useState(),
-      date = _useState[0],
-      setDate = _useState[1];
-
+    date = _useState[0],
+    setDate = _useState[1];
   var _useState2 = useState(),
-      dates = _useState2[0],
-      setDates = _useState2[1];
-
+    dates = _useState2[0],
+    setDates = _useState2[1];
   var _useState3 = useState('2020-08-07T15:13:47.290Z'),
-      reference1 = _useState3[0],
-      setReference1 = _useState3[1];
-
+    reference1 = _useState3[0],
+    setReference1 = _useState3[1];
   var _useState4 = useState('2020-09-01T15:15:34.916Z'),
-      reference2 = _useState4[0],
-      setReference2 = _useState4[1];
-
+    reference2 = _useState4[0],
+    setReference2 = _useState4[1];
   var onSelect = function onSelect(arg) {
     if (Array.isArray(arg)) {
       setDate(undefined);
@@ -29,7 +25,6 @@ export var Dual = function Dual() {
       setDates(undefined);
     }
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -58,9 +53,9 @@ export var Dual = function Dual() {
       },
       header: function header(_ref) {
         var currentDate = _ref.date,
-            locale = _ref.locale,
-            onPreviousMonth = _ref.onPreviousMonth,
-            previousInBound = _ref.previousInBound;
+          locale = _ref.locale,
+          onPreviousMonth = _ref.onPreviousMonth,
+          previousInBound = _ref.previousInBound;
         return /*#__PURE__*/React.createElement(Box, {
           direction: "row",
           align: "center",
@@ -94,9 +89,9 @@ export var Dual = function Dual() {
       },
       header: function header(_ref2) {
         var currentDate = _ref2.date,
-            locale = _ref2.locale,
-            onNextMonth = _ref2.onNextMonth,
-            nextInBound = _ref2.nextInBound;
+          locale = _ref2.locale,
+          onNextMonth = _ref2.onNextMonth,
+          nextInBound = _ref2.nextInBound;
         return /*#__PURE__*/React.createElement(Box, {
           direction: "row",
           align: "center",
@@ -113,10 +108,11 @@ export var Dual = function Dual() {
           onClick: onNextMonth
         }));
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Calendar/Dual'
 };

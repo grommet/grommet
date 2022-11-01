@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Border = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Border = function Border() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "large",
@@ -94,7 +90,6 @@ var Border = function Border() {
     }]
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Loading...")));
 };
-
 exports.Border = Border;
 var _default = {
   title: 'Visualizations/Spinner/Border'

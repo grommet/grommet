@@ -217,7 +217,8 @@ var columns = [{
     color: "text"
   }, "(TiB)")),
   render: function render(datum) {
-    return (// bytes to tebibytes
+    return (
+      // bytes to tebibytes
       (datum.size / Math.pow(2, 40)).toFixed([1])
     );
   },
@@ -233,7 +234,8 @@ var columns = [{
     color: "text"
   }, "(B)")),
   render: function render(datum) {
-    return (// bytes to tebibytes
+    return (
+      // bytes to tebibytes
       (datum.pinnable / Math.pow(2, 40)).toFixed([1])
     );
   },
@@ -257,7 +259,7 @@ var columns = [{
   }, "%"))),
   render: function render(_ref2) {
     var pinnable = _ref2.pinnable,
-        pinned = _ref2.pinned;
+      pinned = _ref2.pinned;
     return /*#__PURE__*/React.createElement(Box, {
       pad: {
         vertical: 'xsmall'
@@ -291,12 +293,10 @@ var columns = [{
     }, savings[1] && "" + savings[1].value);
   }
 }];
-
 var handleClickRow = function handleClickRow(obj) {
   // eslint-disable-next-line no-alert
   alert("\n  Record was clicked:\n  {\n      id: " + obj.id + ",\n      poolName: " + obj.poolName + "\n  }\n\n  You can use onClickRow() to navigate to a record's detail\n  page, open a panel or modal to edit the record, or perform\n  other actions as you see fit.\n  ");
 };
-
 export var MultiplePins = function MultiplePins() {
   return (
     /*#__PURE__*/
@@ -345,10 +345,11 @@ export var MultiplePins = function MultiplePins() {
       pin: true,
       onSelect: function onSelect() {},
       sortable: true
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 MultiplePins.storyName = 'Multiple pins';
 export default {
   title: 'Visualizations/DataTable/Multiple pins'

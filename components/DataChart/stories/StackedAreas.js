@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.StackedAreas = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 0; i < 7; i += 1) {
   data.push({
     date: "2020-07-" + (i % 31 + 1).toString().padStart(2, 0),
@@ -18,7 +13,6 @@ for (var i = 0; i < 7; i += 1) {
     bonus: Math.floor(Math.abs(Math.cos(i / 2.0) * 100))
   });
 }
-
 var StackedAreas = function StackedAreas() {
   return (
     /*#__PURE__*/
@@ -64,11 +58,10 @@ var StackedAreas = function StackedAreas() {
         }
       },
       legend: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.StackedAreas = StackedAreas;
 StackedAreas.storyName = 'Stacked areas';
 var _default = {

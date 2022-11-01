@@ -1,5 +1,5 @@
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React from 'react';
 import { Anchor, Box, Button, Card, CardBody, CardFooter, Collapsible, Heading, Grommet, Image, Paragraph } from 'grommet';
 import { FormDown } from "grommet-icons/es6/icons/FormDown";
@@ -22,16 +22,13 @@ var theme = {
 };
 export var RichFooter = function RichFooter() {
   var _React$useState = React.useState(false),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var _React$useState2 = React.useState(false),
-      favorite = _React$useState2[0],
-      setFavorite = _React$useState2[1];
-
+    favorite = _React$useState2[0],
+    setFavorite = _React$useState2[1];
   var ExpandButton = function ExpandButton(_ref) {
-    var rest = _extends({}, _ref);
-
+    var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
     var Icon = open ? FormUp : FormDown;
     return /*#__PURE__*/React.createElement(Button, _extends({
       hoverIndicator: "light-4",
@@ -40,7 +37,6 @@ export var RichFooter = function RichFooter() {
       })
     }, rest));
   };
-
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme
   }, /*#__PURE__*/React.createElement(Box, {

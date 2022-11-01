@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Menu } from 'grommet';
-
 var SimpleMenu = function SimpleMenu() {
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
@@ -27,7 +26,6 @@ var SimpleMenu = function SimpleMenu() {
     }]
   }));
 };
-
 export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleMenu, null);
 };

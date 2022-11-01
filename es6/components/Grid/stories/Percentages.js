@@ -25,10 +25,11 @@ export var Percentages = function Percentages() {
     }), /*#__PURE__*/React.createElement(Box, {
       gridArea: "main",
       background: "brand"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 Percentages.args = {
   full: true
 };

@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports.dark = void 0;
-
 var _styledComponents = require("styled-components");
-
 var _object = require("../utils/object");
-
 var _colors = require("../utils/colors");
-
 var accentColors = ['#FD6FFF', '#60EB9F', '#60EBE1', '#FFCA58'];
 var neutralColors = ['#EB6060', '#01C781', '#6095EB', '#FFB200'];
 var statusColors = {
@@ -41,13 +37,11 @@ var colors = {
   },
   white: '#FFFFFF'
 };
-
 var colorArray = function colorArray(array, prefix) {
   return array.forEach(function (color, index) {
     colors[prefix + "-" + (index + 1)] = color;
   });
 };
-
 colorArray(accentColors, 'accent');
 colorArray(neutralColors, 'neutral');
 Object.keys(statusColors).forEach(function (color) {

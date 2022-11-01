@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Sizes = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Sizes = function Sizes() {
   var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return (
@@ -88,11 +84,10 @@ var Sizes = function Sizes() {
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       size: "5xl",
       src: src
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
-
 exports.Sizes = Sizes;
 var _default = {
   title: 'Visualizations/Avatar/Sizes'

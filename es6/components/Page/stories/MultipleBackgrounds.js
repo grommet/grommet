@@ -53,10 +53,11 @@ export var MultipleBackgrounds = function MultipleBackgrounds() {
       pad: {
         vertical: 'small'
       }
-    }, "Footer"))) // </Grommet>
-
+    }, "Footer")))
+    // </Grommet>
   );
 };
+
 MultipleBackgrounds.storyName = 'Multiple backgrounds';
 export default {
   title: 'Layout/Page/Multiple backgrounds'

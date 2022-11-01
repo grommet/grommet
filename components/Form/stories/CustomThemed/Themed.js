@@ -2,21 +2,13 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Themed = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _styledComponents = require("styled-components");
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 var _themes = require("grommet/themes");
-
 var _utils = require("../../../../utils");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   formField: {
     border: {
@@ -70,7 +62,6 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-
 var Themed = function Themed() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
@@ -135,7 +126,6 @@ var Themed = function Themed() {
     disabled: true
   }))))));
 };
-
 exports.Themed = Themed;
 var _default = {
   title: 'Input/Form/Custom Themed/Themed'

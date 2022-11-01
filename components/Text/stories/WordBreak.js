@@ -2,16 +2,12 @@
 
 exports.__esModule = true;
 exports["default"] = exports.WordBreak = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
-/* eslint-disable max-len */
 
+/* eslint-disable max-len */
 var WordBreak = function WordBreak() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, wordBreakValues.map(function (value) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -26,8 +22,6 @@ var WordBreak = function WordBreak() {
   }));
 };
 /* eslint-enable max-len */
-
-
 exports.WordBreak = WordBreak;
 WordBreak.storyName = 'Word break';
 var _default = {

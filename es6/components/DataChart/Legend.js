@@ -1,22 +1,21 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React, { useMemo } from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import { Swatch } from './Swatch';
-
 var Legend = function Legend(_ref) {
   var activeProperty = _ref.activeProperty,
-      seriesProp = _ref.series,
-      seriesStyles = _ref.seriesStyles,
-      setActiveProperty = _ref.setActiveProperty;
+    seriesProp = _ref.series,
+    seriesStyles = _ref.seriesStyles,
+    setActiveProperty = _ref.setActiveProperty;
   var series = useMemo(function () {
     return seriesProp.filter(function (s) {
       return seriesStyles[s.property];
     });
   }, [seriesProp, seriesStyles]);
-  var interactive = useMemo( // filter out properties that are used in point chart aspects
+  var interactive = useMemo(
+  // filter out properties that are used in point chart aspects
   function () {
     return series.filter(function (_ref2) {
       var property = _ref2.property;
@@ -32,11 +31,10 @@ var Legend = function Legend(_ref) {
     gap: "small"
   }, series.map(function (_ref3) {
     var property = _ref3.property,
-        label = _ref3.label;
+      label = _ref3.label;
     var isActive = property === activeProperty;
     var swatchProps = {};
     var textProps = {};
-
     if (activeProperty !== undefined) {
       if (!isActive) {
         // swatchProps.color = 'status-disabled';
@@ -45,7 +43,6 @@ var Legend = function Legend(_ref) {
         textProps.color = 'text-strong';
       }
     }
-
     var content = /*#__PURE__*/React.createElement(Box, {
       key: property,
       direction: "row",
@@ -56,7 +53,6 @@ var Legend = function Legend(_ref) {
       },
       gap: "xsmall"
     }, /*#__PURE__*/React.createElement(Swatch, _extends({}, seriesStyles[property], swatchProps)), /*#__PURE__*/React.createElement(Text, textProps, label || property));
-
     if (interactive) {
       content = /*#__PURE__*/React.createElement(Button, {
         key: property,
@@ -67,9 +63,7 @@ var Legend = function Legend(_ref) {
         hoverIndicator: true
       }, content);
     }
-
     return content;
   }));
 };
-
 export { Legend };

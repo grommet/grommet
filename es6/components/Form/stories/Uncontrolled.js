@@ -95,10 +95,11 @@ export var Uncontrolled = function Uncontrolled() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 Uncontrolled.args = {
   full: true
 };

@@ -1,10 +1,10 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React from 'react';
 import { Box, DataTable } from 'grommet';
-import { columns } from './data'; // This story uses intentionally-messy values (e.g. mixed case)
-// to demonstrate case-insensitive sorting
+import { columns } from './data';
 
+// This story uses intentionally-messy values (e.g. mixed case)
+// to demonstrate case-insensitive sorting
 var DATA = [{
   name: 'zoey',
   location: '',
@@ -74,12 +74,11 @@ var DATA = [{
 }];
 export var Sort = function Sort() {
   var _React$useState = React.useState({
-    property: 'name',
-    direction: 'desc'
-  }),
-      sort = _React$useState[0],
-      setSort = _React$useState[1];
-
+      property: 'name',
+      direction: 'desc'
+    }),
+    sort = _React$useState[0],
+    setSort = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -97,10 +96,11 @@ export var Sort = function Sort() {
       sort: sort,
       onSort: setSort,
       resizeable: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/DataTable/Sort'
 };

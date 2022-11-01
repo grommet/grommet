@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.BorderBox = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var BorderBox = function BorderBox() {
   return (
     /*#__PURE__*/
@@ -102,11 +98,10 @@ var BorderBox = function BorderBox() {
           size: 'large'
         }
       }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "between"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, direction));
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.BorderBox = BorderBox;
 BorderBox.storyName = 'Border';
 var _default = {

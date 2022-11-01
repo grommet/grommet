@@ -2,19 +2,12 @@
 
 exports.__esModule = true;
 exports["default"] = exports.FieldBorderPosition = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 var _utils = require("grommet/utils");
-
 var _themes = require("grommet/themes");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var allOptions = Array(3).fill().map(function (_, i) {
   return "option " + (i + 1);
 });
@@ -61,16 +54,13 @@ var borderPositions = [{
     }
   })
 }];
-
 var FormExample = function FormExample(_ref) {
   var index = _ref.index,
-      borderPosition = _ref.borderPosition,
-      theme = _ref.theme;
-
+    borderPosition = _ref.borderPosition,
+    theme = _ref.theme;
   var _useState = (0, _react.useState)(''),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "#F7F7F7",
     gap: "medium",
@@ -133,7 +123,6 @@ var FormExample = function FormExample(_ref) {
     name: "textArea"
   })))));
 };
-
 var FieldBorderPosition = function FieldBorderPosition() {
   return (
     /*#__PURE__*/
@@ -154,11 +143,10 @@ var FieldBorderPosition = function FieldBorderPosition() {
         theme: example.theme,
         index: index
       });
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.FieldBorderPosition = FieldBorderPosition;
 FieldBorderPosition.storyName = 'Field border position';
 var _default = {

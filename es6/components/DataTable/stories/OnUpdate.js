@@ -1,31 +1,33 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 /* eslint-disable no-param-reassign */
 import React, { useCallback, useMemo, useState } from 'react';
-import { Box, DataTable } from 'grommet'; // Source code for the data can be found here
+import { Box, DataTable } from 'grommet';
+
+// Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
+import { groupColumns, locations, DATA } from './data';
 
-import { groupColumns, locations, DATA } from './data'; // The key of the header selection state in groupBy.select
+// The key of the header selection state in groupBy.select
 // Other keys in groupBy.select will be group id's.
-
 var HEADER_KEY = '';
 var SELECTED = {
   none: 'none',
   some: 'some',
   all: 'all'
 };
-var expandable = [].concat(locations); // copy groupColumns but remove the primaryKey from any that have it.
+var expandable = [].concat(locations);
 
+// copy groupColumns but remove the primaryKey from any that have it.
 var columns = groupColumns.map(function (col) {
   return _extends({}, col, {
     primary: false
   });
 });
 var numExtra = 20;
-
 var buildGroups = function buildGroups() {
-  var data = [].concat(DATA); // Add some extra people to each location
+  var data = [].concat(DATA);
 
+  // Add some extra people to each location
   locations.forEach(function (location, index) {
     for (var i = 0; i < numExtra * (index + 1); i += 1) {
       data.push({
@@ -57,14 +59,11 @@ var buildGroups = function buildGroups() {
   });
   return [nextGroups, nextGroupMap];
 };
-
 var _buildGroups = buildGroups(),
-    groups = _buildGroups[0],
-    groupMap = _buildGroups[1];
-
+  groups = _buildGroups[0],
+  groupMap = _buildGroups[1];
 var calcHeaderSelected = function calcHeaderSelected(nextGroupSelected, selected) {
   var _extends2;
-
   // Figure out if everything is selected or just partial or none.
   var totals = {
     all: 0,
@@ -83,7 +82,6 @@ var calcHeaderSelected = function calcHeaderSelected(nextGroupSelected, selected
         var selectedMembers = keys.filter(function (key) {
           return selected.includes(key);
         }).length;
-
         if (selectedMembers === 0) {
           totals.none += 1;
         } else if (group.members.length === selectedMembers) {
@@ -95,22 +93,18 @@ var calcHeaderSelected = function calcHeaderSelected(nextGroupSelected, selected
     }
   });
   var headerSelected = SELECTED.all;
-
   if (totals.all === 0 && totals.some === 0) {
     headerSelected = SELECTED.none;
   } else if (totals.some > 0 || totals.all > 0 && totals.none > 0) {
     headerSelected = SELECTED.some;
   }
-
   return _extends({}, nextGroupSelected, (_extends2 = {}, _extends2[HEADER_KEY] = headerSelected, _extends2));
 };
-
 var sortCompare = function sortCompare(a, b, sort) {
   var v1 = a[sort.property] || '';
   var v2 = b[sort.property] || '';
   var dir = sort.direction || 'asc';
   var result = 0;
-
   if (typeof v1 === 'string' && typeof v2 === 'string') {
     result = v1.localeCompare(v2, 'en', {
       sensitivity: 'base'
@@ -122,30 +116,29 @@ var sortCompare = function sortCompare(a, b, sort) {
   } else {
     result = 1;
   }
-
   return dir === 'desc' ? -result : result;
 };
-
 var getData = function getData(_ref) {
   var expanded = _ref.expanded,
-      sort = _ref.sort,
-      show = _ref.show,
-      count = _ref.count;
-  var items = []; // Sort the groups by location
+    sort = _ref.sort,
+    show = _ref.show,
+    count = _ref.count;
+  var items = [];
 
+  // Sort the groups by location
   groups.sort(function (a, b) {
     var dir = (sort == null ? void 0 : sort.property) === 'location' ? sort.direction || 'asc' : 'asc';
     var result = a.id.localeCompare(b.id, 'en', {
       sensitivity: 'base'
     });
     return dir === 'desc' ? -result : result;
-  }); // add any non-empty groups to items. Also add members of
-  // expanded groups.
+  });
 
+  // add any non-empty groups to items. Also add members of
+  // expanded groups.
   groups.forEach(function (_ref2) {
     var id = _ref2.id,
-        members = _ref2.members;
-
+      members = _ref2.members;
     if (members.length > 0) {
       if (id) {
         var paid = members.reduce(function (prev, curr) {
@@ -157,14 +150,12 @@ var getData = function getData(_ref) {
           paid: paid
         });
       }
-
       if (!id || expanded != null && expanded.includes(id)) {
         if (sort != null && sort.property) {
           members.sort(function (a, b) {
             return sortCompare(a, b, sort);
           });
         }
-
         items.push.apply(items, members);
       }
     }
@@ -173,38 +164,31 @@ var getData = function getData(_ref) {
   var result = count ? items.slice(0, Math.max(count, start + count)) : items;
   return result;
 };
-
 export var OnUpdateDataTable = function OnUpdateDataTable() {
   var step = 50;
-
   var _useState = useState({}),
-      groupSelected = _useState[0],
-      setGroupSelected = _useState[1];
-
+    groupSelected = _useState[0],
+    setGroupSelected = _useState[1];
   var _useState2 = useState([]),
-      select = _useState2[0],
-      setSelect = _useState2[1];
-
+    select = _useState2[0],
+    setSelect = _useState2[1];
   var _useState3 = useState(['Fort Collins']),
-      expand = _useState3[0],
-      setExpand = _useState3[1];
-
+    expand = _useState3[0],
+    setExpand = _useState3[1];
   var _useState4 = useState(function () {
-    return getData({
-      expanded: expand,
-      sort: {
-        property: 'name',
-        direction: 'asc'
-      },
-      count: step
-    });
-  }),
-      data = _useState4[0],
-      setData = _useState4[1];
-
+      return getData({
+        expanded: expand,
+        sort: {
+          property: 'name',
+          direction: 'asc'
+        },
+        count: step
+      });
+    }),
+    data = _useState4[0],
+    setData = _useState4[1];
   var onSelect = useCallback(function (selected, row) {
     var groupUpdates = {};
-
     if (row != null && row.location) {
       // this is a member of a group. Update the group selection state
       var memberKeys = groupMap[row.location].members.map(function (_ref3) {
@@ -214,7 +198,6 @@ export var OnUpdateDataTable = function OnUpdateDataTable() {
       var selectedMembers = selected.filter(function (s) {
         return memberKeys.includes(s);
       });
-
       if (selectedMembers.length === 0) {
         groupUpdates[row.location] = SELECTED.none;
       } else if (selectedMembers.length === memberKeys.length) {
@@ -223,7 +206,6 @@ export var OnUpdateDataTable = function OnUpdateDataTable() {
         groupUpdates[row.location] = SELECTED.some;
       }
     }
-
     setGroupSelected(function (prev) {
       return calcHeaderSelected(_extends({}, prev, groupUpdates), selected);
     });
@@ -232,7 +214,6 @@ export var OnUpdateDataTable = function OnUpdateDataTable() {
   var onGroupSelect = useCallback(function (selected, row, groupBySelected) {
     var nextSelected;
     var nextGroupSelected;
-
     if (row) {
       var memberKeys = groupMap[row.id].members.map(function (_ref4) {
         var id = _ref4.id;
@@ -242,33 +223,27 @@ export var OnUpdateDataTable = function OnUpdateDataTable() {
       nextSelected = selected.filter(function (s) {
         return !memberKeys.includes(s);
       });
-
       if (groupSelected[row.id] === SELECTED.some || groupSelected[row.id] === SELECTED.all) {
         nextGroupSelected[row.id] = SELECTED.none;
       } else {
         nextSelected = [].concat(nextSelected, memberKeys);
         nextGroupSelected[row.id] = SELECTED.all;
       }
-
       nextGroupSelected = calcHeaderSelected(nextGroupSelected, nextSelected);
     } else {
       // The header was selected/deselected
       nextGroupSelected = {};
       nextSelected = [];
-
       if (groupBySelected[HEADER_KEY] === SELECTED.all) {
         // add all groups and keys
         groups.forEach(function (_ref5) {
           var id = _ref5.id,
-              members = _ref5.members;
-
+            members = _ref5.members;
           if (members.length > 0) {
             var _nextSelected;
-
             if (id) {
               nextGroupSelected[id] = SELECTED.all;
             }
-
             (_nextSelected = nextSelected).push.apply(_nextSelected, members.map(function (datum) {
               return datum.id;
             }));
@@ -279,7 +254,6 @@ export var OnUpdateDataTable = function OnUpdateDataTable() {
         nextSelected = [];
       }
     }
-
     setSelect(nextSelected);
     setGroupSelected(nextGroupSelected);
   }, [groupSelected]);
@@ -313,10 +287,11 @@ export var OnUpdateDataTable = function OnUpdateDataTable() {
       },
       select: select,
       step: step
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 OnUpdateDataTable.storyName = 'OnUpdate';
 export default {
   title: 'Visualizations/DataTable/OnUpdate'

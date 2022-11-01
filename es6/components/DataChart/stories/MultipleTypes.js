@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, DataChart, Text } from 'grommet';
 var data = [];
-
 for (var i = 0; i < 13; i += 1) {
   var v = -Math.sin(i / 2.0);
   data.push({
@@ -9,7 +8,6 @@ for (var i = 0; i < 13; i += 1) {
     amount: Math.floor(v * 100)
   });
 }
-
 export var MultipleTypes = function MultipleTypes() {
   return (
     /*#__PURE__*/
@@ -66,10 +64,11 @@ export var MultipleTypes = function MultipleTypes() {
       },
       gap: "medium",
       pad: "small"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 MultipleTypes.storyName = 'Multiple types';
 export default {
   title: 'Visualizations/DataChart/Multiple types'

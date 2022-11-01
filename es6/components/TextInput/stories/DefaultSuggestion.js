@@ -5,17 +5,14 @@ var suggestions = Array(100).fill().map(function (_, i) {
 });
 export var DefaultSuggestion = function DefaultSuggestion() {
   var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var onChange = function onChange(event) {
     return setValue(event.target.value);
   };
-
   var onSelect = function onSelect(event) {
     return setValue(event.suggestion);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -35,10 +32,11 @@ export var DefaultSuggestion = function DefaultSuggestion() {
       suggestions: suggestions,
       defaultSuggestion: 1,
       "aria-label": "Input Text"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 DefaultSuggestion.storyName = 'Default suggestion';
 DefaultSuggestion.parameters = {
   chromatic: {

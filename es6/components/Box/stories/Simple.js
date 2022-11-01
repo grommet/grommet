@@ -46,10 +46,11 @@ export var SimpleBox = function SimpleBox() {
     }), /*#__PURE__*/React.createElement(Button, {
       label: "Button",
       onClick: function onClick() {}
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 SimpleBox.storyName = 'Simple';
 export default {
   title: 'Layout/Box/Simple'

@@ -14,10 +14,11 @@ export var Fill = function Fill() {
     }, /*#__PURE__*/React.createElement(Calendar, {
       fill: true,
       daysOfWeek: true
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Calendar/Fill'
 };

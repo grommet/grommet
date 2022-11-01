@@ -1,14 +1,12 @@
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React, { useReducer, useEffect } from 'react';
 import { Box, Diagram, Stack, Text } from 'grommet';
 import { Diamond } from "grommet-icons/es6/icons/Diamond";
 import { data } from './data';
-
 var connection = function connection(fromTarget, toTarget, _temp) {
   var _ref = _temp === void 0 ? {} : _temp,
-      rest = _extends({}, _ref);
-
+    rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   return _extends({
     fromTarget: fromTarget,
     toTarget: toTarget,
@@ -19,15 +17,14 @@ var connection = function connection(fromTarget, toTarget, _temp) {
     type: 'curved'
   }, rest);
 };
-
 var DiamondContainer = function DiamondContainer(_ref2) {
   var carat = _ref2.carat,
-      color = _ref2.color,
-      cut = _ref2.cut,
-      align = _ref2.align,
-      id = _ref2.id,
-      name = _ref2.name,
-      textSize = _ref2.textSize;
+    color = _ref2.color,
+    cut = _ref2.cut,
+    align = _ref2.align,
+    id = _ref2.id,
+    name = _ref2.name,
+    textSize = _ref2.textSize;
   return /*#__PURE__*/React.createElement(Box, {
     align: align || 'center',
     alignSelf: "center",
@@ -51,10 +48,9 @@ var DiamondContainer = function DiamondContainer(_ref2) {
     size: textSize
   }, " Cut: ", cut, " ")));
 };
-
 var Container = function Container(_ref3) {
   var node = _ref3.node,
-      index = _ref3.index;
+    index = _ref3.index;
   return /*#__PURE__*/React.createElement(DiamondContainer, {
     carat: node.carat,
     color: node.color,
@@ -65,16 +61,13 @@ var Container = function Container(_ref3) {
     textSize: "small"
   });
 };
-
 export var Animated = function Animated() {
   var reducer = function reducer(draw) {
     return !draw;
   };
-
   var _useReducer = useReducer(reducer, true),
-      draw = _useReducer[0],
-      toogleDraw = _useReducer[1];
-
+    draw = _useReducer[0],
+    toogleDraw = _useReducer[1];
   useEffect(function () {
     var timer = setInterval(function () {
       toogleDraw();
@@ -84,7 +77,6 @@ export var Animated = function Animated() {
     };
   }, [toogleDraw]);
   var connections = [];
-
   if (draw) {
     connections.push(connection('4', '1', {
       anchor: 'vertical'
@@ -96,7 +88,6 @@ export var Animated = function Animated() {
       anchor: 'vertical'
     }));
   }
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -137,10 +128,11 @@ export var Animated = function Animated() {
         duration: 3000
       },
       connections: connections
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Diagram/Animated'
 };

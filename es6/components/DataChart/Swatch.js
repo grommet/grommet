@@ -1,18 +1,16 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { normalizeColor, parseMetricToNum } from '../../utils';
-
 var Swatch = function Swatch(_ref) {
   var aspect = _ref.aspect,
-      color = _ref.color,
-      dash = _ref.dash,
-      opacityProp = _ref.opacity,
-      point = _ref.point,
-      round = _ref.round,
-      thickness = _ref.thickness,
-      type = _ref.type;
+    color = _ref.color,
+    dash = _ref.dash,
+    opacityProp = _ref.opacity,
+    point = _ref.point,
+    round = _ref.round,
+    thickness = _ref.thickness,
+    type = _ref.type;
   var theme = useContext(ThemeContext);
   var dim = parseInt(theme.global.spacing, 10) / 2;
   var half = dim / 2;
@@ -83,9 +81,7 @@ var Swatch = function Swatch(_ref) {
   } else {
     // draw a line oriented based on the type and then match style
     var strokeWidth = parseMetricToNum(theme.global.edgeSize[thickness]) || dim;
-
     var _d;
-
     if (type === 'line' || type === 'area') {
       width = Math.max(width, strokeWidth * 4);
       height = strokeWidth;
@@ -94,7 +90,6 @@ var Swatch = function Swatch(_ref) {
       width = strokeWidth;
       _d = "M " + width / 2 + " 0 L " + width / 2 + " " + dim;
     }
-
     fill = 'none';
     stroke = normalizedColor;
     var strokeProps = {};
@@ -115,5 +110,4 @@ var Swatch = function Swatch(_ref) {
     stroke: stroke
   }, content);
 };
-
 export { Swatch };

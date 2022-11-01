@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { colorPropType } from '../../utils/general-prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     a11yTitle: PropTypes.string,
@@ -19,5 +18,4 @@ if (process.env.NODE_ENV !== 'production') {
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
   };
 }
-
 export var RangeInputPropTypes = PropType;

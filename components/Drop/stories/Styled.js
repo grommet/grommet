@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Styled = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var alignBottomLeft = {
   top: 'bottom',
   left: 'left'
@@ -19,13 +14,10 @@ var alignTopLeft = {
   bottom: 'top',
   left: 'left'
 };
-
 var StyledDrop = function StyledDrop() {
   var targetRef = (0, _react.useRef)();
-
   var _useState = (0, _react.useState)(false),
-      setShowDrop = _useState[1];
-
+    setShowDrop = _useState[1];
   (0, _react.useEffect)(function () {
     setShowDrop(true);
   }, []);
@@ -62,15 +54,14 @@ var StyledDrop = function StyledDrop() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "large"
-    }, "Drop Contents with round, background and margin")))) // </Grommet>
-
+    }, "Drop Contents with round, background and margin"))))
+    // </Grommet>
   );
 };
 
 var Styled = function Styled() {
   return /*#__PURE__*/_react["default"].createElement(StyledDrop, null);
 };
-
 exports.Styled = Styled;
 Styled.parameters = {
   chromatic: {

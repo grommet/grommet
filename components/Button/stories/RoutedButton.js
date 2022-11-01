@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.RoutedButton = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var RoutedButton = function RoutedButton() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
@@ -21,7 +17,6 @@ var RoutedButton = function RoutedButton() {
     path: "/"
   }));
 };
-
 exports.RoutedButton = RoutedButton;
 RoutedButton.storyName = 'Routed button';
 var _default = {

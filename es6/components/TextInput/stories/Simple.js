@@ -2,13 +2,11 @@ import React from 'react';
 import { Box, TextInput } from 'grommet';
 export var Simple = function Simple() {
   var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var onChange = function onChange(event) {
     return setValue(event.target.value);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -24,10 +22,11 @@ export var Simple = function Simple() {
       value: value,
       onChange: onChange,
       "aria-label": "Input Text"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 Simple.parameters = {
   chromatic: {
     disable: true

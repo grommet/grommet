@@ -1,9 +1,6 @@
 var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React, { forwardRef, useCallback, useContext, useMemo, useRef, useState, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -22,7 +19,6 @@ var headingPadMap = {
   medium: 'small',
   large: 'medium'
 };
-
 var getLocaleString = function getLocaleString(value, locale) {
   return value == null ? void 0 : value.toLocaleDateString(locale, {
     month: 'long',
@@ -30,16 +26,13 @@ var getLocaleString = function getLocaleString(value, locale) {
     year: 'numeric'
   });
 };
-
 var currentlySelectedString = function currentlySelectedString(value, locale) {
   var selected;
-
   if (value instanceof Date) {
     selected = "Currently selected " + getLocaleString(value, locale) + ";";
   } else if (value != null && value.length) {
     selected = "Currently selected " + value.map(function (item) {
       var dates;
-
       if (!Array.isArray(item)) {
         dates = "" + getLocaleString(item, locale);
       } else {
@@ -47,24 +40,22 @@ var currentlySelectedString = function currentlySelectedString(value, locale) {
         var end = item[1] !== undefined ? getLocaleString(item[1], locale) : 'none';
         dates = start + " through " + end;
       }
-
       return dates;
     });
   } else {
     selected = 'No date selected';
   }
-
   return selected;
-}; // calendar value may be a single date, multiple dates, a range of dates
+};
+
+// calendar value may be a single date, multiple dates, a range of dates
 // supplied as ISOstrings.
-
-
 var normalizeInput = function normalizeInput(dateValue) {
   var result;
-
   if (dateValue instanceof Date) {
     result = dateValue;
-  } // date may be an empty string ''
+  }
+  // date may be an empty string ''
   else if (typeof dateValue === 'string' && dateValue.length) {
     result = setHoursWithOffset(dateValue);
   } else if (Array.isArray(dateValue)) {
@@ -72,25 +63,18 @@ var normalizeInput = function normalizeInput(dateValue) {
       return normalizeInput(d);
     });
   }
-
   return result;
 };
-
 var normalizeOutput = function normalizeOutput(dateValue, outputFormat) {
   var result;
-
   var normalize = function normalize(value) {
     var normalizedValue = value.toISOString();
-
     if (normalizedValue && outputFormat === 'no timezone') {
       var _handleOffset$toISOSt = handleOffset(normalizedValue).toISOString().split('T');
-
       normalizedValue = _handleOffset$toISOSt[0];
     }
-
     return normalizedValue;
   };
-
   if (dateValue instanceof Date) {
     result = normalize(dateValue);
   } else if (typeof dateValue === 'undefined') {
@@ -100,20 +84,17 @@ var normalizeOutput = function normalizeOutput(dateValue, outputFormat) {
       return normalizeOutput(d, outputFormat);
     });
   }
-
   return result;
-}; // format value to [[]] for internal functions
+};
 
-
+// format value to [[]] for internal functions
 var normalizeRange = function normalizeRange(value, activeDate) {
   var range = value;
   if (range instanceof Date) range = activeDate === 'start' ? [[undefined, range]] : [[range, undefined]];else if (Array.isArray(range) && !Array.isArray(range[0])) range = [range];
   return range;
 };
-
 var getReference = function getReference(reference, value) {
   var nextReference;
-
   if (value) {
     if (Array.isArray(value)) {
       if (value[0] instanceof Date) {
@@ -131,53 +112,46 @@ var getReference = function getReference(reference, value) {
     nextReference = new Date();
     nextReference.setHours(0, 0, 0, 0);
   }
-
   return nextReference;
 };
-
 var buildDisplayBounds = function buildDisplayBounds(reference, firstDayOfWeek) {
   var start = new Date(reference);
   start.setDate(1); // first of month
+
   // In case Sunday is the first day of the month, and the user asked for Monday
   // to be the first day of the week, then we need to include Sunday and six
   // days prior.
-
-  start = start.getDay() === 0 && firstDayOfWeek === 1 ? start = subtractDays(start, 6) : // beginning of week
+  start = start.getDay() === 0 && firstDayOfWeek === 1 ? start = subtractDays(start, 6) :
+  // beginning of week
   start = subtractDays(start, start.getDay() - firstDayOfWeek);
   var end = addDays(start, 7 * 5 + 7); // 5 weeks to end of week
-
   return [start, end];
 };
-
 export var getOutputFormat = function getOutputFormat(dates) {
   if (typeof dates === 'string' && (dates == null ? void 0 : dates.indexOf('T')) === -1) {
     return 'no timezone';
   }
-
   if (Array.isArray(dates)) {
     return getOutputFormat(dates[0]);
   }
-
   return 'date timezone';
 };
 var millisecondsPerYear = 31557600000;
-
 var CalendarDayButton = function CalendarDayButton(props) {
   return /*#__PURE__*/React.createElement(Button, _extends({
     tabIndex: -1,
     plain: true
   }, props));
 };
-
 var CalendarDay = function CalendarDay(_ref) {
   var children = _ref.children,
-      fill = _ref.fill,
-      size = _ref.size,
-      isInRange = _ref.isInRange,
-      isSelected = _ref.isSelected,
-      otherMonth = _ref.otherMonth,
-      _ref$buttonProps = _ref.buttonProps,
-      buttonProps = _ref$buttonProps === void 0 ? {} : _ref$buttonProps;
+    fill = _ref.fill,
+    size = _ref.size,
+    isInRange = _ref.isInRange,
+    isSelected = _ref.isSelected,
+    otherMonth = _ref.otherMonth,
+    _ref$buttonProps = _ref.buttonProps,
+    buttonProps = _ref$buttonProps === void 0 ? {} : _ref$buttonProps;
   return /*#__PURE__*/React.createElement(StyledDayContainer, {
     role: "gridcell",
     sizeProp: size,
@@ -193,13 +167,11 @@ var CalendarDay = function CalendarDay(_ref) {
     fillContainer: fill
   }, children)));
 };
-
 var CalendarCustomDay = function CalendarCustomDay(_ref2) {
   var children = _ref2.children,
-      fill = _ref2.fill,
-      size = _ref2.size,
-      buttonProps = _ref2.buttonProps;
-
+    fill = _ref2.fill,
+    size = _ref2.size,
+    buttonProps = _ref2.buttonProps;
   if (!buttonProps) {
     return /*#__PURE__*/React.createElement(StyledDayContainer, {
       role: "gridcell",
@@ -207,7 +179,6 @@ var CalendarCustomDay = function CalendarCustomDay(_ref2) {
       fillContainer: fill
     }, children);
   }
-
   return /*#__PURE__*/React.createElement(StyledDayContainer, {
     role: "gridcell",
     sizeProp: size,
@@ -216,56 +187,50 @@ var CalendarCustomDay = function CalendarCustomDay(_ref2) {
     fill: fill
   }, buttonProps), children));
 };
-
 var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   var activeDateProp = _ref3.activeDate,
-      _ref3$animate = _ref3.animate,
-      animate = _ref3$animate === void 0 ? true : _ref3$animate,
-      boundsProp = _ref3.bounds,
-      children = _ref3.children,
-      dateProp = _ref3.date,
-      datesProp = _ref3.dates,
-      daysOfWeek = _ref3.daysOfWeek,
-      disabled = _ref3.disabled,
-      initialFocus = _ref3.initialFocus,
-      fill = _ref3.fill,
-      _ref3$firstDayOfWeek = _ref3.firstDayOfWeek,
-      firstDayOfWeek = _ref3$firstDayOfWeek === void 0 ? 0 : _ref3$firstDayOfWeek,
-      header = _ref3.header,
-      _ref3$locale = _ref3.locale,
-      locale = _ref3$locale === void 0 ? 'en-US' : _ref3$locale,
-      messages = _ref3.messages,
-      onReference = _ref3.onReference,
-      onSelect = _ref3.onSelect,
-      range = _ref3.range,
-      referenceProp = _ref3.reference,
-      _ref3$showAdjacentDay = _ref3.showAdjacentDays,
-      showAdjacentDays = _ref3$showAdjacentDay === void 0 ? true : _ref3$showAdjacentDay,
-      _ref3$size = _ref3.size,
-      size = _ref3$size === void 0 ? 'medium' : _ref3$size,
-      timestampProp = _ref3.timestamp,
-      rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
-
+    _ref3$animate = _ref3.animate,
+    animate = _ref3$animate === void 0 ? true : _ref3$animate,
+    boundsProp = _ref3.bounds,
+    children = _ref3.children,
+    dateProp = _ref3.date,
+    datesProp = _ref3.dates,
+    daysOfWeek = _ref3.daysOfWeek,
+    disabled = _ref3.disabled,
+    initialFocus = _ref3.initialFocus,
+    fill = _ref3.fill,
+    _ref3$firstDayOfWeek = _ref3.firstDayOfWeek,
+    firstDayOfWeek = _ref3$firstDayOfWeek === void 0 ? 0 : _ref3$firstDayOfWeek,
+    header = _ref3.header,
+    _ref3$locale = _ref3.locale,
+    locale = _ref3$locale === void 0 ? 'en-US' : _ref3$locale,
+    messages = _ref3.messages,
+    onReference = _ref3.onReference,
+    onSelect = _ref3.onSelect,
+    range = _ref3.range,
+    referenceProp = _ref3.reference,
+    _ref3$showAdjacentDay = _ref3.showAdjacentDays,
+    showAdjacentDays = _ref3$showAdjacentDay === void 0 ? true : _ref3$showAdjacentDay,
+    _ref3$size = _ref3.size,
+    size = _ref3$size === void 0 ? 'medium' : _ref3$size,
+    timestampProp = _ref3.timestamp,
+    rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var announce = useContext(AnnounceContext);
-
   var _useContext = useContext(MessageContext),
-      format = _useContext.format; // when mousedown, we don't want to let Calendar set
+    format = _useContext.format;
+
+  // when mousedown, we don't want to let Calendar set
   // active date to firstInMonth
-
-
   var _useState = useState(false),
-      mouseDown = _useState[0],
-      setMouseDown = _useState[1];
-
+    mouseDown = _useState[0],
+    setMouseDown = _useState[1];
   var onMouseDown = function onMouseDown() {
     return setMouseDown(true);
   };
-
   var onMouseUp = function onMouseUp() {
     return setMouseDown(false);
   };
-
   useEffect(function () {
     document.addEventListener('mousedown', onMouseDown);
     document.addEventListener('mouseup', onMouseUp);
@@ -273,83 +238,75 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       document.removeEventListener('mousedown', onMouseDown);
       document.removeEventListener('mouseup', onMouseUp);
     };
-  }, []); // set activeDate when caller changes it, allows us to change
+  }, []);
+
+  // set activeDate when caller changes it, allows us to change
   // it internally too
-
   var _useState2 = useState(dateProp && typeof dateProp === 'string' && range ? 'end' : 'start'),
-      activeDate = _useState2[0],
-      setActiveDate = _useState2[1];
-
+    activeDate = _useState2[0],
+    setActiveDate = _useState2[1];
   useEffect(function () {
     if (activeDateProp) setActiveDate(activeDateProp);
   }, [activeDateProp]);
-
   var _useState3 = useState(normalizeInput(dateProp || datesProp)),
-      value = _useState3[0],
-      setValue = _useState3[1];
-
+    value = _useState3[0],
+    setValue = _useState3[1];
   useEffect(function () {
     var val = dateProp || datesProp;
     setValue(normalizeInput(val));
   }, [dateProp, datesProp]);
-
   var _useState4 = useState(getReference(normalizeInput(referenceProp), value)),
-      reference = _useState4[0],
-      setReference = _useState4[1];
-
+    reference = _useState4[0],
+    setReference = _useState4[1];
   useEffect(function () {
     if (value) {
       setReference(getReference(normalizeInput(referenceProp), value));
     }
   }, [referenceProp, value]);
-
   var _useState5 = useState(getOutputFormat(dateProp || datesProp)),
-      outputFormat = _useState5[0],
-      setOutputFormat = _useState5[1];
-
+    outputFormat = _useState5[0],
+    setOutputFormat = _useState5[1];
   useEffect(function () {
     setOutputFormat(getOutputFormat(dateProp || datesProp));
-  }, [dateProp, datesProp]); // normalize bounds
+  }, [dateProp, datesProp]);
 
+  // normalize bounds
   var _useState6 = useState(boundsProp),
-      bounds = _useState6[0],
-      setBounds = _useState6[1];
-
+    bounds = _useState6[0],
+    setBounds = _useState6[1];
   useEffect(function () {
     if (boundsProp) setBounds(boundsProp);else setBounds(undefined);
-  }, [boundsProp]); // calculate the bounds we display based on the reference
+  }, [boundsProp]);
 
+  // calculate the bounds we display based on the reference
   var _useState7 = useState(buildDisplayBounds(reference, firstDayOfWeek)),
-      displayBounds = _useState7[0],
-      setDisplayBounds = _useState7[1];
-
+    displayBounds = _useState7[0],
+    setDisplayBounds = _useState7[1];
   var _useState8 = useState(),
-      targetDisplayBounds = _useState8[0],
-      setTargetDisplayBounds = _useState8[1];
-
+    targetDisplayBounds = _useState8[0],
+    setTargetDisplayBounds = _useState8[1];
   var _useState9 = useState(),
-      slide = _useState9[0],
-      setSlide = _useState9[1];
-
+    slide = _useState9[0],
+    setSlide = _useState9[1];
   var _useState10 = useState(),
-      animating = _useState10[0],
-      setAnimating = _useState10[1]; // When the reference changes, we need to update the displayBounds.
+    animating = _useState10[0],
+    setAnimating = _useState10[1];
+
+  // When the reference changes, we need to update the displayBounds.
   // This is easy when we aren't animating. If we are animating,
   // we temporarily increase the displayBounds to be the union of the old
   // and new ones and set slide to drive the animation. We keep track
   // of where we are heading via targetDisplayBounds. When the animation
   // finishes, we prune displayBounds down to where we are headed and
   // clear the slide and targetDisplayBounds.
-
-
   useEffect(function () {
-    var nextDisplayBounds = buildDisplayBounds(reference, firstDayOfWeek); // Checks if the difference between the current and next DisplayBounds is
+    var nextDisplayBounds = buildDisplayBounds(reference, firstDayOfWeek);
+
+    // Checks if the difference between the current and next DisplayBounds is
     // greater than a year. If that's the case, calendar should update without
     // animation.
-
     if (nextDisplayBounds[0].getTime() !== displayBounds[0].getTime() && nextDisplayBounds[1].getTime() !== displayBounds[1].getTime()) {
       var diffBoundsAboveYear = false;
-
       if (nextDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
         if (displayBounds[0].getTime() - nextDisplayBounds[0].getTime() > millisecondsPerYear) {
           diffBoundsAboveYear = true;
@@ -359,7 +316,6 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
           diffBoundsAboveYear = true;
         }
       }
-
       if (!animate || diffBoundsAboveYear) {
         setDisplayBounds(nextDisplayBounds);
       } else {
@@ -374,7 +330,6 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       if (targetDisplayBounds[0].getTime() < displayBounds[0].getTime() || targetDisplayBounds[1].getTime() > displayBounds[1].getTime()) {
         setDisplayBounds([targetDisplayBounds[0], targetDisplayBounds[1]]);
       }
-
       if (targetDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
         // only animate if the duration is within a year
         if (displayBounds[0].getTime() - targetDisplayBounds[0].getTime() < millisecondsPerYear && daysApart(displayBounds[0], targetDisplayBounds[0])) {
@@ -393,15 +348,14 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
           setAnimating(true);
         }
       }
-
       return undefined;
     }
-
     setSlide(undefined);
     return undefined;
-  }, [animating, displayBounds, targetDisplayBounds]); // Last step in updating the displayBounds. Allows for pruning
-  // displayBounds and cleaning up states to occur after animation.
+  }, [animating, displayBounds, targetDisplayBounds]);
 
+  // Last step in updating the displayBounds. Allows for pruning
+  // displayBounds and cleaning up states to occur after animation.
   useEffect(function () {
     if (animating && targetDisplayBounds) {
       // Wait for animation to finish before cleaning up.
@@ -412,16 +366,17 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         setAnimating(false);
       }, 400 // Empirically determined.
       );
+
       return function () {
         return clearTimeout(timer);
       };
     }
-
     return undefined;
-  }, [animating, targetDisplayBounds]); // We have to deal with reference being the end of a month with more
+  }, [animating, targetDisplayBounds]);
+
+  // We have to deal with reference being the end of a month with more
   // days than the month we are changing to. So, we always set reference
   // to the first of the month before changing the month.
-
   var previousMonth = useMemo(function () {
     return endOfMonth(subtractMonths(startOfMonth(reference), 1));
   }, [reference]);
@@ -429,15 +384,12 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     return startOfMonth(addMonths(startOfMonth(reference), 1));
   }, [reference]);
   var daysRef = useRef();
-
   var _useState11 = useState(),
-      focus = _useState11[0],
-      setFocus = _useState11[1];
-
+    focus = _useState11[0],
+    setFocus = _useState11[1];
   var _useState12 = useState(),
-      active = _useState12[0],
-      setActive = _useState12[1];
-
+    active = _useState12[0],
+    setActive = _useState12[1];
   useEffect(function () {
     if (initialFocus === 'days') daysRef.current.focus();
   }, [initialFocus]);
@@ -449,17 +401,17 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, [onReference, bounds]);
   var handleRange = useCallback(function (selectedDate) {
     var _priorRange$, _priorRange$$, _priorRange$2, _priorRange$2$;
-
     var result;
-    var priorRange = normalizeRange(value, activeDate); // deselect when date clicked was the start/end of the range
-
+    var priorRange = normalizeRange(value, activeDate);
+    // deselect when date clicked was the start/end of the range
     if (selectedDate.getTime() === (priorRange == null ? void 0 : (_priorRange$ = priorRange[0]) == null ? void 0 : (_priorRange$$ = _priorRange$[0]) == null ? void 0 : _priorRange$$.getTime())) {
       result = [[undefined, priorRange[0][1]]];
       setActiveDate('start');
     } else if (selectedDate.getTime() === (priorRange == null ? void 0 : (_priorRange$2 = priorRange[0]) == null ? void 0 : (_priorRange$2$ = _priorRange$2[1]) == null ? void 0 : _priorRange$2$.getTime())) {
       result = [[priorRange[0][0], undefined]];
       setActiveDate('end');
-    } // selecting start date
+    }
+    // selecting start date
     else if (activeDate === 'start') {
       if (!priorRange) {
         result = [[selectedDate, undefined]];
@@ -470,9 +422,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       } else if (selectedDate.getTime() > priorRange[0][1].getTime()) {
         result = [[selectedDate, undefined]];
       }
-
       setActiveDate('end');
-    } // selecting end date
+    }
+    // selecting end date
     else if (!priorRange) {
       result = [[undefined, selectedDate]];
       setActiveDate('start');
@@ -482,10 +434,10 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     } else if (selectedDate.getTime() > priorRange[0][0].getTime()) {
       result = [[priorRange[0][0], selectedDate]];
       setActiveDate('start');
-    } // If no dates selected, always return undefined; else format
+    }
+
+    // If no dates selected, always return undefined; else format
     // result according to specified range value.
-
-
     if (result[0].includes(undefined)) {
       if (range === 'array') {
         result = !result[0][0] && !result[0][1] ? undefined : result;
@@ -495,34 +447,29 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         });
       }
     }
-
     setValue(result);
     return result;
   }, [activeDate, value, range]);
   var selectDate = useCallback(function (selectedDate) {
     var nextValue;
-
     if (range || Array.isArray(value == null ? void 0 : value[0])) {
       nextValue = handleRange(selectedDate);
     } else {
       nextValue = selectedDate;
     }
-
     if (onSelect) {
       nextValue = normalizeOutput(nextValue, outputFormat);
       onSelect(nextValue);
     }
   }, [handleRange, onSelect, outputFormat, range, value]);
-
   var _onClick = function onClick(selectedDate) {
     selectDate(selectedDate);
-    announce("Selected " + getLocaleString(selectedDate, locale), 'assertive'); // Chrome moves the focus indicator to this button. Set
+    announce("Selected " + getLocaleString(selectedDate, locale), 'assertive');
+    // Chrome moves the focus indicator to this button. Set
     // the focus to the grid of days instead.
-
     daysRef.current.focus();
     setActive(selectedDate);
   };
-
   var renderCalendarHeader = function renderCalendarHeader() {
     var PreviousIcon = size === 'small' ? theme.calendar.icons.small.previous : theme.calendar.icons.previous;
     var NextIcon = size === 'small' ? theme.calendar.icons.small.next : theme.calendar.icons.next;
@@ -605,11 +552,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       }
     })));
   };
-
   var renderDaysOfWeek = function renderDaysOfWeek() {
     var day = new Date(displayBounds[0]);
     var days = [];
-
     while (days.length < 7) {
       days.push( /*#__PURE__*/React.createElement(StyledDayContainer, {
         role: "gridcell",
@@ -625,18 +570,15 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       }))));
       day = addDays(day, 1);
     }
-
     return /*#__PURE__*/React.createElement(StyledWeek, {
       role: "row"
     }, days);
   };
-
   var weeks = [];
   var day = new Date(displayBounds[0]);
   var days;
   var firstDayInMonth;
   var blankWeek = false;
-
   while (day.getTime() < displayBounds[1].getTime()) {
     if (day.getDay() === firstDayOfWeek) {
       if (days) {
@@ -646,12 +588,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
           fillContainer: fill
         }, days));
       }
-
       days = [];
     }
-
     var otherMonth = day.getMonth() !== reference.getMonth();
-
     if (!showAdjacentDays && otherMonth) {
       days.push( /*#__PURE__*/React.createElement(StyledDayContainer, {
         key: day.getTime(),
@@ -661,7 +600,6 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         sizeProp: size,
         fillContainer: fill
       })));
-
       if (weeks.length === 5 &&
       /* If the length days array is less than the current getDate()
       we know that all days in the array are from the next month. */
@@ -686,24 +624,20 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       })));
     } else {
       (function () {
-        var dateObject = day; // this.dayRefs[dateObject] = React.createRef();
-
+        var dateObject = day;
+        // this.dayRefs[dateObject] = React.createRef();
         var selected = false;
         var inRange = false;
         var selectedState = withinDates(day, range ? normalizeRange(value, activeDate) : value);
-
         if (selectedState === 2) {
           selected = true;
         } else if (selectedState === 1) {
           inRange = true;
         }
-
         var dayDisabled = withinDates(day, normalizeInput(disabled)) || bounds && !betweenDates(day, normalizeInput(bounds));
-
         if (!firstDayInMonth && !dayDisabled && day.getMonth() === reference.getMonth()) {
           firstDayInMonth = dateObject;
         }
-
         if (!children) {
           days.push( /*#__PURE__*/React.createElement(CalendarDay, {
             key: day.getTime(),
@@ -755,11 +689,10 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         }
       })();
     }
-
     day = addDays(day, 1);
   }
-
-  weeks.push( /*#__PURE__*/React.createElement(StyledWeek // if a week contains only blank days, for screen reader accessibility
+  weeks.push( /*#__PURE__*/React.createElement(StyledWeek
+  // if a week contains only blank days, for screen reader accessibility
   // we don't want to set role="row"
   , {
     role: !blankWeek ? 'row' : undefined,
@@ -810,9 +743,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     onUp: function onUp(event) {
       event.preventDefault();
       event.stopPropagation(); // so the page doesn't scroll
-
       setActive(addDays(active, -7));
-
       if (!betweenDates(addDays(active, -7), displayBounds)) {
         changeReference(addDays(active, -7));
       }
@@ -820,23 +751,19 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     onDown: function onDown(event) {
       event.preventDefault();
       event.stopPropagation(); // so the page doesn't scroll
-
       setActive(addDays(active, 7));
-
       if (!betweenDates(addDays(active, 7), displayBounds)) {
         changeReference(active);
       }
     },
     onLeft: function onLeft() {
       setActive(addDays(active, -1));
-
       if (!betweenDates(addDays(active, -1), displayBounds)) {
         changeReference(active);
       }
     },
     onRight: function onRight() {
       setActive(addDays(active, 1));
-
       if (!betweenDates(addDays(active, 2), displayBounds)) {
         changeReference(active);
       }
@@ -853,8 +780,8 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     fillContainer: fill,
     focus: focus,
     onFocus: function onFocus() {
-      setFocus(true); // caller focused onto Calendar via keyboard
-
+      setFocus(true);
+      // caller focused onto Calendar via keyboard
       if (!mouseDown) {
         setActive(new Date(firstDayInMonth));
       }

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { colorPropType } from '../../utils/general-prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     color: colorPropType,
@@ -21,5 +20,4 @@ if (process.env.NODE_ENV !== 'production') {
     values: PropTypes.arrayOf(PropTypes.number).isRequired
   };
 }
-
 export var RangeSelectorPropTypes = PropType;

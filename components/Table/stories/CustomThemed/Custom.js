@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Custom = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _data = require("../data");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var customTheme = {
   global: {
     font: {
@@ -54,7 +49,6 @@ var customTheme = {
     }
   }
 };
-
 var Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
@@ -86,7 +80,6 @@ var Custom = function Custom() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, c.footer));
   }))))));
 };
-
 exports.Custom = Custom;
 var _default = {
   title: 'Visualizations/Table/Custom Themed/Custom'

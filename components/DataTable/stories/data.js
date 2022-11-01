@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports.storageData = exports.storageColumns = exports.locations = exports.groupColumns = exports.data = exports.columns = exports.DATA = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
@@ -72,7 +67,6 @@ var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francis
 exports.locations = locations;
 var data = [];
 exports.data = data;
-
 for (var i = 0; i < 40; i += 1) {
   data.push({
     name: "Name " + (i + 1),
@@ -82,7 +76,6 @@ for (var i = 0; i < 40; i += 1) {
     paid: (i + 1) * 17 % 1000
   });
 }
-
 var DATA = [{
   name: 'Alan',
   location: '',
@@ -254,7 +247,8 @@ var storageColumns = [{
     color: "text"
   }, "(TiB)")),
   render: function render(datum) {
-    return (// bytes to tebibytes
+    return (
+      // bytes to tebibytes
       (datum.size / Math.pow(2, 40)).toFixed([1])
     );
   },
@@ -276,7 +270,7 @@ var storageColumns = [{
   }, "%"))),
   render: function render(_ref3) {
     var pinnable = _ref3.pinnable,
-        pinned = _ref3.pinned;
+      pinned = _ref3.pinned;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
       plain: true,
       dropProps: {

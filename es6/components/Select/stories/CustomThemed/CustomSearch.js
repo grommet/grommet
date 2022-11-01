@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { FormClose } from "grommet-icons/es6/icons/FormClose";
-import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet'; // https://github.com/grommet/grommet/blob/master/src/js/components/Select/stories/theme.js
-
+import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
+// https://github.com/grommet/grommet/blob/master/src/js/components/Select/stories/theme.js
 import { theme as customSearchTheme } from '../theme';
 var allContentPartners = [{
   name: 'Test Partner',
@@ -42,27 +42,21 @@ var allContentPartners = [{
 }];
 export var CustomSearch = function CustomSearch() {
   var _useState = useState([]),
-      selectedContentPartners = _useState[0],
-      setSelectedContentPartners = _useState[1];
-
+    selectedContentPartners = _useState[0],
+    setSelectedContentPartners = _useState[1];
   var _useState2 = useState(allContentPartners),
-      contentPartners = _useState2[0],
-      setContentPartners = _useState2[1];
-
+    contentPartners = _useState2[0],
+    setContentPartners = _useState2[1];
   var _useState3 = useState(false),
-      searching = _useState3[0],
-      setSearching = _useState3[1];
-
+    searching = _useState3[0],
+    setSearching = _useState3[1];
   var _useState4 = useState(''),
-      searchQuery = _useState4[0],
-      setSearchQuery = _useState4[1];
-
+    searchQuery = _useState4[0],
+    setSearchQuery = _useState4[1];
   var selectRef = useRef();
-
   var clearContentPartners = function clearContentPartners() {
     setSelectedContentPartners([]);
   };
-
   useEffect(function () {
     var filterContentPartners = allContentPartners.filter(function (s) {
       return s.name.toLowerCase().indexOf(searchQuery.toLowerCase()) >= 0;
@@ -72,7 +66,6 @@ export var CustomSearch = function CustomSearch() {
       setContentPartners(filterContentPartners);
     }, 500);
   }, [searching, searchQuery]);
-
   var renderOption = function renderOption(_ref) {
     var name = _ref.name;
     return /*#__PURE__*/React.createElement(Box, {
@@ -91,7 +84,6 @@ export var CustomSearch = function CustomSearch() {
       onChange: function onChange() {}
     }));
   };
-
   var renderContentPartners = function renderContentPartners() {
     return /*#__PURE__*/React.createElement(Box, {
       direction: "row",
@@ -144,28 +136,22 @@ export var CustomSearch = function CustomSearch() {
       }
     }))));
   };
-
   var sortContentPartners = function sortContentPartners(selectedPartnerNames) {
     return function (p1, p2) {
       var p1Exists = selectedPartnerNames.includes(p1.name);
       var p2Exists = selectedPartnerNames.includes(p2.name);
-
       if (!p1Exists && p2Exists) {
         return 1;
       }
-
       if (p1Exists && !p2Exists) {
         return -1;
       }
-
       if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
         return -1;
       }
-
       return 1;
     };
   };
-
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: customSearchTheme
@@ -194,13 +180,11 @@ export var CustomSearch = function CustomSearch() {
         var name = _ref4.name;
         return name;
       }).indexOf(option.name);
-
       if (seasonIndex >= 0) {
         newSelectedPartners.splice(seasonIndex, 1);
       } else {
         newSelectedPartners.push(option);
       }
-
       var selectedPartnerNames = newSelectedPartners.map(function (_ref5) {
         var name = _ref5.name;
         return name;

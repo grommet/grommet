@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Gap = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var GapAnchor = function GapAnchor() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "medium",
@@ -37,11 +32,9 @@ var GapAnchor = function GapAnchor() {
     gap: "5px"
   }));
 };
-
 var Gap = function Gap() {
   return /*#__PURE__*/_react["default"].createElement(GapAnchor, null);
 };
-
 exports.Gap = Gap;
 var _default = {
   title: 'Controls/Anchor/Gap'

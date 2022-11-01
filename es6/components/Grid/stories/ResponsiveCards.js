@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Box, Card, Grid, ResponsiveContext, Text } from 'grommet';
-var cards = Array(20).fill() // eslint-disable-next-line react/no-array-index-key
+var cards = Array(20).fill()
+// eslint-disable-next-line react/no-array-index-key
 .map(function (_, i) {
   return /*#__PURE__*/React.createElement(Text, {
     key: i
@@ -26,10 +27,11 @@ export var Example = function Example() {
           key: index
         }, card)
       );
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 Example.storyName = 'Responsive cards';
 export default {
   title: 'Layout/Grid/Responsive cards'

@@ -25,11 +25,9 @@ var align = {
   top: 'bottom',
   left: 'right'
 };
-
 var ThemedDrop = function ThemedDrop() {
   var _useState = useState(false),
-      setShowDrop = _useState[1];
-
+    setShowDrop = _useState[1];
   var targetRef = useRef();
   useEffect(function () {
     return setShowDrop(true);
@@ -54,7 +52,6 @@ var ThemedDrop = function ThemedDrop() {
     pad: "small"
   }, "This Drop uses a custom theme"))));
 };
-
 export var Themed = function Themed() {
   return /*#__PURE__*/React.createElement(ThemedDrop, null);
 };

@@ -4,7 +4,6 @@ import { FacebookOption } from "grommet-icons/es6/icons/FacebookOption";
 import { Instagram } from "grommet-icons/es6/icons/Instagram";
 import { Twitter } from "grommet-icons/es6/icons/Twitter";
 import { Anchor, Box, Footer, Main, Text } from 'grommet';
-
 var Media = function Media() {
   return /*#__PURE__*/React.createElement(Box, {
     direction: "row",
@@ -30,7 +29,6 @@ var Media = function Media() {
     })
   }));
 };
-
 export var Social = function Social() {
   return (
     /*#__PURE__*/
@@ -63,10 +61,11 @@ export var Social = function Social() {
     }, "Grommet")), /*#__PURE__*/React.createElement(Media, null), /*#__PURE__*/React.createElement(Text, {
       textAlign: "center",
       size: "xsmall"
-    }, "\xA9Copyright"))) // </Grommet>
-
+    }, "\xA9Copyright")))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Layout/Footer/Social'
 };

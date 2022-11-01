@@ -19,10 +19,11 @@ export var Uncontrolled = function Uncontrolled() {
         var option = _ref.option;
         return console.log(option);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 Uncontrolled.parameters = {
   chromatic: {
     disable: true

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, DataTable, Spinner, Text } from 'grommet'; // Source code for the data can be found here
-// https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
+import { Box, DataTable, Spinner, Text } from 'grommet';
 
+// Source code for the data can be found here
+// https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 import { columns, DATA } from './data';
 export var Placeholder = function Placeholder() {
   return (
@@ -29,10 +30,11 @@ export var Placeholder = function Placeholder() {
         weight: "bold"
       }, "Loading ...")),
       step: 10
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/DataTable/Placeholder'
 };

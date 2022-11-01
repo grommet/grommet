@@ -190,10 +190,11 @@ export var ColumnSize = function ColumnSize() {
         side: 'vertical',
         size: '1px'
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 ColumnSize.storyName = 'Column sizes';
 export default {
   title: 'Visualizations/DataTable/Column sizes'

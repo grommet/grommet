@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Justify = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Justify = function Justify() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
@@ -31,7 +26,6 @@ var Justify = function Justify() {
     }]
   }));
 };
-
 exports.Justify = Justify;
 Justify.parameters = {
   chromatic: {

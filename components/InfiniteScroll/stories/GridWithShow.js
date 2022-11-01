@@ -2,17 +2,12 @@
 
 exports.__esModule = true;
 exports["default"] = exports.GridWithShow = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var allItems = Array(2000).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
-
 var GridWithShow = function GridWithShow() {
   return (
     /*#__PURE__*/
@@ -34,11 +29,10 @@ var GridWithShow = function GridWithShow() {
         src: "https://via.placeholder.com/350x150",
         alt: "Placeholder Image"
       }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, item));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.GridWithShow = GridWithShow;
 GridWithShow.storyName = 'Grid with show item 77';
 var _default = {

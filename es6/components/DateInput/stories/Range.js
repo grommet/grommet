@@ -6,16 +6,14 @@ var dateFormat = new Intl.DateTimeFormat(undefined, {
 });
 export var Range = function Range() {
   var _React$useState = React.useState(['2020-07-31T15:27:42.920Z', '2020-08-07T15:27:42.920Z']),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var onChange = function onChange(event) {
     var nextValue = event.value;
     console.log('onChange iso date:', nextValue);
     console.log('onChange utc date:', new Date(nextValue));
     setValue(nextValue);
   };
-
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"

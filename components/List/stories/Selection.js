@@ -2,28 +2,20 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Selection = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 0; i < 40; i += 1) {
   data.push({
     entry: "entry-" + (i + 1)
   });
 }
-
 var Selection = function Selection() {
   var _ref;
-
   var _React$useState = _react["default"].useState(),
-      selected = _React$useState[0],
-      setSelected = _React$useState[1];
-
+    selected = _React$useState[0],
+    setSelected = _React$useState[1];
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
@@ -39,7 +31,6 @@ var Selection = function Selection() {
     }
   }));
 };
-
 exports.Selection = Selection;
 var _default = {
   title: 'Visualizations/List/Selection'

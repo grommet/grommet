@@ -4,33 +4,26 @@ var align = {
   top: 'bottom',
   right: 'right'
 };
-
 var ProgressiveDrop = function ProgressiveDrop() {
   var boxRef = useRef();
   var innerBoxRef = useRef();
-
   var _useState = useState(false),
-      openDrop = _useState[0],
-      setOpenDrop = _useState[1];
-
+    openDrop = _useState[0],
+    setOpenDrop = _useState[1];
   var _useState2 = useState(false),
-      openInnerDrop = _useState2[0],
-      setOpenInnerDrop = _useState2[1];
-
+    openInnerDrop = _useState2[0],
+    setOpenInnerDrop = _useState2[1];
   var _useState3 = useState(false),
-      interactedWithInnerButton = _useState3[0],
-      setInteractedWithInnerButton = _useState3[1];
-
+    interactedWithInnerButton = _useState3[0],
+    setInteractedWithInnerButton = _useState3[1];
   var onCloseDrop = function onCloseDrop() {
     setOpenDrop(false);
     setOpenInnerDrop(false);
   };
-
   var onOpenDrop = function onOpenDrop() {
     setOpenDrop(true);
     setOpenInnerDrop(false);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -74,8 +67,8 @@ var ProgressiveDrop = function ProgressiveDrop() {
       onClick: function onClick() {
         return setInteractedWithInnerButton(true);
       }
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
 

@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.BottomControlButton = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var ControlBottomMenu = function ControlBottomMenu() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "medium",
@@ -35,11 +31,9 @@ var ControlBottomMenu = function ControlBottomMenu() {
     }]
   }));
 };
-
 var BottomControlButton = function BottomControlButton() {
   return /*#__PURE__*/_react["default"].createElement(ControlBottomMenu, null);
 };
-
 exports.BottomControlButton = BottomControlButton;
 BottomControlButton.storyName = 'Bottom control button';
 BottomControlButton.parameters = {

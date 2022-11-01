@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ElevationBox = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var ElevationBox = function ElevationBox() {
   return (
     /*#__PURE__*/
@@ -34,11 +30,10 @@ var ElevationBox = function ElevationBox() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "light on dark"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "medium",
       elevation: "medium"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "light on light")))))) // </Grommet>
-
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "light on light"))))))
+    // </Grommet>
   );
 };
-
 exports.ElevationBox = ElevationBox;
 ElevationBox.storyName = 'Elevation';
 var _default = {

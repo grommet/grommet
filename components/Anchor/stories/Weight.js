@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Weight = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var WeightAnchor = function WeightAnchor() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
@@ -63,11 +59,9 @@ var WeightAnchor = function WeightAnchor() {
     weight: "unset"
   }));
 };
-
 var Weight = function Weight() {
   return /*#__PURE__*/_react["default"].createElement(WeightAnchor, null);
 };
-
 exports.Weight = Weight;
 var _default = {
   title: 'Controls/Anchor/Weight'

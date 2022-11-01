@@ -2,26 +2,20 @@
 
 exports.__esModule = true;
 exports["default"] = exports.DateForm = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var DateForm = function DateForm() {
   var _React$useState = _react["default"].useState({
-    value: ''
-  }),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+      value: ''
+    }),
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var onChange = function onChange(nextValue) {
     console.log('onChange iso date:', nextValue);
     console.log('onChange utc date:', new Date(nextValue));
     setValue(nextValue);
   };
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
@@ -47,7 +41,6 @@ var DateForm = function DateForm() {
     label: "submit"
   })));
 };
-
 exports.DateForm = DateForm;
 DateForm.storyName = 'Form';
 var _default = {

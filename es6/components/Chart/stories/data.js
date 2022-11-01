@@ -4,19 +4,15 @@ var dataSet = {
     if (count === void 0) {
       count = 5;
     }
-
     if (max === void 0) {
       max = 100;
     }
-
     if (min === void 0) {
       min = 0;
     }
-
     var data = [];
     var date = new Date();
     var span = max - min;
-
     while (data.length < count) {
       var s = Math.sin(data.length / 2.0);
       var value = s * (span / 2) + (span / 2 + min);
@@ -28,7 +24,6 @@ var dataSet = {
         value: value
       });
     }
-
     return data;
   }
 };

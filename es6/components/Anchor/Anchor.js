@@ -1,9 +1,6 @@
 var _excluded = ["a11yTitle", "aria-label", "children", "color", "disabled", "gap", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { cloneElement, forwardRef, useCallback, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -14,26 +11,23 @@ import { AnchorPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
-      ariaLabel = _ref['aria-label'],
-      children = _ref.children,
-      color = _ref.color,
-      disabled = _ref.disabled,
-      gap = _ref.gap,
-      href = _ref.href,
-      icon = _ref.icon,
-      label = _ref.label,
-      _onBlur = _ref.onBlur,
-      onClickProp = _ref.onClick,
-      _onFocus = _ref.onFocus,
-      reverse = _ref.reverse,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    ariaLabel = _ref['aria-label'],
+    children = _ref.children,
+    color = _ref.color,
+    disabled = _ref.disabled,
+    gap = _ref.gap,
+    href = _ref.href,
+    icon = _ref.icon,
+    label = _ref.label,
+    _onBlur = _ref.onBlur,
+    onClickProp = _ref.onClick,
+    _onFocus = _ref.onFocus,
+    reverse = _ref.reverse,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
-
   var _useState = useState(),
-      focus = _useState[0],
-      setFocus = _useState[1];
-
+    focus = _useState[0],
+    setFocus = _useState[1];
   var sendAnalytics = useAnalytics();
   var onClick = useCallback(function (event) {
     sendAnalytics({
@@ -51,13 +45,11 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   }, [children, icon, label]);
   var coloredIcon = icon;
-
   if (icon && !icon.props.color) {
     coloredIcon = /*#__PURE__*/cloneElement(icon, {
       color: normalizeColor(color || theme.anchor.color, theme)
     });
   }
-
   var first = reverse ? label : coloredIcon;
   var second = reverse ? coloredIcon : label;
   return /*#__PURE__*/React.createElement(StyledAnchor, _extends({}, rest, {

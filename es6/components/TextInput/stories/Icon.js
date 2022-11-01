@@ -21,10 +21,11 @@ export var Icon = function Icon() {
       icon: /*#__PURE__*/React.createElement(Search, null),
       reverse: true,
       placeholder: "search ..."
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Input/TextInput/Icon'
 };

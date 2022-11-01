@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Colors = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var customTheme = {
   global: {
     colors: {
@@ -43,7 +39,6 @@ var customTheme = {
     }
   }
 };
-
 var Colors = function Colors() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
@@ -59,7 +54,6 @@ var Colors = function Colors() {
     href: "https://github.com/grommet/grommet/wiki/Color-Properties"
   }, "Click here to read more about Grommet Colors")));
 };
-
 exports.Colors = Colors;
 var _default = {
   title: 'Utilities/Theme/Colors'

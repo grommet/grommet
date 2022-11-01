@@ -1,14 +1,12 @@
 import React from 'react';
 import { Box, DataChart } from 'grommet';
 var data = [];
-
 for (var i = 1; i < 8; i += 1) {
   var v = Math.sin(i / 2.0);
   data.push({
     percent: Math.abs(v * 100)
   });
 }
-
 export var Simple = function Simple() {
   return (
     /*#__PURE__*/
@@ -23,10 +21,11 @@ export var Simple = function Simple() {
       series: [{
         property: 'percent'
       }, {}]
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/DataChart/Simple'
 };

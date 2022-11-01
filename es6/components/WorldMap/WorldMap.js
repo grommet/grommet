@@ -1,43 +1,46 @@
 var _excluded = ["fill", "color", "continents", "hoverColor", "onSelectPlace", "places"],
-    _excluded2 = ["location"],
-    _excluded3 = ["color", "onClick", "onHover"],
-    _excluded4 = ["color", "coords", "content", "dropProps", "key", "name", "onClick", "onHover"];
-
+  _excluded2 = ["location"],
+  _excluded3 = ["color", "onClick", "onHover"],
+  _excluded4 = ["color", "coords", "content", "dropProps", "key", "name", "onClick", "onHover"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Drop } from '../Drop';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { StyledWorldMap } from './StyledWorldMap';
-import { WorldMapPropTypes } from './propTypes'; // The graphic is drawn as a rectangular grid using coordinates spaced
-// by FACTOR pixels.
+import { WorldMapPropTypes } from './propTypes';
 
-var FACTOR = 10; // Mapping constants between coordinates and latitude+longitude.
+// The graphic is drawn as a rectangular grid using coordinates spaced
+// by FACTOR pixels.
+var FACTOR = 10;
+
+// Mapping constants between coordinates and latitude+longitude.
 // The map coordinate space isn't precisely a mercator projection. So,
 // we have a few adjustments that we've empirically determined. The following
 // cities were used to make the empirical determinations:
 // London (0 lon), Quito (0 lat), Nome (far west), Sydney (far east),
 // Svalbard (far north), Ushuaia (far south).
+
 // These map to reality, they aren't adjusted.
-
 var EQUATOR_Y = 32;
-var WIDTH = 93; // Scale the latitude and longitude to align better with actual locations.
+var WIDTH = 93;
 
-var LAT_SCALE = 0.98; // adjust more extreme latitudes to fit with the map dots better
-
+// Scale the latitude and longitude to align better with actual locations.
+var LAT_SCALE = 0.98;
+// adjust more extreme latitudes to fit with the map dots better
 var LAT_EXTREME_SCALE = 0.91;
-var LON_SCALE = 0.99; // We shift the map coordinates to align better with actual locations.
+var LON_SCALE = 0.99;
 
+// We shift the map coordinates to align better with actual locations.
 var X_OFFSET = -2;
-var Y_OFFSET = -2; // The continents have both an area boundary for interaction
+var Y_OFFSET = -2;
+
+// The continents have both an area boundary for interaction
 // and dots described as rows where each row is described by three values:
 // a starting coordinate and a length. This approach is more efficient than
 // describing it via SVG elements, keeping the code/library size smaller.
-
 var CONTINENTS = [{
   name: 'Australia',
   origin: [74, 32],
@@ -69,55 +72,49 @@ var CONTINENTS = [{
   area: [[21, 0], [39, 0], [39, 6], [22, 26], [16, 23], [2, 12], [0, 7]],
   dots: [[22, 0, 6], [29, 0, 1], [31, 0, 1], [33, 0, 5], [20, 1, 1], [22, 1, 1], [24, 1, 2], [27, 1, 13], [17, 2, 1], [20, 2, 5], [26, 2, 13], [13, 3, 1], [19, 3, 1], [21, 3, 3], [26, 3, 14], [14, 4, 1], [16, 4, 4], [21, 4, 3], [29, 4, 11], [12, 5, 3], [16, 5, 1], [18, 5, 1], [20, 5, 3], [24, 5, 1], [30, 5, 8], [14, 6, 3], [19, 6, 1], [22, 6, 4], [31, 6, 8], [0, 7, 15], [16, 7, 1], [18, 7, 4], [24, 7, 2], [30, 7, 7], [2, 8, 20], [24, 8, 3], [29, 8, 5], [2, 9, 20], [24, 9, 2], [30, 9, 3], [1, 10, 18], [23, 10, 2], [31, 10, 1], [2, 11, 2], [8, 11, 11], [23, 11, 2], [26, 11, 1], [2, 12, 1], [8, 12, 13], [24, 12, 3], [10, 13, 12], [23, 13, 5], [11, 14, 17], [11, 15, 9], [21, 15, 6], [28, 15, 2], [11, 16, 11], [23, 16, 4], [11, 17, 14], [12, 18, 11], [12, 19, 12], [13, 20, 9], [15, 21, 3], [22, 21, 1], [16, 22, 2], [16, 23, 2], [20, 23, 1], [23, 23, 1], [18, 24, 3], [21, 25, 1], [22, 26, 1]]
 }];
-
 var mergeBounds = function mergeBounds(bounds1, bounds2) {
   return [bounds1 ? Math.min(bounds1[0], bounds2[0]) : bounds2[0], bounds1 ? Math.min(bounds1[1], bounds2[1]) : bounds2[1], bounds1 ? Math.max(bounds1[2], bounds2[2]) : bounds2[2], bounds1 ? Math.max(bounds1[3], bounds2[3]) : bounds2[3]];
 };
-
 var midPoint = function midPoint(bounds) {
   return [bounds[0] + (bounds[2] - bounds[0]) / 2, bounds[1] + (bounds[3] - bounds[1]) / 2];
-}; // from https://stackoverflow.com/a/14457180/8513067
+};
 
-
+// from https://stackoverflow.com/a/14457180/8513067
 var latLonToCoord = function latLonToCoord(_ref) {
   var lat = _ref[0],
-      lon = _ref[1];
+    lon = _ref[1];
   var scaledLon = lon * LON_SCALE;
-  var x = Math.round((scaledLon + 180) * (WIDTH / 360)); // adjust more extreme latitudes to fit with the map dots better
-
+  var x = Math.round((scaledLon + 180) * (WIDTH / 360));
+  // adjust more extreme latitudes to fit with the map dots better
   var scaledLat = lat * (lat > 60 || lat < -50 ? LAT_EXTREME_SCALE : LAT_SCALE);
   var latRad = scaledLat * Math.PI / 180;
   var mercN = Math.log(Math.tan(Math.PI / 4 + latRad / 2));
   var y = Math.round(EQUATOR_Y - WIDTH * mercN / (2 * Math.PI));
   return [x + X_OFFSET, y + Y_OFFSET];
 };
-
 var coordToLatLon = function coordToLatLon(_ref2) {
   var x = _ref2[0],
-      y = _ref2[1];
+    y = _ref2[1];
   var mercN = (EQUATOR_Y - (y - Y_OFFSET)) * (2 * Math.PI) / WIDTH;
   var latRad = (Math.atan(Math.exp(mercN)) - Math.PI / 4) * 2;
-  var scaledLat = latRad * 180 / Math.PI / LAT_SCALE; // adjust more extreme latitudes to fit with the map dots better
-
+  var scaledLat = latRad * 180 / Math.PI / LAT_SCALE;
+  // adjust more extreme latitudes to fit with the map dots better
   var lat = scaledLat / (scaledLat > 60 || scaledLat < -50 ? LAT_EXTREME_SCALE : LAT_SCALE);
   var lon = (x - X_OFFSET) * 360 / WIDTH - 180;
   return [lat, lon];
 };
-
 var buildContinent = function buildContinent(_ref3) {
   var areaProp = _ref3.area,
-      dotsProp = _ref3.dots,
-      name = _ref3.name,
-      origin = _ref3.origin;
+    dotsProp = _ref3.dots,
+    name = _ref3.name,
+    origin = _ref3.origin;
   var bounds = [origin[0], origin[1], origin[0], origin[1]];
   var dots = dotsProp.map(function (segment) {
     var count = segment[2];
     var spots = [];
-
     for (var i = 0; i < count; i += 1) {
       spots.push('h0');
     }
-
     var dotCommands = spots.join(' m10,0 ');
     var x = FACTOR * (origin[0] + segment[0] + 1);
     var y = FACTOR * (origin[1] + segment[1] + 1);
@@ -139,7 +136,6 @@ var buildContinent = function buildContinent(_ref3) {
     mid: mid
   };
 };
-
 var buildWorld = function buildWorld() {
   // Build the SVG paths describing the individual dots
   var continents = CONTINENTS.map(buildContinent);
@@ -156,11 +152,10 @@ var buildWorld = function buildWorld() {
     height: (bounds[3] - bounds[1] + 2) * FACTOR
   };
 };
-
 var buildInteractiveProps = function buildInteractiveProps(_ref4, activeFunc, active) {
   var name = _ref4.name,
-      onClick = _ref4.onClick,
-      onHover = _ref4.onHover;
+    onClick = _ref4.onClick,
+    onHover = _ref4.onHover;
   return {
     role: 'button',
     'aria-label': name,
@@ -171,7 +166,6 @@ var buildInteractiveProps = function buildInteractiveProps(_ref4, activeFunc, ac
     onMouseOver: function onMouseOver() {
       if (!active) {
         activeFunc(name);
-
         if (onHover) {
           onHover(true);
         }
@@ -180,7 +174,6 @@ var buildInteractiveProps = function buildInteractiveProps(_ref4, activeFunc, ac
     onMouseLeave: function onMouseLeave() {
       if (active) {
         activeFunc(undefined);
-
         if (onHover) {
           onHover(false);
         }
@@ -201,23 +194,19 @@ var buildInteractiveProps = function buildInteractiveProps(_ref4, activeFunc, ac
     }
   };
 };
-
 var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
   var fill = _ref5.fill,
-      color = _ref5.color,
-      continentsProp = _ref5.continents,
-      hoverColor = _ref5.hoverColor,
-      onSelectPlace = _ref5.onSelectPlace,
-      placesProp = _ref5.places,
-      rest = _objectWithoutPropertiesLoose(_ref5, _excluded);
-
+    color = _ref5.color,
+    continentsProp = _ref5.continents,
+    hoverColor = _ref5.hoverColor,
+    onSelectPlace = _ref5.onSelectPlace,
+    placesProp = _ref5.places,
+    rest = _objectWithoutPropertiesLoose(_ref5, _excluded);
   var theme = React.useContext(ThemeContext);
   var world = React.useMemo(buildWorld, []);
-
   var _React$useState = React.useState({}),
-      continents = _React$useState[0],
-      setContinents = _React$useState[1];
-
+    continents = _React$useState[0],
+    setContinents = _React$useState[1];
   React.useEffect(function () {
     if (continentsProp) {
       setContinents(continentsProp.reduce(function (obj, continent) {
@@ -227,17 +216,14 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
       }, {}));
     } else setContinents({});
   }, [continentsProp]);
-
   var _React$useState2 = React.useState([]),
-      places = _React$useState2[0],
-      setPlaces = _React$useState2[1];
-
+    places = _React$useState2[0],
+    setPlaces = _React$useState2[1];
   React.useEffect(function () {
     if (placesProp) {
       setPlaces(placesProp.map(function (_ref6) {
         var location = _ref6.location,
-            place = _objectWithoutPropertiesLoose(_ref6, _excluded2);
-
+          place = _objectWithoutPropertiesLoose(_ref6, _excluded2);
         var coords = latLonToCoord(location);
         return _extends({
           coords: coords,
@@ -246,29 +232,24 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
       }));
     } else setPlaces([]);
   }, [placesProp, world]);
-
   var _React$useState3 = React.useState(),
-      over = _React$useState3[0],
-      setOver = _React$useState3[1];
-
+    over = _React$useState3[0],
+    setOver = _React$useState3[1];
   var _React$useState4 = React.useState(),
-      activeCoords = _React$useState4[0],
-      setActiveCoords = _React$useState4[1];
-
+    activeCoords = _React$useState4[0],
+    setActiveCoords = _React$useState4[1];
   var _React$useState5 = React.useState(),
-      activeContinent = _React$useState5[0],
-      setActiveContinent = _React$useState5[1];
-
+    activeContinent = _React$useState5[0],
+    setActiveContinent = _React$useState5[1];
   var _React$useState6 = React.useState(),
-      activePlace = _React$useState6[0],
-      setActivePlace = _React$useState6[1];
+    activePlace = _React$useState6[0],
+    setActivePlace = _React$useState6[1];
+  var containerRef = React.useRef();
 
-  var containerRef = React.useRef(); // targets are used for the Drops associated with places content
-
+  // targets are used for the Drops associated with places content
   var _React$useState7 = React.useState([]),
-      targets = _React$useState7[0],
-      setTargets = _React$useState7[1];
-
+    targets = _React$useState7[0],
+    setTargets = _React$useState7[1];
   var placeRef = React.useCallback(function (node, index) {
     setTargets(function (prevTargets) {
       if (!prevTargets[index]) {
@@ -276,39 +257,34 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
         nextTargets[index] = node;
         return nextTargets;
       }
-
       return prevTargets;
     });
   }, []);
   var onMouseMove = React.useCallback(function (event) {
     // determine the map coordinates for where the mouse is
     // containerRef uses the group so we can handle aspect ratio scaling
-    var rect = containerRef.current.getBoundingClientRect(); // since the SVG viewBox might be scaled
-
+    var rect = containerRef.current.getBoundingClientRect();
+    // since the SVG viewBox might be scaled
     var scale = rect.width / world.width;
     var coords = [Math.round((event.clientX - rect.left) / scale / FACTOR), Math.round((event.clientY - rect.top) / scale / FACTOR)];
     setActiveCoords(coords);
   }, [world.width]);
   var continentElements = world.continents.map(function (_ref7) {
     var area = _ref7.area,
-        dots = _ref7.dots,
-        name = _ref7.name;
-
+      dots = _ref7.dots,
+      name = _ref7.name;
     var _ref8 = continents[name] || {},
-        continentColor = _ref8.color,
-        onClick = _ref8.onClick,
-        onHover = _ref8.onHover,
-        restContinents = _objectWithoutPropertiesLoose(_ref8, _excluded3);
-
+      continentColor = _ref8.color,
+      onClick = _ref8.onClick,
+      onHover = _ref8.onHover,
+      restContinents = _objectWithoutPropertiesLoose(_ref8, _excluded3);
     var active = activeContinent && activeContinent === name;
     var interactiveProps = {};
-
     if (onClick || onHover) {
       interactiveProps = buildInteractiveProps(continents[name], function (activate) {
         return setActiveContinent(activate);
       }, active);
     }
-
     return /*#__PURE__*/React.createElement("g", _extends({
       key: name
     }, interactiveProps, restContinents), /*#__PURE__*/React.createElement("path", {
@@ -326,25 +302,22 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
   var placesContent = [];
   var placeElements = places.map(function (place, index) {
     var placeColor = place.color,
-        coords = place.coords,
-        content = place.content,
-        dropProps = place.dropProps,
-        key = place.key,
-        name = place.name,
-        onClick = place.onClick,
-        onHover = place.onHover,
-        restPlace = _objectWithoutPropertiesLoose(place, _excluded4);
-
+      coords = place.coords,
+      content = place.content,
+      dropProps = place.dropProps,
+      key = place.key,
+      name = place.name,
+      onClick = place.onClick,
+      onHover = place.onHover,
+      restPlace = _objectWithoutPropertiesLoose(place, _excluded4);
     var d = "M" + FACTOR * coords[0] + ", " + FACTOR * coords[1] + " h0";
     var active = activePlace && activePlace === name;
     var interactiveProps = {};
-
     if (onClick || onHover) {
       interactiveProps = buildInteractiveProps(place, function (activate) {
         return setActivePlace(activate);
       }, active);
     }
-
     if (content && targets[index]) {
       placesContent.push( /*#__PURE__*/React.createElement(Drop, _extends({
         key: key || name
@@ -352,7 +325,6 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
         target: targets[index]
       }), content));
     }
-
     return /*#__PURE__*/React.createElement("path", _extends({
       key: key,
       ref: function ref(node) {
@@ -364,10 +336,10 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
     }, interactiveProps, restPlace, {
       d: d
     }));
-  }); // If the caller is interested in onSelectPlace changes, track where the
+  });
 
+  // If the caller is interested in onSelectPlace changes, track where the
   var interactiveProps = {};
-
   if (onSelectPlace) {
     interactiveProps = {
       onMouseOver: function onMouseOver() {
@@ -380,9 +352,7 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
       }
     };
   }
-
   var active;
-
   if (activeCoords) {
     var d = "M" + FACTOR * activeCoords[0] + ", " + FACTOR * activeCoords[1] + " h0";
     active = /*#__PURE__*/React.createElement("g", {
@@ -399,7 +369,6 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
       d: d
     }));
   }
-
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(StyledWorldMap, _extends({
     ref: ref,
     viewBox: world.x + " " + world.y + " " + world.width + " " + world.height,

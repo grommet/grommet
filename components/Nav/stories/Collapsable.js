@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Collapsable = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var CollapsableNav = function CollapsableNav() {
   return (
     /*#__PURE__*/
@@ -46,15 +42,14 @@ var CollapsableNav = function CollapsableNav() {
         href: "#",
         label: "Component"
       }));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
 
 var Collapsable = function Collapsable() {
   return /*#__PURE__*/_react["default"].createElement(CollapsableNav, null);
 };
-
 exports.Collapsable = Collapsable;
 var _default = {
   title: 'Controls/Nav/Collapsable'

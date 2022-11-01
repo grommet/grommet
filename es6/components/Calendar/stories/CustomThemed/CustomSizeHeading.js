@@ -10,13 +10,11 @@ var customHeading = deepMerge(grommet, {
 });
 export var CustomSizeCalendar = function CustomSizeCalendar() {
   var _useState = useState(),
-      date = _useState[0],
-      setDate = _useState[1];
-
+    date = _useState[0],
+    setDate = _useState[1];
   var onSelect = function onSelect(nextDate) {
     setDate(nextDate !== date ? nextDate : undefined);
   };
-
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customHeading
   }, /*#__PURE__*/React.createElement(Box, {

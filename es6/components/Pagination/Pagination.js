@@ -1,9 +1,6 @@
 var _excluded = ["a11yTitle", "aria-label", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "page", "size", "step"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -17,59 +14,51 @@ var StyledPaginationContainer = styled(Box).withConfig({
 })(["", ""], function (props) {
   return props.theme.pagination.container && props.theme.pagination.container.extend;
 });
-
 var getPageIndices = function getPageIndices(begin, end) {
   var indices = [];
-
   for (var i = begin; i <= end; i += 1) {
     indices.push(i);
   }
-
   return indices;
 };
-
 var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
-      ariaLabel = _ref['aria-label'],
-      numberItems = _ref.numberItems,
-      _ref$numberEdgePages = _ref.numberEdgePages,
-      numberEdgePages = _ref$numberEdgePages === void 0 ? 1 : _ref$numberEdgePages,
-      _ref$numberMiddlePage = _ref.numberMiddlePages,
-      numberMiddlePagesProp = _ref$numberMiddlePage === void 0 ? 3 : _ref$numberMiddlePage,
-      onChange = _ref.onChange,
-      pageProp = _ref.page,
-      size = _ref.size,
-      _ref$step = _ref.step,
-      step = _ref$step === void 0 ? 10 : _ref$step,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    ariaLabel = _ref['aria-label'],
+    numberItems = _ref.numberItems,
+    _ref$numberEdgePages = _ref.numberEdgePages,
+    numberEdgePages = _ref$numberEdgePages === void 0 ? 1 : _ref$numberEdgePages,
+    _ref$numberMiddlePage = _ref.numberMiddlePages,
+    numberMiddlePagesProp = _ref$numberMiddlePage === void 0 ? 3 : _ref$numberMiddlePage,
+    onChange = _ref.onChange,
+    pageProp = _ref.page,
+    size = _ref.size,
+    _ref$step = _ref.step,
+    step = _ref$step === void 0 ? 10 : _ref$step,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
+
   /* Calculate total number pages */
-
   var totalPages = Math.ceil(numberItems / step);
-
   var _useState = useState(Math.min(pageProp, totalPages) || 1),
-      activePage = _useState[0],
-      setActivePage = _useState[1];
-
+    activePage = _useState[0],
+    setActivePage = _useState[1];
   useEffect(function () {
     setActivePage(pageProp || 1);
   }, [pageProp]);
-  /* Define page indices to display */
 
+  /* Define page indices to display */
   var beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
   var endPages = getPageIndices(Math.max(totalPages - numberEdgePages + 1, numberEdgePages + 1), totalPages);
   var numberMiddlePages;
-
   if (numberMiddlePagesProp < 1) {
     numberMiddlePages = 1;
     console.warn( // eslint-disable-next-line max-len
     "Property \"numberMiddlePages\" should not be < 1. One middle page button will be shown. Set \"numberMiddlePages\" >= 1 to remove this warning.");
   } else numberMiddlePages = numberMiddlePagesProp;
-
-  var startingMiddlePages; // odd
-
-  if (numberMiddlePages % 2) startingMiddlePages = Math.min(activePage - Math.floor(numberMiddlePages / 2), totalPages - numberEdgePages - numberMiddlePages); // even, cannot split equally around active page
+  var startingMiddlePages;
+  // odd
+  if (numberMiddlePages % 2) startingMiddlePages = Math.min(activePage - Math.floor(numberMiddlePages / 2), totalPages - numberEdgePages - numberMiddlePages);
+  // even, cannot split equally around active page
   // let extra page appear on middlePagesEnd instead
   else startingMiddlePages = Math.min(activePage - Math.floor(numberMiddlePages / 2) + 1, totalPages - numberEdgePages - numberMiddlePages);
   var middlePagesBegin = Math.max(startingMiddlePages, numberEdgePages + 2);
@@ -79,7 +68,6 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
   if (middlePagesBegin > numberEdgePages + 2) beginFlex = ['more-prev'];else if (numberEdgePages + 1 < totalPages - numberEdgePages) beginFlex = [numberEdgePages + 1];
   var endFlex = [];
   if (middlePagesEnd < totalPages - numberEdgePages - 1) endFlex = ['more-next'];else if (totalPages - numberEdgePages > numberEdgePages) endFlex = [totalPages - numberEdgePages];
-
   var getItemIndices = function getItemIndices(nextPage) {
     var startIndex = step * (nextPage - 1);
     var endIndex = startIndex + step;
@@ -88,26 +76,23 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
       endIndex: endIndex
     };
   };
-
   var handleClick = function handleClick(event, nextPage) {
     setActivePage(nextPage);
-
     if (onChange) {
       event.persist();
       var adjustedEvent = event;
-      adjustedEvent.page = nextPage; // for controlled use cases, provide user with info on
+      adjustedEvent.page = nextPage;
+
+      // for controlled use cases, provide user with info on
       // what range of indices should be displayed given the active page
-
       var _getItemIndices = getItemIndices(nextPage),
-          startIndex = _getItemIndices.startIndex,
-          endIndex = _getItemIndices.endIndex;
-
+        startIndex = _getItemIndices.startIndex,
+        endIndex = _getItemIndices.endIndex;
       adjustedEvent.startIndex = startIndex;
       adjustedEvent.endIndex = endIndex;
       onChange(adjustedEvent);
     }
   };
-
   var NextIcon = theme.pagination.icons.next;
   var PreviousIcon = theme.pagination.icons.previous;
   var iconColor = theme.pagination.icons.color;
@@ -139,11 +124,11 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   };
   var controls = ['previous'].concat(beginPages, beginFlex, middlePages, endFlex, endPages, ['next']);
+
   /* Set props for each page index. Each page index should display a
    * clickable index, control, or placeholder (e.g. ellipsis) indicating
    * more pages are available.
    */
-
   controls = controls.map(function (control) {
     return _extends({
       active: control === activePage,
@@ -166,7 +151,6 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, theme.pagination.controls), controls.map(function (control, index) {
     return (
       /*#__PURE__*/
-
       /* Using index as key (as opposed to a unique id) seems to
        * help React prioritize rendering the updated controls as
        * desired. Whereas, using a unique id resulted in rendering

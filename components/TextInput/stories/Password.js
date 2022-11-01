@@ -2,24 +2,17 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Password = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Password = function Password() {
   var _React$useState = _react["default"].useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var _React$useState2 = _react["default"].useState(false),
-      reveal = _React$useState2[0],
-      setReveal = _React$useState2[1];
-
+    reveal = _React$useState2[0],
+    setReveal = _React$useState2[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -48,11 +41,10 @@ var Password = function Password() {
       onClick: function onClick() {
         return setReveal(!reveal);
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Password = Password;
 var _default = {
   title: 'Input/TextInput/Password'

@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.GlobalHeaderFooter = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var GlobalHeaderFooter = function GlobalHeaderFooter() {
   return (
     /*#__PURE__*/
@@ -34,11 +30,10 @@ var GlobalHeaderFooter = function GlobalHeaderFooter() {
       pad: "large"
     }, "Card")), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt."))), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
       pad: "small"
-    }, "Global Footer")) // </Grommet>
-
+    }, "Global Footer"))
+    // </Grommet>
   );
 };
-
 exports.GlobalHeaderFooter = GlobalHeaderFooter;
 GlobalHeaderFooter.storyName = 'Global Header and Footer';
 var _default = {

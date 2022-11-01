@@ -30,10 +30,11 @@ export var Labelled = function Labelled() {
       weight: "bold"
     }, meterValue), /*#__PURE__*/React.createElement(Text, {
       size: "small"
-    }, "%")))) // </Grommet>
-
+    }, "%"))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Meter/Labelled'
 };

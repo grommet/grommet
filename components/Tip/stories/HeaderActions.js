@@ -2,24 +2,18 @@
 
 exports.__esModule = true;
 exports["default"] = exports.HeaderActions = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 var _data = require("../../DataTable/stories/data");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
+
 var TipContent = function TipContent(_ref) {
   var message = _ref.message,
-      icon = _ref.icon;
+    icon = _ref.icon;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     gap: "small"
@@ -29,16 +23,13 @@ var TipContent = function TipContent(_ref) {
     color: "accent-1"
   }, message));
 };
-
 var HeaderActions = function HeaderActions() {
   var _useState = (0, _react.useState)(_data.storageData),
-      data = _useState[0],
-      setData = _useState[1];
-
+    data = _useState[0],
+    setData = _useState[1];
   var _useState2 = (0, _react.useState)(),
-      selected = _useState2[0],
-      setSelected = _useState2[1];
-
+    selected = _useState2[0],
+    setSelected = _useState2[1];
   var removeRow = function removeRow() {
     var filteredData = data.filter(function (item) {
       return item.id !== selected.id;
@@ -46,7 +37,6 @@ var HeaderActions = function HeaderActions() {
     setData(filteredData);
     setSelected(undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -109,11 +99,10 @@ var HeaderActions = function HeaderActions() {
       onClickRow: function onClickRow(event) {
         return setSelected(event.datum);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.HeaderActions = HeaderActions;
 HeaderActions.args = {
   full: true

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { padPropType } from '../../utils/general-prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     a11yTitle: PropTypes.string,
@@ -18,5 +17,4 @@ if (process.env.NODE_ENV !== 'production') {
     indeterminate: PropTypes.bool
   };
 }
-
 export var CheckBoxPropTypes = PropType;

@@ -10,24 +10,20 @@ var dummyOptions = Array(2000).fill().map(function (_, i) {
 });
 export var LongList = function LongList() {
   var _React$useState = React.useState([]),
-      selected = _React$useState[0],
-      setSelected = _React$useState[1];
-
+    selected = _React$useState[0],
+    setSelected = _React$useState[1];
   var _React$useState2 = React.useState(dummyOptions.slice(0, 200)),
-      options = _React$useState2[0],
-      setOptions = _React$useState2[1];
-
+    options = _React$useState2[0],
+    setOptions = _React$useState2[1];
   var onMore = function onMore() {
     setTimeout(function () {
       setOptions(dummyOptions.slice(0, options.length + 200));
     }, 1000);
   };
-
   var onChange = function onChange(_ref) {
     var nextSelected = _ref.value;
     return setSelected(nextSelected);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -45,10 +41,11 @@ export var LongList = function LongList() {
       dropHeight: "medium",
       onMore: onMore,
       onChange: onChange
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 LongList.storyName = 'Long list';
 LongList.parameters = {
   chromatic: {

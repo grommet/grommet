@@ -19,21 +19,17 @@ var rangeInputTheme = {
 };
 export var Bounds = function Bounds() {
   var _React$useState = React.useState(3),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var _React$useState2 = React.useState(),
-      isAddDisabled = _React$useState2[0],
-      setIsAddDisabled = _React$useState2[1];
-
+    isAddDisabled = _React$useState2[0],
+    setIsAddDisabled = _React$useState2[1];
   var _React$useState3 = React.useState(),
-      isSubtractDisabled = _React$useState3[0],
-      setIsSubtractDisabled = _React$useState3[1];
-
+    isSubtractDisabled = _React$useState3[0],
+    setIsSubtractDisabled = _React$useState3[1];
   var onChange = function onChange(event) {
     return setValue(event.target.value);
   };
-
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: rangeInputTheme
   }, /*#__PURE__*/React.createElement(Box, {

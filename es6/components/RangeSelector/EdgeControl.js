@@ -1,9 +1,6 @@
 var _excluded = ["color", "direction", "edge", "onDecrease", "onIncrease", "thickness"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef, useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -28,22 +25,19 @@ var StyledBox = styled(Box).withConfig({
 });
 var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var color = _ref.color,
-      direction = _ref.direction,
-      edge = _ref.edge,
-      onDecrease = _ref.onDecrease,
-      onIncrease = _ref.onIncrease,
-      thickness = _ref.thickness,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    direction = _ref.direction,
+    edge = _ref.edge,
+    onDecrease = _ref.onDecrease,
+    onIncrease = _ref.onIncrease,
+    thickness = _ref.thickness,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext);
-
   var _useState = useState(false),
-      focus = _useState[0],
-      setFocus = _useState[1];
-
+    focus = _useState[0],
+    setFocus = _useState[1];
   var _DIRECTION_PROPS$dire = DIRECTION_PROPS[direction],
-      cursor = _DIRECTION_PROPS$dire.cursor,
-      fill = _DIRECTION_PROPS$dire.fill;
+    cursor = _DIRECTION_PROPS$dire.cursor,
+    fill = _DIRECTION_PROPS$dire.fill;
   var size = parseMetricToNum(theme.global.spacing) / 2;
   var keyboardProps = direction === 'vertical' ? {
     onUp: onDecrease,
@@ -56,7 +50,6 @@ var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var type = theme.rangeSelector && theme.rangeSelector.edge && theme.rangeSelector.edge.type || 'disc';
   var node;
   var backgroundColor = normalizeColor(color || 'control', theme);
-
   if (type === 'bar') {
     node = /*#__PURE__*/React.createElement(StyledBox, {
       flex: !thickness,
@@ -77,7 +70,6 @@ var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
   } else {
     node = type;
   }
-
   return /*#__PURE__*/React.createElement(Keyboard, keyboardProps, /*#__PURE__*/React.createElement(Box, {
     direction: boxDirection,
     style: {

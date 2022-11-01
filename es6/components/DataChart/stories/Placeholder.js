@@ -27,10 +27,11 @@ export var Placeholder = function Placeholder() {
         }
       },
       placeholder: "no data"
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/DataChart/Placeholder'
 };

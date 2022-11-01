@@ -64,10 +64,11 @@ export var FieldStates = function FieldStates() {
       name: "disabled",
       placeholder: "Enter a username",
       disabled: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 FieldStates.storyName = 'Field states';
 export default {
   title: 'Input/Form/Field states'

@@ -3,16 +3,13 @@ import { Box, Tab, Tabs } from 'grommet';
 import { Attraction } from "grommet-icons/es6/icons/Attraction";
 import { Car } from "grommet-icons/es6/icons/Car";
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
-
 var ResponsiveTabs = function ResponsiveTabs() {
   var _useState = useState(),
-      index = _useState[0],
-      setIndex = _useState[1];
-
+    index = _useState[0],
+    setIndex = _useState[1];
   var onActive = function onActive(nextIndex) {
     return setIndex(nextIndex);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -133,8 +130,8 @@ var ResponsiveTabs = function ResponsiveTabs() {
       background: "dark-3"
     }, /*#__PURE__*/React.createElement(Car, {
       size: "xlarge"
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
 

@@ -93,10 +93,11 @@ export var BorderBox = function BorderBox() {
           size: 'large'
         }
       }, /*#__PURE__*/React.createElement(Text, null, "between"), /*#__PURE__*/React.createElement(Text, null, direction));
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 BorderBox.storyName = 'Border';
 export default {
   title: 'Layout/Box/Border'

@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.GradientColorBox = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var GradientColorBox = function GradientColorBox() {
   return (
     /*#__PURE__*/
@@ -22,11 +18,10 @@ var GradientColorBox = function GradientColorBox() {
       round: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       color: "white"
-    }, "I have a linear gradient background")) // </Grommet>
-
+    }, "I have a linear gradient background"))
+    // </Grommet>
   );
 };
-
 exports.GradientColorBox = GradientColorBox;
 GradientColorBox.storyName = 'Gradient';
 var _default = {

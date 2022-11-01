@@ -61,10 +61,11 @@ export var ValidateOnBlur = function ValidateOnBlur() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 ValidateOnBlur.storyName = 'Validate on blur';
 ValidateOnBlur.args = {
   full: true

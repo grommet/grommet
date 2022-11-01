@@ -13,15 +13,12 @@ var StyledLayer = styled.div.withConfig({
   if (props.position === 'hidden') {
     return hiddenPositionStyle;
   }
-
   var styles = [];
   styles.push(desktopLayerStyle);
-
   if (props.responsive && props.theme.layer.responsiveBreakpoint && !props.layerTarget) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
     styles.push(breakpointStyle(breakpoint, responsiveLayerStyle));
   }
-
   return styles;
 }, function (props) {
   return props.theme.layer && props.theme.layer.extend;
@@ -36,12 +33,10 @@ var StyledOverlay = styled.div.withConfig({
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
     return breakpointStyle(breakpoint, 'position: relative;');
   }
-
   return '';
 }, function (props) {
   return !props.plain && props.theme.layer.overlay.background && backgroundStyle(props.theme.layer.overlay.background, props.theme);
 });
-
 var getMargin = function getMargin(margin, theme, position) {
   var axis = position.indexOf('top') !== -1 || position.indexOf('bottom') !== -1 ? 'vertical' : 'horizontal';
   var marginValue = margin[position] || margin[axis] || margin;
@@ -49,16 +44,13 @@ var getMargin = function getMargin(margin, theme, position) {
   var marginInTheme = !!theme.global.edgeSize[marginValue];
   return !marginInTheme && typeof marginValue !== 'string' ? 0 : parseMetricToNum(marginApplied);
 };
-
 var getBounds = function getBounds(bounds, margin, theme, position) {
   if (position === void 0) {
     position = undefined;
   }
-
   if (position) {
     return bounds[position] + getMargin(margin, theme, position);
   }
-
   return {
     bottom: bounds.bottom + getMargin(margin, theme, 'bottom'),
     // 'bottom-left': getMargin(margin, theme, 'bottom-left'),
@@ -67,9 +59,9 @@ var getBounds = function getBounds(bounds, margin, theme, position) {
     left: bounds.left + getMargin(margin, theme, 'left'),
     right: bounds.right + getMargin(margin, theme, 'right'),
     start: bounds.left + getMargin(margin, theme, 'start'),
-    top: bounds.top + getMargin(margin, theme, 'top') // 'top-right': getMargin(margin, theme, 'top-right'),
+    top: bounds.top + getMargin(margin, theme, 'top')
+    // 'top-right': getMargin(margin, theme, 'top-right'),
     // 'top-left': getMargin(margin, theme, 'top-left'),
-
   };
 };
 
@@ -118,27 +110,24 @@ var KEYFRAMES = {
   }
 };
 var animationDuration = 200;
-
 var getAnimationStyle = function getAnimationStyle(props, position, full) {
   var animation = props.animation !== undefined ? props.animation : props.animate;
   if (animation === undefined) animation = 'slide';
   var keys;
-
   if (animation === 'slide' || animation === true) {
     keys = KEYFRAMES[position][full];
   } else if (animation === 'fadeIn') {
     keys = keyframes(["0%{opacity:0}100%{opacity:1}"]);
   }
-
   return keys ? css(["animation:", " ", "s ease-in-out forwards;"], keys, animationDuration / 1000.0) : '';
-}; // POSITIONS combines 'position', 'full', and 'margin' properties, since
+};
+
+// POSITIONS combines 'position', 'full', and 'margin' properties, since
 // they are all interdependent.
 // Basically, non-full axes combine 50% position with -50% translation.
 // full axes pin to the window edges offset by any margin.
 // The keyframe animations are included as they are done via translations
 // as well so they must take into account the non-animated positioning.
-
-
 var POSITIONS = {
   center: {
     vertical: function vertical(bounds) {
@@ -383,14 +372,12 @@ var POSITIONS = {
     }
   }
 };
-
 var roundStyle = function roundStyle(data, theme, position, margin) {
   var styles = [];
   var size = data === true ? 'medium' : data;
-  var round = theme.global.edgeSize[size] || size; // if user provides CSS string such as '50px 12px', apply that always
-
+  var round = theme.global.edgeSize[size] || size;
+  // if user provides CSS string such as '50px 12px', apply that always
   var customCSS = round.split(' ').length > 1;
-
   if (margin === 'none' && !customCSS && theme.layer.border.intelligentRounding === true) {
     if (position === 'bottom') {
       styles.push(css(["border-radius:", " ", " 0 0;"], round, round));
@@ -423,10 +410,8 @@ var roundStyle = function roundStyle(data, theme, position, margin) {
     // a complex CSS string such as "50px 20px" apply this
     styles.push(css(["border-radius:", ";"], round));
   }
-
   return styles;
 };
-
 var bounds = {
   left: 0,
   right: 0,
@@ -437,7 +422,6 @@ var desktopContainerStyle = css(["", " max-height:", ";max-width:", ";", ";", ";
   if (!props.modal && props.position === 'hidden') {
     return hiddenPositionStyle;
   }
-
   return css(["position:", ";"], props.modal || props.layerTarget ? 'absolute' : 'fixed');
 }, function (props) {
   return "calc(100% - " + getBounds(bounds, props.margin, props.theme, 'top') + "px - " + getBounds(bounds, props.margin, props.theme, 'bottom') + "px)";
@@ -448,11 +432,9 @@ var desktopContainerStyle = css(["", " max-height:", ";max-width:", ";", ";", ";
 }, function (props) {
   return props.position !== 'hidden' && POSITIONS[props.position][props.full](getBounds(bounds, props.margin, props.theme), bounds) || '';
 });
-
 var responsiveContainerStyle = function responsiveContainerStyle(props) {
   return css(["position:relative;max-height:none;max-width:none;border-radius:0;height:", ";width:", ";"], !props.layerTarget ? '100vh' : '100%', !props.layerTarget ? '100vw' : '100%');
 };
-
 var elevationStyle = css(["box-shadow:", ";"], function (props) {
   return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.theme.layer.container.elevation];
 });
@@ -478,12 +460,10 @@ var StyledContainer = styled.div.withConfig({
 }, desktopContainerStyle, function (props) {
   if (props.responsive && props.theme.layer.responsiveBreakpoint) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
-
     if (breakpoint) {
       return breakpointStyle(breakpoint, responsiveContainerStyle);
     }
   }
-
   return '';
 }, function (props) {
   return props.theme.layer.container && props.theme.layer.container.extend;

@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports.theme = void 0;
-
 var _grommetIcons = require("grommet-icons");
-
 var _utils = require("../../../utils");
-
 var _SearchInput = require("./components/SearchInput");
-
 var theme = {
   global: {
     colors: {
@@ -60,7 +56,7 @@ var theme = {
     check: {
       extend: function extend(_ref) {
         var extendTheme = _ref.theme,
-            checked = _ref.checked;
+          checked = _ref.checked;
         return "\n        " + (checked && "background-color: " + (0, _utils.normalizeColor)('brand', extendTheme) + ";") + "\n      ";
       }
     },

@@ -2,17 +2,11 @@
 
 exports.__esModule = true;
 exports["default"] = exports.CustomValue = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 var _data = require("./data");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var CustomValue = function CustomValue() {
   return (
     /*#__PURE__*/
@@ -26,7 +20,7 @@ var CustomValue = function CustomValue() {
       size: "3xl"
     }, "Custom Value"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, null, Object.entries(_data.statusData).map(function (_ref) {
       var name = _ref[0],
-          value = _ref[1];
+        value = _ref[1];
       var icon;
       if (value === 'Ok') icon = /*#__PURE__*/_react["default"].createElement(_grommetIcons.StatusGoodSmall, {
         color: "green",
@@ -53,7 +47,7 @@ var CustomValue = function CustomValue() {
       size: "3xl"
     }, "Custom Multi-Line Value"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, null, Object.entries(_data.languageData).map(function (_ref2) {
       var name = _ref2[0],
-          value = _ref2[1];
+        value = _ref2[1];
       var icon;
       if (name === 'Languages') icon = /*#__PURE__*/_react["default"].createElement(_grommetIcons.Language, {
         size: "small"
@@ -75,11 +69,10 @@ var CustomValue = function CustomValue() {
       }, icon), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
         color: "text-strong"
       }, value)));
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.CustomValue = CustomValue;
 var _default = {
   title: 'Visualizations/NameValueList/Custom Value'

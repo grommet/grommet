@@ -94,10 +94,11 @@ export var BackgroundBox = function BackgroundBox() {
       pad: "medium"
     }, /*#__PURE__*/React.createElement(Text, {
       color: "brand"
-    }, "force light background with color as object")))) // </Grommet>
-
+    }, "force light background with color as object"))))
+    // </Grommet>
   );
 };
+
 BackgroundBox.storyName = 'Background';
 export default {
   title: 'Layout/Box/Background'

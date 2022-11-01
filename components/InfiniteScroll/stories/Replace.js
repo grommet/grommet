@@ -2,17 +2,12 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Replace = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var allItems = Array(240).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
-
 var Replace = function Replace() {
   return (
     /*#__PURE__*/
@@ -30,11 +25,10 @@ var Replace = function Replace() {
         },
         align: "center"
       }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, item));
-    }) // </Grommet>
-
+    })
+    // </Grommet>
   );
 };
-
 exports.Replace = Replace;
 Replace.parameters = {
   chromatic: {

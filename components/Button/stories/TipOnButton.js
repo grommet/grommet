@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.TipOnButton = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var TipOnButton = function TipOnButton() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
@@ -52,7 +48,6 @@ var TipOnButton = function TipOnButton() {
     }
   }));
 };
-
 exports.TipOnButton = TipOnButton;
 TipOnButton.storyName = 'Tip on button';
 TipOnButton.parameters = {

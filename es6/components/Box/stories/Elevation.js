@@ -25,10 +25,11 @@ export var ElevationBox = function ElevationBox() {
     }, /*#__PURE__*/React.createElement(Text, null, "light on dark"), /*#__PURE__*/React.createElement(Box, {
       pad: "medium",
       elevation: "medium"
-    }, /*#__PURE__*/React.createElement(Text, null, "light on light")))))) // </Grommet>
-
+    }, /*#__PURE__*/React.createElement(Text, null, "light on light"))))))
+    // </Grommet>
   );
 };
+
 ElevationBox.storyName = 'Elevation';
 export default {
   title: 'Layout/Box/Elevation'

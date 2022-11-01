@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.OnClickBox = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var OnClickBox = function OnClickBox() {
   return (
     /*#__PURE__*/
@@ -37,11 +32,10 @@ var OnClickBox = function OnClickBox() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
       size: "large"
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Party"))) // </Grommet>
-
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Party")))
+    // </Grommet>
   );
 };
-
 exports.OnClickBox = OnClickBox;
 OnClickBox.storyName = 'onClick';
 var _default = {

@@ -2,30 +2,22 @@
 
 exports.__esModule = true;
 exports["default"] = exports.DefaultSuggestion = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var suggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
-
 var DefaultSuggestion = function DefaultSuggestion() {
   var _React$useState = _react["default"].useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var onChange = function onChange(event) {
     return setValue(event.target.value);
   };
-
   var onSelect = function onSelect(event) {
     return setValue(event.suggestion);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -45,11 +37,10 @@ var DefaultSuggestion = function DefaultSuggestion() {
       suggestions: suggestions,
       defaultSuggestion: 1,
       "aria-label": "Input Text"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.DefaultSuggestion = DefaultSuggestion;
 DefaultSuggestion.storyName = 'Default suggestion';
 DefaultSuggestion.parameters = {

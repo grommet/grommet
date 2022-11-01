@@ -28,10 +28,11 @@ export var AnimatedChart = function AnimatedChart() {
         values: values,
         animate: true
       }));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 AnimatedChart.storyName = 'Animate';
 AnimatedChart.parameters = {
   chromatic: {

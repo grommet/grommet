@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Drop, Text, ThemeContext } from 'grommet';
-
 var OneDrop = function OneDrop(_ref) {
   var align = _ref.align,
-      target = _ref.target;
+    target = _ref.target;
   return /*#__PURE__*/React.createElement(Drop, {
     align: align,
     target: target,
@@ -13,20 +12,16 @@ var OneDrop = function OneDrop(_ref) {
     pad: "small"
   }));
 };
-
 OneDrop.propTypes = {
   align: PropTypes.shape({}).isRequired,
   target: PropTypes.shape({}).isRequired
 };
-
 var Set = function Set(_ref2) {
   var aligns = _ref2.aligns,
-      label = _ref2.label;
-
+    label = _ref2.label;
   var _React$useState = React.useState(),
-      target = _React$useState[0],
-      setTarget = _React$useState[1];
-
+    target = _React$useState[0],
+    setTarget = _React$useState[1];
   var targetRef = React.useCallback(setTarget, [setTarget]);
   return /*#__PURE__*/React.createElement(Box, {
     border: true,
@@ -42,7 +37,8 @@ var Set = function Set(_ref2) {
     justify: "center",
     ref: targetRef
   }, "\xA0"), target && /*#__PURE__*/React.createElement(React.Fragment, null, aligns.map(function (align, index) {
-    return /*#__PURE__*/React.createElement(OneDrop // eslint-disable-next-line react/no-array-index-key
+    return /*#__PURE__*/React.createElement(OneDrop
+    // eslint-disable-next-line react/no-array-index-key
     , {
       key: index,
       align: align,
@@ -50,12 +46,10 @@ var Set = function Set(_ref2) {
     });
   })));
 };
-
 Set.propTypes = {
   aligns: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   label: PropTypes.string.isRequired
 };
-
 var AllDrops = function AllDrops() {
   return (
     /*#__PURE__*/
@@ -223,8 +217,8 @@ var AllDrops = function AllDrops() {
     }), /*#__PURE__*/React.createElement(Set, {
       label: "(center vertical and horizontal)",
       aligns: [{}]
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
 

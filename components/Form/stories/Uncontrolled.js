@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Uncontrolled = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var suggestions = ['Shimi', 'Eric'];
-
 var Uncontrolled = function Uncontrolled() {
   return (
     /*#__PURE__*/
@@ -105,11 +100,10 @@ var Uncontrolled = function Uncontrolled() {
       type: "submit",
       label: "Update",
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
-
 exports.Uncontrolled = Uncontrolled;
 Uncontrolled.args = {
   full: true

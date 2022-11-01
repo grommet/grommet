@@ -2,19 +2,12 @@
 
 exports.__esModule = true;
 exports["default"] = exports.FieldSpacingOptions = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _themes = require("grommet/themes");
-
 var _utils = require("grommet/utils");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   formField: {
     border: {
@@ -54,7 +47,6 @@ var adjustedLabelMargins = {
     margin: 'none'
   }
 };
-
 var FieldSpacingOptions = function FieldSpacingOptions() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
@@ -233,7 +225,6 @@ var FieldSpacingOptions = function FieldSpacingOptions() {
     options: ['Eenie', 'Meenie', 'Miney', 'Moe']
   })))))));
 };
-
 exports.FieldSpacingOptions = FieldSpacingOptions;
 FieldSpacingOptions.storyName = 'Field spacing options';
 var _default = {

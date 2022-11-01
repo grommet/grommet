@@ -2,17 +2,11 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ThemeRadioButton = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _themes = require("grommet/themes");
-
 var _utils = require("grommet/utils");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var theme = (0, _utils.deepMerge)(_themes.grommet, {
   radioButton: {
     gap: 'xsmall',
@@ -38,12 +32,10 @@ var theme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-
 var ThemeRadioButton = function ThemeRadioButton() {
   var _React$useState = _react["default"].useState(),
-      selected = _React$useState[0],
-      setSelected = _React$useState[1];
-
+    selected = _React$useState[0],
+    setSelected = _React$useState[1];
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -65,7 +57,6 @@ var ThemeRadioButton = function ThemeRadioButton() {
     }
   })));
 };
-
 exports.ThemeRadioButton = ThemeRadioButton;
 ThemeRadioButton.storyName = 'Theme';
 var _default = {

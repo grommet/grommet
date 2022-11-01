@@ -16,10 +16,11 @@ export var NumberMiddlePages = function NumberMiddlePages() {
       numberItems: 237,
       page: 10,
       numberMiddlePages: 5
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 NumberMiddlePages.storyName = 'Number middle pages';
 export default {
   title: 'Controls/Pagination/Number middle pages'

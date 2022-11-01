@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports.MaskedInputPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     a11yTitle: _propTypes["default"].string,
@@ -26,14 +22,13 @@ if (process.env.NODE_ENV !== 'production') {
       options: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])),
       restrictToOptions: _propTypes["default"].bool,
       regexp: _propTypes["default"].shape({}) // RegExp
-
     })),
+
     reverse: _propTypes["default"].bool,
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), _propTypes["default"].string]),
     textAlign: _propTypes["default"].oneOf(['start', 'center', 'end']),
     value: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])
   };
 }
-
 var MaskedInputPropTypes = PropType;
 exports.MaskedInputPropTypes = MaskedInputPropTypes;

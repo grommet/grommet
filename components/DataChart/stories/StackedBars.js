@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.StackedBars = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 0; i < 7; i += 1) {
   data.push({
     date: "2020-07-" + (i % 31 + 1).toString().padStart(2, 0),
@@ -18,7 +13,6 @@ for (var i = 0; i < 7; i += 1) {
     forecast: Math.floor(Math.abs(Math.cos(i / 2.0) * 100))
   });
 }
-
 var StackedBars = function StackedBars() {
   return (
     /*#__PURE__*/
@@ -65,11 +59,10 @@ var StackedBars = function StackedBars() {
         y: true
       },
       legend: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.StackedBars = StackedBars;
 StackedBars.storyName = 'Stacked bars';
 var _default = {

@@ -37,10 +37,11 @@ export var Opacity = function Opacity() {
     }, /*#__PURE__*/React.createElement(Image, {
       opacity: "0.6",
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Media/Image/Opacity'
 };

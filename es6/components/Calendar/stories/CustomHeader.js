@@ -4,13 +4,11 @@ import { FormPreviousLink } from "grommet-icons/es6/icons/FormPreviousLink";
 import { FormNextLink } from "grommet-icons/es6/icons/FormNextLink";
 export var CustomHeaderCalendar = function CustomHeaderCalendar() {
   var _useState = useState(),
-      date = _useState[0],
-      setDate = _useState[1];
-
+    date = _useState[0],
+    setDate = _useState[1];
   var onSelect = function onSelect(nextDate) {
     setDate(nextDate !== date ? nextDate : undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -25,11 +23,11 @@ export var CustomHeaderCalendar = function CustomHeaderCalendar() {
       bounds: ['2020-09-08', '2025-12-13'],
       header: function header(_ref) {
         var currentDate = _ref.date,
-            locale = _ref.locale,
-            onPreviousMonth = _ref.onPreviousMonth,
-            onNextMonth = _ref.onNextMonth,
-            previousInBound = _ref.previousInBound,
-            nextInBound = _ref.nextInBound;
+          locale = _ref.locale,
+          onPreviousMonth = _ref.onPreviousMonth,
+          onNextMonth = _ref.onNextMonth,
+          previousInBound = _ref.previousInBound,
+          nextInBound = _ref.nextInBound;
         return /*#__PURE__*/React.createElement(Box, {
           direction: "row",
           align: "center",
@@ -47,10 +45,11 @@ export var CustomHeaderCalendar = function CustomHeaderCalendar() {
           onClick: onNextMonth
         }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(FormNextLink, null))));
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 CustomHeaderCalendar.storyName = 'Header';
 export default {
   title: 'Visualizations/Calendar/Header'

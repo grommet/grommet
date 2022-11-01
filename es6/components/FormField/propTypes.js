@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { marginProp } from '../../utils/general-prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     a11yTitle: PropTypes.string,
@@ -32,5 +31,4 @@ if (process.env.NODE_ENV !== 'production') {
     }), PropTypes.func]))])
   };
 }
-
 export var FormFieldPropTypes = PropType;

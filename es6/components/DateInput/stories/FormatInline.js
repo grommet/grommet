@@ -6,93 +6,77 @@ var DATE_RANGE = ['2020-07-02', '2020-07-05'];
 var DATE_RANGETZ = ['2020-07-02T00:00:00-08:00', '2020-07-05T00:00:00-08:00'];
 export var FormatInline = function FormatInline() {
   var _useState = useState(),
-      date = _useState[0],
-      setDate = _useState[1];
-
+    date = _useState[0],
+    setDate = _useState[1];
   var _useState2 = useState(),
-      emptyDate = _useState2[0],
-      setEmptyDate = _useState2[1];
-
+    emptyDate = _useState2[0],
+    setEmptyDate = _useState2[1];
   var _useState3 = useState(),
-      dateRange = _useState3[0],
-      setDateRange = _useState3[1];
-
+    dateRange = _useState3[0],
+    setDateRange = _useState3[1];
   var _useState4 = useState(),
-      dateNoTZ = _useState4[0],
-      setDateNoTZ = _useState4[1];
-
+    dateNoTZ = _useState4[0],
+    setDateNoTZ = _useState4[1];
   var _useState5 = useState(),
-      dateRangeNoTZ = _useState5[0],
-      setDateRangeNoTZ = _useState5[1];
-
+    dateRangeNoTZ = _useState5[0],
+    setDateRangeNoTZ = _useState5[1];
   var _useState6 = useState(),
-      dateNoDefault = _useState6[0],
-      setDateNoDefault = _useState6[1];
-
+    dateNoDefault = _useState6[0],
+    setDateNoDefault = _useState6[1];
   var _useState7 = useState(DATETZ),
-      dateStateDefault = _useState7[0],
-      setDateStateDefault = _useState7[1];
-
+    dateStateDefault = _useState7[0],
+    setDateStateDefault = _useState7[1];
   var _useState8 = useState(DATE),
-      dateStateDefaultNoTZ = _useState8[0],
-      setDateStateDefaultNoTZ = _useState8[1];
-
+    dateStateDefaultNoTZ = _useState8[0],
+    setDateStateDefaultNoTZ = _useState8[1];
   var onChangeEmpty = function onChangeEmpty(event) {
     var nextValue = event.value;
     console.log('onChange iso date:', nextValue);
     console.log('onChange utc date:', new Date(nextValue));
     setEmptyDate(nextValue);
   };
-
   var onChangeTZ = function onChangeTZ(event) {
     var nextValue = event.value;
     console.log('onChange iso date:', nextValue);
     console.log('onChange utc date:', new Date(nextValue));
     setDate(nextValue);
   };
-
   var onChangeNoTZ = function onChangeNoTZ(event) {
     var nextValue = event.value;
     console.log('onChange iso date:', nextValue);
     console.log('onChange utc date:', new Date(nextValue));
     setDateNoTZ(nextValue);
   };
-
   var onChangeRange = function onChangeRange(event) {
     var nextValue = event.value;
     console.log('onChange iso date:', nextValue);
     console.log('onChange utc date:', new Date(nextValue));
     setDateRange(nextValue);
   };
-
   var onChangeRangeNoTZ = function onChangeRangeNoTZ(event) {
     var nextValue = event.value;
     console.log('onChange iso date:', nextValue);
     console.log('onChange utc date:', new Date(nextValue));
     setDateRangeNoTZ(nextValue);
   };
-
   var onChangeNoDefault = function onChangeNoDefault(event) {
     var nextValue = event.value;
     console.log('onChange iso date:', nextValue);
     console.log('onChange utc date:', new Date(nextValue));
     setDateNoDefault(nextValue);
   };
-
   var onChangeStateDefault = function onChangeStateDefault(event) {
     var nextValue = event.value;
     console.log('onChange iso date:', nextValue);
     console.log('onChange utc date:', new Date(nextValue));
     setDateStateDefault(nextValue);
   };
-
   var onChangeStateDefaultNoTZ = function onChangeStateDefaultNoTZ(event) {
     var nextValue = event.value;
     console.log('onChange iso date:', nextValue);
     console.log('onChange utc date:', new Date(nextValue));
     setDateStateDefaultNoTZ(nextValue);
   };
-
   return /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     gap: "medium"

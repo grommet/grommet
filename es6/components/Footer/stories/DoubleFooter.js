@@ -1,5 +1,5 @@
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React from 'react';
 import styled from 'styled-components';
 import { Grommet as GrommetIcon } from "grommet-icons/es6/icons/Grommet";
@@ -9,17 +9,14 @@ var StyledAnchor = styled(Anchor).withConfig({
   displayName: "DoubleFooter__StyledAnchor",
   componentId: "sc-hzr4m1-0"
 })(["font-weight:200;"]);
-
 var FooterAnchor = function FooterAnchor(_ref) {
-  var rest = _extends({}, _ref);
-
+  var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   return /*#__PURE__*/React.createElement(StyledAnchor, _extends({
     href: "/",
     size: "small",
     color: "white"
   }, rest));
 };
-
 var FooterContent = function FooterContent() {
   return data.map(function (item) {
     return /*#__PURE__*/React.createElement(Box, {
@@ -35,7 +32,6 @@ var FooterContent = function FooterContent() {
     })));
   });
 };
-
 export var DoubleFooter = function DoubleFooter() {
   return (
     /*#__PURE__*/
@@ -70,10 +66,11 @@ export var DoubleFooter = function DoubleFooter() {
     }, "grommet.io")), /*#__PURE__*/React.createElement(Text, {
       textAlign: "center",
       size: "small"
-    }, "\xA9 2019 Copyright"))) // </Grommet>
-
+    }, "\xA9 2019 Copyright")))
+    // </Grommet>
   );
 };
+
 DoubleFooter.storyName = 'Double footer';
 export default {
   title: 'Layout/Footer/Double footer'

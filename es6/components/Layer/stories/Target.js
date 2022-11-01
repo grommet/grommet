@@ -3,35 +3,28 @@ import { Box, Button, CheckBox, Grid, Layer, Select } from 'grommet';
 var positions = ['left', 'right', 'top', 'bottom', 'center'];
 export var TargetLayer = function TargetLayer() {
   var _React$useState = React.useState(),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var _React$useState2 = React.useState('small'),
-      gutter = _React$useState2[0],
-      setGutter = _React$useState2[1];
-
+    gutter = _React$useState2[0],
+    setGutter = _React$useState2[1];
   var _React$useState3 = React.useState(true),
-      modal = _React$useState3[0],
-      setModal = _React$useState3[1];
-
+    modal = _React$useState3[0],
+    setModal = _React$useState3[1];
   var _React$useState4 = React.useState(positions[0]),
-      position = _React$useState4[0],
-      setPosition = _React$useState4[1];
-
+    position = _React$useState4[0],
+    setPosition = _React$useState4[1];
   React.useEffect(function () {
     window.dispatchEvent(new Event('resize'));
     return undefined;
   }, [gutter]);
   var ref = React.useRef();
-
   var onOpen = function onOpen() {
     return setOpen(true);
   };
-
   var onClose = function onClose() {
     return setOpen(undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -100,10 +93,11 @@ export var TargetLayer = function TargetLayer() {
         var option = _ref2.option;
         return setPosition(option);
       }
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 TargetLayer.storyName = 'Target';
 TargetLayer.args = {
   full: true

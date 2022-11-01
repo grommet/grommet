@@ -3,9 +3,8 @@ import { Box, Button, RadioButton } from 'grommet';
 import { Ascend } from "grommet-icons/es6/icons/Ascend";
 export var Children = function Children() {
   var _React$useState = React.useState(),
-      selected = _React$useState[0],
-      setSelected = _React$useState[1];
-
+    selected = _React$useState[0],
+    setSelected = _React$useState[1];
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",

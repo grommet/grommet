@@ -2,46 +2,35 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Scan = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _grommet = require("grommet");
-
 var _calcs = require("../calcs");
-
 var _data = require("./data");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var count = 30,
-    max = 100,
-    min = 0;
-
+  max = 100,
+  min = 0;
 var ScanChart = function ScanChart() {
   var _useState = (0, _react.useState)(undefined),
-      active = _useState[0],
-      setActive = _useState[1];
-
+    active = _useState[0],
+    setActive = _useState[1];
   var data = (0, _react.useMemo)(function () {
     return (0, _data.generateData)(count, max, min);
   }, []);
   var values = data.map(function (d) {
     return [d.time, d.value];
   });
-
   var _useMemo = (0, _react.useMemo)(function () {
-    return (0, _calcs.calcs)(values, {
-      min: min,
-      max: max
-    });
-  }, [values]),
-      axis = _useMemo.axis,
-      bounds = _useMemo.bounds,
-      pad = _useMemo.pad,
-      thickness = _useMemo.thickness;
-
+      return (0, _calcs.calcs)(values, {
+        min: min,
+        max: max
+      });
+    }, [values]),
+    axis = _useMemo.axis,
+    bounds = _useMemo.bounds,
+    pad = _useMemo.pad,
+    thickness = _useMemo.thickness;
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -156,15 +145,14 @@ var ScanChart = function ScanChart() {
         className: "chromatic-ignore",
         key: t
       }, new Date(t).toLocaleDateString());
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
 
 var Scan = function Scan() {
   return /*#__PURE__*/_react["default"].createElement(ScanChart, null);
 };
-
 exports.Scan = Scan;
 Scan.parameters = {
   chromatic: {

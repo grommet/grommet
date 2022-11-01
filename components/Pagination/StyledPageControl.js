@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports.StyledSeparator = exports.StyledPaginationButton = exports.StyledContainer = void 0;
-
 var _styledComponents = _interopRequireDefault(require("styled-components"));
-
 var _Button = require("../Button");
-
 var _Text = require("../Text");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var sizeStyle = function sizeStyle(props) {
   var style = props.theme.pagination.button && props.theme.pagination.button.size && props.theme.pagination.button.size[props.size || 'medium'];
   return style ? {
@@ -24,7 +19,6 @@ var sizeStyle = function sizeStyle(props) {
     }
   } : '';
 };
-
 var StyledPaginationButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "StyledPageControl__StyledPaginationButton",
   componentId: "sc-1vlfaez-0"
@@ -32,7 +26,6 @@ var StyledPaginationButton = (0, _styledComponents["default"])(_Button.Button).w
   return sizeStyle(props).content;
 });
 exports.StyledPaginationButton = StyledPaginationButton;
-
 var StyledContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledPageControl__StyledContainer",
   componentId: "sc-1vlfaez-1"
@@ -41,7 +34,6 @@ var StyledContainer = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.theme.pagination.control && props.theme.pagination.control.extend;
 });
-
 exports.StyledContainer = StyledContainer;
 var StyledSeparator = (0, _styledComponents["default"])(_Text.Text).withConfig({
   displayName: "StyledPageControl__StyledSeparator",

@@ -13,10 +13,11 @@ export var SemiCircle = function SemiCircle() {
       type: "semicircle",
       background: "light-2",
       value: 60
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Meter/Semi Circle'
 };

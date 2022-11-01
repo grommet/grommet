@@ -53,10 +53,11 @@ export var ValueStyleChart = function ValueStyleChart() {
     }), /*#__PURE__*/React.createElement(Chart, {
       type: "bar",
       values: values
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 ValueStyleChart.storyName = 'Value style';
 export default {
   title: 'Visualizations/Chart/Value style'

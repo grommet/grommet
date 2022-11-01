@@ -2,20 +2,14 @@
 
 exports.__esModule = true;
 exports["default"] = exports.IPv4RangeMaskedInput = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var IPv4ElementExp = /^[0-1][0-9][0-9]$|^2[0-4][0-9]$|^25[0-5]$|^[0-9][0-9]$|^[0-9]$/;
-
 var IPv4RangeMaskedInput = function IPv4RangeMaskedInput() {
   var _React$useState = _react["default"].useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -79,11 +73,10 @@ var IPv4RangeMaskedInput = function IPv4RangeMaskedInput() {
       onChange: function onChange(event) {
         return setValue(event.target.value);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.IPv4RangeMaskedInput = IPv4RangeMaskedInput;
 IPv4RangeMaskedInput.storyName = 'IPv4 range';
 IPv4RangeMaskedInput.args = {

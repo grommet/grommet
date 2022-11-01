@@ -9,13 +9,11 @@ var data = {
 };
 export var Filtered = function Filtered() {
   var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
+    value = _React$useState[0],
+    setValue = _React$useState[1];
   var _value$split = value.split(':'),
-      first = _value$split[0],
-      second = _value$split[1];
-
+    first = _value$split[0],
+    second = _value$split[1];
   var poets = first ? Object.keys(data).filter(function (k) {
     return k.toLowerCase().startsWith(first.toLowerCase());
   }) : Object.keys(data);
@@ -52,10 +50,11 @@ export var Filtered = function Filtered() {
       onChange: function onChange(event) {
         return setValue(event.target.value);
       }
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 Filtered.parameters = {
   chromatic: {
     disable: true

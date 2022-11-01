@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     confirmRemove: PropTypes.func,
@@ -22,5 +21,4 @@ if (process.env.NODE_ENV !== 'production') {
     renderFile: PropTypes.func
   };
 }
-
 export var FileInputPropTypes = PropType;

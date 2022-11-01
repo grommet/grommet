@@ -10,10 +10,11 @@ export var Fill = function Fill() {
     }, /*#__PURE__*/React.createElement(Box, {
       background: "brand",
       fill: true
-    }, "Test")) // </Grommet>
-
+    }, "Test"))
+    // </Grommet>
   );
 };
+
 Fill.args = {
   full: true
 };

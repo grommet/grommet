@@ -1,9 +1,6 @@
 var _excluded = ["name", "value", "size", "onRemove", "onClick"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { FormClose } from 'grommet-icons/icons/FormClose';
@@ -14,16 +11,13 @@ import { Text } from '../Text';
 import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _theme$tag$size, _theme$tag$size$size, _theme$tag$size2, _theme$tag$size2$size, _theme$tag$size3, _theme$tag$size3$size, _theme$tag$size4, _theme$tag$size4$size;
-
   var name = _ref.name,
-      value = _ref.value,
-      size = _ref.size,
-      onRemove = _ref.onRemove,
-      onClick = _ref.onClick,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    value = _ref.value,
+    size = _ref.size,
+    onRemove = _ref.onRemove,
+    onClick = _ref.onClick,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
-
   var containerProps = _extends({
     ref: ref,
     align: 'center',
@@ -31,7 +25,6 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     border: theme.tag.border,
     round: ((_theme$tag$size = theme.tag.size) == null ? void 0 : (_theme$tag$size$size = _theme$tag$size[size]) == null ? void 0 : _theme$tag$size$size.round) || theme.tag.round
   }, rest);
-
   var contents = /*#__PURE__*/React.createElement(Box, {
     width: {
       min: 'min-content'
@@ -46,11 +39,9 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, theme.tag.separator) : '', value && /*#__PURE__*/React.createElement(Text, _extends({}, theme.tag.value, {
     size: size
   }), value)));
-
   if (onClick && onRemove) {
     console.warn('Tag cannot combine "onClick" and "onRemove".');
   }
-
   return onRemove || !onClick ? /*#__PURE__*/React.createElement(Box, _extends({
     flex: false,
     direction: "row",

@@ -2,43 +2,24 @@
 
 exports.__esModule = true;
 exports.SelectContainer = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
-
 var _utils = require("../../utils");
-
 var _defaultProps = require("../../default-props");
-
 var _Box = require("../Box");
-
 var _Button = require("../Button");
-
 var _InfiniteScroll = require("../InfiniteScroll");
-
 var _Keyboard = require("../Keyboard");
-
 var _Text = require("../Text");
-
 var _TextInput = require("../TextInput");
-
 var _StyledSelect = require("./StyledSelect");
-
 var _utils2 = require("./utils");
-
 var _EmptySearchOption = require("./EmptySearchOption");
-
 var _excluded = ["clear", "onClear", "name", "theme"];
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 // ensure ClearButton receives visual indication of keyboard
 var StyledButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "SelectContainer__StyledButton",
@@ -48,13 +29,12 @@ var StyledButton = (0, _styledComponents["default"])(_Button.Button).withConfig(
 });
 var ClearButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var clear = _ref.clear,
-      onClear = _ref.onClear,
-      name = _ref.name,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    onClear = _ref.onClear,
+    name = _ref.name,
+    theme = _ref.theme,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var label = clear.label,
-      position = clear.position;
+    position = clear.position;
   var align = position !== 'bottom' ? 'start' : 'center';
   var buttonLabel = label || "Clear " + (name || 'selection');
   return /*#__PURE__*/_react["default"].createElement(StyledButton, _extends({
@@ -69,72 +49,66 @@ var ClearButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 });
 var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   var clear = _ref2.clear,
-      _ref2$children = _ref2.children,
-      children = _ref2$children === void 0 ? null : _ref2$children,
-      disabled = _ref2.disabled,
-      disabledKey = _ref2.disabledKey,
-      dropHeight = _ref2.dropHeight,
-      _ref2$emptySearchMess = _ref2.emptySearchMessage,
-      emptySearchMessage = _ref2$emptySearchMess === void 0 ? 'No matches found' : _ref2$emptySearchMess,
-      id = _ref2.id,
-      labelKey = _ref2.labelKey,
-      multiple = _ref2.multiple,
-      name = _ref2.name,
-      onChange = _ref2.onChange,
-      onKeyDown = _ref2.onKeyDown,
-      onMore = _ref2.onMore,
-      onSearch = _ref2.onSearch,
-      optionIndexesInValue = _ref2.optionIndexesInValue,
-      options = _ref2.options,
-      allOptions = _ref2.allOptions,
-      searchPlaceholder = _ref2.searchPlaceholder,
-      search = _ref2.search,
-      setSearch = _ref2.setSearch,
-      selected = _ref2.selected,
-      usingKeyboard = _ref2.usingKeyboard,
-      _ref2$value = _ref2.value,
-      value = _ref2$value === void 0 ? '' : _ref2$value,
-      valueKey = _ref2.valueKey,
-      _ref2$replace = _ref2.replace,
-      replace = _ref2$replace === void 0 ? true : _ref2$replace;
-
+    _ref2$children = _ref2.children,
+    children = _ref2$children === void 0 ? null : _ref2$children,
+    disabled = _ref2.disabled,
+    disabledKey = _ref2.disabledKey,
+    dropHeight = _ref2.dropHeight,
+    _ref2$emptySearchMess = _ref2.emptySearchMessage,
+    emptySearchMessage = _ref2$emptySearchMess === void 0 ? 'No matches found' : _ref2$emptySearchMess,
+    id = _ref2.id,
+    labelKey = _ref2.labelKey,
+    multiple = _ref2.multiple,
+    name = _ref2.name,
+    onChange = _ref2.onChange,
+    onKeyDown = _ref2.onKeyDown,
+    onMore = _ref2.onMore,
+    onSearch = _ref2.onSearch,
+    optionIndexesInValue = _ref2.optionIndexesInValue,
+    options = _ref2.options,
+    allOptions = _ref2.allOptions,
+    searchPlaceholder = _ref2.searchPlaceholder,
+    search = _ref2.search,
+    setSearch = _ref2.setSearch,
+    selected = _ref2.selected,
+    usingKeyboard = _ref2.usingKeyboard,
+    _ref2$value = _ref2.value,
+    value = _ref2$value === void 0 ? '' : _ref2$value,
+    valueKey = _ref2.valueKey,
+    _ref2$replace = _ref2.replace,
+    replace = _ref2$replace === void 0 ? true : _ref2$replace;
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-
   var shouldShowClearButton = (0, _react.useCallback)(function (position) {
     var hasValue = Boolean(multiple && value ? value.length : value);
     var showAtPosition = position === 'bottom' ? (clear == null ? void 0 : clear.position) === 'bottom' : (clear == null ? void 0 : clear.position) !== 'bottom';
     return clear && hasValue && showAtPosition;
   }, [clear, multiple, value]);
   var isDisabled = (0, _utils2.useDisabled)(disabled, disabledKey, options, valueKey || labelKey);
-
   var _useState = (0, _react.useState)(usingKeyboard && !shouldShowClearButton('top') ? 0 : -1),
-      activeIndex = _useState[0],
-      setActiveIndex = _useState[1];
-
+    activeIndex = _useState[0],
+    setActiveIndex = _useState[1];
   var _useState2 = (0, _react.useState)(usingKeyboard),
-      keyboardNavigation = _useState2[0],
-      setKeyboardNavigation = _useState2[1];
-
+    keyboardNavigation = _useState2[0],
+    setKeyboardNavigation = _useState2[1];
   var searchRef = (0, _react.useRef)();
   var optionsRef = (0, _react.useRef)();
   var clearRef = (0, _react.useRef)();
-  var activeRef = (0, _react.useRef)(); // for keyboard/screenreader, keep the active option in focus
+  var activeRef = (0, _react.useRef)();
 
+  // for keyboard/screenreader, keep the active option in focus
   (0, _react.useEffect)(function () {
     var _activeRef$current;
-
     if (activeIndex >= 0) (_activeRef$current = activeRef.current) == null ? void 0 : _activeRef$current.focus();
-  }, [activeIndex]); // set initial focus
+  }, [activeIndex]);
 
+  // set initial focus
   (0, _react.useEffect)(function () {
     // need to wait for Drop to be ready
     var timer = setTimeout(function () {
       var optionsNode = optionsRef.current;
       var clearButton = clearRef.current;
-
       if (onSearch) {
         var searchInput = searchRef.current;
-
         if (searchInput && searchInput.focus) {
           (0, _utils.setFocusWithoutScroll)(searchInput);
         }
@@ -152,13 +126,11 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
   }, [onSearch, usingKeyboard, clear]);
   var isSelected = (0, _react.useCallback)(function (index) {
     var result;
-
     if (selected) {
       // deprecated in favor of value
       result = selected.indexOf(index) !== -1;
     } else {
       var optionVal = (0, _utils2.getOptionValue)(index, options, valueKey);
-
       if (Array.isArray(value)) {
         if (value.length === 0) {
           result = false;
@@ -177,7 +149,6 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
         result = value === optionVal;
       }
     }
-
     return result;
   }, [selected, value, valueKey, options]);
   var selectOption = (0, _react.useCallback)(function (index) {
@@ -185,18 +156,15 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
       if (onChange) {
         var nextValue;
         var nextSelected;
-
         if (multiple) {
           var nextOptionIndexesInValue = optionIndexesInValue.slice(0);
           var allOptionsIndex = allOptions.indexOf(options[index]);
           var valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
-
           if (valueIndex === -1) {
             nextOptionIndexesInValue.push(allOptionsIndex);
           } else {
             nextOptionIndexesInValue.splice(valueIndex, 1);
           }
-
           nextValue = nextOptionIndexesInValue.map(function (i) {
             return valueKey && valueKey.reduce ? (0, _utils2.applyKey)(allOptions[i], valueKey) : allOptions[i];
           });
@@ -205,7 +173,6 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
           nextValue = valueKey && valueKey.reduce ? (0, _utils2.applyKey)(options[index], valueKey) : options[index];
           nextSelected = index;
         }
-
         onChange(event, {
           option: options[index],
           value: nextValue,
@@ -224,11 +191,9 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
   var onNextOption = (0, _react.useCallback)(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;
-
     while (nextActiveIndex < options.length && isDisabled(nextActiveIndex)) {
       nextActiveIndex += 1;
     }
-
     if (nextActiveIndex !== options.length) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
@@ -237,11 +202,9 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
   var onPreviousOption = (0, _react.useCallback)(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex - 1;
-
     if (nextActiveIndex === -1) {
       var searchInput = searchRef.current;
       var clearButton = clearRef.current;
-
       if (clearButton && clearButton.focus && shouldShowClearButton('top')) {
         setActiveIndex(nextActiveIndex);
         (0, _utils.setFocusWithoutScroll)(clearButton);
@@ -250,11 +213,9 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
         (0, _utils.setFocusWithoutScroll)(searchInput);
       }
     }
-
     while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
       nextActiveIndex -= 1;
     }
-
     if (nextActiveIndex >= 0) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
@@ -264,23 +225,19 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     if (!onSearch) {
       var nextActiveIndex = options.findIndex(function (e, index) {
         var label;
-
         if (typeof e === 'object') {
           label = e.label || (0, _utils2.applyKey)(e, labelKey);
         } else {
           label = e;
         }
-
         return typeof label === 'string' && label.charAt(0).toLowerCase() === event.key.toLowerCase() && !isDisabled(index);
       });
-
       if (nextActiveIndex >= 0) {
         event.preventDefault();
         setActiveIndex(nextActiveIndex);
         setKeyboardNavigation(true);
       }
     }
-
     if (onKeyDown) {
       onKeyDown(event);
     }
@@ -299,7 +256,6 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
       });
     } else if (activeIndex >= 0 && activeIndex < options.length) {
       event.preventDefault(); // prevent submitting forms
-
       selectOption(activeIndex)(event);
     }
   }, [activeIndex, selectOption, options, onChange, shouldShowClearButton]);
@@ -362,12 +318,11 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
   }, function (option, index, optionRef) {
     var optionDisabled = isDisabled(index);
     var optionSelected = isSelected(index);
-    var optionActive = activeIndex === index; // Determine whether the label is done as a child or
+    var optionActive = activeIndex === index;
+    // Determine whether the label is done as a child or
     // as an option Button kind property.
-
     var child;
     var textComponent = false;
-
     if (children) {
       child = children(option, index, options, {
         active: optionActive,
@@ -378,12 +333,14 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     } else if (theme.select.options) {
       child = /*#__PURE__*/_react["default"].createElement(_Box.Box, selectOptionsStyle, /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.select.options.text, (0, _utils2.getOptionLabel)(index, options, labelKey)));
       textComponent = true;
-    } // if we have a child, turn on plain, and hoverIndicator
+    }
 
-
-    return /*#__PURE__*/_react["default"].createElement(_StyledSelect.SelectOption // eslint-disable-next-line react/no-array-index-key
+    // if we have a child, turn on plain, and hoverIndicator
+    return /*#__PURE__*/_react["default"].createElement(_StyledSelect.SelectOption
+    // eslint-disable-next-line react/no-array-index-key
     , {
-      key: index // merge optionRef and activeRef
+      key: index
+      // merge optionRef and activeRef
       ,
       ref: function ref(node) {
         // eslint-disable-next-line no-param-reassign
@@ -403,7 +360,8 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
       label: !child ? (0, _utils2.getOptionLabel)(index, options, labelKey || valueKey) : undefined,
       disabled: optionDisabled || undefined,
       active: optionActive,
-      selected: optionSelected // allow keyboard navigation to start from
+      selected: optionSelected
+      // allow keyboard navigation to start from
       // selected option after tabbing to it
       ,
       onFocus: function onFocus() {

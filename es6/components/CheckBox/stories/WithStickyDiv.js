@@ -14,22 +14,18 @@ var titleBoxStyle = {
 var checkboxes = Array(8).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
-
 var removeItemFromArray = function removeItemFromArray(array, value) {
   return array.filter(function (item) {
     return item !== value;
   });
 };
-
 export var WithStickyDiv = function WithStickyDiv() {
   var _useState = useState([]),
-      checks = _useState[0],
-      setChecks = _useState[1];
-
+    checks = _useState[0],
+    setChecks = _useState[1];
   var onCheck = function onCheck(value) {
     return function (_ref) {
       var target = _ref.target;
-
       if (target.checked) {
         setChecks([].concat(checks, [value]));
       } else {
@@ -37,7 +33,6 @@ export var WithStickyDiv = function WithStickyDiv() {
       }
     };
   };
-
   return /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     align: "center"

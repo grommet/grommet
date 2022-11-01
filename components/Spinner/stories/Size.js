@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Size = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Size = function Size() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, ['xsmall', 'small', 'medium', 'large', 'xlarge'].map(function (size) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -24,7 +20,6 @@ var Size = function Size() {
     }, size));
   }));
 };
-
 exports.Size = Size;
 var _default = {
   title: 'Visualizations/Spinner/Size'

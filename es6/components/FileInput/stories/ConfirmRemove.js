@@ -23,7 +23,6 @@ export var ConfirmRemove = function ConfirmRemove() {
     onChange: function onChange(event, _ref2) {
       var files = _ref2.files;
       var fileList = files;
-
       for (var i = 0; i < fileList.length; i += 1) {
         var file = fileList[i];
         console.log(file.name);
@@ -31,7 +30,7 @@ export var ConfirmRemove = function ConfirmRemove() {
     },
     confirmRemove: function confirmRemove(_ref3) {
       var onConfirm = _ref3.onConfirm,
-          onCancel = _ref3.onCancel;
+        onCancel = _ref3.onCancel;
       return /*#__PURE__*/React.createElement(Layer, {
         onClickOutside: onCancel,
         onEsc: onCancel

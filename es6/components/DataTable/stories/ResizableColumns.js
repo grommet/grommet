@@ -76,10 +76,11 @@ export var ResizableDataTable = function ResizableDataTable() {
       data: DATA,
       primaryKey: false,
       resizeable: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 ResizableDataTable.storyName = 'Resizable columns';
 export default {
   title: 'Visualizations/DataTable/Resizable columns'

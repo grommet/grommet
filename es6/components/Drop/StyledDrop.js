@@ -2,31 +2,25 @@ import styled, { keyframes } from 'styled-components';
 import { baseStyle, edgeStyle, roundStyle } from '../../utils/styles';
 import { backgroundStyle } from '../../utils/background';
 import { defaultProps } from '../../default-props';
-
 function getTransformOriginStyle(align) {
   var vertical = 'top';
-
   if (align.bottom) {
     vertical = 'bottom';
   }
-
   var horizontal = 'left';
-
   if (align.right) {
     horizontal = 'right';
   }
-
   return vertical + " " + horizontal;
 }
+var dropKeyFrames = keyframes(["0%{opacity:0.5;transform:scale(0.8);}100%{opacity:1;transform:scale(1);}"]);
 
-var dropKeyFrames = keyframes(["0%{opacity:0.5;transform:scale(0.8);}100%{opacity:1;transform:scale(1);}"]); // The desired margin may be adjusted depending on drops alignment
-
+// The desired margin may be adjusted depending on drops alignment
 var marginStyle = function marginStyle(theme, align, data, responsive, marginProp) {
   var margin = theme.global.edgeSize[data] || data;
-  var adjustedMargin = {}; // if user provides CSS string such as '50px 12px', apply that always
-
+  var adjustedMargin = {};
+  // if user provides CSS string such as '50px 12px', apply that always
   var customCSS = typeof margin === 'string' && margin.split(' ').length > 1;
-
   if (theme.global.drop.intelligentMargin === true && !customCSS && typeof margin === 'string') {
     if (align.top === 'bottom') adjustedMargin.top = margin;else if (align.bottom === 'top') adjustedMargin.bottom = margin;
     if (align.right === 'left') adjustedMargin.left = "-" + margin;else if (align.left === 'right') adjustedMargin.left = margin;
@@ -34,10 +28,8 @@ var marginStyle = function marginStyle(theme, align, data, responsive, marginPro
   } else {
     return edgeStyle('margin', marginProp || theme.global.drop.margin, responsive, theme.global.edgeSize.responsiveBreakpoint, theme);
   }
-
   return edgeStyle('margin', adjustedMargin, responsive, theme.global.edgeSize.responsiveBreakpoint, theme);
 };
-
 var StyledDrop = styled.div.withConfig({
   displayName: "StyledDrop",
   componentId: "sc-16s5rx8-0"

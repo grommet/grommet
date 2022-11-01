@@ -10,9 +10,8 @@ var BounceSpinner = styled(Spinner).withConfig({
 })(["animation-name:bounce-1;animation-timing-function:ease;animation-duration:2s;animation-iteration-count:infinite;@keyframes bounce-1{0%{transform:translateY(0);}50%{transform:translateY(-100px);}100%{transform:translateY(0);}}"]);
 export var Animation = function Animation() {
   var _useState = useState(0),
-      meterValue = _useState[0],
-      setMeterValue = _useState[1];
-
+    meterValue = _useState[0],
+    setMeterValue = _useState[1];
   useEffect(function () {
     var timer = setInterval(function () {
       if (meterValue < 100) setMeterValue(meterValue + 0.02);

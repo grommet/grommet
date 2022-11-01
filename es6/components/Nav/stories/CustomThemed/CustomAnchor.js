@@ -29,7 +29,6 @@ var customTheme = deepMerge(grommet, {
     }
   }
 });
-
 var CustomAnchorNav = function CustomAnchorNav() {
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
@@ -56,7 +55,6 @@ var CustomAnchorNav = function CustomAnchorNav() {
     });
   })), /*#__PURE__*/React.createElement(Main, null, "Place main content here"))));
 };
-
 export var CustomAnchor = function CustomAnchor() {
   return /*#__PURE__*/React.createElement(CustomAnchorNav, null);
 };

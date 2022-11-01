@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.CustomBreakpoints = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var customBreakpoints = {
   global: {
     breakpoints: {
@@ -54,7 +50,6 @@ var customBreakpoints = {
     }
   }
 };
-
 var CustomBreakpoints = function CustomBreakpoints() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customBreakpoints,
@@ -66,7 +61,6 @@ var CustomBreakpoints = function CustomBreakpoints() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "Hi, I'm " + size + ", resize me!"));
   }));
 };
-
 exports.CustomBreakpoints = CustomBreakpoints;
 CustomBreakpoints.storyName = 'Custom breakpoints';
 var _default = {

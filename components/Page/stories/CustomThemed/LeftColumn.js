@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.LeftColumn = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var customTheme = {
   page: {
     customKind: {
@@ -41,7 +37,6 @@ var customTheme = {
     }
   }
 };
-
 var LeftColumn = function LeftColumn() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
@@ -69,7 +64,6 @@ var LeftColumn = function LeftColumn() {
     pad: "large"
   }, "Card"))), /*#__PURE__*/_react["default"].createElement(_grommet.PageContent, null, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt."))));
 };
-
 exports.LeftColumn = LeftColumn;
 LeftColumn.storyName = 'Left column';
 var _default = {

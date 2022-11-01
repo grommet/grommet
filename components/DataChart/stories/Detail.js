@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Detail = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [];
-
 for (var i = 1; i < 8; i += 1) {
   var v = Math.sin(i / 2.0);
   data.push({
@@ -18,7 +13,6 @@ for (var i = 1; i < 8; i += 1) {
     percent: Math.abs(v * 100)
   });
 }
-
 var Detail = function Detail() {
   return (
     /*#__PURE__*/
@@ -48,11 +42,10 @@ var Detail = function Detail() {
           granularity: 'medium'
         }
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.Detail = Detail;
 var _default = {
   title: 'Visualizations/DataChart/Detail'

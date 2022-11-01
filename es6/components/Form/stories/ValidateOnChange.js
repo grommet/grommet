@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Box, Button, Form, FormField, Select } from 'grommet';
 export var ValidateOnChange = function ValidateOnChange() {
   var _useState = useState(false),
-      valid = _useState[0],
-      setValid = _useState[1];
-
+    valid = _useState[0],
+    setValid = _useState[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -60,7 +59,6 @@ export var ValidateOnChange = function ValidateOnChange() {
             status: 'info'
           };
         }
-
         return undefined;
       }
     }, /*#__PURE__*/React.createElement(Select, {
@@ -83,10 +81,11 @@ export var ValidateOnChange = function ValidateOnChange() {
       label: "Update",
       disabled: !valid,
       primary: true
-    }))))) // </Grommet>
-
+    })))))
+    // </Grommet>
   );
 };
+
 ValidateOnChange.storyName = 'Validate on change';
 ValidateOnChange.args = {
   full: true

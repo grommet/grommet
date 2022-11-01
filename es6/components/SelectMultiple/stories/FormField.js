@@ -4,9 +4,8 @@ import { SelectMultiple } from '../SelectMultiple';
 var options = ['Apple', 'Orange', 'Banana', 'Grape', 'Melon', 'Strawberry', 'Kiwi', 'Mango', 'Raspberry', 'Rhubarb'];
 export var InsideFormField = function InsideFormField() {
   var _useState = useState({}),
-      value = _useState[0],
-      setValue = _useState[1];
-
+    value = _useState[0],
+    setValue = _useState[1];
   var onChange = useCallback(function (nextValue) {
     return setValue(nextValue);
   }, []);
@@ -35,10 +34,11 @@ export var InsideFormField = function InsideFormField() {
       type: "submit",
       label: "Update",
       primary: true
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 InsideFormField.parameters = {
   chromatic: {
     disable: true

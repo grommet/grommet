@@ -18,10 +18,11 @@ export var Fill = function Fill() {
       fit: "cover",
       fill: true,
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Media/Image/Fill'
 };

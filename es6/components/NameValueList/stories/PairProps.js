@@ -18,15 +18,16 @@ export var PairProps = function PairProps() {
       }
     }, Object.entries(data).map(function (_ref) {
       var name = _ref[0],
-          value = _ref[1];
+        value = _ref[1];
       return /*#__PURE__*/React.createElement(NameValuePair, {
         key: name,
         name: name
       }, /*#__PURE__*/React.createElement(Text, null, value));
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/NameValueList/Pair Props'
 };

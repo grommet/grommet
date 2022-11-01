@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ContentBackground = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var ContentBackground = function ContentBackground() {
   return (
     /*#__PURE__*/
@@ -31,11 +27,10 @@ var ContentBackground = function ContentBackground() {
     }, "Card"), /*#__PURE__*/_react["default"].createElement(_grommet.Card, {
       background: "white",
       pad: "large"
-    }, "Card")), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt."))) // </Grommet>
-
+    }, "Card")), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt.")))
+    // </Grommet>
   );
 };
-
 exports.ContentBackground = ContentBackground;
 ContentBackground.storyName = 'Content background';
 var _default = {

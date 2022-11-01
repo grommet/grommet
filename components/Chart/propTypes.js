@@ -2,19 +2,12 @@
 
 exports.__esModule = true;
 exports.ChartPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _generalPropTypes = require("../../utils/general-prop-types");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var thicknessType = _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none']), _propTypes["default"].string, _propTypes["default"].number]);
-
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, _generalPropTypes.genericProps, {
     animate: _propTypes["default"].bool,
@@ -56,6 +49,5 @@ if (process.env.NODE_ENV !== 'production') {
     })]))
   });
 }
-
 var ChartPropTypes = PropType;
 exports.ChartPropTypes = ChartPropTypes;

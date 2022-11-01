@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.InfiniteScrollDataTable = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'NIS',
@@ -39,7 +35,7 @@ var columns = [{
   header: 'Percent Complete',
   render: function render(_ref) {
     var key = _ref.key,
-        percent = _ref.percent;
+      percent = _ref.percent;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: {
         vertical: 'xsmall'
@@ -278,14 +274,11 @@ var DATA = [{
   percent: 40,
   paid: 2345
 }];
-
 var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
   var step = 10;
-
   var load = function load() {
     console.log("InfiniteScroll fires onMore after loading " + step + " items");
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -304,11 +297,10 @@ var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
       onMore: function onMore() {
         return load();
       }
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.InfiniteScrollDataTable = InfiniteScrollDataTable;
 InfiniteScrollDataTable.storyName = 'Infinite Scroll';
 var _default = {

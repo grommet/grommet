@@ -26,12 +26,10 @@ var alignBottomRight = {
   top: 'bottom',
   right: 'right'
 };
-
 var LazyDrop = function LazyDrop() {
   var _useState = useState(null),
-      pad = _useState[0],
-      setPad = _useState[1];
-
+    pad = _useState[0],
+    setPad = _useState[1];
   var topLeftTargetRef = useRef();
   var topRightTargetRef = useRef();
   var bottomLeftTargetRef = useRef();
@@ -119,7 +117,6 @@ var LazyDrop = function LazyDrop() {
     }
   }, "align top to bottom")))));
 };
-
 export var Lazy = function Lazy() {
   return /*#__PURE__*/React.createElement(LazyDrop, null);
 };

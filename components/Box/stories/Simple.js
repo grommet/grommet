@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.SimpleBox = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var SimpleBox = function SimpleBox() {
   return (
     /*#__PURE__*/
@@ -55,11 +50,10 @@ var SimpleBox = function SimpleBox() {
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       label: "Button",
       onClick: function onClick() {}
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.SimpleBox = SimpleBox;
 SimpleBox.storyName = 'Simple';
 var _default = {

@@ -2,14 +2,12 @@ import React from 'react';
 import { Box, List, Text } from 'grommet';
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 var data = [];
-
 for (var i = 0; i < 40; i += 1) {
   data.push({
     entry: "entry-" + (i + 1),
     location: locations[i % locations.length]
   });
 }
-
 export var RenderedList = function RenderedList() {
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",

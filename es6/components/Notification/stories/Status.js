@@ -2,7 +2,6 @@ import React from 'react';
 import { Notification } from 'grommet';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
-
 var StatusNotification = function StatusNotification() {
   return /*#__PURE__*/React.createElement(Box, {
     pad: "large",
@@ -49,7 +48,6 @@ var StatusNotification = function StatusNotification() {
     message: "This is an example of message text"
   })));
 };
-
 export var Status = function Status() {
   return /*#__PURE__*/React.createElement(StatusNotification, null);
 };

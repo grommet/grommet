@@ -79,10 +79,11 @@ export var Sizes = function Sizes() {
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "5xl",
       src: src
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/Avatar/Sizes'
 };

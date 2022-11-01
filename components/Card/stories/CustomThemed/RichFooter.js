@@ -2,17 +2,12 @@
 
 exports.__esModule = true;
 exports["default"] = exports.RichFooter = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var theme = {
   global: {
     font: {
@@ -27,19 +22,15 @@ var theme = {
     }
   }
 };
-
 var RichFooter = function RichFooter() {
   var _React$useState = _react["default"].useState(false),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var _React$useState2 = _react["default"].useState(false),
-      favorite = _React$useState2[0],
-      setFavorite = _React$useState2[1];
-
+    favorite = _React$useState2[0],
+    setFavorite = _React$useState2[1];
   var ExpandButton = function ExpandButton(_ref) {
-    var rest = _extends({}, _ref);
-
+    var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
     var Icon = open ? _grommetIcons.FormUp : _grommetIcons.FormDown;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Button, _extends({
       hoverIndicator: "light-4",
@@ -48,7 +39,6 @@ var RichFooter = function RichFooter() {
       })
     }, rest));
   };
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -108,7 +98,6 @@ var RichFooter = function RichFooter() {
     color: "dark-3"
   }, "The greatest bridge builders of antiquity were the ancient Romans. The Romans built arch bridges and aqueducts that could stand in conditions that would damage or destroy earlier designs. Some stand today.")))));
 };
-
 exports.RichFooter = RichFooter;
 RichFooter.storyName = 'Rich footer';
 var _default = {

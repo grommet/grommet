@@ -2,19 +2,13 @@
 
 exports.__esModule = true;
 exports.GridPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _generalPropTypes = require("../../utils/general-prop-types");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'flex', 'auto'];
 var edgeSizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none'];
-
 var BORDER_SHAPE = _propTypes["default"].shape({
   color: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
     dark: _propTypes["default"].string,
@@ -24,9 +18,7 @@ var BORDER_SHAPE = _propTypes["default"].shape({
   size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
   style: _propTypes["default"].oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden'])
 });
-
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, _generalPropTypes.genericProps, {
     align: _generalPropTypes.alignPropType,
@@ -57,6 +49,5 @@ if (process.env.NODE_ENV !== 'production') {
     width: _generalPropTypes.widthPropType
   });
 }
-
 var GridPropTypes = PropType;
 exports.GridPropTypes = GridPropTypes;

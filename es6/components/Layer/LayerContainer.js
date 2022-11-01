@@ -1,9 +1,6 @@
 var _excluded = ["background", "children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "target"];
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef, useContext, useEffect, useMemo, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -22,32 +19,30 @@ var HiddenAnchor = styled.a.withConfig({
 var defaultPortalContext = [];
 var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var background = _ref.background,
-      children = _ref.children,
-      _ref$full = _ref.full,
-      full = _ref$full === void 0 ? false : _ref$full,
-      id = _ref.id,
-      _ref$margin = _ref.margin,
-      margin = _ref$margin === void 0 ? 'none' : _ref$margin,
-      _ref$modal = _ref.modal,
-      modal = _ref$modal === void 0 ? true : _ref$modal,
-      onClickOutside = _ref.onClickOutside,
-      onEsc = _ref.onEsc,
-      plain = _ref.plain,
-      _ref$position = _ref.position,
-      position = _ref$position === void 0 ? 'center' : _ref$position,
-      _ref$responsive = _ref.responsive,
-      responsive = _ref$responsive === void 0 ? true : _ref$responsive,
-      layerTarget = _ref.target,
-      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+    children = _ref.children,
+    _ref$full = _ref.full,
+    full = _ref$full === void 0 ? false : _ref$full,
+    id = _ref.id,
+    _ref$margin = _ref.margin,
+    margin = _ref$margin === void 0 ? 'none' : _ref$margin,
+    _ref$modal = _ref.modal,
+    modal = _ref$modal === void 0 ? true : _ref$modal,
+    onClickOutside = _ref.onClickOutside,
+    onEsc = _ref.onEsc,
+    plain = _ref.plain,
+    _ref$position = _ref.position,
+    position = _ref$position === void 0 ? 'center' : _ref$position,
+    _ref$responsive = _ref.responsive,
+    responsive = _ref$responsive === void 0 ? true : _ref$responsive,
+    layerTarget = _ref.target,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerTarget = useContext(ContainerTargetContext);
   var theme = useContext(ThemeContext) || defaultProps.theme;
-  var size = useContext(ResponsiveContext); // layerOptions was created to preserve backwards compatibility but
+  var size = useContext(ResponsiveContext);
+  // layerOptions was created to preserve backwards compatibility but
   // should not be supported in v3
-
   var _useContext = useContext(OptionsContext),
-      layerOptions = _useContext.layer;
-
+    layerOptions = _useContext.layer;
   var anchorRef = useRef();
   var containerRef = useRef();
   var layerRef = useRef();
@@ -63,14 +58,12 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var start = new Date();
     var element = layerRef.current;
     var isHidden = position === 'hidden';
-
     if (!isHidden) {
       sendAnalytics({
         type: 'layerOpen',
         element: element
       });
     }
-
     return function () {
       if (!isHidden) {
         sendAnalytics({
@@ -84,22 +77,19 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   useEffect(function () {
     if (position !== 'hidden') {
       var node = layerRef.current || containerRef.current || ref.current;
-      if (node && node.scrollIntoView) node.scrollIntoView(); // Once layer is open we make sure it has focus so that you
+      if (node && node.scrollIntoView) node.scrollIntoView();
+      // Once layer is open we make sure it has focus so that you
       // can start tabbing inside the layer. If the caller put focus
       // on an element already, we honor that. Otherwise, we put
       // the focus in the hidden anchor.
-
       var element = document.activeElement;
-
       while (element) {
         if (element === containerRef.current) {
           // already have focus inside the container
           break;
         }
-
         element = element.parentElement;
       }
-
       if (modal && !element && anchorRef.current) {
         anchorRef.current.focus();
       }
@@ -116,45 +106,45 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       // determine which portal id the target is in, if any
       var clickedPortalId = null;
       var node = containerTarget === document.body ? event.target : event == null ? void 0 : event.path[0];
-
       while (clickedPortalId === null && node !== document && node !== null) {
         // check if user click occurred within the layer
         var attr = node.getAttribute('data-g-portal-id');
-        if (attr !== null && attr !== '') clickedPortalId = parseInt(attr, 10); // loop upward through parents to see if clicked element is a child
+        if (attr !== null && attr !== '') clickedPortalId = parseInt(attr, 10);
+        // loop upward through parents to see if clicked element is a child
         // of the Layer. if so, click was inside Layer
         else node = node.parentNode;
       }
-
       if ((clickedPortalId === null || portalContext.indexOf(clickedPortalId) !== -1) && node !== null) {
         // if the click occurred outside of the Layer portal, call
         // the user's onClickOutside function
         onClickOutside(event);
       }
-    }; // if user provides an onClickOutside function, listen for mousedown event
+    };
 
-
+    // if user provides an onClickOutside function, listen for mousedown event
     if (onClickOutside) {
       document.addEventListener('mousedown', onClickDocument);
     }
-
     if (layerTarget) {
       var updateBounds = function updateBounds() {
         var windowWidth = window.innerWidth;
         var windowHeight = window.innerHeight;
-        var target = findVisibleParent(layerTarget); // affects StyledLayer
+        var target = findVisibleParent(layerTarget);
 
+        // affects StyledLayer
         var layer = layerRef.current;
-
         if (layer && target) {
           // clear prior styling
           layer.style.left = '';
           layer.style.top = '';
           layer.style.bottom = '';
-          layer.style.width = ''; // get bounds
+          layer.style.width = '';
 
+          // get bounds
           var targetRect = target.getBoundingClientRect();
-          var layerRect = layer.getBoundingClientRect(); // ensure that layer moves with the target
+          var layerRect = layer.getBoundingClientRect();
 
+          // ensure that layer moves with the target
           layer.style.left = targetRect.left + "px";
           layer.style.right = windowWidth - targetRect.right + "px";
           layer.style.top = targetRect.top + "px";
@@ -163,20 +153,17 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
           layer.style.maxWidth = Math.min(layerRect.width, windowWidth);
         }
       };
-
       updateBounds();
       window.addEventListener('resize', updateBounds);
       window.addEventListener('scroll', updateBounds, true);
       return function () {
         window.removeEventListener('resize', updateBounds);
         window.removeEventListener('scroll', updateBounds, true);
-
         if (onClickOutside) {
           document.removeEventListener('mousedown', onClickDocument);
         }
       };
     }
-
     return function () {
       if (onClickOutside) {
         document.removeEventListener('mousedown', onClickDocument);
@@ -186,7 +173,8 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var content = /*#__PURE__*/React.createElement(StyledContainer, _extends({
     ref: ref || containerRef,
     background: background,
-    elevation: theme.layer.container.elevation // layerOptions was created to preserve backwards compatibility but
+    elevation: theme.layer.container.elevation
+    // layerOptions was created to preserve backwards compatibility but
     // should not be supported in v3. In v3, this should always be
     // ${id}__container
     ,
@@ -199,7 +187,8 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     plain: plain,
     responsive: responsive,
     layerTarget: layerTarget,
-    dir: theme.dir // portalId is used to determine if click occurred inside
+    dir: theme.dir
+    // portalId is used to determine if click occurred inside
     // or outside of the layer
     ,
     "data-g-portal-id": portalId
@@ -222,7 +211,6 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     responsive: responsive,
     onMouseDown: onClickOutside
   }), content);
-
   if (onEsc) {
     content = /*#__PURE__*/React.createElement(Keyboard, {
       onEsc: onEsc ? function (event) {
@@ -234,35 +222,32 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       target: modal === false ? 'document' : undefined
     }, content);
   }
-
   var themeContextValue = useMemo(function () {
     var dark = backgroundIsDark(theme.layer.background, theme);
     return _extends({}, theme, {
       dark: dark
     });
   }, [theme]);
-
   if (theme.layer.background) {
     var dark = themeContextValue.dark;
-
     if (dark !== undefined && dark !== theme.dark) {
       content = /*#__PURE__*/React.createElement(ThemeContext.Provider, {
         value: themeContextValue
       }, content);
     }
   }
-
   content = /*#__PURE__*/React.createElement(PortalContext.Provider, {
     value: nextPortalContext
   }, content);
-  var hitResponsiveBreakpoint = responsive && size === theme.layer.responsiveBreakpoint; // if layer is responsive and we've hit the breakpoint,
+  var hitResponsiveBreakpoint = responsive && size === theme.layer.responsiveBreakpoint;
+  // if layer is responsive and we've hit the breakpoint,
   // the layer will be filling the viewport, so we want to
   // restrict the scroll to the layer and not allow the
   // body to scroll
-
   if (modal || hitResponsiveBreakpoint) {
     content = /*#__PURE__*/React.createElement(FocusedContainer, {
-      hidden: position === 'hidden' // if layer has a target, do not restrict scroll.
+      hidden: position === 'hidden'
+      // if layer has a target, do not restrict scroll.
       // restricting scroll could inhibit the user's
       // ability to scroll the page while the layer is open.
       ,
@@ -270,7 +255,6 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       trapFocus: true
     }, content);
   }
-
   return content;
 });
 export { LayerContainer };

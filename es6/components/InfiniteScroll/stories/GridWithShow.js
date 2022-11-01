@@ -24,10 +24,11 @@ export var GridWithShow = function GridWithShow() {
         src: "https://via.placeholder.com/350x150",
         alt: "Placeholder Image"
       }), /*#__PURE__*/React.createElement(Text, null, item));
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
+
 GridWithShow.storyName = 'Grid with show item 77';
 export default {
   title: 'Utilities/InfiniteScroll/Grid with show item 77'

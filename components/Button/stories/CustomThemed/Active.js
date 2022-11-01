@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Active = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Active = function Active() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: {
@@ -22,7 +17,6 @@ var Active = function Active() {
       button: {
         "default": {}
       } // enabling kind button functionality
-
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
@@ -38,7 +32,6 @@ var Active = function Active() {
     gap: "small"
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Kind")))));
 };
-
 exports.Active = Active;
 Active.storyName = 'Active';
 var _default = {

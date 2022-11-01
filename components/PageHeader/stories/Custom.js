@@ -2,17 +2,11 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Custom = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 var _utils = require("grommet/utils");
-
 var _grommetIcons = require("grommet-icons");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
   pageHeader: {
     medium: {
@@ -20,7 +14,6 @@ var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
     }
   }
 });
-
 var Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
@@ -39,7 +32,6 @@ var Custom = function Custom() {
     })
   }))));
 };
-
 exports.Custom = Custom;
 var _default = {
   title: 'Layout/PageHeader/Custom Themed/Custom'

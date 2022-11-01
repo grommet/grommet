@@ -2,16 +2,11 @@
 
 exports.__esModule = true;
 exports.LayerPropTypes = void 0;
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _generalPropTypes = require("../../utils/general-prop-types");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 var PropType = {};
-
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     animate: _propTypes["default"].bool,
@@ -37,6 +32,5 @@ if (process.env.NODE_ENV !== 'production') {
     target: _propTypes["default"].object
   };
 }
-
 var LayerPropTypes = PropType;
 exports.LayerPropTypes = LayerPropTypes;

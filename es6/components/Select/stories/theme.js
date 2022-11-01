@@ -54,7 +54,7 @@ export var theme = {
     check: {
       extend: function extend(_ref) {
         var extendTheme = _ref.theme,
-            checked = _ref.checked;
+          checked = _ref.checked;
         return "\n        " + (checked && "background-color: " + normalizeColor('brand', extendTheme) + ";") + "\n      ";
       }
     },

@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports.data = exports.columns = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 // Always should store amount in cents to avoid precision errors
 var data = [{
   id: 1,

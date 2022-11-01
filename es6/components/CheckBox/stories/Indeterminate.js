@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import { Box, CheckBox } from 'grommet';
 export var Indeterminate = function Indeterminate() {
   var _useState = useState([]),
-      checked = _useState[0],
-      setChecked = _useState[1];
-
+    checked = _useState[0],
+    setChecked = _useState[1];
   var checkboxes = ['fruits', 'vegetables', 'olive oil'];
-
   var onCheckAll = function onCheckAll(event) {
     if (event.target.checked) {
       setChecked(checkboxes);
@@ -14,7 +12,6 @@ export var Indeterminate = function Indeterminate() {
       setChecked([]);
     }
   };
-
   var onCheck = function onCheck(event, value) {
     if (event.target.checked) {
       setChecked([].concat(checked, [value]));
@@ -24,7 +21,6 @@ export var Indeterminate = function Indeterminate() {
       }));
     }
   };
-
   return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"

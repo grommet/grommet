@@ -2,31 +2,23 @@
 
 exports.__esModule = true;
 exports["default"] = exports.NotificationLayer = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var NotificationLayer = function NotificationLayer() {
   var _React$useState = _react["default"].useState(),
-      open = _React$useState[0],
-      setOpen = _React$useState[1];
-
+    open = _React$useState[0],
+    setOpen = _React$useState[1];
   var onOpen = function onOpen() {
     setOpen(true);
     setTimeout(function () {
       setOpen(undefined);
     }, 3000);
   };
-
   var onClose = function onClose() {
     return setOpen(undefined);
   };
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -72,11 +64,10 @@ var NotificationLayer = function NotificationLayer() {
       icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormClose, null),
       onClick: onClose,
       plain: true
-    })))) // </Grommet>
-
+    }))))
+    // </Grommet>
   );
 };
-
 exports.NotificationLayer = NotificationLayer;
 NotificationLayer.storyName = 'Notification';
 NotificationLayer.parameters = {

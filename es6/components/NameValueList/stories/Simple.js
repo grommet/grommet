@@ -10,15 +10,16 @@ export var Simple = function Simple() {
       pad: "small"
     }, /*#__PURE__*/React.createElement(NameValueList, null, Object.entries(data).map(function (_ref) {
       var name = _ref[0],
-          value = _ref[1];
+        value = _ref[1];
       return /*#__PURE__*/React.createElement(NameValuePair, {
         key: name,
         name: name
       }, value);
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
+
 export default {
   title: 'Visualizations/NameValueList/Simple'
 };

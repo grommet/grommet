@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../Button';
 import { Text } from '../Text';
-
 var sizeStyle = function sizeStyle(props) {
   var style = props.theme.pagination.button && props.theme.pagination.button.size && props.theme.pagination.button.size[props.size || 'medium'];
   return style ? {
@@ -15,7 +14,6 @@ var sizeStyle = function sizeStyle(props) {
     }
   } : '';
 };
-
 export var StyledPaginationButton = styled(Button).withConfig({
   displayName: "StyledPageControl__StyledPaginationButton",
   componentId: "sc-1vlfaez-0"

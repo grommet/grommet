@@ -7,9 +7,10 @@ export var getBreakpoint = function getBreakpoint(viewportWidth, theme) {
     if (!first.value) return 1;
     if (!second.value) return -1;
     return first.value - second.value;
-  }); // the last breakpoint on the sorted array should have
-  // no windowWidth boundaries
+  });
 
+  // the last breakpoint on the sorted array should have
+  // no windowWidth boundaries
   var lastBreakpoint = sortedBreakpoints[sortedBreakpoints.length - 1];
   var result = sortedBreakpoints.find(function (name) {
     var breakpoint = theme.global.breakpoints[name];

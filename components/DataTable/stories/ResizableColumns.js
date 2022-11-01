@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ResizableDataTable = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var DATA = [{
   location: 'Winston Salem',
   date: '2018-01-09',
@@ -70,7 +66,6 @@ var columnsResize = [{
   size: 'xsmall',
   align: 'end'
 }];
-
 var ResizableDataTable = function ResizableDataTable() {
   return (
     /*#__PURE__*/
@@ -86,11 +81,10 @@ var ResizableDataTable = function ResizableDataTable() {
       data: DATA,
       primaryKey: false,
       resizeable: true
-    })) // </Grommet>
-
+    }))
+    // </Grommet>
   );
 };
-
 exports.ResizableDataTable = ResizableDataTable;
 ResizableDataTable.storyName = 'Resizable columns';
 var _default = {

@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Fill = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var Fill = function Fill() {
   return (
     /*#__PURE__*/
@@ -23,11 +19,10 @@ var Fill = function Fill() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
       fill: true,
       daysOfWeek: true
-    }))) // </Grommet>
-
+    })))
+    // </Grommet>
   );
 };
-
 exports.Fill = Fill;
 var _default = {
   title: 'Visualizations/Calendar/Fill'

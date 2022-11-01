@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.ConfirmRemove = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var ConfirmRemove = function ConfirmRemove() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
@@ -32,7 +28,6 @@ var ConfirmRemove = function ConfirmRemove() {
     onChange: function onChange(event, _ref2) {
       var files = _ref2.files;
       var fileList = files;
-
       for (var i = 0; i < fileList.length; i += 1) {
         var file = fileList[i];
         console.log(file.name);
@@ -40,7 +35,7 @@ var ConfirmRemove = function ConfirmRemove() {
     },
     confirmRemove: function confirmRemove(_ref3) {
       var onConfirm = _ref3.onConfirm,
-          onCancel = _ref3.onCancel;
+        onCancel = _ref3.onCancel;
       return /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
         onClickOutside: onCancel,
         onEsc: onCancel
@@ -67,7 +62,6 @@ var ConfirmRemove = function ConfirmRemove() {
     type: "submit"
   }))));
 };
-
 exports.ConfirmRemove = ConfirmRemove;
 ConfirmRemove.parameters = {
   chromatic: {

@@ -2,49 +2,34 @@
 
 exports.__esModule = true;
 exports.Detail = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
-
 var _Box = require("../Box");
-
 var _Drop = require("../Drop");
-
 var _Grid = require("../Grid");
-
 var _Keyboard = require("../Keyboard");
-
 var _Text = require("../Text");
-
 var _utils = require("../../utils");
-
 var _Swatch = require("./Swatch");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var DetailControl = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "Detail__DetailControl",
   componentId: "sc-huiwg9-0"
 })(["&:focus{", "}&:focus:not(:focus-visible){", "}"], (0, _utils.focusStyle)(), (0, _utils.unfocusStyle)());
-
 var Detail = function Detail(_ref) {
   var activeProperty = _ref.activeProperty,
-      axis = _ref.axis,
-      data = _ref.data,
-      padProp = _ref.pad,
-      series = _ref.series,
-      seriesStyles = _ref.seriesStyles,
-      renderValue = _ref.renderValue,
-      thickness = _ref.thickness;
+    axis = _ref.axis,
+    data = _ref.data,
+    padProp = _ref.pad,
+    series = _ref.series,
+    seriesStyles = _ref.seriesStyles,
+    renderValue = _ref.renderValue,
+    thickness = _ref.thickness;
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme;
-
   var _useState = (0, _react.useState)(),
-      detailIndex = _useState[0],
-      setDetailIndex = _useState[1];
-
+    detailIndex = _useState[0],
+    setDetailIndex = _useState[1];
   var activeIndex = (0, _react.useRef)();
   var detailRefs = (0, _react.useMemo)(function () {
     return [];
@@ -68,7 +53,6 @@ var Detail = function Detail(_ref) {
     // This helps distinguish leaving the drop on the edge where it is
     // anchored.
     var rect = activeIndex.current.getBoundingClientRect();
-
     if (event.pageX < rect.left || event.pageX > rect.right || event.pageY < rect.top || event.pageY > rect.bottom) {
       activeIndex.current = undefined;
       setDetailIndex(undefined);
@@ -94,7 +78,8 @@ var Detail = function Detail(_ref) {
       return setDetailIndex(undefined);
     }
   }, data.map(function (_, i) {
-    return /*#__PURE__*/_react["default"].createElement(_Box.Box // eslint-disable-next-line react/no-array-index-key
+    return /*#__PURE__*/_react["default"].createElement(_Box.Box
+    // eslint-disable-next-line react/no-array-index-key
     , {
       key: i,
       align: "center",
@@ -135,7 +120,6 @@ var Detail = function Detail(_ref) {
     align: "center"
   }, series.filter(function (_ref2) {
     var _data$detailIndex;
-
     var property = _ref2.property;
     return (!activeProperty || activeProperty === property) && (data == null ? void 0 : (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
   }).map(function (serie) {
@@ -150,5 +134,4 @@ var Detail = function Detail(_ref) {
     }, renderValue(serie, detailIndex)));
   })))));
 };
-
 exports.Detail = Detail;

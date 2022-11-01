@@ -1,10 +1,7 @@
 var _excluded = ["background", "max", "round", "size", "thickness", "type", "values"],
-    _excluded2 = ["color", "highlight", "label", "onHover", "value"];
-
+  _excluded2 = ["color", "highlight", "label", "onHover", "value"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { forwardRef, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -13,27 +10,26 @@ import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
 var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
   var background = props.background,
-      max = props.max,
-      round = props.round,
-      size = props.size,
-      thickness = props.thickness,
-      type = props.type,
-      values = props.values,
-      rest = _objectWithoutPropertiesLoose(props, _excluded);
-
+    max = props.max,
+    round = props.round,
+    size = props.size,
+    thickness = props.thickness,
+    type = props.type,
+    values = props.values,
+    rest = _objectWithoutPropertiesLoose(props, _excluded);
   var theme = useContext(ThemeContext);
   var width = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   var strokeWidth = type === 'pie' ? width / 2 : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   var centerX = width / 2;
   var centerY = width / 2;
-  var radius = width / 2 - strokeWidth / 2; // truncate to avoid floating point arithmetic errors
+  var radius = width / 2 - strokeWidth / 2;
+  // truncate to avoid floating point arithmetic errors
   // see: https://github.com/grommet/grommet/issues/6190
   // Choose a scale factor at least 3 orders of magnitude above max
-
   var scalePower = Math.max(5, Math.ceil(Math.log10(max)) + 3);
   var scale = Math.pow(10, scalePower);
-  var anglePer = Math.floor((type === 'semicircle' ? 180 : 360) / max * scale) / scale; //  (type === 'semicircle' ? 180 : 360) / max;
-
+  var anglePer = Math.floor((type === 'semicircle' ? 180 : 360) / max * scale) / scale;
+  //  (type === 'semicircle' ? 180 : 360) / max;
   var someHighlight = (values || []).some(function (v) {
     return v.highlight;
   });
@@ -45,24 +41,20 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
     return v.value > 0;
   }).forEach(function (valueArg, index) {
     var color = valueArg.color,
-        highlight = valueArg.highlight,
-        label = valueArg.label,
-        onHover = valueArg.onHover,
-        value = valueArg.value,
-        pathRest = _objectWithoutPropertiesLoose(valueArg, _excluded2);
-
+      highlight = valueArg.highlight,
+      label = valueArg.label,
+      onHover = valueArg.onHover,
+      value = valueArg.value,
+      pathRest = _objectWithoutPropertiesLoose(valueArg, _excluded2);
     var key = "p-" + index;
     var colorName = color || defaultColor(index, theme, values ? values.length : 0);
     var endAngle;
-
     if (startValue + value >= max) {
       endAngle = type === 'semicircle' ? 90 : 360;
     } else {
       endAngle = translateEndAngle(startAngle, anglePer, value);
     }
-
     var hoverProps;
-
     if (onHover) {
       hoverProps = {
         onMouseOver: function onMouseOver() {
@@ -73,9 +65,7 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
         }
       };
     }
-
     var stroke = strokeProps(someHighlight && !highlight ? background : colorName, theme);
-
     if (round) {
       var d1 = arcCommands(centerX, centerY, radius, startAngle, endAngle);
       paths.unshift( /*#__PURE__*/React.createElement("path", _extends({
@@ -85,10 +75,11 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
       }, stroke, {
         strokeWidth: strokeWidth,
         strokeLinecap: "round"
-      }, hoverProps, pathRest))); // To handle situations where the last values are small, redraw
+      }, hoverProps, pathRest)));
+
+      // To handle situations where the last values are small, redraw
       // a dot at the end. Give just a bit of angle to avoid anti-aliasing
       // leakage around the edge.
-
       var d2 = arcCommands(centerX, centerY, radius, endAngle - 0.5, endAngle);
       var pathCap = /*#__PURE__*/React.createElement("path", _extends({
         key: key + "-",
@@ -97,13 +88,12 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
       }, stroke, {
         strokeWidth: strokeWidth,
         strokeLinecap: "round"
-      }, hoverProps, pathRest)); // If we are on a large enough path to not need re-drawing previous
+      }, hoverProps, pathRest));
+      // If we are on a large enough path to not need re-drawing previous
       // ones, clear the pathCaps we've collected already.
-
       if (endAngle - startAngle > 2 * anglePer) {
         pathCaps = [];
       }
-
       pathCaps.unshift(pathCap);
     } else {
       var d = arcCommands(centerX, centerY, radius, startAngle, endAngle);
@@ -116,12 +106,10 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
         strokeLinecap: "butt"
       }, hoverProps, pathRest)));
     }
-
     startValue += value;
     startAngle = endAngle;
   });
   var track;
-
   if (type === 'semicircle') {
     var d1 = arcCommands(centerX, centerY, radius, 270, 90);
     track = /*#__PURE__*/React.createElement("path", _extends({
@@ -142,7 +130,6 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
       fill: "none"
     }));
   }
-
   var viewBoxHeight = type === 'semicircle' ? width / 2 : width;
   return /*#__PURE__*/React.createElement(StyledMeter, _extends({
     ref: ref,

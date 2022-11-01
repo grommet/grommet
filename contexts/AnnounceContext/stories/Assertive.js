@@ -2,37 +2,27 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Assertive = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _themes = require("grommet/themes");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var Announcer = function Announcer(_ref) {
   var announce = _ref.announce,
-      message = _ref.message,
-      mode = _ref.mode,
-      role = _ref.role;
-
+    message = _ref.message,
+    mode = _ref.mode,
+    role = _ref.role;
   _react["default"].useEffect(function () {
     var timeout = 3000;
     announce(message, mode, timeout);
   }, [announce, message, mode]);
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     align: "center",
     role: role,
     "aria-live": mode
   }, message);
 };
-
 Announcer.propTypes = {
   announce: _propTypes["default"].func.isRequired,
   message: _propTypes["default"].string,
@@ -44,7 +34,6 @@ Announcer.defaultProps = {
   mode: 'polite',
   role: 'log'
 };
-
 var AnnounceContextComponent = function AnnounceContextComponent(props) {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
@@ -60,7 +49,6 @@ var AnnounceContextComponent = function AnnounceContextComponent(props) {
     }, props));
   })));
 };
-
 var Assertive = function Assertive() {
   return /*#__PURE__*/_react["default"].createElement(AnnounceContextComponent, {
     message: "Turn on Accessibility feature to listen to this announcement. This will soon disappear",
@@ -68,7 +56,6 @@ var Assertive = function Assertive() {
     role: "alert"
   });
 };
-
 exports.Assertive = Assertive;
 var _default = {
   title: 'Utilities/AnnounceContext/Assertive'

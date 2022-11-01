@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports.statusData = exports.metricData = exports.languageData = exports.data = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = {
   'Model type': 'MXQ83700F3',
   'Request created by': /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {

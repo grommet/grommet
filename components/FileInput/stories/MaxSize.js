@@ -2,13 +2,9 @@
 
 exports.__esModule = true;
 exports["default"] = exports.MaxSize = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var MaxSize = function MaxSize() {
   var maxSize = 5000000;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -36,7 +32,6 @@ var MaxSize = function MaxSize() {
     type: "submit"
   }))));
 };
-
 exports.MaxSize = MaxSize;
 var _default = {
   title: 'Input/FileInput/Max Size'

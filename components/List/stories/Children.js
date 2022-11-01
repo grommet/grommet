@@ -2,15 +2,10 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Children = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var data = [{
   city: 'Boise',
   state: 'Idaho'
@@ -24,7 +19,6 @@ var data = [{
   city: 'San Diego',
   state: 'California'
 }];
-
 var Children = function Children() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
@@ -53,7 +47,6 @@ var Children = function Children() {
     }, datum.city)));
   }));
 };
-
 exports.Children = Children;
 var _default = {
   title: 'Visualizations/List/Children'

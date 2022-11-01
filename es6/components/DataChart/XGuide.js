@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { Box } from '../Box';
 var XGuide = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var guide = _ref.guide,
-      pad = _ref.pad;
+    pad = _ref.pad;
   return /*#__PURE__*/React.createElement(Box, {
     ref: ref,
     fill: true,
