@@ -15,18 +15,7 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
-var formatBytes = function formatBytes(size) {
-  var units = ['B', 'KB', 'MB', 'GB', 'TB'];
-  var factor = 1024;
-  var index = 0;
-  var num = size;
-  while (num >= factor && index < units.length - 1) {
-    num /= factor;
-    index += 1;
-  }
-  return num.toFixed(1) + " " + units[index];
-};
-
+import { formatBytes } from './utils/formatBytes';
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
 // position the <input /> on top with an opacity of zero.
