@@ -5,7 +5,7 @@ import {
   PlaceHolderType,
   TextAlignType,
 } from '../../utils';
-import { DropProps } from '../Drop';
+import { DropType } from '../Drop';
 
 export interface TextInputProps
   extends Omit<
@@ -21,7 +21,7 @@ export interface TextInputProps
   };
   dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   dropTarget?: object;
-  dropProps?: DropProps;
+  dropProps?: DropType;
   focusIndicator?: boolean;
   defaultSuggestion?: number;
   icon?: JSX.Element;

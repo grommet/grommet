@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DropProps } from '../Drop';
+import { DropType } from '../Drop';
 import {
   A11yTitleType,
   AlignSelfType,
@@ -23,7 +23,7 @@ export interface BasicSelectProps {
   };
   dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   dropTarget?: object;
-  dropProps?: DropProps;
+  dropProps?: DropType;
   emptySearchMessage?: string | React.ReactNode;
   focusIndicator?: boolean;
   icon?: boolean | ((...args: any[]) => any) | React.ReactNode | React.FC;

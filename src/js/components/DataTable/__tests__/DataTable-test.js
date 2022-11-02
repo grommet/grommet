@@ -1188,6 +1188,26 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('should pin and paginate', () => {
+    const { container, getAllByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={DATA}
+          paginate
+          pin
+        />
+      </Grommet>,
+    );
+
+    const results = getAllByText('entry', { exact: false });
+    expect(results.length).toEqual(50);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('should apply pagination styling', () => {
     const { container } = render(
       <Grommet>
@@ -1428,7 +1448,7 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`onSelect + groupBy should render indeterminate checkbox on table and 
+  test(`onSelect + groupBy should render indeterminate checkbox on table and
   group if subset of group items are selected`, () => {
     const onSelect = jest.fn();
     const { container, getAllByLabelText, getByLabelText } = render(
@@ -1460,7 +1480,7 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`onSelect + groupBy should render indeterminate checkbox on table and 
+  test(`onSelect + groupBy should render indeterminate checkbox on table and
   group when controlled`, () => {
     const onSelect = jest.fn();
     const { container } = render(
