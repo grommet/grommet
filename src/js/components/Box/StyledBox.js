@@ -200,7 +200,10 @@ const interactiveStyle = css`
   }
 `;
 
-const boxStyles = css`
+// NOTE: basis must be after flex! Otherwise, flex overrides basis
+const StyledBox = styled.div.attrs((props) => ({
+  directionProp: props.directionProp || 'column',
+}))`
   display: flex;
   box-sizing: border-box;
   ${(props) => !props.basis && 'max-width: 100%;'};
@@ -243,19 +246,6 @@ const boxStyles = css`
     focusStyle()}
   ${(props) => props.theme.box && props.theme.box.extend}
   ${(props) => props.kindProp && props.kindProp.extend}
-`;
-
-// NOTE: basis must be after flex! Otherwise, flex overrides basis
-const StyledBox = styled.div.attrs((props) => ({
-  directionProp: props.directionProp || 'column',
-}))`
-  ${boxStyles}
-`;
-
-const StyledRowBox = styled.div.attrs((props) => ({
-  directionProp: props.directionProp || 'row',
-}))`
-  ${boxStyles}
 `;
 
 const gapStyle = (directionProp, gap, responsive, border, theme) => {
@@ -408,4 +398,4 @@ const StyledBoxGap = styled.div.attrs((props) => ({
 StyledBoxGap.defaultProps = {};
 Object.setPrototypeOf(StyledBoxGap.defaultProps, defaultProps);
 
-export { StyledBox, StyledBoxGap, StyledRowBox };
+export { StyledBox, StyledBoxGap };

@@ -8120,7 +8120,7 @@ exports[`Pagination should display next page of results when "next" is
       class="StyledBox-sc-13pk1d4-0 jKAhip"
     >
       <ul
-        class="StyledBox__StyledRowBox-sc-13pk1d4-1 kpdkFV"
+        class="StyledBox-sc-13pk1d4-0 hUxOug"
       >
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -8145,7 +8145,7 @@ exports[`Pagination should display next page of results when "next" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -8159,7 +8159,7 @@ exports[`Pagination should display next page of results when "next" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -8174,7 +8174,7 @@ exports[`Pagination should display next page of results when "next" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -8188,7 +8188,7 @@ exports[`Pagination should display next page of results when "next" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -8202,7 +8202,7 @@ exports[`Pagination should display next page of results when "next" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -8216,7 +8216,7 @@ exports[`Pagination should display next page of results when "next" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -8228,7 +8228,7 @@ exports[`Pagination should display next page of results when "next" is
           </span>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -8242,7 +8242,7 @@ exports[`Pagination should display next page of results when "next" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -9421,7 +9421,7 @@ exports[`Pagination should display previous page of results when "previous" is
       class="StyledBox-sc-13pk1d4-0 jKAhip"
     >
       <ul
-        class="StyledBox__StyledRowBox-sc-13pk1d4-1 kpdkFV"
+        class="StyledBox-sc-13pk1d4-0 hUxOug"
       >
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -9446,7 +9446,7 @@ exports[`Pagination should display previous page of results when "previous" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -9460,7 +9460,7 @@ exports[`Pagination should display previous page of results when "previous" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -9475,7 +9475,7 @@ exports[`Pagination should display previous page of results when "previous" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -9489,7 +9489,7 @@ exports[`Pagination should display previous page of results when "previous" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -9503,7 +9503,7 @@ exports[`Pagination should display previous page of results when "previous" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -9517,7 +9517,7 @@ exports[`Pagination should display previous page of results when "previous" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -9529,7 +9529,7 @@ exports[`Pagination should display previous page of results when "previous" is
           </span>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -9543,7 +9543,7 @@ exports[`Pagination should display previous page of results when "previous" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-2 cLpzvv"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cuTpwc"
         />
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"

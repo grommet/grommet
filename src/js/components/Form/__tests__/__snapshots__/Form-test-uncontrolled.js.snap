@@ -572,25 +572,6 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   flex-direction: column;
 }
 
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -630,6 +611,25 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -2532,6 +2532,47 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   flex-direction: column;
 }
 
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
 .c10 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2698,47 +2739,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
 }
 
 .c24 {
@@ -3367,10 +3367,10 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
           type="button"
         >
           <div
-            class="StyledBox__StyledRowBox-sc-13pk1d4-1 gIulRN"
+            class="StyledBox-sc-13pk1d4-0 hMXKog"
           >
             <div
-              class="StyledBox__StyledRowBox-sc-13pk1d4-1 jxJiFj"
+              class="StyledBox-sc-13pk1d4-0 hWKKwG"
             >
               <div
                 class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
@@ -3488,7 +3488,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
             </span>
           </label>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-2 kWjWHj"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 drdMXk"
           />
           <label
             class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 drCFDy"
@@ -3516,7 +3516,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
             </span>
           </label>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-2 kWjWHj"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 drdMXk"
           />
           <label
             class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 drCFDy"

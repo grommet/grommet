@@ -36,38 +36,6 @@ exports[`Notification custom theme 1`] = `
   stroke: none;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -100,6 +68,38 @@ exports[`Notification custom theme 1`] = `
   -ms-flex: 1 1;
   flex: 1 1;
   padding: 24px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c6 {
@@ -136,12 +136,6 @@ exports[`Notification custom theme 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 3px;
   }
@@ -150,6 +144,12 @@ exports[`Notification custom theme 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-right: 6px;
   }
 }
 
@@ -246,38 +246,6 @@ exports[`Notification global 1`] = `
   stroke: none;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -315,6 +283,38 @@ exports[`Notification global 1`] = `
   padding-bottom: 6px;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 24px;
@@ -349,12 +349,6 @@ exports[`Notification global 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 0px;
   }
@@ -371,6 +365,12 @@ exports[`Notification global 1`] = `
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-right: 6px;
   }
 }
 
@@ -467,38 +467,6 @@ exports[`Notification multi actions 1`] = `
   stroke: none;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -534,6 +502,38 @@ exports[`Notification multi actions 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c6 {
@@ -587,12 +587,6 @@ exports[`Notification multi actions 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 3px;
   }
@@ -609,6 +603,12 @@ exports[`Notification multi actions 1`] = `
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-right: 6px;
   }
 }
 
@@ -713,38 +713,6 @@ exports[`Notification position bottom 1`] = `
   stroke: none;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -783,6 +751,38 @@ exports[`Notification position bottom 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c8 {
@@ -864,12 +864,6 @@ exports[`Notification position bottom 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
@@ -886,6 +880,12 @@ exports[`Notification position bottom 1`] = `
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-right: 6px;
   }
 }
 
@@ -956,25 +956,25 @@ exports[`Notification position bottom 1`] = `
 
 exports[`Notification position bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .inJCpc {
-    padding-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .iqNusi {
+  .kgjIGD {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .inJCpc {
+    padding-right: 6px;
   }
 }"
 `;
@@ -1012,38 +1012,6 @@ exports[`Notification position bottom-left 1`] = `
 .c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c3 {
@@ -1084,6 +1052,38 @@ exports[`Notification position bottom-left 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c8 {
@@ -1165,12 +1165,6 @@ exports[`Notification position bottom-left 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
@@ -1187,6 +1181,12 @@ exports[`Notification position bottom-left 1`] = `
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-right: 6px;
   }
 }
 
@@ -1257,25 +1257,25 @@ exports[`Notification position bottom-left 1`] = `
 
 exports[`Notification position bottom-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .inJCpc {
-    padding-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .iqNusi {
+  .kgjIGD {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .inJCpc {
+    padding-right: 6px;
   }
 }"
 `;
@@ -1313,38 +1313,6 @@ exports[`Notification position bottom-right 1`] = `
 .c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c3 {
@@ -1385,6 +1353,38 @@ exports[`Notification position bottom-right 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c8 {
@@ -1466,12 +1466,6 @@ exports[`Notification position bottom-right 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
@@ -1488,6 +1482,12 @@ exports[`Notification position bottom-right 1`] = `
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-right: 6px;
   }
 }
 
@@ -1558,25 +1558,25 @@ exports[`Notification position bottom-right 1`] = `
 
 exports[`Notification position bottom-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .inJCpc {
-    padding-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .iqNusi {
+  .kgjIGD {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .inJCpc {
+    padding-right: 6px;
   }
 }"
 `;
@@ -1614,38 +1614,6 @@ exports[`Notification position center 1`] = `
 .c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c3 {
@@ -1686,6 +1654,38 @@ exports[`Notification position center 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c8 {
@@ -1767,12 +1767,6 @@ exports[`Notification position center 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
@@ -1789,6 +1783,12 @@ exports[`Notification position center 1`] = `
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-right: 6px;
   }
 }
 
@@ -1859,25 +1859,25 @@ exports[`Notification position center 1`] = `
 
 exports[`Notification position center 2`] = `
 "@media only screen and (max-width: 768px) {
-  .inJCpc {
-    padding-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .iqNusi {
+  .kgjIGD {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .inJCpc {
+    padding-right: 6px;
   }
 }"
 `;
@@ -1915,38 +1915,6 @@ exports[`Notification position end 1`] = `
 .c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c3 {
@@ -1987,6 +1955,38 @@ exports[`Notification position end 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c8 {
@@ -2068,12 +2068,6 @@ exports[`Notification position end 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
@@ -2090,6 +2084,12 @@ exports[`Notification position end 1`] = `
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-right: 6px;
   }
 }
 
@@ -2160,25 +2160,25 @@ exports[`Notification position end 1`] = `
 
 exports[`Notification position end 2`] = `
 "@media only screen and (max-width: 768px) {
-  .inJCpc {
-    padding-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .iqNusi {
+  .kgjIGD {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .inJCpc {
+    padding-right: 6px;
   }
 }"
 `;
@@ -2216,38 +2216,6 @@ exports[`Notification position left 1`] = `
 .c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c3 {
@@ -2288,6 +2256,38 @@ exports[`Notification position left 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c8 {
@@ -2369,12 +2369,6 @@ exports[`Notification position left 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
@@ -2391,6 +2385,12 @@ exports[`Notification position left 1`] = `
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-right: 6px;
   }
 }
 
@@ -2461,25 +2461,25 @@ exports[`Notification position left 1`] = `
 
 exports[`Notification position left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .inJCpc {
-    padding-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .iqNusi {
+  .kgjIGD {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .inJCpc {
+    padding-right: 6px;
   }
 }"
 `;
@@ -2517,38 +2517,6 @@ exports[`Notification position right 1`] = `
 .c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c3 {
@@ -2589,6 +2557,38 @@ exports[`Notification position right 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c8 {
@@ -2670,12 +2670,6 @@ exports[`Notification position right 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
@@ -2692,6 +2686,12 @@ exports[`Notification position right 1`] = `
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-right: 6px;
   }
 }
 
@@ -2762,25 +2762,25 @@ exports[`Notification position right 1`] = `
 
 exports[`Notification position right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .inJCpc {
-    padding-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .iqNusi {
+  .kgjIGD {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .inJCpc {
+    padding-right: 6px;
   }
 }"
 `;
@@ -2818,38 +2818,6 @@ exports[`Notification position start 1`] = `
 .c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c3 {
@@ -2890,6 +2858,38 @@ exports[`Notification position start 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c8 {
@@ -2971,12 +2971,6 @@ exports[`Notification position start 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
@@ -2993,6 +2987,12 @@ exports[`Notification position start 1`] = `
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-right: 6px;
   }
 }
 
@@ -3063,25 +3063,25 @@ exports[`Notification position start 1`] = `
 
 exports[`Notification position start 2`] = `
 "@media only screen and (max-width: 768px) {
-  .inJCpc {
-    padding-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .iqNusi {
+  .kgjIGD {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .inJCpc {
+    padding-right: 6px;
   }
 }"
 `;
@@ -3119,38 +3119,6 @@ exports[`Notification position top 1`] = `
 .c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c3 {
@@ -3191,6 +3159,38 @@ exports[`Notification position top 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c8 {
@@ -3272,12 +3272,6 @@ exports[`Notification position top 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
@@ -3294,6 +3288,12 @@ exports[`Notification position top 1`] = `
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-right: 6px;
   }
 }
 
@@ -3364,25 +3364,25 @@ exports[`Notification position top 1`] = `
 
 exports[`Notification position top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .inJCpc {
-    padding-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .iqNusi {
+  .kgjIGD {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .inJCpc {
+    padding-right: 6px;
   }
 }"
 `;
@@ -3420,38 +3420,6 @@ exports[`Notification position top-left 1`] = `
 .c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c3 {
@@ -3492,6 +3460,38 @@ exports[`Notification position top-left 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c8 {
@@ -3573,12 +3573,6 @@ exports[`Notification position top-left 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
@@ -3595,6 +3589,12 @@ exports[`Notification position top-left 1`] = `
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-right: 6px;
   }
 }
 
@@ -3665,25 +3665,25 @@ exports[`Notification position top-left 1`] = `
 
 exports[`Notification position top-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .inJCpc {
-    padding-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .iqNusi {
+  .kgjIGD {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .inJCpc {
+    padding-right: 6px;
   }
 }"
 `;
@@ -3721,38 +3721,6 @@ exports[`Notification position top-right 1`] = `
 .c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c3 {
@@ -3793,6 +3761,38 @@ exports[`Notification position top-right 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c8 {
@@ -3874,12 +3874,6 @@ exports[`Notification position top-right 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
@@ -3896,6 +3890,12 @@ exports[`Notification position top-right 1`] = `
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-right: 6px;
   }
 }
 
@@ -3966,25 +3966,25 @@ exports[`Notification position top-right 1`] = `
 
 exports[`Notification position top-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .inJCpc {
-    padding-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .iqNusi {
+  .kgjIGD {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keSUlL {
+  .hVpiry {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .inJCpc {
+    padding-right: 6px;
   }
 }"
 `;
@@ -4025,38 +4025,6 @@ exports[`Notification should have no accessibility violations 1`] = `
   stroke: none;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4094,6 +4062,38 @@ exports[`Notification should have no accessibility violations 1`] = `
   padding-bottom: 6px;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 24px;
@@ -4108,12 +4108,6 @@ exports[`Notification should have no accessibility violations 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -4133,6 +4127,12 @@ exports[`Notification should have no accessibility violations 1`] = `
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-right: 6px;
   }
 }
 
@@ -4249,38 +4249,6 @@ exports[`Notification should render custom icon 1`] = `
   stroke: none;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4318,6 +4286,38 @@ exports[`Notification should render custom icon 1`] = `
   padding-bottom: 6px;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 24px;
@@ -4348,12 +4348,6 @@ exports[`Notification should render custom icon 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 3px;
   }
@@ -4370,6 +4364,12 @@ exports[`Notification should render custom icon 1`] = `
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-right: 6px;
   }
 }
 
@@ -4457,38 +4457,6 @@ exports[`Notification should render custom template inside notification 1`] = `
   stroke: none;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4526,6 +4494,38 @@ exports[`Notification should render custom template inside notification 1`] = `
   padding-bottom: 6px;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 24px;
@@ -4548,12 +4548,6 @@ exports[`Notification should render custom template inside notification 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 3px;
   }
@@ -4570,6 +4564,12 @@ exports[`Notification should render custom template inside notification 1`] = `
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-right: 6px;
   }
 }
 
@@ -4658,38 +4658,6 @@ exports[`Notification should render the default icon if no icon is passed 1`] = 
   stroke: none;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4727,6 +4695,38 @@ exports[`Notification should render the default icon if no icon is passed 1`] = 
   padding-bottom: 6px;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 24px;
@@ -4757,12 +4757,6 @@ exports[`Notification should render the default icon if no icon is passed 1`] = 
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 3px;
   }
@@ -4779,6 +4773,12 @@ exports[`Notification should render the default icon if no icon is passed 1`] = 
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-right: 6px;
   }
 }
 
@@ -4936,38 +4936,6 @@ exports[`Notification status 1`] = `
   stroke: none;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-right: 12px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5003,6 +4971,38 @@ exports[`Notification status 1`] = `
   padding-right: 48px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c10 {
@@ -5071,12 +5071,6 @@ exports[`Notification status 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 0px;
   }
@@ -5093,6 +5087,12 @@ exports[`Notification status 1`] = `
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-right: 6px;
   }
 }
 

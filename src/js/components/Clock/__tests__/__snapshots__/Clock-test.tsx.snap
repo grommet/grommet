@@ -443,7 +443,7 @@ exports[`Clock run 2`] = `
     />
   </svg>
   <div
-    class="StyledBox__StyledRowBox-sc-13pk1d4-1 kDEaft"
+    class="StyledBox-sc-13pk1d4-0 euWtCA"
   >
     <div
       class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 iuGlaf"
@@ -518,7 +518,7 @@ exports[`Clock run 2`] = `
     </div>
   </div>
   <div
-    class="StyledBox__StyledRowBox-sc-13pk1d4-1 kDEaft"
+    class="StyledBox-sc-13pk1d4-0 euWtCA"
   >
     <div
       class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 iuGlaf"
