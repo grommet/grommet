@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
@@ -305,7 +305,7 @@ describe('SelectMultiple', () => {
   test('null value', () => {
     const { asFragment } = render(
       <Grommet>
-        {/* @ts-expect-error */}
+        {/* @ts-ignore */}
         <SelectMultiple options={['a', 'b']} value={null} />
       </Grommet>,
     );
@@ -329,5 +329,93 @@ describe('SelectMultiple', () => {
       </Grommet>,
     );
     expect(screen.getByRole('option', { name: /a selected/ })).toBeVisible();
+  });
+
+  test('search with select and clear', async () => {
+    const user = userEvent.setup();
+    const defaultOptions = [
+      'Apple',
+      'Orange',
+      'Banana',
+      'Grape',
+      'Melon',
+      'Strawberry',
+      'Kiwi',
+      'Mango',
+      'Raspberry',
+      'Rhubarb',
+    ];
+    const Test = () => {
+      const [options, setOptions] = useState(defaultOptions);
+      const [valueMultiple, setValueMultiple] = useState([]);
+      return (
+        <Grommet>
+          <SelectMultiple
+            options={options}
+            value={valueMultiple}
+            placeholder="Select"
+            onSearch={(text) => {
+              const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+              const exp = new RegExp(escapedText, 'i');
+              setOptions(defaultOptions.filter((o) => exp.test(o)));
+            }}
+            onClose={() => setOptions(defaultOptions)}
+            onChange={({ value }) => {
+              setValueMultiple(value);
+            }}
+          />
+        </Grommet>
+      );
+    };
+    render(<Test />);
+    // open drop
+    await user.click(screen.getByRole('button', { name: /Select/ }));
+    // search
+    await user.type(screen.getByRole('searchbox', { name: /Search/ }), 'p');
+    // select all
+    await user.click(screen.getByRole('button', { name: /Select all/ }));
+
+    expect(
+      screen.queryByRole('option', { name: /Apple selected/ }),
+    ).not.toBeNull();
+    expect(
+      screen.queryByRole('option', { name: /Grape selected/ }),
+    ).not.toBeNull();
+    expect(
+      screen.queryByRole('option', { name: /Raspberry selected/ }),
+    ).not.toBeNull();
+
+    // search
+    await user.type(
+      screen.getByRole('searchbox', { name: /Search/ }),
+      '{backspace}w',
+    );
+    // select all
+    await user.click(screen.getByRole('button', { name: /Select all/ }));
+    expect(
+      screen.queryByRole('option', { name: /Strawberry selected/ }),
+    ).not.toBeNull();
+    expect(
+      screen.queryByRole('option', { name: /Kiwi selected/ }),
+    ).not.toBeNull();
+
+    // search
+    await user.type(
+      screen.getByRole('searchbox', { name: /Search/ }),
+      '{backspace}b',
+    );
+    // Clear
+    await user.click(screen.getByRole('button', { name: /Clear all/ }));
+    // clear search
+    await user.type(
+      screen.getByRole('searchbox', { name: /Search/ }),
+      '{backspace}',
+    );
+    expect(
+      screen.queryByRole('option', { name: /Grape selected/ }),
+    ).not.toBeNull();
+    expect(
+      screen.queryByRole('option', { name: /Strawberry selected/ }),
+    ).toBeNull();
   });
 });

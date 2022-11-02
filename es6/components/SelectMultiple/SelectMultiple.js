@@ -132,8 +132,8 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (!search) setAllOptions(optionsProp);
   }, [optionsProp, search]);
   useEffect(function () {
-    if (!search && sortSelectedOnClose) setOrderedOptions(optionsProp);
-  }, [optionsProp, search, sortSelectedOnClose]);
+    if (sortSelectedOnClose) setOrderedOptions(optionsProp);
+  }, [optionsProp, sortSelectedOnClose]);
 
   // the option indexes present in the value
   var optionIndexesInValue = useMemo(function () {
@@ -158,8 +158,11 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     setOpen(true);
     if (onOpen) onOpen();
   }, [onOpen, open]);
+
+  // On drop close if sortSelectedOnClose is true, sort options so that
+  // selected options appear first, followed by unselected options.
   useEffect(function () {
-    if (sortSelectedOnClose && (open && search || !open)) {
+    if (sortSelectedOnClose && value && !open) {
       var selectedOptions = optionsProp.filter(function (option) {
         return arrayIncludes(value, valueKey && valueKey.reduce ? applyKey(option, valueKey) : option, valueKey || labelKey);
       });
@@ -169,7 +172,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
       var nextOrderedOptions = selectedOptions.concat(unselectedOptions);
       setOrderedOptions(nextOrderedOptions);
     }
-  }, [labelKey, open, sortSelectedOnClose, optionsProp, value, valueKey, search]);
+  }, [labelKey, open, sortSelectedOnClose, optionsProp, value, valueKey]);
   var onRequestClose = useCallback(function () {
     setOpen(false);
     if (onClose) onClose();
