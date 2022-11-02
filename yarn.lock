@@ -7303,10 +7303,10 @@ grommet-theme-hp@^0.1.2:
   resolved "https://registry.yarnpkg.com/grommet-theme-hp/-/grommet-theme-hp-0.1.2.tgz#52eac70d7cce2136b9ca6d7f6bf37649a40208a8"
   integrity sha512-pRJxgzJ6oWKNg4hq8csi7hEgH0qeMyP3m/cjQVTk473lH1OdgzqNfjyjQXJf80Fnp6Azm+ovwuNNGCKWCZxcvg==
 
-grommet-theme-hpe@^3.2.1:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-3.3.0.tgz#04ea8e04967d81617ee4066f031805b21fb8993b"
-  integrity sha512-YSPSoZbsRr9hkvqD2KjOfd35jf4Jf7LmK46OrPC7n6FwYvQg4OC+OkeJrzCKmShBCQYKWcU/wwWXUovpZFvbJQ==
+grommet-theme-hpe@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-4.0.0.tgz#b41f9b0e6533ecd116c3ca0d863916760a2cd5b1"
+  integrity sha512-V4DFr3KGC3AiKXLfXYSwDKwXJ9ub5Ji4LXtftHZQKbzpB/3yP6cJTCQxzUV+E4bjxnZ+Z+xjHa9SkO7cwUp/vQ==
 
 gzip-size@^5.1.1:
   version "5.1.1"
