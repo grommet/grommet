@@ -39,6 +39,7 @@ export const ControlledDataTable = () => {
                 key={name}
                 checked={checked.indexOf(name) !== -1}
                 onChange={(e) => onCheck(e, name)}
+                aria-label="row checkbox"
               />
             ),
             header: (
@@ -48,6 +49,7 @@ export const ControlledDataTable = () => {
                   checked.length > 0 && checked.length < DATA.length
                 }
                 onChange={onCheckAll}
+                aria-label="header checkbox"
               />
             ),
             sortable: false,

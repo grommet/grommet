@@ -20,7 +20,7 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
-import { useForwardedRef } from '../../utils';
+import { useForwardedRef, setHoursWithOffset } from '../../utils';
 import {
   formatToSchema,
   schemaToMask,
@@ -40,13 +40,7 @@ const getReference = (value) => {
   else if (Array.isArray(value) && value.length) [res] = value;
 
   if (res) {
-    adjustedDate = new Date(res);
-    // if time is not specified in ISOstring, normalize to midnight
-    if (res?.indexOf('T') === -1) {
-      const offset = adjustedDate.getTimezoneOffset();
-      const hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset);
-    }
+    adjustedDate = setHoursWithOffset(res);
   }
   return adjustedDate;
 };
@@ -122,7 +116,7 @@ const DateInput = forwardRef(
     const { icon: MaskedInputIcon, ...restOfInputProps } = inputProps || {};
     if (MaskedInputIcon) {
       console.warn(
-        `Customizing the DateInput icon through inputProps is deprecated. 
+        `Customizing the DateInput icon through inputProps is deprecated.
 Use the icon prop instead.`,
       );
     }
@@ -165,6 +159,11 @@ Use the icon prop instead.`,
       announce(formatMessage({ id: 'dateInput.exitCalendar', messages }));
     }, [announce, formatMessage, messages]);
 
+    const dates = useMemo(
+      () => (range && value?.length ? [value] : undefined),
+      [range, value],
+    );
+
     const calendar = (
       <Calendar
         ref={inline ? ref : undefined}
@@ -173,7 +172,7 @@ Use the icon prop instead.`,
         date={range ? undefined : value}
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
-        dates={range && value?.length ? [value] : undefined}
+        dates={dates}
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
         onSelect={

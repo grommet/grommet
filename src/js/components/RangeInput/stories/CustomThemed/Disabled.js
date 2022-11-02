@@ -20,12 +20,12 @@ export const Disabled = () => (
   <>
     <Grommet theme={customThemeRangeInput}>
       <Box align="center" pad="large">
-        <RangeInput disabled value={5} />
+        <RangeInput disabled value={5} a11yTitle="Select range value" />
       </Box>
     </Grommet>
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <RangeInput disabled value={5} />
+        <RangeInput disabled value={5} a11yTitle="Select range value" />
       </Box>
     </Grommet>
   </>

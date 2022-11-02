@@ -135,7 +135,7 @@ export const padPropType = PropTypes.oneOfType([
 
 export const genericProps = {
   a11yTitle: a11yTitlePropType,
-  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch', 'baseline']),
   gridArea: PropTypes.string,
   margin: marginProp,
 };

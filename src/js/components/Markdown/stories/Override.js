@@ -27,7 +27,7 @@ import { Grommet } from 'grommet';
 `;
 
 const StyledPre = styled.pre`
-  background-color: #7d4cdb;
+  background-color: #ffca58;
 `;
 
 export const ComponentOverrideMarkdown = () => (
