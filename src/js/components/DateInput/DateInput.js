@@ -281,6 +281,10 @@ Use the icon prop instead.`,
                   nextValue,
                 );
 
+                if (!validatedNextValue && nextValue) {
+                  setTextValue('');
+                }
+
                 if (validatedNextValue !== undefined)
                   setReference(getReference(validatedNextValue));
                 // update value even when undefined

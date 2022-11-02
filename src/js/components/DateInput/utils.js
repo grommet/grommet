@@ -127,9 +127,7 @@ export const validateBounds = (dateBounds, selectedDate) => {
 
   const isoSelectedDates = (
     Array.isArray(selectedDate) ? selectedDate : [selectedDate]
-  ).map((date) => date.toISOString());
-
-  console.log({ selectedDate, isoSelectedDates });
+  ).map((date) => setHoursWithOffset(date).toISOString());
 
   const validSelection = isoSelectedDates.every(
     (isoSelectedDate) =>
