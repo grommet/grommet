@@ -47,7 +47,6 @@ export const GridContainer = () => {
 
   return (
     <Box skeleton={skeleton}>
-      <Button label="Reload" onClick={() => setSkeleton(true)} />
       <Grid pad="small" gap="small" columns={['medium', 'medium']}>
         {labels.map((label, index) => (
           <Item

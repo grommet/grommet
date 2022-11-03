@@ -13,7 +13,7 @@ const HeadingSkeleton = forwardRef(
 
     const levelStyle = theme.heading.level[props.level];
     const data = levelStyle?.[props.size || 'medium'];
-    const height = data ? data.size : props.size;
+    const height = data ? data.height : props.size;
     return (
       <Skeleton
         as={props.as}

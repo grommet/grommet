@@ -164,7 +164,7 @@ exports[`Sidebar Box skeleton loading 1`] = `
   box-sizing: border-box;
   background-color: #EDEDED;
   color: #444444;
-  height: 50px;
+  height: 56px;
   min-width: 200px;
 }
 
@@ -348,7 +348,7 @@ exports[`Sidebar Box skeleton sizes loading 1`] = `
   box-sizing: border-box;
   background-color: #EDEDED;
   color: #444444;
-  height: 34px;
+  height: 40px;
   min-width: 200px;
 }
 
