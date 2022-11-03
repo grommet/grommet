@@ -564,7 +564,7 @@ const Form = forwardRef(
             // priority is given to validateOn prop on formField, if it is
             // undefined, then we will use the validate prop value of Form.
             // The reason we don't want to add validateOn = "submit" here is
-            // because we don't have to trigger validation of "submit" field
+            // because we don't want to trigger validation of "submit" field
             // when the user is typing in the instant (blur, change)
             // validation fields.
             if (validateOnArg && validateOnArg !== 'submit') {
