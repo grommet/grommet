@@ -109,8 +109,10 @@ const reorder = (array, pinnedArray, source, target) => {
 // getItemId returns something appropriate to use as a unique DOM
 // id for an item in the list
 const getItemId = (item, index, itemKey, primaryKey) => {
-  if (itemKey) return getValue(item, index, itemKey);
+  // we do primaryKey first to be backward compatible, even though
+  // itemKey is probably technically the better choice for a DOM id.
   if (primaryKey) return getValue(item, index, primaryKey);
+  if (itemKey) return getValue(item, index, itemKey);
   return getValue(item, index) ?? index; // do our best w/o *key properties
 };
 
