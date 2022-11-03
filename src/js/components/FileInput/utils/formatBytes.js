@@ -3,7 +3,7 @@ const IEC_CONVERSION_FACTOR = 1024;
 
 const getCurrentOS = () => {
   const currentOS = ['Win', 'Linux', 'Mac'].find(
-    (v) => window.navigator.userAgent.indexOf(v) >= 0,
+    (v) => window?.navigator?.userAgent?.indexOf(v) >= 0,
   );
 
   return currentOS;
