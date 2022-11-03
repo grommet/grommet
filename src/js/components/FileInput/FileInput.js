@@ -16,19 +16,7 @@ import { Text } from '../Text';
 
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
-
-const formatBytes = (size) => {
-  const units = ['B', 'KB', 'MB', 'GB', 'TB'];
-  const factor = 1024;
-  let index = 0;
-  let num = size;
-  while (num >= factor && index < units.length - 1) {
-    num /= factor;
-    index += 1;
-  }
-  return `${num.toFixed(1)} ${units[index]}`;
-};
-
+import { formatBytes } from './utils/formatBytes';
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
 // position the <input /> on top with an opacity of zero.
