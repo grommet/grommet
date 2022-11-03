@@ -537,12 +537,11 @@ const Form = forwardRef(
         const info = infoArg || validationResults.infos[name];
 
         useEffect(() => {
-          if (!validateOnArg) return;
           setValidateOn((prevValues) => {
             if (typeof prevValues === 'string') {
-              return { [name]: validateOnArg };
+              return { [name]: validateOnArg || validateOnProp };
             }
-            return { ...prevValues, [name]: validateOnArg };
+            return { ...prevValues, [name]: validateOnArg || validateOnProp };
           });
         }, [validateOnArg, name]);
 
@@ -562,10 +561,16 @@ const Form = forwardRef(
               required,
             );
 
+            // priority is given to validateOn prop on formField, if it is
+            // undefined, then we will use the validate prop value of Form.
+            // The reason we don't want to add validateOn = "submit" here is
+            // because we don't have to trigger validation of "submit" field
+            // when the user is typing in the instant (blur, change)
+            // validation fields.
             if (validateOnArg && validateOnArg !== 'submit') {
               validationRulesRef.current[name].validateOn = validateOnArg;
-            } else if (!validateOnArg && typeof validateOn === 'string') {
-              validationRulesRef.current[name].validateOn = validateOn;
+            } else if (!validateOnArg && validateOnProp !== 'submit') {
+              validationRulesRef.current[name].validateOn = validateOnProp;
             }
             return () => {
               delete validationRulesRef.current[name].field;
@@ -585,14 +590,14 @@ const Form = forwardRef(
           info,
           inForm: true,
           onBlur:
-            validateOnArg === 'blur' || validateOn === 'blur'
+            validateOnArg === 'blur' || validateOn[name] === 'blur'
               ? () =>
                   setPendingValidation(
                     pendingValidation ? [...pendingValidation, name] : [name],
                   )
               : undefined,
           onChange:
-            validateOnArg === 'change' || validateOn === 'change'
+            validateOnArg === 'change' || validateOn[name] === 'change'
               ? () =>
                   setPendingValidation(
                     pendingValidation ? [...pendingValidation, name] : [name],
@@ -611,6 +616,7 @@ const Form = forwardRef(
       validationResults.infos,
       value,
       valueProp,
+      validateOnProp,
     ]);
 
     return (
@@ -647,8 +653,8 @@ const Form = forwardRef(
           // otherwise.
           event.preventDefault();
           setPendingValidation(undefined);
-          // adding "submit" to the undefined || false validateOn
-          // prop of validationRulesRef
+          // adding validateOn: "submit" prop to the undefined validateOn fields
+          // as we want to trigger "submit" validation once form is submitted
           const newValidationRulesRef = Object.keys(
             validationRulesRef.current,
           ).reduce((acc, key) => {
@@ -661,7 +667,7 @@ const Form = forwardRef(
             }
             return acc;
           }, {});
-          // adding onSubmit validate prop for the fields which doesn
+
           const [nextErrors, nextInfos] = validateForm(
             Object.entries(newValidationRulesRef),
             value,
