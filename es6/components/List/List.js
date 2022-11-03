@@ -66,11 +66,11 @@ var StyledContainer = styled(Box).withConfig({
 })(["", ";"], function (props) {
   return props.theme.list && props.theme.list.container && props.theme.list.container.extend;
 });
-var normalize = function normalize(item, index, property) {
-  if (typeof property === 'function') {
-    return property(item, index);
-  }
-  return item[property];
+var getValue = function getValue(item, index, key) {
+  if (typeof key === 'function') return key(item, index);
+  if (typeof item === 'string') return item;
+  if (key !== undefined) return item[key];
+  return undefined;
 };
 var reorder = function reorder(array, pinnedArray, source, target) {
   var result = array.slice(0);
@@ -92,33 +92,17 @@ var reorder = function reorder(array, pinnedArray, source, target) {
   return result;
 };
 
-// Determine the primary content for a row. If the List
-// has a primaryKey defined this returns the item data
-// based on this primary key. If no primaryKey property
-// is defined this will return unknown. The intent of
-// the content from the primary key is that it is unique
-// within the list.
-var getPrimaryContent = function getPrimaryContent(item, index, primaryKey) {
-  var primaryContent;
-  if (primaryKey) {
-    if (typeof primaryKey === 'function') {
-      primaryContent = primaryKey(item, index);
-    } else {
-      primaryContent = normalize(item, index, primaryKey);
-    }
-  }
-  return primaryContent;
+// getItemId returns something appropriate to use as a unique DOM
+// id for an item in the list
+var getItemId = function getItemId(item, index, itemKey, primaryKey) {
+  var _getValue;
+  // we do primaryKey first to be backward compatible, even though
+  // itemKey is probably technically the better choice for a DOM id.
+  if (primaryKey) return getValue(item, index, primaryKey);
+  if (itemKey) return getValue(item, index, itemKey);
+  return (_getValue = getValue(item, index)) != null ? _getValue : index; // do our best w/o *key properties
 };
-var getKey = function getKey(item, index, primaryContent) {
-  if (typeof primaryContent === 'string') {
-    return primaryContent;
-  }
-  return typeof item === 'string' ? item : index;
-};
-var getItemId = function getItemId(item, index, primaryKey) {
-  var primaryContent = getPrimaryContent(item, index, primaryKey);
-  return getKey(item, index, primaryContent);
-};
+
 var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
@@ -195,7 +179,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         indexes: pinnedIndexes
       }];
       currentData.forEach(function (item, index) {
-        var key = typeof item === 'object' ? item[itemKey] : item;
+        var key = getValue(item, index, itemKey);
         if (pinned.includes(key)) {
           pinnedData.push(item);
           pinnedIndexes.push(index);
@@ -233,10 +217,10 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       // figure out which arrow button will be the active one.
       var buttonId = active % 2 ? 'MoveDown' : 'MoveUp';
       var itemIndex = Math.trunc(active / 2);
-      activeId = "" + getItemId(orderableData[itemIndex], itemIndex, primaryKey) + buttonId;
+      activeId = "" + getItemId(orderableData[itemIndex], itemIndex, itemKey, primaryKey) + buttonId;
     } else if (onClickItem) {
       // The whole list item is active. Figure out an id
-      activeId = getItemId(orderableData[active], active, primaryKey);
+      activeId = getItemId(orderableData[active], active, itemKey, primaryKey);
     }
     ariaProps['aria-activedescendant'] = activeId;
   }
@@ -255,7 +239,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           onOrder(reorder(orderableData, pinnedInfo, index, index - 1));
           updateActive(Math.max(active - 2, 1));
         }
-      } else if (disabledItems != null && disabledItems.includes(typeof itemKey === 'function' ? itemKey(data[active]) : data[active])) {
+      } else if (disabledItems != null && disabledItems.includes(getValue(data[active], active, itemKey))) {
         event.preventDefault();
       } else if (onClickItem) {
         event.persist();
@@ -315,30 +299,21 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   }, function (item, index) {
     var content;
     var boxProps = {};
-    var itemId;
     if (children) {
       content = children(item, index, onClickItem ? {
         active: active === index
       } : undefined);
     } else if (primaryKey) {
-      if (typeof primaryKey === 'function') {
-        itemId = primaryKey(item, index);
-        content = itemId;
-      } else {
-        itemId = normalize(item, index, primaryKey);
-        content = /*#__PURE__*/React.createElement(Text, {
-          key: "p",
-          weight: "bold"
-        }, itemId);
-      }
+      var primary = getValue(item, index, primaryKey);
+      content = typeof primary === 'string' || typeof primary === 'number' ? /*#__PURE__*/React.createElement(Text, {
+        key: "p",
+        weight: "bold"
+      }, primary) : primary;
       if (secondaryKey) {
-        if (typeof secondaryKey === 'function') {
-          content = [content, secondaryKey(item, index)];
-        } else {
-          content = [content, /*#__PURE__*/React.createElement(Text, {
-            key: "s"
-          }, normalize(item, index, secondaryKey))];
-        }
+        var secondary = getValue(item, index, secondaryKey);
+        content = [content, typeof secondary === 'string' || typeof secondary === 'number' ? /*#__PURE__*/React.createElement(Text, {
+          key: "s"
+        }, getValue(item, index, secondaryKey)) : secondary];
         boxProps = {
           direction: 'row',
           align: 'center',
@@ -351,17 +326,9 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     } else {
       content = item;
     }
-    if (itemKey) {
-      if (typeof itemKey === 'function') {
-        itemId = itemKey(item);
-      } else {
-        itemId = normalize(item, index, itemKey);
-      }
-    }
-    var key = itemKey ? itemId : getKey(item, index, itemId);
-    var orderableIndex = orderableData.findIndex(function (ordItem) {
-      var ordItemKey = typeof ordItem === 'object' ? ordItem[itemKey] : ordItem;
-      return ordItemKey === key;
+    var key = getValue(item, index, itemKey) || index;
+    var orderableIndex = orderableData.findIndex(function (ordItem, ordIndex) {
+      return getValue(ordItem, ordIndex, itemKey) === key;
     });
     var isDisabled;
     if (disabledItems) {
