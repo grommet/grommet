@@ -2,9 +2,11 @@ const SI_CONVERSION_FACTOR = 1000;
 const IEC_CONVERSION_FACTOR = 1024;
 
 const getCurrentOS = () => {
-  const currentOS = ['Win', 'Linux', 'Mac'].find(
-    (v) => window?.navigator?.userAgent?.indexOf(v) >= 0,
-  );
+  const currentOS = ['Win', 'Linux', 'Mac'].find((v) => {
+    if (typeof window !== 'undefined')
+      return window?.navigator?.userAgent?.indexOf(v) >= 0;
+    return undefined;
+  });
 
   return currentOS;
 };
