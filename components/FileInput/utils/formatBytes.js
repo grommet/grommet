@@ -7,7 +7,8 @@ var IEC_CONVERSION_FACTOR = 1024;
 var getCurrentOS = function getCurrentOS() {
   var currentOS = ['Win', 'Linux', 'Mac'].find(function (v) {
     var _window, _window$navigator, _window$navigator$use;
-    return ((_window = window) == null ? void 0 : (_window$navigator = _window.navigator) == null ? void 0 : (_window$navigator$use = _window$navigator.userAgent) == null ? void 0 : _window$navigator$use.indexOf(v)) >= 0;
+    if (typeof window !== 'undefined') return ((_window = window) == null ? void 0 : (_window$navigator = _window.navigator) == null ? void 0 : (_window$navigator$use = _window$navigator.userAgent) == null ? void 0 : _window$navigator$use.indexOf(v)) >= 0;
+    return undefined;
   });
   return currentOS;
 };
