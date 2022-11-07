@@ -382,6 +382,7 @@ export type SkeletonType =
 | boolean
 | {
   animation?: AnimateType;
-  depth?: number;
   colors?: SkeletonColorsType;
+  depth?: number;
+  message?: string | { start?: string; end?: string };
 };

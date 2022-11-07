@@ -6,6 +6,8 @@ import { FormAdd } from 'grommet-icons';
 const labels = [];
 for (let i = 0; i < 10; i += 1) labels.push(`Item ${i}`);
 
+const skeleton = { message: { start: "Loading", end: 'Done' } };
+
 const Item = ({ title, ...rest }) => (
   <Card
     width="531px"
@@ -40,20 +42,20 @@ const Item = ({ title, ...rest }) => (
 );
 
 export const GridContainer = () => {
-  const [skeleton, setSkeleton] = useState(true);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setSkeleton(!skeleton), 3000);
-  }, [skeleton]);
+    setTimeout(() => setLoading(!loading), 3000);
+  }, [loading]);
 
   return (
-    <Box skeleton={skeleton}>
+    <Box skeleton={loading ? skeleton : undefined}>
       <Grid pad="small" gap="small" columns={['medium', 'medium']}>
         {labels.map((label, index) => (
           <Item
             key={label}
             title={label}
             skeleton={
-              skeleton
+              loading
                 ? {
                     animation: [
                       { type: 'fadeIn', delay: index * 200},

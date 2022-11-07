@@ -206,7 +206,14 @@ export const skeletonPropType = PropTypes.oneOfType([
   PropTypes.shape({ 
     animation: animationPropType,
     colors: skeletonColorsPropType,
-    depth: PropTypes.number,    
+    depth: PropTypes.number,
+    message: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        start: PropTypes.string,
+        end: PropTypes.end,
+      }),
+    ]),
   }),
 ]);
 

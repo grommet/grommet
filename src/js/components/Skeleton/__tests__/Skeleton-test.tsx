@@ -10,7 +10,7 @@ import { Heading } from '../../Heading';
 import { Paragraph } from '../../Paragraph';
 import { Button } from '../../Button';
 
-describe('Sidebar', () => {
+describe('Skeleton', () => {
   test('renders', () => {
     const { asFragment } = render(
       <Grommet>
@@ -86,7 +86,7 @@ describe('Sidebar', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Skeleton with styling props', () => {
+  test('with styling props', () => {
     const { asFragment } = render(
       <Grommet>
         <Skeleton

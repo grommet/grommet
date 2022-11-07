@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sidebar Box skeleton loaded 1`] = `
+exports[`Skeleton Box skeleton loaded 1`] = `
 <DocumentFragment>
   .c0 {
   font-size: 18px;
@@ -154,7 +154,7 @@ exports[`Sidebar Box skeleton loaded 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Sidebar Box skeleton loading 1`] = `
+exports[`Skeleton Box skeleton loading 1`] = `
 <DocumentFragment>
   .c3 {
   display: -webkit-box;
@@ -338,7 +338,7 @@ exports[`Sidebar Box skeleton loading 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Sidebar Box skeleton sizes loading 1`] = `
+exports[`Skeleton Box skeleton sizes loading 1`] = `
 <DocumentFragment>
   .c3 {
   display: -webkit-box;
@@ -522,7 +522,7 @@ exports[`Sidebar Box skeleton sizes loading 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Sidebar Box skeleton with specific dimensions 1`] = `
+exports[`Skeleton Box skeleton with specific dimensions 1`] = `
 <DocumentFragment>
   .c2 {
   display: -webkit-box;
@@ -580,7 +580,41 @@ exports[`Sidebar Box skeleton with specific dimensions 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Sidebar Skeleton with styling props 1`] = `
+exports[`Skeleton renders 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EDEDED;
+  color: #444444;
+  height: 24px;
+  width: 100%;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Skeleton with styling props 1`] = `
 <DocumentFragment>
   .c1 {
   display: -webkit-box;
@@ -609,40 +643,6 @@ exports[`Sidebar Skeleton with styling props 1`] = `
   .c1 {
     border-radius: 6px;
   }
-}
-
-<div
-    class="c0"
-  >
-    <div
-      class="c1"
-    />
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Sidebar renders 1`] = `
-<DocumentFragment>
-  .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 24px;
-  width: 100%;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
 }
 
 <div

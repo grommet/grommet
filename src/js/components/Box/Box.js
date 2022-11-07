@@ -2,6 +2,7 @@ import React, {
   Children,
   forwardRef,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from 'react';
@@ -14,6 +15,7 @@ import { Keyboard } from '../Keyboard';
 import { StyledBox, StyledBoxGap } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 
 const Box = forwardRef(
   (
@@ -48,6 +50,16 @@ const Box = forwardRef(
     const skeleton = useSkeleton();
 
     let background = backgroundProp;
+
+    const announce = useContext(AnnounceContext);
+    
+    useEffect(() => {
+      if (skeletonProp?.message?.start) announce(skeletonProp.message.start);
+      else if (typeof skeletonProp?.message === 'string')
+        announce(skeletonProp.message);
+      return () =>
+        skeletonProp?.message?.end && announce(skeletonProp.message.end);
+    }, [announce, skeletonProp]);
 
     const focusable = useMemo(
       () => onClick && !(tabIndex < 0),
