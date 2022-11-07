@@ -1,4 +1,4 @@
-var _excluded = ["actions", "message", "onClose", "id", "global", "status", "title", "toast", "icon"];
+var _excluded = ["actions", "message", "onClose", "id", "global", "status", "title", "toast", "icon", "time"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useCallback, useContext, useEffect, useState, useMemo, Fragment } from 'react';
@@ -60,6 +60,7 @@ var Notification = function Notification(_ref) {
     title = _ref.title,
     toast = _ref.toast,
     icon = _ref.icon,
+    time = _ref.time,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var autoClose = toast && (toast == null ? void 0 : toast.autoClose) === undefined ? true : toast.autoClose;
   var theme = useContext(ThemeContext) || defaultProps.theme;
@@ -75,13 +76,13 @@ var Notification = function Notification(_ref) {
   }, [onClose]);
   useEffect(function () {
     if (autoClose) {
-      var timer = setTimeout(close, theme.notification.toast.time || theme.notification.time);
+      var timer = setTimeout(close, time || theme.notification.toast.time || theme.notification.time);
       return function () {
         return clearTimeout(timer);
       };
     }
     return undefined;
-  }, [autoClose, close, theme.notification.toast.time, theme.notification.time]);
+  }, [autoClose, close, theme.notification.toast.time, theme.notification.time, time]);
   var CloseIcon = theme.notification.close.icon;
   var _ref2 = ((_theme$notification = theme.notification) == null ? void 0 : _theme$notification[status]) || theme.notification.unknown,
     StatusIcon = _ref2.icon,

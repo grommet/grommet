@@ -21,7 +21,8 @@ var TitleNotification = function TitleNotification() {
   })), visible && /*#__PURE__*/React.createElement(Notification, {
     toast: true,
     title: "Status Title",
-    onClose: onClose
+    onClose: onClose,
+    time: 4000
   }));
 };
 export var ToastTitleOnly = function ToastTitleOnly() {

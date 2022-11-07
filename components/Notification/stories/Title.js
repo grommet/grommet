@@ -27,7 +27,8 @@ var TitleNotification = function TitleNotification() {
   })), visible && /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
     toast: true,
     title: "Status Title",
-    onClose: onClose
+    onClose: onClose,
+    time: 4000
   }));
 };
 var ToastTitleOnly = function ToastTitleOnly() {

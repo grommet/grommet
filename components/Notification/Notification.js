@@ -12,7 +12,7 @@ var _Layer = require("../Layer");
 var _Paragraph = require("../Paragraph");
 var _Text = require("../Text");
 var _propTypes = require("./propTypes");
-var _excluded = ["actions", "message", "onClose", "id", "global", "status", "title", "toast", "icon"];
+var _excluded = ["actions", "message", "onClose", "id", "global", "status", "title", "toast", "icon", "time"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -66,6 +66,7 @@ var Notification = function Notification(_ref) {
     title = _ref.title,
     toast = _ref.toast,
     icon = _ref.icon,
+    time = _ref.time,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var autoClose = toast && (toast == null ? void 0 : toast.autoClose) === undefined ? true : toast.autoClose;
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
@@ -81,13 +82,13 @@ var Notification = function Notification(_ref) {
   }, [onClose]);
   (0, _react.useEffect)(function () {
     if (autoClose) {
-      var timer = setTimeout(close, theme.notification.toast.time || theme.notification.time);
+      var timer = setTimeout(close, time || theme.notification.toast.time || theme.notification.time);
       return function () {
         return clearTimeout(timer);
       };
     }
     return undefined;
-  }, [autoClose, close, theme.notification.toast.time, theme.notification.time]);
+  }, [autoClose, close, theme.notification.toast.time, theme.notification.time, time]);
   var CloseIcon = theme.notification.close.icon;
   var _ref2 = ((_theme$notification = theme.notification) == null ? void 0 : _theme$notification[status]) || theme.notification.unknown,
     StatusIcon = _ref2.icon,

@@ -13,7 +13,8 @@ if (process.env.NODE_ENV !== 'production') {
       position: PropTypes.oneOf(['bottom', 'bottom-left', 'bottom-right', 'center', 'end', 'hidden', 'left', 'right', 'start', 'top', 'top-left', 'top-right'])
     })]),
     onClose: PropTypes.func,
-    icon: PropTypes.element
+    icon: PropTypes.element,
+    time: PropTypes.number
   };
 }
 export var NotificationType = PropType;
