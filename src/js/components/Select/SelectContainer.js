@@ -177,7 +177,7 @@ const SelectContainer = forwardRef(
                 return valueValue === optionVal;
               });
             }
-          } else if (valueKey && typeof value === 'object') {
+          } else if (valueKey && value !== null && typeof value === 'object') {
             const valueValue =
               typeof valueKey === 'function'
                 ? valueKey(value)
