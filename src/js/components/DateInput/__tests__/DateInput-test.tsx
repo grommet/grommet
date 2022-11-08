@@ -106,6 +106,32 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('format with date bounds', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy"
+          calendarProps={{
+            bounds: ['2022-11-10', '2022-11-20'],
+          }}
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+
+    await user.type(input, '09/09/2022');
+    expect(input).not.toHaveValue();
+
+    await user.clear(input);
+    await user.type(input, '11/15/2022');
+    expect(input).toHaveValue('11/15/2022');
+  });
+
   test('reverse calendar icon', () => {
     const { container } = render(
       <Grommet>
@@ -254,6 +280,16 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('range format no value', () => {
+    render(
+      <Grommet>
+        <DateInput id="item" name="item" format="mm/dd/yyyy-mm/dd/yyyy" />
+      </Grommet>,
+    );
+
+    expect(screen.queryByRole('button', { name: /Calendar/ })).not.toBeNull();
+  });
+
   test('range format inline', () => {
     const { container } = render(
       <Grommet>
@@ -267,6 +303,32 @@ describe('DateInput', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('range format with date bounds', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          calendarProps={{
+            bounds: ['2022-11-10', '2022-11-20'],
+          }}
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+
+    await user.type(input, '09/09/2022-09/09/2022');
+    expect(input).not.toHaveValue();
+
+    await user.clear(input);
+    await user.type(input, '11/15/2022-11/15/2022');
+    expect(input).toHaveValue('11/15/2022-11/15/2022');
   });
 
   test('dates initialized with empty array', async () => {
@@ -1014,5 +1076,21 @@ describe('DateInput', () => {
       <DateInput icon={<CalendarIcon color="red" />} name="item" />,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme', () => {
+    const customTheme = {
+      dateInput: {
+        container: {
+          round: 'xsmall',
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <DateInput format="mm/dd/yyyy" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

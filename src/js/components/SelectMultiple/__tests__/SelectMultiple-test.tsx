@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
@@ -87,6 +87,7 @@ describe('SelectMultiple', () => {
   });
 
   test('disabled option', async () => {
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
     const user = userEvent.setup();
     render(
       <Grommet>
@@ -184,12 +185,10 @@ describe('SelectMultiple', () => {
     await user.click(screen.getByRole('option', { name: /0/i }));
     await user.click(screen.getByRole('option', { name: /1/i }));
     await user.click(screen.getByRole('option', { name: /2/i }));
-
     // close SelectMultiple
     await user.click(screen.getByRole('button', { name: /Close Select/i }));
     // all options should be visible when drop is closed
     expect(container.firstChild).toMatchSnapshot();
-
     // unselect option at input level
     await user.click(screen.getByRole('option', { name: /0/i }));
     await user.click(screen.getByRole('option', { name: /2/i }));
@@ -301,5 +300,122 @@ describe('SelectMultiple', () => {
     await user.click(screen.getByRole('button', { name: /Clear All/i }));
 
     expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('null value', () => {
+    const { asFragment } = render(
+      <Grommet>
+        {/* @ts-ignore */}
+        <SelectMultiple options={['a', 'b']} value={null} />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('object value', () => {
+    render(
+      <Grommet>
+        <SelectMultiple
+          showSelectedInline
+          options={[
+            { label: 'a', value: 1 },
+            { label: 'b', value: 2 },
+          ]}
+          labelKey="label"
+          valueKey="value"
+          value={[{ label: 'a', value: 1 }]}
+        />
+      </Grommet>,
+    );
+    expect(screen.getByRole('option', { name: /a selected/ })).toBeVisible();
+  });
+
+  test('search with select and clear', async () => {
+    const user = userEvent.setup();
+    const defaultOptions = [
+      'Apple',
+      'Orange',
+      'Banana',
+      'Grape',
+      'Melon',
+      'Strawberry',
+      'Kiwi',
+      'Mango',
+      'Raspberry',
+      'Rhubarb',
+    ];
+    const Test = () => {
+      const [options, setOptions] = useState(defaultOptions);
+      const [valueMultiple, setValueMultiple] = useState([]);
+      return (
+        <Grommet>
+          <SelectMultiple
+            options={options}
+            value={valueMultiple}
+            placeholder="Select"
+            onSearch={(text) => {
+              const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+              const exp = new RegExp(escapedText, 'i');
+              setOptions(defaultOptions.filter((o) => exp.test(o)));
+            }}
+            onClose={() => setOptions(defaultOptions)}
+            onChange={({ value }) => {
+              setValueMultiple(value);
+            }}
+          />
+        </Grommet>
+      );
+    };
+    render(<Test />);
+    // open drop
+    await user.click(screen.getByRole('button', { name: /Select/ }));
+    // search
+    await user.type(screen.getByRole('searchbox', { name: /Search/ }), 'p');
+    // select all
+    await user.click(screen.getByRole('button', { name: /Select all/ }));
+
+    expect(
+      screen.queryByRole('option', { name: /Apple selected/ }),
+    ).not.toBeNull();
+    expect(
+      screen.queryByRole('option', { name: /Grape selected/ }),
+    ).not.toBeNull();
+    expect(
+      screen.queryByRole('option', { name: /Raspberry selected/ }),
+    ).not.toBeNull();
+
+    // search
+    await user.type(
+      screen.getByRole('searchbox', { name: /Search/ }),
+      '{backspace}w',
+    );
+    // select all
+    await user.click(screen.getByRole('button', { name: /Select all/ }));
+    expect(
+      screen.queryByRole('option', { name: /Strawberry selected/ }),
+    ).not.toBeNull();
+    expect(
+      screen.queryByRole('option', { name: /Kiwi selected/ }),
+    ).not.toBeNull();
+
+    // search
+    await user.type(
+      screen.getByRole('searchbox', { name: /Search/ }),
+      '{backspace}b',
+    );
+    // Clear
+    await user.click(screen.getByRole('button', { name: /Clear all/ }));
+    // clear search
+    await user.type(
+      screen.getByRole('searchbox', { name: /Search/ }),
+      '{backspace}',
+    );
+    expect(
+      screen.queryByRole('option', { name: /Grape selected/ }),
+    ).not.toBeNull();
+    expect(
+      screen.queryByRole('option', { name: /Strawberry selected/ }),
+    ).toBeNull();
   });
 });

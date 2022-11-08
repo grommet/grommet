@@ -5,7 +5,8 @@ import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
-import { DataChart } from '..';
+import { DataChart, DataChartProps } from '..';
+import { ChartProps } from '../../Chart';
 
 const data = [
   { a: 1, b: 'one', c: 111111, d: '2020-06-24' },
@@ -13,7 +14,7 @@ const data = [
 ];
 
 describe('DataChart', () => {
-  let warnSpy;
+  let warnSpy: jest.SpyInstance;
 
   beforeEach(() => {
     warnSpy = jest.spyOn(console, 'warn').mockImplementation();
@@ -103,16 +104,17 @@ describe('DataChart', () => {
   });
 
   test('axis', () => {
+    const values: DataChartProps['axis'][] = [
+      true,
+      false,
+      { x: { property: 'd' } },
+      { y: { property: 'a' } },
+      { x: { property: 'd', granularity: 'fine' } },
+      { y: { property: 'a', granularity: 'fine' } },
+    ];
     const { container } = render(
       <Grommet>
-        {[
-          true,
-          false,
-          { x: { property: 'd' } },
-          { y: { property: 'a' } },
-          { x: { property: 'd', granularity: 'fine' } },
-          { y: { property: 'a', granularity: 'fine' } },
-        ].map((axis, i) => (
+        {values.map((axis, i) => (
           // eslint-disable-next-line react/no-array-index-key
           <DataChart key={i} data={data} series="a" axis={axis} />
         ))}
@@ -123,9 +125,9 @@ describe('DataChart', () => {
   });
 
   test('dates', () => {
-    const dateData = [];
+    const dateData: DataChartProps['data'] = [];
     for (let i = 0; i < 4; i += 1) {
-      const digits = ((i % 12) + 1).toString().padStart(2, 0);
+      const digits = ((i % 12) + 1).toString().padStart(2, '0');
       dateData.push({
         second: `2020-05-15T08:04:${digits}`,
         minute: `2020-05-15T08:${digits}:00`,
@@ -156,14 +158,15 @@ describe('DataChart', () => {
   });
 
   test('guide', () => {
+    const values: DataChartProps['guide'][] = [
+      true,
+      false,
+      { x: { granularity: 'fine' } },
+      { y: { granularity: 'fine' } },
+    ];
     const { container } = render(
       <Grommet>
-        {[
-          true,
-          false,
-          { x: { granularity: 'fine' } },
-          { y: { granularity: 'fine' } },
-        ].map((guide, i) => (
+        {values.map((guide, i) => (
           // eslint-disable-next-line react/no-array-index-key
           <DataChart key={i} data={data} series="a" guide={guide} />
         ))}
@@ -230,7 +233,7 @@ describe('DataChart', () => {
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((count) => (
           <DataChart
             key={count}
-            data={Array.from({ length: count }, (x, i) => ({ a: i }))}
+            data={Array.from({ length: count }, (_, i) => ({ a: i }))}
             series="a"
             axis={{ x: { granularity: 'medium' } }}
           />
@@ -242,14 +245,15 @@ describe('DataChart', () => {
   });
 
   test('type', () => {
+    const values: ChartProps['type'][] = ['bar', 'line', 'area'];
     const { container } = render(
       <Grommet>
-        {['bar', 'line', 'area'].map((type) => (
+        {values.map((type) => (
           <DataChart
             key={type}
             data={data}
             series="a"
-            chart={[{ property: 'a', type }]}
+            chart={[{ property: 'a', type: type }]}
           />
         ))}
       </Grommet>,

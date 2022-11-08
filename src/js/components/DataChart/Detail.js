@@ -143,8 +143,8 @@ const Detail = ({
               {series
                 .filter(
                   ({ property }) =>
-                    !activeProperty ||
-                    activeProperty === property ||
+                    ((!activeProperty || activeProperty === property) &&
+                      data?.[detailIndex]?.[property] !== undefined) ||
                     (axis && axis.x && axis.x.property === property),
                 )
                 .map((serie) => {

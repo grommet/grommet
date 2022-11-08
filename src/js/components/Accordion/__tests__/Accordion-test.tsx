@@ -107,7 +107,6 @@ describe('Accordion', () => {
     expect(asFragment()).toMatchSnapshot();
 
     await user.click(screen.getByRole('tab', { name: /Panel 2/i }));
-
     expect(onActive).toBeCalled();
     expect(asFragment()).toMatchSnapshot();
   });
@@ -125,7 +124,6 @@ describe('Accordion', () => {
     expect(asFragment()).toMatchSnapshot();
 
     await user.click(screen.getByRole('tab', { name: /Panel 2/i }));
-
     expect(asFragment()).toMatchSnapshot();
   });
 
