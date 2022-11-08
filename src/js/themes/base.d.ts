@@ -342,7 +342,7 @@ export interface ThemeType {
       intelligentMargin?: boolean;
       margin?: MarginType;
       shadowSize?: string;
-      zIndex?: string;
+      zIndex?: number | string;
     };
     edgeSize?: {
       none?: string;
