@@ -2,21 +2,22 @@ import React, {
   forwardRef,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useRef,
   useState,
-  useEffect,
 } from 'react';
 import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
+import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
 
+import { CalendarPropTypes } from './propTypes';
 import {
   StyledCalendar,
   StyledDay,
@@ -32,12 +33,13 @@ import {
   daysApart,
   endOfMonth,
   handleOffset,
+  sameDayOrAfter,
+  sameDayOrBefore,
   startOfMonth,
   subtractDays,
   subtractMonths,
   withinDates,
 } from './utils';
-import { CalendarPropTypes } from './propTypes';
 import { setHoursWithOffset } from '../../utils/dates';
 
 const headingPadMap = {
@@ -165,6 +167,22 @@ const buildDisplayBounds = (reference, firstDayOfWeek) => {
 
   const end = addDays(start, 7 * 5 + 7); // 5 weeks to end of week
   return [start, end];
+};
+
+const disabledCalendarPreviousMonthButton = (date, reference, bounds) => {
+  if (!bounds) return false;
+
+  const lastBound = new Date(bounds[1]);
+
+  return !sameDayOrBefore(lastBound, reference) && !betweenDates(date, bounds);
+};
+
+const disabledCalendarNextMonthButton = (date, reference, bounds) => {
+  if (!bounds) return false;
+
+  const firstBound = new Date(bounds[0]);
+
+  return !sameDayOrAfter(firstBound, reference) && !betweenDates(date, bounds);
 };
 
 export const getOutputFormat = (dates) => {
@@ -443,15 +461,37 @@ const Calendar = forwardRef(
       if (initialFocus === 'days') daysRef.current.focus();
     }, [initialFocus]);
 
+    const handleReference = useCallback(
+      (nextReference) => {
+        setReference(nextReference);
+        if (onReference) onReference(nextReference.toISOString());
+      },
+      [onReference],
+    );
+
     const changeReference = useCallback(
       (nextReference) => {
-        if (betweenDates(nextReference, bounds)) {
-          setReference(nextReference);
-          if (onReference) onReference(nextReference.toISOString());
-        }
+        if (betweenDates(nextReference, bounds)) handleReference(nextReference);
       },
-      [onReference, bounds],
+      [handleReference, bounds],
     );
+
+    const changeCalendarMonth = (messageId, newMonth) => {
+      handleReference(newMonth);
+
+      announce(
+        format({
+          id: messageId,
+          messages,
+          values: {
+            date: newMonth.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric',
+            }),
+          },
+        }),
+      );
+    };
 
     const handleRange = useCallback(
       (selectedDate) => {
@@ -580,22 +620,14 @@ const Calendar = forwardRef(
                 },
               })}
               icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
-              disabled={!betweenDates(previousMonth, bounds)}
-              onClick={() => {
-                changeReference(previousMonth);
-                announce(
-                  format({
-                    id: 'calendar.previousMove',
-                    messages,
-                    values: {
-                      date: previousMonth.toLocaleDateString(locale, {
-                        month: 'long',
-                        year: 'numeric',
-                      }),
-                    },
-                  }),
-                );
-              }}
+              disabled={disabledCalendarPreviousMonthButton(
+                previousMonth,
+                reference,
+                bounds,
+              )}
+              onClick={() =>
+                changeCalendarMonth('calendar.previousMove', previousMonth)
+              }
             />
             <Button
               a11yTitle={format({
@@ -609,22 +641,14 @@ const Calendar = forwardRef(
                 },
               })}
               icon={<NextIcon size={size !== 'small' ? size : undefined} />}
-              disabled={!betweenDates(nextMonth, bounds)}
-              onClick={() => {
-                changeReference(nextMonth);
-                announce(
-                  format({
-                    id: 'calendar.nextMove',
-                    messages,
-                    values: {
-                      date: nextMonth.toLocaleDateString(locale, {
-                        month: 'long',
-                        year: 'numeric',
-                      }),
-                    },
-                  }),
-                );
-              }}
+              disabled={disabledCalendarNextMonthButton(
+                nextMonth,
+                reference,
+                bounds,
+              )}
+              onClick={() =>
+                changeCalendarMonth('calendar.nextMove', nextMonth)
+              }
             />
           </Box>
         </Box>

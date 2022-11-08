@@ -366,7 +366,7 @@ const Form = forwardRef(
             type: 'formClose',
             element,
             errors: analyticsRef.current.errors,
-            elapsed: 
+            elapsed:
               new Date().getTime() - analyticsRef.current.start.getTime(),
           });
         }
