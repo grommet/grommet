@@ -27,6 +27,7 @@ import {
   valuesAreEqual,
   valueToText,
   textToValue,
+  validateBounds,
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
@@ -274,14 +275,24 @@ Use the icon prop instead.`,
                   reference,
                   outputFormat,
                 );
-                if (nextValue !== undefined)
-                  setReference(getReference(nextValue));
+
+                const validatedNextValue = validateBounds(
+                  calendarProps?.bounds,
+                  nextValue,
+                );
+
+                if (!validatedNextValue && nextValue) {
+                  setTextValue('');
+                }
+
+                if (validatedNextValue !== undefined)
+                  setReference(getReference(validatedNextValue));
                 // update value even when undefined
-                setValue(nextValue);
+                setValue(validatedNextValue);
                 if (onChange) {
                   event.persist(); // extract from React synthetic event pool
                   const adjustedEvent = event;
-                  adjustedEvent.value = nextValue;
+                  adjustedEvent.value = validatedNextValue;
                   onChange(adjustedEvent);
                 }
               }}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DropProps } from '../Drop';
+import { DropType } from '../Drop';
 import { ButtonExtendedProps, ButtonType } from '../Button';
 import {
   A11yTitleType,
@@ -28,7 +28,7 @@ export interface MenuProps {
         opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
       };
   dropTarget?: object;
-  dropProps?: DropProps;
+  dropProps?: DropType;
   gridArea?: GridAreaType;
   icon?: boolean | React.ReactNode;
   items: ButtonExtendedProps[] | ButtonExtendedProps[][];
