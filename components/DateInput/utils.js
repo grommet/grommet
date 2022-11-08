@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.valuesAreEqual = exports.valueToText = exports.textToValue = exports.schemaToMask = exports.formatToSchema = void 0;
+exports.valuesAreEqual = exports.valueToText = exports.validateBounds = exports.textToValue = exports.schemaToMask = exports.formatToSchema = void 0;
 var _utils = require("../../utils");
 var _utils2 = require("../Calendar/utils");
 function _construct(Parent, args, Class) { if (_isNativeReflectConstruct()) { _construct = Reflect.construct.bind(); } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
@@ -126,6 +126,22 @@ var pullDigits = function pullDigits(text, index) {
   }
   return text.slice(index, end);
 };
+var validateBounds = function validateBounds(dateBounds, selectedDate) {
+  if (!dateBounds || !selectedDate) return selectedDate;
+  var _dateBounds$map = dateBounds.map(function (date) {
+      return (0, _utils.setHoursWithOffset)(date).toISOString();
+    }),
+    startDate = _dateBounds$map[0],
+    endDate = _dateBounds$map[1];
+  var isoSelectedDates = (Array.isArray(selectedDate) ? selectedDate : [selectedDate]).map(function (date) {
+    return (0, _utils.setHoursWithOffset)(date).toISOString();
+  });
+  var validSelection = isoSelectedDates.every(function (isoSelectedDate) {
+    return !endDate && startDate === isoSelectedDate || isoSelectedDate >= startDate && isoSelectedDate <= endDate;
+  });
+  return validSelection ? selectedDate : undefined;
+};
+exports.validateBounds = validateBounds;
 var textToValue = function textToValue(text, schema, range, reference, outputFormat) {
   if (!text) return range ? [] : undefined;
   var result;

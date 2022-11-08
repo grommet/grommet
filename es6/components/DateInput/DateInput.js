@@ -17,7 +17,7 @@ import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef, setHoursWithOffset } from '../../utils';
-import { formatToSchema, schemaToMask, valuesAreEqual, valueToText, textToValue } from './utils';
+import { formatToSchema, schemaToMask, valuesAreEqual, valueToText, textToValue, validateBounds } from './utils';
 import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
 var getReference = function getReference(value) {
@@ -256,13 +256,17 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       var nextTextValue = event.target.value;
       setTextValue(nextTextValue);
       var nextValue = textToValue(nextTextValue, schema, range, reference, outputFormat);
-      if (nextValue !== undefined) setReference(getReference(nextValue));
+      var validatedNextValue = validateBounds(calendarProps == null ? void 0 : calendarProps.bounds, nextValue);
+      if (!validatedNextValue && nextValue) {
+        setTextValue('');
+      }
+      if (validatedNextValue !== undefined) setReference(getReference(validatedNextValue));
       // update value even when undefined
-      setValue(nextValue);
+      setValue(validatedNextValue);
       if (_onChange) {
         event.persist(); // extract from React synthetic event pool
         var adjustedEvent = event;
-        adjustedEvent.value = nextValue;
+        adjustedEvent.value = validatedNextValue;
         _onChange(adjustedEvent);
       }
     },

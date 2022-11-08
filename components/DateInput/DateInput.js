@@ -262,13 +262,17 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       var nextTextValue = event.target.value;
       setTextValue(nextTextValue);
       var nextValue = (0, _utils2.textToValue)(nextTextValue, schema, range, reference, outputFormat);
-      if (nextValue !== undefined) setReference(getReference(nextValue));
+      var validatedNextValue = (0, _utils2.validateBounds)(calendarProps == null ? void 0 : calendarProps.bounds, nextValue);
+      if (!validatedNextValue && nextValue) {
+        setTextValue('');
+      }
+      if (validatedNextValue !== undefined) setReference(getReference(validatedNextValue));
       // update value even when undefined
-      setValue(nextValue);
+      setValue(validatedNextValue);
       if (_onChange) {
         event.persist(); // extract from React synthetic event pool
         var adjustedEvent = event;
-        adjustedEvent.value = nextValue;
+        adjustedEvent.value = validatedNextValue;
         _onChange(adjustedEvent);
       }
     },
