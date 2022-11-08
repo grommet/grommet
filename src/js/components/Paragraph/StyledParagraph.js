@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles, normalizeColor, textAlignStyle } from '../../utils';
+import {
+  breakpointStyle,
+  genericStyles,
+  normalizeColor,
+  textAlignStyle,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const colorStyle = css`
@@ -9,12 +14,42 @@ const colorStyle = css`
 
 const sizeStyle = (props) => {
   const size = props.size || 'medium';
-  const data = props.theme.paragraph[size];
-  return css`
-    font-size: ${data ? data.size : size};
-    line-height: ${data ? data.height : 'normal'};
-    max-width: ${props.fillProp ? 'none' : data && data.maxWidth};
-  `;
+  const paragraphTheme = props.theme.paragraph;
+  const data = paragraphTheme.fontSize[size];
+  const styles = [
+    css`
+      font-size: ${data ? data.size : size};
+      line-height: ${data ? data.height : 'normal'};
+      max-width: ${props.fillProp ? 'none' : data && data.maxWidth};
+    `,
+  ];
+  if (props.responsive && paragraphTheme.responsiveBreakpoint) {
+    const breakpoint =
+      props.theme.global.breakpoints[paragraphTheme.responsiveBreakpoint];
+    // create (ordered) Array of sizes to loop through
+    const allSizes = Object.keys(paragraphTheme.fontSize);
+    const sizePosition = allSizes.findIndex(
+      (elementSize) => elementSize === size,
+    );
+    if (breakpoint) {
+      const responsiveData = paragraphTheme.fontSize[allSizes[sizePosition - 1]]
+        ? paragraphTheme.fontSize[allSizes[sizePosition - 1]]
+        : paragraphTheme.fontSize[allSizes[sizePosition]];
+      if (responsiveData) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+              font-size: ${responsiveData.size};
+              line-height: ${responsiveData.height};
+              max-width: ${props.fillProp ? 'none' : responsiveData.maxWidth};
+            `,
+          ),
+        );
+      }
+    }
+  }
+  return styles;
 };
 
 const fontFamily = css`

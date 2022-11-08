@@ -30,7 +30,7 @@ const radiusStyle = (props) => {
 
 const fontStyle = (props) => {
   const size = props.sizeProp || 'medium';
-  const data = props.theme.text[size];
+  const data = props.theme.text.fontSize[size];
   return css`
     font-size: ${data.size};
     line-height: ${data.height};

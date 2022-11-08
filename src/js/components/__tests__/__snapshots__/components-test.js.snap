@@ -2237,31 +2237,34 @@ exports[`Components loads 1`] = `
         },
         "paragraph": {
           "font": {},
-          "large": {
-            "height": "28px",
-            "maxWidth": "528px",
-            "size": "22px",
+          "fontSize": {
+            "large": {
+              "height": "28px",
+              "maxWidth": "528px",
+              "size": "22px",
+            },
+            "medium": {
+              "height": "24px",
+              "maxWidth": "432px",
+              "size": "18px",
+            },
+            "small": {
+              "height": "20px",
+              "maxWidth": "336px",
+              "size": "14px",
+            },
+            "xlarge": {
+              "height": "32px",
+              "maxWidth": "624px",
+              "size": "26px",
+            },
+            "xxlarge": {
+              "height": "40px",
+              "maxWidth": "816px",
+              "size": "34px",
+            },
           },
-          "medium": {
-            "height": "24px",
-            "maxWidth": "432px",
-            "size": "18px",
-          },
-          "small": {
-            "height": "20px",
-            "maxWidth": "336px",
-            "size": "14px",
-          },
-          "xlarge": {
-            "height": "32px",
-            "maxWidth": "624px",
-            "size": "26px",
-          },
-          "xxlarge": {
-            "height": "40px",
-            "maxWidth": "816px",
-            "size": "34px",
-          },
+          "responsiveBreakpoint": "small",
         },
         "radioButton": {
           "border": {
@@ -2502,62 +2505,65 @@ exports[`Components loads 1`] = `
           },
         },
         "text": {
-          "2xl": {
-            "height": "40px",
-            "maxWidth": "816px",
-            "size": "34px",
-          },
-          "3xl": {
-            "height": "48px",
-            "maxWidth": "1008px",
-            "size": "42px",
-          },
-          "4xl": {
-            "height": "60px",
-            "maxWidth": "1296px",
-            "size": "54px",
-          },
-          "5xl": {
-            "height": "76px",
-            "maxWidth": "1680px",
-            "size": "70px",
-          },
-          "6xl": {
-            "height": "96px",
-            "maxWidth": "2160px",
-            "size": "90px",
-          },
           "font": {},
-          "large": {
-            "height": "28px",
-            "maxWidth": "528px",
-            "size": "22px",
+          "fontSize": {
+            "2xl": {
+              "height": "40px",
+              "maxWidth": "816px",
+              "size": "34px",
+            },
+            "3xl": {
+              "height": "48px",
+              "maxWidth": "1008px",
+              "size": "42px",
+            },
+            "4xl": {
+              "height": "60px",
+              "maxWidth": "1296px",
+              "size": "54px",
+            },
+            "5xl": {
+              "height": "76px",
+              "maxWidth": "1680px",
+              "size": "70px",
+            },
+            "6xl": {
+              "height": "96px",
+              "maxWidth": "2160px",
+              "size": "90px",
+            },
+            "large": {
+              "height": "28px",
+              "maxWidth": "528px",
+              "size": "22px",
+            },
+            "medium": {
+              "height": "24px",
+              "maxWidth": "432px",
+              "size": "18px",
+            },
+            "small": {
+              "height": "20px",
+              "maxWidth": "336px",
+              "size": "14px",
+            },
+            "xlarge": {
+              "height": "32px",
+              "maxWidth": "624px",
+              "size": "26px",
+            },
+            "xsmall": {
+              "height": "18px",
+              "maxWidth": "288px",
+              "size": "12px",
+            },
+            "xxlarge": {
+              "height": "40px",
+              "maxWidth": "816px",
+              "size": "34px",
+            },
           },
-          "medium": {
-            "height": "24px",
-            "maxWidth": "432px",
-            "size": "18px",
-          },
-          "small": {
-            "height": "20px",
-            "maxWidth": "336px",
-            "size": "14px",
-          },
-          "xlarge": {
-            "height": "32px",
-            "maxWidth": "624px",
-            "size": "26px",
-          },
-          "xsmall": {
-            "height": "18px",
-            "maxWidth": "288px",
-            "size": "12px",
-          },
-          "xxlarge": {
-            "height": "40px",
-            "maxWidth": "816px",
-            "size": "34px",
-          },
+          "responsiveBreakpoint": "small",
         },
         "textArea": {},
         "textInput": {},
@@ -4173,31 +4179,34 @@ exports[`Components loads 1`] = `
         },
         "paragraph": {
           "font": {},
-          "large": {
-            "height": "28px",
-            "maxWidth": "528px",
-            "size": "22px",
+          "fontSize": {
+            "large": {
+              "height": "28px",
+              "maxWidth": "528px",
+              "size": "22px",
+            },
+            "medium": {
+              "height": "24px",
+              "maxWidth": "432px",
+              "size": "18px",
+            },
+            "small": {
+              "height": "20px",
+              "maxWidth": "336px",
+              "size": "14px",
+            },
+            "xlarge": {
+              "height": "32px",
+              "maxWidth": "624px",
+              "size": "26px",
+            },
+            "xxlarge": {
+              "height": "40px",
+              "maxWidth": "816px",
+              "size": "34px",
+            },
           },
-          "medium": {
-            "height": "24px",
-            "maxWidth": "432px",
-            "size": "18px",
-          },
-          "small": {
-            "height": "20px",
-            "maxWidth": "336px",
-            "size": "14px",
-          },
-          "xlarge": {
-            "height": "32px",
-            "maxWidth": "624px",
-            "size": "26px",
-          },
-          "xxlarge": {
-            "height": "40px",
-            "maxWidth": "816px",
-            "size": "34px",
-          },
+          "responsiveBreakpoint": "small",
         },
         "radioButton": {
           "border": {
@@ -4438,62 +4447,65 @@ exports[`Components loads 1`] = `
           },
         },
         "text": {
-          "2xl": {
-            "height": "40px",
-            "maxWidth": "816px",
-            "size": "34px",
-          },
-          "3xl": {
-            "height": "48px",
-            "maxWidth": "1008px",
-            "size": "42px",
-          },
-          "4xl": {
-            "height": "60px",
-            "maxWidth": "1296px",
-            "size": "54px",
-          },
-          "5xl": {
-            "height": "76px",
-            "maxWidth": "1680px",
-            "size": "70px",
-          },
-          "6xl": {
-            "height": "96px",
-            "maxWidth": "2160px",
-            "size": "90px",
-          },
           "font": {},
-          "large": {
-            "height": "28px",
-            "maxWidth": "528px",
-            "size": "22px",
+          "fontSize": {
+            "2xl": {
+              "height": "40px",
+              "maxWidth": "816px",
+              "size": "34px",
+            },
+            "3xl": {
+              "height": "48px",
+              "maxWidth": "1008px",
+              "size": "42px",
+            },
+            "4xl": {
+              "height": "60px",
+              "maxWidth": "1296px",
+              "size": "54px",
+            },
+            "5xl": {
+              "height": "76px",
+              "maxWidth": "1680px",
+              "size": "70px",
+            },
+            "6xl": {
+              "height": "96px",
+              "maxWidth": "2160px",
+              "size": "90px",
+            },
+            "large": {
+              "height": "28px",
+              "maxWidth": "528px",
+              "size": "22px",
+            },
+            "medium": {
+              "height": "24px",
+              "maxWidth": "432px",
+              "size": "18px",
+            },
+            "small": {
+              "height": "20px",
+              "maxWidth": "336px",
+              "size": "14px",
+            },
+            "xlarge": {
+              "height": "32px",
+              "maxWidth": "624px",
+              "size": "26px",
+            },
+            "xsmall": {
+              "height": "18px",
+              "maxWidth": "288px",
+              "size": "12px",
+            },
+            "xxlarge": {
+              "height": "40px",
+              "maxWidth": "816px",
+              "size": "34px",
+            },
           },
-          "medium": {
-            "height": "24px",
-            "maxWidth": "432px",
-            "size": "18px",
-          },
-          "small": {
-            "height": "20px",
-            "maxWidth": "336px",
-            "size": "14px",
-          },
-          "xlarge": {
-            "height": "32px",
-            "maxWidth": "624px",
-            "size": "26px",
-          },
-          "xsmall": {
-            "height": "18px",
-            "maxWidth": "288px",
-            "size": "12px",
-          },
-          "xxlarge": {
-            "height": "40px",
-            "maxWidth": "816px",
-            "size": "34px",
-          },
+          "responsiveBreakpoint": "small",
         },
         "textArea": {},
         "textInput": {},
