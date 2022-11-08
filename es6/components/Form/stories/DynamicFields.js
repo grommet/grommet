@@ -31,7 +31,8 @@ export var DynamicFields = function DynamicFields() {
       name: "name",
       required: true
     }, /*#__PURE__*/React.createElement(TextInput, {
-      name: "name"
+      name: "name",
+      "aria-label": "name"
     })), /*#__PURE__*/React.createElement(FormField, {
       name: "haveAlias"
     }, /*#__PURE__*/React.createElement(CheckBox, {

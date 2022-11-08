@@ -37,7 +37,8 @@ var DynamicFields = function DynamicFields() {
       name: "name",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-      name: "name"
+      name: "name",
+      "aria-label": "name"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       name: "haveAlias"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
