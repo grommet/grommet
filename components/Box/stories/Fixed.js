@@ -23,7 +23,8 @@ var FixedSizesBox = function FixedSizesBox() {
       overflow: {
         horizontal: 'hidden',
         vertical: 'scroll'
-      }
+      },
+      tabIndex: 0
     }, Array(20).fill().map(function (_, i) {
       return (
         /*#__PURE__*/
