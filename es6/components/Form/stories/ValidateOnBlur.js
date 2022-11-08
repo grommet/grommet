@@ -23,6 +23,7 @@ export var ValidateOnBlur = function ValidateOnBlur() {
       }
     }, /*#__PURE__*/React.createElement(FormField, {
       label: "Name",
+      "aria-label": "name",
       name: "name",
       required: true,
       validate: [{
@@ -45,6 +46,7 @@ export var ValidateOnBlur = function ValidateOnBlur() {
       required: true
     }, /*#__PURE__*/React.createElement(TextInput, {
       name: "email",
+      "aria-label": "email",
       type: "email"
     })), /*#__PURE__*/React.createElement(Box, {
       direction: "row",

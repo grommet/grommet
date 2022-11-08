@@ -28,6 +28,7 @@ var ValidateOnBlur = function ValidateOnBlur() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Name",
+      "aria-label": "name",
       name: "name",
       required: true,
       validate: [{
@@ -50,6 +51,7 @@ var ValidateOnBlur = function ValidateOnBlur() {
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
       name: "email",
+      "aria-label": "email",
       type: "email"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",
