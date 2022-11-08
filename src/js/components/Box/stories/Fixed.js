@@ -14,6 +14,7 @@ export const FixedSizesBox = () => (
       justify="center"
       background="brand"
       overflow={{ horizontal: 'hidden', vertical: 'scroll' }}
+      tabIndex={0}
     >
       {Array(20)
         .fill()

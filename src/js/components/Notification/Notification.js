@@ -61,6 +61,7 @@ const Notification = ({
   title,
   toast,
   icon,
+  time,
   ...rest
 }) => {
   const autoClose =
@@ -82,7 +83,7 @@ const Notification = ({
     if (autoClose) {
       const timer = setTimeout(
         close,
-        theme.notification.toast.time || theme.notification.time,
+        time || theme.notification.toast.time || theme.notification.time,
       );
 
       return () => clearTimeout(timer);
@@ -93,6 +94,7 @@ const Notification = ({
     close,
     theme.notification.toast.time,
     theme.notification.time,
+    time,
   ]);
 
   const { icon: CloseIcon } = theme.notification.close;
