@@ -52,6 +52,7 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
         align: "center"
       }, /*#__PURE__*/React.createElement(FormField, {
         label: "Phone Number",
+        "aria-label": "phone number",
         name: "phones[" + index + "].number",
         required: true,
         validate: [{
@@ -62,6 +63,7 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
         }]
       }), /*#__PURE__*/React.createElement(FormField, {
         label: "Extension",
+        "aria-label": "extension",
         name: "phones[" + index + "].ext",
         validate: [{
           regexp: /^[0-9]*$/
@@ -108,6 +110,7 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
       }
     }, /*#__PURE__*/React.createElement(FormField, {
       label: "Name",
+      "aria-label": "name",
       name: "name",
       pad: true,
       required: true,

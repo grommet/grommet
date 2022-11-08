@@ -57,6 +57,7 @@ var ArrayOfFormFields = function ArrayOfFormFields() {
         align: "center"
       }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
         label: "Phone Number",
+        "aria-label": "phone number",
         name: "phones[" + index + "].number",
         required: true,
         validate: [{
@@ -67,6 +68,7 @@ var ArrayOfFormFields = function ArrayOfFormFields() {
         }]
       }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
         label: "Extension",
+        "aria-label": "extension",
         name: "phones[" + index + "].ext",
         validate: [{
           regexp: /^[0-9]*$/
@@ -113,6 +115,7 @@ var ArrayOfFormFields = function ArrayOfFormFields() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Name",
+      "aria-label": "name",
       name: "name",
       pad: true,
       required: true,
