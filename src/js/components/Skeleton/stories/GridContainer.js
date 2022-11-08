@@ -6,7 +6,7 @@ import { FormAdd } from 'grommet-icons';
 const labels = [];
 for (let i = 0; i < 10; i += 1) labels.push(`Item ${i}`);
 
-const skeleton = { message: { start: "Loading", end: 'Done' } };
+const skeleton = { message: { start: "Loading", end: 'Content Loaded' } };
 
 const Item = ({ title, ...rest }) => (
   <Card
