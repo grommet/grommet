@@ -4,16 +4,16 @@ exports.__esModule = true;
 exports.getOutputFormat = exports.Calendar = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = require("styled-components");
-var _defaultProps = require("../../default-props");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _MessageContext = require("../../contexts/MessageContext");
+var _defaultProps = require("../../default-props");
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _Heading = require("../Heading");
 var _Keyboard = require("../Keyboard");
+var _propTypes = require("./propTypes");
 var _StyledCalendar = require("./StyledCalendar");
 var _utils = require("./utils");
-var _propTypes = require("./propTypes");
 var _dates = require("../../utils/dates");
 var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -132,6 +132,16 @@ var buildDisplayBounds = function buildDisplayBounds(reference, firstDayOfWeek) 
   start = (0, _utils.subtractDays)(start, start.getDay() - firstDayOfWeek);
   var end = (0, _utils.addDays)(start, 7 * 5 + 7); // 5 weeks to end of week
   return [start, end];
+};
+var disabledCalendarPreviousMonthButton = function disabledCalendarPreviousMonthButton(date, reference, bounds) {
+  if (!bounds) return false;
+  var lastBound = new Date(bounds[1]);
+  return !(0, _utils.sameDayOrBefore)(lastBound, reference) && !(0, _utils.betweenDates)(date, bounds);
+};
+var disabledCalendarNextMonthButton = function disabledCalendarNextMonthButton(date, reference, bounds) {
+  if (!bounds) return false;
+  var firstBound = new Date(bounds[0]);
+  return !(0, _utils.sameDayOrAfter)(firstBound, reference) && !(0, _utils.betweenDates)(date, bounds);
 };
 var getOutputFormat = function getOutputFormat(dates) {
   if (typeof dates === 'string' && (dates == null ? void 0 : dates.indexOf('T')) === -1) {
@@ -400,12 +410,26 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   (0, _react.useEffect)(function () {
     if (initialFocus === 'days') daysRef.current.focus();
   }, [initialFocus]);
+  var handleReference = (0, _react.useCallback)(function (nextReference) {
+    setReference(nextReference);
+    if (onReference) onReference(nextReference.toISOString());
+  }, [onReference]);
   var changeReference = (0, _react.useCallback)(function (nextReference) {
-    if ((0, _utils.betweenDates)(nextReference, bounds)) {
-      setReference(nextReference);
-      if (onReference) onReference(nextReference.toISOString());
-    }
-  }, [onReference, bounds]);
+    if ((0, _utils.betweenDates)(nextReference, bounds)) handleReference(nextReference);
+  }, [handleReference, bounds]);
+  var changeCalendarMonth = function changeCalendarMonth(messageId, newMonth) {
+    handleReference(newMonth);
+    announce(format({
+      id: messageId,
+      messages: messages,
+      values: {
+        date: newMonth.toLocaleDateString(locale, {
+          month: 'long',
+          year: 'numeric'
+        })
+      }
+    }));
+  };
   var handleRange = (0, _react.useCallback)(function (selectedDate) {
     var _priorRange$, _priorRange$$, _priorRange$2, _priorRange$2$;
     var result;
@@ -515,19 +539,9 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       icon: /*#__PURE__*/_react["default"].createElement(PreviousIcon, {
         size: size !== 'small' ? size : undefined
       }),
-      disabled: !(0, _utils.betweenDates)(previousMonth, bounds),
+      disabled: disabledCalendarPreviousMonthButton(previousMonth, reference, bounds),
       onClick: function onClick() {
-        changeReference(previousMonth);
-        announce(format({
-          id: 'calendar.previousMove',
-          messages: messages,
-          values: {
-            date: previousMonth.toLocaleDateString(locale, {
-              month: 'long',
-              year: 'numeric'
-            })
-          }
-        }));
+        return changeCalendarMonth('calendar.previousMove', previousMonth);
       }
     }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       a11yTitle: format({
@@ -543,19 +557,9 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       icon: /*#__PURE__*/_react["default"].createElement(NextIcon, {
         size: size !== 'small' ? size : undefined
       }),
-      disabled: !(0, _utils.betweenDates)(nextMonth, bounds),
+      disabled: disabledCalendarNextMonthButton(nextMonth, reference, bounds),
       onClick: function onClick() {
-        changeReference(nextMonth);
-        announce(format({
-          id: 'calendar.nextMove',
-          messages: messages,
-          values: {
-            date: nextMonth.toLocaleDateString(locale, {
-              month: 'long',
-              year: 'numeric'
-            })
-          }
-        }));
+        return changeCalendarMonth('calendar.nextMove', nextMonth);
       }
     })));
   };

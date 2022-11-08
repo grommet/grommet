@@ -1,18 +1,18 @@
 var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React, { forwardRef, useCallback, useContext, useMemo, useRef, useState, useEffect } from 'react';
+import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
-import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
-import { addDays, addMonths, betweenDates, daysApart, endOfMonth, handleOffset, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
 import { CalendarPropTypes } from './propTypes';
+import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
+import { addDays, addMonths, betweenDates, daysApart, endOfMonth, handleOffset, sameDayOrAfter, sameDayOrBefore, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
 import { setHoursWithOffset } from '../../utils/dates';
 var headingPadMap = {
   small: 'xsmall',
@@ -126,6 +126,16 @@ var buildDisplayBounds = function buildDisplayBounds(reference, firstDayOfWeek) 
   start = subtractDays(start, start.getDay() - firstDayOfWeek);
   var end = addDays(start, 7 * 5 + 7); // 5 weeks to end of week
   return [start, end];
+};
+var disabledCalendarPreviousMonthButton = function disabledCalendarPreviousMonthButton(date, reference, bounds) {
+  if (!bounds) return false;
+  var lastBound = new Date(bounds[1]);
+  return !sameDayOrBefore(lastBound, reference) && !betweenDates(date, bounds);
+};
+var disabledCalendarNextMonthButton = function disabledCalendarNextMonthButton(date, reference, bounds) {
+  if (!bounds) return false;
+  var firstBound = new Date(bounds[0]);
+  return !sameDayOrAfter(firstBound, reference) && !betweenDates(date, bounds);
 };
 export var getOutputFormat = function getOutputFormat(dates) {
   if (typeof dates === 'string' && (dates == null ? void 0 : dates.indexOf('T')) === -1) {
@@ -393,12 +403,26 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   useEffect(function () {
     if (initialFocus === 'days') daysRef.current.focus();
   }, [initialFocus]);
+  var handleReference = useCallback(function (nextReference) {
+    setReference(nextReference);
+    if (onReference) onReference(nextReference.toISOString());
+  }, [onReference]);
   var changeReference = useCallback(function (nextReference) {
-    if (betweenDates(nextReference, bounds)) {
-      setReference(nextReference);
-      if (onReference) onReference(nextReference.toISOString());
-    }
-  }, [onReference, bounds]);
+    if (betweenDates(nextReference, bounds)) handleReference(nextReference);
+  }, [handleReference, bounds]);
+  var changeCalendarMonth = function changeCalendarMonth(messageId, newMonth) {
+    handleReference(newMonth);
+    announce(format({
+      id: messageId,
+      messages: messages,
+      values: {
+        date: newMonth.toLocaleDateString(locale, {
+          month: 'long',
+          year: 'numeric'
+        })
+      }
+    }));
+  };
   var handleRange = useCallback(function (selectedDate) {
     var _priorRange$, _priorRange$$, _priorRange$2, _priorRange$2$;
     var result;
@@ -508,19 +532,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       icon: /*#__PURE__*/React.createElement(PreviousIcon, {
         size: size !== 'small' ? size : undefined
       }),
-      disabled: !betweenDates(previousMonth, bounds),
+      disabled: disabledCalendarPreviousMonthButton(previousMonth, reference, bounds),
       onClick: function onClick() {
-        changeReference(previousMonth);
-        announce(format({
-          id: 'calendar.previousMove',
-          messages: messages,
-          values: {
-            date: previousMonth.toLocaleDateString(locale, {
-              month: 'long',
-              year: 'numeric'
-            })
-          }
-        }));
+        return changeCalendarMonth('calendar.previousMove', previousMonth);
       }
     }), /*#__PURE__*/React.createElement(Button, {
       a11yTitle: format({
@@ -536,19 +550,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       icon: /*#__PURE__*/React.createElement(NextIcon, {
         size: size !== 'small' ? size : undefined
       }),
-      disabled: !betweenDates(nextMonth, bounds),
+      disabled: disabledCalendarNextMonthButton(nextMonth, reference, bounds),
       onClick: function onClick() {
-        changeReference(nextMonth);
-        announce(format({
-          id: 'calendar.nextMove',
-          messages: messages,
-          values: {
-            date: nextMonth.toLocaleDateString(locale, {
-              month: 'long',
-              year: 'numeric'
-            })
-          }
-        }));
+        return changeCalendarMonth('calendar.nextMove', nextMonth);
       }
     })));
   };
