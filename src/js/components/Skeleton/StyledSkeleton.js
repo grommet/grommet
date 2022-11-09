@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 
 import {
@@ -10,18 +9,22 @@ import {
   widthStyle,
 } from '../../utils';
 
+// Styling a div directly rather than just using
+// a Box since Box itself will react to a SkeletonContext
+// and we don't want that here.
 export const StyledSkeleton = styled.div`
   display: flex;
   box-sizing: border-box;
 
   ${genericStyles}
- 
+
   ${(props) =>
     props.background && backgroundStyle(props.background, props.theme)}
-  ${(props) => heightStyle(
-    props.heightProp || props.theme.text?.medium?.height,
-    props.theme,
-  )}
+  ${(props) =>
+    heightStyle(
+      props.heightProp || props.theme.text?.medium?.height,
+      props.theme,
+    )}
   ${(props) => widthStyle(props.widthProp || '100%', props.theme)}
  
   ${(props) =>

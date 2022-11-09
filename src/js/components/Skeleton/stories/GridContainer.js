@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from 'react';
 
-import { Box, Button, Card, Grid, Image, Text} from 'grommet';
+import { Box, Button, Card, Grid, Image, Text } from 'grommet';
 import { FormAdd } from 'grommet-icons';
 
 const labels = [];
 for (let i = 0; i < 10; i += 1) labels.push(`Item ${i}`);
 
-const skeleton = { message: { start: "Loading", end: 'Content Loaded' } };
+const skeleton = { message: { start: 'Loading', end: 'Content Loaded' } };
 
 const Item = ({ title, ...rest }) => (
-  <Card
-    width="531px"
-    pad="medium"
-    gap="large"
-    round="medium"
-    flex="grow"
-    {...rest}
-  >
+  <Card pad="medium" gap="large" round="medium" flex="grow" {...rest}>
     <Box direction="row" gap="large" justify="between" align="center">
       <Box direction="row" gap="medium">
-        <Box width="96px" height="96px" background="brand" round="small">
+        <Box
+          width="xsmall"
+          height="xsmall"
+          background="brand"
+          round="small"
+          flex={false}
+        >
           <Image />
         </Box>
         <Box>
@@ -27,13 +26,11 @@ const Item = ({ title, ...rest }) => (
             size="large"
             color="text-strong"
             weight="bold"
-            skeleton={{ width: '200px' }}
+            skeleton={{ width: 'xsmall' }}
           >
             {title}
           </Text>
-          <Text size="small" >
-            Acme Company Inc
-          </Text>
+          <Text size="small">Acme Company Inc</Text>
         </Box>
       </Box>
       <Button label="Add" reverse icon={<FormAdd />} secondary />
@@ -57,9 +54,7 @@ export const GridContainer = () => {
             skeleton={
               loading
                 ? {
-                    animation: [
-                      { type: 'fadeIn', delay: index * 200},
-                    ],
+                    animation: [{ type: 'fadeIn', delay: index * 200 }],
                   }
                 : undefined
             }

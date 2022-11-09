@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { Box, Button, Card, Grommet, Image, Text, ThemeContext} from 'grommet';
+import { Box, Button, Card, Grommet, Image, Text, ThemeContext } from 'grommet';
 import { FormAdd } from 'grommet-icons';
 
 const Item = ({ ...rest }) => (
@@ -15,7 +15,7 @@ const Item = ({ ...rest }) => (
   >
     <Box direction="row" gap="large" justify="between" align="center">
       <Box direction="row" gap="medium">
-        <Box width="96px" height="96px" background="orange!" round="small">
+        <Box width="xsmall" height="xsmall" background="orange!" round="small">
           <Image />
         </Box>
         <Box>
@@ -23,13 +23,11 @@ const Item = ({ ...rest }) => (
             size="large"
             color="text-strong"
             weight="bold"
-            skeleton={{ width: '200px' }}
+            skeleton={{ width: 'small' }}
           >
             Compliance
           </Text>
-          <Text size="small">
-            Acme Company Inc
-          </Text>
+          <Text size="small">Acme Company Inc</Text>
         </Box>
       </Box>
       <Button label="Add" reverse icon={<FormAdd />} secondary />
@@ -40,7 +38,7 @@ const Item = ({ ...rest }) => (
 const skeleton = { animation: 'fadeIn' };
 
 const Content = () => (
-  <Box fill align="center" pad="large" gap="medium" skeleton={skeleton} >
+  <Box fill align="center" pad="large" gap="medium" skeleton={skeleton}>
     <Item />
     <Item />
     <Item />

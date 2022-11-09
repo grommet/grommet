@@ -54,6 +54,7 @@ describe('Skeleton', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+    expect(screen.queryByText('Heading')).toBeNull();
   });
 
   test('Box skeleton loaded', () => {
@@ -101,24 +102,24 @@ describe('Skeleton', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  // test('Skeleton with theme', () => {
-  //   const { container } = render(
-  //     <Grommet
-  //       theme={{
-  //         skeleton: {
-  //           colors: {
-  //             light: ['#a2a8a8', '#adb9ba'],
-  //           },
-  //           round: 'xsmall',
-  //         },
-  //       }}
-  //     >
-  //       <Box skeleton>
-  //         <Text>Text</Text>
-  //       </Box>
-  //     </Grommet>,
-  //   );
+  test('Skeleton with theme', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          skeleton: {
+            colors: {
+              light: ['#a2a8a8', '#adb9ba'],
+            },
+            round: 'xsmall',
+          },
+        }}
+      >
+        <Box skeleton>
+          <Text>Text</Text>
+        </Box>
+      </Grommet>,
+    );
 
-  //   expect(asFragment()).toMatchSnapshot();
-  // });
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

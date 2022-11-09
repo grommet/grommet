@@ -13,7 +13,6 @@ import {
   WidthType,
 } from '../../utils';
 
-
 export interface SkeletonProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;

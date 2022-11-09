@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { Box, Button, Card, Grommet, Image, Text, ThemeContext} from 'grommet';
+import { Box, Button, Card, Grommet, Image, Text, ThemeContext } from 'grommet';
 
 const Item = ({ title, ...rest }) => (
   <Card
@@ -16,13 +16,13 @@ const Item = ({ title, ...rest }) => (
       color="text-strong"
       size="xlarge"
       weight="bold"
-      skeleton={{ width: '200px' }}
+      skeleton={{ width: 'medium' }}
     >
       {title}
     </Text>
     <Box direction="row" gap="large" justify="between" align="center">
       <Box direction="row" gap="medium">
-        <Box width="96px" height="96px" background="orange!" round="small">
+        <Box width="xsmall" height="xsmall" background="orange!" round="small">
           <Image />
         </Box>
         <Box>
@@ -30,13 +30,11 @@ const Item = ({ title, ...rest }) => (
             size="large"
             color="text-strong"
             weight="bold"
-            skeleton={{ width: '200px' }}
+            skeleton={{ width: 'small' }}
           >
             Acme Operations
           </Text>
-          <Text size="small">
-            Acme Company Inc
-          </Text>
+          <Text size="small">Acme Company Inc</Text>
         </Box>
       </Box>
       <Button label="Learn More" />
@@ -48,7 +46,7 @@ const skeleton = { animation: 'fadeIn' };
 
 const Content = () => (
   <Box fill align="center" pad="large" gap="medium">
-    <Item title="Operations assurance and security platform"/>
+    <Item title="Operations assurance and security platform" />
     <Item skeleton={skeleton} />
   </Box>
 );

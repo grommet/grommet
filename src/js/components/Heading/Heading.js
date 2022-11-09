@@ -48,9 +48,7 @@ const Heading = forwardRef(
 
     let content = children;
     if (skeleton) {
-      content = (
-        <HeadingSkeleton level={level} />
-      ); 
+      content = <HeadingSkeleton level={level} fill={fill} {...rest} />;
     }
 
     return (
