@@ -1015,14 +1015,15 @@ describe('Form controlled', () => {
   });
 
   test('validate on mount using FormField - controlled input', () => {
+    const onSubmit = jest.fn();
     const Test = () => {
-      const [firstName, setFirstName] = useState('32434324');
+      const [firstName, setFirstName] = useState('a');
       const [middleName, setMiddleName] = useState('1');
       const [lastName, setLastName] = useState('');
       const [title, setTitle] = useState(1);
 
       return (
-        <Form>
+        <Form onSubmit={onSubmit}>
           <FormField
             label="First Name"
             htmlFor="first-name"
@@ -1116,20 +1117,124 @@ describe('Form controlled', () => {
               }}
             />
           </FormField>
+          <Button type="submit" primary label="Submit" />
         </Form>
       );
     };
 
-    render(
+    const { getByText } = render(
       <Grommet>
         <Test />
       </Grommet>,
     );
 
-    // firstName value is incorrect
     // middleName & title trigger regexp, but not string length validation
-    expect(screen.queryAllByText('invalid')).toHaveLength(3);
+    expect(screen.queryAllByText('invalid')).toHaveLength(2);
     // lastName should not trigger required validation onMount
     expect(screen.queryAllByText('required')).toHaveLength(0);
+    fireEvent.click(getByText('Submit'));
+    // lastName should trigger required
+    expect(screen.queryAllByText('required')).toHaveLength(1);
+  });
+
+  test('validate - blur, change and submit using FormField', () => {
+    const onSubmit = jest.fn();
+    const Test = () => (
+      <Form onSubmit={onSubmit}>
+        <FormField
+          label="Blur"
+          name="blur"
+          aria-label="blur"
+          required
+          validate={[
+            { regexp: /^[a-z]/i },
+            (name) => {
+              if (name && name.length === 1) return 'must be >1 character';
+              return undefined;
+            },
+          ]}
+          validateOn="blur"
+        />
+
+        <FormField
+          label="Submit"
+          name="submit"
+          aria-label="submit"
+          required
+          validate={[
+            { regexp: /^[a-z]/i },
+            (name) => {
+              if (name && name.length === 1) return 'must be >1 character';
+              return undefined;
+            },
+          ]}
+          validateOn="submit"
+        />
+
+        <FormField
+          label="Change"
+          name="change"
+          aria-label="change"
+          required
+          validate={[
+            { regexp: /^[a-z]/i },
+            (name) => {
+              if (name && name.length === 1) return 'must be >1 character';
+              return undefined;
+            },
+          ]}
+          validateOn="change"
+        />
+        <Button type="submit" primary label="Submit_Button" />
+      </Form>
+    );
+
+    const { container, getByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    const blur = container.querySelector('input[name="blur"]');
+    const change = container.querySelector('input[name="change"]');
+    const submit = container.querySelector('input[name="submit"]');
+
+    expect(screen.queryAllByText('invalid')).toHaveLength(0);
+    expect(screen.queryAllByText('required')).toHaveLength(0);
+
+    fireEvent.change(blur, {
+      target: { value: 'b' },
+    });
+
+    fireEvent.change(change, {
+      target: { value: 'c' },
+    });
+
+    fireEvent.change(submit, {
+      target: { value: 's' },
+    });
+
+    fireEvent.click(getByText('Submit_Button'));
+
+    expect(screen.queryAllByText('must be >1 character')).toHaveLength(3);
+    expect(screen.queryAllByText('invalid')).toHaveLength(0);
+
+    fireEvent.change(blur, {
+      target: { value: '123213' },
+    });
+
+    fireEvent.change(change, {
+      target: { value: '123213' },
+    });
+
+    fireEvent.change(submit, {
+      target: { value: '123213' },
+    });
+
+    expect(screen.queryAllByText('must be >1 character')).toHaveLength(0);
+    expect(screen.queryAllByText('invalid')).toHaveLength(2);
+
+    fireEvent.click(getByText('Submit_Button'));
+    expect(screen.queryAllByText('invalid')).toHaveLength(3);
   });
 });
