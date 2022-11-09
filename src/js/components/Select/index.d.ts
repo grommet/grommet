@@ -32,7 +32,7 @@ export interface BasicSelectProps {
   margin?: MarginType;
   messages?: { multiple?: string };
   name?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent) => void;
   onClose?: (...args: any[]) => any;
   onMore?: (...args: any[]) => any;
   onOpen?: (...args: any[]) => any;
