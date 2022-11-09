@@ -8,9 +8,7 @@ import { ParagraphSkeleton } from './ParagraphSkeleton';
 const Paragraph = forwardRef(({ color, fill, ...rest }, ref) => {
   const skeleton = useSkeleton();
   if (skeleton) {
-    return (
-      <ParagraphSkeleton ref={ref} fill={fill} {...rest} />
-    );
+    return <ParagraphSkeleton ref={ref} fill={fill} {...rest} />;
   }
   return (
     <StyledParagraph ref={ref} colorProp={color} fillProp={fill} {...rest} />

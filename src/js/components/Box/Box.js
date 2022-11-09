@@ -52,7 +52,7 @@ const Box = forwardRef(
     let background = backgroundProp;
 
     const announce = useContext(AnnounceContext);
-    
+
     useEffect(() => {
       if (skeletonProp?.message?.start) announce(skeletonProp.message.start);
       else if (typeof skeletonProp?.message === 'string')
@@ -136,7 +136,7 @@ const Box = forwardRef(
       //      background or border. This means the box probably is more
       //      distinguishable from the area around it.
       // We keep track of a depth so we know how to alternate backgrounds.
-      if (skeletonProp || ((background || border) && skeleton) ) {
+      if (skeletonProp || ((background || border) && skeleton)) {
         const depth = skeleton ? skeleton.depth + 1 : 0;
         return {
           ...skeleton,
@@ -149,7 +149,7 @@ const Box = forwardRef(
 
     let skeletonProps = {};
     if (nextSkeleton) {
-      const { 
+      const {
         colors: skeletonThemeColors,
         size: skeletonThemeSize,
         ...skeletonThemeProps
@@ -167,7 +167,7 @@ const Box = forwardRef(
           {contents}
         </SkeletonContext.Provider>
       );
-    }   
+    }
 
     // construct a new theme object in case we have a background that wants
     // to change the background color context

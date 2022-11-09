@@ -7,13 +7,7 @@ import { StyledSkeleton } from './StyledSkeleton';
 
 const Skeleton = forwardRef(
   (
-    {
-      as,
-      colors: colorsProp,
-      width: widthProp,
-      height: heightProp,
-      ...rest
-    },
+    { as, colors: colorsProp, width: widthProp, height: heightProp, ...rest },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -23,7 +17,7 @@ const Skeleton = forwardRef(
 
     const colors = colorsProp || theme?.skeleton?.colors;
     const themeColors = colors[theme.dark ? 'dark' : 'light'];
-    const background =  themeColors[(depth + 1) % themeColors.length];
+    const background = themeColors[(depth + 1) % themeColors.length];
 
     return (
       <StyledSkeleton

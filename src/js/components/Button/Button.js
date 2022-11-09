@@ -275,14 +275,14 @@ const Button = forwardRef(
     }, [active, disabled, kind, kindObj, plain, selected]);
 
     if (skeleton) {
-       return (
+      return (
         <Skeleton
           ref={ref}
           height={theme.text[size || 'medium']?.height || size}
           a11yTitle={a11yTitle}
-          { ...rest }
-          { ...theme.button.size?.[size || 'medium']}
-          { ...theme.button.skeleton }
+          {...rest}
+          {...theme.button.size?.[size || 'medium']}
+          {...theme.button.skeleton}
         />
       );
     }
