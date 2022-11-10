@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import {
+  animationPropType,
   backgroundDoc,
   elevationPropType,
   genericProps,
@@ -7,31 +8,11 @@ import {
   hoverIndicatorPropType,
   padPropType,
   roundPropType,
+  skeletonPropType,
   widthPropType,
 } from '../../utils/general-prop-types';
 
 const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
-
-const ANIMATION_TYPE = PropTypes.oneOf([
-  'fadeIn',
-  'fadeOut',
-  'jiggle',
-  'pulse',
-  'rotateLeft',
-  'rotateRight',
-  'slideUp',
-  'slideDown',
-  'slideLeft',
-  'slideRight',
-  'zoomIn',
-  'zoomOut',
-]);
-const ANIMATION_SHAPE = PropTypes.shape({
-  type: ANIMATION_TYPE,
-  delay: PropTypes.number,
-  duration: PropTypes.number,
-  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-});
 
 const BORDER_SHAPE = PropTypes.shape({
   color: PropTypes.oneOfType([
@@ -101,11 +82,7 @@ if (process.env.NODE_ENV !== 'production') {
       ]),
       PropTypes.string,
     ]),
-    animation: PropTypes.oneOfType([
-      ANIMATION_TYPE,
-      ANIMATION_SHAPE,
-      PropTypes.arrayOf(PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE])),
-    ]),
+    animation: animationPropType,
     background: backgroundDoc,
     basis: PropTypes.oneOfType([
       PropTypes.oneOf([
@@ -193,6 +170,7 @@ if (process.env.NODE_ENV !== 'production') {
     pad: padPropType,
     responsive: PropTypes.bool,
     round: roundPropType,
+    skeleton: skeletonPropType,
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     as: PropTypes.oneOfType([
       PropTypes.string,
