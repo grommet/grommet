@@ -65,6 +65,10 @@ export const GridContainer = () => {
   );
 };
 
+GridContainer.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Visualizations/Skeleton/GridContainer',
 };

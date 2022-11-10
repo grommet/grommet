@@ -61,6 +61,10 @@ export const Group = () => {
   );
 };
 
+Group.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Visualizations/Skeleton/Group',
 };
