@@ -15,7 +15,14 @@ const TitleNotification = () => {
       <Box pad="large" justify="center">
         <Button label="Show Notification" onClick={onOpen} />
       </Box>
-      {visible && <Notification toast title="Status Title" onClose={onClose} />}
+      {visible && (
+        <Notification
+          toast
+          title="Status Title"
+          onClose={onClose}
+          time={4000}
+        />
+      )}
     </>
   );
 };

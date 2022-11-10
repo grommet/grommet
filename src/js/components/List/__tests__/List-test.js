@@ -571,8 +571,9 @@ describe('List onOrder with action', () => {
               onOrder(newData);
             }}
             // eslint-disable-next-line react/no-unstable-nested-components
-            action={(item, index) =>
-              <Button key={`action${index}`} label="Action"/>}
+            action={(item, index) => (
+              <Button key={`action${index}`} label="Action" />
+            )}
           />
         </Grommet>
       );
