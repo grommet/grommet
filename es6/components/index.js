@@ -58,6 +58,7 @@ export * from './RoutedButton';
 export * from './Select';
 export * from './SelectMultiple';
 export * from './Sidebar';
+export * from './Skeleton';
 export * from './SkipLink';
 export * from './SkipLinks';
 export * from './SkipLinkTarget';

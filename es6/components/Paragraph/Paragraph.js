@@ -4,10 +4,19 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { forwardRef } from 'react';
 import { StyledParagraph } from './StyledParagraph';
 import { ParagraphPropTypes } from './propTypes';
+import { useSkeleton } from '../Skeleton';
+import { ParagraphSkeleton } from './ParagraphSkeleton';
 var Paragraph = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var color = _ref.color,
     fill = _ref.fill,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var skeleton = useSkeleton();
+  if (skeleton) {
+    return /*#__PURE__*/React.createElement(ParagraphSkeleton, _extends({
+      ref: ref,
+      fill: fill
+    }, rest));
+  }
   return /*#__PURE__*/React.createElement(StyledParagraph, _extends({
     ref: ref,
     colorProp: color,

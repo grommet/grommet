@@ -13,6 +13,7 @@ var _Badge = require("./Badge");
 var _StyledButton = require("./StyledButton");
 var _StyledButtonKind = require("./StyledButtonKind");
 var _AnalyticsContext = require("../../contexts/AnalyticsContext");
+var _Skeleton = require("../Skeleton");
 var _excluded = ["active", "align", "aria-label", "badge", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "justify", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "a11yTitle", "as"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -190,6 +191,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   if ((icon || label) && children) {
     console.warn('Button should not have children if icon or label is provided');
   }
+  var skeleton = (0, _Skeleton.useSkeleton)();
   var sendAnalytics = (0, _AnalyticsContext.useAnalytics)();
   var onClick = (0, _react.useCallback)(function (event) {
     sendAnalytics({
@@ -253,6 +255,14 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
     return result;
   }, [active, disabled, kind, kindObj, plain, selected]);
+  if (skeleton) {
+    var _theme$text, _theme$button$size;
+    return /*#__PURE__*/_react["default"].createElement(_Skeleton.Skeleton, _extends({
+      ref: ref,
+      height: ((_theme$text = theme.text[size || 'medium']) == null ? void 0 : _theme$text.height) || size,
+      a11yTitle: a11yTitle
+    }, rest, (_theme$button$size = theme.button.size) == null ? void 0 : _theme$button$size[size || 'medium'], theme.button.skeleton));
+  }
 
   // only used when theme does not have button.default
   var isDarkBackground = function isDarkBackground() {

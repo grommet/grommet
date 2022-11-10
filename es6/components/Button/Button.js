@@ -12,6 +12,7 @@ import { Badge } from './Badge';
 import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
+import { Skeleton, useSkeleton } from '../Skeleton';
 
 // We have two Styled* components to separate
 // the newer default|primary|secondary approach,
@@ -185,6 +186,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
   if ((icon || label) && children) {
     console.warn('Button should not have children if icon or label is provided');
   }
+  var skeleton = useSkeleton();
   var sendAnalytics = useAnalytics();
   var onClick = useCallback(function (event) {
     sendAnalytics({
@@ -248,6 +250,14 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
     return result;
   }, [active, disabled, kind, kindObj, plain, selected]);
+  if (skeleton) {
+    var _theme$text, _theme$button$size;
+    return /*#__PURE__*/React.createElement(Skeleton, _extends({
+      ref: ref,
+      height: ((_theme$text = theme.text[size || 'medium']) == null ? void 0 : _theme$text.height) || size,
+      a11yTitle: a11yTitle
+    }, rest, (_theme$button$size = theme.button.size) == null ? void 0 : _theme$button$size[size || 'medium'], theme.button.skeleton));
+  }
 
   // only used when theme does not have button.default
   var isDarkBackground = function isDarkBackground() {

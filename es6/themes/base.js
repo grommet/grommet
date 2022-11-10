@@ -615,6 +615,11 @@ export var generate = function generate(baseSpacing, scale) {
         timing: 'ease-in-out',
         duration: 0.1,
         properties: ['color', 'background-color', 'border-color', 'box-shadow']
+      },
+      skeleton: {
+        width: {
+          min: '100px'
+        }
       }
     },
     calendar: {
@@ -1137,7 +1142,12 @@ export var generate = function generate(baseSpacing, scale) {
       },
       responsiveBreakpoint: 'small',
       // when we scale the font size down
-      weight: 600
+      weight: 600,
+      skeleton: {
+        width: {
+          min: '200px'
+        }
+      }
     },
     layer: {
       background: {
@@ -1810,6 +1820,13 @@ export var generate = function generate(baseSpacing, scale) {
     selectMultiple: {
       maxInline: 5
     },
+    skeleton: {
+      border: false,
+      colors: {
+        dark: ['background', 'background-front'],
+        light: ['background', 'background-back']
+      }
+    },
     skipLinks: {
       position: 'top',
       container: {
@@ -2016,7 +2033,20 @@ export var generate = function generate(baseSpacing, scale) {
       '3xl': _extends({}, fontSizing(6)),
       '4xl': _extends({}, fontSizing(9)),
       '5xl': _extends({}, fontSizing(13)),
-      '6xl': _extends({}, fontSizing(18))
+      '6xl': _extends({}, fontSizing(18)),
+      skeleton: {
+        width: {
+          width: '100px',
+          min: '100px'
+        },
+        margin: {
+          vertical: 'xsmall'
+        },
+        colors: {
+          dark: ['border', 'border'],
+          light: ['background-front', 'background-back']
+        }
+      }
     },
     textArea: {
       // extend: undefined,

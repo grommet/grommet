@@ -1,13 +1,22 @@
 "use strict";
 
 exports.__esModule = true;
-exports.widthPropType = exports.roundPropType = exports.pointPropType = exports.patternPropType = exports.padPropType = exports.marginProp = exports.hoverIndicatorPropType = exports.heightPropType = exports.genericProps = exports.elevationPropType = exports.colorPropType = exports.backgroundPropType = exports.backgroundDoc = exports.alignPropType = exports.a11yTitlePropType = exports.OVERFLOW_VALUES = exports.MARGIN_SIZES = void 0;
+exports.widthPropType = exports.skeletonPropType = exports.skeletonColorsPropType = exports.roundPropType = exports.pointPropType = exports.patternPropType = exports.padPropType = exports.marginProp = exports.hoverIndicatorPropType = exports.heightPropType = exports.genericProps = exports.elevationPropType = exports.colorPropType = exports.backgroundPropType = exports.backgroundDoc = exports.animationPropType = exports.alignPropType = exports.a11yTitlePropType = exports.OVERFLOW_VALUES = exports.MARGIN_SIZES = void 0;
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var a11yTitlePropType = _propTypes["default"].string;
 exports.a11yTitlePropType = a11yTitlePropType;
 var alignPropType = _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['baseline', 'center', 'end', 'start', 'stretch']), _propTypes["default"].string]);
 exports.alignPropType = alignPropType;
+var ANIMATION_TYPE = _propTypes["default"].oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'rotateLeft', 'rotateRight', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);
+var ANIMATION_SHAPE = _propTypes["default"].shape({
+  type: ANIMATION_TYPE,
+  delay: _propTypes["default"].number,
+  duration: _propTypes["default"].number,
+  size: _propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge'])
+});
+var animationPropType = _propTypes["default"].oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE, _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE]))]);
+exports.animationPropType = animationPropType;
 var colorPropType = _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
   dark: _propTypes["default"].string,
   light: _propTypes["default"].string
@@ -76,6 +85,21 @@ var roundPropType = _propTypes["default"].oneOfType([_propTypes["default"].bool,
   size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string])
 })]);
 exports.roundPropType = roundPropType;
+var skeletonColorsPropType = _propTypes["default"].shape({
+  dark: _propTypes["default"].arrayOf(_propTypes["default"].string),
+  light: _propTypes["default"].arrayOf(_propTypes["default"].string)
+});
+exports.skeletonColorsPropType = skeletonColorsPropType;
+var skeletonPropType = _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].shape({
+  animation: animationPropType,
+  colors: skeletonColorsPropType,
+  depth: _propTypes["default"].number,
+  message: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
+    start: _propTypes["default"].string,
+    end: _propTypes["default"].end
+  })])
+})]);
+exports.skeletonPropType = skeletonPropType;
 var dimSizeType = _propTypes["default"].oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']);
 var heightPropType = _propTypes["default"].oneOfType([dimSizeType, _propTypes["default"].string, _propTypes["default"].shape({
   height: _propTypes["default"].oneOfType([dimSizeType, _propTypes["default"].string]),

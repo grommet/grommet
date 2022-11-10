@@ -18,6 +18,8 @@ import {
   PolymorphicType,
   RoundType,
   WidthType,
+  AnimationType,
+  SkeletonType,
 } from '../../utils';
 
 export interface BoxProps {
@@ -27,65 +29,7 @@ export interface BoxProps {
   margin?: MarginType;
   align?: AlignType;
   alignContent?: AlignContentType;
-  animation?:
-    | 'fadeIn'
-    | 'fadeOut'
-    | 'jiggle'
-    | 'pulse'
-    | 'rotateLeft'
-    | 'rotateRight'
-    | 'slideUp'
-    | 'slideDown'
-    | 'slideLeft'
-    | 'slideRight'
-    | 'zoomIn'
-    | 'zoomOut'
-    | {
-        type?:
-          | 'fadeIn'
-          | 'fadeOut'
-          | 'jiggle'
-          | 'pulse'
-          | 'rotateLeft'
-          | 'rotateRight'
-          | 'slideUp'
-          | 'slideDown'
-          | 'slideLeft'
-          | 'slideRight'
-          | 'zoomIn'
-          | 'zoomOut';
-        delay?: number;
-        duration?: number;
-        size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
-      }
-    | (
-        | 'fadeIn'
-        | 'fadeOut'
-        | 'jiggle'
-        | 'pulse'
-        | 'slideUp'
-        | 'slideDown'
-        | 'slideLeft'
-        | 'slideRight'
-        | 'zoomIn'
-        | 'zoomOut'
-        | {
-            type?:
-              | 'fadeIn'
-              | 'fadeOut'
-              | 'jiggle'
-              | 'pulse'
-              | 'slideUp'
-              | 'slideDown'
-              | 'slideLeft'
-              | 'slideRight'
-              | 'zoomIn'
-              | 'zoomOut';
-            delay?: number;
-            duration?: number;
-            size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
-          }
-      )[];
+  animation?: AnimationType;
   background?: BackgroundType;
   basis?: BasisType;
   border?: BorderType;
@@ -122,6 +66,7 @@ export interface BoxProps {
   pad?: PadType;
   responsive?: boolean;
   round?: RoundType;
+  skeleton?: SkeletonType;
   tag?: PolymorphicType;
   as?: PolymorphicType;
   width?: WidthType;

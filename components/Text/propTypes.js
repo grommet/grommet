@@ -21,6 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
       vertical: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(_generalPropTypes.MARGIN_SIZES), _propTypes["default"].string])
     }), _propTypes["default"].string]),
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), _propTypes["default"].string]),
+    skeleton: _generalPropTypes.skeletonPropType,
     tag: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
     as: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func, _propTypes["default"].element]),
     textAlign: _propTypes["default"].oneOf(['start', 'center', 'end', 'justify']),

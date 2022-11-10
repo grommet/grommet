@@ -361,6 +361,12 @@ Object.keys(_Sidebar).forEach(function (key) {
   if (key in exports && exports[key] === _Sidebar[key]) return;
   exports[key] = _Sidebar[key];
 });
+var _Skeleton = require("./Skeleton");
+Object.keys(_Skeleton).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Skeleton[key]) return;
+  exports[key] = _Skeleton[key];
+});
 var _SkipLink = require("./SkipLink");
 Object.keys(_SkipLink).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

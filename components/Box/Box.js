@@ -9,14 +9,17 @@ var _utils = require("../../utils");
 var _Keyboard = require("../Keyboard");
 var _StyledBox = require("./StyledBox");
 var _propTypes = require("./propTypes");
-var _excluded = ["a11yTitle", "background", "border", "children", "direction", "elevation", "fill", "gap", "kind", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex"];
+var _Skeleton = require("../Skeleton");
+var _AnnounceContext = require("../../contexts/AnnounceContext");
+var _excluded = ["a11yTitle", "background", "border", "children", "direction", "elevation", "fill", "gap", "kind", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex", "skeleton"],
+  _excluded2 = ["colors", "size"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
-    background = _ref.background,
+    backgroundProp = _ref.background,
     border = _ref.border,
     children = _ref.children,
     _ref$direction = _ref.direction,
@@ -37,8 +40,20 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     width = _ref.width,
     height = _ref.height,
     tabIndex = _ref.tabIndex,
+    skeletonProp = _ref.skeleton,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var skeleton = (0, _Skeleton.useSkeleton)();
+  var background = backgroundProp;
+  var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
+  (0, _react.useEffect)(function () {
+    var _skeletonProp$message;
+    if (skeletonProp != null && (_skeletonProp$message = skeletonProp.message) != null && _skeletonProp$message.start) announce(skeletonProp.message.start);else if (typeof (skeletonProp == null ? void 0 : skeletonProp.message) === 'string') announce(skeletonProp.message);
+    return function () {
+      var _skeletonProp$message2;
+      return (skeletonProp == null ? void 0 : (_skeletonProp$message2 = skeletonProp.message) == null ? void 0 : _skeletonProp$message2.end) && announce(skeletonProp.message.end);
+    };
+  }, [announce, skeletonProp]);
   var focusable = (0, _react.useMemo)(function () {
     return onClick && !(tabIndex < 0);
   }, [onClick, tabIndex]);
@@ -98,6 +113,37 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       contents.push(child);
     });
   }
+  var nextSkeleton = (0, _react.useMemo)(function () {
+    // Decide if we need to add a new SkeletonContext. We need one if:
+    //   1. skeleton info was set in a property OR
+    //   2. there already is a SkeletonContext but this box has a
+    //      background or border. This means the box probably is more
+    //      distinguishable from the area around it.
+    // We keep track of a depth so we know how to alternate backgrounds.
+    if (skeletonProp || (background || border) && skeleton) {
+      var depth = skeleton ? skeleton.depth + 1 : 0;
+      return _extends({}, skeleton, {
+        depth: depth
+      }, typeof skeletonProp === 'object' ? skeletonProp : {});
+    }
+    return undefined;
+  }, [background, border, skeleton, skeletonProp]);
+  var skeletonProps = {};
+  if (nextSkeleton) {
+    var _theme$skeleton = theme.skeleton,
+      skeletonThemeColors = _theme$skeleton.colors,
+      skeletonThemeSize = _theme$skeleton.size,
+      skeletonThemeProps = _objectWithoutPropertiesLoose(_theme$skeleton, _excluded2);
+    var skeletonColors = nextSkeleton.colors ? nextSkeleton.colors[theme.dark ? 'dark' : 'light'] : skeletonThemeColors == null ? void 0 : skeletonThemeColors[theme.dark ? 'dark' : 'light'];
+    skeletonProps = _extends({}, skeletonThemeProps);
+    background = skeletonColors[nextSkeleton.depth % skeletonColors.length];
+    if (skeletonProp != null && skeletonProp.animation) {
+      skeletonProps.animation = skeletonProp.animation;
+    }
+    contents = /*#__PURE__*/_react["default"].createElement(_Skeleton.SkeletonContext.Provider, {
+      value: nextSkeleton
+    }, contents);
+  }
 
   // construct a new theme object in case we have a background that wants
   // to change the background color context
@@ -136,7 +182,7 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     heightProp: height,
     responsive: responsive,
     tabIndex: adjustedTabIndex
-  }, clickProps, rest), /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
+  }, clickProps, rest, skeletonProps), /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
     value: nextTheme
   }, contents));
   if (onClick) {

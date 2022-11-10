@@ -1,6 +1,14 @@
 import PropTypes from 'prop-types';
 export var a11yTitlePropType = PropTypes.string;
 export var alignPropType = PropTypes.oneOfType([PropTypes.oneOf(['baseline', 'center', 'end', 'start', 'stretch']), PropTypes.string]);
+var ANIMATION_TYPE = PropTypes.oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'rotateLeft', 'rotateRight', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);
+var ANIMATION_SHAPE = PropTypes.shape({
+  type: ANIMATION_TYPE,
+  delay: PropTypes.number,
+  duration: PropTypes.number,
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge'])
+});
+export var animationPropType = PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE, PropTypes.arrayOf(PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE]))]);
 export var colorPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
   dark: PropTypes.string,
   light: PropTypes.string
@@ -56,6 +64,19 @@ export var patternPropType = PropTypes.oneOf(['squares', 'circles', 'stripesHori
 export var roundPropType = PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), PropTypes.string, PropTypes.shape({
   corner: PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'top-left', 'top-right', 'bottom-left', 'bottom-right']),
   size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string])
+})]);
+export var skeletonColorsPropType = PropTypes.shape({
+  dark: PropTypes.arrayOf(PropTypes.string),
+  light: PropTypes.arrayOf(PropTypes.string)
+});
+export var skeletonPropType = PropTypes.oneOfType([PropTypes.bool, PropTypes.shape({
+  animation: animationPropType,
+  colors: skeletonColorsPropType,
+  depth: PropTypes.number,
+  message: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+    start: PropTypes.string,
+    end: PropTypes.end
+  })])
 })]);
 var dimSizeType = PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']);
 export var heightPropType = PropTypes.oneOfType([dimSizeType, PropTypes.string, PropTypes.shape({

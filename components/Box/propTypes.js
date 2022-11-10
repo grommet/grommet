@@ -7,13 +7,6 @@ var _generalPropTypes = require("../../utils/general-prop-types");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
-var ANIMATION_TYPE = _propTypes["default"].oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'rotateLeft', 'rotateRight', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);
-var ANIMATION_SHAPE = _propTypes["default"].shape({
-  type: ANIMATION_TYPE,
-  delay: _propTypes["default"].number,
-  duration: _propTypes["default"].number,
-  size: _propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge'])
-});
 var BORDER_SHAPE = _propTypes["default"].shape({
   color: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
     dark: _propTypes["default"].string,
@@ -34,7 +27,7 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, _generalPropTypes.genericProps, {
     align: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['baseline', 'center', 'end', 'start', 'stretch']), _propTypes["default"].string]),
     alignContent: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['around', 'baseline', 'between', 'center', 'evenly', 'end', 'start', 'stretch']), _propTypes["default"].string]),
-    animation: _propTypes["default"].oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE, _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE]))]),
+    animation: _generalPropTypes.animationPropType,
     background: _generalPropTypes.backgroundDoc,
     basis: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'full', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'auto']), _propTypes["default"].string]),
     border: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all', 'between']), BORDER_SHAPE, _propTypes["default"].arrayOf(BORDER_SHAPE)]),
@@ -55,6 +48,7 @@ if (process.env.NODE_ENV !== 'production') {
     pad: _generalPropTypes.padPropType,
     responsive: _propTypes["default"].bool,
     round: _generalPropTypes.roundPropType,
+    skeleton: _generalPropTypes.skeletonPropType,
     tag: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
     as: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func, _propTypes["default"].elementType]),
     width: _generalPropTypes.widthPropType,

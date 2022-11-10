@@ -1,6 +1,6 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 import PropTypes from 'prop-types';
-import { colorPropType, genericProps, MARGIN_SIZES } from '../../utils/general-prop-types';
+import { colorPropType, genericProps, MARGIN_SIZES, skeletonPropType } from '../../utils/general-prop-types';
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, genericProps, {
@@ -16,6 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
       vertical: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string])
     }), PropTypes.string]),
     size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), PropTypes.string]),
+    skeleton: skeletonPropType,
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.element]),
     textAlign: PropTypes.oneOf(['start', 'center', 'end', 'justify']),
