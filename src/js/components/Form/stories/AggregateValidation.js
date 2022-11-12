@@ -23,8 +23,8 @@ export const AggregateValidation = () => {
             <TextInput aria-label="name" name="name" type="name" />
           </FormField>
 
-          <FormField htmlFor="email" label="email" name="email" required>
-            <TextInput id="email" name="email" type="email" />
+          <FormField label="Email" name="email" required>
+            <TextInput aria-label="email" name="email" type="email" />
           </FormField>
 
           {message && (
