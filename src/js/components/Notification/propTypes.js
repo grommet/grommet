@@ -37,6 +37,7 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
     onClose: PropTypes.func,
     icon: PropTypes.element,
+    time: PropTypes.number,
   };
 }
 export const NotificationType = PropType;

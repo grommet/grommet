@@ -118,6 +118,26 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
+export const validateBounds = (dateBounds, selectedDate) => {
+  if (!dateBounds || !selectedDate) return selectedDate;
+
+  const [startDate, endDate] = dateBounds.map((date) =>
+    setHoursWithOffset(date).toISOString(),
+  );
+
+  const isoSelectedDates = (
+    Array.isArray(selectedDate) ? selectedDate : [selectedDate]
+  ).map((date) => setHoursWithOffset(date).toISOString());
+
+  const validSelection = isoSelectedDates.every(
+    (isoSelectedDate) =>
+      (!endDate && startDate === isoSelectedDate) ||
+      (isoSelectedDate >= startDate && isoSelectedDate <= endDate),
+  );
+
+  return validSelection ? selectedDate : undefined;
+};
+
 export const textToValue = (text, schema, range, reference, outputFormat) => {
   if (!text) return range ? [] : undefined;
 
