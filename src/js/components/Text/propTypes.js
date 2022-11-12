@@ -3,6 +3,7 @@ import {
   colorPropType,
   genericProps,
   MARGIN_SIZES,
+  skeletonPropType,
 } from '../../utils/general-prop-types';
 
 let PropType = {};
@@ -64,6 +65,7 @@ if (process.env.NODE_ENV !== 'production') {
       ]),
       PropTypes.string,
     ]),
+    skeleton: skeletonPropType,
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     as: PropTypes.oneOfType([
       PropTypes.string,
