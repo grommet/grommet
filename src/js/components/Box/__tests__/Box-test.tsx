@@ -735,6 +735,22 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders border=between and gap=pixle value', () => {
+    const { container } = render(
+      <Grommet>
+        <Box gap="12px" border="top" pad="medium">
+          <Box pad="small" background="dark-3">
+            Test 1
+          </Box>
+          <Box pad="medium" background="light-3">
+            Test 2
+          </Box>
+        </Box>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('renders a11yTitle and aria-label', () => {
     const { container, getByLabelText } = render(
       <Grommet>
