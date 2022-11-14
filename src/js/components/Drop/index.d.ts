@@ -23,7 +23,7 @@ export interface DropProps extends Omit<BoxProps, 'align'> {
   plain?: boolean;
 }
 
-type divProps = JSX.IntrinsicElements['div'];
+type divProps = Omit<JSX.IntrinsicElements['div'], keyof DropProps>;
 
 export interface DropExtendedProps extends DropProps, divProps {}
 
