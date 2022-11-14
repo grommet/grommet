@@ -34,6 +34,7 @@ export var AggregateValidation = function AggregateValidation() {
       name: "name",
       required: true
     }, /*#__PURE__*/React.createElement(TextInput, {
+      "aria-label": "name",
       name: "name",
       type: "name"
     })), /*#__PURE__*/React.createElement(FormField, {
@@ -41,6 +42,7 @@ export var AggregateValidation = function AggregateValidation() {
       name: "email",
       required: true
     }, /*#__PURE__*/React.createElement(TextInput, {
+      "aria-label": "email",
       name: "email",
       type: "email"
     })), message && /*#__PURE__*/React.createElement(Box, {

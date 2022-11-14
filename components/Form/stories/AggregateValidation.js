@@ -38,6 +38,7 @@ var AggregateValidation = function AggregateValidation() {
       name: "name",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      "aria-label": "name",
       name: "name",
       type: "name"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
@@ -45,6 +46,7 @@ var AggregateValidation = function AggregateValidation() {
       name: "email",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      "aria-label": "email",
       name: "email",
       type: "email"
     })), message && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
