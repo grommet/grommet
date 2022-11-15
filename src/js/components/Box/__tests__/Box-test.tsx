@@ -738,7 +738,7 @@ describe('Box', () => {
   test('renders border=between and gap=pixle value', () => {
     const { container } = render(
       <Grommet>
-        <Box gap="12px" border="top" pad="medium">
+        <Box gap="12px" border="between" pad="medium">
           <Box pad="small" background="dark-3">
             Test 1
           </Box>
