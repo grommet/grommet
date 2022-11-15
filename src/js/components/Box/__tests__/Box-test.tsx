@@ -735,7 +735,7 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('renders border=between and gap=pixle value', () => {
+  test('renders border=between and gap=pixel value', () => {
     const { container } = render(
       <Grommet>
         <Box gap="12px" border="between" pad="medium">
