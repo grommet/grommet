@@ -4826,7 +4826,7 @@ exports[`Box renders a11yTitle and aria-label 1`] = `
 </div>
 `;
 
-exports[`Box renders border=between and gap=pixle value 1`] = `
+exports[`Box renders border=between and gap=pixel value 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
