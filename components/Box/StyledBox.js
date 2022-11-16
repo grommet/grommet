@@ -204,7 +204,7 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) 
     var borderMetric = theme.global.borderSize[borderSize] || borderSize;
     var borderOffset = (0, _utils.parseMetricToNum)(metric) / 2 - (0, _utils.parseMetricToNum)(borderMetric) / 2 + "px";
     var responsiveBorderMetric = responsive && breakpoint && (breakpoint.borderSize[borderSize] || borderSize);
-    var responsiveBorderOffset = responsiveBorderMetric && (0, _utils.parseMetricToNum)(responsiveMetric) / 2 - (0, _utils.parseMetricToNum)(responsiveBorderMetric) / 2 + "px";
+    var responsiveBorderOffset = responsiveBorderMetric && (0, _utils.parseMetricToNum)(responsiveMetric || metric) / 2 - (0, _utils.parseMetricToNum)(responsiveBorderMetric) / 2 + "px";
     if (directionProp === 'column' || directionProp === 'column-reverse') {
       var adjustedBorder = typeof border === 'string' ? 'top' : _extends({}, border, {
         side: 'top'
