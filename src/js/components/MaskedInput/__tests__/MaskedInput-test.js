@@ -6,6 +6,7 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
+import userEvent from '@testing-library/user-event';
 
 import { Search } from 'grommet-icons';
 
@@ -191,7 +192,58 @@ describe('MaskedInput', () => {
     expect(onChange).toHaveReturnedWith('aa!');
   });
 
-  test('Escape events should propagage if there is no drop', () => {
+  test('should not enable to type beyond options via keyboard', async () => {
+    const user = userEvent.setup();
+
+    const onChange = jest.fn((event) => event.target.value);
+    render(
+      <MaskedInput
+        data-testid="test-input"
+        id="item"
+        name="item"
+        mask={[
+          {
+            options: ['aaa', 'aba', 'abb'],
+            regexp: /\w$/,
+          },
+        ]}
+        onChange={onChange}
+      />,
+    );
+
+    await user.type(screen.getByRole('textbox'), 'abbb');
+
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('abb');
+  });
+
+  test('restrictToOptions=false allows typing beyond options', async () => {
+    const user = userEvent.setup();
+
+    const onChange = jest.fn((event) => event.target.value);
+    render(
+      <MaskedInput
+        data-testid="test-input"
+        id="item"
+        name="item"
+        mask={[
+          {
+            restrictToOptions: false,
+            options: ['aaa', 'aba', 'abb'],
+            regexp: /\w$/,
+          },
+        ]}
+        onChange={onChange}
+      />,
+    );
+
+    await user.type(screen.getByRole('textbox'), 'abbb');
+
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('abbb');
+  });
+
+  test('Escape events should propagate if there is no drop', () => {
     const callback = jest.fn();
     const { getByTestId } = render(
       <Grommet>

@@ -16,14 +16,6 @@ export const Simple = () => {
       <Box align="center" pad="large">
         <Calendar
           date={date}
-          onSelect={onSelect}
-          size="small"
-          bounds={['2018-09-08', '2020-12-13']}
-        />
-      </Box>
-      <Box align="center" pad="large">
-        <Calendar
-          date={date}
           daysOfWeek
           onSelect={onSelect}
           size="small"

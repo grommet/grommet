@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { Box, Drop } from 'grommet';
 
+const align = { top: 'bottom', left: 'left' };
+
 const PlainDrop = () => {
   const targetRef = useRef();
 
@@ -10,9 +12,9 @@ const PlainDrop = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box background="brand" fill align="center" justify="center">
+    <Box background="light-3" fill align="center" justify="center">
       <Box
-        background="dark-3"
+        background="dark-2"
         pad="medium"
         align="center"
         justify="start"
@@ -21,11 +23,7 @@ const PlainDrop = () => {
         Target
       </Box>
       {targetRef.current && (
-        <Drop
-          plain
-          align={{ top: 'bottom', left: 'left' }}
-          target={targetRef.current}
-        >
+        <Drop plain align={align} target={targetRef.current}>
           <Box pad="large">No background no shadow</Box>
         </Drop>
       )}

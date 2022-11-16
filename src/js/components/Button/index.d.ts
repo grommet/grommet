@@ -27,6 +27,17 @@ export interface ButtonProps {
         value?: boolean | number;
       }
     | JSX.Element;
+  children?:
+    | React.ReactNode
+    | (({
+        disabled,
+        hover,
+        focus,
+      }: {
+        disabled: boolean;
+        hover: boolean;
+        focus: boolean;
+      }) => React.ReactNode);
   gridArea?: GridAreaType;
   margin?: MarginType;
   active?: boolean;
@@ -53,7 +64,7 @@ export interface ButtonProps {
   primary?: boolean;
   reverse?: boolean;
   secondary?: boolean;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | string;
   tip?: TipProps | string;
   type?: 'button' | 'reset' | 'submit';
   as?: PolymorphicType;
@@ -63,25 +74,13 @@ type anchorType = Omit<JSX.IntrinsicElements['a'], 'color'>;
 type buttonType = Omit<JSX.IntrinsicElements['button'], 'color'>;
 type extendType = anchorType & buttonType;
 
-export interface ButtonExtendedProps extends ButtonProps, extendType {}
+export interface ButtonExtendedProps
+  extends ButtonProps,
+    Omit<extendType, 'target' | 'children'> {}
 
 // Keep type alias for backwards compatibility.
 export type ButtonType = ButtonProps & extendType;
 
-declare const Button: React.FC<
-  ButtonExtendedProps & {
-    children?:
-      | React.ReactNode
-      | (({
-          disabled,
-          hover,
-          focus,
-        }: {
-          disabled: boolean;
-          hover: boolean;
-          focus: boolean;
-        }) => React.ReactNode);
-  }
->;
+declare const Button: React.FC<ButtonExtendedProps>;
 
 export { Button };

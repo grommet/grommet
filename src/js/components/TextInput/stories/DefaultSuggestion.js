@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, Grommet, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, TextInput } from 'grommet';
 
 const suggestions = Array(100)
   .fill()
@@ -10,24 +9,27 @@ const suggestions = Array(100)
 export const DefaultSuggestion = () => {
   const [value, setValue] = React.useState('');
 
-  const onChange = event => setValue(event.target.value);
+  const onChange = (event) => setValue(event.target.value);
 
-  const onSelect = event => setValue(event.suggestion);
+  const onSelect = (event) => setValue(event.suggestion);
 
   return (
-    <Grommet full theme={grommet}>
-      <Box fill align="center" justify="start" pad="large">
-        <Box width="medium">
-          <TextInput
-            value={value}
-            onChange={onChange}
-            onSelect={onSelect}
-            suggestions={suggestions}
-            defaultSuggestion={1}
-          />
-        </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box fill align="center" justify="start" pad="large">
+      <Box width="medium">
+        <TextInput
+          id="grommet-text-combobox-default-suggestion"
+          value={value}
+          onChange={onChange}
+          onSelect={onSelect}
+          suggestions={suggestions}
+          defaultSuggestion={1}
+          aria-label="Input Text"
+        />
       </Box>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 

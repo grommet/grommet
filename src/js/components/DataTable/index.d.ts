@@ -36,6 +36,8 @@ export type MouseClick<TRowType> = React.MouseEvent<HTMLTableRowElement> & {
 
 export type KeyPress<TRowType> = React.KeyboardEvent & { datum: TRowType };
 
+type VerticalAlignType = 'middle' | 'top' | 'bottom';
+
 export interface ColumnConfig<TRowType> {
   align?: 'center' | 'start' | 'end';
   aggregate?: 'avg' | 'max' | 'min' | 'sum';
@@ -51,7 +53,7 @@ export interface ColumnConfig<TRowType> {
   sortable?: boolean;
   size?: ColumnSizeType | string;
   units?: string;
-  verticalAlign?: 'middle' | 'top' | 'bottom';
+  verticalAlign?: VerticalAlignType;
 }
 
 export interface DataTableProps<TRowType = any> {
@@ -80,20 +82,21 @@ export interface DataTableProps<TRowType = any> {
       pad?: PadType;
     };
   };
-  rowDetails?: React.ReactNode;
+  rowDetails?: (row: TRowType) => React.ReactNode;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
   // Data
   data?: TRowType[];
+  disabled?: (string | number)[];
   groupBy?:
     | string
     | {
-        property: string;
-        expand: Array<string>;
-        expandable: Array<string>;
-        select: { [key: string]: 'all' | 'some' | 'none' };
-        onExpand: (expandedKeys: string[]) => void;
-        onSelect: (select: (string | number)[], datum: TRowType) => void;
+        property?: string;
+        expand?: Array<string>;
+        expandable?: Array<string>;
+        select?: { [key: string]: 'all' | 'some' | 'none' };
+        onExpand?: (expandedKeys: string[]) => void;
+        onSelect?: (select: (string | number)[], datum: TRowType) => void;
       };
   primaryKey?: string | boolean;
   select?: (string | number)[];
@@ -102,7 +105,9 @@ export interface DataTableProps<TRowType = any> {
   step?: number;
 
   // Events
-  onClickRow?: (event: MouseClick<TRowType> | KeyPress<TRowType>) => void;
+  onClickRow?:
+    | 'select'
+    | ((event: MouseClick<TRowType> | KeyPress<TRowType>) => void);
   onMore?: () => void;
   onSearch?: (search: string) => void;
   onSelect?: (select: (string | number)[], datum: TRowType) => void;
@@ -113,11 +118,21 @@ export interface DataTableProps<TRowType = any> {
     show: number;
     count: number;
   }) => void;
+  verticalAlign?:
+    | VerticalAlignType
+    | {
+        header?: VerticalAlignType;
+        body?: VerticalAlignType;
+        footer?: VerticalAlignType;
+      };
 }
 
 export interface DataTableExtendedProps<TRowType = any>
   extends DataTableProps<TRowType>,
-    Omit<JSX.IntrinsicElements['table'], 'onSelect' | 'placeholder'> {}
+    Omit<
+      JSX.IntrinsicElements['table'],
+      'onSelect' | 'placeholder' | 'border'
+    > {}
 
 declare class DataTable<TRowType = any> extends React.Component<
   DataTableExtendedProps<TRowType>

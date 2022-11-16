@@ -102,6 +102,7 @@ describe('Button kind', () => {
     const { container } = render(
       <Grommet theme={buttonKindTheme}>
         <Button primary />
+        <Button primary disabled />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -323,19 +324,18 @@ describe('Button kind', () => {
       <Grommet
         theme={{
           button: {
-            default: {
-              size: {
-                small: {
-                  border: {
-                    radius: '4px',
-                  },
-                  pad: {
-                    vertical: '4px',
-                    horizontal: '8px',
-                  },
+            size: {
+              small: {
+                border: {
+                  radius: '4px',
+                },
+                pad: {
+                  vertical: '4px',
+                  horizontal: '8px',
                 },
               },
             },
+            default: {},
           },
         }}
       >
@@ -618,5 +618,18 @@ describe('Button kind', () => {
 
     fireEvent.mouseOver(getByText('Button'));
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`plain with icon`, () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          button: { default: {} },
+        }}
+      >
+        <Button plain icon={<Add />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

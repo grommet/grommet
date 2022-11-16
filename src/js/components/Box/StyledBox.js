@@ -212,12 +212,7 @@ const StyledBox = styled.div`
   ${(props) =>
     props.background && backgroundStyle(props.background, props.theme)}
   ${(props) =>
-    props.border &&
-    (Array.isArray(props.border)
-      ? props.border.map((border) =>
-          borderStyle(border, props.responsive, props.theme),
-        )
-      : borderStyle(props.border, props.responsive, props.theme))}
+    props.border && borderStyle(props.border, props.responsive, props.theme)}
   ${(props) =>
     props.directionProp && directionStyle(props.directionProp, props.theme)}
   ${(props) => props.heightProp && heightStyle(props.heightProp, props.theme)}
@@ -294,7 +289,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
     const responsiveBorderOffset =
       responsiveBorderMetric &&
       `${
-        parseMetricToNum(responsiveMetric) / 2 -
+        parseMetricToNum(responsiveMetric || metric) / 2 -
         parseMetricToNum(responsiveBorderMetric) / 2
       }px`;
 

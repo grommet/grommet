@@ -20,16 +20,31 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
-import { useForwardedRef } from '../../utils';
-import { getTimestamp, normalizeForTimezone } from '../Calendar/utils';
+import { useForwardedRef, setHoursWithOffset } from '../../utils';
 import {
   formatToSchema,
   schemaToMask,
   valuesAreEqual,
   valueToText,
   textToValue,
+  validateBounds,
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
+import { getOutputFormat } from '../Calendar/Calendar';
+
+const getReference = (value) => {
+  let adjustedDate;
+  let res;
+  if (typeof value === 'string') res = value;
+  else if (Array.isArray(value) && Array.isArray(value[0]))
+    res = value[0].find((date) => date);
+  else if (Array.isArray(value) && value.length) [res] = value;
+
+  if (res) {
+    adjustedDate = setHoursWithOffset(res);
+  }
+  return adjustedDate;
+};
 
 const DateInput = forwardRef(
   (
@@ -41,12 +56,14 @@ const DateInput = forwardRef(
       dropProps, // when inline isn't true
       format,
       id,
+      icon,
       inline = false,
       inputProps, // for MaskedInput, when format is specified
       name,
       onChange,
       onFocus,
       plain,
+      reverse: reverseProp = false,
       value: valueArg,
       messages,
       ...rest
@@ -67,21 +84,19 @@ const DateInput = forwardRef(
       initialValue: defaultValue,
     });
 
-    let timestamp;
-    if (Array.isArray(defaultValue) && defaultValue.length) {
-      timestamp = getTimestamp(defaultValue[0]);
-    } else if (typeof defaultValue === 'string') {
-      timestamp = getTimestamp(defaultValue);
-    } else if (Array.isArray(value) && value.length) {
-      timestamp = getTimestamp(value[0]);
-      // check to see if value is not an empty string
-      // empty string should behave like undefined
-    } else if (typeof value === 'string' && value.length) {
-      timestamp = getTimestamp(value);
-    }
+    const [outputFormat, setOutputFormat] = useState(getOutputFormat(value));
+    useEffect(() => {
+      setOutputFormat((previousFormat) => {
+        const nextFormat = getOutputFormat(value);
+        // when user types, date could become something like 07//2020
+        // and value becomes undefined. don't lose the format from the
+        // previous valid date
+        return previousFormat !== nextFormat ? previousFormat : nextFormat;
+      });
+    }, [value]);
 
-    // normalize value based on timestamp vs user's local timezone
-    const normalizedDate = normalizeForTimezone(value, timestamp);
+    // keep track of timestamp from original date(s)
+    const [reference, setReference] = useState(getReference(value));
 
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
@@ -94,8 +109,22 @@ const DateInput = forwardRef(
 
     // textValue is only used when a format is provided
     const [textValue, setTextValue] = useState(
-      schema ? valueToText(normalizedDate, schema) : undefined,
+      schema ? valueToText(value, schema) : undefined,
     );
+
+    // Setting the icon through `inputProps` is deprecated.
+    // The `icon` prop should be used instead.
+    const { icon: MaskedInputIcon, ...restOfInputProps } = inputProps || {};
+    if (MaskedInputIcon) {
+      console.warn(
+        `Customizing the DateInput icon through inputProps is deprecated.
+Use the icon prop instead.`,
+      );
+    }
+
+    const reverse = reverseProp || restOfInputProps.reverse;
+
+    const calendarDropdownAlign = { top: 'bottom', left: 'left' };
 
     // We need to distinguish between the caller changing a Form value
     // and the user typing a date that he isn't finished with yet.
@@ -105,18 +134,18 @@ const DateInput = forwardRef(
     // matching "06/1/2021".
     useEffect(() => {
       if (schema && value !== undefined) {
-        const nextTextValue = valueToText(normalizedDate, schema);
+        const nextTextValue = valueToText(value, schema);
         if (
           !valuesAreEqual(
-            textToValue(textValue, schema, range, timestamp),
-            textToValue(nextTextValue, schema, range, timestamp),
+            textToValue(textValue, schema, range, reference),
+            textToValue(nextTextValue, schema, range, reference),
           ) ||
           (textValue === '' && nextTextValue !== '')
         ) {
           setTextValue(nextTextValue);
         }
       }
-    }, [range, schema, textValue, value, normalizedDate, timestamp]);
+    }, [range, schema, textValue, reference, value]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
@@ -131,15 +160,20 @@ const DateInput = forwardRef(
       announce(formatMessage({ id: 'dateInput.exitCalendar', messages }));
     }, [announce, formatMessage, messages]);
 
+    const dates = useMemo(
+      () => (range && value?.length ? [value] : undefined),
+      [range, value],
+    );
+
     const calendar = (
       <Calendar
         ref={inline ? ref : undefined}
         id={inline && !format ? id : undefined}
         range={range}
-        date={range ? undefined : normalizedDate}
+        date={range ? undefined : value}
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
-        dates={range && value.length ? [normalizedDate] : undefined}
+        dates={dates}
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
         onSelect={
@@ -152,11 +186,10 @@ const DateInput = forwardRef(
                 // clicking an edge date removes it
                 else if (range) normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
-                if (schema)
-                  setTextValue(
-                    valueToText(normalizeForTimezone(normalizedValue), schema),
-                  );
+
+                if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
+                setReference(getReference(nextValue));
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
                   closeCalendar();
@@ -164,7 +197,7 @@ const DateInput = forwardRef(
                 }
               }
         }
-        {...{ ...calendarProps, timestamp }}
+        {...calendarProps}
       />
     );
 
@@ -183,13 +216,22 @@ const DateInput = forwardRef(
         <DropButton
           ref={ref}
           id={id}
-          dropProps={{ align: { top: 'bottom', left: 'left' }, ...dropProps }}
+          dropProps={{ align: calendarDropdownAlign, ...dropProps }}
           dropContent={calendar}
-          icon={<CalendarIcon size={iconSize} />}
+          icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
           {...buttonProps}
         />
       );
     }
+
+    const calendarButton = (
+      <Button
+        onClick={open ? closeCalendar : openCalendar}
+        plain
+        icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
+        margin={reverse ? { left: 'small' } : { right: 'small' }}
+      />
+    );
 
     const input = (
       <FormContext.Provider
@@ -199,15 +241,19 @@ const DateInput = forwardRef(
       >
         <Keyboard
           onEsc={open ? () => closeCalendar() : undefined}
-          onSpace={openCalendar}
+          onSpace={(event) => {
+            event.preventDefault();
+            openCalendar();
+          }}
         >
           <Box
             ref={containerRef}
             border={!plain}
-            round="xxsmall"
+            round={theme.dateInput.container.round}
             direction="row"
             fill
           >
+            {reverse && calendarButton}
             <MaskedInput
               ref={ref}
               id={id}
@@ -216,7 +262,7 @@ const DateInput = forwardRef(
               disabled={disabled}
               mask={mask}
               plain
-              {...inputProps}
+              {...restOfInputProps}
               {...rest}
               value={textValue}
               onChange={(event) => {
@@ -226,14 +272,27 @@ const DateInput = forwardRef(
                   nextTextValue,
                   schema,
                   range,
-                  timestamp,
+                  reference,
+                  outputFormat,
                 );
+
+                const validatedNextValue = validateBounds(
+                  calendarProps?.bounds,
+                  nextValue,
+                );
+
+                if (!validatedNextValue && nextValue) {
+                  setTextValue('');
+                }
+
+                if (validatedNextValue !== undefined)
+                  setReference(getReference(validatedNextValue));
                 // update value even when undefined
-                setValue(nextValue);
+                setValue(validatedNextValue);
                 if (onChange) {
                   event.persist(); // extract from React synthetic event pool
                   const adjustedEvent = event;
-                  adjustedEvent.value = nextValue;
+                  adjustedEvent.value = validatedNextValue;
                   onChange(adjustedEvent);
                 }
               }}
@@ -244,12 +303,7 @@ const DateInput = forwardRef(
                 if (onFocus) onFocus(event);
               }}
             />
-            <Button
-              onClick={open ? closeCalendar : openCalendar}
-              plain
-              icon={<CalendarIcon size={iconSize} />}
-              margin={{ right: 'small' }}
-            />
+            {!reverse && calendarButton}
           </Box>
         </Keyboard>
       </FormContext.Provider>
@@ -271,8 +325,8 @@ const DateInput = forwardRef(
           <Drop
             overflow="visible"
             id={id ? `${id}__drop` : undefined}
-            target={ref.current}
-            align={{ top: 'bottom', left: 'left', ...dropProps }}
+            target={containerRef.current}
+            align={{ ...calendarDropdownAlign, ...dropProps }}
             onEsc={closeCalendar}
             onClickOutside={({ target }) => {
               if (

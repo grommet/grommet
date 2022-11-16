@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { render } from 'react-dom';
-
-import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, RangeSelector, Stack, Text } from 'grommet';
 
 const RANGE_MIN = 0;
 const RANGE_MAX = 100;
@@ -21,7 +18,7 @@ function Thin({ initialRange = [0, 100], label }) {
           max={RANGE_MAX}
           step={1}
           values={range}
-          onChange={nextRange => {
+          onChange={(nextRange) => {
             setRange(nextRange);
           }}
         />
@@ -33,19 +30,14 @@ function Thin({ initialRange = [0, 100], label }) {
   );
 }
 
-function App() {
-  return (
-    <Grommet theme={grommet}>
-      <Box pad="small">
-        <Thin label="My Range Selector" />
-      </Box>
-    </Grommet>
-  );
-}
-
-render(<App />, document.getElementById('root'));
-
-export const ThinStory = () => <App />;
+export const ThinStory = () => (
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box pad="small">
+    <Thin label="My Range Selector" />
+  </Box>
+  // </Grommet>
+);
 
 ThinStory.storyName = 'Thin';
 

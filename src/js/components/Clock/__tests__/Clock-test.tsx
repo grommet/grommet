@@ -52,7 +52,7 @@ describe('Clock', () => {
   });
 
   test('run', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <Clock type="analog" run="forward" time={DURATION} />

@@ -187,6 +187,25 @@ describe('CheckBox', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders custom checked icon', () => {
+    const CustomCheckedIcon = () => <svg data-testid="custom-checkBox-icon" />;
+    const customTheme = {
+      checkBox: {
+        icons: {
+          checked: CustomCheckedIcon,
+        },
+      },
+    };
+
+    const { container, getByTestId } = render(
+      <Grommet theme={customTheme}>
+        <CheckBox label="test-label" checked />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    expect(getByTestId('custom-checkBox-icon')).toBeDefined();
+  });
+
   test('renders a11yTitle and aria-label', async () => {
     const LABEL = 'Label';
     const { container, getByLabelText } = render(

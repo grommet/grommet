@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { A11yTitleType, Omit, TextAlignType } from '../../utils';
-import { DropProps } from '../Drop';
+import { DropType } from '../Drop';
 
 export interface MaskedInputProps {
   a11yTitle?: A11yTitleType;
   dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
-  dropProps?: DropProps;
+  dropProps?: DropType;
   focusIndicator?: boolean;
   icon?: JSX.Element;
   id?: string;
@@ -13,6 +13,7 @@ export interface MaskedInputProps {
     length?: number | number[];
     fixed?: string;
     options?: string[] | number[];
+    restrictToOptions?: boolean;
     regexp?: {};
     placeholder?: string;
   }>;

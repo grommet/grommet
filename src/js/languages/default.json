@@ -42,7 +42,8 @@
     "upper": "Upper Bounds"
   },
   "select": {
-    "multiple": "multiple"
+    "multiple": "multiple",
+    "selected": "; Selected: {currentSelectedValue}"
   },
   "skipLinks": {
     "skipTo": "Skip To:"
@@ -57,7 +58,9 @@
     "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
   },
   "video": {
+    "captions": "closed captions",
     "closeMenu": "close menu",
+    "audioDescriptions": "video audio description",
     "fullScreen": "full screen",
     "progressMeter": "video progress",
     "scrubber": "scrubber",
@@ -65,6 +68,7 @@
     "pauseButton": "pause",
     "playButton": "play",
     "volumeDown": "volume down",
-    "volumeUp": "volume up"
+    "volumeUp": "volume up",
+    "description": "video audio description"
   }
 }

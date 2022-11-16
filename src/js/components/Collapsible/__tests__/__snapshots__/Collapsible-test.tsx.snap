@@ -56,15 +56,15 @@ exports[`Collapsible onClick open default 1`] = `
 
 exports[`Collapsible onClick open default 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <div
     aria-hidden="true"
-    class="StyledBox-sc-13pk1d4-0 jLMOlN Collapsible__AnimatedBox-sc-15kniua-0 dVCExP"
+    class="StyledBox-sc-13pk1d4-0 hUSFEE Collapsible__AnimatedBox-sc-15kniua-0 foFiNe"
     style="max-height: 0px;"
   >
     <span
-      class="StyledText-sc-1sadyjn-0 gKFELF"
+      class="StyledText-sc-1sadyjn-0 jbJJSg"
     >
       Example
     </span>

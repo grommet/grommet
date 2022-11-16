@@ -97,7 +97,25 @@ test('Image onError', () => {
   expect(onError).toHaveBeenCalledTimes(1);
 });
 
+test('Image onLoad', () => {
+  const onLoad = jest.fn();
+  render(
+    <Grommet>
+      <Image alt="test" onLoad={onLoad} />
+    </Grommet>,
+  );
+
+  expect(onLoad).not.toHaveBeenCalled();
+
+  const image = screen.getByRole('img', { name: 'test' });
+  fireEvent.load(image);
+
+  expect(onLoad).toHaveBeenCalledTimes(1);
+});
+
 test('Image fallback', async () => {
+  const user = userEvent.setup();
+
   const onError = jest.fn();
   const fallbackImage = 'https://v2.grommet.io/assets/IMG_4245.jpg';
   const regularImage = 'https://v2.grommet.io/img/stak-hurrah.svg';
@@ -129,7 +147,7 @@ test('Image fallback', async () => {
   let imgSrc = screen.getByRole<HTMLImageElement>('img').src;
   expect(imgSrc).toEqual(fallbackImage);
 
-  userEvent.click(screen.getByRole('button', { name: /Update Image/i }));
+  await user.click(screen.getByRole('button', { name: /Update Image/i }));
   imgSrc = screen.getByRole<HTMLImageElement>('img').src;
   expect(imgSrc).toEqual(regularImage);
 });

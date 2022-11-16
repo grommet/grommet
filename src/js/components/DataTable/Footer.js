@@ -21,6 +21,7 @@ const Footer = forwardRef(
       pinnedOffset,
       primaryProperty,
       selected,
+      verticalAlign,
       ...rest
     },
     ref,
@@ -45,6 +46,7 @@ const Footer = forwardRef(
               background={cellProps.background}
               context="footer"
               pin={pin}
+              verticalAlign={verticalAlign}
             />
           )}
           {columns.map((column) => {
@@ -68,6 +70,7 @@ const Footer = forwardRef(
                 pin={pin.length ? pin : undefined}
                 pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
                 primaryProperty={primaryProperty}
+                verticalAlign={verticalAlign}
               />
             );
           })}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 
@@ -589,5 +589,28 @@ describe('Menu', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should group items', async () => {
+    window.scrollTo = jest.fn();
+    render(
+      <Grommet>
+        <Menu
+          id="test-menu"
+          label="Test Menu"
+          items={[
+            [{ label: 'Item 1' }, { label: 'Item 2' }],
+            [{ label: 'Item 3' }],
+          ]}
+        />
+      </Grommet>,
+    );
+    fireEvent.keyDown(screen.getByText('Test Menu'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+
+    expectPortal('test-menu__drop').toMatchSnapshot();
   });
 });

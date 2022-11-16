@@ -11,10 +11,13 @@ export const Disabled = () => (
     <Box>
       <Text margin={{ vertical: 'small' }}> Disabled Individuals</Text>
       <CheckBoxGroup
+        name="destinations"
+        valueKey="id"
+        aria-labelledby="drink-formfield-id"
         options={[
-          { label: 'Maui', disabled: true },
-          { label: 'Jerusalem' },
-          { label: 'Wuhan', disabled: true },
+          { label: 'Maui', id: '1', disabled: true },
+          { label: 'Jerusalem', id: '2' },
+          { label: 'Wuhan', id: '3', disabled: true },
         ]}
       />
     </Box>

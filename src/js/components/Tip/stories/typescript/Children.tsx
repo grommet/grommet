@@ -1,20 +1,38 @@
 import React from 'react';
 
-import { grommet, Box, Button, Grommet, Text, Tip } from 'grommet';
+import {
+  grommet,
+  Anchor,
+  Box,
+  Button,
+  Grommet,
+  Heading,
+  Paragraph,
+  Text,
+  Tip,
+} from 'grommet';
 
 export const Children = () => (
-  <Grommet full theme={grommet}>
-    <Box align="center" pad="xlarge" gap="xlarge" fill>
-      <Text>Tooltip will be displayed once hovering on the Tip child</Text>
-      <Tip
-        content={
-          <Box align="center">
-            <Text>Hello</Text>
-          </Box>
-        }
-      >
-        String Child
-      </Tip>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box align="center" pad="large" fill>
+    <Heading size="xsmall">Tip's Child</Heading>
+
+    <Paragraph margin="none" textAlign="center">
+      Tooltip is displayed once hovering on the Tip's child or when using
+      keyboard navigation to skim through the webpage via tabbing.
+    </Paragraph>
+
+    <Paragraph textAlign="center">
+      To ensure accessibility support for the tooltip content when using
+      keyboard navigation, please use an{' '}
+      <Anchor href="https://github.com/grommet/grommet/issues/5971">
+        interactive element as the Tip's child component
+      </Anchor>
+      .
+    </Paragraph>
+
+    <Box align="center" pad="large" gap="xlarge" fill>
       <Tip
         plain
         dropProps={{ align: { right: 'left' } }}
@@ -22,7 +40,7 @@ export const Children = () => (
           <Box
             animation="slideLeft"
             align="center"
-            background="light-4"
+            background="accent-2"
             round={{ size: 'medium', corner: 'left' }}
             pad="small"
             margin="small"
@@ -31,7 +49,7 @@ export const Children = () => (
           </Box>
         }
       >
-        <Box background="brand" pad="small" flex={false}>
+        <Box background="brand" pad="small" flex={false} onClick={() => {}}>
           Box Child
         </Box>
       </Tip>
@@ -54,7 +72,8 @@ export const Children = () => (
         <Button label="Button Child" />
       </Tip>
     </Box>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
 
 Children.parameters = {

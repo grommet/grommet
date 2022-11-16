@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { grommet, Box, Form, Grommet, Button, FormField } from 'grommet';
+import { Box, Form, Button, FormField } from 'grommet';
 import { Add, Trash } from 'grommet-icons';
 
 export const ArrayOfFormFields = () => {
@@ -45,6 +45,7 @@ export const ArrayOfFormFields = () => {
       >
         <FormField
           label="Phone Number"
+          aria-label="phone number"
           name={`phones[${index}].number`}
           required
           validate={[
@@ -57,6 +58,7 @@ export const ArrayOfFormFields = () => {
         />
         <FormField
           label="Extension"
+          aria-label="extension"
           name={`phones[${index}].ext`}
           validate={[
             { regexp: /^[0-9]*$/ },
@@ -80,48 +82,50 @@ export const ArrayOfFormFields = () => {
   }
 
   return (
-    <Grommet theme={grommet}>
-      <Box pad="medium" width="large">
-        <Form
-          value={values}
-          validate="blur"
-          onReset={() => {
-            setValues({
-              name: '',
-              phones: [{ number: '', ext: '' }],
-            });
-          }}
-          onChange={handleFormChange}
-          onValidate={(validationResults) => {
-            console.log('validationResults = ', validationResults);
-          }}
-          onSubmit={(event) => {
-            console.log('Submit', event.value, event.touched);
-          }}
-        >
-          <FormField
-            label="Name"
-            name="name"
-            pad
-            required
-            validate={[{ regexp: /^[a-zA-Z ]*$/ }]}
-          />
-          {PhoneNumberGroup}
-          <Button
-            icon={<Add />}
-            label="Add Number"
-            plain
-            hoverIndicator
-            onClick={addPhone}
-          />
-          <Box direction="row" justify="between" margin={{ top: 'medium' }}>
-            <Button label="Cancel" />
-            <Button type="reset" label="Reset" />
-            <Button type="submit" label="Submit" primary />
-          </Box>
-        </Form>
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box pad="medium" width="large">
+      <Form
+        value={values}
+        validate="blur"
+        onReset={() => {
+          setValues({
+            name: '',
+            phones: [{ number: '', ext: '' }],
+          });
+        }}
+        onChange={handleFormChange}
+        onValidate={(validationResults) => {
+          console.log('validationResults = ', validationResults);
+        }}
+        onSubmit={(event) => {
+          console.log('Submit', event.value, event.touched);
+        }}
+      >
+        <FormField
+          label="Name"
+          aria-label="name"
+          name="name"
+          pad
+          required
+          validate={[{ regexp: /^[a-zA-Z ]*$/ }]}
+        />
+        {PhoneNumberGroup}
+        <Button
+          icon={<Add />}
+          label="Add Number"
+          plain
+          hoverIndicator
+          onClick={addPhone}
+        />
+        <Box direction="row" justify="between" margin={{ top: 'medium' }}>
+          <Button label="Cancel" />
+          <Button type="reset" label="Reset" />
+          <Button type="submit" label="Submit" primary />
+        </Box>
+      </Form>
+    </Box>
+    // </Grommet>
   );
 };
 

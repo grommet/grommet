@@ -1,9 +1,10 @@
 import React from 'react';
-import { render, fireEvent, act } from '@testing-library/react';
+import { render, fireEvent, act, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -62,7 +63,7 @@ describe('Select', () => {
   });
 
   test('prop: onOpen', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onOpen = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -87,7 +88,7 @@ describe('Select', () => {
   });
 
   test('prop: onClose', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onClose = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -110,21 +111,23 @@ describe('Select', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
-  test('0 value', () => {
-    const { container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={[0, 1]}
-        value={0}
-      />,
-    );
+  [0, null].forEach((value) =>
+    test(`${value} value`, () => {
+      const { asFragment } = render(
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[0, 1]}
+          value={value}
+        />,
+      );
 
-    expect(container.firstChild).toMatchSnapshot();
-  });
+      expect(asFragment()).toMatchSnapshot();
+    }),
+  );
 
   test('search', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onSearch = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -153,7 +156,7 @@ describe('Select', () => {
   });
 
   test('search and select', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onSearch = jest.fn();
     const onChange = jest.fn();
     const Test = () => {
@@ -275,7 +278,7 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
       <Grommet>
         <Test />
       </Grommet>,
@@ -294,6 +297,101 @@ describe('Select', () => {
         },
       }),
     );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('onChange without labelKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          valueKey="id"
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, asFragment } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          id: 1,
+          name: 'Value1',
+        },
+      }),
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('onChange without labelKey or valueKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('1')); // 1 matches first key
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          id: 1,
+          name: 'Value1',
+        },
+      }),
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('onChange with valueKey string', () => {
@@ -321,7 +419,7 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
       <Grommet>
         <Test />
       </Grommet>,
@@ -340,10 +438,57 @@ describe('Select', () => {
         },
       }),
     );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('onChange with valueKey object', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          valueKey={{ key: 'id', reduce: true }}
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, asFragment } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: 1,
+      }),
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('disabled key', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const Test = () => {
       const [value] = React.useState();
       return (
@@ -667,7 +812,7 @@ describe('Select', () => {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    const selectButton = container.querySelector('Button');
+    const selectButton = document.getElementById('test-open-id');
     let style;
 
     style = window.getComputedStyle(selectButton);
@@ -1022,7 +1167,7 @@ describe('Select', () => {
   });
 
   test('keyboard navigation timeout', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     // scrollIntoView is not implemented in jsdom, so we need to mock.
     // Select keyboard / keyboard nav timeout uses InfiniteScroll which
     // has scrollIntoView as part of its implementation.
@@ -1052,7 +1197,7 @@ describe('Select', () => {
   });
 
   test('Search timeout', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onSearch = jest.fn();
     const { container, getByPlaceholderText } = render(
       <Grommet>
@@ -1082,7 +1227,7 @@ describe('Select', () => {
   });
 
   test('disabled option value', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { getByPlaceholderText } = render(
       <Grommet>
         <Select
@@ -1110,13 +1255,19 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText } = render(
+    render(
       <Grommet>
         <Test />
       </Grommet>,
     );
-    fireEvent.click(getByPlaceholderText('test select'));
 
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    fireEvent.click(screen.getByRole('option', { name: 'one' }));
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    const clearButton = screen.getByRole('button', {
+      name: 'Clear selection. Or, press down arrow to move to select options',
+    });
+    expect(clearButton).toBeTruthy();
     expectPortal('test-select__drop').toMatchSnapshot();
   });
 
@@ -1133,12 +1284,19 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText } = render(
+    render(
       <Grommet>
         <Test />
       </Grommet>,
     );
-    fireEvent.click(getByPlaceholderText('test select'));
+
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    fireEvent.click(screen.getByRole('option', { name: 'one' }));
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    const clearButton = screen.getByRole('button', {
+      name: 'Clear selection. Or, press shift tab to move to select options',
+    });
+    expect(clearButton).toBeTruthy();
 
     expectPortal('test-select__drop').toMatchSnapshot();
   });
@@ -1298,7 +1456,7 @@ describe('Select', () => {
   });
 
   test('select option by typing should not break if caller passes JSX', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onChange = jest.fn();
 
     const { getByPlaceholderText, container } = render(
@@ -1343,6 +1501,31 @@ describe('Select', () => {
     expect(getByRole('button', { name: 'test' })).toBeTruthy();
     expect(getByRole('button', { name: 'test-select' })).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('object options and null value', () => {
+    render(
+      <Grommet>
+        <Select
+          placeholder="test select"
+          valueKey="id"
+          value={null}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+    const select = screen.getByRole('button', { name: /test select/ });
+    fireEvent.click(select);
+    expect(select).toHaveAttribute('aria-expanded', 'true');
   });
 
   window.scrollTo.mockRestore();

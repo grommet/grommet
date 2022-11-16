@@ -123,6 +123,8 @@ exports[`Menu basic 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -302,6 +304,8 @@ exports[`Menu close by clicking outside 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -560,6 +564,10 @@ exports[`Menu close by clicking outside 2`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
@@ -606,6 +614,7 @@ exports[`Menu close by clicking outside 2`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
@@ -644,12 +653,15 @@ exports[`Menu close by clicking outside 2`] = `
     </div>
     <div
       class="c10"
+      role="menu"
     >
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -661,9 +673,11 @@ exports[`Menu close by clicking outside 2`] = `
       </div>
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -680,7 +694,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .Gcwat {
+  .kXRsIU {
     padding: 6px;
   }
 }"
@@ -843,6 +857,8 @@ exports[`Menu close on tab 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -1034,6 +1050,8 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
     class="c0"
   >
     <button
+      aria-expanded="false"
+      aria-haspopup="menu"
       aria-label="My Menu"
       class="c1"
       type="button"
@@ -1064,6 +1082,8 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
       </div>
     </button>
     <button
+      aria-expanded="false"
+      aria-haspopup="menu"
       aria-label="My Menu 2"
       class="c1"
       type="button"
@@ -1254,6 +1274,8 @@ exports[`Menu custom message 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -1443,6 +1465,8 @@ exports[`Menu custom theme icon color 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     type="button"
@@ -1577,6 +1601,7 @@ exports[`Menu custom theme with default button 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 
 .c1:focus {
@@ -1633,6 +1658,8 @@ exports[`Menu custom theme with default button 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     type="button"
@@ -1820,6 +1847,8 @@ exports[`Menu disabled 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     disabled=""
@@ -2028,6 +2057,8 @@ exports[`Menu gap between icon and label 1`] = `
     class="c0"
   >
     <button
+      aria-expanded="true"
+      aria-haspopup="menu"
       aria-label="Open Menu"
       class="c1"
       type="button"
@@ -2359,6 +2390,8 @@ exports[`Menu justify content 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -2389,6 +2422,8 @@ exports[`Menu justify content 1`] = `
     </div>
   </button>
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -2419,6 +2454,8 @@ exports[`Menu justify content 1`] = `
     </div>
   </button>
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -2449,6 +2486,8 @@ exports[`Menu justify content 1`] = `
     </div>
   </button>
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -2479,6 +2518,8 @@ exports[`Menu justify content 1`] = `
     </div>
   </button>
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -2509,6 +2550,8 @@ exports[`Menu justify content 1`] = `
     </div>
   </button>
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Abrir Menu"
     class="c1"
     type="button"
@@ -2623,6 +2666,8 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     type="button"
@@ -2789,6 +2834,8 @@ exports[`Menu navigate through suggestions and select 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -2979,6 +3026,8 @@ exports[`Menu open and close on click 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -3014,28 +3063,30 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <button
+    aria-expanded="true"
+    aria-haspopup="menu"
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 eiEooU"
+    class="StyledButton-sc-323bzc-0 hIPuDF"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 Gcwat"
+      class="StyledBox-sc-13pk1d4-0 kXRsIU"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 gKFELF"
+        class="StyledText-sc-1sadyjn-0 jbJJSg"
       >
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 knmKel"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ilMzAg"
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 kxOTGz"
+        class="StyledIcon-sc-ofa7kd-0 eTQGBW"
         viewBox="0 0 24 24"
       >
         <path
@@ -3275,6 +3326,10 @@ exports[`Menu open and close on click 3`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
@@ -3321,6 +3376,7 @@ exports[`Menu open and close on click 3`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
@@ -3359,12 +3415,15 @@ exports[`Menu open and close on click 3`] = `
     </div>
     <div
       class="c10"
+      role="menu"
     >
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -3376,9 +3435,11 @@ exports[`Menu open and close on click 3`] = `
       </div>
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -3390,10 +3451,12 @@ exports[`Menu open and close on click 3`] = `
       </div>
       <div
         class="c4"
+        role="none"
       >
         <a
           class="c5"
           href="/test"
+          role="menuitem"
         >
           <div
             class="c11"
@@ -3409,7 +3472,7 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .Gcwat {
+  .kXRsIU {
     padding: 6px;
   }
 }"
@@ -3572,6 +3635,8 @@ exports[`Menu open on down close on esc 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -3762,6 +3827,8 @@ exports[`Menu open on up close on esc 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -4020,6 +4087,10 @@ exports[`Menu open on up close on esc 2`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
@@ -4066,6 +4137,7 @@ exports[`Menu open on up close on esc 2`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
@@ -4104,12 +4176,15 @@ exports[`Menu open on up close on esc 2`] = `
     </div>
     <div
       class="c10"
+      role="menu"
     >
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -4121,9 +4196,11 @@ exports[`Menu open on up close on esc 2`] = `
       </div>
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -4140,7 +4217,7 @@ exports[`Menu open on up close on esc 2`] = `
 
 exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
-  .Gcwat {
+  .kXRsIU {
     padding: 6px;
   }
 }"
@@ -4316,6 +4393,8 @@ exports[`Menu reverse icon and label 1`] = `
     class="c0"
   >
     <button
+      aria-expanded="true"
+      aria-haspopup="menu"
       aria-label="Open Menu"
       class="c1"
       type="button"
@@ -4506,6 +4585,8 @@ exports[`Menu select an item 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -4696,6 +4777,8 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -4898,6 +4981,8 @@ exports[`Menu should apply themed drop props 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="true"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     type="button"
@@ -4928,6 +5013,473 @@ exports[`Menu should apply themed drop props 1`] = `
     </div>
   </button>
 </div>
+`;
+
+exports[`Menu should group items 1`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 12px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c5:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="test-menu__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+    tabindex="-1"
+  >
+    <div
+      class="c4"
+    >
+      <button
+        aria-label="Close Menu"
+        class="c5"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c6"
+        >
+          <span
+            class="c7"
+          >
+            Test Menu
+          </span>
+          <div
+            class="c8"
+          />
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="c10"
+      role="menu"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c11"
+        >
+          <div
+            class="c4"
+            role="none"
+          >
+            <button
+              class="c5"
+              role="menuitem"
+              type="button"
+            >
+              <div
+                class="c12"
+              >
+                Item 1
+              </div>
+            </button>
+          </div>
+          <div
+            class="c4"
+            role="none"
+          >
+            <button
+              class="c5"
+              role="menuitem"
+              type="button"
+            >
+              <div
+                class="c12"
+              >
+                Item 2
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c2"
+      >
+        <div
+          class="c13"
+        >
+          <div
+            class="c14"
+          />
+        </div>
+        <div
+          class="c11"
+        >
+          <div
+            class="c4"
+            role="none"
+          >
+            <button
+              class="c5"
+              role="menuitem"
+              type="button"
+            >
+              <div
+                class="c12"
+              >
+                Item 3
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Menu should group items 2`] = `
+"@media only screen and (max-width: 768px) {
+  .kXRsIU {
+    padding: 6px;
+  }
+}"
 `;
 
 exports[`Menu should have no accessibility violations 1`] = `
@@ -5072,6 +5624,8 @@ exports[`Menu should have no accessibility violations 1`] = `
     class="c0"
   >
     <button
+      aria-expanded="false"
+      aria-haspopup="menu"
       aria-label="Open Menu"
       class="c1"
       type="button"
@@ -5257,6 +5811,8 @@ exports[`Menu tab through menu until it closes 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -5447,6 +6003,8 @@ exports[`Menu with dropAlign bottom renders 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -5705,6 +6263,10 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c8 {
     padding: 6px;
@@ -5751,15 +6313,19 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
+      role="menu"
     >
       <div
         class="c5"
+        role="none"
       >
         <button
           class="c6"
+          role="menuitem"
           type="button"
         >
           <div
@@ -5771,9 +6337,11 @@ exports[`Menu with dropAlign bottom renders 2`] = `
       </div>
       <div
         class="c5"
+        role="none"
       >
         <button
           class="c6"
+          role="menuitem"
           type="button"
         >
           <div
@@ -5825,7 +6393,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 
 exports[`Menu with dropAlign bottom renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .Gcwat {
+  .kXRsIU {
     padding: 6px;
   }
 }"
@@ -5988,6 +6556,8 @@ exports[`Menu with dropAlign top renders 1`] = `
   class="c0"
 >
   <button
+    aria-expanded="false"
+    aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
     id="test-menu"
@@ -6246,6 +6816,10 @@ exports[`Menu with dropAlign top renders 2`] = `
   max-height: inherit;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
@@ -6292,6 +6866,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 >
   <div
     class="c2 c3"
+    tabindex="-1"
   >
     <div
       class="c4"
@@ -6330,12 +6905,15 @@ exports[`Menu with dropAlign top renders 2`] = `
     </div>
     <div
       class="c10"
+      role="menu"
     >
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -6347,9 +6925,11 @@ exports[`Menu with dropAlign top renders 2`] = `
       </div>
       <div
         class="c4"
+        role="none"
       >
         <button
           class="c5"
+          role="menuitem"
           type="button"
         >
           <div
@@ -6366,7 +6946,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 exports[`Menu with dropAlign top renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .Gcwat {
+  .kXRsIU {
     padding: 6px;
   }
 }"

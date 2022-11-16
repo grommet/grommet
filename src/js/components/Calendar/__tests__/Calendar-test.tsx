@@ -3,9 +3,10 @@ import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { axe } from 'jest-axe';
-import { fireEvent, render, act } from '@testing-library/react';
+import { fireEvent, render, act, screen } from '@testing-library/react';
 import { FormNextLink, FormPreviousLink } from 'grommet-icons';
 import { Box, Button, Calendar, Grommet, Text, CalendarProps } from '../..';
 
@@ -38,27 +39,25 @@ describe('Calendar', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('disabled', () => {
-    // need to set the date to avoid snapshot drift over time
-    // have disabled date be distinct from selected date
-    const normalizeForTimezone = (value: string, timestamp: string) => {
-      const hourDelta = parseInt(timestamp?.split(':')[0], 10);
-      const valueOffset = hourDelta * 60 * 1000; // ms
-      const localOffset = new Date().getTimezoneOffset() * 60 * 1000;
+  test('date without time specified', () => {
+    // correct date displayed if time is not specified in ISOstring
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar date={DATE.split('T')[0]} animate={false} />
+      </Grommet>,
+    );
 
-      return (
-        value &&
-        new Date(
-          new Date(value).getTime() - valueOffset + localOffset,
-        ).toISOString()
-      );
-    };
-    const adjustedDate = normalizeForTimezone(DATE, '08:00:00.000Z');
-    const disabledDate = new Date(adjustedDate);
+    expect(
+      getByLabelText('January 2020; Currently selected January 15, 2020;'),
+    ).not.toBeUndefined();
+  });
+
+  test('disabled', () => {
+    const disabledDate = new Date(DATE);
     disabledDate.setDate(disabledDate.getDate() + 1);
     const { asFragment } = render(
       <Grommet>
-        <Calendar date={DATE} disabled={[disabledDate.toDateString()]} />
+        <Calendar date={DATE} disabled={[disabledDate.toISOString()]} />
       </Grommet>,
     );
 
@@ -241,7 +240,7 @@ describe('Calendar', () => {
   });
 
   test('change months', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { container, getByLabelText } = render(
       <Grommet>
         <Calendar date={DATE} />
@@ -279,6 +278,100 @@ describe('Calendar', () => {
         expect.stringMatching(/^2020-01-20T/),
       ],
     ]);
+  });
+
+  test('disabled previous month button when date is before bounds', () => {
+    render(
+      <Grommet>
+        <Calendar
+          date="2019-01-15T00:00:00-08:00"
+          onSelect={jest.fn()}
+          range
+          animate={false}
+          bounds={['2020-01-01', '2020-01-31']}
+        />
+      </Grommet>,
+    );
+
+    const previousMonthButton = screen.getByRole('button', {
+      name: 'Go to December 2018',
+    });
+    const nextMonthButton = screen.getByRole('button', {
+      name: 'Go to February 2019',
+    });
+
+    expect(previousMonthButton).toBeDisabled();
+    expect(nextMonthButton).not.toBeDisabled();
+  });
+
+  test('disabled next month button when date is after bounds', () => {
+    render(
+      <Grommet>
+        <Calendar
+          date="2020-02-15T00:00:00-08:00"
+          onSelect={jest.fn()}
+          range
+          animate={false}
+          bounds={['2020-01-01', '2020-01-31']}
+        />
+      </Grommet>,
+    );
+
+    const previousMonthButton = screen.getByRole('button', {
+      name: 'Go to January 2020',
+    });
+    const nextMonthButton = screen.getByRole('button', {
+      name: 'Go to March 2020',
+    });
+
+    expect(previousMonthButton).not.toBeDisabled();
+    expect(nextMonthButton).toBeDisabled();
+  });
+
+  test('change to next month when date is before bounds', () => {
+    const onReference = jest.fn();
+    render(
+      <Grommet>
+        <Calendar
+          date="2019-01-15T00:00:00-08:00"
+          onReference={onReference}
+          range
+          animate={false}
+          bounds={['2020-01-01', '2020-01-31']}
+        />
+      </Grommet>,
+    );
+
+    const nextMonthButton = screen.getByRole('button', {
+      name: 'Go to February 2019',
+    });
+
+    fireEvent.click(nextMonthButton);
+
+    expect(onReference).toBeCalledWith(expect.stringContaining('2019-02-01'));
+  });
+
+  test('change to next month when date is after bounds', () => {
+    const onReference = jest.fn();
+    render(
+      <Grommet>
+        <Calendar
+          date="2021-01-15T00:00:00-08:00"
+          onReference={onReference}
+          range
+          animate={false}
+          bounds={['2020-01-01', '2020-01-31']}
+        />
+      </Grommet>,
+    );
+
+    const previousMonthButton = screen.getByRole('button', {
+      name: 'Go to December 2020',
+    });
+
+    fireEvent.click(previousMonthButton);
+
+    expect(onReference).toBeCalledWith(expect.stringContaining('2020-12-31'));
   });
 
   test('select date with range no date set', () => {
@@ -514,6 +607,43 @@ describe('Calendar', () => {
         expect.stringMatching(/^2020-01-03T/),
       ],
     ]);
+  });
+
+  test('daylight savings', () => {
+    const onSelect = jest.fn();
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar
+          reference="2022-07-14T08:00:00.000Z"
+          onSelect={onSelect}
+          animate={false}
+        />
+      </Grommet>,
+    );
+    fireEvent.click(getByLabelText('Fri Jul 15 2022'));
+    expect(onSelect).toBeCalledWith(
+      expect.stringMatching(/^2022-07-15T08:00:00.000Z/),
+    );
+
+    // Change the Calendar from July to March
+    fireEvent.click(getByLabelText('Go to June 2022'));
+    fireEvent.click(getByLabelText('Go to May 2022'));
+    fireEvent.click(getByLabelText('Go to April 2022'));
+    fireEvent.click(getByLabelText('Go to March 2022'));
+
+    fireEvent.click(getByLabelText('Wed Mar 02 2022'));
+
+    const date = new Date();
+    const january = new Date(date.getFullYear(), 0, 1).getTimezoneOffset();
+    const july = new Date(date.getFullYear(), 6, 1).getTimezoneOffset();
+    const hasDaylightSavings = january !== july;
+
+    expect(onSelect).toBeCalledWith(
+      // expecting one hour diff bc of daylight savings shift, otherwise no shift
+      expect.stringMatching(
+        `2022-03-02T0${hasDaylightSavings ? 9 : 8}:00:00.000Z`,
+      ),
+    );
   });
 });
 

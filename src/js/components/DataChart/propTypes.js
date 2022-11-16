@@ -71,7 +71,15 @@ const chartType = PropTypes.oneOfType([
     point: pointPropType,
     round: PropTypes.bool,
     thickness: thicknessType,
-    type: PropTypes.oneOf(['bar', 'bars', 'line', 'area', 'point']),
+    type: PropTypes.oneOf([
+      'bar',
+      'bars',
+      'line',
+      'area',
+      'areas',
+      'lines',
+      'point',
+    ]),
   }),
 ]);
 
@@ -113,7 +121,12 @@ if (process.env.NODE_ENV !== 'production') {
         ]),
       }),
     ]),
-    bounds: PropTypes.oneOf(['align']),
+    bounds: PropTypes.oneOfType([
+      PropTypes.oneOf(['align']),
+      PropTypes.shape({
+        y: PropTypes.arrayOf(PropTypes.number),
+      }),
+    ]),
     chart: PropTypes.oneOfType([chartType, PropTypes.arrayOf(chartType)]),
     data: PropTypes.arrayOf(PropTypes.shape({})),
     detail: PropTypes.bool,
@@ -147,7 +160,12 @@ if (process.env.NODE_ENV !== 'production') {
       }),
     ]),
     legend: PropTypes.bool,
+    offset: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({ gap: thicknessType }),
+    ]),
     pad: padPropType,
+    placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     series: PropTypes.oneOfType([seriesType, PropTypes.arrayOf(seriesType)]),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['fill']),

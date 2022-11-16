@@ -208,3 +208,37 @@ test('TableCell plain renders', () => {
 
   expect(container.firstChild).toMatchSnapshot();
 });
+
+test('TableCell border renders', () => {
+  const { container } = render(
+    <Grommet>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell border="top" />
+            <TableCell border={{ side: 'top', size: 'medium' }} />
+            <TableCell
+              border={[
+                { side: 'right', size: 'medium' },
+                { side: 'bottom', size: 'large' },
+              ]}
+            />
+          </TableRow>
+        </TableHeader>
+      </Table>
+    </Grommet>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('Table with ref', () => {
+  const ref = React.createRef<HTMLTableElement>();
+  render(
+    <Grommet>
+      <Table ref={ref} />
+    </Grommet>,
+  );
+
+  expect(ref.current).not.toBeNull();
+});

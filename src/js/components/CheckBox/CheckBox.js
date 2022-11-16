@@ -164,7 +164,7 @@ const CheckBox = forwardRef(
       </StyledCheckBoxBox>
     );
 
-    const side = reverse ? 'left' : 'right';
+    const side = !reverse !== !theme.dir ? 'left' : 'right';
     const checkBoxNode = (
       <StyledCheckBox
         as={Box}
@@ -174,6 +174,7 @@ const CheckBox = forwardRef(
         {...themeableProps}
       >
         <StyledCheckBoxInput
+          aria-label={ariaLabel || a11yTitle}
           {...rest}
           ref={ref}
           type="checkbox"
@@ -210,7 +211,6 @@ const CheckBox = forwardRef(
 
     return (
       <StyledCheckBoxContainer
-        aria-label={ariaLabel || a11yTitle}
         fillProp={fill}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}

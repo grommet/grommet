@@ -151,6 +151,13 @@ const TextInput = forwardRef(
       if (onSuggestionsClose) onSuggestionsClose();
     }, [onSuggestionsClose, suggestions]);
 
+    const clickOutside = useCallback(
+      (event) => {
+        if (event.target !== inputRef.current) closeDrop();
+      },
+      [inputRef, closeDrop],
+    );
+
     // Handle scenarios where we have focus, the drop isn't showing,
     // and the suggestions change. We don't want to open the drop if
     // the drop has been closed by onEsc and the suggestions haven't
@@ -315,15 +322,13 @@ const TextInput = forwardRef(
           align={dropAlign}
           responsive={false}
           target={dropTarget || inputRef.current}
-          onClickOutside={({ target }) => {
-            if (target !== inputRef.current) {
-              closeDrop();
-            }
-          }}
+          onClickOutside={clickOutside}
           onEsc={closeDrop}
           {...dropProps}
         >
           <ContainerBox
+            id={id ? `listbox__${id}` : undefined}
+            role="listbox"
             overflow="auto"
             dropHeight={dropHeight}
             onMouseMove={() => setMouseMovedSinceLastKey(true)}
@@ -339,6 +344,8 @@ const TextInput = forwardRef(
                 }
               >
                 {(suggestion, index, itemRef) => {
+                  const active = activeSuggestionIndex === index;
+                  const selected = suggestion === value;
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.
                   const renderedLabel = renderLabel(suggestion);
@@ -361,7 +368,10 @@ const TextInput = forwardRef(
                       ref={itemRef}
                     >
                       <Button
-                        active={activeSuggestionIndex === index}
+                        id={id ? `listbox-option-${index}__${id}` : undefined}
+                        role="option"
+                        aria-selected={selected ? 'true' : 'false'}
+                        active={active}
                         fill="horizontal"
                         plain={!child ? undefined : true}
                         align="start"
@@ -406,6 +416,24 @@ const TextInput = forwardRef(
       keyboardProps.onDown = openDrop;
     }
 
+    /*
+    If the text input has a list of suggestions, add the WAI-ARIA 1.2
+    combobox role and states.
+    */
+    let comboboxProps = {};
+    let activeOptionID;
+    if (id && suggestions?.length > -1) {
+      if (showDrop && activeSuggestionIndex > -1) {
+        activeOptionID = `listbox-option-${activeSuggestionIndex}__${id}`;
+      }
+      comboboxProps = {
+        'aria-activedescendant': activeOptionID,
+        'aria-autocomplete': 'list',
+        'aria-expanded': showDrop ? 'true' : 'false',
+        'aria-controls': showDrop ? `listbox__${id}` : undefined,
+        role: 'combobox',
+      };
+    }
     // For the Keyboard target below, if we have focus,
     // either on the input element or within the drop,
     // then we set the target to the document,
@@ -440,6 +468,7 @@ const TextInput = forwardRef(
             textAlign={textAlign}
             {...rest}
             {...extraProps}
+            {...comboboxProps}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             readOnly={readOnly}

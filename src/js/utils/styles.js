@@ -9,6 +9,12 @@ export const baseStyle = css`
   font-size: ${(props) => props.theme.global.font.size};
   line-height: ${(props) => props.theme.global.font.height};
   font-weight: ${(props) => props.theme.global.font.weight};
+  /* check if prop is defined in the theme*/
+  ${(props) =>
+    props.theme.global.font.variant &&
+    `
+    font-variant:${props.theme.global.font.variant};
+  `}
   ${(props) =>
     !props.plain && backgroundStyle(props.theme.baseBackground, props.theme)}
   box-sizing: border-box;
@@ -518,6 +524,7 @@ const ALIGN_SELF_MAP = {
   end: 'flex-end',
   start: 'flex-start',
   stretch: 'stretch',
+  baseline: 'baseline',
 };
 
 export const genericStyles = css`
@@ -840,7 +847,14 @@ const heightObjectStyle = (height, theme) => {
         min-height: ${getSize(theme, height.min)};
       `,
     );
+  // backwards compatibile
   if (height.width)
+    result.push(
+      css`
+        height: ${getSize(theme, height.height)};
+      `,
+    );
+  if (height.height)
     result.push(
       css`
         height: ${getSize(theme, height.height)};

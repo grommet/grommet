@@ -152,6 +152,7 @@ export const ClickableDataTable = () => {
         columns={columns}
         data={DATA}
         step={10}
+        disabled={['Matt']}
         onClickRow={(event) => {
           setShow(true);
           setClicked(event.datum);

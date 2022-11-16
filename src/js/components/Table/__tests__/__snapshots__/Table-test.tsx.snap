@@ -21,12 +21,6 @@ exports[`Table caption renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -59,12 +53,6 @@ exports[`Table renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -91,12 +79,6 @@ exports[`TableBody renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -106,6 +88,90 @@ exports[`TableBody renders 1`] = `
     <tbody
       class="StyledTable__StyledTableBody-sc-1m3u5g-3"
     />
+  </table>
+</div>
+`;
+
+exports[`TableCell border renders 1`] = `
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-top: solid 4px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-right: solid 4px rgba(0,0,0,0.33);
+  border-bottom: solid 12px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2"
+      >
+        <td
+          class="c2"
+        />
+        <td
+          class="c3"
+        />
+        <td
+          class="c4"
+        />
+      </tr>
+    </thead>
   </table>
 </div>
 `;
@@ -138,12 +204,6 @@ exports[`TableCell plain renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -220,12 +280,6 @@ exports[`TableCell renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -311,12 +365,6 @@ exports[`TableCell scope renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div
@@ -505,12 +553,6 @@ exports[`TableCell size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -654,12 +696,6 @@ exports[`TableCell verticalAlign renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -704,12 +740,6 @@ exports[`TableFooter renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -740,12 +770,6 @@ exports[`TableHeader renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
 <div
   class="c0"
 >
@@ -774,12 +798,6 @@ exports[`TableRow renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
 }
 
 <div

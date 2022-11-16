@@ -59,11 +59,15 @@ const SkipLinks = ({ children, id, messages }) => {
           {format({ id: 'skipLinks.skipTo', messages })}
         </Text>
         <Box align="center" gap="medium">
-          {Children.map(children, (child, index) =>
-            cloneElement(child, {
-              key: `skip-link-${index}`,
-              onClick: removeLayer,
-            }),
+          {Children.map(
+            children,
+            (child, index) =>
+              child &&
+              cloneElement(child, {
+                // eslint-disable-next-line react/no-array-index-key
+                key: `skip-link-${index}`,
+                onClick: removeLayer,
+              }),
           )}
         </Box>
       </Box>

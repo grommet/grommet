@@ -1,6 +1,6 @@
-global.console.warn = message => {
+global.console.warn = (message) => {
   throw message;
 };
-global.console.error = message => {
+global.console.error = (message) => {
   throw message;
 };

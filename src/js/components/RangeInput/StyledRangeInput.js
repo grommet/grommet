@@ -40,7 +40,7 @@ const getBoundColor = (props, bound) => {
 
 const trackColorStyle = (props) => {
   const { max, min } = props;
-  const thumbPosition = `${((props.value - min) / (max - min)) * 100}%`;
+  const thumbPosition = `${(((props.value || 0) - min) / (max - min)) * 100}%`;
   let defaultTrackColor;
 
   // backward compatibility in case no bounds are defined
@@ -148,6 +148,14 @@ const disabledRangeInputStyle = (props, context) => css`
   )};`}
 `;
 
+const hoverStyle = (props) => css`
+  box-shadow: 0px 0px 0px 2px
+    ${normalizeColor(
+      props.theme.rangeInput.thumb.color || 'control',
+      props.theme,
+    )};
+`;
+
 const rangeTrackStyle = css`
   box-sizing: border-box;
   width: 100%;
@@ -191,7 +199,7 @@ const firefoxMicrosoftThumbStyle = css`
   ${rangeThumbStyle} margin-top: 0px;
   height: ${(props) => props.theme.global.spacing};
   width: ${(props) => props.theme.global.spacing};
-  ${(props) => props.focus && focusStyle()}
+  ${(props) => props.focus && props.focusIndicator && focusStyle()}
   ${(props) =>
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
@@ -209,6 +217,7 @@ const StyledRangeInput = styled.input`
   padding: 0px;
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   background: transparent;
+  margin: 0px;
 
   ${(props) =>
     props.theme.rangeInput.pad &&
@@ -239,12 +248,14 @@ const StyledRangeInput = styled.input`
       !props.disabled &&
       css`
         &:hover {
-          box-shadow: 0px 0px 0px 2px
-            ${normalizeColor(
-              props.theme.rangeInput.thumb.color || 'control',
-              props.theme,
-            )};
+          ${hoverStyle(props)}
         }
+      `}
+    ${(props) =>
+      props.focus &&
+      !props.focusIndicator &&
+      css`
+        ${hoverStyle(props)}
       `}
   }
 
@@ -264,19 +275,11 @@ const StyledRangeInput = styled.input`
     !props.disabled &&
     css`
       &:hover::-moz-range-thumb {
-        box-shadow: 0px 0px 0px 2px
-          ${normalizeColor(
-            props.theme.rangeInput.thumb.color || 'control',
-            props.theme,
-          )};
+        ${hoverStyle(props)}
       }
 
       &:hover::-ms-thumb {
-        box-shadow: 0px 0px 0px 2px
-          ${normalizeColor(
-            props.theme.rangeInput.thumb.color || 'control',
-            props.theme,
-          )};
+        ${hoverStyle(props)}
       }
     `}
 
@@ -297,7 +300,7 @@ const StyledRangeInput = styled.input`
   }
 
   &:focus::-webkit-slider-thumb {
-    ${(props) => props.focus && focusStyle()}
+    ${(props) => props.focus && props.focusIndicator && focusStyle()}
   }
 
   &:focus-visible {

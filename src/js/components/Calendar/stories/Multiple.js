@@ -20,7 +20,8 @@ export const Multiple = () => {
             nextDates.splice(index, 1);
           }
           setDates(nextDates);
-          console.log('Select', date, nextDates);
+          console.log('Select iso date:', date, nextDates);
+          console.log('Select utc date:', new Date(date));
         }}
         bounds={['2020-09-08', '2025-12-13']}
       />

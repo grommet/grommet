@@ -11,10 +11,17 @@ type ChartType =
       opacity?: ChartProps['opacity'];
       point?: ChartProps['point']; // default across points
       // property to get values from objects in data
-      property:
+      property?:
         | string
-        | string[]
-        | { property?: string; color: string }[]
+        | (
+            | string
+            | {
+                property: string;
+                color?: string;
+                opacity?: string;
+                thickness?: string;
+              }
+          )[]
         | {
             color?:
               | string
@@ -33,7 +40,7 @@ type ChartType =
           };
       round?: ChartProps['round']; // defaults to undefined
       thickness?: ChartProps['thickness']; // defaults to auto assigned based on available space and amount of data
-      type?: ChartProps['type'] | 'bars'; // defaults to 'bar',
+      type?: ChartProps['type'] | 'bars' | 'areas' | 'lines'; // defaults to 'bar',
     };
 
 type SeriesType =
@@ -41,7 +48,7 @@ type SeriesType =
   | {
       label?: string | React.ReactNode; // used for legend and/or hover/touch detail
       prefix?: string; // used for values in axes and hover/touch detail
-      property: string; // property key to get values from objects in data
+      property?: string; // property key to get values from objects in data
       render?: (value: any, datum: {}, property: string) => React.ReactNode; // used for hover/touch detail
       suffix?: string; // used for values in axes and hover/touch detail
     };
@@ -66,7 +73,11 @@ export interface DataChartProps {
           | string
           | { property?: string; granularity?: GranularityType };
       };
-  bounds?: 'align';
+  bounds?:
+    | 'align'
+    | {
+        y?: number[];
+      };
   // chart - if undefined, { type: 'bar', property: <first series property> }
   chart?: ChartType | ChartType[];
   // data - an array of objects containing data values
@@ -87,11 +98,15 @@ export interface DataChartProps {
       };
   // legend - when true, { side: 'bottom' }
   legend?: boolean | { side: 'left' | 'right' | 'bottom' };
+  // offset - whether to shift the charts to reveal them all, mostly useful
+  // for bar charts
+  offset?: boolean | { gap?: ChartProps['thickness'] };
   // pad - padding around the guides/visuals
   // defaults to what's needed based on axis and chart types
   pad?: GridProps['pad'];
+  placeholder?: string | React.ReactNode;
   // series - the data item properties and any
-  series: SeriesType | SeriesType[];
+  series?: SeriesType | SeriesType[];
   margin?: MarginType; // generic
   size?: ChartProps['size']; // width and height, defaults to 'fill'
 }

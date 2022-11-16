@@ -45,7 +45,9 @@ describe('Tag', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('onClick', () => {
+  test('onClick', async () => {
+    const user = userEvent.setup();
+
     const onClick = jest.fn();
     const { container } = render(
       <Grommet>
@@ -53,13 +55,15 @@ describe('Tag', () => {
       </Grommet>,
     );
 
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(onClick).toBeCalled();
 
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('onRemove', () => {
+  test('onRemove', async () => {
+    const user = userEvent.setup();
+
     const onRemove = jest.fn();
     const { container } = render(
       <Grommet>
@@ -67,8 +71,22 @@ describe('Tag', () => {
       </Grommet>,
     );
 
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(onRemove).toBeCalled();
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('size', () => {
+    const { container } = render(
+      <Grommet>
+        <Tag size="xsmall" name="Name" value="Value" />
+        <Tag size="small" name="Name" value="Value" />
+        <Tag size="medium" name="Name" value="Value" />
+        <Tag size="large" name="Name" value="Value" />
+        <Tag size="xlarge" name="Name" value="Value" />
+      </Grommet>,
+    );
 
     expect(container.firstChild).toMatchSnapshot();
   });

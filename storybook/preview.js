@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { hpe } from 'grommet-theme-hpe';
-import { Grommet, grommet, Box, Text } from '../src/js';
 import isChromatic from 'chromatic/isChromatic';
+import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
 
 const CUSTOM_THEMED = 'Custom Themed';
 const THEMES = {
   hpe,
   grommet,
+  hacktoberfest2022,
   base: {},
 };
 
@@ -17,6 +18,8 @@ export const decorators = [
       setState(context.globals.theme);
     }, [context.globals.theme]);
     const full = context.parameters?.args?.full || 'min';
+    const dir = context.parameters?.args?.dir;
+    const options = context.parameters?.args?.options;
 
     /**
      * This demonstrates that custom themed stories are driven off the "base"
@@ -44,7 +47,7 @@ export const decorators = [
     }
 
     return (
-      <Grommet theme={THEMES[state]} full={full}>
+      <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
         <Story state={THEMES[state]} />
       </Grommet>
     );
@@ -81,11 +84,15 @@ export const parameters = {
 
 export const globalTypes = {
   theme: {
-    name: 'Theme',
     defaultValue: 'grommet',
     toolbar: {
-      items: ['base', 'grommet', 'hpe'],
-      showName: true,
+      title: 'Theme',
+      items: [
+        { title: 'base', value: 'base' },
+        { title: 'grommet', value: 'grommet' },
+        { title: 'hpe', value: 'hpe' },
+        { title: 'hacktoberfest2022', value: 'hacktoberfest2022' },
+      ],
     },
   },
 };

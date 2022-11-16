@@ -69,21 +69,15 @@ export const sameDayOrBefore = (date1, date2) =>
 export const daysApart = (date1, date2) =>
   Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
 
-export const formatToLocalYYYYMMDD = (date) => {
-  const adjustedDate = new Date(date);
-  return new Date(
-    adjustedDate.getTime() - adjustedDate.getTimezoneOffset() * 60000,
-  )
-    .toISOString()
-    .split('T')[0];
-};
 // betweenDates takes an array of two elements and checks if the
 // supplied date lies between them, inclusive.
 // returns 2 if exact match to one end, 1 if between, undefined otherwise
 export const betweenDates = (date, dates) => {
   let result;
   if (dates) {
-    const [from, to] = dates.map((d) => (d ? new Date(d) : undefined));
+    const [from, to] = Array.isArray(dates)
+      ? dates.map((d) => (d ? new Date(d) : undefined))
+      : [dates, undefined];
     if ((from && sameDay(date, from)) || (to && sameDay(date, to))) {
       result = 2;
     } else if (
@@ -109,8 +103,8 @@ export const withinDates = (date, dates) => {
   if (dates) {
     if (Array.isArray(dates)) {
       dates.some((d) => {
-        if (typeof d === 'string') {
-          if (sameDay(date, new Date(d))) {
+        if (d instanceof Date) {
+          if (sameDay(date, d)) {
             result = 2;
           }
         } else {
@@ -118,58 +112,19 @@ export const withinDates = (date, dates) => {
         }
         return result;
       });
-    } else if (sameDay(date, new Date(dates))) {
+    } else if (sameDay(date, dates)) {
       result = 2;
     }
   }
   return result;
 };
 
-export const getTimestamp = (date) =>
-  /T.*/.test(date)
-    ? new Date(date).toISOString().split('T')[1]
-    : // for Calendar, explicitly mark that caller has provided
-      // value with no timestamp
-      false;
+export const handleOffset = (date) => {
+  const normalizedDate = new Date(date);
+  const offset = normalizedDate.getTimezoneOffset();
+  const hour = normalizedDate.getHours();
+  // add back offset
+  normalizedDate.setHours(hour, offset < 0 ? -offset : offset);
 
-// Adjust for differences between timestamp on value and
-// local timezone of user. Internal Calendar logic relies
-// on Javascript date contructor which translates the provided
-// date into the equivalent moment for the user's timezone, which
-// can create undesired results. The standardizes the input value
-// for internal calculations
-// Reference: https://www.ursahealth.com/new-insights/dates-and-timezones-in-javascript
-export const normalizeForTimezone = (value, timestamp) => {
-  let adjustedDate;
-  let hourDelta;
-  let valueOffset = 0;
-  if (timestamp && typeof timestamp === 'string') {
-    hourDelta = parseInt(timestamp?.split(':')[0], 10);
-    valueOffset = hourDelta * 60 * 1000; // ms
-  }
-  const localOffset = new Date().getTimezoneOffset() * 60 * 1000;
-
-  adjustedDate =
-    value &&
-    (Array.isArray(value) ? value : [value]).map((v) =>
-      new Date(new Date(v).getTime() - valueOffset + localOffset).toISOString(),
-    );
-  if (typeof value === 'string') [adjustedDate] = adjustedDate;
-
-  return adjustedDate;
-};
-
-// format the date to align with date format caller passed in
-export const formatDateToPropStructure = (date, timestamp) => {
-  let adjustedDate;
-  if (date) {
-    if (timestamp)
-      adjustedDate = `${
-        formatToLocalYYYYMMDD(date).split('T')[0]
-      }T${timestamp}`;
-    else if (timestamp === false)
-      [adjustedDate] = formatToLocalYYYYMMDD(date).split('T');
-    else adjustedDate = date;
-  }
-  return adjustedDate;
+  return normalizedDate;
 };

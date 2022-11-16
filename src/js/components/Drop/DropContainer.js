@@ -6,7 +6,7 @@ import React, {
   useRef,
 } from 'react';
 import { ThemeContext } from 'styled-components';
-
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { FocusedContainer } from '../FocusedContainer';
 import {
   backgroundIsDark,
@@ -36,6 +36,8 @@ const defaultPortalContext = [];
 const DropContainer = forwardRef(
   (
     {
+      a11yTitle,
+      'aria-label': ariaLabel,
       align = defaultAlign,
       background,
       onAlign,
@@ -55,6 +57,7 @@ const DropContainer = forwardRef(
     },
     ref,
   ) => {
+    const containerTarget = useContext(ContainerTargetContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const portalContext = useContext(PortalContext) || defaultPortalContext;
     const portalId = useMemo(() => portalContext.length, [portalContext]);
@@ -256,7 +259,11 @@ const DropContainer = forwardRef(
       const onClickDocument = (event) => {
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
-        let node = event.target;
+        let node =
+          containerTarget === document.body
+            ? event.target
+            : event?.composedPath()[0];
+
         while (clickedPortalId === null && node !== document) {
           const attr = node.getAttribute('data-g-portal-id');
           if (attr !== null) clickedPortalId = parseInt(attr, 10);
@@ -293,6 +300,7 @@ const DropContainer = forwardRef(
       };
     }, [
       align,
+      containerTarget,
       onAlign,
       dropTarget,
       onClickOutside,
@@ -313,6 +321,7 @@ const DropContainer = forwardRef(
 
     let content = (
       <StyledDrop
+        aria-label={a11yTitle || ariaLabel}
         ref={ref || dropRef}
         as={Box}
         background={background}
