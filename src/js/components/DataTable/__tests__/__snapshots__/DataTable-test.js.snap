@@ -21366,9 +21366,6 @@ exports[`DataTable should apply pagination styling 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
   overflow-x: auto;
 }
 
@@ -23514,6 +23511,7 @@ exports[`DataTable should apply pagination styling 1`] = `
     />
     <div
       class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -23644,9 +23642,6 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
   overflow-x: auto;
 }
 
@@ -23800,9 +23795,6 @@ exports[`DataTable should not show paginate controls when length of data < step 
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
   overflow-x: auto;
 }
 
@@ -24136,9 +24128,6 @@ exports[`DataTable should paginate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
   overflow-x: auto;
 }
 
@@ -26276,6 +26265,7 @@ exports[`DataTable should paginate 1`] = `
     />
     <div
       class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -26474,9 +26464,6 @@ exports[`DataTable should pin and paginate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
   overflow-x: auto;
 }
 
@@ -28623,6 +28610,7 @@ exports[`DataTable should pin and paginate 1`] = `
     />
     <div
       class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -28821,9 +28809,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
   overflow-x: auto;
 }
 
@@ -29845,6 +29830,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
     />
     <div
       class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -30113,9 +30099,6 @@ exports[`DataTable should render new data when page changes 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
   overflow-x: auto;
 }
 
@@ -32253,6 +32236,7 @@ exports[`DataTable should render new data when page changes 1`] = `
     />
     <div
       class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -32354,7 +32338,7 @@ exports[`DataTable should render new data when page changes 2`] = `
     class="StyledBox-sc-13pk1d4-0 hUSFEE StyledDataTable__StyledContainer-sc-xrlyjm-1 iuBBg"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gSGGou"
+      class="StyledBox-sc-13pk1d4-0 huRNCA"
     >
       <table
         class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
@@ -33801,6 +33785,7 @@ exports[`DataTable should render new data when page changes 2`] = `
     />
     <div
       class="StyledBox-sc-13pk1d4-0 dQObhs Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -33999,9 +33984,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
   overflow-x: auto;
 }
 
@@ -36139,6 +36121,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
     />
     <div
       class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -36337,9 +36320,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
   overflow-x: auto;
 }
 
@@ -38322,6 +38302,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
     />
     <div
       class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"

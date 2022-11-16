@@ -352,7 +352,7 @@ const DataTable = ({
   // should remain in its location
   const OverflowContainer = paginate ? Box : Fragment;
   const overflowContainerProps = paginate
-    ? { overflow: { horizontal: 'auto' }, flex: true }
+    ? { overflow: { horizontal: 'auto' } }
     : undefined;
 
   // necessary for Firefox, otherwise paginated DataTable will
@@ -567,7 +567,13 @@ const DataTable = ({
       adjustedData.length > paginationStep &&
       items &&
       items.length ? (
-        <Pagination alignSelf="end" {...paginationProps} />
+        <Pagination
+          alignSelf="end"
+          // flex none needed for Pagination controls to stay in correct
+          // location and prevent overflow outside container
+          style={{ flex: 'none' }}
+          {...paginationProps}
+        />
       ) : null}
     </Container>
   );
