@@ -1,4 +1,10 @@
-import React, { forwardRef, useEffect, useState, useContext } from 'react';
+import React, {
+  forwardRef,
+  useEffect,
+  useState,
+  useContext,
+  useRef,
+} from 'react';
 import { createPortal } from 'react-dom';
 
 import { ThemeContext } from 'styled-components';
@@ -24,13 +30,15 @@ const Drop = forwardRef(
     useEffect(() => setOriginalFocusedElement(document.activeElement), []);
     const [dropContainer, setDropContainer] = useState();
     const containerTarget = useContext(ContainerTargetContext);
-    useEffect(
-      () =>
+    const containerChildNodesLenght = useRef(null);
+    useEffect(() => {
+      if (!containerChildNodesLenght?.current) {
+        containerChildNodesLenght.current = containerTarget.childNodes.length;
         setDropContainer(
           !inline ? getNewContainer(containerTarget) : undefined,
-        ),
-      [containerTarget, inline],
-    );
+        );
+      }
+    }, [containerTarget, inline]);
 
     // just a few things to clean up when the Drop is unmounted
     useEffect(
