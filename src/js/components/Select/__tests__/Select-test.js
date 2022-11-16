@@ -4,6 +4,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -1500,6 +1501,31 @@ describe('Select', () => {
     expect(getByRole('button', { name: 'test' })).toBeTruthy();
     expect(getByRole('button', { name: 'test-select' })).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('object options and null value', () => {
+    render(
+      <Grommet>
+        <Select
+          placeholder="test select"
+          valueKey="id"
+          value={null}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+    const select = screen.getByRole('button', { name: /test select/ });
+    fireEvent.click(select);
+    expect(select).toHaveAttribute('aria-expanded', 'true');
   });
 
   window.scrollTo.mockRestore();
