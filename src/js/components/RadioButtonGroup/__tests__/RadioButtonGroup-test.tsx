@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
@@ -200,6 +200,7 @@ describe('RadioButtonGroup', () => {
   });
 
   test('Works with keyboard', async () => {
+    const user = userEvent.setup();
     const radioGroupOptions = [
       {
         id: 'ONE',
@@ -231,20 +232,11 @@ describe('RadioButtonGroup', () => {
       </Grommet>,
     );
 
-    // Focus radio '2' button and simulate ArrowDown key
-    // should result in selecting radio '3'
     const middleRadioBtn = screen.getByRole('radio', {
       name: 'radio button 2',
     });
-    middleRadioBtn.focus();
-    expect(middleRadioBtn).toHaveFocus();
-    await waitFor(() => expect(middleRadioBtn).toHaveFocus(), {
-      timeout: 200,
-    });
 
-    // focusing the radio button results in internal state update
-    // so we wait (`act`) after focusing
-    userEvent.type(middleRadioBtn, '{arrowDown}');
+    await user.type(middleRadioBtn, '{arrowDown}');
 
     expect(onChange).toHaveBeenLastCalledWith(
       expect.objectContaining({
@@ -252,14 +244,7 @@ describe('RadioButtonGroup', () => {
       }),
     );
 
-    // Focus radio '2' button and simulate ArrowUp key
-    // should result in selecting radio '1'
-    middleRadioBtn.focus();
-    await waitFor(() => expect(middleRadioBtn).toHaveFocus(), {
-      timeout: 200,
-    });
-
-    userEvent.type(middleRadioBtn, '{arrowUp}');
+    await user.type(middleRadioBtn, '{arrowUp}');
 
     expect(onChange).toHaveBeenLastCalledWith(
       expect.objectContaining({
