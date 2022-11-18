@@ -30,10 +30,13 @@ const Drop = forwardRef(
     useEffect(() => setOriginalFocusedElement(document.activeElement), []);
     const [dropContainer, setDropContainer] = useState();
     const containerTarget = useContext(ContainerTargetContext);
-    const containerChildNodesLenght = useRef(null);
+    const containerChildNodesLength = useRef(null);
     useEffect(() => {
-      if (!containerChildNodesLenght?.current) {
-        containerChildNodesLenght.current = containerTarget.childNodes.length;
+      // we need this condition to prevent getNewContainer to run multiple times
+      // in the event that the component gets created, destroyed, and recreated.
+      // see https://reactjs.org/docs/strict-mode.html#ensuring-reusable-state
+      if (!containerChildNodesLength?.current) {
+        containerChildNodesLength.current = containerTarget.childNodes.length;
         setDropContainer(
           !inline ? getNewContainer(containerTarget) : undefined,
         );
