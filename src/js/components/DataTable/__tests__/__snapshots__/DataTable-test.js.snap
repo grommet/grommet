@@ -21403,6 +21403,9 @@ exports[`DataTable should apply pagination styling 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c13 {
@@ -23511,7 +23514,6 @@ exports[`DataTable should apply pagination styling 1`] = `
     />
     <div
       class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -24163,6 +24165,9 @@ exports[`DataTable should paginate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c13 {
@@ -26265,7 +26270,6 @@ exports[`DataTable should paginate 1`] = `
     />
     <div
       class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -26499,6 +26503,9 @@ exports[`DataTable should pin and paginate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c14 {
@@ -28610,7 +28617,6 @@ exports[`DataTable should pin and paginate 1`] = `
     />
     <div
       class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -28844,6 +28850,9 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c13 {
@@ -29830,7 +29839,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
     />
     <div
       class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -30134,6 +30142,9 @@ exports[`DataTable should render new data when page changes 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c13 {
@@ -32236,7 +32247,6 @@ exports[`DataTable should render new data when page changes 1`] = `
     />
     <div
       class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -33784,8 +33794,7 @@ exports[`DataTable should render new data when page changes 2`] = `
       class="StyledBox__StyledBoxGap-sc-13pk1d4-1 grsgKE"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 dQObhs Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      style="flex: 0 0 auto;"
+      class="StyledBox-sc-13pk1d4-0 cSsESN Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -34019,6 +34028,9 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c13 {
@@ -36121,7 +36133,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
     />
     <div
       class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -36355,6 +36366,9 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c13 {
@@ -38302,7 +38316,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
     />
     <div
       class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      style="flex: 0 0 auto;"
     >
       <nav
         aria-label="Pagination Navigation"
