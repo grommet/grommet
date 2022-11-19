@@ -18,7 +18,7 @@ export const Range = () => {
     console.log(
       'onChange utc date:',
       new Date(nextValue[0]),
-      new Date(nextValue[0]),
+      new Date(nextValue[1]),
     );
     setValue(nextValue);
   };
