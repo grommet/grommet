@@ -354,8 +354,7 @@ var DataTable = function DataTable(_ref) {
   var overflowContainerProps = paginate ? {
     overflow: {
       horizontal: 'auto'
-    },
-    flex: true
+    }
   } : undefined;
 
   // necessary for Firefox, otherwise paginated DataTable will

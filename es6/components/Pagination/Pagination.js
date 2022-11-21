@@ -143,7 +143,9 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
       separator: control === 'more-prev' || control === 'more-next'
     }, navProps[control]);
   });
-  return /*#__PURE__*/React.createElement(StyledPaginationContainer, _extends({}, theme.pagination.container, rest), /*#__PURE__*/React.createElement(Nav, {
+  return /*#__PURE__*/React.createElement(StyledPaginationContainer, _extends({
+    flex: false
+  }, theme.pagination.container, rest), /*#__PURE__*/React.createElement(Nav, {
     a11yTitle: ariaLabel || a11yTitle || 'Pagination Navigation',
     ref: ref
   }, /*#__PURE__*/React.createElement(Box, _extends({
