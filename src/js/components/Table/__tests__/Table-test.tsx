@@ -231,3 +231,14 @@ test('TableCell border renders', () => {
 
   expect(container.firstChild).toMatchSnapshot();
 });
+
+test('Table with ref', () => {
+  const ref = React.createRef<HTMLTableElement>();
+  render(
+    <Grommet>
+      <Table ref={ref} />
+    </Grommet>,
+  );
+
+  expect(ref.current).not.toBeNull();
+});
