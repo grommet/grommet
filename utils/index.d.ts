@@ -378,11 +378,11 @@ export type SkeletonColorsType = {
   light?: string[];
 };
 
-export type SkeletonType = 
-| boolean
-| {
-  animation?: AnimateType;
-  colors?: SkeletonColorsType;
-  depth?: number;
-  message?: string | { start?: string; end?: string };
-};
+export type SkeletonType =
+  | boolean
+  | {
+      animation?: AnimateType;
+      colors?: SkeletonColorsType;
+      depth?: number;
+      message?: string | { start?: string; end?: string };
+    };

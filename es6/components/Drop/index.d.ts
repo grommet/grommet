@@ -1,10 +1,6 @@
 import * as React from 'react';
-import {
-  KeyboardType,
-} from '../../utils';
-import {
-  BoxProps
-} from '../Box';
+import { KeyboardType } from '../../utils';
+import { BoxProps } from '../Box';
 
 export interface DropProps extends Omit<BoxProps, 'align'> {
   align?: {
