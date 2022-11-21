@@ -16,7 +16,7 @@ var Range = function Range() {
   var onChange = function onChange(event) {
     var nextValue = event.value;
     console.log('onChange iso date:', nextValue);
-    console.log('onChange utc date:', new Date(nextValue));
+    console.log('onChange utc date:', new Date(nextValue[0]), new Date(nextValue[1]));
     setValue(nextValue);
   };
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {

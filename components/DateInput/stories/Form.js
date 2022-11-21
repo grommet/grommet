@@ -13,7 +13,7 @@ var DateForm = function DateForm() {
     setValue = _React$useState[1];
   var onChange = function onChange(nextValue) {
     console.log('onChange iso date:', nextValue);
-    console.log('onChange utc date:', new Date(nextValue));
+    console.log('onChange utc date:', new Date(nextValue.value));
     setValue(nextValue);
   };
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
