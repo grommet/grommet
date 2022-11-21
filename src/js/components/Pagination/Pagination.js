@@ -184,7 +184,11 @@ const Pagination = forwardRef(
     }));
 
     return (
-      <StyledPaginationContainer {...theme.pagination.container} {...rest}>
+      <StyledPaginationContainer
+        flex={false}
+        {...theme.pagination.container}
+        {...rest}
+      >
         <Nav
           a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
           ref={ref}
