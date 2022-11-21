@@ -20,20 +20,37 @@ const objectOptions = [
     label: 'Purple',
     value: 4,
   },
+  {
+    label: 'Pink',
+    value: 5,
+  },
+  {
+    label: 'Grey',
+    value: 6,
+  },
 ];
 
 export const ObjectOptions = () => {
   const [options, setOptions] = useState(objectOptions);
-
+  const [value, setValue] = useState([
+    {
+      label: 'Red',
+      value: 1,
+    },
+    {
+      label: 'Grey',
+      value: 6,
+    },
+  ]);
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box fill gap="large" align="center" justify="start" pad="large">
       <Text>SelectMultiple with Object Options</Text>
       <SelectMultiple
+        value={value}
         onSearch={(text) => {
           const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-
           // Create the regular expression with modified value which
           // handles escaping special characters. Without escaping special
           // characters, errors will appear in the console
@@ -47,6 +64,12 @@ export const ObjectOptions = () => {
         labelKey="label"
         valueKey={{ key: 'value' }}
         options={options}
+        onClose={() => {
+          setOptions(objectOptions);
+        }}
+        onChange={({ value: nextValue }) => {
+          setValue(nextValue);
+        }}
       />
     </Box>
     // </Grommet>

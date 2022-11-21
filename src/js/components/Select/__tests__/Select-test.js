@@ -4,6 +4,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -277,7 +278,7 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
       <Grommet>
         <Test />
       </Grommet>,
@@ -296,6 +297,55 @@ describe('Select', () => {
         },
       }),
     );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('onChange without labelKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          valueKey="id"
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, asFragment } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          id: 1,
+          name: 'Value1',
+        },
+      }),
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('onChange without labelKey or valueKey', () => {
@@ -321,7 +371,7 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
       <Grommet>
         <Test />
       </Grommet>,
@@ -340,6 +390,8 @@ describe('Select', () => {
         },
       }),
     );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('onChange with valueKey string', () => {
@@ -367,7 +419,7 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
       <Grommet>
         <Test />
       </Grommet>,
@@ -386,6 +438,53 @@ describe('Select', () => {
         },
       }),
     );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('onChange with valueKey object', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          valueKey={{ key: 'id', reduce: true }}
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, asFragment } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: 1,
+      }),
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('disabled key', () => {
@@ -1402,6 +1501,31 @@ describe('Select', () => {
     expect(getByRole('button', { name: 'test' })).toBeTruthy();
     expect(getByRole('button', { name: 'test-select' })).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('object options and null value', () => {
+    render(
+      <Grommet>
+        <Select
+          placeholder="test select"
+          valueKey="id"
+          value={null}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+    const select = screen.getByRole('button', { name: /test select/ });
+    fireEvent.click(select);
+    expect(select).toHaveAttribute('aria-expanded', 'true');
   });
 
   window.scrollTo.mockRestore();

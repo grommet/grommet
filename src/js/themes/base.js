@@ -559,6 +559,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         duration: 0.1,
         properties: ['color', 'background-color', 'border-color', 'box-shadow'],
       },
+      skeleton: {
+        width: { min: '100px' },
+      },
     },
     calendar: {
       // daySize must align with global.size
@@ -652,6 +655,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
         // background: undefined,
+        // extend: undefined,
       },
       icon: {
         // size: undefined,
@@ -739,6 +743,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       baseline: 500,
     },
     dateInput: {
+      container: {
+        round: 'xxsmall',
+      },
       // icon: {
       //   size: undefined,
       // },
@@ -1008,6 +1015,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       responsiveBreakpoint: 'small', // when we scale the font size down
       weight: 600,
+      skeleton: {
+        width: { min: '200px' },
+      },
     },
     layer: {
       background: {
@@ -1634,6 +1644,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     selectMultiple: {
       maxInline: 5,
     },
+    skeleton: {
+      border: false,
+      colors: {
+        dark: ['background', 'background-front'],
+        light: ['background', 'background-back'],
+      },
+    },
     skipLinks: {
       position: 'top',
       container: {
@@ -1801,6 +1818,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       '4xl': { ...fontSizing(9) },
       '5xl': { ...fontSizing(13) },
       '6xl': { ...fontSizing(18) },
+      skeleton: {
+        width: { width: '100px', min: '100px' },
+        margin: { vertical: 'xsmall' },
+        colors: {
+          dark: ['border', 'border'],
+          light: ['background-front', 'background-back'],
+        },
+      },
     },
     textArea: {
       // extend: undefined,

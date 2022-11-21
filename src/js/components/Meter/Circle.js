@@ -28,7 +28,7 @@ const Circle = forwardRef((props, ref) => {
 
   const anglePer =
     Math.floor(((type === 'semicircle' ? 180 : 360) / max) * scale) / scale;
-    //  (type === 'semicircle' ? 180 : 360) / max;
+  //  (type === 'semicircle' ? 180 : 360) / max;
   const someHighlight = (values || []).some((v) => v.highlight);
 
   let startValue = 0;

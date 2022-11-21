@@ -8,6 +8,7 @@ import {
   Header,
   Heading,
   Paragraph,
+  Main,
 } from 'grommet';
 import { Grommet as GrommetIcon, AppsRounded } from 'grommet-icons';
 import { Box } from '../../Box';
@@ -26,11 +27,11 @@ export const Global = () => {
         </Box>
         <Button icon={<AppsRounded />} />
       </Header>
-      <Box gap="medium">
+      <Main gap="medium">
         {showGlobalNotification && (
           <Notification
             status="warning"
-            message={`Your supscription will expire in 7 days. Renew your 
+            message={`Your supscription will expire in 7 days. Renew your
             subscription to ensure you don't lose access.`}
             onClose={() => setShowGlobalNotification(false)}
             actions={[
@@ -64,7 +65,7 @@ export const Global = () => {
             ))}
           </NameValueList>
         </Box>
-      </Box>
+      </Main>
     </>
   );
 };

@@ -7,8 +7,9 @@ export interface NotificationProps {
   actions?: AnchorType[];
   global?: boolean;
   title?: string;
-  message?: string;
+  message?: string | React.ReactNode;
   status?: StatusType;
+  time?: number;
   toast?:
     | boolean
     | {
@@ -16,6 +17,7 @@ export interface NotificationProps {
         position?: LayerPositionType;
       };
   onClose?: (...args: any[]) => any;
+  icon?: JSX.Element;
 }
 
 declare const Notification: React.FC<NotificationProps>;

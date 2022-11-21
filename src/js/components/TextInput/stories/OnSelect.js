@@ -35,6 +35,7 @@ export const OnSelect = () => {
           onSelect={onHighlight}
           onSuggestionSelect={onSelect}
           suggestions={suggestions}
+          aria-label="Input text"
         />
       </Box>
     </Box>

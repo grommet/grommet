@@ -268,6 +268,34 @@ describe('List', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('itemKey function', () => {
+    const onOrder = jest.fn();
+    const TestApp = () => {
+      const [ordered, setOrdered] = useState([
+        { city: 'Fort Collins', state: 'Colorado' },
+        { city: 'Boise', state: 'Idaho' },
+        { city: 'New Orleans', state: 'Louisiana' },
+      ]);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            itemKey={(item) => item.state}
+            onOrder={(items) => {
+              onOrder(items);
+              setOrdered(items);
+            }}
+            pinned={['Idaho']}
+          />
+        </Grommet>
+      );
+    };
+    const { asFragment } = render(<TestApp />);
+    fireEvent.click(screen.getByRole('button', { name: /Colorado move down/ }));
+    expect(onOrder).toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
 
 describe('List events', () => {
@@ -571,8 +599,9 @@ describe('List onOrder with action', () => {
               onOrder(newData);
             }}
             // eslint-disable-next-line react/no-unstable-nested-components
-            action={(item, index) =>
-              <Button key={`action${index}`} label="Action"/>}
+            action={(item, index) => (
+              <Button key={`action${index}`} label="Action" />
+            )}
           />
         </Grommet>
       );

@@ -10,7 +10,9 @@ export const baseStyle = css`
   line-height: ${(props) => props.theme.global.font.height};
   font-weight: ${(props) => props.theme.global.font.weight};
   /* check if prop is defined in the theme*/
-  ${(props)=>props.theme.global.font.variant && `
+  ${(props) =>
+    props.theme.global.font.variant &&
+    `
     font-variant:${props.theme.global.font.variant};
   `}
   ${(props) =>
@@ -522,6 +524,7 @@ const ALIGN_SELF_MAP = {
   end: 'flex-end',
   start: 'flex-start',
   stretch: 'stretch',
+  baseline: 'baseline',
 };
 
 export const genericStyles = css`

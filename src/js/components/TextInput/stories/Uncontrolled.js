@@ -9,6 +9,7 @@ export const Uncontrolled = () => (
     <Box width="medium">
       <TextInput
         onChange={(event) => console.log('Change', event.target.value)}
+        aria-label="Input Text"
       />
     </Box>
   </Box>

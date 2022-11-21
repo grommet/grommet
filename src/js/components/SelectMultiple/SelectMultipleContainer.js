@@ -31,6 +31,8 @@ import {
   getOptionLabel,
   getOptionValue,
   useDisabled,
+  getOptionIndex,
+  arrayIncludes,
 } from '../Select/utils';
 import { EmptySearchOption } from '../Select/EmptySearchOption';
 
@@ -143,7 +145,11 @@ const SelectMultipleContainer = forwardRef(
       (index) => (event) => {
         if (onChange) {
           const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-          const allOptionsIndex = allOptions.indexOf(options[index]);
+          const allOptionsIndex = getOptionIndex(
+            allOptions,
+            options[index],
+            valueKey || labelKey,
+          );
           const valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
           if (valueIndex === -1 && (!limit || value?.length < limit)) {
             nextOptionIndexesInValue.push(allOptionsIndex);
@@ -164,6 +170,7 @@ const SelectMultipleContainer = forwardRef(
         }
       },
       [
+        labelKey,
         limit,
         onChange,
         optionIndexesInValue,
@@ -278,8 +285,10 @@ const SelectMultipleContainer = forwardRef(
             result = disabledProp.indexOf(index) !== -1;
           } else {
             result =
-              disabledProp.indexOf(
+              getOptionIndex(
+                disabledProp,
                 getOptionValue(index, options, valueKey || labelKey),
+                valueKey || labelKey,
               ) !== -1;
           }
         }
@@ -419,10 +428,12 @@ const SelectMultipleContainer = forwardRef(
                 {(option, index, optionRef) => {
                   const optionDisabled = isDisabled(index);
                   const optionSelected = value
-                    ? value.includes(
+                    ? arrayIncludes(
+                        value,
                         valueKey && valueKey.reduce
                           ? applyKey(option, valueKey)
                           : option,
+                        valueKey || labelKey,
                       )
                     : false;
                   const optionActive = activeIndex === index;
@@ -466,25 +477,26 @@ const SelectMultipleContainer = forwardRef(
                   }
 
                   if (!children && search) {
+                    const searchText = search.toLowerCase();
                     if (
                       typeof optionLabel === 'string' &&
-                      optionLabel.toLowerCase().indexOf(search) >= 0
+                      optionLabel.toLowerCase().indexOf(searchText) >= 0
                     ) {
                       // code to bold search term in matching options
                       const boldIndex = optionLabel
                         .toLowerCase()
-                        .indexOf(search);
+                        .indexOf(searchText);
                       const childBeginning = optionLabel.substring(
                         0,
                         boldIndex,
                       );
                       let childBold = optionLabel.substring(
                         boldIndex,
-                        boldIndex + search.length,
+                        boldIndex + searchText.length,
                       );
                       childBold = <b>{childBold}</b>;
                       const childEnd = optionLabel.substring(
-                        boldIndex + search.length,
+                        boldIndex + searchText.length,
                       );
                       child = (
                         <CheckBox

@@ -84,11 +84,11 @@ const StyledContainer = styled(Box)`
     props.theme.list.container.extend};
 `;
 
-const normalize = (item, index, property) => {
-  if (typeof property === 'function') {
-    return property(item, index);
-  }
-  return item[property];
+const getValue = (item, index, key) => {
+  if (typeof key === 'function') return key(item, index);
+  if (typeof item === 'string') return item;
+  if (key !== undefined) return item[key];
+  return undefined;
 };
 
 const reorder = (array, pinnedArray, source, target) => {
@@ -109,35 +109,14 @@ const reorder = (array, pinnedArray, source, target) => {
   return result;
 };
 
-// Determine the primary content for a row. If the List
-// has a primaryKey defined this returns the item data
-// based on this primary key. If no primaryKey property
-// is defined this will return unknown. The intent of
-// the content from the primary key is that it is unique
-// within the list.
-const getPrimaryContent = (item, index, primaryKey) => {
-  let primaryContent;
-  if (primaryKey) {
-    if (typeof primaryKey === 'function') {
-      primaryContent = primaryKey(item, index);
-    } else {
-      primaryContent = normalize(item, index, primaryKey);
-    }
-  }
-
-  return primaryContent;
-};
-
-const getKey = (item, index, primaryContent) => {
-  if (typeof primaryContent === 'string') {
-    return primaryContent;
-  }
-  return typeof item === 'string' ? item : index;
-};
-
-const getItemId = (item, index, primaryKey) => {
-  const primaryContent = getPrimaryContent(item, index, primaryKey);
-  return getKey(item, index, primaryContent);
+// getItemId returns something appropriate to use as a unique DOM
+// id for an item in the list
+const getItemId = (item, index, itemKey, primaryKey) => {
+  // we do primaryKey first to be backward compatible, even though
+  // itemKey is probably technically the better choice for a DOM id.
+  if (primaryKey) return getValue(item, index, primaryKey);
+  if (itemKey) return getValue(item, index, itemKey);
+  return getValue(item, index) ?? index; // do our best w/o *key properties
 };
 
 const List = React.forwardRef(
@@ -199,6 +178,7 @@ const List = React.forwardRef(
     };
     const [itemFocus, setItemFocus] = useState();
     const [dragging, setDragging] = useState();
+    const [orderingData, setOrderingData] = useState();
 
     // store a reference to the pinned and the data that is orderable
     const [orderableData, pinnedInfo] = useMemo(() => {
@@ -206,11 +186,13 @@ const List = React.forwardRef(
       const pinnedData = [];
       const pinnedIndexes = [];
 
-      if (pinned.length === 0)
-        return [data, { data: pinnedData, indexes: pinnedIndexes }];
+      const currentData = orderingData || data;
 
-      data.forEach((item, index) => {
-        const key = typeof item === 'object' ? item[itemKey] : item;
+      if (pinned.length === 0)
+        return [currentData, { data: pinnedData, indexes: pinnedIndexes }];
+
+      currentData.forEach((item, index) => {
+        const key = getValue(item, index, itemKey);
         if (pinned.includes(key)) {
           pinnedData.push(item);
           pinnedIndexes.push(index);
@@ -220,7 +202,7 @@ const List = React.forwardRef(
       });
 
       return [orderable, { data: pinnedData, indexes: pinnedIndexes }];
-    }, [data, itemKey, pinned]);
+    }, [data, orderingData, itemKey, pinned]);
 
     const [items, paginationProps] = usePagination({
       data,
@@ -232,9 +214,6 @@ const List = React.forwardRef(
 
     const Container = paginate ? StyledContainer : Fragment;
     const containterProps = paginate ? { ...theme.list.container } : undefined;
-
-    const [orderingData, setOrderingData] = useState();
-
     const draggingRef = useRef();
 
     const sendAnalytics = useAnalytics();
@@ -255,11 +234,17 @@ const List = React.forwardRef(
         activeId = `${getItemId(
           orderableData[itemIndex],
           itemIndex,
+          itemKey,
           primaryKey,
         )}${buttonId}`;
       } else if (onClickItem) {
         // The whole list item is active. Figure out an id
-        activeId = getItemId(orderableData[active], active, primaryKey);
+        activeId = getItemId(
+          orderableData[active],
+          active,
+          itemKey,
+          primaryKey,
+        );
       }
       ariaProps['aria-activedescendant'] = activeId;
     }
@@ -291,9 +276,7 @@ const List = React.forwardRef(
                     }
                   } else if (
                     disabledItems?.includes(
-                      typeof itemKey === 'function'
-                        ? itemKey(data[active])
-                        : data[active],
+                      getValue(data[active], active, itemKey),
                     )
                   ) {
                     event.preventDefault();
@@ -371,7 +354,6 @@ const List = React.forwardRef(
               {(item, index) => {
                 let content;
                 let boxProps = {};
-                let itemId;
 
                 if (children) {
                   content = children(
@@ -380,28 +362,29 @@ const List = React.forwardRef(
                     onClickItem ? { active: active === index } : undefined,
                   );
                 } else if (primaryKey) {
-                  if (typeof primaryKey === 'function') {
-                    itemId = primaryKey(item, index);
-                    content = itemId;
-                  } else {
-                    itemId = normalize(item, index, primaryKey);
-                    content = (
+                  const primary = getValue(item, index, primaryKey);
+                  content =
+                    typeof primary === 'string' ||
+                    typeof primary === 'number' ? (
                       <Text key="p" weight="bold">
-                        {itemId}
+                        {primary}
                       </Text>
+                    ) : (
+                      primary
                     );
-                  }
                   if (secondaryKey) {
-                    if (typeof secondaryKey === 'function') {
-                      content = [content, secondaryKey(item, index)];
-                    } else {
-                      content = [
-                        content,
+                    const secondary = getValue(item, index, secondaryKey);
+                    content = [
+                      content,
+                      typeof secondary === 'string' ||
+                      typeof secondary === 'number' ? (
                         <Text key="s">
-                          {normalize(item, index, secondaryKey)}
-                        </Text>,
-                      ];
-                    }
+                          {getValue(item, index, secondaryKey)}
+                        </Text>
+                      ) : (
+                        secondary
+                      ),
+                    ];
                     boxProps = {
                       direction: 'row',
                       align: 'center',
@@ -415,21 +398,12 @@ const List = React.forwardRef(
                   content = item;
                 }
 
-                if (itemKey) {
-                  if (typeof itemKey === 'function') {
-                    itemId = itemKey(item);
-                  } else {
-                    itemId = normalize(item, index, itemKey);
-                  }
-                }
+                const key = getValue(item, index, itemKey) || index;
 
-                const key = itemKey ? itemId : getKey(item, index, itemId);
-
-                const orderableIndex = orderableData.findIndex((ordItem) => {
-                  const ordItemKey =
-                    typeof ordItem === 'object' ? ordItem[itemKey] : ordItem;
-                  return ordItemKey === key;
-                });
+                const orderableIndex = orderableData.findIndex(
+                  (ordItem, ordIndex) =>
+                    getValue(ordItem, ordIndex, itemKey) === key,
+                );
 
                 let isDisabled;
                 if (disabledItems) {
@@ -644,7 +618,11 @@ const List = React.forwardRef(
 
                   // wrap the main content and use
                   // the boxProps defined for the content
-                  content = <Box flex {...boxProps}>{content}</Box>;
+                  content = (
+                    <Box flex {...boxProps}>
+                      {content}
+                    </Box>
+                  );
 
                   // Adjust the boxProps to account for the order controls
                   boxProps = {
@@ -653,7 +631,6 @@ const List = React.forwardRef(
                       (defaultItemProps && defaultItemProps.align) || 'center',
                     gap: 'medium',
                   };
-
                 }
 
                 let itemAriaProps;
