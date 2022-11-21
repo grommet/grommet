@@ -571,7 +571,6 @@ const DataTable = ({
           alignSelf="end"
           // flex false is needed for Pagination controls to stay in
           // correct location and prevent overflow outside container
-          flex={false}
           {...paginationProps}
         />
       ) : null}
