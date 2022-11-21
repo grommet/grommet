@@ -142,7 +142,6 @@ exports[`RadioButtonGroup adding additional props 1`] = `
       >
         <input
           class="c4"
-          data-testid="testid-1"
           id="ONE"
           name="test"
           tabindex="0"
@@ -166,7 +165,6 @@ exports[`RadioButtonGroup adding additional props 1`] = `
       >
         <input
           class="c4"
-          data-testid="testid-2"
           id="TWO"
           name="test"
           tabindex="-1"

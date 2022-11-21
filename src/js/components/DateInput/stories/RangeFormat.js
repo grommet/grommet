@@ -10,7 +10,11 @@ export const RangeFormat = () => {
   const onChange = (event) => {
     const nextValue = event.value;
     console.log('onChange iso date:', nextValue);
-    console.log('onChange utc date:', new Date(nextValue));
+    console.log(
+      'onChange utc date:',
+      new Date(nextValue[0]),
+      new Date(nextValue[1]),
+    );
     setValue(nextValue);
   };
   return (

@@ -1,2 +1,2 @@
-export { Skeleton } from  './Skeleton';
+export { Skeleton } from './Skeleton';
 export * from './SkeletonContext';
