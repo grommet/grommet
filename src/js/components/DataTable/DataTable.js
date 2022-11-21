@@ -567,12 +567,7 @@ const DataTable = ({
       adjustedData.length > paginationStep &&
       items &&
       items.length ? (
-        <Pagination
-          alignSelf="end"
-          // flex false is needed for Pagination controls to stay in
-          // correct location and prevent overflow outside container
-          {...paginationProps}
-        />
+        <Pagination alignSelf="end" {...paginationProps} />
       ) : null}
     </Container>
   );
