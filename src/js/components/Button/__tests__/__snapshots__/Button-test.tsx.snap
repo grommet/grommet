@@ -2156,6 +2156,16 @@ exports[`Button disabled 1`] = `
   justify-content: center;
 }
 
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -2621,6 +2631,9 @@ exports[`Button disabled 1`] = `
       class="c7"
     >
       <svg />
+      <div
+        class="c8"
+      />
       Button
     </div>
   </button>
@@ -2633,6 +2646,9 @@ exports[`Button disabled 1`] = `
       class="c7"
     >
       <svg />
+      <div
+        class="c8"
+      />
       Button
     </div>
   </button>
@@ -2646,6 +2662,9 @@ exports[`Button disabled 1`] = `
     >
       <svg
         color="#f8f8f8"
+      />
+      <div
+        class="c8"
       />
       Button
     </div>
@@ -3525,6 +3544,16 @@ exports[`Button icon label 1`] = `
   justify-content: center;
 }
 
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -3616,6 +3645,9 @@ exports[`Button icon label 1`] = `
     >
       <svg
         data-testid="icon"
+      />
+      <div
+        class="c3"
       />
       Test
     </div>
@@ -3741,6 +3773,16 @@ exports[`Button reverse icon label 1`] = `
   justify-content: center;
 }
 
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -3831,6 +3873,9 @@ exports[`Button reverse icon label 1`] = `
       class="c2"
     >
       Test
+      <div
+        class="c3"
+      />
       <svg
         data-testid="icon"
       />
@@ -3874,7 +3919,7 @@ exports[`Button size 1`] = `
   stroke: none;
 }
 
-.c10 {
+.c11 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3885,25 +3930,25 @@ exports[`Button size 1`] = `
   stroke: #666666;
 }
 
-.c10 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c11 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3928,6 +3973,16 @@ exports[`Button size 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c10 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c1 {
@@ -4553,9 +4608,12 @@ exports[`Button size 1`] = `
       class="c9"
     >
       Small
+      <div
+        class="c10"
+      />
       <svg
         aria-label="Next"
-        class="c10"
+        class="c11"
         viewBox="0 0 24 24"
       >
         <path
@@ -4575,9 +4633,12 @@ exports[`Button size 1`] = `
       class="c9"
     >
       Medium
+      <div
+        class="c10"
+      />
       <svg
         aria-label="Next"
-        class="c10"
+        class="c11"
         viewBox="0 0 24 24"
       >
         <path
@@ -4597,9 +4658,12 @@ exports[`Button size 1`] = `
       class="c9"
     >
       Default
+      <div
+        class="c10"
+      />
       <svg
         aria-label="Next"
-        class="c10"
+        class="c11"
         viewBox="0 0 24 24"
       >
         <path
@@ -4619,9 +4683,12 @@ exports[`Button size 1`] = `
       class="c9"
     >
       Large
+      <div
+        class="c10"
+      />
       <svg
         aria-label="Next"
-        class="c10"
+        class="c11"
         viewBox="0 0 24 24"
       >
         <path

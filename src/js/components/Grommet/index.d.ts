@@ -10,9 +10,7 @@ export interface GrommetProps {
   full?: boolean | 'min';
   options?: {
     box?: {
-      gap?: {
-        css?: boolean;
-      };
+      cssGap?: boolean;
     };
     layer?: {
       singleId?: boolean;

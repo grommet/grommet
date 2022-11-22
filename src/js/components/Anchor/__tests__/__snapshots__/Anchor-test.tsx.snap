@@ -162,6 +162,56 @@ exports[`Anchor gap renders 1`] = `
   flex-direction: row;
 }
 
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 6px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c5 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c6 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 48px;
+}
+
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 5px;
+}
+
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -193,6 +243,9 @@ exports[`Anchor gap renders 1`] = `
         <svg
           color="#7D4CDB"
         />
+        <span
+          class="c3"
+        />
         Theme Gap
       </span>
     </a>
@@ -206,6 +259,9 @@ exports[`Anchor gap renders 1`] = `
       >
         <svg
           color="#7D4CDB"
+        />
+        <span
+          class="c4"
         />
         Small Gap
       </span>
@@ -221,6 +277,9 @@ exports[`Anchor gap renders 1`] = `
         <svg
           color="#7D4CDB"
         />
+        <span
+          class="c5"
+        />
         Medium Gap
       </span>
     </a>
@@ -235,6 +294,9 @@ exports[`Anchor gap renders 1`] = `
         <svg
           color="#7D4CDB"
         />
+        <span
+          class="c6"
+        />
         Large Gap
       </span>
     </a>
@@ -248,6 +310,9 @@ exports[`Anchor gap renders 1`] = `
       >
         <svg
           color="#7D4CDB"
+        />
+        <span
+          class="c7"
         />
         5px Gap
       </span>
@@ -285,6 +350,16 @@ exports[`Anchor icon label renders 1`] = `
   flex-direction: row;
 }
 
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -314,6 +389,9 @@ exports[`Anchor icon label renders 1`] = `
       >
         <svg
           color="#7D4CDB"
+        />
+        <span
+          class="c3"
         />
         Test
       </span>
@@ -557,6 +635,16 @@ exports[`Anchor reverse icon label renders 1`] = `
   flex-direction: row;
 }
 
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -585,6 +673,9 @@ exports[`Anchor reverse icon label renders 1`] = `
         style="display: inline-flex;"
       >
         Test
+        <span
+          class="c3"
+        />
         <svg
           color="#7D4CDB"
         />

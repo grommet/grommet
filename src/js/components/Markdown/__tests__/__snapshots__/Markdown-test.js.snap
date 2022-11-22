@@ -312,7 +312,7 @@ exports[`wrapper 1`] = `
   overflow-wrap: break-word;
 }
 
-.c4 {
+.c5 {
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
@@ -320,7 +320,7 @@ exports[`wrapper 1`] = `
   overflow-wrap: break-word;
 }
 
-.c5 {
+.c6 {
   font-size: 26px;
   line-height: 32px;
   max-width: 624px;
@@ -328,7 +328,7 @@ exports[`wrapper 1`] = `
   overflow-wrap: break-word;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -336,7 +336,7 @@ exports[`wrapper 1`] = `
   overflow-wrap: break-word;
 }
 
-.c3 {
+.c4 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -356,7 +356,17 @@ exports[`wrapper 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -367,12 +377,12 @@ exports[`wrapper 1`] = `
   cursor: pointer;
 }
 
-.c7:hover {
+.c8:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c9 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -385,7 +395,7 @@ exports[`wrapper 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -397,7 +407,7 @@ exports[`wrapper 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -412,7 +422,7 @@ exports[`wrapper 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     font-size: 26px;
     line-height: 32px;
     max-width: 624px;
@@ -420,7 +430,7 @@ exports[`wrapper 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
@@ -428,10 +438,16 @@ exports[`wrapper 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     font-size: 16px;
     line-height: 22px;
     max-width: 384px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    height: 6px;
   }
 }
 
@@ -448,48 +464,69 @@ exports[`wrapper 1`] = `
       >
         H1
       </h1>
-      <p
+      <div
         class="c3"
+      />
+      <p
+        class="c4"
       >
         Paragraph
       </p>
+      <div
+        class="c3"
+      />
       <h2
-        class="c4"
+        class="c5"
         id="h2"
       >
         H2
       </h2>
+      <div
+        class="c3"
+      />
       <h3
-        class="c5"
+        class="c6"
         id="h3"
       >
         H3
       </h3>
+      <div
+        class="c3"
+      />
       <h4
-        class="c6"
+        class="c7"
         id="h4"
       >
         H4
       </h4>
-      <p
+      <div
         class="c3"
+      />
+      <p
+        class="c4"
       >
         <a
-          class="c7"
+          class="c8"
           href="#"
         >
           a link
         </a>
       </p>
+      <div
+        class="c3"
+      />
       <blockquote>
         <p
-          class="c3"
+          class="c4"
         >
           i carry your heart with me
         </p>
       </blockquote>
-      <p
+      <div
         class="c3"
+      />
+      <p
+        class="c4"
       >
         <img
           alt="alt text"
@@ -498,8 +535,11 @@ exports[`wrapper 1`] = `
           title="Markdown Image"
         />
       </p>
+      <div
+        class="c3"
+      />
       <table
-        class="c8"
+        class="c9"
       >
         <thead
           class="StyledTable__StyledTableHeader-sc-1m3u5g-4"
@@ -508,7 +548,7 @@ exports[`wrapper 1`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c9"
+              class="c10"
             >
               <div
                 class="c1"
@@ -517,7 +557,7 @@ exports[`wrapper 1`] = `
               </div>
             </td>
             <td
-              class="c9"
+              class="c10"
             >
               <div
                 class="c1"
@@ -526,7 +566,7 @@ exports[`wrapper 1`] = `
               </div>
             </td>
             <td
-              class="c9"
+              class="c10"
             >
               <div
                 class="c1"
@@ -543,21 +583,21 @@ exports[`wrapper 1`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c10"
+              class="c11"
             >
               <em>
                 Still
               </em>
             </td>
             <td
-              class="c10"
+              class="c11"
             >
               <code>
                 renders
               </code>
             </td>
             <td
-              class="c10"
+              class="c11"
             >
               <strong>
                 nicely
@@ -568,17 +608,17 @@ exports[`wrapper 1`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c10"
+              class="c11"
             >
               1
             </td>
             <td
-              class="c10"
+              class="c11"
             >
               2
             </td>
             <td
-              class="c10"
+              class="c11"
             >
               3
             </td>

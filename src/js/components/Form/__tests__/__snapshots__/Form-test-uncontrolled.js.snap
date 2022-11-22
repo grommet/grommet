@@ -2715,7 +2715,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   border-radius: 4px;
 }
 
-.c24 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2739,6 +2739,16 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
+}
+
+.c24 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
 }
 
 .c18 {
@@ -2832,7 +2842,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   cursor: pointer;
 }
 
-.c25 {
+.c26 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
@@ -2886,7 +2896,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   border: 0;
 }
 
-.c26 {
+.c27 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2914,47 +2924,47 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   transition-timing-function: ease-in-out;
 }
 
-.c26:hover {
+.c27:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c26:focus {
+.c27:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c26:focus > circle,
-.c26:focus > ellipse,
-.c26:focus > line,
-.c26:focus > path,
-.c26:focus > polygon,
-.c26:focus > polyline,
-.c26:focus > rect {
+.c27:focus > circle,
+.c27:focus > ellipse,
+.c27:focus > line,
+.c27:focus > path,
+.c27:focus > polygon,
+.c27:focus > polyline,
+.c27:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c26:focus::-moz-focus-inner {
+.c27:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c26:focus:not(:focus-visible) {
+.c27:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c26:focus:not(:focus-visible) > circle,
-.c26:focus:not(:focus-visible) > ellipse,
-.c26:focus:not(:focus-visible) > line,
-.c26:focus:not(:focus-visible) > path,
-.c26:focus:not(:focus-visible) > polygon,
-.c26:focus:not(:focus-visible) > polyline,
-.c26:focus:not(:focus-visible) > rect {
+.c27:focus:not(:focus-visible) > circle,
+.c27:focus:not(:focus-visible) > ellipse,
+.c27:focus:not(:focus-visible) > line,
+.c27:focus:not(:focus-visible) > path,
+.c27:focus:not(:focus-visible) > polygon,
+.c27:focus:not(:focus-visible) > polyline,
+.c27:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c26:focus:not(:focus-visible)::-moz-focus-inner {
+.c27:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3075,8 +3085,14 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
 }
 
 @media only screen and (max-width:768px) {
-  .c24 {
+  .c25 {
     border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c24 {
+    height: 6px;
   }
 }
 
@@ -3244,6 +3260,9 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
               one
             </span>
           </label>
+          <div
+            class="c24"
+          />
           <label
             class="c20"
             for="test-radiobuttongroup-two"
@@ -3260,10 +3279,10 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
                 value="two"
               />
               <div
-                class="c24 "
+                class="c25 "
               >
                 <svg
-                  class="c25"
+                  class="c26"
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
@@ -3281,6 +3300,9 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
               two
             </span>
           </label>
+          <div
+            class="c24"
+          />
           <label
             class="c20"
             for="test-radiobuttongroup-three"
@@ -3310,7 +3332,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
       </div>
     </div>
     <button
-      class="c26"
+      class="c27"
       type="reset"
     >
       Reset
@@ -3465,6 +3487,9 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
               one
             </span>
           </label>
+          <div
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 drdMXk"
+          />
           <label
             class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 drCFDy"
             for="test-radiobuttongroup-two"
@@ -3490,6 +3515,9 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
               two
             </span>
           </label>
+          <div
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 drdMXk"
+          />
           <label
             class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 drCFDy"
             for="test-radiobuttongroup-three"

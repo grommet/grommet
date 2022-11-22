@@ -386,9 +386,10 @@ describe('Box', () => {
 
   test('css gap', () => {
     const { container } = render(
-      <Grommet options={{ box: { gap: { css: true } } }}>
+      <Grommet options={{ box: { cssGap: true } }}>
         {['xsmall', 'small', 'medium', 'large', '80px', 'none'].map((gap) => (
           <Box key={gap} gap={gap} direction="row">
+            <Box />
             <Box />
           </Box>
         ))}

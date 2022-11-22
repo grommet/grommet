@@ -1133,6 +1133,10 @@ exports[`SelectMultiple disabled option 1`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -1515,6 +1519,10 @@ exports[`SelectMultiple keyboard interactions 1`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -1798,6 +1806,10 @@ exports[`SelectMultiple limit 1`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -2755,6 +2767,10 @@ exports[`SelectMultiple select all and clear 1`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -3779,6 +3795,10 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -4345,6 +4365,10 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -4544,6 +4568,10 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
 
 .c2 {
   cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {

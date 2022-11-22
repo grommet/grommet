@@ -195,7 +195,7 @@ exports[`Skeleton Box skeleton loading 1`] = `
   width: 100%;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -207,7 +207,7 @@ exports[`Skeleton Box skeleton loading 1`] = `
   width: 30%;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -263,12 +263,28 @@ exports[`Skeleton Box skeleton loading 1`] = `
   max-width: 432px;
 }
 
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 6px;
+}
+
 .c2 {
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    height: 3px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -302,14 +318,20 @@ exports[`Skeleton Box skeleton loading 1`] = `
           class="c6"
         />
         <div
+          class="c7"
+        />
+        <div
           class="c6"
         />
         <div
           class="c7"
         />
+        <div
+          class="c8"
+        />
       </div>
       <div
-        class="c8"
+        class="c9"
       />
     </div>
   </div>
@@ -357,7 +379,7 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
   width: 100%;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -369,7 +391,7 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
   width: 30%;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -425,12 +447,28 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
   max-width: 528px;
 }
 
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 6px;
+}
+
 .c2 {
   font-size: 26px;
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    height: 3px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -464,14 +502,20 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
           class="c6"
         />
         <div
+          class="c7"
+        />
+        <div
           class="c6"
         />
         <div
           class="c7"
         />
+        <div
+          class="c8"
+        />
       </div>
       <div
-        class="c8"
+        class="c9"
       />
     </div>
   </div>

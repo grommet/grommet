@@ -49,7 +49,7 @@ exports[`Distribution gap renders 1`] = `
   overflow: hidden;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -69,7 +69,7 @@ exports[`Distribution gap renders 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -89,6 +89,134 @@ exports[`Distribution gap renders 1`] = `
   overflow: hidden;
 }
 
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 6px;
+}
+
+.c5 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 6px;
+}
+
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c9 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c10 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 24px;
+}
+
+.c11 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 48px;
+}
+
+.c12 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 48px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    width: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    height: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    width: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    height: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    width: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    height: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    width: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    height: 24px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -103,17 +231,23 @@ exports[`Distribution gap renders 1`] = `
       </span>
     </div>
     <div
+      class="c3"
+    />
+    <div
       class="c2"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <span>
           2
         </span>
       </div>
       <div
-        class="c4"
+        class="c5"
+      />
+      <div
+        class="c6"
       >
         <span>
           1
@@ -132,17 +266,23 @@ exports[`Distribution gap renders 1`] = `
       </span>
     </div>
     <div
+      class="c7"
+    />
+    <div
       class="c2"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <span>
           2
         </span>
       </div>
       <div
-        class="c4"
+        class="c8"
+      />
+      <div
+        class="c6"
       >
         <span>
           1
@@ -161,17 +301,23 @@ exports[`Distribution gap renders 1`] = `
       </span>
     </div>
     <div
+      class="c9"
+    />
+    <div
       class="c2"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <span>
           2
         </span>
       </div>
       <div
-        class="c4"
+        class="c10"
+      />
+      <div
+        class="c6"
       >
         <span>
           1
@@ -190,17 +336,23 @@ exports[`Distribution gap renders 1`] = `
       </span>
     </div>
     <div
+      class="c11"
+    />
+    <div
       class="c2"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <span>
           2
         </span>
       </div>
       <div
-        class="c4"
+        class="c12"
+      />
+      <div
+        class="c6"
       >
         <span>
           1
@@ -276,7 +428,7 @@ exports[`Distribution undefined value 1`] = `
   overflow: hidden;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -296,6 +448,22 @@ exports[`Distribution undefined value 1`] = `
   overflow: hidden;
 }
 
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 6px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    width: 3px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -311,6 +479,9 @@ exports[`Distribution undefined value 1`] = `
     </div>
     <div
       class="c3"
+    />
+    <div
+      class="c4"
     >
       <span />
     </div>
@@ -367,7 +538,7 @@ exports[`Distribution values renders 1`] = `
   overflow: hidden;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -387,7 +558,7 @@ exports[`Distribution values renders 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -407,7 +578,7 @@ exports[`Distribution values renders 1`] = `
   overflow: hidden;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -427,7 +598,7 @@ exports[`Distribution values renders 1`] = `
   overflow: hidden;
 }
 
-.c6 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -447,7 +618,7 @@ exports[`Distribution values renders 1`] = `
   overflow: hidden;
 }
 
-.c7 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -467,6 +638,38 @@ exports[`Distribution values renders 1`] = `
   overflow: hidden;
 }
 
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 6px;
+}
+
+.c6 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 6px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    width: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    height: 3px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -482,26 +685,35 @@ exports[`Distribution values renders 1`] = `
     </div>
     <div
       class="c3"
+    />
+    <div
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <span>
           3
         </span>
       </div>
       <div
-        class="c5"
+        class="c6"
+      />
+      <div
+        class="c7"
       >
         <div
-          class="c6"
+          class="c8"
         >
           <span>
             2
           </span>
         </div>
         <div
-          class="c7"
+          class="c3"
+        />
+        <div
+          class="c9"
         >
           <span>
             1

@@ -5003,7 +5003,7 @@ exports[`Tabs with icon + reverse 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5032,12 +5032,22 @@ exports[`Tabs with icon + reverse 1`] = `
 }
 
 .c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c8 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
@@ -5127,7 +5137,7 @@ exports[`Tabs with icon + reverse 1`] = `
   z-index: 1;
 }
 
-.c10 {
+.c11 {
   min-height: 0;
 }
 
@@ -5158,28 +5168,34 @@ exports[`Tabs with icon + reverse 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     border-bottom: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    width: 6px;
   }
 }
 
@@ -5209,8 +5225,11 @@ exports[`Tabs with icon + reverse 1`] = `
             <svg
               color="text"
             />
-            <span
+            <div
               class="c7"
+            />
+            <span
+              class="c8"
             >
               Tab 1
             </span>
@@ -5224,13 +5243,16 @@ exports[`Tabs with icon + reverse 1`] = `
           type="button"
         >
           <div
-            class="c8 c6"
+            class="c9 c6"
           >
             <span
-              class="c9"
+              class="c10"
             >
               Tab 2
             </span>
+            <div
+              class="c7"
+            />
             <svg
               color="control"
             />
@@ -5240,7 +5262,7 @@ exports[`Tabs with icon + reverse 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="c10"
+      class="c11"
       role="tabpanel"
     >
       Tab body 1

@@ -7268,6 +7268,16 @@ exports[`DataChart legend 1`] = `
 }
 
 .c12 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 6px;
+}
+
+.c13 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -7326,6 +7336,12 @@ exports[`DataChart legend 1`] = `
   .c11 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    width: 3px;
   }
 }
 
@@ -7426,8 +7442,11 @@ exports[`DataChart legend 1`] = `
             stroke-width="96"
           />
         </svg>
-        <span
+        <div
           class="c12"
+        />
+        <span
+          class="c13"
         >
           a
         </span>

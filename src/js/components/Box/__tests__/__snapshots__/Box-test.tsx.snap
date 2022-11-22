@@ -2803,10 +2803,16 @@ exports[`Box css gap 1`] = `
     <div
       class="c2"
     />
+    <div
+      class="c2"
+    />
   </div>
   <div
     class="c3"
   >
+    <div
+      class="c2"
+    />
     <div
       class="c2"
     />
@@ -2817,10 +2823,16 @@ exports[`Box css gap 1`] = `
     <div
       class="c2"
     />
+    <div
+      class="c2"
+    />
   </div>
   <div
     class="c5"
   >
+    <div
+      class="c2"
+    />
     <div
       class="c2"
     />
@@ -2831,10 +2843,16 @@ exports[`Box css gap 1`] = `
     <div
       class="c2"
     />
+    <div
+      class="c2"
+    />
   </div>
   <div
     class="c7"
   >
+    <div
+      class="c2"
+    />
     <div
       class="c2"
     />
@@ -3478,6 +3496,22 @@ exports[`Box gap 1`] = `
   flex-direction: column;
 }
 
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    height: 6px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -3529,6 +3563,9 @@ exports[`Box gap 1`] = `
     <span>
       first
     </span>
+    <span
+      class="c3"
+    />
     <span>
       second
     </span>

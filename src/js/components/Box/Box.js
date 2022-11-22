@@ -110,7 +110,7 @@ const Box = forwardRef(
     if (
       gap &&
       gap !== 'none' &&
-      (!boxOptions?.gap?.css ||
+      (!boxOptions?.cssGap ||
         // need this approach to show border between
         border === 'between' ||
         border?.side === 'between')
@@ -213,7 +213,7 @@ const Box = forwardRef(
         fillProp={fill}
         focus={focus}
         gap={
-          boxOptions?.gap?.css &&
+          boxOptions?.cssGap &&
           gap &&
           gap !== 'none' &&
           border !== 'between' &&
