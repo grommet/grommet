@@ -33,8 +33,15 @@ var Drop = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     dropContainer = _useState2[0],
     setDropContainer = _useState2[1];
   var containerTarget = (0, _react.useContext)(_ContainerTargetContext.ContainerTargetContext);
+  var containerChildNodesLength = (0, _react.useRef)(null);
   (0, _react.useEffect)(function () {
-    return setDropContainer(!inline ? (0, _utils.getNewContainer)(containerTarget) : undefined);
+    // we need this condition to prevent getNewContainer to run multiple times
+    // in the event that the component gets created, destroyed, and recreated.
+    // see https://reactjs.org/docs/strict-mode.html#ensuring-reusable-state
+    if (!(containerChildNodesLength != null && containerChildNodesLength.current)) {
+      containerChildNodesLength.current = containerTarget.childNodes.length;
+      setDropContainer(!inline ? (0, _utils.getNewContainer)(containerTarget) : undefined);
+    }
   }, [containerTarget, inline]);
 
   // just a few things to clean up when the Drop is unmounted

@@ -1,7 +1,7 @@
 var _excluded = ["inline", "restrictFocus", "target", "trapFocus"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { forwardRef, useEffect, useState, useContext } from 'react';
+import React, { forwardRef, useEffect, useState, useContext, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -27,8 +27,15 @@ var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
     dropContainer = _useState2[0],
     setDropContainer = _useState2[1];
   var containerTarget = useContext(ContainerTargetContext);
+  var containerChildNodesLength = useRef(null);
   useEffect(function () {
-    return setDropContainer(!inline ? getNewContainer(containerTarget) : undefined);
+    // we need this condition to prevent getNewContainer to run multiple times
+    // in the event that the component gets created, destroyed, and recreated.
+    // see https://reactjs.org/docs/strict-mode.html#ensuring-reusable-state
+    if (!(containerChildNodesLength != null && containerChildNodesLength.current)) {
+      containerChildNodesLength.current = containerTarget.childNodes.length;
+      setDropContainer(!inline ? getNewContainer(containerTarget) : undefined);
+    }
   }, [containerTarget, inline]);
 
   // just a few things to clean up when the Drop is unmounted
