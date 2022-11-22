@@ -7,10 +7,11 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import { TabsContext } from '../Tabs/TabsContext';
-import { normalizeColor } from '../../utils';
+import { normalizeColor, useForwardedRef } from '../../utils';
 
 import { StyledTab } from './StyledTab';
 import { TabPropTypes } from './propTypes';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 const Tab = forwardRef(
   (
@@ -21,6 +22,8 @@ const Tab = forwardRef(
       icon,
       plain,
       title,
+      onBlur,
+      onFocus,
       onMouseOver,
       onMouseOut,
       reverse,
@@ -32,15 +35,24 @@ const Tab = forwardRef(
     const {
       active,
       activeIndex,
+      index,
+      ref: tabsContextRef,
       onActivate,
       setActiveContent,
       setActiveTitle,
+      setFocusIndex,
     } = useContext(TabsContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [over, setOver] = useState(undefined);
-    const [focus, setFocus] = useState(undefined);
     let normalizedTitle = title;
     const tabStyles = {};
+    const tabRef = useForwardedRef(ref);
+
+    useLayoutEffect(() => {
+      if (tabRef.current && tabsContextRef) {
+        tabsContextRef.current = tabRef.current;
+      }
+    });
 
     useEffect(() => {
       if (active) {
@@ -70,6 +82,22 @@ const Tab = forwardRef(
         onMouseOut(event);
       }
     };
+
+    if (!plain) {
+      if (typeof title !== 'string') {
+        normalizedTitle = title;
+      } else if (active) {
+        normalizedTitle = <Text {...theme.tab.active}>{title}</Text>;
+      } else if (disabled && theme.tab.disabled) {
+        normalizedTitle = <Text {...theme.tab.disabled}>{title}</Text>;
+      } else {
+        normalizedTitle = (
+          <Text color={over ? theme.tab.hover.color : theme.tab.color}>
+            {title}
+          </Text>
+        );
+      }
+    }
 
     const onClickTab = (event) => {
       if (event) {
@@ -164,7 +192,7 @@ const Tab = forwardRef(
 
     return (
       <Button
-        ref={ref}
+        ref={tabRef}
         plain
         role="tab"
         aria-selected={active}
@@ -175,16 +203,13 @@ const Tab = forwardRef(
         onMouseOver={onMouseOverTab}
         onMouseOut={onMouseOutTab}
         onFocus={() => {
-          setFocus(true);
-          if (onMouseOver) onMouseOver();
+          if (onFocus) onFocus();
+          setFocusIndex(index);
         }}
         onBlur={() => {
-          setFocus(undefined);
-          if (onMouseOut) onMouseOut();
+          if (onBlur) onBlur();
+          setFocusIndex(-1);
         }}
-        // ensure focus outline is not covered by hover styling
-        // of adjacent tabs
-        style={focus && { zIndex: 1 }}
       >
         <StyledTab
           as={Box}

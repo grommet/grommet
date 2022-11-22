@@ -82,7 +82,7 @@ export interface DataTableProps<TRowType = any> {
       pad?: PadType;
     };
   };
-  rowDetails?: React.ReactNode;
+  rowDetails?: (row: TRowType) => React.ReactNode;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
   // Data
@@ -91,12 +91,12 @@ export interface DataTableProps<TRowType = any> {
   groupBy?:
     | string
     | {
-        property: string;
-        expand: Array<string>;
-        expandable: Array<string>;
-        select: { [key: string]: 'all' | 'some' | 'none' };
-        onExpand: (expandedKeys: string[]) => void;
-        onSelect: (select: (string | number)[], datum: TRowType) => void;
+        property?: string;
+        expand?: Array<string>;
+        expandable?: Array<string>;
+        select?: { [key: string]: 'all' | 'some' | 'none' };
+        onExpand?: (expandedKeys: string[]) => void;
+        onSelect?: (select: (string | number)[], datum: TRowType) => void;
       };
   primaryKey?: string | boolean;
   select?: (string | number)[];
@@ -129,7 +129,10 @@ export interface DataTableProps<TRowType = any> {
 
 export interface DataTableExtendedProps<TRowType = any>
   extends DataTableProps<TRowType>,
-    Omit<JSX.IntrinsicElements['table'], 'onSelect' | 'placeholder'> {}
+    Omit<
+      JSX.IntrinsicElements['table'],
+      'onSelect' | 'placeholder' | 'border'
+    > {}
 
 declare class DataTable<TRowType = any> extends React.Component<
   DataTableExtendedProps<TRowType>

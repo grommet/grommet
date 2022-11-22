@@ -1,8 +1,9 @@
+import { setHoursWithOffset } from '../../utils';
+import { handleOffset } from '../Calendar/utils';
+
 // Converting between Date and String types is handled via a "schema".
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
-import { formatToLocalYYYYMMDD } from '../Calendar/utils';
-
 export const formatToSchema = (format) => {
   if (!format) return undefined;
   const result = [];
@@ -53,8 +54,8 @@ export const valueToText = (value, schema) => {
   // show the placeholder text
   if (!value || (Array.isArray(value) && !value.length)) return text;
 
-  const dates = (Array.isArray(value) ? value : [value]).map(
-    (v) => new Date(v),
+  const dates = (Array.isArray(value) ? value : [value]).map((v) =>
+    setHoursWithOffset(v),
   );
 
   let dateIndex = 0;
@@ -117,7 +118,27 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
-export const textToValue = (text, schema, range, timestamp, normalize) => {
+export const validateBounds = (dateBounds, selectedDate) => {
+  if (!dateBounds || !selectedDate) return selectedDate;
+
+  const [startDate, endDate] = dateBounds.map((date) =>
+    setHoursWithOffset(date).toISOString(),
+  );
+
+  const isoSelectedDates = (
+    Array.isArray(selectedDate) ? selectedDate : [selectedDate]
+  ).map((date) => setHoursWithOffset(date).toISOString());
+
+  const validSelection = isoSelectedDates.every(
+    (isoSelectedDate) =>
+      (!endDate && startDate === isoSelectedDate) ||
+      (isoSelectedDate >= startDate && isoSelectedDate <= endDate),
+  );
+
+  return validSelection ? selectedDate : undefined;
+};
+
+export const textToValue = (text, schema, range, reference, outputFormat) => {
   if (!text) return range ? [] : undefined;
 
   let result;
@@ -141,13 +162,21 @@ export const textToValue = (text, schema, range, timestamp, normalize) => {
     )
       return parts;
 
-    let date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
-    // match time and timezone of any supplied valueProp
-    if (timestamp)
-      date = `${
-        formatToLocalYYYYMMDD(date, normalize).split('T')[0]
-      }T${timestamp}`;
-    else date = `${formatToLocalYYYYMMDD(date, normalize).split('T')[0]}`;
+    // use time info from reference date
+    const time = reference
+      ? [
+          reference.getHours(),
+          reference.getMinutes(),
+          reference.getSeconds(),
+          reference.getMilliseconds(),
+        ]
+      : null;
+
+    let date = new Date(parts.y, parts.m - 1, parts.d, ...time).toISOString();
+
+    if (date && outputFormat === 'no timezone') {
+      [date] = handleOffset(date).toISOString().split('T');
+    }
 
     if (!range) {
       if (!result) result = date;

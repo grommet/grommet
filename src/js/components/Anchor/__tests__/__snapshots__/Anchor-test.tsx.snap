@@ -160,88 +160,6 @@ exports[`Anchor gap renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-column-gap: 6px;
-  column-gap: 6px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-column-gap: 12px;
-  column-gap: 12px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-column-gap: 24px;
-  column-gap: 24px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-column-gap: 48px;
-  column-gap: 48px;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-column-gap: 5px;
-  column-gap: 5px;
 }
 
 .c1 {
@@ -283,7 +201,7 @@ exports[`Anchor gap renders 1`] = `
       href="#"
     >
       <span
-        class="c3"
+        class="c2"
         style="display: inline-flex;"
       >
         <svg
@@ -297,7 +215,7 @@ exports[`Anchor gap renders 1`] = `
       href="#"
     >
       <span
-        class="c4"
+        class="c2"
         style="display: inline-flex;"
       >
         <svg
@@ -311,7 +229,7 @@ exports[`Anchor gap renders 1`] = `
       href="#"
     >
       <span
-        class="c5"
+        class="c2"
         style="display: inline-flex;"
       >
         <svg
@@ -325,7 +243,7 @@ exports[`Anchor gap renders 1`] = `
       href="#"
     >
       <span
-        class="c6"
+        class="c2"
         style="display: inline-flex;"
       >
         <svg
@@ -365,8 +283,6 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-column-gap: 12px;
-  column-gap: 12px;
 }
 
 .c1 {
@@ -639,8 +555,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-column-gap: 12px;
-  column-gap: 12px;
 }
 
 .c1 {
@@ -743,6 +657,7 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .c2 {
@@ -767,6 +682,7 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
   <div
     class="c1 c2"
     href="#"
+    tabindex="0"
   />
 </div>
 `;

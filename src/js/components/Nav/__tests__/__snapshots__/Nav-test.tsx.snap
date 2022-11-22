@@ -16,7 +16,6 @@ exports[`Nav should have no accessibility violations 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  row-gap: 24px;
 }
 
 .c0 {
@@ -27,12 +26,6 @@ exports[`Nav should have no accessibility violations 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    row-gap: 12px;
-  }
 }
 
 <div>

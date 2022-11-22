@@ -45,8 +45,6 @@ exports[`Card Themed 1`] = `
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
-  -webkit-column-gap: 24px;
-  column-gap: 24px;
 }
 
 .c3 {
@@ -97,8 +95,6 @@ exports[`Card Themed 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-  -webkit-column-gap: 24px;
-  column-gap: 24px;
 }
 
 .c0 {
@@ -125,13 +121,6 @@ exports[`Card Themed 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    -webkit-column-gap: 12px;
-    column-gap: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     padding: 6px;
   }
@@ -148,13 +137,6 @@ exports[`Card Themed 1`] = `
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    -webkit-column-gap: 12px;
-    column-gap: 12px;
   }
 }
 
@@ -224,8 +206,6 @@ exports[`Card all 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-column-gap: 24px;
-  column-gap: 24px;
 }
 
 .c3 {
@@ -258,13 +238,6 @@ exports[`Card all 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    -webkit-column-gap: 12px;
-    column-gap: 12px;
   }
 }
 
@@ -406,8 +379,6 @@ exports[`Card footer 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-column-gap: 24px;
-  column-gap: 24px;
 }
 
 .c0 {
@@ -423,13 +394,6 @@ exports[`Card footer 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    -webkit-column-gap: 12px;
-    column-gap: 12px;
   }
 }
 
@@ -489,8 +453,6 @@ exports[`Card header 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-column-gap: 24px;
-  column-gap: 24px;
 }
 
 .c0 {
@@ -506,13 +468,6 @@ exports[`Card header 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    -webkit-column-gap: 12px;
-    column-gap: 12px;
   }
 }
 

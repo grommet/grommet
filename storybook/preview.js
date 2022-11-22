@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { hpe } from 'grommet-theme-hpe';
 import isChromatic from 'chromatic/isChromatic';
-import { Grommet, grommet, Box, Text } from '../src/js';
+import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
 
 const CUSTOM_THEMED = 'Custom Themed';
 const THEMES = {
   hpe,
   grommet,
+  hacktoberfest2022,
   base: {},
 };
 
@@ -83,11 +84,15 @@ export const parameters = {
 
 export const globalTypes = {
   theme: {
-    name: 'Theme',
     defaultValue: 'grommet',
     toolbar: {
-      items: ['base', 'grommet', 'hpe'],
-      showName: true,
+      title: 'Theme',
+      items: [
+        { title: 'base', value: 'base' },
+        { title: 'grommet', value: 'grommet' },
+        { title: 'hpe', value: 'hpe' },
+        { title: 'hacktoberfest2022', value: 'hacktoberfest2022' },
+      ],
     },
   },
 };

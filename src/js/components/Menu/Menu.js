@@ -291,6 +291,7 @@ const Menu = forwardRef((props, ref) => {
         // be able to receive tab focus because the focus should
         // go to the first menu item instead.
         tabIndex={activeItemIndex === constants.none ? '-1' : undefined}
+        {...theme.menu.item}
         {...buttonProps}
       >
         {typeof content === 'function'
@@ -308,8 +309,8 @@ const Menu = forwardRef((props, ref) => {
         align="start"
         pad="small"
         direction="row"
-        gap={item.gap}
-        justify={item.justify}
+        gap={item.gap || theme.menu.item?.gap}
+        justify={item.justify || theme.menu.item?.justify}
       >
         {item.reverse && item.label}
         {item.icon}
@@ -333,9 +334,10 @@ const Menu = forwardRef((props, ref) => {
           focusIndicator={false}
           plain={!child ? undefined : true}
           align="start"
-          justify={item.justify}
           kind={!child ? 'option' : undefined}
           hoverIndicator={!child ? undefined : 'background'}
+          {...theme.menu.item}
+          justify={item.justify || theme.menu.item?.justify}
           {...(!child
             ? item
             : {
@@ -367,25 +369,28 @@ const Menu = forwardRef((props, ref) => {
       <Box
         // eslint-disable-next-line react/no-array-index-key
         key={groupIndex}
-        {...theme.menu.group?.container}
-        border={
-          groupIndex > 0
-            ? {
+      >
+        {groupIndex > 0 && (
+          <Box pad={theme.menu.group.separator.pad}>
+            <Box
+              border={{
                 side: 'top',
                 color: theme.menu.group?.separator?.color,
                 size: theme.menu.group?.separator?.size,
-              }
-            : undefined
-        }
-      >
-        {group.map((item) => {
-          // item index needs to be its index in the entire menu as if
-          // it were a flat array
-          const currentIndex = index;
-          index += 1;
+              }}
+            />
+          </Box>
+        )}
+        <Box {...theme.menu.group?.container}>
+          {group.map((item) => {
+            // item index needs to be its index in the entire menu as if
+            // it were a flat array
+            const currentIndex = index;
+            index += 1;
 
-          return menuItem(item, currentIndex);
-        })}
+            return menuItem(item, currentIndex);
+          })}
+        </Box>
       </Box>
     ));
   } else menuContent = items.map((item, index) => menuItem(item, index));

@@ -2154,8 +2154,6 @@ exports[`Button disabled 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-column-gap: 12px;
-  column-gap: 12px;
 }
 
 .c1 {
@@ -3525,8 +3523,6 @@ exports[`Button icon label 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-column-gap: 12px;
-  column-gap: 12px;
 }
 
 .c1 {
@@ -3743,8 +3739,6 @@ exports[`Button reverse icon label 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-column-gap: 12px;
-  column-gap: 12px;
 }
 
 .c1 {
@@ -3934,8 +3928,6 @@ exports[`Button size 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-column-gap: 12px;
-  column-gap: 12px;
 }
 
 .c1 {

@@ -200,7 +200,7 @@ const interactiveStyle = css`
   }
 `;
 
-const gapStyle = (directionProp, gap, responsive, border, theme) => {
+const gapStyle = (directionProp, gap, responsive, theme) => {
   const metric = theme.global.edgeSize[gap] || gap;
   const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
@@ -270,14 +270,7 @@ const StyledBox = styled.div`
   ${(props) => props.elevationProp && elevationStyle(props.elevationProp)}
   ${(props) =>
     props.gap &&
-    !(props.border === 'between' || props.border?.side === 'between') &&
-    gapStyle(
-      props.directionProp,
-      props.gap,
-      props.responsive,
-      props.border,
-      props.theme,
-    )}
+    gapStyle(props.directionProp, props.gap, props.responsive, props.theme)}
   ${(props) => props.animation && animationStyle}
   ${(props) => props.onClick && interactiveStyle}
   ${(props) =>
@@ -335,7 +328,7 @@ const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
     const responsiveBorderOffset =
       responsiveBorderMetric &&
       `${
-        parseMetricToNum(responsiveMetric) / 2 -
+        parseMetricToNum(responsiveMetric || metric) / 2 -
         parseMetricToNum(responsiveBorderMetric) / 2
       }px`;
 

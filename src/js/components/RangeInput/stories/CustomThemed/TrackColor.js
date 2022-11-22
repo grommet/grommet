@@ -22,6 +22,7 @@ export const TrackColor = () => {
     <Grommet theme={rangeInputTheme}>
       <Box align="center" pad="large" gap="large" width="large">
         <RangeInput
+          a11yTitle="Select range value"
           min={0}
           max={1}
           step={0.1}
@@ -30,6 +31,7 @@ export const TrackColor = () => {
           onChange={onChange1}
         />
         <RangeInput
+          a11yTitle="Select range value"
           min={0}
           max={10}
           step={1}

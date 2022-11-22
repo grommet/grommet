@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { DropProps } from '../Drop';
-import { ButtonProps, ButtonType } from '../Button';
+import { DropType } from '../Drop';
+import { ButtonExtendedProps, ButtonType } from '../Button';
 import {
   A11yTitleType,
   AlignSelfType,
@@ -28,10 +28,10 @@ export interface MenuProps {
         opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
       };
   dropTarget?: object;
-  dropProps?: DropProps;
+  dropProps?: DropType;
   gridArea?: GridAreaType;
   icon?: boolean | React.ReactNode;
-  items: ButtonProps[] | ButtonProps[][];
+  items: ButtonExtendedProps[] | ButtonExtendedProps[][];
   justifyContent?: JustifyContentType;
   label?: string | React.ReactNode;
   margin?: MarginType;

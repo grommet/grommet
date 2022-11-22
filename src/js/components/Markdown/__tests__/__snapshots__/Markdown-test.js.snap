@@ -16,6 +16,7 @@ exports[`Markdown renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c3 {
@@ -23,6 +24,7 @@ exports[`Markdown renders 1`] = `
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c4 {
@@ -30,6 +32,7 @@ exports[`Markdown renders 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c5 {
@@ -37,6 +40,7 @@ exports[`Markdown renders 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c2 {
@@ -305,6 +309,7 @@ exports[`wrapper 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c4 {
@@ -312,6 +317,7 @@ exports[`wrapper 1`] = `
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c5 {
@@ -319,6 +325,7 @@ exports[`wrapper 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c6 {
@@ -326,6 +333,7 @@ exports[`wrapper 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c3 {
@@ -335,21 +343,6 @@ exports[`wrapper 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  row-gap: 12px;
-}
-
-.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -392,7 +385,7 @@ exports[`wrapper 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -439,12 +432,6 @@ exports[`wrapper 1`] = `
     font-size: 16px;
     line-height: 22px;
     max-width: 384px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    row-gap: 6px;
   }
 }
 
@@ -524,7 +511,7 @@ exports[`wrapper 1`] = `
               class="c9"
             >
               <div
-                class="c10"
+                class="c1"
               >
                 Markdown
               </div>
@@ -533,7 +520,7 @@ exports[`wrapper 1`] = `
               class="c9"
             >
               <div
-                class="c10"
+                class="c1"
               >
                 Less
               </div>
@@ -542,7 +529,7 @@ exports[`wrapper 1`] = `
               class="c9"
             >
               <div
-                class="c10"
+                class="c1"
               >
                 Pretty
               </div>
@@ -556,21 +543,21 @@ exports[`wrapper 1`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c11"
+              class="c10"
             >
               <em>
                 Still
               </em>
             </td>
             <td
-              class="c11"
+              class="c10"
             >
               <code>
                 renders
               </code>
             </td>
             <td
-              class="c11"
+              class="c10"
             >
               <strong>
                 nicely
@@ -581,17 +568,17 @@ exports[`wrapper 1`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c11"
+              class="c10"
             >
               1
             </td>
             <td
-              class="c11"
+              class="c10"
             >
               2
             </td>
             <td
-              class="c11"
+              class="c10"
             >
               3
             </td>

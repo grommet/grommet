@@ -16,7 +16,7 @@ export const DynamicFields = () => {
           onSubmit={({ value }) => console.log('Submit', value)}
         >
           <FormField label="Name" name="name" required>
-            <TextInput name="name" />
+            <TextInput name="name" aria-label="name" />
           </FormField>
           <FormField name="haveAlias">
             <CheckBox

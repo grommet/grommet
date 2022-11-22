@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export const parseMetricToNum = metric => {
+export const parseMetricToNum = (metric) => {
   if (typeof metric === 'number') return metric;
   if (metric.match(/\s/) && process.env.NODE_ENV !== 'production') {
     console.warn(`Invalid single measurement value: "${metric}"`);
@@ -8,23 +8,30 @@ export const parseMetricToNum = metric => {
   return parseFloat(metric.match(/\d+(\.\d+)?/), 10);
 };
 
+export const edgeToNum = (size, theme) =>
+  size ? parseMetricToNum(theme.global.edgeSize[size] || size) : 0;
+
 export const fontSize = (size, lineHeight) => css`
-  font-size: ${props =>
-    `${(parseMetricToNum(size) /
-      parseMetricToNum(props.theme.global.font.size)) *
-      1}rem`};
-  line-height: ${props =>
+  font-size: ${(props) =>
+    `${
+      (parseMetricToNum(size) /
+        parseMetricToNum(props.theme.global.font.size)) *
+      1
+    }rem`};
+  line-height: ${(props) =>
     lineHeight ||
-    `${Math.ceil(
-      parseMetricToNum(size) / parseMetricToNum(props.theme.global.lineHeight),
-    ) *
-      (parseMetricToNum(props.theme.global.lineHeight) /
-        parseMetricToNum(size))}px`};
+    `${
+      Math.ceil(
+        parseMetricToNum(size) /
+          parseMetricToNum(props.theme.global.lineHeight),
+      ) *
+      (parseMetricToNum(props.theme.global.lineHeight) / parseMetricToNum(size))
+    }px`};
 `;
 
 export const breakpointStyle = (breakpoint, content) => css`
   @media only screen ${breakpoint.value &&
-      `and (max-width: ${breakpoint.value}px)`} {
+    `and (max-width: ${breakpoint.value}px)`} {
     ${content};
   }
 `;
@@ -37,7 +44,7 @@ export const findAllByType = (component, type) => {
   }
 
   if (component.children) {
-    component.children.forEach(child => {
+    component.children.forEach((child) => {
       matches = matches.concat(findAllByType(child, type));
     });
   }

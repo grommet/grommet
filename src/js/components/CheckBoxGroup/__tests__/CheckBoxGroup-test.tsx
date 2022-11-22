@@ -207,4 +207,14 @@ describe('CheckBoxGroup', () => {
     warnSpy.mockReset();
     warnSpy.mockRestore();
   });
+
+  test('defaultValue renders', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <CheckBoxGroup options={['First', 'Second']} defaultValue={['First']} />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

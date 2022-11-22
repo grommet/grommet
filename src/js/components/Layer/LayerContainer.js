@@ -13,6 +13,8 @@ import { Keyboard } from '../Keyboard';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
+
 import {
   backgroundIsDark,
   findVisibleParent,
@@ -65,6 +67,29 @@ const LayerContainer = forwardRef(
       [portalContext, portalId],
     );
 
+    const sendAnalytics = useAnalytics();
+
+    useEffect(() => {
+      const start = new Date();
+      const element = layerRef.current;
+      const isHidden = position === 'hidden';
+      if (!isHidden) {
+        sendAnalytics({
+          type: 'layerOpen',
+          element,
+        });
+      }
+      return () => {
+        if (!isHidden) {
+          sendAnalytics({
+            type: 'layerClose',
+            element,
+            elapsed: new Date().getTime() - start.getTime(),
+          });
+        }
+      };
+    }, [sendAnalytics, layerRef, position]);
+
     useEffect(() => {
       if (position !== 'hidden') {
         const node = layerRef.current || containerRef.current || ref.current;
@@ -99,7 +124,10 @@ const LayerContainer = forwardRef(
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
         let node =
-          containerTarget === document.body ? event.target : event?.path[0];
+          containerTarget === document.body
+            ? event.target
+            : event?.composedPath()[0];
+
         while (clickedPortalId === null && node !== document && node !== null) {
           // check if user click occurred within the layer
           const attr = node.getAttribute('data-g-portal-id');

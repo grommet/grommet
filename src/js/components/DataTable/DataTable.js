@@ -108,6 +108,9 @@ const DataTable = ({
 
   // which column we are sorting on, with direction
   const [sort, setSort] = useState(sortProp || {});
+  useEffect(() => {
+    if (sortProp) setSort(sortProp);
+  }, [sortProp]);
 
   // the data filtered and sorted, if needed
   // Note: onUpdate mode expects the data to be passed
@@ -338,6 +341,7 @@ const DataTable = ({
     step,
     ...paginate, // let any specifications from paginate prop override component
   });
+  const { step: paginationStep } = paginationProps;
 
   const Container = paginate ? StyledContainer : Fragment;
   const containterProps = paginate
@@ -348,7 +352,7 @@ const DataTable = ({
   // should remain in its location
   const OverflowContainer = paginate ? Box : Fragment;
   const overflowContainerProps = paginate
-    ? { overflow: { horizontal: 'auto' }, flex: false }
+    ? { overflow: { horizontal: 'auto' } }
     : undefined;
 
   // necessary for Firefox, otherwise paginated DataTable will
@@ -392,12 +396,12 @@ const DataTable = ({
                   expanded: Object.keys(groupState).filter(
                     (k) => groupState[k].expanded,
                   ),
-                  count: limit + step,
+                  count: limit + paginationStep,
                 };
                 if (sort?.property) opts.sort = sort;
                 if (showProp) opts.show = showProp;
                 onUpdate(opts);
-                setLimit((prev) => prev + step);
+                setLimit((prev) => prev + paginationStep);
               }
             }
           : onMore
@@ -416,7 +420,7 @@ const DataTable = ({
       rowProps={rowProps}
       selected={selected}
       size={size}
-      step={step}
+      step={paginationStep}
       verticalAlign={
         typeof verticalAlign === 'string' ? verticalAlign : verticalAlign?.body
       }
@@ -433,12 +437,12 @@ const DataTable = ({
           ? () => {
               if (adjustedData.length === limit) {
                 const opts = {
-                  count: limit + step,
+                  count: limit + paginationStep,
                 };
                 if (sort?.property) opts.sort = sort;
                 if (showProp) opts.show = showProp;
                 onUpdate(opts);
-                setLimit((prev) => prev + step);
+                setLimit((prev) => prev + paginationStep);
               }
             }
           : onMore
@@ -460,7 +464,7 @@ const DataTable = ({
       selected={selected}
       show={!paginate ? showProp : undefined}
       size={size}
-      step={step}
+      step={paginationStep}
       rowDetails={rowDetails}
       rowExpand={rowExpand}
       setRowExpand={setRowExpand}
@@ -559,7 +563,10 @@ const DataTable = ({
           )}
         </StyledDataTable>
       </OverflowContainer>
-      {paginate && adjustedData.length > step && items && items.length ? (
+      {paginate &&
+      adjustedData.length > paginationStep &&
+      items &&
+      items.length ? (
         <Pagination alignSelf="end" {...paginationProps} />
       ) : null}
     </Container>

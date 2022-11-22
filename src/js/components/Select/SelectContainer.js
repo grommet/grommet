@@ -8,7 +8,11 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { selectedStyle, setFocusWithoutScroll } from '../../utils';
+import {
+  setFocusWithoutScroll,
+  getHoverIndicatorStyle,
+  containsFocus,
+} from '../../utils';
 
 import { defaultProps } from '../../default-props';
 
@@ -19,40 +23,44 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
-import { StyledContainer } from './StyledSelect';
-import { applyKey } from './utils';
+import {
+  StyledContainer,
+  OptionsContainer,
+  SelectOption,
+} from './StyledSelect';
+import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
+import { EmptySearchOption } from './EmptySearchOption';
 
-// position relative is so scroll can be managed correctly
-const OptionsBox = styled.div`
-  position: relative;
-  scroll-behavior: smooth;
-  overflow: auto;
-  outline: none;
+// ensure ClearButton receives visual indication of keyboard
+const StyledButton = styled(Button)`
+  &:focus {
+    ${(props) => getHoverIndicatorStyle('background', props.theme)}
+  }
 `;
 
-const SelectOption = styled(Button)`
-  ${(props) => props.selected && props.textComponent && selectedStyle}
-  display: block;
-  width: 100%;
-`;
-
-const ClearButton = forwardRef(({ clear, onClear, name, theme }, ref) => {
-  const { label, position } = clear;
-  const align = position !== 'bottom' ? 'start' : 'center';
-  const buttonLabel = label || `Clear ${name || 'selection'}`;
-  return (
-    <Button
-      fill="horizontal"
-      ref={ref}
-      onClick={onClear}
-      focusIndicator={false}
-    >
-      <Box {...theme.select.clear.container} align={align}>
-        <Text {...theme.select.clear.text}>{buttonLabel}</Text>
-      </Box>
-    </Button>
-  );
-});
+const ClearButton = forwardRef(
+  ({ clear, onClear, name, theme, ...rest }, ref) => {
+    const { label, position } = clear;
+    const align = position !== 'bottom' ? 'start' : 'center';
+    const buttonLabel = label || `Clear ${name || 'selection'}`;
+    return (
+      <StyledButton
+        a11yTitle={`${buttonLabel}. Or, press ${
+          position === 'bottom' ? 'shift tab' : 'down arrow'
+        } to move to select options`}
+        fill="horizontal"
+        ref={ref}
+        onClick={onClear}
+        focusIndicator={false}
+        {...rest}
+      >
+        <Box {...theme.select.clear.container} align={align}>
+          <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+        </Box>
+      </StyledButton>
+    );
+  },
+);
 
 const SelectContainer = forwardRef(
   (
@@ -86,22 +94,39 @@ const SelectContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [activeIndex, setActiveIndex] = useState(-1);
-    const [keyboardNavigation, setKeyboardNavigation] = useState();
+    const shouldShowClearButton = useCallback(
+      (position) => {
+        const hasValue = Boolean(multiple && value ? value.length : value);
+        const showAtPosition =
+          position === 'bottom'
+            ? clear?.position === 'bottom'
+            : clear?.position !== 'bottom';
+
+        return clear && hasValue && showAtPosition;
+      },
+      [clear, multiple, value],
+    );
+
+    const isDisabled = useDisabled(
+      disabled,
+      disabledKey,
+      options,
+      valueKey || labelKey,
+    );
+
+    const [activeIndex, setActiveIndex] = useState(
+      usingKeyboard && !shouldShowClearButton('top') ? 0 : -1,
+    );
+    const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
     const searchRef = useRef();
     const optionsRef = useRef();
     const clearRef = useRef();
+    const activeRef = useRef();
 
+    // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {
-      const optionsNode = optionsRef.current;
-      if (optionsNode.children) {
-        const clearButton = clearRef.current;
-        let index = activeIndex;
-        if (clear && clear.position !== 'bottom' && clearButton) index += 1;
-        const optionNode = optionsNode.children[index];
-        if (optionNode) optionNode.focus();
-      }
-    }, [activeIndex, clear]);
+      if (activeIndex >= 0) activeRef.current?.focus();
+    }, [activeIndex]);
 
     // set initial focus
     useEffect(() => {
@@ -121,56 +146,14 @@ const SelectContainer = forwardRef(
           clear.position !== 'bottom'
         ) {
           setFocusWithoutScroll(clearButton);
-        } else if (optionsNode && optionsNode.children && usingKeyboard) {
-          // if the user is navigating with the keyboard set the
-          // first child as the active index when the drop opens
-          setFocusWithoutScroll(optionsNode.children[0]);
-          setActiveIndex(0);
+        } else if (usingKeyboard && activeRef.current) {
+          setFocusWithoutScroll(activeRef.current);
         } else if (optionsNode) {
           setFocusWithoutScroll(optionsNode);
         }
       }, 100);
       return () => clearTimeout(timer);
     }, [onSearch, usingKeyboard, clear]);
-
-    // clear keyboardNavigation after a while
-    useEffect(() => {
-      if (keyboardNavigation) {
-        // 100ms was empirically determined
-        const timer = setTimeout(() => setKeyboardNavigation(false), 100);
-        return () => clearTimeout(timer);
-      }
-      return undefined;
-    }, [keyboardNavigation]);
-
-    const optionLabel = useCallback(
-      (index) => applyKey(options[index], labelKey),
-      [labelKey, options],
-    );
-
-    const optionValue = useCallback(
-      (index) => applyKey(options[index], valueKey),
-      [options, valueKey],
-    );
-
-    const isDisabled = useCallback(
-      (index) => {
-        const option = options[index];
-        let result;
-        if (disabledKey) {
-          result = applyKey(option, disabledKey);
-        } else if (Array.isArray(disabled)) {
-          if (typeof disabled[0] === 'number') {
-            result = disabled.indexOf(index) !== -1;
-          } else {
-            const optionVal = optionValue(index);
-            result = disabled.indexOf(optionVal) !== -1;
-          }
-        }
-        return result;
-      },
-      [disabled, disabledKey, options, optionValue],
-    );
 
     const isSelected = useCallback(
       (index) => {
@@ -179,7 +162,7 @@ const SelectContainer = forwardRef(
           // deprecated in favor of value
           result = selected.indexOf(index) !== -1;
         } else {
-          const optionVal = optionValue(index);
+          const optionVal = getOptionValue(index, options, valueKey);
           if (Array.isArray(value)) {
             if (value.length === 0) {
               result = false;
@@ -190,11 +173,11 @@ const SelectContainer = forwardRef(
                 const valueValue =
                   typeof valueKey === 'function'
                     ? valueKey(valueItem)
-                    : valueItem[valueKey];
+                    : valueItem[valueKey] || valueItem[valueKey.key];
                 return valueValue === optionVal;
               });
             }
-          } else if (valueKey && typeof value === 'object') {
+          } else if (valueKey && value !== null && typeof value === 'object') {
             const valueValue =
               typeof valueKey === 'function'
                 ? valueKey(value)
@@ -206,7 +189,7 @@ const SelectContainer = forwardRef(
         }
         return result;
       },
-      [optionValue, selected, value, valueKey],
+      [selected, value, valueKey, options],
     );
 
     const selectOption = useCallback(
@@ -257,7 +240,6 @@ const SelectContainer = forwardRef(
       (event) => {
         event.preventDefault();
         let nextActiveIndex = activeIndex + 1;
-        const clearButton = clearRef.current;
         while (
           nextActiveIndex < options.length &&
           isDisabled(nextActiveIndex)
@@ -268,28 +250,26 @@ const SelectContainer = forwardRef(
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
         }
-        if (
-          clear &&
-          clear.position === 'bottom' &&
-          clearButton &&
-          nextActiveIndex >= options.length
-        ) {
-          setActiveIndex(options.length);
-          setFocusWithoutScroll(clearButton);
-        }
       },
-      [activeIndex, isDisabled, options, clear],
+      [activeIndex, options, isDisabled],
     );
 
     const onPreviousOption = useCallback(
       (event) => {
         event.preventDefault();
         let nextActiveIndex = activeIndex - 1;
-        const clearButton = clearRef.current;
 
         if (nextActiveIndex === -1) {
           const searchInput = searchRef.current;
-          if (searchInput && searchInput.focus) {
+          const clearButton = clearRef.current;
+          if (
+            clearButton &&
+            clearButton.focus &&
+            shouldShowClearButton('top')
+          ) {
+            setActiveIndex(nextActiveIndex);
+            setFocusWithoutScroll(clearButton);
+          } else if (searchInput && searchInput.focus) {
             setActiveIndex(nextActiveIndex);
             setFocusWithoutScroll(searchInput);
           }
@@ -302,16 +282,8 @@ const SelectContainer = forwardRef(
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
         }
-        if (
-          clear &&
-          clear.position !== 'bottom' &&
-          clearButton &&
-          activeIndex === 0
-        ) {
-          setActiveIndex(-1);
-        }
       },
-      [activeIndex, isDisabled, clear],
+      [activeIndex, isDisabled, shouldShowClearButton],
     );
 
     const onKeyDownOption = useCallback(
@@ -341,7 +313,7 @@ const SelectContainer = forwardRef(
           onKeyDown(event);
         }
       },
-      [onKeyDown, options, isDisabled, onSearch, labelKey],
+      [isDisabled, labelKey, onKeyDown, options, onSearch],
     );
 
     const onActiveOption = useCallback(
@@ -353,23 +325,18 @@ const SelectContainer = forwardRef(
 
     const onSelectOption = useCallback(
       (event) => {
-        if (activeIndex >= 0 && activeIndex < options.length) {
+        if (
+          (shouldShowClearButton('bottom') || shouldShowClearButton('top')) &&
+          containsFocus(clearRef.current)
+        ) {
+          onChange(event, { option: undefined, value: '', selected: '' });
+        } else if (activeIndex >= 0 && activeIndex < options.length) {
           event.preventDefault(); // prevent submitting forms
           selectOption(activeIndex)(event);
         }
       },
-      [activeIndex, selectOption, options],
+      [activeIndex, selectOption, options, onChange, shouldShowClearButton],
     );
-
-    const shouldShowClearButton = (position) => {
-      const hasValue = Boolean(multiple ? value.length : value);
-      const showAtPosition =
-        position === 'bottom'
-          ? clear?.position === 'bottom'
-          : clear?.position !== 'bottom';
-
-      return clear && hasValue && showAtPosition;
-    };
 
     const customSearchInput = theme.select.searchInput;
     const SelectTextInput = customSearchInput || TextInput;
@@ -412,21 +379,24 @@ const SelectContainer = forwardRef(
               />
             </Box>
           )}
-          <OptionsBox
+          {shouldShowClearButton('top') && (
+            <ClearButton
+              ref={clearRef}
+              clear={clear}
+              name={name}
+              onClear={onClear}
+              onFocus={() => setActiveIndex(-1)}
+              onMouseOver={() => setActiveIndex(-1)}
+              theme={theme}
+            />
+          )}
+          <OptionsContainer
             role="listbox"
             tabIndex="-1"
             ref={optionsRef}
             aria-multiselectable={multiple}
+            onMouseMove={() => setKeyboardNavigation(false)}
           >
-            {shouldShowClearButton('top') && (
-              <ClearButton
-                ref={clearRef}
-                clear={clear}
-                name={name}
-                onClear={onClear}
-                theme={theme}
-              />
-            )}
             {options.length > 0 ? (
               <InfiniteScroll
                 items={options}
@@ -460,7 +430,7 @@ const SelectContainer = forwardRef(
                     child = (
                       <Box {...selectOptionsStyle}>
                         <Text {...theme.select.options.text}>
-                          {optionLabel(index)}
+                          {getOptionLabel(index, options, labelKey)}
                         </Text>
                       </Box>
                     );
@@ -472,7 +442,12 @@ const SelectContainer = forwardRef(
                     <SelectOption
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
-                      ref={optionRef}
+                      // merge optionRef and activeRef
+                      ref={(node) => {
+                        // eslint-disable-next-line no-param-reassign
+                        if (optionRef) optionRef.current = node;
+                        if (optionActive) activeRef.current = node;
+                      }}
                       tabIndex={optionSelected ? '0' : '-1'}
                       role="option"
                       aria-setsize={options.length}
@@ -483,11 +458,17 @@ const SelectContainer = forwardRef(
                       plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
-                      hoverIndicator={!child ? undefined : 'background'}
-                      label={!child ? optionLabel(index) : undefined}
+                      label={
+                        !child
+                          ? getOptionLabel(index, options, labelKey || valueKey)
+                          : undefined
+                      }
                       disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}
+                      // allow keyboard navigation to start from
+                      // selected option after tabbing to it
+                      onFocus={() => setActiveIndex(index)}
                       onMouseOver={
                         !optionDisabled ? onActiveOption(index) : undefined
                       }
@@ -502,30 +483,24 @@ const SelectContainer = forwardRef(
                 }}
               </InfiniteScroll>
             ) : (
-              <SelectOption
-                key="search_empty"
-                tabIndex="-1"
-                role="menuitem"
-                hoverIndicator="background"
-                disabled
-              >
-                <Box {...selectOptionsStyle}>
-                  <Text {...theme.select.container.text}>
-                    {emptySearchMessage}
-                  </Text>
-                </Box>
-              </SelectOption>
-            )}
-            {shouldShowClearButton('bottom') && (
-              <ClearButton
-                ref={clearRef}
-                clear={clear}
-                name={name}
-                onClear={onClear}
+              <EmptySearchOption
+                emptySearchMessage={emptySearchMessage}
+                selectOptionsStyle={selectOptionsStyle}
                 theme={theme}
               />
             )}
-          </OptionsBox>
+          </OptionsContainer>
+          {shouldShowClearButton('bottom') && (
+            <ClearButton
+              ref={clearRef}
+              clear={clear}
+              name={name}
+              onClear={onClear}
+              onFocus={() => setActiveIndex(-1)}
+              onMouseOver={() => setActiveIndex(-1)}
+              theme={theme}
+            />
+          )}
         </StyledContainer>
       </Keyboard>
     );

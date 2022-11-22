@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useRef, useState } from 'react';
+import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
@@ -16,6 +16,8 @@ import {
   useForwardedRef,
   usePagination,
 } from '../../utils';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
+
 import { ListPropTypes } from './propTypes';
 
 const StyledList = styled.ul`
@@ -79,52 +81,39 @@ const StyledContainer = styled(Box)`
     props.theme.list.container.extend};
 `;
 
-const normalize = (item, index, property) => {
-  if (typeof property === 'function') {
-    return property(item, index);
-  }
-  return item[property];
+const getValue = (item, index, key) => {
+  if (typeof key === 'function') return key(item, index);
+  if (typeof item === 'string') return item;
+  if (key !== undefined) return item[key];
+  return undefined;
 };
 
-const reorder = (array, source, target) => {
+const reorder = (array, pinnedArray, source, target) => {
   const result = array.slice(0);
   const tmp = result[source];
   if (source < target)
     for (let i = source; i < target; i += 1) result[i] = result[i + 1];
   else for (let i = source; i > target; i -= 1) result[i] = result[i - 1];
   result[target] = tmp;
+
+  // insert pinned items into their proper index within the orderable
+  // data object to make the complete data set again
+  if (pinnedArray.data.length > 0) {
+    pinnedArray.data.forEach((pinnedItem, index) => {
+      result.splice(pinnedArray.indexes[index], 0, pinnedItem);
+    });
+  }
   return result;
 };
 
-// Determine the primary content for a row. If the List
-// has a primaryKey defined this returns the item data
-// based on this primary key. If no primaryKey property
-// is defined this will return unknown. The intent of
-// the content from the primary key is that it is unique
-// within the list.
-const getPrimaryContent = (item, index, primaryKey) => {
-  let primaryContent;
-  if (primaryKey) {
-    if (typeof primaryKey === 'function') {
-      primaryContent = primaryKey(item, index);
-    } else {
-      primaryContent = normalize(item, index, primaryKey);
-    }
-  }
-
-  return primaryContent;
-};
-
-const getKey = (item, index, primaryContent) => {
-  if (typeof primaryContent === 'string') {
-    return primaryContent;
-  }
-  return typeof item === 'string' ? item : index;
-};
-
-const getItemId = (item, index, primaryKey) => {
-  const primaryContent = getPrimaryContent(item, index, primaryKey);
-  return getKey(item, index, primaryContent);
+// getItemId returns something appropriate to use as a unique DOM
+// id for an item in the list
+const getItemId = (item, index, itemKey, primaryKey) => {
+  // we do primaryKey first to be backward compatible, even though
+  // itemKey is probably technically the better choice for a DOM id.
+  if (primaryKey) return getValue(item, index, primaryKey);
+  if (itemKey) return getValue(item, index, itemKey);
+  return getValue(item, index) ?? index; // do our best w/o *key properties
 };
 
 const List = React.forwardRef(
@@ -141,7 +130,7 @@ const List = React.forwardRef(
       defaultItemProps,
       disabled: disabledItems,
       focus,
-      itemKey,
+      itemKey: defaultItemKey,
       itemProps,
       onActive,
       onClickItem,
@@ -150,6 +139,7 @@ const List = React.forwardRef(
       onOrder,
       pad,
       paginate,
+      pinned = [],
       primaryKey,
       secondaryKey,
       show: showProp,
@@ -160,6 +150,9 @@ const List = React.forwardRef(
   ) => {
     const listRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext);
+
+    // fixes issue where itemKey is undefined when only primaryKey is provided
+    const itemKey = defaultItemKey || primaryKey || null;
 
     // active will be the index of the current 'active'
     // control in the list. If the onOrder property is defined
@@ -180,6 +173,31 @@ const List = React.forwardRef(
     };
     const [itemFocus, setItemFocus] = useState();
     const [dragging, setDragging] = useState();
+    const [orderingData, setOrderingData] = useState();
+
+    // store a reference to the pinned and the data that is orderable
+    const [orderableData, pinnedInfo] = useMemo(() => {
+      const orderable = [];
+      const pinnedData = [];
+      const pinnedIndexes = [];
+
+      const currentData = orderingData || data;
+
+      if (pinned.length === 0)
+        return [currentData, { data: pinnedData, indexes: pinnedIndexes }];
+
+      currentData.forEach((item, index) => {
+        const key = getValue(item, index, itemKey);
+        if (pinned.includes(key)) {
+          pinnedData.push(item);
+          pinnedIndexes.push(index);
+        } else {
+          orderable.push(item);
+        }
+      });
+
+      return [orderable, { data: pinnedData, indexes: pinnedIndexes }];
+    }, [data, orderingData, itemKey, pinned]);
 
     const [items, paginationProps] = usePagination({
       data,
@@ -191,10 +209,9 @@ const List = React.forwardRef(
 
     const Container = paginate ? StyledContainer : Fragment;
     const containterProps = paginate ? { ...theme.list.container } : undefined;
-
-    const [orderingData, setOrderingData] = useState();
-
     const draggingRef = useRef();
+
+    const sendAnalytics = useAnalytics();
 
     const ariaProps = {
       role: onClickItem || onOrder ? 'listbox' : 'list',
@@ -210,13 +227,19 @@ const List = React.forwardRef(
         const buttonId = active % 2 ? 'MoveDown' : 'MoveUp';
         const itemIndex = Math.trunc(active / 2);
         activeId = `${getItemId(
-          data[itemIndex],
+          orderableData[itemIndex],
           itemIndex,
+          itemKey,
           primaryKey,
         )}${buttonId}`;
       } else if (onClickItem) {
         // The whole list item is active. Figure out an id
-        activeId = getItemId(data[active], active, primaryKey);
+        activeId = getItemId(
+          orderableData[active],
+          active,
+          itemKey,
+          primaryKey,
+        );
       }
       ariaProps['aria-activedescendant'] = activeId;
     }
@@ -234,17 +257,21 @@ const List = React.forwardRef(
                     // active control will stay on the same item
                     // even though it moved up or down.
                     if (active % 2) {
-                      onOrder(reorder(data, index, index + 1));
-                      updateActive(Math.min(active + 2, data.length * 2 - 2));
+                      onOrder(
+                        reorder(orderableData, pinnedInfo, index, index + 1),
+                      );
+                      updateActive(
+                        Math.min(active + 2, orderableData.length * 2 - 2),
+                      );
                     } else {
-                      onOrder(reorder(data, index, index - 1));
+                      onOrder(
+                        reorder(orderableData, pinnedInfo, index, index - 1),
+                      );
                       updateActive(Math.max(active - 2, 1));
                     }
                   } else if (
                     disabledItems?.includes(
-                      typeof itemKey === 'function'
-                        ? itemKey(data[active])
-                        : data[active],
+                      getValue(data[active], active, itemKey),
                     )
                   ) {
                     event.preventDefault();
@@ -254,6 +281,13 @@ const List = React.forwardRef(
                     adjustedEvent.item = data[active];
                     adjustedEvent.index = active;
                     onClickItem(adjustedEvent);
+                    sendAnalytics({
+                      type: 'listItemClick',
+                      element: listRef.current,
+                      event: adjustedEvent,
+                      item: data[active],
+                      index: active,
+                    });
                   }
                 }
               : undefined
@@ -267,10 +301,12 @@ const List = React.forwardRef(
               : undefined
           }
           onDown={
-            (onClickItem || onOrder) && data && data.length
+            (onClickItem || onOrder) && orderableData && orderableData.length
               ? () => {
                   const min = onOrder ? 1 : 0;
-                  const max = onOrder ? data.length * 2 - 2 : data.length - 1;
+                  const max = onOrder
+                    ? orderableData.length * 2 - 2
+                    : data.length - 1;
                   updateActive(active >= min ? Math.min(active + 1, max) : min);
                 }
               : undefined
@@ -313,7 +349,6 @@ const List = React.forwardRef(
               {(item, index) => {
                 let content;
                 let boxProps = {};
-                let itemId;
 
                 if (children) {
                   content = children(
@@ -322,28 +357,29 @@ const List = React.forwardRef(
                     onClickItem ? { active: active === index } : undefined,
                   );
                 } else if (primaryKey) {
-                  if (typeof primaryKey === 'function') {
-                    itemId = primaryKey(item, index);
-                    content = itemId;
-                  } else {
-                    itemId = normalize(item, index, primaryKey);
-                    content = (
+                  const primary = getValue(item, index, primaryKey);
+                  content =
+                    typeof primary === 'string' ||
+                    typeof primary === 'number' ? (
                       <Text key="p" weight="bold">
-                        {itemId}
+                        {primary}
                       </Text>
+                    ) : (
+                      primary
                     );
-                  }
                   if (secondaryKey) {
-                    if (typeof secondaryKey === 'function') {
-                      content = [content, secondaryKey(item, index)];
-                    } else {
-                      content = [
-                        content,
+                    const secondary = getValue(item, index, secondaryKey);
+                    content = [
+                      content,
+                      typeof secondary === 'string' ||
+                      typeof secondary === 'number' ? (
                         <Text key="s">
-                          {normalize(item, index, secondaryKey)}
-                        </Text>,
-                      ];
-                    }
+                          {getValue(item, index, secondaryKey)}
+                        </Text>
+                      ) : (
+                        secondary
+                      ),
+                    ];
                     boxProps = {
                       direction: 'row',
                       align: 'center',
@@ -357,15 +393,12 @@ const List = React.forwardRef(
                   content = item;
                 }
 
-                if (itemKey) {
-                  if (typeof itemKey === 'function') {
-                    itemId = itemKey(item);
-                  } else {
-                    itemId = normalize(item, index, itemKey);
-                  }
-                }
+                const key = getValue(item, index, itemKey) || index;
 
-                const key = itemKey ? itemId : getKey(item, index, itemId);
+                const orderableIndex = orderableData.findIndex(
+                  (ordItem, ordIndex) =>
+                    getValue(ordItem, ordIndex, itemKey) === key,
+                );
 
                 let isDisabled;
                 if (disabledItems) {
@@ -376,6 +409,17 @@ const List = React.forwardRef(
                     );
                   }
                   isDisabled = disabledItems?.includes(key);
+                }
+
+                let isPinned;
+                if (pinned.length > 0) {
+                  if (typeof item === 'object' && !itemKey) {
+                    console.error(
+                      // eslint-disable-next-line max-len
+                      `Warning: Missing prop itemKey. Prop pin requires itemKey to be specified when data is of type 'object'.`,
+                    );
+                  }
+                  isPinned = pinned?.includes(key);
                 }
 
                 if (action) {
@@ -400,6 +444,8 @@ const List = React.forwardRef(
                 } else if (Array.isArray(adjustedBackground)) {
                   adjustedBackground =
                     adjustedBackground[index % adjustedBackground.length];
+                } else if (isPinned) {
+                  adjustedBackground = theme.list.item.pinned.background;
                 }
 
                 let adjustedBorder =
@@ -430,6 +476,13 @@ const List = React.forwardRef(
                         // put focus on the List container to meet WCAG
                         // accessibility guidelines that focus remains on `ul`
                         listRef.current.focus();
+                        sendAnalytics({
+                          type: 'listItemClick',
+                          element: listRef.current,
+                          event: adjustedEvent,
+                          item,
+                          index,
+                        });
                       }
                     },
                     onMouseOver: () => updateActive(index),
@@ -447,7 +500,7 @@ const List = React.forwardRef(
 
                 let orderProps;
                 let orderControls;
-                if (onOrder) {
+                if (onOrder && !isPinned) {
                   orderProps = {
                     draggable: true,
                     onDragStart: (event) => {
@@ -456,7 +509,7 @@ const List = React.forwardRef(
                       // https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API#define_the_drag_effect
                       // eslint-disable-next-line no-param-reassign
                       event.dataTransfer.effectAllowed = 'move';
-                      setDragging(index);
+                      setDragging(orderableIndex);
                       updateActive(undefined);
                     },
                     onDragEnd: () => {
@@ -466,13 +519,18 @@ const List = React.forwardRef(
                     onDragOver: (event) => {
                       if (dragging !== undefined) {
                         event.preventDefault();
-                        if (dragging !== index) {
+                        if (dragging !== orderableIndex) {
                           // eslint-disable-next-line no-param-reassign
                           event.dataTransfer.dropEffect = 'move';
                           setOrderingData(
-                            reorder(orderingData || data, dragging, index),
+                            reorder(
+                              orderableData,
+                              pinnedInfo,
+                              dragging,
+                              orderableIndex,
+                            ),
                           );
-                          setDragging(index);
+                          setDragging(orderableIndex);
                         }
                       }
                     },
@@ -481,30 +539,37 @@ const List = React.forwardRef(
                         onOrder(orderingData);
                       }
                     },
-                    ref: dragging === index ? draggingRef : undefined,
+                    ref: dragging === orderableIndex ? draggingRef : undefined,
                   };
 
                   const Up = theme.list.icons.up;
                   const Down = theme.list.icons.down;
-                  orderControls = (
+                  orderControls = !isPinned && (
                     <Box direction="row" align="center" justify="end">
                       <Button
                         id={`${key}MoveUp`}
-                        a11yTitle={`${index + 1} ${key} move up`}
+                        a11yTitle={`${orderableIndex + 1} ${key} move up`}
                         icon={<Up />}
                         hoverIndicator
                         focusIndicator={false}
-                        disabled={!index}
-                        active={active === index * 2}
+                        disabled={!orderableIndex}
+                        active={active === orderableIndex * 2}
                         onClick={(event) => {
                           event.stopPropagation();
-                          onOrder(reorder(data, index, index - 1));
+                          onOrder(
+                            reorder(
+                              orderableData,
+                              pinnedInfo,
+                              orderableIndex,
+                              orderableIndex - 1,
+                            ),
+                          );
                         }}
                         tabIndex={-1}
-                        onMouseOver={() => updateActive(index * 2)}
+                        onMouseOver={() => updateActive(orderableIndex * 2)}
                         onMouseOut={() => updateActive(undefined)}
                         onFocus={() => {
-                          updateActive(index * 2);
+                          updateActive(orderableIndex * 2);
                           setItemFocus(true);
                         }}
                         onBlur={() => {
@@ -514,21 +579,28 @@ const List = React.forwardRef(
                       />
                       <Button
                         id={`${key}MoveDown`}
-                        a11yTitle={`${index + 1} ${key} move down`}
+                        a11yTitle={`${orderableIndex + 1} ${key} move down`}
                         icon={<Down />}
                         hoverIndicator
                         focusIndicator={false}
-                        disabled={index >= data.length - 1}
-                        active={active === index * 2 + 1}
+                        disabled={orderableIndex >= orderableData.length - 1}
+                        active={active === orderableIndex * 2 + 1}
                         onClick={(event) => {
                           event.stopPropagation();
-                          onOrder(reorder(data, index, index + 1));
+                          onOrder(
+                            reorder(
+                              orderableData,
+                              pinnedInfo,
+                              orderableIndex,
+                              orderableIndex + 1,
+                            ),
+                          );
                         }}
                         tabIndex={-1}
-                        onMouseOver={() => updateActive(index * 2 + 1)}
+                        onMouseOver={() => updateActive(orderableIndex * 2 + 1)}
                         onMouseOut={() => updateActive(undefined)}
                         onFocus={() => {
-                          updateActive(index * 2 + 1);
+                          updateActive(orderableIndex * 2 + 1);
                           setItemFocus(true);
                         }}
                         onBlur={() => {
@@ -539,14 +611,21 @@ const List = React.forwardRef(
                     </Box>
                   );
 
+                  // wrap the main content and use
+                  // the boxProps defined for the content
+                  content = (
+                    <Box flex {...boxProps}>
+                      {content}
+                    </Box>
+                  );
+
+                  // Adjust the boxProps to account for the order controls
                   boxProps = {
                     direction: 'row',
                     align:
                       (defaultItemProps && defaultItemProps.align) || 'center',
                     gap: 'medium',
                   };
-
-                  content = <Box flex>{content}</Box>;
                 }
 
                 let itemAriaProps;
@@ -560,6 +639,32 @@ const List = React.forwardRef(
                       'aria-selected': false,
                     };
                   }
+                }
+
+                let displayPinned;
+                if (isPinned) {
+                  // Pinned icon and settings
+                  const Pin = theme.list.icons.pin;
+                  const pinSize = theme.list.item.pinned.icon.size;
+                  const pinPad = theme.list.item.pinned.icon.pad;
+
+                  boxProps = {
+                    direction: 'row',
+                    align:
+                      (defaultItemProps && defaultItemProps.align) || 'center',
+                    gap: 'medium',
+                  };
+                  displayPinned = (
+                    <Box
+                      direction="row"
+                      align="center"
+                      justify="end"
+                      pad={pinPad}
+                    >
+                      <Pin size={pinSize} />
+                    </Box>
+                  );
+                  content = <Box flex>{content}</Box>;
                 }
 
                 if (itemProps && itemProps[index]) {
@@ -583,6 +688,7 @@ const List = React.forwardRef(
                   >
                     {onOrder && <Text>{index + 1}</Text>}
                     {content}
+                    {displayPinned}
                     {orderControls}
                   </StyledItem>
                 );

@@ -68,6 +68,16 @@ const ResponsiveTabs = () => {
             <Attraction size="xlarge" />
           </Box>
         </Tab>
+        <Tab title="Tab 11">
+          <Box margin="small" pad="large" align="center" background="light-4">
+            <TreeOption size="xlarge" />
+          </Box>
+        </Tab>
+        <Tab title="Tab 12">
+          <Box margin="small" pad="large" align="center" background="dark-3">
+            <Car size="xlarge" />
+          </Box>
+        </Tab>
       </Tabs>
     </Box>
     // </Grommet>

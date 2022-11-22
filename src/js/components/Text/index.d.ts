@@ -7,6 +7,7 @@ import {
   MarginType,
   Omit,
   PolymorphicType,
+  SkeletonType,
   TextAlignType,
 } from '../../utils';
 
@@ -32,6 +33,7 @@ export interface TextProps {
     | '5xl'
     | '6xl'
     | string;
+  skeleton?: SkeletonType;
   tag?: PolymorphicType;
   textAlign?: TextAlignType;
   truncate?: boolean | 'tip';

@@ -2,6 +2,7 @@
 import React, { forwardRef, memo, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
+import { useKeyboard } from '../../utils';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
@@ -184,6 +185,12 @@ const Body = forwardRef(
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
 
+    // Determine if using a keyboard to cover focus behavior
+    const usingKeyboard = useKeyboard();
+
+    const onFocusActive =
+      active ?? lastActive ?? (usingKeyboard ? 0 : undefined);
+
     const selectRow = () => {
       const primaryValue = data[active]?.[primaryProperty];
       if (selected && selected.includes(primaryValue)) {
@@ -234,7 +241,7 @@ const Body = forwardRef(
           ref={ref}
           size={size}
           tabIndex={onClickRow ? 0 : undefined}
-          onFocus={() => setActive(active ?? lastActive ?? 0)}
+          onFocus={() => setActive(onFocusActive)}
           onBlur={() => {
             setLastActive(active);
             setActive(undefined);

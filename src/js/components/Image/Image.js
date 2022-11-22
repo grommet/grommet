@@ -3,7 +3,10 @@ import { StyledImage } from './StyledImage';
 import { ImagePropTypes } from './propTypes';
 
 const Image = forwardRef(
-  ({ a11yTitle, fallback, onError, opacity, fill, src, ...rest }, ref) => {
+  (
+    { a11yTitle, fallback, onError, onLoad, opacity, fill, src, ...rest },
+    ref,
+  ) => {
     const [isFallbackInUse, setFallbackInUse] = useState(false);
 
     const handleError = (event) => {
@@ -15,7 +18,8 @@ const Image = forwardRef(
       }
     };
 
-    const handleOnLoad = () => {
+    const handleOnLoad = (event) => {
+      if (onLoad) onLoad(event);
       setFallbackInUse(false);
     };
 
