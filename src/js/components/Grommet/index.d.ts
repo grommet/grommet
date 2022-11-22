@@ -9,6 +9,11 @@ export interface GrommetProps {
   dir?: 'rtl';
   full?: boolean | 'min';
   options?: {
+    box?: {
+      gap?: {
+        css?: boolean;
+      };
+    };
     layer?: {
       singleId?: boolean;
     };

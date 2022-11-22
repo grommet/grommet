@@ -384,6 +384,24 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('css gap', () => {
+    const { container } = render(
+      <Grommet options={{ box: { gap: { css: true } } }}>
+        {['xsmall', 'small', 'medium', 'large', '80px', 'none'].map((gap) => (
+          <Box key={gap} gap={gap} direction="row">
+            <Box />
+          </Box>
+        ))}
+        <Box as="span" gap="small">
+          <span>first</span>
+          <span>second</span>
+        </Box>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('margin', () => {
     const { container } = render(
       <Grommet>
