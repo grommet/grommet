@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FormFieldProps } from '../FormField/index';
 
-export interface FeedbackPosNegProps {
+export interface ThumbRatingProps {
   formFieldProps?: FormFieldProps;
   color?: string;
   name?: string;
@@ -10,6 +10,6 @@ export interface FeedbackPosNegProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-declare const FeedbackPosNeg: React.FC<FeedbackPosNegProps>;
+declare const ThumbsRating: React.FC<ThumbRatingProps>;
 
-export { FeedbackPosNeg };
+export { ThumbsRating };

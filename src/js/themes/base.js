@@ -840,6 +840,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     // },
     feedback: {
       button: {
+        margin: { vertical: 'medium', horizontal: 'medium' },
+        elevation: 'large',
+        color: 'purple!',
+        label: 'Feedback',
+        a11yTitle: 'This button launches a modal to give feedback.',
+        primary: true,
+      },
+      buttonContainer: {
         position: 'fixed',
         borderRadius: '6px',
         zIndex: '10',
@@ -864,12 +872,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           vertical: 'none',
         },
       },
+      modal: {
+        footer: {
+          pad: {
+            top: 'medium',
+          },
+          direction: 'row',
+          justify: 'end',
+          gap: 'xsmall',
+        },
+      },
       footer: {
         pad: {
           top: 'medium',
         },
         direction: 'row',
-        justify: 'end',
         gap: 'xsmall',
       },
       success: {

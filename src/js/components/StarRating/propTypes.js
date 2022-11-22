@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
-import { FormFieldPropTypes } from '../FormField/propTypes';
 
 let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
-    color: PropTypes.string,
-    formProps: FormFieldPropTypes,
+    fillColor: PropTypes.string,
     name: PropTypes.string,
     label: PropType.string,
     onChange: PropTypes.func,
+    outlineColor: PropType.string,
     scale: PropTypes.number,
     value: PropTypes.number,
   };

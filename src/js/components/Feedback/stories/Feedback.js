@@ -1,25 +1,40 @@
-import React from 'react';
-import { Feedback, FeedbackRating, FormField, TextArea } from 'grommet';
+import React, { useContext } from 'react';
+import {
+  Feedback,
+  StarRating,
+  FormField,
+  TextArea,
+  ResponsiveContext,
+} from 'grommet';
 
-export const FeedbackModal = () => (
+export const FeedbackModal = () => {
+  const breakpoint = useContext(ResponsiveContext);
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Feedback
-    modal
-    title="We’d love your feedback"
-    //   onSubmit={onSubmit}
-  >
-    <FeedbackRating label="Was this content helpful?" />
-    <FormField
-      htmlFor="comments"
-      name="comments"
-      label="Any additional comments?"
+  return (
+    <Feedback
+      title="We’d love your feedback"
+      feedbackButton
+      layerProps={{
+        margin: { vertical: 'xlarge', horizontal: 'medium' },
+        position: !['xsmall', 'small'].includes(breakpoint)
+          ? 'bottom-right'
+          : 'center',
+      }}
+      //   onSubmit={onSubmit}
     >
-      <TextArea id="comments" name="comments" placeholder="Comments" />
-    </FormField>
-  </Feedback>
-  // </Grommet>
-);
+      <StarRating label="Was this content helpful?" />
+      <FormField
+        htmlFor="comments"
+        name="comments"
+        label="Any additional comments?"
+      >
+        <TextArea id="comments" name="comments" placeholder="Comments" />
+      </FormField>
+    </Feedback>
+    // </Grommet>
+  );
+};
 
 Feedback.storyName = 'FeedbackModal';
 

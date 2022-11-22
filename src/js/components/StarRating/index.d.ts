@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { FormFieldProps } from '../FormField/index';
 
 export interface FeedbackRating {
-  formFieldProps?: FormFieldProps;
-  color?: string;
+  fillColor?: string;
+  outlineColor?: string;
   name?: string;
   label?: string;
   value?: number;

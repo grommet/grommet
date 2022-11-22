@@ -334,8 +334,6 @@ exports[`Components loads 1`] = `
     "render": [Function],
   },
   "Feedback": [Function],
-  "FeedbackPosNeg": [Function],
-  "FeedbackRating": [Function],
   "FileInput": {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": {},
@@ -1173,6 +1171,17 @@ exports[`Components loads 1`] = `
         },
         "feedback": {
           "button": {
+            "a11yTitle": "This button launches a modal to give feedback.",
+            "color": "purple!",
+            "elevation": "large",
+            "label": "Feedback",
+            "margin": {
+              "horizontal": "medium",
+              "vertical": "medium",
+            },
+            "primary": true,
+          },
+          "buttonContainer": {
             "borderRadius": "6px",
             "position": "fixed",
             "zIndex": "10",
@@ -1187,7 +1196,6 @@ exports[`Components loads 1`] = `
           "footer": {
             "direction": "row",
             "gap": "xsmall",
-            "justify": "end",
             "pad": {
               "top": "medium",
             },
@@ -1204,6 +1212,16 @@ exports[`Components loads 1`] = `
               "vertical": "none",
             },
             "size": "small",
+          },
+          "modal": {
+            "footer": {
+              "direction": "row",
+              "gap": "xsmall",
+              "justify": "end",
+              "pad": {
+                "top": "medium",
+              },
+            },
           },
           "success": {
             "alignSelf": "end",
@@ -3191,6 +3209,17 @@ exports[`Components loads 1`] = `
         },
         "feedback": {
           "button": {
+            "a11yTitle": "This button launches a modal to give feedback.",
+            "color": "purple!",
+            "elevation": "large",
+            "label": "Feedback",
+            "margin": {
+              "horizontal": "medium",
+              "vertical": "medium",
+            },
+            "primary": true,
+          },
+          "buttonContainer": {
             "borderRadius": "6px",
             "position": "fixed",
             "zIndex": "10",
@@ -3205,7 +3234,6 @@ exports[`Components loads 1`] = `
           "footer": {
             "direction": "row",
             "gap": "xsmall",
-            "justify": "end",
             "pad": {
               "top": "medium",
             },
@@ -3222,6 +3250,16 @@ exports[`Components loads 1`] = `
               "vertical": "none",
             },
             "size": "small",
+          },
+          "modal": {
+            "footer": {
+              "direction": "row",
+              "gap": "xsmall",
+              "justify": "end",
+              "pad": {
+                "top": "medium",
+              },
+            },
           },
           "success": {
             "alignSelf": "end",
@@ -4849,6 +4887,7 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "StarRating": [Function],
   "Tab": {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": {},
@@ -5002,6 +5041,7 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "ThumbsRating": [Function],
   "Tip": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {

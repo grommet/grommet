@@ -4,9 +4,10 @@ import { Box } from '../Box';
 const PositionedFeedbackBox = styled(Box)`
   bottom: 0px;
   right: 0px;
-  position: ${(props) => props.theme.feedback?.button?.position};
-  border-radius: ${(props) => props.theme.feedback?.button?.borderRadius};
-  z-index: ${(props) => props.theme.feedback?.button?.zIndex};
+  position: ${(props) => props.theme.feedback?.buttonContainer?.position};
+  border-radius: ${(props) =>
+    props.theme.feedback?.buttonContainer?.borderRadius};
+  z-index: ${(props) => props.theme.feedback?.buttonContainer?.zIndex};
 `;
 
 export { PositionedFeedbackBox };

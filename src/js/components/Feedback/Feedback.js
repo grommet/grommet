@@ -9,7 +9,6 @@ import { Form } from '../Form';
 import { Heading } from '../Heading';
 import { Layer } from '../Layer';
 import { Text } from '../Text';
-import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 
 const Announcer = ({ announce, message, mode, role }) => {
   const theme = useContext(ThemeContext);
@@ -29,6 +28,7 @@ const AnnounceContextComponent = (props) => (
 
 export const Feedback = ({
   children,
+  feedbackButton,
   layerProps,
   messages,
   modal,
@@ -37,7 +37,6 @@ export const Feedback = ({
   title,
 }) => {
   const theme = useContext(ThemeContext);
-  const breakpoint = useContext(ResponsiveContext);
   // tracks if feedback has successfully been submitted
   const [successfulSubmit, setSuccessfulSubmit] = useState(false);
   const [open, setOpen] = useState(false);
@@ -45,6 +44,7 @@ export const Feedback = ({
   const onClose = () => setOpen(undefined);
 
   // Want to show Thank you message so close the modal after 2 seconds
+  // should we change the timing to be in theme to have user control?
   const closeFeedbackModal = () => {
     setTimeout(() => {
       setOpen(false);
@@ -56,9 +56,16 @@ export const Feedback = ({
   }, [show]);
 
   let footerContent;
-  if (!successfulSubmit) {
+  if (!successfulSubmit && !modal) {
     footerContent = (
       <Box {...theme?.feedback?.footer}>
+        <Button onClick={onClose} label={messages?.cancel || 'Cancel'} />
+        <Button label={messages?.submit || 'Submit'} primary type="submit" />
+      </Box>
+    );
+  } else if (!successfulSubmit && modal) {
+    footerContent = (
+      <Box {...theme?.feedback?.modal?.footer}>
         <Button onClick={onClose} label={messages?.cancel || 'Cancel'} />
         <Button label={messages?.submit || 'Submit'} primary type="submit" />
       </Box>
@@ -101,33 +108,22 @@ export const Feedback = ({
     </Box>
   );
 
-  if (modal)
+  if (feedbackButton)
     content = open ? (
-      <Layer
-        // to opionated ? maybe move to just let user pass with layerProps
-        position={
-          !['xsmall', 'small'].includes(breakpoint) ? 'bottom-right' : 'center'
-        }
-        margin={{ vertical: 'xlarge', horizontal: 'medium' }}
-        modal={false}
-        onEsc={onClose}
-        {...layerProps}
-      >
+      <Layer modal={false} onEsc={onClose} {...layerProps}>
         {content}
       </Layer>
     ) : (
       <PositionedFeedbackBox>
-        <Button
-          margin={{ vertical: 'medium', horizontal: 'medium' }}
-          elevation="large"
-          onClick={onOpen}
-          color="purple!"
-          label="Feedback"
-          primary
-          a11yTitle="This button launches a modal to give feedback."
-          // ...buttonProps
-        />
+        <Button onClick={onOpen} {...theme?.feedback?.button} />
       </PositionedFeedbackBox>
+    );
+
+  if (modal)
+    content = (
+      <Layer modal={false} onEsc={onClose} {...layerProps}>
+        {content}
+      </Layer>
     );
 
   return content;

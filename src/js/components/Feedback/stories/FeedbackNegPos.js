@@ -1,20 +1,20 @@
 import React from 'react';
-import { Feedback, FeedbackPosNeg } from 'grommet';
+import { Feedback, ThumbsRating } from 'grommet';
 
-export const FeedbackNegPos = () => (
+export const ThumbsRatingStory = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Feedback
     title="We’d love your feedback"
     //   onSubmit={onSubmit}
   >
-    <FeedbackPosNeg label="Was this content helpful?" />
+    <ThumbsRating label="Was this content helpful?" />
   </Feedback>
   // </Grommet>
 );
 
-FeedbackNegPos.storyName = 'FeedbackNegPos';
+ThumbsRatingStory.storyName = 'ThumbsRating';
 
 export default {
-  title: 'Input/Feedback/FeedbackNegPos',
+  title: 'Input/Feedback/ThumbsRating',
 };

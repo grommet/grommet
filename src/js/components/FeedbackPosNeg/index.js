@@ -1,1 +1,0 @@
-export { FeedbackPosNeg } from './FeedbackPosNeg';

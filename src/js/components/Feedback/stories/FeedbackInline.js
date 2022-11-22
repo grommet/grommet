@@ -1,5 +1,5 @@
 import React from 'react';
-import { Feedback, FeedbackRating, FormField, TextArea } from 'grommet';
+import { Feedback, StarRating, FormField, TextArea } from 'grommet';
 
 export const FeedbackInline = () => (
   // Uncomment <Grommet> lines when using outside of storybook
@@ -13,7 +13,7 @@ export const FeedbackInline = () => (
     title="We’d love your feedback"
     //   onSubmit={onSubmit}
   >
-    <FeedbackRating color="pink" label="Was this content helpful?" />
+    <StarRating color="pink" label="Was this content helpful?" />
     <FormField
       htmlFor="comments"
       name="comments"
