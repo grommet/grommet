@@ -201,9 +201,7 @@ const interactiveStyle = css`
 `;
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-const StyledBox = styled.div.attrs((props) => ({
-  directionProp: props.directionProp || 'column',
-}))`
+const StyledBox = styled.div`
   display: flex;
   box-sizing: border-box;
   ${(props) => !props.basis && 'max-width: 100%;'};
@@ -378,10 +376,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
 StyledBox.defaultProps = {};
 Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 
-const StyledBoxGap = styled.div.attrs((props) => ({
-  directionProp: props.directionProp || 'column',
-  // Every <Button /> will now have type="button" as default
-}))`
+const StyledBoxGap = styled.div`
   flex: 0 0 auto;
   align-self: stretch;
   ${(props) =>
