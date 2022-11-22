@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Omit, PlaceHolderType, MarginType } from '../../utils';
+import { Omit, MarginType } from '../../utils';
 import { BoxProps } from '../Box/index';
 
 export interface FormFieldProps {
@@ -14,25 +14,6 @@ export interface FormFieldProps {
   name?: string;
   options?: string[];
   pad?: boolean;
-  // Although Placeholder is not a prop within FormField we Omit the HTML placeholder attribute and replaced with following.
-  placeholder?: PlaceHolderType;
-  required?: boolean | { indicator: boolean };
-  component?: any;
-  validate?:
-    | {
-        regexp?: object;
-        message?: string | React.ReactNode;
-        status?: 'error' | 'info';
-      }
-    | ((...args: any[]) => any)
-    | (
-        | {
-            regexp?: object;
-            message?: string | React.ReactNode;
-            status?: 'error' | 'info';
-          }
-        | ((...args: any[]) => any)
-      )[];
 }
 
 type inputProps = Omit<

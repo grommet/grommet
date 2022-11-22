@@ -333,6 +333,9 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "Feedback": [Function],
+  "FeedbackPosNeg": [Function],
+  "FeedbackRating": [Function],
   "FileInput": {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": {},
@@ -1166,6 +1169,46 @@ exports[`Components loads 1`] = `
         "diagram": {
           "line": {
             "color": "graph-0",
+          },
+        },
+        "feedback": {
+          "button": {
+            "borderRadius": "6px",
+            "position": "fixed",
+            "zIndex": "10",
+          },
+          "closeButton": {
+            "a11yTitle": "You are in a dialog containing a form to submit feedback.
+          To close this layer, press Enter.",
+          },
+          "container": {
+            "pad": "medium",
+          },
+          "footer": {
+            "direction": "row",
+            "gap": "xsmall",
+            "justify": "end",
+            "pad": {
+              "top": "medium",
+            },
+          },
+          "header": {
+            "align": "center",
+            "direction": "row",
+            "gap": "xsmall",
+            "justify": "between",
+          },
+          "heading": {
+            "level": 2,
+            "margin": {
+              "vertical": "none",
+            },
+            "size": "small",
+          },
+          "success": {
+            "alignSelf": "end",
+            "color": "text-strong",
+            "weight": "bold",
           },
         },
         "fileInput": {
@@ -3144,6 +3187,46 @@ exports[`Components loads 1`] = `
         "diagram": {
           "line": {
             "color": "graph-0",
+          },
+        },
+        "feedback": {
+          "button": {
+            "borderRadius": "6px",
+            "position": "fixed",
+            "zIndex": "10",
+          },
+          "closeButton": {
+            "a11yTitle": "You are in a dialog containing a form to submit feedback.
+          To close this layer, press Enter.",
+          },
+          "container": {
+            "pad": "medium",
+          },
+          "footer": {
+            "direction": "row",
+            "gap": "xsmall",
+            "justify": "end",
+            "pad": {
+              "top": "medium",
+            },
+          },
+          "header": {
+            "align": "center",
+            "direction": "row",
+            "gap": "xsmall",
+            "justify": "between",
+          },
+          "heading": {
+            "level": 2,
+            "margin": {
+              "vertical": "none",
+            },
+            "size": "small",
+          },
+          "success": {
+            "alignSelf": "end",
+            "color": "text-strong",
+            "weight": "bold",
           },
         },
         "fileInput": {

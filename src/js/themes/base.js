@@ -838,6 +838,46 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     //   extend: undefined,
     //   maxHeight: undefined,
     // },
+    feedback: {
+      button: {
+        position: 'fixed',
+        borderRadius: '6px',
+        zIndex: '10',
+      },
+      closeButton: {
+        a11yTitle: `You are in a dialog containing a form to submit feedback.
+          To close this layer, press Enter.`,
+      },
+      container: {
+        pad: 'medium',
+      },
+      header: {
+        align: 'center',
+        direction: 'row',
+        justify: 'between',
+        gap: 'xsmall',
+      },
+      heading: {
+        size: 'small',
+        level: 2,
+        margin: {
+          vertical: 'none',
+        },
+      },
+      footer: {
+        pad: {
+          top: 'medium',
+        },
+        direction: 'row',
+        justify: 'end',
+        gap: 'xsmall',
+      },
+      success: {
+        color: 'text-strong',
+        weight: 'bold',
+        alignSelf: 'end',
+      },
+    },
     fileInput: {
       // background: {},
       border: {
