@@ -1,10 +1,12 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
@@ -111,7 +113,7 @@ describe('RadioButtonGroup', () => {
   });
 
   test('children', () => {
-    const child = ({ checked }) => (
+    const child = ({ checked }: { checked: boolean }) => (
       <Box pad="small" background={checked ? 'accent-1' : 'control'} />
     );
     const { container } = render(
@@ -134,12 +136,10 @@ describe('RadioButtonGroup', () => {
             {
               id: 'ONE',
               value: '1',
-              'data-testid': 'testid-1',
             },
             {
               id: 'TWO',
               value: '2',
-              'data-testid': 'testid-2',
             },
           ]}
         />
@@ -173,7 +173,7 @@ describe('RadioButtonGroup', () => {
       );
 
       expect(option).not.toBeNull();
-      expect(target.value).toEqual(option.value);
+      expect(target.value).toEqual(option?.value);
     });
 
     const { getByTestId } = render(
@@ -200,74 +200,56 @@ describe('RadioButtonGroup', () => {
   });
 
   test('Works with keyboard', async () => {
+    const user = userEvent.setup();
+    const radioGroupOptions = [
+      {
+        id: 'ONE',
+        value: '1',
+        label: 'radio button 1',
+      },
+      {
+        id: 'TWO',
+        value: '2',
+        label: 'radio button 2',
+      },
+      {
+        id: 'THREE',
+        value: '3',
+        label: 'radio button 3',
+      },
+    ];
+
     const onChange = jest.fn();
 
-    const { getByTestId } = render(
+    render(
       <Grommet>
         <RadioButtonGroup
           name="test"
           value="2"
-          options={[
-            {
-              id: 'ONE',
-              value: '1',
-              'data-testid': 'testid-1',
-            },
-            {
-              id: 'TWO',
-              value: '2',
-              'data-testid': 'testid-2',
-            },
-            {
-              id: 'THREE',
-              value: '3',
-              'data-testid': 'testid-3',
-            },
-          ]}
+          options={radioGroupOptions}
           onChange={onChange}
         />
       </Grommet>,
     );
 
-    // Focus radio '2' button and simulate ArrowDown key
-    // should result in selecting radio '3'
-    const middleRadioBtn = getByTestId('testid-2');
-    middleRadioBtn.focus();
+    const middleRadioBtn = screen.getByRole('radio', {
+      name: 'radio button 2',
+    });
 
-    // focusing the radio button results in internal state update
-    // so we wait (`act`) after focusing
+    await user.type(middleRadioBtn, '{arrowDown}');
 
-    await waitFor(() => getByTestId('testid-2'));
-    setTimeout(() => {
-      fireEvent.keyDown(middleRadioBtn, {
-        key: 'ArrowDown',
-        keyCode: 40,
-        which: 40,
-        bubbles: true,
-        cancelable: true,
-      });
-      expect(onChange).toBeCalledTimes(1);
-      expect(onChange).toHaveBeenLastCalledWith(
-        expect.objectContaining({ target: { value: '3' } }),
-      );
-    }, 50);
+    expect(onChange).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        target: screen.getByRole('radio', { name: 'radio button 3' }),
+      }),
+    );
 
-    // Focus radio '2' button and simulate ArrowUp key
-    // should result in selecting radio '1'
-    middleRadioBtn.focus();
-    await waitFor(() => getByTestId('testid-2'));
-    setTimeout(() => {
-      fireEvent.keyDown(middleRadioBtn, {
-        key: 'ArrowUp',
-        keyCode: 38,
-        which: 38,
-        bubbles: true,
-        cancelable: true,
-      });
-      expect(onChange).toBeCalledTimes(2);
-      expect(onChange).toHaveBeenLastCalledWith(
-        expect.objectContaining({ target: { value: '1' } }),
-      );
-    }, 50);
+    await user.type(middleRadioBtn, '{arrowUp}');
+
+    expect(onChange).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        target: screen.getByRole('radio', { name: 'radio button 1' }),
+      }),
+    );
   });
 });
