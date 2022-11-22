@@ -15,6 +15,7 @@ export const ValidateOnBlur = () => (
       >
         <FormField
           label="Name"
+          aria-label="name"
           name="name"
           required
           validate={[
@@ -39,7 +40,7 @@ export const ValidateOnBlur = () => (
         />
 
         <FormField label="Email" name="email" required>
-          <TextInput name="email" type="email" />
+          <TextInput name="email" aria-label="email" type="email" />
         </FormField>
 
         <Box direction="row" justify="between" margin={{ top: 'medium' }}>

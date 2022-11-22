@@ -291,7 +291,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
     const responsiveBorderOffset =
       responsiveBorderMetric &&
       `${
-        parseMetricToNum(responsiveMetric) / 2 -
+        parseMetricToNum(responsiveMetric || metric) / 2 -
         parseMetricToNum(responsiveBorderMetric) / 2
       }px`;
 

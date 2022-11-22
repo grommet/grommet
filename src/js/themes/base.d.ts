@@ -24,6 +24,7 @@ import {
   PadType,
   PropsOf,
   AlignContentType,
+  SkeletonColorsType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -41,6 +42,7 @@ import {
 } from '../components/Grid';
 import { HeadingProps } from '../components/Heading';
 import { ParagraphProps } from '../components/Paragraph';
+import { SkeletonProps } from '../components/Skeleton/index';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
@@ -241,6 +243,7 @@ interface ButtonType {
       };
     };
   };
+  skeleton?: SkeletonProps;
   style?: Partial<CSSStyleDeclaration>;
   transition?: {
     timing?: string;
@@ -342,7 +345,7 @@ export interface ThemeType {
       intelligentMargin?: boolean;
       margin?: MarginType;
       shadowSize?: string;
-      zIndex?: string;
+      zIndex?: number | string;
     };
     edgeSize?: {
       none?: string;
@@ -988,6 +991,7 @@ export interface ThemeType {
       };
     };
     responsiveBreakpoint?: string;
+    skeleton?: SkeletonProps;
     weight?: number;
   };
   icon?: {
@@ -1406,6 +1410,7 @@ export interface ThemeType {
   selectMultiple?: {
     maxInline?: number;
   };
+  skeleton?: BoxProps & { colors?: SkeletonColorsType };
   skipLinks?: {
     position?: LayerPositionType;
     container?: BoxProps;
@@ -1614,6 +1619,7 @@ export interface ThemeType {
       height?: string;
       maxWidth?: string;
     };
+    skeleton?: BoxProps & { colors?: SkeletonColorsType };
   };
   textArea?: {
     extend?: ExtendType;

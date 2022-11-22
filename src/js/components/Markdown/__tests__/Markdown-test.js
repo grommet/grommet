@@ -29,7 +29,7 @@ Markdown | Less | Pretty
 1 | 2 | 3
 `;
 
-const Wrapper = props => <Box gap="small" {...props} />;
+const Wrapper = (props) => <Box gap="small" {...props} />;
 
 test('Markdown renders', () => {
   const { container } = render(
@@ -44,9 +44,7 @@ test('Markdown renders', () => {
 test('wrapper', () => {
   const { container } = render(
     <Grommet>
-      <Markdown
-        options={{ wrapper: Wrapper }}
-      >{CONTENT}</Markdown>
+      <Markdown options={{ wrapper: Wrapper }}>{CONTENT}</Markdown>
     </Grommet>,
   );
 

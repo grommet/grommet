@@ -45,6 +45,7 @@ export const ArrayOfFormFields = () => {
       >
         <FormField
           label="Phone Number"
+          aria-label="phone number"
           name={`phones[${index}].number`}
           required
           validate={[
@@ -57,6 +58,7 @@ export const ArrayOfFormFields = () => {
         />
         <FormField
           label="Extension"
+          aria-label="extension"
           name={`phones[${index}].ext`}
           validate={[
             { regexp: /^[0-9]*$/ },
@@ -102,6 +104,7 @@ export const ArrayOfFormFields = () => {
       >
         <FormField
           label="Name"
+          aria-label="name"
           name="name"
           pad
           required

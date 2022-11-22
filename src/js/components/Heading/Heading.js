@@ -4,10 +4,20 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { StyledHeading } from './StyledHeading';
 import { HeadingPropTypes } from './propTypes';
 import { useForwardedRef } from '../../utils';
+import { useSkeleton } from '../Skeleton';
+import { HeadingSkeleton } from './HeadingSkeleton';
 
 const Heading = forwardRef(
   (
-    { color, fill, level, overflowWrap: overflowWrapProp, weight, ...rest },
+    {
+      children,
+      color,
+      fill,
+      level,
+      overflowWrap: overflowWrapProp,
+      weight,
+      ...rest
+    },
 
     ref, // munged to avoid styled-components putting it in the DOM
   ) => {
@@ -15,6 +25,8 @@ const Heading = forwardRef(
     const [overflowWrap, setOverflowWrap] = useState(
       overflowWrapProp || 'break-word',
     );
+
+    const skeleton = useSkeleton();
 
     // handle overflowWrap of heading
     useLayoutEffect(() => {
@@ -34,6 +46,11 @@ const Heading = forwardRef(
       return () => window.removeEventListener('resize', updateOverflowWrap);
     }, [headingRef, overflowWrapProp]);
 
+    let content = children;
+    if (skeleton) {
+      content = <HeadingSkeleton level={level} fill={fill} {...rest} />;
+    }
+
     return (
       // enforce level to be a number
       <StyledHeading
@@ -45,7 +62,9 @@ const Heading = forwardRef(
         weight={weight}
         {...rest}
         ref={headingRef}
-      />
+      >
+        {content}
+      </StyledHeading>
     );
   },
 );
