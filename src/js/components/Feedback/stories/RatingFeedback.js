@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Feedback, StarRating, ResponsiveContext } from 'grommet';
+import { Feedback, FormField, StarRating, ResponsiveContext } from 'grommet';
 
 export const StarRatingStory = () => {
   const breakpoint = useContext(ResponsiveContext);
@@ -17,7 +17,9 @@ export const StarRatingStory = () => {
       }}
       //   onSubmit={onSubmit}
     >
-      <StarRating label="Review of Grommet" />
+      <FormField abel="Review of Grommet">
+        <StarRating />
+      </FormField>
     </Feedback>
     // </Grommet>
   );

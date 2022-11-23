@@ -1,5 +1,5 @@
 import React from 'react';
-import { Feedback, ThumbsRating } from 'grommet';
+import { Feedback, FormField, ThumbsRating } from 'grommet';
 
 export const ThumbsRatingStory = () => (
   // Uncomment <Grommet> lines when using outside of storybook
@@ -8,7 +8,13 @@ export const ThumbsRatingStory = () => (
     title="We’d love your feedback"
     //   onSubmit={onSubmit}
   >
-    <ThumbsRating label="Was this content helpful?" />
+    <FormField label="Was this content helpful?">
+      <ThumbsRating
+        outlineColor="purple"
+        fillColor="purple"
+        options={['1', '2']}
+      />
+    </FormField>
   </Feedback>
   // </Grommet>
 );

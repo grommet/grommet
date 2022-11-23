@@ -13,7 +13,9 @@ export const FeedbackInline = () => (
     title="We’d love your feedback"
     //   onSubmit={onSubmit}
   >
-    <StarRating color="pink" label="Was this content helpful?" />
+    <FormField label="Was this content helpful?">
+      <StarRating fillColor="pink" outlineColor="pink" />
+    </FormField>
     <FormField
       htmlFor="comments"
       name="comments"

@@ -35,7 +35,7 @@ export const StarRating = ({
         option < rating ? (
           <Star color={fillColor} />
         ) : (
-          <StarOutline outlineColor={outlineColor} />
+          <StarOutline color={outlineColor} />
         )
       }
     </RadioButtonGroup>

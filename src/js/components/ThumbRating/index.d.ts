@@ -8,6 +8,18 @@ export interface ThumbRatingProps {
   label?: string;
   value?: number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  outlineColor?: string;
+  options: (
+    | string
+    | number
+    | boolean
+    | {
+        disabled?: boolean;
+        id?: string;
+        label?: string | React.ReactNode;
+        value: string | number | boolean;
+      }
+  )[];
 }
 
 declare const ThumbsRating: React.FC<ThumbRatingProps>;

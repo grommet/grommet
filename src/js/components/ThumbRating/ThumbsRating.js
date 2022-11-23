@@ -10,6 +10,7 @@ export const ThumbsRating = ({
   label,
   value,
   onChange,
+  options,
   ...rest
 }) => {
   const [thumbs, setThumbs] = useState(value);
@@ -17,7 +18,7 @@ export const ThumbsRating = ({
   return (
     <RadioButtonGroup
       direction="row"
-      options={['1', '2']}
+      options={options}
       value={thumbs}
       onChange={(event) => {
         setThumbs(event.target.value);

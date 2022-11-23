@@ -3,6 +3,7 @@ import {
   Feedback,
   StarRating,
   FormField,
+  Text,
   TextArea,
   ResponsiveContext,
 } from 'grommet';
@@ -23,7 +24,9 @@ export const FeedbackModal = () => {
       }}
       //   onSubmit={onSubmit}
     >
-      <StarRating label="Was this content helpful?" />
+      <FormField label={<Text>Was this content helpful?</Text>}>
+        <StarRating />
+      </FormField>
       <FormField
         htmlFor="comments"
         name="comments"
