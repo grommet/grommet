@@ -22,7 +22,7 @@ export const FeedbackModal = () => {
           ? 'bottom-right'
           : 'center',
       }}
-      //   onSubmit={onSubmit}
+      onSubmit={({ value }) => console.log('Submit', value)}
     >
       <FormField label={<Text>Was this content helpful?</Text>}>
         <StarRating />

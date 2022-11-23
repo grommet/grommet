@@ -6,7 +6,7 @@ export const ThumbsRatingStory = () => (
   // <Grommet theme={...}>
   <Feedback
     title="We’d love your feedback"
-    //   onSubmit={onSubmit}
+    onSubmit={({ value }) => console.log('Submit', value)}
   >
     <FormField label="Was this content helpful?">
       <ThumbsRating

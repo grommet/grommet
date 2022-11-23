@@ -15,7 +15,7 @@ export const StarRatingStory = () => {
           ? 'top-right'
           : 'center',
       }}
-      //   onSubmit={onSubmit}
+      onSubmit={({ value }) => console.log('Submit', value)}
     >
       <FormField abel="Review of Grommet">
         <StarRating />
