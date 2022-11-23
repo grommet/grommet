@@ -8,6 +8,7 @@ export interface FormExtendedEvent<R = Record<string, unknown>, T = Element>
 }
 export interface FeedbackProps<T> {
   children?: React.ReactNode;
+  feedbackButton?: boolean;
   layerProps?: LayerProps;
   onSubmit?: (event: FormExtendedEvent<T>) => void;
   messages?: object;

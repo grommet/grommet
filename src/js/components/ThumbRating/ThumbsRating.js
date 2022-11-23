@@ -15,9 +15,12 @@ export const ThumbsRating = ({
 }) => {
   const [thumbs, setThumbs] = useState(value);
 
+  const likeOption = options[0];
+
   return (
     <RadioButtonGroup
       direction="row"
+      name="thumbsRating"
       options={options}
       value={thumbs}
       onChange={(event) => {
@@ -27,7 +30,7 @@ export const ThumbsRating = ({
       {...rest}
     >
       {(option, { checked }) => {
-        if (option === '1') {
+        if (option === likeOption) {
           return checked ? (
             <LikeFill color={fillColor} />
           ) : (
