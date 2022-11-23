@@ -9,7 +9,7 @@ export const Simple = () => (
     fill
     values={[
       { value: 50, color: 'light-3' },
-      { value: 30, color: 'neutral-1' },
+      { value: 30, color: 'neutral-2' },
       { value: 20, color: 'brand' },
       { value: 10, color: 'light-3' },
       { value: 5, color: 'neutral-1' },
