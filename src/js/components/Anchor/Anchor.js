@@ -34,6 +34,7 @@ const Anchor = forwardRef(
       onClick: onClickProp,
       onFocus,
       reverse,
+      pad,
       ...rest
     },
     ref,

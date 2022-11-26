@@ -950,7 +950,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  padding: 12px;
 }
 
 .c1:hover {
