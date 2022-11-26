@@ -89,6 +89,7 @@ const Anchor = forwardRef(
         reverse={reverse}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
+        pad={pad}
         onFocus={(event) => {
           setFocus(true);
           if (onFocus) onFocus(event);
