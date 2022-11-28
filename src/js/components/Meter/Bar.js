@@ -16,7 +16,7 @@ const Bar = forwardRef((props, ref) => {
     thickness: thicknessProp,
     direction,
     values,
-    rtl,
+    reverse,
     ...rest
   } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -28,9 +28,6 @@ const Bar = forwardRef((props, ref) => {
   // account for the round cap, if any
   const capOffset = round ? thickness / 2 : 0;
   const mid = thickness / 2;
-
-  const isDirectionRtl =
-    direction === 'horizontal' && (theme.dir === 'rtl' || rtl);
 
   const someHighlight = (values || []).some((v) => v.highlight);
   let start =
@@ -111,7 +108,7 @@ const Bar = forwardRef((props, ref) => {
       height={direction === 'horizontal' ? thickness : length}
       round={round ? { size: thicknessProp } : undefined}
       {...rest}
-      isDirectionRtl={isDirectionRtl}
+      reverse={reverse}
     >
       <path
         d={backgroundPath}

@@ -13,9 +13,9 @@ const StyledMeter = styled.svg`
   overflow: hidden;
 
   ${(props) =>
-    props.isDirectionRtl &&
+    props.reverse &&
     css`
-      transform: rotate(180deg);
+      transform: scale(-1, 1);
     `}
 
   ${genericStyles} ${(props) => props.round && roundStyle}

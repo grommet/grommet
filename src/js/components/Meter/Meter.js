@@ -1,5 +1,7 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef, useMemo, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
+import { defaultProps } from '../../default-props';
 import { Bar } from './Bar';
 import { Circle } from './Circle';
 import { MeterPropTypes } from './propTypes';
@@ -25,17 +27,25 @@ const Meter = forwardRef(
       thickness = 'medium',
       type = 'bar',
       value,
+      reverse,
       values: valuesProp,
       ...rest
     },
     ref,
   ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+
     // normalize values to an array of objects
     const values = useMemo(() => {
       if (valuesProp) return valuesProp;
       if (value) return [{ color, value }];
       return [];
     }, [color, value, valuesProp]);
+
+    const reverseDirection =
+      direction === 'horizontal' &&
+      (theme.dir === 'rtl' || reverse) &&
+      !(theme.dir === 'rtl' && reverse);
 
     const memoizedMax = useMemo(() => deriveMax(values), [values]);
     let content;
@@ -49,6 +59,7 @@ const Meter = forwardRef(
           thickness={thickness}
           background={background}
           direction={direction}
+          reverse={reverseDirection}
           {...rest}
         />
       );
@@ -62,6 +73,7 @@ const Meter = forwardRef(
           thickness={thickness}
           type={type}
           background={background}
+          reverse={reverseDirection}
           {...rest}
         />
       );

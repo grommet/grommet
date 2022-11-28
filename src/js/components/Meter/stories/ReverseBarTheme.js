@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box, Meter, Grommet } from 'grommet';
 
-export const BarRTLTheme = () => {
+export const ReverseBarTheme = () => {
   const value = 30;
 
   return (
@@ -15,5 +15,5 @@ export const BarRTLTheme = () => {
 };
 
 export default {
-  title: 'Visualizations/Meter/BarRTLTheme',
+  title: 'Visualizations/Meter/ReverseBarTheme',
 };
