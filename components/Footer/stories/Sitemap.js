@@ -18,7 +18,10 @@ var FooterAnchor = function FooterAnchor(_ref) {
   }, rest));
 };
 var FooterContent = function FooterContent() {
-  return _data.threeColumns.map(function (item) {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    direction: "row-responsive",
+    gap: "xlarge"
+  }, _data.threeColumns.map(function (item) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       gap: "medium",
       key: item[0]
@@ -30,7 +33,7 @@ var FooterContent = function FooterContent() {
         key: item[i]
       }, item[i]);
     })));
-  });
+  }));
 };
 var Sitemap = function Sitemap() {
   return (

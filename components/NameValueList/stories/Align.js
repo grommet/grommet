@@ -12,8 +12,9 @@ var Align = function Align() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Box, {
-      pad: "small"
-    }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      pad: "small",
+      gap: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold",
       size: "3xl"
     }, "Align value end"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, {
@@ -27,7 +28,7 @@ var Align = function Align() {
         key: name,
         name: name
       }, value);
-    }))), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold",
       size: "3xl"
     }, "Align name end"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, {
@@ -41,7 +42,7 @@ var Align = function Align() {
         key: name,
         name: name
       }, value);
-    }))))
+    })))
     // </Grommet>
   );
 };

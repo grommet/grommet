@@ -13,7 +13,10 @@ var FooterAnchor = function FooterAnchor(_ref) {
   }, rest));
 };
 var FooterContent = function FooterContent() {
-  return data.map(function (item) {
+  return /*#__PURE__*/React.createElement(Box, {
+    direction: "row-responsive",
+    gap: "xlarge"
+  }, data.map(function (item) {
     return /*#__PURE__*/React.createElement(Box, {
       gap: "medium",
       key: item[0]
@@ -25,7 +28,7 @@ var FooterContent = function FooterContent() {
         key: item[i]
       }, item[i]);
     })));
-  });
+  }));
 };
 export var Sitemap = function Sitemap() {
   return (

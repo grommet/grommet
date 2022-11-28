@@ -11,6 +11,7 @@ var _StyledBox = require("./StyledBox");
 var _propTypes = require("./propTypes");
 var _Skeleton = require("../Skeleton");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
+var _OptionsContext = require("../../contexts/OptionsContext");
 var _excluded = ["a11yTitle", "background", "border", "children", "direction", "elevation", "fill", "gap", "kind", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex", "skeleton"],
   _excluded2 = ["colors", "size"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -43,6 +44,10 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     skeletonProp = _ref.skeleton,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  // boxOptions was created to preserve backwards compatibility but
+  // should not be supported in v3
+  var _useContext = (0, _react.useContext)(_OptionsContext.OptionsContext),
+    boxOptions = _useContext.box;
   var skeleton = (0, _Skeleton.useSkeleton)();
   var background = backgroundProp;
   var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
@@ -89,7 +94,9 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     console.warn('Box must have a gap to use border between');
   }
   var contents = children;
-  if (gap && gap !== 'none') {
+  if (gap && gap !== 'none' && (!(boxOptions != null && boxOptions.cssGap) ||
+  // need this approach to show border between
+  border === 'between' || (border == null ? void 0 : border.side) === 'between')) {
     var boxAs = !as && tag ? tag : as;
     contents = [];
     var firstIndex;
@@ -175,6 +182,7 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     elevationProp: elevation,
     fillProp: fill,
     focus: focus,
+    gap: (boxOptions == null ? void 0 : boxOptions.cssGap) && gap && gap !== 'none' && border !== 'between' && (border == null ? void 0 : border.side) !== 'between' && gap,
     kindProp: kind,
     overflowProp: overflow,
     wrapProp: wrap,

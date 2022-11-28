@@ -9,7 +9,7 @@ export var CustomName = function CustomName() {
     React.createElement(Box, {
       pad: "small",
       gap: "medium"
-    }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       weight: "bold",
       size: "3xl"
     }, "Custom Name"), /*#__PURE__*/React.createElement(NameValueList, null, Object.entries(data).map(function (_ref) {
@@ -22,7 +22,7 @@ export var CustomName = function CustomName() {
         }, name),
         key: name
       }, value);
-    }))))
+    })))
     // </Grommet>
   );
 };

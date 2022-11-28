@@ -122,12 +122,34 @@ var interactiveStyle = css(["cursor:pointer;&:hover{", " ", "}"], function (prop
 }, function (props) {
   return props.hoverIndicator && getHoverIndicatorStyle(props.hoverIndicator, props.theme);
 });
+var gapStyle = function gapStyle(directionProp, gap, responsive, theme) {
+  var metric = theme.global.edgeSize[gap] || gap;
+  var breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
+  var responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
+  var styles = [];
+  if (directionProp === 'column' || directionProp === 'column-reverse') {
+    styles.push("row-gap: " + metric + ";");
+    if (responsiveMetric) {
+      styles.push(breakpointStyle(breakpoint, "row-gap: " + responsiveMetric + ";"));
+    }
+  } else {
+    styles.push("column-gap: " + metric + ";");
+    if (responsiveMetric) {
+      if (directionProp === 'row' || directionProp === 'row-reverse') {
+        styles.push(breakpointStyle(breakpoint, "column-gap: " + responsiveMetric + ";"));
+      } else if (directionProp === 'row-responsive') {
+        styles.push(breakpointStyle(breakpoint, "\n          row-gap: " + responsiveMetric + ";\n        "));
+      }
+    }
+  }
+  return styles;
+};
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 var StyledBox = styled.div.withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
-})(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return !props.basis && 'max-width: 100%;';
 }, genericStyles, function (props) {
   return props.align && alignStyle;
@@ -162,6 +184,8 @@ var StyledBox = styled.div.withConfig({
 }, function (props) {
   return props.elevationProp && elevationStyle(props.elevationProp);
 }, function (props) {
+  return props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.theme);
+}, function (props) {
   return props.animation && animationStyle;
 }, function (props) {
   return props.onClick && interactiveStyle;
@@ -172,7 +196,9 @@ var StyledBox = styled.div.withConfig({
 }, function (props) {
   return props.kindProp && props.kindProp.extend;
 });
-var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) {
+StyledBox.defaultProps = {};
+Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
+var gapGapStyle = function gapGapStyle(directionProp, gap, responsive, border, theme) {
   var metric = theme.global.edgeSize[gap] || gap;
   var breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   var responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
@@ -225,13 +251,11 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) 
   }
   return styles;
 };
-StyledBox.defaultProps = {};
-Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 var StyledBoxGap = styled.div.withConfig({
   displayName: "StyledBox__StyledBoxGap",
   componentId: "sc-13pk1d4-1"
 })(["flex:0 0 auto;align-self:stretch;", ";"], function (props) {
-  return props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.border, props.theme);
+  return props.gap && gapGapStyle(props.directionProp, props.gap, props.responsive, props.border, props.theme);
 });
 StyledBoxGap.defaultProps = {};
 Object.setPrototypeOf(StyledBoxGap.defaultProps, defaultProps);

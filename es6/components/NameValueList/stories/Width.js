@@ -7,9 +7,9 @@ export var Width = function Width() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     React.createElement(Box, {
-      gap: "large",
-      pad: "small"
-    }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+      pad: "small",
+      gap: "medium"
+    }, /*#__PURE__*/React.createElement(Text, {
       weight: "bold",
       size: "3xl"
     }, "Name width xsmall"), /*#__PURE__*/React.createElement(NameValueList, {
@@ -23,7 +23,7 @@ export var Width = function Width() {
         name: name,
         key: name
       }, /*#__PURE__*/React.createElement(Text, null, value));
-    }))), /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+    })), /*#__PURE__*/React.createElement(Text, {
       weight: "bold",
       size: "3xl"
     }, "Value width large"), /*#__PURE__*/React.createElement(NameValueList, {
@@ -37,7 +37,7 @@ export var Width = function Width() {
         name: name,
         key: name
       }, /*#__PURE__*/React.createElement(Text, null, value));
-    }))))
+    })))
     // </Grommet>
   );
 };

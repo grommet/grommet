@@ -11,6 +11,7 @@ import { StyledBox, StyledBoxGap } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
 var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     backgroundProp = _ref.background,
@@ -37,6 +38,10 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     skeletonProp = _ref.skeleton,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
+  // boxOptions was created to preserve backwards compatibility but
+  // should not be supported in v3
+  var _useContext = useContext(OptionsContext),
+    boxOptions = _useContext.box;
   var skeleton = useSkeleton();
   var background = backgroundProp;
   var announce = useContext(AnnounceContext);
@@ -83,7 +88,9 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     console.warn('Box must have a gap to use border between');
   }
   var contents = children;
-  if (gap && gap !== 'none') {
+  if (gap && gap !== 'none' && (!(boxOptions != null && boxOptions.cssGap) ||
+  // need this approach to show border between
+  border === 'between' || (border == null ? void 0 : border.side) === 'between')) {
     var boxAs = !as && tag ? tag : as;
     contents = [];
     var firstIndex;
@@ -169,6 +176,7 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     elevationProp: elevation,
     fillProp: fill,
     focus: focus,
+    gap: (boxOptions == null ? void 0 : boxOptions.cssGap) && gap && gap !== 'none' && border !== 'between' && (border == null ? void 0 : border.side) !== 'between' && gap,
     kindProp: kind,
     overflowProp: overflow,
     wrapProp: wrap,

@@ -13,8 +13,8 @@ var PairProps = function PairProps() {
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Box, {
       pad: "small",
-      gap: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      gap: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold",
       size: "2xl"
     }, "layout = column (default) / pairProps direction = column"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, {
@@ -28,7 +28,7 @@ var PairProps = function PairProps() {
         key: name,
         name: name
       }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, value));
-    }))))
+    })))
     // </Grommet>
   );
 };

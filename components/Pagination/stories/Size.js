@@ -13,17 +13,17 @@ var Size = function Size() {
     _react["default"].createElement(_grommet.Box, {
       align: "start",
       pad: "small",
-      gap: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Small"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+      gap: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Small"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
       numberItems: 237,
       size: "small"
-    })), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Medium (Default)"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Medium (Default)"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
       numberItems: 237,
       size: "medium"
-    })), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Large"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Large"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
       numberItems: 237,
       size: "large"
-    })))
+    }))
     // </Grommet>
   );
 };

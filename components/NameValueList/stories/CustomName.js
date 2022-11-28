@@ -14,7 +14,7 @@ var CustomName = function CustomName() {
     _react["default"].createElement(_grommet.Box, {
       pad: "small",
       gap: "medium"
-    }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold",
       size: "3xl"
     }, "Custom Name"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, null, Object.entries(_data.data).map(function (_ref) {
@@ -27,7 +27,7 @@ var CustomName = function CustomName() {
         }, name),
         key: name
       }, value);
-    }))))
+    })))
     // </Grommet>
   );
 };

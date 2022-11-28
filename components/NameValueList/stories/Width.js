@@ -12,9 +12,9 @@ var Width = function Width() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Box, {
-      gap: "large",
-      pad: "small"
-    }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      pad: "small",
+      gap: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold",
       size: "3xl"
     }, "Name width xsmall"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, {
@@ -28,7 +28,7 @@ var Width = function Width() {
         name: name,
         key: name
       }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, value));
-    }))), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold",
       size: "3xl"
     }, "Value width large"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, {
@@ -42,7 +42,7 @@ var Width = function Width() {
         name: name,
         key: name
       }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, value));
-    }))))
+    })))
     // </Grommet>
   );
 };

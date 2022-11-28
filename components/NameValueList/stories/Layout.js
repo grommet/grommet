@@ -13,8 +13,8 @@ var Layout = function Layout() {
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Box, {
       pad: "small",
-      gap: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      gap: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold",
       size: "2xl"
     }, "layout = grid / pairProps direction = column"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, {
@@ -29,7 +29,7 @@ var Layout = function Layout() {
         key: name,
         name: name
       }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, value));
-    }))), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold",
       size: "2xl"
     }, "layout = grid / pairProps direction = column-reverse"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, {
@@ -47,7 +47,7 @@ var Layout = function Layout() {
         key: name,
         name: name
       }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, value));
-    }))))
+    })))
     // </Grommet>
   );
 };

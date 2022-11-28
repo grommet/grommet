@@ -15,7 +15,7 @@ var CustomValue = function CustomValue() {
     _react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "small",
       gap: "medium"
-    }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold",
       size: "3xl"
     }, "Custom Value"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, null, Object.entries(_data.statusData).map(function (_ref) {
@@ -39,10 +39,10 @@ var CustomValue = function CustomValue() {
       }, icon, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
         color: "text-strong"
       }, value)));
-    })))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "small",
       gap: "medium"
-    }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold",
       size: "3xl"
     }, "Custom Multi-Line Value"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, null, Object.entries(_data.languageData).map(function (_ref2) {
@@ -69,7 +69,7 @@ var CustomValue = function CustomValue() {
       }, icon), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
         color: "text-strong"
       }, value)));
-    })))))
+    }))))
     // </Grommet>
   );
 };

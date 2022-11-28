@@ -8,8 +8,8 @@ export var PairProps = function PairProps() {
     // <Grommet theme={...}>
     React.createElement(Box, {
       pad: "small",
-      gap: "large"
-    }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+      gap: "medium"
+    }, /*#__PURE__*/React.createElement(Text, {
       weight: "bold",
       size: "2xl"
     }, "layout = column (default) / pairProps direction = column"), /*#__PURE__*/React.createElement(NameValueList, {
@@ -23,7 +23,7 @@ export var PairProps = function PairProps() {
         key: name,
         name: name
       }, /*#__PURE__*/React.createElement(Text, null, value));
-    }))))
+    })))
     // </Grommet>
   );
 };

@@ -7,8 +7,9 @@ export var Align = function Align() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     React.createElement(Box, {
-      pad: "small"
-    }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+      pad: "small",
+      gap: "medium"
+    }, /*#__PURE__*/React.createElement(Text, {
       weight: "bold",
       size: "3xl"
     }, "Align value end"), /*#__PURE__*/React.createElement(NameValueList, {
@@ -22,7 +23,7 @@ export var Align = function Align() {
         key: name,
         name: name
       }, value);
-    }))), /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+    })), /*#__PURE__*/React.createElement(Text, {
       weight: "bold",
       size: "3xl"
     }, "Align name end"), /*#__PURE__*/React.createElement(NameValueList, {
@@ -36,7 +37,7 @@ export var Align = function Align() {
         key: name,
         name: name
       }, value);
-    }))))
+    })))
     // </Grommet>
   );
 };

@@ -8,8 +8,8 @@ export var Layout = function Layout() {
     // <Grommet theme={...}>
     React.createElement(Box, {
       pad: "small",
-      gap: "large"
-    }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+      gap: "medium"
+    }, /*#__PURE__*/React.createElement(Text, {
       weight: "bold",
       size: "2xl"
     }, "layout = grid / pairProps direction = column"), /*#__PURE__*/React.createElement(NameValueList, {
@@ -24,7 +24,7 @@ export var Layout = function Layout() {
         key: name,
         name: name
       }, /*#__PURE__*/React.createElement(Text, null, value));
-    }))), /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+    })), /*#__PURE__*/React.createElement(Text, {
       weight: "bold",
       size: "2xl"
     }, "layout = grid / pairProps direction = column-reverse"), /*#__PURE__*/React.createElement(NameValueList, {
@@ -42,7 +42,7 @@ export var Layout = function Layout() {
         key: name,
         name: name
       }, /*#__PURE__*/React.createElement(Text, null, value));
-    }))))
+    })))
     // </Grommet>
   );
 };

@@ -13,7 +13,7 @@ export var CustomValue = function CustomValue() {
     React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
       pad: "small",
       gap: "medium"
-    }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       weight: "bold",
       size: "3xl"
     }, "Custom Value"), /*#__PURE__*/React.createElement(NameValueList, null, Object.entries(statusData).map(function (_ref) {
@@ -37,10 +37,10 @@ export var CustomValue = function CustomValue() {
       }, icon, /*#__PURE__*/React.createElement(Text, {
         color: "text-strong"
       }, value)));
-    })))), /*#__PURE__*/React.createElement(Box, {
+    }))), /*#__PURE__*/React.createElement(Box, {
       pad: "small",
       gap: "medium"
-    }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       weight: "bold",
       size: "3xl"
     }, "Custom Multi-Line Value"), /*#__PURE__*/React.createElement(NameValueList, null, Object.entries(languageData).map(function (_ref2) {
@@ -67,7 +67,7 @@ export var CustomValue = function CustomValue() {
       }, icon), /*#__PURE__*/React.createElement(Text, {
         color: "text-strong"
       }, value)));
-    })))))
+    }))))
     // </Grommet>
   );
 };
