@@ -60,6 +60,8 @@ const Notification = ({
   status,
   title,
   toast,
+  icon,
+  time,
   ...rest
 }) => {
   const autoClose =
@@ -81,7 +83,7 @@ const Notification = ({
     if (autoClose) {
       const timer = setTimeout(
         close,
-        theme.notification.toast.time || theme.notification.time,
+        time || theme.notification.toast.time || theme.notification.time,
       );
 
       return () => clearTimeout(timer);
@@ -92,6 +94,7 @@ const Notification = ({
     close,
     theme.notification.toast.time,
     theme.notification.time,
+    time,
   ]);
 
   const { icon: CloseIcon } = theme.notification.close;
@@ -183,7 +186,7 @@ const Notification = ({
         avoid nested interactive elements */}
       <Box direction="row" pad={textPad} flex>
         <Box {...theme.notification.iconContainer}>
-          <StatusIcon color={color} />
+          {icon || <StatusIcon color={color} />}
         </Box>
         <Box {...theme.notification.textContainer}>
           <TextWrapper>

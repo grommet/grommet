@@ -128,7 +128,7 @@ export type AlignContentType =
   | 'start'
   | 'stretch'
   | string;
-export type AlignSelfType = 'start' | 'center' | 'end' | 'stretch';
+export type AlignSelfType = 'start' | 'center' | 'end' | 'stretch' | 'baseline';
 export type AnimateType = boolean;
 export interface BackgroundObject {
   color?: ColorType;
@@ -311,4 +311,78 @@ export type WidthType =
       width?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
       max?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
       min?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
+    };
+
+export type AnimationType =
+  | 'fadeIn'
+  | 'fadeOut'
+  | 'jiggle'
+  | 'pulse'
+  | 'rotateLeft'
+  | 'rotateRight'
+  | 'slideUp'
+  | 'slideDown'
+  | 'slideLeft'
+  | 'slideRight'
+  | 'zoomIn'
+  | 'zoomOut'
+  | {
+      type?:
+        | 'fadeIn'
+        | 'fadeOut'
+        | 'jiggle'
+        | 'pulse'
+        | 'rotateLeft'
+        | 'rotateRight'
+        | 'slideUp'
+        | 'slideDown'
+        | 'slideLeft'
+        | 'slideRight'
+        | 'zoomIn'
+        | 'zoomOut';
+      delay?: number;
+      duration?: number;
+      size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    }
+  | (
+      | 'fadeIn'
+      | 'fadeOut'
+      | 'jiggle'
+      | 'pulse'
+      | 'slideUp'
+      | 'slideDown'
+      | 'slideLeft'
+      | 'slideRight'
+      | 'zoomIn'
+      | 'zoomOut'
+      | {
+          type?:
+            | 'fadeIn'
+            | 'fadeOut'
+            | 'jiggle'
+            | 'pulse'
+            | 'slideUp'
+            | 'slideDown'
+            | 'slideLeft'
+            | 'slideRight'
+            | 'zoomIn'
+            | 'zoomOut';
+          delay?: number;
+          duration?: number;
+          size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+        }
+    )[];
+
+export type SkeletonColorsType = {
+  dark?: string[];
+  light?: string[];
+};
+
+export type SkeletonType =
+  | boolean
+  | {
+      animation?: AnimateType;
+      colors?: SkeletonColorsType;
+      depth?: number;
+      message?: string | { start?: string; end?: string };
     };

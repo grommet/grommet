@@ -26,6 +26,7 @@ import { Badge } from './Badge';
 import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
+import { Skeleton, useSkeleton } from '../Skeleton';
 
 // We have two Styled* components to separate
 // the newer default|primary|secondary approach,
@@ -208,6 +209,8 @@ const Button = forwardRef(
       );
     }
 
+    const skeleton = useSkeleton();
+
     const sendAnalytics = useAnalytics();
 
     const onClick = useCallback(
@@ -270,6 +273,19 @@ const Button = forwardRef(
       }
       return result;
     }, [active, disabled, kind, kindObj, plain, selected]);
+
+    if (skeleton) {
+      return (
+        <Skeleton
+          ref={ref}
+          height={theme.text[size || 'medium']?.height || size}
+          a11yTitle={a11yTitle}
+          {...rest}
+          {...theme.button.size?.[size || 'medium']}
+          {...theme.button.skeleton}
+        />
+      );
+    }
 
     // only used when theme does not have button.default
     const isDarkBackground = () => {

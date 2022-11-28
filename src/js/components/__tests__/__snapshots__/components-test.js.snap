@@ -76,6 +76,7 @@ exports[`Components loads 1`] = `
       "pad": [Function],
       "responsive": [Function],
       "round": [Function],
+      "skeleton": [Function],
       "tag": [Function],
       "width": [Function],
       "wrap": [Function],
@@ -881,6 +882,11 @@ exports[`Components loads 1`] = `
               },
             },
           },
+          "skeleton": {
+            "width": {
+              "min": "100px",
+            },
+          },
           "transition": {
             "duration": 0.1,
             "properties": [
@@ -1651,6 +1657,11 @@ exports[`Components loads 1`] = `
             },
           },
           "responsiveBreakpoint": "small",
+          "skeleton": {
+            "width": {
+              "min": "200px",
+            },
+          },
           "weight": 600,
         },
         "icon": {
@@ -2342,6 +2353,19 @@ exports[`Components loads 1`] = `
         "selectMultiple": {
           "maxInline": 5,
         },
+        "skeleton": {
+          "border": false,
+          "colors": {
+            "dark": [
+              "background",
+              "background-front",
+            ],
+            "light": [
+              "background",
+              "background-back",
+            ],
+          },
+        },
         "skipLinks": {
           "container": {
             "elevation": "large",
@@ -2537,6 +2561,25 @@ exports[`Components loads 1`] = `
             "height": "24px",
             "maxWidth": "432px",
             "size": "18px",
+          },
+          "skeleton": {
+            "colors": {
+              "dark": [
+                "border",
+                "border",
+              ],
+              "light": [
+                "background-front",
+                "background-back",
+              ],
+            },
+            "margin": {
+              "vertical": "xsmall",
+            },
+            "width": {
+              "min": "100px",
+              "width": "100px",
+            },
           },
           "small": {
             "height": "20px",
@@ -2817,6 +2860,11 @@ exports[`Components loads 1`] = `
               },
             },
           },
+          "skeleton": {
+            "width": {
+              "min": "100px",
+            },
+          },
           "transition": {
             "duration": 0.1,
             "properties": [
@@ -3587,6 +3635,11 @@ exports[`Components loads 1`] = `
             },
           },
           "responsiveBreakpoint": "small",
+          "skeleton": {
+            "width": {
+              "min": "200px",
+            },
+          },
           "weight": 600,
         },
         "icon": {
@@ -4278,6 +4331,19 @@ exports[`Components loads 1`] = `
         "selectMultiple": {
           "maxInline": 5,
         },
+        "skeleton": {
+          "border": false,
+          "colors": {
+            "dark": [
+              "background",
+              "background-front",
+            ],
+            "light": [
+              "background",
+              "background-back",
+            ],
+          },
+        },
         "skipLinks": {
           "container": {
             "elevation": "large",
@@ -4474,6 +4540,25 @@ exports[`Components loads 1`] = `
             "maxWidth": "432px",
             "size": "18px",
           },
+          "skeleton": {
+            "colors": {
+              "dark": [
+                "border",
+                "border",
+              ],
+              "light": [
+                "background-front",
+                "background-back",
+              ],
+            },
+            "margin": {
+              "vertical": "xsmall",
+            },
+            "width": {
+              "min": "100px",
+              "width": "100px",
+            },
+          },
           "small": {
             "height": "20px",
             "maxWidth": "336px",
@@ -4618,6 +4703,40 @@ exports[`Components loads 1`] = `
     "render": [Function],
   },
   "Sidebar": [Function],
+  "Skeleton": {
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "as": [Function],
+      "colors": [Function],
+      "gridArea": [Function],
+      "height": [Function],
+      "margin": [Function],
+      "pad": [Function],
+      "round": [Function],
+      "width": [Function],
+    },
+    "render": [Function],
+  },
+  "SkeletonContext": {
+    "$$typeof": Symbol(react.context),
+    "Consumer": {
+      "$$typeof": Symbol(react.context),
+      "_context": [Circular],
+    },
+    "Provider": {
+      "$$typeof": Symbol(react.provider),
+      "_context": [Circular],
+    },
+    "_currentRenderer": null,
+    "_currentRenderer2": null,
+    "_currentValue": undefined,
+    "_currentValue2": undefined,
+    "_defaultValue": null,
+    "_globalName": null,
+    "_threadCount": 0,
+  },
   "SkipLink": {
     "$$typeof": Symbol(react.forward_ref),
     "render": [Function],
@@ -4659,7 +4778,17 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
-  "Table": [Function],
+  "Table": {
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "caption": [Function],
+      "gridArea": [Function],
+      "margin": [Function],
+    },
+    "render": [Function],
+  },
   "TableBody": {
     "$$typeof": Symbol(react.forward_ref),
     "render": [Function],
@@ -4734,6 +4863,7 @@ exports[`Components loads 1`] = `
       "gridArea": [Function],
       "margin": [Function],
       "size": [Function],
+      "skeleton": [Function],
       "tag": [Function],
       "textAlign": [Function],
       "tip": [Function],
@@ -4837,5 +4967,6 @@ exports[`Components loads 1`] = `
   "calcBounds": [Function],
   "calcs": [Function],
   "round": [Function],
+  "useSkeleton": [Function],
 }
 `;

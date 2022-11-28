@@ -7,7 +7,11 @@ export const StyledPlaceholder = () => (
   // <Grommet theme={...}>
   <Box>
     <Form>
-      <TextInput name="name" placeholder={<Text>placeholder</Text>} />
+      <TextInput
+        name="name"
+        placeholder={<Text>placeholder</Text>}
+        aria-label="Input Text"
+      />
     </Form>
   </Box>
   // </Grommet>

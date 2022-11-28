@@ -82,7 +82,7 @@ export interface DataTableProps<TRowType = any> {
       pad?: PadType;
     };
   };
-  rowDetails?: React.ReactNode;
+  rowDetails?: (row: TRowType) => React.ReactNode;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
   // Data
@@ -91,12 +91,12 @@ export interface DataTableProps<TRowType = any> {
   groupBy?:
     | string
     | {
-        property: string;
-        expand: Array<string>;
-        expandable: Array<string>;
-        select: { [key: string]: 'all' | 'some' | 'none' };
-        onExpand: (expandedKeys: string[]) => void;
-        onSelect: (select: (string | number)[], datum: TRowType) => void;
+        property?: string;
+        expand?: Array<string>;
+        expandable?: Array<string>;
+        select?: { [key: string]: 'all' | 'some' | 'none' };
+        onExpand?: (expandedKeys: string[]) => void;
+        onSelect?: (select: (string | number)[], datum: TRowType) => void;
       };
   primaryKey?: string | boolean;
   select?: (string | number)[];

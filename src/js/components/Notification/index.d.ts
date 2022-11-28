@@ -6,9 +6,10 @@ export type StatusType = 'critical' | 'warning' | 'normal' | 'info' | 'unknown';
 export interface NotificationProps {
   actions?: AnchorType[];
   global?: boolean;
-  title: string;
+  title?: string;
   message?: string | React.ReactNode;
   status?: StatusType;
+  time?: number;
   toast?:
     | boolean
     | {
@@ -16,6 +17,7 @@ export interface NotificationProps {
         position?: LayerPositionType;
       };
   onClose?: (...args: any[]) => any;
+  icon?: JSX.Element;
 }
 
 declare const Notification: React.FC<NotificationProps>;
