@@ -1030,6 +1030,250 @@ exports[`Box basis 1`] = `
 </div>
 `;
 
+exports[`Box css gap 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 6px;
+  column-gap: 6px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 24px;
+  column-gap: 24px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 48px;
+  column-gap: 48px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 80px;
+  column-gap: 80px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    -webkit-column-gap: 3px;
+    column-gap: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    -webkit-column-gap: 12px;
+    column-gap: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    -webkit-column-gap: 24px;
+    column-gap: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    row-gap: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    />
+    <div
+      class="c2"
+    />
+  </div>
+  <div
+    class="c3"
+  >
+    <div
+      class="c2"
+    />
+    <div
+      class="c2"
+    />
+  </div>
+  <div
+    class="c4"
+  >
+    <div
+      class="c2"
+    />
+    <div
+      class="c2"
+    />
+  </div>
+  <div
+    class="c5"
+  >
+    <div
+      class="c2"
+    />
+    <div
+      class="c2"
+    />
+  </div>
+  <div
+    class="c6"
+  >
+    <div
+      class="c2"
+    />
+    <div
+      class="c2"
+    />
+  </div>
+  <div
+    class="c7"
+  >
+    <div
+      class="c2"
+    />
+    <div
+      class="c2"
+    />
+  </div>
+  <span
+    class="c8"
+  >
+    <span>
+      first
+    </span>
+    <span>
+      second
+    </span>
+  </span>
+</div>
+`;
+
 exports[`Box direction 1`] = `
 .c0 {
   font-size: 18px;
