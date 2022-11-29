@@ -357,7 +357,7 @@ const DataTable = ({
   // should remain in its location
   const OverflowContainer = paginate ? Box : Fragment;
   const overflowContainerProps = paginate
-    ? { overflow: { horizontal: 'auto' }, flex: true }
+    ? { overflow: { horizontal: 'auto' } }
     : undefined;
 
   // necessary for Firefox, otherwise paginated DataTable will

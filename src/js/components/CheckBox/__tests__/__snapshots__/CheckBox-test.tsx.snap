@@ -322,7 +322,7 @@ exports[`CheckBox controlled 2`] = `
     label="test-label"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bLhmeR StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+      class="StyledBox-sc-13pk1d4-0 bGaxyQ StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
     >
       <input
         checked=""
@@ -330,7 +330,7 @@ exports[`CheckBox controlled 2`] = `
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+        class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
       >
         <svg
           class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 hrzLMu"
