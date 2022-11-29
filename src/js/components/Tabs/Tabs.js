@@ -325,13 +325,13 @@ const Tabs = forwardRef(
       <StyledTabs
         ref={ref}
         as={Box}
-        role="tablist"
         flex={flex}
         responsive={responsive}
         {...rest}
         background={theme.tabs.background}
       >
         <Box
+          role="tablist"
           flex={false}
           direction={overflow ? 'row' : 'column'}
           {...tabsHeaderStyles}
