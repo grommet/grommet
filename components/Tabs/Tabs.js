@@ -269,12 +269,12 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   return /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabs, _extends({
     ref: ref,
     as: _Box.Box,
-    role: "tablist",
     flex: flex,
     responsive: responsive
   }, rest, {
     background: theme.tabs.background
   }), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
+    role: "tablist",
     flex: false,
     direction: overflow ? 'row' : 'column'
   }, tabsHeaderStyles), overflow && /*#__PURE__*/_react["default"].createElement(_Button.Button, {

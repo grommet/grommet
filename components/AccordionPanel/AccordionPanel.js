@@ -76,8 +76,6 @@ var AccordionPanel = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     border: panelBorder,
     margin: abutMargin
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    role: "tab",
-    "aria-selected": active,
     "aria-expanded": active,
     plain: theme.button["default"] ? true : undefined,
     onClick: onPanelChange,
@@ -125,6 +123,7 @@ var AccordionPanel = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, /*#__PURE__*/_react["default"].createElement(AccordionIcon, {
     color: iconColor
   })))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    role: "region",
     border: contentBorder
   }, animate ? /*#__PURE__*/_react["default"].createElement(_Collapsible.Collapsible, {
     open: active

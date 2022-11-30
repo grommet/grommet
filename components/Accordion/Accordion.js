@@ -61,8 +61,7 @@ var Accordion = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     };
   }, [activeIndexes, animate, multiple, onActive]);
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
-    ref: ref,
-    role: "tablist"
+    ref: ref
   }, rest), _react.Children.toArray(children).filter(function (child) {
     return child;
   }).map(function (child, index) {
