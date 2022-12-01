@@ -9,7 +9,7 @@ export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Grid flex={false} pad="large" columns={['large']} justifyContent="center">
-    <Data data={DATA} search filters={['location']} sort>
+    <Data data={DATA} toolbar>
       <DataTable columns={columns} />
     </Data>
   </Grid>

@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { Children, useContext, useState } from 'react';
 import { Close } from 'grommet-icons/icons/Close';
 import { Filter } from 'grommet-icons/icons/Filter';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataFilter } from '../DataFilter';
 import { DataForm } from '../Data';
-import { DataSort } from '../DataSort';
+// import { DataSort } from '../DataSort';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
@@ -21,12 +21,10 @@ export const DataFilters = ({
   drop,
   children,
   layer,
-  messages,
-  properties,
-  sort,
+  // messages,
   ...rest
 }) => {
-  const { filters, clearFilters } = useContext(DataContext);
+  const { clearFilters, data, schema, view } = useContext(DataContext);
   const [showContent, setShowContent] = useState();
   const controlled = drop || layer;
 
@@ -35,6 +33,20 @@ export const DataFilters = ({
       <Button label="Clear filters" onClick={clearFilters} />
     </Box>
   );
+
+  let filters;
+  if (Children.count(children) === 0) {
+    let properties;
+    if (schema === 'raw' && data && data.length)
+      properties = Object.keys(data[0]);
+    else if (Array.isArray(schema)) properties = schema;
+    else if (typeof schema === 'object') properties = Object.keys(schema);
+    else properties = [];
+    filters = properties.map((property) => (
+      <DataFilter key={property} property={property} />
+    ));
+    // {sort && <DataSort />}
+  }
 
   const content = (
     <DataForm
@@ -58,11 +70,7 @@ export const DataFilters = ({
           {!controlled && clearControl}
         </Header>
       )}
-      {properties &&
-        properties.map((property) => (
-          <DataFilter key={property} property={property} />
-        ))}
-      {sort && <DataSort />}
+      {filters}
       {children}
     </DataForm>
   );
@@ -71,8 +79,9 @@ export const DataFilters = ({
 
   let control;
   let badge = 0;
-  if (filters.properties) badge += Object.keys(filters.properties).length;
-  if (filters.search.text) badge += 1;
+  if (view?.properties) badge += Object.keys(view.properties).length;
+  if (view?.search?.text || (typeof view?.search === 'string' && view?.search))
+    badge += 1;
   if (!badge) badge = undefined;
 
   if (layer) {

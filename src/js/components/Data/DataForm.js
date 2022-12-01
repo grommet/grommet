@@ -9,14 +9,17 @@ const formSearchKey = '_search';
 const formSortPropertyKey = '_sort.property';
 const formSortDirectionKey = '_sort.direction';
 
-const filtersToFormValue = (filters) => ({
-  ...filters.properties,
-  [formSearchKey]: filters.search.text,
-  [formSortPropertyKey]: filters?.sort?.property,
-  [formSortDirectionKey]: filters?.sort?.direction,
+const viewToFormValue = (view) => ({
+  ...(view?.properties || {}),
+  [formSearchKey]:
+    view?.search?.text ||
+    (typeof view?.search === 'string' && view.search) ||
+    '',
+  [formSortPropertyKey]: view?.sort?.property,
+  [formSortDirectionKey]: view?.sort?.direction,
 });
 
-const formValueToFilters = (value) => {
+const formValueToView = (value) => {
   const properties = value;
   const searchText = value[formSearchKey];
   delete properties[formSearchKey];
@@ -42,21 +45,21 @@ const clearEmpty = (properties) => {
 };
 
 export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
-  const { filters, onChange, onSubmit } = useContext(DataContext);
-  const [formValue, setFormValue] = useState(filtersToFormValue(filters));
+  const { onView, updateOn, view } = useContext(DataContext);
+  const [formValue, setFormValue] = useState(viewToFormValue(view));
 
-  useEffect(() => setFormValue(filtersToFormValue(filters)), [filters]);
+  useEffect(() => setFormValue(viewToFormValue(view)), [view]);
 
   return (
     <Form
       {...rest}
       value={formValue}
       onSubmit={
-        onSubmit
+        updateOn === 'submit'
           ? ({ value: nextValue }) => {
               clearEmpty(nextValue);
               setFormValue(nextValue);
-              onSubmit(formValueToFilters(nextValue));
+              onView(formValueToView(nextValue));
               if (onDone) onDone();
             }
           : undefined
@@ -64,18 +67,18 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
       onChange={(nextValue) => {
         clearEmpty(nextValue);
         setFormValue(nextValue);
-        if (onChange) onChange(formValueToFilters(nextValue));
+        if (updateOn === 'change') onView(formValueToView(nextValue));
       }}
     >
       <Box flex={false} pad={pad} gap={gap}>
         {children}
-        {footer !== false && onSubmit && (
+        {footer !== false && updateOn === 'submit' && (
           <Footer>
             <Button label="Apply Filters" type="submit" primary />
             <Button
               label="Reset Filters"
               type="reset"
-              onClick={() => setFormValue(filtersToFormValue(filters))}
+              onClick={() => setFormValue(viewToFormValue(view))}
             />
           </Footer>
         )}

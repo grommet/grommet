@@ -14,14 +14,38 @@ import {
 import { Data } from '../Data';
 import { columns, DATA } from '../../DataTable/stories/data';
 
+const defaultView = {
+  properties: [],
+  search: '',
+  sort: { property: 'name', direction: 'asc' },
+};
+
 // simulate back end filtering
-const filter = (filters) => {
-  console.log('!!! filter', filters);
+const filter = (view) => {
+  const searchExp =
+    view.search?.text || (typeof view.search === 'string' && view.search)
+      ? new RegExp(view.search.text || view.search, 'i')
+      : undefined;
+  const searchProperty = view.search?.property;
+
   return DATA.filter((datum) => {
     let matched = true;
-    if (filters.propeties) {
-      matched = !Object.keys(filters).some((property) => {
-        const value = filters[property];
+    if (searchExp) {
+      matched = Object.keys(datum).some((property) => {
+        if (
+          !searchProperty ||
+          searchProperty === property ||
+          (Array.isArray(searchProperty) && searchProperty.includes(property))
+        )
+          return searchExp.test(datum[property]);
+        return false;
+      });
+    }
+
+    const { properties } = view;
+    if (matched && properties) {
+      matched = !Object.keys(properties).some((property) => {
+        const value = properties[property];
         if (Array.isArray(value)) return !value.includes(datum[property]);
         return value !== datum[property];
       });
@@ -31,15 +55,20 @@ const filter = (filters) => {
 };
 
 export const Controlled = () => {
-  const [filteredData, setFilteredData] = useState(DATA);
+  const [view, setView] = useState(defaultView);
+  const [data, setData] = useState(DATA);
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Grid flex={false} pad="large" columns={['large']} justifyContent="center">
       <Data
-        data={filteredData}
+        data={data}
         total={DATA.length}
-        onSubmit={(filters) => setFilteredData(filter(filters))}
+        view={view}
+        onView={(nextView) => {
+          setView(nextView);
+          setData(filter(nextView));
+        }}
       >
         <Toolbar>
           <Box direction="row" gap="small">

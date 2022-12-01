@@ -2,6 +2,8 @@ import * as React from 'react';
 import { BoxProps } from '../Box/index';
 
 export interface DataFiltersProps {
+  drop: boolean,
+  layer: boolean,
   search: boolean;
 }
 

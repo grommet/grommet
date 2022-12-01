@@ -1,13 +1,6 @@
 import React from 'react';
 
-import {
-  Box,
-  ButtonBar,
-  Button,
-  DropButton,
-  FilterBar,
-  TextInput,
-} from 'grommet';
+import { Box, Button, DropButton, TextInput } from 'grommet';
 import { Search } from 'grommet-icons/icons/Search';
 import { Filter } from 'grommet-icons/icons/Filter';
 
@@ -17,19 +10,15 @@ export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Box fill align="center" justify="start" pad="large">
-    <Toolbar
-      filter={
-        <FilterBar>
-          <TextInput icon={<Search />} />
-          <DropButton kind="toolbar" icon={<Filter />} />
-        </FilterBar>
-      }
-      actions={
-        <ButtonBar>
-          <Button label="Create" primary />
-        </ButtonBar>
-      }
-    />
+    <Toolbar>
+      <Box direction="row">
+        <TextInput icon={<Search />} />
+        <DropButton kind="toolbar" icon={<Filter />} />
+      </Box>
+      <Box direction="row">
+        <Button label="Create" primary />
+      </Box>
+    </Toolbar>
   </Box>
   // </Grommet>
 );

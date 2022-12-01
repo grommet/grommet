@@ -13,8 +13,7 @@ export const DataSearch = ({ property, ...rest }) => {
 
   let content = <TextInput name="_search" icon={<Search />} {...rest} />;
 
-  if (noForm)
-    content = <DataForm footer={false}>{content}</DataForm>;
+  if (noForm) content = <DataForm footer={false}>{content}</DataForm>;
 
   return content;
 };
