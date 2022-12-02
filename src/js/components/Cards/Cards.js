@@ -17,7 +17,7 @@ const emptyData = [];
 const Cards = React.forwardRef(
   (
     {
-      as,
+      as = 'ul',
       children,
       data: dataProp,
       onMore,
@@ -42,13 +42,13 @@ const Cards = React.forwardRef(
     });
 
     const Container = paginate ? Box : Fragment;
-    const containerProps = paginate ? { ...theme.list.container } : undefined;
+    const containerProps = paginate ? { ...theme.cards.container } : undefined;
 
     return (
       <Container {...containerProps}>
         <Grid
           ref={ref}
-          as={as || 'ul'}
+          as={as}
           columns={size}
           gap="medium"
           margin="none"
@@ -70,8 +70,15 @@ const Cards = React.forwardRef(
               children ? (
                 children(item, index)
               ) : (
-                <Card>
-                  <CardBody>{typeof item === 'string' ? item : index}</CardBody>
+                <Card
+                  key={index.toString()}
+                  as={as === 'ul' ? 'li' : undefined}
+                >
+                  <CardBody>
+                    {(typeof item === 'string' && item) ??
+                      (typeof item === 'object' && Object.values(item)[0]) ??
+                      index}
+                  </CardBody>
                 </Card>
               )
             }

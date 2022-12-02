@@ -29,6 +29,7 @@ exports[`RangeSelector basic 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -232,6 +233,7 @@ exports[`RangeSelector color 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -435,6 +437,7 @@ exports[`RangeSelector direction 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -559,6 +562,7 @@ exports[`RangeSelector direction 1`] = `
   flex-direction: column;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c9 {
@@ -1410,6 +1414,7 @@ exports[`RangeSelector invert 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -1686,6 +1691,7 @@ exports[`RangeSelector max 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -1889,6 +1895,7 @@ exports[`RangeSelector min 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -2092,6 +2099,7 @@ exports[`RangeSelector opacity 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -2440,6 +2448,7 @@ exports[`RangeSelector round 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -3057,6 +3066,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -3260,6 +3270,7 @@ exports[`RangeSelector size 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
