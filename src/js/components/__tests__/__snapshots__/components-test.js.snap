@@ -977,6 +977,11 @@ exports[`Components loads 1`] = `
           "footer": {},
           "header": {},
         },
+        "cards": {
+          "container": {
+            "gap": "xsmall",
+          },
+        },
         "carousel": {
           "animation": {
             "duration": 1000,
@@ -2954,6 +2959,11 @@ exports[`Components loads 1`] = `
           },
           "footer": {},
           "header": {},
+        },
+        "cards": {
+          "container": {
+            "gap": "xsmall",
+          },
         },
         "carousel": {
           "animation": {

@@ -608,6 +608,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       body: {},
       footer: {},
     },
+    cards: {
+      container: {
+        // any box props
+        gap: 'xsmall',
+        // extend: undefined,
+      },
+    },
     carousel: {
       icons: {
         current: Subtract,

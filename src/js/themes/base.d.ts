@@ -555,6 +555,9 @@ export interface ThemeType {
     body?: BoxProps;
     footer?: BoxProps;
   };
+  cards?: {
+    container?: BoxProps;
+  };
   carousel?: {
     animation?: {
       duration?: number;
