@@ -45,7 +45,14 @@ export const Inline = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Data data={DATA} updateOn={sidebar ? 'change' : undefined}>
+    <Data
+      properties={{
+        location: { label: 'Location' },
+        percent: { label: 'Percent' },
+      }}
+      data={DATA}
+      updateOn={sidebar ? 'change' : undefined}
+    >
       <Grid
         columns={sidebar ? ['auto', ['medium', 'large']] : 'auto'}
         gap="large"

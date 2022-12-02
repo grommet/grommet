@@ -14,7 +14,7 @@ export const DataFilter = ({
   property,
   ...rest
 }) => {
-  const { unfilteredData } = useContext(DataContext);
+  const { properties, unfilteredData } = useContext(DataContext);
 
   const options = useMemo(() => {
     if (children) return []; // caller driving
@@ -73,7 +73,11 @@ export const DataFilter = ({
   }
 
   return (
-    <FormField name={property} label={property} {...rest}>
+    <FormField
+      name={property}
+      label={properties?.[property]?.label || property}
+      {...rest}
+    >
       {content}
     </FormField>
   );
