@@ -15,7 +15,7 @@ export interface View {
     direction: 'asc' | 'desc';
   };
 
-  // Future column ordering, requires 'schema' property on Data
+  // Future column ordering, requires 'properties' property on Data
   // columns?: string[];
 
   // Future name
@@ -28,24 +28,24 @@ export interface DataProps {
 
   view?: View;
   onView?: (view: View) => void;
+  // when view changes should be delivered
+  updateOn?: 'change' | 'submit';
 
-  schema?: 'raw' | string[] | {
+  // whether to render a Toolbar
+  toolbar: boolean | 'search' | 'filters';
+
+  properties?: string[] | {
     [key: string]: {
       // for DataTable column header, DataFilter label, DataTableColumns label
       label?: string | React.ReactNode;
-      // for DataFilter options
-      values?: (string | number)[];
+      // Future for DataFilter options
+      // values?: (string | number)[];
     };
   };
 
   // Future selection
   // select: string[];
   // onSelect: (select: string[]) => void;
-
-  toolbar: boolean | 'search' | 'filters';
-
-  // whether to add filter controls and when changes should be delivered
-  // updateOn?: 'change' | 'submit';
 
   // Future named views
   // views?: View[];

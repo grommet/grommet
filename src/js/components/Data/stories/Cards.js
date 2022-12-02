@@ -39,7 +39,7 @@ export const Example = () => (
       <DataSummary />
       <Cards>
         {(item) => (
-          <Card key={item.name}>
+          <Card key={item.name} pad="small">
             <CardBody>
               <Heading level={2} size="small" margin="none">
                 {item.name}

@@ -5,7 +5,6 @@ import {
   DataFilters,
   DataFilter,
   DataSearch,
-  DataSort,
   DataSummary,
   DataTable,
   Grid,
@@ -17,17 +16,16 @@ import {
 import { Data } from '../Data';
 import { columns, DATA } from '../../DataTable/stories/data';
 
+const Filters = ({ search, ...rest }) => (
+  <DataFilters {...rest}>
+    {search && <DataSearch />}
+    <DataFilter property="location" />
+    <DataFilter property="percent" />
+  </DataFilters>
+);
+
 export const Inline = () => {
   const size = useContext(ResponsiveContext);
-
-  const Filters = ({ search, ...rest }) => (
-    <DataFilters {...rest}>
-      {search && <DataSearch />}
-      <DataFilter property="location" />
-      <DataFilter property="percent" />
-      <DataSort />
-    </DataFilters>
-  );
 
   let toolbar;
   let sidebar;
@@ -47,7 +45,7 @@ export const Inline = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Data data={DATA} onChange={sidebar ? true : undefined}>
+    <Data data={DATA} updateOn={sidebar ? 'change' : undefined}>
       <Grid
         columns={sidebar ? ['auto', ['medium', 'large']] : 'auto'}
         gap="large"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Data, DataTable, Grid, Paragraph } from 'grommet';
+import { Data, DataSummary, DataTable, Grid, Paragraph } from 'grommet';
 
 import { DataSearch } from '../DataSearch';
 import { columns, DATA } from '../../DataTable/stories/data';
@@ -12,8 +12,9 @@ export const Simple = () => (
     <Paragraph color="text-weak">
       Note: Results are filtered as you type, checking all fields.
     </Paragraph>
-    <Data data={DATA} onChange>
+    <Data data={DATA} updateOn="change">
       <DataSearch />
+      <DataSummary />
       <DataTable columns={columns} />
     </Data>
   </Grid>

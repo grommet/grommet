@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Data, DataTable, Grid, Paragraph } from 'grommet';
+import { Data, DataSummary, DataTable, Grid, Paragraph } from 'grommet';
 
 import { DataSearch } from '../DataSearch';
 import { columns, DATA } from '../../DataTable/stories/data';
@@ -14,6 +14,7 @@ export const Property = () => (
     </Paragraph>
     <Data data={DATA}>
       <DataSearch property="name" />
+      <DataSummary />
       <DataTable columns={columns} />
     </Data>
   </Grid>

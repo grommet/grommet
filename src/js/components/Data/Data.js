@@ -17,7 +17,7 @@ export const Data = ({
   children,
   data,
   onView,
-  schema = 'raw',
+  properties,
   toolbar,
   total,
   updateOn = 'submit',
@@ -29,11 +29,12 @@ export const Data = ({
 
   // what we use for DataContext value
   const contextValue = useMemo(() => {
-    const result = { schema, updateOn, view };
+    const result = { properties, updateOn, view };
 
     // used by DataSearch to pass along what property search should be scoped to
     result.setSearchProperty = (property) => {
-      if (property && property !== view?.search?.property)
+      if (!view) setView({ search: { property } });
+      else if (property && property !== view?.search?.property)
         setView({ ...view, search: { ...view.search, property } });
     };
 
@@ -62,7 +63,7 @@ export const Data = ({
     result.total = total !== undefined ? total : data.length;
 
     return result;
-  }, [data, onView, schema, total, updateOn, view]);
+  }, [data, onView, properties, total, updateOn, view]);
 
   let toolbarContent;
   if (toolbar) {

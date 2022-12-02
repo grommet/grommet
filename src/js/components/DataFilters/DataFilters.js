@@ -5,7 +5,6 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataFilter } from '../DataFilter';
 import { DataForm } from '../Data';
-// import { DataSort } from '../DataSort';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
@@ -20,11 +19,11 @@ const dropProps = {
 export const DataFilters = ({
   drop,
   children,
+  heading = 'Filters',
   layer,
-  // messages,
   ...rest
 }) => {
-  const { clearFilters, data, schema, view } = useContext(DataContext);
+  const { clearFilters, data, properties, view } = useContext(DataContext);
   const [showContent, setShowContent] = useState();
   const controlled = drop || layer;
 
@@ -36,16 +35,15 @@ export const DataFilters = ({
 
   let filters;
   if (Children.count(children) === 0) {
-    let properties;
-    if (schema === 'raw' && data && data.length)
-      properties = Object.keys(data[0]);
-    else if (Array.isArray(schema)) properties = schema;
-    else if (typeof schema === 'object') properties = Object.keys(schema);
-    else properties = [];
-    filters = properties.map((property) => (
+    let filtersFor;
+    if (!properties && data && data.length) filtersFor = Object.keys(data[0]);
+    else if (Array.isArray(properties)) filtersFor = properties;
+    else if (typeof properties === 'object')
+      filtersFor = Object.keys(properties);
+    else filtersFor = [];
+    filters = filtersFor.map((property) => (
       <DataFilter key={property} property={property} />
     ));
-    // {sort && <DataSort />}
   }
 
   const content = (
@@ -58,7 +56,7 @@ export const DataFilters = ({
       {!drop && (
         <Header>
           <Heading margin="none" level={2} size="small">
-            Filters
+            {heading}
           </Heading>
           {layer && (
             <Button

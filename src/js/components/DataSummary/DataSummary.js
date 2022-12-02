@@ -9,7 +9,7 @@ export const DataSummary = ({ messages, ...rest }) => {
   const { format } = useContext(MessageContext);
   const { data, total } = useContext(DataContext);
   return (
-    <Text {...rest}>
+    <Text margin={{ vertical: 'xsmall' }} {...rest}>
       {total !== data.length
         ? format({
             id: 'dataFilters.filtered',
