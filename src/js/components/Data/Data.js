@@ -47,18 +47,18 @@ export const Data = ({
         const nextView = defaultView;
         setView(nextView);
         if (typeof onView === 'function') onView(nextView);
-        else result.data = filter(data, nextView);
+        else result.data = filter(data, nextView, properties);
       };
     }
 
     result.onView = (nextView) => {
       setView(nextView);
       if (typeof onView === 'function') onView(nextView);
-      else result.data = filter(data, nextView);
+      else result.data = filter(data, nextView, properties);
     };
 
     const doFilter = typeof onView !== 'function';
-    result.data = doFilter ? filter(data, view) : data;
+    result.data = doFilter ? filter(data, view, properties) : data;
     result.unfilteredData = data;
     result.total = total !== undefined ? total : data.length;
 

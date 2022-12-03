@@ -60,7 +60,7 @@ function useGroupState(groups, groupBy) {
 const DataTable = ({
   background,
   border,
-  columns = [],
+  columns: columnsProp,
   data: dataProp,
   disabled,
   fill,
@@ -90,8 +90,19 @@ const DataTable = ({
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const { data: contextData } = useContext(DataContext);
+  const { data: contextData, properties } = useContext(DataContext);
   const data = dataProp || contextData || emptyData;
+
+  const columns = useMemo(() => {
+    if (columnsProp) return columnsProp;
+    if (properties)
+      return Object.keys(properties).map((p) => ({
+        property: p,
+        ...properties[p],
+      }));
+    if (data.length) return Object.keys(data[0]).map((p) => ({ property: p }));
+    return [];
+  }, [columnsProp, data, properties]);
 
   // property name of the primary property
   const primaryProperty = useMemo(

@@ -1,10 +1,17 @@
+// TODO: share with DataTable, List, Cards, etc.
+const datumValue = (datum, property) => {
+  if (!property) return undefined;
+  const parts = property.split('.');
+  if (parts.length === 1) return datum[property];
+  if (!datum[parts[0]]) return undefined;
+  return datumValue(datum[parts[0]], parts.slice(1).join('.'));
+};
 
-// TODO: handle '.' delimited property names via sub objects
-
-export const filter = (data, view) => {
-  const searchExp = (view?.search?.text || view?.search)
-    ? new RegExp(view.search.text || view.search, 'i')
-    : undefined;
+export const filter = (data, view, properties) => {
+  const searchExp =
+    view?.search?.text || (typeof view?.search === 'string' && view?.search)
+      ? new RegExp(view.search.text || view.search, 'i')
+      : undefined;
   const searchProperty = view?.search?.property;
 
   const result = data.filter((datum) => {
@@ -12,15 +19,27 @@ export const filter = (data, view) => {
 
     // check whether it matches any search
     if (searchExp) {
-      matched = Object.keys(datum).some((property) => {
-        if (
-          !searchProperty ||
-          searchProperty === property ||
-          (Array.isArray(searchProperty) && searchProperty.includes(property))
-        )
-          return searchExp.test(datum[property]);
-        return false;
-      });
+      const searchWith = (property) => {
+        const value = datumValue(datum, property);
+        if (value === undefined) return false;
+        return searchExp.test(value);
+      };
+
+      if (searchProperty) {
+        // we know where we want to search, look there
+        if (typeof searchProperty === 'string')
+          matched = searchWith(searchProperty);
+        else if (Array.isArray(searchProperty))
+          matched = searchProperty.some(searchWith);
+      } else if (properties) {
+        // look in defined properties
+        matched = Object.keys(properties).some(searchWith);
+      } else {
+        // look in all properties
+        matched = Object.keys(datum).some((property) =>
+          searchExp.test(datum[property]),
+        );
+      }
     }
 
     // check whether it matches any specific values
