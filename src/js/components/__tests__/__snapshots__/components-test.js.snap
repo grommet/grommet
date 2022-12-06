@@ -1247,6 +1247,15 @@ exports[`Components loads 1`] = `
           "margin": {
             "bottom": "small",
           },
+          "survey": {
+            "label": {
+              "margin": {
+                "vertical": "xsmall",
+              },
+              "size": "large",
+              "weight": 500,
+            },
+          },
         },
         "global": {
           "active": {
@@ -3225,6 +3234,15 @@ exports[`Components loads 1`] = `
           "margin": {
             "bottom": "small",
           },
+          "survey": {
+            "label": {
+              "margin": {
+                "vertical": "xsmall",
+              },
+              "size": "large",
+              "weight": 500,
+            },
+          },
         },
         "global": {
           "active": {
@@ -4766,6 +4784,7 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "StarRating": [Function],
   "Tab": {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": {},
@@ -4919,6 +4938,7 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "ThumbsRating": [Function],
   "Tip": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
