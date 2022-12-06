@@ -28,5 +28,8 @@ module.exports = {
   features: {
     postcss: false,
   },
+  reactOptions: {
+    strictMode: true,
+  },
   staticDirs: ['./public'],
 };
