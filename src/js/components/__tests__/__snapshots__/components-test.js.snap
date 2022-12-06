@@ -334,6 +334,7 @@ exports[`Components loads 1`] = `
     "render": [Function],
   },
   "Feedback": [Function],
+  "FeedbackQuestion": [Function],
   "FileInput": {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": {},
@@ -1212,6 +1213,13 @@ exports[`Components loads 1`] = `
               "vertical": "none",
             },
             "size": "small",
+          },
+          "label": {
+            "color": "rebeccapurple",
+            "font": {
+              "size": "large",
+              "weight": 400,
+            },
           },
           "modal": {
             "footer": {
@@ -3250,6 +3258,13 @@ exports[`Components loads 1`] = `
               "vertical": "none",
             },
             "size": "small",
+          },
+          "label": {
+            "color": "rebeccapurple",
+            "font": {
+              "size": "large",
+              "weight": 400,
+            },
           },
           "modal": {
             "footer": {

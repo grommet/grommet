@@ -23,6 +23,7 @@ export * from './Distribution';
 export * from './Drop';
 export * from './DropButton';
 export * from './Feedback';
+export * from './FeedbackQuestion.js';
 export * from './ThumbRating';
 export * from './StarRating';
 export * from './FileInput';

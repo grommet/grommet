@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import {
   Feedback,
+  FeedbackQuestion,
   StarRating,
-  FormField,
-  Text,
   TextArea,
   ResponsiveContext,
 } from 'grommet';
@@ -24,16 +23,16 @@ export const FeedbackModal = () => {
       }}
       onSubmit={({ value }) => console.log('Submit', value)}
     >
-      <FormField label={<Text>Was this content helpful?</Text>}>
+      <FeedbackQuestion label="Was this content helpful?">
         <StarRating />
-      </FormField>
-      <FormField
+      </FeedbackQuestion>
+      <FeedbackQuestion
         htmlFor="comments"
         name="comments"
         label="Any additional comments?"
       >
         <TextArea id="comments" name="comments" placeholder="Comments" />
-      </FormField>
+      </FeedbackQuestion>
     </Feedback>
     // </Grommet>
   );

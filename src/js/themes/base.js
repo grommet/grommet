@@ -872,6 +872,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           vertical: 'none',
         },
       },
+      label: {
+        color: 'rebeccapurple',
+        font: {
+          size: 'large',
+          weight: 400,
+        },
+      },
       modal: {
         footer: {
           pad: {
