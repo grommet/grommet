@@ -937,6 +937,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       margin: { bottom: 'small' },
       // round: undefined,
+      survey: {
+        label: {
+          margin: { vertical: 'xsmall' },
+          size: 'large',
+          weight: 500,
+        },
+      },
     },
     grommet: {
       // extend: undefined

@@ -21,6 +21,7 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
+import { FormTypeContext } from '../../contexts/FormTypeContext';
 
 const grommetInputNames = [
   'CheckBox',
@@ -191,6 +192,7 @@ const FormField = forwardRef(
       required,
       validate,
     });
+    const formKind = useContext(FormTypeContext);
     const [focus, setFocus] = useState();
     const formFieldRef = useForwardedRef(ref);
 
@@ -334,7 +336,10 @@ const FormField = forwardRef(
       borderColor = (themeBorder && themeBorder.color) || 'border';
     }
 
-    const labelStyle = { ...formFieldTheme.label };
+    let labelStyle;
+    if (formKind === 'survey') {
+      labelStyle = { ...formFieldTheme.survey.label };
+    } else labelStyle = { ...formFieldTheme.label };
 
     if (disabled) {
       labelStyle.color =

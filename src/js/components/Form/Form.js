@@ -7,7 +7,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { useAnalytics } from '../../contexts';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
+import { FormTypeContext } from '../../contexts/FormTypeContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useForwardedRef } from '../../utils';
 
@@ -166,6 +167,7 @@ const Form = forwardRef(
       errors: errorsProp = defaultValidationResults.errors,
       infos: infosProp = defaultValidationResults.infos,
       messages,
+      kind,
       onChange,
       onReset,
       onSubmit,
@@ -655,9 +657,11 @@ const Form = forwardRef(
           }
         }}
       >
-        <FormContext.Provider value={formContextValue}>
-          {children}
-        </FormContext.Provider>
+        <FormTypeContext.Provider value={kind}>
+          <FormContext.Provider value={formContextValue}>
+            {children}
+          </FormContext.Provider>
+        </FormTypeContext.Provider>
       </form>
     );
   },
