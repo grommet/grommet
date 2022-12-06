@@ -69,7 +69,7 @@ var StyledContainer = styled(Box).withConfig({
 var getValue = function getValue(item, index, key) {
   if (typeof key === 'function') return key(item, index);
   if (typeof item === 'string') return item;
-  if (key !== undefined) return item[key];
+  if (key !== undefined) return item == null ? void 0 : item[key];
   return undefined;
 };
 var reorder = function reorder(array, pinnedArray, source, target) {
