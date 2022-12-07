@@ -337,7 +337,7 @@ const FormField = forwardRef(
     }
 
     let labelStyle;
-    if (formKind === 'survey') {
+    if (formKind) {
       labelStyle = { ...formFieldTheme.survey.label };
     } else labelStyle = { ...formFieldTheme.label };
 

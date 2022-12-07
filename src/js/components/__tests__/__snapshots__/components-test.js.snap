@@ -1252,8 +1252,8 @@ exports[`Components loads 1`] = `
               "margin": {
                 "vertical": "xsmall",
               },
-              "size": "large",
-              "weight": 500,
+              "size": "medium",
+              "weight": 400,
             },
           },
         },
@@ -3239,8 +3239,8 @@ exports[`Components loads 1`] = `
               "margin": {
                 "vertical": "xsmall",
               },
-              "size": "large",
-              "weight": 500,
+              "size": "medium",
+              "weight": 400,
             },
           },
         },

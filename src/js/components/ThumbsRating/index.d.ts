@@ -1,14 +1,6 @@
 import * as React from 'react';
-import { FormFieldProps } from '../FormField/index';
-
 export interface ThumbRatingProps {
-  formFieldProps?: FormFieldProps;
-  color?: string;
-  name?: string;
-  label?: string;
-  value?: number;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  outlineColor?: string;
+  color?: string | object;
   options: (
     | string
     | number

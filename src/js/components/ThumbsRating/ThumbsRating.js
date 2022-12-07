@@ -2,36 +2,28 @@ import React from 'react';
 import { Like, LikeFill, Dislike, DislikeFill } from 'grommet-icons';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 
-export const ThumbsRating = ({
-  fillColor,
-  outlineColor,
-  formProps,
-  name,
-  label,
-  options,
-  ...rest
-}) => {
+export const ThumbsRating = ({ color, options, ...rest }) => {
   const likeOption = options[0];
 
   return (
     <RadioButtonGroup
       direction="row"
       name="thumbsRating"
-      options={options}
+      options={['like', 'dislike'] || options}
       {...rest}
     >
       {(option, { checked }) => {
         if (option === likeOption) {
           return checked ? (
-            <LikeFill color={fillColor} />
+            <LikeFill color={typeof color === 'string' ? color : color.fill} />
           ) : (
-            <Like color={outlineColor} />
+            <Like color={typeof color === 'string' ? color : color.outline} />
           );
         }
         return checked ? (
-          <DislikeFill color={fillColor} />
+          <DislikeFill color={typeof color === 'string' ? color : color.fill} />
         ) : (
-          <Dislike color={outlineColor} />
+          <Dislike color={typeof color === 'string' ? color : color.outline} />
         );
       }}
     </RadioButtonGroup>

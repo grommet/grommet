@@ -97,7 +97,7 @@ export const UnSolicitedFeedback = () => {
                     name="rating"
                     fillColor="pink"
                     options={['1', '2']}
-                    outlineColor="pink"
+                    color="pink"
                   />
                 </FormField>
                 <FormField label="Comments" htmlFor="comments" name="comments">

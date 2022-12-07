@@ -1,10 +1,7 @@
 import * as React from 'react';
 
 export interface StarRating {
-  fillColor?: string;
-  outlineColor?: string;
-  name?: string;
-  label?: string;
+  color?: string | object;
   value?: number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }

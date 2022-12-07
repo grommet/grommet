@@ -940,8 +940,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       survey: {
         label: {
           margin: { vertical: 'xsmall' },
-          size: 'large',
-          weight: 500,
+          size: 'medium',
+          weight: 400,
         },
       },
     },

@@ -3,12 +3,24 @@ import PropTypes from 'prop-types';
 let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
-    fillColor: PropType.string,
-    onChange: PropTypes.func,
-    outlineColor: PropType.string,
-    options: PropType.array,
-    scale: PropTypes.number,
-    value: PropTypes.number,
+    color: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    options: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.arrayOf(PropTypes.number),
+      PropTypes.arrayOf(PropTypes.bool),
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          disabled: PropTypes.bool,
+          id: PropTypes.string,
+          label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+          value: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.bool,
+          ]).isRequired,
+        }),
+      ),
+    ]).isRequired,
   };
 }
 export const ThumbsRatingPropTypes = PropType;
