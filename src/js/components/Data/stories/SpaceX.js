@@ -166,7 +166,7 @@ export const Table = () => {
       <Box>
         <Data 
           properties={{
-            "rocket.name": { label: 'Rocket', options: rocketOptions },
+            rocket: { label: 'Rocket', options: rocketOptions },
             success: { label: 'Success', options: ['Successful', 'Failed'] },
           }}
           data={docs}
