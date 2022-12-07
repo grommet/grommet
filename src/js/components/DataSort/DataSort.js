@@ -13,12 +13,15 @@ const directionOptions = [
 ];
 
 export const DataSort = ({ options: optionsArg }) => {
-  const { unfilteredData } = useContext(DataContext);
+  const { properties, unfilteredData } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
 
   const options = useMemo(
-    () => optionsArg || Object.keys(unfilteredData[0]).sort(),
-    [optionsArg, unfilteredData],
+    () =>
+      optionsArg ||
+      (properties && Object.keys(properties).sort()) ||
+      Object.keys(unfilteredData[0]).sort(),
+    [optionsArg, properties, unfilteredData],
   );
 
   let content = [

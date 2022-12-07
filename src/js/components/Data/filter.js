@@ -52,14 +52,15 @@ export const filter = (data, view, properties) => {
     return matched;
   });
 
-  if (view?.sort?.property && view?.sort?.direction) {
+  if (view?.sort?.property || view?.sort?.direction) {
     const { property, direction } = view.sort;
-    const sortAsc = direction === 'asc';
-    const before = sortAsc ? 1 : -1;
-    const after = sortAsc ? -1 : 1;
+    const prop = property || (result.length && Object.keys(result[0])[0]);
+    const sortDesc = direction === 'desc'; // default to asc
+    const before = sortDesc ? -1 : 1;
+    const after = sortDesc ? 1 : -1;
     result.sort((d1, d2) => {
-      const d1Val = datumValue(d1, property);
-      const d2Val = datumValue(d2, property);
+      const d1Val = datumValue(d1, prop);
+      const d2Val = datumValue(d2, prop);
       // sort strings via locale case insensitive
       if (
         (typeof d1Val === 'string' && typeof d2Val === 'string') ||
@@ -69,7 +70,7 @@ export const filter = (data, view, properties) => {
         const sortResult = (d1Val || '').localeCompare(d2Val || '', undefined, {
           sensitivity: 'base',
         });
-        return sortAsc ? sortResult : -sortResult;
+        return sortDesc ? -sortResult : sortResult;
       }
       // numbers are easier to sort
       if (d1Val > d2Val) return before;

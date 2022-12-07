@@ -1,21 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-import {
-  Box,
-  DataTable,
-  Data,
-  Grid,
-  Pagination,
-  Text,
-  Tip,
-} from 'grommet';
+import { Box, DataTable, Data, Grid, Pagination, Text, Tip } from 'grommet';
 
 import { StatusCritical } from 'grommet-icons';
 
 const buildQuery = (view) => {
-  const query = { };
+  const query = {};
   const properties = view?.properties || [];
-  Object.keys(properties).forEach(property => {
+  Object.keys(properties).forEach((property) => {
     switch (property) {
       case 'success':
         if (properties.success.length === 1) {
@@ -31,7 +23,7 @@ const buildQuery = (view) => {
         query[property] = properties[property];
     }
   });
-  if (view?.search) query.$text = { "$search": view.search };
+  if (view?.search) query.$text = { $search: view.search };
   return query;
 };
 
@@ -62,7 +54,7 @@ const fetchLaunches = async (view) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(body),
-  }).then(response => response.json());
+  }).then((response) => response.json());
 };
 
 const fetchRockets = async () => {
@@ -70,7 +62,7 @@ const fetchRockets = async () => {
     options: {
       sort: { name: 'asc' },
       select: ['name', 'id'],
-    }
+    },
   };
   return fetch('https://api.spacexdata.com/v4/rockets/query', {
     method: 'POST',
@@ -78,7 +70,7 @@ const fetchRockets = async () => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(body),
-  }).then(response => response.json());
+  }).then((response) => response.json());
 };
 
 const columns = [
@@ -100,7 +92,7 @@ const columns = [
     size: 'xsmall',
     align: 'center',
     sortable: false,
-    render: datum => {
+    render: (datum) => {
       if (datum.success === false) {
         const content = (
           <Box width={{ max: 'medium' }}>
@@ -131,7 +123,6 @@ const columns = [
 ];
 
 export const Table = () => {
- 
   const [data, setData] = useState();
   const [rockets, setRockets] = useState();
   const [view, setView] = useState({ search: '' });
@@ -142,20 +133,25 @@ export const Table = () => {
   const search = view.search?.text || '';
 
   useEffect(() => {
-    fetchRockets().then(d => setRockets(d));
+    fetchRockets().then((d) => setRockets(d));
   }, []);
 
   useEffect(() => {
-    fetchLaunches({search, limit, page, sort, properties: view.properties })
-      .then(d => setData(d));
+    fetchLaunches({
+      search,
+      limit,
+      page,
+      sort,
+      properties: view.properties,
+    }).then((d) => setData(d));
   }, [search, limit, page, sort, view.properties]);
 
   const numberItems = data?.totalDocs || 0;
   const pageResultStart = (page - 1) * limit + 1;
   const pageResultEnd = Math.min(page * limit, numberItems);
-  
-  const rocketOptions = 
-    rockets?.docs?.map(({name, id}) => ({ value: id, label:name })) || [];
+
+  const rocketOptions =
+    rockets?.docs?.map(({ name, id }) => ({ value: id, label: name })) || [];
 
   const docs = data?.docs || [];
 
@@ -164,7 +160,7 @@ export const Table = () => {
     // <Grommet theme={...}>
     <Grid flex={false} pad="large" columns={['large']} justifyContent="center">
       <Box>
-        <Data 
+        <Data
           properties={{
             rocket: { label: 'Rocket', options: rocketOptions },
             success: { label: 'Success', options: ['Successful', 'Failed'] },
@@ -178,10 +174,10 @@ export const Table = () => {
           }}
           toolbar
         >
-          <DataTable 
-            columns={columns} 
+          <DataTable
+            columns={columns}
             sort={{ ...sort, external: true }}
-            onSort={opts => setSort(opts)}
+            onSort={(opts) => setSort(opts)}
           />
         </Data>
         {numberItems > limit && (
