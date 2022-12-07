@@ -13,12 +13,6 @@ const data = [
   { name: 'dd' },
 ];
 
-const data2 = [
-  { name: 'aa', enabled: true },
-  { name: 'bb', enabled: false },
-  { name: 'dd' },
-];
-
 describe('Data', () => {
   test('renders', () => {
     const { container } = render(
@@ -30,38 +24,48 @@ describe('Data', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('properties', () => {
-    const { container } = render(
-      <Grommet>
-        <Data data={data} properties={{ name: { label: 'Name' } }} />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('toolbar', () => {
-    const { container } = render(
+    const { getByText, container } = render(
       <Grommet>
-        <Data data={data} toolbar />
+        <Data
+          data={data}
+          properties={{
+            name: { label: 'Name' },
+            'sub.note': { label: 'Note' },
+          }}
+          toolbar
+        >
+          <DataTable />
+        </Data>
       </Grommet>,
     );
 
+    expect(getByText('4 items')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('view', () => {
-    const { container } = render(
+    const { getByText, container } = render(
       <Grommet>
-        <Data data={data} view={{ search: '', properties: {} }} />
+        <Data
+          data={data}
+          properties={{
+            name: { label: 'Name' },
+            'sub.note': { label: 'Note' },
+          }}
+          view={{ search: '', properties: {} }}
+        >
+          <DataTable />
+        </Data>
       </Grommet>,
     );
 
+    expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('view search', () => {
-    const { container } = render(
+    const { getByText, queryByText, container } = render(
       <Grommet>
         <Data
           data={data}
@@ -69,7 +73,7 @@ describe('Data', () => {
             name: { label: 'Name' },
             'sub.note': { label: 'Note' },
           }}
-          view={{ search: { text: 'a' } }}
+          view={{ search: 'a' }}
           toolbar
         >
           <DataTable />
@@ -77,43 +81,14 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('view search property', () => {
-    const { container } = render(
-      <Grommet>
-        <Data
-          data={data}
-          properties={{
-            name: { label: 'Name' },
-            'sub.note': { label: 'Note' },
-          }}
-          view={{ search: { text: 'a', property: 'name' } }}
-          toolbar
-        >
-          <DataTable />
-        </Data>
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('view search all', () => {
-    const { container } = render(
-      <Grommet>
-        <Data data={data2} view={{ search: { text: 'a' } }} toolbar>
-          <DataTable />
-        </Data>
-      </Grommet>,
-    );
-
+    expect(getByText('1 items')).toBeTruthy();
+    expect(getByText('aa')).toBeTruthy();
+    expect(queryByText('bb')).toBeFalsy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('view property', () => {
-    const { container } = render(
+    const { getByText, container } = render(
       <Grommet>
         <Data
           data={data}
@@ -131,11 +106,13 @@ describe('Data', () => {
       </Grommet>,
     );
 
+    expect(getByText('1 items')).toBeTruthy();
+    expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('view sort', () => {
-    const { container } = render(
+    const { getByText, container } = render(
       <Grommet>
         <Data
           data={data}
@@ -153,11 +130,12 @@ describe('Data', () => {
       </Grommet>,
     );
 
+    expect(getByText('4 items')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('view all', () => {
-    const { container } = render(
+    const { getByText, container } = render(
       <Grommet>
         <Data
           data={data}
@@ -166,7 +144,7 @@ describe('Data', () => {
             'sub.note': { label: 'Note' },
           }}
           view={{
-            search: { text: 'a' },
+            search: 'a',
             properties: { enabled: [true] },
             sort: { property: 'name', direction: 'desc' },
           }}
@@ -177,6 +155,8 @@ describe('Data', () => {
       </Grommet>,
     );
 
+    expect(getByText('1 items')).toBeTruthy();
+    expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -186,7 +166,7 @@ describe('Data', () => {
         <Data
           data={data}
           properties={{ name: { label: 'Name' } }}
-          view={{ search: { text: '' }, properties: {} }}
+          view={{ search: '', properties: {} }}
           toolbar
           updateOn="change"
         >
@@ -194,14 +174,20 @@ describe('Data', () => {
         </Data>
       </Grommet>,
     );
+
+    expect(getByText('4 items')).toBeTruthy();
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
+
     fireEvent.change(getByRole('searchbox'), {
       target: { value: 'a' },
     });
+    expect(getByText('1 items')).toBeTruthy();
     expect(queryByText('bb')).toBeFalsy();
     expect(container.firstChild).toMatchSnapshot();
+
     fireEvent.click(getByText('Clear filters'));
+    expect(getByText('4 items')).toBeTruthy();
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -213,7 +199,7 @@ describe('Data', () => {
         <Data
           data={data}
           properties={{ name: { label: 'Name' } }}
-          view={{ search: { text: '' }, properties: {} }}
+          view={{ search: '', properties: {} }}
           toolbar
           updateOn="change"
           onView={onView}
@@ -222,8 +208,10 @@ describe('Data', () => {
         </Data>
       </Grommet>,
     );
+
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
+
     fireEvent.change(getByRole('searchbox'), {
       target: { value: 'a' },
     });
@@ -232,16 +220,17 @@ describe('Data', () => {
     expect(onView).toHaveBeenNthCalledWith(
       1,
       expect.objectContaining({
-        search: { text: 'a' },
+        search: 'a',
         properties: {},
       }),
     );
+
     fireEvent.click(getByText('Clear filters'));
     expect(container.firstChild).toMatchSnapshot();
     expect(onView).toHaveBeenNthCalledWith(
       2,
       expect.objectContaining({
-        search: { text: '' },
+        search: '',
         properties: {},
       }),
     );

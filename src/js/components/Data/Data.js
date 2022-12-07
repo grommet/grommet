@@ -9,7 +9,7 @@ import { DataPropTypes } from './propTypes';
 import { filter } from './filter';
 
 const defaultView = {
-  search: { text: '' },
+  search: '',
   properties: {},
 };
 
@@ -36,16 +36,8 @@ export const Data = ({
   const contextValue = useMemo(() => {
     const result = { properties, updateOn, view };
 
-    // used by DataSearch to pass along what property search should be scoped to
-    result.setSearchProperty = (property) => {
-      if (!view) setView({ search: { property } });
-      else if (property && property !== view?.search?.property)
-        setView({ ...view, search: { ...view.search, property } });
-    };
-
     if (
-      view?.search?.text ||
-      (typeof view?.search === 'string' && view.search) ||
+      view?.search ||
       (view?.properties && Object.keys(view.properties).length)
     ) {
       result.clearFilters = () => {

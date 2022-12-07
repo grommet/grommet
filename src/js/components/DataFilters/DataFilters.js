@@ -78,8 +78,7 @@ export const DataFilters = ({
   let control;
   let badge = 0;
   if (view?.properties) badge += Object.keys(view.properties).length;
-  if (view?.search?.text || (typeof view?.search === 'string' && view?.search))
-    badge += 1;
+  if (view?.search) badge += 1;
   if (!badge) badge = undefined;
 
   if (layer) {

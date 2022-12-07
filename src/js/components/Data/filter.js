@@ -8,11 +8,17 @@ const datumValue = (datum, property) => {
 };
 
 export const filter = (data, view, properties) => {
-  const searchExp =
-    view?.search?.text || (typeof view?.search === 'string' && view?.search)
-      ? new RegExp(view.search.text || view.search, 'i')
-      : undefined;
-  const searchProperty = view?.search?.property;
+  const searchExp = view?.search ? new RegExp(view.search, 'i') : undefined;
+  let searchProperties;
+  if (properties) {
+    // if we know where we want to search, look there
+    searchProperties = Object.keys(properties).filter(
+      (k) => properties[k].search,
+    );
+    // if none specified, look in all defined properties
+    if (searchProperties.length === 0)
+      searchProperties = Object.keys(properties);
+  }
 
   const result = data.filter((datum) => {
     let matched = true;
@@ -25,19 +31,8 @@ export const filter = (data, view, properties) => {
         return searchExp.test(value);
       };
 
-      if (searchProperty) {
-        // we know where we want to search, look there
-        if (typeof searchProperty === 'string')
-          matched = searchWith(searchProperty);
-        else if (Array.isArray(searchProperty))
-          matched = searchProperty.some(searchWith);
-      } else if (properties) {
-        // look in defined properties
-        matched = Object.keys(properties).some(searchWith);
-      } else {
-        // look in all properties
-        matched = Object.keys(datum).some(searchWith);
-      }
+      if (searchProperties) matched = searchProperties.some(searchWith);
+      else matched = Object.keys(datum).some(searchWith);
     }
 
     // check whether it matches any specific values

@@ -8,10 +8,7 @@ export interface View {
       | (string | number)[]
       | { max: number; min: number };
   };
-  search?: {
-    property?: string | string[];
-    text: string;
-  };
+  search?: string;
   sort?: {
     property: string;
     direction: 'asc' | 'desc';
@@ -51,6 +48,8 @@ export interface DataProps {
                 value: string | number;
               }
           )[];
+          // for internal filtering only, should searching evaluate this
+          search?: boolean;
         };
       };
 

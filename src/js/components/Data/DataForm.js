@@ -11,9 +11,7 @@ const formSortDirectionKey = '_sort.direction';
 
 const viewToFormValue = (view) => {
   const result = { ...(view?.properties || {}) };
-  if (typeof view?.search?.text === 'string')
-    result[formSearchKey] = view.search.text;
-  else result[formSearchKey] = '';
+  result[formSearchKey] = view?.search || '';
   if (view?.sort) {
     result[formSortPropertyKey] = view?.sort?.property;
     result[formSortDirectionKey] = view?.sort?.direction;
@@ -31,7 +29,7 @@ const formValueToView = (value) => {
   delete properties[formSortDirectionKey];
   return {
     properties,
-    search: { text: searchText },
+    search: searchText,
     ...(sortProperty || sortDirection
       ? { sort: { property: sortProperty, direction: sortDirection } }
       : {}),
