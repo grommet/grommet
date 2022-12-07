@@ -19,12 +19,14 @@ export const DataFilter = ({
   const options = useMemo(() => {
     if (children) return []; // caller driving
     if (optionsProp) return optionsProp; // caller setting
+    // Data setting
+    if (properties?.[property]?.options) return properties[property].options;
 
     // generate options from all values detected for property
     return Array.from(new Set(unfilteredData.map((d) => d[property])))
       .filter((v) => v)
       .sort();
-  }, [children, optionsProp, property, unfilteredData]);
+  }, [children, optionsProp, properties, property, unfilteredData]);
 
   const [rangeValues, setRangeValues] = useState(() =>
     typeof options[0] === 'number'

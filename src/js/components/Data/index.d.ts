@@ -42,8 +42,15 @@ export interface DataProps {
         [key: string]: {
           // for DataTable column header, DataFilter label, DataTableColumns label
           label?: string | React.ReactNode;
-          // Future for DataFilter options
-          // values?: (string | number)[];
+          // DataFilter options
+          options?: (
+            | string
+            | number
+            | {
+                label: string;
+                value: string | number;
+              }
+          )[];
         };
       };
 
