@@ -15,7 +15,6 @@ export const StarRating = ({ color, scale = 5, value, onChange, ...rest }) => {
       direction="row"
       options={options}
       value={rating}
-      name="starRating"
       onChange={(event) => {
         const adjustedRating = parseInt(event.target.value, 10) + 1;
         setRating(adjustedRating);
@@ -24,10 +23,10 @@ export const StarRating = ({ color, scale = 5, value, onChange, ...rest }) => {
     >
       {(option) =>
         option < rating ? (
-          <Star color={typeof color === 'string' ? color : color.fill} />
+          <Star color={typeof color === 'string' ? color : color?.fill} />
         ) : (
           <StarOutline
-            color={typeof color === 'string' ? color : color.outline}
+            color={typeof color === 'string' ? color : color?.outline}
           />
         )
       }

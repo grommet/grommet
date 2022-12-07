@@ -1,5 +1,6 @@
 import * as React from 'react';
-export interface ThumbRatingProps {
+import { RadioButtonGroupProps } from '../RadioButtonGroup/index';
+export interface ThumbsRating {
   color?: string | object;
   options: (
     | string
@@ -14,6 +15,10 @@ export interface ThumbRatingProps {
   )[];
 }
 
-declare const ThumbsRating: React.FC<ThumbRatingProps>;
+export interface ThumbsRatingProps
+  extends ThumbsRating,
+    RadioButtonGroupProps {}
+
+declare const ThumbsRating: React.FC<ThumbsRatingProps>;
 
 export { ThumbsRating };
