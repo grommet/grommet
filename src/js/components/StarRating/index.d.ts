@@ -3,6 +3,7 @@ import * as React from 'react';
 export interface StarRating {
   color?: string | object;
   value?: number;
+  scale?: number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
