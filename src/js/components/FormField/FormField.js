@@ -21,7 +21,6 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
-import { FormTypeContext } from '../../contexts/FormTypeContext';
 
 const grommetInputNames = [
   'CheckBox',
@@ -192,7 +191,7 @@ const FormField = forwardRef(
       required,
       validate,
     });
-    const formKind = useContext(FormTypeContext);
+    const formKind = formContext.kind;
     const [focus, setFocus] = useState();
     const formFieldRef = useForwardedRef(ref);
 

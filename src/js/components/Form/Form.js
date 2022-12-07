@@ -8,7 +8,6 @@ import React, {
   useState,
 } from 'react';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
-import { FormTypeContext } from '../../contexts/FormTypeContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useForwardedRef } from '../../utils';
 
@@ -571,9 +570,10 @@ const Form = forwardRef(
         };
       };
 
-      return { useFormField, useFormInput };
+      return { useFormField, useFormInput, kind };
     }, [
       onChange,
+      kind,
       pendingValidation,
       touched,
       validateOn,
@@ -657,11 +657,9 @@ const Form = forwardRef(
           }
         }}
       >
-        <FormTypeContext.Provider value={kind}>
-          <FormContext.Provider value={formContextValue}>
-            {children}
-          </FormContext.Provider>
-        </FormTypeContext.Provider>
+        <FormContext.Provider value={formContextValue}>
+          {children}
+        </FormContext.Provider>
       </form>
     );
   },
