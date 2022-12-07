@@ -9,9 +9,13 @@ import { DataSearchPropTypes } from './propTypes';
 export const DataSearch = ({ property, ...rest }) => {
   const { setSearchProperty } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
-  useEffect(() => setSearchProperty(property), [property, setSearchProperty]);
+  useEffect(() => {
+    if (property) setSearchProperty(property);
+  }, [property, setSearchProperty]);
 
-  let content = <TextInput name="_search" icon={<Search />} {...rest} />;
+  let content = (
+    <TextInput name="_search" icon={<Search />} type="search" {...rest} />
+  );
 
   if (noForm) content = <DataForm footer={false}>{content}</DataForm>;
 

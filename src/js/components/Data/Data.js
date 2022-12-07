@@ -9,13 +9,13 @@ import { DataPropTypes } from './propTypes';
 import { filter } from './filter';
 
 const defaultView = {
-  search: '',
+  search: { text: '' },
   properties: {},
 };
 
 export const Data = ({
   children,
-  data,
+  data: dataProp,
   onView,
   properties,
   toolbar,
@@ -24,8 +24,13 @@ export const Data = ({
   view: viewProp,
   ...rest
 }) => {
-  const [view, setView] = useState(viewProp || defaultView);
+  const [view, setView] = useState(viewProp);
   useEffect(() => setView(viewProp), [viewProp]);
+
+  const data = useMemo(() => {
+    if (onView) return dataProp;
+    return filter(dataProp, view, properties);
+  }, [dataProp, onView, properties, view]);
 
   // what we use for DataContext value
   const contextValue = useMemo(() => {
@@ -46,19 +51,16 @@ export const Data = ({
       result.clearFilters = () => {
         const nextView = defaultView;
         setView(nextView);
-        if (typeof onView === 'function') onView(nextView);
-        else result.data = filter(data, nextView, properties);
+        if (onView) onView(nextView);
       };
     }
 
     result.onView = (nextView) => {
       setView(nextView);
-      if (typeof onView === 'function') onView(nextView);
-      else result.data = filter(data, nextView, properties);
+      if (onView) onView(nextView);
     };
 
-    const doFilter = typeof onView !== 'function';
-    result.data = doFilter ? filter(data, view, properties) : data;
+    result.data = data;
     result.unfilteredData = data;
     result.total = total !== undefined ? total : data.length;
 

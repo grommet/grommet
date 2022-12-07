@@ -36,9 +36,7 @@ export const filter = (data, view, properties) => {
         matched = Object.keys(properties).some(searchWith);
       } else {
         // look in all properties
-        matched = Object.keys(datum).some((property) =>
-          searchExp.test(datum[property]),
-        );
+        matched = Object.keys(datum).some(searchWith);
       }
     }
 
@@ -48,7 +46,7 @@ export const filter = (data, view, properties) => {
       matched = !Object.keys(view.properties).some((property) => {
         // returning true means it doesn't match the filter,
         const filterValue = view.properties[property];
-        const value = datum[property];
+        const value = datumValue(datum, property);
         if (Array.isArray(filterValue) && typeof filterValue[0] === 'number')
           return value < filterValue[0] || value > filterValue[1];
         if (Array.isArray(filterValue)) return !filterValue.includes(value);
@@ -65,8 +63,8 @@ export const filter = (data, view, properties) => {
     const before = sortAsc ? 1 : -1;
     const after = sortAsc ? -1 : 1;
     result.sort((d1, d2) => {
-      const d1Val = d1[property];
-      const d2Val = d2[property];
+      const d1Val = datumValue(d1, property);
+      const d2Val = datumValue(d2, property);
       // sort strings via locale case insensitive
       if (
         (typeof d1Val === 'string' && typeof d2Val === 'string') ||

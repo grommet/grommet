@@ -4,9 +4,11 @@ import { BoxProps } from '../Box/index';
 export interface View {
   properties?: {
     [property: string]:
-      boolean | (string | number)[] | { max: number, min: number };
+      | boolean
+      | (string | number)[]
+      | { max: number; min: number };
   };
-  search?: string | {
+  search?: {
     property?: string | string[];
     text: string;
   };
@@ -34,14 +36,16 @@ export interface DataProps {
   // whether to render a Toolbar
   toolbar: boolean | 'search' | 'filters';
 
-  properties?: string[] | {
-    [key: string]: {
-      // for DataTable column header, DataFilter label, DataTableColumns label
-      label?: string | React.ReactNode;
-      // Future for DataFilter options
-      // values?: (string | number)[];
-    };
-  };
+  properties?:
+    | string[]
+    | {
+        [key: string]: {
+          // for DataTable column header, DataFilter label, DataTableColumns label
+          label?: string | React.ReactNode;
+          // Future for DataFilter options
+          // values?: (string | number)[];
+        };
+      };
 
   // Future selection
   // select: string[];
@@ -55,10 +59,7 @@ export interface DataProps {
 
 type divProps = Omit<JSX.IntrinsicElements['div'], 'onClick'>;
 
-export interface DataExtendedProps
-  extends BoxProps,
-  DataProps,
-    divProps {}
+export interface DataExtendedProps extends BoxProps, DataProps, divProps {}
 
 declare const Data: React.FC<DataExtendedProps>;
 

@@ -414,6 +414,7 @@ exports[`DataSearch renders 1`] = `
             autocomplete="off"
             class="c8"
             name="_search"
+            type="search"
             value=""
           />
         </div>

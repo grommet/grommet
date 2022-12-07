@@ -9,18 +9,20 @@ const formSearchKey = '_search';
 const formSortPropertyKey = '_sort.property';
 const formSortDirectionKey = '_sort.direction';
 
-const viewToFormValue = (view) => ({
-  ...(view?.properties || {}),
-  [formSearchKey]:
-    view?.search?.text ||
-    (typeof view?.search === 'string' && view.search) ||
-    '',
-  [formSortPropertyKey]: view?.sort?.property,
-  [formSortDirectionKey]: view?.sort?.direction,
-});
+const viewToFormValue = (view) => {
+  const result = { ...(view?.properties || {}) };
+  if (typeof view?.search?.text === 'string')
+    result[formSearchKey] = view.search.text;
+  else result[formSearchKey] = '';
+  if (view?.sort) {
+    result[formSortPropertyKey] = view?.sort?.property;
+    result[formSortDirectionKey] = view?.sort?.direction;
+  }
+  return result;
+};
 
 const formValueToView = (value) => {
-  const properties = value;
+  const properties = { ...value };
   const searchText = value[formSearchKey];
   delete properties[formSearchKey];
   const sortProperty = value[formSortPropertyKey];
@@ -38,9 +40,11 @@ const formValueToView = (value) => {
 
 const clearEmpty = (properties) => {
   const result = properties;
-  Object.keys(result).forEach((k) => {
-    if (Array.isArray(result[k]) && result[k].length === 0) delete result[k];
-  });
+  Object.keys(result)
+    .filter((k) => k !== formSearchKey)
+    .forEach((k) => {
+      if (Array.isArray(result[k]) && result[k].length === 0) delete result[k];
+    });
   return result;
 };
 
