@@ -235,4 +235,46 @@ describe('Data', () => {
       }),
     );
   });
+
+  test('toolbar search', () => {
+    const { container } = render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{ name: { label: 'Name' } }}
+          view={{
+            properties: [],
+            search: '',
+            sort: { property: 'name', direction: 'asc' },
+          }}
+          toolbar="search"
+        >
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('toolbar filters', () => {
+    const { container } = render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{ name: { label: 'Name' } }}
+          view={{
+            properties: [],
+            search: '',
+            sort: { property: 'name', direction: 'asc' },
+          }}
+          toolbar="filters"
+        >
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

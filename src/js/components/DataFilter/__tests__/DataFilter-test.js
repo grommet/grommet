@@ -5,6 +5,7 @@ import 'jest-styled-components';
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
 import { Grommet } from '../../Grommet';
+import { TextInput } from '../../TextInput';
 import { DataFilter } from '..';
 
 const data = [
@@ -43,17 +44,65 @@ describe('DataFilter', () => {
             },
             'type.name': {
               label: 'Type',
-              options: [
-                { label: 'ZZ', value: 1 },
-                { label: 'YY', value: 2 },
-              ],
             },
           }}
         >
           <DataFilters>
             <DataFilter property="name" />
             <DataFilter property="enabled" />
-            <DataFilter property="type.name" />
+            <DataFilter
+              property="type.name"
+              options={[
+                { label: 'ZZ', value: 1 },
+                { label: 'YY', value: 2 },
+              ]}
+            />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('children', () => {
+    const { container } = render(
+      <Grommet>
+        <Data data={data}>
+          <DataFilters>
+            <DataFilter property="name">
+              <TextInput />
+            </DataFilter>
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('range values', () => {
+    const { container } = render(
+      <Grommet>
+        <Data
+          data={[
+            {
+              name: 'Alan',
+              percent: 0,
+            },
+            {
+              name: 'Bryan',
+              percent: 30,
+            },
+            {
+              name: 'Chris',
+              percent: 40,
+            },
+          ]}
+        >
+          <DataFilters>
+            <DataFilter property="name" />
+            <DataFilter property="percent" />
           </DataFilters>
         </Data>
       </Grommet>,
