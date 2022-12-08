@@ -2,12 +2,14 @@ import * as React from 'react';
 import { BoxProps } from '../Box/index';
 
 export interface View {
-  properties?: {
-    [property: string]:
-      | boolean
-      | (string | number)[]
-      | { max: number; min: number };
-  };
+  properties?:
+    | string[]
+    | {
+        [property: string]:
+          | boolean
+          | (string | number | boolean)[]
+          | { max: number; min: number };
+      };
   search?: string;
   sort?: {
     property: string;
@@ -31,7 +33,7 @@ export interface DataProps {
   updateOn?: 'change' | 'submit';
 
   // whether to render a Toolbar
-  toolbar: boolean | 'search' | 'filters';
+  toolbar?: boolean | 'search' | 'filters';
 
   properties?:
     | string[]
@@ -45,7 +47,7 @@ export interface DataProps {
             | number
             | {
                 label: string;
-                value: string | number;
+                value: string | number | boolean;
               }
           )[];
           // for internal filtering only, should searching evaluate this
