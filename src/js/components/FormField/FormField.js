@@ -191,7 +191,7 @@ const FormField = forwardRef(
       required,
       validate,
     });
-    const formKind = formContext.kind;
+    const formKind = formContext.kindArg;
     const [focus, setFocus] = useState();
     const formFieldRef = useForwardedRef(ref);
 
@@ -337,7 +337,7 @@ const FormField = forwardRef(
 
     let labelStyle;
     if (formKind) {
-      labelStyle = { ...formFieldTheme.survey.label };
+      labelStyle = { ...formFieldTheme[formKind].label };
     } else labelStyle = { ...formFieldTheme.label };
 
     if (disabled) {

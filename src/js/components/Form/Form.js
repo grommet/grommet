@@ -166,7 +166,7 @@ const Form = forwardRef(
       errors: errorsProp = defaultValidationResults.errors,
       infos: infosProp = defaultValidationResults.infos,
       messages,
-      kind,
+      kind: kindArg,
       onChange,
       onReset,
       onSubmit,
@@ -570,10 +570,10 @@ const Form = forwardRef(
         };
       };
 
-      return { useFormField, useFormInput, kind };
+      return { useFormField, useFormInput, kindArg };
     }, [
       onChange,
-      kind,
+      kindArg,
       pendingValidation,
       touched,
       validateOn,
