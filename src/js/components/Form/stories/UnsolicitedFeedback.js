@@ -55,7 +55,7 @@ export const UnSolicitedFeedback = () => {
         />
       </PositionedFeedbackBox>
       {open && (
-        <Layer modal={false} onEsc={onClose}>
+        <Layer onEsc={onClose}>
           <Box
             fill="vertical"
             overflow="auto"
