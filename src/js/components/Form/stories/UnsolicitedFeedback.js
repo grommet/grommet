@@ -132,6 +132,10 @@ export const UnSolicitedFeedback = () => {
 
 UnSolicitedFeedback.storyName = 'UnSolicited feedback';
 
+UnSolicitedFeedback.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Input/Form/UnSolicited feedback',
 };
