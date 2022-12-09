@@ -35,7 +35,8 @@ export const UnSolicitedFeedback = () => {
   const closeFeedbackModal = () => {
     setTimeout(() => {
       setOpen(false);
-    }, 4000);
+      setIsSuccessful(false);
+    }, 3000);
   };
 
   return (
