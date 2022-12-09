@@ -2,7 +2,7 @@ import * as React from 'react';
 import { RadioButtonGroupProps } from '../RadioButtonGroup/index';
 export interface ThumbsRating {
   color?: string | object;
-  options: (
+  options?: (
     | string
     | number
     | boolean
