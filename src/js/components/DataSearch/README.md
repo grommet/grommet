@@ -1,2 +1,2 @@
-## Toolbar
-Documentation for this component: https://v2.grommet.io/toolbar
+## DataSearch
+Documentation for this component: https://v2.grommet.io/datasearch
