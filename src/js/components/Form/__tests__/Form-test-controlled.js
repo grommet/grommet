@@ -12,6 +12,7 @@ import { TextInput } from '../../TextInput';
 import { CheckBox } from '../../CheckBox';
 import { Box } from '../../Box';
 import { Select } from '../../Select';
+import { ThumbsRating } from '../../ThumbsRating/ThumbsRating';
 
 describe('Form controlled', () => {
   test('controlled', () => {
@@ -47,6 +48,30 @@ describe('Form controlled', () => {
         value: { test: 'v' },
         touched: { test: true },
       }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme', () => {
+    const customTheme = {
+      formField: {
+        feedback: {
+          label: {
+            color: 'red',
+            size: 'large',
+          },
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Form kind="feedback">
+          <FormField name="test" label="custom theme label">
+            <ThumbsRating name="test" />
+          </FormField>
+        </Form>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
