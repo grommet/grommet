@@ -354,6 +354,7 @@ exports[`Components loads 1`] = `
     "propTypes": {
       "errors": [Function],
       "infos": [Function],
+      "kind": [Function],
       "messages": [Function],
       "onChange": [Function],
       "onReset": [Function],
