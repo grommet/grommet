@@ -64,6 +64,10 @@ exports[`Markdown renders 1`] = `
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -367,6 +371,10 @@ exports[`wrapper 1`] = `
 }
 
 .c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;

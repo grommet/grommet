@@ -108,6 +108,10 @@ exports[`PageHeader basic 1`] = `
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -426,6 +430,10 @@ exports[`PageHeader custom theme 1`] = `
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -729,6 +737,10 @@ exports[`PageHeader size - large 1`] = `
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1030,6 +1042,10 @@ exports[`PageHeader size - medium 1`] = `
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1331,6 +1347,10 @@ exports[`PageHeader size - small 1`] = `
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;

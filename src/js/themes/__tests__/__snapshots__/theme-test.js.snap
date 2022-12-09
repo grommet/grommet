@@ -2,6 +2,10 @@
 
 exports[`Grommet ThemeContext theme 1`] = `
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -203,6 +207,10 @@ exports[`Grommet custom theme 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -219,6 +227,10 @@ exports[`Grommet custom theme 1`] = `
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -235,6 +247,10 @@ exports[`Grommet custom theme 1`] = `
 }
 
 .c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;

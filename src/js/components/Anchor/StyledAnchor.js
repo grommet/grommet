@@ -32,6 +32,7 @@ const StyledAnchor = styled.a.withConfig({
       prop,
     ) && defaultValidatorFn(prop),
 })`
+  display: flex;
   box-sizing: border-box;
   ${(props) => sizeStyle(props)}
   color: ${(props) =>

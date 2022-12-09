@@ -12,6 +12,10 @@ exports[`RoutedAnchor renders 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
