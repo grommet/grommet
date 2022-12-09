@@ -15,9 +15,8 @@ export interface ThumbsRating {
   )[];
 }
 
-export interface ThumbsRatingProps
-  extends ThumbsRating,
-    RadioButtonGroupProps {}
+type RadioButtonGroup = Omit<RadioButtonGroupProps, 'options'>;
+export interface ThumbsRatingProps extends ThumbsRating, RadioButtonGroup {}
 
 declare const ThumbsRating: React.FC<ThumbsRatingProps>;
 
