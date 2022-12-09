@@ -21,10 +21,12 @@ export const StarRating = ({ color, scale = 5, ...rest }) => {
     >
       {(option) =>
         option <= rating ? (
-          <Star color={typeof color === 'string' ? color : color?.fill} />
+          <Star
+            color={color && typeof color === 'string' ? color : color?.fill}
+          />
         ) : (
           <StarOutline
-            color={typeof color === 'string' ? color : color?.outline}
+            color={color && typeof color === 'string' ? color : color?.outline}
           />
         )
       }
