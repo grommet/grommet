@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Star, StarOutline } from 'grommet-icons';
+import { StarRatingPropTypes } from './propTypes';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 
-export const StarRating = ({ color, scale = 5, ...rest }) => {
+const StarRating = ({ color, scale = 5, ...rest }) => {
   const [rating, setRating] = useState();
 
   const options = [];
@@ -22,14 +23,18 @@ export const StarRating = ({ color, scale = 5, ...rest }) => {
       {(option) =>
         option <= rating ? (
           <Star
-            color={color && typeof color === 'string' ? color : color?.fill}
+            color={color && typeof color === 'string' ? color : color.fill}
           />
         ) : (
           <StarOutline
-            color={color && typeof color === 'string' ? color : color?.outline}
+            color={color && typeof color === 'string' ? color : color.outline}
           />
         )
       }
     </RadioButtonGroup>
   );
 };
+
+StarRating.propTypes = StarRatingPropTypes;
+
+export { StarRating };

@@ -7,4 +7,4 @@ if (process.env.NODE_ENV !== 'production') {
     scale: PropTypes.number,
   };
 }
-export const FeedbackRatingTypes = PropType;
+export const StarRatingPropTypes = PropType;
