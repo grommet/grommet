@@ -12,7 +12,7 @@ import { TextInput } from '../../TextInput';
 import { CheckBox } from '../../CheckBox';
 import { Box } from '../../Box';
 import { Select } from '../../Select';
-import { ThumbsRating } from '../../ThumbsRating/ThumbsRating';
+import { ThumbsRating } from '../../ThumbsRating';
 
 describe('Form controlled', () => {
   test('controlled', () => {

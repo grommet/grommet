@@ -6,6 +6,16 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 const ThumbsRating = ({ color, options, ...rest }) => {
   const likeOption = options ? options[0] : 'like';
 
+  let colorProp;
+  let colorfill;
+  let coloroutline;
+  if (color && typeof color === 'string') {
+    colorProp = color;
+  } else if (color && typeof color === 'object') {
+    colorfill = color.fill;
+    coloroutline = color.outline;
+  } else colorProp = undefined;
+
   return (
     <RadioButtonGroup
       direction="row"
@@ -15,25 +25,15 @@ const ThumbsRating = ({ color, options, ...rest }) => {
       {(option, { checked }) => {
         if (option === likeOption) {
           return checked ? (
-            <LikeFill
-              color={color && typeof color === 'string' ? color : color?.fill}
-            />
+            <LikeFill color={colorfill || colorProp} />
           ) : (
-            <Like
-              color={
-                color && typeof color === 'string' ? color : color?.outline
-              }
-            />
+            <Like color={coloroutline || colorProp} />
           );
         }
         return checked ? (
-          <DislikeFill
-            color={color && typeof color === 'string' ? color : color?.fill}
-          />
+          <DislikeFill color={colorfill || colorProp} />
         ) : (
-          <Dislike
-            color={color && typeof color === 'string' ? color : color?.outline}
-          />
+          <Dislike color={coloroutline || colorProp} />
         );
       }}
     </RadioButtonGroup>

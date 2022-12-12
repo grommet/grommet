@@ -96,7 +96,6 @@ export const UnSolicitedFeedback = () => {
                   <ThumbsRating
                     id="thumbs-rating"
                     name="rating"
-                    fillColor="pink"
                     options={['1', '2']}
                     color="pink"
                   />

@@ -11,6 +11,16 @@ const StarRating = ({ color, scale = 5, ...rest }) => {
     options.push(i);
   }
 
+  let colorProp;
+  let colorfill;
+  let coloroutline;
+  if (color && typeof color === 'string') {
+    colorProp = color;
+  } else if (color && typeof color === 'object') {
+    colorfill = color.fill;
+    coloroutline = color.outline;
+  } else colorProp = undefined;
+
   return (
     <RadioButtonGroup
       direction="row"
@@ -22,13 +32,9 @@ const StarRating = ({ color, scale = 5, ...rest }) => {
     >
       {(option) =>
         option <= rating ? (
-          <Star
-            color={color && typeof color === 'string' ? color : color.fill}
-          />
+          <Star color={colorfill || colorProp} />
         ) : (
-          <StarOutline
-            color={color && typeof color === 'string' ? color : color.outline}
-          />
+          <StarOutline color={coloroutline || colorProp} />
         )
       }
     </RadioButtonGroup>

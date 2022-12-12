@@ -17,10 +17,10 @@ if (process.env.NODE_ENV !== 'production') {
             PropTypes.string,
             PropTypes.number,
             PropTypes.bool,
-          ]).isRequired,
+          ]),
         }),
       ),
-    ]).isRequired,
+    ]),
   };
 }
 export const ThumbsRatingPropTypes = PropType;
