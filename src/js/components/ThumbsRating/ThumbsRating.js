@@ -1,8 +1,9 @@
 import React from 'react';
 import { Like, LikeFill, Dislike, DislikeFill } from 'grommet-icons';
+import { ThumbsRatingPropTypes } from './propTypes';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 
-export const ThumbsRating = ({ color, options, ...rest }) => {
+const ThumbsRating = ({ color, options, ...rest }) => {
   const likeOption = options ? options[0] : 'like';
 
   return (
@@ -38,3 +39,7 @@ export const ThumbsRating = ({ color, options, ...rest }) => {
     </RadioButtonGroup>
   );
 };
+
+ThumbsRating.propTypes = ThumbsRatingPropTypes;
+
+export { ThumbsRating };

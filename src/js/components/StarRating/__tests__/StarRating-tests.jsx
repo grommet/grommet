@@ -8,7 +8,7 @@ import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
-import { StarRating } from '../StarRating';
+import { StarRating } from '..';
 
 describe('StarRating', () => {
   test('StarRating should have no accessibility violations', async () => {

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { RadioButtonGroupProps } from '../RadioButtonGroup/index';
-export interface ThumbsRating {
+import { Omit } from 'grommet/utils';
+export interface ThumbsRatingProps {
   color?: string | object;
   options?: (
     | string
@@ -16,8 +17,8 @@ export interface ThumbsRating {
 }
 
 type RadioButtonGroup = Omit<RadioButtonGroupProps, 'options'>;
-export interface ThumbsRatingProps extends ThumbsRating, RadioButtonGroup {}
+export interface ThumbsRatingExtendedProps extends ThumbsRatingProps, RadioButtonGroup {}
 
-declare const ThumbsRating: React.FC<ThumbsRatingProps>;
+declare const ThumbsRating: React.FC<ThumbsRatingExtendedProps>;
 
 export { ThumbsRating };
