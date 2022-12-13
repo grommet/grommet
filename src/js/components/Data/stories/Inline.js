@@ -66,7 +66,7 @@ export const Inline = () => {
       updateOn={sidebar ? 'change' : undefined}
     >
       <Grid
-        columns={sidebar ? ['auto', ['medium', 'large']] : 'auto'}
+        columns={sidebar ? ['auto', ['small', 'large']] : 'auto'}
         gap="large"
         pad="large"
         justifyContent="center"

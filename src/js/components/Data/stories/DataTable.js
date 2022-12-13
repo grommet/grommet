@@ -18,7 +18,12 @@ import { columns, DATA } from '../../DataTable/stories/data';
 export const Table = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Grid flex={false} pad="large" columns={['large']} justifyContent="center">
+  <Grid
+    flex={false}
+    pad="large"
+    columns={[['small', 'large']]}
+    justifyContent="center"
+  >
     <Data data={DATA}>
       <Toolbar>
         <Box direction="row" gap="small">

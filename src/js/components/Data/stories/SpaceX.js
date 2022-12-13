@@ -158,7 +158,12 @@ export const Table = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Grid flex={false} pad="large" columns={['large']} justifyContent="center">
+    <Grid
+      flex={false}
+      pad="large"
+      columns={[['small', 'large']]}
+      justifyContent="center"
+    >
       <Box>
         <Data
           properties={{
