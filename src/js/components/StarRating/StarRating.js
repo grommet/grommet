@@ -1,25 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { Star, StarOutline } from 'grommet-icons';
-import { StarRatingPropTypes } from './propTypes';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 
-const StarRating = ({ color, scale = 5, ...rest }) => {
+const StarRating = ({ ...rest }) => {
+  const theme = useContext(ThemeContext);
   const [value, setValue] = useState();
 
   const options = [];
-  for (let i = 0; i < scale; i += 1) {
+  for (let i = 0; i < 5; i += 1) {
     options.push(i);
   }
-
-  let colorProp;
-  let colorfill;
-  let coloroutline;
-  if (color && typeof color === 'string') {
-    colorProp = color;
-  } else if (color && typeof color === 'object') {
-    colorfill = color.fill;
-    coloroutline = color.outline;
-  } else colorProp = undefined;
 
   return (
     <RadioButtonGroup
@@ -32,15 +23,24 @@ const StarRating = ({ color, scale = 5, ...rest }) => {
     >
       {(option) =>
         option <= value ? (
-          <Star color={colorfill || colorProp} />
+          <Star
+            color={
+              theme.starRating?.icon?.color ||
+              theme.starRating?.icon?.color?.fill
+            }
+          />
         ) : (
-          <StarOutline color={coloroutline || colorProp} />
+          <StarOutline
+            color={
+              theme.starRating?.icon?.color ||
+              theme.starRating?.icon?.color?.outline
+            }
+          />
         )
       }
     </RadioButtonGroup>
   );
 };
 
-StarRating.propTypes = StarRatingPropTypes;
-
+StarRating.displayName = 'StarRating';
 export { StarRating };

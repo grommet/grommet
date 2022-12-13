@@ -22,24 +22,4 @@ describe('ThumbsRating', () => {
     expect(results).toHaveNoViolations();
     expect(container).toMatchSnapshot();
   });
-
-  test('ThumbsRating with color star green', () => {
-    const { container } = render(
-      <Grommet>
-        <ThumbsRating name="test" color="green" />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('ThumbsRating with color outline and fill', () => {
-    const { container } = render(
-      <Grommet>
-        <ThumbsRating name="test" color={{ outline: 'green', fill: 'pink' }} />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
 });

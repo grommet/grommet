@@ -93,12 +93,7 @@ export const UnSolicitedFeedback = () => {
                   name="rating"
                   label="Was this content helpful?"
                 >
-                  <ThumbsRating
-                    id="thumbs-rating"
-                    name="rating"
-                    options={['1', '2']}
-                    color="pink"
-                  />
+                  <ThumbsRating id="thumbs-rating" name="rating" />
                 </FormField>
                 <FormField label="Comments" htmlFor="comments" name="comments">
                   <TextArea id="comments" name="comments" />

@@ -22,24 +22,4 @@ describe('StarRating', () => {
     expect(results).toHaveNoViolations();
     expect(container).toMatchSnapshot();
   });
-
-  test('StarRating color star green', () => {
-    const { container } = render(
-      <Grommet>
-        <StarRating name="test" color="green" />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('StarRating color outline and fill', () => {
-    const { container } = render(
-      <Grommet>
-        <StarRating name="test" color={{ outline: 'green', fill: 'pink' }} />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
 });

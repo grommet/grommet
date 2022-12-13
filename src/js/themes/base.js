@@ -1508,6 +1508,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
     },
+    thumbsRating: {
+      dislike: {
+        icon: {
+          color: 'blue',
+        },
+      },
+      like: {
+        icon: {
+          color: 'green',
+        },
+      },
+    },
     spinner: {
       container: {
         animation: 'rotateRight',
@@ -1668,6 +1680,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       label: {
         margin: { bottom: 'medium' },
         size: 'medium',
+      },
+    },
+    starRating: {
+      icon: {
+        color: 'pink',
       },
     },
     tab: {

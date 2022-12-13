@@ -34,6 +34,8 @@ const grommetInputNames = [
   'FileInput',
   'RadioButtonGroup',
   'RangeInput',
+  'StarRating',
+  'ThumbsRating',
 ];
 const grommetInputPadNames = [
   'CheckBox',
