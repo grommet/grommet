@@ -286,7 +286,8 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     // from automatically filling the vertical space.
     content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       flex: "grow",
-      fill: onResize || search ? 'vertical' : false
+      fill: onResize || search ? 'vertical' : false,
+      justify: !align && 'center' || align
     }, content);
     if (search || onResize) {
       var resizer = onResize ? /*#__PURE__*/_react["default"].createElement(_Resizer.Resizer, {
