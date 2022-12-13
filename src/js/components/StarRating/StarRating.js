@@ -4,7 +4,7 @@ import { StarRatingPropTypes } from './propTypes';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 
 const StarRating = ({ color, scale = 5, ...rest }) => {
-  const [rating, setRating] = useState();
+  const [value, setValue] = useState();
 
   const options = [];
   for (let i = 0; i < scale; i += 1) {
@@ -26,12 +26,12 @@ const StarRating = ({ color, scale = 5, ...rest }) => {
       direction="row"
       options={options}
       onChange={(event) => {
-        setRating(event.target.value);
+        setValue(event.target.value);
       }}
       {...rest}
     >
       {(option) =>
-        option <= rating ? (
+        option <= value ? (
           <Star color={colorfill || colorProp} />
         ) : (
           <StarOutline color={coloroutline || colorProp} />

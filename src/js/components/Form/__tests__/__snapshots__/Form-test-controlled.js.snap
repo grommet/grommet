@@ -4047,9 +4047,12 @@ exports[`Form controlled custom theme 1`] = `
 }
 
 .c2 {
+  margin-top: 6px;
+  margin-bottom: 6px;
   font-size: 22px;
   line-height: 28px;
   color: red;
+  font-weight: 400;
 }
 
 @media only screen and (max-width:768px) {

@@ -191,7 +191,7 @@ const FormField = forwardRef(
       required,
       validate,
     });
-    const formKind = formContext.kindArg;
+    const formKind = formContext.kind;
     const [focus, setFocus] = useState();
     const formFieldRef = useForwardedRef(ref);
 

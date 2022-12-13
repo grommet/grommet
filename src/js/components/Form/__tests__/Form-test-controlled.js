@@ -55,7 +55,7 @@ describe('Form controlled', () => {
   test('custom theme', () => {
     const customTheme = {
       formField: {
-        feedback: {
+        survey: {
           label: {
             color: 'red',
             size: 'large',
@@ -66,7 +66,7 @@ describe('Form controlled', () => {
 
     const { container } = render(
       <Grommet theme={customTheme}>
-        <Form kind="feedback">
+        <Form kind="survey">
           <FormField name="test" label="custom theme label">
             <ThumbsRating name="test" />
           </FormField>
