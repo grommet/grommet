@@ -3,9 +3,7 @@ import { Like, LikeFill, Dislike, DislikeFill } from 'grommet-icons';
 import { ThumbsRatingPropTypes } from './propTypes';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 
-const ThumbsRating = ({ color, options, ...rest }) => {
-  const likeOption = options ? options[0] : 'like';
-
+const ThumbsRating = ({ color, ...rest }) => {
   let colorProp;
   let colorfill;
   let coloroutline;
@@ -17,13 +15,9 @@ const ThumbsRating = ({ color, options, ...rest }) => {
   } else colorProp = undefined;
 
   return (
-    <RadioButtonGroup
-      direction="row"
-      options={options || ['like', 'dislike']}
-      {...rest}
-    >
+    <RadioButtonGroup direction="row" options={['like', 'dislike']} {...rest}>
       {(option, { checked }) => {
-        if (option === likeOption) {
+        if (option === 'like') {
           return checked ? (
             <LikeFill color={colorfill || colorProp} />
           ) : (

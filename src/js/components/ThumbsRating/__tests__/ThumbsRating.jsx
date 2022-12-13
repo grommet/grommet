@@ -23,16 +23,6 @@ describe('ThumbsRating', () => {
     expect(container).toMatchSnapshot();
   });
 
-  test('ThumbsRating with string options', () => {
-    const { container } = render(
-      <Grommet>
-        <ThumbsRating name="test" options={['positive', 'negative']} />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('ThumbsRating with color star green', () => {
     const { container } = render(
       <Grommet>
@@ -51,15 +41,5 @@ describe('ThumbsRating', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('ThumbsRating with defaultValue', () => {
-    const { container } = render(
-      <Grommet>
-        <ThumbsRating name="test" options={['one', 'two']} defaultValue="one" />
-      </Grommet>,
-    );
-
-    expect(container).toMatchSnapshot();
   });
 });
