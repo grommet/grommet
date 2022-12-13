@@ -94,6 +94,10 @@ exports[`Data controlled search 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c17 {
@@ -388,6 +392,7 @@ exports[`Data controlled search 1`] = `
                 </svg>
               </div>
               <input
+                aria-label="search"
                 autocomplete="off"
                 class="c7"
                 name="_search"
@@ -404,7 +409,7 @@ exports[`Data controlled search 1`] = `
           class="c3"
         >
           <button
-            aria-label="Open Drop"
+            aria-label="open filters"
             class="c9"
             type="button"
           >
@@ -566,6 +571,7 @@ exports[`Data controlled search 2`] = `
                 </svg>
               </div>
               <input
+                aria-label="search"
                 autocomplete="off"
                 class="StyledTextInput-sc-1x30a0s-0 jgXNod"
                 name="_search"
@@ -582,7 +588,7 @@ exports[`Data controlled search 2`] = `
           class="StyledBox-sc-13pk1d4-0 lgzxvo"
         >
           <button
-            aria-label="Open Drop"
+            aria-label="open filters"
             class="StyledButton-sc-323bzc-0 emhJYD"
             type="button"
           >
@@ -866,7 +872,7 @@ exports[`Data controlled search 2`] = `
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 cUuGOF"
+              class="StyledBox-sc-13pk1d4-0 dCZrDR"
             />
           </th>
         </tr>
@@ -989,6 +995,7 @@ exports[`Data controlled search 3`] = `
                 </svg>
               </div>
               <input
+                aria-label="search"
                 autocomplete="off"
                 class="StyledTextInput-sc-1x30a0s-0 jgXNod"
                 name="_search"
@@ -1005,7 +1012,7 @@ exports[`Data controlled search 3`] = `
           class="StyledBox-sc-13pk1d4-0 lgzxvo"
         >
           <button
-            aria-label="Open Drop"
+            aria-label="open filters"
             class="StyledButton-sc-323bzc-0 emhJYD"
             type="button"
           >
@@ -1086,7 +1093,7 @@ exports[`Data controlled search 3`] = `
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 cUuGOF"
+              class="StyledBox-sc-13pk1d4-0 dCZrDR"
             />
           </th>
         </tr>
@@ -1303,6 +1310,10 @@ exports[`Data toolbar 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c17 {
@@ -1602,6 +1613,7 @@ exports[`Data toolbar 1`] = `
                 </svg>
               </div>
               <input
+                aria-label="search"
                 autocomplete="off"
                 class="c7"
                 name="_search"
@@ -1618,7 +1630,7 @@ exports[`Data toolbar 1`] = `
           class="c3"
         >
           <button
-            aria-label="Open Drop"
+            aria-label="open filters"
             class="c9"
             type="button"
           >
@@ -1885,6 +1897,10 @@ exports[`Data toolbar filters 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c13 {
@@ -2057,7 +2073,7 @@ exports[`Data toolbar filters 1`] = `
           class="c3"
         >
           <button
-            aria-label="Open Drop"
+            aria-label="open filters"
             class="c4"
             type="button"
           >
@@ -2276,6 +2292,10 @@ exports[`Data toolbar search 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c15 {
@@ -2494,6 +2514,7 @@ exports[`Data toolbar search 1`] = `
                 </svg>
               </div>
               <input
+                aria-label="search"
                 autocomplete="off"
                 class="c7"
                 name="_search"
@@ -2704,6 +2725,10 @@ exports[`Data uncontrolled search 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c17 {
@@ -2998,6 +3023,7 @@ exports[`Data uncontrolled search 1`] = `
                 </svg>
               </div>
               <input
+                aria-label="search"
                 autocomplete="off"
                 class="c7"
                 name="_search"
@@ -3014,7 +3040,7 @@ exports[`Data uncontrolled search 1`] = `
           class="c3"
         >
           <button
-            aria-label="Open Drop"
+            aria-label="open filters"
             class="c9"
             type="button"
           >
@@ -3176,6 +3202,7 @@ exports[`Data uncontrolled search 2`] = `
                 </svg>
               </div>
               <input
+                aria-label="search"
                 autocomplete="off"
                 class="StyledTextInput-sc-1x30a0s-0 jgXNod"
                 name="_search"
@@ -3192,7 +3219,7 @@ exports[`Data uncontrolled search 2`] = `
           class="StyledBox-sc-13pk1d4-0 lgzxvo"
         >
           <button
-            aria-label="Open Drop"
+            aria-label="open filters"
             class="StyledButton-sc-323bzc-0 emhJYD"
             type="button"
           >
@@ -3476,7 +3503,7 @@ exports[`Data uncontrolled search 2`] = `
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 cUuGOF"
+              class="StyledBox-sc-13pk1d4-0 dCZrDR"
             />
           </th>
         </tr>
@@ -3545,6 +3572,7 @@ exports[`Data uncontrolled search 3`] = `
                 </svg>
               </div>
               <input
+                aria-label="search"
                 autocomplete="off"
                 class="StyledTextInput-sc-1x30a0s-0 jgXNod"
                 name="_search"
@@ -3561,7 +3589,7 @@ exports[`Data uncontrolled search 3`] = `
           class="StyledBox-sc-13pk1d4-0 lgzxvo"
         >
           <button
-            aria-label="Open Drop"
+            aria-label="open filters"
             class="StyledButton-sc-323bzc-0 emhJYD"
             type="button"
           >
@@ -3642,7 +3670,7 @@ exports[`Data uncontrolled search 3`] = `
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 cUuGOF"
+              class="StyledBox-sc-13pk1d4-0 dCZrDR"
             />
           </th>
         </tr>
@@ -3891,6 +3919,10 @@ exports[`Data view 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -4242,6 +4274,10 @@ exports[`Data view all 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c23 {
@@ -4638,6 +4674,7 @@ exports[`Data view all 1`] = `
                 </svg>
               </div>
               <input
+                aria-label="search"
                 autocomplete="off"
                 class="c7"
                 name="_search"
@@ -4654,7 +4691,7 @@ exports[`Data view all 1`] = `
           class="c3"
         >
           <button
-            aria-label="Open Drop"
+            aria-label="open filters"
             class="c9"
             type="button"
           >
@@ -4905,6 +4942,10 @@ exports[`Data view property 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c23 {
@@ -5301,6 +5342,7 @@ exports[`Data view property 1`] = `
                 </svg>
               </div>
               <input
+                aria-label="search"
                 autocomplete="off"
                 class="c7"
                 name="_search"
@@ -5317,7 +5359,7 @@ exports[`Data view property 1`] = `
           class="c3"
         >
           <button
-            aria-label="Open Drop"
+            aria-label="open filters"
             class="c9"
             type="button"
           >
@@ -5568,6 +5610,10 @@ exports[`Data view search 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c23 {
@@ -5964,6 +6010,7 @@ exports[`Data view search 1`] = `
                 </svg>
               </div>
               <input
+                aria-label="search"
                 autocomplete="off"
                 class="c7"
                 name="_search"
@@ -5980,7 +6027,7 @@ exports[`Data view search 1`] = `
           class="c3"
         >
           <button
-            aria-label="Open Drop"
+            aria-label="open filters"
             class="c9"
             type="button"
           >
@@ -6201,6 +6248,10 @@ exports[`Data view sort 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c17 {
@@ -6500,6 +6551,7 @@ exports[`Data view sort 1`] = `
                 </svg>
               </div>
               <input
+                aria-label="search"
                 autocomplete="off"
                 class="c7"
                 name="_search"
@@ -6516,7 +6568,7 @@ exports[`Data view sort 1`] = `
           class="c3"
         >
           <button
-            aria-label="Open Drop"
+            aria-label="open filters"
             class="c9"
             type="button"
           >

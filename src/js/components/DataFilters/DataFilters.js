@@ -92,8 +92,11 @@ export const DataFilters = ({
     );
   } else {
     // drop
+    // TODO: Consider <Data name="X" /> such that the aria-label below
+    // could become "open filters for users".
     control = (
       <DropButton
+        aria-label="open filters"
         kind="toolbar"
         icon={<Filter />}
         dropProps={dropProps}

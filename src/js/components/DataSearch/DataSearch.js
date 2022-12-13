@@ -8,8 +8,16 @@ import { DataSearchPropTypes } from './propTypes';
 export const DataSearch = ({ ...rest }) => {
   const { noForm } = useContext(FormContext);
 
+  // TODO: Consider <Data name="X" /> such that the aria-label below
+  // could become "search users".
   let content = (
-    <TextInput name="_search" icon={<Search />} type="search" {...rest} />
+    <TextInput
+      aria-label="search"
+      name="_search"
+      icon={<Search />}
+      type="search"
+      {...rest}
+    />
   );
 
   if (noForm) content = <DataForm footer={false}>{content}</DataForm>;

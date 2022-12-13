@@ -411,6 +411,7 @@ exports[`DataSearch renders 1`] = `
             </svg>
           </div>
           <input
+            aria-label="search"
             autocomplete="off"
             class="c8"
             name="_search"
