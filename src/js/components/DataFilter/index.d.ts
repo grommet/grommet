@@ -2,7 +2,6 @@ import * as React from 'react';
 import { BoxProps } from '../Box/index';
 
 export interface DataFilterProps {
-  property: string;
   options?: (
     | string
     | number
@@ -11,6 +10,7 @@ export interface DataFilterProps {
         value: string | number | boolean;
       }
   )[];
+  property: string;
 }
 
 type divProps = Omit<JSX.IntrinsicElements['div'], 'onClick' | 'property'>;

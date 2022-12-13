@@ -243,7 +243,7 @@ describe('Data', () => {
           data={data}
           properties={{ name: { label: 'Name' } }}
           view={{
-            properties: [],
+            properties: {},
             search: '',
             sort: { property: 'name', direction: 'asc' },
           }}
@@ -264,7 +264,7 @@ describe('Data', () => {
           data={data}
           properties={{ name: { label: 'Name' } }}
           view={{
-            properties: [],
+            properties: {},
             search: '',
             sort: { property: 'name', direction: 'asc' },
           }}

@@ -5,7 +5,7 @@ import { FormContext } from '../Form/FormContext';
 import { TextInput } from '../TextInput';
 import { DataSearchPropTypes } from './propTypes';
 
-export const DataSearch = ({ property, ...rest }) => {
+export const DataSearch = ({ ...rest }) => {
   const { noForm } = useContext(FormContext);
 
   let content = (

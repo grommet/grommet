@@ -12,12 +12,12 @@ export const DataSummary = ({ messages, ...rest }) => {
     <Text margin={{ vertical: 'xsmall' }} {...rest}>
       {total !== data.length
         ? format({
-            id: 'dataFilters.filtered',
+            id: 'dataSummary.filtered',
             messages,
             values: { filtered: data.length, total },
           })
         : format({
-            id: 'dataFilters.total',
+            id: 'dataSummary.total',
             messages,
             values: { total },
           })}

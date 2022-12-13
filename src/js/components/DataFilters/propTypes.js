@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
-    search: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
-    ]),
+    drop: PropTypes.bool,
+    heading: PropTypes.string,
+    layer: PropTypes.bool,
   };
 }
 export const DataFiltersPropTypes = PropType;

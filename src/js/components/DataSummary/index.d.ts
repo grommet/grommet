@@ -1,14 +1,11 @@
 import * as React from 'react';
-import { BoxProps } from '../Box/index';
+import { TextProps } from '../Text/index';
 
-export interface DataSummaryProps {}
+export interface DataSummaryProps {
+  messages?: { filtered?: string; total?: string };
+}
 
-type divProps = Omit<JSX.IntrinsicElements['div'], 'onClick'>;
-
-export interface DataSummaryExtendedProps
-  extends BoxProps,
-  DataSummaryProps,
-    divProps {}
+export interface DataSummaryExtendedProps extends TextProps, DataSummaryProps {}
 
 declare const DataSummary: React.FC<DataSummaryExtendedProps>;
 

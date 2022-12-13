@@ -88,5 +88,3 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
     </Form>
   );
 };
-
-// DataForm.propTypes = DataFormPropTypes;

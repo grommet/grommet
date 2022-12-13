@@ -1,9 +1,3 @@
-import PropTypes from 'prop-types';
+import { TextInputPropTypes } from '../TextInput/propTypes';
 
-let PropType = {};
-if (process.env.NODE_ENV !== 'production') {
-  PropType = {
-    property: PropTypes.string,
-  };
-}
-export const DataSortPropTypes = PropType;
+export const DataSortPropTypes = TextInputPropTypes;
