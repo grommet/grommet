@@ -261,6 +261,7 @@ exports[`DataSummary renders 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <form>
       <div

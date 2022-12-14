@@ -6,11 +6,12 @@ import { TextInput } from '../TextInput';
 import { DataSearchPropTypes } from './propTypes';
 
 export const DataSearch = ({ ...rest }) => {
-  const { noForm } = useContext(FormContext);
+  const { id: dataId, noForm } = useContext(FormContext);
 
   let content = (
     <TextInput
       aria-label="search"
+      id={`${dataId}--search`}
       name="_search"
       icon={<Search />}
       type="search"

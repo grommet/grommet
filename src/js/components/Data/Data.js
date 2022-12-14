@@ -16,6 +16,7 @@ const defaultView = {
 export const Data = ({
   children,
   data: dataProp,
+  id = 'data',
   onView,
   properties,
   toolbar,
@@ -34,7 +35,7 @@ export const Data = ({
 
   // what we use for DataContext value
   const contextValue = useMemo(() => {
-    const result = { properties, updateOn, view };
+    const result = { id, properties, updateOn, view };
 
     if (
       view?.search ||
@@ -57,7 +58,7 @@ export const Data = ({
     result.total = total !== undefined ? total : data.length;
 
     return result;
-  }, [data, dataProp, onView, properties, total, updateOn, view]);
+  }, [data, dataProp, id, onView, properties, total, updateOn, view]);
 
   let toolbarContent;
   if (toolbar) {
@@ -74,7 +75,7 @@ export const Data = ({
 
   return (
     <DataContext.Provider value={contextValue}>
-      <Box flex={false} {...rest}>
+      <Box id={id} flex={false} {...rest}>
         {toolbarContent}
         {children}
       </Box>

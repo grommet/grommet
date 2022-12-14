@@ -434,6 +434,7 @@ exports[`DataFilters renders 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <form>
       <div
@@ -456,6 +457,7 @@ exports[`DataFilters renders 1`] = `
         >
           <label
             class="c6"
+            for="data-name"
           >
             name
           </label>
@@ -464,6 +466,7 @@ exports[`DataFilters renders 1`] = `
           >
             <div
               class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+              id="data-name"
               role="group"
             >
               <label

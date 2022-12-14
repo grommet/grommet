@@ -33,7 +33,12 @@ export const DataFilter = ({
   range: rangeProp,
   ...rest
 }) => {
-  const { properties, unfilteredData, view } = useContext(DataContext);
+  const {
+    id: dataId,
+    properties,
+    unfilteredData,
+    view,
+  } = useContext(DataContext);
   const maxRef = useRef();
   const minRef = useRef();
 
@@ -94,6 +99,8 @@ export const DataFilter = ({
     }
   });
 
+  const id = `${dataId}-${property}`;
+
   let content = children;
   if (!content) {
     if (range) {
@@ -110,6 +117,7 @@ export const DataFilter = ({
             {rangeValues[0]}
           </Text>
           <RangeSelector
+            id={id}
             name={`${property}._range`}
             defaultValues={range}
             direction="horizontal"
@@ -127,16 +135,22 @@ export const DataFilter = ({
         </Box>
       );
     } else if (options.length < 7) {
-      content = <CheckBoxGroup name={property} options={options} />;
+      content = <CheckBoxGroup id={id} name={property} options={options} />;
     } else {
       content = (
-        <SelectMultiple name={property} showSelectedInline options={options} />
+        <SelectMultiple
+          id={id}
+          name={property}
+          showSelectedInline
+          options={options}
+        />
       );
     }
   }
 
   return (
     <FormField
+      htmlFor={id}
       name={property}
       label={properties?.[property]?.label || property}
       {...rest}

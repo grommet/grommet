@@ -24,6 +24,8 @@ export interface View {
 }
 
 export interface DataProps {
+  id?: string;
+
   data: object[];
   total?: number;
 

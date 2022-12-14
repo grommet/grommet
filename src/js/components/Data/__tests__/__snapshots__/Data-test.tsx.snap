@@ -361,6 +361,7 @@ exports[`Data controlled search 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <div
       class="c2"
@@ -395,6 +396,7 @@ exports[`Data controlled search 1`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="c7"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value=""
@@ -540,6 +542,7 @@ exports[`Data controlled search 2`] = `
 >
   <div
     class="StyledBox-sc-13pk1d4-0 hoPFxc"
+    id="data"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 epRbTV"
@@ -574,6 +577,7 @@ exports[`Data controlled search 2`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="StyledTextInput-sc-1x30a0s-0 jgXNod"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value="a"
@@ -964,6 +968,7 @@ exports[`Data controlled search 3`] = `
 >
   <div
     class="StyledBox-sc-13pk1d4-0 hoPFxc"
+    id="data"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 epRbTV"
@@ -998,6 +1003,7 @@ exports[`Data controlled search 3`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="StyledTextInput-sc-1x30a0s-0 jgXNod"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value=""
@@ -1212,6 +1218,7 @@ exports[`Data renders 1`] = `
 >
   <div
     class="c1"
+    id="data"
   />
 </div>
 `;
@@ -1582,6 +1589,7 @@ exports[`Data toolbar 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <div
       class="c2"
@@ -1616,6 +1624,7 @@ exports[`Data toolbar 1`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="c7"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value=""
@@ -2062,6 +2071,7 @@ exports[`Data toolbar filters 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <div
       class="c2"
@@ -2483,6 +2493,7 @@ exports[`Data toolbar search 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <div
       class="c2"
@@ -2517,6 +2528,7 @@ exports[`Data toolbar search 1`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="c7"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value=""
@@ -2992,6 +3004,7 @@ exports[`Data uncontrolled search 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <div
       class="c2"
@@ -3026,6 +3039,7 @@ exports[`Data uncontrolled search 1`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="c7"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value=""
@@ -3171,6 +3185,7 @@ exports[`Data uncontrolled search 2`] = `
 >
   <div
     class="StyledBox-sc-13pk1d4-0 hoPFxc"
+    id="data"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 epRbTV"
@@ -3205,6 +3220,7 @@ exports[`Data uncontrolled search 2`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="StyledTextInput-sc-1x30a0s-0 jgXNod"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value="a"
@@ -3541,6 +3557,7 @@ exports[`Data uncontrolled search 3`] = `
 >
   <div
     class="StyledBox-sc-13pk1d4-0 hoPFxc"
+    id="data"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 epRbTV"
@@ -3575,6 +3592,7 @@ exports[`Data uncontrolled search 3`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="StyledTextInput-sc-1x30a0s-0 jgXNod"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value=""
@@ -4001,6 +4019,7 @@ exports[`Data view 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <table
       class="c2 c3"
@@ -4643,6 +4662,7 @@ exports[`Data view all 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <div
       class="c2"
@@ -4677,6 +4697,7 @@ exports[`Data view all 1`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="c7"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value="a"
@@ -5311,6 +5332,7 @@ exports[`Data view property option 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <div
       class="c2"
@@ -5345,6 +5367,7 @@ exports[`Data view property option 1`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="c7"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value=""
@@ -5979,6 +6002,7 @@ exports[`Data view property range 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <div
       class="c2"
@@ -6013,6 +6037,7 @@ exports[`Data view property range 1`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="c7"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value=""
@@ -6668,6 +6693,7 @@ exports[`Data view search 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <div
       class="c2"
@@ -6702,6 +6728,7 @@ exports[`Data view search 1`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="c7"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value="a"
@@ -7209,6 +7236,7 @@ exports[`Data view sort 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <div
       class="c2"
@@ -7243,6 +7271,7 @@ exports[`Data view sort 1`] = `
                 aria-label="search"
                 autocomplete="off"
                 class="c7"
+                id="undefined--search"
                 name="_search"
                 type="search"
                 value=""

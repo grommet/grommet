@@ -354,6 +354,7 @@ exports[`DataFilter children 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <form>
       <div
@@ -376,6 +377,7 @@ exports[`DataFilter children 1`] = `
         >
           <label
             class="c6"
+            for="data-name"
           >
             name
           </label>
@@ -855,6 +857,7 @@ exports[`DataFilter options 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <form>
       <div
@@ -877,6 +880,7 @@ exports[`DataFilter options 1`] = `
         >
           <label
             class="c6"
+            for="data-name"
           >
             name
           </label>
@@ -885,6 +889,7 @@ exports[`DataFilter options 1`] = `
           >
             <div
               class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+              id="data-name"
               role="group"
             >
               <label
@@ -961,6 +966,7 @@ exports[`DataFilter options 1`] = `
         >
           <label
             class="c6"
+            for="data-enabled"
           >
             Enabled
           </label>
@@ -969,6 +975,7 @@ exports[`DataFilter options 1`] = `
           >
             <div
               class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+              id="data-enabled"
               role="group"
             >
               <label
@@ -1023,6 +1030,7 @@ exports[`DataFilter options 1`] = `
         >
           <label
             class="c6"
+            for="data-type.name"
           >
             Type
           </label>
@@ -1031,6 +1039,7 @@ exports[`DataFilter options 1`] = `
           >
             <div
               class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+              id="data-type.name"
               role="group"
             >
               <label
@@ -1610,6 +1619,7 @@ exports[`DataFilter range 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <form>
       <div
@@ -1632,6 +1642,7 @@ exports[`DataFilter range 1`] = `
         >
           <label
             class="c6"
+            for="data-rating"
           >
             Rating
           </label>
@@ -1652,6 +1663,7 @@ exports[`DataFilter range 1`] = `
               />
               <div
                 class="c11 c12"
+                id="data-rating"
                 tabindex="-1"
               >
                 <div
@@ -2179,6 +2191,7 @@ exports[`DataFilter renders 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <form>
       <div
@@ -2201,6 +2214,7 @@ exports[`DataFilter renders 1`] = `
         >
           <label
             class="c6"
+            for="data-name"
           >
             name
           </label>
@@ -2209,6 +2223,7 @@ exports[`DataFilter renders 1`] = `
           >
             <div
               class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+              id="data-name"
               role="group"
             >
               <label

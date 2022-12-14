@@ -13,7 +13,7 @@ const directionOptions = [
 ];
 
 export const DataSort = ({ options: optionsArg }) => {
-  const { properties, unfilteredData } = useContext(DataContext);
+  const { id: dataId, properties, unfilteredData } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
 
   const options = useMemo(
@@ -24,12 +24,19 @@ export const DataSort = ({ options: optionsArg }) => {
     [optionsArg, properties, unfilteredData],
   );
 
+  const sortPropertyId = `${dataId}--sort-property`;
+  const sortDirectionId = `${dataId}--sort-direction`;
+
   let content = [
-    <FormField key="by" label="Sort by">
-      <Select name="_sort.property" options={options} />
+    <FormField key="by" htmlFor={sortPropertyId} label="Sort by">
+      <Select id={sortPropertyId} name="_sort.property" options={options} />
     </FormField>,
-    <FormField key="dir" label="Sort direction">
-      <RadioButtonGroup name="_sort.direction" options={directionOptions} />
+    <FormField key="dir" htmlFor={sortDirectionId} label="Sort direction">
+      <RadioButtonGroup
+        id={sortDirectionId}
+        name="_sort.direction"
+        options={directionOptions}
+      />
     </FormField>,
   ];
 

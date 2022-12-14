@@ -455,6 +455,7 @@ exports[`DataFilters renders 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <div
       class="c2"
@@ -480,6 +481,7 @@ exports[`DataFilters renders 1`] = `
           >
             <label
               class="c7"
+              for="data-name"
             >
               name
             </label>
@@ -488,6 +490,7 @@ exports[`DataFilters renders 1`] = `
             >
               <div
                 class="c9 StyledCheckBoxGroup-sc-2nhc5d-0"
+                id="data-name"
                 role="group"
               >
                 <label

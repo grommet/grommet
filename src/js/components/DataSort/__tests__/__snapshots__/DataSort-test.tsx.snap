@@ -631,6 +631,7 @@ exports[`DataSort renders 1`] = `
 >
   <div
     class="c1"
+    id="data"
   >
     <form>
       <div
@@ -653,6 +654,7 @@ exports[`DataSort renders 1`] = `
         >
           <label
             class="c6"
+            for="data--sort-property"
           >
             Sort by
           </label>
@@ -664,6 +666,7 @@ exports[`DataSort renders 1`] = `
               aria-haspopup="listbox"
               aria-label="Open Drop"
               class="c8 "
+              id="data--sort-property"
               type="button"
             >
               <div
@@ -678,6 +681,7 @@ exports[`DataSort renders 1`] = `
                     <input
                       autocomplete="off"
                       class="c12 c13"
+                      id="data--sort-property__input"
                       name="_sort.property"
                       readonly=""
                       tabindex="-1"
@@ -712,6 +716,7 @@ exports[`DataSort renders 1`] = `
         >
           <label
             class="c6"
+            for="data--sort-direction"
           >
             Sort direction
           </label>
@@ -720,6 +725,7 @@ exports[`DataSort renders 1`] = `
           >
             <div
               class="c17"
+              id="data--sort-direction"
               role="radiogroup"
             >
               <label
