@@ -7,6 +7,8 @@ const datumValue = (datum, property) => {
   return datumValue(datum[parts[0]], parts.slice(1).join('.'));
 };
 
+// This is where we filter the data internall, when the caller doesn't
+// provide an onView.
 export const filter = (data, view, properties) => {
   const searchExp = view?.search ? new RegExp(view.search, 'i') : undefined;
   let searchProperties;

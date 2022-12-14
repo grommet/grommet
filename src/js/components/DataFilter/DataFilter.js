@@ -97,6 +97,7 @@ export const DataFilter = ({
   let content = children;
   if (!content) {
     if (range) {
+      // consider moving the Text values inside RangeSelector
       content = (
         <Box
           direction="row"

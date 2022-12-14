@@ -5,11 +5,15 @@ import { Footer } from '../Footer';
 import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
 
+// We convert the view structure to something more flat to work better
+// with the Form inputs. These keys are how we flatten the Form value object
+// from the view object.
 const formSearchKey = '_search';
 const formSortPropertyKey = '_sort.property';
 const formSortDirectionKey = '_sort.direction';
 const formRangeKey = '_range';
 
+// converts from the external view format to the internal Form value format
 const viewToFormValue = (view) => {
   const result = { ...(view?.properties || {}) };
   // convert { min: , max: } range to [min, max] for RangeSelector
@@ -32,6 +36,7 @@ const viewToFormValue = (view) => {
   return result;
 };
 
+// converts from the internal Form value format to the external view format
 const formValueToView = (value) => {
   const properties = { ...value };
 
@@ -64,6 +69,8 @@ const formValueToView = (value) => {
   return result;
 };
 
+// remove any empty arrays of property values by deleting the key for
+// that property in the view properties
 const clearEmpty = (properties) => {
   const result = properties;
   Object.keys(result)
