@@ -7,8 +7,8 @@ import { DataTable } from '../../DataTable';
 import { Data } from '..';
 
 const data = [
-  { name: 'aa', enabled: true, sub: { note: 'ZZ' } },
-  { name: 'bb', enabled: false, sub: { note: 'YY' } },
+  { name: 'aa', enabled: true, rating: 2.3, sub: { note: 'ZZ' } },
+  { name: 'bb', enabled: false, rating: 4.3, sub: { note: 'YY' } },
   { name: 'cc', sub: {} },
   { name: 'dd' },
 ];
@@ -87,7 +87,7 @@ describe('Data', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('view property', () => {
+  test('view property option', () => {
     const { getByText, container } = render(
       <Grommet>
         <Data
@@ -108,6 +108,31 @@ describe('Data', () => {
 
     expect(getByText('1 items')).toBeTruthy();
     expect(getByText('aa')).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('view property range', () => {
+    const { getByText, container } = render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{
+            name: { label: 'Name' },
+            'sub.note': { label: 'Note' },
+            rating: { label: 'Rating', range: { min: 0, max: 5 } },
+          }}
+          view={{
+            properties: { rating: { min: 3.0, max: 5.0 } },
+          }}
+          toolbar
+        >
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(getByText('1 items')).toBeTruthy();
+    expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 

@@ -9,8 +9,8 @@ import { TextInput } from '../../TextInput';
 import { DataFilter } from '..';
 
 const data = [
-  { name: 'aa', enabled: true, type: { name: 'ZZ', id: 1 } },
-  { name: 'bb', enabled: false, type: { name: 'YY', id: 2 } },
+  { name: 'aa', enabled: true, rating: 2.3, type: { name: 'ZZ', id: 1 } },
+  { name: 'bb', enabled: false, rating: 4.3, type: { name: 'YY', id: 2 } },
   { name: 'cc', type: { name: 'ZZ', id: 1 } },
 ];
 
@@ -65,14 +65,20 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('children', () => {
+  test('range', () => {
     const { container } = render(
       <Grommet>
-        <Data data={data}>
+        <Data
+          data={data}
+          properties={{
+            rating: {
+              label: 'Rating',
+              range: { min: 0, max: 5 },
+            },
+          }}
+        >
           <DataFilters>
-            <DataFilter property="name">
-              <TextInput />
-            </DataFilter>
+            <DataFilter property="rating" />
           </DataFilters>
         </Data>
       </Grommet>,
@@ -81,28 +87,14 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('range values', () => {
+  test('children', () => {
     const { container } = render(
       <Grommet>
-        <Data
-          data={[
-            {
-              name: 'Alan',
-              percent: 0,
-            },
-            {
-              name: 'Bryan',
-              percent: 30,
-            },
-            {
-              name: 'Chris',
-              percent: 40,
-            },
-          ]}
-        >
+        <Data data={data}>
           <DataFilters>
-            <DataFilter property="name" />
-            <DataFilter property="percent" />
+            <DataFilter property="name">
+              <TextInput />
+            </DataFilter>
           </DataFilters>
         </Data>
       </Grommet>,

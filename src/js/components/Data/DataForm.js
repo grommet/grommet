@@ -8,32 +8,60 @@ import { DataContext } from '../../contexts/DataContext';
 const formSearchKey = '_search';
 const formSortPropertyKey = '_sort.property';
 const formSortDirectionKey = '_sort.direction';
+const formRangeKey = '_range';
 
 const viewToFormValue = (view) => {
   const result = { ...(view?.properties || {}) };
+  // convert { min: , max: } range to [min, max] for RangeSelector
+  Object.keys(result).forEach((key) => {
+    if (
+      typeof result[key]?.min === 'number' ||
+      typeof result[key]?.max === 'number'
+    ) {
+      result[key] = { [formRangeKey]: [result[key].min, result[key].max] };
+    }
+  });
+
   result[formSearchKey] = view?.search || '';
+
   if (view?.sort) {
     result[formSortPropertyKey] = view?.sort?.property;
     result[formSortDirectionKey] = view?.sort?.direction;
   }
+
   return result;
 };
 
 const formValueToView = (value) => {
   const properties = { ...value };
+
   const searchText = value[formSearchKey];
   delete properties[formSearchKey];
+
   const sortProperty = value[formSortPropertyKey];
   const sortDirection = value[formSortDirectionKey];
   delete properties[formSortPropertyKey];
   delete properties[formSortDirectionKey];
-  return {
+
+  const result = {
     properties,
     search: searchText,
     ...(sortProperty || sortDirection
       ? { sort: { property: sortProperty, direction: sortDirection } }
       : {}),
   };
+
+  // convert any ranges
+  Object.keys(result.properties).forEach((key) => {
+    if (result.properties[key][formRangeKey]) {
+      result.properties[key] = {
+        min: result.properties[key][formRangeKey][0],
+        max: result.properties[key][formRangeKey][1],
+      };
+    }
+  });
+
+  return result;
 };
 
 const clearEmpty = (properties) => {

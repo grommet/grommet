@@ -50,7 +50,12 @@ export interface DataProps {
                 value: string | number | boolean;
               }
           )[];
-          // for internal filtering only, should searching evaluate this
+          // DataFilter range
+          range?: {
+            max: number;
+            min: number;
+          };
+          // for internal filtering only, should searching evaluate this property
           search?: boolean;
         };
       };

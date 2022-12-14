@@ -11,6 +11,10 @@ export interface DataFilterProps {
       }
   )[];
   property: string;
+  range?: {
+    max: number;
+    min: number;
+  };
 }
 
 type divProps = Omit<JSX.IntrinsicElements['div'], 'onClick' | 'property'>;

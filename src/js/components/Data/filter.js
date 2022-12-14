@@ -42,10 +42,26 @@ export const filter = (data, view, properties) => {
         // returning true means it doesn't match the filter,
         const filterValue = view.properties[property];
         const value = datumValue(datum, property);
-        if (Array.isArray(filterValue) && typeof filterValue[0] === 'number')
-          return value < filterValue[0] || value > filterValue[1];
+
+        // range case
+        if (
+          typeof filterValue?.min === 'number' ||
+          typeof filterValue?.max === 'number'
+        )
+          return (
+            typeof value !== 'number' ||
+            value <= filterValue.min ||
+            value >= filterValue.max
+          );
+
+        // options case
         if (Array.isArray(filterValue)) return !filterValue.includes(value);
-        return filterValue !== value;
+
+        // presence case
+        if (typeof filterValue === 'boolean') return filterValue === !value;
+
+        // not sure, keep it
+        return false;
       });
     }
 
