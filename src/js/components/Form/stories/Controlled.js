@@ -47,8 +47,9 @@ export const Controlled = () => {
           <FormField label="Name" name="name">
             <TextInput name="name" suggestions={suggestions} />
           </FormField>
-          <FormField label="Email" name="email" required>
+          <FormField label="Email" htmlFor="email" name="email" required>
             <MaskedInput
+              id="email"
               name="email"
               mask={[
                 { regexp: /^[\w\-_.]+$/, placeholder: 'example' },
