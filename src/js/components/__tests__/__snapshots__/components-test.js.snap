@@ -1251,7 +1251,7 @@ exports[`Components loads 1`] = `
           "survey": {
             "label": {
               "margin": {
-                "vertical": "xsmall",
+                "bottom": "xsmall",
               },
               "size": "medium",
               "weight": 400,
@@ -3255,7 +3255,7 @@ exports[`Components loads 1`] = `
           "survey": {
             "label": {
               "margin": {
-                "vertical": "xsmall",
+                "bottom": "xsmall",
               },
               "size": "medium",
               "weight": 400,

@@ -939,7 +939,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // round: undefined,
       survey: {
         label: {
-          margin: { vertical: 'xsmall' },
+          margin: { bottom: 'xsmall' },
           size: 'medium',
           weight: 400,
         },
