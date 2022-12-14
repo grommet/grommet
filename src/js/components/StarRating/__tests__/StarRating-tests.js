@@ -1,24 +1,24 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { fireEvent, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import userEvent from '@testing-library/user-event';
 
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 
-import { Button } from '../../Button';
 import { Grommet } from '../../Grommet';
 import { Form } from '../../Form';
+import { Button } from '../../Button';
+import { StarRating } from '..';
 import { FormField } from '../../FormField';
-import { ThumbsRating } from '..';
 
-describe('ThumbsRating', () => {
+describe('StarRating', () => {
   test('StarRating should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
-        <ThumbsRating name="test" />
+        <StarRating name="test" />
       </Grommet>,
     );
 
@@ -30,21 +30,21 @@ describe('ThumbsRating', () => {
   test('StarRating is present', () => {
     const { container, getByTestId } = render(
       <Grommet>
-        <ThumbsRating name="test" data-testid="ThumbsRating-icon" />
+        <StarRating name="test" data-testid="starRating-icon" />
       </Grommet>,
     );
 
-    expect(getByTestId('ThumbsRating-icon')).toBeTruthy();
+    expect(getByTestId('starRating-icon')).toBeTruthy();
     expect(container).toMatchSnapshot();
   });
 
-  test('value for thumbs', async () => {
+  test('value for rating', async () => {
     const onSubmit = jest.fn();
     const user = userEvent.setup();
     const Test = () => (
       <Form onSubmit={({ value }) => onSubmit({ value })}>
         <FormField label="test-starRating">
-          <ThumbsRating name="test" />
+          <StarRating name="test" />
         </FormField>
         <Button label="submit" type="submit" />
       </Form>
@@ -60,7 +60,7 @@ describe('ThumbsRating', () => {
     fireEvent.click(getByText('submit'));
     expect(onSubmit).toBeCalledWith(
       expect.objectContaining({
-        value: { test: 'dislike' },
+        value: { test: 1 },
       }),
     );
   });
