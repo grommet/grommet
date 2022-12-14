@@ -10,26 +10,27 @@ import { Header } from '../Header';
 import { Heading } from '../Heading';
 import { Layer } from '../Layer';
 import { DataContext } from '../../contexts/DataContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { DataFiltersPropTypes } from './propTypes';
 
 const dropProps = {
   align: { top: 'bottom', right: 'right' },
 };
 
-export const DataFilters = ({
-  drop,
-  children,
-  heading = 'Filters',
-  layer,
-  ...rest
-}) => {
+export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   const { clearFilters, data, properties, view } = useContext(DataContext);
+  const { format } = useContext(MessageContext);
   const [showContent, setShowContent] = useState();
   const controlled = drop || layer;
 
   const clearControl = clearFilters && (
     <Box flex={false}>
-      <Button label="Clear filters" onClick={clearFilters} />
+      <Button
+        label={format({
+          id: 'dataFilters.clear',
+        })}
+        onClick={clearFilters}
+      />
     </Box>
   );
 
@@ -56,7 +57,10 @@ export const DataFilters = ({
       {!drop && (
         <Header>
           <Heading margin="none" level={2} size="small">
-            {heading}
+            {heading ||
+              format({
+                id: 'dataFilters.heading',
+              })}
           </Heading>
           {layer && (
             <Button
@@ -94,7 +98,9 @@ export const DataFilters = ({
     // drop
     control = (
       <DropButton
-        aria-label="open filters"
+        aria-label={format({
+          id: 'dataFilters.open',
+        })}
         kind="toolbar"
         icon={<Filter />}
         dropProps={dropProps}

@@ -4,6 +4,7 @@ import { Button } from '../Button';
 import { Footer } from '../Footer';
 import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
+import { MessageContext } from '../../contexts/MessageContext';
 
 // We convert the view structure to something more flat to work better
 // with the Form inputs. These keys are how we flatten the Form value object
@@ -83,6 +84,7 @@ const clearEmpty = (properties) => {
 
 export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
   const { onView, updateOn, view } = useContext(DataContext);
+  const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
 
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
@@ -111,9 +113,17 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
         {children}
         {footer !== false && updateOn === 'submit' && (
           <Footer>
-            <Button label="Apply Filters" type="submit" primary />
             <Button
-              label="Reset Filters"
+              label={format({
+                id: 'dataForm.submit',
+              })}
+              type="submit"
+              primary
+            />
+            <Button
+              label={format({
+                id: 'dataForm.reset',
+              })}
               type="reset"
               onClick={() => setFormValue(viewToFormValue(view))}
             />

@@ -547,7 +547,7 @@ exports[`DataFilters renders 1`] = `
               class="c15"
               type="submit"
             >
-              Apply Filters
+              Apply filters
             </button>
             <div
               class="c16"
@@ -556,7 +556,7 @@ exports[`DataFilters renders 1`] = `
               class="c17"
               type="reset"
             >
-              Reset Filters
+              Reset filters
             </button>
           </footer>
         </div>

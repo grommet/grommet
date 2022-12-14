@@ -62,6 +62,31 @@ export interface DataProps {
         };
       };
 
+  messages?: {
+    dataFilters?: {
+      clear?: string;
+      heading?: string;
+      open?: string;
+    };
+    dataForm?: {
+      reset?: string;
+      submit?: string;
+    };
+    dataSearch?: {
+      label?: string;
+    };
+    dataSort?: {
+      ascending?: string;
+      by?: string;
+      descending?: string;
+      direction?: string;
+    };
+    dataSummary?: {
+      filtered?: string;
+      total?: string;
+    };
+  };
+
   // Future selection
   // select: string[];
   // onSelect: (select: string[]) => void;

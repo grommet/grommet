@@ -294,7 +294,7 @@ exports[`DataSummary renders 1`] = `
             class="c6"
             type="submit"
           >
-            Apply Filters
+            Apply filters
           </button>
           <div
             class="c7"
@@ -303,7 +303,7 @@ exports[`DataSummary renders 1`] = `
             class="c8"
             type="reset"
           >
-            Reset Filters
+            Reset filters
           </button>
         </footer>
       </div>

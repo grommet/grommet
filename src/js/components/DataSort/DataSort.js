@@ -5,16 +5,13 @@ import { DataForm } from '../Data';
 import { FormContext } from '../Form/FormContext';
 import { FormField } from '../FormField';
 import { Select } from '../Select';
+import { MessageContext } from '../../contexts/MessageContext';
 import { DataSortPropTypes } from './propTypes';
-
-const directionOptions = [
-  { label: 'Ascending', value: 'asc' },
-  { label: 'Descending', value: 'desc' },
-];
 
 export const DataSort = ({ options: optionsArg }) => {
   const { id: dataId, properties, unfilteredData } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
+  const { format } = useContext(MessageContext);
 
   const options = useMemo(
     () =>
@@ -24,14 +21,41 @@ export const DataSort = ({ options: optionsArg }) => {
     [optionsArg, properties, unfilteredData],
   );
 
+  const directionOptions = [
+    {
+      label: format({
+        id: 'dataSort.ascending',
+      }),
+      value: 'asc',
+    },
+    {
+      label: format({
+        id: 'dataSort.descending',
+      }),
+      value: 'desc',
+    },
+  ];
+
   const sortPropertyId = `${dataId}--sort-property`;
   const sortDirectionId = `${dataId}--sort-direction`;
 
   let content = [
-    <FormField key="by" htmlFor={sortPropertyId} label="Sort by">
+    <FormField
+      key="by"
+      htmlFor={sortPropertyId}
+      label={format({
+        id: 'dataSort.by',
+      })}
+    >
       <Select id={sortPropertyId} name="_sort.property" options={options} />
     </FormField>,
-    <FormField key="dir" htmlFor={sortDirectionId} label="Sort direction">
+    <FormField
+      key="dir"
+      htmlFor={sortDirectionId}
+      label={format({
+        id: 'dataSort.direction',
+      })}
+    >
       <RadioButtonGroup
         id={sortDirectionId}
         name="_sort.direction"

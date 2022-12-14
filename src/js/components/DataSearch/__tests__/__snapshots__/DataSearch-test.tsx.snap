@@ -412,7 +412,7 @@ exports[`DataSearch renders 1`] = `
             </svg>
           </div>
           <input
-            aria-label="search"
+            aria-label="Search data"
             autocomplete="off"
             class="c8"
             id="undefined--search"
@@ -431,7 +431,7 @@ exports[`DataSearch renders 1`] = `
             class="c9"
             type="submit"
           >
-            Apply Filters
+            Apply filters
           </button>
           <div
             class="c10"
@@ -440,7 +440,7 @@ exports[`DataSearch renders 1`] = `
             class="c11"
             type="reset"
           >
-            Reset Filters
+            Reset filters
           </button>
         </footer>
       </div>

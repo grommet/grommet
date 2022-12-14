@@ -405,7 +405,7 @@ exports[`DataFilter children 1`] = `
             class="c10"
             type="submit"
           >
-            Apply Filters
+            Apply filters
           </button>
           <div
             class="c11"
@@ -414,7 +414,7 @@ exports[`DataFilter children 1`] = `
             class="c12"
             type="reset"
           >
-            Reset Filters
+            Reset filters
           </button>
         </footer>
       </div>
@@ -1096,7 +1096,7 @@ exports[`DataFilter options 1`] = `
             class="c14"
             type="submit"
           >
-            Apply Filters
+            Apply filters
           </button>
           <div
             class="c15"
@@ -1105,7 +1105,7 @@ exports[`DataFilter options 1`] = `
             class="c16"
             type="reset"
           >
-            Reset Filters
+            Reset filters
           </button>
         </footer>
       </div>
@@ -1739,7 +1739,7 @@ exports[`DataFilter range 1`] = `
             class="c18"
             type="submit"
           >
-            Apply Filters
+            Apply filters
           </button>
           <div
             class="c19"
@@ -1748,7 +1748,7 @@ exports[`DataFilter range 1`] = `
             class="c20"
             type="reset"
           >
-            Reset Filters
+            Reset filters
           </button>
         </footer>
       </div>
@@ -2302,7 +2302,7 @@ exports[`DataFilter renders 1`] = `
             class="c14"
             type="submit"
           >
-            Apply Filters
+            Apply filters
           </button>
           <div
             class="c15"
@@ -2311,7 +2311,7 @@ exports[`DataFilter renders 1`] = `
             class="c16"
             type="reset"
           >
-            Reset Filters
+            Reset filters
           </button>
         </footer>
       </div>

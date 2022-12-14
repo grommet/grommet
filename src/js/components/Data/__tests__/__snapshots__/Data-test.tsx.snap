@@ -393,7 +393,7 @@ exports[`Data controlled search 1`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="c7"
                 id="undefined--search"
@@ -411,7 +411,7 @@ exports[`Data controlled search 1`] = `
           class="c3"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="c9"
             type="button"
           >
@@ -574,7 +574,7 @@ exports[`Data controlled search 2`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="StyledTextInput-sc-1x30a0s-0 jgXNod"
                 id="undefined--search"
@@ -592,7 +592,7 @@ exports[`Data controlled search 2`] = `
           class="StyledBox-sc-13pk1d4-0 lgzxvo"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="StyledButton-sc-323bzc-0 emhJYD"
             type="button"
           >
@@ -1000,7 +1000,7 @@ exports[`Data controlled search 3`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="StyledTextInput-sc-1x30a0s-0 jgXNod"
                 id="undefined--search"
@@ -1018,7 +1018,7 @@ exports[`Data controlled search 3`] = `
           class="StyledBox-sc-13pk1d4-0 lgzxvo"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="StyledButton-sc-323bzc-0 emhJYD"
             type="button"
           >
@@ -1621,7 +1621,7 @@ exports[`Data toolbar 1`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="c7"
                 id="undefined--search"
@@ -1639,7 +1639,7 @@ exports[`Data toolbar 1`] = `
           class="c3"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="c9"
             type="button"
           >
@@ -2083,7 +2083,7 @@ exports[`Data toolbar filters 1`] = `
           class="c3"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="c4"
             type="button"
           >
@@ -2525,7 +2525,7 @@ exports[`Data toolbar search 1`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="c7"
                 id="undefined--search"
@@ -3036,7 +3036,7 @@ exports[`Data uncontrolled search 1`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="c7"
                 id="undefined--search"
@@ -3054,7 +3054,7 @@ exports[`Data uncontrolled search 1`] = `
           class="c3"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="c9"
             type="button"
           >
@@ -3217,7 +3217,7 @@ exports[`Data uncontrolled search 2`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="StyledTextInput-sc-1x30a0s-0 jgXNod"
                 id="undefined--search"
@@ -3235,7 +3235,7 @@ exports[`Data uncontrolled search 2`] = `
           class="StyledBox-sc-13pk1d4-0 lgzxvo"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="StyledButton-sc-323bzc-0 emhJYD"
             type="button"
           >
@@ -3503,7 +3503,7 @@ exports[`Data uncontrolled search 2`] = `
     <span
       class="StyledText-sc-1sadyjn-0 fKpAiz"
     >
-      1 items
+      1 result of 4 items
     </span>
     <table
       class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
@@ -3589,7 +3589,7 @@ exports[`Data uncontrolled search 3`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="StyledTextInput-sc-1x30a0s-0 jgXNod"
                 id="undefined--search"
@@ -3607,7 +3607,7 @@ exports[`Data uncontrolled search 3`] = `
           class="StyledBox-sc-13pk1d4-0 lgzxvo"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="StyledButton-sc-323bzc-0 emhJYD"
             type="button"
           >
@@ -4694,7 +4694,7 @@ exports[`Data view all 1`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="c7"
                 id="undefined--search"
@@ -4712,7 +4712,7 @@ exports[`Data view all 1`] = `
           class="c3"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="c9"
             type="button"
           >
@@ -4770,7 +4770,7 @@ exports[`Data view all 1`] = `
     <span
       class="c16"
     >
-      1 items
+      1 result of 4 items
     </span>
     <table
       class="c17 c18"
@@ -5364,7 +5364,7 @@ exports[`Data view property option 1`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="c7"
                 id="undefined--search"
@@ -5382,7 +5382,7 @@ exports[`Data view property option 1`] = `
           class="c3"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="c9"
             type="button"
           >
@@ -5440,7 +5440,7 @@ exports[`Data view property option 1`] = `
     <span
       class="c16"
     >
-      1 items
+      1 result of 4 items
     </span>
     <table
       class="c17 c18"
@@ -6034,7 +6034,7 @@ exports[`Data view property range 1`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="c7"
                 id="undefined--search"
@@ -6052,7 +6052,7 @@ exports[`Data view property range 1`] = `
           class="c3"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="c9"
             type="button"
           >
@@ -6110,7 +6110,7 @@ exports[`Data view property range 1`] = `
     <span
       class="c16"
     >
-      1 items
+      1 result of 4 items
     </span>
     <table
       class="c17 c18"
@@ -6725,7 +6725,7 @@ exports[`Data view search 1`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="c7"
                 id="undefined--search"
@@ -6743,7 +6743,7 @@ exports[`Data view search 1`] = `
           class="c3"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="c9"
             type="button"
           >
@@ -6801,7 +6801,7 @@ exports[`Data view search 1`] = `
     <span
       class="c16"
     >
-      1 items
+      1 result of 4 items
     </span>
     <table
       class="c17 c18"
@@ -7268,7 +7268,7 @@ exports[`Data view sort 1`] = `
                 </svg>
               </div>
               <input
-                aria-label="search"
+                aria-label="Search data"
                 autocomplete="off"
                 class="c7"
                 id="undefined--search"
@@ -7286,7 +7286,7 @@ exports[`Data view sort 1`] = `
           class="c3"
         >
           <button
-            aria-label="open filters"
+            aria-label="Open filters"
             class="c9"
             type="button"
           >

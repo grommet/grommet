@@ -81,7 +81,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 items')).toBeTruthy();
+    expect(getByText('1 result of 4 items')).toBeTruthy();
     expect(getByText('aa')).toBeTruthy();
     expect(queryByText('bb')).toBeFalsy();
     expect(container.firstChild).toMatchSnapshot();
@@ -106,7 +106,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 items')).toBeTruthy();
+    expect(getByText('1 result of 4 items')).toBeTruthy();
     expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -131,7 +131,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 items')).toBeTruthy();
+    expect(getByText('1 result of 4 items')).toBeTruthy();
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -180,7 +180,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 items')).toBeTruthy();
+    expect(getByText('1 result of 4 items')).toBeTruthy();
     expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -207,7 +207,7 @@ describe('Data', () => {
     fireEvent.change(getByRole('searchbox'), {
       target: { value: 'a' },
     });
-    expect(getByText('1 items')).toBeTruthy();
+    expect(getByText('1 result of 4 items')).toBeTruthy();
     expect(queryByText('bb')).toBeFalsy();
     expect(container.firstChild).toMatchSnapshot();
 
