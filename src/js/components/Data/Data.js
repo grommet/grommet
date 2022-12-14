@@ -53,11 +53,11 @@ export const Data = ({
     };
 
     result.data = data;
-    result.unfilteredData = data;
+    result.unfilteredData = dataProp;
     result.total = total !== undefined ? total : data.length;
 
     return result;
-  }, [data, onView, properties, total, updateOn, view]);
+  }, [data, dataProp, onView, properties, total, updateOn, view]);
 
   let toolbarContent;
   if (toolbar) {

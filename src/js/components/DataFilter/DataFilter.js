@@ -8,6 +8,11 @@ import { SelectMultiple } from '../SelectMultiple';
 import { Text } from '../Text';
 import { DataFilterPropTypes } from './propTypes';
 
+const generateOptions = (data, property) =>
+  Array.from(new Set(data.map((d) => d[property])))
+    .filter((v) => v)
+    .sort();
+
 export const DataFilter = ({
   children,
   options: optionsProp,
@@ -23,9 +28,7 @@ export const DataFilter = ({
     if (properties?.[property]?.options) return properties[property].options;
 
     // generate options from all values detected for property
-    return Array.from(new Set(unfilteredData.map((d) => d[property])))
-      .filter((v) => v)
-      .sort();
+    return generateOptions(unfilteredData, property);
   }, [children, optionsProp, properties, property, unfilteredData]);
 
   const [rangeValues, setRangeValues] = useState(() =>
