@@ -1509,16 +1509,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xxlarge: { ...fontSizing(4) },
     },
     thumbsRating: {
-      dislike: {
-        icon: {
-          color: 'blue',
-        },
-      },
-      like: {
-        icon: {
-          color: 'green',
-        },
-      },
+      // dislike: {
+      //   icon: {
+      //     color: undefined,
+      //   },
+      // },
+      // like: {
+      //   icon: {
+      //     color: undefined,
+      //   },
+      // },
     },
     spinner: {
       container: {
@@ -1683,9 +1683,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     starRating: {
-      icon: {
-        color: 'pink',
-      },
+      // icon: {
+      //   color: undefined,
+      // },
     },
     tab: {
       active: {

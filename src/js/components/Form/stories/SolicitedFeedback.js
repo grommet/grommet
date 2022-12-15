@@ -30,45 +30,39 @@ export const SolicitedFeedback = () => {
           Let us know how your expirence was!
         </Heading>
       </Header>
-      <Box
-        // Padding used to prevent focus from being cutoff
-        pad={{ horizontal: 'xxsmall' }}
+      <Form
+        onSubmit={({ value }) => console.log('Submit', value)}
+        validate="submit"
+        kind="survey"
       >
-        <Form
-          onSubmit={({ value }) => console.log('Submit', value)}
-          method="post"
-          validate="submit"
-          kind="survey"
+        <FormField
+          htmlFor="star-rating"
+          name="rating"
+          label="Was this content helpful?"
         >
-          <FormField
-            htmlFor="star-rating"
-            name="rating"
-            label="Was this content helpful?"
-          >
-            <StarRating id="star-rating" name="rating" color="pink" />
-          </FormField>
-          <FormField
-            label="What would have improved your experience"
-            htmlFor="experience"
+          <StarRating id="star-rating" name="rating" color="pink" />
+        </FormField>
+        <FormField
+          label="What would have improved your experience"
+          htmlFor="better-experience"
+          name="experience"
+        >
+          <RadioButtonGroup
+            options={['Better UI', 'Accessibility', 'Clear Label', 'Nothing']}
+            id="experience"
             name="experience"
-          >
-            <RadioButtonGroup
-              options={['Better UI', 'Accessibility', 'Clear Label', 'Nothing']}
-              id="experience"
-              name="experience"
-            />
-          </FormField>
-          <FormField label="Comments" htmlFor="comments" name="comments">
-            <TextArea id="comments" name="comments" />
-          </FormField>
-          <Box
-            align={!['xsmall', 'small'].includes(size) ? 'start' : undefined}
-            margin={{ top: 'medium', bottom: 'small' }}
-          >
-            <Button label="Submit Feedback" primary type="submit" />
-          </Box>
-        </Form>
-      </Box>
+          />
+        </FormField>
+        <FormField label="Comments" htmlFor="comments" name="comments">
+          <TextArea id="comments" name="comments" />
+        </FormField>
+        <Box
+          align={!['xsmall', 'small'].includes(size) ? 'start' : undefined}
+          margin={{ top: 'medium', bottom: 'small' }}
+        >
+          <Button label="Submit Feedback" primary type="submit" />
+        </Box>
+      </Form>
     </Box>
     // </Grommet>
   );

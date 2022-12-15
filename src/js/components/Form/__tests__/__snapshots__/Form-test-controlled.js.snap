@@ -3902,8 +3902,8 @@ exports[`Form controlled custom theme 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: green;
-  stroke: green;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c8 g {
@@ -3925,40 +3925,6 @@ exports[`Form controlled custom theme 1`] = `
 .c8 *[FILL-RULE],
 .c8 *[fill*="#"],
 .c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c10 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: blue;
-  stroke: blue;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4174,7 +4140,7 @@ exports[`Form controlled custom theme 1`] = `
               />
               <svg
                 aria-label="Dislike"
-                class="c10"
+                class="c8"
                 viewBox="0 0 24 24"
               >
                 <path

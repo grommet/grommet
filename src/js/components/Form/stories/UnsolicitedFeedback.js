@@ -14,14 +14,13 @@ import {
   ResponsiveContext,
 } from 'grommet';
 
-// floating button purposes
-const PositionedFeedbackBox = styled(Box)`
+// create a floating button for story example
+const PositionedFeedbackButton = styled(Button)`
+  position: fixed;
   bottom: 0px;
+  border-radius: 6px;
   right: 0px;
-  position: ${(props) => props.theme.feedback?.buttonContainer?.position};
-  border-radius: ${(props) =>
-    props.theme.feedback?.buttonContainer?.borderRadius};
-  z-index: ${(props) => props.theme.feedback?.buttonContainer?.zIndex};
+  z-index: 10;
 `;
 
 // This example shows a way to perform validation across multiple fields.
@@ -43,18 +42,16 @@ export const UnSolicitedFeedback = () => {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <>
-      <PositionedFeedbackBox>
-        <Button
-          onClick={onOpen}
-          margin={{ vertical: 'medium', horizontal: 'medium' }}
-          elevation="large"
-          color="purple!"
-          label="Submit Feedback"
-          a11yTitle="This button launches a modal to give feedback."
-          primary
-          alignSelf="start"
-        />
-      </PositionedFeedbackBox>
+      <PositionedFeedbackButton
+        onClick={onOpen}
+        margin={{ vertical: 'medium', horizontal: 'medium' }}
+        elevation="large"
+        color="brand"
+        label="Submit Feedback"
+        a11yTitle="This button launches a modal to give feedback."
+        primary
+        alignSelf="start"
+      />
       {open && (
         <Layer onEsc={onClose}>
           <Box

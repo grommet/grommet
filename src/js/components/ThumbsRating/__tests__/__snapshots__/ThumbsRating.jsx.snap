@@ -8,8 +8,8 @@ exports[`ThumbsRating StarRating is present 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: green;
-  stroke: green;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c5 g {
@@ -31,40 +31,6 @@ exports[`ThumbsRating StarRating is present 1`] = `
 .c5 *[FILL-RULE],
 .c5 *[fill*="#"],
 .c5 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c7 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: blue;
-  stroke: blue;
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -220,7 +186,7 @@ exports[`ThumbsRating StarRating is present 1`] = `
           />
           <svg
             aria-label="Dislike"
-            class="c7"
+            class="c5"
             viewBox="0 0 24 24"
           >
             <path
@@ -245,8 +211,8 @@ exports[`ThumbsRating StarRating should have no accessibility violations 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: green;
-  stroke: green;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c5 g {
@@ -268,40 +234,6 @@ exports[`ThumbsRating StarRating should have no accessibility violations 1`] = `
 .c5 *[FILL-RULE],
 .c5 *[fill*="#"],
 .c5 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c7 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: blue;
-  stroke: blue;
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -456,7 +388,7 @@ exports[`ThumbsRating StarRating should have no accessibility violations 1`] = `
           />
           <svg
             aria-label="Dislike"
-            class="c7"
+            class="c5"
             viewBox="0 0 24 24"
           >
             <path
@@ -481,8 +413,8 @@ exports[`ThumbsRating value for thumbs 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: green;
-  stroke: green;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c8 g {
@@ -504,40 +436,6 @@ exports[`ThumbsRating value for thumbs 1`] = `
 .c8 *[FILL-RULE],
 .c8 *[fill*="#"],
 .c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c10 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: blue;
-  stroke: blue;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -622,7 +520,7 @@ exports[`ThumbsRating value for thumbs 1`] = `
   line-height: 24px;
 }
 
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -647,47 +545,47 @@ exports[`ThumbsRating value for thumbs 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -823,7 +721,7 @@ exports[`ThumbsRating value for thumbs 1`] = `
               />
               <svg
                 aria-label="Dislike"
-                class="c10"
+                class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -839,7 +737,7 @@ exports[`ThumbsRating value for thumbs 1`] = `
       </div>
     </div>
     <button
-      class="c11"
+      class="c10"
       type="submit"
     >
       submit

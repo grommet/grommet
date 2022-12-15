@@ -1430,6 +1430,23 @@ export interface ThemeType {
       xlarge?: string;
     };
   };
+  starRating?: {
+    icon?: {
+      color?: ColorType;
+    };
+  };
+  thumbsRating?: {
+    dislike?: {
+      icon?: {
+        color?: ColorType;
+      };
+    };
+    like?: {
+      icon?: {
+        color?: ColorType;
+      };
+    };
+  };
   tab?: {
     active?: {
       background?: BackgroundType;

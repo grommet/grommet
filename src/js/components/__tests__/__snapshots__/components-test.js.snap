@@ -2406,11 +2406,7 @@ exports[`Components loads 1`] = `
             "xsmall": "18px",
           },
         },
-        "starRating": {
-          "icon": {
-            "color": "pink",
-          },
-        },
+        "starRating": {},
         "tab": {
           "active": {
             "color": "text",
@@ -2619,18 +2615,7 @@ exports[`Components loads 1`] = `
         },
         "textArea": {},
         "textInput": {},
-        "thumbsRating": {
-          "dislike": {
-            "icon": {
-              "color": "blue",
-            },
-          },
-          "like": {
-            "icon": {
-              "color": "green",
-            },
-          },
-        },
+        "thumbsRating": {},
         "tip": {
           "content": {
             "background": "background-contrast",
@@ -4410,11 +4395,7 @@ exports[`Components loads 1`] = `
             "xsmall": "18px",
           },
         },
-        "starRating": {
-          "icon": {
-            "color": "pink",
-          },
-        },
+        "starRating": {},
         "tab": {
           "active": {
             "color": "text",
@@ -4623,18 +4604,7 @@ exports[`Components loads 1`] = `
         },
         "textArea": {},
         "textInput": {},
-        "thumbsRating": {
-          "dislike": {
-            "icon": {
-              "color": "blue",
-            },
-          },
-          "like": {
-            "icon": {
-              "color": "green",
-            },
-          },
-        },
+        "thumbsRating": {},
         "tip": {
           "content": {
             "background": "background-contrast",

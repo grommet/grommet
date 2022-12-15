@@ -8,8 +8,8 @@ exports[`StarRating StarRating is present 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: pink;
-  stroke: pink;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c5 g {
@@ -307,8 +307,8 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: pink;
-  stroke: pink;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c5 g {
@@ -605,8 +605,8 @@ exports[`StarRating value for rating 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: pink;
-  stroke: pink;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c8 g {
