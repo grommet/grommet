@@ -20,4 +20,76 @@ describe('DataFilters', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('drop', () => {
+    const { container } = render(
+      <Grommet>
+        <Data data={data}>
+          <DataFilters drop />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('drop badge', () => {
+    const { container } = render(
+      <Grommet>
+        <Data data={data} view={{ search: 'a', properties: { name: ['a'] } }}>
+          <DataFilters drop />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('layer', () => {
+    const { container } = render(
+      <Grommet>
+        <Data data={data}>
+          <DataFilters layer />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('properties array', () => {
+    const { container } = render(
+      <Grommet>
+        <Data data={data} properties={['name']}>
+          <DataFilters />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('properties object', () => {
+    const { container } = render(
+      <Grommet>
+        <Data data={data} properties={{ name: {} }}>
+          <DataFilters />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('clear', () => {
+    const { container } = render(
+      <Grommet>
+        <Data data={data} view={{ search: 'a', properties: { name: ['a'] } }}>
+          <DataFilters />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

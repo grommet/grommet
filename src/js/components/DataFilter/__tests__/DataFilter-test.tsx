@@ -21,6 +21,8 @@ describe('DataFilter', () => {
         <Data data={data}>
           <DataFilters>
             <DataFilter property="name" />
+            <DataFilter property="enabled" />
+            <DataFilter property="rating" />
           </DataFilters>
         </Data>
       </Grommet>,

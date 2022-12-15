@@ -26,6 +26,11 @@ const alignMin = (value, interval) => {
   return value;
 };
 
+const booleanOptions = [
+  { label: 'true', value: true },
+  { label: 'false', value: false },
+];
+
 export const DataFilter = ({
   children,
   options: optionsProp,
@@ -133,6 +138,15 @@ export const DataFilter = ({
             {rangeValues[1]}
           </Text>
         </Box>
+      );
+    } else if (
+      options.length === 2 &&
+      options[1] === true &&
+      options[0] === false
+    ) {
+      // special case boolean properties
+      content = (
+        <CheckBoxGroup id={id} name={property} options={booleanOptions} />
       );
     } else if (options.length < 7) {
       content = <CheckBoxGroup id={id} name={property} options={options} />;
