@@ -18,7 +18,8 @@ const dropProps = {
 };
 
 export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
-  const { clearFilters, data, properties, view } = useContext(DataContext);
+  const { clearFilters, data, messages, properties, view } =
+    useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [showContent, setShowContent] = useState();
   const controlled = drop || layer;
@@ -28,6 +29,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
       <Button
         label={format({
           id: 'dataFilters.clear',
+          messages: messages?.dataFilters,
         })}
         onClick={clearFilters}
       />
@@ -60,6 +62,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
             {heading ||
               format({
                 id: 'dataFilters.heading',
+                messages: messages?.dataFilters,
               })}
           </Heading>
           {layer && (
@@ -100,6 +103,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
       <DropButton
         aria-label={format({
           id: 'dataFilters.open',
+          messages: messages?.dataFilters,
         })}
         kind="toolbar"
         icon={<Filter />}

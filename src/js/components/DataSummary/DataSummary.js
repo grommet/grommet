@@ -7,7 +7,7 @@ import { DataSummaryPropTypes } from './propTypes';
 
 export const DataSummary = ({ messages, ...rest }) => {
   const { format } = useContext(MessageContext);
-  const { data, total } = useContext(DataContext);
+  const { data, messages: dataMessages, total } = useContext(DataContext);
 
   let messageId;
   if (total !== data.length) {
@@ -19,7 +19,7 @@ export const DataSummary = ({ messages, ...rest }) => {
     <Text margin={{ vertical: 'xsmall' }} {...rest}>
       {format({
         id: messageId,
-        messages,
+        messages: messages || dataMessages?.dataSummary,
         values: { filtered: data.length, total },
       })}
     </Text>

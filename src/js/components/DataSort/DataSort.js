@@ -9,7 +9,12 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { DataSortPropTypes } from './propTypes';
 
 export const DataSort = ({ options: optionsArg }) => {
-  const { id: dataId, properties, unfilteredData } = useContext(DataContext);
+  const {
+    id: dataId,
+    messages,
+    properties,
+    unfilteredData,
+  } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
   const { format } = useContext(MessageContext);
 
@@ -25,12 +30,14 @@ export const DataSort = ({ options: optionsArg }) => {
     {
       label: format({
         id: 'dataSort.ascending',
+        messages: messages?.DataSort,
       }),
       value: 'asc',
     },
     {
       label: format({
         id: 'dataSort.descending',
+        messages: messages?.DataSort,
       }),
       value: 'desc',
     },
@@ -45,6 +52,7 @@ export const DataSort = ({ options: optionsArg }) => {
       htmlFor={sortPropertyId}
       label={format({
         id: 'dataSort.by',
+        messages: messages?.DataSort,
       })}
     >
       <Select id={sortPropertyId} name="_sort.property" options={options} />
@@ -54,6 +62,7 @@ export const DataSort = ({ options: optionsArg }) => {
       htmlFor={sortDirectionId}
       label={format({
         id: 'dataSort.direction',
+        messages: messages?.DataSort,
       })}
     >
       <RadioButtonGroup

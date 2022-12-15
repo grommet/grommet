@@ -83,7 +83,7 @@ const clearEmpty = (properties) => {
 };
 
 export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
-  const { onView, updateOn, view } = useContext(DataContext);
+  const { messages, onView, updateOn, view } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
 
@@ -116,6 +116,7 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
             <Button
               label={format({
                 id: 'dataForm.submit',
+                messages: messages?.dataForm,
               })}
               type="submit"
               primary
@@ -123,6 +124,7 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
             <Button
               label={format({
                 id: 'dataForm.reset',
+                messages: messages?.dataForm,
               })}
               type="reset"
               onClick={() => setFormValue(viewToFormValue(view))}

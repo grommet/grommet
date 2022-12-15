@@ -17,6 +17,7 @@ export const Data = ({
   children,
   data: dataProp,
   id = 'data',
+  messages,
   onView,
   properties,
   toolbar,
@@ -35,7 +36,7 @@ export const Data = ({
 
   // what we use for DataContext value
   const contextValue = useMemo(() => {
-    const result = { id, properties, updateOn, view };
+    const result = { id, messages, properties, updateOn, view };
 
     if (
       view?.search ||

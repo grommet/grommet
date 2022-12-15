@@ -7,13 +7,14 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { DataSearchPropTypes } from './propTypes';
 
 export const DataSearch = ({ ...rest }) => {
-  const { id: dataId, noForm } = useContext(FormContext);
+  const { id: dataId, messages, noForm } = useContext(FormContext);
   const { format } = useContext(MessageContext);
 
   let content = (
     <TextInput
       aria-label={format({
         id: 'dataSearch.label',
+        messages: messages?.DataSearch,
       })}
       id={`${dataId}--search`}
       name="_search"

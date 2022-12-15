@@ -185,6 +185,32 @@ describe('Data', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test.only('messages', () => {
+    const { getByText, container } = render(
+      <Grommet>
+        <Data
+          data={data}
+          messages={{
+            dataSummary: {
+              total: '{total} things',
+            },
+          }}
+          properties={{
+            name: { label: 'Name' },
+            'sub.note': { label: 'Note' },
+          }}
+          toolbar
+        >
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(getByText('4 things')).toBeTruthy();
+    expect(getByText('aa')).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('uncontrolled search', () => {
     const { getByRole, getByText, queryByText, container } = render(
       <Grommet>
