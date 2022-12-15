@@ -24,17 +24,11 @@ const StarRating = ({ ...rest }) => {
       {(option) =>
         option <= value ? (
           <Star
-            color={
-              theme.starRating?.icon?.color ||
-              theme.starRating?.icon?.color?.fill
-            }
+            color={theme.starRating?.color || theme.starRating?.color?.fill}
           />
         ) : (
           <StarOutline
-            color={
-              theme.starRating?.icon?.color ||
-              theme.starRating?.icon?.color?.outline
-            }
+            color={theme.starRating?.color || theme.starRating?.color?.outline}
           />
         )
       }

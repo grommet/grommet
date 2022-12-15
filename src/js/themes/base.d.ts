@@ -1431,20 +1431,14 @@ export interface ThemeType {
     };
   };
   starRating?: {
-    icon?: {
-      color?: ColorType;
-    };
+    color?: ColorType;
   };
   thumbsRating?: {
     dislike?: {
-      icon?: {
-        color?: ColorType;
-      };
+      color?: ColorType;
     };
     like?: {
-      icon?: {
-        color?: ColorType;
-      };
+      color?: ColorType;
     };
   };
   tab?: {

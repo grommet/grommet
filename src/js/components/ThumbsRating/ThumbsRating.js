@@ -12,15 +12,15 @@ const ThumbsRating = ({ ...rest }) => {
           return checked ? (
             <LikeFill
               color={
-                theme.thumbsRating?.like?.icon?.color ||
-                theme.thumbsRating?.like?.icon?.color?.fill
+                theme.thumbsRating?.like?.color ||
+                theme.thumbsRating?.like?.color?.fill
               }
             />
           ) : (
             <Like
               color={
-                theme.thumbsRating?.like?.icon?.color ||
-                theme.thumbsRating?.like?.icon?.color?.outline
+                theme.thumbsRating?.like?.color ||
+                theme.thumbsRating?.like?.color?.outline
               }
             />
           );
@@ -28,15 +28,15 @@ const ThumbsRating = ({ ...rest }) => {
         return checked ? (
           <DislikeFill
             color={
-              theme.thumbsRating?.dislike?.icon?.color ||
-              theme.thumbsRating?.dislike?.icon?.color?.fill
+              theme.thumbsRating?.dislike?.color ||
+              theme.thumbsRating?.dislike?.color?.fill
             }
           />
         ) : (
           <Dislike
             color={
-              theme.thumbsRating?.dislike?.icon?.color ||
-              theme.thumbsRating?.dislike?.icon?.color?.fill
+              theme.thumbsRating?.dislike?.color ||
+              theme.thumbsRating?.dislike?.color?.fill
             }
           />
         );

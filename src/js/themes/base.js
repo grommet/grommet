@@ -1510,14 +1510,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     thumbsRating: {
       // dislike: {
-      //   icon: {
-      //     color: undefined,
-      //   },
+      //   color: undefined,
       // },
       // like: {
-      //   icon: {
-      //     color: undefined,
-      //   },
+      //   color: undefined,
       // },
     },
     spinner: {
@@ -1683,9 +1679,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     starRating: {
-      // icon: {
-      //   color: undefined,
-      // },
+      // color: undefined,
     },
     tab: {
       active: {
