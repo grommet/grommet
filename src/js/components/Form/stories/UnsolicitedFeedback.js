@@ -35,7 +35,7 @@ export const UnSolicitedFeedback = () => {
     setTimeout(() => {
       setOpen(false);
       setIsSuccessful(false);
-    }, 3000);
+    }, 2000);
   };
 
   return (
@@ -53,7 +53,7 @@ export const UnSolicitedFeedback = () => {
         alignSelf="start"
       />
       {open && (
-        <Layer onEsc={onClose}>
+        <Layer onClickOutside={onClose} onEsc={onClose}>
           <Box
             fill="vertical"
             overflow="auto"
