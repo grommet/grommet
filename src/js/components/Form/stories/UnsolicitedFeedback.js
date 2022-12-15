@@ -15,12 +15,15 @@ import {
 } from 'grommet';
 
 // create a floating button for story example
+// temp fix until this theme issue is resolved:
+// https://github.com/grommet/grommet-theme-hpe/issues/283
 const PositionedFeedbackButton = styled(Button)`
   position: fixed;
   bottom: 0px;
   border-radius: 6px;
   right: 0px;
   z-index: 10;
+  color: ${(props) => props.theme.global.colors['text-strong'].dark};
 `;
 
 // This example shows a way to perform validation across multiple fields.
