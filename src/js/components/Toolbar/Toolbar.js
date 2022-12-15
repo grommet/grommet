@@ -5,8 +5,8 @@ import { ToolbarPropTypes } from './propTypes';
 
 const defaultLayoutProps = {
   direction: 'row',
-  justify: 'between',
   align: 'start',
+  gap: 'small',
 };
 
 const smallLayoutProps = {

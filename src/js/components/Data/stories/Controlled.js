@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import {
-  Box,
   DataFilters,
   DataFilter,
   DataSearch,
@@ -76,17 +75,15 @@ export const Controlled = () => {
         }}
       >
         <Toolbar>
-          <Box direction="row" gap="small">
-            <DataSearch />
-            <DataFilters drop>
-              <DataFilter
-                property="location"
-                options={Array.from(new Set(DATA.map((d) => d.location)))
-                  .filter((v) => v)
-                  .sort()}
-              />
-            </DataFilters>
-          </Box>
+          <DataSearch />
+          <DataFilters drop>
+            <DataFilter
+              property="location"
+              options={Array.from(new Set(DATA.map((d) => d.location)))
+                .filter((v) => v)
+                .sort()}
+            />
+          </DataFilters>
         </Toolbar>
         <DataSummary />
         <DataTable columns={columns} />

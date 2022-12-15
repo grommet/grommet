@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-  Box,
   DataFilters,
   DataFilter,
   DataSearch,
@@ -26,13 +25,11 @@ export const Table = () => (
   >
     <Data data={DATA}>
       <Toolbar>
-        <Box direction="row" gap="small">
-          <DataSearch />
-          <DataFilters drop>
-            <DataFilter property="location" />
-            <DataSort />
-          </DataFilters>
-        </Box>
+        <DataSearch />
+        <DataFilters drop>
+          <DataFilter property="location" />
+          <DataSort />
+        </DataFilters>
       </Toolbar>
       <DataSummary />
       <DataTable columns={columns} />

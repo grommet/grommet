@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-  Box,
   DataFilters,
   DataFilter,
   DataSearch,
@@ -25,12 +24,10 @@ export const Example = () => (
   >
     <Data data={DATA}>
       <Toolbar>
-        <Box direction="row" gap="xsmall">
-          <DataSearch />
-          <DataFilters drop>
-            <DataFilter property="location" />
-          </DataFilters>
-        </Box>
+        <DataSearch />
+        <DataFilters drop>
+          <DataFilter property="location" />
+        </DataFilters>
       </Toolbar>
       <DataSummary />
       <List primaryKey="name" secondaryKey="location" />

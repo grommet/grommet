@@ -185,7 +185,7 @@ describe('Data', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test.only('messages', () => {
+  test('messages', () => {
     const { getByText, container } = render(
       <Grommet>
         <Data

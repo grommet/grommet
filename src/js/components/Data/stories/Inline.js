@@ -43,10 +43,8 @@ export const Inline = () => {
   if (size === 'small' || size === 'xsmall') {
     toolbar = (
       <Toolbar key="tool">
-        <Box direction="row" gap="xsmall">
-          <DataSearch property="sub.name" />
-          <Filters drop />
-        </Box>
+        <DataSearch property="sub.name" />
+        <Filters drop />
       </Toolbar>
     );
   } else {

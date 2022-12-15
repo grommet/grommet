@@ -11,13 +11,10 @@ export const Simple = () => (
   // <Grommet theme={...}>
   <Box fill align="center" justify="start" pad="large">
     <Toolbar>
-      <Box direction="row">
-        <TextInput icon={<Search />} />
-        <DropButton kind="toolbar" icon={<Filter />} />
-      </Box>
-      <Box direction="row">
-        <Button label="Create" primary />
-      </Box>
+      <TextInput icon={<Search />} />
+      <DropButton kind="toolbar" icon={<Filter />} />
+      <Box flex />
+      <Button label="Create" primary />
     </Toolbar>
   </Box>
   // </Grommet>

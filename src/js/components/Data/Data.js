@@ -65,10 +65,8 @@ export const Data = ({
   if (toolbar) {
     toolbarContent = [
       <Toolbar key="toolbar">
-        <Box flex={false} direction="row" gap="small">
-          {(toolbar === true || toolbar === 'search') && <DataSearch />}
-          {(toolbar === true || toolbar === 'filters') && <DataFilters drop />}
-        </Box>
+        {(toolbar === true || toolbar === 'search') && <DataSearch />}
+        {(toolbar === true || toolbar === 'filters') && <DataFilters drop />}
       </Toolbar>,
       <DataSummary key="summary" />,
     ];
