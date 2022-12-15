@@ -4,6 +4,7 @@ import 'jest-styled-components';
 
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
+import { DataSearch } from '../../DataSearch';
 import { Grommet } from '../../Grommet';
 import { Toolbar } from '..';
 
@@ -15,6 +16,7 @@ describe('DataFilters', () => {
       <Grommet>
         <Data data={data}>
           <Toolbar>
+            <DataSearch />
             <DataFilters />
           </Toolbar>
         </Data>
