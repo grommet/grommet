@@ -59,7 +59,7 @@ export const Data = ({
     result.total = total !== undefined ? total : dataProp.length;
 
     return result;
-  }, [data, dataProp, id, onView, properties, total, updateOn, view]);
+  }, [data, dataProp, id, messages, onView, properties, total, updateOn, view]);
 
   let toolbarContent;
   if (toolbar) {
