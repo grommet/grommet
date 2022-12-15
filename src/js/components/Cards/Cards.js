@@ -20,7 +20,9 @@ const Cards = React.forwardRef(
       as = 'ul',
       children,
       data: dataProp,
+      margin,
       onMore,
+      pad,
       paginate,
       show: showProp,
       size = 'small',
@@ -42,7 +44,9 @@ const Cards = React.forwardRef(
     });
 
     const Container = paginate ? Box : Fragment;
-    const containerProps = paginate ? { ...theme.cards.container } : undefined;
+    const containerProps = paginate
+      ? { ...theme.cards.container, pad, margin }
+      : undefined;
 
     return (
       <Container {...containerProps}>
@@ -51,8 +55,8 @@ const Cards = React.forwardRef(
           as={as}
           columns={size}
           gap="medium"
-          margin="none"
-          pad="none"
+          margin={(!paginate && margin) || 'none'}
+          pad={(!paginate && pad) || 'none'}
           {...rest}
         >
           <InfiniteScroll

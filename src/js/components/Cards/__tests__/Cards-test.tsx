@@ -11,7 +11,7 @@ import { Cards } from '..';
 import { Card } from '../../Card';
 import { CardHeader } from '../../CardHeader';
 
-const data = [];
+const data: string[] = [];
 for (let i = 0; i < 95; i += 1) {
   data.push(`entry-${i}`);
 }

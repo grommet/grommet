@@ -6,32 +6,33 @@ import {
   MarginType,
   PadType,
 } from '../../utils';
-import { BoxTypes } from '../Box';
 import { GridSizeType } from '../Grid';
 import { PaginationType } from '../Pagination';
 
-export interface CardsProps<CardType> {
+export interface CardsProps<CardType = any> {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   as?: string;
-  children?: React.ReactNode;
+  children?: (item: CardType, index: number) => JSX.Element;
   data?: CardType[];
   gridArea?: GridAreaType;
+  margin?: MarginType;
   onMore?: () => void;
+  pad?: PadType;
   paginate?: boolean | PaginationType;
   show?: number | { page?: number };
-  size?: GridSizeType,
+  size?: GridSizeType;
   step?: number;
 }
 
-type ulProps = JSX.IntrinsicElements['ul'];
+type ulProps = Omit<JSX.IntrinsicElements['ul'], 'children'>;
 
 export interface CardsExtendedProps<CardType>
   extends CardsProps<CardType>,
     ulProps {}
 
-declare const Cards: <CardType = string | {}>(
-  p: React.PropsWithChildren<CardsExtendedProps<CardType>>,
-) => React.ReactElement<CardsExtendedProps<CardType>>;
+declare class Cards<CardType = any> extends React.Component<
+  CardsExtendedProps<CardType>
+> {}
 
 export { Cards };
