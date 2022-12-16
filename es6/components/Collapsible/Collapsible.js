@@ -30,7 +30,7 @@ var Collapsible = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return direction === 'horizontal' ? 'width' : 'height';
   }, [direction]);
   var containerRef = useForwardedRef(ref);
-  var sizeRef = useRef();
+  var sizeRef = useRef(0);
   var shouldOpen = !open && openArg;
   var shouldClose = open && !openArg;
 

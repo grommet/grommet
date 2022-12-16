@@ -36,7 +36,7 @@ var Collapsible = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     return direction === 'horizontal' ? 'width' : 'height';
   }, [direction]);
   var containerRef = (0, _utils.useForwardedRef)(ref);
-  var sizeRef = (0, _react.useRef)();
+  var sizeRef = (0, _react.useRef)(0);
   var shouldOpen = !open && openArg;
   var shouldClose = open && !openArg;
 
