@@ -139,38 +139,6 @@ exports[`StarRating StarRating is present 1`] = `
     >
       <label
         class="c2"
-        for="0"
-      >
-        <div
-          class="c3 "
-        >
-          <input
-            class="c4"
-            id="0"
-            name="test"
-            tabindex="0"
-            type="radio"
-            value="0"
-          />
-          <svg
-            aria-label="Star"
-            class="c5"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </label>
-      <div
-        class="c6"
-      />
-      <label
-        class="c2"
         for="1"
       >
         <div
@@ -180,7 +148,7 @@ exports[`StarRating StarRating is present 1`] = `
             class="c4"
             id="1"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="1"
           />
@@ -279,6 +247,38 @@ exports[`StarRating StarRating is present 1`] = `
             tabindex="-1"
             type="radio"
             value="4"
+          />
+          <svg
+            aria-label="Star"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </label>
+      <div
+        class="c6"
+      />
+      <label
+        class="c2"
+        for="5"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="5"
+            name="test"
+            tabindex="-1"
+            type="radio"
+            value="5"
           />
           <svg
             aria-label="Star"
@@ -437,38 +437,6 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
     >
       <label
         class="c2"
-        for="0"
-      >
-        <div
-          class="c3 "
-        >
-          <input
-            class="c4"
-            id="0"
-            name="test"
-            tabindex="0"
-            type="radio"
-            value="0"
-          />
-          <svg
-            aria-label="Star"
-            class="c5"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </label>
-      <div
-        class="c6"
-      />
-      <label
-        class="c2"
         for="1"
       >
         <div
@@ -478,7 +446,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
             class="c4"
             id="1"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="1"
           />
@@ -577,6 +545,38 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
             tabindex="-1"
             type="radio"
             value="4"
+          />
+          <svg
+            aria-label="Star"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </label>
+      <div
+        class="c6"
+      />
+      <label
+        class="c2"
+        for="5"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="5"
+            name="test"
+            tabindex="-1"
+            type="radio"
+            value="5"
           />
           <svg
             aria-label="Star"
@@ -866,38 +866,6 @@ exports[`StarRating value for rating 1`] = `
         >
           <label
             class="c5"
-            for="0"
-          >
-            <div
-              class="c6 "
-            >
-              <input
-                class="c7"
-                id="0"
-                name="test"
-                tabindex="0"
-                type="radio"
-                value="0"
-              />
-              <svg
-                aria-label="Star"
-                class="c8"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </label>
-          <div
-            class="c9"
-          />
-          <label
-            class="c5"
             for="1"
           >
             <div
@@ -907,7 +875,7 @@ exports[`StarRating value for rating 1`] = `
                 class="c7"
                 id="1"
                 name="test"
-                tabindex="-1"
+                tabindex="0"
                 type="radio"
                 value="1"
               />
@@ -1006,6 +974,38 @@ exports[`StarRating value for rating 1`] = `
                 tabindex="-1"
                 type="radio"
                 value="4"
+              />
+              <svg
+                aria-label="Star"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </label>
+          <div
+            class="c9"
+          />
+          <label
+            class="c5"
+            for="5"
+          >
+            <div
+              class="c6 "
+            >
+              <input
+                class="c7"
+                id="5"
+                name="test"
+                tabindex="-1"
+                type="radio"
+                value="5"
               />
               <svg
                 aria-label="Star"

@@ -60,7 +60,7 @@ describe('StarRating', () => {
     fireEvent.click(getByText('submit'));
     expect(onSubmit).toBeCalledWith(
       expect.objectContaining({
-        value: { test: 1 },
+        value: { test: 2 },
       }),
     );
   });

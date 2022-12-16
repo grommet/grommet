@@ -8,7 +8,7 @@ const StarRating = ({ ...rest }) => {
   const [value, setValue] = useState();
 
   const options = [];
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 1; i < 6; i += 1) {
     options.push(i);
   }
 
