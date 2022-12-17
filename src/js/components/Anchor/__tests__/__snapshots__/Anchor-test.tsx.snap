@@ -11,11 +11,21 @@ exports[`Anchor blur renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -38,7 +48,12 @@ exports[`Anchor blur renders 1`] = `
     class="c1"
     href="#"
   >
-    Test
+    <span
+      class="c2"
+      style="display: inline-flex; vertical-align: bottom;"
+    >
+      Test
+    </span>
   </a>
 </div>
 `;
@@ -54,11 +69,21 @@ exports[`Anchor disabled renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -80,7 +105,12 @@ exports[`Anchor disabled renders 1`] = `
     <a
       class="c1"
       disabled=""
-    />
+    >
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
   </div>
 </div>
 `;
@@ -96,11 +126,21 @@ exports[`Anchor focus renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -140,7 +180,12 @@ exports[`Anchor focus renders 1`] = `
     class="c1"
     href="#"
   >
-    Test
+    <span
+      class="c2"
+      style="display: inline-flex; vertical-align: bottom;"
+    >
+      Test
+    </span>
   </a>
 </div>
 `;
@@ -225,10 +270,6 @@ exports[`Anchor gap renders 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -254,7 +295,7 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex;"
+        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
@@ -271,7 +312,7 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex;"
+        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
@@ -288,7 +329,7 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex;"
+        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
@@ -305,7 +346,7 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex;"
+        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
@@ -322,7 +363,7 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex;"
+        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
@@ -377,10 +418,6 @@ exports[`Anchor icon label renders 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -405,7 +442,7 @@ exports[`Anchor icon label renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex;"
+        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
@@ -431,11 +468,21 @@ exports[`Anchor is clickable 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -458,7 +505,12 @@ exports[`Anchor is clickable 1`] = `
     class="c1"
     href="#"
   >
-    Test
+    <span
+      class="c2"
+      style="display: inline-flex; vertical-align: bottom;"
+    >
+      Test
+    </span>
   </a>
 </div>
 `;
@@ -474,11 +526,21 @@ exports[`Anchor renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -500,7 +562,12 @@ exports[`Anchor renders 1`] = `
   >
     <a
       class="c1"
-    />
+    >
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
   </div>
 </div>
 `;
@@ -516,11 +583,21 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -545,14 +622,24 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
       class="c1"
       href="#"
     >
-      Test
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Test
+      </span>
     </a>
     <a
       aria-label="test-2"
       class="c1"
       href="#"
     >
-      Test
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Test
+      </span>
     </a>
   </div>
 </div>
@@ -569,11 +656,21 @@ exports[`Anchor renders tag 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -597,7 +694,12 @@ exports[`Anchor renders tag 1`] = `
       class="c1"
       href="#"
     >
-      Test
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Test
+      </span>
     </span>
   </div>
 </div>
@@ -614,11 +716,21 @@ exports[`Anchor renders with children 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -641,7 +753,12 @@ exports[`Anchor renders with children 1`] = `
     class="c1"
     href="#"
   >
-    children
+    <span
+      class="c2"
+      style="display: inline-flex; vertical-align: bottom;"
+    >
+      children
+    </span>
   </a>
 </div>
 `;
@@ -686,10 +803,6 @@ exports[`Anchor reverse icon label renders 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -714,7 +827,7 @@ exports[`Anchor reverse icon label renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex;"
+        style="display: inline-flex; vertical-align: bottom;"
       >
         Test
         <span
@@ -740,11 +853,21 @@ exports[`Anchor should have no accessibility violations 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -767,7 +890,12 @@ exports[`Anchor should have no accessibility violations 1`] = `
     <a
       class="c1"
     >
-      Link
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Link
+      </span>
     </a>
   </div>
 </div>
@@ -799,11 +927,21 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
   cursor: pointer;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -826,7 +964,12 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
     class="c1 c2"
     href="#"
     tabindex="0"
-  />
+  >
+    <span
+      class="c3"
+      style="display: inline-flex; vertical-align: bottom;"
+    />
+  </div>
 </div>
 `;
 
@@ -841,11 +984,21 @@ exports[`Anchor size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: 12px;
   line-height: 18px;
@@ -861,34 +1014,10 @@ exports[`Anchor size renders 1`] = `
   text-decoration: underline;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.c3 {
   box-sizing: border-box;
   font-size: 14px;
   line-height: 20px;
-  color: #7D4CDB;
-  font-weight: 600;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.c2:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  font-size: 18px;
-  line-height: 24px;
   color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
@@ -902,13 +1031,9 @@ exports[`Anchor size renders 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 24px;
   color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
@@ -922,13 +1047,9 @@ exports[`Anchor size renders 1`] = `
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 22px;
+  line-height: 28px;
   color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
@@ -942,13 +1063,9 @@ exports[`Anchor size renders 1`] = `
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
-  font-size: 34px;
-  line-height: 40px;
+  font-size: 26px;
+  line-height: 32px;
   color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
@@ -962,13 +1079,9 @@ exports[`Anchor size renders 1`] = `
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
-  font-size: 10px;
-  line-height: normal;
+  font-size: 34px;
+  line-height: 40px;
   color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
@@ -981,31 +1094,82 @@ exports[`Anchor size renders 1`] = `
   text-decoration: underline;
 }
 
+.c8 {
+  box-sizing: border-box;
+  font-size: 10px;
+  line-height: normal;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
 <div>
   <div
     class="c0"
   >
     <a
       class="c1"
-    />
-    <a
-      class="c2"
-    />
+    >
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     <a
       class="c3"
-    />
+    >
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     <a
       class="c4"
-    />
+    >
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     <a
       class="c5"
-    />
+    >
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     <a
       class="c6"
-    />
+    >
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     <a
       class="c7"
-    />
+    >
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
+    <a
+      class="c8"
+    >
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
   </div>
 </div>
 `;
@@ -1021,11 +1185,21 @@ exports[`Anchor warns about invalid icon render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1049,9 +1223,14 @@ exports[`Anchor warns about invalid icon render 1`] = `
     class="c1"
     href="#"
   >
-    <svg
-      color="#7D4CDB"
-    />
+    <span
+      class="c2"
+      style="display: inline-flex; vertical-align: bottom;"
+    >
+      <svg
+        color="#7D4CDB"
+      />
+    </span>
   </a>
 </div>
 `;
@@ -1067,11 +1246,21 @@ exports[`Anchor warns about invalid label render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1094,7 +1283,12 @@ exports[`Anchor warns about invalid label render 1`] = `
     class="c1"
     href="#"
   >
-    Test
+    <span
+      class="c2"
+      style="display: inline-flex; vertical-align: bottom;"
+    >
+      Test
+    </span>
   </a>
 </div>
 `;
@@ -1110,11 +1304,21 @@ exports[`Anchor weight renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1130,36 +1334,12 @@ exports[`Anchor weight renders 1`] = `
   text-decoration: underline;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.c3 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: bold;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.c2:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  font-size: inherit;
-  line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 500;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -1171,15 +1351,11 @@ exports[`Anchor weight renders 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
-  font-weight: lighter;
+  font-weight: 500;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -1191,15 +1367,11 @@ exports[`Anchor weight renders 1`] = `
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
-  font-weight: bolder;
+  font-weight: lighter;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -1211,15 +1383,11 @@ exports[`Anchor weight renders 1`] = `
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
-  font-weight: inherit;
+  font-weight: bolder;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -1231,15 +1399,11 @@ exports[`Anchor weight renders 1`] = `
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
-  font-weight: initial;
+  font-weight: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -1251,15 +1415,11 @@ exports[`Anchor weight renders 1`] = `
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
-  font-weight: revert;
+  font-weight: initial;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -1271,10 +1431,22 @@ exports[`Anchor weight renders 1`] = `
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: revert;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c9:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c10 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1285,7 +1457,7 @@ exports[`Anchor weight renders 1`] = `
   cursor: pointer;
 }
 
-.c9:hover {
+.c10:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1298,55 +1470,100 @@ exports[`Anchor weight renders 1`] = `
       class="c1"
       href="#"
     >
-      Normal
-    </a>
-    <a
-      class="c2"
-      href="#"
-    >
-      Bold
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Normal
+      </span>
     </a>
     <a
       class="c3"
       href="#"
     >
-      Bold
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Bold
+      </span>
     </a>
     <a
       class="c4"
       href="#"
     >
-      Lighter
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Bold
+      </span>
     </a>
     <a
       class="c5"
       href="#"
     >
-      Bolder
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Lighter
+      </span>
     </a>
     <a
       class="c6"
       href="#"
     >
-      Inherit
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Bolder
+      </span>
     </a>
     <a
       class="c7"
       href="#"
     >
-      Initial
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Inherit
+      </span>
     </a>
     <a
       class="c8"
       href="#"
     >
-      Revert
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Initial
+      </span>
     </a>
     <a
       class="c9"
       href="#"
     >
-      Unset
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Revert
+      </span>
+    </a>
+    <a
+      class="c10"
+      href="#"
+    >
+      <span
+        class="c2"
+        style="display: inline-flex; vertical-align: bottom;"
+      >
+        Unset
+      </span>
     </a>
   </div>
 </div>

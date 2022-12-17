@@ -75,6 +75,11 @@ const Anchor = forwardRef(
     const first = reverse ? label : coloredIcon;
     const second = reverse ? coloredIcon : label;
 
+    const anchorChildCustomStyle = {
+      display: 'inline-flex',
+      verticalAlign: 'bottom',
+    };
+
     return (
       <StyledAnchor
         {...rest}
@@ -104,13 +109,15 @@ const Anchor = forwardRef(
             align="center"
             gap={gap || theme.anchor.gap}
             responsive={false}
-            style={{ display: 'inline-flex' }}
+            style={anchorChildCustomStyle}
           >
             {first}
             {second}
           </Box>
         ) : (
-          first || second || children
+          <Box as="span" responsive={false} style={anchorChildCustomStyle}>
+            {first || second || children}
+          </Box>
         )}
       </StyledAnchor>
     );

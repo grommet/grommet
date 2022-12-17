@@ -1,11 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SkipLink basic 1`] = `
-.c1 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -59,7 +69,12 @@ exports[`SkipLink basic 1`] = `
       class="c1 c2"
       id="main"
       tabindex="-1"
-    />
+    >
+      <span
+        class="c3"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     Main Content
     <input
       type="text"
@@ -72,7 +87,12 @@ exports[`SkipLink basic 1`] = `
       class="c1 c2"
       id="footer"
       tabindex="-1"
-    />
+    >
+      <span
+        class="c3"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     <input
       type="text"
       value="footer"
@@ -88,10 +108,15 @@ exports[`SkipLink basic 2`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 fHJGFN SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 jeHekY"
+      class="StyledAnchor-sc-1rp7lwl-0 beqsDB SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 jeHekY"
       id="main"
       tabindex="-1"
-    />
+    >
+      <span
+        class="StyledBox-sc-13pk1d4-0 dEaSmx"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     Main Content
     <input
       type="text"
@@ -101,10 +126,15 @@ exports[`SkipLink basic 2`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 fHJGFN SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 jeHekY"
+      class="StyledAnchor-sc-1rp7lwl-0 beqsDB SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 jeHekY"
       id="footer"
       tabindex="-1"
-    />
+    >
+      <span
+        class="StyledBox-sc-13pk1d4-0 dEaSmx"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     <input
       type="text"
       value="footer"
@@ -120,10 +150,15 @@ exports[`SkipLink basic 3`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 fHJGFN SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 jeHekY"
+      class="StyledAnchor-sc-1rp7lwl-0 beqsDB SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 jeHekY"
       id="main"
       tabindex="-1"
-    />
+    >
+      <span
+        class="StyledBox-sc-13pk1d4-0 dEaSmx"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     Main Content
     <input
       type="text"
@@ -133,10 +168,15 @@ exports[`SkipLink basic 3`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 fHJGFN SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 jeHekY"
+      class="StyledAnchor-sc-1rp7lwl-0 beqsDB SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 jeHekY"
       id="footer"
       tabindex="-1"
-    />
+    >
+      <span
+        class="StyledBox-sc-13pk1d4-0 dEaSmx"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     <input
       type="text"
       value="footer"
@@ -146,11 +186,21 @@ exports[`SkipLink basic 3`] = `
 `;
 
 exports[`SkipLink should allow for single skip link 1`] = `
-.c1 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -200,7 +250,12 @@ exports[`SkipLink should allow for single skip link 1`] = `
       class="c1 c2"
       id="main"
       tabindex="-1"
-    />
+    >
+      <span
+        class="c3"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     Main Content
     <input
       type="text"
@@ -223,10 +278,15 @@ exports[`SkipLink should allow for single skip link 2`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 fHJGFN SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 jeHekY"
+      class="StyledAnchor-sc-1rp7lwl-0 beqsDB SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 jeHekY"
       id="main"
       tabindex="-1"
-    />
+    >
+      <span
+        class="StyledBox-sc-13pk1d4-0 dEaSmx"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     Main Content
     <input
       type="text"
@@ -249,10 +309,15 @@ exports[`SkipLink should allow for single skip link 3`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 fHJGFN SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 jeHekY"
+      class="StyledAnchor-sc-1rp7lwl-0 beqsDB SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 jeHekY"
       id="main"
       tabindex="-1"
-    />
+    >
+      <span
+        class="StyledBox-sc-13pk1d4-0 dEaSmx"
+        style="display: inline-flex; vertical-align: bottom;"
+      />
+    </a>
     Main Content
     <input
       type="text"

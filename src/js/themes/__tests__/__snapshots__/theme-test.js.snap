@@ -1,11 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Grommet ThemeContext theme 1`] = `
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -40,7 +50,12 @@ exports[`Grommet ThemeContext theme 1`] = `
   <a
     class="c1"
   >
-    Hello
+    <span
+      class="c2"
+      style="display: inline-flex; vertical-align: bottom;"
+    >
+      Hello
+    </span>
   </a>
 </div>
 `;
@@ -207,10 +222,6 @@ exports[`Grommet custom theme 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -227,10 +238,6 @@ exports[`Grommet custom theme 1`] = `
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -247,10 +254,6 @@ exports[`Grommet custom theme 1`] = `
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -367,7 +370,7 @@ exports[`Grommet custom theme 1`] = `
     >
       <span
         class="c3"
-        style="display: inline-flex;"
+        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           aria-label="Add"
@@ -392,7 +395,7 @@ exports[`Grommet custom theme 1`] = `
     >
       <span
         class="c3"
-        style="display: inline-flex;"
+        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           aria-label="Add"
@@ -421,7 +424,7 @@ exports[`Grommet custom theme 1`] = `
     >
       <span
         class="c3"
-        style="display: inline-flex;"
+        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           aria-label="Add"
@@ -446,7 +449,7 @@ exports[`Grommet custom theme 1`] = `
     >
       <span
         class="c3"
-        style="display: inline-flex;"
+        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           aria-label="Add"

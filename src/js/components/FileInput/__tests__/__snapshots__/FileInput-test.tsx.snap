@@ -60,11 +60,21 @@ exports[`FileInput accept 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -90,7 +100,7 @@ exports[`FileInput accept 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -113,38 +123,38 @@ exports[`FileInput accept 1`] = `
   cursor: pointer;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -177,12 +187,17 @@ exports[`FileInput accept 1`] = `
         class="c5"
         tabindex="0"
       >
-        browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          browse
+        </span>
       </a>
     </div>
     <input
       accept="image/*"
-      class="c6"
+      class="c7"
       name="file"
       type="file"
     />
@@ -252,11 +267,21 @@ exports[`FileInput background 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -282,7 +307,7 @@ exports[`FileInput background 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -305,38 +330,38 @@ exports[`FileInput background 1`] = `
   cursor: pointer;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -369,11 +394,16 @@ exports[`FileInput background 1`] = `
         class="c5"
         tabindex="0"
       >
-        browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          browse
+        </span>
       </a>
     </div>
     <input
-      class="c6"
+      class="c7"
       name="file"
       type="file"
     />
@@ -441,11 +471,21 @@ exports[`FileInput basic 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -471,7 +511,7 @@ exports[`FileInput basic 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -494,38 +534,38 @@ exports[`FileInput basic 1`] = `
   cursor: pointer;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -558,11 +598,16 @@ exports[`FileInput basic 1`] = `
         class="c5"
         tabindex="0"
       >
-        browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          browse
+        </span>
       </a>
     </div>
     <input
-      class="c6"
+      class="c7"
       name="file"
       type="file"
     />
@@ -630,11 +675,21 @@ exports[`FileInput border 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -660,7 +715,7 @@ exports[`FileInput border 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -683,38 +738,38 @@ exports[`FileInput border 1`] = `
   cursor: pointer;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -747,11 +802,16 @@ exports[`FileInput border 1`] = `
         class="c5"
         tabindex="0"
       >
-        browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          browse
+        </span>
       </a>
     </div>
     <input
-      class="c6"
+      class="c7"
       name="file"
       type="file"
     />
@@ -819,11 +879,21 @@ exports[`FileInput custom theme input font size 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -849,7 +919,7 @@ exports[`FileInput custom theme input font size 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -872,38 +942,38 @@ exports[`FileInput custom theme input font size 1`] = `
   cursor: pointer;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -936,11 +1006,16 @@ exports[`FileInput custom theme input font size 1`] = `
         class="c5"
         tabindex="0"
       >
-        browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          browse
+        </span>
       </a>
     </div>
     <input
-      class="c6"
+      class="c7"
       type="file"
     />
   </div>
@@ -1007,11 +1082,21 @@ exports[`FileInput disabled 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1037,7 +1122,7 @@ exports[`FileInput disabled 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -1059,38 +1144,38 @@ exports[`FileInput disabled 1`] = `
   border: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -1126,11 +1211,16 @@ exports[`FileInput disabled 1`] = `
         class="c5"
         tabindex="0"
       >
-        browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          browse
+        </span>
       </a>
     </div>
     <input
-      class="c6"
+      class="c7"
       disabled=""
       name="file"
       type="file"
@@ -1200,11 +1290,21 @@ exports[`FileInput margin 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1230,7 +1330,7 @@ exports[`FileInput margin 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -1253,38 +1353,38 @@ exports[`FileInput margin 1`] = `
   cursor: pointer;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -1323,11 +1423,16 @@ exports[`FileInput margin 1`] = `
         class="c5"
         tabindex="0"
       >
-        browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          browse
+        </span>
       </a>
     </div>
     <input
-      class="c6"
+      class="c7"
       name="file"
       type="file"
     />
@@ -1395,11 +1500,21 @@ exports[`FileInput maxSize 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1425,7 +1540,7 @@ exports[`FileInput maxSize 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -1448,38 +1563,38 @@ exports[`FileInput maxSize 1`] = `
   cursor: pointer;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -1512,11 +1627,16 @@ exports[`FileInput maxSize 1`] = `
         class="c5"
         tabindex="0"
       >
-        browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          browse
+        </span>
       </a>
     </div>
     <input
-      class="c6"
+      class="c7"
       name="file"
       type="file"
     />
@@ -1584,11 +1704,21 @@ exports[`FileInput messages 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1614,7 +1744,7 @@ exports[`FileInput messages 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -1637,38 +1767,38 @@ exports[`FileInput messages 1`] = `
   cursor: pointer;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -1701,11 +1831,16 @@ exports[`FileInput messages 1`] = `
         class="c5"
         tabindex="0"
       >
-        test browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          test browse
+        </span>
       </a>
     </div>
     <input
-      class="c6"
+      class="c7"
       name="file"
       type="file"
     />
@@ -1773,11 +1908,21 @@ exports[`FileInput multiple 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1803,7 +1948,7 @@ exports[`FileInput multiple 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -1826,38 +1971,38 @@ exports[`FileInput multiple 1`] = `
   cursor: pointer;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -1890,11 +2035,16 @@ exports[`FileInput multiple 1`] = `
         class="c5"
         tabindex="0"
       >
-        browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          browse
+        </span>
       </a>
     </div>
     <input
-      class="c6"
+      class="c7"
       multiple=""
       name="file"
       type="file"
@@ -1963,11 +2113,21 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1993,7 +2153,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -2016,38 +2176,38 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   cursor: pointer;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -2080,11 +2240,16 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
         class="c5"
         tabindex="0"
       >
-        browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          browse
+        </span>
       </a>
     </div>
     <input
-      class="c6"
+      class="c7"
       multiple=""
       name="file"
       type="file"
@@ -2153,11 +2318,21 @@ exports[`FileInput multiple max 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -2183,7 +2358,7 @@ exports[`FileInput multiple max 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -2206,38 +2381,38 @@ exports[`FileInput multiple max 1`] = `
   cursor: pointer;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -2270,11 +2445,16 @@ exports[`FileInput multiple max 1`] = `
         class="c5"
         tabindex="0"
       >
-        browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          browse
+        </span>
       </a>
     </div>
     <input
-      class="c6"
+      class="c7"
       multiple=""
       name="file"
       type="file"
@@ -2344,11 +2524,21 @@ exports[`FileInput pad 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -2374,7 +2564,7 @@ exports[`FileInput pad 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -2397,38 +2587,38 @@ exports[`FileInput pad 1`] = `
   cursor: pointer;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
@@ -2467,11 +2657,16 @@ exports[`FileInput pad 1`] = `
         class="c5"
         tabindex="0"
       >
-        browse
+        <span
+          class="c6"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          browse
+        </span>
       </a>
     </div>
     <input
-      class="c6"
+      class="c7"
       name="file"
       type="file"
     />

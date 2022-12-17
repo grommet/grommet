@@ -549,10 +549,6 @@ exports[`Notification multi actions 1`] = `
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -664,14 +660,24 @@ exports[`Notification multi actions 1`] = `
               class="c9 c10"
               href="/some-link"
             >
-              Renew Subscription
+              <span
+                class="c5"
+                style="display: inline-flex; vertical-align: bottom;"
+              >
+                Renew Subscription
+              </span>
             </a>
              
             <a
               class="c9 c10"
               href="/link"
             >
-              View More
+              <span
+                class="c5"
+                style="display: inline-flex; vertical-align: bottom;"
+              >
+                View More
+              </span>
             </a>
              
           </p>

@@ -49,7 +49,7 @@ exports[`Markdown renders 1`] = `
   max-width: 432px;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64,10 +64,6 @@ exports[`Markdown renders 1`] = `
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -83,7 +79,7 @@ exports[`Markdown renders 1`] = `
   text-decoration: underline;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -108,7 +104,7 @@ exports[`Markdown renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -186,7 +182,12 @@ exports[`Markdown renders 1`] = `
         class="c6"
         href="#"
       >
-        a link
+        <span
+          class="c7"
+          style="display: inline-flex; vertical-align: bottom;"
+        >
+          a link
+        </span>
       </a>
     </p>
     <blockquote>
@@ -207,7 +208,7 @@ exports[`Markdown renders 1`] = `
       />
     </p>
     <table
-      class="c7"
+      class="c8"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4"
@@ -216,28 +217,28 @@ exports[`Markdown renders 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c8"
+            class="c9"
           >
             <div
-              class="c9"
+              class="c7"
             >
               Markdown
             </div>
           </td>
           <td
-            class="c8"
+            class="c9"
           >
             <div
-              class="c9"
+              class="c7"
             >
               Less
             </div>
           </td>
           <td
-            class="c8"
+            class="c9"
           >
             <div
-              class="c9"
+              class="c7"
             >
               Pretty
             </div>
@@ -371,10 +372,6 @@ exports[`wrapper 1`] = `
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -517,7 +514,12 @@ exports[`wrapper 1`] = `
           class="c8"
           href="#"
         >
-          a link
+          <span
+            class="c1"
+            style="display: inline-flex; vertical-align: bottom;"
+          >
+            a link
+          </span>
         </a>
       </p>
       <div
