@@ -5,6 +5,7 @@ import {
   Button,
   Form,
   FormField,
+  Footer,
   TextArea,
   Header,
   Heading,
@@ -56,12 +57,12 @@ export const SolicitedFeedback = () => {
         <FormField label="Comments" htmlFor="comments" name="comments">
           <TextArea id="comments" name="comments" />
         </FormField>
-        <Box
+        <Footer
           align={!['xsmall', 'small'].includes(size) ? 'start' : undefined}
           margin={{ top: 'medium', bottom: 'small' }}
         >
           <Button label="Submit Feedback" primary type="submit" />
-        </Box>
+        </Footer>
       </Form>
     </Box>
     // </Grommet>

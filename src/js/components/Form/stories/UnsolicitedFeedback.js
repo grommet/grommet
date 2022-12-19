@@ -6,6 +6,7 @@ import {
   Form,
   Layer,
   FormField,
+  Footer,
   Text,
   TextArea,
   Header,
@@ -99,7 +100,7 @@ export const UnSolicitedFeedback = () => {
                   <TextArea id="comments" name="comments" />
                 </FormField>
                 {!isSuccessful ? (
-                  <Box
+                  <Footer
                     margin={{ top: 'medium', bottom: 'small' }}
                     direction="row"
                     justify="end"
@@ -107,13 +108,16 @@ export const UnSolicitedFeedback = () => {
                   >
                     <Button onClick={onClose} label="Cancel" />
                     <Button label="Submit Feedback" primary type="submit" />
-                  </Box>
+                  </Footer>
                 ) : (
-                  <Box margin={{ top: 'medium', bottom: 'small' }} align="end">
+                  <Footer
+                    margin={{ top: 'medium', bottom: 'small' }}
+                    align="end"
+                  >
                     <Text weight="bold" size="large">
                       Thank you for your response!
                     </Text>
-                  </Box>
+                  </Footer>
                 )}
               </Form>
             </Box>
