@@ -51,9 +51,11 @@ var Controlled = function Controlled() {
       suggestions: suggestions
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Email",
+      htmlFor: "email",
       name: "email",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+      id: "email",
       name: "email",
       mask: [{
         regexp: /^[\w\-_.]+$/,

@@ -51,6 +51,10 @@ var RequiredText = styled(Text).withConfig({
   displayName: "FormField__RequiredText",
   componentId: "sc-m9hood-3"
 })(["color:inherit;font-weight:inherit;line-height:inherit;"]);
+var ScreenReaderOnly = styled(Text).withConfig({
+  displayName: "FormField__ScreenReaderOnly",
+  componentId: "sc-m9hood-4"
+})(["position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;"]);
 var Message = function Message(_ref) {
   var error = _ref.error,
     info = _ref.info,
@@ -310,12 +314,14 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   } : {};
   var requiredIndicator = theme.formField.label.requiredIndicator;
   if (requiredIndicator === true)
-    // a11yTitle necessary so screenreader announces as "required"
-    // as opposed to "star"
     // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
-    requiredIndicator = /*#__PURE__*/React.createElement(RequiredText, {
-      a11yTitle: "required"
-    }, "*");
+    // this approach allows the required indicator to be hidden visually,
+    // but present for assistive tech.
+    // using aria-hidden so screen does not read out "star" and
+    // just reads out "required"
+    requiredIndicator = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(RequiredText, {
+      "aria-hidden": "true"
+    }, "*"), /*#__PURE__*/React.createElement(ScreenReaderOnly, null, "required"));
   var showRequiredIndicator = required && requiredIndicator;
   if (typeof required === 'object' && required.indicator === false) showRequiredIndicator = false;
   return /*#__PURE__*/React.createElement(FormFieldBox, _extends({
