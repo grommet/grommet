@@ -25,6 +25,7 @@ const Box = forwardRef(
       background: backgroundProp,
       border,
       children,
+      cssGap, // internal for now
       direction = 'column',
       elevation, // munged to avoid styled-components putting it in the DOM
       fill, // munged to avoid styled-components putting it in the DOM
@@ -110,7 +111,7 @@ const Box = forwardRef(
     if (
       gap &&
       gap !== 'none' &&
-      (!boxOptions?.cssGap ||
+      (!(boxOptions?.cssGap || cssGap) ||
         // need this approach to show border between
         border === 'between' ||
         border?.side === 'between')
@@ -213,7 +214,7 @@ const Box = forwardRef(
         fillProp={fill}
         focus={focus}
         gap={
-          boxOptions?.cssGap &&
+          (boxOptions?.cssGap || cssGap) &&
           gap &&
           gap !== 'none' &&
           border !== 'between' &&

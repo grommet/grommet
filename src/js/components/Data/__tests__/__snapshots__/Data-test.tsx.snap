@@ -127,12 +127,18 @@ exports[`Data controlled search 1`] = `
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
 }
 
 .c9 {
@@ -344,6 +350,13 @@ exports[`Data controlled search 1`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -526,7 +539,7 @@ exports[`Data controlled search 2`] = `
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 epRbTV"
+      class="StyledBox-sc-13pk1d4-0 cA-DryL"
     >
       <form>
         <div
@@ -658,6 +671,14 @@ exports[`Data controlled search 2`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c4 {
     border-radius: 12px;
   }
@@ -710,6 +731,14 @@ exports[`Data controlled search 2`] = `
   -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -809,6 +838,14 @@ exports[`Data controlled search 2`] = `
 
 .c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -945,7 +982,7 @@ exports[`Data controlled search 3`] = `
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 epRbTV"
+      class="StyledBox-sc-13pk1d4-0 cA-DryL"
     >
       <form>
         <div
@@ -1022,6 +1059,14 @@ exports[`Data controlled search 3`] = `
 .c0 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -1279,12 +1324,18 @@ exports[`Data messages 1`] = `
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
 }
 
 .c9 {
@@ -1499,6 +1550,13 @@ exports[`Data messages 1`] = `
 
 @media only screen and (max-width:768px) {
 
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
 }
 
 <div
@@ -1887,12 +1945,18 @@ exports[`Data toolbar 1`] = `
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
 }
 
 .c9 {
@@ -2107,6 +2171,13 @@ exports[`Data toolbar 1`] = `
 
 @media only screen and (max-width:768px) {
 
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
 }
 
 <div
@@ -2457,12 +2528,18 @@ exports[`Data toolbar filters 1`] = `
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
 }
 
 .c6 {
@@ -2582,6 +2659,17 @@ exports[`Data toolbar filters 1`] = `
 
 .c11:focus:not(:focus-visible) {
   outline: none;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
 }
 
 <div
@@ -2832,12 +2920,18 @@ exports[`Data toolbar search 1`] = `
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
 }
 
 .c7 {
@@ -2983,6 +3077,17 @@ exports[`Data toolbar search 1`] = `
 
 .c12:focus:not(:focus-visible) {
   outline: none;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
 }
 
 <div
@@ -3263,12 +3368,18 @@ exports[`Data uncontrolled search 1`] = `
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
 }
 
 .c9 {
@@ -3480,6 +3591,13 @@ exports[`Data uncontrolled search 1`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -3662,7 +3780,7 @@ exports[`Data uncontrolled search 2`] = `
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 epRbTV"
+      class="StyledBox-sc-13pk1d4-0 cA-DryL"
     >
       <form>
         <div
@@ -3794,6 +3912,14 @@ exports[`Data uncontrolled search 2`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c4 {
     border-radius: 12px;
   }
@@ -3846,6 +3972,14 @@ exports[`Data uncontrolled search 2`] = `
   -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -3955,6 +4089,14 @@ exports[`Data uncontrolled search 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <div
           class="c0"
         >
@@ -4027,7 +4169,7 @@ exports[`Data uncontrolled search 3`] = `
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 epRbTV"
+      class="StyledBox-sc-13pk1d4-0 cA-DryL"
     >
       <form>
         <div
@@ -4104,6 +4246,14 @@ exports[`Data uncontrolled search 3`] = `
 .c0 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -4214,6 +4364,14 @@ exports[`Data uncontrolled search 3`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
@@ -4272,6 +4430,14 @@ exports[`Data uncontrolled search 3`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
@@ -4320,6 +4486,14 @@ exports[`Data uncontrolled search 3`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -4786,12 +4960,18 @@ exports[`Data view all 1`] = `
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
 }
 
 .c14 {
@@ -5106,8 +5286,19 @@ exports[`Data view all 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c12 {
     border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -5449,12 +5640,18 @@ exports[`Data view property option 1`] = `
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
 }
 
 .c14 {
@@ -5769,8 +5966,19 @@ exports[`Data view property option 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c12 {
     border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -6112,12 +6320,18 @@ exports[`Data view property range 1`] = `
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
 }
 
 .c14 {
@@ -6432,8 +6646,19 @@ exports[`Data view property range 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c12 {
     border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -6796,12 +7021,18 @@ exports[`Data view search 1`] = `
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
 }
 
 .c14 {
@@ -7116,8 +7347,19 @@ exports[`Data view search 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c12 {
     border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
   }
 }
 
@@ -7429,12 +7671,18 @@ exports[`Data view sort 1`] = `
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
 }
 
 .c9 {
@@ -7649,6 +7897,13 @@ exports[`Data view sort 1`] = `
 
 @media only screen and (max-width:768px) {
 
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
 }
 
 <div

@@ -10,12 +10,16 @@ export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Box fill align="center" justify="start" pad="large">
-    <Toolbar>
-      <TextInput icon={<Search />} />
-      <DropButton kind="toolbar" icon={<Filter />} />
-      <Box flex />
-      <Button label="Create" primary />
-    </Toolbar>
+    <Box width="large">
+      <Toolbar>
+        <Box width={{ max: 'small' }}>
+          <TextInput icon={<Search />} />
+        </Box>
+        <DropButton kind="toolbar" icon={<Filter />} />
+        <Box flex />
+        <Button label="Create" primary />
+      </Toolbar>
+    </Box>
   </Box>
   // </Grommet>
 );

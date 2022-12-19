@@ -10,8 +10,10 @@ const defaultLayoutProps = {
 };
 
 const smallLayoutProps = {
-  direction: 'column',
+  direction: 'row',
+  wrap: true,
   align: 'start',
+  gap: 'small',
 };
 
 export const Toolbar = ({ children, ...rest }) => {
@@ -21,7 +23,7 @@ export const Toolbar = ({ children, ...rest }) => {
       ? smallLayoutProps
       : defaultLayoutProps;
   return (
-    <Box flex={false} {...layoutProps} {...rest}>
+    <Box flex={false} cssGap {...layoutProps} {...rest}>
       {children}
     </Box>
   );
