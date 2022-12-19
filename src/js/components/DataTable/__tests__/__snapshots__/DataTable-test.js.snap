@@ -26,6 +26,10 @@ exports[`DataTable !primaryKey 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -229,6 +233,10 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -477,6 +485,10 @@ exports[`DataTable aggregate 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -729,6 +741,10 @@ exports[`DataTable aggregate with nested object 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -1028,6 +1044,10 @@ exports[`DataTable background 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -1609,6 +1629,10 @@ exports[`DataTable basic 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -1820,6 +1844,10 @@ exports[`DataTable border 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -2475,6 +2503,10 @@ exports[`DataTable click 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -2643,7 +2675,7 @@ exports[`DataTable click 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -2666,7 +2698,7 @@ exports[`DataTable click 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -2684,7 +2716,7 @@ exports[`DataTable click 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -2749,6 +2781,10 @@ exports[`DataTable custom theme 1`] = `
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -3391,18 +3427,18 @@ exports[`DataTable custom theme 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dKXxli"
+            class="StyledBox-sc-13pk1d4-0 glMZQD"
             style="position: relative;"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 cLnqZy"
+              class="StyledBox-sc-13pk1d4-0 kcpMrH"
             >
               <button
                 class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jRVSDa"
                 type="button"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                  class="StyledBox-sc-13pk1d4-0 exzkbd"
                 >
                   <span
                     class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -3419,17 +3455,17 @@ exports[`DataTable custom theme 2`] = `
                 class="StyledStack__StyledStackLayer-sc-ajspsk-1 jvatDH"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 eJYPqQ"
+                  class="StyledBox-sc-13pk1d4-0 dKMZWR"
                 />
               </div>
               <div
                 class="StyledStack__StyledStackLayer-sc-ajspsk-1 csUiJE"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 joPtJW Resizer__InteractionBox-sc-8l808w-0 mWhXA"
+                  class="StyledBox-sc-13pk1d4-0 jkdjdX Resizer__InteractionBox-sc-8l808w-0 mWhXA"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 goYpgp"
+                    class="StyledBox-sc-13pk1d4-0 eoBqPI"
                   />
                 </div>
               </div>
@@ -3449,7 +3485,7 @@ exports[`DataTable custom theme 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
@@ -3457,7 +3493,7 @@ exports[`DataTable custom theme 2`] = `
               disabled=""
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
                 disabled=""
               >
                 <input
@@ -3468,7 +3504,7 @@ exports[`DataTable custom theme 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                   disabled=""
                 >
                   <svg
@@ -3496,7 +3532,7 @@ exports[`DataTable custom theme 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -3514,7 +3550,7 @@ exports[`DataTable custom theme 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
@@ -3522,7 +3558,7 @@ exports[`DataTable custom theme 2`] = `
               disabled=""
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
                 disabled=""
               >
                 <input
@@ -3532,7 +3568,7 @@ exports[`DataTable custom theme 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ffvzbe StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 dXyapD StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                   disabled=""
                 />
               </div>
@@ -3544,7 +3580,7 @@ exports[`DataTable custom theme 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -3585,6 +3621,10 @@ exports[`DataTable disabled click 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -3754,7 +3794,7 @@ exports[`DataTable disabled click 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -3778,7 +3818,7 @@ exports[`DataTable disabled click 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -3796,7 +3836,7 @@ exports[`DataTable disabled click 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -3903,6 +3943,10 @@ exports[`DataTable disabled select 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c19 {
@@ -4385,6 +4429,10 @@ exports[`DataTable fill 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -4923,6 +4971,10 @@ exports[`DataTable footer 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -5251,6 +5303,10 @@ exports[`DataTable groupBy 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c14 {
@@ -5636,7 +5692,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hZqGxJ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jOtVsF"
+            class="StyledBox-sc-13pk1d4-0 uAWAU"
             style="height: 0px;"
           >
             <button
@@ -5645,7 +5701,7 @@ exports[`DataTable groupBy 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gmouHf"
+                class="StyledBox-sc-13pk1d4-0 Jsmwa"
               >
                 <svg
                   aria-label="FormDown"
@@ -5668,7 +5724,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -5682,7 +5738,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -5703,7 +5759,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jggIUz"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jOtVsF"
+            class="StyledBox-sc-13pk1d4-0 uAWAU"
             style="height: 0px;"
           >
             <button
@@ -5712,7 +5768,7 @@ exports[`DataTable groupBy 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gmouHf"
+                class="StyledBox-sc-13pk1d4-0 Jsmwa"
               >
                 <svg
                   aria-label="FormDown"
@@ -5735,7 +5791,7 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -5748,7 +5804,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -5759,7 +5815,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jggIUz"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jOtVsF"
+            class="StyledBox-sc-13pk1d4-0 uAWAU"
             style="height: 0px;"
           >
             <button
@@ -5768,7 +5824,7 @@ exports[`DataTable groupBy 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gmouHf"
+                class="StyledBox-sc-13pk1d4-0 Jsmwa"
               >
                 <svg
                   aria-label="FormDown"
@@ -5791,7 +5847,7 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -5804,7 +5860,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -5949,6 +6005,10 @@ exports[`DataTable groupBy expand 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c14 {
@@ -6551,6 +6611,10 @@ exports[`DataTable groupBy property 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c14 {
@@ -6936,7 +7000,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hZqGxJ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jOtVsF"
+            class="StyledBox-sc-13pk1d4-0 uAWAU"
             style="height: 0px;"
           >
             <button
@@ -6945,7 +7009,7 @@ exports[`DataTable groupBy property 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gmouHf"
+                class="StyledBox-sc-13pk1d4-0 Jsmwa"
               >
                 <svg
                   aria-label="FormDown"
@@ -6968,7 +7032,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -6982,7 +7046,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -7003,7 +7067,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jggIUz"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jOtVsF"
+            class="StyledBox-sc-13pk1d4-0 uAWAU"
             style="height: 0px;"
           >
             <button
@@ -7012,7 +7076,7 @@ exports[`DataTable groupBy property 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gmouHf"
+                class="StyledBox-sc-13pk1d4-0 Jsmwa"
               >
                 <svg
                   aria-label="FormDown"
@@ -7035,7 +7099,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -7048,7 +7112,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -7059,7 +7123,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jggIUz"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jOtVsF"
+            class="StyledBox-sc-13pk1d4-0 uAWAU"
             style="height: 0px;"
           >
             <button
@@ -7068,7 +7132,7 @@ exports[`DataTable groupBy property 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gmouHf"
+                class="StyledBox-sc-13pk1d4-0 Jsmwa"
               >
                 <svg
                   aria-label="FormDown"
@@ -7091,7 +7155,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -7104,7 +7168,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -7139,6 +7203,10 @@ exports[`DataTable groupBy toggle 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -7617,7 +7685,7 @@ exports[`DataTable groupBy toggle 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -7631,7 +7699,7 @@ exports[`DataTable groupBy toggle 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -7995,7 +8063,7 @@ exports[`DataTable groupBy toggle 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -8009,7 +8077,7 @@ exports[`DataTable groupBy toggle 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -8408,6 +8476,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c23 {
@@ -9346,6 +9418,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c23 {
@@ -10062,6 +10138,10 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c24 {
@@ -10810,6 +10890,10 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c22 {
@@ -11345,7 +11429,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hZqGxJ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jOtVsF"
+            class="StyledBox-sc-13pk1d4-0 uAWAU"
             style="height: 0px;"
           >
             <button
@@ -11354,7 +11438,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gmouHf"
+                class="StyledBox-sc-13pk1d4-0 Jsmwa"
               >
                 <svg
                   aria-label="FormDown"
@@ -11377,14 +11461,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="unselect all"
@@ -11392,7 +11476,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -11438,7 +11522,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -11452,7 +11536,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -11473,7 +11557,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jggIUz"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jOtVsF"
+            class="StyledBox-sc-13pk1d4-0 uAWAU"
             style="height: 0px;"
           >
             <button
@@ -11482,7 +11566,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gmouHf"
+                class="StyledBox-sc-13pk1d4-0 Jsmwa"
               >
                 <svg
                   aria-label="FormDown"
@@ -11504,14 +11588,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="unselect one"
@@ -11519,7 +11603,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -11565,7 +11649,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -11578,7 +11662,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -11589,7 +11673,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jggIUz"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jOtVsF"
+            class="StyledBox-sc-13pk1d4-0 uAWAU"
             style="height: 0px;"
           >
             <button
@@ -11598,7 +11682,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gmouHf"
+                class="StyledBox-sc-13pk1d4-0 Jsmwa"
               >
                 <svg
                   aria-label="FormDown"
@@ -11620,14 +11704,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="unselect two"
@@ -11635,7 +11719,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -11681,7 +11765,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -11694,7 +11778,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -11720,7 +11804,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hZqGxJ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jOtVsF"
+            class="StyledBox-sc-13pk1d4-0 uAWAU"
             style="height: 0px;"
           >
             <button
@@ -11729,7 +11813,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gmouHf"
+                class="StyledBox-sc-13pk1d4-0 Jsmwa"
               >
                 <svg
                   aria-label="FormDown"
@@ -11752,14 +11836,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="select all"
@@ -11767,7 +11851,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ffvzbe StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 dXyapD StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 />
               </div>
             </label>
@@ -11778,7 +11862,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -11792,7 +11876,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -11813,7 +11897,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jggIUz"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jOtVsF"
+            class="StyledBox-sc-13pk1d4-0 uAWAU"
             style="height: 0px;"
           >
             <button
@@ -11822,7 +11906,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gmouHf"
+                class="StyledBox-sc-13pk1d4-0 Jsmwa"
               >
                 <svg
                   aria-label="FormDown"
@@ -11844,14 +11928,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="select one"
@@ -11859,7 +11943,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ffvzbe StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 dXyapD StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 />
               </div>
             </label>
@@ -11870,7 +11954,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -11883,7 +11967,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -11894,7 +11978,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jggIUz"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jOtVsF"
+            class="StyledBox-sc-13pk1d4-0 uAWAU"
             style="height: 0px;"
           >
             <button
@@ -11903,7 +11987,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gmouHf"
+                class="StyledBox-sc-13pk1d4-0 Jsmwa"
               >
                 <svg
                   aria-label="FormDown"
@@ -11925,14 +12009,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="select two"
@@ -11940,7 +12024,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ffvzbe StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 dXyapD StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 />
               </div>
             </label>
@@ -11951,7 +12035,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -11964,7 +12048,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -12065,6 +12149,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c16 {
@@ -12530,14 +12618,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="unselect all"
@@ -12545,7 +12633,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12583,7 +12671,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -12597,7 +12685,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -12618,14 +12706,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="unselect 1.1"
@@ -12633,7 +12721,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12670,7 +12758,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -12684,7 +12772,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -12701,14 +12789,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="unselect 1.2"
@@ -12716,7 +12804,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12753,7 +12841,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -12767,7 +12855,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -12784,14 +12872,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="unselect 2.1"
@@ -12799,7 +12887,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12836,7 +12924,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -12850,7 +12938,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -12867,14 +12955,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="unselect 2.2"
@@ -12882,7 +12970,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12919,7 +13007,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -12933,7 +13021,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -12966,14 +13054,14 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="select all"
@@ -12981,7 +13069,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ffvzbe StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 dXyapD StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 />
               </div>
             </label>
@@ -12992,7 +13080,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13006,7 +13094,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13027,14 +13115,14 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="select 1.1"
@@ -13042,7 +13130,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ffvzbe StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 dXyapD StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 />
               </div>
             </label>
@@ -13052,7 +13140,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13066,7 +13154,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -13083,14 +13171,14 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="select 1.2"
@@ -13098,7 +13186,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ffvzbe StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 dXyapD StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 />
               </div>
             </label>
@@ -13108,7 +13196,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13122,7 +13210,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -13139,14 +13227,14 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="select 2.1"
@@ -13154,7 +13242,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ffvzbe StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 dXyapD StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 />
               </div>
             </label>
@@ -13164,7 +13252,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13178,7 +13266,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -13195,14 +13283,14 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="select 2.2"
@@ -13210,7 +13298,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ffvzbe StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 dXyapD StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 />
               </div>
             </label>
@@ -13220,7 +13308,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13234,7 +13322,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -13275,6 +13363,10 @@ exports[`DataTable onSort 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -13605,14 +13697,14 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13697,14 +13789,14 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13728,7 +13820,7 @@ exports[`DataTable onSort 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -13741,7 +13833,7 @@ exports[`DataTable onSort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13759,7 +13851,7 @@ exports[`DataTable onSort 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -13772,7 +13864,7 @@ exports[`DataTable onSort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13790,7 +13882,7 @@ exports[`DataTable onSort 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -13803,7 +13895,7 @@ exports[`DataTable onSort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13878,6 +13970,10 @@ exports[`DataTable onSort external 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -14239,14 +14335,14 @@ exports[`DataTable onSort external 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -14315,14 +14411,14 @@ exports[`DataTable onSort external 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -14346,7 +14442,7 @@ exports[`DataTable onSort external 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -14359,7 +14455,7 @@ exports[`DataTable onSort external 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -14377,7 +14473,7 @@ exports[`DataTable onSort external 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -14390,7 +14486,7 @@ exports[`DataTable onSort external 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -14408,7 +14504,7 @@ exports[`DataTable onSort external 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -14421,7 +14517,7 @@ exports[`DataTable onSort external 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -14462,6 +14558,10 @@ exports[`DataTable pad 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -15024,6 +15124,10 @@ exports[`DataTable paths 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -15235,6 +15339,10 @@ exports[`DataTable pin + background 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c11 {
@@ -15858,6 +15966,10 @@ exports[`DataTable pin + background context 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -16500,6 +16612,10 @@ exports[`DataTable pin 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c11 {
@@ -17064,6 +17180,10 @@ exports[`DataTable placeholder 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -17530,6 +17650,10 @@ exports[`DataTable primaryKey 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -17741,6 +17865,10 @@ exports[`DataTable relativeColumnSizes 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -17989,6 +18117,10 @@ exports[`DataTable replace 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -18253,6 +18385,10 @@ exports[`DataTable resizeable 1`] = `
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c10 {
@@ -18665,6 +18801,10 @@ exports[`DataTable rowDetails 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -19263,6 +19403,10 @@ exports[`DataTable rowDetails condtional 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -19830,6 +19974,10 @@ exports[`DataTable rowProps 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -20152,6 +20300,10 @@ exports[`DataTable search 1`] = `
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -20439,10 +20591,10 @@ exports[`DataTable search 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dKXxli"
+            class="StyledBox-sc-13pk1d4-0 glMZQD"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 cLnqZy"
+              class="StyledBox-sc-13pk1d4-0 kcpMrH"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -20581,7 +20733,7 @@ exports[`DataTable search 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -20688,6 +20840,10 @@ exports[`DataTable select 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c16 {
@@ -21064,14 +21220,14 @@ exports[`DataTable select 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="unselect all"
@@ -21079,7 +21235,7 @@ exports[`DataTable select 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -21117,7 +21273,7 @@ exports[`DataTable select 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -21138,14 +21294,14 @@ exports[`DataTable select 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="unselect alpha"
@@ -21154,7 +21310,7 @@ exports[`DataTable select 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 >
                   <svg
                     class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 hrzLMu"
@@ -21176,7 +21332,7 @@ exports[`DataTable select 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -21193,14 +21349,14 @@ exports[`DataTable select 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfSWTS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fPnLbc"
+            class="StyledBox-sc-13pk1d4-0 kQasZR"
             style="height: 0px;"
           >
             <label
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kHdnwq"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jhrYos StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+                class="StyledBox-sc-13pk1d4-0 fdXYHx StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
               >
                 <input
                   aria-label="unselect beta"
@@ -21208,7 +21364,7 @@ exports[`DataTable select 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+                  class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -21246,7 +21402,7 @@ exports[`DataTable select 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -21384,6 +21540,10 @@ exports[`DataTable should apply pagination styling 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -23662,6 +23822,10 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -23815,6 +23979,10 @@ exports[`DataTable should not show paginate controls when length of data < step 
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -24148,6 +24316,10 @@ exports[`DataTable should paginate 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -26486,6 +26658,10 @@ exports[`DataTable should pin and paginate 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c13 {
@@ -28833,6 +29009,10 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -30125,6 +30305,10 @@ exports[`DataTable should render new data when page changes 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -32345,10 +32529,10 @@ exports[`DataTable should render new data when page changes 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hUSFEE StyledDataTable__StyledContainer-sc-xrlyjm-1 iuBBg"
+    class="StyledBox-sc-13pk1d4-0 dEaSmx StyledDataTable__StyledContainer-sc-xrlyjm-1 iuBBg"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 huRNCA"
+      class="StyledBox-sc-13pk1d4-0 bhVjdV"
     >
       <table
         class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
@@ -32364,7 +32548,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="col"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 guIzTQ"
+                class="StyledBox-sc-13pk1d4-0 dCZrDR"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32378,7 +32562,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="col"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 guIzTQ"
+                class="StyledBox-sc-13pk1d4-0 dCZrDR"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32400,7 +32584,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32413,7 +32597,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32431,7 +32615,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32444,7 +32628,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32462,7 +32646,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32475,7 +32659,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32493,7 +32677,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32506,7 +32690,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32524,7 +32708,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32537,7 +32721,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32555,7 +32739,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32568,7 +32752,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32586,7 +32770,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32599,7 +32783,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32617,7 +32801,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32630,7 +32814,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32648,7 +32832,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32661,7 +32845,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32679,7 +32863,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32692,7 +32876,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32710,7 +32894,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32723,7 +32907,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32741,7 +32925,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32754,7 +32938,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32772,7 +32956,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32785,7 +32969,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32803,7 +32987,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32816,7 +33000,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32834,7 +33018,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32847,7 +33031,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32865,7 +33049,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32878,7 +33062,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32896,7 +33080,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32909,7 +33093,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32927,7 +33111,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32940,7 +33124,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32958,7 +33142,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -32971,7 +33155,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32989,7 +33173,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33002,7 +33186,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33020,7 +33204,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33033,7 +33217,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33051,7 +33235,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33064,7 +33248,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33082,7 +33266,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33095,7 +33279,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33113,7 +33297,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33126,7 +33310,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33144,7 +33328,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33157,7 +33341,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33175,7 +33359,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33188,7 +33372,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33206,7 +33390,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33219,7 +33403,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33237,7 +33421,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33250,7 +33434,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33268,7 +33452,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33281,7 +33465,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33299,7 +33483,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33312,7 +33496,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33330,7 +33514,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33343,7 +33527,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33361,7 +33545,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33374,7 +33558,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33392,7 +33576,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33405,7 +33589,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33423,7 +33607,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33436,7 +33620,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33454,7 +33638,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33467,7 +33651,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33485,7 +33669,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33498,7 +33682,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33516,7 +33700,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33529,7 +33713,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33547,7 +33731,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33560,7 +33744,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33578,7 +33762,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33591,7 +33775,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33609,7 +33793,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33622,7 +33806,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33640,7 +33824,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33653,7 +33837,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33671,7 +33855,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33684,7 +33868,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33702,7 +33886,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33715,7 +33899,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33733,7 +33917,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33746,7 +33930,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33764,7 +33948,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -33777,7 +33961,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hUSFEE"
+                class="StyledBox-sc-13pk1d4-0 dEaSmx"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -33794,14 +33978,14 @@ exports[`DataTable should render new data when page changes 2`] = `
       class="StyledBox__StyledBoxGap-sc-13pk1d4-1 grsgKE"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 cSsESN Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 DVwAo Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="StyledBox-sc-13pk1d4-0 jKAhip"
+        class="StyledBox-sc-13pk1d4-0 hoPFxc"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 hUxOug"
+          class="StyledBox-sc-13pk1d4-0 ipfPKx"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hOyRIb"
@@ -34011,6 +34195,10 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -36349,6 +36537,10 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -38469,6 +38661,10 @@ exports[`DataTable sort 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -38873,6 +39069,10 @@ exports[`DataTable sort controlled 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -39353,6 +39553,10 @@ exports[`DataTable sort controlled 2`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -39832,6 +40036,10 @@ exports[`DataTable sort external 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -40235,6 +40443,10 @@ exports[`DataTable sort nested object 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -40638,6 +40850,10 @@ exports[`DataTable sort nested object with onSort 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -41007,6 +41223,10 @@ exports[`DataTable sort null data 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -41482,14 +41702,14 @@ exports[`DataTable sort null data 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41574,14 +41794,14 @@ exports[`DataTable sort null data 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41597,14 +41817,14 @@ exports[`DataTable sort null data 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41620,14 +41840,14 @@ exports[`DataTable sort null data 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41651,14 +41871,14 @@ exports[`DataTable sort null data 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </th>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41671,7 +41891,7 @@ exports[`DataTable sort null data 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41684,7 +41904,7 @@ exports[`DataTable sort null data 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41702,14 +41922,14 @@ exports[`DataTable sort null data 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </th>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41722,14 +41942,14 @@ exports[`DataTable sort null data 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             .c0 {
   font-size: 18px;
@@ -41756,7 +41976,7 @@ exports[`DataTable sort null data 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -41769,7 +41989,7 @@ exports[`DataTable sort null data 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41782,14 +42002,14 @@ exports[`DataTable sort null data 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -41801,7 +42021,7 @@ exports[`DataTable sort null data 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             .c0 {
   font-size: 18px;
@@ -41824,7 +42044,7 @@ exports[`DataTable sort null data 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41837,7 +42057,7 @@ exports[`DataTable sort null data 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             .c0 {
   font-size: 18px;
@@ -41859,7 +42079,7 @@ exports[`DataTable sort null data 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -41886,14 +42106,14 @@ exports[`DataTable sort null data 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41909,14 +42129,14 @@ exports[`DataTable sort null data 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -41932,14 +42152,14 @@ exports[`DataTable sort null data 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42024,14 +42244,14 @@ exports[`DataTable sort null data 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42055,7 +42275,7 @@ exports[`DataTable sort null data 3`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             .c0 {
   font-size: 18px;
@@ -42078,7 +42298,7 @@ exports[`DataTable sort null data 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42091,14 +42311,14 @@ exports[`DataTable sort null data 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -42110,14 +42330,14 @@ exports[`DataTable sort null data 3`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </th>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42130,14 +42350,14 @@ exports[`DataTable sort null data 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42155,14 +42375,14 @@ exports[`DataTable sort null data 3`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </th>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42175,7 +42395,7 @@ exports[`DataTable sort null data 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             .c0 {
   font-size: 18px;
@@ -42197,7 +42417,7 @@ exports[`DataTable sort null data 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             .c0 {
   font-size: 18px;
@@ -42224,7 +42444,7 @@ exports[`DataTable sort null data 3`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -42237,7 +42457,7 @@ exports[`DataTable sort null data 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42250,7 +42470,7 @@ exports[`DataTable sort null data 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42263,7 +42483,7 @@ exports[`DataTable sort null data 3`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -42290,14 +42510,14 @@ exports[`DataTable sort null data 4`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42313,14 +42533,14 @@ exports[`DataTable sort null data 4`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42336,14 +42556,14 @@ exports[`DataTable sort null data 4`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42359,14 +42579,14 @@ exports[`DataTable sort null data 4`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42459,7 +42679,7 @@ exports[`DataTable sort null data 4`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -42472,7 +42692,7 @@ exports[`DataTable sort null data 4`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42485,14 +42705,14 @@ exports[`DataTable sort null data 4`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -42504,7 +42724,7 @@ exports[`DataTable sort null data 4`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             .c0 {
   font-size: 18px;
@@ -42527,7 +42747,7 @@ exports[`DataTable sort null data 4`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42540,7 +42760,7 @@ exports[`DataTable sort null data 4`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             .c0 {
   font-size: 18px;
@@ -42562,7 +42782,7 @@ exports[`DataTable sort null data 4`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
       </tr>
@@ -42574,14 +42794,14 @@ exports[`DataTable sort null data 4`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </th>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42594,7 +42814,7 @@ exports[`DataTable sort null data 4`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42607,7 +42827,7 @@ exports[`DataTable sort null data 4`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42625,14 +42845,14 @@ exports[`DataTable sort null data 4`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </th>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -42645,14 +42865,14 @@ exports[`DataTable sort null data 4`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           />
         </td>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             .c0 {
   font-size: 18px;
@@ -42702,6 +42922,10 @@ exports[`DataTable sortable 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -43032,14 +43256,14 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -43124,14 +43348,14 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 guIzTQ"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dEmnTc"
+                class="StyledBox-sc-13pk1d4-0 exzkbd"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -43155,7 +43379,7 @@ exports[`DataTable sortable 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -43168,7 +43392,7 @@ exports[`DataTable sortable 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -43186,7 +43410,7 @@ exports[`DataTable sortable 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -43199,7 +43423,7 @@ exports[`DataTable sortable 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -43217,7 +43441,7 @@ exports[`DataTable sortable 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hDSAIu"
@@ -43230,7 +43454,7 @@ exports[`DataTable sortable 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hUSFEE"
+            class="StyledBox-sc-13pk1d4-0 dEaSmx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -43271,6 +43495,10 @@ exports[`DataTable themeColumnSizes 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -43519,6 +43747,10 @@ exports[`DataTable units 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c6 {
@@ -43805,6 +44037,10 @@ exports[`DataTable verticalAlign 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c5 {

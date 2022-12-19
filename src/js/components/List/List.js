@@ -84,7 +84,7 @@ const StyledContainer = styled(Box)`
 const getValue = (item, index, key) => {
   if (typeof key === 'function') return key(item, index);
   if (typeof item === 'string') return item;
-  if (key !== undefined) return item[key];
+  if (key !== undefined) return item?.[key];
   return undefined;
 };
 

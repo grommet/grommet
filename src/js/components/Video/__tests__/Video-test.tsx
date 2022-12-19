@@ -22,7 +22,11 @@ describe('Video', () => {
   });
 
   test('should have no accessibility violations', async () => {
-    const { container } = render(<App />);
+    const { container } = render(
+      <Grommet>
+        <Video />
+      </Grommet>,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
