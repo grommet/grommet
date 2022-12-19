@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { useAnalytics } from '../../contexts/AnalyticsContext';
+import { useAnalytics } from '../../contexts';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useForwardedRef } from '../../utils';
 

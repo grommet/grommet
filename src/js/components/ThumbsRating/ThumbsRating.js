@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { Like, LikeFill, Dislike, DislikeFill } from 'grommet-icons';
+import { Like } from 'grommet-icons/icons/Like';
+import { LikeFill } from 'grommet-icons/icons/LikeFill';
+import { Dislike } from 'grommet-icons/icons/Dislike';
+import { DislikeFill } from 'grommet-icons/icons/DislikeFill';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 
 const ThumbsRating = ({ ...rest }) => {

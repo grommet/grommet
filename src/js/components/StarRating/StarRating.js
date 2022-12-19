@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-import { Star, StarOutline } from 'grommet-icons';
+import { Star } from 'grommet-icons/icons/Star';
+import { StarOutline } from 'grommet-icons/icons/StarOutline';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 
 const StarRating = ({ ...rest }) => {
