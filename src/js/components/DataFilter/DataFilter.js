@@ -118,7 +118,7 @@ export const DataFilter = ({
           pad="xsmall"
           gap="small"
         >
-          <Text ref={minRef} size="small" style={{ fontFamily: 'monospace' }}>
+          <Text ref={minRef} size="small">
             {rangeValues[0]}
           </Text>
           <RangeSelector
@@ -134,7 +134,7 @@ export const DataFilter = ({
             round="small"
             onChange={setRangeValues}
           />
-          <Text ref={maxRef} size="small" style={{ fontFamily: 'monospace' }}>
+          <Text ref={maxRef} size="small">
             {rangeValues[1]}
           </Text>
         </Box>

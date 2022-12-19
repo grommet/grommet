@@ -1654,7 +1654,7 @@ exports[`DataFilter range 1`] = `
             >
               <span
                 class="c9"
-                style="font-family: monospace; width: 0px;"
+                style="width: 0px;"
               >
                 0
               </span>
@@ -1722,7 +1722,7 @@ exports[`DataFilter range 1`] = `
               />
               <span
                 class="c9"
-                style="font-family: monospace; width: 0px;"
+                style="width: 0px;"
               >
                 5
               </span>
@@ -2597,7 +2597,7 @@ exports[`DataFilter renders 1`] = `
             >
               <span
                 class="c16"
-                style="font-family: monospace; width: 0px;"
+                style="width: 0px;"
               >
                 2.0999999999999996
               </span>
@@ -2665,7 +2665,7 @@ exports[`DataFilter renders 1`] = `
               />
               <span
                 class="c16"
-                style="font-family: monospace; width: 0px;"
+                style="width: 0px;"
               >
                 4.8999999999999995
               </span>
