@@ -56,7 +56,7 @@ export interface SelectProps extends BasicSelectProps {
   defaultValue?: string | number | object | (string | number | object)[];
   multiple?: boolean;
   selected?: number | number[];
-  value?: string | JSX.Element | object | (string | number | object)[];
+  value?: string | JSX.Element | number | object | (string | number | object)[];
 }
 
 // Try without Omit<> to see where we define our own attributes for overrides
