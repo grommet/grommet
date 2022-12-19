@@ -14,7 +14,7 @@ export const Children = () => (
   <Grid pad="large" columns={[['medium', 'large']]} justifyContent="center">
     <Cards data={data} pad="medium" border={false}>
       {(datum) => (
-        <Card key={datum.city}>
+        <Card key={datum.city} as="li">
           <CardBody>
             <Heading level={2} size="small" margin="none">
               {datum.city}
