@@ -44,7 +44,7 @@ export const SolicitedFeedback = () => {
         </FormField>
         <FormField
           label="What would have improved your experience"
-          htmlFor="better-experience"
+          htmlFor="experience"
           name="experience"
         >
           <RadioButtonGroup
