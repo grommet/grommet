@@ -333,6 +333,73 @@ exports[`DataFilters clear 1`] = `
   border: 0;
 }
 
+.c19 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus > circle,
+.c19:focus > ellipse,
+.c19:focus > line,
+.c19:focus > path,
+.c19:focus > polygon,
+.c19:focus > polyline,
+.c19:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) > circle,
+.c19:focus:not(:focus-visible) > ellipse,
+.c19:focus:not(:focus-visible) > line,
+.c19:focus:not(:focus-visible) > path,
+.c19:focus:not(:focus-visible) > polygon,
+.c19:focus:not(:focus-visible) > polyline,
+.c19:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   box-sizing: border-box;
   stroke-width: 4px;
@@ -395,6 +462,11 @@ exports[`DataFilters clear 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+.c20 {
+  opacity: 0;
+  tab-index: -1;
 }
 
 .c0 {
@@ -594,7 +666,8 @@ exports[`DataFilters clear 1`] = `
             class="c4"
           />
           <button
-            class="c5"
+            class="c19 c20"
+            disabled=""
             type="reset"
           >
             Reset filters
@@ -1554,16 +1627,14 @@ exports[`DataFilters properties array 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c16:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c16:focus {
@@ -1660,6 +1731,11 @@ exports[`DataFilters properties array 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+.c17 {
+  opacity: 0;
+  tab-index: -1;
 }
 
 .c0 {
@@ -1828,7 +1904,8 @@ exports[`DataFilters properties array 1`] = `
             class="c15"
           />
           <button
-            class="c16"
+            class="c16 c17"
+            disabled=""
             type="reset"
           >
             Reset filters
@@ -2095,16 +2172,14 @@ exports[`DataFilters properties object 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c16:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c16:focus {
@@ -2201,6 +2276,11 @@ exports[`DataFilters properties object 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+.c17 {
+  opacity: 0;
+  tab-index: -1;
 }
 
 .c0 {
@@ -2369,7 +2449,8 @@ exports[`DataFilters properties object 1`] = `
             class="c15"
           />
           <button
-            class="c16"
+            class="c16 c17"
+            disabled=""
             type="reset"
           >
             Reset filters
@@ -2636,16 +2717,14 @@ exports[`DataFilters renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c16:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c16:focus {
@@ -2742,6 +2821,11 @@ exports[`DataFilters renders 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+.c17 {
+  opacity: 0;
+  tab-index: -1;
 }
 
 .c0 {
@@ -2910,7 +2994,8 @@ exports[`DataFilters renders 1`] = `
             class="c15"
           />
           <button
-            class="c16"
+            class="c16 c17"
+            disabled=""
             type="reset"
           >
             Reset filters

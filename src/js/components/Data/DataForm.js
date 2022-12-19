@@ -1,10 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Footer } from '../Footer';
 import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
+
+const HideableButton = styled(Button)`
+  ${(props) =>
+    props.disabled &&
+    `
+  opacity: 0;
+  tab-index: -1;`}
+`;
 
 // We convert the view structure to something more flat to work better
 // with the Form inputs. These keys are how we flatten the Form value object
@@ -86,6 +95,7 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
   const { messages, onView, updateOn, view } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
+  const [changed, setChanged] = useState();
 
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
 
@@ -98,6 +108,7 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
           ? ({ value: nextValue }) => {
               clearEmpty(nextValue);
               setFormValue(nextValue);
+              setChanged(false);
               onView(formValueToView(nextValue));
               if (onDone) onDone();
             }
@@ -106,6 +117,7 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
       onChange={(nextValue) => {
         clearEmpty(nextValue);
         setFormValue(nextValue);
+        setChanged(true);
         if (updateOn === 'change') onView(formValueToView(nextValue));
       }}
     >
@@ -121,13 +133,17 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
               type="submit"
               primary
             />
-            <Button
+            <HideableButton
               label={format({
                 id: 'dataForm.reset',
                 messages: messages?.dataForm,
               })}
               type="reset"
-              onClick={() => setFormValue(viewToFormValue(view))}
+              onClick={() => {
+                setFormValue(viewToFormValue(view));
+                setChanged(false);
+              }}
+              disabled={!changed}
             />
           </Footer>
         )}

@@ -159,16 +159,14 @@ exports[`DataSummary renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c8:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c8:focus {
@@ -218,6 +216,11 @@ exports[`DataSummary renders 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+.c9 {
+  opacity: 0;
+  tab-index: -1;
 }
 
 .c0 {
@@ -300,7 +303,8 @@ exports[`DataSummary renders 1`] = `
             class="c7"
           />
           <button
-            class="c8"
+            class="c8 c9"
+            disabled=""
             type="reset"
           >
             Reset filters

@@ -191,16 +191,14 @@ exports[`DataFilter children 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c12:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c12:focus {
@@ -299,6 +297,11 @@ exports[`DataFilter children 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+.c13 {
+  opacity: 0;
+  tab-index: -1;
 }
 
 .c0 {
@@ -411,7 +414,8 @@ exports[`DataFilter children 1`] = `
             class="c11"
           />
           <button
-            class="c12"
+            class="c12 c13"
+            disabled=""
             type="reset"
           >
             Reset filters
@@ -678,16 +682,14 @@ exports[`DataFilter options 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c16:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c16:focus {
@@ -784,6 +786,11 @@ exports[`DataFilter options 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+.c17 {
+  opacity: 0;
+  tab-index: -1;
 }
 
 .c0 {
@@ -1102,7 +1109,8 @@ exports[`DataFilter options 1`] = `
             class="c15"
           />
           <button
-            class="c16"
+            class="c16 c17"
+            disabled=""
             type="reset"
           >
             Reset filters
@@ -1474,16 +1482,14 @@ exports[`DataFilter range 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c20:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c20:focus {
@@ -1540,6 +1546,11 @@ exports[`DataFilter range 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+.c21 {
+  opacity: 0;
+  tab-index: -1;
 }
 
 .c0 {
@@ -1745,7 +1756,8 @@ exports[`DataFilter range 1`] = `
             class="c19"
           />
           <button
-            class="c20"
+            class="c20 c21"
+            disabled=""
             type="reset"
           >
             Reset filters
@@ -2196,16 +2208,14 @@ exports[`DataFilter renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c27:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c27:focus {
@@ -2309,6 +2319,11 @@ exports[`DataFilter renders 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+.c28 {
+  opacity: 0;
+  tab-index: -1;
 }
 
 .c0 {
@@ -2688,7 +2703,8 @@ exports[`DataFilter renders 1`] = `
             class="c26"
           />
           <button
-            class="c27"
+            class="c27 c28"
+            disabled=""
             type="reset"
           >
             Reset filters

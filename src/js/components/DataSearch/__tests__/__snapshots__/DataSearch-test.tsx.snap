@@ -186,16 +186,14 @@ exports[`DataSearch renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c11:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c11:focus {
@@ -333,6 +331,11 @@ exports[`DataSearch renders 1`] = `
   overflow-wrap: break-word;
 }
 
+.c12 {
+  opacity: 0;
+  tab-index: -1;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -437,7 +440,8 @@ exports[`DataSearch renders 1`] = `
             class="c10"
           />
           <button
-            class="c11"
+            class="c11 c12"
+            disabled=""
             type="reset"
           >
             Reset filters
