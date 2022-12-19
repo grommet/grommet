@@ -41,7 +41,7 @@ export const SolicitedFeedback = () => {
           name="rating"
           label="Was this content helpful?"
         >
-          <StarRating id="star-rating" name="rating" color="pink" />
+          <StarRating id="star-rating" name="rating" color="brand" />
         </FormField>
         <FormField
           label="What would have improved your experience"

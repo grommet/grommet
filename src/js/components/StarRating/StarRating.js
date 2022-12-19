@@ -24,13 +24,9 @@ const StarRating = ({ ...rest }) => {
     >
       {(option) =>
         option <= value ? (
-          <Star
-            color={theme.starRating?.color || theme.starRating?.color?.fill}
-          />
+          <Star color={theme.starRating?.color} />
         ) : (
-          <StarOutline
-            color={theme.starRating?.color || theme.starRating?.color?.outline}
-          />
+          <StarOutline color={theme.starRating?.color} />
         )
       }
     </RadioButtonGroup>

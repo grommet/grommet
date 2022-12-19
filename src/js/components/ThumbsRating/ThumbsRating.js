@@ -13,35 +13,15 @@ const ThumbsRating = ({ ...rest }) => {
       {(option, { checked }) => {
         if (option === 'like') {
           return checked ? (
-            <LikeFill
-              color={
-                theme.thumbsRating?.like?.color ||
-                theme.thumbsRating?.like?.color?.fill
-              }
-            />
+            <LikeFill color={theme.thumbsRating?.like?.color} />
           ) : (
-            <Like
-              color={
-                theme.thumbsRating?.like?.color ||
-                theme.thumbsRating?.like?.color?.outline
-              }
-            />
+            <Like color={theme.thumbsRating?.like?.color} />
           );
         }
         return checked ? (
-          <DislikeFill
-            color={
-              theme.thumbsRating?.dislike?.color ||
-              theme.thumbsRating?.dislike?.color?.fill
-            }
-          />
+          <DislikeFill color={theme.thumbsRating?.dislike?.color} />
         ) : (
-          <Dislike
-            color={
-              theme.thumbsRating?.dislike?.color ||
-              theme.thumbsRating?.dislike?.color?.fill
-            }
-          />
+          <Dislike color={theme.thumbsRating?.dislike?.color} />
         );
       }}
     </RadioButtonGroup>
