@@ -9,6 +9,7 @@ export interface FormExtendedEvent<R = Record<string, unknown>, T = Element>
 export interface FormProps<T> {
   errors?: {};
   infos?: {};
+  kind?: string;
   messages?: { invalid?: string; required?: string };
   onChange?: (value: T, options: { touched?: Record<string, boolean> }) => void;
   onSubmit?: (event: FormExtendedEvent<T>) => void;
