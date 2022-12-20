@@ -937,6 +937,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       margin: { bottom: 'small' },
       // round: undefined,
+      survey: {
+        label: {
+          margin: { bottom: 'xsmall' },
+          size: 'medium',
+          weight: 400,
+        },
+      },
     },
     grommet: {
       // extend: undefined
@@ -1501,6 +1508,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
     },
+    thumbsRating: {
+      // dislike: {
+      //   color: undefined,
+      // },
+      // like: {
+      //   color: undefined,
+      // },
+    },
     spinner: {
       container: {
         animation: 'rotateRight',
@@ -1662,6 +1677,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: { bottom: 'medium' },
         size: 'medium',
       },
+    },
+    starRating: {
+      // color: undefined,
     },
     tab: {
       active: {

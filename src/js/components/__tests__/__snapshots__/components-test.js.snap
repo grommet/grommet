@@ -354,6 +354,7 @@ exports[`Components loads 1`] = `
     "propTypes": {
       "errors": [Function],
       "infos": [Function],
+      "kind": [Function],
       "messages": [Function],
       "onChange": [Function],
       "onReset": [Function],
@@ -1247,6 +1248,15 @@ exports[`Components loads 1`] = `
           "margin": {
             "bottom": "small",
           },
+          "survey": {
+            "label": {
+              "margin": {
+                "bottom": "xsmall",
+              },
+              "size": "medium",
+              "weight": 400,
+            },
+          },
         },
         "global": {
           "active": {
@@ -2396,6 +2406,7 @@ exports[`Components loads 1`] = `
             "xsmall": "18px",
           },
         },
+        "starRating": {},
         "tab": {
           "active": {
             "color": "text",
@@ -2604,6 +2615,7 @@ exports[`Components loads 1`] = `
         },
         "textArea": {},
         "textInput": {},
+        "thumbsRating": {},
         "tip": {
           "content": {
             "background": "background-contrast",
@@ -3225,6 +3237,15 @@ exports[`Components loads 1`] = `
           "margin": {
             "bottom": "small",
           },
+          "survey": {
+            "label": {
+              "margin": {
+                "bottom": "xsmall",
+              },
+              "size": "medium",
+              "weight": 400,
+            },
+          },
         },
         "global": {
           "active": {
@@ -4374,6 +4395,7 @@ exports[`Components loads 1`] = `
             "xsmall": "18px",
           },
         },
+        "starRating": {},
         "tab": {
           "active": {
             "color": "text",
@@ -4582,6 +4604,7 @@ exports[`Components loads 1`] = `
         },
         "textArea": {},
         "textInput": {},
+        "thumbsRating": {},
         "tip": {
           "content": {
             "background": "background-contrast",
@@ -4766,6 +4789,7 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "StarRating": [Function],
   "Tab": {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": {},
@@ -4919,6 +4943,7 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "ThumbsRating": [Function],
   "Tip": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {

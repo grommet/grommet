@@ -5,6 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     errors: PropTypes.shape({}),
     infos: PropTypes.shape({}),
+    kind: PropTypes.string,
     messages: PropTypes.shape({
       invalid: PropTypes.string,
       required: PropTypes.string,
