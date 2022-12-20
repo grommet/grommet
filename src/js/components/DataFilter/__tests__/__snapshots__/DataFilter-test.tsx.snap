@@ -301,7 +301,6 @@ exports[`DataFilter children 1`] = `
 
 .c13 {
   opacity: 0;
-  tab-index: -1;
 }
 
 .c0 {
@@ -414,11 +413,13 @@ exports[`DataFilter children 1`] = `
             class="c11"
           />
           <button
+            aria-hidden="true"
             class="c12 c13"
             disabled=""
+            tabindex="-1"
             type="reset"
           >
-            Reset filters
+            Undo changes
           </button>
         </footer>
       </div>
@@ -790,7 +791,6 @@ exports[`DataFilter options 1`] = `
 
 .c17 {
   opacity: 0;
-  tab-index: -1;
 }
 
 .c0 {
@@ -1109,11 +1109,13 @@ exports[`DataFilter options 1`] = `
             class="c15"
           />
           <button
+            aria-hidden="true"
             class="c16 c17"
             disabled=""
+            tabindex="-1"
             type="reset"
           >
-            Reset filters
+            Undo changes
           </button>
         </footer>
       </div>
@@ -1550,7 +1552,6 @@ exports[`DataFilter range 1`] = `
 
 .c21 {
   opacity: 0;
-  tab-index: -1;
 }
 
 .c0 {
@@ -1756,11 +1757,13 @@ exports[`DataFilter range 1`] = `
             class="c19"
           />
           <button
+            aria-hidden="true"
             class="c20 c21"
             disabled=""
+            tabindex="-1"
             type="reset"
           >
-            Reset filters
+            Undo changes
           </button>
         </footer>
       </div>
@@ -2323,7 +2326,6 @@ exports[`DataFilter renders 1`] = `
 
 .c28 {
   opacity: 0;
-  tab-index: -1;
 }
 
 .c0 {
@@ -2703,11 +2705,13 @@ exports[`DataFilter renders 1`] = `
             class="c26"
           />
           <button
+            aria-hidden="true"
             class="c27 c28"
             disabled=""
+            tabindex="-1"
             type="reset"
           >
-            Reset filters
+            Undo changes
           </button>
         </footer>
       </div>

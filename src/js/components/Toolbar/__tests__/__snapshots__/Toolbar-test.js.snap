@@ -510,7 +510,6 @@ exports[`DataFilters renders 1`] = `
 
 .c22 {
   opacity: 0;
-  tab-index: -1;
 }
 
 .c0 {
@@ -728,11 +727,13 @@ exports[`DataFilters renders 1`] = `
               class="c20"
             />
             <button
+              aria-hidden="true"
               class="c21 c22"
               disabled=""
+              tabindex="-1"
               type="reset"
             >
-              Reset filters
+              Undo changes
             </button>
           </footer>
         </div>

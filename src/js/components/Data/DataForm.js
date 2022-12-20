@@ -11,9 +11,14 @@ const HideableButton = styled(Button)`
   ${(props) =>
     props.disabled &&
     `
-  opacity: 0;
-  tab-index: -1;`}
+  opacity: 0;`}
 `;
+
+const hideButtonProps = {
+  'aria-hidden': true,
+  disabled: true,
+  tabIndex: -1,
+};
 
 // We convert the view structure to something more flat to work better
 // with the Form inputs. These keys are how we flatten the Form value object
@@ -143,7 +148,7 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
                 setFormValue(viewToFormValue(view));
                 setChanged(false);
               }}
-              disabled={!changed}
+              {...(!changed ? hideButtonProps : {})}
             />
           </Footer>
         )}

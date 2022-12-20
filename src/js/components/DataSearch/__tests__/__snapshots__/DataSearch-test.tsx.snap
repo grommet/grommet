@@ -333,7 +333,6 @@ exports[`DataSearch renders 1`] = `
 
 .c12 {
   opacity: 0;
-  tab-index: -1;
 }
 
 .c0 {
@@ -440,11 +439,13 @@ exports[`DataSearch renders 1`] = `
             class="c10"
           />
           <button
+            aria-hidden="true"
             class="c11 c12"
             disabled=""
+            tabindex="-1"
             type="reset"
           >
-            Reset filters
+            Undo changes
           </button>
         </footer>
       </div>

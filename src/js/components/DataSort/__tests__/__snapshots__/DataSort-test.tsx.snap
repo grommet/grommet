@@ -547,7 +547,6 @@ exports[`DataSort renders 1`] = `
 
 .c25 {
   opacity: 0;
-  tab-index: -1;
 }
 
 .c0 {
@@ -799,11 +798,13 @@ exports[`DataSort renders 1`] = `
             class="c23"
           />
           <button
+            aria-hidden="true"
             class="c24 c25"
             disabled=""
+            tabindex="-1"
             type="reset"
           >
-            Reset filters
+            Undo changes
           </button>
         </footer>
       </div>

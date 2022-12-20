@@ -21,7 +21,7 @@
     "open": "Open filters"
   },
   "dataForm": {
-    "reset": "Reset filters",
+    "reset": "Undo changes",
     "submit": "Apply filters"
   },
   "dataSearch": {
