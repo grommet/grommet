@@ -24,8 +24,7 @@ const hideButtonProps = {
 // with the Form inputs. These keys are how we flatten the Form value object
 // from the view object.
 const formSearchKey = '_search';
-const formSortPropertyKey = '_sort.property';
-const formSortDirectionKey = '_sort.direction';
+const formSortKey = '_sort';
 const formRangeKey = '_range';
 
 // converts from the external view format to the internal Form value format
@@ -43,10 +42,7 @@ const viewToFormValue = (view) => {
 
   result[formSearchKey] = view?.search || '';
 
-  if (view?.sort) {
-    result[formSortPropertyKey] = view?.sort?.property;
-    result[formSortDirectionKey] = view?.sort?.direction;
-  }
+  if (view?.sort) result[formSortKey] = view?.sort;
 
   return result;
 };
@@ -57,18 +53,13 @@ const formValueToView = (value) => {
 
   const searchText = value[formSearchKey];
   delete properties[formSearchKey];
-
-  const sortProperty = value[formSortPropertyKey];
-  const sortDirection = value[formSortDirectionKey];
-  delete properties[formSortPropertyKey];
-  delete properties[formSortDirectionKey];
+  const sort = value[formSortKey];
+  delete properties[formSortKey];
 
   const result = {
     properties,
     search: searchText,
-    ...(sortProperty || sortDirection
-      ? { sort: { property: sortProperty, direction: sortDirection } }
-      : {}),
+    ...(sort ? { sort } : {}),
   };
 
   // convert any ranges

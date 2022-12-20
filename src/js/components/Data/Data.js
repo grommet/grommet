@@ -40,6 +40,7 @@ export const Data = ({
 
     if (
       view?.search ||
+      view?.sort ||
       (view?.properties && Object.keys(view.properties).length)
     ) {
       result.clearFilters = () => {

@@ -76,25 +76,26 @@ export const DataFilters = ({ drop, children, heading, ...rest }) => {
   let badge = 0;
   if (view?.properties) badge += Object.keys(view.properties).length;
   if (view?.search) badge += 1;
+  if (view?.sort) badge += 1;
   if (!badge) badge = undefined;
 
-    // drop
+  // drop
   const control = (
-      <DropButton
-        aria-label={format({
-          id: 'dataFilters.open',
-          messages: messages?.dataFilters,
-        })}
-        kind="toolbar"
-        icon={<Filter />}
-        dropProps={dropProps}
-        dropContent={content}
-        badge={badge}
-        open={showContent}
-        onOpen={() => setShowContent(undefined)}
-        onClose={() => setShowContent(undefined)}
-      />
-    );
+    <DropButton
+      aria-label={format({
+        id: 'dataFilters.open',
+        messages: messages?.dataFilters,
+      })}
+      kind="toolbar"
+      icon={<Filter />}
+      dropProps={dropProps}
+      dropContent={content}
+      badge={badge}
+      open={showContent}
+      onOpen={() => setShowContent(undefined)}
+      onClose={() => setShowContent(undefined)}
+    />
+  );
 
   return (
     <Box flex={false} direction="row" gap="small" {...rest}>
