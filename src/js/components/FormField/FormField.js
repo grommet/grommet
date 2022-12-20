@@ -34,6 +34,8 @@ const grommetInputNames = [
   'FileInput',
   'RadioButtonGroup',
   'RangeInput',
+  'StarRating',
+  'ThumbsRating',
 ];
 const grommetInputPadNames = [
   'CheckBox',
@@ -202,6 +204,7 @@ const FormField = forwardRef(
       required,
       validate,
     });
+    const formKind = formContext.kind;
     const [focus, setFocus] = useState();
     const formFieldRef = useForwardedRef(ref);
 
@@ -345,7 +348,10 @@ const FormField = forwardRef(
       borderColor = (themeBorder && themeBorder.color) || 'border';
     }
 
-    const labelStyle = { ...formFieldTheme.label };
+    let labelStyle;
+    if (formKind) {
+      labelStyle = { ...formFieldTheme[formKind].label };
+    } else labelStyle = { ...formFieldTheme.label };
 
     if (disabled) {
       labelStyle.color =
