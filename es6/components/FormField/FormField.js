@@ -18,7 +18,7 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
-var grommetInputNames = ['CheckBox', 'CheckBoxGroup', 'TextInput', 'Select', 'MaskedInput', 'SelectMultiple', 'TextArea', 'DateInput', 'FileInput', 'RadioButtonGroup', 'RangeInput'];
+var grommetInputNames = ['CheckBox', 'CheckBoxGroup', 'TextInput', 'Select', 'MaskedInput', 'SelectMultiple', 'TextArea', 'DateInput', 'FileInput', 'RadioButtonGroup', 'RangeInput', 'StarRating', 'ThumbsRating'];
 var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButtonGroup', 'RangeInput'];
 var isGrommetInput = function isGrommetInput(comp) {
   return comp && (grommetInputNames.indexOf(comp.displayName) !== -1 || grommetInputPadNames.indexOf(comp.displayName) !== -1);
@@ -169,6 +169,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     inForm = _formContext$useFormF.inForm,
     contextOnBlur = _formContext$useFormF.onBlur,
     contextOnChange = _formContext$useFormF.onChange;
+  var formKind = formContext.kind;
   var _useState2 = useState(),
     focus = _useState2[0],
     setFocus = _useState2[1];
@@ -248,7 +249,10 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   } else {
     borderColor = themeBorder && themeBorder.color || 'border';
   }
-  var labelStyle = _extends({}, formFieldTheme.label);
+  var labelStyle;
+  if (formKind) {
+    labelStyle = _extends({}, formFieldTheme[formKind].label);
+  } else labelStyle = _extends({}, formFieldTheme.label);
   if (disabled) {
     labelStyle.color = formFieldTheme.disabled && formFieldTheme.disabled.label ? formFieldTheme.disabled.label.color : labelStyle.color;
   }

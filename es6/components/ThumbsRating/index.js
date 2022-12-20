@@ -1,0 +1,1 @@
+export { ThumbsRating } from './ThumbsRating';

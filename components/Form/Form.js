@@ -8,7 +8,7 @@ var _MessageContext = require("../../contexts/MessageContext");
 var _utils = require("../../utils");
 var _FormContext = require("./FormContext");
 var _propTypes = require("./propTypes");
-var _excluded = ["children", "errors", "infos", "messages", "onChange", "onReset", "onSubmit", "onValidate", "validate", "value"];
+var _excluded = ["children", "errors", "infos", "messages", "kind", "onChange", "onReset", "onSubmit", "onValidate", "validate", "value"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -155,6 +155,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     _ref2$infos = _ref2.infos,
     infosProp = _ref2$infos === void 0 ? defaultValidationResults.infos : _ref2$infos,
     messages = _ref2.messages,
+    kind = _ref2.kind,
     onChange = _ref2.onChange,
     _onReset = _ref2.onReset,
     _onSubmit = _ref2.onSubmit,
@@ -518,9 +519,10 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     };
     return {
       useFormField: useFormField,
-      useFormInput: useFormInput
+      useFormInput: useFormInput,
+      kind: kind
     };
-  }, [onChange, pendingValidation, touched, validateOn, validationResults.errors, validationResults.infos, value, valueProp]);
+  }, [onChange, kind, pendingValidation, touched, validateOn, validationResults.errors, validationResults.infos, value, valueProp]);
   return /*#__PURE__*/_react["default"].createElement("form", _extends({
     ref: formRef
   }, rest, {

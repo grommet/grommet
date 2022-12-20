@@ -9,6 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     errors: _propTypes["default"].shape({}),
     infos: _propTypes["default"].shape({}),
+    kind: _propTypes["default"].string,
     messages: _propTypes["default"].shape({
       invalid: _propTypes["default"].string,
       required: _propTypes["default"].string

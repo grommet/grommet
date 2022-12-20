@@ -1,4 +1,4 @@
-var _excluded = ["children", "errors", "infos", "messages", "onChange", "onReset", "onSubmit", "onValidate", "validate", "value"];
+var _excluded = ["children", "errors", "infos", "messages", "kind", "onChange", "onReset", "onSubmit", "onValidate", "validate", "value"];
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
@@ -149,6 +149,7 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     _ref2$infos = _ref2.infos,
     infosProp = _ref2$infos === void 0 ? defaultValidationResults.infos : _ref2$infos,
     messages = _ref2.messages,
+    kind = _ref2.kind,
     onChange = _ref2.onChange,
     _onReset = _ref2.onReset,
     _onSubmit = _ref2.onSubmit,
@@ -512,9 +513,10 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     };
     return {
       useFormField: useFormField,
-      useFormInput: useFormInput
+      useFormInput: useFormInput,
+      kind: kind
     };
-  }, [onChange, pendingValidation, touched, validateOn, validationResults.errors, validationResults.infos, value, valueProp]);
+  }, [onChange, kind, pendingValidation, touched, validateOn, validationResults.errors, validationResults.infos, value, valueProp]);
   return /*#__PURE__*/React.createElement("form", _extends({
     ref: formRef
   }, rest, {

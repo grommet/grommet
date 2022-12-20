@@ -1065,10 +1065,18 @@ var generate = function generate(baseSpacing, scale) {
 
       margin: {
         bottom: 'small'
-      }
+      },
       // round: undefined,
+      survey: {
+        label: {
+          margin: {
+            bottom: 'xsmall'
+          },
+          size: 'medium',
+          weight: 400
+        }
+      }
     },
-
     grommet: {
       // extend: undefined
     },
@@ -1671,6 +1679,14 @@ var generate = function generate(baseSpacing, scale) {
       xlarge: _extends({}, fontSizing(2)),
       xxlarge: _extends({}, fontSizing(4))
     },
+    thumbsRating: {
+      // dislike: {
+      //   color: undefined,
+      // },
+      // like: {
+      //   color: undefined,
+      // },
+    },
     spinner: {
       container: {
         animation: 'rotateRight',
@@ -1844,6 +1860,9 @@ var generate = function generate(baseSpacing, scale) {
         },
         size: 'medium'
       }
+    },
+    starRating: {
+      // color: undefined,
     },
     tab: {
       active: {

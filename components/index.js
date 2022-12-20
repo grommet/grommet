@@ -397,6 +397,12 @@ Object.keys(_Stack).forEach(function (key) {
   if (key in exports && exports[key] === _Stack[key]) return;
   exports[key] = _Stack[key];
 });
+var _StarRating = require("./StarRating");
+Object.keys(_StarRating).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _StarRating[key]) return;
+  exports[key] = _StarRating[key];
+});
 var _Table = require("./Table");
 Object.keys(_Table).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -474,6 +480,12 @@ Object.keys(_Tip).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   if (key in exports && exports[key] === _Tip[key]) return;
   exports[key] = _Tip[key];
+});
+var _ThumbsRating = require("./ThumbsRating");
+Object.keys(_ThumbsRating).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _ThumbsRating[key]) return;
+  exports[key] = _ThumbsRating[key];
 });
 var _Video = require("./Video");
 Object.keys(_Video).forEach(function (key) {
