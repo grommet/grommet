@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
-import { Box, DataTable, Data, Grid, Pagination, Text, Tip } from 'grommet';
+import {
+  Box,
+  DataTable,
+  Data,
+  Grid,
+  Notification,
+  Pagination,
+  Text,
+  Tip,
+} from 'grommet';
 
 import { StatusCritical } from 'grommet-icons';
 
@@ -163,7 +172,12 @@ export const Table = () => {
       pad="large"
       columns={[['small', 'large']]}
       justifyContent="center"
+      gap="large"
     >
+      <Notification
+        status="info"
+        message="Data is in 'beta'. The API surface is subject to change."
+      />
       <Box>
         <Data
           properties={{

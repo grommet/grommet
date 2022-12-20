@@ -26,5 +26,5 @@ Inline.args = {
 };
 
 export default {
-  title: 'Input/DataFilters/Inline',
+  title: 'Layout/Data/DataFilters/Inline',
 };

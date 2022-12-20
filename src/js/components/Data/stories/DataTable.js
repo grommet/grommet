@@ -8,6 +8,7 @@ import {
   DataSummary,
   DataTable,
   Grid,
+  Notification,
   Toolbar,
 } from 'grommet';
 
@@ -22,7 +23,12 @@ export const Table = () => (
     pad="large"
     columns={[['small', 'large']]}
     justifyContent="center"
+    gap="large"
   >
+    <Notification
+      status="info"
+      message="Data is in 'beta'. The API surface is subject to change."
+    />
     <Data data={DATA}>
       <Toolbar>
         <DataSearch />

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button, DropButton, TextInput } from 'grommet';
+import { Box, Button, DropButton, Notification, TextInput } from 'grommet';
 import { Search } from 'grommet-icons/icons/Search';
 import { Filter } from 'grommet-icons/icons/Filter';
 
@@ -9,7 +9,11 @@ import { Toolbar } from '../Toolbar';
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box fill align="center" justify="start" pad="large">
+  <Box fill align="center" justify="start" pad="large" gap="large">
+    <Notification
+      status="info"
+      message="Toolbar is in 'beta'. The API surface is subject to change."
+    />
     <Box width="large">
       <Toolbar>
         <Box width={{ max: 'small' }}>

@@ -22,5 +22,5 @@ Simple.args = {
 };
 
 export default {
-  title: 'Type/DataSummary/Simple',
+  title: 'Layout/Data/DataSummary/Simple',
 };

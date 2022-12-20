@@ -21,5 +21,5 @@ Simple.args = {
 };
 
 export default {
-  title: 'Input/DataFilters/Simple',
+  title: 'Layout/Data/DataFilters/Simple',
 };
