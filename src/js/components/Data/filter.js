@@ -10,7 +10,10 @@ const datumValue = (datum, property) => {
 // This is where we filter the data internall, when the caller doesn't
 // provide an onView.
 export const filter = (data, view, properties) => {
-  const searchExp = view?.search ? new RegExp(view.search, 'i') : undefined;
+  // from https://stackoverflow.com/a/6300266/8513067
+  const searchExp = view?.search
+    ? new RegExp(view.search.replace(/[#-.]|[[-^]|[?|{}]/g, '\\$&'), 'i')
+    : undefined;
   let searchProperties;
   if (properties) {
     // if we know where we want to search, look there
