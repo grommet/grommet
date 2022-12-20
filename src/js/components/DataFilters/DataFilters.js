@@ -1,5 +1,4 @@
 import React, { Children, useContext, useState } from 'react';
-import { Close } from 'grommet-icons/icons/Close';
 import { Filter } from 'grommet-icons/icons/Filter';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -8,7 +7,6 @@ import { DataForm } from '../Data';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
-import { Layer } from '../Layer';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataFiltersPropTypes } from './propTypes';
@@ -17,12 +15,12 @@ const dropProps = {
   align: { top: 'bottom', right: 'right' },
 };
 
-export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
+export const DataFilters = ({ drop, children, heading, ...rest }) => {
   const { clearFilters, data, messages, properties, view } =
     useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [showContent, setShowContent] = useState();
-  const controlled = drop || layer;
+  const controlled = drop;
 
   const clearControl = clearFilters && (
     <Box flex={false}>
@@ -65,13 +63,6 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
                 messages: messages?.dataFilters,
               })}
           </Heading>
-          {layer && (
-            <Button
-              icon={<Close />}
-              hoverIndicator
-              onClick={() => setShowContent(false)}
-            />
-          )}
           {!controlled && clearControl}
         </Header>
       )}
@@ -82,24 +73,13 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
 
   if (!controlled) return content;
 
-  let control;
   let badge = 0;
   if (view?.properties) badge += Object.keys(view.properties).length;
   if (view?.search) badge += 1;
   if (!badge) badge = undefined;
 
-  if (layer) {
-    control = (
-      <Button
-        kind="toolbar"
-        icon={<Filter />}
-        badge={badge}
-        onClick={() => setShowContent(!showContent)}
-      />
-    );
-  } else {
     // drop
-    control = (
+  const control = (
       <DropButton
         aria-label={format({
           id: 'dataFilters.open',
@@ -115,20 +95,11 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
         onClose={() => setShowContent(undefined)}
       />
     );
-  }
 
   return (
     <Box flex={false} direction="row" gap="small" {...rest}>
       {control}
       {clearControl}
-      {layer && showContent && (
-        <Layer
-          onClickOutside={() => setShowContent(false)}
-          onEsc={() => setShowContent(false)}
-        >
-          {content}
-        </Layer>
-      )}
     </Box>
   );
 };
