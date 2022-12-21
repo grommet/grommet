@@ -7,10 +7,12 @@ import React, {
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { Box } from '../Box';
 import { EdgeControl } from './EdgeControl';
 import { FormContext } from '../Form/FormContext';
+import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
@@ -26,6 +28,7 @@ const RangeSelector = forwardRef(
       defaultValues = [],
       direction = 'horizontal',
       invert,
+      label,
       max = 100,
       messages,
       min = 0,
@@ -47,6 +50,8 @@ const RangeSelector = forwardRef(
     const [lastChange, setLastChange] = useState();
     const [moveValue, setMoveValue] = useState();
     const containerRef = useRef();
+    const maxRef = useRef();
+    const minRef = useRef();
 
     const [values, setValues] = formContext.useFormInput({
       name,
@@ -173,6 +178,18 @@ const RangeSelector = forwardRef(
       [onMouseMove],
     );
 
+    // keep the text values size consistent
+    useLayoutEffect(() => {
+      if (maxRef.current && minRef.current) {
+        const width = Math.max(
+          maxRef.current.getBoundingClientRect().width,
+          minRef.current.getBoundingClientRect().width,
+        );
+        maxRef.current.style.width = `${width}px`;
+        minRef.current.style.width = `${width}px`;
+      }
+    });
+
     const [lower, upper] = values;
     // It needs to be true when vertical, due to how browsers manage height
     // const fill = direction === 'vertical' ? true : 'horizontal';
@@ -196,6 +213,16 @@ const RangeSelector = forwardRef(
         onClick={onClick}
         onTouchMove={onTouchMove}
       >
+        {label && (
+          <Text
+            ref={minRef}
+            textAlign="end"
+            size="small"
+            margin={{ horizontal: 'small' }}
+          >
+            {typeof label === 'function' ? label(lower) : lower}
+          </Text>
+        )}
         <Box
           style={{ flex: `${lower - min} 0 0` }}
           background={
@@ -295,6 +322,11 @@ const RangeSelector = forwardRef(
           {...layoutProps}
           round={round}
         />
+        {label && (
+          <Text ref={maxRef} size="small" margin={{ horizontal: 'small' }}>
+            {typeof label === 'function' ? label(upper) : upper}
+          </Text>
+        )}
       </Container>
     );
   },
