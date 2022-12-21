@@ -152,6 +152,23 @@ exports[`Components loads 1`] = `
   "CardBody": [Function],
   "CardFooter": [Function],
   "CardHeader": [Function],
+  "Cards": {
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "as": [Function],
+      "children": [Function],
+      "data": [Function],
+      "gridArea": [Function],
+      "margin": [Function],
+      "onMore": [Function],
+      "paginate": [Function],
+      "show": [Function],
+      "step": [Function],
+    },
+    "render": [Function],
+  },
   "Carousel": [Function],
   "Chart": {
     "$$typeof": Symbol(react.forward_ref),
@@ -238,6 +255,7 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "Data": [Function],
   "DataChart": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
@@ -261,6 +279,12 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "DataFilter": [Function],
+  "DataFilters": [Function],
+  "DataForm": [Function],
+  "DataSearch": [Function],
+  "DataSort": [Function],
+  "DataSummary": [Function],
   "DataTable": [Function],
   "DateInput": {
     "$$typeof": Symbol(react.forward_ref),
@@ -378,10 +402,12 @@ exports[`Components loads 1`] = `
     "_currentRenderer": null,
     "_currentRenderer2": null,
     "_currentValue": {
+      "noForm": true,
       "useFormField": [Function],
       "useFormInput": [Function],
     },
     "_currentValue2": {
+      "noForm": true,
       "useFormField": [Function],
       "useFormInput": [Function],
     },
@@ -731,6 +757,7 @@ exports[`Components loads 1`] = `
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
       "color": [Function],
+      "defaultValues": [Function],
       "direction": [Function],
       "invert": [Function],
       "max": [Function],
@@ -950,6 +977,11 @@ exports[`Components loads 1`] = `
           },
           "footer": {},
           "header": {},
+        },
+        "cards": {
+          "container": {
+            "gap": "xsmall",
+          },
         },
         "carousel": {
           "animation": {
@@ -2939,6 +2971,11 @@ exports[`Components loads 1`] = `
           },
           "footer": {},
           "header": {},
+        },
+        "cards": {
+          "container": {
+            "gap": "xsmall",
+          },
         },
         "carousel": {
           "animation": {
@@ -4953,6 +4990,7 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "Toolbar": [Function],
   "Video": {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": {},

@@ -1,6 +1,7 @@
 import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
+import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
@@ -19,6 +20,8 @@ import {
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 
 import { ListPropTypes } from './propTypes';
+
+const emptyData = [];
 
 const StyledList = styled.ul`
   list-style: none;
@@ -126,7 +129,7 @@ const List = React.forwardRef(
       background,
       border,
       children,
-      data,
+      data: dataProp,
       defaultItemProps,
       disabled: disabledItems,
       focus,
@@ -150,6 +153,8 @@ const List = React.forwardRef(
   ) => {
     const listRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext);
+    const { data: contextData } = useContext(DataContext);
+    const data = dataProp || contextData || emptyData;
 
     // fixes issue where itemKey is undefined when only primaryKey is provided
     const itemKey = defaultItemKey || primaryKey || null;
