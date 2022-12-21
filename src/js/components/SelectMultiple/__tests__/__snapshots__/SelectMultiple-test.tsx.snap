@@ -1260,9 +1260,7 @@ exports[`SelectMultiple disabled option 2`] = `
 }"
 `;
 
-exports[`SelectMultiple keyboard interactions 1`] = `null`;
-
-exports[`SelectMultiple keyboard interactions 2`] = `
+exports[`SelectMultiple keyboard interactions 1`] = `
 .c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
