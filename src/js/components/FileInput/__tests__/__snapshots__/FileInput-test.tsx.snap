@@ -60,20 +60,6 @@ exports[`FileInput accept 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -92,6 +78,14 @@ exports[`FileInput accept 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {
@@ -267,20 +261,6 @@ exports[`FileInput background 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -299,6 +279,14 @@ exports[`FileInput background 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {
@@ -471,20 +459,6 @@ exports[`FileInput basic 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -503,6 +477,14 @@ exports[`FileInput basic 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {
@@ -675,20 +657,6 @@ exports[`FileInput border 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -707,6 +675,14 @@ exports[`FileInput border 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {
@@ -879,20 +855,6 @@ exports[`FileInput custom theme input font size 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -911,6 +873,14 @@ exports[`FileInput custom theme input font size 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {
@@ -1082,20 +1052,6 @@ exports[`FileInput disabled 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1114,6 +1070,14 @@ exports[`FileInput disabled 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {
@@ -1290,20 +1254,6 @@ exports[`FileInput margin 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1322,6 +1272,14 @@ exports[`FileInput margin 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {
@@ -1500,20 +1458,6 @@ exports[`FileInput maxSize 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1532,6 +1476,14 @@ exports[`FileInput maxSize 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {
@@ -1704,20 +1656,6 @@ exports[`FileInput messages 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1736,6 +1674,14 @@ exports[`FileInput messages 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {
@@ -1908,20 +1854,6 @@ exports[`FileInput multiple 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1940,6 +1872,14 @@ exports[`FileInput multiple 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {
@@ -2113,20 +2053,6 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -2145,6 +2071,14 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {
@@ -2318,20 +2252,6 @@ exports[`FileInput multiple max 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -2350,6 +2270,14 @@ exports[`FileInput multiple max 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {
@@ -2524,20 +2452,6 @@ exports[`FileInput pad 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -2556,6 +2470,14 @@ exports[`FileInput pad 1`] = `
 .c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c4 {

@@ -12,9 +12,7 @@ import { defaultProps } from '../../default-props';
 
 import { findButtonParent, normalizeColor } from '../../utils';
 
-import { Box } from '../Box';
-
-import { StyledAnchor } from './StyledAnchor';
+import { StyledAnchor, InlineBox } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 
@@ -103,7 +101,7 @@ const Anchor = forwardRef(
         }}
       >
         {first && second ? (
-          <Box
+          <InlineBox
             as="span"
             direction="row"
             align="center"
@@ -113,11 +111,15 @@ const Anchor = forwardRef(
           >
             {first}
             {second}
-          </Box>
+          </InlineBox>
         ) : (
-          <Box as="span" responsive={false} style={anchorChildCustomStyle}>
+          <InlineBox
+            as="span"
+            responsive={false}
+            style={anchorChildCustomStyle}
+          >
             {first || second || children}
-          </Box>
+          </InlineBox>
         )}
       </StyledAnchor>
     );

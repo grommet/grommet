@@ -49,7 +49,7 @@ exports[`Markdown renders 1`] = `
   max-width: 432px;
 }
 
-.c7 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -79,6 +79,14 @@ exports[`Markdown renders 1`] = `
   text-decoration: underline;
 }
 
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
+}
+
 .c9 {
   margin: 0;
   padding: 0;
@@ -92,7 +100,7 @@ exports[`Markdown renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -220,7 +228,7 @@ exports[`Markdown renders 1`] = `
             class="c9"
           >
             <div
-              class="c7"
+              class="c10"
             >
               Markdown
             </div>
@@ -229,7 +237,7 @@ exports[`Markdown renders 1`] = `
             class="c9"
           >
             <div
-              class="c7"
+              class="c10"
             >
               Less
             </div>
@@ -238,7 +246,7 @@ exports[`Markdown renders 1`] = `
             class="c9"
           >
             <div
-              class="c7"
+              class="c10"
             >
               Pretty
             </div>
@@ -252,21 +260,21 @@ exports[`Markdown renders 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c10"
+            class="c11"
           >
             <em>
               Still
             </em>
           </td>
           <td
-            class="c10"
+            class="c11"
           >
             <code>
               renders
             </code>
           </td>
           <td
-            class="c10"
+            class="c11"
           >
             <strong>
               nicely
@@ -277,17 +285,17 @@ exports[`Markdown renders 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c10"
+            class="c11"
           >
             1
           </td>
           <td
-            class="c10"
+            class="c11"
           >
             2
           </td>
           <td
-            class="c10"
+            class="c11"
           >
             3
           </td>
@@ -387,7 +395,15 @@ exports[`wrapper 1`] = `
   text-decoration: underline;
 }
 
-.c10 {
+.c9 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
+}
+
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -400,7 +416,7 @@ exports[`wrapper 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -412,7 +428,7 @@ exports[`wrapper 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c10 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -515,7 +531,7 @@ exports[`wrapper 1`] = `
           href="#"
         >
           <span
-            class="c1"
+            class="c9"
             style="display: inline-flex; vertical-align: bottom;"
           >
             a link
@@ -549,7 +565,7 @@ exports[`wrapper 1`] = `
         class="c3"
       />
       <table
-        class="c9"
+        class="c10"
       >
         <thead
           class="StyledTable__StyledTableHeader-sc-1m3u5g-4"
@@ -558,7 +574,7 @@ exports[`wrapper 1`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c10"
+              class="c11"
             >
               <div
                 class="c1"
@@ -567,7 +583,7 @@ exports[`wrapper 1`] = `
               </div>
             </td>
             <td
-              class="c10"
+              class="c11"
             >
               <div
                 class="c1"
@@ -576,7 +592,7 @@ exports[`wrapper 1`] = `
               </div>
             </td>
             <td
-              class="c10"
+              class="c11"
             >
               <div
                 class="c1"
@@ -593,21 +609,21 @@ exports[`wrapper 1`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c11"
+              class="c12"
             >
               <em>
                 Still
               </em>
             </td>
             <td
-              class="c11"
+              class="c12"
             >
               <code>
                 renders
               </code>
             </td>
             <td
-              class="c11"
+              class="c12"
             >
               <strong>
                 nicely
@@ -618,17 +634,17 @@ exports[`wrapper 1`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c11"
+              class="c12"
             >
               1
             </td>
             <td
-              class="c11"
+              class="c12"
             >
               2
             </td>
             <td
-              class="c11"
+              class="c12"
             >
               3
             </td>

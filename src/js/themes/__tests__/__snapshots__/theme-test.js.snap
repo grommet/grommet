@@ -1,20 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Grommet ThemeContext theme 1`] = `
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -29,6 +15,14 @@ exports[`Grommet ThemeContext theme 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c0 {
@@ -95,7 +89,7 @@ exports[`Grommet custom theme 1`] = `
   stroke: none;
 }
 
-.c7 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -106,30 +100,30 @@ exports[`Grommet custom theme 1`] = `
   stroke: #cc6633;
 }
 
-.c7 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c10 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -140,25 +134,25 @@ exports[`Grommet custom theme 1`] = `
   stroke: #6FFFB0;
 }
 
-.c10 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -177,25 +171,7 @@ exports[`Grommet custom theme 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -209,16 +185,6 @@ exports[`Grommet custom theme 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c5 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c2 {
@@ -237,7 +203,7 @@ exports[`Grommet custom theme 1`] = `
   text-decoration: underline;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -248,12 +214,12 @@ exports[`Grommet custom theme 1`] = `
   cursor: pointer;
 }
 
-.c6:hover {
+.c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c9 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -264,12 +230,20 @@ exports[`Grommet custom theme 1`] = `
   cursor: pointer;
 }
 
-.c9:hover {
+.c8:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c12 {
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
+}
+
+.c11 {
   box-sizing: border-box;
   font-size: 22px;
   font-family: inherit;
@@ -286,65 +260,65 @@ exports[`Grommet custom theme 1`] = `
   border-radius: 4px;
 }
 
-.c12:focus {
+.c11:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus::-moz-focus-inner {
+.c11:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c12::-webkit-input-placeholder {
+.c11::-webkit-input-placeholder {
   color: #cc6633;
 }
 
-.c12::-moz-placeholder {
+.c11::-moz-placeholder {
   color: #cc6633;
 }
 
-.c12:-ms-input-placeholder {
+.c11:-ms-input-placeholder {
   color: #cc6633;
 }
 
-.c12::-webkit-search-decoration {
+.c11::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c12::-moz-focus-inner {
+.c11::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c12:-moz-placeholder,
-.c12::-moz-placeholder {
+.c11:-moz-placeholder,
+.c11::-moz-placeholder {
   opacity: 1;
 }
 
-.c12::-webkit-input-placeholder {
+.c11::-webkit-input-placeholder {
   font-weight: normal;
 }
 
-.c12::-moz-placeholder {
+.c11::-moz-placeholder {
   font-weight: normal;
 }
 
-.c12:-ms-input-placeholder {
+.c11:-ms-input-placeholder {
   font-weight: normal;
 }
 
-.c11 {
+.c10 {
   position: relative;
   width: 100%;
 }
@@ -370,6 +344,7 @@ exports[`Grommet custom theme 1`] = `
     >
       <span
         class="c3"
+        direction="row"
         style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
@@ -384,22 +359,20 @@ exports[`Grommet custom theme 1`] = `
             stroke-width="2"
           />
         </svg>
-        <span
-          class="c5"
-        />
         Add
       </span>
     </a>
     <a
-      class="c6"
+      class="c5"
     >
       <span
         class="c3"
+        direction="row"
         style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           aria-label="Add"
-          class="c7"
+          class="c6"
           viewBox="0 0 24 24"
         >
           <path
@@ -409,26 +382,24 @@ exports[`Grommet custom theme 1`] = `
             stroke-width="2"
           />
         </svg>
-        <span
-          class="c5"
-        />
         Add
       </span>
     </a>
   </div>
   <div
-    class="c8"
+    class="c7"
   >
     <a
-      class="c9"
+      class="c8"
     >
       <span
         class="c3"
+        direction="row"
         style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           aria-label="Add"
-          class="c10"
+          class="c9"
           viewBox="0 0 24 24"
         >
           <path
@@ -438,22 +409,20 @@ exports[`Grommet custom theme 1`] = `
             stroke-width="2"
           />
         </svg>
-        <span
-          class="c5"
-        />
         Add
       </span>
     </a>
     <a
-      class="c6"
+      class="c5"
     >
       <span
         class="c3"
+        direction="row"
         style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           aria-label="Add"
-          class="c7"
+          class="c6"
           viewBox="0 0 24 24"
         >
           <path
@@ -463,9 +432,6 @@ exports[`Grommet custom theme 1`] = `
             stroke-width="2"
           />
         </svg>
-        <span
-          class="c5"
-        />
         Add
       </span>
     </a>
@@ -474,11 +440,11 @@ exports[`Grommet custom theme 1`] = `
     class="c1"
   >
     <div
-      class="c11"
+      class="c10"
     >
       <input
         autocomplete="off"
-        class="c12"
+        class="c11"
         placeholder="Placeholder"
         value="Value"
       />

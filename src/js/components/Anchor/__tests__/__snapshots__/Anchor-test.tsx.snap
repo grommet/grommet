@@ -11,20 +11,6 @@ exports[`Anchor blur renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -39,6 +25,14 @@ exports[`Anchor blur renders 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 <div
@@ -69,20 +63,6 @@ exports[`Anchor disabled renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -96,6 +76,14 @@ exports[`Anchor disabled renders 1`] = `
   cursor: default;
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 <div>
@@ -124,20 +112,6 @@ exports[`Anchor focus renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c1 {
@@ -173,6 +147,14 @@ exports[`Anchor focus renders 1`] = `
   border: 0;
 }
 
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
+}
+
 <div
   class="c0"
 >
@@ -201,74 +183,6 @@ exports[`Anchor gap renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 6px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c5 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 24px;
-}
-
-.c6 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 48px;
-}
-
-.c7 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 5px;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -285,6 +199,14 @@ exports[`Anchor gap renders 1`] = `
   text-decoration: underline;
 }
 
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
+}
+
 <div>
   <div
     class="c0"
@@ -295,13 +217,11 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
+        direction="row"
         style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
-        />
-        <span
-          class="c3"
         />
         Theme Gap
       </span>
@@ -312,13 +232,11 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
+        direction="row"
         style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
-        />
-        <span
-          class="c4"
         />
         Small Gap
       </span>
@@ -329,13 +247,11 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
+        direction="row"
         style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
-        />
-        <span
-          class="c5"
         />
         Medium Gap
       </span>
@@ -346,13 +262,11 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
+        direction="row"
         style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
-        />
-        <span
-          class="c6"
         />
         Large Gap
       </span>
@@ -363,13 +277,11 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
+        direction="row"
         style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
-        />
-        <span
-          class="c7"
         />
         5px Gap
       </span>
@@ -389,34 +301,6 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -433,6 +317,14 @@ exports[`Anchor icon label renders 1`] = `
   text-decoration: underline;
 }
 
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
+}
+
 <div>
   <div
     class="c0"
@@ -442,13 +334,11 @@ exports[`Anchor icon label renders 1`] = `
     >
       <span
         class="c2"
+        direction="row"
         style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
-        />
-        <span
-          class="c3"
         />
         Test
       </span>
@@ -468,20 +358,6 @@ exports[`Anchor is clickable 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -496,6 +372,14 @@ exports[`Anchor is clickable 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 <div
@@ -526,20 +410,6 @@ exports[`Anchor renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -554,6 +424,14 @@ exports[`Anchor renders 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 <div>
@@ -583,20 +461,6 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -611,6 +475,14 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 <div>
@@ -656,20 +528,6 @@ exports[`Anchor renders tag 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -684,6 +542,14 @@ exports[`Anchor renders tag 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 <div>
@@ -716,20 +582,6 @@ exports[`Anchor renders with children 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -744,6 +596,14 @@ exports[`Anchor renders with children 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 <div
@@ -774,34 +634,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -818,6 +650,14 @@ exports[`Anchor reverse icon label renders 1`] = `
   text-decoration: underline;
 }
 
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
+}
+
 <div>
   <div
     class="c0"
@@ -827,12 +667,10 @@ exports[`Anchor reverse icon label renders 1`] = `
     >
       <span
         class="c2"
+        direction="row"
         style="display: inline-flex; vertical-align: bottom;"
       >
         Test
-        <span
-          class="c3"
-        />
         <svg
           color="#7D4CDB"
         />
@@ -853,20 +691,6 @@ exports[`Anchor should have no accessibility violations 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -881,6 +705,14 @@ exports[`Anchor should have no accessibility violations 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 <div>
@@ -927,20 +759,6 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
   cursor: pointer;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c2 {
   box-sizing: border-box;
   font-size: inherit;
@@ -955,6 +773,14 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
 .c2:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 <div
@@ -982,20 +808,6 @@ exports[`Anchor size renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c1 {
@@ -1110,6 +922,14 @@ exports[`Anchor size renders 1`] = `
   text-decoration: underline;
 }
 
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
+}
+
 <div>
   <div
     class="c0"
@@ -1185,20 +1005,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1214,6 +1020,14 @@ exports[`Anchor warns about invalid icon render 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 <div
@@ -1246,20 +1060,6 @@ exports[`Anchor warns about invalid label render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1274,6 +1074,14 @@ exports[`Anchor warns about invalid label render 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 <div
@@ -1302,20 +1110,6 @@ exports[`Anchor weight renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c1 {
@@ -1460,6 +1254,14 @@ exports[`Anchor weight renders 1`] = `
 .c10:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
 }
 
 <div>
