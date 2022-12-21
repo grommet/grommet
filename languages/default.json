@@ -15,6 +15,29 @@
     "enterCalendar": "Calendar is open, use arrow keys and enter to select a date.",
     "exitCalendar": "Exited calendar dialog"
   },
+  "dataFilters": {
+    "clear": "Clear filters",
+    "heading": "Filters",
+    "open": "Open filters"
+  },
+  "dataForm": {
+    "reset": "Undo changes",
+    "submit": "Apply filters"
+  },
+  "dataSearch": {
+    "label": "Search data"
+  },
+  "dataSort": {
+    "ascending": "Ascending",
+    "by": "Sort by",
+    "descending": "Descending",
+    "direction": "Sort direction"
+  },
+  "dataSummary": {
+    "filtered": "{filtered} results of {total} items",
+    "filteredSingle": "{filtered} result of {total} items",
+    "total": "{total} items"
+  },
   "fileInput": {
     "browse": "browse",
     "dropPrompt": "Drop file here or",

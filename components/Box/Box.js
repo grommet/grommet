@@ -12,7 +12,7 @@ var _propTypes = require("./propTypes");
 var _Skeleton = require("../Skeleton");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _OptionsContext = require("../../contexts/OptionsContext");
-var _excluded = ["a11yTitle", "background", "border", "children", "direction", "elevation", "fill", "gap", "kind", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex", "skeleton"],
+var _excluded = ["a11yTitle", "background", "border", "children", "cssGap", "direction", "elevation", "fill", "gap", "kind", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex", "skeleton"],
   _excluded2 = ["colors", "size"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -23,6 +23,7 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     backgroundProp = _ref.background,
     border = _ref.border,
     children = _ref.children,
+    cssGap = _ref.cssGap,
     _ref$direction = _ref.direction,
     direction = _ref$direction === void 0 ? 'column' : _ref$direction,
     elevation = _ref.elevation,
@@ -94,7 +95,7 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     console.warn('Box must have a gap to use border between');
   }
   var contents = children;
-  if (gap && gap !== 'none' && (!(boxOptions != null && boxOptions.cssGap) ||
+  if (gap && gap !== 'none' && (!(boxOptions != null && boxOptions.cssGap || cssGap) ||
   // need this approach to show border between
   border === 'between' || (border == null ? void 0 : border.side) === 'between')) {
     var boxAs = !as && tag ? tag : as;
@@ -182,7 +183,7 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     elevationProp: elevation,
     fillProp: fill,
     focus: focus,
-    gap: (boxOptions == null ? void 0 : boxOptions.cssGap) && gap && gap !== 'none' && border !== 'between' && (border == null ? void 0 : border.side) !== 'between' && gap,
+    gap: ((boxOptions == null ? void 0 : boxOptions.cssGap) || cssGap) && gap && gap !== 'none' && border !== 'between' && (border == null ? void 0 : border.side) !== 'between' && gap,
     kindProp: kind,
     overflowProp: overflow,
     wrapProp: wrap,

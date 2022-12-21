@@ -19,6 +19,12 @@ Object.keys(_ContainerTargetContext).forEach(function (key) {
   if (key in exports && exports[key] === _ContainerTargetContext[key]) return;
   exports[key] = _ContainerTargetContext[key];
 });
+var _DataContext = require("./DataContext");
+Object.keys(_DataContext).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _DataContext[key]) return;
+  exports[key] = _DataContext[key];
+});
 var _ResponsiveContext = require("./ResponsiveContext");
 Object.keys(_ResponsiveContext).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

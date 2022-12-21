@@ -9,6 +9,7 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     color: _generalPropTypes.colorPropType,
+    defaultValues: _propTypes["default"].arrayOf(_propTypes["default"].number),
     direction: _propTypes["default"].oneOf(['horizontal', 'vertical']),
     invert: _propTypes["default"].bool,
     max: _propTypes["default"].number,
@@ -22,7 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
     round: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'full']), _propTypes["default"].string]),
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), _propTypes["default"].string]),
     step: _propTypes["default"].number,
-    values: _propTypes["default"].arrayOf(_propTypes["default"].number).isRequired
+    values: _propTypes["default"].arrayOf(_propTypes["default"].number)
   };
 }
 var RangeSelectorPropTypes = PropType;

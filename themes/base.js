@@ -675,6 +675,14 @@ var generate = function generate(baseSpacing, scale) {
       body: {},
       footer: {}
     },
+    cards: {
+      container: {
+        // any box props
+        gap: 'xsmall'
+        // extend: undefined,
+      }
+    },
+
     carousel: {
       icons: {
         current: _Subtract.Subtract,

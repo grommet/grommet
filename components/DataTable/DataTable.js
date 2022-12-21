@@ -6,6 +6,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = require("styled-components");
 var _defaultProps = require("../../default-props");
 var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
+var _DataContext = require("../../contexts/DataContext");
 var _Box = require("../Box");
 var _Text = require("../Text");
 var _Header = require("./Header");
@@ -23,6 +24,7 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var emptyData = [];
 function useGroupState(groups, groupBy) {
   var _useState = (0, _react.useState)(function () {
       return (0, _buildState.buildGroupState)(groups, groupBy);
@@ -51,10 +53,8 @@ function useGroupState(groups, groupBy) {
 var DataTable = function DataTable(_ref) {
   var background = _ref.background,
     border = _ref.border,
-    _ref$columns = _ref.columns,
-    columns = _ref$columns === void 0 ? [] : _ref$columns,
-    _ref$data = _ref.data,
-    data = _ref$data === void 0 ? [] : _ref$data,
+    columnsProp = _ref.columns,
+    dataProp = _ref.data,
     disabled = _ref.disabled,
     fill = _ref.fill,
     groupBy = _ref.groupBy,
@@ -83,6 +83,24 @@ var DataTable = function DataTable(_ref) {
     verticalAlign = _ref.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var _useContext = (0, _react.useContext)(_DataContext.DataContext),
+    contextData = _useContext.data,
+    properties = _useContext.properties;
+  var data = dataProp || contextData || emptyData;
+  var columns = (0, _react.useMemo)(function () {
+    if (columnsProp) return columnsProp;
+    if (properties) return Object.keys(properties).map(function (p) {
+      return _extends({
+        property: p
+      }, properties[p]);
+    });
+    if (data.length) return Object.keys(data[0]).map(function (p) {
+      return {
+        property: p
+      };
+    });
+    return [];
+  }, [columnsProp, data, properties]);
 
   // property name of the primary property
   var primaryProperty = (0, _react.useMemo)(function () {

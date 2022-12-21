@@ -24,12 +24,8 @@ exports.set = set;
 var datumValue = function datumValue(datum, property) {
   if (!property) return undefined;
   var parts = property.split('.');
-  if (parts.length === 1) {
-    return datum[property];
-  }
-  if (!datum[parts[0]]) {
-    return undefined;
-  }
+  if (parts.length === 1) return datum[property];
+  if (!datum[parts[0]]) return undefined;
   return datumValue(datum[parts[0]], parts.slice(1).join('.'));
 };
 

@@ -122,7 +122,7 @@ var interactiveStyle = css(["cursor:pointer;&:hover{", " ", "}"], function (prop
 }, function (props) {
   return props.hoverIndicator && getHoverIndicatorStyle(props.hoverIndicator, props.theme);
 });
-var gapStyle = function gapStyle(directionProp, gap, responsive, theme) {
+var gapStyle = function gapStyle(directionProp, gap, responsive, wrap, theme) {
   var metric = theme.global.edgeSize[gap] || gap;
   var breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   var responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
@@ -134,6 +134,7 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, theme) {
     }
   } else {
     styles.push("column-gap: " + metric + ";");
+    if (wrap) styles.push("row-gap: " + metric + ";");
     if (responsiveMetric) {
       if (directionProp === 'row' || directionProp === 'row-reverse') {
         styles.push(breakpointStyle(breakpoint, "column-gap: " + responsiveMetric + ";"));
@@ -184,7 +185,7 @@ var StyledBox = styled.div.withConfig({
 }, function (props) {
   return props.elevationProp && elevationStyle(props.elevationProp);
 }, function (props) {
-  return props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.theme);
+  return props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.wrapProp, props.theme);
 }, function (props) {
   return props.animation && animationStyle;
 }, function (props) {

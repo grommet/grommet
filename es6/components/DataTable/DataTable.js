@@ -5,6 +5,7 @@ import React, { useCallback, useContext, useEffect, useMemo, useRef, useState, F
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
+import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';
@@ -17,6 +18,7 @@ import { normalizeShow, usePagination } from '../../utils';
 import { StyledContainer, StyledDataTable, StyledPlaceholder } from './StyledDataTable';
 import { DataTablePropTypes } from './propTypes';
 import { PlaceholderBody } from './PlaceholderBody';
+var emptyData = [];
 function useGroupState(groups, groupBy) {
   var _useState = useState(function () {
       return buildGroupState(groups, groupBy);
@@ -45,10 +47,8 @@ function useGroupState(groups, groupBy) {
 var DataTable = function DataTable(_ref) {
   var background = _ref.background,
     border = _ref.border,
-    _ref$columns = _ref.columns,
-    columns = _ref$columns === void 0 ? [] : _ref$columns,
-    _ref$data = _ref.data,
-    data = _ref$data === void 0 ? [] : _ref$data,
+    columnsProp = _ref.columns,
+    dataProp = _ref.data,
     disabled = _ref.disabled,
     fill = _ref.fill,
     groupBy = _ref.groupBy,
@@ -77,6 +77,24 @@ var DataTable = function DataTable(_ref) {
     verticalAlign = _ref.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
+  var _useContext = useContext(DataContext),
+    contextData = _useContext.data,
+    properties = _useContext.properties;
+  var data = dataProp || contextData || emptyData;
+  var columns = useMemo(function () {
+    if (columnsProp) return columnsProp;
+    if (properties) return Object.keys(properties).map(function (p) {
+      return _extends({
+        property: p
+      }, properties[p]);
+    });
+    if (data.length) return Object.keys(data[0]).map(function (p) {
+      return {
+        property: p
+      };
+    });
+    return [];
+  }, [columnsProp, data, properties]);
 
   // property name of the primary property
   var primaryProperty = useMemo(function () {

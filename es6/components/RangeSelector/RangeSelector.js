@@ -1,10 +1,11 @@
-var _excluded = ["color", "direction", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "values"];
+var _excluded = ["color", "defaultValues", "direction", "invert", "max", "messages", "min", "name", "onChange", "opacity", "round", "size", "step", "values"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { EdgeControl } from './EdgeControl';
+import { FormContext } from '../Form/FormContext';
 import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
@@ -14,6 +15,8 @@ var Container = styled(Box).withConfig({
 })(["user-select:none;"]);
 var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var color = _ref.color,
+    _ref$defaultValues = _ref.defaultValues,
+    defaultValues = _ref$defaultValues === void 0 ? [] : _ref$defaultValues,
     _ref$direction = _ref.direction,
     direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
     invert = _ref.invert,
@@ -22,6 +25,7 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     messages = _ref.messages,
     _ref$min = _ref.min,
     min = _ref$min === void 0 ? 0 : _ref$min,
+    name = _ref.name,
     onChange = _ref.onChange,
     _ref$opacity = _ref.opacity,
     opacity = _ref$opacity === void 0 ? 'medium' : _ref$opacity,
@@ -30,12 +34,12 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     size = _ref$size === void 0 ? 'medium' : _ref$size,
     _ref$step = _ref.step,
     step = _ref$step === void 0 ? 1 : _ref$step,
-    _ref$values = _ref.values,
-    values = _ref$values === void 0 ? [] : _ref$values,
+    valuesProp = _ref.values,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
+  var formContext = useContext(FormContext);
   var _useState = useState(),
     changing = _useState[0],
     setChanging = _useState[1];
@@ -46,6 +50,17 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     moveValue = _useState3[0],
     setMoveValue = _useState3[1];
   var containerRef = useRef();
+  var _formContext$useFormI = formContext.useFormInput({
+      name: name,
+      value: valuesProp,
+      initialValue: defaultValues
+    }),
+    values = _formContext$useFormI[0],
+    setValues = _formContext$useFormI[1];
+  var change = useCallback(function (nextValues) {
+    setValues(nextValues);
+    if (onChange) onChange(nextValues);
+  }, [onChange, setValues]);
   var valueForMouseCoord = useCallback(function (event) {
     var rect = containerRef.current.getBoundingClientRect();
     var value;
@@ -90,9 +105,9 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
     if (nextValues) {
       setMoveValue(value);
-      onChange(nextValues);
+      change(nextValues);
     }
-  }, [values, changing, moveValue, max, min, setMoveValue, onChange, valueForMouseCoord]);
+  }, [values, change, changing, moveValue, max, min, setMoveValue, valueForMouseCoord]);
   useEffect(function () {
     var onMouseUp = function onMouseUp() {
       return setChanging(undefined);
@@ -111,12 +126,12 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var value = valueForMouseCoord(event);
     if (value <= values[0] || value < values[1] && lastChange === 'lower') {
       setLastChange('lower');
-      onChange([value, values[1]]);
+      change([value, values[1]]);
     } else if (value >= values[1] || value > values[0] && lastChange === 'upper') {
       setLastChange('upper');
-      onChange([values[0], value]);
+      change([values[0], value]);
     }
-  }, [lastChange, onChange, valueForMouseCoord, values]);
+  }, [change, lastChange, valueForMouseCoord, values]);
   var onTouchMove = useCallback(function (event) {
     var touchEvent = event.changedTouches[0];
     onMouseMove(touchEvent);
@@ -139,8 +154,8 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     fill: true
   }, rest, {
     tabIndex: "-1",
-    onClick: onChange ? onClick : undefined,
-    onTouchMove: onChange ? onTouchMove : undefined
+    onClick: onClick,
+    onTouchMove: onTouchMove
   }), /*#__PURE__*/React.createElement(Box, _extends({
     style: {
       flex: lower - min + " 0 0"
@@ -168,17 +183,17 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     direction: direction,
     thickness: thickness,
     edge: "lower",
-    onMouseDown: onChange ? function () {
+    onMouseDown: function onMouseDown() {
       return setChanging('lower');
-    } : undefined,
-    onTouchStart: onChange ? function () {
+    },
+    onTouchStart: function onTouchStart() {
       return setChanging('lower');
+    },
+    onDecrease: lower - step >= min ? function () {
+      return change([lower - step, upper]);
     } : undefined,
-    onDecrease: onChange && lower - step >= min ? function () {
-      return onChange([lower - step, upper]);
-    } : undefined,
-    onIncrease: onChange && lower + step <= upper ? function () {
-      return onChange([lower + step, upper]);
+    onIncrease: lower + step <= upper ? function () {
+      return change([lower + step, upper]);
     } : undefined
   }), /*#__PURE__*/React.createElement(Box, _extends({
     style: {
@@ -194,11 +209,11 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
       dark: theme.dark
     }
   }, layoutProps, {
-    onMouseDown: onChange ? function (event) {
+    onMouseDown: function onMouseDown(event) {
       var nextMoveValue = valueForMouseCoord(event);
       setChanging('selection');
       setMoveValue(nextMoveValue);
-    } : undefined
+    }
   })), /*#__PURE__*/React.createElement(EdgeControl, {
     a11yTitle: format({
       id: 'rangeSelector.upper',
@@ -213,17 +228,17 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     direction: direction,
     thickness: thickness,
     edge: "upper",
-    onMouseDown: onChange ? function () {
+    onMouseDown: function onMouseDown() {
       return setChanging('upper');
-    } : undefined,
-    onTouchStart: onChange ? function () {
+    },
+    onTouchStart: function onTouchStart() {
       return setChanging('upper');
+    },
+    onDecrease: upper - step >= lower ? function () {
+      return change([lower, upper - step]);
     } : undefined,
-    onDecrease: onChange && upper - step >= lower ? function () {
-      return onChange([lower, upper - step]);
-    } : undefined,
-    onIncrease: onChange && upper + step <= max ? function () {
-      return onChange([lower, upper + step]);
+    onIncrease: upper + step <= max ? function () {
+      return change([lower, upper + step]);
     } : undefined
   }), /*#__PURE__*/React.createElement(Box, _extends({
     style: {

@@ -1,0 +1,318 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataSummary renders 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c5 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c6:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c9 {
+  opacity: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    height: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    width: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <form>
+      <div
+        class="c1"
+      >
+        <header
+          class="c2"
+        >
+          <h2
+            class="c3"
+          >
+            Filters
+          </h2>
+        </header>
+        <div
+          class="c4"
+        />
+        <span
+          class="c5"
+        >
+          2 items
+        </span>
+        <div
+          class="c4"
+        />
+        <footer
+          class="c2"
+        >
+          <button
+            class="c6"
+            type="submit"
+          >
+            Apply filters
+          </button>
+          <div
+            class="c7"
+          />
+          <button
+            aria-hidden="true"
+            class="c8 c9"
+            disabled=""
+            tabindex="-1"
+            type="reset"
+          >
+            Undo changes
+          </button>
+        </footer>
+      </div>
+    </form>
+  </div>
+</div>
+`;

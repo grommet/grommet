@@ -4,6 +4,7 @@ exports.__esModule = true;
 exports.List = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _DataContext = require("../../contexts/DataContext");
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _InfiniteScroll = require("../InfiniteScroll");
@@ -18,6 +19,7 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var emptyData = [];
 var StyledList = _styledComponents["default"].ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
@@ -117,7 +119,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     background = _ref.background,
     border = _ref.border,
     children = _ref.children,
-    data = _ref.data,
+    dataProp = _ref.data,
     defaultItemProps = _ref.defaultItemProps,
     disabledItems = _ref.disabled,
     focus = _ref.focus,
@@ -140,6 +142,9 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var listRef = (0, _utils.useForwardedRef)(ref);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+  var _useContext = (0, _react.useContext)(_DataContext.DataContext),
+    contextData = _useContext.data;
+  var data = dataProp || contextData || emptyData;
 
   // fixes issue where itemKey is undefined when only primaryKey is provided
   var itemKey = defaultItemKey || primaryKey || null;

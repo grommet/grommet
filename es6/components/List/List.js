@@ -3,6 +3,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
@@ -12,6 +13,7 @@ import { Text } from '../Text';
 import { focusStyle, genericStyles, normalizeColor, normalizeShow, unfocusStyle, useForwardedRef, usePagination } from '../../utils';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { ListPropTypes } from './propTypes';
+var emptyData = [];
 var StyledList = styled.ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
@@ -111,7 +113,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     background = _ref.background,
     border = _ref.border,
     children = _ref.children,
-    data = _ref.data,
+    dataProp = _ref.data,
     defaultItemProps = _ref.defaultItemProps,
     disabledItems = _ref.disabled,
     focus = _ref.focus,
@@ -134,6 +136,9 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var listRef = useForwardedRef(ref);
   var theme = useContext(ThemeContext);
+  var _useContext = useContext(DataContext),
+    contextData = _useContext.data;
+  var data = dataProp || contextData || emptyData;
 
   // fixes issue where itemKey is undefined when only primaryKey is provided
   var itemKey = defaultItemKey || primaryKey || null;
