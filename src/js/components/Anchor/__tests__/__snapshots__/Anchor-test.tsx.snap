@@ -44,7 +44,6 @@ exports[`Anchor blur renders 1`] = `
   >
     <span
       class="c2"
-      style="display: inline-flex; vertical-align: bottom;"
     >
       Test
     </span>
@@ -96,7 +95,6 @@ exports[`Anchor disabled renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
   </div>
@@ -164,7 +162,6 @@ exports[`Anchor focus renders 1`] = `
   >
     <span
       class="c2"
-      style="display: inline-flex; vertical-align: bottom;"
     >
       Test
     </span>
@@ -218,7 +215,6 @@ exports[`Anchor gap renders 1`] = `
       <span
         class="c2"
         direction="row"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
@@ -233,7 +229,6 @@ exports[`Anchor gap renders 1`] = `
       <span
         class="c2"
         direction="row"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
@@ -248,7 +243,6 @@ exports[`Anchor gap renders 1`] = `
       <span
         class="c2"
         direction="row"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
@@ -263,7 +257,6 @@ exports[`Anchor gap renders 1`] = `
       <span
         class="c2"
         direction="row"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
@@ -278,7 +271,6 @@ exports[`Anchor gap renders 1`] = `
       <span
         class="c2"
         direction="row"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
@@ -335,7 +327,6 @@ exports[`Anchor icon label renders 1`] = `
       <span
         class="c2"
         direction="row"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           color="#7D4CDB"
@@ -391,7 +382,6 @@ exports[`Anchor is clickable 1`] = `
   >
     <span
       class="c2"
-      style="display: inline-flex; vertical-align: bottom;"
     >
       Test
     </span>
@@ -443,7 +433,6 @@ exports[`Anchor renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
   </div>
@@ -496,7 +485,6 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Test
       </span>
@@ -508,7 +496,6 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Test
       </span>
@@ -562,7 +549,6 @@ exports[`Anchor renders tag 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Test
       </span>
@@ -615,7 +601,6 @@ exports[`Anchor renders with children 1`] = `
   >
     <span
       class="c2"
-      style="display: inline-flex; vertical-align: bottom;"
     >
       children
     </span>
@@ -668,7 +653,6 @@ exports[`Anchor reverse icon label renders 1`] = `
       <span
         class="c2"
         direction="row"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Test
         <svg
@@ -724,7 +708,6 @@ exports[`Anchor should have no accessibility violations 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Link
       </span>
@@ -793,7 +776,6 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
   >
     <span
       class="c3"
-      style="display: inline-flex; vertical-align: bottom;"
     />
   </div>
 </div>
@@ -939,7 +921,6 @@ exports[`Anchor size renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     <a
@@ -947,7 +928,6 @@ exports[`Anchor size renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     <a
@@ -955,7 +935,6 @@ exports[`Anchor size renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     <a
@@ -963,7 +942,6 @@ exports[`Anchor size renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     <a
@@ -971,7 +949,6 @@ exports[`Anchor size renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     <a
@@ -979,7 +956,6 @@ exports[`Anchor size renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     <a
@@ -987,7 +963,6 @@ exports[`Anchor size renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
   </div>
@@ -1039,7 +1014,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
   >
     <span
       class="c2"
-      style="display: inline-flex; vertical-align: bottom;"
     >
       <svg
         color="#7D4CDB"
@@ -1093,7 +1067,6 @@ exports[`Anchor warns about invalid label render 1`] = `
   >
     <span
       class="c2"
-      style="display: inline-flex; vertical-align: bottom;"
     >
       Test
     </span>
@@ -1274,7 +1247,6 @@ exports[`Anchor weight renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Normal
       </span>
@@ -1285,7 +1257,6 @@ exports[`Anchor weight renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Bold
       </span>
@@ -1296,7 +1267,6 @@ exports[`Anchor weight renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Bold
       </span>
@@ -1307,7 +1277,6 @@ exports[`Anchor weight renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Lighter
       </span>
@@ -1318,7 +1287,6 @@ exports[`Anchor weight renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Bolder
       </span>
@@ -1329,7 +1297,6 @@ exports[`Anchor weight renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Inherit
       </span>
@@ -1340,7 +1307,6 @@ exports[`Anchor weight renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Initial
       </span>
@@ -1351,7 +1317,6 @@ exports[`Anchor weight renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Revert
       </span>
@@ -1362,7 +1327,6 @@ exports[`Anchor weight renders 1`] = `
     >
       <span
         class="c2"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         Unset
       </span>

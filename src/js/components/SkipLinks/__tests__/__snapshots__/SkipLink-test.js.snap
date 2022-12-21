@@ -66,7 +66,6 @@ exports[`SkipLink basic 1`] = `
     >
       <span
         class="c3"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     Main Content
@@ -84,7 +83,6 @@ exports[`SkipLink basic 1`] = `
     >
       <span
         class="c3"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     <input
@@ -108,7 +106,6 @@ exports[`SkipLink basic 2`] = `
     >
       <span
         class="StyledAnchor__InlineBox-sc-1rp7lwl-1 hETcUa"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     Main Content
@@ -126,7 +123,6 @@ exports[`SkipLink basic 2`] = `
     >
       <span
         class="StyledAnchor__InlineBox-sc-1rp7lwl-1 hETcUa"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     <input
@@ -150,7 +146,6 @@ exports[`SkipLink basic 3`] = `
     >
       <span
         class="StyledAnchor__InlineBox-sc-1rp7lwl-1 hETcUa"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     Main Content
@@ -168,7 +163,6 @@ exports[`SkipLink basic 3`] = `
     >
       <span
         class="StyledAnchor__InlineBox-sc-1rp7lwl-1 hETcUa"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     <input
@@ -241,7 +235,6 @@ exports[`SkipLink should allow for single skip link 1`] = `
     >
       <span
         class="c3"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     Main Content
@@ -272,7 +265,6 @@ exports[`SkipLink should allow for single skip link 2`] = `
     >
       <span
         class="StyledAnchor__InlineBox-sc-1rp7lwl-1 hETcUa"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     Main Content
@@ -303,7 +295,6 @@ exports[`SkipLink should allow for single skip link 3`] = `
     >
       <span
         class="StyledAnchor__InlineBox-sc-1rp7lwl-1 hETcUa"
-        style="display: inline-flex; vertical-align: bottom;"
       />
     </a>
     Main Content

@@ -46,7 +46,6 @@ exports[`Grommet ThemeContext theme 1`] = `
   >
     <span
       class="c2"
-      style="display: inline-flex; vertical-align: bottom;"
     >
       Hello
     </span>
@@ -345,7 +344,6 @@ exports[`Grommet custom theme 1`] = `
       <span
         class="c3"
         direction="row"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           aria-label="Add"
@@ -368,7 +366,6 @@ exports[`Grommet custom theme 1`] = `
       <span
         class="c3"
         direction="row"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           aria-label="Add"
@@ -395,7 +392,6 @@ exports[`Grommet custom theme 1`] = `
       <span
         class="c3"
         direction="row"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           aria-label="Add"
@@ -418,7 +414,6 @@ exports[`Grommet custom theme 1`] = `
       <span
         class="c3"
         direction="row"
-        style="display: inline-flex; vertical-align: bottom;"
       >
         <svg
           aria-label="Add"

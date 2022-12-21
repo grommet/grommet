@@ -670,7 +670,6 @@ exports[`Notification multi actions 1`] = `
             >
               <span
                 class="c11"
-                style="display: inline-flex; vertical-align: bottom;"
               >
                 Renew Subscription
               </span>
@@ -682,7 +681,6 @@ exports[`Notification multi actions 1`] = `
             >
               <span
                 class="c11"
-                style="display: inline-flex; vertical-align: bottom;"
               >
                 View More
               </span>

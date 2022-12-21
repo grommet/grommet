@@ -272,7 +272,6 @@ exports[`PageHeader basic 1`] = `
           >
             <span
               class="c5"
-              style="display: inline-flex; vertical-align: bottom;"
             >
               Parent Page
             </span>
@@ -603,7 +602,6 @@ exports[`PageHeader custom theme 1`] = `
           >
             <span
               class="c5"
-              style="display: inline-flex; vertical-align: bottom;"
             >
               Settings
             </span>
@@ -919,7 +917,6 @@ exports[`PageHeader size - large 1`] = `
           >
             <span
               class="c5"
-              style="display: inline-flex; vertical-align: bottom;"
             >
               Parent Page
             </span>
@@ -1233,7 +1230,6 @@ exports[`PageHeader size - medium 1`] = `
           >
             <span
               class="c5"
-              style="display: inline-flex; vertical-align: bottom;"
             >
               Parent Page
             </span>
@@ -1547,7 +1543,6 @@ exports[`PageHeader size - small 1`] = `
           >
             <span
               class="c5"
-              style="display: inline-flex; vertical-align: bottom;"
             >
               Parent Page
             </span>

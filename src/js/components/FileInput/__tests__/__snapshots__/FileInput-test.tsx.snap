@@ -183,7 +183,6 @@ exports[`FileInput accept 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           browse
         </span>
@@ -384,7 +383,6 @@ exports[`FileInput background 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           browse
         </span>
@@ -582,7 +580,6 @@ exports[`FileInput basic 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           browse
         </span>
@@ -780,7 +777,6 @@ exports[`FileInput border 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           browse
         </span>
@@ -978,7 +974,6 @@ exports[`FileInput custom theme input font size 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           browse
         </span>
@@ -1177,7 +1172,6 @@ exports[`FileInput disabled 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           browse
         </span>
@@ -1383,7 +1377,6 @@ exports[`FileInput margin 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           browse
         </span>
@@ -1581,7 +1574,6 @@ exports[`FileInput maxSize 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           browse
         </span>
@@ -1779,7 +1771,6 @@ exports[`FileInput messages 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           test browse
         </span>
@@ -1977,7 +1968,6 @@ exports[`FileInput multiple 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           browse
         </span>
@@ -2176,7 +2166,6 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           browse
         </span>
@@ -2375,7 +2364,6 @@ exports[`FileInput multiple max 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           browse
         </span>
@@ -2581,7 +2569,6 @@ exports[`FileInput pad 1`] = `
       >
         <span
           class="c6"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           browse
         </span>

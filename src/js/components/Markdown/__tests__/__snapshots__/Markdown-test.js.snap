@@ -192,7 +192,6 @@ exports[`Markdown renders 1`] = `
       >
         <span
           class="c7"
-          style="display: inline-flex; vertical-align: bottom;"
         >
           a link
         </span>
@@ -532,7 +531,6 @@ exports[`wrapper 1`] = `
         >
           <span
             class="c9"
-            style="display: inline-flex; vertical-align: bottom;"
           >
             a link
           </span>
