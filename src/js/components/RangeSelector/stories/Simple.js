@@ -3,7 +3,7 @@ import { Box } from 'grommet';
 import { RangeSelector } from '../RangeSelector';
 
 export const Simple = () => {
-  const [range, setRange] = useState();
+  const [range, setRange] = useState([10, 40]);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
