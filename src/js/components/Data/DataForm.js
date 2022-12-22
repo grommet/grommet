@@ -26,6 +26,7 @@ const hideButtonProps = {
 const formSearchKey = '_search';
 const formSortKey = '_sort';
 const formRangeKey = '_range';
+const formViewKey = '_view';
 
 // converts from the external view format to the internal Form value format
 const viewToFormValue = (view) => {
@@ -42,19 +43,25 @@ const viewToFormValue = (view) => {
 
   result[formSearchKey] = view?.search || '';
 
-  if (view?.sort) result[formSortKey] = view?.sort;
+  if (view?.sort) result[formSortKey] = view.sort;
+  if (view?.name) result[formViewKey] = view.name;
 
   return result;
 };
 
 // converts from the internal Form value format to the external view format
-const formValueToView = (value) => {
+const formValueToView = (value, views) => {
+  // if the user chose a view, use that
+  if (value[formViewKey])
+    return views.find((v) => v.name === value[formViewKey]);
+
   const properties = { ...value };
 
   const searchText = value[formSearchKey];
   delete properties[formSearchKey];
   const sort = value[formSortKey];
   delete properties[formSortKey];
+  delete properties[formViewKey];
 
   const result = {
     properties,
@@ -87,8 +94,23 @@ const clearEmpty = (properties) => {
   return result;
 };
 
-export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
-  const { messages, onView, updateOn, view } = useContext(DataContext);
+export const DataForm = ({
+  children,
+  footer,
+  gap,
+  onDone,
+  pad,
+  updateOn: updateOnProp,
+  ...rest
+}) => {
+  const {
+    messages,
+    onView,
+    updateOn: updateOnData,
+    view,
+    views,
+  } = useContext(DataContext);
+  const updateOn = updateOnProp ?? updateOnData;
   const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
   const [changed, setChanged] = useState();
@@ -105,7 +127,7 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
               clearEmpty(nextValue);
               setFormValue(nextValue);
               setChanged(false);
-              onView(formValueToView(nextValue));
+              onView(formValueToView(nextValue, views));
               if (onDone) onDone();
             }
           : undefined
@@ -114,7 +136,7 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
         clearEmpty(nextValue);
         setFormValue(nextValue);
         setChanged(true);
-        if (updateOn === 'change') onView(formValueToView(nextValue));
+        if (updateOn === 'change') onView(formValueToView(nextValue, views));
       }}
     >
       <Box flex={false} pad={pad} gap={gap}>

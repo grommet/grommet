@@ -16,7 +16,7 @@ const dropProps = {
 };
 
 export const DataFilters = ({ drop, children, heading, ...rest }) => {
-  const { clearFilters, data, messages, properties, view } =
+  const { clearFilters, data, messages, properties, toolbarKeys, view } =
     useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [showContent, setShowContent] = useState();
@@ -74,8 +74,11 @@ export const DataFilters = ({ drop, children, heading, ...rest }) => {
   if (!controlled) return content;
 
   let badge = 0;
-  if (view?.properties) badge += Object.keys(view.properties).length;
-  if (view?.search) badge += 1;
+  if (view?.properties)
+    badge += Object.keys(view.properties).filter(
+      (p) => !toolbarKeys.includes(p),
+    ).length;
+  if (view?.search && !toolbarKeys.includes('_search')) badge += 1;
   if (view?.sort) badge += 1;
   if (!badge) badge = undefined;
 

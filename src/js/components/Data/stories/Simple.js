@@ -19,7 +19,20 @@ export const Simple = () => (
       status="info"
       message="Data is in 'beta'. The API surface is subject to change."
     />
-    <Data data={DATA} toolbar>
+    <Data
+      data={DATA}
+      views={[
+        { name: 'latest', sort: { property: 'date', direction: 'desc' } },
+        {
+          name: 'behind',
+          properties: {
+            percent: { min: 0, max: 30 },
+            location: ['San Francisco'],
+          },
+        },
+      ]}
+      toolbar
+    >
       <DataTable columns={columns} />
     </Data>
   </Grid>

@@ -1,14 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
 import { DataForm } from '../Data';
+import { DataContext } from '../../contexts/DataContext';
 import { FormContext } from '../Form/FormContext';
 import { TextInput } from '../TextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataSearchPropTypes } from './propTypes';
 
 export const DataSearch = ({ ...rest }) => {
-  const { id: dataId, messages, noForm } = useContext(FormContext);
+  const { id: dataId, messages, addToolbarKey } = useContext(DataContext);
+  const { noForm } = useContext(FormContext);
   const { format } = useContext(MessageContext);
+
+  useEffect(() => {
+    if (noForm) addToolbarKey('_search');
+  }, [addToolbarKey, noForm]);
 
   let content = (
     <TextInput
@@ -24,7 +30,12 @@ export const DataSearch = ({ ...rest }) => {
     />
   );
 
-  if (noForm) content = <DataForm footer={false}>{content}</DataForm>;
+  if (noForm)
+    content = (
+      <DataForm footer={false} updateOn="change">
+        {content}
+      </DataForm>
+    );
 
   return content;
 };
