@@ -55,7 +55,8 @@ const RangeSelector = forwardRef(
 
     const [values, setValues] = formContext.useFormInput({
       name,
-      value: valuesProp,
+      // ensure values are within min/max
+      value: valuesProp?.map((n) => Math.min(max, Math.max(min, n))),
       initialValue: defaultValues,
     });
 
@@ -202,27 +203,17 @@ const RangeSelector = forwardRef(
     else layoutProps.height = thickness;
     if (size === 'full') layoutProps.alignSelf = 'stretch';
 
-    return (
+    let content = (
       <Container
         ref={containerRef}
         direction={direction === 'vertical' ? 'column' : 'row'}
         align="center"
         fill
-        {...rest}
+        {...(label ? {} : rest)}
         tabIndex="-1"
         onClick={onClick}
         onTouchMove={onTouchMove}
       >
-        {label && (
-          <Text
-            ref={minRef}
-            textAlign="end"
-            size="small"
-            margin={{ horizontal: 'small' }}
-          >
-            {typeof label === 'function' ? label(lower) : lower}
-          </Text>
-        )}
         <Box
           style={{ flex: `${lower - min} 0 0` }}
           background={
@@ -322,13 +313,34 @@ const RangeSelector = forwardRef(
           {...layoutProps}
           round={round}
         />
-        {label && (
+      </Container>
+    );
+
+    if (label) {
+      content = (
+        <Box
+          direction={direction === 'vertical' ? 'column' : 'row'}
+          align="center"
+          fill
+          {...rest}
+        >
+          <Text
+            ref={minRef}
+            textAlign="end"
+            size="small"
+            margin={{ horizontal: 'small' }}
+          >
+            {typeof label === 'function' ? label(lower) : lower}
+          </Text>
+          {content}
           <Text ref={maxRef} size="small" margin={{ horizontal: 'small' }}>
             {typeof label === 'function' ? label(upper) : upper}
           </Text>
-        )}
-      </Container>
-    );
+        </Box>
+      );
+    }
+
+    return content;
   },
 );
 
