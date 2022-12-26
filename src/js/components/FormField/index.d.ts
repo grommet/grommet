@@ -33,6 +33,7 @@ export interface FormFieldProps {
           }
         | ((...args: any[]) => any)
       )[];
+  validation?: { length: { max: 10; threshold: 0.5 } };
 }
 
 type inputProps = Omit<

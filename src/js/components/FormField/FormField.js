@@ -184,12 +184,30 @@ const FormField = forwardRef(
       required,
       style,
       validate,
+      validation,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
+
+    const getMaxAndThresholdValidation = (value) => {
+      const { length } = validation;
+
+      return value.length / length.max > length.threshold
+        ? {
+            status: length.max - value.length >= 0 ? 'info' : 'error',
+            message:
+              length.max - value.length >= 0
+                ? `${length.max - value.length} characters left`
+                : `${value.length - length.max} character${
+                    value.length - length.max > 1 ? 's' : ''
+                  } over limit`,
+          }
+        : undefined;
+    };
+
     const {
       error,
       info,
@@ -202,7 +220,9 @@ const FormField = forwardRef(
       info: infoProp,
       name,
       required,
-      validate,
+      validate: validation
+        ? (value) => getMaxAndThresholdValidation(value)
+        : validate,
     });
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();

@@ -38,6 +38,12 @@ if (process.env.NODE_ENV !== 'production') {
         ]),
       ),
     ]),
+    validation: PropTypes.shape({
+      length: PropTypes.shape({
+        max: PropTypes.number,
+        threshold: PropTypes.number,
+      }),
+    }),
   };
 }
 export const FormFieldPropTypes = PropType;

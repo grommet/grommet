@@ -1,16 +1,16 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
-import styled from 'styled-components';
-import 'jest-styled-components';
 import 'jest-axe/extend-expect';
+import 'jest-styled-components';
+import React from 'react';
 import 'regenerator-runtime/runtime';
+import styled from 'styled-components';
 
 import { Alert, New, StatusInfo } from 'grommet-icons';
-import { Grommet } from '../../Grommet';
-import { Form } from '../../Form';
-import { CheckBox } from '../../CheckBox';
 import { FormField } from '..';
+import { CheckBox } from '../../CheckBox';
+import { Form } from '../../Form';
+import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
 
 const CustomFormField = styled(FormField)`
@@ -441,6 +441,29 @@ describe('FormField', () => {
             <CheckBox label="checkbox with pad" />
           </FormField>
           <CheckBox label="checkbox without pad" />
+        </Form>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('validation', () => {
+    const { container } = render(
+      <Grommet>
+        <Form validate="change">
+          <FormField
+            label="label"
+            validation={{ length: { max: 10, threshold: 0.5 } }}
+            name="issue-description"
+            htmlFor="issue-description"
+          >
+            <TextInput
+              id="issue-description"
+              name="issue-description"
+              placeholder="placeholder"
+            />
+          </FormField>
         </Form>
       </Grommet>,
     );
