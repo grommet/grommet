@@ -242,7 +242,23 @@ function
   function
 ]
 ```
-  
+
+**validation**
+
+When value of input reaches threshold of max (ex: 50% of 100 characters), 
+  is displayed an info message "X characters left".
+When value of input exceeds max, 
+  display an error message "X character over limit".
+
+```
+{
+  length: { 
+    max: number,
+    threshold: number
+  }
+}
+```
+
 ## Intrinsic element
 
 ```
