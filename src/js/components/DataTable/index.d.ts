@@ -8,9 +8,15 @@ import {
   PadType,
   BorderType,
 } from '../../utils';
+import { BoxProps } from '../Box';
 import { PaginationType } from '../Pagination';
 
-type Sections<TBody, THeader = TBody, TFooter = TBody, TPinned = TBody> = {
+export type Sections<
+  TBody,
+  THeader = TBody,
+  TFooter = TBody,
+  TPinned = TBody,
+> = {
   header?: THeader;
   body?: TBody;
   footer?: TFooter;
@@ -56,6 +62,15 @@ export interface ColumnConfig<TRowType> {
   verticalAlign?: VerticalAlignType;
 }
 
+interface SortDefinition {
+  property: string;
+  direction: 'asc' | 'desc';
+}
+
+export interface SortType extends SortDefinition {
+  external?: boolean;
+}
+
 export interface DataTableProps<TRowType = any> {
   a11yTitle?: A11yTitleType;
 
@@ -63,6 +78,7 @@ export interface DataTableProps<TRowType = any> {
   alignSelf?: AlignSelfType;
   background?:
     | BackgroundType
+    | BackgroundType[]
     | Sections<BackgroundType | string[], BackgroundType, BackgroundType>;
   border?: BorderType | Sections<BorderType>;
   columns?: ColumnConfig<TRowType>[];
@@ -70,7 +86,7 @@ export interface DataTableProps<TRowType = any> {
   gridArea?: GridAreaType;
   margin?: MarginType;
   pad?: PadType | Sections<PadType>;
-  paginate?: boolean | PaginationType;
+  paginate?: boolean | PaginationType | BoxProps;
   pin?: boolean | 'header' | 'footer';
   placeholder?: string | React.ReactNode;
   resizeable?: boolean;
@@ -83,6 +99,7 @@ export interface DataTableProps<TRowType = any> {
     };
   };
   rowDetails?: (row: TRowType) => React.ReactNode;
+  show?: number | { page?: number };
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
   // Data
@@ -100,7 +117,7 @@ export interface DataTableProps<TRowType = any> {
       };
   primaryKey?: string | boolean;
   select?: (string | number)[];
-  sort?: { property: string; direction: 'asc' | 'desc'; external?: boolean };
+  sort?: SortType;
   sortable?: boolean;
   step?: number;
 
@@ -111,9 +128,9 @@ export interface DataTableProps<TRowType = any> {
   onMore?: () => void;
   onSearch?: (search: string) => void;
   onSelect?: (select: (string | number)[], datum: TRowType) => void;
-  onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
+  onSort?: (sort: SortDefinition) => void;
   onUpdate?: (datatableState: {
-    sort?: { property: string; direction: 'asc' | 'desc' };
+    sort?: SortDefinition;
     expanded?: Array<string>;
     show: number;
     count: number;
