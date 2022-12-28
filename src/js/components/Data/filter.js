@@ -15,7 +15,7 @@ export const filter = (data, view, properties) => {
     ? new RegExp(view.search.replace(/[#-.]|[[-^]|[?|{}]/g, '\\$&'), 'i')
     : undefined;
   let searchProperties;
-  if (properties) {
+  if (searchExp && properties) {
     // if we know where we want to search, look there
     searchProperties = Object.keys(properties).filter(
       (k) => properties[k].search,

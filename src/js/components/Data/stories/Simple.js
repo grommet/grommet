@@ -26,7 +26,7 @@ export const Simple = () => (
         {
           name: 'behind',
           properties: {
-            percent: { min: 0, max: 30 },
+            percent: { min: 0, max: 50 },
             location: ['San Francisco'],
           },
         },

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -26,7 +26,7 @@ const hideButtonProps = {
 const formSearchKey = '_search';
 const formSortKey = '_sort';
 const formRangeKey = '_range';
-const formViewKey = '_view';
+const formViewNameKey = '_view';
 
 // converts from the external view format to the internal Form value format
 const viewToFormValue = (view) => {
@@ -44,7 +44,7 @@ const viewToFormValue = (view) => {
   result[formSearchKey] = view?.search || '';
 
   if (view?.sort) result[formSortKey] = view.sort;
-  if (view?.name) result[formViewKey] = view.name;
+  if (view?.name) result[formViewNameKey] = view.name;
 
   return result;
 };
@@ -52,8 +52,8 @@ const viewToFormValue = (view) => {
 // converts from the internal Form value format to the external view format
 const formValueToView = (value, views) => {
   // if the user chose a view, use that
-  if (value[formViewKey])
-    return views.find((v) => v.name === value[formViewKey]);
+  if (value[formViewNameKey])
+    return views.find((v) => v.name === value[formViewNameKey]);
 
   const properties = { ...value };
 
@@ -61,7 +61,7 @@ const formValueToView = (value, views) => {
   delete properties[formSearchKey];
   const sort = value[formSortKey];
   delete properties[formSortKey];
-  delete properties[formViewKey];
+  delete properties[formViewNameKey];
 
   const result = {
     properties,
@@ -84,13 +84,32 @@ const formValueToView = (value, views) => {
 
 // remove any empty arrays of property values by deleting the key for
 // that property in the view properties
-const clearEmpty = (properties) => {
-  const result = properties;
+const clearEmpty = (formValue) => {
+  const result = formValue;
   Object.keys(result)
-    .filter((k) => k !== formSearchKey)
+    .filter((k) => k !== formSearchKey) // leave search value alone, allow ''
     .forEach((k) => {
       if (Array.isArray(result[k]) && result[k].length === 0) delete result[k];
     });
+  return result;
+};
+
+// function shared by onSubmit and onChange to coordinate view
+// name changes
+const normalizeValue = (nextValue, prevValue, views) => {
+  if (
+    nextValue[formViewNameKey] &&
+    nextValue[formViewNameKey] !== prevValue[formViewNameKey]
+  ) {
+    // view name changed, reset view contents from named view
+    return viewToFormValue(
+      views.find((v) => v.name === nextValue[formViewNameKey]),
+    );
+  }
+
+  // something else changed, clear empty propeties and view name
+  const result = clearEmpty(nextValue);
+  delete result[formViewNameKey];
   return result;
 };
 
@@ -115,29 +134,40 @@ export const DataForm = ({
   const [formValue, setFormValue] = useState(viewToFormValue(view));
   const [changed, setChanged] = useState();
 
+  const onSubmit = useCallback(
+    ({ value }) => {
+      const nextValue = normalizeValue(value, formValue, views);
+      setFormValue(nextValue);
+      setChanged(false);
+      onView(formValueToView(nextValue, views));
+      if (onDone) onDone();
+    },
+    [formValue, onDone, onView, views],
+  );
+
+  const onChange = useCallback(
+    (value) => {
+      const nextValue = normalizeValue(value, formValue, views);
+      setFormValue(nextValue);
+      setChanged(true);
+      if (updateOn === 'change') onView(formValueToView(nextValue, views));
+    },
+    [formValue, onView, updateOn, views],
+  );
+
+  const onReset = useCallback(() => {
+    setFormValue(viewToFormValue(view));
+    setChanged(false);
+  }, [view]);
+
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
 
   return (
     <Form
       {...rest}
       value={formValue}
-      onSubmit={
-        updateOn === 'submit'
-          ? ({ value: nextValue }) => {
-              clearEmpty(nextValue);
-              setFormValue(nextValue);
-              setChanged(false);
-              onView(formValueToView(nextValue, views));
-              if (onDone) onDone();
-            }
-          : undefined
-      }
-      onChange={(nextValue) => {
-        clearEmpty(nextValue);
-        setFormValue(nextValue);
-        setChanged(true);
-        if (updateOn === 'change') onView(formValueToView(nextValue, views));
-      }}
+      onSubmit={updateOn === 'submit' ? onSubmit : undefined}
+      onChange={onChange}
     >
       <Box flex={false} pad={pad} gap={gap}>
         {children}
@@ -157,10 +187,7 @@ export const DataForm = ({
                 messages: messages?.dataForm,
               })}
               type="reset"
-              onClick={() => {
-                setFormValue(viewToFormValue(view));
-                setChanged(false);
-              }}
+              onClick={onReset}
               {...(!changed ? hideButtonProps : {})}
             />
           </Footer>
