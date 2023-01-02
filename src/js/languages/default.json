@@ -38,6 +38,11 @@
     "filteredSingle": "{filtered} result of {total} items",
     "total": "{total} items"
   },
+  "dataTableColumns": {
+    "open": "Open column selector",
+    "order": "Order columns",
+    "select": "Select columns"
+  },
   "fileInput": {
     "browse": "browse",
     "dropPrompt": "Drop file here or",

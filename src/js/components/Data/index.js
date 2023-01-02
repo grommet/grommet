@@ -1,2 +1,8 @@
 export { Data } from './Data';
-export { DataForm } from './DataForm';
+export {
+  DataForm,
+  formColumnsKey,
+  formRangeKey,
+  formSearchKey,
+  formSortKey,
+} from './DataForm';
