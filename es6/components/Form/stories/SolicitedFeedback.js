@@ -36,8 +36,7 @@ export var SolicitedFeedback = function SolicitedFeedback() {
       label: "Was this content helpful?"
     }, /*#__PURE__*/React.createElement(StarRating, {
       id: "star-rating",
-      name: "rating",
-      color: "brand"
+      name: "rating"
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "What would have improved your experience",
       htmlFor: "experience",

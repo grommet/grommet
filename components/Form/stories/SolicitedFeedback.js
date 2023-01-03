@@ -41,8 +41,7 @@ var SolicitedFeedback = function SolicitedFeedback() {
       label: "Was this content helpful?"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.StarRating, {
       id: "star-rating",
-      name: "rating",
-      color: "brand"
+      name: "rating"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "What would have improved your experience",
       htmlFor: "experience",
