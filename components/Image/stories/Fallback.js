@@ -12,7 +12,8 @@ var Fallback = function Fallback() {
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Image, {
       fallback: "//v2.grommet.io/assets/IMG_4245.jpg",
-      src: "//v2.grommet.io/assets/IMG_4245_not_exists.jpg"
+      src: "//v2.grommet.io/assets/IMG_4245_not_exists.jpg",
+      alt: "fallback image"
     })
     // </Grommet>
   );
