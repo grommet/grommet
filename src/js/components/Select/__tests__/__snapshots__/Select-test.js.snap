@@ -1772,6 +1772,15 @@ exports[`Select Search timeout 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1780,15 +1789,6 @@ exports[`Select Search timeout 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -2167,6 +2167,15 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2175,15 +2184,6 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -3392,6 +3392,15 @@ exports[`Select dark 1`] = `
   width: 100%;
 }
 
+.c8 {
+  cursor: pointer;
+}
+
+.c3 {
+  border: 1px solid rgba(255,255,255,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3400,15 +3409,6 @@ exports[`Select dark 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c8 {
-  cursor: pointer;
-}
-
-.c3 {
-  border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -3676,6 +3676,15 @@ exports[`Select default value 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3684,15 +3693,6 @@ exports[`Select default value 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -4349,6 +4349,15 @@ exports[`Select default value object options 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4357,15 +4366,6 @@ exports[`Select default value object options 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -4954,6 +4954,15 @@ exports[`Select disabled key 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4962,15 +4971,6 @@ exports[`Select disabled key 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -5935,6 +5935,15 @@ exports[`Select keyboard navigation timeout 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -5943,15 +5952,6 @@ exports[`Select keyboard navigation timeout 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -6725,16 +6725,6 @@ exports[`Select modifies select control style on open 1`] = `
   width: 100%;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c7 {
   cursor: pointer;
 }
@@ -6743,6 +6733,16 @@ exports[`Select modifies select control style on open 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   background: purple;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -7280,6 +7280,15 @@ exports[`Select onChange with valueKey object 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -7288,15 +7297,6 @@ exports[`Select onChange with valueKey object 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -7819,6 +7819,15 @@ exports[`Select onChange with valueKey object 4`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -7827,15 +7836,6 @@ exports[`Select onChange with valueKey object 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -8114,6 +8114,15 @@ exports[`Select onChange with valueKey string 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -8122,15 +8131,6 @@ exports[`Select onChange with valueKey string 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -8652,6 +8652,15 @@ exports[`Select onChange with valueKey string 4`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -8660,15 +8669,6 @@ exports[`Select onChange with valueKey string 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -8898,6 +8898,15 @@ exports[`Select onChange with valueLabel 1`] = `
   border: 0;
 }
 
+.c5 {
+  display: none;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -8906,15 +8915,6 @@ exports[`Select onChange with valueLabel 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c5 {
-  display: none;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -9432,6 +9432,15 @@ exports[`Select onChange without labelKey 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -9440,15 +9449,6 @@ exports[`Select onChange without labelKey 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -9971,6 +9971,15 @@ exports[`Select onChange without labelKey 4`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -9979,15 +9988,6 @@ exports[`Select onChange without labelKey 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -10266,6 +10266,15 @@ exports[`Select onChange without labelKey or valueKey 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -10274,15 +10283,6 @@ exports[`Select onChange without labelKey or valueKey 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -10804,6 +10804,15 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -10812,15 +10821,6 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -11099,6 +11099,15 @@ exports[`Select onChange without valueKey 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -11107,15 +11116,6 @@ exports[`Select onChange without valueKey 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -11637,6 +11637,15 @@ exports[`Select onChange without valueKey 4`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -11645,15 +11654,6 @@ exports[`Select onChange without valueKey 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -13388,6 +13388,15 @@ exports[`Select renders custom up and down icons 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -13396,15 +13405,6 @@ exports[`Select renders custom up and down icons 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -14039,6 +14039,15 @@ exports[`Select renders styled select options backwards compatible with legacy
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -14047,15 +14056,6 @@ exports[`Select renders styled select options backwards compatible with legacy
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -14324,6 +14324,15 @@ exports[`Select renders styled select options combining select.options.box &&
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -14332,15 +14341,6 @@ exports[`Select renders styled select options combining select.options.box &&
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -14607,6 +14607,15 @@ exports[`Select renders styled select options using select.options.container 1`]
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -14615,15 +14624,6 @@ exports[`Select renders styled select options using select.options.container 1`]
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -17971,6 +17971,15 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -17979,15 +17988,6 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -18308,6 +18308,15 @@ exports[`Select selected 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -18316,15 +18325,6 @@ exports[`Select selected 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -18590,6 +18590,15 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -18598,15 +18607,6 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -18916,6 +18916,15 @@ exports[`Select should not have accessibility violations 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -18924,15 +18933,6 @@ exports[`Select should not have accessibility violations 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {

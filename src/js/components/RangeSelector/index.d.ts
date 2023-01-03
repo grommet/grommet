@@ -3,6 +3,7 @@ import { Omit, ColorType } from '../../utils';
 
 export interface RangeSelectorProps {
   color?: ColorType;
+  defaultValues?: number[];
   direction?: 'horizontal' | 'vertical';
   invert?: boolean;
   max?: number;
@@ -21,7 +22,7 @@ export interface RangeSelectorProps {
     | 'full'
     | string;
   step?: number;
-  values: number[];
+  values?: number[];
 }
 
 export interface RangeSelectorExtendedProps

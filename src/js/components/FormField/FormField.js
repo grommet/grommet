@@ -34,6 +34,8 @@ const grommetInputNames = [
   'FileInput',
   'RadioButtonGroup',
   'RangeInput',
+  'StarRating',
+  'ThumbsRating',
 ];
 const grommetInputPadNames = [
   'CheckBox',
@@ -67,6 +69,17 @@ const RequiredText = styled(Text)`
   color: inherit;
   font-weight: inherit;
   line-height: inherit;
+`;
+
+const ScreenReaderOnly = styled(Text)`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 `;
 
 const Message = ({ error, info, message, type, ...rest }) => {
@@ -191,6 +204,7 @@ const FormField = forwardRef(
       required,
       validate,
     });
+    const formKind = formContext.kind;
     const [focus, setFocus] = useState();
     const formFieldRef = useForwardedRef(ref);
 
@@ -334,7 +348,10 @@ const FormField = forwardRef(
       borderColor = (themeBorder && themeBorder.color) || 'border';
     }
 
-    const labelStyle = { ...formFieldTheme.label };
+    let labelStyle;
+    if (formKind) {
+      labelStyle = { ...formFieldTheme[formKind].label };
+    } else labelStyle = { ...formFieldTheme.label };
 
     if (disabled) {
       labelStyle.color =
@@ -450,10 +467,17 @@ const FormField = forwardRef(
 
     let { requiredIndicator } = theme.formField.label;
     if (requiredIndicator === true)
-      // a11yTitle necessary so screenreader announces as "required"
-      // as opposed to "star"
       // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
-      requiredIndicator = <RequiredText a11yTitle="required">*</RequiredText>;
+      // this approach allows the required indicator to be hidden visually,
+      // but present for assistive tech.
+      // using aria-hidden so screen does not read out "star" and
+      // just reads out "required"
+      requiredIndicator = (
+        <>
+          <RequiredText aria-hidden="true">*</RequiredText>
+          <ScreenReaderOnly>required</ScreenReaderOnly>
+        </>
+      );
 
     let showRequiredIndicator = required && requiredIndicator;
     if (typeof required === 'object' && required.indicator === false)

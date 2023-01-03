@@ -555,6 +555,9 @@ export interface ThemeType {
     body?: BoxProps;
     footer?: BoxProps;
   };
+  cards?: {
+    container?: BoxProps;
+  };
   carousel?: {
     animation?: {
       duration?: number;
@@ -1428,6 +1431,17 @@ export interface ThemeType {
       medium?: string;
       large?: string;
       xlarge?: string;
+    };
+  };
+  starRating?: {
+    color?: ColorType;
+  };
+  thumbsRating?: {
+    dislike?: {
+      color?: ColorType;
+    };
+    like?: {
+      color?: ColorType;
     };
   };
   tab?: {
