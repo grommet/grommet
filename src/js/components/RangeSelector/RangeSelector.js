@@ -182,6 +182,8 @@ const RangeSelector = forwardRef(
     // keep the text values size consistent
     useLayoutEffect(() => {
       if (maxRef.current && minRef.current) {
+        maxRef.current.style.width = '';
+        minRef.current.style.width = '';
         const width = Math.max(
           maxRef.current.getBoundingClientRect().width,
           minRef.current.getBoundingClientRect().width,
