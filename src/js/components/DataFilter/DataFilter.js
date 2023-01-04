@@ -1,12 +1,9 @@
-import React, { useContext, useMemo, useRef, useState } from 'react';
-import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
+import React, { useContext, useMemo } from 'react';
 import { DataContext } from '../../contexts/DataContext';
-import { Box } from '../Box';
 import { FormField } from '../FormField';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
 import { SelectMultiple } from '../SelectMultiple';
-import { Text } from '../Text';
 import { DataFilterPropTypes } from './propTypes';
 
 const generateOptions = (data, property) =>
@@ -38,14 +35,7 @@ export const DataFilter = ({
   range: rangeProp,
   ...rest
 }) => {
-  const {
-    id: dataId,
-    properties,
-    unfilteredData,
-    view,
-  } = useContext(DataContext);
-  const maxRef = useRef();
-  const minRef = useRef();
+  const { id: dataId, properties, unfilteredData } = useContext(DataContext);
 
   const options = useMemo(() => {
     if (children) return undefined; // caller driving
@@ -85,59 +75,23 @@ export const DataFilter = ({
     return [min, max];
   }, [children, options, properties, property, rangeProp, unfilteredData]);
 
-  // track range values so we can display them
-  const [rangeValues, setRangeValues] = useState(() => {
-    if (!range) return undefined;
-    const { min, max } = view?.properties?.[property] || {};
-    return [min || range[0], max || range[1]];
-  }, [range, view]);
-
-  // keep the text values size consistent
-  useLayoutEffect(() => {
-    if (maxRef.current && minRef.current) {
-      const width = Math.max(
-        maxRef.current.getBoundingClientRect().width,
-        minRef.current.getBoundingClientRect().width,
-      );
-      maxRef.current.style.width = `${width}px`;
-      minRef.current.style.width = `${width}px`;
-    }
-  });
-
   const id = `${dataId}-${property}`;
 
   let content = children;
   if (!content) {
     if (range) {
-      // consider moving the Text values inside RangeSelector
       content = (
-        <Box
-          direction="row"
-          justify="between"
-          align="center"
-          pad="xsmall"
-          gap="small"
-        >
-          <Text ref={minRef} size="small">
-            {rangeValues[0]}
-          </Text>
-          <RangeSelector
-            id={id}
-            name={`${property}._range`}
-            defaultValues={range}
-            direction="horizontal"
-            invert={false}
-            min={range[0]}
-            max={range[1]}
-            step={(range[1] - range[0]) / 20}
-            size="full"
-            round="small"
-            onChange={setRangeValues}
-          />
-          <Text ref={maxRef} size="small">
-            {rangeValues[1]}
-          </Text>
-        </Box>
+        <RangeSelector
+          id={id}
+          name={`${property}._range`}
+          defaultValues={range}
+          label
+          min={range[0]}
+          max={range[1]}
+          step={(range[1] - range[0]) / 20}
+          size="full"
+          round="small"
+        />
       );
     } else if (
       options.length === 2 &&
