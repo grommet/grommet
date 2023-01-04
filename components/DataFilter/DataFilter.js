@@ -3,14 +3,11 @@
 exports.__esModule = true;
 exports.DataFilter = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
 var _DataContext = require("../../contexts/DataContext");
-var _Box = require("../Box");
 var _FormField = require("../FormField");
 var _CheckBoxGroup = require("../CheckBoxGroup");
 var _RangeSelector = require("../RangeSelector");
 var _SelectMultiple = require("../SelectMultiple");
-var _Text = require("../Text");
 var _propTypes = require("./propTypes");
 var _excluded = ["children", "options", "property", "range"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -51,10 +48,7 @@ var DataFilter = function DataFilter(_ref) {
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     dataId = _useContext.id,
     properties = _useContext.properties,
-    unfilteredData = _useContext.unfilteredData,
-    view = _useContext.view;
-  var maxRef = (0, _react.useRef)();
-  var minRef = (0, _react.useRef)();
+    unfilteredData = _useContext.unfilteredData;
   var options = (0, _react.useMemo)(function () {
     var _properties$property, _properties$property2;
     if (children) return undefined; // caller driving
@@ -96,57 +90,21 @@ var DataFilter = function DataFilter(_ref) {
     var max = alignMax(uniqueValues[uniqueValues.length - 1], interval);
     return [min, max];
   }, [children, options, properties, property, rangeProp, unfilteredData]);
-
-  // track range values so we can display them
-  var _useState = (0, _react.useState)(function () {
-      var _view$properties;
-      if (!range) return undefined;
-      var _ref2 = (view == null ? void 0 : (_view$properties = view.properties) == null ? void 0 : _view$properties[property]) || {},
-        min = _ref2.min,
-        max = _ref2.max;
-      return [min || range[0], max || range[1]];
-    }, [range, view]),
-    rangeValues = _useState[0],
-    setRangeValues = _useState[1];
-
-  // keep the text values size consistent
-  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
-    if (maxRef.current && minRef.current) {
-      var width = Math.max(maxRef.current.getBoundingClientRect().width, minRef.current.getBoundingClientRect().width);
-      maxRef.current.style.width = width + "px";
-      minRef.current.style.width = width + "px";
-    }
-  });
   var id = dataId + "-" + property;
   var content = children;
   if (!content) {
     if (range) {
-      // consider moving the Text values inside RangeSelector
-      content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-        direction: "row",
-        justify: "between",
-        align: "center",
-        pad: "xsmall",
-        gap: "small"
-      }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
-        ref: minRef,
-        size: "small"
-      }, rangeValues[0]), /*#__PURE__*/_react["default"].createElement(_RangeSelector.RangeSelector, {
+      content = /*#__PURE__*/_react["default"].createElement(_RangeSelector.RangeSelector, {
         id: id,
         name: property + "._range",
         defaultValues: range,
-        direction: "horizontal",
-        invert: false,
+        label: true,
         min: range[0],
         max: range[1],
         step: (range[1] - range[0]) / 20,
         size: "full",
-        round: "small",
-        onChange: setRangeValues
-      }), /*#__PURE__*/_react["default"].createElement(_Text.Text, {
-        ref: maxRef,
-        size: "small"
-      }, rangeValues[1]));
+        round: "small"
+      });
     } else if (options.length === 2 && options[1] === true && options[0] === false) {
       // special case boolean properties
       content = /*#__PURE__*/_react["default"].createElement(_CheckBoxGroup.CheckBoxGroup, {
