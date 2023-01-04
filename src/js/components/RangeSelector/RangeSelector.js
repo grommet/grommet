@@ -52,6 +52,7 @@ const RangeSelector = forwardRef(
     const containerRef = useRef();
     const maxRef = useRef();
     const minRef = useRef();
+    const labelWidthRef = useRef(0);
 
     const [values, setValues] = formContext.useFormInput({
       name,
@@ -185,11 +186,13 @@ const RangeSelector = forwardRef(
         maxRef.current.style.width = '';
         minRef.current.style.width = '';
         const width = Math.max(
+          labelWidthRef.current,
           maxRef.current.getBoundingClientRect().width,
           minRef.current.getBoundingClientRect().width,
         );
         maxRef.current.style.width = `${width}px`;
         minRef.current.style.width = `${width}px`;
+        labelWidthRef.current = width;
       }
     });
 
