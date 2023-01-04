@@ -1,11 +1,13 @@
-var _excluded = ["color", "defaultValues", "direction", "invert", "max", "messages", "min", "name", "onChange", "opacity", "round", "size", "step", "values"];
+var _excluded = ["color", "defaultValues", "direction", "invert", "label", "max", "messages", "min", "name", "onChange", "opacity", "round", "size", "step", "values"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { EdgeControl } from './EdgeControl';
 import { FormContext } from '../Form/FormContext';
+import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
@@ -20,6 +22,7 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$direction = _ref.direction,
     direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
     invert = _ref.invert,
+    label = _ref.label,
     _ref$max = _ref.max,
     max = _ref$max === void 0 ? 100 : _ref$max,
     messages = _ref.messages,
@@ -50,9 +53,15 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     moveValue = _useState3[0],
     setMoveValue = _useState3[1];
   var containerRef = useRef();
+  var maxRef = useRef();
+  var minRef = useRef();
+  var labelWidthRef = useRef(0);
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
-      value: valuesProp,
+      // ensure values are within min/max
+      value: valuesProp == null ? void 0 : valuesProp.map(function (n) {
+        return Math.min(max, Math.max(min, n));
+      }),
       initialValue: defaultValues
     }),
     values = _formContext$useFormI[0],
@@ -136,6 +145,18 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var touchEvent = event.changedTouches[0];
     onMouseMove(touchEvent);
   }, [onMouseMove]);
+
+  // keep the text values size consistent
+  useLayoutEffect(function () {
+    if (maxRef.current && minRef.current) {
+      maxRef.current.style.width = '';
+      minRef.current.style.width = '';
+      var width = Math.max(labelWidthRef.current, maxRef.current.getBoundingClientRect().width, minRef.current.getBoundingClientRect().width);
+      maxRef.current.style.width = width + "px";
+      minRef.current.style.width = width + "px";
+      labelWidthRef.current = width;
+    }
+  });
   var lower = values[0],
     upper = values[1];
   // It needs to be true when vertical, due to how browsers manage height
@@ -147,12 +168,12 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
   };
   if (direction === 'vertical') layoutProps.width = thickness;else layoutProps.height = thickness;
   if (size === 'full') layoutProps.alignSelf = 'stretch';
-  return /*#__PURE__*/React.createElement(Container, _extends({
+  var content = /*#__PURE__*/React.createElement(Container, _extends({
     ref: containerRef,
     direction: direction === 'vertical' ? 'column' : 'row',
     align: "center",
     fill: true
-  }, rest, {
+  }, label ? {} : rest, {
     tabIndex: "-1",
     onClick: onClick,
     onTouchMove: onTouchMove
@@ -255,6 +276,27 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, layoutProps, {
     round: round
   })));
+  if (label) {
+    content = /*#__PURE__*/React.createElement(Box, _extends({
+      direction: direction === 'vertical' ? 'column' : 'row',
+      align: "center",
+      fill: true
+    }, rest), /*#__PURE__*/React.createElement(Text, {
+      ref: minRef,
+      textAlign: "end",
+      size: "small",
+      margin: {
+        horizontal: 'small'
+      }
+    }, typeof label === 'function' ? label(lower) : lower), content, /*#__PURE__*/React.createElement(Text, {
+      ref: maxRef,
+      size: "small",
+      margin: {
+        horizontal: 'small'
+      }
+    }, typeof label === 'function' ? label(upper) : upper));
+  }
+  return content;
 });
 RangeSelector.displayName = 'RangeSelector';
 RangeSelector.propTypes = RangeSelectorPropTypes;

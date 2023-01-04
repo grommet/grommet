@@ -12,6 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
     defaultValues: _propTypes["default"].arrayOf(_propTypes["default"].number),
     direction: _propTypes["default"].oneOf(['horizontal', 'vertical']),
     invert: _propTypes["default"].bool,
+    label: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].func]),
     max: _propTypes["default"].number,
     messages: _propTypes["default"].shape({
       lower: _propTypes["default"].string,

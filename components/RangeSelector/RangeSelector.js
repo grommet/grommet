@@ -4,13 +4,15 @@ exports.__esModule = true;
 exports.RangeSelector = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
 var _Box = require("../Box");
 var _EdgeControl = require("./EdgeControl");
 var _FormContext = require("../Form/FormContext");
+var _Text = require("../Text");
 var _utils = require("../../utils");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
-var _excluded = ["color", "defaultValues", "direction", "invert", "max", "messages", "min", "name", "onChange", "opacity", "round", "size", "step", "values"];
+var _excluded = ["color", "defaultValues", "direction", "invert", "label", "max", "messages", "min", "name", "onChange", "opacity", "round", "size", "step", "values"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -26,6 +28,7 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     _ref$direction = _ref.direction,
     direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
     invert = _ref.invert,
+    label = _ref.label,
     _ref$max = _ref.max,
     max = _ref$max === void 0 ? 100 : _ref$max,
     messages = _ref.messages,
@@ -56,9 +59,15 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     moveValue = _useState3[0],
     setMoveValue = _useState3[1];
   var containerRef = (0, _react.useRef)();
+  var maxRef = (0, _react.useRef)();
+  var minRef = (0, _react.useRef)();
+  var labelWidthRef = (0, _react.useRef)(0);
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
-      value: valuesProp,
+      // ensure values are within min/max
+      value: valuesProp == null ? void 0 : valuesProp.map(function (n) {
+        return Math.min(max, Math.max(min, n));
+      }),
       initialValue: defaultValues
     }),
     values = _formContext$useFormI[0],
@@ -142,6 +151,18 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     var touchEvent = event.changedTouches[0];
     onMouseMove(touchEvent);
   }, [onMouseMove]);
+
+  // keep the text values size consistent
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
+    if (maxRef.current && minRef.current) {
+      maxRef.current.style.width = '';
+      minRef.current.style.width = '';
+      var width = Math.max(labelWidthRef.current, maxRef.current.getBoundingClientRect().width, minRef.current.getBoundingClientRect().width);
+      maxRef.current.style.width = width + "px";
+      minRef.current.style.width = width + "px";
+      labelWidthRef.current = width;
+    }
+  });
   var lower = values[0],
     upper = values[1];
   // It needs to be true when vertical, due to how browsers manage height
@@ -153,12 +174,12 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   };
   if (direction === 'vertical') layoutProps.width = thickness;else layoutProps.height = thickness;
   if (size === 'full') layoutProps.alignSelf = 'stretch';
-  return /*#__PURE__*/_react["default"].createElement(Container, _extends({
+  var content = /*#__PURE__*/_react["default"].createElement(Container, _extends({
     ref: containerRef,
     direction: direction === 'vertical' ? 'column' : 'row',
     align: "center",
     fill: true
-  }, rest, {
+  }, label ? {} : rest, {
     tabIndex: "-1",
     onClick: onClick,
     onTouchMove: onTouchMove
@@ -261,6 +282,27 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, layoutProps, {
     round: round
   })));
+  if (label) {
+    content = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
+      direction: direction === 'vertical' ? 'column' : 'row',
+      align: "center",
+      fill: true
+    }, rest), /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+      ref: minRef,
+      textAlign: "end",
+      size: "small",
+      margin: {
+        horizontal: 'small'
+      }
+    }, typeof label === 'function' ? label(lower) : lower), content, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+      ref: maxRef,
+      size: "small",
+      margin: {
+        horizontal: 'small'
+      }
+    }, typeof label === 'function' ? label(upper) : upper));
+  }
+  return content;
 });
 exports.RangeSelector = RangeSelector;
 RangeSelector.displayName = 'RangeSelector';
