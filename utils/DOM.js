@@ -56,7 +56,8 @@ var findScrollParents = function findScrollParents(element, horizontal) {
 };
 exports.findScrollParents = findScrollParents;
 var containsFocus = function containsFocus(node) {
-  var element = document.activeElement;
+  var root = node.getRootNode();
+  var element = root.activeElement;
   while (element) {
     if (element === node) break;
     element = element.parentElement;
@@ -84,8 +85,8 @@ var getFirstFocusableDescendant = function getFirstFocusableDescendant(element) 
   return undefined;
 };
 exports.getFirstFocusableDescendant = getFirstFocusableDescendant;
-var shouldKeepFocus = function shouldKeepFocus() {
-  var element = document.activeElement;
+var shouldKeepFocus = function shouldKeepFocus(root) {
+  var element = root.activeElement;
   if (isFocusable(element)) return true;
   return !!getFirstFocusableDescendant(element);
 };

@@ -336,7 +336,8 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, outerProps, {
     style: outerStyle,
     onFocus: function onFocus(event) {
-      setFocus(containsFocus(formFieldRef.current) && shouldKeepFocus());
+      var root = formFieldRef.current.getRootNode();
+      setFocus(containsFocus(formFieldRef.current) && shouldKeepFocus(root));
       if (_onFocus) _onFocus(event);
     },
     onBlur: function onBlur(event) {
