@@ -56,12 +56,23 @@ export const findScrollParents = (element, horizontal) => {
 };
 
 export const containsFocus = (node) => {
-  let element = document.activeElement;
+  const root = node.getRootNode();
+  let element = root.activeElement;
   while (element) {
     if (element === node) break;
     element = element.parentElement;
   }
   return !!element;
+};
+
+export const focusWithinDropPortal = (node) => {
+  const root = node.getRootNode();
+  let element = node;
+  while (element && element !== root) {
+    if (element.hasAttribute('data-g-portal-id')) return true;
+    element = element.parentElement;
+  }
+  return false;
 };
 
 // Check if the element.tagName is an input, select or textarea
@@ -82,8 +93,8 @@ export const getFirstFocusableDescendant = (element) => {
   return undefined;
 };
 
-export const shouldKeepFocus = () => {
-  const element = document.activeElement;
+export const shouldKeepFocus = (root) => {
+  const element = root.activeElement;
   if (isFocusable(element)) return true;
   return !!getFirstFocusableDescendant(element);
 };

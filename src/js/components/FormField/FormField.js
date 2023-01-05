@@ -9,7 +9,11 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { containsFocus, shouldKeepFocus } from '../../utils/DOM';
+import {
+  containsFocus,
+  shouldKeepFocus,
+  focusWithinDropPortal,
+} from '../../utils/DOM';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -209,6 +213,7 @@ const FormField = forwardRef(
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();
     const formFieldRef = useForwardedRef(ref);
+    const [dropFocused, setDropFocused] = useState();
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
@@ -494,12 +499,28 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
-          setFocus(containsFocus(formFieldRef.current) && shouldKeepFocus());
+          const root = formFieldRef.current.getRootNode();
+          setFocus(
+            containsFocus(formFieldRef.current) && shouldKeepFocus(root),
+          );
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {
           setFocus(false);
-          if (contextOnBlur) contextOnBlur(event);
+
+          if (
+            event.relatedTarget &&
+            focusWithinDropPortal(event.relatedTarget)
+          ) {
+            setDropFocused(event.relatedTarget);
+          } else if (
+            !(dropFocused && dropFocused.contains(event.relatedTarget)) &&
+            !formFieldRef.current.contains(event.relatedTarget)
+          ) {
+            if (dropFocused) setDropFocused(undefined);
+            if (contextOnBlur) contextOnBlur(event);
+          }
+
           if (onBlur) onBlur(event);
         }}
         onChange={
