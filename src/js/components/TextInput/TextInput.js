@@ -500,6 +500,7 @@ const TextInput = forwardRef(
                 event.relatedTarget !== dropRef.current
               ) {
                 setFocus(false);
+                closeDrop();
                 if (onBlur) onBlur(event);
               }
             }}
