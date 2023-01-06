@@ -189,7 +189,8 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       if (open && !range) {
         closeCalendar();
         setTimeout(function () {
-          return ref.current.focus();
+          var _ref$current;
+          return (_ref$current = ref.current) == null ? void 0 : _ref$current.focus();
         }, 1);
       }
     }
