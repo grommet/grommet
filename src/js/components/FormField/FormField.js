@@ -508,6 +508,9 @@ const FormField = forwardRef(
         onBlur={(event) => {
           setFocus(false);
 
+          // if input has a drop and focus is within drop
+          // prevent onBlur validation from running until
+          // focus is no longer within the drop or input
           if (
             event.relatedTarget &&
             focusWithinDropPortal(event.relatedTarget)
