@@ -5230,6 +5230,10 @@ exports[`DataTable groupBy 1`] = `
   flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -5645,7 +5649,7 @@ exports[`DataTable groupBy 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jsAhdo"
+                class="StyledBox-sc-13pk1d4-0 hjqrGQ"
               >
                 <svg
                   aria-label="FormDown"
@@ -5712,7 +5716,7 @@ exports[`DataTable groupBy 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jsAhdo"
+                class="StyledBox-sc-13pk1d4-0 hjqrGQ"
               >
                 <svg
                   aria-label="FormDown"
@@ -5768,7 +5772,7 @@ exports[`DataTable groupBy 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jsAhdo"
+                class="StyledBox-sc-13pk1d4-0 hjqrGQ"
               >
                 <svg
                   aria-label="FormDown"
@@ -5928,6 +5932,10 @@ exports[`DataTable groupBy expand 1`] = `
   flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -6530,6 +6538,10 @@ exports[`DataTable groupBy property 1`] = `
   flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -6945,7 +6957,7 @@ exports[`DataTable groupBy property 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jsAhdo"
+                class="StyledBox-sc-13pk1d4-0 hjqrGQ"
               >
                 <svg
                   aria-label="FormDown"
@@ -7012,7 +7024,7 @@ exports[`DataTable groupBy property 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jsAhdo"
+                class="StyledBox-sc-13pk1d4-0 hjqrGQ"
               >
                 <svg
                   aria-label="FormDown"
@@ -7068,7 +7080,7 @@ exports[`DataTable groupBy property 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jsAhdo"
+                class="StyledBox-sc-13pk1d4-0 hjqrGQ"
               >
                 <svg
                   aria-label="FormDown"
@@ -7479,6 +7491,10 @@ exports[`DataTable groupBy toggle 2`] = `
   flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -7726,6 +7742,10 @@ exports[`DataTable groupBy toggle 2`] = `
   flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -8321,6 +8341,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -9259,6 +9283,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -9975,6 +10003,10 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -10723,6 +10755,10 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -11354,7 +11390,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jsAhdo"
+                class="StyledBox-sc-13pk1d4-0 hjqrGQ"
               >
                 <svg
                   aria-label="FormDown"
@@ -11482,7 +11518,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jsAhdo"
+                class="StyledBox-sc-13pk1d4-0 hjqrGQ"
               >
                 <svg
                   aria-label="FormDown"
@@ -11598,7 +11634,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jsAhdo"
+                class="StyledBox-sc-13pk1d4-0 hjqrGQ"
               >
                 <svg
                   aria-label="FormDown"
@@ -11729,7 +11765,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jsAhdo"
+                class="StyledBox-sc-13pk1d4-0 hjqrGQ"
               >
                 <svg
                   aria-label="FormDown"
@@ -11822,7 +11858,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jsAhdo"
+                class="StyledBox-sc-13pk1d4-0 hjqrGQ"
               >
                 <svg
                   aria-label="FormDown"
@@ -11903,7 +11939,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jsAhdo"
+                class="StyledBox-sc-13pk1d4-0 hjqrGQ"
               >
                 <svg
                   aria-label="FormDown"
@@ -18703,6 +18739,10 @@ exports[`DataTable rowDetails 1`] = `
   flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -19301,6 +19341,10 @@ exports[`DataTable rowDetails condtional 1`] = `
   flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
