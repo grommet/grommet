@@ -193,7 +193,7 @@ Use the icon prop instead.`,
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
                   closeCalendar();
-                  setTimeout(() => ref.current.focus(), 1);
+                  setTimeout(() => ref.current?.focus(), 1);
                 }
               }
         }
