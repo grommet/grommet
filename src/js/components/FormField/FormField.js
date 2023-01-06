@@ -213,7 +213,7 @@ const FormField = forwardRef(
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();
     const formFieldRef = useForwardedRef(ref);
-    const [dropFocused, setDropFocused] = useState();
+    const [focusedDropElement, setFocusedDropElement] = useState();
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
@@ -515,12 +515,15 @@ const FormField = forwardRef(
             event.relatedTarget &&
             focusWithinDropPortal(event.relatedTarget)
           ) {
-            setDropFocused(event.relatedTarget);
+            setFocusedDropElement(event.relatedTarget);
           } else if (
-            !(dropFocused && dropFocused.contains(event.relatedTarget)) &&
+            !(
+              focusedDropElement &&
+              focusedDropElement.contains(event.relatedTarget)
+            ) &&
             !formFieldRef.current.contains(event.relatedTarget)
           ) {
-            if (dropFocused) setDropFocused(undefined);
+            if (focusedDropElement) setFocusedDropElement(undefined);
             if (contextOnBlur) contextOnBlur(event);
           }
 
