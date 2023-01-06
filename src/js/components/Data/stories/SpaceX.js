@@ -4,6 +4,7 @@ import {
   Box,
   DataTable,
   Data,
+  Footer,
   Grid,
   Notification,
   Pagination,
@@ -131,33 +132,27 @@ const columns = [
   },
 ];
 
-export const Table = () => {
+export const SpaceX = () => {
   const [data, setData] = useState();
   const [rockets, setRockets] = useState();
-  const [view, setView] = useState({ search: '' });
-  const [sort, setSort] = useState({ property: 'name', direction: 'asc' });
-  const [page, setPage] = useState(1);
-  const limit = 10;
-
-  const search = view.search || '';
+  const [view, setView] = useState({
+    search: '',
+    sort: { property: 'name', direction: 'asc' },
+    page: 1,
+    step: 10,
+  });
 
   useEffect(() => {
     fetchRockets().then((d) => setRockets(d));
   }, []);
 
   useEffect(() => {
-    fetchLaunches({
-      search,
-      limit,
-      page,
-      sort,
-      properties: view.properties,
-    }).then((d) => setData(d));
-  }, [search, limit, page, sort, view.properties]);
+    fetchLaunches(view).then((d) => setData(d));
+  }, [view]);
 
-  const numberItems = data?.totalDocs || 0;
-  const pageResultStart = (page - 1) * limit + 1;
-  const pageResultEnd = Math.min(page * limit, numberItems);
+  const total = data?.totalDocs || 0;
+  const pageResultStart = (view.page - 1) * view.step + 1;
+  const pageResultEnd = Math.min(view.page * view.step, total);
 
   const rocketOptions =
     rockets?.docs?.map(({ name, id }) => ({ value: id, label: name })) || [];
@@ -185,50 +180,34 @@ export const Table = () => {
             success: { label: 'Success', options: ['Successful', 'Failed'] },
           }}
           data={docs}
-          total={numberItems}
+          total={total}
           view={view}
-          onView={(nextView) => {
-            setView(nextView);
-            setPage(1);
-          }}
+          onView={setView}
           toolbar
         >
           <DataTable
             columns={columns}
-            sort={{ ...sort, external: true }}
-            onSort={(opts) => setSort(opts)}
+            sort={{ ...view.sort, external: true }}
+            // onSort={(opts) => setSort(opts)} TODO: build inside DataTable
           />
+          {total > view.step && (
+            <Footer>
+              <Text>
+                Showing {pageResultStart}-{pageResultEnd} of {total}
+              </Text>
+              <Pagination />
+            </Footer>
+          )}
         </Data>
-        {numberItems > limit && (
-          <Box
-            direction="row-responsive"
-            fill="horizontal"
-            border="top"
-            justify="end"
-            pad={{ vertical: 'xsmall' }}
-          >
-            <Text>
-              Showing {pageResultStart}-{pageResultEnd} of {numberItems}
-            </Text>
-            <Pagination
-              step={limit}
-              numberItems={numberItems}
-              page={page}
-              onChange={(opts) => setPage(opts.page)}
-              direction="row"
-              flex={false}
-            />
-          </Box>
-        )}
       </Box>
     </Grid>
     // </Grommet>
   );
 };
 
-Table.storyName = 'SpaceX';
+SpaceX.storyName = 'SpaceX';
 
-Table.args = {
+SpaceX.args = {
   full: true,
 };
 

@@ -4,6 +4,7 @@ import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { DataTable } from '../../DataTable';
+import { Pagination } from '../../Pagination';
 import { Data } from '..';
 
 const data = [
@@ -322,6 +323,30 @@ describe('Data', () => {
           toolbar="filters"
         >
           <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('pagination', () => {
+    const { container } = render(
+      <Grommet>
+        <Data
+          data={data.slice(2, 4)}
+          total={data.length}
+          properties={{ name: { label: 'Name' } }}
+          view={{
+            page: 2,
+            properties: {},
+            search: '',
+            sort: { property: 'name', direction: 'asc' },
+            step: 2,
+          }}
+        >
+          <DataTable />
+          <Pagination />
         </Data>
       </Grommet>,
     );

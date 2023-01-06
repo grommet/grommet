@@ -2,6 +2,7 @@ import * as React from 'react';
 import { BoxProps } from '../Box/index';
 
 export interface View {
+  page?: number;
   properties?:
     | string[]
     | {
@@ -15,6 +16,7 @@ export interface View {
     property: string;
     direction: 'asc' | 'desc';
   };
+  step?: number; // page size
 
   // Future column ordering, requires 'properties' property on Data
   // columns?: string[];
