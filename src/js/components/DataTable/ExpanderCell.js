@@ -31,7 +31,14 @@ const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
   delete normalizedThemeProps.pad;
 
   content = (
-    <Box {...normalizedThemeProps} {...rest} align="center" fill pad={pad}>
+    <Box
+      {...normalizedThemeProps}
+      {...rest}
+      align="center"
+      fill
+      pad={pad}
+      justify="center"
+    >
       {content}
     </Box>
   );
