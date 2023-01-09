@@ -65,14 +65,15 @@ export const containsFocus = (node) => {
   return !!element;
 };
 
-export const focusWithinDropPortal = (node) => {
+export const withinDropPortal = (node) => {
   const root = node.getRootNode();
   let element = node;
   while (element && element !== root) {
-    if (element.hasAttribute('data-g-portal-id')) return true;
+    if (element.hasAttribute('data-g-portal-id'))
+      return element.getAttribute('data-g-portal-id');
     element = element.parentElement;
   }
-  return false;
+  return undefined;
 };
 
 // Check if the element.tagName is an input, select or textarea

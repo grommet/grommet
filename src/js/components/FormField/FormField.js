@@ -12,8 +12,9 @@ import { defaultProps } from '../../default-props';
 import {
   containsFocus,
   shouldKeepFocus,
-  focusWithinDropPortal,
-} from '../../utils/DOM';
+  withinDropPortal,
+  PortalContext,
+} from '../../utils';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -213,11 +214,12 @@ const FormField = forwardRef(
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();
     const formFieldRef = useForwardedRef(ref);
-    const [focusedDropElement, setFocusedDropElement] = useState();
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
     const debounce = useDebounce();
+
+    const portalContext = useContext(PortalContext) || [];
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -511,20 +513,14 @@ const FormField = forwardRef(
           // if input has a drop and focus is within drop
           // prevent onBlur validation from running until
           // focus is no longer within the drop or input
+          const dropPortalId = withinDropPortal(event.relatedTarget);
           if (
-            event.relatedTarget &&
-            focusWithinDropPortal(event.relatedTarget)
+            (dropPortalId === undefined ||
+              portalContext.indexOf(parseInt(dropPortalId, 10)) !== -1) &&
+            !formFieldRef.current.contains(event.relatedTarget) &&
+            contextOnBlur
           ) {
-            setFocusedDropElement(event.relatedTarget);
-          } else if (
-            !(
-              focusedDropElement &&
-              focusedDropElement.contains(event.relatedTarget)
-            ) &&
-            !formFieldRef.current.contains(event.relatedTarget)
-          ) {
-            if (focusedDropElement) setFocusedDropElement(undefined);
-            if (contextOnBlur) contextOnBlur(event);
+            contextOnBlur(event);
           }
 
           if (onBlur) onBlur(event);
