@@ -56,7 +56,8 @@ export const findScrollParents = (element, horizontal) => {
 };
 
 export const containsFocus = (node) => {
-  let element = document.activeElement;
+  const root = node.getRootNode();
+  let element = root.activeElement;
   while (element) {
     if (element === node) break;
     element = element.parentElement;
@@ -82,8 +83,8 @@ export const getFirstFocusableDescendant = (element) => {
   return undefined;
 };
 
-export const shouldKeepFocus = () => {
-  const element = document.activeElement;
+export const shouldKeepFocus = (root) => {
+  const element = root.activeElement;
   if (isFocusable(element)) return true;
   return !!getFirstFocusableDescendant(element);
 };

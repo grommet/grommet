@@ -34,6 +34,7 @@ const grommetInputNames = [
   'FileInput',
   'RadioButtonGroup',
   'RangeInput',
+  'RangeSelector',
   'StarRating',
   'ThumbsRating',
 ];
@@ -42,6 +43,7 @@ const grommetInputPadNames = [
   'CheckBoxGroup',
   'RadioButtonGroup',
   'RangeInput',
+  'RangeSelector',
 ];
 
 const isGrommetInput = (comp) =>
@@ -519,7 +521,10 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
-          setFocus(containsFocus(formFieldRef.current) && shouldKeepFocus());
+          const root = formFieldRef.current.getRootNode();
+          setFocus(
+            containsFocus(formFieldRef.current) && shouldKeepFocus(root),
+          );
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {

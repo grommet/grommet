@@ -760,6 +760,7 @@ exports[`Components loads 1`] = `
       "defaultValues": [Function],
       "direction": [Function],
       "invert": [Function],
+      "label": [Function],
       "max": [Function],
       "messages": [Function],
       "min": [Function],
