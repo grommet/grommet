@@ -399,6 +399,1284 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
 </div>
 `;
 
+exports[`FormField checks that the "X characters left" message appears 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="c4"
+        >
+          <input
+            autocomplete="off"
+            class="c5"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 4`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 5`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 6`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 7`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 8`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 9`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 10`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 11`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 12`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 13`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters left" message appears 14`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+      .c0 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #666666;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+<span
+        class="c0"
+      >
+        4 characters left
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="c4"
+        >
+          <input
+            autocomplete="off"
+            class="c5"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 4`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 5`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 6`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 7`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 8`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 9`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 10`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 11`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 12`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 13`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField checks that the "X characters over limit" message appears. 14`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 kKrMsX"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cXkhIG FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            data-testid="test-input"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+      .c0 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FF4040;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+<span
+        class="c0"
+      >
+        1 character over limit
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`FormField contentProps 1`] = `
 .c1 {
   display: -webkit-box;
@@ -2123,6 +3401,151 @@ exports[`FormField margin 1`] = `
 </div>
 `;
 
+exports[`FormField max and threshold validation 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="c4"
+        >
+          <input
+            autocomplete="off"
+            class="c5"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`FormField pad 1`] = `
 .c1 {
   display: -webkit-box;
@@ -3042,7 +4465,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
 </div>
 `;
 
-exports[`FormField validation 1`] = `
+exports[`FormField typing something into the input that meets the threshold 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3175,6 +4598,7 @@ exports[`FormField validation 1`] = `
           <input
             autocomplete="off"
             class="c5"
+            data-testid="test-input"
             id="issue-description"
             name="issue-description"
             placeholder="placeholder"

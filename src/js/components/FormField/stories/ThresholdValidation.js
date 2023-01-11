@@ -9,7 +9,7 @@ export const ThresholdValidation = () => (
     <Form validate="change">
       <FormField
         label="Label"
-        validation={{ length: { max: 10, threshold: 0.5 } }}
+        validate={{ length: { max: 10, threshold: 0.5 } }}
         name="issue-description"
         htmlFor="issue-description"
       >

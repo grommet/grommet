@@ -216,7 +216,10 @@ Validation rule when used within a grommet Form. Provide an object
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
       describing the validation issue, if any, or an object with 'message'
-      and 'status' properties.
+      and 'status' properties. When value of input reaches threshold 
+      of max (ex: 50% of 100 characters), is displayed an info message 
+      "X characters left" and when value of input exceeds max, 
+      display an error message "X character over limit".
 
 ```
 {
@@ -241,16 +244,6 @@ function
   }
   function
 ]
-```
-
-**validation**
-
-When value of input reaches threshold of max (ex: 50% of 100 characters), 
-  is displayed an info message "X characters left".
-When value of input exceeds max, 
-  display an error message "X character over limit".
-
-```
 {
   length: { 
     max: number,

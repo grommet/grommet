@@ -32,8 +32,13 @@ export interface FormFieldProps {
             status?: 'error' | 'info';
           }
         | ((...args: any[]) => any)
-      )[];
-  validation?: { length: { max: 10; threshold: 0.5 } };
+      )[]
+    | {
+        length: {
+          max: number;
+          threshold: number;
+        };
+      };
 }
 
 type inputProps = Omit<

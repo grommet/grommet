@@ -184,7 +184,6 @@ const FormField = forwardRef(
       required,
       style,
       validate,
-      validation,
       ...rest
     },
     ref,
@@ -192,8 +191,16 @@ const FormField = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
+    // eslint-disable-next-line max-len
+    const isObject =
+      typeof validate === 'object' &&
+      !Array.isArray(validate) &&
+      validate !== null;
+    // eslint-disable-next-line max-len
+    const isMaxAndThresholdValidation = isObject && 'length' in validate;
+
     const getMaxAndThresholdValidation = (value) => {
-      const { length } = validation;
+      const { length } = validate;
 
       return value.length / length.max > length.threshold
         ? {
@@ -220,7 +227,7 @@ const FormField = forwardRef(
       info: infoProp,
       name,
       required,
-      validate: validation
+      validate: isMaxAndThresholdValidation
         ? (value) => getMaxAndThresholdValidation(value)
         : validate,
     });

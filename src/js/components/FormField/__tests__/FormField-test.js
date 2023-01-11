@@ -1,4 +1,5 @@
-import { render } from '@testing-library/react';
+// eslint-disable-next-line max-len
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'jest-styled-components';
@@ -448,13 +449,13 @@ describe('FormField', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('validation', () => {
+  test('max and threshold validation', () => {
     const { container } = render(
       <Grommet>
         <Form validate="change">
           <FormField
             label="label"
-            validation={{ length: { max: 10, threshold: 0.5 } }}
+            validate={{ length: { max: 10, threshold: 0.5 } }}
             name="issue-description"
             htmlFor="issue-description"
           >
@@ -469,5 +470,97 @@ describe('FormField', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('typing something into the input that meets the threshold', () => {
+    const { container } = render(
+      <Grommet>
+        <Form validate="change">
+          <FormField
+            label="label"
+            validate={{ length: { max: 10, threshold: 0.5 } }}
+            name="issue-description"
+            htmlFor="issue-description"
+          >
+            <TextInput
+              data-testid="test-input"
+              id="issue-description"
+              name="issue-description"
+              placeholder="placeholder"
+            />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    fireEvent.change(screen.getByTestId('test-input'), {
+      target: { value: '12345' },
+    });
+
+    expect(container.firstChild).toMatchSnapshot();
+    expect(screen.queryByText('characters left', { exact: false })).toBeNull();
+  });
+
+  test('checks that the "X characters left" message appears', async () => {
+    const { container } = render(
+      <Grommet>
+        <Form validate="change">
+          <FormField
+            label="label"
+            validate={{ length: { max: 10, threshold: 0.5 } }}
+            name="issue-description"
+            htmlFor="issue-description"
+          >
+            <TextInput
+              data-testid="test-input"
+              id="issue-description"
+              name="issue-description"
+              placeholder="placeholder"
+            />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    fireEvent.change(screen.getByTestId('test-input'), {
+      target: { value: '123456' },
+    });
+
+    await waitFor(() => {
+      expect(container.firstChild).toMatchSnapshot();
+      expect(screen.getByText('4 characters left')).toBeTruthy();
+    });
+  });
+
+  // eslint-disable-next-line max-len
+  test('checks that the "X characters over limit" message appears.', async () => {
+    const { container } = render(
+      <Grommet>
+        <Form validate="change">
+          <FormField
+            label="label"
+            validate={{ length: { max: 10, threshold: 0.5 } }}
+            name="issue-description"
+            htmlFor="issue-description"
+          >
+            <TextInput
+              data-testid="test-input"
+              id="issue-description"
+              name="issue-description"
+              placeholder="placeholder"
+            />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    fireEvent.change(screen.getByTestId('test-input'), {
+      target: { value: '1234567890$' },
+    });
+
+    await waitFor(() => {
+      expect(container.firstChild).toMatchSnapshot();
+      expect(screen.getByText('1 character over limit')).toBeTruthy();
+    });
   });
 });

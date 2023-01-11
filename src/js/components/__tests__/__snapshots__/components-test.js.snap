@@ -432,7 +432,6 @@ exports[`Components loads 1`] = `
       "pad": [Function],
       "required": [Function],
       "validate": [Function],
-      "validation": [Function],
     },
     "render": [Function],
   },
