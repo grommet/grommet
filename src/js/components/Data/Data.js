@@ -57,7 +57,7 @@ export const Data = ({
 
     result.data = data;
     result.unfilteredData = dataProp;
-    result.total = total !== undefined ? total : dataProp.length;
+    result.total = total ?? dataProp?.length ?? 0;
 
     return result;
   }, [data, dataProp, id, messages, onView, properties, total, updateOn, view]);

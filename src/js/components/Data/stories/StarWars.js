@@ -21,12 +21,12 @@ const fetchData = async (view) => {
 };
 
 export const StarWars = () => {
-  const [result, setResult] = useState({ items: [], total: 0, page: 1 });
+  const [result, setResult] = useState({});
   const [view, setView] = useState({ search: '' });
 
   useEffect(() => {
     fetchData(view).then(({ count, results }) =>
-      setResult({ items: results, total: count }),
+      setResult({ data: results, total: count, page: 1, step: 10 }),
     );
   }, [view]);
 
@@ -46,7 +46,7 @@ export const StarWars = () => {
       />
       <Box>
         <Data
-          data={result.items}
+          data={result.data}
           total={result.total}
           view={view}
           onView={setView}

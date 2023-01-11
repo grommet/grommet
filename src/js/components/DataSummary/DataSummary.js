@@ -10,7 +10,7 @@ export const DataSummary = ({ messages, ...rest }) => {
   const { data, messages: dataMessages, total } = useContext(DataContext);
 
   let messageId;
-  if (total !== data.length) {
+  if (data?.length && total !== data.length) {
     if (data.length === 1) messageId = 'dataSummary.filteredSingle';
     else messageId = 'dataSummary.filtered';
   } else messageId = 'dataSummary.total';
@@ -20,7 +20,7 @@ export const DataSummary = ({ messages, ...rest }) => {
       {format({
         id: messageId,
         messages: messages || dataMessages?.dataSummary,
-        values: { filtered: data.length, total },
+        values: { filtered: data?.length || 0, total },
       })}
     </Text>
   );
