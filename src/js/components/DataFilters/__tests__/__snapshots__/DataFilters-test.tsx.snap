@@ -43,7 +43,7 @@ exports[`DataFilters clear 1`] = `
   justify-content: space-between;
 }
 
-.c7 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -58,7 +58,7 @@ exports[`DataFilters clear 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -74,7 +74,7 @@ exports[`DataFilters clear 1`] = `
   padding: 12px;
 }
 
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -88,7 +88,7 @@ exports[`DataFilters clear 1`] = `
   flex-direction: column;
 }
 
-.c12 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -111,7 +111,7 @@ exports[`DataFilters clear 1`] = `
   justify-content: center;
 }
 
-.c15 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -137,7 +137,7 @@ exports[`DataFilters clear 1`] = `
   border-radius: 4px;
 }
 
-.c17 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -170,20 +170,20 @@ exports[`DataFilters clear 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  height: 12px;
 }
 
-.c6 {
+.c17 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  height: 12px;
+  width: 24px;
 }
 
-.c8 {
+.c6 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -192,76 +192,7 @@ exports[`DataFilters clear 1`] = `
   line-height: 24px;
 }
 
-.c5 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c5:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c5:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c18 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -289,8 +220,75 @@ exports[`DataFilters clear 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c18:hover {
+.c16:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c18 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c18:focus {
@@ -333,74 +331,7 @@ exports[`DataFilters clear 1`] = `
   border: 0;
 }
 
-.c19 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c19:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c19:focus > circle,
-.c19:focus > ellipse,
-.c19:focus > line,
-.c19:focus > path,
-.c19:focus > polygon,
-.c19:focus > polyline,
-.c19:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c19:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c19:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c19:focus:not(:focus-visible) > circle,
-.c19:focus:not(:focus-visible) > ellipse,
-.c19:focus:not(:focus-visible) > line,
-.c19:focus:not(:focus-visible) > path,
-.c19:focus:not(:focus-visible) > polygon,
-.c19:focus:not(:focus-visible) > polyline,
-.c19:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c19:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c16 {
+.c14 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -408,7 +339,7 @@ exports[`DataFilters clear 1`] = `
   height: 24px;
 }
 
-.c11 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -430,12 +361,12 @@ exports[`DataFilters clear 1`] = `
   cursor: pointer;
 }
 
-.c11:hover input:not([disabled]) + div,
-.c11:hover input:not([disabled]) + span {
+.c9:hover input:not([disabled]) + div,
+.c9:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c14 {
+.c12 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -444,12 +375,12 @@ exports[`DataFilters clear 1`] = `
   cursor: pointer;
 }
 
-.c14:checked + span > span {
+.c12:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c13 {
+.c11 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -464,7 +395,7 @@ exports[`DataFilters clear 1`] = `
   overflow-wrap: break-word;
 }
 
-.c20 {
+.c19 {
   opacity: 0;
 }
 
@@ -479,50 +410,50 @@ exports[`DataFilters clear 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c5 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c10 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c13 {
     border: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c15 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
-    width: 12px;
+    height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    height: 6px;
+  .c17 {
+    width: 12px;
   }
 }
 
@@ -559,57 +490,44 @@ exports[`DataFilters clear 1`] = `
           >
             Filters
           </h2>
-          <div
-            class="c4"
-          />
-          <div
-            class="c1"
-          >
-            <button
-              class="c5"
-              type="button"
-            >
-              Clear filters
-            </button>
-          </div>
         </header>
         <div
-          class="c6"
+          class="c4"
         />
         <div
-          class="c7 "
+          class="c5 "
         >
           <label
-            class="c8"
+            class="c6"
             for="data-name"
           >
             name
           </label>
           <div
-            class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+            class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
           >
             <div
-              class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+              class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
               id="data-name"
               role="group"
             >
               <label
-                class="c11"
+                class="c9"
                 label="a"
               >
                 <div
-                  class="c12 c13"
+                  class="c10 c11"
                 >
                   <input
                     checked=""
-                    class="c14"
+                    class="c12"
                     type="checkbox"
                   />
                   <div
-                    class="c15 "
+                    class="c13 "
                   >
                     <svg
-                      class="c16"
+                      class="c14"
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 24 24"
                     >
@@ -625,21 +543,21 @@ exports[`DataFilters clear 1`] = `
                 </span>
               </label>
               <div
-                class="c6"
+                class="c4"
               />
               <label
-                class="c11"
+                class="c9"
                 label="b"
               >
                 <div
-                  class="c12 c13"
+                  class="c10 c11"
                 >
                   <input
-                    class="c14"
+                    class="c12"
                     type="checkbox"
                   />
                   <div
-                    class="c17 "
+                    class="c15 "
                   />
                 </div>
                 <span>
@@ -650,23 +568,23 @@ exports[`DataFilters clear 1`] = `
           </div>
         </div>
         <div
-          class="c6"
+          class="c4"
         />
         <footer
           class="c2"
         >
           <button
-            class="c18"
+            class="c16"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c4"
+            class="c17"
           />
           <button
             aria-hidden="true"
-            class="c19 c20"
+            class="c18 c19"
             disabled=""
             tabindex="-1"
             type="reset"
@@ -853,7 +771,7 @@ exports[`DataFilters drop 1`] = `
 `;
 
 exports[`DataFilters drop badge 1`] = `
-.c6 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -864,25 +782,25 @@ exports[`DataFilters drop badge 1`] = `
   stroke: #666666;
 }
 
-.c6 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -919,68 +837,6 @@ exports[`DataFilters drop badge 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 24px;
-}
-
-.c10 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c4 {
-  position: relative;
-}
-
-.c5 {
-  position: relative;
-  display: block;
-}
-
-.c7 {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.c9 {
-  font-size: 14px;
-  line-height: 20px;
-  color: #FFFFFF;
-  font-weight: normal;
 }
 
 .c3 {
@@ -1043,75 +899,6 @@ exports[`DataFilters drop badge 1`] = `
   border: 0;
 }
 
-.c11 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c11:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1120,18 +907,6 @@ exports[`DataFilters drop badge 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    width: 6px;
-  }
 }
 
 <div
@@ -1149,54 +924,19 @@ exports[`DataFilters drop badge 1`] = `
         class="c3"
         type="button"
       >
-        <div
+        <svg
+          aria-label="Filter"
           class="c4"
+          viewBox="0 0 24 24"
         >
-          <div
-            class="c5"
-          >
-            <svg
-              aria-label="Filter"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
-          <div
-            class="c7"
-            style="top: -12px; right: -12px;"
-          >
-            <div
-              class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
-            >
-              <span
-                class="c9"
-              >
-                2
-              </span>
-            </div>
-          </div>
-        </div>
+          <path
+            d="m3 6 7 7v8h4v-8l7-7V3H3z"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </button>
-      <div
-        class="c10"
-      />
-      <div
-        class="c1"
-      >
-        <button
-          class="c11"
-          type="button"
-        >
-          Clear filters
-        </button>
-      </div>
     </div>
   </div>
 </div>

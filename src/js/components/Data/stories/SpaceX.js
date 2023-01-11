@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import {
   Box,
@@ -53,7 +53,7 @@ const fetchLaunches = async (view) => {
       ],
       sort,
       select: ['name', 'success', 'failures'],
-      limit: view?.limit || 10,
+      limit: view?.step || 10,
       page: view?.page || 1,
     },
     query,
@@ -133,31 +133,42 @@ const columns = [
 ];
 
 export const SpaceX = () => {
-  const [data, setData] = useState();
-  const [rockets, setRockets] = useState();
+  const [total, setTotal] = useState(0);
+  const [result, setResult] = useState({ data: [] });
+  const [rockets, setRockets] = useState([]);
   const [view, setView] = useState({
     search: '',
     sort: { property: 'name', direction: 'asc' },
-    page: 1,
     step: 10,
   });
 
   useEffect(() => {
-    fetchRockets().then((d) => setRockets(d));
+    fetchRockets().then((response) =>
+      setRockets(
+        response.docs.map(({ name, id }) => ({ value: id, label: name })),
+      ),
+    );
   }, []);
 
   useEffect(() => {
-    fetchLaunches(view).then((d) => setData(d));
+    fetchLaunches(view).then((response) => {
+      setResult({
+        data: response.docs,
+        filteredTotal: response.totalDocs,
+        page: response.page,
+      });
+      setTotal((prevTotal) => Math.max(prevTotal, response.totalDocs));
+    });
   }, [view]);
 
-  const total = data?.totalDocs || 0;
-  const pageResultStart = (view.page - 1) * view.step + 1;
-  const pageResultEnd = Math.min(view.page * view.step, total);
-
-  const rocketOptions =
-    rockets?.docs?.map(({ name, id }) => ({ value: id, label: name })) || [];
-
-  const docs = data?.docs || [];
+  const pageBounds = useMemo(() => {
+    if (result?.page)
+      return [
+        (result.page - 1) * view.step + 1,
+        Math.min(result.page * view.step, result.filteredTotal),
+      ];
+    return [];
+  }, [result, view]);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
@@ -176,11 +187,12 @@ export const SpaceX = () => {
       <Box>
         <Data
           properties={{
-            rocket: { label: 'Rocket', options: rocketOptions },
+            rocket: { label: 'Rocket', options: rockets },
             success: { label: 'Success', options: ['Successful', 'Failed'] },
           }}
-          data={docs}
+          data={result.data}
           total={total}
+          filteredTotal={result.filteredTotal}
           view={view}
           onView={setView}
           toolbar
@@ -188,12 +200,15 @@ export const SpaceX = () => {
           <DataTable
             columns={columns}
             sort={{ ...view.sort, external: true }}
-            // onSort={(opts) => setSort(opts)} TODO: build inside DataTable
+            // TODO: in some other pull request,
+            // integrate sorting between Data and DataTable
+            // onSort={(opts) => setSort(opts)}
           />
-          {total > view.step && (
+          {result.filteredTotal > view.step && (
             <Footer>
               <Text>
-                Showing {pageResultStart}-{pageResultEnd} of {total}
+                Showing {pageBounds[0]}-{pageBounds[1]} of{' '}
+                {result.filteredTotal}
               </Text>
               <Pagination />
             </Footer>

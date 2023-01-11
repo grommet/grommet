@@ -38,9 +38,9 @@ const Pagination = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const { onView, total: dataTotal, view } = useContext(DataContext);
+    const { onView, filteredTotal, view } = useContext(DataContext);
     const step = stepProp || view?.step || 10;
-    const total = numberItems ?? dataTotal ?? 0;
+    const total = numberItems ?? filteredTotal ?? 0;
     const page = pageProp || view?.page || 1;
 
     /* Calculate total number pages */

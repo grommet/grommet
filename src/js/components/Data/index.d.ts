@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BoxProps } from '../Box/index';
 
 export interface View {
-  page?: number;
+  page?: number; // when paging
   properties?:
     | string[]
     | {
@@ -30,6 +30,8 @@ export interface DataProps {
 
   data: object[];
   total?: number;
+  // when paging
+  filteredTotal?: number;
 
   view?: View;
   onView?: (view: View) => void;
@@ -84,7 +86,7 @@ export interface DataProps {
       direction?: string;
     };
     dataSummary?: {
-      filtered?: string;
+      filteredTotal?: string;
       total?: string;
     };
   };

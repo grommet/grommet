@@ -16,6 +16,7 @@ const defaultView = {
 export const Data = ({
   children,
   data: dataProp,
+  filteredTotal,
   id = 'data',
   messages,
   onView,
@@ -26,41 +27,37 @@ export const Data = ({
   view: viewProp,
   ...rest
 }) => {
-  const [view, setView] = useState(viewProp);
+  const [view, setView] = useState(viewProp || defaultView);
   useEffect(() => setView(viewProp), [viewProp]);
 
-  const data = useMemo(() => {
-    if (onView) return dataProp;
+  const result = useMemo(() => {
+    if (onView)
+      // caller is filtering
+      return {
+        data: dataProp,
+        total,
+        filteredTotal: filteredTotal || dataProp.length,
+      };
     return filter(dataProp, view, properties);
-  }, [dataProp, onView, properties, view]);
+  }, [dataProp, filteredTotal, onView, properties, total, view]);
 
   // what we use for DataContext value
   const contextValue = useMemo(() => {
-    const result = { id, messages, properties, updateOn, view };
+    const value = { id, messages, properties, updateOn, view, ...result };
 
-    if (
-      view?.search ||
-      view?.sort ||
-      (view?.properties && Object.keys(view.properties).length)
-    ) {
-      result.clearFilters = () => {
-        const nextView = defaultView;
-        setView(nextView);
-        if (onView) onView(nextView);
-      };
-    }
-
-    result.onView = (nextView) => {
+    value.clearFilters = () => {
+      const nextView = defaultView;
       setView(nextView);
       if (onView) onView(nextView);
     };
 
-    result.data = data;
-    result.unfilteredData = dataProp;
-    result.total = total !== undefined ? total : dataProp.length;
+    value.onView = (nextView) => {
+      setView(nextView);
+      if (onView) onView(nextView);
+    };
 
-    return result;
-  }, [data, dataProp, id, messages, onView, properties, total, updateOn, view]);
+    return value;
+  }, [id, messages, onView, properties, result, updateOn, view]);
 
   let toolbarContent;
   if (toolbar) {

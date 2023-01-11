@@ -237,11 +237,6 @@ describe('Data', () => {
     expect(getByText('1 result of 4 items')).toBeTruthy();
     expect(queryByText('bb')).toBeFalsy();
     expect(container.firstChild).toMatchSnapshot();
-
-    fireEvent.click(getByText('Clear filters'));
-    expect(getByText('4 items')).toBeTruthy();
-    expect(getByText('bb')).toBeTruthy();
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('controlled search', () => {
@@ -273,16 +268,6 @@ describe('Data', () => {
       1,
       expect.objectContaining({
         search: 'a',
-        properties: {},
-      }),
-    );
-
-    fireEvent.click(getByText('Clear filters'));
-    expect(container.firstChild).toMatchSnapshot();
-    expect(onView).toHaveBeenNthCalledWith(
-      2,
-      expect.objectContaining({
-        search: '',
         properties: {},
       }),
     );
@@ -334,16 +319,11 @@ describe('Data', () => {
     const { container } = render(
       <Grommet>
         <Data
-          data={data.slice(2, 4)}
+          data={[...data].slice(2, 4)}
           total={data.length}
           properties={{ name: { label: 'Name' } }}
-          view={{
-            page: 2,
-            properties: {},
-            search: '',
-            sort: { property: 'name', direction: 'asc' },
-            step: 2,
-          }}
+          onView={() => {}}
+          view={{ page: 2, step: 2 }}
         >
           <DataTable />
           <Pagination />

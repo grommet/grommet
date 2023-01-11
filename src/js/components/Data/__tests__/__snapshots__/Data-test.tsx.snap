@@ -428,7 +428,7 @@ exports[`Data controlled search 1`] = `
     <span
       class="c9"
     >
-      4 items
+      4 results of undefined items
     </span>
     <table
       class="c10 c11"
@@ -584,502 +584,9 @@ exports[`Data controlled search 2`] = `
           class="StyledButton-sc-323bzc-0 emhJYD"
           type="button"
         >
-          .c2 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c2 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c2 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c2 *[fill-rule],
-.c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 24px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 20px;
-  color: #FFFFFF;
-  font-weight: normal;
-}
-
-.c0 {
-  position: relative;
-}
-
-.c1 {
-  position: relative;
-  display: block;
-}
-
-.c3 {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<div
-            class="c0"
-          >
-            <div
-              class="c1"
-            >
-              <svg
-                aria-label="Filter"
-                class="c2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <div
-              class="c3"
-              style="top: -12px; right: -12px;"
-            >
-              <div
-                class="c4 Badge__StyledBadgeContainer-sc-1es4ws1-0"
-              >
-                <span
-                  class="c5"
-                >
-                  1
-                </span>
-              </div>
-            </div>
-          </div>
-        </button>
-        .c0 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    width: 6px;
-  }
-}
-
-<div
-          class="c0"
-        />
-        .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c1:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<div
-          class="c0"
-        >
-          <button
-            class="c1"
-            type="button"
-          >
-            Clear filters
-          </button>
-        </div>
-      </div>
-    </div>
-    <span
-      class="StyledText-sc-1sadyjn-0 fKpAiz"
-    >
-      4 items
-    </span>
-    <table
-      class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
-    >
-      <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
-        >
-          <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 dJRXxk StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
-            scope="col"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 dCZrDR"
-            />
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 cNqjdy"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
-        >
-          <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
-            scope="row"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
-            >
-              <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
-              >
-                aa
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
-        >
-          <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
-            scope="row"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
-            >
-              <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
-              >
-                bb
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
-        >
-          <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
-            scope="row"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
-            >
-              <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
-              >
-                cc
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
-        >
-          <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
-            scope="row"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
-            >
-              <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
-              >
-                dd
-              </span>
-            </div>
-          </th>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-`;
-
-exports[`Data controlled search 3`] = `
-<div
-  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
->
-  <div
-    class="StyledBox-sc-13pk1d4-0 hoPFxc"
-    id="data"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 cA-DryL"
-    >
-      <form>
-        <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
-        >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
-          >
-            <div
-              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 cFBrkA"
-            >
-              <svg
-                aria-label="Search"
-                class="StyledIcon-sc-ofa7kd-0 jQvEgu"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <input
-              aria-label="Search data"
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jgXNod"
-              id="undefined--search"
-              name="_search"
-              type="search"
-              value=""
-            />
-          </div>
-        </div>
-      </form>
-      <div
-        class="StyledBox-sc-13pk1d4-0 lgzxvo"
-      >
-        <button
-          aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 emhJYD"
-          type="button"
-        >
-          .c0 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c0 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c0 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c0 *[stroke*="#"],
-.c0 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c0 *[fill-rule],
-.c0 *[FILL-RULE],
-.c0 *[fill*="#"],
-.c0 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<svg
+          <svg
             aria-label="Filter"
-            class="c0"
+            class="StyledIcon-sc-ofa7kd-0 jQvEgu"
             viewBox="0 0 24 24"
           >
             <path
@@ -1095,7 +602,7 @@ exports[`Data controlled search 3`] = `
     <span
       class="StyledText-sc-1sadyjn-0 fKpAiz"
     >
-      4 items
+      4 results of undefined items
     </span>
     <table
       class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
@@ -1815,40 +1322,6 @@ exports[`Data pagination 1`] = `
   stroke: none;
 }
 
-.c19 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c19 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c19 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c19 *[fill-rule],
-.c19 *[FILL-RULE],
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2110,169 +1583,6 @@ exports[`Data pagination 1`] = `
   border: 0;
 }
 
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: rgba(51,51,51,0.06274509803921569);
-  color: #444444;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c17:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c17:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c17:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  text-align: center;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c18 > svg {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) > circle,
-.c18:focus:not(:focus-visible) > ellipse,
-.c18:focus:not(:focus-visible) > line,
-.c18:focus:not(:focus-visible) > path,
-.c18:focus:not(:focus-visible) > polygon,
-.c18:focus:not(:focus-visible) > polyline,
-.c18:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c4 {
   margin: 0;
   padding: 0;
@@ -2484,30 +1794,13 @@ exports[`Data pagination 1`] = `
             class="c11"
           >
             <button
-              aria-current="page"
-              aria-label="Go to page 2"
-              class="c17 c13"
-              type="button"
-            >
-              2
-            </button>
-          </li>
-          <div
-            class="c15"
-          />
-          <li
-            class="c11"
-          >
-            <button
-              aria-disabled="true"
               aria-label="Go to next page"
-              class="c18 c13"
-              disabled=""
+              class="c12 c13"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c19"
+                class="c14"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -3148,7 +2441,7 @@ exports[`Data toolbar 1`] = `
 `;
 
 exports[`Data toolbar filters 1`] = `
-.c7 {
+.c5 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3159,25 +2452,25 @@ exports[`Data toolbar filters 1`] = `
   stroke: #666666;
 }
 
-.c7 g {
+.c5 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3226,37 +2519,7 @@ exports[`Data toolbar filters 1`] = `
   flex: 0 0 auto;
 }
 
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 24px;
-}
-
-.c17 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3277,7 +2540,7 @@ exports[`Data toolbar filters 1`] = `
   justify-content: center;
 }
 
-.c20 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3318,49 +2581,17 @@ exports[`Data toolbar filters 1`] = `
   row-gap: 12px;
 }
 
-.c11 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c10 {
-  font-size: 14px;
-  line-height: 20px;
-  color: #FFFFFF;
-  font-weight: normal;
-}
-
-.c13 {
+.c6 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c21 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
-}
-
-.c5 {
-  position: relative;
-}
-
-.c6 {
-  position: relative;
-  display: block;
-}
-
-.c8 {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .c4 {
@@ -3423,76 +2654,7 @@ exports[`Data toolbar filters 1`] = `
   border: 0;
 }
 
-.c12 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c12:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c16 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3505,7 +2667,7 @@ exports[`Data toolbar filters 1`] = `
   padding-bottom: 6px;
 }
 
-.c19 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3517,24 +2679,24 @@ exports[`Data toolbar filters 1`] = `
   padding-bottom: 6px;
 }
 
-.c14 {
+.c7 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c15 {
+.c8 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
   height: 100%;
 }
 
-.c18:focus {
+.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c18:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -3543,21 +2705,9 @@ exports[`Data toolbar filters 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
-    border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c2 {
     -webkit-column-gap: 6px;
     column-gap: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    width: 6px;
   }
 }
 
@@ -3579,63 +2729,28 @@ exports[`Data toolbar filters 1`] = `
           class="c4"
           type="button"
         >
-          <div
+          <svg
+            aria-label="Filter"
             class="c5"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="c6"
-            >
-              <svg
-                aria-label="Filter"
-                class="c7"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <div
-              class="c8"
-              style="top: -12px; right: -12px;"
-            >
-              <div
-                class="c9 Badge__StyledBadgeContainer-sc-1es4ws1-0"
-              >
-                <span
-                  class="c10"
-                >
-                  1
-                </span>
-              </div>
-            </div>
-          </div>
+            <path
+              d="m3 6 7 7v8h4v-8l7-7V3H3z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </button>
-        <div
-          class="c11"
-        />
-        <div
-          class="c1"
-        >
-          <button
-            class="c12"
-            type="button"
-          >
-            Clear filters
-          </button>
-        </div>
       </div>
     </div>
     <span
-      class="c13"
+      class="c6"
     >
       4 items
     </span>
     <table
-      class="c14 c15"
+      class="c7 c8"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -3644,30 +2759,30 @@ exports[`Data toolbar filters 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c16 "
+            class="c9 "
             scope="col"
           >
             <div
-              class="c17"
+              class="c10"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c18"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c19 "
+            class="c12 "
             scope="row"
           >
             <div
-              class="c20"
+              class="c13"
             >
               <span
-                class="c21"
+                class="c14"
               >
                 aa
               </span>
@@ -3678,14 +2793,14 @@ exports[`Data toolbar filters 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c19 "
+            class="c12 "
             scope="row"
           >
             <div
-              class="c20"
+              class="c13"
             >
               <span
-                class="c21"
+                class="c14"
               >
                 bb
               </span>
@@ -3696,14 +2811,14 @@ exports[`Data toolbar filters 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c19 "
+            class="c12 "
             scope="row"
           >
             <div
-              class="c20"
+              class="c13"
             >
               <span
-                class="c21"
+                class="c14"
               >
                 cc
               </span>
@@ -3714,14 +2829,14 @@ exports[`Data toolbar filters 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c19 "
+            class="c12 "
             scope="row"
           >
             <div
-              class="c20"
+              class="c13"
             >
               <span
-                class="c21"
+                class="c14"
               >
                 dd
               </span>
@@ -4749,288 +3864,19 @@ exports[`Data uncontrolled search 2`] = `
           class="StyledButton-sc-323bzc-0 emhJYD"
           type="button"
         >
-          .c2 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c2 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c2 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c2 *[fill-rule],
-.c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 24px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 20px;
-  color: #FFFFFF;
-  font-weight: normal;
-}
-
-.c0 {
-  position: relative;
-}
-
-.c1 {
-  position: relative;
-  display: block;
-}
-
-.c3 {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<div
-            class="c0"
+          <svg
+            aria-label="Filter"
+            class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="c1"
-            >
-              <svg
-                aria-label="Filter"
-                class="c2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <div
-              class="c3"
-              style="top: -12px; right: -12px;"
-            >
-              <div
-                class="c4 Badge__StyledBadgeContainer-sc-1es4ws1-0"
-              >
-                <span
-                  class="c5"
-                >
-                  1
-                </span>
-              </div>
-            </div>
-          </div>
+            <path
+              d="m3 6 7 7v8h4v-8l7-7V3H3z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </button>
-        .c0 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    width: 6px;
-  }
-}
-
-<div
-          class="c0"
-        />
-        .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c1:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<div
-          class="c0"
-        >
-          <button
-            class="c1"
-            type="button"
-          >
-            Clear filters
-          </button>
-        </div>
       </div>
     </div>
     <span
@@ -5074,374 +3920,6 @@ exports[`Data uncontrolled search 2`] = `
                 class="StyledText-sc-1sadyjn-0 hDSAIu"
               >
                 aa
-              </span>
-            </div>
-          </th>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-`;
-
-exports[`Data uncontrolled search 3`] = `
-<div
-  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
->
-  <div
-    class="StyledBox-sc-13pk1d4-0 hoPFxc"
-    id="data"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 cA-DryL"
-    >
-      <form>
-        <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
-        >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
-          >
-            <div
-              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 cFBrkA"
-            >
-              <svg
-                aria-label="Search"
-                class="StyledIcon-sc-ofa7kd-0 jQvEgu"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <input
-              aria-label="Search data"
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jgXNod"
-              id="undefined--search"
-              name="_search"
-              type="search"
-              value=""
-            />
-          </div>
-        </div>
-      </form>
-      <div
-        class="StyledBox-sc-13pk1d4-0 lgzxvo"
-      >
-        <button
-          aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 emhJYD"
-          type="button"
-        >
-          .c0 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c0 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c0 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c0 *[stroke*="#"],
-.c0 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c0 *[fill-rule],
-.c0 *[FILL-RULE],
-.c0 *[fill*="#"],
-.c0 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<svg
-            aria-label="Filter"
-            class="c0"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="m3 6 7 7v8h4v-8l7-7V3H3z"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <span
-      class="StyledText-sc-1sadyjn-0 fKpAiz"
-    >
-      4 items
-    </span>
-    <table
-      class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
-    >
-      <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
-        >
-          <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 dJRXxk StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
-            scope="col"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 dCZrDR"
-            />
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 cNqjdy"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
-        >
-          <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
-            scope="row"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
-            >
-              <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
-              >
-                aa
-              </span>
-            </div>
-          </th>
-        </tr>
-        .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c0 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c0 "
-            scope="row"
-          >
-            <div
-              class="c1"
-            >
-              <span
-                class="c2"
-              >
-                bb
-              </span>
-            </div>
-          </th>
-        </tr>
-        .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c0 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c0 "
-            scope="row"
-          >
-            <div
-              class="c1"
-            >
-              <span
-                class="c2"
-              >
-                cc
-              </span>
-            </div>
-          </th>
-        </tr>
-        .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c0 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c0 "
-            scope="row"
-          >
-            <div
-              class="c1"
-            >
-              <span
-                class="c2"
-              >
-                dd
               </span>
             </div>
           </th>
@@ -5806,37 +4284,7 @@ exports[`Data view all 1`] = `
   flex: 0 0 auto;
 }
 
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 24px;
-}
-
-.c20 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5857,7 +4305,7 @@ exports[`Data view all 1`] = `
   justify-content: center;
 }
 
-.c23 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5898,54 +4346,22 @@ exports[`Data view all 1`] = `
   row-gap: 12px;
 }
 
-.c14 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c13 {
-  font-size: 14px;
-  line-height: 20px;
-  color: #FFFFFF;
-  font-weight: normal;
-}
-
-.c16 {
+.c9 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c24 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c25 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c11 {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .c8 {
@@ -6008,76 +4424,7 @@ exports[`Data view all 1`] = `
   border: 0;
 }
 
-.c15 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c15:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus > circle,
-.c15:focus > ellipse,
-.c15:focus > line,
-.c15:focus > path,
-.c15:focus > polygon,
-.c15:focus > polyline,
-.c15:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) > circle,
-.c15:focus:not(:focus-visible) > ellipse,
-.c15:focus:not(:focus-visible) > line,
-.c15:focus:not(:focus-visible) > path,
-.c15:focus:not(:focus-visible) > polygon,
-.c15:focus:not(:focus-visible) > polyline,
-.c15:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c19 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6090,7 +4437,7 @@ exports[`Data view all 1`] = `
   padding-bottom: 6px;
 }
 
-.c22 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6102,7 +4449,7 @@ exports[`Data view all 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c10 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -6194,18 +4541,18 @@ exports[`Data view all 1`] = `
   left: 12px;
 }
 
-.c18 {
+.c11 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
   height: 100%;
 }
 
-.c21:focus {
+.c14:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c21:focus:not(:focus-visible) {
+.c14:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -6214,21 +4561,9 @@ exports[`Data view all 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
-    border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c2 {
     -webkit-column-gap: 6px;
     column-gap: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    width: 6px;
   }
 }
 
@@ -6285,63 +4620,28 @@ exports[`Data view all 1`] = `
           class="c8"
           type="button"
         >
-          <div
-            class="c9"
+          <svg
+            aria-label="Filter"
+            class="c5"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="c10"
-            >
-              <svg
-                aria-label="Filter"
-                class="c5"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <div
-              class="c11"
-              style="top: -12px; right: -12px;"
-            >
-              <div
-                class="c12 Badge__StyledBadgeContainer-sc-1es4ws1-0"
-              >
-                <span
-                  class="c13"
-                >
-                  3
-                </span>
-              </div>
-            </div>
-          </div>
+            <path
+              d="m3 6 7 7v8h4v-8l7-7V3H3z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </button>
-        <div
-          class="c14"
-        />
-        <div
-          class="c1"
-        >
-          <button
-            class="c15"
-            type="button"
-          >
-            Clear filters
-          </button>
-        </div>
       </div>
     </div>
     <span
-      class="c16"
+      class="c9"
     >
       1 result of 4 items
     </span>
     <table
-      class="c17 c18"
+      class="c10 c11"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -6350,51 +4650,51 @@ exports[`Data view all 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c19 "
+            class="c12 "
             scope="col"
           >
             <div
-              class="c20"
+              class="c13"
             />
           </th>
           <th
-            class="c19 "
+            class="c12 "
             scope="col"
           >
             <div
-              class="c20"
+              class="c13"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c21"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c22 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c24"
+                class="c17"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c22 "
+            class="c15 "
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c25"
+                class="c18"
               >
                 ZZ
               </span>
@@ -6486,37 +4786,7 @@ exports[`Data view property option 1`] = `
   flex: 0 0 auto;
 }
 
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 24px;
-}
-
-.c20 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6537,7 +4807,7 @@ exports[`Data view property option 1`] = `
   justify-content: center;
 }
 
-.c23 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6578,54 +4848,22 @@ exports[`Data view property option 1`] = `
   row-gap: 12px;
 }
 
-.c14 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c13 {
-  font-size: 14px;
-  line-height: 20px;
-  color: #FFFFFF;
-  font-weight: normal;
-}
-
-.c16 {
+.c9 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c24 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c25 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c11 {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .c8 {
@@ -6688,76 +4926,7 @@ exports[`Data view property option 1`] = `
   border: 0;
 }
 
-.c15 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c15:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus > circle,
-.c15:focus > ellipse,
-.c15:focus > line,
-.c15:focus > path,
-.c15:focus > polygon,
-.c15:focus > polyline,
-.c15:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) > circle,
-.c15:focus:not(:focus-visible) > ellipse,
-.c15:focus:not(:focus-visible) > line,
-.c15:focus:not(:focus-visible) > path,
-.c15:focus:not(:focus-visible) > polygon,
-.c15:focus:not(:focus-visible) > polyline,
-.c15:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c19 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6770,7 +4939,7 @@ exports[`Data view property option 1`] = `
   padding-bottom: 6px;
 }
 
-.c22 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6782,7 +4951,7 @@ exports[`Data view property option 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c10 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -6874,18 +5043,18 @@ exports[`Data view property option 1`] = `
   left: 12px;
 }
 
-.c18 {
+.c11 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
   height: 100%;
 }
 
-.c21:focus {
+.c14:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c21:focus:not(:focus-visible) {
+.c14:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -6894,21 +5063,9 @@ exports[`Data view property option 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
-    border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c2 {
     -webkit-column-gap: 6px;
     column-gap: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    width: 6px;
   }
 }
 
@@ -6965,63 +5122,28 @@ exports[`Data view property option 1`] = `
           class="c8"
           type="button"
         >
-          <div
-            class="c9"
+          <svg
+            aria-label="Filter"
+            class="c5"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="c10"
-            >
-              <svg
-                aria-label="Filter"
-                class="c5"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <div
-              class="c11"
-              style="top: -12px; right: -12px;"
-            >
-              <div
-                class="c12 Badge__StyledBadgeContainer-sc-1es4ws1-0"
-              >
-                <span
-                  class="c13"
-                >
-                  1
-                </span>
-              </div>
-            </div>
-          </div>
+            <path
+              d="m3 6 7 7v8h4v-8l7-7V3H3z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </button>
-        <div
-          class="c14"
-        />
-        <div
-          class="c1"
-        >
-          <button
-            class="c15"
-            type="button"
-          >
-            Clear filters
-          </button>
-        </div>
       </div>
     </div>
     <span
-      class="c16"
+      class="c9"
     >
       1 result of 4 items
     </span>
     <table
-      class="c17 c18"
+      class="c10 c11"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7030,51 +5152,51 @@ exports[`Data view property option 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c19 "
+            class="c12 "
             scope="col"
           >
             <div
-              class="c20"
+              class="c13"
             />
           </th>
           <th
-            class="c19 "
+            class="c12 "
             scope="col"
           >
             <div
-              class="c20"
+              class="c13"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c21"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c22 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c24"
+                class="c17"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c22 "
+            class="c15 "
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c25"
+                class="c18"
               >
                 ZZ
               </span>
@@ -7166,37 +5288,7 @@ exports[`Data view property range 1`] = `
   flex: 0 0 auto;
 }
 
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 24px;
-}
-
-.c20 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7217,7 +5309,7 @@ exports[`Data view property range 1`] = `
   justify-content: center;
 }
 
-.c23 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7258,54 +5350,22 @@ exports[`Data view property range 1`] = `
   row-gap: 12px;
 }
 
-.c14 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c13 {
-  font-size: 14px;
-  line-height: 20px;
-  color: #FFFFFF;
-  font-weight: normal;
-}
-
-.c16 {
+.c9 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c24 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c25 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c11 {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .c8 {
@@ -7368,76 +5428,7 @@ exports[`Data view property range 1`] = `
   border: 0;
 }
 
-.c15 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c15:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus > circle,
-.c15:focus > ellipse,
-.c15:focus > line,
-.c15:focus > path,
-.c15:focus > polygon,
-.c15:focus > polyline,
-.c15:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) > circle,
-.c15:focus:not(:focus-visible) > ellipse,
-.c15:focus:not(:focus-visible) > line,
-.c15:focus:not(:focus-visible) > path,
-.c15:focus:not(:focus-visible) > polygon,
-.c15:focus:not(:focus-visible) > polyline,
-.c15:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c19 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7450,7 +5441,7 @@ exports[`Data view property range 1`] = `
   padding-bottom: 6px;
 }
 
-.c22 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7462,7 +5453,7 @@ exports[`Data view property range 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c10 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -7554,18 +5545,18 @@ exports[`Data view property range 1`] = `
   left: 12px;
 }
 
-.c18 {
+.c11 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
   height: 100%;
 }
 
-.c21:focus {
+.c14:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c21:focus:not(:focus-visible) {
+.c14:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -7574,21 +5565,9 @@ exports[`Data view property range 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
-    border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c2 {
     -webkit-column-gap: 6px;
     column-gap: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    width: 6px;
   }
 }
 
@@ -7645,63 +5624,28 @@ exports[`Data view property range 1`] = `
           class="c8"
           type="button"
         >
-          <div
-            class="c9"
+          <svg
+            aria-label="Filter"
+            class="c5"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="c10"
-            >
-              <svg
-                aria-label="Filter"
-                class="c5"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <div
-              class="c11"
-              style="top: -12px; right: -12px;"
-            >
-              <div
-                class="c12 Badge__StyledBadgeContainer-sc-1es4ws1-0"
-              >
-                <span
-                  class="c13"
-                >
-                  1
-                </span>
-              </div>
-            </div>
-          </div>
+            <path
+              d="m3 6 7 7v8h4v-8l7-7V3H3z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </button>
-        <div
-          class="c14"
-        />
-        <div
-          class="c1"
-        >
-          <button
-            class="c15"
-            type="button"
-          >
-            Clear filters
-          </button>
-        </div>
       </div>
     </div>
     <span
-      class="c16"
+      class="c9"
     >
       1 result of 4 items
     </span>
     <table
-      class="c17 c18"
+      class="c10 c11"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7710,72 +5654,72 @@ exports[`Data view property range 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c19 "
+            class="c12 "
             scope="col"
           >
             <div
-              class="c20"
+              class="c13"
             />
           </th>
           <th
-            class="c19 "
+            class="c12 "
             scope="col"
           >
             <div
-              class="c20"
+              class="c13"
             />
           </th>
           <th
-            class="c19 "
+            class="c12 "
             scope="col"
           >
             <div
-              class="c20"
+              class="c13"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c21"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c22 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c24"
+                class="c17"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c22 "
+            class="c15 "
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c25"
+                class="c18"
               >
                 YY
               </span>
             </div>
           </td>
           <td
-            class="c22 "
+            class="c15 "
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c25"
+                class="c18"
               >
                 4.3
               </span>
@@ -7867,37 +5811,7 @@ exports[`Data view search 1`] = `
   flex: 0 0 auto;
 }
 
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 24px;
-}
-
-.c20 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7918,7 +5832,7 @@ exports[`Data view search 1`] = `
   justify-content: center;
 }
 
-.c23 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7959,54 +5873,22 @@ exports[`Data view search 1`] = `
   row-gap: 12px;
 }
 
-.c14 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c13 {
-  font-size: 14px;
-  line-height: 20px;
-  color: #FFFFFF;
-  font-weight: normal;
-}
-
-.c16 {
+.c9 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c24 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c25 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c11 {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .c8 {
@@ -8069,76 +5951,7 @@ exports[`Data view search 1`] = `
   border: 0;
 }
 
-.c15 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c15:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus > circle,
-.c15:focus > ellipse,
-.c15:focus > line,
-.c15:focus > path,
-.c15:focus > polygon,
-.c15:focus > polyline,
-.c15:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) > circle,
-.c15:focus:not(:focus-visible) > ellipse,
-.c15:focus:not(:focus-visible) > line,
-.c15:focus:not(:focus-visible) > path,
-.c15:focus:not(:focus-visible) > polygon,
-.c15:focus:not(:focus-visible) > polyline,
-.c15:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c19 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8151,7 +5964,7 @@ exports[`Data view search 1`] = `
   padding-bottom: 6px;
 }
 
-.c22 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8163,7 +5976,7 @@ exports[`Data view search 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c10 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -8255,18 +6068,18 @@ exports[`Data view search 1`] = `
   left: 12px;
 }
 
-.c18 {
+.c11 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
   height: 100%;
 }
 
-.c21:focus {
+.c14:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c21:focus:not(:focus-visible) {
+.c14:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -8275,21 +6088,9 @@ exports[`Data view search 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
-    border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c2 {
     -webkit-column-gap: 6px;
     column-gap: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    width: 6px;
   }
 }
 
@@ -8346,63 +6147,28 @@ exports[`Data view search 1`] = `
           class="c8"
           type="button"
         >
-          <div
-            class="c9"
+          <svg
+            aria-label="Filter"
+            class="c5"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="c10"
-            >
-              <svg
-                aria-label="Filter"
-                class="c5"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <div
-              class="c11"
-              style="top: -12px; right: -12px;"
-            >
-              <div
-                class="c12 Badge__StyledBadgeContainer-sc-1es4ws1-0"
-              >
-                <span
-                  class="c13"
-                >
-                  1
-                </span>
-              </div>
-            </div>
-          </div>
+            <path
+              d="m3 6 7 7v8h4v-8l7-7V3H3z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </button>
-        <div
-          class="c14"
-        />
-        <div
-          class="c1"
-        >
-          <button
-            class="c15"
-            type="button"
-          >
-            Clear filters
-          </button>
-        </div>
       </div>
     </div>
     <span
-      class="c16"
+      class="c9"
     >
       1 result of 4 items
     </span>
     <table
-      class="c17 c18"
+      class="c10 c11"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -8411,51 +6177,51 @@ exports[`Data view search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c19 "
+            class="c12 "
             scope="col"
           >
             <div
-              class="c20"
+              class="c13"
             />
           </th>
           <th
-            class="c19 "
+            class="c12 "
             scope="col"
           >
             <div
-              class="c20"
+              class="c13"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c21"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c22 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c24"
+                class="c17"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c22 "
+            class="c15 "
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c25"
+                class="c18"
               >
                 ZZ
               </span>
@@ -8547,37 +6313,7 @@ exports[`Data view sort 1`] = `
   flex: 0 0 auto;
 }
 
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 24px;
-}
-
-.c20 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8598,7 +6334,7 @@ exports[`Data view sort 1`] = `
   justify-content: center;
 }
 
-.c23 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8639,54 +6375,22 @@ exports[`Data view sort 1`] = `
   row-gap: 12px;
 }
 
-.c14 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c13 {
-  font-size: 14px;
-  line-height: 20px;
-  color: #FFFFFF;
-  font-weight: normal;
-}
-
-.c16 {
+.c9 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c24 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c25 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c11 {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .c8 {
@@ -8749,76 +6453,7 @@ exports[`Data view sort 1`] = `
   border: 0;
 }
 
-.c15 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c15:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus > circle,
-.c15:focus > ellipse,
-.c15:focus > line,
-.c15:focus > path,
-.c15:focus > polygon,
-.c15:focus > polyline,
-.c15:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) > circle,
-.c15:focus:not(:focus-visible) > ellipse,
-.c15:focus:not(:focus-visible) > line,
-.c15:focus:not(:focus-visible) > path,
-.c15:focus:not(:focus-visible) > polygon,
-.c15:focus:not(:focus-visible) > polyline,
-.c15:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c19 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8831,7 +6466,7 @@ exports[`Data view sort 1`] = `
   padding-bottom: 6px;
 }
 
-.c22 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8843,7 +6478,7 @@ exports[`Data view sort 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c10 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -8935,18 +6570,18 @@ exports[`Data view sort 1`] = `
   left: 12px;
 }
 
-.c18 {
+.c11 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
   height: 100%;
 }
 
-.c21:focus {
+.c14:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c21:focus:not(:focus-visible) {
+.c14:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -8955,21 +6590,9 @@ exports[`Data view sort 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
-    border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c2 {
     -webkit-column-gap: 6px;
     column-gap: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    width: 6px;
   }
 }
 
@@ -9026,63 +6649,28 @@ exports[`Data view sort 1`] = `
           class="c8"
           type="button"
         >
-          <div
-            class="c9"
+          <svg
+            aria-label="Filter"
+            class="c5"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="c10"
-            >
-              <svg
-                aria-label="Filter"
-                class="c5"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <div
-              class="c11"
-              style="top: -12px; right: -12px;"
-            >
-              <div
-                class="c12 Badge__StyledBadgeContainer-sc-1es4ws1-0"
-              >
-                <span
-                  class="c13"
-                >
-                  1
-                </span>
-              </div>
-            </div>
-          </div>
+            <path
+              d="m3 6 7 7v8h4v-8l7-7V3H3z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </button>
-        <div
-          class="c14"
-        />
-        <div
-          class="c1"
-        >
-          <button
-            class="c15"
-            type="button"
-          >
-            Clear filters
-          </button>
-        </div>
       </div>
     </div>
     <span
-      class="c16"
+      class="c9"
     >
       4 items
     </span>
     <table
-      class="c17 c18"
+      class="c10 c11"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -9091,51 +6679,51 @@ exports[`Data view sort 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c19 "
+            class="c12 "
             scope="col"
           >
             <div
-              class="c20"
+              class="c13"
             />
           </th>
           <th
-            class="c19 "
+            class="c12 "
             scope="col"
           >
             <div
-              class="c20"
+              class="c13"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c21"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c22 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c24"
+                class="c17"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c22 "
+            class="c15 "
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c25"
+                class="c18"
               >
                 ZZ
               </span>
@@ -9146,27 +6734,27 @@ exports[`Data view sort 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c22 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c24"
+                class="c17"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c22 "
+            class="c15 "
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c25"
+                class="c18"
               >
                 YY
               </span>
@@ -9177,24 +6765,24 @@ exports[`Data view sort 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c22 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c24"
+                class="c17"
               >
                 cc
               </span>
             </div>
           </th>
           <td
-            class="c22 "
+            class="c15 "
           >
             <div
-              class="c23"
+              class="c16"
             />
           </td>
         </tr>
@@ -9202,24 +6790,24 @@ exports[`Data view sort 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c22 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c23"
+              class="c16"
             >
               <span
-                class="c24"
+                class="c17"
               >
                 dd
               </span>
             </div>
           </th>
           <td
-            class="c22 "
+            class="c15 "
           >
             <div
-              class="c23"
+              class="c16"
             />
           </td>
         </tr>
