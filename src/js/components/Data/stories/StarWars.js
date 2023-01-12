@@ -26,7 +26,12 @@ export const StarWars = () => {
 
   useEffect(() => {
     fetchData(view).then(({ count, results }) =>
-      setResult({ data: results, total: count, page: 1, step: 10 }),
+      setResult({
+        data: results,
+        total: count,
+        page: view.page ?? 1,
+        step: 10,
+      }),
     );
   }, [view]);
 
@@ -44,13 +49,12 @@ export const StarWars = () => {
         status="info"
         message="Data is in 'beta'. The API surface is subject to change."
       />
-      <Box>
+      <Box skeleton={!result.data}>
         <Data
           data={result.data}
           total={result.total}
           view={view}
           onView={setView}
-          updateOn="change"
           toolbar="search"
         >
           <List primaryKey="name" secondaryKey="starship_class" />
