@@ -219,7 +219,7 @@ const FormField = forwardRef(
     const { border: themeBorder } = formFieldTheme;
     const debounce = useDebounce();
 
-    const portalContext = useContext(PortalContext) || [];
+    const portalContext = useContext(PortalContext);
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -513,12 +513,10 @@ const FormField = forwardRef(
           // if input has a drop and focus is within drop
           // prevent onBlur validation from running until
           // focus is no longer within the drop or input
-          const dropPortalId = withinDropPortal(event.relatedTarget);
           if (
-            (dropPortalId === undefined ||
-              portalContext.indexOf(parseInt(dropPortalId, 10)) !== -1) &&
+            contextOnBlur &&
             !formFieldRef.current.contains(event.relatedTarget) &&
-            contextOnBlur
+            !withinDropPortal(event.relatedTarget, portalContext)
           ) {
             contextOnBlur(event);
           }
