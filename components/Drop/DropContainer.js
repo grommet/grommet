@@ -62,6 +62,29 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [portalContext, portalId]);
   var dropRef = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
+    var onClickDocument = function onClickDocument(event) {
+      // determine which portal id the target is in, if any
+      var clickedPortalId = null;
+      var node = containerTarget === document.body ? event.target : event == null ? void 0 : event.composedPath()[0];
+      while (clickedPortalId === null && node !== document) {
+        var attr = node.getAttribute('data-g-portal-id');
+        if (attr !== null) clickedPortalId = parseInt(attr, 10);
+        node = node.parentNode;
+      }
+      if (clickedPortalId === null || portalContext.indexOf(clickedPortalId) !== -1) {
+        onClickOutside(event);
+      }
+    };
+    if (onClickOutside) {
+      document.addEventListener('mousedown', onClickDocument);
+    }
+    return function () {
+      if (onClickOutside) {
+        document.removeEventListener('mousedown', onClickDocument);
+      }
+    };
+  }, [onClickOutside, containerTarget, portalContext]);
+  (0, _react.useEffect)(function () {
     var notifyAlign = function notifyAlign() {
       var styleCurrent = (ref || dropRef).current.style;
       var alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
@@ -233,19 +256,6 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       });
       scrollParents = [];
     };
-    var onClickDocument = function onClickDocument(event) {
-      // determine which portal id the target is in, if any
-      var clickedPortalId = null;
-      var node = containerTarget === document.body ? event.target : event == null ? void 0 : event.composedPath()[0];
-      while (clickedPortalId === null && node !== document) {
-        var attr = node.getAttribute('data-g-portal-id');
-        if (attr !== null) clickedPortalId = parseInt(attr, 10);
-        node = node.parentNode;
-      }
-      if (clickedPortalId === null || portalContext.indexOf(clickedPortalId) !== -1) {
-        onClickOutside(event);
-      }
-    };
     var onResize = function onResize() {
       removeScrollListeners();
       addScrollListeners();
@@ -253,18 +263,12 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     };
     addScrollListeners();
     window.addEventListener('resize', onResize);
-    if (onClickOutside) {
-      document.addEventListener('mousedown', onClickDocument);
-    }
     place(false);
     return function () {
       removeScrollListeners();
       window.removeEventListener('resize', onResize);
-      if (onClickOutside) {
-        document.removeEventListener('mousedown', onClickDocument);
-      }
     };
-  }, [align, containerTarget, onAlign, dropTarget, onClickOutside, portalContext, portalId, ref, responsive, restrictFocus, stretch, theme.drop]);
+  }, [align, containerTarget, onAlign, dropTarget, portalContext, portalId, ref, responsive, restrictFocus, stretch, theme.drop]);
   (0, _react.useEffect)(function () {
     if (restrictFocus) {
       (ref || dropRef).current.focus();
