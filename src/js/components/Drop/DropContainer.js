@@ -259,6 +259,7 @@ const DropContainer = forwardRef(
       const onClickDocument = (event) => {
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
+        let clickedPortal = null;
         let node =
           containerTarget === document.body
             ? event.target
@@ -266,12 +267,17 @@ const DropContainer = forwardRef(
 
         while (clickedPortalId === null && node !== document) {
           const attr = node.getAttribute('data-g-portal-id');
-          if (attr !== null) clickedPortalId = parseInt(attr, 10);
+          if (attr !== null) {
+            clickedPortalId = parseInt(attr, 10);
+            clickedPortal = node;
+          }
           node = node.parentNode;
         }
+
         if (
           clickedPortalId === null ||
-          portalContext.indexOf(clickedPortalId) !== -1
+          portalContext.indexOf(clickedPortalId) !== -1 ||
+          (clickedPortal && clickedPortal !== (ref || dropRef).current)
         ) {
           onClickOutside(event);
         }
