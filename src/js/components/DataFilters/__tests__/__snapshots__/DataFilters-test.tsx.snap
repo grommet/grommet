@@ -455,6 +455,10 @@ exports[`DataFilters clear 1`] = `
   flex-shrink: 0;
 }
 
+.c20 {
+  opacity: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 26px;
@@ -462,10 +466,6 @@ exports[`DataFilters clear 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c20 {
-  opacity: 0;
 }
 
 .c0 {
@@ -1554,6 +1554,10 @@ exports[`DataFilters properties array 1`] = `
   flex-shrink: 0;
 }
 
+.c17 {
+  opacity: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 26px;
@@ -1561,10 +1565,6 @@ exports[`DataFilters properties array 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c17 {
-  opacity: 0;
 }
 
 .c0 {
@@ -2100,6 +2100,10 @@ exports[`DataFilters properties object 1`] = `
   flex-shrink: 0;
 }
 
+.c17 {
+  opacity: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 26px;
@@ -2107,10 +2111,6 @@ exports[`DataFilters properties object 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c17 {
-  opacity: 0;
 }
 
 .c0 {
@@ -2646,6 +2646,10 @@ exports[`DataFilters renders 1`] = `
   flex-shrink: 0;
 }
 
+.c17 {
+  opacity: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 26px;
@@ -2653,10 +2657,6 @@ exports[`DataFilters renders 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c17 {
-  opacity: 0;
 }
 
 .c0 {
