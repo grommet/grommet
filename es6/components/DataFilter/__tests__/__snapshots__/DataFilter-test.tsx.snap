@@ -290,6 +290,10 @@ exports[`DataFilter children 1`] = `
   width: 100%;
 }
 
+.c13 {
+  opacity: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 26px;
@@ -297,10 +301,6 @@ exports[`DataFilter children 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c13 {
-  opacity: 0;
 }
 
 .c0 {
@@ -780,6 +780,10 @@ exports[`DataFilter options 1`] = `
   flex-shrink: 0;
 }
 
+.c17 {
+  opacity: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 26px;
@@ -787,10 +791,6 @@ exports[`DataFilter options 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c17 {
-  opacity: 0;
 }
 
 .c0 {
@@ -1539,6 +1539,10 @@ exports[`DataFilter range 1`] = `
   user-select: none;
 }
 
+.c21 {
+  opacity: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 26px;
@@ -1546,10 +1550,6 @@ exports[`DataFilter range 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c21 {
-  opacity: 0;
 }
 
 .c0 {
@@ -2283,6 +2283,10 @@ exports[`DataFilter renders 1`] = `
   user-select: none;
 }
 
+.c27 {
+  opacity: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 26px;
@@ -2290,10 +2294,6 @@ exports[`DataFilter renders 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c27 {
-  opacity: 0;
 }
 
 .c0 {

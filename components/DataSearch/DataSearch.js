@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports.DataSearch = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _Search = require("grommet-icons/icons/Search");
-var _Data = require("../Data");
+var _DataForm = require("../Data/DataForm");
 var _FormContext = require("../Form/FormContext");
 var _TextInput = require("../TextInput");
 var _MessageContext = require("../../contexts/MessageContext");
@@ -31,7 +31,7 @@ var DataSearch = function DataSearch(_ref) {
     icon: /*#__PURE__*/_react["default"].createElement(_Search.Search, null),
     type: "search"
   }, rest));
-  if (noForm) content = /*#__PURE__*/_react["default"].createElement(_Data.DataForm, {
+  if (noForm) content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, {
     footer: false
   }, content);
   return content;

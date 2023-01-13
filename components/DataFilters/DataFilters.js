@@ -7,7 +7,7 @@ var _Filter = require("grommet-icons/icons/Filter");
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _DataFilter = require("../DataFilter");
-var _Data = require("../Data");
+var _DataForm = require("../Data/DataForm");
 var _DropButton = require("../DropButton");
 var _Header = require("../Header");
 var _Heading = require("../Heading");
@@ -62,7 +62,7 @@ var DataFilters = function DataFilters(_ref) {
       });
     });
   }
-  var content = /*#__PURE__*/_react["default"].createElement(_Data.DataForm, _extends({
+  var content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, _extends({
     pad: controlled ? 'medium' : undefined,
     gap: "small",
     onDone: function onDone() {

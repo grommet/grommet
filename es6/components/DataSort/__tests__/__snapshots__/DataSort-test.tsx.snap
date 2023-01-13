@@ -536,6 +536,10 @@ exports[`DataSort renders 1`] = `
   cursor: pointer;
 }
 
+.c25 {
+  opacity: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 26px;
@@ -543,10 +547,6 @@ exports[`DataSort renders 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c25 {
-  opacity: 0;
 }
 
 .c0 {
