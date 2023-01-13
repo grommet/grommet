@@ -35,7 +35,7 @@ const Content = ({ drop, options, ...rest }) => {
   const { useFormInput } = useContext(FormContext);
   const { format } = useContext(MessageContext);
 
-  // In cases the user searches for a particular option, render
+  // If the user searches for a particular option, render
   // the filtered list of options.
   const [search, setSearch] = useState('');
   const [filteredOptions, setFilteredOptions] = useState(options);
@@ -50,7 +50,7 @@ const Content = ({ drop, options, ...rest }) => {
   // 'value' is an array of property names
   const [value, setValue] = useFormInput({
     name: formColumnsKey,
-    initialValue: optionsToValue(options?.slice(0, 3)),
+    initialValue: optionsToValue(options),
   });
 
   // When the user searches, updated the filtered options based on the
@@ -104,6 +104,7 @@ const Content = ({ drop, options, ...rest }) => {
             />
           </Box>
         </Tab>
+
         <Tab
           id={`${dataId}--order-columns-tab`}
           title={format({
