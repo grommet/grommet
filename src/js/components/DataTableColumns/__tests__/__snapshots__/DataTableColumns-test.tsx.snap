@@ -619,6 +619,10 @@ exports[`DataTableColumns renders 1`] = `
   left: 12px;
 }
 
+.c28 {
+  opacity: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 26px;
@@ -626,10 +630,6 @@ exports[`DataTableColumns renders 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c28 {
-  opacity: 0;
 }
 
 .c31 {

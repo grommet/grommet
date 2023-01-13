@@ -13,6 +13,7 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     data: PropTypes.arrayOf(PropTypes.shape({})),
+    defaultView: viewType,
     onView: PropTypes.func,
     properties: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),

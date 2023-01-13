@@ -34,8 +34,8 @@
     "direction": "Sort direction"
   },
   "dataSummary": {
-    "filtered": "{filtered} results of {total} items",
-    "filteredSingle": "{filtered} result of {total} items",
+    "filtered": "{filteredTotal} results of {total} items",
+    "filteredSingle": "{filteredTotal} result of {total} items",
     "total": "{total} items"
   },
   "dataTableColumns": {

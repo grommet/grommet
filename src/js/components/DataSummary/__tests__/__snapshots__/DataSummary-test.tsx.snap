@@ -209,6 +209,10 @@ exports[`DataSummary renders 1`] = `
   border: 0;
 }
 
+.c9 {
+  opacity: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 26px;
@@ -216,10 +220,6 @@ exports[`DataSummary renders 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c9 {
-  opacity: 0;
 }
 
 .c0 {

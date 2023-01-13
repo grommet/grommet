@@ -26,7 +26,17 @@ const hideButtonProps = {
 export const formSearchKey = '_search';
 export const formSortKey = '_sort';
 export const formRangeKey = '_range';
+export const formStepKey = '_step';
+export const formPageKey = '_page';
 export const formColumnsKey = '_columns';
+
+const viewFormKeyMap = {
+  search: formSearchKey,
+  sort: formSortKey,
+  step: formStepKey,
+  page: formPageKey,
+  columns: formColumnsKey,
+};
 
 // converts from the external view format to the internal Form value format
 const viewToFormValue = (view) => {
@@ -41,9 +51,12 @@ const viewToFormValue = (view) => {
     }
   });
 
-  result[formSearchKey] = view?.search || '';
-
-  if (view?.sort) result[formSortKey] = view?.sort;
+  // convert formal view keys to their form '_' prefixed counterparts
+  Object.keys(viewFormKeyMap).forEach((key) => {
+    if (view?.[key]) result[viewFormKeyMap[key]] = view[key];
+  });
+  // always have some blank search text
+  if (!result[formSearchKey]) result[formSearchKey] = '';
 
   if (view?.columns) result[formColumnsKey] = view.columns;
 
@@ -52,21 +65,18 @@ const viewToFormValue = (view) => {
 
 // converts from the internal Form value format to the external view format
 const formValueToView = (value) => {
-  const properties = { ...value };
+  const result = {};
 
-  const searchText = value[formSearchKey];
-  delete properties[formSearchKey];
-  const sort = value[formSortKey];
-  delete properties[formSortKey];
-  const columns = value[formColumnsKey];
-  delete properties[formColumnsKey];
+  const valueCopy = { ...value };
 
-  const result = {
-    properties,
-    search: searchText,
-    ...(sort ? { sort } : {}),
-    ...(columns ? { columns } : {}),
-  };
+  Object.keys(viewFormKeyMap).forEach((key) => {
+    if (valueCopy[viewFormKeyMap[key]]) {
+      result[key] = valueCopy[viewFormKeyMap[key]];
+      delete valueCopy[viewFormKeyMap[key]];
+    }
+  });
+
+  result.properties = valueCopy;
 
   // convert any ranges
   Object.keys(result.properties).forEach((key) => {
@@ -84,16 +94,39 @@ const formValueToView = (value) => {
 // remove any empty arrays of property values by deleting the key for
 // that property in the view properties
 const clearEmpty = (properties) => {
-  const result = properties;
-  Object.keys(result)
+  Object.keys(properties)
     .filter((k) => k !== formSearchKey)
     .forEach((k) => {
-      if (Array.isArray(result[k]) && result[k].length === 0) delete result[k];
+      if (Array.isArray(properties[k]) && properties[k].length === 0)
+        // eslint-disable-next-line no-param-reassign
+        delete properties[k];
     });
+};
+
+// if paging, when anything other than the page changes, reset the page to 1
+const resetPage = (nextFormValue, prevFormValue) => {
+  if (prevFormValue[formPageKey] && prevFormValue[formPageKey] > 1)
+    // eslint-disable-next-line no-param-reassign
+    nextFormValue[formPageKey] = 1;
+};
+
+const transformTouched = (touched, value) => {
+  const result = {};
+  Object.keys(touched).forEach((key) => {
+    result[key] = value[key];
+  });
   return result;
 };
 
-export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
+export const DataForm = ({
+  children,
+  footer,
+  gap,
+  onDone,
+  onTouched,
+  pad,
+  ...rest
+}) => {
   const { messages, onView, updateOn, view } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
@@ -107,20 +140,26 @@ export const DataForm = ({ children, footer, gap, onDone, pad, ...rest }) => {
       value={formValue}
       onSubmit={
         updateOn === 'submit'
-          ? ({ value: nextValue }) => {
+          ? ({ value: nextValue, touched }) => {
               clearEmpty(nextValue);
+              resetPage(nextValue, formValue);
               setFormValue(nextValue);
               setChanged(false);
+              if (onTouched) onTouched(transformTouched(touched, nextValue));
               onView(formValueToView(nextValue));
               if (onDone) onDone();
             }
           : undefined
       }
-      onChange={(nextValue) => {
+      onChange={(nextValue, { touched }) => {
         clearEmpty(nextValue);
+        resetPage(nextValue, formValue);
         setFormValue(nextValue);
         setChanged(true);
-        if (updateOn === 'change') onView(formValueToView(nextValue));
+        if (updateOn === 'change') {
+          if (onTouched) onTouched(transformTouched(touched, nextValue));
+          onView(formValueToView(nextValue));
+        }
       }}
     >
       <Box flex={false} pad={pad} gap={gap}>
