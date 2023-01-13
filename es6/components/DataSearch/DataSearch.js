@@ -4,18 +4,20 @@ import React, { useContext } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
 import { DataForm } from '../Data/DataForm';
 import { FormContext } from '../Form/FormContext';
+import { useSkeleton } from '../Skeleton';
 import { TextInput } from '../TextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataSearchPropTypes } from './propTypes';
 export var DataSearch = function DataSearch(_ref) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
-  var _useContext = useContext(FormContext),
-    dataId = _useContext.id,
-    messages = _useContext.messages,
-    noForm = _useContext.noForm;
-  var _useContext2 = useContext(MessageContext),
-    format = _useContext2.format;
-  var content = /*#__PURE__*/React.createElement(TextInput, _extends({
+  var skeleton = useSkeleton();
+  var _useContext = useContext(MessageContext),
+    format = _useContext.format;
+  var _useContext2 = useContext(FormContext),
+    dataId = _useContext2.id,
+    messages = _useContext2.messages,
+    noForm = _useContext2.noForm;
+  var content = skeleton ? null : /*#__PURE__*/React.createElement(TextInput, _extends({
     "aria-label": format({
       id: 'dataSearch.label',
       messages: messages == null ? void 0 : messages.DataSearch

@@ -43,12 +43,13 @@ var Data = function Data(_ref) {
     return setView(viewProp);
   }, [viewProp]);
   var result = (0, _react.useMemo)(function () {
+    var _ref2;
     if (onView)
       // caller is filtering
       return {
         data: dataProp,
         total: total,
-        filteredTotal: filteredTotal || dataProp.length
+        filteredTotal: (_ref2 = filteredTotal != null ? filteredTotal : dataProp == null ? void 0 : dataProp.length) != null ? _ref2 : 0
       };
     return (0, _filter.filter)(dataProp, view, properties);
   }, [dataProp, filteredTotal, onView, properties, total, view]);

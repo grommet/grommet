@@ -6,6 +6,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _Search = require("grommet-icons/icons/Search");
 var _DataForm = require("../Data/DataForm");
 var _FormContext = require("../Form/FormContext");
+var _Skeleton = require("../Skeleton");
 var _TextInput = require("../TextInput");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
@@ -15,13 +16,14 @@ function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 var DataSearch = function DataSearch(_ref) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
-  var _useContext = (0, _react.useContext)(_FormContext.FormContext),
-    dataId = _useContext.id,
-    messages = _useContext.messages,
-    noForm = _useContext.noForm;
-  var _useContext2 = (0, _react.useContext)(_MessageContext.MessageContext),
-    format = _useContext2.format;
-  var content = /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, _extends({
+  var skeleton = (0, _Skeleton.useSkeleton)();
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+    format = _useContext.format;
+  var _useContext2 = (0, _react.useContext)(_FormContext.FormContext),
+    dataId = _useContext2.id,
+    messages = _useContext2.messages,
+    noForm = _useContext2.noForm;
+  var content = skeleton ? null : /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, _extends({
     "aria-label": format({
       id: 'dataSearch.label',
       messages: messages == null ? void 0 : messages.DataSearch

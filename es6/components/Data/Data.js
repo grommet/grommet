@@ -37,12 +37,13 @@ export var Data = function Data(_ref) {
     return setView(viewProp);
   }, [viewProp]);
   var result = useMemo(function () {
+    var _ref2;
     if (onView)
       // caller is filtering
       return {
         data: dataProp,
         total: total,
-        filteredTotal: filteredTotal || dataProp.length
+        filteredTotal: (_ref2 = filteredTotal != null ? filteredTotal : dataProp == null ? void 0 : dataProp.length) != null ? _ref2 : 0
       };
     return filter(dataProp, view, properties);
   }, [dataProp, filteredTotal, onView, properties, total, view]);
