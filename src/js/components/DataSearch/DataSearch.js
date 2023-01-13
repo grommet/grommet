@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
-import { DataForm } from '../Data';
+import { DataForm } from '../Data/DataForm';
 import { DataContext } from '../../contexts/DataContext';
 import { FormContext } from '../Form/FormContext';
 import { useSkeleton } from '../Skeleton';

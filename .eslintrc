@@ -51,6 +51,7 @@
       }
     ],
     "no-useless-concat": 0,
+    "react/destructuring-assignment": 0,
     "react/function-component-definition": 0,
     "react/jsx-curly-newline": 0,
     "react/jsx-filename-extension": 0,

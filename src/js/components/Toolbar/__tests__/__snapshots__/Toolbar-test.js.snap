@@ -499,6 +499,10 @@ exports[`DataFilters renders 1`] = `
   right: 12px;
 }
 
+.c22 {
+  opacity: 0;
+}
+
 .c8 {
   margin: 0px;
   font-size: 26px;
@@ -506,10 +510,6 @@ exports[`DataFilters renders 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c22 {
-  opacity: 0;
 }
 
 .c0 {

@@ -3,7 +3,7 @@ import { Filter } from 'grommet-icons/icons/Filter';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataFilter } from '../DataFilter';
-import { DataForm } from '../Data';
+import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
