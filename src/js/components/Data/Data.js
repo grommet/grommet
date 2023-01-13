@@ -34,7 +34,7 @@ export const Data = ({
       return {
         data: dataProp,
         total,
-        filteredTotal: filteredTotal || dataProp.length,
+        filteredTotal: filteredTotal ?? dataProp?.length ?? 0,
       };
     return filter(dataProp, view, properties);
   }, [dataProp, filteredTotal, onView, properties, total, view]);
