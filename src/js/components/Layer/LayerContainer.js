@@ -30,8 +30,6 @@ const HiddenAnchor = styled.a`
   position: absolute;
 `;
 
-const defaultPortalContext = [];
-
 const LayerContainer = forwardRef(
   (
     {
@@ -60,7 +58,7 @@ const LayerContainer = forwardRef(
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
-    const portalContext = useContext(PortalContext) || defaultPortalContext;
+    const portalContext = useContext(PortalContext);
     const portalId = useMemo(() => portalContext.length, [portalContext]);
     const nextPortalContext = useMemo(
       () => [...portalContext, portalId],

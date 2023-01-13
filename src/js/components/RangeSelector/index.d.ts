@@ -6,6 +6,7 @@ export interface RangeSelectorProps {
   defaultValues?: number[];
   direction?: 'horizontal' | 'vertical';
   invert?: boolean;
+  label?: boolean | ((value: number) => React.ReactNode);
   max?: number;
   messages?: { lower?: string; upper?: string };
   min?: number;

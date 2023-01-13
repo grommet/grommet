@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
     defaultValues: PropTypes.arrayOf(PropTypes.number),
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     invert: PropTypes.bool,
+    label: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
     max: PropTypes.number,
     messages: PropTypes.shape({
       lower: PropTypes.string,
