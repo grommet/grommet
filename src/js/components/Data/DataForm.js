@@ -23,17 +23,19 @@ const hideButtonProps = {
 // We convert the view structure to something more flat to work better
 // with the Form inputs. These keys are how we flatten the Form value object
 // from the view object.
-const formSearchKey = '_search';
-const formSortKey = '_sort';
-const formRangeKey = '_range';
-const formStepKey = '_step';
-const formPageKey = '_page';
+export const formSearchKey = '_search';
+export const formSortKey = '_sort';
+export const formRangeKey = '_range';
+export const formStepKey = '_step';
+export const formPageKey = '_page';
+export const formColumnsKey = '_columns';
 
 const viewFormKeyMap = {
   search: formSearchKey,
   sort: formSortKey,
   step: formStepKey,
   page: formPageKey,
+  columns: formColumnsKey,
 };
 
 // converts from the external view format to the internal Form value format
@@ -55,6 +57,8 @@ const viewToFormValue = (view) => {
   });
   // always have some blank search text
   if (!result[formSearchKey]) result[formSearchKey] = '';
+
+  if (view?.columns) result[formColumnsKey] = view.columns;
 
   return result;
 };
