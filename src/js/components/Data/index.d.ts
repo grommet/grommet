@@ -33,6 +33,7 @@ export interface DataProps {
   // when paging
   filteredTotal?: number;
 
+  defaultView?: View;
   view?: View;
   onView?: (view: View) => void;
   // when view changes should be delivered

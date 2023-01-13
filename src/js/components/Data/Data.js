@@ -8,14 +8,12 @@ import { DataContext } from '../../contexts/DataContext';
 import { DataPropTypes } from './propTypes';
 import { filter } from './filter';
 
-const defaultView = {
-  search: '',
-  properties: {},
-};
+const defaultDefaultView = { search: '' };
 
 export const Data = ({
   children,
   data: dataProp,
+  defaultView = defaultDefaultView,
   filteredTotal,
   id = 'data',
   messages,
@@ -57,7 +55,7 @@ export const Data = ({
     };
 
     return value;
-  }, [id, messages, onView, properties, result, updateOn, view]);
+  }, [defaultView, id, messages, onView, properties, result, updateOn, view]);
 
   let toolbarContent;
   if (toolbar) {

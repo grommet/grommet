@@ -132,15 +132,17 @@ const columns = [
   },
 ];
 
+const defaultView = {
+  search: '',
+  sort: { property: 'name', direction: 'asc' },
+  step: 10,
+};
+
 export const SpaceX = () => {
   const [total, setTotal] = useState(0);
   const [result, setResult] = useState({ data: [] });
   const [rockets, setRockets] = useState([]);
-  const [view, setView] = useState({
-    search: '',
-    sort: { property: 'name', direction: 'asc' },
-    step: 10,
-  });
+  const [view, setView] = useState(defaultView);
 
   useEffect(() => {
     fetchRockets().then((response) =>
@@ -157,6 +159,9 @@ export const SpaceX = () => {
         filteredTotal: response.totalDocs,
         page: response.page,
       });
+      // The REST API doesn't return the unfiltered total in responses.
+      // Since the first request likely has no filtering, we'll likely use
+      // response.totalDocs the first time and prevTotal thereafter.
       setTotal((prevTotal) => Math.max(prevTotal, response.totalDocs));
     });
   }, [view]);
@@ -193,6 +198,7 @@ export const SpaceX = () => {
           data={result.data}
           total={total}
           filteredTotal={result.filteredTotal}
+          defaultView={defaultView}
           view={view}
           onView={setView}
           toolbar
