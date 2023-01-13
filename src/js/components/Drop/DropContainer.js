@@ -65,6 +65,40 @@ const DropContainer = forwardRef(
       [portalContext, portalId],
     );
     const dropRef = useRef();
+
+    useEffect(() => {
+      const onClickDocument = (event) => {
+        // determine which portal id the target is in, if any
+        let clickedPortalId = null;
+        let node =
+          containerTarget === document.body
+            ? event.target
+            : event?.composedPath()[0];
+
+        while (clickedPortalId === null && node !== document) {
+          const attr = node.getAttribute('data-g-portal-id');
+          if (attr !== null) clickedPortalId = parseInt(attr, 10);
+          node = node.parentNode;
+        }
+        if (
+          clickedPortalId === null ||
+          portalContext.indexOf(clickedPortalId) !== -1
+        ) {
+          onClickOutside(event);
+        }
+      };
+
+      if (onClickOutside) {
+        document.addEventListener('mousedown', onClickDocument);
+      }
+
+      return () => {
+        if (onClickOutside) {
+          document.removeEventListener('mousedown', onClickDocument);
+        }
+      };
+    }, [onClickOutside, containerTarget, portalContext]);
+
     useEffect(() => {
       const notifyAlign = () => {
         const styleCurrent = (ref || dropRef).current.style;
@@ -255,27 +289,6 @@ const DropContainer = forwardRef(
         scrollParents = [];
       };
 
-      const onClickDocument = (event) => {
-        // determine which portal id the target is in, if any
-        let clickedPortalId = null;
-        let node =
-          containerTarget === document.body
-            ? event.target
-            : event?.composedPath()[0];
-
-        while (clickedPortalId === null && node !== document) {
-          const attr = node.getAttribute('data-g-portal-id');
-          if (attr !== null) clickedPortalId = parseInt(attr, 10);
-          node = node.parentNode;
-        }
-        if (
-          clickedPortalId === null ||
-          portalContext.indexOf(clickedPortalId) !== -1
-        ) {
-          onClickOutside(event);
-        }
-      };
-
       const onResize = () => {
         removeScrollListeners();
         addScrollListeners();
@@ -284,25 +297,18 @@ const DropContainer = forwardRef(
 
       addScrollListeners();
       window.addEventListener('resize', onResize);
-      if (onClickOutside) {
-        document.addEventListener('mousedown', onClickDocument);
-      }
 
       place(false);
 
       return () => {
         removeScrollListeners();
         window.removeEventListener('resize', onResize);
-        if (onClickOutside) {
-          document.removeEventListener('mousedown', onClickDocument);
-        }
       };
     }, [
       align,
       containerTarget,
       onAlign,
       dropTarget,
-      onClickOutside,
       portalContext,
       portalId,
       ref,
