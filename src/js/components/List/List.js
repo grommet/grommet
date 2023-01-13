@@ -478,9 +478,6 @@ const List = React.forwardRef(
                         adjustedEvent.item = item;
                         adjustedEvent.index = index;
                         onClickItem(adjustedEvent);
-                        // put focus on the List container to meet WCAG
-                        // accessibility guidelines that focus remains on `ul`
-                        listRef.current.focus();
                         sendAnalytics({
                           type: 'listItemClick',
                           element: listRef.current,
