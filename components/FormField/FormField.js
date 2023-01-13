@@ -5,7 +5,7 @@ exports.FormField = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _defaultProps = require("../../default-props");
-var _DOM = require("../../utils/DOM");
+var _utils = require("../../utils");
 var _styles = require("../../utils/styles");
 var _mixins = require("../../utils/mixins");
 var _refs = require("../../utils/refs");
@@ -183,6 +183,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   var formFieldTheme = theme.formField;
   var themeBorder = formFieldTheme.border;
   var debounce = useDebounce();
+  var portalContext = (0, _react.useContext)(_utils.PortalContext);
 
   // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
@@ -343,12 +344,18 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     style: outerStyle,
     onFocus: function onFocus(event) {
       var root = formFieldRef.current.getRootNode();
-      setFocus((0, _DOM.containsFocus)(formFieldRef.current) && (0, _DOM.shouldKeepFocus)(root));
+      setFocus((0, _utils.containsFocus)(formFieldRef.current) && (0, _utils.shouldKeepFocus)(root));
       if (_onFocus) _onFocus(event);
     },
     onBlur: function onBlur(event) {
       setFocus(false);
-      if (contextOnBlur) contextOnBlur(event);
+
+      // if input has a drop and focus is within drop
+      // prevent onBlur validation from running until
+      // focus is no longer within the drop or input
+      if (contextOnBlur && !formFieldRef.current.contains(event.relatedTarget) && !(0, _utils.withinDropPortal)(event.relatedTarget, portalContext)) {
+        contextOnBlur(event);
+      }
       if (_onBlur) _onBlur(event);
     },
     onChange: contextOnChange || onChange ? function (event) {

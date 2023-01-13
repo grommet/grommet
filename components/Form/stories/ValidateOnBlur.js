@@ -53,6 +53,24 @@ var ValidateOnBlur = function ValidateOnBlur() {
       name: "email",
       "aria-label": "email",
       type: "email"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      label: "Size",
+      name: "select-size",
+      htmlFor: "select-size__input",
+      required: true,
+      validate: function validate(val) {
+        if (val === 'small') {
+          return {
+            message: 'Only 10 left in stock!',
+            status: 'info'
+          };
+        }
+        return undefined;
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
+      name: "select-size",
+      id: "select-size",
+      options: ['small', 'medium', 'large']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",
       justify: "between",

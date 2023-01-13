@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusGood } from "grommet-icons/es6/icons/StatusGood";
-import { Box, Button, Form, FormField, TextInput } from 'grommet';
+import { Box, Button, Form, FormField, Select, TextInput } from 'grommet';
 export var ValidateOnBlur = function ValidateOnBlur() {
   return (
     /*#__PURE__*/
@@ -48,6 +48,24 @@ export var ValidateOnBlur = function ValidateOnBlur() {
       name: "email",
       "aria-label": "email",
       type: "email"
+    })), /*#__PURE__*/React.createElement(FormField, {
+      label: "Size",
+      name: "select-size",
+      htmlFor: "select-size__input",
+      required: true,
+      validate: function validate(val) {
+        if (val === 'small') {
+          return {
+            message: 'Only 10 left in stock!',
+            status: 'info'
+          };
+        }
+        return undefined;
+      }
+    }, /*#__PURE__*/React.createElement(Select, {
+      name: "select-size",
+      id: "select-size",
+      options: ['small', 'medium', 'large']
     })), /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       justify: "between",

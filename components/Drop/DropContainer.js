@@ -28,7 +28,6 @@ var defaultAlign = {
   top: 'top',
   left: 'left'
 };
-var defaultPortalContext = [];
 var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
@@ -53,7 +52,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerTarget = (0, _react.useContext)(_ContainerTargetContext.ContainerTargetContext);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-  var portalContext = (0, _react.useContext)(_utils.PortalContext) || defaultPortalContext;
+  var portalContext = (0, _react.useContext)(_utils.PortalContext);
   var portalId = (0, _react.useMemo)(function () {
     return portalContext.length;
   }, [portalContext]);

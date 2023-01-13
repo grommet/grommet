@@ -23,7 +23,6 @@ var defaultAlign = {
   top: 'top',
   left: 'left'
 };
-var defaultPortalContext = [];
 var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
@@ -48,7 +47,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerTarget = useContext(ContainerTargetContext);
   var theme = useContext(ThemeContext) || defaultProps.theme;
-  var portalContext = useContext(PortalContext) || defaultPortalContext;
+  var portalContext = useContext(PortalContext);
   var portalId = useMemo(function () {
     return portalContext.length;
   }, [portalContext]);

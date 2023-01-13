@@ -1,15 +1,12 @@
 import React from 'react';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { Close } from "grommet-icons/es6/icons/Close";
-import { Box, Button, FormField, Heading, Layer, Select, TextArea, TextInput } from 'grommet';
-var suggestions = ['alpha', 'beta'];
+import { StatusGood } from "grommet-icons/es6/icons/StatusGood";
+import { Box, Button, Form, FormField, Heading, Layer, Select, TextInput } from 'grommet';
 export var FormLayer = function FormLayer() {
   var _React$useState = React.useState(false),
     open = _React$useState[0],
     setOpen = _React$useState[1];
-  var _React$useState2 = React.useState(''),
-    select = _React$useState2[0],
-    setSelect = _React$useState2[1];
   var onOpen = function onOpen() {
     return setOpen(true);
   };
@@ -35,12 +32,19 @@ export var FormLayer = function FormLayer() {
       onClickOutside: onClose,
       onEsc: onClose
     }, /*#__PURE__*/React.createElement(Box, {
-      as: "form",
       fill: "vertical",
       overflow: "auto",
       width: "medium",
-      pad: "medium",
-      onSubmit: onClose
+      pad: "medium"
+    }, /*#__PURE__*/React.createElement(Form, {
+      validate: "blur",
+      onReset: function onReset(event) {
+        return console.log(event);
+      },
+      onSubmit: function onSubmit(_ref) {
+        var value = _ref.value;
+        return console.log('Submit', value);
+      }
     }, /*#__PURE__*/React.createElement(Box, {
       flex: false,
       direction: "row",
@@ -51,29 +55,52 @@ export var FormLayer = function FormLayer() {
     }, "Add"), /*#__PURE__*/React.createElement(Button, {
       icon: /*#__PURE__*/React.createElement(Close, null),
       onClick: onClose
-    })), /*#__PURE__*/React.createElement(Box, {
-      flex: "grow",
-      overflow: "auto",
-      pad: {
-        vertical: 'medium'
-      }
-    }, /*#__PURE__*/React.createElement(FormField, {
-      label: "First"
+    })), /*#__PURE__*/React.createElement(FormField, {
+      label: "Name",
+      "aria-label": "name",
+      name: "name",
+      required: true,
+      validate: [{
+        regexp: /^[a-z]/i
+      }, function (name) {
+        if (name && name.length === 1) return 'must be >1 character';
+        return undefined;
+      }, function (name) {
+        if (name === 'good') return {
+          message: /*#__PURE__*/React.createElement(Box, {
+            align: "end"
+          }, /*#__PURE__*/React.createElement(StatusGood, null)),
+          status: 'info'
+        };
+        return undefined;
+      }]
+    }), /*#__PURE__*/React.createElement(FormField, {
+      label: "Email",
+      name: "email",
+      required: true
     }, /*#__PURE__*/React.createElement(TextInput, {
-      suggestions: suggestions
+      name: "email",
+      "aria-label": "email",
+      type: "email"
     })), /*#__PURE__*/React.createElement(FormField, {
-      label: "Second"
-    }, /*#__PURE__*/React.createElement(Select, {
-      options: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
-      value: select,
-      onSearch: function onSearch() {},
-      onChange: function onChange(_ref) {
-        var option = _ref.option;
-        return setSelect(option);
+      label: "Size",
+      name: "select-size",
+      htmlFor: "select-size__input",
+      required: true,
+      validate: function validate(val) {
+        if (val === 'small') {
+          return {
+            message: 'Only 10 left in stock!',
+            status: 'info'
+          };
+        }
+        return undefined;
       }
-    })), /*#__PURE__*/React.createElement(FormField, {
-      label: "Third"
-    }, /*#__PURE__*/React.createElement(TextArea, null))), /*#__PURE__*/React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Select, {
+      name: "select-size",
+      id: "select-size",
+      options: ['small', 'medium', 'large']
+    })), /*#__PURE__*/React.createElement(Box, {
       flex: false,
       as: "footer",
       align: "start"
@@ -82,7 +109,7 @@ export var FormLayer = function FormLayer() {
       label: "Submit",
       onClick: onClose,
       primary: true
-    })))))
+    }))))))
     // </Grommet>
   );
 };

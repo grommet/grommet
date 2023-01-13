@@ -16,7 +16,6 @@ var HiddenAnchor = styled.a.withConfig({
   displayName: "LayerContainer__HiddenAnchor",
   componentId: "sc-1srj14c-0"
 })(["width:0;height:0;overflow:hidden;position:absolute;"]);
-var defaultPortalContext = [];
 var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var background = _ref.background,
     children = _ref.children,
@@ -46,7 +45,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var anchorRef = useRef();
   var containerRef = useRef();
   var layerRef = useRef();
-  var portalContext = useContext(PortalContext) || defaultPortalContext;
+  var portalContext = useContext(PortalContext);
   var portalId = useMemo(function () {
     return portalContext.length;
   }, [portalContext]);

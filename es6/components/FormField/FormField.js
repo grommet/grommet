@@ -6,7 +6,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { Children, cloneElement, forwardRef, useContext, useState, useEffect } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { containsFocus, shouldKeepFocus } from '../../utils/DOM';
+import { containsFocus, shouldKeepFocus, withinDropPortal, PortalContext } from '../../utils';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -177,6 +177,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   var formFieldTheme = theme.formField;
   var themeBorder = formFieldTheme.border;
   var debounce = useDebounce();
+  var portalContext = useContext(PortalContext);
 
   // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
@@ -342,7 +343,13 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     },
     onBlur: function onBlur(event) {
       setFocus(false);
-      if (contextOnBlur) contextOnBlur(event);
+
+      // if input has a drop and focus is within drop
+      // prevent onBlur validation from running until
+      // focus is no longer within the drop or input
+      if (contextOnBlur && !formFieldRef.current.contains(event.relatedTarget) && !withinDropPortal(event.relatedTarget, portalContext)) {
+        contextOnBlur(event);
+      }
       if (_onBlur) _onBlur(event);
     },
     onChange: contextOnChange || onChange ? function (event) {

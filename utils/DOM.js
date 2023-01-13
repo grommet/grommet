@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.shouldKeepFocus = exports.setFocusWithoutScroll = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.isFocusable = exports.getNewContainer = exports.getFirstFocusableDescendant = exports.findVisibleParent = exports.findScrollParents = exports.findScrollParent = exports.findButtonParent = exports.containsFocus = void 0;
+exports.withinDropPortal = exports.shouldKeepFocus = exports.setFocusWithoutScroll = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.isFocusable = exports.getNewContainer = exports.getFirstFocusableDescendant = exports.findVisibleParent = exports.findScrollParents = exports.findScrollParent = exports.findButtonParent = exports.containsFocus = void 0;
 var findScrollParent = function findScrollParent(element, horizontal) {
   var result;
   if (element) {
@@ -64,9 +64,27 @@ var containsFocus = function containsFocus(node) {
   }
   return !!element;
 };
+exports.containsFocus = containsFocus;
+var withinDropPortal = function withinDropPortal(node, portalContext) {
+  var root = node.getRootNode();
+  var element = node;
+  var portalId;
+  while (element && element !== root) {
+    if (element.hasAttribute('data-g-portal-id')) {
+      portalId = element.getAttribute('data-g-portal-id');
+      element = root;
+    } else {
+      element = element.parentElement;
+    }
+  }
+  // if portalContext doesn't contain the portalId then the
+  // portal is new and node is within a drop that just opened
+  if (portalId === undefined || portalContext.indexOf(parseInt(portalId, 10)) !== -1) return false;
+  return true;
+};
 
 // Check if the element.tagName is an input, select or textarea
-exports.containsFocus = containsFocus;
+exports.withinDropPortal = withinDropPortal;
 var isFocusable = function isFocusable(element) {
   var tagName = element.tagName.toLowerCase();
   return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
