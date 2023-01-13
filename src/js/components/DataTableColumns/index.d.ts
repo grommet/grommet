@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface DataTableColumnsProps {
-  drop?: boolean;
+  drop: boolean;
   options: (string | { property: string; label: string })[];
 }
 

@@ -146,7 +146,7 @@ const Content = ({ drop, options, ...rest }) => {
 };
 
 export const DataTableColumns = ({ drop, options, ...rest }) => {
-  const { messages } = useContext(DataContext);
+  const { id: dataId, messages } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
   const { format } = useContext(MessageContext);
   const [showContent, setShowContent] = useState();
@@ -158,6 +158,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
 
   const control = (
     <DropButton
+      id={`${dataId}--columns-control`}
       aria-label={format({
         id: 'dataTableColumns.open',
         messages: messages?.dataTableColumns,
