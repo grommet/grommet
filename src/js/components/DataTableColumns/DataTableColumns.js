@@ -28,6 +28,21 @@ const tabsProps = {
 const optionsToValue = (options) =>
   options.map((o) => (typeof o === 'object' && o.property) || o) || [];
 
+const optionProperty = (option) =>
+  typeof option === 'object' ? option.property : option;
+
+// align the order in value to the order in options, as best we can
+const alignOrder = (value, prevValue, options) =>
+  value.sort((p1, p2) => {
+    // if both are in prevValue, preserve the order from that
+    let i1 = prevValue.findIndex((n) => n === p1);
+    let i2 = prevValue.findIndex((n) => n === p2);
+    if (i1 !== -1 && i2 !== -1) return i1 - i2;
+    i1 = options.findIndex((o) => optionProperty(o) === p1);
+    i2 = options.findIndex((o) => optionProperty(o) === p2);
+    return i1 - i2;
+  });
+
 // Content is a separate component since it might be getting its form context
 // from the DataForm rendered inside DataTableColumns.
 const Content = ({ drop, options, ...rest }) => {
@@ -100,7 +115,9 @@ const Content = ({ drop, options, ...rest }) => {
               valueKey={(objectOptions && 'property') || undefined}
               labelKey={(objectOptions && 'label') || undefined}
               value={value}
-              onChange={({ value: nextValue }) => setValue(nextValue)}
+              onChange={({ value: nextValue }) =>
+                setValue(alignOrder(nextValue, value, options))
+              }
             />
           </Box>
         </Tab>
