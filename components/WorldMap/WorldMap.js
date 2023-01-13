@@ -117,9 +117,7 @@ var buildContinent = function buildContinent(_ref3) {
   var dots = dotsProp.map(function (segment) {
     var count = segment[2];
     var spots = [];
-    for (var i = 0; i < count; i += 1) {
-      spots.push('h0');
-    }
+    for (var i = 0; i < count; i += 1) spots.push('h0');
     var dotCommands = spots.join(' m10,0 ');
     var x = FACTOR * (origin[0] + segment[0] + 1);
     var y = FACTOR * (origin[1] + segment[1] + 1);

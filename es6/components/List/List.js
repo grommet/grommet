@@ -77,11 +77,7 @@ var getValue = function getValue(item, index, key) {
 var reorder = function reorder(array, pinnedArray, source, target) {
   var result = array.slice(0);
   var tmp = result[source];
-  if (source < target) for (var i = source; i < target; i += 1) {
-    result[i] = result[i + 1];
-  } else for (var _i = source; _i > target; _i -= 1) {
-    result[_i] = result[_i - 1];
-  }
+  if (source < target) for (var i = source; i < target; i += 1) result[i] = result[i + 1];else for (var _i = source; _i > target; _i -= 1) result[_i] = result[_i - 1];
   result[target] = tmp;
 
   // insert pinned items into their proper index within the orderable

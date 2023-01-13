@@ -583,7 +583,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   var days;
   var firstDayInMonth;
   var blankWeek = false;
-  while (day.getTime() < displayBounds[1].getTime()) {
+  var _loop = function _loop() {
     if (day.getDay() === firstDayOfWeek) {
       if (days) {
         weeks.push( /*#__PURE__*/React.createElement(StyledWeek, {
@@ -627,73 +627,74 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         fillContainer: fill
       })));
     } else {
-      (function () {
-        var dateObject = day;
-        // this.dayRefs[dateObject] = React.createRef();
-        var selected = false;
-        var inRange = false;
-        var selectedState = withinDates(day, range ? normalizeRange(value, activeDate) : value);
-        if (selectedState === 2) {
-          selected = true;
-        } else if (selectedState === 1) {
-          inRange = true;
-        }
-        var dayDisabled = withinDates(day, normalizeInput(disabled)) || bounds && !betweenDates(day, normalizeInput(bounds));
-        if (!firstDayInMonth && !dayDisabled && day.getMonth() === reference.getMonth()) {
-          firstDayInMonth = dateObject;
-        }
-        if (!children) {
-          days.push( /*#__PURE__*/React.createElement(CalendarDay, {
-            key: day.getTime(),
-            buttonProps: {
-              a11yTitle: day.toDateString(),
-              active: active && active.getTime() === day.getTime(),
-              disabled: dayDisabled && !!dayDisabled,
-              onClick: function onClick() {
-                return _onClick(dateObject);
-              },
-              onMouseOver: function onMouseOver() {
-                return setActive(dateObject);
-              },
-              onMouseOut: function onMouseOut() {
-                return setActive(undefined);
-              }
+      var dateObject = day;
+      // this.dayRefs[dateObject] = React.createRef();
+      var selected = false;
+      var inRange = false;
+      var selectedState = withinDates(day, range ? normalizeRange(value, activeDate) : value);
+      if (selectedState === 2) {
+        selected = true;
+      } else if (selectedState === 1) {
+        inRange = true;
+      }
+      var dayDisabled = withinDates(day, normalizeInput(disabled)) || bounds && !betweenDates(day, normalizeInput(bounds));
+      if (!firstDayInMonth && !dayDisabled && day.getMonth() === reference.getMonth()) {
+        firstDayInMonth = dateObject;
+      }
+      if (!children) {
+        days.push( /*#__PURE__*/React.createElement(CalendarDay, {
+          key: day.getTime(),
+          buttonProps: {
+            a11yTitle: day.toDateString(),
+            active: active && active.getTime() === day.getTime(),
+            disabled: dayDisabled && !!dayDisabled,
+            onClick: function onClick() {
+              return _onClick(dateObject);
             },
-            isInRange: inRange,
-            isSelected: selected,
-            otherMonth: day.getMonth() !== reference.getMonth(),
-            size: size,
-            fill: fill
-          }, day.getDate()));
-        } else {
-          days.push( /*#__PURE__*/React.createElement(CalendarCustomDay, {
-            key: day.getTime(),
-            buttonProps: onSelect ? {
-              a11yTitle: day.toDateString(),
-              active: active && active.getTime() === day.getTime(),
-              disabled: dayDisabled && !!dayDisabled,
-              onClick: function onClick() {
-                return _onClick(dateObject);
-              },
-              onMouseOver: function onMouseOver() {
-                return setActive(dateObject);
-              },
-              onMouseOut: function onMouseOut() {
-                return setActive(undefined);
-              }
-            } : null,
-            size: size,
-            fill: fill
-          }, children({
-            date: day,
-            day: day.getDate(),
-            isInRange: inRange,
-            isSelected: selected
-          })));
-        }
-      })();
+            onMouseOver: function onMouseOver() {
+              return setActive(dateObject);
+            },
+            onMouseOut: function onMouseOut() {
+              return setActive(undefined);
+            }
+          },
+          isInRange: inRange,
+          isSelected: selected,
+          otherMonth: day.getMonth() !== reference.getMonth(),
+          size: size,
+          fill: fill
+        }, day.getDate()));
+      } else {
+        days.push( /*#__PURE__*/React.createElement(CalendarCustomDay, {
+          key: day.getTime(),
+          buttonProps: onSelect ? {
+            a11yTitle: day.toDateString(),
+            active: active && active.getTime() === day.getTime(),
+            disabled: dayDisabled && !!dayDisabled,
+            onClick: function onClick() {
+              return _onClick(dateObject);
+            },
+            onMouseOver: function onMouseOver() {
+              return setActive(dateObject);
+            },
+            onMouseOut: function onMouseOut() {
+              return setActive(undefined);
+            }
+          } : null,
+          size: size,
+          fill: fill
+        }, children({
+          date: day,
+          day: day.getDate(),
+          isInRange: inRange,
+          isSelected: selected
+        })));
+      }
     }
     day = addDays(day, 1);
+  };
+  while (day.getTime() < displayBounds[1].getTime()) {
+    _loop();
   }
   weeks.push( /*#__PURE__*/React.createElement(StyledWeek
   // if a week contains only blank days, for screen reader accessibility

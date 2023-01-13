@@ -115,9 +115,7 @@ var charCodeZero = '0'.charCodeAt(0);
 var charCodeNine = '9'.charCodeAt(0);
 var pullDigits = function pullDigits(text, index) {
   var end = index;
-  while (text.charCodeAt(end) >= charCodeZero && text.charCodeAt(end) <= charCodeNine) {
-    end += 1;
-  }
+  while (text.charCodeAt(end) >= charCodeZero && text.charCodeAt(end) <= charCodeNine) end += 1;
   return text.slice(index, end);
 };
 export var validateBounds = function validateBounds(dateBounds, selectedDate) {

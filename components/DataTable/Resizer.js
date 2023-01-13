@@ -34,9 +34,7 @@ var Resizer = function Resizer(_ref) {
     if (ref.current) {
       var element = ref.current;
       // find TH parent
-      while (element && element.nodeName !== 'TH') {
-        element = element.parentNode;
-      }
+      while (element && element.nodeName !== 'TH') element = element.parentNode;
       var rect = element.getBoundingClientRect();
       setStart(event.clientX);
       setWidth(rect.width);

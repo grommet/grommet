@@ -59,9 +59,7 @@ var getIconColor = function getIconColor(paths, theme, colorProp, kind) {
     // for example: 'active.primary'
     if (paths[index]) {
       var parts = paths[index].split('.');
-      while (obj && parts.length) {
-        obj = obj[parts.shift()];
-      }
+      while (obj && parts.length) obj = obj[parts.shift()];
     }
     if (obj) {
       var _obj, _obj$icon, _obj$icon$props;
@@ -78,9 +76,7 @@ var getIconColor = function getIconColor(paths, theme, colorProp, kind) {
       else if (paths[index + 1]) {
         var _obj2, _obj2$icon, _obj2$icon$props;
         var _parts = paths[index + 1].split('.');
-        while (baseObj && _parts.length) {
-          obj = baseObj[_parts.shift()];
-        }
+        while (baseObj && _parts.length) obj = baseObj[_parts.shift()];
         if ((_obj2 = obj) != null && (_obj2$icon = _obj2.icon) != null && (_obj2$icon$props = _obj2$icon.props) != null && _obj2$icon$props.color) color = obj.icon.props.color;
       }
       // use passed in color for text if the theme doesn't have
@@ -111,9 +107,7 @@ var getKindIcon = function getKindIcon(paths, theme, kind) {
     // for example: 'active.primary'
     if (paths[index]) {
       var parts = paths[index].split('.');
-      while (obj && parts.length) {
-        obj = obj[parts.shift()];
-      }
+      while (obj && parts.length) obj = obj[parts.shift()];
     }
     if ((_obj3 = obj) != null && _obj3.icon) result = obj.icon;
     index -= 1;
@@ -130,9 +124,7 @@ var getPropertyColor = function getPropertyColor(property, paths, theme, kind, p
     // index 0 is default state
     if (paths[0]) {
       var parts = paths[0].split('.');
-      while (obj && parts.length) {
-        obj = obj[parts.shift()];
-      }
+      while (obj && parts.length) obj = obj[parts.shift()];
     }
     if (obj) {
       result = obj[property] || obj[property] && obj[property].color;

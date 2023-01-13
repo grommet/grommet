@@ -61,9 +61,7 @@ var getPath = function getPath(theme, path) {
   if (path) {
     obj = theme;
     var parts = path.split('.');
-    while (obj && parts.length) {
-      obj = obj[parts.shift()];
-    }
+    while (obj && parts.length) obj = obj[parts.shift()];
   }
   return obj;
 };

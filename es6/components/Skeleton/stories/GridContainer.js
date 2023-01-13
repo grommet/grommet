@@ -5,9 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Button, Card, Grid, Image, Text } from 'grommet';
 import { FormAdd } from "grommet-icons/es6/icons/FormAdd";
 var labels = [];
-for (var i = 0; i < 10; i += 1) {
-  labels.push("Item " + i);
-}
+for (var i = 0; i < 10; i += 1) labels.push("Item " + i);
 var skeleton = {
   message: {
     start: 'Loading',

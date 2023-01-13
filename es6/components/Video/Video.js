@@ -173,7 +173,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       var nextCaptions = [];
       var set = false;
       // iterate through all of the tracks provided
-      var _loop = function _loop(i) {
+      var _loop = function _loop() {
         var track = textTracks[i];
         var active = track.mode === 'showing';
         var getActiveTrack = function getActiveTrack(currentVideoTime) {
@@ -218,7 +218,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
         }
       };
       for (var i = 0; i < textTracks.length; i += 1) {
-        _loop(i);
+        _loop();
       }
     }
   }, [activeTrack, announce, announceAudioDescription, captions, height, videoRef, width]);
@@ -258,9 +258,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [videoRef]);
   var showCaptions = useCallback(function (index) {
     var textTracks = videoRef.current.textTracks;
-    for (var i = 0; i < textTracks.length; i += 1) {
-      textTracks[i].mode = i === index ? 'showing' : 'hidden';
-    }
+    for (var i = 0; i < textTracks.length; i += 1) textTracks[i].mode = i === index ? 'showing' : 'hidden';
   }, [videoRef]);
   var fullscreen = useCallback(function () {
     var video = videoRef.current;
@@ -404,9 +402,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
         return undefined;
       }
       if (item === 'captions' && typeof buttonProps[item] === 'object') {
-        for (var i = 0; i < buttonProps[item].length; i += 1) {
-          controlsMenuItems.push(buttonProps[item][i]);
-        }
+        for (var i = 0; i < buttonProps[item].length; i += 1) controlsMenuItems.push(buttonProps[item][i]);
         return undefined;
       }
       if (item === 'descriptions') {
