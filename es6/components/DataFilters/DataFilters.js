@@ -1,7 +1,7 @@
 var _excluded = ["drop", "children", "heading"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { Children, useContext, useState } from 'react';
+import React, { Children, useContext, useMemo, useState } from 'react';
 import { Filter } from 'grommet-icons/icons/Filter';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -28,22 +28,39 @@ export var DataFilters = function DataFilters(_ref) {
     clearFilters = _useContext.clearFilters,
     data = _useContext.data,
     messages = _useContext.messages,
-    properties = _useContext.properties,
-    view = _useContext.view;
+    properties = _useContext.properties;
   var _useContext2 = useContext(MessageContext),
     format = _useContext2.format;
   var _useState = useState(),
     showContent = _useState[0],
     setShowContent = _useState[1];
-  var controlled = drop;
-  var clearControl = clearFilters && /*#__PURE__*/React.createElement(Box, {
+  // touched is a map of form field name to its value, it only has fields that
+  // were changed as part of the DataForm here. This is so we can track based
+  // on what's inside DataFilters as opposed to trying to track from the view
+  // object.
+  var _useState2 = useState({}),
+    touched = _useState2[0],
+    setTouched = _useState2[1];
+  var controlled = useMemo(function () {
+    return drop;
+  }, [drop]);
+  // generate the badge value based on touched fields that have a value
+  var badge = useMemo(function () {
+    return controlled && Object.keys(touched).filter(function (k) {
+      return touched[k];
+    }).length || undefined;
+  }, [controlled, touched]);
+  var clearControl = badge && /*#__PURE__*/React.createElement(Box, {
     flex: false
   }, /*#__PURE__*/React.createElement(Button, {
     label: format({
       id: 'dataFilters.clear',
       messages: messages == null ? void 0 : messages.dataFilters
     }),
-    onClick: clearFilters
+    onClick: function onClick() {
+      setTouched({});
+      clearFilters();
+    }
   }));
   var filters;
   if (Children.count(children) === 0) {
@@ -61,7 +78,17 @@ export var DataFilters = function DataFilters(_ref) {
     gap: "small",
     onDone: function onDone() {
       return setShowContent(false);
-    }
+    },
+    onTouched: controlled ? function (currentTouched) {
+      return (
+        // we merge this with our prior state to handle the case where the
+        // user opens and closes the drop multiple times and we want to
+        // track both new changes and prior changes.
+        setTouched(function (prevTouched) {
+          return _extends({}, prevTouched, currentTouched);
+        })
+      );
+    } : undefined
   }, !controlled ? rest : {}), !drop && /*#__PURE__*/React.createElement(Header, null, /*#__PURE__*/React.createElement(Heading, {
     margin: "none",
     level: 2,
@@ -71,11 +98,6 @@ export var DataFilters = function DataFilters(_ref) {
     messages: messages == null ? void 0 : messages.dataFilters
   })), !controlled && clearControl), filters, children);
   if (!controlled) return content;
-  var badge = 0;
-  if (view != null && view.properties) badge += Object.keys(view.properties).length;
-  if (view != null && view.search) badge += 1;
-  if (view != null && view.sort) badge += 1;
-  if (!badge) badge = undefined;
 
   // drop
   var control = /*#__PURE__*/React.createElement(DropButton, {

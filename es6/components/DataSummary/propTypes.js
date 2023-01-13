@@ -3,8 +3,8 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     messages: PropTypes.shape({
-      filtered: PropTypes.string,
-      total: PropTypes.string
+      filteredTotal: PropTypes.number,
+      total: PropTypes.number
     })
   };
 }

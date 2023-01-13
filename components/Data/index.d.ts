@@ -2,6 +2,7 @@ import * as React from 'react';
 import { BoxProps } from '../Box/index';
 
 export interface View {
+  page?: number; // when paging
   properties?:
     | string[]
     | {
@@ -15,6 +16,7 @@ export interface View {
     property: string;
     direction: 'asc' | 'desc';
   };
+  step?: number; // page size
 
   // Future column ordering, requires 'properties' property on Data
   // columns?: string[];
@@ -28,7 +30,10 @@ export interface DataProps {
 
   data: object[];
   total?: number;
+  // when paging
+  filteredTotal?: number;
 
+  defaultView?: View;
   view?: View;
   onView?: (view: View) => void;
   // when view changes should be delivered
@@ -82,7 +87,7 @@ export interface DataProps {
       direction?: string;
     };
     dataSummary?: {
-      filtered?: string;
+      filteredTotal?: string;
       total?: string;
     };
   };

@@ -4,6 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
+import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageControl } from './PageControl';
@@ -22,6 +23,7 @@ var getPageIndices = function getPageIndices(begin, end) {
   return indices;
 };
 var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _ref2;
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
     numberItems = _ref.numberItems,
@@ -32,19 +34,25 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onChange = _ref.onChange,
     pageProp = _ref.page,
     size = _ref.size,
-    _ref$step = _ref.step,
-    step = _ref$step === void 0 ? 10 : _ref$step,
+    stepProp = _ref.step,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
+  var _useContext = useContext(DataContext),
+    onView = _useContext.onView,
+    filteredTotal = _useContext.filteredTotal,
+    view = _useContext.view;
+  var step = stepProp || (view == null ? void 0 : view.step) || 10;
+  var total = (_ref2 = numberItems != null ? numberItems : filteredTotal) != null ? _ref2 : 0;
+  var page = pageProp || (view == null ? void 0 : view.page) || 1;
 
   /* Calculate total number pages */
-  var totalPages = Math.ceil(numberItems / step);
-  var _useState = useState(Math.min(pageProp, totalPages) || 1),
+  var totalPages = Math.ceil(total / step);
+  var _useState = useState(Math.min(page, totalPages) || 1),
     activePage = _useState[0],
     setActivePage = _useState[1];
   useEffect(function () {
-    setActivePage(pageProp || 1);
-  }, [pageProp]);
+    return setActivePage(page);
+  }, [page]);
 
   /* Define page indices to display */
   var beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
@@ -78,6 +86,9 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
   };
   var handleClick = function handleClick(event, nextPage) {
     setActivePage(nextPage);
+    if (onView) onView(_extends({}, view, {
+      page: nextPage
+    }));
     if (onChange) {
       event.persist();
       var adjustedEvent = event;
@@ -100,7 +111,7 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     next: {
       // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
       'aria-disabled': activePage === totalPages ? 'true' : undefined,
-      disabled: activePage === totalPages || !numberItems,
+      disabled: activePage === totalPages || !total,
       icon: /*#__PURE__*/React.createElement(NextIcon, {
         color: iconColor
       }),
@@ -112,7 +123,7 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     },
     previous: {
       'aria-disabled': activePage === 1 ? 'true' : undefined,
-      disabled: activePage === 1 || !numberItems,
+      disabled: activePage === 1 || !total,
       icon: /*#__PURE__*/React.createElement(PreviousIcon, {
         color: iconColor
       }),

@@ -12,12 +12,12 @@ export var DataSummary = function DataSummary(_ref) {
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var _useContext2 = useContext(DataContext),
-    data = _useContext2.data,
+    filteredTotal = _useContext2.filteredTotal,
     dataMessages = _useContext2.messages,
     total = _useContext2.total;
   var messageId;
-  if (total !== data.length) {
-    if (data.length === 1) messageId = 'dataSummary.filteredSingle';else messageId = 'dataSummary.filtered';
+  if (total !== filteredTotal) {
+    if (filteredTotal === 1) messageId = 'dataSummary.filteredSingle';else messageId = 'dataSummary.filtered';
   } else messageId = 'dataSummary.total';
   return /*#__PURE__*/React.createElement(Text, _extends({
     margin: {
@@ -27,7 +27,7 @@ export var DataSummary = function DataSummary(_ref) {
     id: messageId,
     messages: messages || (dataMessages == null ? void 0 : dataMessages.dataSummary),
     values: {
-      filtered: data.length,
+      filteredTotal: filteredTotal,
       total: total
     }
   }));

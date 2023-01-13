@@ -8,8 +8,8 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     messages: _propTypes["default"].shape({
-      filtered: _propTypes["default"].string,
-      total: _propTypes["default"].string
+      filteredTotal: _propTypes["default"].number,
+      total: _propTypes["default"].number
     })
   };
 }

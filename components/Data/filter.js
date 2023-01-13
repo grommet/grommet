@@ -11,7 +11,7 @@ var datumValue = function datumValue(datum, property) {
   return datumValue(datum[parts[0]], parts.slice(1).join('.'));
 };
 
-// This is where we filter the data internall, when the caller doesn't
+// This is where we filter the data internally, when the caller doesn't
 // provide an onView.
 var filter = function filter(data, view, properties) {
   var _view$sort, _view$sort2;
@@ -26,7 +26,7 @@ var filter = function filter(data, view, properties) {
     // if none specified, look in all defined properties
     if (searchProperties.length === 0) searchProperties = Object.keys(properties);
   }
-  var result = data.filter(function (datum) {
+  var filteredData = data.filter(function (datum) {
     var matched = true;
 
     // check whether it matches any search
@@ -66,11 +66,11 @@ var filter = function filter(data, view, properties) {
     var _view$sort3 = view.sort,
       property = _view$sort3.property,
       direction = _view$sort3.direction;
-    var prop = property || result.length && Object.keys(result[0])[0];
+    var prop = property || filteredData.length && Object.keys(filteredData[0])[0];
     var sortDesc = direction === 'desc'; // default to asc
     var before = sortDesc ? -1 : 1;
     var after = sortDesc ? 1 : -1;
-    result.sort(function (d1, d2) {
+    filteredData.sort(function (d1, d2) {
       var d1Val = datumValue(d1, prop);
       var d2Val = datumValue(d2, prop);
       // sort strings via locale case insensitive
@@ -86,6 +86,17 @@ var filter = function filter(data, view, properties) {
       return 0;
     });
   }
-  return result;
+  var pagedData;
+  if (view != null && view.step) {
+    var _view$page;
+    var start = view.step * (((_view$page = view == null ? void 0 : view.page) != null ? _view$page : 1) - 1);
+    pagedData = filteredData.slice(start, start + view.step);
+  }
+  return {
+    unfilteredData: data,
+    data: pagedData || filteredData,
+    total: data.length,
+    filteredTotal: filteredData.length
+  };
 };
 exports.filter = filter;

@@ -16,6 +16,7 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     data: _propTypes["default"].arrayOf(_propTypes["default"].shape({})),
+    defaultView: viewType,
     onView: _propTypes["default"].func,
     properties: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].string), _propTypes["default"].shape({})]),
     toolbar: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['search', 'filters'])]),

@@ -5,6 +5,7 @@ exports.Pagination = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _defaultProps = require("../../default-props");
+var _DataContext = require("../../contexts/DataContext");
 var _Box = require("../Box");
 var _Nav = require("../Nav");
 var _PageControl = require("./PageControl");
@@ -28,6 +29,7 @@ var getPageIndices = function getPageIndices(begin, end) {
   return indices;
 };
 var Pagination = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var _ref2;
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
     numberItems = _ref.numberItems,
@@ -38,19 +40,25 @@ var Pagination = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onChange = _ref.onChange,
     pageProp = _ref.page,
     size = _ref.size,
-    _ref$step = _ref.step,
-    step = _ref$step === void 0 ? 10 : _ref$step,
+    stepProp = _ref.step,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var _useContext = (0, _react.useContext)(_DataContext.DataContext),
+    onView = _useContext.onView,
+    filteredTotal = _useContext.filteredTotal,
+    view = _useContext.view;
+  var step = stepProp || (view == null ? void 0 : view.step) || 10;
+  var total = (_ref2 = numberItems != null ? numberItems : filteredTotal) != null ? _ref2 : 0;
+  var page = pageProp || (view == null ? void 0 : view.page) || 1;
 
   /* Calculate total number pages */
-  var totalPages = Math.ceil(numberItems / step);
-  var _useState = (0, _react.useState)(Math.min(pageProp, totalPages) || 1),
+  var totalPages = Math.ceil(total / step);
+  var _useState = (0, _react.useState)(Math.min(page, totalPages) || 1),
     activePage = _useState[0],
     setActivePage = _useState[1];
   (0, _react.useEffect)(function () {
-    setActivePage(pageProp || 1);
-  }, [pageProp]);
+    return setActivePage(page);
+  }, [page]);
 
   /* Define page indices to display */
   var beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
@@ -84,6 +92,9 @@ var Pagination = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   };
   var handleClick = function handleClick(event, nextPage) {
     setActivePage(nextPage);
+    if (onView) onView(_extends({}, view, {
+      page: nextPage
+    }));
     if (onChange) {
       event.persist();
       var adjustedEvent = event;
@@ -106,7 +117,7 @@ var Pagination = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     next: {
       // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
       'aria-disabled': activePage === totalPages ? 'true' : undefined,
-      disabled: activePage === totalPages || !numberItems,
+      disabled: activePage === totalPages || !total,
       icon: /*#__PURE__*/_react["default"].createElement(NextIcon, {
         color: iconColor
       }),
@@ -118,7 +129,7 @@ var Pagination = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     },
     previous: {
       'aria-disabled': activePage === 1 ? 'true' : undefined,
-      disabled: activePage === 1 || !numberItems,
+      disabled: activePage === 1 || !total,
       icon: /*#__PURE__*/_react["default"].createElement(PreviousIcon, {
         color: iconColor
       }),

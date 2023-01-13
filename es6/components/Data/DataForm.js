@@ -1,4 +1,4 @@
-var _excluded = ["children", "footer", "gap", "onDone", "pad"];
+var _excluded = ["children", "footer", "gap", "onDone", "onTouched", "pad"];
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 import React, { useContext, useEffect, useState } from 'react';
@@ -27,6 +27,14 @@ var hideButtonProps = {
 var formSearchKey = '_search';
 var formSortKey = '_sort';
 var formRangeKey = '_range';
+var formStepKey = '_step';
+var formPageKey = '_page';
+var viewFormKeyMap = {
+  search: formSearchKey,
+  sort: formSortKey,
+  step: formStepKey,
+  page: formPageKey
+};
 
 // converts from the external view format to the internal Form value format
 var viewToFormValue = function viewToFormValue(view) {
@@ -39,24 +47,27 @@ var viewToFormValue = function viewToFormValue(view) {
       result[key] = (_result$key3 = {}, _result$key3[formRangeKey] = [result[key].min, result[key].max], _result$key3);
     }
   });
-  result[formSearchKey] = (view == null ? void 0 : view.search) || '';
-  if (view != null && view.sort) result[formSortKey] = view == null ? void 0 : view.sort;
+
+  // convert formal view keys to their form '_' prefixed counterparts
+  Object.keys(viewFormKeyMap).forEach(function (key) {
+    if (view != null && view[key]) result[viewFormKeyMap[key]] = view[key];
+  });
+  // always have some blank search text
+  if (!result[formSearchKey]) result[formSearchKey] = '';
   return result;
 };
 
 // converts from the internal Form value format to the external view format
 var formValueToView = function formValueToView(value) {
-  var properties = _extends({}, value);
-  var searchText = value[formSearchKey];
-  delete properties[formSearchKey];
-  var sort = value[formSortKey];
-  delete properties[formSortKey];
-  var result = _extends({
-    properties: properties,
-    search: searchText
-  }, sort ? {
-    sort: sort
-  } : {});
+  var result = {};
+  var valueCopy = _extends({}, value);
+  Object.keys(viewFormKeyMap).forEach(function (key) {
+    if (valueCopy[viewFormKeyMap[key]]) {
+      result[key] = valueCopy[viewFormKeyMap[key]];
+      delete valueCopy[viewFormKeyMap[key]];
+    }
+  });
+  result.properties = valueCopy;
 
   // convert any ranges
   Object.keys(result.properties).forEach(function (key) {
@@ -73,11 +84,25 @@ var formValueToView = function formValueToView(value) {
 // remove any empty arrays of property values by deleting the key for
 // that property in the view properties
 var clearEmpty = function clearEmpty(properties) {
-  var result = properties;
-  Object.keys(result).filter(function (k) {
+  Object.keys(properties).filter(function (k) {
     return k !== formSearchKey;
   }).forEach(function (k) {
-    if (Array.isArray(result[k]) && result[k].length === 0) delete result[k];
+    if (Array.isArray(properties[k]) && properties[k].length === 0)
+      // eslint-disable-next-line no-param-reassign
+      delete properties[k];
+  });
+};
+
+// if paging, when anything other than the page changes, reset the page to 1
+var resetPage = function resetPage(nextFormValue, prevFormValue) {
+  if (prevFormValue[formPageKey] && prevFormValue[formPageKey] > 1)
+    // eslint-disable-next-line no-param-reassign
+    nextFormValue[formPageKey] = 1;
+};
+var transformTouched = function transformTouched(touched, value) {
+  var result = {};
+  Object.keys(touched).forEach(function (key) {
+    result[key] = value[key];
   });
   return result;
 };
@@ -86,6 +111,7 @@ export var DataForm = function DataForm(_ref) {
     footer = _ref.footer,
     gap = _ref.gap,
     onDone = _ref.onDone,
+    onTouched = _ref.onTouched,
     pad = _ref.pad,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = useContext(DataContext),
@@ -107,18 +133,26 @@ export var DataForm = function DataForm(_ref) {
   return /*#__PURE__*/React.createElement(Form, _extends({}, rest, {
     value: formValue,
     onSubmit: updateOn === 'submit' ? function (_ref2) {
-      var nextValue = _ref2.value;
+      var nextValue = _ref2.value,
+        touched = _ref2.touched;
       clearEmpty(nextValue);
+      resetPage(nextValue, formValue);
       setFormValue(nextValue);
       setChanged(false);
+      if (onTouched) onTouched(transformTouched(touched, nextValue));
       onView(formValueToView(nextValue));
       if (onDone) onDone();
     } : undefined,
-    onChange: function onChange(nextValue) {
+    onChange: function onChange(nextValue, _ref3) {
+      var touched = _ref3.touched;
       clearEmpty(nextValue);
+      resetPage(nextValue, formValue);
       setFormValue(nextValue);
       setChanged(true);
-      if (updateOn === 'change') onView(formValueToView(nextValue));
+      if (updateOn === 'change') {
+        if (onTouched) onTouched(transformTouched(touched, nextValue));
+        onView(formValueToView(nextValue));
+      }
     }
   }), /*#__PURE__*/React.createElement(Box, {
     flex: false,

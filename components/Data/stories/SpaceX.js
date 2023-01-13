@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.Table = void 0;
+exports["default"] = exports.SpaceX = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _grommet = require("grommet");
 var _grommetIcons = require("grommet-icons");
@@ -54,7 +54,7 @@ var fetchLaunches = /*#__PURE__*/function () {
               }],
               sort: sort,
               select: ['name', 'success', 'failures'],
-              limit: (view == null ? void 0 : view.limit) || 10,
+              limit: (view == null ? void 0 : view.step) || 10,
               page: (view == null ? void 0 : view.page) || 1
             },
             query: query
@@ -155,58 +155,60 @@ var columns = [{
     return undefined;
   }
 }];
-var Table = function Table() {
-  var _rockets$docs;
-  var _useState = (0, _react.useState)(),
-    data = _useState[0],
-    setData = _useState[1];
-  var _useState2 = (0, _react.useState)(),
-    rockets = _useState2[0],
-    setRockets = _useState2[1];
-  var _useState3 = (0, _react.useState)({
-      search: ''
+var defaultView = {
+  search: '',
+  sort: {
+    property: 'name',
+    direction: 'asc'
+  },
+  step: 10
+};
+var SpaceX = function SpaceX() {
+  var _useState = (0, _react.useState)(0),
+    total = _useState[0],
+    setTotal = _useState[1];
+  var _useState2 = (0, _react.useState)({
+      data: []
     }),
-    view = _useState3[0],
-    setView = _useState3[1];
-  var _useState4 = (0, _react.useState)({
-      property: 'name',
-      direction: 'asc'
-    }),
-    sort = _useState4[0],
-    setSort = _useState4[1];
-  var _useState5 = (0, _react.useState)(1),
-    page = _useState5[0],
-    setPage = _useState5[1];
-  var limit = 10;
-  var search = view.search || '';
+    result = _useState2[0],
+    setResult = _useState2[1];
+  var _useState3 = (0, _react.useState)([]),
+    rockets = _useState3[0],
+    setRockets = _useState3[1];
+  var _useState4 = (0, _react.useState)(defaultView),
+    view = _useState4[0],
+    setView = _useState4[1];
   (0, _react.useEffect)(function () {
-    fetchRockets().then(function (d) {
-      return setRockets(d);
+    fetchRockets().then(function (response) {
+      return setRockets(response.docs.map(function (_ref4) {
+        var name = _ref4.name,
+          id = _ref4.id;
+        return {
+          value: id,
+          label: name
+        };
+      }));
     });
   }, []);
   (0, _react.useEffect)(function () {
-    fetchLaunches({
-      search: search,
-      limit: limit,
-      page: page,
-      sort: sort,
-      properties: view.properties
-    }).then(function (d) {
-      return setData(d);
+    fetchLaunches(view).then(function (response) {
+      setResult({
+        data: response.docs,
+        filteredTotal: response.totalDocs,
+        page: response.page
+      });
+      // The REST API doesn't return the unfiltered total in responses.
+      // Since the first request likely has no filtering, we'll likely use
+      // response.totalDocs the first time and prevTotal thereafter.
+      setTotal(function (prevTotal) {
+        return Math.max(prevTotal, response.totalDocs);
+      });
     });
-  }, [search, limit, page, sort, view.properties]);
-  var numberItems = (data == null ? void 0 : data.totalDocs) || 0;
-  var pageResultStart = (page - 1) * limit + 1;
-  var pageResultEnd = Math.min(page * limit, numberItems);
-  var rocketOptions = (rockets == null ? void 0 : (_rockets$docs = rockets.docs) == null ? void 0 : _rockets$docs.map(function (_ref4) {
-    var name = _ref4.name,
-      id = _ref4.id;
-    return {
-      value: id,
-      label: name
-    };
-  })) || [];
-  var docs = (data == null ? void 0 : data.docs) || [];
+  }, [view]);
+  var pageBounds = (0, _react.useMemo)(function () {
+    if (result != null && result.page) return [(result.page - 1) * view.step + 1, Math.min(result.page * view.step, result.filteredTotal)];
+    return [];
+  }, [result, view]);
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -224,53 +226,35 @@ var Table = function Table() {
       properties: {
         rocket: {
           label: 'Rocket',
-          options: rocketOptions
+          options: rockets
         },
         success: {
           label: 'Success',
           options: ['Successful', 'Failed']
         }
       },
-      data: docs,
-      total: numberItems,
+      data: result.data,
+      total: total,
+      filteredTotal: result.filteredTotal,
+      defaultView: defaultView,
       view: view,
-      onView: function onView(nextView) {
-        setView(nextView);
-        setPage(1);
-      },
+      onView: setView,
       toolbar: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: columns,
-      sort: _extends({}, sort, {
+      sort: _extends({}, view.sort, {
         external: true
-      }),
-      onSort: function onSort(opts) {
-        return setSort(opts);
-      }
-    })), numberItems > limit && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      direction: "row-responsive",
-      fill: "horizontal",
-      border: "top",
-      justify: "end",
-      pad: {
-        vertical: 'xsmall'
-      }
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Showing ", pageResultStart, "-", pageResultEnd, " of ", numberItems), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
-      step: limit,
-      numberItems: numberItems,
-      page: page,
-      onChange: function onChange(opts) {
-        return setPage(opts.page);
-      },
-      direction: "row",
-      flex: false
-    }))))
+      })
+      // TODO: in some other pull request,
+      // integrate sorting between Data and DataTable
+      // onSort={(opts) => setSort(opts)}
+    }), result.filteredTotal > view.step && /*#__PURE__*/_react["default"].createElement(_grommet.Footer, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Showing ", pageBounds[0], "-", pageBounds[1], " of", ' ', result.filteredTotal), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, null)))))
     // </Grommet>
   );
 };
-exports.Table = Table;
-Table.storyName = 'SpaceX';
-Table.args = {
+exports.SpaceX = SpaceX;
+SpaceX.storyName = 'SpaceX';
+SpaceX.args = {
   full: true
 };
 var _default = {

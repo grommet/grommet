@@ -34,22 +34,39 @@ var DataFilters = function DataFilters(_ref) {
     clearFilters = _useContext.clearFilters,
     data = _useContext.data,
     messages = _useContext.messages,
-    properties = _useContext.properties,
-    view = _useContext.view;
+    properties = _useContext.properties;
   var _useContext2 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext2.format;
   var _useState = (0, _react.useState)(),
     showContent = _useState[0],
     setShowContent = _useState[1];
-  var controlled = drop;
-  var clearControl = clearFilters && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  // touched is a map of form field name to its value, it only has fields that
+  // were changed as part of the DataForm here. This is so we can track based
+  // on what's inside DataFilters as opposed to trying to track from the view
+  // object.
+  var _useState2 = (0, _react.useState)({}),
+    touched = _useState2[0],
+    setTouched = _useState2[1];
+  var controlled = (0, _react.useMemo)(function () {
+    return drop;
+  }, [drop]);
+  // generate the badge value based on touched fields that have a value
+  var badge = (0, _react.useMemo)(function () {
+    return controlled && Object.keys(touched).filter(function (k) {
+      return touched[k];
+    }).length || undefined;
+  }, [controlled, touched]);
+  var clearControl = badge && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     flex: false
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     label: format({
       id: 'dataFilters.clear',
       messages: messages == null ? void 0 : messages.dataFilters
     }),
-    onClick: clearFilters
+    onClick: function onClick() {
+      setTouched({});
+      clearFilters();
+    }
   }));
   var filters;
   if (_react.Children.count(children) === 0) {
@@ -67,7 +84,17 @@ var DataFilters = function DataFilters(_ref) {
     gap: "small",
     onDone: function onDone() {
       return setShowContent(false);
-    }
+    },
+    onTouched: controlled ? function (currentTouched) {
+      return (
+        // we merge this with our prior state to handle the case where the
+        // user opens and closes the drop multiple times and we want to
+        // track both new changes and prior changes.
+        setTouched(function (prevTouched) {
+          return _extends({}, prevTouched, currentTouched);
+        })
+      );
+    } : undefined
   }, !controlled ? rest : {}), !drop && /*#__PURE__*/_react["default"].createElement(_Header.Header, null, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
     margin: "none",
     level: 2,
@@ -77,11 +104,6 @@ var DataFilters = function DataFilters(_ref) {
     messages: messages == null ? void 0 : messages.dataFilters
   })), !controlled && clearControl), filters, children);
   if (!controlled) return content;
-  var badge = 0;
-  if (view != null && view.properties) badge += Object.keys(view.properties).length;
-  if (view != null && view.search) badge += 1;
-  if (view != null && view.sort) badge += 1;
-  if (!badge) badge = undefined;
 
   // drop
   var control = /*#__PURE__*/_react["default"].createElement(_DropButton.DropButton, {
