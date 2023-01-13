@@ -75,18 +75,14 @@ const Content = ({ drop, options, ...rest }) => {
       let nextFilteredOptions = options;
       if (nextSearch) {
         const lowerSearch = nextSearch.toLowerCase();
-        nextFilteredOptions = options.filter(
-          (o) =>
-            (!objectOptions && o.toLowerCase().includes(lowerSearch)) ||
-            (objectOptions &&
-              (o.property.toLowerCase().includes(lowerSearch) ||
-                o.label.toLowerCase().includes(lowerSearch))),
+        nextFilteredOptions = options.filter((o) =>
+          (o.property ?? o.label ?? o)?.toLowerCase().includes(lowerSearch),
         );
       }
       setSearch(nextSearch);
       setFilteredOptions(nextFilteredOptions);
     },
-    [objectOptions, options],
+    [options],
   );
 
   return (
