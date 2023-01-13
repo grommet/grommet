@@ -95,7 +95,7 @@ const Content = ({ drop, options, ...rest }) => {
             messages: messages?.dataTableColumns,
           })}
         >
-          <Box pad={{ top: 'small' }}>
+          <Box pad={{ vertical: 'small' }} gap="xsmall">
             <TextInput
               type="search"
               icon={<Search />}
@@ -125,18 +125,20 @@ const Content = ({ drop, options, ...rest }) => {
             messages: messages?.dataTableColumns,
           })}
         >
-          <List
-            id={`${dataId}--order-columns`}
-            aria-labelledby={`${dataId}--order-columns-tab`}
-            // List wants objects if possible to be able to use 'label'
-            data={value.map(
-              (v) =>
-                (objectOptions && options.find((o) => o.property === v)) || v,
-            )}
-            onOrder={(nextData) => setValue(optionsToValue(nextData))}
-            pad="none"
-            primaryKey={(objectOptions && 'label') || undefined}
-          />
+          <Box pad={{ top: 'small' }}>
+            <List
+              id={`${dataId}--order-columns`}
+              aria-labelledby={`${dataId}--order-columns-tab`}
+              // List wants objects if possible to be able to use 'label'
+              data={value.map(
+                (v) =>
+                  (objectOptions && options.find((o) => o.property === v)) || v,
+              )}
+              onOrder={(nextData) => setValue(optionsToValue(nextData))}
+              pad="none"
+              primaryKey={(objectOptions && 'label') || undefined}
+            />
+          </Box>
         </Tab>
       </Tabs>
     </Box>
