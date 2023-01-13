@@ -968,7 +968,7 @@ exports[`Data messages 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  padding-right: 48px;
+  padding-left: 48px;
 }
 
 .c6:focus {
@@ -1037,7 +1037,7 @@ exports[`Data messages 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
-  right: 12px;
+  left: 12px;
 }
 
 .c11 {
@@ -2121,7 +2121,7 @@ exports[`Data toolbar 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  padding-right: 48px;
+  padding-left: 48px;
 }
 
 .c6:focus {
@@ -2190,7 +2190,7 @@ exports[`Data toolbar 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
-  right: 12px;
+  left: 12px;
 }
 
 .c11 {
@@ -3031,7 +3031,7 @@ exports[`Data toolbar search 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  padding-right: 48px;
+  padding-left: 48px;
 }
 
 .c6:focus {
@@ -3100,7 +3100,7 @@ exports[`Data toolbar search 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
-  right: 12px;
+  left: 12px;
 }
 
 .c9 {
@@ -4469,7 +4469,7 @@ exports[`Data view all 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  padding-right: 48px;
+  padding-left: 48px;
 }
 
 .c6:focus {
@@ -4538,7 +4538,7 @@ exports[`Data view all 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
-  right: 12px;
+  left: 12px;
 }
 
 .c11 {
@@ -4971,7 +4971,7 @@ exports[`Data view property option 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  padding-right: 48px;
+  padding-left: 48px;
 }
 
 .c6:focus {
@@ -5040,7 +5040,7 @@ exports[`Data view property option 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
-  right: 12px;
+  left: 12px;
 }
 
 .c11 {
@@ -5473,7 +5473,7 @@ exports[`Data view property range 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  padding-right: 48px;
+  padding-left: 48px;
 }
 
 .c6:focus {
@@ -5542,7 +5542,7 @@ exports[`Data view property range 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
-  right: 12px;
+  left: 12px;
 }
 
 .c11 {
@@ -5996,7 +5996,7 @@ exports[`Data view search 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  padding-right: 48px;
+  padding-left: 48px;
 }
 
 .c6:focus {
@@ -6065,7 +6065,7 @@ exports[`Data view search 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
-  right: 12px;
+  left: 12px;
 }
 
 .c11 {
@@ -6498,7 +6498,7 @@ exports[`Data view sort 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  padding-right: 48px;
+  padding-left: 48px;
 }
 
 .c6:focus {
@@ -6567,7 +6567,7 @@ exports[`Data view sort 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
-  right: 12px;
+  left: 12px;
 }
 
 .c11 {
