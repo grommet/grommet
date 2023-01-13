@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.DataForm = void 0;
+exports.formStepKey = exports.formSortKey = exports.formSearchKey = exports.formRangeKey = exports.formPageKey = exports.formColumnsKey = exports.DataForm = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _Box = require("../Box");
@@ -32,15 +32,23 @@ var hideButtonProps = {
 // with the Form inputs. These keys are how we flatten the Form value object
 // from the view object.
 var formSearchKey = '_search';
+exports.formSearchKey = formSearchKey;
 var formSortKey = '_sort';
+exports.formSortKey = formSortKey;
 var formRangeKey = '_range';
+exports.formRangeKey = formRangeKey;
 var formStepKey = '_step';
+exports.formStepKey = formStepKey;
 var formPageKey = '_page';
+exports.formPageKey = formPageKey;
+var formColumnsKey = '_columns';
+exports.formColumnsKey = formColumnsKey;
 var viewFormKeyMap = {
   search: formSearchKey,
   sort: formSortKey,
   step: formStepKey,
-  page: formPageKey
+  page: formPageKey,
+  columns: formColumnsKey
 };
 
 // converts from the external view format to the internal Form value format
@@ -61,6 +69,7 @@ var viewToFormValue = function viewToFormValue(view) {
   });
   // always have some blank search text
   if (!result[formSearchKey]) result[formSearchKey] = '';
+  if (view != null && view.columns) result[formColumnsKey] = view.columns;
   return result;
 };
 

@@ -84,23 +84,28 @@ var DataTable = function DataTable(_ref) {
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
+    view = _useContext.view,
     contextData = _useContext.data,
     properties = _useContext.properties;
   var data = dataProp || contextData || emptyData;
   var columns = (0, _react.useMemo)(function () {
-    if (columnsProp) return columnsProp;
-    if (properties) return Object.keys(properties).map(function (p) {
+    var result = [];
+    if (columnsProp) result = columnsProp;else if (properties) result = Object.keys(properties).map(function (p) {
       return _extends({
         property: p
       }, properties[p]);
-    });
-    if (data.length) return Object.keys(data[0]).map(function (p) {
+    });else if (data.length) result = Object.keys(data[0]).map(function (p) {
       return {
         property: p
       };
     });
-    return [];
-  }, [columnsProp, data, properties]);
+    if (view != null && view.columns) result = result.filter(function (c) {
+      return view.columns.includes(c.property);
+    }).sort(function (c1, c2) {
+      return view.columns.indexOf(c1.property) - view.columns.indexOf(c2.property);
+    });
+    return result;
+  }, [columnsProp, data, properties, view]);
 
   // property name of the primary property
   var primaryProperty = (0, _react.useMemo)(function () {

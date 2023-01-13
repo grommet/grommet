@@ -133,12 +133,6 @@ Object.keys(_DataFilters).forEach(function (key) {
   if (key in exports && exports[key] === _DataFilters[key]) return;
   exports[key] = _DataFilters[key];
 });
-var _DataTable = require("./DataTable");
-Object.keys(_DataTable).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _DataTable[key]) return;
-  exports[key] = _DataTable[key];
-});
 var _DataSearch = require("./DataSearch");
 Object.keys(_DataSearch).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -156,6 +150,18 @@ Object.keys(_DataSummary).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   if (key in exports && exports[key] === _DataSummary[key]) return;
   exports[key] = _DataSummary[key];
+});
+var _DataTable = require("./DataTable");
+Object.keys(_DataTable).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _DataTable[key]) return;
+  exports[key] = _DataTable[key];
+});
+var _DataTableColumns = require("./DataTableColumns");
+Object.keys(_DataTableColumns).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _DataTableColumns[key]) return;
+  exports[key] = _DataTableColumns[key];
 });
 var _DateInput = require("./DateInput");
 Object.keys(_DateInput).forEach(function (key) {
