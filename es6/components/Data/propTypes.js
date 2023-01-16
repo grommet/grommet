@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 var viewType = PropTypes.shape({
-  properties: PropTypes.shape({}),
+  properties: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.shape({})]),
   search: PropTypes.string,
   sort: PropTypes.shape({
     direction: PropTypes.oneOf(['asc', 'desc']),
