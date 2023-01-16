@@ -126,7 +126,7 @@ export interface DataTableProps<TRowType = any> {
     | 'select'
     | ((event: MouseClick<TRowType> | KeyPress<TRowType>) => void);
   onMore?: () => void;
-  onSearch?: (search: string) => void;
+  onSearch?: (search: object) => void;
   onSelect?: (select: (string | number)[], datum: TRowType) => void;
   onSort?: (sort: SortDefinition) => void;
   onUpdate?: (datatableState: {
