@@ -1,9 +1,9 @@
-import React, { Children, useContext, useState } from 'react';
+import React, { Children, useContext, useMemo, useState } from 'react';
 import { Filter } from 'grommet-icons/icons/Filter';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataFilter } from '../DataFilter';
-import { DataForm } from '../Data';
+import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
@@ -16,20 +16,34 @@ const dropProps = {
 };
 
 export const DataFilters = ({ drop, children, heading, ...rest }) => {
-  const { clearFilters, data, messages, properties, toolbarKeys, view } =
-    useContext(DataContext);
+  const { clearFilters, data, messages, properties } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [showContent, setShowContent] = useState();
-  const controlled = drop;
+  // touched is a map of form field name to its value, it only has fields that
+  // were changed as part of the DataForm here. This is so we can track based
+  // on what's inside DataFilters as opposed to trying to track from the view
+  // object.
+  const [touched, setTouched] = useState({});
+  const controlled = useMemo(() => drop, [drop]);
+  // generate the badge value based on touched fields that have a value
+  const badge = useMemo(
+    () =>
+      (controlled && Object.keys(touched).filter((k) => touched[k]).length) ||
+      undefined,
+    [controlled, touched],
+  );
 
-  const clearControl = clearFilters && (
+  const clearControl = badge && (
     <Box flex={false}>
       <Button
         label={format({
           id: 'dataFilters.clear',
           messages: messages?.dataFilters,
         })}
-        onClick={clearFilters}
+        onClick={() => {
+          setTouched({});
+          clearFilters();
+        }}
       />
     </Box>
   );
@@ -52,6 +66,18 @@ export const DataFilters = ({ drop, children, heading, ...rest }) => {
       pad={controlled ? 'medium' : undefined}
       gap="small"
       onDone={() => setShowContent(false)}
+      onTouched={
+        controlled
+          ? (currentTouched) =>
+              // we merge this with our prior state to handle the case where the
+              // user opens and closes the drop multiple times and we want to
+              // track both new changes and prior changes.
+              setTouched((prevTouched) => ({
+                ...prevTouched,
+                ...currentTouched,
+              }))
+          : undefined
+      }
       {...(!controlled ? rest : {})}
     >
       {!drop && (
@@ -72,15 +98,6 @@ export const DataFilters = ({ drop, children, heading, ...rest }) => {
   );
 
   if (!controlled) return content;
-
-  let badge = 0;
-  if (view?.properties)
-    badge += Object.keys(view.properties).filter(
-      (p) => !toolbarKeys.includes(p),
-    ).length;
-  if (view?.search && !toolbarKeys.includes('_search')) badge += 1;
-  if (view?.sort) badge += 1;
-  if (!badge) badge = undefined;
 
   // drop
   const control = (

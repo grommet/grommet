@@ -7,7 +7,7 @@ const datumValue = (datum, property) => {
   return datumValue(datum[parts[0]], parts.slice(1).join('.'));
 };
 
-// This is where we filter the data internall, when the caller doesn't
+// This is where we filter the data internally, when the caller doesn't
 // provide an onView.
 export const filter = (data, view, properties) => {
   // from https://stackoverflow.com/a/6300266/8513067
@@ -25,7 +25,7 @@ export const filter = (data, view, properties) => {
       searchProperties = Object.keys(properties);
   }
 
-  const result = data.filter((datum) => {
+  const filteredData = data.filter((datum) => {
     let matched = true;
 
     // check whether it matches any search
@@ -75,11 +75,12 @@ export const filter = (data, view, properties) => {
 
   if (view?.sort?.property || view?.sort?.direction) {
     const { property, direction } = view.sort;
-    const prop = property || (result.length && Object.keys(result[0])[0]);
+    const prop =
+      property || (filteredData.length && Object.keys(filteredData[0])[0]);
     const sortDesc = direction === 'desc'; // default to asc
     const before = sortDesc ? -1 : 1;
     const after = sortDesc ? 1 : -1;
-    result.sort((d1, d2) => {
+    filteredData.sort((d1, d2) => {
       const d1Val = datumValue(d1, prop);
       const d2Val = datumValue(d2, prop);
       // sort strings via locale case insensitive
@@ -101,5 +102,16 @@ export const filter = (data, view, properties) => {
     });
   }
 
-  return result;
+  let pagedData;
+  if (view?.step) {
+    const start = view.step * ((view?.page ?? 1) - 1);
+    pagedData = filteredData.slice(start, start + view.step);
+  }
+
+  return {
+    unfilteredData: data,
+    data: pagedData || filteredData,
+    total: data.length,
+    filteredTotal: filteredData.length,
+  };
 };

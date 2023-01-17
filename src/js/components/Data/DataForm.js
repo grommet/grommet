@@ -23,10 +23,22 @@ const hideButtonProps = {
 // We convert the view structure to something more flat to work better
 // with the Form inputs. These keys are how we flatten the Form value object
 // from the view object.
-const formSearchKey = '_search';
-const formSortKey = '_sort';
-const formRangeKey = '_range';
-const formViewNameKey = '_view';
+export const formSearchKey = '_search';
+export const formSortKey = '_sort';
+export const formRangeKey = '_range';
+export const formStepKey = '_step';
+export const formPageKey = '_page';
+export const formColumnsKey = '_columns';
+export const formViewNameKey = '_view';
+
+const viewFormKeyMap = {
+  search: formSearchKey,
+  sort: formSortKey,
+  step: formStepKey,
+  page: formPageKey,
+  columns: formColumnsKey,
+  view: formViewNameKey,
+};
 
 // converts from the external view format to the internal Form value format
 const viewToFormValue = (view) => {
@@ -41,10 +53,16 @@ const viewToFormValue = (view) => {
     }
   });
 
-  result[formSearchKey] = view?.search || '';
+  // convert formal view keys to their form '_' prefixed counterparts
+  Object.keys(viewFormKeyMap).forEach((key) => {
+    if (view?.[key]) result[viewFormKeyMap[key]] = view[key];
+  });
+  // always have some blank search text
+  if (!result[formSearchKey]) result[formSearchKey] = '';
 
   if (view?.sort) result[formSortKey] = view.sort;
   if (view?.name) result[formViewNameKey] = view.name;
+  if (view?.columns) result[formColumnsKey] = view.columns;
 
   return result;
 };
@@ -55,19 +73,18 @@ const formValueToView = (value, views) => {
   if (value[formViewNameKey])
     return views.find((v) => v.name === value[formViewNameKey]);
 
-  const properties = { ...value };
+  const result = {};
 
-  const searchText = value[formSearchKey];
-  delete properties[formSearchKey];
-  const sort = value[formSortKey];
-  delete properties[formSortKey];
-  delete properties[formViewNameKey];
+  const valueCopy = { ...value };
 
-  const result = {
-    properties,
-    search: searchText,
-    ...(sort ? { sort } : {}),
-  };
+  Object.keys(viewFormKeyMap).forEach((key) => {
+    if (valueCopy[viewFormKeyMap[key]]) {
+      result[key] = valueCopy[viewFormKeyMap[key]];
+      delete valueCopy[viewFormKeyMap[key]];
+    }
+  });
+
+  result.properties = valueCopy;
 
   // convert any ranges
   Object.keys(result.properties).forEach((key) => {
@@ -85,12 +102,27 @@ const formValueToView = (value, views) => {
 // remove any empty arrays of property values by deleting the key for
 // that property in the view properties
 const clearEmpty = (formValue) => {
-  const result = formValue;
-  Object.keys(result)
+  const value = formValue;
+  Object.keys(value)
     .filter((k) => k !== formSearchKey) // leave search value alone, allow ''
     .forEach((k) => {
-      if (Array.isArray(result[k]) && result[k].length === 0) delete result[k];
+      if (Array.isArray(value[k]) && value[k].length === 0) delete value[k];
     });
+  return value;
+};
+
+// if paging, when anything other than the page changes, reset the page to 1
+const resetPage = (nextFormValue, prevFormValue) => {
+  if (prevFormValue[formPageKey] && prevFormValue[formPageKey] > 1)
+    // eslint-disable-next-line no-param-reassign
+    nextFormValue[formPageKey] = 1;
+};
+
+const transformTouched = (touched, value) => {
+  const result = {};
+  Object.keys(touched).forEach((key) => {
+    result[key] = value[key];
+  });
   return result;
 };
 
@@ -118,6 +150,7 @@ export const DataForm = ({
   footer,
   gap,
   onDone,
+  onTouched,
   pad,
   updateOn: updateOnProp,
   ...rest
@@ -135,24 +168,30 @@ export const DataForm = ({
   const [changed, setChanged] = useState();
 
   const onSubmit = useCallback(
-    ({ value }) => {
+    ({ value, touched }) => {
       const nextValue = normalizeValue(value, formValue, views);
+      resetPage(nextValue, formValue);
       setFormValue(nextValue);
       setChanged(false);
+      if (onTouched) onTouched(transformTouched(touched, nextValue));
       onView(formValueToView(nextValue, views));
       if (onDone) onDone();
     },
-    [formValue, onDone, onView, views],
+    [formValue, onDone, onTouched, onView, views],
   );
 
   const onChange = useCallback(
-    (value) => {
+    (value, { touched }) => {
       const nextValue = normalizeValue(value, formValue, views);
+      resetPage(nextValue, formValue);
       setFormValue(nextValue);
       setChanged(true);
-      if (updateOn === 'change') onView(formValueToView(nextValue, views));
+      if (updateOn === 'change') {
+        if (onTouched) onTouched(transformTouched(touched, nextValue));
+        onView(formValueToView(nextValue));
+      }
     },
-    [formValue, onView, updateOn, views],
+    [formValue, onTouched, onView, updateOn, views],
   );
 
   const onReset = useCallback(() => {
