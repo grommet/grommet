@@ -25,6 +25,7 @@ export * from './DataSort';
 export * from './DataSummary';
 export * from './DataTable';
 export * from './DataTableColumns';
+export * from './DataView';
 export * from './DateInput';
 export * from './Diagram';
 export * from './Distribution';

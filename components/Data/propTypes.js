@@ -22,7 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
     toolbar: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['search', 'filters'])]),
     total: _propTypes["default"].number,
     updateOn: _propTypes["default"].oneOf(['change', 'submit']),
-    view: viewType
+    view: _propTypes["default"].oneOfType([_propTypes["default"].string, viewType])
   };
 }
 var DataPropTypes = PropType;

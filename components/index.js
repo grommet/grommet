@@ -163,6 +163,12 @@ Object.keys(_DataTableColumns).forEach(function (key) {
   if (key in exports && exports[key] === _DataTableColumns[key]) return;
   exports[key] = _DataTableColumns[key];
 });
+var _DataView = require("./DataView");
+Object.keys(_DataView).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _DataView[key]) return;
+  exports[key] = _DataView[key];
+});
 var _DateInput = require("./DateInput");
 Object.keys(_DateInput).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

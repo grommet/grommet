@@ -18,7 +18,7 @@ var filter = function filter(data, view, properties) {
   // from https://stackoverflow.com/a/6300266/8513067
   var searchExp = view != null && view.search ? new RegExp(view.search.replace(/[#-.]|[[-^]|[?|{}]/g, '\\$&'), 'i') : undefined;
   var searchProperties;
-  if (properties) {
+  if (searchExp && properties) {
     // if we know where we want to search, look there
     searchProperties = Object.keys(properties).filter(function (k) {
       return properties[k].search;
