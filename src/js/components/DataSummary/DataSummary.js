@@ -7,11 +7,15 @@ import { DataSummaryPropTypes } from './propTypes';
 
 export const DataSummary = ({ messages, ...rest }) => {
   const { format } = useContext(MessageContext);
-  const { data, messages: dataMessages, total } = useContext(DataContext);
+  const {
+    filteredTotal,
+    messages: dataMessages,
+    total,
+  } = useContext(DataContext);
 
   let messageId;
-  if (total !== data.length) {
-    if (data.length === 1) messageId = 'dataSummary.filteredSingle';
+  if (total !== filteredTotal) {
+    if (filteredTotal === 1) messageId = 'dataSummary.filteredSingle';
     else messageId = 'dataSummary.filtered';
   } else messageId = 'dataSummary.total';
 
@@ -20,7 +24,7 @@ export const DataSummary = ({ messages, ...rest }) => {
       {format({
         id: messageId,
         messages: messages || dataMessages?.dataSummary,
-        values: { filtered: data.length, total },
+        values: { filteredTotal, total },
       })}
     </Text>
   );

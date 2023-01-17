@@ -164,16 +164,6 @@ exports[`Tabs Custom Tab component 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -192,6 +182,16 @@ exports[`Tabs Custom Tab component 1`] = `
 
 .c10 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -470,16 +470,6 @@ exports[`Tabs Tab 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -498,6 +488,16 @@ exports[`Tabs Tab 1`] = `
 
 .c10 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -779,19 +779,6 @@ exports[`Tabs alignControls 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -810,6 +797,19 @@ exports[`Tabs alignControls 1`] = `
 
 .c10 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
 }
 
 @media only screen and (max-width:768px) {
@@ -1088,16 +1088,6 @@ exports[`Tabs change to second tab 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -1116,6 +1106,16 @@ exports[`Tabs change to second tab 1`] = `
 
 .c10 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -1443,16 +1443,6 @@ exports[`Tabs complex title 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -1471,6 +1461,16 @@ exports[`Tabs complex title 1`] = `
 
 .c8 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -1713,16 +1713,6 @@ exports[`Tabs no Tab 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -1741,6 +1731,16 @@ exports[`Tabs no Tab 1`] = `
 
 .c7 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -1883,16 +1883,6 @@ exports[`Tabs no Tabs 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c3 {
   white-space: nowrap;
   margin-left: 12px;
@@ -1907,6 +1897,16 @@ exports[`Tabs no Tabs 1`] = `
 
 .c3:focus {
   z-index: 1;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -2114,16 +2114,6 @@ exports[`Tabs onClick 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -2142,6 +2132,16 @@ exports[`Tabs onClick 1`] = `
 
 .c10 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -2420,16 +2420,6 @@ exports[`Tabs set on hover 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -2448,6 +2438,16 @@ exports[`Tabs set on hover 1`] = `
 
 .c10 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -2944,16 +2944,6 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c5 {
   white-space: nowrap;
   color: red;
@@ -2984,6 +2974,16 @@ exports[`Tabs should allow to extend tab styles 1`] = `
 
 .c9 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -3292,16 +3292,6 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -3329,6 +3319,16 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
 
 .c12 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -3670,16 +3670,6 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -3707,6 +3697,16 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
 
 .c12 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -3955,16 +3955,6 @@ exports[`Tabs should have no accessibility violations 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -3983,6 +3973,16 @@ exports[`Tabs should have no accessibility violations 1`] = `
 
 .c7 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -4161,6 +4161,14 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
   border: 0;
 }
 
+.c5 {
+  white-space: nowrap;
+}
+
+.c6 {
+  min-height: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4169,14 +4177,6 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c5 {
-  white-space: nowrap;
-}
-
-.c6 {
-  min-height: 0;
 }
 
 <div
@@ -4440,16 +4440,6 @@ exports[`Tabs should style as disabled 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -4476,6 +4466,16 @@ exports[`Tabs should style as disabled 1`] = `
 
 .c12 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -4756,16 +4756,6 @@ exports[`Tabs styled component should change tab color when active 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c7 {
   white-space: nowrap;
   margin-left: 12px;
@@ -4784,6 +4774,16 @@ exports[`Tabs styled component should change tab color when active 1`] = `
 
 .c12 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c9 {
@@ -5111,16 +5111,6 @@ exports[`Tabs with icon + reverse 1`] = `
   border: 0;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   white-space: nowrap;
   margin-left: 12px;
@@ -5139,6 +5129,16 @@ exports[`Tabs with icon + reverse 1`] = `
 
 .c11 {
   min-height: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {

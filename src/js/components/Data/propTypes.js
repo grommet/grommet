@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 
 const viewType = PropTypes.shape({
-  properties: PropTypes.shape({}),
+  properties: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.shape({}),
+  ]),
   search: PropTypes.string,
   sort: PropTypes.shape({
     direction: PropTypes.oneOf(['asc', 'desc']),
@@ -13,6 +16,7 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     data: PropTypes.arrayOf(PropTypes.shape({})),
+    defaultView: viewType,
     onView: PropTypes.func,
     properties: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
