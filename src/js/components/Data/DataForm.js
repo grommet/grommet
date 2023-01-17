@@ -105,11 +105,9 @@ const formValueToView = (value, views) => {
 // that property in the view properties
 const clearEmpty = (formValue) => {
   const value = formValue;
-  Object.keys(value)
-    .filter((k) => k !== formSearchKey) // leave search value alone, allow ''
-    .forEach((k) => {
-      if (Array.isArray(value[k]) && value[k].length === 0) delete value[k];
-    });
+  Object.keys(value).forEach((k) => {
+    if (Array.isArray(value[k]) && value[k].length === 0) delete value[k];
+  });
   return value;
 };
 
@@ -146,10 +144,15 @@ const normalizeValue = (nextValue, prevValue, views) => {
   // if we have a view and something related to it changed, clear the view
   if (result[formViewNameKey]) {
     const view = views.find((v) => v.name === result[formViewNameKey]);
+    const viewValue = viewToFormValue(view);
+    clearEmpty(viewValue);
     if (
-      view.properties &&
-      Object.keys(view.properties).some(
-        (k) => JSON.stringify(result[k]) !== JSON.stringify(view.properties[k]),
+      Object.keys(viewValue).some(
+        (k) =>
+          // allow mismatch between empty and set strings
+          viewValue[k] &&
+          result[k] &&
+          JSON.stringify(result[k]) !== JSON.stringify(viewValue[k]),
       )
     ) {
       delete result[formViewNameKey];
