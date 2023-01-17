@@ -86,7 +86,8 @@ var DataTable = function DataTable(_ref) {
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     view = _useContext.view,
     contextData = _useContext.data,
-    properties = _useContext.properties;
+    properties = _useContext.properties,
+    onView = _useContext.onView;
   var data = dataProp || contextData || emptyData;
   var columns = (0, _react.useMemo)(function () {
     var result = [];
@@ -134,8 +135,8 @@ var DataTable = function DataTable(_ref) {
     sort = _useState5[0],
     setSort = _useState5[1];
   (0, _react.useEffect)(function () {
-    if (sortProp) setSort(sortProp);
-  }, [sortProp]);
+    if (sortProp) setSort(sortProp);else if (view != null && view.sort) setSort(view.sort);
+  }, [sortProp, view]);
 
   // the data filtered and sorted, if needed
   // Note: onUpdate mode expects the data to be passed
@@ -278,6 +279,14 @@ var DataTable = function DataTable(_ref) {
         external: external
       };
       setSort(nextSort);
+      if (onView) {
+        onView(_extends({}, view, {
+          sort: {
+            property: property,
+            direction: direction
+          }
+        }));
+      }
       if (onUpdate) {
         var opts = {
           count: limit,

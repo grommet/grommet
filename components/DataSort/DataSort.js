@@ -5,7 +5,7 @@ exports.DataSort = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _DataContext = require("../../contexts/DataContext");
 var _RadioButtonGroup = require("../RadioButtonGroup");
-var _Data = require("../Data");
+var _DataForm = require("../Data/DataForm");
 var _FormContext = require("../Form/FormContext");
 var _FormField = require("../FormField");
 var _Select = require("../Select");
@@ -65,7 +65,7 @@ var DataSort = function DataSort(_ref) {
     name: "_sort.direction",
     options: directionOptions
   }))];
-  if (noForm) content = /*#__PURE__*/_react["default"].createElement(_Data.DataForm, {
+  if (noForm) content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, {
     footer: false
   }, content);
   return content;

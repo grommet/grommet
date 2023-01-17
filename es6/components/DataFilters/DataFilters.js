@@ -7,6 +7,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataFilter } from '../DataFilter';
 import { DataForm } from '../Data/DataForm';
+import { DataSort } from '../DataSort';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
@@ -28,7 +29,8 @@ export var DataFilters = function DataFilters(_ref) {
     clearFilters = _useContext.clearFilters,
     data = _useContext.data,
     messages = _useContext.messages,
-    properties = _useContext.properties;
+    properties = _useContext.properties,
+    view = _useContext.view;
   var _useContext2 = useContext(MessageContext),
     format = _useContext2.format;
   var _useState = useState(),
@@ -72,6 +74,11 @@ export var DataFilters = function DataFilters(_ref) {
         property: property
       });
     });
+    if (view != null && view.sort) {
+      filters.push( /*#__PURE__*/React.createElement(DataSort, {
+        key: "_sort"
+      }));
+    }
   }
   var content = /*#__PURE__*/React.createElement(DataForm, _extends({
     pad: controlled ? 'medium' : undefined,

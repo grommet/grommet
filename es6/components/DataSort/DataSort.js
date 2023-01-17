@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from 'react';
 import { DataContext } from '../../contexts/DataContext';
 import { RadioButtonGroup } from '../RadioButtonGroup';
-import { DataForm } from '../Data';
+import { DataForm } from '../Data/DataForm';
 import { FormContext } from '../Form/FormContext';
 import { FormField } from '../FormField';
 import { Select } from '../Select';
