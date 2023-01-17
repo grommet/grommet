@@ -4,6 +4,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataFilter } from '../DataFilter';
 import { DataForm } from '../Data/DataForm';
+import { DataSort } from '../DataSort';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
@@ -16,7 +17,8 @@ const dropProps = {
 };
 
 export const DataFilters = ({ drop, children, heading, ...rest }) => {
-  const { clearFilters, data, messages, properties } = useContext(DataContext);
+  const { clearFilters, data, messages, properties, view } =
+    useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [showContent, setShowContent] = useState();
   // touched is a map of form field name to its value, it only has fields that
@@ -59,6 +61,9 @@ export const DataFilters = ({ drop, children, heading, ...rest }) => {
     filters = filtersFor.map((property) => (
       <DataFilter key={property} property={property} />
     ));
+    if (view?.sort) {
+      filters.push(<DataSort key="_sort" />);
+    }
   }
 
   const content = (
