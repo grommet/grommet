@@ -121,7 +121,10 @@ const resetPage = (nextFormValue, prevFormValue) => {
 const transformTouched = (touched, value) => {
   const result = {};
   Object.keys(touched).forEach((key) => {
-    result[key] = value[key];
+    // special case _range fields
+    const parts = key.split('.');
+    if (parts[1] === formRangeKey) result[key] = value[parts[0]];
+    else result[key] = value[key];
   });
   return result;
 };
