@@ -69,22 +69,24 @@ const viewToFormValue = (view) => {
 
 // converts from the internal Form value format to the external view format
 const formValueToView = (value, views) => {
+  let result = {};
+
   // if the user chose a view, use that
   if (value[formViewNameKey])
-    return views.find((v) => v.name === value[formViewNameKey]);
-
-  const result = {};
+    result = JSON.parse(
+      JSON.stringify(views.find((v) => v.name === value[formViewNameKey])),
+    );
 
   const valueCopy = { ...value };
 
   Object.keys(viewFormKeyMap).forEach((key) => {
     if (valueCopy[viewFormKeyMap[key]]) {
       result[key] = valueCopy[viewFormKeyMap[key]];
-      delete valueCopy[viewFormKeyMap[key]];
     }
+    delete valueCopy[viewFormKeyMap[key]];
   });
 
-  result.properties = valueCopy;
+  result.properties = { ...(result.properties || {}), ...valueCopy };
 
   // convert any ranges
   Object.keys(result.properties).forEach((key) => {
@@ -139,9 +141,21 @@ const normalizeValue = (nextValue, prevValue, views) => {
     );
   }
 
-  // something else changed, clear empty propeties and view name
+  // something else changed, clear empty propeties
   const result = clearEmpty(nextValue);
-  delete result[formViewNameKey];
+  // if we have a view and something related to it changed, clear the view
+  if (result[formViewNameKey]) {
+    const view = views.find((v) => v.name === result[formViewNameKey]);
+    if (
+      view.properties &&
+      Object.keys(view.properties).some(
+        (k) => JSON.stringify(result[k]) !== JSON.stringify(view.properties[k]),
+      )
+    ) {
+      delete result[formViewNameKey];
+    }
+  }
+
   return result;
 };
 
@@ -188,7 +202,7 @@ export const DataForm = ({
       setChanged(true);
       if (updateOn === 'change') {
         if (onTouched) onTouched(transformTouched(touched, nextValue));
-        onView(formValueToView(nextValue));
+        onView(formValueToView(nextValue, views));
       }
     },
     [formValue, onTouched, onView, updateOn, views],
