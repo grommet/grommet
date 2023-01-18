@@ -53,7 +53,11 @@ export const DataFilters = ({ drop, children, heading, ...rest }) => {
   let filters;
   if (Children.count(children) === 0) {
     let filtersFor;
-    if (!properties && data && data.length) filtersFor = Object.keys(data[0]);
+    if (!properties && data && data.length)
+      // build from a piece of data, ignore object values
+      filtersFor = Object.keys(data[0]).filter(
+        (k) => typeof data[0][k] !== 'object',
+      );
     else if (Array.isArray(properties)) filtersFor = properties;
     else if (typeof properties === 'object')
       filtersFor = Object.keys(properties);

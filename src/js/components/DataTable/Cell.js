@@ -1,4 +1,4 @@
-import React, { memo, useContext } from 'react';
+import React, { isValidElement, memo, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
@@ -42,7 +42,16 @@ const Cell = memo(
     if (render && renderContexts) {
       content = render(datum);
     } else if (value !== undefined) {
-      content = value;
+      if (
+        typeof value === 'string' ||
+        typeof value === 'number' ||
+        isValidElement(value)
+      )
+        content = value;
+      // if (typeof value === 'string' || typeof value === 'number')
+      //   content = value;
+      // else if (typeof value === 'boolean') content = JSON.stringify(value);
+      // else console.log('!!! Cell', typeof value, value);
     }
 
     if (typeof content === 'string' || typeof content === 'number') {
