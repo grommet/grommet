@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -29,6 +29,7 @@ export const formRangeKey = '_range';
 export const formStepKey = '_step';
 export const formPageKey = '_page';
 export const formColumnsKey = '_columns';
+export const formViewNameKey = '_view';
 
 const viewFormKeyMap = {
   search: formSearchKey,
@@ -36,6 +37,7 @@ const viewFormKeyMap = {
   step: formStepKey,
   page: formPageKey,
   columns: formColumnsKey,
+  view: formViewNameKey,
 };
 
 // converts from the external view format to the internal Form value format
@@ -58,25 +60,33 @@ const viewToFormValue = (view) => {
   // always have some blank search text
   if (!result[formSearchKey]) result[formSearchKey] = '';
 
+  if (view?.sort) result[formSortKey] = view.sort;
+  if (view?.name) result[formViewNameKey] = view.name;
   if (view?.columns) result[formColumnsKey] = view.columns;
 
   return result;
 };
 
 // converts from the internal Form value format to the external view format
-const formValueToView = (value) => {
-  const result = {};
+const formValueToView = (value, views) => {
+  let result = {};
+
+  // if the user chose a view, use that
+  if (value[formViewNameKey])
+    result = JSON.parse(
+      JSON.stringify(views.find((v) => v.name === value[formViewNameKey])),
+    );
 
   const valueCopy = { ...value };
 
   Object.keys(viewFormKeyMap).forEach((key) => {
     if (valueCopy[viewFormKeyMap[key]]) {
       result[key] = valueCopy[viewFormKeyMap[key]];
-      delete valueCopy[viewFormKeyMap[key]];
     }
+    delete valueCopy[viewFormKeyMap[key]];
   });
 
-  result.properties = valueCopy;
+  result.properties = { ...(result.properties || {}), ...valueCopy };
 
   // convert any ranges
   Object.keys(result.properties).forEach((key) => {
@@ -93,14 +103,12 @@ const formValueToView = (value) => {
 
 // remove any empty arrays of property values by deleting the key for
 // that property in the view properties
-const clearEmpty = (properties) => {
-  Object.keys(properties)
-    .filter((k) => k !== formSearchKey)
-    .forEach((k) => {
-      if (Array.isArray(properties[k]) && properties[k].length === 0)
-        // eslint-disable-next-line no-param-reassign
-        delete properties[k];
-    });
+const clearEmpty = (formValue) => {
+  const value = formValue;
+  Object.keys(value).forEach((k) => {
+    if (Array.isArray(value[k]) && value[k].length === 0) delete value[k];
+  });
+  return value;
 };
 
 // if paging, when anything other than the page changes, reset the page to 1
@@ -113,8 +121,47 @@ const resetPage = (nextFormValue, prevFormValue) => {
 const transformTouched = (touched, value) => {
   const result = {};
   Object.keys(touched).forEach((key) => {
-    result[key] = value[key];
+    // special case _range fields
+    const parts = key.split('.');
+    if (parts[1] === formRangeKey) result[key] = value[parts[0]];
+    else result[key] = value[key];
   });
+  return result;
+};
+
+// function shared by onSubmit and onChange to coordinate view
+// name changes
+const normalizeValue = (nextValue, prevValue, views) => {
+  if (
+    nextValue[formViewNameKey] &&
+    nextValue[formViewNameKey] !== prevValue[formViewNameKey]
+  ) {
+    // view name changed, reset view contents from named view
+    return viewToFormValue(
+      views.find((v) => v.name === nextValue[formViewNameKey]),
+    );
+  }
+
+  // something else changed, clear empty propeties
+  const result = clearEmpty(nextValue);
+  // if we have a view and something related to it changed, clear the view
+  if (result[formViewNameKey]) {
+    const view = views.find((v) => v.name === result[formViewNameKey]);
+    const viewValue = viewToFormValue(view);
+    clearEmpty(viewValue);
+    if (
+      Object.keys(viewValue).some(
+        (k) =>
+          // allow mismatch between empty and set strings
+          viewValue[k] &&
+          result[k] &&
+          JSON.stringify(result[k]) !== JSON.stringify(viewValue[k]),
+      )
+    ) {
+      delete result[formViewNameKey];
+    }
+  }
+
   return result;
 };
 
@@ -125,12 +172,52 @@ export const DataForm = ({
   onDone,
   onTouched,
   pad,
+  updateOn: updateOnProp,
   ...rest
 }) => {
-  const { messages, onView, updateOn, view } = useContext(DataContext);
+  const {
+    messages,
+    onView,
+    updateOn: updateOnData,
+    view,
+    views,
+  } = useContext(DataContext);
+  const updateOn = updateOnProp ?? updateOnData;
   const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
   const [changed, setChanged] = useState();
+
+  const onSubmit = useCallback(
+    ({ value, touched }) => {
+      const nextValue = normalizeValue(value, formValue, views);
+      resetPage(nextValue, formValue);
+      setFormValue(nextValue);
+      setChanged(false);
+      if (onTouched) onTouched(transformTouched(touched, nextValue));
+      onView(formValueToView(nextValue, views));
+      if (onDone) onDone();
+    },
+    [formValue, onDone, onTouched, onView, views],
+  );
+
+  const onChange = useCallback(
+    (value, { touched }) => {
+      const nextValue = normalizeValue(value, formValue, views);
+      resetPage(nextValue, formValue);
+      setFormValue(nextValue);
+      setChanged(true);
+      if (updateOn === 'change') {
+        if (onTouched) onTouched(transformTouched(touched, nextValue));
+        onView(formValueToView(nextValue, views));
+      }
+    },
+    [formValue, onTouched, onView, updateOn, views],
+  );
+
+  const onReset = useCallback(() => {
+    setFormValue(viewToFormValue(view));
+    setChanged(false);
+  }, [view]);
 
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
 
@@ -138,29 +225,8 @@ export const DataForm = ({
     <Form
       {...rest}
       value={formValue}
-      onSubmit={
-        updateOn === 'submit'
-          ? ({ value: nextValue, touched }) => {
-              clearEmpty(nextValue);
-              resetPage(nextValue, formValue);
-              setFormValue(nextValue);
-              setChanged(false);
-              if (onTouched) onTouched(transformTouched(touched, nextValue));
-              onView(formValueToView(nextValue));
-              if (onDone) onDone();
-            }
-          : undefined
-      }
-      onChange={(nextValue, { touched }) => {
-        clearEmpty(nextValue);
-        resetPage(nextValue, formValue);
-        setFormValue(nextValue);
-        setChanged(true);
-        if (updateOn === 'change') {
-          if (onTouched) onTouched(transformTouched(touched, nextValue));
-          onView(formValueToView(nextValue));
-        }
-      }}
+      onSubmit={updateOn === 'submit' ? onSubmit : undefined}
+      onChange={onChange}
     >
       <Box flex={false} pad={pad} gap={gap}>
         {children}
@@ -180,10 +246,7 @@ export const DataForm = ({
                 messages: messages?.dataForm,
               })}
               type="reset"
-              onClick={() => {
-                setFormValue(viewToFormValue(view));
-                setChanged(false);
-              }}
+              onClick={onReset}
               {...(!changed ? hideButtonProps : {})}
             />
           </Footer>

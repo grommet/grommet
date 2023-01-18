@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
+import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { FormContext } from '../Form/FormContext';
 import { useSkeleton } from '../Skeleton';
@@ -8,9 +9,14 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { DataSearchPropTypes } from './propTypes';
 
 export const DataSearch = ({ ...rest }) => {
+  const { id: dataId, messages, addToolbarKey } = useContext(DataContext);
+  const { noForm } = useContext(FormContext);
   const skeleton = useSkeleton();
   const { format } = useContext(MessageContext);
-  const { id: dataId, messages, noForm } = useContext(FormContext);
+
+  useEffect(() => {
+    if (noForm) addToolbarKey('_search');
+  }, [addToolbarKey, noForm]);
 
   let content = skeleton ? null : (
     <TextInput
@@ -26,7 +32,12 @@ export const DataSearch = ({ ...rest }) => {
     />
   );
 
-  if (noForm) content = <DataForm footer={false}>{content}</DataForm>;
+  if (noForm)
+    content = (
+      <DataForm footer={false} updateOn="change">
+        {content}
+      </DataForm>
+    );
 
   return content;
 };
