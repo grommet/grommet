@@ -343,8 +343,11 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   }, outerProps, {
     style: outerStyle,
     onFocus: function onFocus(event) {
-      var root = formFieldRef.current.getRootNode();
-      setFocus((0, _utils.containsFocus)(formFieldRef.current) && (0, _utils.shouldKeepFocus)(root));
+      var _formFieldRef$current;
+      var root = (_formFieldRef$current = formFieldRef.current) == null ? void 0 : _formFieldRef$current.getRootNode();
+      if (root) {
+        setFocus((0, _utils.containsFocus)(formFieldRef.current) && (0, _utils.shouldKeepFocus)(root));
+      }
       if (_onFocus) _onFocus(event);
     },
     onBlur: function onBlur(event) {
