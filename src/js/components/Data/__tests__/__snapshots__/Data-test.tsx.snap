@@ -335,7 +335,6 @@ exports[`Data controlled search 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c14:focus {
@@ -605,7 +604,7 @@ exports[`Data controlled search 2`] = `
       4 results of undefined items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+      class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -1044,7 +1043,6 @@ exports[`Data messages 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c14:focus {
@@ -1902,7 +1900,6 @@ exports[`Data onView 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c32:focus {
@@ -2840,7 +2837,6 @@ exports[`Data pagination 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -3419,7 +3415,6 @@ exports[`Data toolbar 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c14:focus {
@@ -3911,7 +3906,6 @@ exports[`Data toolbar filters 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c11:focus {
@@ -4329,7 +4323,6 @@ exports[`Data toolbar search 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c12:focus {
@@ -4837,7 +4830,6 @@ exports[`Data uncontrolled search 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c14:focus {
@@ -5107,7 +5099,7 @@ exports[`Data uncontrolled search 2`] = `
       1 result of 4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+      class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -5261,7 +5253,6 @@ exports[`Data view 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -5767,7 +5758,6 @@ exports[`Data view all 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c14:focus {
@@ -6269,7 +6259,6 @@ exports[`Data view property option 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c14:focus {
@@ -6771,7 +6760,6 @@ exports[`Data view property range 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c14:focus {
@@ -7294,7 +7282,6 @@ exports[`Data view search 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c14:focus {
@@ -7796,7 +7783,6 @@ exports[`Data view sort 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c14:focus {
