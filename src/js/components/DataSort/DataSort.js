@@ -9,12 +9,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { DataSortPropTypes } from './propTypes';
 
 export const DataSort = ({ options: optionsArg }) => {
-  const {
-    id: dataId,
-    messages,
-    properties,
-    unfilteredData,
-  } = useContext(DataContext);
+  const { data, id: dataId, messages, properties } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
   const { format } = useContext(MessageContext);
 
@@ -22,8 +17,8 @@ export const DataSort = ({ options: optionsArg }) => {
     () =>
       optionsArg ||
       (properties && Object.keys(properties).sort()) ||
-      Object.keys(unfilteredData[0]).sort(),
-    [optionsArg, properties, unfilteredData],
+      Object.keys(data[0]).sort(),
+    [data, optionsArg, properties],
   );
 
   const directionOptions = [
