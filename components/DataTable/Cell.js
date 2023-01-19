@@ -42,7 +42,7 @@ var Cell = /*#__PURE__*/(0, _react.memo)(function (_ref) {
   if (render && renderContexts) {
     content = render(datum);
   } else if (value !== undefined) {
-    content = value;
+    if (typeof value === 'string' || typeof value === 'number' || /*#__PURE__*/(0, _react.isValidElement)(value)) content = value;
   }
   if (typeof content === 'string' || typeof content === 'number') {
     var textProps = property === primaryProperty ? theme.dataTable.primary : {};

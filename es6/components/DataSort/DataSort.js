@@ -10,17 +10,17 @@ import { DataSortPropTypes } from './propTypes';
 export var DataSort = function DataSort(_ref) {
   var optionsArg = _ref.options;
   var _useContext = useContext(DataContext),
+    data = _useContext.data,
     dataId = _useContext.id,
     messages = _useContext.messages,
-    properties = _useContext.properties,
-    unfilteredData = _useContext.unfilteredData;
+    properties = _useContext.properties;
   var _useContext2 = useContext(FormContext),
     noForm = _useContext2.noForm;
   var _useContext3 = useContext(MessageContext),
     format = _useContext3.format;
   var options = useMemo(function () {
-    return optionsArg || properties && Object.keys(properties).sort() || Object.keys(unfilteredData[0]).sort();
-  }, [optionsArg, properties, unfilteredData]);
+    return optionsArg || properties && Object.keys(properties).sort() || Object.keys(data[0]).sort();
+  }, [data, optionsArg, properties]);
   var directionOptions = [{
     label: format({
       id: 'dataSort.ascending',

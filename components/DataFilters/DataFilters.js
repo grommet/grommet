@@ -73,7 +73,11 @@ var DataFilters = function DataFilters(_ref) {
   var filters;
   if (_react.Children.count(children) === 0) {
     var filtersFor;
-    if (!properties && data && data.length) filtersFor = Object.keys(data[0]);else if (Array.isArray(properties)) filtersFor = properties;else if (typeof properties === 'object') filtersFor = Object.keys(properties);else filtersFor = [];
+    if (!properties && data && data.length)
+      // build from a piece of data, ignore object values
+      filtersFor = Object.keys(data[0]).filter(function (k) {
+        return typeof data[0][k] !== 'object';
+      });else if (Array.isArray(properties)) filtersFor = properties;else if (typeof properties === 'object') filtersFor = Object.keys(properties);else filtersFor = [];
     filters = filtersFor.map(function (property) {
       return /*#__PURE__*/_react["default"].createElement(_DataFilter.DataFilter, {
         key: property,

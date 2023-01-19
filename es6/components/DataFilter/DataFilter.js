@@ -40,6 +40,7 @@ export var DataFilter = function DataFilter(_ref) {
     rangeProp = _ref.range,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = useContext(DataContext),
+    data = _useContext.data,
     dataId = _useContext.id,
     properties = _useContext.properties,
     unfilteredData = _useContext.unfilteredData;
@@ -53,14 +54,14 @@ export var DataFilter = function DataFilter(_ref) {
     if (rangeProp || properties != null && (_properties$property2 = properties[property]) != null && _properties$property2.range) return undefined;
 
     // generate options from all values for property
-    var uniqueValues = generateOptions(unfilteredData, property);
+    var uniqueValues = generateOptions(unfilteredData || data, property);
     // if any values aren't numeric, treat as options
     if (uniqueValues.some(function (v) {
       return v && typeof v !== 'number';
     })) return uniqueValues;
     // if all values are numeric, let range take care of it
     return undefined;
-  }, [children, optionsProp, properties, property, rangeProp, unfilteredData]);
+  }, [children, data, optionsProp, properties, property, rangeProp, unfilteredData]);
   var range = useMemo(function () {
     var _properties$property3;
     if (children) return undefined; // caller driving
@@ -76,14 +77,14 @@ export var DataFilter = function DataFilter(_ref) {
     if (options) return undefined;
 
     // generate range from all values for the property
-    var uniqueValues = generateOptions(unfilteredData, property).sort();
+    var uniqueValues = generateOptions(unfilteredData || data, property).sort();
     // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
     var delta = uniqueValues[uniqueValues.length - 1] - uniqueValues[0];
     var interval = Number.parseFloat((delta / 3).toPrecision(1));
     var min = alignMin(uniqueValues[0], interval);
     var max = alignMax(uniqueValues[uniqueValues.length - 1], interval);
     return [min, max];
-  }, [children, options, properties, property, rangeProp, unfilteredData]);
+  }, [children, data, options, properties, property, rangeProp, unfilteredData]);
   var id = dataId + "-" + property;
   var content = children;
   if (!content) {
