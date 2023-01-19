@@ -48,10 +48,6 @@ const Cell = memo(
         isValidElement(value)
       )
         content = value;
-      // if (typeof value === 'string' || typeof value === 'number')
-      //   content = value;
-      // else if (typeof value === 'boolean') content = JSON.stringify(value);
-      // else console.log('!!! Cell', typeof value, value);
     }
 
     if (typeof content === 'string' || typeof content === 'number') {
