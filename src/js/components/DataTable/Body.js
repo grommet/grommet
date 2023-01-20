@@ -13,6 +13,7 @@ import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 import { datumValue, normalizeRowCellProps } from './buildState';
 import { defaultProps } from '../../default-props';
+import { useKeyboard } from '../../utils';
 
 const Row = memo(
   ({
@@ -184,7 +185,10 @@ const Body = forwardRef(
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
 
-    const onFocusActive = active ?? lastActive;
+    const keyboardRowNavigatable = useKeyboard() && onClickRow;
+
+    const onFocusActive =
+      active ?? lastActive ?? (keyboardRowNavigatable ? 0 : undefined);
 
     const selectRow = () => {
       const primaryValue = data[active]?.[primaryProperty];
