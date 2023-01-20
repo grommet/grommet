@@ -217,6 +217,11 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
   var _React$useState2 = React.useState([]),
     places = _React$useState2[0],
     setPlaces = _React$useState2[1];
+
+  // targets are used for the Drops associated with places content
+  var _React$useState3 = React.useState([]),
+    targets = _React$useState3[0],
+    setTargets = _React$useState3[1];
   React.useEffect(function () {
     if (placesProp) {
       setPlaces(placesProp.map(function (_ref6) {
@@ -229,25 +234,23 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
         }, place);
       }));
     } else setPlaces([]);
+    return function () {
+      setTargets([]);
+    };
   }, [placesProp, world]);
-  var _React$useState3 = React.useState(),
-    over = _React$useState3[0],
-    setOver = _React$useState3[1];
   var _React$useState4 = React.useState(),
-    activeCoords = _React$useState4[0],
-    setActiveCoords = _React$useState4[1];
+    over = _React$useState4[0],
+    setOver = _React$useState4[1];
   var _React$useState5 = React.useState(),
-    activeContinent = _React$useState5[0],
-    setActiveContinent = _React$useState5[1];
+    activeCoords = _React$useState5[0],
+    setActiveCoords = _React$useState5[1];
   var _React$useState6 = React.useState(),
-    activePlace = _React$useState6[0],
-    setActivePlace = _React$useState6[1];
+    activeContinent = _React$useState6[0],
+    setActiveContinent = _React$useState6[1];
+  var _React$useState7 = React.useState(),
+    activePlace = _React$useState7[0],
+    setActivePlace = _React$useState7[1];
   var containerRef = React.useRef();
-
-  // targets are used for the Drops associated with places content
-  var _React$useState7 = React.useState([]),
-    targets = _React$useState7[0],
-    setTargets = _React$useState7[1];
   var placeRef = React.useCallback(function (node, index) {
     setTargets(function (prevTargets) {
       if (!prevTargets[index]) {
