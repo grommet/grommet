@@ -13,7 +13,7 @@ import { TableFooter } from '../TableFooter';
 var StyledDataTable = styled(Table).withConfig({
   displayName: "StyledDataTable",
   componentId: "sc-xrlyjm-0"
-})(["position:relative;border-spacing:0;border-collapse:separate;height:100%;", " ", " ", ";"], genericStyles, function (props) {
+})(["position:relative;border-spacing:0;border-collapse:separate;", " ", " ", ";"], genericStyles, function (props) {
   return props.fillProp && fillStyle(props.fillProp);
 }, function (props) {
   return props.theme.dataTable && props.theme.dataTable.body && props.theme.dataTable.body.extend;
