@@ -3,6 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
+import { DataFilters } from '../../DataFilters';
 import { DataTable } from '../../DataTable';
 import { Pagination } from '../../Pagination';
 import { Data } from '..';
@@ -327,6 +328,20 @@ describe('Data', () => {
         >
           <DataTable />
           <Pagination />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onView', () => {
+    const onView = jest.fn();
+    const { container } = render(
+      <Grommet>
+        <Data data={data} onView={onView}>
+          <DataFilters />
+          <DataTable />
         </Data>
       </Grommet>,
     );

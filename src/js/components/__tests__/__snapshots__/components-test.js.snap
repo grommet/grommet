@@ -287,6 +287,7 @@ exports[`Components loads 1`] = `
   "DataSummary": [Function],
   "DataTable": [Function],
   "DataTableColumns": [Function],
+  "DataView": [Function],
   "DateInput": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
