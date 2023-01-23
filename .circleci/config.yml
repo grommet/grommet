@@ -46,7 +46,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: Running chromatic
-          command: yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes
+          command: yarn chromatic -t ${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
     steps:
@@ -54,7 +54,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: Running chromatic
-          command: yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes --auto-accept-changes
+          command: yarn chromatic -t ${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
     steps:
