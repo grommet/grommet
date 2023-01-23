@@ -45,7 +45,7 @@
     "test-e2e": "testcafe chrome:headless e2e/tests",
     "build-storybook": "build-storybook -c storybook -o storybook-static",
     "prettier": "pretty-quick --staged",
-    "chromatic": "chromatic -t 9q99in2ygnh"
+    "chromatic": "chromatic"
   },
   "peerDependencies": {
     "react": "^16.6.1 || ^17.0.0 || ^18.0.0",
