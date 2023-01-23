@@ -45,16 +45,16 @@ jobs:
       - attach_workspace:
           at: ~/grommet-ci
       - run:
-          name: Running chromatic test
-          command: yarn chromatic test --exit-zero-on-changes
+          name: Running chromatic
+          command: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/grommet-ci
       - run:
-          name: Running chromatic test
-          command: yarn chromatic test --exit-zero-on-changes --auto-accept-changes
+          name: Running chromatic
+          command: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
     steps:
