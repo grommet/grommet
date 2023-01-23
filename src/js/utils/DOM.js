@@ -66,7 +66,7 @@ export const containsFocus = (node) => {
 };
 
 export const withinDropPortal = (node, portalContext) => {
-  const root = node.getRootNode();
+  const root = node?.getRootNode();
   let element = node;
   let portalId;
   while (element && element !== root) {
