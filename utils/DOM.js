@@ -66,7 +66,7 @@ var containsFocus = function containsFocus(node) {
 };
 exports.containsFocus = containsFocus;
 var withinDropPortal = function withinDropPortal(node, portalContext) {
-  var root = node.getRootNode();
+  var root = node == null ? void 0 : node.getRootNode();
   var element = node;
   var portalId;
   while (element && element !== root) {
