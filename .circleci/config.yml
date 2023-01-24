@@ -3,7 +3,7 @@ version: 2.1
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: circleci/node:14
+    - image: cimg/node:18
 
 jobs:
   checkout:
@@ -41,28 +41,18 @@ jobs:
           command: yarn test
   chromatic:
     <<: *defaults
-    parameters:
-      project-token:
-        type: env_var_name
-        default: CHROMATIC_PROJECT_TOKEN
     steps:
       - attach_workspace:
           at: ~/grommet-ci
-      - run:
-          name: Running chromatic
-          command: yarn chromatic -t ${<< parameters.project-token >>} --exit-zero-on-changes
+      - run: yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
-    parameters:
-      project-token:
-        type: env_var_name
-        default: CHROMATIC_PROJECT_TOKEN
     steps:
       - attach_workspace:
           at: ~/grommet-ci
       - run:
           name: Running chromatic
-          command: yarn chromatic -t ${<< parameters.project-token >>} --exit-zero-on-changes --auto-accept-changes
+          command: yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
     steps:
