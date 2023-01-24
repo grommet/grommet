@@ -46,7 +46,8 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/grommet-ci
-      - run: echo "test $CIRCLE_USERNAME test"
+      - run: echo $CIRCLE_USERNAME
+      - run: echo $CHROMATIC_PROJECT_TOKEN
       # - run: yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
