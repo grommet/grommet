@@ -245,10 +245,8 @@ function
   function
 ]
 {
-  length: { 
-    max: number,
-    threshold: number
-  }
+  max: number,
+  threshold: number
 }
 ```
 

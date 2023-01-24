@@ -36,10 +36,8 @@ if (process.env.NODE_ENV !== 'production') {
           }),
           PropTypes.func,
           PropTypes.shape({
-            length: PropTypes.shape({
-              max: PropTypes.number,
-              threshold: PropTypes.number,
-            }),
+            max: PropTypes.number,
+            threshold: PropTypes.number,
           }),
         ]),
       ),

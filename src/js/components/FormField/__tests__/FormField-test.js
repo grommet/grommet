@@ -456,7 +456,7 @@ describe('FormField', () => {
         <Form validate="change">
           <FormField
             label="label"
-            validate={{ length: { max: 10, threshold: 0.5 } }}
+            validate={{ max: 10, threshold: 0.5 }}
             name="issue-description"
             htmlFor="issue-description"
           >
@@ -479,7 +479,7 @@ describe('FormField', () => {
         <Form validate="change">
           <FormField
             label="label"
-            validate={{ length: { max: 10, threshold: 0.5 } }}
+            validate={{ max: 10, threshold: 0.5 }}
             name="issue-description"
             htmlFor="issue-description"
           >
@@ -508,7 +508,7 @@ describe('FormField', () => {
         <Form validate="change">
           <FormField
             label="label"
-            validate={{ length: { max: 10, threshold: 0.5 } }}
+            validate={{ max: 10, threshold: 0.5 }}
             name="issue-description"
             htmlFor="issue-description"
           >
@@ -540,7 +540,7 @@ describe('FormField', () => {
         <Form validate="change">
           <FormField
             label="label"
-            validate={{ length: { max: 10, threshold: 0.5 } }}
+            validate={{ max: 10, threshold: 0.5 }}
             name="issue-description"
             htmlFor="issue-description"
           >

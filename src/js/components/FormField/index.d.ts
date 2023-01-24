@@ -34,10 +34,8 @@ export interface FormFieldProps {
         | ((...args: any[]) => any)
       )[]
     | {
-        length: {
-          max: number;
-          threshold: number;
-        };
+        max: number;
+        threshold: number;
       };
 }
 

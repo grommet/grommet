@@ -204,19 +204,19 @@ const FormField = forwardRef(
       !Array.isArray(validate) &&
       validate !== null;
     // eslint-disable-next-line max-len
-    const isMaxAndThresholdValidation = isObject && 'length' in validate;
+    const isMaxAndThresholdValidation = isObject && 'max' in validate && 'threshold' in validate;
 
     const getMaxAndThresholdValidation = (value) => {
-      const { length } = validate;
+      const { max, threshold } = validate;
 
-      return value.length / length.max > length.threshold
+      return value.length / max > threshold
         ? {
-            status: length.max - value.length >= 0 ? 'info' : 'error',
+            status: max - value.length >= 0 ? 'info' : 'error',
             message:
-              length.max - value.length >= 0
-                ? `${length.max - value.length} characters left`
-                : `${value.length - length.max} character${
-                    value.length - length.max > 1 ? 's' : ''
+              max - value.length >= 0
+                ? `${max - value.length} characters left`
+                : `${value.length - max} character${
+                    value.length - max > 1 ? 's' : ''
                   } over limit`,
           }
         : undefined;
