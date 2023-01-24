@@ -23,6 +23,7 @@ jobs:
           root: ~/grommet-ci
           paths:
             - ./
+      - run: echo "test $NPM_TOKEN test"
   lint:
     <<: *defaults
     steps:
