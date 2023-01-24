@@ -22,7 +22,6 @@ const StyledDataTable = styled(Table)`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
   ${genericStyles}
   ${(props) => props.fillProp && fillStyle(props.fillProp)}
   ${(props) =>

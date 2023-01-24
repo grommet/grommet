@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import {
   Box,
   DataTable,
   Data,
+  Footer,
   Grid,
   Notification,
   Pagination,
@@ -52,7 +53,7 @@ const fetchLaunches = async (view) => {
       ],
       sort,
       select: ['name', 'success', 'failures'],
-      limit: view?.limit || 10,
+      limit: view?.step || 10,
       page: view?.page || 1,
     },
     query,
@@ -131,38 +132,48 @@ const columns = [
   },
 ];
 
-export const Table = () => {
-  const [data, setData] = useState();
-  const [rockets, setRockets] = useState();
-  const [view, setView] = useState({ search: '' });
-  const [sort, setSort] = useState({ property: 'name', direction: 'asc' });
-  const [page, setPage] = useState(1);
-  const limit = 10;
+const defaultView = {
+  search: '',
+  sort: { property: 'name', direction: 'asc' },
+  step: 10,
+};
 
-  const search = view.search || '';
+export const SpaceX = () => {
+  const [total, setTotal] = useState(0);
+  const [result, setResult] = useState({ data: [] });
+  const [rockets, setRockets] = useState([]);
+  const [view, setView] = useState(defaultView);
 
   useEffect(() => {
-    fetchRockets().then((d) => setRockets(d));
+    fetchRockets().then((response) =>
+      setRockets(
+        response.docs.map(({ name, id }) => ({ value: id, label: name })),
+      ),
+    );
   }, []);
 
   useEffect(() => {
-    fetchLaunches({
-      search,
-      limit,
-      page,
-      sort,
-      properties: view.properties,
-    }).then((d) => setData(d));
-  }, [search, limit, page, sort, view.properties]);
+    fetchLaunches(view).then((response) => {
+      setResult({
+        data: response.docs,
+        filteredTotal: response.totalDocs,
+        page: response.page,
+      });
+      // The REST API doesn't return the unfiltered total in responses.
+      // Since the first request likely has no filtering, we'll likely use
+      // response.totalDocs the first time and prevTotal thereafter.
+      setTotal((prevTotal) => Math.max(prevTotal, response.totalDocs));
+    });
+  }, [view]);
 
-  const numberItems = data?.totalDocs || 0;
-  const pageResultStart = (page - 1) * limit + 1;
-  const pageResultEnd = Math.min(page * limit, numberItems);
-
-  const rocketOptions =
-    rockets?.docs?.map(({ name, id }) => ({ value: id, label: name })) || [];
-
-  const docs = data?.docs || [];
+  const pageBounds = useMemo(() => {
+    if (result?.page)
+      return [
+        (result.page - 1) * view.step + 1,
+        Math.min(result.page * view.step, result.filteredTotal),
+      ];
+    return [];
+  }, [result, view]);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
@@ -181,54 +192,37 @@ export const Table = () => {
       <Box>
         <Data
           properties={{
-            rocket: { label: 'Rocket', options: rocketOptions },
+            rocket: { label: 'Rocket', options: rockets },
             success: { label: 'Success', options: ['Successful', 'Failed'] },
           }}
-          data={docs}
-          total={numberItems}
+          data={result.data}
+          total={total}
+          filteredTotal={result.filteredTotal}
+          defaultView={defaultView}
           view={view}
-          onView={(nextView) => {
-            setView(nextView);
-            setPage(1);
-          }}
+          onView={setView}
           toolbar
         >
-          <DataTable
-            columns={columns}
-            sort={{ ...sort, external: true }}
-            onSort={(opts) => setSort(opts)}
-          />
+          <DataTable columns={columns} sortable />
+          {result.filteredTotal > view.step && (
+            <Footer>
+              <Text>
+                Showing {pageBounds[0]}-{pageBounds[1]} of{' '}
+                {result.filteredTotal}
+              </Text>
+              <Pagination />
+            </Footer>
+          )}
         </Data>
-        {numberItems > limit && (
-          <Box
-            direction="row-responsive"
-            fill="horizontal"
-            border="top"
-            justify="end"
-            pad={{ vertical: 'xsmall' }}
-          >
-            <Text>
-              Showing {pageResultStart}-{pageResultEnd} of {numberItems}
-            </Text>
-            <Pagination
-              step={limit}
-              numberItems={numberItems}
-              page={page}
-              onChange={(opts) => setPage(opts.page)}
-              direction="row"
-              flex={false}
-            />
-          </Box>
-        )}
       </Box>
     </Grid>
     // </Grommet>
   );
 };
 
-Table.storyName = 'SpaceX';
+SpaceX.storyName = 'SpaceX';
 
-Table.args = {
+SpaceX.args = {
   full: true,
 };
 

@@ -13,6 +13,7 @@ import { CheckBox } from '../../CheckBox';
 import { Form } from '../../Form';
 import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
+import { TextArea } from '../../TextArea';
 
 const CustomFormField = styled(FormField)`
   font-size: 40px;
@@ -562,5 +563,17 @@ describe('FormField', () => {
       expect(container.firstChild).toMatchSnapshot();
       expect(screen.getByText('1 character over limit')).toBeTruthy();
     });
+  });
+
+  test('Field with autoFocus', () => {
+    const mockFocus = jest.fn();
+    render(
+      <Grommet>
+        <FormField label="Label" htmlFor="select">
+          <TextArea onFocus={mockFocus} autoFocus />
+        </FormField>
+      </Grommet>,
+    );
+    expect(mockFocus).toHaveBeenCalledTimes(1);
   });
 });

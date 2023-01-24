@@ -288,6 +288,7 @@ describe('SelectMultiple', () => {
         <SelectMultiple
           id="test-select__drop"
           options={['one', 'two', 'three', 'four']}
+          valueKey={{ key: 'value', reduce: true }}
         />
       </Grommet>,
     );

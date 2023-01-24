@@ -3,7 +3,9 @@ import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
+import { DataFilters } from '../../DataFilters';
 import { DataTable } from '../../DataTable';
+import { Pagination } from '../../Pagination';
 import { Data } from '..';
 
 const data = [
@@ -236,11 +238,6 @@ describe('Data', () => {
     expect(getByText('1 result of 4 items')).toBeTruthy();
     expect(queryByText('bb')).toBeFalsy();
     expect(container.firstChild).toMatchSnapshot();
-
-    fireEvent.click(getByText('Clear filters'));
-    expect(getByText('4 items')).toBeTruthy();
-    expect(getByText('bb')).toBeTruthy();
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('controlled search', () => {
@@ -272,16 +269,6 @@ describe('Data', () => {
       1,
       expect.objectContaining({
         search: 'a',
-        properties: {},
-      }),
-    );
-
-    fireEvent.click(getByText('Clear filters'));
-    expect(container.firstChild).toMatchSnapshot();
-    expect(onView).toHaveBeenNthCalledWith(
-      2,
-      expect.objectContaining({
-        search: '',
         properties: {},
       }),
     );
@@ -321,6 +308,39 @@ describe('Data', () => {
           }}
           toolbar="filters"
         >
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('pagination', () => {
+    const { container } = render(
+      <Grommet>
+        <Data
+          data={[...data].slice(2, 4)}
+          total={data.length}
+          properties={{ name: { label: 'Name' } }}
+          onView={() => {}}
+          view={{ page: 2, step: 2 }}
+        >
+          <DataTable />
+          <Pagination />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onView', () => {
+    const onView = jest.fn();
+    const { container } = render(
+      <Grommet>
+        <Data data={data} onView={onView}>
+          <DataFilters />
           <DataTable />
         </Data>
       </Grommet>,

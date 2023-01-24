@@ -286,6 +286,8 @@ exports[`Components loads 1`] = `
   "DataSort": [Function],
   "DataSummary": [Function],
   "DataTable": [Function],
+  "DataTableColumns": [Function],
+  "DataView": [Function],
   "DateInput": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
@@ -5030,6 +5032,10 @@ exports[`Components loads 1`] = `
   "__esModule": true,
   "calcBounds": [Function],
   "calcs": [Function],
+  "formColumnsKey": "_columns",
+  "formRangeKey": "_range",
+  "formSearchKey": "_search",
+  "formSortKey": "_sort",
   "round": [Function],
   "useSkeleton": [Function],
 }

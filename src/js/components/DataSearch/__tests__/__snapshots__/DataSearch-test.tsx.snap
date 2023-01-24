@@ -322,6 +322,10 @@ exports[`DataSearch renders 1`] = `
   left: 12px;
 }
 
+.c12 {
+  opacity: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 26px;
@@ -329,10 +333,6 @@ exports[`DataSearch renders 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
-}
-
-.c12 {
-  opacity: 0;
 }
 
 .c0 {
@@ -417,7 +417,7 @@ exports[`DataSearch renders 1`] = `
             aria-label="Search data"
             autocomplete="off"
             class="c8"
-            id="undefined--search"
+            id="data--search"
             name="_search"
             type="search"
             value=""

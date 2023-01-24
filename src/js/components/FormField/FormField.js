@@ -9,7 +9,12 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { containsFocus, shouldKeepFocus } from '../../utils/DOM';
+import {
+  containsFocus,
+  shouldKeepFocus,
+  withinDropPortal,
+  PortalContext,
+} from '../../utils';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -240,6 +245,8 @@ const FormField = forwardRef(
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
     const debounce = useDebounce();
+
+    const portalContext = useContext(PortalContext);
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -521,15 +528,28 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
-          const root = formFieldRef.current.getRootNode();
-          setFocus(
-            containsFocus(formFieldRef.current) && shouldKeepFocus(root),
-          );
+          const root = formFieldRef.current?.getRootNode();
+          if (root) {
+            setFocus(
+              containsFocus(formFieldRef.current) && shouldKeepFocus(root),
+            );
+          }
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {
           setFocus(false);
-          if (contextOnBlur) contextOnBlur(event);
+
+          // if input has a drop and focus is within drop
+          // prevent onBlur validation from running until
+          // focus is no longer within the drop or input
+          if (
+            contextOnBlur &&
+            !formFieldRef.current.contains(event.relatedTarget) &&
+            !withinDropPortal(event.relatedTarget, portalContext)
+          ) {
+            contextOnBlur(event);
+          }
+
           if (onBlur) onBlur(event);
         }}
         onChange={

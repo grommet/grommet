@@ -2,10 +2,13 @@ import * as React from 'react';
 import { BoxProps } from '../Box/index';
 
 export interface View {
+  name?: string;
+  page?: number; // when paging
   properties?:
     | string[]
     | {
         [property: string]:
+          | undefined
           | boolean
           | (string | number | boolean)[]
           | { max: number; min: number };
@@ -15,12 +18,10 @@ export interface View {
     property: string;
     direction: 'asc' | 'desc';
   };
+  step?: number; // page size
 
   // Future column ordering, requires 'properties' property on Data
   // columns?: string[];
-
-  // Future name
-  // name?: string;
 }
 
 export interface DataProps {
@@ -28,8 +29,11 @@ export interface DataProps {
 
   data: object[];
   total?: number;
+  // when paging
+  filteredTotal?: number;
 
-  view?: View;
+  defaultView?: View;
+  view?: string | View;
   onView?: (view: View) => void;
   // when view changes should be delivered
   updateOn?: 'change' | 'submit';
@@ -82,17 +86,18 @@ export interface DataProps {
       direction?: string;
     };
     dataSummary?: {
-      filtered?: string;
+      filteredTotal?: string;
       total?: string;
     };
   };
+
+  views?: View[];
 
   // Future selection
   // select: string[];
   // onSelect: (select: string[]) => void;
 
-  // Future named views
-  // views?: View[];
+  // Future manage named views
   // onCreateView?: (view: View) =>  void;
   // onDeleteView?: (string) => void;
 }

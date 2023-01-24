@@ -35,7 +35,12 @@ export const DataFilter = ({
   range: rangeProp,
   ...rest
 }) => {
-  const { id: dataId, properties, unfilteredData } = useContext(DataContext);
+  const {
+    data,
+    id: dataId,
+    properties,
+    unfilteredData,
+  } = useContext(DataContext);
 
   const options = useMemo(() => {
     if (children) return undefined; // caller driving
@@ -46,13 +51,21 @@ export const DataFilter = ({
     if (rangeProp || properties?.[property]?.range) return undefined;
 
     // generate options from all values for property
-    const uniqueValues = generateOptions(unfilteredData, property);
+    const uniqueValues = generateOptions(unfilteredData || data, property);
     // if any values aren't numeric, treat as options
     if (uniqueValues.some((v) => v && typeof v !== 'number'))
       return uniqueValues;
     // if all values are numeric, let range take care of it
     return undefined;
-  }, [children, optionsProp, properties, property, rangeProp, unfilteredData]);
+  }, [
+    children,
+    data,
+    optionsProp,
+    properties,
+    property,
+    rangeProp,
+    unfilteredData,
+  ]);
 
   const range = useMemo(() => {
     if (children) return undefined; // caller driving
@@ -66,14 +79,25 @@ export const DataFilter = ({
     if (options) return undefined;
 
     // generate range from all values for the property
-    const uniqueValues = generateOptions(unfilteredData, property).sort();
+    const uniqueValues = generateOptions(
+      unfilteredData || data,
+      property,
+    ).sort();
     // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
     const delta = uniqueValues[uniqueValues.length - 1] - uniqueValues[0];
     const interval = Number.parseFloat((delta / 3).toPrecision(1));
     const min = alignMin(uniqueValues[0], interval);
     const max = alignMax(uniqueValues[uniqueValues.length - 1], interval);
     return [min, max];
-  }, [children, options, properties, property, rangeProp, unfilteredData]);
+  }, [
+    children,
+    data,
+    options,
+    properties,
+    property,
+    rangeProp,
+    unfilteredData,
+  ]);
 
   const id = `${dataId}-${property}`;
 
