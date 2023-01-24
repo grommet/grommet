@@ -23,7 +23,6 @@ jobs:
           root: ~/grommet-ci
           paths:
             - ./
-      - run: echo "test $NPM_TOKEN test"
   lint:
     <<: *defaults
     steps:
@@ -47,7 +46,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/grommet-ci
-      - run: echo "test $NPM_TOKEN test"
+      - run: echo "test $CIRCLE_USERNAME test"
       # - run: yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
@@ -56,7 +55,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: Running chromatic
-          command: yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes --auto-accept-changes
+          command: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
     steps:
