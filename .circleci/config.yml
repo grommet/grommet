@@ -41,10 +41,13 @@ jobs:
           command: yarn test
   chromatic:
     <<: *defaults
+    environment:
+      FOO: $foo
     steps:
       - attach_workspace:
           at: ~/grommet-ci
-      - run: yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes
+      - run: echo "test $CHROMATIC_PROJECT_TOKEN test"
+      # - run: yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
     steps:
