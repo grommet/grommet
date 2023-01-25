@@ -41,12 +41,10 @@ jobs:
           command: yarn test
   chromatic:
     <<: *defaults
-    environment:
-      FOO: $foo
     steps:
       - attach_workspace:
-          at: ~/grommet-ciN
-      - run: 
+          at: ~/grommet-ci
+      - run:
           name: Running chromatic test
           command: yarn chromatic --exit-zero-on-changes
   chromatic-accept:
