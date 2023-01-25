@@ -48,7 +48,7 @@ jobs:
           at: ~/grommet-ciN
       - run: 
           name: Running chromatic test
-          command: yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes
+          command: yarn chromatic --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
     steps:
