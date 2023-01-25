@@ -75,6 +75,21 @@ jobs:
       - run:
           name: size
           command: yarn test-bundlesize
+  test:
+    docker:
+      - image: cimg/node:lts-browsers
+    steps:
+      - checkout
+      - browser-tools/install-browser-tools
+      - node/install-packages
+      - run:
+          command: yarn start && yarn test-e2e
+      - store_test_results:
+          path: /tmp/test-results
+    workflows:
+      e2e-test:
+        jobs:
+          - test
   release:
     <<: *defaults
     steps:
