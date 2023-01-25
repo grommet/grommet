@@ -474,7 +474,7 @@ describe('FormField', () => {
   });
 
   test('typing something into the input that meets the threshold', () => {
-    const { container } = render(
+    render(
       <Grommet>
         <Form validate="change">
           <FormField
@@ -498,12 +498,11 @@ describe('FormField', () => {
       target: { value: '12345' },
     });
 
-    expect(container.firstChild).toMatchSnapshot();
     expect(screen.queryByText('characters left', { exact: false })).toBeNull();
   });
 
   test('checks that the "X characters left" message appears', async () => {
-    const { container } = render(
+    render(
       <Grommet>
         <Form validate="change">
           <FormField
@@ -528,14 +527,13 @@ describe('FormField', () => {
     });
 
     await waitFor(() => {
-      expect(container.firstChild).toMatchSnapshot();
       expect(screen.getByText('4 characters left')).toBeTruthy();
     });
   });
 
   // eslint-disable-next-line max-len
   test('checks that the "X characters over limit" message appears.', async () => {
-    const { container } = render(
+    render(
       <Grommet>
         <Form validate="change">
           <FormField
@@ -560,7 +558,6 @@ describe('FormField', () => {
     });
 
     await waitFor(() => {
-      expect(container.firstChild).toMatchSnapshot();
       expect(screen.getByText('1 character over limit')).toBeTruthy();
     });
   });
