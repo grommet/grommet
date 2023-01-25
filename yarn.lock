@@ -137,7 +137,7 @@
     lru-cache "^5.1.1"
     semver "^6.3.0"
 
-"@babel/helper-create-class-features-plugin@^7.18.6", "@babel/helper-create-class-features-plugin@^7.20.5", "@babel/helper-create-class-features-plugin@^7.20.7":
+"@babel/helper-create-class-features-plugin@^7.18.6", "@babel/helper-create-class-features-plugin@^7.20.12", "@babel/helper-create-class-features-plugin@^7.20.5", "@babel/helper-create-class-features-plugin@^7.20.7":
   version "7.20.12"
   resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.20.12.tgz#4349b928e79be05ed2d1643b20b99bb87c503819"
   integrity sha512-9OunRkbT0JQcednL0UFvbfXpAsUXiGjUk0a7sN8fUXX7Mue79cUSMjHGDRRi/Vz9vYlpIhLV5fMD5dKoMhhsNQ==
@@ -403,7 +403,18 @@
     "@babel/helper-plugin-utils" "^7.20.2"
     "@babel/plugin-syntax-class-static-block" "^7.14.5"
 
-"@babel/plugin-proposal-decorators@^7.12.1", "@babel/plugin-proposal-decorators@^7.12.12":
+"@babel/plugin-proposal-decorators@^7.12.1":
+  version "7.20.13"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.20.13.tgz#b6bea3b18e88443688fa7ed2cc06d2c60da9f4a7"
+  integrity sha512-7T6BKHa9Cpd7lCueHBBzP0nkXNina+h5giOZw+a8ZpMfPFY19VjJAjIxyFHuWkhCWgL6QMqRiY/wB1fLXzm6Mw==
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.20.12"
+    "@babel/helper-plugin-utils" "^7.20.2"
+    "@babel/helper-replace-supers" "^7.20.7"
+    "@babel/helper-split-export-declaration" "^7.18.6"
+    "@babel/plugin-syntax-decorators" "^7.19.0"
+
+"@babel/plugin-proposal-decorators@^7.12.12":
   version "7.20.7"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.20.7.tgz#05d37453c2ce818f3e47bbeda9468c8de947eecc"
   integrity sha512-JB45hbUweYpwAGjkiM7uCyXMENH2lG+9r3G2E+ttc2PRXAoEkpfd/KW5jDg4j8RS6tLtTG1jZi9LbHZVSfs1/A==
@@ -5953,9 +5964,9 @@ detect-port@^1.3.0:
     debug "4"
 
 device-specs@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/device-specs/-/device-specs-1.0.0.tgz#47b54577b9b159118bbb0a175177d0aa9c50a9c9"
-  integrity sha512-fYXbFSeilT7bnKWFi4OERSPHdtaEoDGn4aUhV5Nly6/I+Tp6JZ/6Icmd7LVIF5euyodGpxz2e/bfUmDnIdSIDw==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/device-specs/-/device-specs-1.0.1.tgz#b1a26c717a5339815238abf07f427e0b340d35ac"
+  integrity sha512-rxns/NDZfbdYumnn801z9uo8kWIz3Eld7Bk/F0V9zw4sZemSoD93+gxHEonLdxYulkws4iCMt7ZP8zuM8EzUSg==
 
 diff-sequences@^29.3.1:
   version "29.3.1"
@@ -6641,6 +6652,13 @@ esotope-hammerhead@0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/esotope-hammerhead/-/esotope-hammerhead-0.6.2.tgz#06d802eba949e9cac109a20cafeafc8cdeac3b32"
   integrity sha512-SJdxje3PBgYRnHKfoTdjB9Q32vHLiuJABSvTXVBHVpzTz+uIgpkrMcXD1Y0i2k1gplPNyJ62gA8k8/f08FvFsg==
+  dependencies:
+    "@types/estree" "0.0.46"
+
+esotope-hammerhead@0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/esotope-hammerhead/-/esotope-hammerhead-0.6.3.tgz#0cd6f7503c7fe285daf366ff7d42a338316d59ac"
+  integrity sha512-Aq6gUznvm0xPtjpbZo9OSsRO1+m+NM0hjZOYufH3HDlJWeOZpBskR/vuP9/tiMaQFD3+ES5BQq5fAY1qOLKWUA==
   dependencies:
     "@types/estree" "0.0.46"
 
@@ -8103,9 +8121,9 @@ human-signals@^2.1.0:
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
 humanize-duration@^3.25.0:
-  version "3.27.3"
-  resolved "https://registry.yarnpkg.com/humanize-duration/-/humanize-duration-3.27.3.tgz#db654e72ebf5ccfe232c7f56bc58aa3a6fe4df88"
-  integrity sha512-iimHkHPfIAQ8zCDQLgn08pRqSVioyWvnGfaQ8gond2wf7Jq2jJ+24ykmnRyiz3fIldcn4oUuQXpjqKLhSVR7lw==
+  version "3.28.0"
+  resolved "https://registry.yarnpkg.com/humanize-duration/-/humanize-duration-3.28.0.tgz#f79770c0bec34d3bfd4899338cc40643bc04df72"
+  integrity sha512-jMAxraOOmHuPbffLVDKkEKi/NeG8dMqP8lGRd6Tbf7JgAeG33jjgPWDbXXU7ypCI0o+oNKJFgbSB9FKVdWNI2A==
 
 iconv-lite@0.4.24:
   version "0.4.24"
@@ -13384,9 +13402,9 @@ testcafe-hammerhead@28.2.5:
     webauth "^1.1.0"
 
 testcafe-hammerhead@>=19.4.0:
-  version "28.2.6"
-  resolved "https://registry.yarnpkg.com/testcafe-hammerhead/-/testcafe-hammerhead-28.2.6.tgz#7a8a818a0e83e22fc134b3ff7d1cb3c602a5d561"
-  integrity sha512-OdoEAqgUJRetV76NxfD3Nh9xOAiTIUum+eOUV4Fr8zmu0xW8dHHWCsWrttN0+iz3u7i99R3cMEls5gHKRxqeow==
+  version "28.2.9"
+  resolved "https://registry.yarnpkg.com/testcafe-hammerhead/-/testcafe-hammerhead-28.2.9.tgz#9bf3b84b0428b8ee0c1453484b935f8fa2edaf38"
+  integrity sha512-qagJnHJlcnqpUTGHtg9RbVqnUPtuZvNA5XmM3SmzVmd7kcd9pgBfdJE9pw2Fp1ljVNshiDCsDcGGfn5jsyMalg==
   dependencies:
     acorn-hammerhead "0.6.1"
     asar "^2.0.1"
@@ -13394,7 +13412,7 @@ testcafe-hammerhead@>=19.4.0:
     crypto-md5 "^1.0.0"
     css "2.2.3"
     debug "4.3.1"
-    esotope-hammerhead "0.6.2"
+    esotope-hammerhead "0.6.3"
     http-cache-semantics "^4.1.0"
     iconv-lite "0.5.1"
     lodash "^4.17.20"
@@ -13474,7 +13492,7 @@ testcafe-reporter-spec@^2.1.1:
   resolved "https://registry.yarnpkg.com/testcafe-reporter-spec/-/testcafe-reporter-spec-2.1.1.tgz#8156fced0f5132486559ad560bc80676469275ec"
   integrity sha512-KO4c4F5pIORaQ1ddWgNDOyN0GiiKFWtjoMYk3VgBiJYcYuk2ZPN1Ewn0KkZsSsL30tOKeQW6jdp/H+7b4rg5+Q==
 
-testcafe-reporter-xunit@^2.2.1:
+testcafe-reporter-xunit@^2.2.1, testcafe-reporter-xunit@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/testcafe-reporter-xunit/-/testcafe-reporter-xunit-2.2.2.tgz#e26d517a2fb509139184cd06e41fe7822923e661"
   integrity sha512-Si2cloquvpgv71JAcut8qdx+HrsTuU5vjmxxbf8xGPBZuITW/J9HF0lGLNGFAp7IRRgqu3oZ/HyfAQrobGawOQ==
@@ -14681,9 +14699,9 @@ wildcard@^2.0.0:
   integrity sha512-JcKqAHLPxcdb9KM49dufGXn2x3ssnfjbcaQdLlfZsL9rH9wgDQjUtDxbo8NE0F6SFvydeu1VhZe7hZuHsB2/pw==
 
 windows-release@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/windows-release/-/windows-release-5.0.1.tgz#d1f7cd1f25660ba05cac6359711844dce909a8ed"
-  integrity sha512-y1xFdFvdMiDXI3xiOhMbJwt1Y7dUxidha0CWPs1NgjZIjZANTcX7+7bMqNjuezhzb8s5JGEiBAbQjQQYYy7ulw==
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/windows-release/-/windows-release-5.1.0.tgz#fc56e8c53d970bd63ded965c85b2fbeacf7d80da"
+  integrity sha512-CddHecz5dt0ngTjGPP1uYr9Tjl4qq5rEKNk8UGb8XCdngNXI+GRYvqelD055FdiUgqODZz3R/5oZWYldPtXQpA==
   dependencies:
     execa "^5.1.1"
 
