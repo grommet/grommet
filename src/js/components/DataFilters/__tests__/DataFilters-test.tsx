@@ -45,6 +45,18 @@ describe('DataFilters', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('layer', () => {
+    const { container } = render(
+      <Grommet>
+        <Data data={data}>
+          <DataFilters layer />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('properties array', () => {
     const { container } = render(
       <Grommet>
