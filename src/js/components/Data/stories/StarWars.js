@@ -40,13 +40,8 @@ export const StarWars = () => {
       if (results) {
         // The API doesn't provide a non-filtered total, so we rely on the
         // first call having no filtering telling us the total.
-        setTotal(prevTotal => Math.max(prevTotal, count));
-        setResult({
-          data: results,
-          filteredTotal: count,
-          page: view.page ?? 1,
-          step,
-        });
+        setTotal((prevTotal) => Math.max(prevTotal, count));
+        setResult({ data: results, filteredTotal: count });
         abortRef.current = undefined;
       }
     });
