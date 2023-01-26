@@ -1021,6 +1021,7 @@ export interface ThemeType {
     extend?: ExtendType;
     overlay?: {
       background?: BackgroundType;
+      backdropFilter?: string;
     };
     responsiveBreakpoint?: string;
     zIndex?: string;
