@@ -1030,7 +1030,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       responsiveBreakpoint: 'small', // when we scale the font size down
       weight: 600,
       skeleton: {
-        width: { min: '200px' },
+        width: { min: '150px', max: '200px' },
       },
     },
     layer: {
