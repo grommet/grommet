@@ -1161,7 +1161,8 @@ export var generate = function generate(baseSpacing, scale) {
       weight: 600,
       skeleton: {
         width: {
-          min: '200px'
+          min: '150px',
+          max: '200px'
         }
       }
     },
