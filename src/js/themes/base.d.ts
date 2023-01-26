@@ -175,6 +175,13 @@ interface ButtonType {
       };
     };
   };
+  icon?: {
+    size?: {
+      small?: string;
+      medium?: string;
+      large?: string;
+    };
+  };
   gap?: GapType;
   border?: {
     color?: ColorType;
@@ -223,6 +230,9 @@ interface ButtonType {
         vertical?: string;
         horizontal?: string;
       };
+      iconOnly?: {
+        pad?: string | { horizontal?: string; vertical?: string };
+      };
     };
     medium?: {
       border?: {
@@ -232,6 +242,9 @@ interface ButtonType {
         vertical?: string;
         horizontal?: string;
       };
+      iconOnly?: {
+        pad?: string | { horizontal?: string; vertical?: string };
+      };
     };
     large?: {
       border?: {
@@ -240,6 +253,9 @@ interface ButtonType {
       pad?: {
         vertical?: string;
         horizontal?: string;
+      };
+      iconOnly?: {
+        pad?: string | { horizontal?: string; vertical?: string };
       };
     };
   };

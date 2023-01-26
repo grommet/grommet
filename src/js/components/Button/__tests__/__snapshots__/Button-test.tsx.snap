@@ -3890,8 +3890,8 @@ exports[`Button size 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   fill: #f8f8f8;
   stroke: #f8f8f8;
 }
@@ -3919,7 +3919,109 @@ exports[`Button size 1`] = `
   stroke: none;
 }
 
-.c11 {
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c10 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c14 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3930,30 +4032,64 @@ exports[`Button size 1`] = `
   stroke: #666666;
 }
 
-.c11 g {
+.c14 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill="none"] {
+.c14 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
+.c14 *[stroke*="#"],
+.c14 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
+.c14 *[fill-rule],
+.c14 *[FILL-RULE],
+.c14 *[fill*="#"],
+.c14 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c9 {
+.c15 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c15 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c15 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c15 *[stroke*="#"],
+.c15 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c15 *[fill-rule],
+.c15 *[FILL-RULE],
+.c15 *[fill*="#"],
+.c15 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3975,7 +4111,7 @@ exports[`Button size 1`] = `
   justify-content: center;
 }
 
-.c10 {
+.c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -4555,7 +4691,7 @@ exports[`Button size 1`] = `
   >
     <svg
       aria-label="Add"
-      class="c8"
+      class="c9"
       viewBox="0 0 24 24"
     >
       <path
@@ -4572,7 +4708,7 @@ exports[`Button size 1`] = `
   >
     <svg
       aria-label="Add"
-      class="c8"
+      class="c9"
       viewBox="0 0 24 24"
     >
       <path
@@ -4589,7 +4725,7 @@ exports[`Button size 1`] = `
   >
     <svg
       aria-label="Add"
-      class="c8"
+      class="c10"
       viewBox="0 0 24 24"
     >
       <path
@@ -4605,15 +4741,15 @@ exports[`Button size 1`] = `
     type="button"
   >
     <div
-      class="c9"
+      class="c11"
     >
       Small
       <div
-        class="c10"
+        class="c12"
       />
       <svg
         aria-label="Next"
-        class="c11"
+        class="c13"
         viewBox="0 0 24 24"
       >
         <path
@@ -4630,15 +4766,15 @@ exports[`Button size 1`] = `
     type="button"
   >
     <div
-      class="c9"
+      class="c11"
     >
       Medium
       <div
-        class="c10"
+        class="c12"
       />
       <svg
         aria-label="Next"
-        class="c11"
+        class="c14"
         viewBox="0 0 24 24"
       >
         <path
@@ -4655,15 +4791,15 @@ exports[`Button size 1`] = `
     type="button"
   >
     <div
-      class="c9"
+      class="c11"
     >
       Default
       <div
-        class="c10"
+        class="c12"
       />
       <svg
         aria-label="Next"
-        class="c11"
+        class="c14"
         viewBox="0 0 24 24"
       >
         <path
@@ -4680,15 +4816,15 @@ exports[`Button size 1`] = `
     type="button"
   >
     <div
-      class="c9"
+      class="c11"
     >
       Large
       <div
-        class="c10"
+        class="c12"
       />
       <svg
         aria-label="Next"
-        class="c11"
+        class="c15"
         viewBox="0 0 24 24"
       >
         <path

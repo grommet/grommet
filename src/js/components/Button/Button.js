@@ -189,7 +189,7 @@ const Button = forwardRef(
       reverse: reverseProp,
       secondary,
       selected,
-      size,
+      size = 'medium',
       tip,
       type = 'button',
       // can't alphabetize a11yTitle before tip is defined
@@ -345,6 +345,12 @@ const Button = forwardRef(
         buttonIcon = cloneElement(kindIcon, {
           color: iconColor,
         });
+    }
+
+    if (icon && !icon.props.size) {
+      buttonIcon = cloneElement(buttonIcon, {
+        size: theme.button?.icon?.size?.[size] || size,
+      });
     }
 
     const reverse = reverseProp ?? theme.button[kind]?.reverse;
