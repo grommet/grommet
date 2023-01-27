@@ -632,4 +632,22 @@ describe('Button kind', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test(`should apply kind direction`, () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {},
+            secondary: {
+              direction: 'column',
+            },
+          },
+        }}
+      >
+        <Button secondary label="Button" icon={<svg />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

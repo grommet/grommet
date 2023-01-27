@@ -147,7 +147,9 @@ interface ButtonKindType {
       }
     | boolean;
   color?: ColorType;
+  direction?: DirectionType;
   font?: {
+    size?: string;
     weight?: number | string;
   };
   icon?: React.ReactNode | Icon;
