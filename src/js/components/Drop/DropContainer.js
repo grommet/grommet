@@ -48,7 +48,7 @@ const DropContainer = forwardRef(
       onKeyDown,
       overflow = 'auto',
       plain,
-      responsive,
+      responsive = true,
       restrictFocus,
       stretch = 'width',
       trapFocus,
@@ -166,32 +166,20 @@ const DropContainer = forwardRef(
           let bottom;
           let maxHeight = containerRect.height;
           if (align.top) {
-            if (align.top === 'top') {
-              ({ top } = targetRect);
-            } else {
-              top = targetRect.bottom;
-            }
+            const alignToTop = align.top === 'top';
+            const switchTop = !alignToTop ? targetRect.top : targetRect.bottom;
+            top = alignToTop ? targetRect.top : targetRect.bottom;
 
-            // Calculate visible area underneath the control w.r.t window height
-            const percentVisibleAreaBelow =
-              100 - (targetRect.bottom / windowHeight) * 100;
-
-            // Check whether it is within 20% from bottom of the window or
-            // visible area to flip the control
-            // DropContainer doesn't fit well within visible area when
-            // percentVisibleAreaBelow value<=20%
-            // There is enough space from DropContainer to bottom of the window
-            // when percentVisibleAreaBelow>20%.
-
-            if (windowHeight === top || percentVisibleAreaBelow <= 20) {
+            if (
+              responsive &&
+              (windowHeight === top ||
+                (windowHeight < top + containerRect.height &&
+                  windowHeight - top < switchTop))
+            ) {
               // We need more room than we have.
               // We put it below, but there's more room above, put it above
               top = '';
-              if (align.top === 'bottom') {
-                bottom = targetRect.top;
-              } else {
-                ({ bottom } = targetRect);
-              }
+              bottom = alignToTop ? targetRect.bottom : targetRect.top;
               maxHeight = bottom;
               container.style.maxHeight = `${maxHeight}px`;
             } else if (top > 0) {
@@ -201,13 +189,26 @@ const DropContainer = forwardRef(
               maxHeight = windowHeight - top;
             }
           } else if (align.bottom) {
-            if (align.bottom === 'bottom') {
-              ({ bottom } = targetRect);
+            const alignToBottom = align.bottom === 'bottom';
+            const switchBottom = !alignToBottom
+              ? targetRect.bottom
+              : targetRect.top;
+            bottom = alignToBottom ? targetRect.bottom : targetRect.top;
+
+            if (
+              responsive &&
+              (bottom === 0 ||
+                (bottom - containerRect.height < 0 &&
+                  0 + bottom > switchBottom))
+            ) {
+              bottom = '';
+              top = alignToBottom ? targetRect.top : targetRect.bottom;
+              maxHeight = top;
+              container.style.maxHeight = `${maxHeight}px`;
             } else {
-              bottom = targetRect.top;
+              maxHeight = bottom;
+              container.style.maxHeight = `${maxHeight}px`;
             }
-            maxHeight = bottom;
-            container.style.maxHeight = `${maxHeight}px`;
           } else {
             // center
             top =
