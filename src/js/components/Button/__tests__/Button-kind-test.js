@@ -641,6 +641,9 @@ describe('Button kind', () => {
             default: {},
             secondary: {
               direction: 'column',
+              font: {
+                size: 'xsmall',
+              },
             },
           },
         }}
