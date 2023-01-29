@@ -44,8 +44,8 @@ export const Controlled = () => {
             console.log('Submit', event.value, event.touched)
           }
         >
-          <FormField label="Name" name="name">
-            <TextInput name="name" suggestions={suggestions} />
+          <FormField label="Name" htmlFor="name" name="name">
+            <TextInput id="name" name="name" suggestions={suggestions} />
           </FormField>
           <FormField label="Email" htmlFor="email" name="email" required>
             <MaskedInput
@@ -66,14 +66,19 @@ export const Controlled = () => {
           <FormField name="ampm">
             <RadioButtonGroup name="ampm" options={['morning', 'evening']} />
           </FormField>
-          <FormField label="Size" name="size">
-            <Select name="size" options={['small', 'medium', 'large']} />
+          <FormField label="Size" htmlFor="size" name="size">
+            <Select
+              id="size"
+              aria-label="size"
+              name="size"
+              options={['small', 'medium', 'large']}
+            />
           </FormField>
-          <FormField label="Comments" name="comments">
-            <TextArea name="comments" />
+          <FormField label="Comments" htmlFor="comments" name="comments">
+            <TextArea id="comments" name="comments" />
           </FormField>
-          <FormField label="Age" name="age" pad>
-            <RangeInput name="age" min={15} max={75} />
+          <FormField label="Age" htmlFor="age" name="age" pad>
+            <RangeInput id="age" name="age" min={15} max={75} />
           </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />

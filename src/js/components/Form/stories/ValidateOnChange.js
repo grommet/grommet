@@ -21,6 +21,8 @@ export const ValidateOnChange = () => {
         >
           <FormField
             label="First Name"
+            htmlFor="firstName"
+            id="firstName"
             name="firstName"
             required
             validate={[
@@ -35,6 +37,8 @@ export const ValidateOnChange = () => {
 
           <FormField
             label="Last Name"
+            htmlFor="lastName"
+            id="lastName"
             name="lastName"
             required
             validate={[
@@ -61,6 +65,7 @@ export const ValidateOnChange = () => {
             <Select
               name="select-size"
               id="select-size"
+              aria-label="select-size"
               options={['small', 'medium', 'large']}
             />
           </FormField>
