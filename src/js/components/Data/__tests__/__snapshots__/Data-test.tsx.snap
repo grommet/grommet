@@ -412,6 +412,7 @@ exports[`Data controlled search 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -586,6 +587,7 @@ exports[`Data controlled search 2`] = `
         <button
           aria-label="Open filters"
           class="StyledButton-sc-323bzc-0 wfYUD"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -1125,6 +1127,7 @@ exports[`Data messages 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -3502,6 +3505,7 @@ exports[`Data toolbar 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -3963,6 +3967,7 @@ exports[`Data toolbar filters 1`] = `
         <button
           aria-label="Open filters"
           class="c4"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -4927,6 +4932,7 @@ exports[`Data uncontrolled search 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -5101,6 +5107,7 @@ exports[`Data uncontrolled search 2`] = `
         <button
           aria-label="Open filters"
           class="StyledButton-sc-323bzc-0 wfYUD"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -5860,6 +5867,7 @@ exports[`Data view all 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -6366,6 +6374,7 @@ exports[`Data view property option 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -6872,6 +6881,7 @@ exports[`Data view property range 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -7399,6 +7409,7 @@ exports[`Data view search 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -7905,6 +7916,7 @@ exports[`Data view sort 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg

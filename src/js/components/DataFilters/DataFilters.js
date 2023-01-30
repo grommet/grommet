@@ -24,8 +24,14 @@ const layerProps = {
 };
 
 export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
-  const { clearFilters, data, messages, properties, view } =
-    useContext(DataContext);
+  const {
+    clearFilters,
+    data,
+    id: dataId,
+    messages,
+    properties,
+    view,
+  } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [showContent, setShowContent] = useState();
   // touched is a map of form field name to its value, it only has fields that
@@ -127,6 +133,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   if (drop) {
     control = (
       <DropButton
+        id={`${dataId}--filters-control`}
         aria-label={format({
           id: 'dataFilters.open',
           messages: messages?.dataFilters,
@@ -145,6 +152,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   } else if (layer) {
     control = (
       <Button
+        id={`${dataId}--filters-control`}
         aria-label={format({
           id: 'dataFilters.open',
           messages: messages?.dataFilters,
@@ -164,6 +172,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
       {clearControl}
       {layer && showContent && (
         <Layer
+          id={`${dataId}--filters-layer`}
           {...(typeof layer === 'object' ? layer : layerProps)}
           onClickOutside={() => setShowContent(undefined)}
           onEsc={() => setShowContent(undefined)}
