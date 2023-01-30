@@ -96,7 +96,7 @@ const DropContainer = forwardRef(
 
     useEffect(() => {
       const notifyAlign = () => {
-        const styleCurrent = dropRef?.current.style;
+        const styleCurrent = dropRef.current.style;
         const alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
 
         onAlign(alignControl);
@@ -109,7 +109,7 @@ const DropContainer = forwardRef(
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
         const target = dropTarget?.current || dropTarget;
-        const container = dropRef?.current;
+        const container = dropRef.current;
         if (container && target) {
           // clear prior styling
           container.style.left = '';
@@ -306,7 +306,6 @@ const DropContainer = forwardRef(
       dropTarget,
       portalContext,
       portalId,
-      ref,
       responsive,
       restrictFocus,
       stretch,
@@ -316,9 +315,9 @@ const DropContainer = forwardRef(
 
     useEffect(() => {
       if (restrictFocus) {
-        dropRef?.current.focus();
+        dropRef.current.focus();
       }
-    }, [dropRef, ref, restrictFocus]);
+    }, [dropRef, restrictFocus]);
 
     let content = (
       <StyledDrop
