@@ -167,14 +167,21 @@ const DropContainer = forwardRef(
           let maxHeight = containerRect.height;
           if (align.top) {
             const alignToTop = align.top === 'top';
-            const switchTop = !alignToTop ? targetRect.top : targetRect.bottom;
+            const switchTarget = !alignToTop
+              ? targetRect.top
+              : targetRect.bottom;
             top = alignToTop ? targetRect.top : targetRect.bottom;
 
+            /* If responsive is true and the Drop doesn't have enough room 
+            to be fully visible and there is more room in the other 
+            direction, change the Drop to display above/below. If there is 
+            less room in the other direction leave the Drop in its current 
+            position. */
             if (
               responsive &&
               (windowHeight === top ||
                 (windowHeight < top + containerRect.height &&
-                  windowHeight - top < switchTop))
+                  windowHeight - top < switchTarget))
             ) {
               // We need more room than we have.
               // We put it below, but there's more room above, put it above
@@ -190,16 +197,21 @@ const DropContainer = forwardRef(
             }
           } else if (align.bottom) {
             const alignToBottom = align.bottom === 'bottom';
-            const switchBottom = !alignToBottom
+            const switchTarget = !alignToBottom
               ? targetRect.bottom
               : targetRect.top;
             bottom = alignToBottom ? targetRect.bottom : targetRect.top;
 
+            /* If responsive is true and the Drop doesn't have enough room 
+            to be fully visible and there is more room in the other 
+            direction, change the Drop to display above/below. If there is 
+            less room in the other direction leave the Drop in its current 
+            position. */
             if (
               responsive &&
               (bottom === 0 ||
                 (bottom - containerRect.height < 0 &&
-                  0 + bottom > switchBottom))
+                  0 + bottom > switchTarget))
             ) {
               bottom = '';
               top = alignToBottom ? targetRect.top : targetRect.bottom;
