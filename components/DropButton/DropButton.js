@@ -76,7 +76,7 @@ var DropButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onAlign: onAlign,
     restrictFocus: true,
     align: dropAlign,
-    target: dropTarget || buttonRef.current,
+    target: dropTarget || buttonRef,
     onClickOutside: onDropClose,
     onEsc: onDropClose
   }, dropProps), dropContent));

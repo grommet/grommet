@@ -1,11 +1,11 @@
 var _excluded = ["a11yTitle", "aria-label", "align", "background", "onAlign", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch", "trapFocus"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { forwardRef, useContext, useEffect, useMemo, useRef } from 'react';
+import React, { forwardRef, useContext, useEffect, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { FocusedContainer } from '../FocusedContainer';
-import { backgroundIsDark, findScrollParents, parseMetricToNum, PortalContext } from '../../utils';
+import { backgroundIsDark, findScrollParents, parseMetricToNum, PortalContext, useForwardedRef } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
@@ -54,7 +54,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var nextPortalContext = useMemo(function () {
     return [].concat(portalContext, [portalId]);
   }, [portalContext, portalId]);
-  var dropRef = useRef();
+  var dropRef = useForwardedRef(ref);
   useEffect(function () {
     var onClickDocument = function onClickDocument(event) {
       // determine which portal id the target is in, if any
@@ -80,7 +80,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [onClickOutside, containerTarget, portalContext]);
   useEffect(function () {
     var notifyAlign = function notifyAlign() {
-      var styleCurrent = (ref || dropRef).current.style;
+      var styleCurrent = dropRef.current.style;
       var alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
       onAlign(alignControl);
     };
@@ -91,8 +91,8 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var place = function place(preserveHeight) {
       var windowWidth = window.innerWidth;
       var windowHeight = window.innerHeight;
-      var target = dropTarget;
-      var container = (ref || dropRef).current;
+      var target = (dropTarget == null ? void 0 : dropTarget.current) || dropTarget;
+      var container = dropRef.current;
       if (container && target) {
         // clear prior styling
         container.style.left = '';
@@ -262,15 +262,15 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       removeScrollListeners();
       window.removeEventListener('resize', onResize);
     };
-  }, [align, containerTarget, onAlign, dropTarget, portalContext, portalId, ref, responsive, restrictFocus, stretch, theme.drop]);
+  }, [align, containerTarget, onAlign, dropTarget, portalContext, portalId, responsive, restrictFocus, stretch, theme.drop, dropRef]);
   useEffect(function () {
     if (restrictFocus) {
-      (ref || dropRef).current.focus();
+      dropRef.current.focus();
     }
-  }, [ref, restrictFocus]);
+  }, [dropRef, restrictFocus]);
   var content = /*#__PURE__*/React.createElement(StyledDrop, _extends({
     "aria-label": a11yTitle || ariaLabel,
-    ref: ref || dropRef,
+    ref: dropRef,
     as: Box,
     background: background,
     plain: plain,

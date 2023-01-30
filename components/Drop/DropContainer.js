@@ -59,7 +59,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var nextPortalContext = (0, _react.useMemo)(function () {
     return [].concat(portalContext, [portalId]);
   }, [portalContext, portalId]);
-  var dropRef = (0, _react.useRef)();
+  var dropRef = (0, _utils.useForwardedRef)(ref);
   (0, _react.useEffect)(function () {
     var onClickDocument = function onClickDocument(event) {
       // determine which portal id the target is in, if any
@@ -85,7 +85,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [onClickOutside, containerTarget, portalContext]);
   (0, _react.useEffect)(function () {
     var notifyAlign = function notifyAlign() {
-      var styleCurrent = (ref || dropRef).current.style;
+      var styleCurrent = dropRef.current.style;
       var alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
       onAlign(alignControl);
     };
@@ -96,8 +96,8 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     var place = function place(preserveHeight) {
       var windowWidth = window.innerWidth;
       var windowHeight = window.innerHeight;
-      var target = dropTarget;
-      var container = (ref || dropRef).current;
+      var target = (dropTarget == null ? void 0 : dropTarget.current) || dropTarget;
+      var container = dropRef.current;
       if (container && target) {
         // clear prior styling
         container.style.left = '';
@@ -267,15 +267,15 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       removeScrollListeners();
       window.removeEventListener('resize', onResize);
     };
-  }, [align, containerTarget, onAlign, dropTarget, portalContext, portalId, ref, responsive, restrictFocus, stretch, theme.drop]);
+  }, [align, containerTarget, onAlign, dropTarget, portalContext, portalId, responsive, restrictFocus, stretch, theme.drop, dropRef]);
   (0, _react.useEffect)(function () {
     if (restrictFocus) {
-      (ref || dropRef).current.focus();
+      dropRef.current.focus();
     }
-  }, [ref, restrictFocus]);
+  }, [dropRef, restrictFocus]);
   var content = /*#__PURE__*/_react["default"].createElement(_StyledDrop.StyledDrop, _extends({
     "aria-label": a11yTitle || ariaLabel,
-    ref: ref || dropRef,
+    ref: dropRef,
     as: _Box.Box,
     background: background,
     plain: plain,
