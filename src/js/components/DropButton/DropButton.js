@@ -80,7 +80,7 @@ const DropButton = forwardRef(
             onAlign={onAlign}
             restrictFocus
             align={dropAlign}
-            target={dropTarget || buttonRef.current}
+            target={dropTarget || buttonRef}
             onClickOutside={onDropClose}
             onEsc={onDropClose}
             {...dropProps}

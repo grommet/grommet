@@ -4,6 +4,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataFilter } from '../DataFilter';
 import { DataForm } from '../Data/DataForm';
+import { DataSort } from '../DataSort';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
@@ -16,7 +17,8 @@ const dropProps = {
 };
 
 export const DataFilters = ({ drop, children, heading, ...rest }) => {
-  const { clearFilters, data, messages, properties } = useContext(DataContext);
+  const { clearFilters, data, messages, properties, view } =
+    useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [showContent, setShowContent] = useState();
   // touched is a map of form field name to its value, it only has fields that
@@ -51,7 +53,11 @@ export const DataFilters = ({ drop, children, heading, ...rest }) => {
   let filters;
   if (Children.count(children) === 0) {
     let filtersFor;
-    if (!properties && data && data.length) filtersFor = Object.keys(data[0]);
+    if (!properties && data && data.length)
+      // build from a piece of data, ignore object values
+      filtersFor = Object.keys(data[0]).filter(
+        (k) => typeof data[0][k] !== 'object',
+      );
     else if (Array.isArray(properties)) filtersFor = properties;
     else if (typeof properties === 'object')
       filtersFor = Object.keys(properties);
@@ -59,6 +65,9 @@ export const DataFilters = ({ drop, children, heading, ...rest }) => {
     filters = filtersFor.map((property) => (
       <DataFilter key={property} property={property} />
     ));
+    if (view?.sort) {
+      filters.push(<DataSort key="_sort" />);
+    }
   }
 
   const content = (
