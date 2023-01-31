@@ -34,7 +34,7 @@ var Simple = function Simple() {
           }
         }
       }]
-    }, /*#__PURE__*/_react["default"].createElement(_DataView.DataView, null)))
+    }, /*#__PURE__*/_react["default"].createElement(_DataView.DataView, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, null)))
     // </Grommet>
   );
 };

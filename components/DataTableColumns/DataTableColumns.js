@@ -198,7 +198,8 @@ var DataTableColumns = function DataTableColumns(_ref5) {
     options: options
   });
   if (noForm) content = /*#__PURE__*/_react["default"].createElement(_Data.DataForm, {
-    footer: false
+    footer: false,
+    updateOn: "change"
   }, content);
   if (!drop) return content;
   var control = /*#__PURE__*/_react["default"].createElement(_DropButton.DropButton, _extends({

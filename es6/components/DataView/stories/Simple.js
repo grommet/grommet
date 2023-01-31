@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Data } from 'grommet';
+import { Box, Data, DataTable } from 'grommet';
 import { DataView } from '../DataView';
 import { DATA } from '../../DataTable/stories/data';
 export var Simple = function Simple() {
@@ -29,7 +29,7 @@ export var Simple = function Simple() {
           }
         }
       }]
-    }, /*#__PURE__*/React.createElement(DataView, null)))
+    }, /*#__PURE__*/React.createElement(DataView, null), /*#__PURE__*/React.createElement(DataTable, null)))
     // </Grommet>
   );
 };
