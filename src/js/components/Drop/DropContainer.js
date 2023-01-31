@@ -160,98 +160,40 @@ const DropContainer = forwardRef(
           let top;
           let bottom;
           let maxHeight = containerRect.height;
-          if (align.top) {
-            const alignToTop = align.top === 'top';
-            const switchTarget = !alignToTop
-              ? targetRect.top
-              : targetRect.bottom;
-            top = alignToTop ? targetRect.top : targetRect.bottom;
 
-            /* If responsive is true and the Drop doesn't have enough room 
-            to be fully visible and there is more room in the other 
-            direction, change the Drop to display above/below. If there is 
-            less room in the other direction leave the Drop in its current 
-            position. */
-            if (
-              responsive &&
-              (windowHeight === top ||
-                (windowHeight < top + containerRect.height &&
-                  windowHeight - top < switchTarget))
-            ) {
-              // We need more room than we have.
-              // We put it below, but there's more room above, put it above
-              top = '';
-              bottom = alignToTop ? targetRect.bottom : targetRect.top;
-              maxHeight = bottom;
-              container.style.maxHeight = `${maxHeight}px`;
-            } else if (top > 0) {
-              maxHeight = windowHeight - top;
-              container.style.maxHeight = `${maxHeight}px`;
-            } else {
-              maxHeight = windowHeight - top;
-            }
-          } else if (align.bottom) {
-            const alignToBottom = align.bottom === 'bottom';
-            const switchTarget = !alignToBottom
-              ? targetRect.bottom
-              : targetRect.top;
-            bottom = alignToBottom ? targetRect.bottom : targetRect.top;
-
-            /* If responsive is true and the Drop doesn't have enough room 
-            to be fully visible and there is more room in the other 
-            direction, change the Drop to display above/below. If there is 
-            less room in the other direction leave the Drop in its current 
-            position. */
-            if (
-              responsive &&
-              (bottom === 0 ||
-                (bottom - containerRect.height < 0 &&
-                  0 + bottom > switchTarget))
-            ) {
-              bottom = '';
-              top = alignToBottom ? targetRect.top : targetRect.bottom;
-              maxHeight = top;
-              container.style.maxHeight = `${maxHeight}px`;
-            } else {
-              maxHeight = bottom;
-              container.style.maxHeight = `${maxHeight}px`;
-            }
-          } else {
-            // center
-            top =
-              targetRect.top + targetRect.height / 2 - containerRect.height / 2;
-            maxHeight = windowHeight - top;
-          }
-          // if we can't fit it all, or we're rather close,
-          // see if there's more room the other direction
           if (
             responsive &&
-            (containerRect.height > maxHeight || maxHeight < windowHeight / 10)
+            ((align.top === 'top' && targetRect.top < 0) ||
+              (align.bottom === 'top' &&
+                targetRect.top - containerRect.height <= 0 &&
+                targetRect.bottom + containerRect.height < windowHeight))
           ) {
-            // We need more room than we have.
-            if (align.top && top > windowHeight / 2) {
-              // We put it below, but there's more room above, put it above
-              top = '';
-              if (align.top === 'bottom') {
-                // top = Math.max(targetRect.top - containerRect.height, 0);
-                // maxHeight = targetRect.top - top;
-                bottom = targetRect.top;
-              } else {
-                // top = Math.max(targetRect.bottom - containerRect.height, 0);
-                // maxHeight = targetRect.bottom - top;
-                ({ bottom } = targetRect);
-              }
-              maxHeight = bottom;
-            } else if (align.bottom && maxHeight < windowHeight / 2) {
-              // We put it above but there's more room below, put it below
-              bottom = '';
-              if (align.bottom === 'bottom') {
-                ({ top } = targetRect);
-              } else {
-                top = targetRect.bottom;
-              }
-              maxHeight = windowHeight - top;
-            }
+            top = targetRect.bottom;
+            maxHeight = top;
+          } else if (
+            responsive &&
+            ((align.bottom === 'bottom' && targetRect.bottom > windowHeight) ||
+              (align.top === 'bottom' &&
+                targetRect.bottom + containerRect.height >= windowHeight &&
+                targetRect.top - containerRect.height > 0))
+          ) {
+            bottom = targetRect.top;
+            maxHeight = bottom;
+          } else if (align.top === 'top') {
+            top = targetRect.top;
+            maxHeight = windowHeight - top;
+          } else if (align.top === 'bottom') {
+            top = targetRect.bottom;
+            maxHeight = windowHeight - top;
+          } else if (align.bottom === 'top') {
+            bottom = targetRect.top;
+            maxHeight = bottom;
+          } else if (align.bottom === 'bottom') {
+            bottom = targetRect.bottom;
+            maxHeight = bottom;
+          } else {
+            top =
+              targetRect.top + targetRect.height / 2 - containerRect.height / 2;
           }
           container.style.left = `${left}px`;
           if (stretch) {
