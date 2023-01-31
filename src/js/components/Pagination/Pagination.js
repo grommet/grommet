@@ -51,6 +51,13 @@ const Pagination = forwardRef(
 
     useEffect(() => setActivePage(page), [page]);
 
+    useEffect(() => {
+      // if we are getting the step or page from outside the view,
+      // update the Data's view in case it needs to filter.
+      if (onView && (view?.step !== step || view?.page !== page))
+        onView({ ...view, page, step });
+    }, [onView, page, step, view]);
+
     /* Define page indices to display */
     const beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
     const endPages = getPageIndices(
