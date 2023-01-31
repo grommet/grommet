@@ -59,6 +59,14 @@ var Pagination = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   (0, _react.useEffect)(function () {
     return setActivePage(page);
   }, [page]);
+  (0, _react.useEffect)(function () {
+    // if we are getting the step or page from outside the view,
+    // update the Data's view in case it needs to filter.
+    if (onView && ((view == null ? void 0 : view.step) !== step || (view == null ? void 0 : view.page) !== page)) onView(_extends({}, view, {
+      page: page,
+      step: step
+    }));
+  }, [onView, page, step, view]);
 
   /* Define page indices to display */
   var beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
