@@ -152,7 +152,12 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
   const [showContent, setShowContent] = useState();
 
   let content = <Content drop={drop} options={options} />;
-  if (noForm) content = <DataForm footer={false}>{content}</DataForm>;
+  if (noForm)
+    content = (
+      <DataForm footer={false} updateOn="change">
+        {content}
+      </DataForm>
+    );
 
   if (!drop) return content;
 
