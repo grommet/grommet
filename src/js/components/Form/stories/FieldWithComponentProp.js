@@ -65,6 +65,8 @@ export const FieldWithComponentProp = () => (
         />
         <FormField
           label="Size"
+          htmlFor="size"
+          id="size"
           aria-label="size"
           name="size"
           component={Select}
