@@ -161,6 +161,11 @@ const DropContainer = forwardRef(
           let bottom;
           let maxHeight = containerRect.height;
 
+          /* If responsive is true and the Drop doesn't have enough room 
+            to be fully visible and there is more room in the other 
+            direction, change the Drop to display above/below. If there is 
+            less room in the other direction leave the Drop in its current 
+            position. */
           if (
             responsive &&
             ((align.top === 'top' && targetRect.top < 0) ||
