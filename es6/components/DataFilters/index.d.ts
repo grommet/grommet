@@ -4,6 +4,7 @@ import { BoxProps } from '../Box/index';
 export interface DataFiltersProps {
   drop?: boolean;
   heading?: string | React.ReactNode;
+  layer?: boolean;
 }
 
 type divProps = Omit<JSX.IntrinsicElements['div'], 'onClick'>;

@@ -4,6 +4,7 @@ exports.__esModule = true;
 exports.DataFilters = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _Filter = require("grommet-icons/icons/Filter");
+var _FormClose = require("grommet-icons/icons/FormClose");
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _DataFilter = require("../DataFilter");
@@ -12,10 +13,11 @@ var _DataSort = require("../DataSort");
 var _DropButton = require("../DropButton");
 var _Header = require("../Header");
 var _Heading = require("../Heading");
+var _Layer = require("../Layer");
 var _DataContext = require("../../contexts/DataContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
-var _excluded = ["drop", "children", "heading"];
+var _excluded = ["drop", "children", "heading", "layer"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -26,14 +28,20 @@ var dropProps = {
     right: 'right'
   }
 };
+var layerProps = {
+  full: 'vertical',
+  position: 'right'
+};
 var DataFilters = function DataFilters(_ref) {
   var drop = _ref.drop,
     children = _ref.children,
     heading = _ref.heading,
+    layer = _ref.layer,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     clearFilters = _useContext.clearFilters,
     data = _useContext.data,
+    dataId = _useContext.id,
     messages = _useContext.messages,
     properties = _useContext.properties,
     view = _useContext.view;
@@ -50,8 +58,8 @@ var DataFilters = function DataFilters(_ref) {
     touched = _useState2[0],
     setTouched = _useState2[1];
   var controlled = (0, _react.useMemo)(function () {
-    return drop;
-  }, [drop]);
+    return drop || layer;
+  }, [drop, layer]);
   // generate the badge value based on touched fields that have a value
   var badge = (0, _react.useMemo)(function () {
     return controlled && Object.keys(touched).filter(function (k) {
@@ -113,33 +121,68 @@ var DataFilters = function DataFilters(_ref) {
   }, heading || format({
     id: 'dataFilters.heading',
     messages: messages == null ? void 0 : messages.dataFilters
-  })), !controlled && clearControl), filters, children);
+  })), !controlled && clearControl, layer && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_FormClose.FormClose, null),
+    hoverIndicator: true,
+    onClick: function onClick() {
+      return setShowContent(undefined);
+    }
+  })), filters, children);
   if (!controlled) return content;
 
   // drop
-  var control = /*#__PURE__*/_react["default"].createElement(_DropButton.DropButton, {
-    "aria-label": format({
-      id: 'dataFilters.open',
-      messages: messages == null ? void 0 : messages.dataFilters
-    }),
-    kind: "toolbar",
-    icon: /*#__PURE__*/_react["default"].createElement(_Filter.Filter, null),
-    dropProps: dropProps,
-    dropContent: content,
-    badge: badge,
-    open: showContent,
-    onOpen: function onOpen() {
-      return setShowContent(undefined);
-    },
-    onClose: function onClose() {
-      return setShowContent(undefined);
-    }
-  });
+  var control;
+  if (drop) {
+    control = /*#__PURE__*/_react["default"].createElement(_DropButton.DropButton, {
+      id: dataId + "--filters-control",
+      "aria-label": format({
+        id: 'dataFilters.open',
+        messages: messages == null ? void 0 : messages.dataFilters
+      }),
+      kind: "toolbar",
+      icon: /*#__PURE__*/_react["default"].createElement(_Filter.Filter, null),
+      hoverIndicator: true,
+      dropProps: dropProps,
+      dropContent: content,
+      badge: badge,
+      open: showContent,
+      onOpen: function onOpen() {
+        return setShowContent(undefined);
+      },
+      onClose: function onClose() {
+        return setShowContent(undefined);
+      }
+    });
+  } else if (layer) {
+    control = /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+      id: dataId + "--filters-control",
+      "aria-label": format({
+        id: 'dataFilters.open',
+        messages: messages == null ? void 0 : messages.dataFilters
+      }),
+      kind: "toolbar",
+      hoverIndicator: true,
+      icon: /*#__PURE__*/_react["default"].createElement(_Filter.Filter, null),
+      badge: badge,
+      onClick: function onClick() {
+        return setShowContent(true);
+      }
+    });
+  }
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     flex: false,
     direction: "row",
     gap: "small"
-  }, rest), control, clearControl);
+  }, rest), control, clearControl, layer && showContent && /*#__PURE__*/_react["default"].createElement(_Layer.Layer, _extends({
+    id: dataId + "--filters-layer"
+  }, typeof layer === 'object' ? layer : layerProps, {
+    onClickOutside: function onClickOutside() {
+      return setShowContent(undefined);
+    },
+    onEsc: function onEsc() {
+      return setShowContent(undefined);
+    }
+  }), content));
 };
 exports.DataFilters = DataFilters;
 DataFilters.propTypes = _propTypes.DataFiltersPropTypes;

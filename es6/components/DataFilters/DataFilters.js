@@ -1,8 +1,9 @@
-var _excluded = ["drop", "children", "heading"];
+var _excluded = ["drop", "children", "heading", "layer"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { Children, useContext, useMemo, useState } from 'react';
 import { Filter } from 'grommet-icons/icons/Filter';
+import { FormClose } from 'grommet-icons/icons/FormClose';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataFilter } from '../DataFilter';
@@ -11,6 +12,7 @@ import { DataSort } from '../DataSort';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
+import { Layer } from '../Layer';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataFiltersPropTypes } from './propTypes';
@@ -20,14 +22,20 @@ var dropProps = {
     right: 'right'
   }
 };
+var layerProps = {
+  full: 'vertical',
+  position: 'right'
+};
 export var DataFilters = function DataFilters(_ref) {
   var drop = _ref.drop,
     children = _ref.children,
     heading = _ref.heading,
+    layer = _ref.layer,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = useContext(DataContext),
     clearFilters = _useContext.clearFilters,
     data = _useContext.data,
+    dataId = _useContext.id,
     messages = _useContext.messages,
     properties = _useContext.properties,
     view = _useContext.view;
@@ -44,8 +52,8 @@ export var DataFilters = function DataFilters(_ref) {
     touched = _useState2[0],
     setTouched = _useState2[1];
   var controlled = useMemo(function () {
-    return drop;
-  }, [drop]);
+    return drop || layer;
+  }, [drop, layer]);
   // generate the badge value based on touched fields that have a value
   var badge = useMemo(function () {
     return controlled && Object.keys(touched).filter(function (k) {
@@ -107,32 +115,67 @@ export var DataFilters = function DataFilters(_ref) {
   }, heading || format({
     id: 'dataFilters.heading',
     messages: messages == null ? void 0 : messages.dataFilters
-  })), !controlled && clearControl), filters, children);
+  })), !controlled && clearControl, layer && /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(FormClose, null),
+    hoverIndicator: true,
+    onClick: function onClick() {
+      return setShowContent(undefined);
+    }
+  })), filters, children);
   if (!controlled) return content;
 
   // drop
-  var control = /*#__PURE__*/React.createElement(DropButton, {
-    "aria-label": format({
-      id: 'dataFilters.open',
-      messages: messages == null ? void 0 : messages.dataFilters
-    }),
-    kind: "toolbar",
-    icon: /*#__PURE__*/React.createElement(Filter, null),
-    dropProps: dropProps,
-    dropContent: content,
-    badge: badge,
-    open: showContent,
-    onOpen: function onOpen() {
-      return setShowContent(undefined);
-    },
-    onClose: function onClose() {
-      return setShowContent(undefined);
-    }
-  });
+  var control;
+  if (drop) {
+    control = /*#__PURE__*/React.createElement(DropButton, {
+      id: dataId + "--filters-control",
+      "aria-label": format({
+        id: 'dataFilters.open',
+        messages: messages == null ? void 0 : messages.dataFilters
+      }),
+      kind: "toolbar",
+      icon: /*#__PURE__*/React.createElement(Filter, null),
+      hoverIndicator: true,
+      dropProps: dropProps,
+      dropContent: content,
+      badge: badge,
+      open: showContent,
+      onOpen: function onOpen() {
+        return setShowContent(undefined);
+      },
+      onClose: function onClose() {
+        return setShowContent(undefined);
+      }
+    });
+  } else if (layer) {
+    control = /*#__PURE__*/React.createElement(Button, {
+      id: dataId + "--filters-control",
+      "aria-label": format({
+        id: 'dataFilters.open',
+        messages: messages == null ? void 0 : messages.dataFilters
+      }),
+      kind: "toolbar",
+      hoverIndicator: true,
+      icon: /*#__PURE__*/React.createElement(Filter, null),
+      badge: badge,
+      onClick: function onClick() {
+        return setShowContent(true);
+      }
+    });
+  }
   return /*#__PURE__*/React.createElement(Box, _extends({
     flex: false,
     direction: "row",
     gap: "small"
-  }, rest), control, clearControl);
+  }, rest), control, clearControl, layer && showContent && /*#__PURE__*/React.createElement(Layer, _extends({
+    id: dataId + "--filters-layer"
+  }, typeof layer === 'object' ? layer : layerProps, {
+    onClickOutside: function onClickOutside() {
+      return setShowContent(undefined);
+    },
+    onEsc: function onEsc() {
+      return setShowContent(undefined);
+    }
+  }), content));
 };
 DataFilters.propTypes = DataFiltersPropTypes;
