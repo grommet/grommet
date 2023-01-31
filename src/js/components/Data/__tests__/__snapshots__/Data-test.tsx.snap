@@ -174,6 +174,11 @@ exports[`Data controlled search 1`] = `
   padding: 12px;
 }
 
+.c8:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -407,6 +412,7 @@ exports[`Data controlled search 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -580,7 +586,8 @@ exports[`Data controlled search 2`] = `
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 emhJYD"
+          class="StyledButton-sc-323bzc-0 wfYUD"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -882,6 +889,11 @@ exports[`Data messages 1`] = `
   padding: 12px;
 }
 
+.c8:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -1115,6 +1127,7 @@ exports[`Data messages 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -3254,6 +3267,11 @@ exports[`Data toolbar 1`] = `
   padding: 12px;
 }
 
+.c8:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -3487,6 +3505,7 @@ exports[`Data toolbar 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -3831,6 +3850,11 @@ exports[`Data toolbar filters 1`] = `
   padding: 12px;
 }
 
+.c4:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -3943,6 +3967,7 @@ exports[`Data toolbar filters 1`] = `
         <button
           aria-label="Open filters"
           class="c4"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -4669,6 +4694,11 @@ exports[`Data uncontrolled search 1`] = `
   padding: 12px;
 }
 
+.c8:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -4902,6 +4932,7 @@ exports[`Data uncontrolled search 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -5075,7 +5106,8 @@ exports[`Data uncontrolled search 2`] = `
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 emhJYD"
+          class="StyledButton-sc-323bzc-0 wfYUD"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -5597,6 +5629,11 @@ exports[`Data view all 1`] = `
   padding: 12px;
 }
 
+.c8:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -5830,6 +5867,7 @@ exports[`Data view all 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -6098,6 +6136,11 @@ exports[`Data view property option 1`] = `
   padding: 12px;
 }
 
+.c8:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -6331,6 +6374,7 @@ exports[`Data view property option 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -6599,6 +6643,11 @@ exports[`Data view property range 1`] = `
   padding: 12px;
 }
 
+.c8:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -6832,6 +6881,7 @@ exports[`Data view property range 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -7121,6 +7171,11 @@ exports[`Data view search 1`] = `
   padding: 12px;
 }
 
+.c8:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -7354,6 +7409,7 @@ exports[`Data view search 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -7622,6 +7678,11 @@ exports[`Data view sort 1`] = `
   padding: 12px;
 }
 
+.c8:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -7855,6 +7916,7 @@ exports[`Data view sort 1`] = `
         <button
           aria-label="Open filters"
           class="c8"
+          id="data--filters-control"
           type="button"
         >
           <svg
