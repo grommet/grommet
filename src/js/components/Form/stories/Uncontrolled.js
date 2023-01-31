@@ -31,7 +31,7 @@ export const Uncontrolled = () => (
         </FormField>
         <FormField label="Email" htmlFor="email" name="email" required>
           <MaskedInput
-            id="id"
+            id="email"
             name="email"
             mask={[
               { regexp: /^[\w\-_.]+$/, placeholder: 'example' },
