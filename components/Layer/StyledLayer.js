@@ -35,12 +35,14 @@ Object.setPrototypeOf(StyledLayer.defaultProps, _defaultProps.defaultProps);
 var StyledOverlay = _styledComponents["default"].div.withConfig({
   displayName: "StyledLayer__StyledOverlay",
   componentId: "sc-rmtehz-1"
-})(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " pointer-events:all;will-change:transform;"], function (props) {
+})(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " ", " pointer-events:all;will-change:transform;"], function (props) {
   if (props.responsive && props.theme.layer.responsiveBreakpoint) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
     return (0, _utils.breakpointStyle)(breakpoint, 'position: relative;');
   }
   return '';
+}, function (props) {
+  return props.theme.layer.overlay.backdropFilter && "backdrop-filter: " + props.theme.layer.overlay.backdropFilter + ";";
 }, function (props) {
   return !props.plain && props.theme.layer.overlay.background && (0, _utils.backgroundStyle)(props.theme.layer.overlay.background, props.theme);
 });

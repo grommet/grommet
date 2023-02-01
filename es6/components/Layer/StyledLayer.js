@@ -28,12 +28,14 @@ Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
 var StyledOverlay = styled.div.withConfig({
   displayName: "StyledLayer__StyledOverlay",
   componentId: "sc-rmtehz-1"
-})(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " pointer-events:all;will-change:transform;"], function (props) {
+})(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " ", " pointer-events:all;will-change:transform;"], function (props) {
   if (props.responsive && props.theme.layer.responsiveBreakpoint) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
     return breakpointStyle(breakpoint, 'position: relative;');
   }
   return '';
+}, function (props) {
+  return props.theme.layer.overlay.backdropFilter && "backdrop-filter: " + props.theme.layer.overlay.backdropFilter + ";";
 }, function (props) {
   return !props.plain && props.theme.layer.overlay.background && backgroundStyle(props.theme.layer.overlay.background, props.theme);
 });

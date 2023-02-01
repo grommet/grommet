@@ -1187,7 +1187,9 @@ var generate = function generate(baseSpacing, scale) {
       // extend: undefined,
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)'
+        // backdropFilter: undefined,
       },
+
       responsiveBreakpoint: 'small',
       // when Layer takes over the full screen
       zIndex: '20'
