@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-} from 'react';
+import React, { forwardRef, useContext, useEffect, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { FocusedContainer } from '../FocusedContainer';
@@ -13,6 +7,7 @@ import {
   findScrollParents,
   parseMetricToNum,
   PortalContext,
+  useForwardedRef,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -64,7 +59,7 @@ const DropContainer = forwardRef(
       () => [...portalContext, portalId],
       [portalContext, portalId],
     );
-    const dropRef = useRef();
+    const dropRef = useForwardedRef(ref);
 
     useEffect(() => {
       const onClickDocument = (event) => {
@@ -101,7 +96,7 @@ const DropContainer = forwardRef(
 
     useEffect(() => {
       const notifyAlign = () => {
-        const styleCurrent = (ref || dropRef).current.style;
+        const styleCurrent = dropRef.current.style;
         const alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
 
         onAlign(alignControl);
@@ -113,8 +108,8 @@ const DropContainer = forwardRef(
       const place = (preserveHeight) => {
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
-        const target = dropTarget;
-        const container = (ref || dropRef).current;
+        const target = dropTarget?.current || dropTarget;
+        const container = dropRef.current;
         if (container && target) {
           // clear prior styling
           container.style.left = '';
@@ -311,23 +306,23 @@ const DropContainer = forwardRef(
       dropTarget,
       portalContext,
       portalId,
-      ref,
       responsive,
       restrictFocus,
       stretch,
       theme.drop,
+      dropRef,
     ]);
 
     useEffect(() => {
       if (restrictFocus) {
-        (ref || dropRef).current.focus();
+        dropRef.current.focus();
       }
-    }, [ref, restrictFocus]);
+    }, [dropRef, restrictFocus]);
 
     let content = (
       <StyledDrop
         aria-label={a11yTitle || ariaLabel}
-        ref={ref || dropRef}
+        ref={dropRef}
         as={Box}
         background={background}
         plain={plain}

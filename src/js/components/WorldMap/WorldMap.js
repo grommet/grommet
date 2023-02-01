@@ -520,6 +520,10 @@ const WorldMap = forwardRef(
     }, [continentsProp]);
 
     const [places, setPlaces] = React.useState([]);
+
+    // targets are used for the Drops associated with places content
+    const [targets, setTargets] = React.useState([]);
+
     React.useEffect(() => {
       if (placesProp) {
         setPlaces(
@@ -529,6 +533,9 @@ const WorldMap = forwardRef(
           }),
         );
       } else setPlaces([]);
+      return () => {
+        setTargets([]);
+      };
     }, [placesProp, world]);
 
     const [over, setOver] = React.useState();
@@ -537,8 +544,6 @@ const WorldMap = forwardRef(
     const [activePlace, setActivePlace] = React.useState();
     const containerRef = React.useRef();
 
-    // targets are used for the Drops associated with places content
-    const [targets, setTargets] = React.useState([]);
     const placeRef = React.useCallback((node, index) => {
       setTargets((prevTargets) => {
         if (!prevTargets[index]) {

@@ -287,6 +287,7 @@ exports[`Components loads 1`] = `
   "DataSummary": [Function],
   "DataTable": [Function],
   "DataTableColumns": [Function],
+  "DataView": [Function],
   "DateInput": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
@@ -1703,7 +1704,8 @@ exports[`Components loads 1`] = `
           "responsiveBreakpoint": "small",
           "skeleton": {
             "width": {
-              "min": "200px",
+              "max": "200px",
+              "min": "150px",
             },
           },
           "weight": 600,
@@ -3697,7 +3699,8 @@ exports[`Components loads 1`] = `
           "responsiveBreakpoint": "small",
           "skeleton": {
             "width": {
-              "min": "200px",
+              "max": "200px",
+              "min": "150px",
             },
           },
           "weight": 600,
