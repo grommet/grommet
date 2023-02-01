@@ -75,9 +75,8 @@ const StyledOverlay = styled.div`
   right: 0px;
   bottom: 0px;
   ${(props) =>
-    props.theme.layer.overlay.backdropFilter
-      ? `backdrop-filter: ${props.theme.layer.overlay.backdropFilter};`
-      : ''}
+    props.theme.layer.overlay.backdropFilter &&
+    `backdrop-filter: ${props.theme.layer.overlay.backdropFilter};`}
   ${(props) =>
     !props.plain &&
     props.theme.layer.overlay.background &&
