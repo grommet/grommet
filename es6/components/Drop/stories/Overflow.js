@@ -37,6 +37,7 @@ var OverflowDrop = function OverflowDrop() {
       justify: "start",
       ref: targetRef
     }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
+      responsive: false,
       overflow: "unset",
       align: align,
       target: targetRef.current,

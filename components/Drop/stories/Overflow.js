@@ -43,6 +43,7 @@ var OverflowDrop = function OverflowDrop() {
       justify: "start",
       ref: targetRef
     }, "Target"), targetRef.current && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
+      responsive: false,
       overflow: "unset",
       align: align,
       target: targetRef.current,
