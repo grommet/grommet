@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Data } from 'grommet';
+import { Box, Data, DataTable } from 'grommet';
 
 import { DataView } from '../DataView';
 import { DATA } from '../../DataTable/stories/data';
@@ -17,6 +17,7 @@ export const Simple = () => (
       ]}
     >
       <DataView />
+      <DataTable />
     </Data>
   </Box>
   // </Grommet>
