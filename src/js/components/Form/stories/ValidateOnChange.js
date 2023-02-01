@@ -66,6 +66,8 @@ export const ValidateOnChange = () => {
               name="select-size"
               htmlFor="select-size"
               id="select-size"
+              htmlFor="select-size"
+              id="select-size"
               aria-label="select-size"
               options={['small', 'medium', 'large']}
             />
