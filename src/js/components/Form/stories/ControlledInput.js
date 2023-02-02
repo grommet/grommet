@@ -25,7 +25,7 @@ export const ControlledInput = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box fill align="center" justify="center">
+    <Box align="center" justify="center" pad="large">
       <Box width="medium">
         <Form
           onChange={(value) => console.log('Change', value)}
