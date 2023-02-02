@@ -34,6 +34,7 @@ const OverflowDrop = () => {
       </Box>
       {targetRef.current && (
         <Drop
+          responsive={false}
           overflow="unset"
           align={align}
           target={targetRef.current}

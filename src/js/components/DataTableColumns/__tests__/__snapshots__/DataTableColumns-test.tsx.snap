@@ -237,7 +237,6 @@ exports[`DataTableColumns remove column 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c12:focus {
@@ -952,7 +951,6 @@ exports[`DataTableColumns renders 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c16:focus {
@@ -1415,7 +1413,6 @@ exports[`DataTableColumns search 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c12:focus {
