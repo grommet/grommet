@@ -501,10 +501,12 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
-          const root = formFieldRef.current.getRootNode();
-          setFocus(
-            containsFocus(formFieldRef.current) && shouldKeepFocus(root),
-          );
+          const root = formFieldRef.current?.getRootNode();
+          if (root) {
+            setFocus(
+              containsFocus(formFieldRef.current) && shouldKeepFocus(root),
+            );
+          }
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {
