@@ -203,13 +203,7 @@ export const SpaceX = () => {
           onView={setView}
           toolbar
         >
-          <DataTable
-            columns={columns}
-            sort={{ ...view.sort, external: true }}
-            // TODO: in some other pull request,
-            // integrate sorting between Data and DataTable
-            // onSort={(opts) => setSort(opts)}
-          />
+          <DataTable columns={columns} sortable />
           {result.filteredTotal > view.step && (
             <Footer>
               <Text>

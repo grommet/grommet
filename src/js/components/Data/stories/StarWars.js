@@ -28,7 +28,8 @@ const fetchData = async (view, signal) => {
 
 export const StarWars = () => {
   const [result, setResult] = useState({});
-  const [view, setView] = useState({ search: '' });
+  const [total, setTotal] = useState(0);
+  const [view, setView] = useState({ search: '', step });
   const abortRef = useRef();
 
   useEffect(() => {
@@ -37,12 +38,10 @@ export const StarWars = () => {
     abortRef.current = new AbortController();
     fetchData(view, abortRef.current.signal).then(({ count, results }) => {
       if (results) {
-        setResult({
-          data: results,
-          total: count,
-          page: view.page ?? 1,
-          step,
-        });
+        // The API doesn't provide a non-filtered total, so we rely on the
+        // first call having no filtering telling us the total.
+        setTotal((prevTotal) => Math.max(prevTotal, count));
+        setResult({ data: results, filteredTotal: count });
         abortRef.current = undefined;
       }
     });
@@ -65,20 +64,14 @@ export const StarWars = () => {
       <Box skeleton={!result.data}>
         <Data
           data={result.data}
-          total={result.total}
+          total={total}
+          filteredTotal={result.filteredTotal}
           view={view}
           onView={setView}
           toolbar="search"
         >
           <List primaryKey="name" secondaryKey="starship_class" />
-          <Pagination
-            step={step}
-            numberItems={result.total}
-            page={result.page}
-            onChange={({ page }) =>
-              setView((prevView) => ({ ...prevView, page }))
-            }
-          />
+          <Pagination />
         </Data>
       </Box>
     </Grid>

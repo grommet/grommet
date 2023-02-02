@@ -1046,7 +1046,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       responsiveBreakpoint: 'small', // when we scale the font size down
       weight: 600,
       skeleton: {
-        width: { min: '200px' },
+        width: { min: '150px', max: '200px' },
       },
     },
     layer: {
@@ -1065,6 +1065,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)',
+        // backdropFilter: undefined,
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
       zIndex: '20',
