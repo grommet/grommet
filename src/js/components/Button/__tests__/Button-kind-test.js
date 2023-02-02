@@ -653,4 +653,80 @@ describe('Button kind', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('button icon size from theme', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {},
+            icon: {
+              size: {
+                small: '12px',
+                medium: '18px',
+                large: '28px',
+              },
+            },
+          },
+        }}
+      >
+        <Button icon={<Add />} size="small" />
+        <Button icon={<Add />} />
+        <Button icon={<Add />} size="large" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('icon only pad should apply when icon but no label', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {},
+            size: {
+              small: {
+                pad: {
+                  horizontal: '12px',
+                  vertical: '5px',
+                },
+                iconOnly: {
+                  pad: '5px',
+                },
+              },
+              medium: {
+                pad: {
+                  horizontal: '18px',
+                  vertical: '8px',
+                },
+                iconOnly: {
+                  pad: {
+                    vertical: '8px',
+                    horizontal: '12px',
+                  },
+                },
+              },
+              large: {
+                pad: {
+                  horizontal: '24px',
+                  vertical: '18px',
+                },
+                iconOnly: {
+                  pad: '18px',
+                },
+              },
+            },
+          },
+        }}
+      >
+        <Button icon={<Add />} size="small" />
+        <Button label="Add" size="small" />
+        <Button icon={<Add />} />
+        <Button label="Add" />
+        <Button icon={<Add />} size="large" />
+        <Button label="Add" size="large" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

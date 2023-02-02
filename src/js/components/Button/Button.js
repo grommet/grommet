@@ -189,7 +189,7 @@ const Button = forwardRef(
       reverse: reverseProp,
       secondary,
       selected,
-      size,
+      size: sizeProp,
       tip,
       type = 'button',
       // can't alphabetize a11yTitle before tip is defined
@@ -241,6 +241,10 @@ const Button = forwardRef(
       }
       return undefined; // pre-default, no kind
     }, [kindArg, kindObj, primary, secondary, theme]);
+
+    // for backwards compatibility, no-kind button theme did not
+    // default to size "medium" on buttons with no size prop
+    const size = sizeProp || (kind && 'medium') || undefined;
 
     // When we have a kind and are not plain, themePaths stores the relative
     // paths within the theme for the current kind and state of the button.
@@ -345,6 +349,12 @@ const Button = forwardRef(
         buttonIcon = cloneElement(kindIcon, {
           color: iconColor,
         });
+    }
+
+    if (icon && !icon.props.size && theme.button?.icon?.size?.[size]) {
+      buttonIcon = cloneElement(buttonIcon, {
+        size: theme.button.icon.size[size],
+      });
     }
 
     const reverse = reverseProp ?? theme.button[kind]?.reverse;
