@@ -477,6 +477,13 @@ export var generate = function generate(baseSpacing, scale) {
       },
 
       gap: 'small',
+      // icon: {
+      //   size: {
+      //     small: undefined,
+      //     medium: undefined,
+      //     large: undefined,
+      //   },
+      // },
       size: {
         small: {
           border: {
@@ -487,6 +494,9 @@ export var generate = function generate(baseSpacing, scale) {
             // 4px
             horizontal: baseSpacing - borderWidth * 2 + "px" // 20px,
           }
+          // iconOnly: {
+          //   pad: undefined,
+          // },
         },
 
         medium: {
@@ -499,6 +509,9 @@ export var generate = function generate(baseSpacing, scale) {
             // 4px
             horizontal: baseSpacing - borderWidth + "px" // 22px
           }
+          // iconOnly: {
+          //   pad: undefined,
+          // },
         },
 
         large: {
@@ -511,6 +524,9 @@ export var generate = function generate(baseSpacing, scale) {
             // 8px
             horizontal: baseSpacing + borderWidth * 4 + "px" // 32px,
           }
+          // iconOnly: {
+          //   pad: undefined,
+          // },
         }
       },
 

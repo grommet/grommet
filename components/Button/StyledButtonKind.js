@@ -21,12 +21,20 @@ var fontStyle = function fontStyle(props) {
   var data = props.theme.text[size];
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
-var padFromTheme = function padFromTheme(size, theme, themeObj, kind) {
-  var _themeObj$size, _themeObj$size$size, _themeObj$size$size$k;
+var padFromTheme = function padFromTheme(size, theme, themeObj, kind, iconOnly) {
+  var _themeObj$size, _themeObj$size$size, _themeObj$size$size$i, _themeObj$size3, _themeObj$size3$size, _themeObj$size3$size$;
   if (size === void 0) {
     size = 'medium';
   }
-  if (size && themeObj != null && (_themeObj$size = themeObj.size) != null && (_themeObj$size$size = _themeObj$size[size]) != null && (_themeObj$size$size$k = _themeObj$size$size[kind]) != null && _themeObj$size$size$k.pad) {
+  if (size && iconOnly && themeObj != null && (_themeObj$size = themeObj.size) != null && (_themeObj$size$size = _themeObj$size[size]) != null && (_themeObj$size$size$i = _themeObj$size$size.iconOnly) != null && _themeObj$size$size$i.pad) {
+    var _themeObj$size2, _themeObj$size2$size, _themeObj$size2$size$;
+    var pad = themeObj == null ? void 0 : (_themeObj$size2 = themeObj.size) == null ? void 0 : (_themeObj$size2$size = _themeObj$size2[size]) == null ? void 0 : (_themeObj$size2$size$ = _themeObj$size2$size.iconOnly) == null ? void 0 : _themeObj$size2$size$.pad;
+    return {
+      vertical: typeof pad === 'string' ? pad : pad.vertical,
+      horizontal: typeof pad === 'string' ? pad : pad.horizontal
+    };
+  }
+  if (size && themeObj != null && (_themeObj$size3 = themeObj.size) != null && (_themeObj$size3$size = _themeObj$size3[size]) != null && (_themeObj$size3$size$ = _themeObj$size3$size[kind]) != null && _themeObj$size3$size$.pad) {
     return themeObj.size[size][kind].pad;
   }
   if (size && themeObj.size && themeObj.size[size] && themeObj.size[size].pad) {
@@ -44,13 +52,16 @@ var padFromTheme = function padFromTheme(size, theme, themeObj, kind) {
   return undefined;
 };
 var padStyle = function padStyle(_ref) {
-  var size = _ref.sizeProp,
+  var hasIcon = _ref.hasIcon,
+    hasLabel = _ref.hasLabel,
+    size = _ref.sizeProp,
     theme = _ref.theme,
     kind = _ref.kind;
   // caller has specified a themeObj to use for styling
   // relevant for cases like pagination which looks to theme.pagination.button
   var themeObj = typeof kind === 'object' ? kind : theme.button;
-  var pad = padFromTheme(size, theme, themeObj, kind);
+  var iconOnly = hasIcon && !hasLabel;
+  var pad = padFromTheme(size, theme, themeObj, kind, iconOnly);
   return pad ? (0, _styledComponents.css)(["padding:", " ", ";"], pad.vertical, pad.horizontal) : '';
 };
 var basicStyle = function basicStyle(props) {
@@ -73,6 +84,8 @@ var adjustPadStyle = function adjustPadStyle(pad, width) {
 // build up CSS from basic to specific based on the supplied sub-object paths
 var kindStyle = function kindStyle(_ref2) {
   var colorValue = _ref2.colorValue,
+    hasIcon = _ref2.hasIcon,
+    hasLabel = _ref2.hasLabel,
     kind = _ref2.kind,
     size = _ref2.sizeProp,
     themePaths = _ref2.themePaths,
@@ -82,7 +95,8 @@ var kindStyle = function kindStyle(_ref2) {
   // caller has specified a themeObj to use for styling
   // relevant for cases like pagination which looks to theme.pagination.button
   var themeObj = typeof kind === 'object' ? kind : theme.button;
-  var pad = padFromTheme(size, theme, themeObj, kind);
+  var iconOnly = hasIcon && !hasLabel;
+  var pad = padFromTheme(size, theme, themeObj, kind, iconOnly);
   themePaths.base.forEach(function (themePath) {
     var obj = getPath(themeObj, themePath);
     if (obj) {
