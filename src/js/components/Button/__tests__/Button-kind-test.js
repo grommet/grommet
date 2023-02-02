@@ -633,6 +633,27 @@ describe('Button kind', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test(`should apply kind direction`, () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {},
+            secondary: {
+              direction: 'column',
+              font: {
+                size: 'xsmall',
+              },
+            },
+          },
+        }}
+      >
+        <Button secondary label="Button" icon={<svg />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('button icon size from theme', () => {
     const { asFragment } = render(
       <Grommet

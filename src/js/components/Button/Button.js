@@ -366,7 +366,7 @@ const Button = forwardRef(
     if (first && second) {
       contents = (
         <Box
-          direction="row"
+          direction={theme.button?.[kind]?.direction || 'row'}
           align="center"
           justify={justify || (align === 'center' ? 'center' : 'between')}
           gap={gap || theme.button.gap}

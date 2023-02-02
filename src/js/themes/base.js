@@ -485,7 +485,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   font: {
+      //     size: undefined,
       //     weight: undefined,
       //   },
       //   icon: undefined,
@@ -498,11 +500,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       // primary: {
       //   font: {
+      //     size: undefined,
       //     weight: undefined,
       //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -513,11 +517,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       // secondary: {
       //   font: {
+      //     size: undefined,
       //     weight: undefined,
       //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -530,6 +536,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
