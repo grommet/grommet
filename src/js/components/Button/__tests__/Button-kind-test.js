@@ -638,11 +638,12 @@ describe('Button kind', () => {
       <Grommet
         theme={{
           button: {
+            default: {},
             icon: {
               size: {
                 small: '12px',
                 medium: '18px',
-                large: '24px',
+                large: '28px',
               },
             },
           },
@@ -661,6 +662,7 @@ describe('Button kind', () => {
       <Grommet
         theme={{
           button: {
+            default: {},
             size: {
               small: {
                 pad: {
