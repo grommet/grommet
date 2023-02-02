@@ -297,8 +297,9 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var second = reverse ? buttonIcon : label;
   var contents;
   if (first && second) {
+    var _theme$button, _theme$button$kind2;
     contents = /*#__PURE__*/React.createElement(Box, {
-      direction: "row",
+      direction: ((_theme$button = theme.button) == null ? void 0 : (_theme$button$kind2 = _theme$button[kind]) == null ? void 0 : _theme$button$kind2.direction) || 'row',
       align: "center",
       justify: justify || (align === 'center' ? 'center' : 'between'),
       gap: gap || theme.button.gap,
