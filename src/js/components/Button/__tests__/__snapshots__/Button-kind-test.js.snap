@@ -2702,8 +2702,8 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
-  height: 12px;
+  width: 24px;
+  height: 24px;
   fill: #666666;
   stroke: #666666;
 }
@@ -2727,74 +2727,6 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c2 *[FILL-RULE],
 .c2 *[fill*="#"],
 .c2 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c4 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c4 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c4 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c4 *[fill-rule],
-.c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c6 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2928,7 +2860,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   border: 0;
 }
 
-.c5 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2945,6 +2877,75 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   padding: 8px 18px;
   font-size: 18px;
   line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c4:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 24px;
+  color: #444444;
+  padding: 18px 24px;
+  font-size: 22px;
+  line-height: 28px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -2997,75 +2998,6 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   border: 0;
 }
 
-.c7 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 24px;
-  color: #444444;
-  padding: 18px 24px;
-  font-size: 22px;
-  line-height: 28px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c7:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c7:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c7:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3108,7 +3040,30 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
     >
       <svg
         aria-label="Add"
-        class="c4"
+        class="c2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 22V2M2 12h20"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </button>
+    <button
+      class="c4"
+      type="button"
+    >
+      Add
+    </button>
+    <button
+      class="c1"
+      type="button"
+    >
+      <svg
+        aria-label="Add"
+        class="c2"
         viewBox="0 0 24 24"
       >
         <path
@@ -3121,29 +3076,6 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
     </button>
     <button
       class="c5"
-      type="button"
-    >
-      Add
-    </button>
-    <button
-      class="c1"
-      type="button"
-    >
-      <svg
-        aria-label="Add"
-        class="c6"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 22V2M2 12h20"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </button>
-    <button
-      class="c7"
       type="button"
     >
       Add

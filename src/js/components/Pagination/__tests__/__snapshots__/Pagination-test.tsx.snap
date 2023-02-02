@@ -2773,142 +2773,6 @@ exports[`Pagination should apply size 1`] = `
   stroke: none;
 }
 
-.c17 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 12px;
-  height: 12px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c17 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c17 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c17 *[stroke*="#"],
-.c17 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c17 *[fill-rule],
-.c17 *[FILL-RULE],
-.c17 *[fill*="#"],
-.c17 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c23 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 12px;
-  height: 12px;
-  fill: #000000;
-  stroke: #000000;
-}
-
-.c23 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c23 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c27 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c27 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c27 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c27 *[stroke*="#"],
-.c27 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c27 *[fill-rule],
-.c27 *[FILL-RULE],
-.c27 *[fill*="#"],
-.c27 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c33 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  fill: #000000;
-  stroke: #000000;
-}
-
-.c33 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c33 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c33 *[stroke*="#"],
-.c33 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c33 *[fill-rule],
-.c33 *[FILL-RULE],
-.c33 *[fill*="#"],
-.c33 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2971,12 +2835,12 @@ exports[`Pagination should apply size 1`] = `
   line-height: 24px;
 }
 
-.c20 {
+.c19 {
   font-size: 14px;
   line-height: 20px;
 }
 
-.c30 {
+.c27 {
   font-size: 22px;
   line-height: 28px;
 }
@@ -3391,7 +3255,7 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
-.c18 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3411,6 +3275,82 @@ exports[`Pagination should apply size 1`] = `
   line-height: 20px;
   background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c17:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c18 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 4px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -3470,7 +3410,7 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
-.c19 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3502,83 +3442,7 @@ exports[`Pagination should apply size 1`] = `
   flex: 1 0 auto;
 }
 
-.c19:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c19:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c19:focus > circle,
-.c19:focus > ellipse,
-.c19:focus > line,
-.c19:focus > path,
-.c19:focus > polygon,
-.c19:focus > polyline,
-.c19:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c19:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c19:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c19:focus:not(:focus-visible) > circle,
-.c19:focus:not(:focus-visible) > ellipse,
-.c19:focus:not(:focus-visible) > line,
-.c19:focus:not(:focus-visible) > path,
-.c19:focus:not(:focus-visible) > polygon,
-.c19:focus:not(:focus-visible) > polyline,
-.c19:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c19:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 3px;
-  padding: 4px 4px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c22 > svg {
+.c21 > svg {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3589,51 +3453,51 @@ exports[`Pagination should apply size 1`] = `
   vertical-align: middle;
 }
 
-.c22:hover {
+.c21:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c22:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c22:focus > circle,
-.c22:focus > ellipse,
-.c22:focus > line,
-.c22:focus > path,
-.c22:focus > polygon,
-.c22:focus > polyline,
-.c22:focus > rect {
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c22:focus::-moz-focus-inner {
+.c21:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c22:focus:not(:focus-visible) {
+.c21:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c22:focus:not(:focus-visible) > circle,
-.c22:focus:not(:focus-visible) > ellipse,
-.c22:focus:not(:focus-visible) > line,
-.c22:focus:not(:focus-visible) > path,
-.c22:focus:not(:focus-visible) > polygon,
-.c22:focus:not(:focus-visible) > polyline,
-.c22:focus:not(:focus-visible) > rect {
+.c21:focus:not(:focus-visible) > circle,
+.c21:focus:not(:focus-visible) > ellipse,
+.c21:focus:not(:focus-visible) > line,
+.c21:focus:not(:focus-visible) > path,
+.c21:focus:not(:focus-visible) > polygon,
+.c21:focus:not(:focus-visible) > polyline,
+.c21:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c22:focus:not(:focus-visible)::-moz-focus-inner {
+.c21:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c25 {
+.c23 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3666,7 +3530,7 @@ exports[`Pagination should apply size 1`] = `
   flex: 1 0 auto;
 }
 
-.c25 > svg {
+.c23 > svg {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3675,6 +3539,85 @@ exports[`Pagination should apply size 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
+}
+
+.c23:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c23:focus > circle,
+.c23:focus > ellipse,
+.c23:focus > line,
+.c23:focus > path,
+.c23:focus > polygon,
+.c23:focus > polyline,
+.c23:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c23:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c23:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c23:focus:not(:focus-visible) > circle,
+.c23:focus:not(:focus-visible) > ellipse,
+.c23:focus:not(:focus-visible) > line,
+.c23:focus:not(:focus-visible) > path,
+.c23:focus:not(:focus-visible) > polygon,
+.c23:focus:not(:focus-visible) > polyline,
+.c23:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c23:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c25 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 4px;
+  font-size: 22px;
+  line-height: 28px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c25:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
 }
 
 .c25:focus {
@@ -3717,7 +3660,7 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
-.c28 {
+.c26 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3728,15 +3671,12 @@ exports[`Pagination should apply size 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
   border: none;
   border-radius: 6px;
   padding: 4px 4px;
   font-size: 22px;
   line-height: 28px;
-  background-color: rgba(51,51,51,0.06274509803921569);
-  color: #444444;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -3752,47 +3692,47 @@ exports[`Pagination should apply size 1`] = `
   flex: 1 0 auto;
 }
 
-.c28:hover {
+.c26:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c28:focus {
+.c26:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c28:focus > circle,
-.c28:focus > ellipse,
-.c28:focus > line,
-.c28:focus > path,
-.c28:focus > polygon,
-.c28:focus > polyline,
-.c28:focus > rect {
+.c26:focus > circle,
+.c26:focus > ellipse,
+.c26:focus > line,
+.c26:focus > path,
+.c26:focus > polygon,
+.c26:focus > polyline,
+.c26:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c28:focus::-moz-focus-inner {
+.c26:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c28:focus:not(:focus-visible) {
+.c26:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c28:focus:not(:focus-visible) > circle,
-.c28:focus:not(:focus-visible) > ellipse,
-.c28:focus:not(:focus-visible) > line,
-.c28:focus:not(:focus-visible) > path,
-.c28:focus:not(:focus-visible) > polygon,
-.c28:focus:not(:focus-visible) > polyline,
-.c28:focus:not(:focus-visible) > rect {
+.c26:focus:not(:focus-visible) > circle,
+.c26:focus:not(:focus-visible) > ellipse,
+.c26:focus:not(:focus-visible) > line,
+.c26:focus:not(:focus-visible) > path,
+.c26:focus:not(:focus-visible) > polygon,
+.c26:focus:not(:focus-visible) > polyline,
+.c26:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c28:focus:not(:focus-visible)::-moz-focus-inner {
+.c26:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3826,6 +3766,17 @@ exports[`Pagination should apply size 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+}
+
+.c29 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c29:hover {
@@ -3872,93 +3823,6 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
-.c32 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 6px;
-  padding: 4px 4px;
-  font-size: 22px;
-  line-height: 28px;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c32 > svg {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c32:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c32:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c32:focus > circle,
-.c32:focus > ellipse,
-.c32:focus > line,
-.c32:focus > path,
-.c32:focus > polygon,
-.c32:focus > polyline,
-.c32:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c32:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c32:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c32:focus:not(:focus-visible) > circle,
-.c32:focus:not(:focus-visible) > ellipse,
-.c32:focus:not(:focus-visible) > line,
-.c32:focus:not(:focus-visible) > path,
-.c32:focus:not(:focus-visible) > polygon,
-.c32:focus:not(:focus-visible) > polyline,
-.c32:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c32:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c5 {
   font-size: 18px;
   line-height: 24px;
@@ -3977,12 +3841,12 @@ exports[`Pagination should apply size 1`] = `
   margin: 0 auto;
 }
 
-.c26 {
+.c24 {
   font-size: 22px;
   line-height: 28px;
 }
 
-.c26 > svg {
+.c24 > svg {
   margin: 0 auto;
 }
 
@@ -4022,7 +3886,7 @@ exports[`Pagination should apply size 1`] = `
   min-width: 30px;
 }
 
-.c24 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4046,13 +3910,13 @@ exports[`Pagination should apply size 1`] = `
   line-height: 24px;
 }
 
-.c21 {
+.c20 {
   font-weight: bold;
   font-size: 14px;
   line-height: 20px;
 }
 
-.c31 {
+.c28 {
   font-weight: bold;
   font-size: 22px;
   line-height: 28px;
@@ -4260,7 +4124,7 @@ exports[`Pagination should apply size 1`] = `
           >
             <svg
               aria-label="Previous"
-              class="c17"
+              class="c6"
               viewBox="0 0 24 24"
             >
               <path
@@ -4281,7 +4145,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-current="page"
             aria-label="Go to page 1"
-            class="c18 c16"
+            class="c17 c16"
             type="button"
           >
             1
@@ -4295,7 +4159,7 @@ exports[`Pagination should apply size 1`] = `
         >
           <button
             aria-label="Go to page 2"
-            class="c19 c16"
+            class="c18 c16"
             type="button"
           >
             2
@@ -4309,7 +4173,7 @@ exports[`Pagination should apply size 1`] = `
         >
           <button
             aria-label="Go to page 3"
-            class="c19 c16"
+            class="c18 c16"
             type="button"
           >
             3
@@ -4323,7 +4187,7 @@ exports[`Pagination should apply size 1`] = `
         >
           <button
             aria-label="Go to page 4"
-            class="c19 c16"
+            class="c18 c16"
             type="button"
           >
             4
@@ -4337,7 +4201,7 @@ exports[`Pagination should apply size 1`] = `
         >
           <button
             aria-label="Go to page 5"
-            class="c19 c16"
+            class="c18 c16"
             type="button"
           >
             5
@@ -4350,7 +4214,7 @@ exports[`Pagination should apply size 1`] = `
           class="c14"
         >
           <span
-            class="c20 c21"
+            class="c19 c20"
           >
             …
           </span>
@@ -4363,7 +4227,7 @@ exports[`Pagination should apply size 1`] = `
         >
           <button
             aria-label="Go to page 24"
-            class="c19 c16"
+            class="c18 c16"
             type="button"
           >
             24
@@ -4377,12 +4241,12 @@ exports[`Pagination should apply size 1`] = `
         >
           <button
             aria-label="Go to next page"
-            class="c22 c16"
+            class="c21 c16"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c23"
+              class="c13"
               viewBox="0 0 24 24"
             >
               <path
@@ -4408,18 +4272,18 @@ exports[`Pagination should apply size 1`] = `
         class="c2"
       >
         <li
-          class="c24"
+          class="c22"
         >
           <button
             aria-disabled="true"
             aria-label="Go to previous page"
-            class="c25 c26"
+            class="c23 c24"
             disabled=""
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="c27"
+              class="c6"
               viewBox="0 0 24 24"
             >
               <path
@@ -4435,12 +4299,12 @@ exports[`Pagination should apply size 1`] = `
           class="c7"
         />
         <li
-          class="c24"
+          class="c22"
         >
           <button
             aria-current="page"
             aria-label="Go to page 1"
-            class="c28 c26"
+            class="c25 c24"
             type="button"
           >
             1
@@ -4450,11 +4314,11 @@ exports[`Pagination should apply size 1`] = `
           class="c7"
         />
         <li
-          class="c24"
+          class="c22"
         >
           <button
             aria-label="Go to page 2"
-            class="c29 c26"
+            class="c26 c24"
             type="button"
           >
             2
@@ -4464,11 +4328,11 @@ exports[`Pagination should apply size 1`] = `
           class="c7"
         />
         <li
-          class="c24"
+          class="c22"
         >
           <button
             aria-label="Go to page 3"
-            class="c29 c26"
+            class="c26 c24"
             type="button"
           >
             3
@@ -4478,11 +4342,11 @@ exports[`Pagination should apply size 1`] = `
           class="c7"
         />
         <li
-          class="c24"
+          class="c22"
         >
           <button
             aria-label="Go to page 4"
-            class="c29 c26"
+            class="c26 c24"
             type="button"
           >
             4
@@ -4492,11 +4356,11 @@ exports[`Pagination should apply size 1`] = `
           class="c7"
         />
         <li
-          class="c24"
+          class="c22"
         >
           <button
             aria-label="Go to page 5"
-            class="c29 c26"
+            class="c26 c24"
             type="button"
           >
             5
@@ -4506,10 +4370,10 @@ exports[`Pagination should apply size 1`] = `
           class="c7"
         />
         <li
-          class="c24"
+          class="c22"
         >
           <span
-            class="c30 c31"
+            class="c27 c28"
           >
             …
           </span>
@@ -4518,11 +4382,11 @@ exports[`Pagination should apply size 1`] = `
           class="c7"
         />
         <li
-          class="c24"
+          class="c22"
         >
           <button
             aria-label="Go to page 24"
-            class="c29 c26"
+            class="c26 c24"
             type="button"
           >
             24
@@ -4532,16 +4396,16 @@ exports[`Pagination should apply size 1`] = `
           class="c7"
         />
         <li
-          class="c24"
+          class="c22"
         >
           <button
             aria-label="Go to next page"
-            class="c32 c26"
+            class="c29 c24"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c33"
+              class="c13"
               viewBox="0 0 24 24"
             >
               <path

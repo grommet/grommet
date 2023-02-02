@@ -347,9 +347,9 @@ const Button = forwardRef(
         });
     }
 
-    if (icon && !icon.props.size) {
+    if (icon && !icon.props.size && theme.button?.icon?.size?.[size]) {
       buttonIcon = cloneElement(buttonIcon, {
-        size: theme.button?.icon?.size?.[size] || size,
+        size: theme.button.icon.size[size],
       });
     }
 
