@@ -111,9 +111,6 @@ jobs:
           name: Publish package
           command: cd dist && npm publish
 workflows:
-  e2e-test:
-    jobs:
-      - test
   build_test:
     - checkout:
         filters:
@@ -131,6 +128,9 @@ workflows:
         filters:
           tags:
             only: /.*/
+    - e2e-test:
+        requres:
+          - test
     - chromatic:
         requires:
           - checkout
