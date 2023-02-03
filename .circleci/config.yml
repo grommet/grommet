@@ -83,7 +83,7 @@ jobs:
       - browser-tools/install-browser-tools
       - node/install-packages
       - run:
-          command: yarn start && yarn test-e2e
+          command: npm run test
       - store_test_results:
           path: /tmp/test-results
   release:
@@ -111,70 +111,72 @@ jobs:
           name: Publish package
           command: cd dist && npm publish
 workflows:
-  build_test:
+  e2e-test:
     jobs:
-      - checkout:
-          filters:
-            tags:
-              only: /.*/
-      - lint:
-          requires:
-            - checkout
-          filters:
-            tags:
-              only: /.*/
-      - jest:
-          requires:
-            - checkout
-          filters:
-            tags:
-              only: /.*/
-      - chromatic:
-          requires:
-            - checkout
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              ignore:
-                - master
-      - chromatic-accept:
-          requires:
-            - checkout
-          filters:
-            branches:
-              only:
-                - master
-      - build:
-          requires:
-            - checkout
-          filters:
-            tags:
-              only: /.*/
-      - bundlesize:
-          requires:
-            - build
-          filters:
-            tags:
-              only: /.*/
-      - release:
-          requires:
-            - jest
-            - chromatic
-            - lint
-            - build
-          filters:
-            branches:
-              only:
-                - master
-      - publish:
-          requires:
-            - jest
-            - chromatic
-            - lint
-            - build
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
+      - test
+  build_test:
+    - checkout:
+        filters:
+          tags:
+            only: /.*/
+    - lint:
+        requires:
+          - checkout
+        filters:
+          tags:
+            only: /.*/
+    - jest:
+        requires:
+          - checkout
+        filters:
+          tags:
+            only: /.*/
+    - chromatic:
+        requires:
+          - checkout
+        filters:
+          tags:
+            only: /.*/
+          branches:
+            ignore:
+              - master
+    - chromatic-accept:
+        requires:
+          - checkout
+        filters:
+          branches:
+            only:
+              - master
+    - build:
+        requires:
+          - checkout
+        filters:
+          tags:
+            only: /.*/
+    - bundlesize:
+        requires:
+          - build
+        filters:
+          tags:
+            only: /.*/
+    - release:
+        requires:
+          - jest
+          - chromatic
+          - lint
+          - build
+        filters:
+          branches:
+            only:
+              - master
+    - publish:
+        requires:
+          - jest
+          - chromatic
+          - lint
+          - build
+        filters:
+          tags:
+            only: /^v.*/
+          branches:
+            ignore: /.*/
