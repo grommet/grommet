@@ -147,7 +147,9 @@ interface ButtonKindType {
       }
     | boolean;
   color?: ColorType;
+  direction?: DirectionType;
   font?: {
+    size?: string;
     weight?: number | string;
   };
   icon?: React.ReactNode | Icon;
@@ -173,6 +175,13 @@ interface ButtonType {
       size?: {
         medium?: string;
       };
+    };
+  };
+  icon?: {
+    size?: {
+      small?: string;
+      medium?: string;
+      large?: string;
     };
   };
   gap?: GapType;
@@ -223,6 +232,9 @@ interface ButtonType {
         vertical?: string;
         horizontal?: string;
       };
+      iconOnly?: {
+        pad?: string | { horizontal?: string; vertical?: string };
+      };
     };
     medium?: {
       border?: {
@@ -232,6 +244,9 @@ interface ButtonType {
         vertical?: string;
         horizontal?: string;
       };
+      iconOnly?: {
+        pad?: string | { horizontal?: string; vertical?: string };
+      };
     };
     large?: {
       border?: {
@@ -240,6 +255,9 @@ interface ButtonType {
       pad?: {
         vertical?: string;
         horizontal?: string;
+      };
+      iconOnly?: {
+        pad?: string | { horizontal?: string; vertical?: string };
       };
     };
   };
@@ -554,6 +572,9 @@ export interface ThemeType {
     header?: BoxProps;
     body?: BoxProps;
     footer?: BoxProps;
+  };
+  cards?: {
+    container?: BoxProps;
   };
   carousel?: {
     animation?: {
@@ -1018,6 +1039,7 @@ export interface ThemeType {
     extend?: ExtendType;
     overlay?: {
       background?: BackgroundType;
+      backdropFilter?: string;
     };
     responsiveBreakpoint?: string;
     zIndex?: string;
@@ -1428,6 +1450,17 @@ export interface ThemeType {
       medium?: string;
       large?: string;
       xlarge?: string;
+    };
+  };
+  starRating?: {
+    color?: ColorType;
+  };
+  thumbsRating?: {
+    dislike?: {
+      color?: ColorType;
+    };
+    like?: {
+      color?: ColorType;
     };
   };
   tab?: {

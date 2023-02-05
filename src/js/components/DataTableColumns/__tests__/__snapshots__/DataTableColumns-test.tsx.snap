@@ -1,0 +1,1812 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTableColumns remove column 1`] = `
+.c6 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c15 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c8 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c12:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    height: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="test-data"
+  >
+    <form>
+      <div
+        class="c1"
+      >
+        <header
+          class="c2"
+        >
+          <h2
+            class="c3"
+          >
+            Filters
+          </h2>
+        </header>
+        <div
+          class="c4"
+        />
+        <button
+          aria-label="Open column selector"
+          class="c5"
+          id="test-data--columns-control"
+          type="button"
+        >
+          <svg
+            aria-label="Splits"
+            class="c6"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </form>
+    <table
+      class="c7 c8"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c9 "
+            scope="col"
+          >
+            <div
+              class="c10"
+            >
+              <span
+                class="c11"
+              >
+                Name
+              </span>
+            </div>
+          </th>
+          <th
+            class="c9 "
+            scope="col"
+          >
+            <div
+              class="c10"
+            >
+              <span
+                class="c11"
+              >
+                Age
+              </span>
+            </div>
+          </th>
+          <th
+            class="c9 "
+            scope="col"
+          >
+            <div
+              class="c10"
+            >
+              <span
+                class="c11"
+              >
+                Size
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c13 "
+            scope="row"
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c15"
+              >
+                a
+              </span>
+            </div>
+          </th>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c11"
+              >
+                s
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c13 "
+            scope="row"
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c15"
+              >
+                b
+              </span>
+            </div>
+          </th>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c11"
+              >
+                m
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`DataTableColumns remove column 2`] = `
+<button
+  aria-label="Open column selector"
+  class="StyledButton-sc-323bzc-0 emhJYD"
+  data-g-tabindex="none"
+  id="test-data--columns-control"
+  tabindex="-1"
+  type="button"
+>
+  <svg
+    aria-label="Splits"
+    class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+      fill="none"
+      stroke="#000"
+      stroke-width="2"
+    />
+  </svg>
+</button>
+`;
+
+exports[`DataTableColumns remove column 3`] = `
+"@media only screen and (max-width: 768px) {
+  .drdMXk {
+    height: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .iISQcM {
+    width: 12px;
+  }
+}
+.emhJYD {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+.emhJYD:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6fffb0;
+}
+.emhJYD:focus > circle,
+.emhJYD:focus > ellipse,
+.emhJYD:focus > line,
+.emhJYD:focus > path,
+.emhJYD:focus > polygon,
+.emhJYD:focus > polyline,
+.emhJYD:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6fffb0;
+}
+.emhJYD:focus::-moz-focus-inner {
+  border: 0;
+}
+.emhJYD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.emhJYD:focus:not(:focus-visible) > circle,
+.emhJYD:focus:not(:focus-visible) > ellipse,
+.emhJYD:focus:not(:focus-visible) > line,
+.emhJYD:focus:not(:focus-visible) > path,
+.emhJYD:focus:not(:focus-visible) > polygon,
+.emhJYD:focus:not(:focus-visible) > polyline,
+.emhJYD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.emhJYD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+@media only screen and (max-width: 768px) {
+  .evXIdU {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .evXIdU {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}"
+`;
+
+exports[`DataTableColumns renders 1`] = `
+.c6 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c15 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c19 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c7:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  opacity: 0;
+}
+
+.c3 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c17 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c11 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c12 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c16:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    height: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="test-data"
+  >
+    <form>
+      <div
+        class="c1"
+      >
+        <header
+          class="c2"
+        >
+          <h2
+            class="c3"
+          >
+            Filters
+          </h2>
+        </header>
+        <div
+          class="c4"
+        />
+        <button
+          aria-label="Open column selector"
+          class="c5"
+          id="test-data--columns-control"
+          type="button"
+        >
+          <svg
+            aria-label="Splits"
+            class="c6"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="c4"
+        />
+        <footer
+          class="c2"
+        >
+          <button
+            class="c7"
+            type="submit"
+          >
+            Apply filters
+          </button>
+          <div
+            class="c8"
+          />
+          <button
+            aria-hidden="true"
+            class="c9 c10"
+            disabled=""
+            tabindex="-1"
+            type="reset"
+          >
+            Undo changes
+          </button>
+        </footer>
+      </div>
+    </form>
+    <table
+      class="c11 c12"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c13 "
+            scope="col"
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c15"
+              >
+                Name
+              </span>
+            </div>
+          </th>
+          <th
+            class="c13 "
+            scope="col"
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c15"
+              >
+                Size
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c17 "
+            scope="row"
+          >
+            <div
+              class="c18"
+            >
+              <span
+                class="c19"
+              >
+                a
+              </span>
+            </div>
+          </th>
+          <td
+            class="c17 "
+          >
+            <div
+              class="c18"
+            >
+              <span
+                class="c15"
+              >
+                s
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c17 "
+            scope="row"
+          >
+            <div
+              class="c18"
+            >
+              <span
+                class="c19"
+              >
+                b
+              </span>
+            </div>
+          </th>
+          <td
+            class="c17 "
+          >
+            <div
+              class="c18"
+            >
+              <span
+                class="c15"
+              >
+                m
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`DataTableColumns search 1`] = `
+.c6 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c15 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c8 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c12:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    height: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="test-data"
+  >
+    <form>
+      <div
+        class="c1"
+      >
+        <header
+          class="c2"
+        >
+          <h2
+            class="c3"
+          >
+            Filters
+          </h2>
+        </header>
+        <div
+          class="c4"
+        />
+        <button
+          aria-label="Open column selector"
+          class="c5"
+          id="test-data--columns-control"
+          type="button"
+        >
+          <svg
+            aria-label="Splits"
+            class="c6"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </form>
+    <table
+      class="c7 c8"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c9 "
+            scope="col"
+          >
+            <div
+              class="c10"
+            >
+              <span
+                class="c11"
+              >
+                Name
+              </span>
+            </div>
+          </th>
+          <th
+            class="c9 "
+            scope="col"
+          >
+            <div
+              class="c10"
+            >
+              <span
+                class="c11"
+              >
+                Size
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c13 "
+            scope="row"
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c15"
+              >
+                a
+              </span>
+            </div>
+          </th>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c11"
+              >
+                s
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c13 "
+            scope="row"
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c15"
+              >
+                b
+              </span>
+            </div>
+          </th>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c11"
+              >
+                m
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`DataTableColumns search 2`] = `
+<button
+  aria-label="Open column selector"
+  class="StyledButton-sc-323bzc-0 emhJYD"
+  data-g-tabindex="none"
+  id="test-data--columns-control"
+  tabindex="-1"
+  type="button"
+>
+  <svg
+    aria-label="Splits"
+    class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+      fill="none"
+      stroke="#000"
+      stroke-width="2"
+    />
+  </svg>
+</button>
+`;
+
+exports[`DataTableColumns search 3`] = `
+"@media only screen and (max-width: 768px) {
+  .drdMXk {
+    height: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .iISQcM {
+    width: 12px;
+  }
+}
+.emhJYD {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+.emhJYD:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6fffb0;
+}
+.emhJYD:focus > circle,
+.emhJYD:focus > ellipse,
+.emhJYD:focus > line,
+.emhJYD:focus > path,
+.emhJYD:focus > polygon,
+.emhJYD:focus > polyline,
+.emhJYD:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6fffb0;
+}
+.emhJYD:focus::-moz-focus-inner {
+  border: 0;
+}
+.emhJYD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.emhJYD:focus:not(:focus-visible) > circle,
+.emhJYD:focus:not(:focus-visible) > ellipse,
+.emhJYD:focus:not(:focus-visible) > line,
+.emhJYD:focus:not(:focus-visible) > path,
+.emhJYD:focus:not(:focus-visible) > polygon,
+.emhJYD:focus:not(:focus-visible) > polyline,
+.emhJYD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.emhJYD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+@media only screen and (max-width: 768px) {
+  .evXIdU {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .evXIdU {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}"
+`;
+
+exports[`DataTableColumns search 4`] = `
+<button
+  aria-label="Open column selector"
+  class="StyledButton-sc-323bzc-0 emhJYD"
+  data-g-tabindex="none"
+  id="test-data--columns-control"
+  tabindex="-1"
+  type="button"
+>
+  <svg
+    aria-label="Splits"
+    class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+      fill="none"
+      stroke="#000"
+      stroke-width="2"
+    />
+  </svg>
+</button>
+`;
+
+exports[`DataTableColumns search 5`] = `
+"@media only screen and (max-width: 768px) {
+  .drdMXk {
+    height: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .iISQcM {
+    width: 12px;
+  }
+}
+.emhJYD {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+.emhJYD:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6fffb0;
+}
+.emhJYD:focus > circle,
+.emhJYD:focus > ellipse,
+.emhJYD:focus > line,
+.emhJYD:focus > path,
+.emhJYD:focus > polygon,
+.emhJYD:focus > polyline,
+.emhJYD:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6fffb0;
+}
+.emhJYD:focus::-moz-focus-inner {
+  border: 0;
+}
+.emhJYD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.emhJYD:focus:not(:focus-visible) > circle,
+.emhJYD:focus:not(:focus-visible) > ellipse,
+.emhJYD:focus:not(:focus-visible) > line,
+.emhJYD:focus:not(:focus-visible) > path,
+.emhJYD:focus:not(:focus-visible) > polygon,
+.emhJYD:focus:not(:focus-visible) > polyline,
+.emhJYD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.emhJYD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+@media only screen and (max-width: 768px) {
+  .evXIdU {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .evXIdU {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}"
+`;

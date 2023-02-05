@@ -200,7 +200,7 @@ const interactiveStyle = css`
   }
 `;
 
-const gapStyle = (directionProp, gap, responsive, theme) => {
+const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
   const metric = theme.global.edgeSize[gap] || gap;
   const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
@@ -213,6 +213,7 @@ const gapStyle = (directionProp, gap, responsive, theme) => {
     }
   } else {
     styles.push(`column-gap: ${metric};`);
+    if (wrap) styles.push(`row-gap: ${metric};`);
     if (responsiveMetric) {
       if (directionProp === 'row' || directionProp === 'row-reverse') {
         styles.push(
@@ -270,7 +271,13 @@ const StyledBox = styled.div`
   ${(props) => props.elevationProp && elevationStyle(props.elevationProp)}
   ${(props) =>
     props.gap &&
-    gapStyle(props.directionProp, props.gap, props.responsive, props.theme)}
+    gapStyle(
+      props.directionProp,
+      props.gap,
+      props.responsive,
+      props.wrapProp,
+      props.theme,
+    )}
   ${(props) => props.animation && animationStyle}
   ${(props) => props.onClick && interactiveStyle}
   ${(props) =>

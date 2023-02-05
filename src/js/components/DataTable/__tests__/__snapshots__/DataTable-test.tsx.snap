@@ -26,6 +26,10 @@ exports[`DataTable !primaryKey 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -82,7 +86,6 @@ exports[`DataTable !primaryKey 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -229,6 +232,10 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -328,7 +335,6 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c7:focus {
@@ -477,6 +483,10 @@ exports[`DataTable aggregate 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -552,7 +562,6 @@ exports[`DataTable aggregate 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -729,6 +738,10 @@ exports[`DataTable aggregate with nested object 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -804,7 +817,6 @@ exports[`DataTable aggregate with nested object 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -1028,6 +1040,10 @@ exports[`DataTable background 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -1164,7 +1180,6 @@ exports[`DataTable background 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -1609,6 +1624,10 @@ exports[`DataTable basic 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -1671,7 +1690,6 @@ exports[`DataTable basic 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -1820,6 +1838,10 @@ exports[`DataTable border 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -1896,7 +1918,6 @@ exports[`DataTable border 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -2475,6 +2496,10 @@ exports[`DataTable click 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -2537,7 +2562,6 @@ exports[`DataTable click 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c7 {
@@ -2630,7 +2654,7 @@ exports[`DataTable click 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -2643,7 +2667,7 @@ exports[`DataTable click 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -2749,6 +2773,10 @@ exports[`DataTable custom theme 1`] = `
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -3135,7 +3163,6 @@ exports[`DataTable custom theme 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c18:focus {
@@ -3374,7 +3401,7 @@ exports[`DataTable custom theme 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -3395,7 +3422,7 @@ exports[`DataTable custom theme 2`] = `
             style="position: relative;"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dexCrH"
+              class="StyledBox-sc-13pk1d4-0 kcpMrH"
             >
               <button
                 class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jRVSDa"
@@ -3585,6 +3612,10 @@ exports[`DataTable disabled click 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -3647,7 +3678,6 @@ exports[`DataTable disabled click 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c7 {
@@ -3741,7 +3771,7 @@ exports[`DataTable disabled click 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -3754,7 +3784,7 @@ exports[`DataTable disabled click 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -3903,6 +3933,10 @@ exports[`DataTable disabled select 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c19 {
@@ -4108,7 +4142,6 @@ exports[`DataTable disabled select 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c14:focus {
@@ -4328,7 +4361,6 @@ exports[`DataTable empty 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c3:focus {
@@ -4385,6 +4417,10 @@ exports[`DataTable fill 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -4460,7 +4496,6 @@ exports[`DataTable fill 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
   width: 100%;
   height: 100%;
 }
@@ -4469,7 +4504,6 @@ exports[`DataTable fill 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
   width: 100%;
 }
 
@@ -4477,7 +4511,6 @@ exports[`DataTable fill 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
   height: 100%;
 }
 
@@ -4923,6 +4956,10 @@ exports[`DataTable footer 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -4998,7 +5035,6 @@ exports[`DataTable footer 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -5251,6 +5287,10 @@ exports[`DataTable groupBy 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c14 {
@@ -5401,7 +5441,6 @@ exports[`DataTable groupBy 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c11:focus {
@@ -5624,7 +5663,7 @@ exports[`DataTable groupBy 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -5668,7 +5707,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -5682,7 +5721,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -5949,6 +5988,10 @@ exports[`DataTable groupBy expand 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c14 {
@@ -6129,7 +6172,6 @@ exports[`DataTable groupBy expand 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c11:focus {
@@ -6551,6 +6593,10 @@ exports[`DataTable groupBy property 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c14 {
@@ -6701,7 +6747,6 @@ exports[`DataTable groupBy property 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c11:focus {
@@ -6924,7 +6969,7 @@ exports[`DataTable groupBy property 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -6968,7 +7013,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -6982,7 +7027,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -7139,6 +7184,10 @@ exports[`DataTable groupBy toggle 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -7201,7 +7250,6 @@ exports[`DataTable groupBy toggle 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -7401,7 +7449,7 @@ exports[`DataTable groupBy toggle 2`] = `
     toggle
   </button>
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7617,7 +7665,7 @@ exports[`DataTable groupBy toggle 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -7631,7 +7679,7 @@ exports[`DataTable groupBy toggle 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -7982,7 +8030,7 @@ exports[`DataTable groupBy toggle 3`] = `
     toggle
   </button>
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7995,7 +8043,7 @@ exports[`DataTable groupBy toggle 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -8009,7 +8057,7 @@ exports[`DataTable groupBy toggle 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -8408,6 +8456,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c23 {
@@ -8690,7 +8742,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c19:focus {
@@ -9346,6 +9397,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c23 {
@@ -9572,7 +9627,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c19:focus {
@@ -10062,6 +10116,10 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c24 {
@@ -10314,7 +10372,6 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c19:focus {
@@ -10810,6 +10867,10 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c22 {
@@ -11028,7 +11089,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c18:focus {
@@ -11333,7 +11393,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -11438,7 +11498,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -11452,7 +11512,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -11708,7 +11768,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -11778,7 +11838,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -11792,7 +11852,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -12065,6 +12125,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c16 {
@@ -12195,7 +12259,6 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c13:focus {
@@ -12517,7 +12580,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -12583,7 +12646,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -12597,7 +12660,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -12953,7 +13016,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -12992,7 +13055,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13006,7 +13069,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -13275,6 +13338,10 @@ exports[`DataTable onSort 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -13411,7 +13478,6 @@ exports[`DataTable onSort 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c9:focus {
@@ -13592,7 +13658,7 @@ exports[`DataTable onSort 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -13605,7 +13671,7 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -13697,7 +13763,7 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -13878,6 +13944,10 @@ exports[`DataTable onSort external 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -14024,7 +14094,6 @@ exports[`DataTable onSort external 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c11:focus {
@@ -14226,7 +14295,7 @@ exports[`DataTable onSort external 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -14239,7 +14308,7 @@ exports[`DataTable onSort external 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -14315,7 +14384,7 @@ exports[`DataTable onSort external 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -14462,6 +14531,10 @@ exports[`DataTable pad 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -14579,7 +14652,6 @@ exports[`DataTable pad 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -15024,6 +15096,10 @@ exports[`DataTable paths 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -15086,7 +15162,6 @@ exports[`DataTable paths 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -15235,6 +15310,10 @@ exports[`DataTable pin + background 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c11 {
@@ -15353,7 +15432,6 @@ exports[`DataTable pin + background 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c8:focus {
@@ -15858,6 +15936,10 @@ exports[`DataTable pin + background context 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -15999,7 +16081,6 @@ exports[`DataTable pin + background context 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c9:focus {
@@ -16500,6 +16581,10 @@ exports[`DataTable pin 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c11 {
@@ -16575,7 +16660,6 @@ exports[`DataTable pin 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c8:focus {
@@ -17064,6 +17148,10 @@ exports[`DataTable placeholder 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -17164,7 +17252,6 @@ exports[`DataTable placeholder 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -17530,6 +17617,10 @@ exports[`DataTable primaryKey 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -17592,7 +17683,6 @@ exports[`DataTable primaryKey 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -17741,6 +17831,10 @@ exports[`DataTable relativeColumnSizes 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -17840,7 +17934,6 @@ exports[`DataTable relativeColumnSizes 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c7:focus {
@@ -17989,6 +18082,10 @@ exports[`DataTable replace 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -18069,7 +18166,6 @@ exports[`DataTable replace 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -18253,6 +18349,10 @@ exports[`DataTable resizeable 1`] = `
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c10 {
@@ -18409,7 +18509,6 @@ exports[`DataTable resizeable 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c15:focus {
@@ -18665,6 +18764,10 @@ exports[`DataTable rowDetails 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -18863,7 +18966,6 @@ exports[`DataTable rowDetails 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c7:focus {
@@ -19263,6 +19365,10 @@ exports[`DataTable rowDetails condtional 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -19461,7 +19567,6 @@ exports[`DataTable rowDetails condtional 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c7:focus {
@@ -19830,6 +19935,10 @@ exports[`DataTable rowProps 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -19917,7 +20026,6 @@ exports[`DataTable rowProps 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c6:focus {
@@ -20152,6 +20260,10 @@ exports[`DataTable search 1`] = `
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -20289,7 +20401,6 @@ exports[`DataTable search 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c10:focus {
@@ -20426,7 +20537,7 @@ exports[`DataTable search 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -20442,7 +20553,7 @@ exports[`DataTable search 2`] = `
             class="StyledBox-sc-13pk1d4-0 glMZQD"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dexCrH"
+              class="StyledBox-sc-13pk1d4-0 kcpMrH"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -20688,6 +20799,10 @@ exports[`DataTable select 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c16 {
@@ -20852,7 +20967,6 @@ exports[`DataTable select 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c14:focus {
@@ -21051,7 +21165,7 @@ exports[`DataTable select 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -21117,7 +21231,7 @@ exports[`DataTable select 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <span
               class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -21384,6 +21498,10 @@ exports[`DataTable should apply pagination styling 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -21837,7 +21955,6 @@ exports[`DataTable should apply pagination styling 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c8:focus {
@@ -23662,6 +23779,10 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -23692,7 +23813,6 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c8:focus {
@@ -23815,6 +23935,10 @@ exports[`DataTable should not show paginate controls when length of data < step 
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -23863,7 +23987,6 @@ exports[`DataTable should not show paginate controls when length of data < step 
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c8:focus {
@@ -24148,6 +24271,10 @@ exports[`DataTable should paginate 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -24599,7 +24726,6 @@ exports[`DataTable should paginate 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c8:focus {
@@ -26486,6 +26612,10 @@ exports[`DataTable should pin and paginate 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c13 {
@@ -26939,7 +27069,6 @@ exports[`DataTable should pin and paginate 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c9:focus {
@@ -28833,6 +28962,10 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -29284,7 +29417,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c8:focus {
@@ -30125,6 +30257,10 @@ exports[`DataTable should render new data when page changes 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -30576,7 +30712,6 @@ exports[`DataTable should render new data when page changes 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c8:focus {
@@ -32351,7 +32486,7 @@ exports[`DataTable should render new data when page changes 2`] = `
       class="StyledBox-sc-13pk1d4-0 bhVjdV"
     >
       <table
-        class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+        class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
       >
         <thead
           class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -32364,7 +32499,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="col"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 cUuGOF"
+                class="StyledBox-sc-13pk1d4-0 dCZrDR"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -32378,7 +32513,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="col"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 cUuGOF"
+                class="StyledBox-sc-13pk1d4-0 dCZrDR"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -34011,6 +34146,10 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -34462,7 +34601,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c8:focus {
@@ -36349,6 +36487,10 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -36800,7 +36942,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c8:focus {
@@ -38469,6 +38610,10 @@ exports[`DataTable sort 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -38615,7 +38760,6 @@ exports[`DataTable sort 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c11:focus {
@@ -38873,6 +39017,10 @@ exports[`DataTable sort controlled 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -39088,7 +39236,6 @@ exports[`DataTable sort controlled 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c12:focus {
@@ -39353,6 +39500,10 @@ exports[`DataTable sort controlled 2`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c8 {
@@ -39568,7 +39719,6 @@ exports[`DataTable sort controlled 2`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c12:focus {
@@ -39832,6 +39982,10 @@ exports[`DataTable sort external 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -39978,7 +40132,6 @@ exports[`DataTable sort external 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c11:focus {
@@ -40235,6 +40388,10 @@ exports[`DataTable sort nested object 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -40381,7 +40538,6 @@ exports[`DataTable sort nested object 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c11:focus {
@@ -40638,6 +40794,10 @@ exports[`DataTable sort nested object with onSort 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -40784,7 +40944,6 @@ exports[`DataTable sort nested object with onSort 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c11:focus {
@@ -41007,6 +41166,10 @@ exports[`DataTable sort null data 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -41143,7 +41306,6 @@ exports[`DataTable sort null data 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c9:focus {
@@ -41469,7 +41631,7 @@ exports[`DataTable sort null data 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -41482,7 +41644,7 @@ exports[`DataTable sort null data 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -41574,7 +41736,7 @@ exports[`DataTable sort null data 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -41597,7 +41759,7 @@ exports[`DataTable sort null data 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -41620,7 +41782,7 @@ exports[`DataTable sort null data 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -41873,7 +42035,7 @@ exports[`DataTable sort null data 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -41886,7 +42048,7 @@ exports[`DataTable sort null data 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -41909,7 +42071,7 @@ exports[`DataTable sort null data 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -41932,7 +42094,7 @@ exports[`DataTable sort null data 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -42024,7 +42186,7 @@ exports[`DataTable sort null data 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -42277,7 +42439,7 @@ exports[`DataTable sort null data 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -42290,7 +42452,7 @@ exports[`DataTable sort null data 4`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -42313,7 +42475,7 @@ exports[`DataTable sort null data 4`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -42336,7 +42498,7 @@ exports[`DataTable sort null data 4`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -42359,7 +42521,7 @@ exports[`DataTable sort null data 4`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -42702,6 +42864,10 @@ exports[`DataTable sortable 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c7 {
@@ -42838,7 +43004,6 @@ exports[`DataTable sortable 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c9:focus {
@@ -43019,7 +43184,7 @@ exports[`DataTable sortable 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 CMHtZ"
+    class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -43032,7 +43197,7 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -43124,7 +43289,7 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUuGOF"
+            class="StyledBox-sc-13pk1d4-0 dCZrDR"
           >
             <button
               class="StyledButton-sc-323bzc-0 bxbfiz Header__StyledHeaderCellButton-sc-1baku5q-0 jxDSTI"
@@ -43271,6 +43436,10 @@ exports[`DataTable themeColumnSizes 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
@@ -43370,7 +43539,6 @@ exports[`DataTable themeColumnSizes 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c7:focus {
@@ -43519,6 +43687,10 @@ exports[`DataTable units 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c6 {
@@ -43618,7 +43790,6 @@ exports[`DataTable units 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c8:focus {
@@ -43805,6 +43976,10 @@ exports[`DataTable verticalAlign 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c5 {
@@ -43989,7 +44164,6 @@ exports[`DataTable verticalAlign 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
 }
 
 .c7:focus {
