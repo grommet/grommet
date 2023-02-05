@@ -2168,7 +2168,6 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  outline: 2px solid #6FFFB0;
 }
 
 .c1:focus {
@@ -18908,53 +18907,6 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
   border: 0;
 }
 
-.c16 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c16:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c16:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c16:focus:not(:focus-visible) > circle,
-.c16:focus:not(:focus-visible) > ellipse,
-.c16:focus:not(:focus-visible) > line,
-.c16:focus:not(:focus-visible) > path,
-.c16:focus:not(:focus-visible) > polygon,
-.c16:focus:not(:focus-visible) > polyline,
-.c16:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c16:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c15 {
   display: inline-block;
   box-sizing: border-box;
@@ -18971,8 +18923,15 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
   line-height: 0;
   padding: 12px;
+}
+
+.c15:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 .c15:focus:not(:focus-visible) {
@@ -18999,7 +18958,6 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  outline: 2px solid #6FFFB0;
 }
 
 .c1:focus {
@@ -19227,7 +19185,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
         >
           <button
             aria-label="2 San Francisco move up"
-            class="c15"
+            class="c10"
             id="San FranciscoMoveUp"
             tabindex="-1"
             type="button"
@@ -19328,7 +19286,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
         >
           <button
             aria-label="3 Los Gatos move up"
-            class="c16"
+            class="c15"
             id="Los GatosMoveUp"
             tabindex="-1"
             type="button"

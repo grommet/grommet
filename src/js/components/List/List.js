@@ -337,6 +337,7 @@ const List = React.forwardRef(
               setLastActive(active);
               updateActive(undefined);
             }}
+            onMouseDown={(event) => event.preventDefault()}
             {...ariaProps}
             {...rest}
           >
@@ -675,7 +676,7 @@ const List = React.forwardRef(
 
                 return (
                   <StyledItem
-                    key={key}
+                    key={typeof key === 'object' ? key.key : key}
                     tag="li"
                     background={adjustedBackground}
                     border={adjustedBorder}
