@@ -12,9 +12,9 @@ var Uncontrolled = function Uncontrolled() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Box, {
-      fill: true,
       align: "center",
-      justify: "center"
+      justify: "center",
+      pad: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       width: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {

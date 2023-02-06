@@ -11,7 +11,6 @@ var FieldWithComponentProp = function FieldWithComponentProp() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Box, {
-      fill: true,
       overflow: "auto",
       align: "center",
       justify: "center",

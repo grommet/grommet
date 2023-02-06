@@ -36,9 +36,9 @@ export var ControlledInputLazy = function ControlledInputLazy() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     React.createElement(Box, {
-      fill: true,
       align: "center",
-      justify: "center"
+      justify: "center",
+      pad: "large"
     }, /*#__PURE__*/React.createElement(Box, {
       width: "medium"
     }, /*#__PURE__*/React.createElement(Form, {
