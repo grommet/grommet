@@ -40,7 +40,7 @@ const passwordRulesStrong = [
 export const FieldWithChildren = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box fill align="center" justify="center">
+  <Box align="center" justify="center" pad="large">
     <Box width="medium">
       <Form
         onReset={(event) => console.log(event)}
