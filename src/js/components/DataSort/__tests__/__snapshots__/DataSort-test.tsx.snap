@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataSort renders 1`] = `
-.c15 {
+.c16 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12,25 +12,25 @@ exports[`DataSort renders 1`] = `
   stroke: #7D4CDB;
 }
 
-.c15 g {
+.c16 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill="none"] {
+.c16 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*="#"],
-.c15 *[STROKE*="#"] {
+.c16 *[stroke*="#"],
+.c16 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*="#"],
-.c15 *[FILL*="#"] {
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*="#"],
+.c16 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -52,7 +52,7 @@ exports[`DataSort renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -77,7 +77,7 @@ exports[`DataSort renders 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -92,7 +92,7 @@ exports[`DataSort renders 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -107,7 +107,7 @@ exports[`DataSort renders 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -129,7 +129,7 @@ exports[`DataSort renders 1`] = `
   justify-content: space-between;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -148,7 +148,7 @@ exports[`DataSort renders 1`] = `
   flex-basis: auto;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -167,7 +167,7 @@ exports[`DataSort renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -183,7 +183,7 @@ exports[`DataSort renders 1`] = `
   padding: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -197,7 +197,7 @@ exports[`DataSort renders 1`] = `
   flex-direction: column;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -215,7 +215,7 @@ exports[`DataSort renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c21 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -241,7 +241,7 @@ exports[`DataSort renders 1`] = `
   border-radius: 100%;
 }
 
-.c4 {
+.c5 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -251,7 +251,7 @@ exports[`DataSort renders 1`] = `
   height: 12px;
 }
 
-.c23 {
+.c24 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -261,7 +261,7 @@ exports[`DataSort renders 1`] = `
   width: 24px;
 }
 
-.c6 {
+.c7 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -270,7 +270,7 @@ exports[`DataSort renders 1`] = `
   line-height: 24px;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -288,27 +288,27 @@ exports[`DataSort renders 1`] = `
   text-align: inherit;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c22 {
+.c23 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -336,51 +336,51 @@ exports[`DataSort renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c22:hover {
+.c23:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c22:focus {
+.c23:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c22:focus > circle,
-.c22:focus > ellipse,
-.c22:focus > line,
-.c22:focus > path,
-.c22:focus > polygon,
-.c22:focus > polyline,
-.c22:focus > rect {
+.c23:focus > circle,
+.c23:focus > ellipse,
+.c23:focus > line,
+.c23:focus > path,
+.c23:focus > polygon,
+.c23:focus > polyline,
+.c23:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c22:focus::-moz-focus-inner {
+.c23:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c22:focus:not(:focus-visible) {
+.c23:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c22:focus:not(:focus-visible) > circle,
-.c22:focus:not(:focus-visible) > ellipse,
-.c22:focus:not(:focus-visible) > line,
-.c22:focus:not(:focus-visible) > path,
-.c22:focus:not(:focus-visible) > polygon,
-.c22:focus:not(:focus-visible) > polyline,
-.c22:focus:not(:focus-visible) > rect {
+.c23:focus:not(:focus-visible) > circle,
+.c23:focus:not(:focus-visible) > ellipse,
+.c23:focus:not(:focus-visible) > line,
+.c23:focus:not(:focus-visible) > path,
+.c23:focus:not(:focus-visible) > polygon,
+.c23:focus:not(:focus-visible) > polyline,
+.c23:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c22:focus:not(:focus-visible)::-moz-focus-inner {
+.c23:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c24 {
+.c25 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -407,47 +407,47 @@ exports[`DataSort renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c24:focus {
+.c25:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c24:focus > circle,
-.c24:focus > ellipse,
-.c24:focus > line,
-.c24:focus > path,
-.c24:focus > polygon,
-.c24:focus > polyline,
-.c24:focus > rect {
+.c25:focus > circle,
+.c25:focus > ellipse,
+.c25:focus > line,
+.c25:focus > path,
+.c25:focus > polygon,
+.c25:focus > polyline,
+.c25:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c24:focus::-moz-focus-inner {
+.c25:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c24:focus:not(:focus-visible) {
+.c25:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c24:focus:not(:focus-visible) > circle,
-.c24:focus:not(:focus-visible) > ellipse,
-.c24:focus:not(:focus-visible) > line,
-.c24:focus:not(:focus-visible) > path,
-.c24:focus:not(:focus-visible) > polygon,
-.c24:focus:not(:focus-visible) > polyline,
-.c24:focus:not(:focus-visible) > rect {
+.c25:focus:not(:focus-visible) > circle,
+.c25:focus:not(:focus-visible) > ellipse,
+.c25:focus:not(:focus-visible) > line,
+.c25:focus:not(:focus-visible) > path,
+.c25:focus:not(:focus-visible) > polygon,
+.c25:focus:not(:focus-visible) > polyline,
+.c25:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c24:focus:not(:focus-visible)::-moz-focus-inner {
+.c25:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -469,12 +469,12 @@ exports[`DataSort renders 1`] = `
   cursor: pointer;
 }
 
-.c18:hover input:not([disabled]) + div,
-.c18:hover input:not([disabled]) + span {
+.c19:hover input:not([disabled]) + div,
+.c19:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c20 {
+.c21 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -483,7 +483,7 @@ exports[`DataSort renders 1`] = `
   cursor: pointer;
 }
 
-.c12 {
+.c13 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -501,46 +501,50 @@ exports[`DataSort renders 1`] = `
   border: none;
 }
 
-.c12::-webkit-input-placeholder {
+.c13::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c12::-moz-placeholder {
+.c13::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c12:-ms-input-placeholder {
+.c13:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c12::-webkit-search-decoration {
+.c13::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c12::-moz-focus-inner {
+.c13::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c12:-moz-placeholder,
-.c12::-moz-placeholder {
+.c13:-moz-placeholder,
+.c13::-moz-placeholder {
   opacity: 1;
 }
 
-.c11 {
+.c12 {
   position: relative;
   width: 100%;
 }
 
-.c13 {
+.c14 {
   cursor: pointer;
 }
 
-.c25 {
+.c26 {
   opacity: 0;
 }
 
-.c3 {
+.c2 {
+  max-width: 100%;
+}
+
+.c4 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -560,68 +564,68 @@ exports[`DataSort renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c17 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c17 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c19 {
+  .c20 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c21 {
+  .c22 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c23 {
+  .c24 {
     width: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -635,54 +639,56 @@ exports[`DataSort renders 1`] = `
     class="c1"
     id="data"
   >
-    <form>
+    <form
+      class="c2"
+    >
       <div
         class="c1"
       >
         <header
-          class="c2"
+          class="c3"
         >
           <h2
-            class="c3"
+            class="c4"
           >
             Filters
           </h2>
         </header>
         <div
-          class="c4"
+          class="c5"
         />
         <div
-          class="c5 "
+          class="c6 "
         >
           <label
-            class="c6"
+            class="c7"
             for="data--sort-property"
           >
             Sort by
           </label>
           <div
-            class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+            class="c8 FormField__FormFieldContentBox-sc-m9hood-1"
           >
             <button
               aria-expanded="false"
               aria-haspopup="listbox"
               aria-label="Open Drop"
-              class="c8 "
+              class="c9 "
               id="data--sort-property"
               type="button"
             >
               <div
-                class="c9"
+                class="c10"
               >
                 <div
-                  class="c10"
+                  class="c11"
                 >
                   <div
-                    class="c11"
+                    class="c12"
                   >
                     <input
                       autocomplete="off"
-                      class="c12 c13"
+                      class="c13 c14"
                       id="data--sort-property__input"
                       name="_sort.property"
                       readonly=""
@@ -693,12 +699,12 @@ exports[`DataSort renders 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c14"
+                  class="c15"
                   style="min-width: auto;"
                 >
                   <svg
                     aria-label="FormDown"
-                    class="c15"
+                    class="c16"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -714,37 +720,37 @@ exports[`DataSort renders 1`] = `
           </div>
         </div>
         <div
-          class="c5 "
+          class="c6 "
         >
           <label
-            class="c6"
+            class="c7"
             for="data--sort-direction"
           >
             Sort direction
           </label>
           <div
-            class="c16 FormField__FormFieldContentBox-sc-m9hood-1"
+            class="c17 FormField__FormFieldContentBox-sc-m9hood-1"
           >
             <div
-              class="c17"
+              class="c18"
               id="data--sort-direction"
               role="radiogroup"
             >
               <label
-                class="c18"
+                class="c19"
               >
                 <div
-                  class="c19 "
+                  class="c20 "
                 >
                   <input
-                    class="c20"
+                    class="c21"
                     name="_sort.direction"
                     tabindex="0"
                     type="radio"
                     value="asc"
                   />
                   <div
-                    class="c21 "
+                    class="c22 "
                   />
                 </div>
                 <span
@@ -754,23 +760,23 @@ exports[`DataSort renders 1`] = `
                 </span>
               </label>
               <div
-                class="c4"
+                class="c5"
               />
               <label
-                class="c18"
+                class="c19"
               >
                 <div
-                  class="c19 "
+                  class="c20 "
                 >
                   <input
-                    class="c20"
+                    class="c21"
                     name="_sort.direction"
                     tabindex="-1"
                     type="radio"
                     value="desc"
                   />
                   <div
-                    class="c21 "
+                    class="c22 "
                   />
                 </div>
                 <span
@@ -783,23 +789,23 @@ exports[`DataSort renders 1`] = `
           </div>
         </div>
         <div
-          class="c4"
+          class="c5"
         />
         <footer
-          class="c2"
+          class="c3"
         >
           <button
-            class="c22"
+            class="c23"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c23"
+            class="c24"
           />
           <button
             aria-hidden="true"
-            class="c24 c25"
+            class="c25 c26"
             disabled=""
             tabindex="-1"
             type="reset"
