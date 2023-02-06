@@ -129,8 +129,11 @@ workflows:
           tags:
             only: /.*/
     - e2e-test:
-        jobs:
-          - test
+        requires:
+          - checkout
+        filters:
+          tags:
+            only: /.*/
     - chromatic:
         requires:
           - checkout
