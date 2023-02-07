@@ -6308,7 +6308,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   class="c0 c1"
   data-g-portal-id="0"
   id="test-menu__drop"
-  style="max-height: 0px; left: 0px; width: 0.1px; bottom: 768px;"
+  style="left: 0px; width: 0.1px; bottom: 768px; max-height: 0px;"
   tabindex="-1"
 >
   <div

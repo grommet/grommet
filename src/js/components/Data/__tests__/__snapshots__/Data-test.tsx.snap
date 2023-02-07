@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Data controlled search 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12,25 +12,25 @@ exports[`Data controlled search 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -62,7 +62,7 @@ exports[`Data controlled search 1`] = `
   flex: 0 0 auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -79,7 +79,7 @@ exports[`Data controlled search 1`] = `
   flex: 0 0 auto;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -100,7 +100,7 @@ exports[`Data controlled search 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -141,20 +141,20 @@ exports[`Data controlled search 1`] = `
   row-gap: 12px;
 }
 
-.c9 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -174,47 +174,52 @@ exports[`Data controlled search 1`] = `
   padding: 12px;
 }
 
-.c8:focus {
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -231,58 +236,58 @@ exports[`Data controlled search 1`] = `
   padding-left: 48px;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c4 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -300,7 +305,11 @@ exports[`Data controlled search 1`] = `
   left: 12px;
 }
 
-.c12 {
+.c3 {
+  max-width: 100%;
+}
+
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -313,7 +322,7 @@ exports[`Data controlled search 1`] = `
   padding-bottom: 6px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -325,23 +334,23 @@ exports[`Data controlled search 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c11 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c14:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -366,19 +375,21 @@ exports[`Data controlled search 1`] = `
     <div
       class="c2"
     >
-      <form>
+      <form
+        class="c3"
+      >
         <div
           class="c1"
         >
           <div
-            class="c3"
+            class="c4"
           >
             <div
-              class="c4"
+              class="c5"
             >
               <svg
                 aria-label="Search"
-                class="c5"
+                class="c6"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -392,7 +403,7 @@ exports[`Data controlled search 1`] = `
             <input
               aria-label="Search data"
               autocomplete="off"
-              class="c6"
+              class="c7"
               id="data--search"
               name="_search"
               type="search"
@@ -402,16 +413,17 @@ exports[`Data controlled search 1`] = `
         </div>
       </form>
       <div
-        class="c7"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c8"
+          class="c9"
+          id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c5"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -425,12 +437,12 @@ exports[`Data controlled search 1`] = `
       </div>
     </div>
     <span
-      class="c9"
+      class="c10"
     >
       4 results of undefined items
     </span>
     <table
-      class="c10 c11"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -439,30 +451,30 @@ exports[`Data controlled search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 aa
               </span>
@@ -473,14 +485,14 @@ exports[`Data controlled search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 bb
               </span>
@@ -491,14 +503,14 @@ exports[`Data controlled search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 cc
               </span>
@@ -509,14 +521,14 @@ exports[`Data controlled search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 dd
               </span>
@@ -540,7 +552,9 @@ exports[`Data controlled search 2`] = `
     <div
       class="StyledBox-sc-13pk1d4-0 cA-DryL"
     >
-      <form>
+      <form
+        class="DataForm__MaxForm-sc-v64e1r-1 hpHcfX"
+      >
         <div
           class="StyledBox-sc-13pk1d4-0 hoPFxc"
         >
@@ -566,7 +580,7 @@ exports[`Data controlled search 2`] = `
             <input
               aria-label="Search data"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jgXNod"
+              class="StyledTextInput-sc-1x30a0s-0 bMqJAS"
               id="data--search"
               name="_search"
               type="search"
@@ -580,7 +594,8 @@ exports[`Data controlled search 2`] = `
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 emhJYD"
+          class="StyledButton-sc-323bzc-0 wfYUD"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -704,7 +719,7 @@ exports[`Data controlled search 2`] = `
 `;
 
 exports[`Data messages 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -715,25 +730,25 @@ exports[`Data messages 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -765,7 +780,7 @@ exports[`Data messages 1`] = `
   flex: 0 0 auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -782,7 +797,7 @@ exports[`Data messages 1`] = `
   flex: 0 0 auto;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -803,7 +818,7 @@ exports[`Data messages 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -844,25 +859,25 @@ exports[`Data messages 1`] = `
   row-gap: 12px;
 }
 
-.c9 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -882,47 +897,52 @@ exports[`Data messages 1`] = `
   padding: 12px;
 }
 
-.c8:focus {
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -939,58 +959,58 @@ exports[`Data messages 1`] = `
   padding-left: 48px;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c4 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1008,7 +1028,11 @@ exports[`Data messages 1`] = `
   left: 12px;
 }
 
-.c12 {
+.c3 {
+  max-width: 100%;
+}
+
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1021,7 +1045,7 @@ exports[`Data messages 1`] = `
   padding-bottom: 6px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1033,23 +1057,23 @@ exports[`Data messages 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c11 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c14:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -1074,19 +1098,21 @@ exports[`Data messages 1`] = `
     <div
       class="c2"
     >
-      <form>
+      <form
+        class="c3"
+      >
         <div
           class="c1"
         >
           <div
-            class="c3"
+            class="c4"
           >
             <div
-              class="c4"
+              class="c5"
             >
               <svg
                 aria-label="Search"
-                class="c5"
+                class="c6"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1100,7 +1126,7 @@ exports[`Data messages 1`] = `
             <input
               aria-label="Search data"
               autocomplete="off"
-              class="c6"
+              class="c7"
               id="data--search"
               name="_search"
               type="search"
@@ -1110,16 +1136,17 @@ exports[`Data messages 1`] = `
         </div>
       </form>
       <div
-        class="c7"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c8"
+          class="c9"
+          id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c5"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -1133,12 +1160,12 @@ exports[`Data messages 1`] = `
       </div>
     </div>
     <span
-      class="c9"
+      class="c10"
     >
       4 things
     </span>
     <table
-      class="c10 c11"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -1147,51 +1174,51 @@ exports[`Data messages 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 ZZ
               </span>
@@ -1202,27 +1229,27 @@ exports[`Data messages 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 YY
               </span>
@@ -1233,24 +1260,24 @@ exports[`Data messages 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 cc
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             />
           </td>
         </tr>
@@ -1258,24 +1285,24 @@ exports[`Data messages 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 dd
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             />
           </td>
         </tr>
@@ -1313,7 +1340,7 @@ exports[`Data onView 1`] = `
   flex: 0 0 auto;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1338,7 +1365,7 @@ exports[`Data onView 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1353,7 +1380,7 @@ exports[`Data onView 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1369,7 +1396,7 @@ exports[`Data onView 1`] = `
   padding: 12px;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1383,7 +1410,7 @@ exports[`Data onView 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1406,7 +1433,7 @@ exports[`Data onView 1`] = `
   justify-content: center;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1432,7 +1459,7 @@ exports[`Data onView 1`] = `
   border-radius: 4px;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1452,7 +1479,7 @@ exports[`Data onView 1`] = `
   height: 100%;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1473,7 +1500,7 @@ exports[`Data onView 1`] = `
   cursor: pointer;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1492,7 +1519,7 @@ exports[`Data onView 1`] = `
   border-radius: 12px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1518,7 +1545,7 @@ exports[`Data onView 1`] = `
   overflow: visible;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1543,7 +1570,7 @@ exports[`Data onView 1`] = `
   justify-content: center;
 }
 
-.c21 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1562,7 +1589,7 @@ exports[`Data onView 1`] = `
   border-radius: 100%;
 }
 
-.c22 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1583,7 +1610,7 @@ exports[`Data onView 1`] = `
   border-radius: 12px;
 }
 
-.c31 {
+.c32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1604,7 +1631,7 @@ exports[`Data onView 1`] = `
   justify-content: center;
 }
 
-.c4 {
+.c5 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1614,7 +1641,7 @@ exports[`Data onView 1`] = `
   height: 12px;
 }
 
-.c25 {
+.c26 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1624,7 +1651,7 @@ exports[`Data onView 1`] = `
   width: 24px;
 }
 
-.c6 {
+.c7 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1633,7 +1660,7 @@ exports[`Data onView 1`] = `
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -1641,25 +1668,25 @@ exports[`Data onView 1`] = `
   text-align: right;
 }
 
-.c23 {
+.c24 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.c34 {
+.c35 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c35 {
+.c36 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c24 {
+.c25 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1687,51 +1714,51 @@ exports[`Data onView 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c24:hover {
+.c25:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c24:focus {
+.c25:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c24:focus > circle,
-.c24:focus > ellipse,
-.c24:focus > line,
-.c24:focus > path,
-.c24:focus > polygon,
-.c24:focus > polyline,
-.c24:focus > rect {
+.c25:focus > circle,
+.c25:focus > ellipse,
+.c25:focus > line,
+.c25:focus > path,
+.c25:focus > polygon,
+.c25:focus > polyline,
+.c25:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c24:focus::-moz-focus-inner {
+.c25:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c24:focus:not(:focus-visible) {
+.c25:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c24:focus:not(:focus-visible) > circle,
-.c24:focus:not(:focus-visible) > ellipse,
-.c24:focus:not(:focus-visible) > line,
-.c24:focus:not(:focus-visible) > path,
-.c24:focus:not(:focus-visible) > polygon,
-.c24:focus:not(:focus-visible) > polyline,
-.c24:focus:not(:focus-visible) > rect {
+.c25:focus:not(:focus-visible) > circle,
+.c25:focus:not(:focus-visible) > ellipse,
+.c25:focus:not(:focus-visible) > line,
+.c25:focus:not(:focus-visible) > path,
+.c25:focus:not(:focus-visible) > polygon,
+.c25:focus:not(:focus-visible) > polyline,
+.c25:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c24:focus:not(:focus-visible)::-moz-focus-inner {
+.c25:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c26 {
+.c27 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1758,47 +1785,47 @@ exports[`Data onView 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c26:focus {
+.c27:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c26:focus > circle,
-.c26:focus > ellipse,
-.c26:focus > line,
-.c26:focus > path,
-.c26:focus > polygon,
-.c26:focus > polyline,
-.c26:focus > rect {
+.c27:focus > circle,
+.c27:focus > ellipse,
+.c27:focus > line,
+.c27:focus > path,
+.c27:focus > polygon,
+.c27:focus > polyline,
+.c27:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c26:focus::-moz-focus-inner {
+.c27:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c26:focus:not(:focus-visible) {
+.c27:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c26:focus:not(:focus-visible) > circle,
-.c26:focus:not(:focus-visible) > ellipse,
-.c26:focus:not(:focus-visible) > line,
-.c26:focus:not(:focus-visible) > path,
-.c26:focus:not(:focus-visible) > polygon,
-.c26:focus:not(:focus-visible) > polyline,
-.c26:focus:not(:focus-visible) > rect {
+.c27:focus:not(:focus-visible) > circle,
+.c27:focus:not(:focus-visible) > ellipse,
+.c27:focus:not(:focus-visible) > line,
+.c27:focus:not(:focus-visible) > path,
+.c27:focus:not(:focus-visible) > polygon,
+.c27:focus:not(:focus-visible) > polyline,
+.c27:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c26:focus:not(:focus-visible)::-moz-focus-inner {
+.c27:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1820,12 +1847,12 @@ exports[`Data onView 1`] = `
   cursor: pointer;
 }
 
-.c9:hover input:not([disabled]) + div,
-.c9:hover input:not([disabled]) + span {
+.c10:hover input:not([disabled]) + div,
+.c10:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c12 {
+.c13 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -1834,29 +1861,33 @@ exports[`Data onView 1`] = `
   cursor: pointer;
 }
 
-.c12:checked + span > span {
+.c13:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c11 {
+.c12 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c17 {
+.c18 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.c27 {
+.c28 {
   opacity: 0;
 }
 
-.c3 {
+.c2 {
+  max-width: 100%;
+}
+
+.c4 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -1865,7 +1896,7 @@ exports[`Data onView 1`] = `
   overflow-wrap: break-word;
 }
 
-.c30 {
+.c31 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1878,7 +1909,7 @@ exports[`Data onView 1`] = `
   padding-bottom: 6px;
 }
 
-.c33 {
+.c34 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1890,88 +1921,88 @@ exports[`Data onView 1`] = `
   padding-bottom: 6px;
 }
 
-.c28 {
+.c29 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c29 {
+.c30 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c32:focus {
+.c33:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c32:focus:not(:focus-visible) {
+.c33:focus:not(:focus-visible) {
   outline: none;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c11 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c14 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c19 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c22 {
+  .c23 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c25 {
+  .c26 {
     width: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -1985,52 +2016,54 @@ exports[`Data onView 1`] = `
     class="c1"
     id="data"
   >
-    <form>
+    <form
+      class="c2"
+    >
       <div
         class="c1"
       >
         <header
-          class="c2"
+          class="c3"
         >
           <h2
-            class="c3"
+            class="c4"
           >
             Filters
           </h2>
         </header>
         <div
-          class="c4"
+          class="c5"
         />
         <div
-          class="c5 "
+          class="c6 "
         >
           <label
-            class="c6"
+            class="c7"
             for="data-name"
           >
             name
           </label>
           <div
-            class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+            class="c8 FormField__FormFieldContentBox-sc-m9hood-1"
           >
             <div
-              class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+              class="c9 StyledCheckBoxGroup-sc-2nhc5d-0"
               id="data-name"
               role="group"
             >
               <label
-                class="c9"
+                class="c10"
                 label="aa"
               >
                 <div
-                  class="c10 c11"
+                  class="c11 c12"
                 >
                   <input
-                    class="c12"
+                    class="c13"
                     type="checkbox"
                   />
                   <div
-                    class="c13 "
+                    class="c14 "
                   />
                 </div>
                 <span>
@@ -2038,21 +2071,21 @@ exports[`Data onView 1`] = `
                 </span>
               </label>
               <div
-                class="c4"
+                class="c5"
               />
               <label
-                class="c9"
+                class="c10"
                 label="bb"
               >
                 <div
-                  class="c10 c11"
+                  class="c11 c12"
                 >
                   <input
-                    class="c12"
+                    class="c13"
                     type="checkbox"
                   />
                   <div
-                    class="c13 "
+                    class="c14 "
                   />
                 </div>
                 <span>
@@ -2060,21 +2093,21 @@ exports[`Data onView 1`] = `
                 </span>
               </label>
               <div
-                class="c4"
+                class="c5"
               />
               <label
-                class="c9"
+                class="c10"
                 label="cc"
               >
                 <div
-                  class="c10 c11"
+                  class="c11 c12"
                 >
                   <input
-                    class="c12"
+                    class="c13"
                     type="checkbox"
                   />
                   <div
-                    class="c13 "
+                    class="c14 "
                   />
                 </div>
                 <span>
@@ -2082,21 +2115,21 @@ exports[`Data onView 1`] = `
                 </span>
               </label>
               <div
-                class="c4"
+                class="c5"
               />
               <label
-                class="c9"
+                class="c10"
                 label="dd"
               >
                 <div
-                  class="c10 c11"
+                  class="c11 c12"
                 >
                   <input
-                    class="c12"
+                    class="c13"
                     type="checkbox"
                   />
                   <div
-                    class="c13 "
+                    class="c14 "
                   />
                 </div>
                 <span>
@@ -2107,38 +2140,38 @@ exports[`Data onView 1`] = `
           </div>
         </div>
         <div
-          class="c4"
+          class="c5"
         />
         <div
-          class="c5 "
+          class="c6 "
         >
           <label
-            class="c6"
+            class="c7"
             for="data-enabled"
           >
             enabled
           </label>
           <div
-            class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+            class="c8 FormField__FormFieldContentBox-sc-m9hood-1"
           >
             <div
-              class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+              class="c9 StyledCheckBoxGroup-sc-2nhc5d-0"
               id="data-enabled"
               role="group"
             >
               <label
-                class="c9"
+                class="c10"
                 label="true"
               >
                 <div
-                  class="c10 c11"
+                  class="c11 c12"
                 >
                   <input
-                    class="c12"
+                    class="c13"
                     type="checkbox"
                   />
                   <div
-                    class="c13 "
+                    class="c14 "
                   />
                 </div>
                 <span>
@@ -2146,21 +2179,21 @@ exports[`Data onView 1`] = `
                 </span>
               </label>
               <div
-                class="c4"
+                class="c5"
               />
               <label
-                class="c9"
+                class="c10"
                 label="false"
               >
                 <div
-                  class="c10 c11"
+                  class="c11 c12"
                 >
                   <input
-                    class="c12"
+                    class="c13"
                     type="checkbox"
                   />
                   <div
-                    class="c13 "
+                    class="c14 "
                   />
                 </div>
                 <span>
@@ -2171,40 +2204,40 @@ exports[`Data onView 1`] = `
           </div>
         </div>
         <div
-          class="c4"
+          class="c5"
         />
         <div
-          class="c5 "
+          class="c6 "
         >
           <label
-            class="c6"
+            class="c7"
             for="data-rating"
           >
             rating
           </label>
           <div
-            class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+            class="c8 FormField__FormFieldContentBox-sc-m9hood-1"
           >
             <div
-              class="c14"
+              class="c15"
               id="data-rating"
             >
               <span
-                class="c15"
+                class="c16"
                 style="width: 0px;"
               >
                 2.0999999999999996
               </span>
               <div
-                class="c16 c17"
+                class="c17 c18"
                 tabindex="-1"
               >
                 <div
-                  class="c18"
+                  class="c19"
                   style="flex: 0 0 0px;"
                 />
                 <div
-                  class="c19"
+                  class="c20"
                   style="flex: 0 0 1px;"
                 >
                   <div
@@ -2212,22 +2245,22 @@ exports[`Data onView 1`] = `
                     aria-valuemax="4.8999999999999995"
                     aria-valuemin="2.0999999999999996"
                     aria-valuenow="2.0999999999999996"
-                    class="c20"
+                    class="c21"
                     role="slider"
                     style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                     tabindex="0"
                   >
                     <div
-                      class="c21 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                      class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0"
                     />
                   </div>
                 </div>
                 <div
-                  class="c22"
+                  class="c23"
                   style="flex: 3.8 0 0px; cursor: ew-resize;"
                 />
                 <div
-                  class="c19"
+                  class="c20"
                   style="flex: 0 0 1px;"
                 >
                   <div
@@ -2235,23 +2268,23 @@ exports[`Data onView 1`] = `
                     aria-valuemax="4.8999999999999995"
                     aria-valuemin="2.0999999999999996"
                     aria-valuenow="4.8999999999999995"
-                    class="c20"
+                    class="c21"
                     role="slider"
                     style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                     tabindex="0"
                   >
                     <div
-                      class="c21 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                      class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0"
                     />
                   </div>
                 </div>
                 <div
-                  class="c18"
+                  class="c19"
                   style="flex: 0 0 0px;"
                 />
               </div>
               <span
-                class="c23"
+                class="c24"
                 style="width: 0px;"
               >
                 4.8999999999999995
@@ -2260,23 +2293,23 @@ exports[`Data onView 1`] = `
           </div>
         </div>
         <div
-          class="c4"
+          class="c5"
         />
         <footer
-          class="c2"
+          class="c3"
         >
           <button
-            class="c24"
+            class="c25"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c25"
+            class="c26"
           />
           <button
             aria-hidden="true"
-            class="c26 c27"
+            class="c27 c28"
             disabled=""
             tabindex="-1"
             type="reset"
@@ -2287,7 +2320,7 @@ exports[`Data onView 1`] = `
       </div>
     </form>
     <table
-      class="c28 c29"
+      class="c29 c30"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -2296,84 +2329,84 @@ exports[`Data onView 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c30 "
+            class="c31 "
             scope="col"
           >
             <div
-              class="c31"
+              class="c32"
             />
           </th>
           <th
-            class="c30 "
+            class="c31 "
             scope="col"
           >
             <div
-              class="c31"
+              class="c32"
             />
           </th>
           <th
-            class="c30 "
+            class="c31 "
             scope="col"
           >
             <div
-              class="c31"
+              class="c32"
             />
           </th>
           <th
-            class="c30 "
+            class="c31 "
             scope="col"
           >
             <div
-              class="c31"
+              class="c32"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c32"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c33"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c33 "
+            class="c34 "
             scope="row"
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c34"
+                class="c35"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c33 "
+            class="c34 "
           >
             <div
-              class="c8"
+              class="c9"
             />
           </td>
           <td
-            class="c33 "
+            class="c34 "
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c35"
+                class="c36"
               >
                 2.3
               </span>
             </div>
           </td>
           <td
-            class="c33 "
+            class="c34 "
           >
             <div
-              class="c8"
+              class="c9"
             />
           </td>
         </tr>
@@ -2381,44 +2414,44 @@ exports[`Data onView 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c33 "
+            class="c34 "
             scope="row"
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c34"
+                class="c35"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c33 "
+            class="c34 "
           >
             <div
-              class="c8"
+              class="c9"
             />
           </td>
           <td
-            class="c33 "
+            class="c34 "
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c35"
+                class="c36"
               >
                 4.3
               </span>
             </div>
           </td>
           <td
-            class="c33 "
+            class="c34 "
           >
             <div
-              class="c8"
+              class="c9"
             />
           </td>
         </tr>
@@ -2426,38 +2459,38 @@ exports[`Data onView 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c33 "
+            class="c34 "
             scope="row"
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c34"
+                class="c35"
               >
                 cc
               </span>
             </div>
           </th>
           <td
-            class="c33 "
+            class="c34 "
           >
             <div
-              class="c8"
+              class="c9"
             />
           </td>
           <td
-            class="c33 "
+            class="c34 "
           >
             <div
-              class="c8"
+              class="c9"
             />
           </td>
           <td
-            class="c33 "
+            class="c34 "
           >
             <div
-              class="c8"
+              class="c9"
             />
           </td>
         </tr>
@@ -2465,38 +2498,38 @@ exports[`Data onView 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c33 "
+            class="c34 "
             scope="row"
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c34"
+                class="c35"
               >
                 dd
               </span>
             </div>
           </th>
           <td
-            class="c33 "
+            class="c34 "
           >
             <div
-              class="c8"
+              class="c9"
             />
           </td>
           <td
-            class="c33 "
+            class="c34 "
           >
             <div
-              class="c8"
+              class="c9"
             />
           </td>
           <td
-            class="c33 "
+            class="c34 "
           >
             <div
-              class="c8"
+              class="c9"
             />
           </td>
         </tr>
@@ -2507,6 +2540,537 @@ exports[`Data onView 1`] = `
 `;
 
 exports[`Data pagination 1`] = `
+.c14 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c14 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c14 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c14 *[stroke*="#"],
+.c14 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c14 *[fill-rule],
+.c14 *[FILL-RULE],
+.c14 *[fill*="#"],
+.c14 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c15 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c12 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c12:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c16 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c16:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c3 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c6:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c13 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c13 > svg {
+  margin: 0 auto;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <table
+      class="c2 c3"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c4 "
+            scope="col"
+          >
+            <div
+              class="c5"
+            />
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c7 "
+            scope="row"
+          >
+            <div
+              class="c8"
+            >
+              <span
+                class="c9"
+              >
+                cc
+              </span>
+            </div>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c7 "
+            scope="row"
+          >
+            <div
+              class="c8"
+            >
+              <span
+                class="c9"
+              >
+                dd
+              </span>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    >
+      <nav
+        aria-label="Pagination Navigation"
+        class="c1"
+      >
+        <ul
+          class="c10"
+        >
+          <li
+            class="c11"
+          >
+            <button
+              aria-label="Go to previous page"
+              class="c12 c13"
+              type="button"
+            >
+              <svg
+                aria-label="Previous"
+                class="c14"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17 2 7 12l10 10"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </li>
+          <div
+            class="c15"
+          />
+          <li
+            class="c11"
+          >
+            <button
+              aria-label="Go to page 1"
+              class="c16 c13"
+              type="button"
+            >
+              1
+            </button>
+          </li>
+          <div
+            class="c15"
+          />
+          <li
+            class="c11"
+          >
+            <button
+              aria-label="Go to next page"
+              class="c12 c13"
+              type="button"
+            >
+              <svg
+                aria-label="Next"
+                class="c14"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m7 2 10 10L7 22"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Data pagination step 1`] = `
 .c14 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -3076,7 +3640,7 @@ exports[`Data renders 1`] = `
 `;
 
 exports[`Data toolbar 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3087,25 +3651,25 @@ exports[`Data toolbar 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3137,7 +3701,7 @@ exports[`Data toolbar 1`] = `
   flex: 0 0 auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3154,7 +3718,7 @@ exports[`Data toolbar 1`] = `
   flex: 0 0 auto;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3175,7 +3739,7 @@ exports[`Data toolbar 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3216,25 +3780,25 @@ exports[`Data toolbar 1`] = `
   row-gap: 12px;
 }
 
-.c9 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3254,47 +3818,52 @@ exports[`Data toolbar 1`] = `
   padding: 12px;
 }
 
-.c8:focus {
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -3311,58 +3880,58 @@ exports[`Data toolbar 1`] = `
   padding-left: 48px;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c4 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3380,7 +3949,11 @@ exports[`Data toolbar 1`] = `
   left: 12px;
 }
 
-.c12 {
+.c3 {
+  max-width: 100%;
+}
+
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3393,7 +3966,7 @@ exports[`Data toolbar 1`] = `
   padding-bottom: 6px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3405,23 +3978,23 @@ exports[`Data toolbar 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c11 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c14:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -3446,19 +4019,21 @@ exports[`Data toolbar 1`] = `
     <div
       class="c2"
     >
-      <form>
+      <form
+        class="c3"
+      >
         <div
           class="c1"
         >
           <div
-            class="c3"
+            class="c4"
           >
             <div
-              class="c4"
+              class="c5"
             >
               <svg
                 aria-label="Search"
-                class="c5"
+                class="c6"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -3472,7 +4047,7 @@ exports[`Data toolbar 1`] = `
             <input
               aria-label="Search data"
               autocomplete="off"
-              class="c6"
+              class="c7"
               id="data--search"
               name="_search"
               type="search"
@@ -3482,16 +4057,17 @@ exports[`Data toolbar 1`] = `
         </div>
       </form>
       <div
-        class="c7"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c8"
+          class="c9"
+          id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c5"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -3505,12 +4081,12 @@ exports[`Data toolbar 1`] = `
       </div>
     </div>
     <span
-      class="c9"
+      class="c10"
     >
       4 items
     </span>
     <table
-      class="c10 c11"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -3519,51 +4095,51 @@ exports[`Data toolbar 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 ZZ
               </span>
@@ -3574,27 +4150,27 @@ exports[`Data toolbar 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 YY
               </span>
@@ -3605,24 +4181,24 @@ exports[`Data toolbar 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 cc
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             />
           </td>
         </tr>
@@ -3630,24 +4206,24 @@ exports[`Data toolbar 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 dd
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             />
           </td>
         </tr>
@@ -3831,6 +4407,11 @@ exports[`Data toolbar filters 1`] = `
   padding: 12px;
 }
 
+.c4:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -3943,6 +4524,7 @@ exports[`Data toolbar filters 1`] = `
         <button
           aria-label="Open filters"
           class="c4"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -4066,7 +4648,7 @@ exports[`Data toolbar filters 1`] = `
 `;
 
 exports[`Data toolbar search 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4077,25 +4659,25 @@ exports[`Data toolbar search 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4127,7 +4709,7 @@ exports[`Data toolbar search 1`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4148,7 +4730,7 @@ exports[`Data toolbar search 1`] = `
   justify-content: center;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4189,20 +4771,20 @@ exports[`Data toolbar search 1`] = `
   row-gap: 12px;
 }
 
-.c7 {
+.c8 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -4219,58 +4801,58 @@ exports[`Data toolbar search 1`] = `
   padding-left: 48px;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c4 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4288,7 +4870,11 @@ exports[`Data toolbar search 1`] = `
   left: 12px;
 }
 
-.c10 {
+.c3 {
+  max-width: 100%;
+}
+
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4301,7 +4887,7 @@ exports[`Data toolbar search 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4313,23 +4899,23 @@ exports[`Data toolbar search 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c9 {
+.c10 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c12:focus {
+.c13:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c12:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -4354,19 +4940,21 @@ exports[`Data toolbar search 1`] = `
     <div
       class="c2"
     >
-      <form>
+      <form
+        class="c3"
+      >
         <div
           class="c1"
         >
           <div
-            class="c3"
+            class="c4"
           >
             <div
-              class="c4"
+              class="c5"
             >
               <svg
                 aria-label="Search"
-                class="c5"
+                class="c6"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -4380,7 +4968,7 @@ exports[`Data toolbar search 1`] = `
             <input
               aria-label="Search data"
               autocomplete="off"
-              class="c6"
+              class="c7"
               id="data--search"
               name="_search"
               type="search"
@@ -4391,12 +4979,12 @@ exports[`Data toolbar search 1`] = `
       </form>
     </div>
     <span
-      class="c7"
+      class="c8"
     >
       4 items
     </span>
     <table
-      class="c8 c9"
+      class="c9 c10"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -4405,30 +4993,30 @@ exports[`Data toolbar search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c10 "
+            class="c11 "
             scope="col"
           >
             <div
-              class="c11"
+              class="c12"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c13 "
+            class="c14 "
             scope="row"
           >
             <div
-              class="c14"
+              class="c15"
             >
               <span
-                class="c15"
+                class="c16"
               >
                 aa
               </span>
@@ -4439,14 +5027,14 @@ exports[`Data toolbar search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c13 "
+            class="c14 "
             scope="row"
           >
             <div
-              class="c14"
+              class="c15"
             >
               <span
-                class="c15"
+                class="c16"
               >
                 bb
               </span>
@@ -4457,14 +5045,14 @@ exports[`Data toolbar search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c13 "
+            class="c14 "
             scope="row"
           >
             <div
-              class="c14"
+              class="c15"
             >
               <span
-                class="c15"
+                class="c16"
               >
                 cc
               </span>
@@ -4475,14 +5063,14 @@ exports[`Data toolbar search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c13 "
+            class="c14 "
             scope="row"
           >
             <div
-              class="c14"
+              class="c15"
             >
               <span
-                class="c15"
+                class="c16"
               >
                 dd
               </span>
@@ -4496,7 +5084,7 @@ exports[`Data toolbar search 1`] = `
 `;
 
 exports[`Data uncontrolled search 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4507,25 +5095,25 @@ exports[`Data uncontrolled search 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4557,7 +5145,7 @@ exports[`Data uncontrolled search 1`] = `
   flex: 0 0 auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4574,7 +5162,7 @@ exports[`Data uncontrolled search 1`] = `
   flex: 0 0 auto;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4595,7 +5183,7 @@ exports[`Data uncontrolled search 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4636,20 +5224,20 @@ exports[`Data uncontrolled search 1`] = `
   row-gap: 12px;
 }
 
-.c9 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4669,47 +5257,52 @@ exports[`Data uncontrolled search 1`] = `
   padding: 12px;
 }
 
-.c8:focus {
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -4726,58 +5319,58 @@ exports[`Data uncontrolled search 1`] = `
   padding-left: 48px;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c4 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4795,7 +5388,11 @@ exports[`Data uncontrolled search 1`] = `
   left: 12px;
 }
 
-.c12 {
+.c3 {
+  max-width: 100%;
+}
+
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4808,7 +5405,7 @@ exports[`Data uncontrolled search 1`] = `
   padding-bottom: 6px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4820,23 +5417,23 @@ exports[`Data uncontrolled search 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c11 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c14:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -4861,19 +5458,21 @@ exports[`Data uncontrolled search 1`] = `
     <div
       class="c2"
     >
-      <form>
+      <form
+        class="c3"
+      >
         <div
           class="c1"
         >
           <div
-            class="c3"
+            class="c4"
           >
             <div
-              class="c4"
+              class="c5"
             >
               <svg
                 aria-label="Search"
-                class="c5"
+                class="c6"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -4887,7 +5486,7 @@ exports[`Data uncontrolled search 1`] = `
             <input
               aria-label="Search data"
               autocomplete="off"
-              class="c6"
+              class="c7"
               id="data--search"
               name="_search"
               type="search"
@@ -4897,16 +5496,17 @@ exports[`Data uncontrolled search 1`] = `
         </div>
       </form>
       <div
-        class="c7"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c8"
+          class="c9"
+          id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c5"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -4920,12 +5520,12 @@ exports[`Data uncontrolled search 1`] = `
       </div>
     </div>
     <span
-      class="c9"
+      class="c10"
     >
       4 items
     </span>
     <table
-      class="c10 c11"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -4934,30 +5534,30 @@ exports[`Data uncontrolled search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 aa
               </span>
@@ -4968,14 +5568,14 @@ exports[`Data uncontrolled search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 bb
               </span>
@@ -4986,14 +5586,14 @@ exports[`Data uncontrolled search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 cc
               </span>
@@ -5004,14 +5604,14 @@ exports[`Data uncontrolled search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 dd
               </span>
@@ -5035,7 +5635,9 @@ exports[`Data uncontrolled search 2`] = `
     <div
       class="StyledBox-sc-13pk1d4-0 cA-DryL"
     >
-      <form>
+      <form
+        class="DataForm__MaxForm-sc-v64e1r-1 hpHcfX"
+      >
         <div
           class="StyledBox-sc-13pk1d4-0 hoPFxc"
         >
@@ -5061,7 +5663,7 @@ exports[`Data uncontrolled search 2`] = `
             <input
               aria-label="Search data"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jgXNod"
+              class="StyledTextInput-sc-1x30a0s-0 bMqJAS"
               id="data--search"
               name="_search"
               type="search"
@@ -5075,7 +5677,8 @@ exports[`Data uncontrolled search 2`] = `
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 emhJYD"
+          class="StyledButton-sc-323bzc-0 wfYUD"
+          id="data--filters-control"
           type="button"
         >
           <svg
@@ -5419,7 +6022,7 @@ exports[`Data view 1`] = `
 `;
 
 exports[`Data view all 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5430,25 +6033,25 @@ exports[`Data view all 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5480,7 +6083,7 @@ exports[`Data view all 1`] = `
   flex: 0 0 auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5497,7 +6100,7 @@ exports[`Data view all 1`] = `
   flex: 0 0 auto;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5518,7 +6121,7 @@ exports[`Data view all 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5559,25 +6162,25 @@ exports[`Data view all 1`] = `
   row-gap: 12px;
 }
 
-.c9 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5597,47 +6200,52 @@ exports[`Data view all 1`] = `
   padding: 12px;
 }
 
-.c8:focus {
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -5654,58 +6262,58 @@ exports[`Data view all 1`] = `
   padding-left: 48px;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c4 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -5723,7 +6331,11 @@ exports[`Data view all 1`] = `
   left: 12px;
 }
 
-.c12 {
+.c3 {
+  max-width: 100%;
+}
+
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5736,7 +6348,7 @@ exports[`Data view all 1`] = `
   padding-bottom: 6px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5748,23 +6360,23 @@ exports[`Data view all 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c11 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c14:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -5789,19 +6401,21 @@ exports[`Data view all 1`] = `
     <div
       class="c2"
     >
-      <form>
+      <form
+        class="c3"
+      >
         <div
           class="c1"
         >
           <div
-            class="c3"
+            class="c4"
           >
             <div
-              class="c4"
+              class="c5"
             >
               <svg
                 aria-label="Search"
-                class="c5"
+                class="c6"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -5815,7 +6429,7 @@ exports[`Data view all 1`] = `
             <input
               aria-label="Search data"
               autocomplete="off"
-              class="c6"
+              class="c7"
               id="data--search"
               name="_search"
               type="search"
@@ -5825,16 +6439,17 @@ exports[`Data view all 1`] = `
         </div>
       </form>
       <div
-        class="c7"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c8"
+          class="c9"
+          id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c5"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -5848,12 +6463,12 @@ exports[`Data view all 1`] = `
       </div>
     </div>
     <span
-      class="c9"
+      class="c10"
     >
       1 result of 4 items
     </span>
     <table
-      class="c10 c11"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -5862,51 +6477,51 @@ exports[`Data view all 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 ZZ
               </span>
@@ -5920,7 +6535,7 @@ exports[`Data view all 1`] = `
 `;
 
 exports[`Data view property option 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5931,25 +6546,25 @@ exports[`Data view property option 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5981,7 +6596,7 @@ exports[`Data view property option 1`] = `
   flex: 0 0 auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5998,7 +6613,7 @@ exports[`Data view property option 1`] = `
   flex: 0 0 auto;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6019,7 +6634,7 @@ exports[`Data view property option 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6060,25 +6675,25 @@ exports[`Data view property option 1`] = `
   row-gap: 12px;
 }
 
-.c9 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6098,47 +6713,52 @@ exports[`Data view property option 1`] = `
   padding: 12px;
 }
 
-.c8:focus {
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -6155,58 +6775,58 @@ exports[`Data view property option 1`] = `
   padding-left: 48px;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c4 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -6224,7 +6844,11 @@ exports[`Data view property option 1`] = `
   left: 12px;
 }
 
-.c12 {
+.c3 {
+  max-width: 100%;
+}
+
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6237,7 +6861,7 @@ exports[`Data view property option 1`] = `
   padding-bottom: 6px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6249,23 +6873,23 @@ exports[`Data view property option 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c11 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c14:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -6290,19 +6914,21 @@ exports[`Data view property option 1`] = `
     <div
       class="c2"
     >
-      <form>
+      <form
+        class="c3"
+      >
         <div
           class="c1"
         >
           <div
-            class="c3"
+            class="c4"
           >
             <div
-              class="c4"
+              class="c5"
             >
               <svg
                 aria-label="Search"
-                class="c5"
+                class="c6"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -6316,7 +6942,7 @@ exports[`Data view property option 1`] = `
             <input
               aria-label="Search data"
               autocomplete="off"
-              class="c6"
+              class="c7"
               id="data--search"
               name="_search"
               type="search"
@@ -6326,16 +6952,17 @@ exports[`Data view property option 1`] = `
         </div>
       </form>
       <div
-        class="c7"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c8"
+          class="c9"
+          id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c5"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -6349,12 +6976,12 @@ exports[`Data view property option 1`] = `
       </div>
     </div>
     <span
-      class="c9"
+      class="c10"
     >
       1 result of 4 items
     </span>
     <table
-      class="c10 c11"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -6363,51 +6990,51 @@ exports[`Data view property option 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 ZZ
               </span>
@@ -6421,7 +7048,7 @@ exports[`Data view property option 1`] = `
 `;
 
 exports[`Data view property range 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -6432,25 +7059,25 @@ exports[`Data view property range 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -6482,7 +7109,7 @@ exports[`Data view property range 1`] = `
   flex: 0 0 auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6499,7 +7126,7 @@ exports[`Data view property range 1`] = `
   flex: 0 0 auto;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6520,7 +7147,7 @@ exports[`Data view property range 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6561,25 +7188,25 @@ exports[`Data view property range 1`] = `
   row-gap: 12px;
 }
 
-.c9 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6599,47 +7226,52 @@ exports[`Data view property range 1`] = `
   padding: 12px;
 }
 
-.c8:focus {
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -6656,58 +7288,58 @@ exports[`Data view property range 1`] = `
   padding-left: 48px;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c4 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -6725,7 +7357,11 @@ exports[`Data view property range 1`] = `
   left: 12px;
 }
 
-.c12 {
+.c3 {
+  max-width: 100%;
+}
+
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6738,7 +7374,7 @@ exports[`Data view property range 1`] = `
   padding-bottom: 6px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6750,23 +7386,23 @@ exports[`Data view property range 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c11 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c14:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -6791,19 +7427,21 @@ exports[`Data view property range 1`] = `
     <div
       class="c2"
     >
-      <form>
+      <form
+        class="c3"
+      >
         <div
           class="c1"
         >
           <div
-            class="c3"
+            class="c4"
           >
             <div
-              class="c4"
+              class="c5"
             >
               <svg
                 aria-label="Search"
-                class="c5"
+                class="c6"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -6817,7 +7455,7 @@ exports[`Data view property range 1`] = `
             <input
               aria-label="Search data"
               autocomplete="off"
-              class="c6"
+              class="c7"
               id="data--search"
               name="_search"
               type="search"
@@ -6827,16 +7465,17 @@ exports[`Data view property range 1`] = `
         </div>
       </form>
       <div
-        class="c7"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c8"
+          class="c9"
+          id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c5"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -6850,12 +7489,12 @@ exports[`Data view property range 1`] = `
       </div>
     </div>
     <span
-      class="c9"
+      class="c10"
     >
       1 result of 4 items
     </span>
     <table
-      class="c10 c11"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -6864,72 +7503,72 @@ exports[`Data view property range 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 YY
               </span>
             </div>
           </td>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 4.3
               </span>
@@ -6943,7 +7582,7 @@ exports[`Data view property range 1`] = `
 `;
 
 exports[`Data view search 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -6954,25 +7593,25 @@ exports[`Data view search 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7004,7 +7643,7 @@ exports[`Data view search 1`] = `
   flex: 0 0 auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7021,7 +7660,7 @@ exports[`Data view search 1`] = `
   flex: 0 0 auto;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7042,7 +7681,7 @@ exports[`Data view search 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7083,25 +7722,25 @@ exports[`Data view search 1`] = `
   row-gap: 12px;
 }
 
-.c9 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -7121,47 +7760,52 @@ exports[`Data view search 1`] = `
   padding: 12px;
 }
 
-.c8:focus {
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -7178,58 +7822,58 @@ exports[`Data view search 1`] = `
   padding-left: 48px;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c4 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -7247,7 +7891,11 @@ exports[`Data view search 1`] = `
   left: 12px;
 }
 
-.c12 {
+.c3 {
+  max-width: 100%;
+}
+
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7260,7 +7908,7 @@ exports[`Data view search 1`] = `
   padding-bottom: 6px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7272,23 +7920,23 @@ exports[`Data view search 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c11 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c14:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -7313,19 +7961,21 @@ exports[`Data view search 1`] = `
     <div
       class="c2"
     >
-      <form>
+      <form
+        class="c3"
+      >
         <div
           class="c1"
         >
           <div
-            class="c3"
+            class="c4"
           >
             <div
-              class="c4"
+              class="c5"
             >
               <svg
                 aria-label="Search"
-                class="c5"
+                class="c6"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -7339,7 +7989,7 @@ exports[`Data view search 1`] = `
             <input
               aria-label="Search data"
               autocomplete="off"
-              class="c6"
+              class="c7"
               id="data--search"
               name="_search"
               type="search"
@@ -7349,16 +7999,17 @@ exports[`Data view search 1`] = `
         </div>
       </form>
       <div
-        class="c7"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c8"
+          class="c9"
+          id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c5"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -7372,12 +8023,12 @@ exports[`Data view search 1`] = `
       </div>
     </div>
     <span
-      class="c9"
+      class="c10"
     >
       1 result of 4 items
     </span>
     <table
-      class="c10 c11"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7386,51 +8037,51 @@ exports[`Data view search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 ZZ
               </span>
@@ -7444,7 +8095,7 @@ exports[`Data view search 1`] = `
 `;
 
 exports[`Data view sort 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -7455,25 +8106,25 @@ exports[`Data view sort 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7505,7 +8156,7 @@ exports[`Data view sort 1`] = `
   flex: 0 0 auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7522,7 +8173,7 @@ exports[`Data view sort 1`] = `
   flex: 0 0 auto;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7543,7 +8194,7 @@ exports[`Data view sort 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7584,25 +8235,25 @@ exports[`Data view sort 1`] = `
   row-gap: 12px;
 }
 
-.c9 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -7622,47 +8273,52 @@ exports[`Data view sort 1`] = `
   padding: 12px;
 }
 
-.c8:focus {
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -7679,58 +8335,58 @@ exports[`Data view sort 1`] = `
   padding-left: 48px;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c4 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -7748,7 +8404,11 @@ exports[`Data view sort 1`] = `
   left: 12px;
 }
 
-.c12 {
+.c3 {
+  max-width: 100%;
+}
+
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7761,7 +8421,7 @@ exports[`Data view sort 1`] = `
   padding-bottom: 6px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7773,23 +8433,23 @@ exports[`Data view sort 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c11 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c14:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -7814,19 +8474,21 @@ exports[`Data view sort 1`] = `
     <div
       class="c2"
     >
-      <form>
+      <form
+        class="c3"
+      >
         <div
           class="c1"
         >
           <div
-            class="c3"
+            class="c4"
           >
             <div
-              class="c4"
+              class="c5"
             >
               <svg
                 aria-label="Search"
-                class="c5"
+                class="c6"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -7840,7 +8502,7 @@ exports[`Data view sort 1`] = `
             <input
               aria-label="Search data"
               autocomplete="off"
-              class="c6"
+              class="c7"
               id="data--search"
               name="_search"
               type="search"
@@ -7850,16 +8512,17 @@ exports[`Data view sort 1`] = `
         </div>
       </form>
       <div
-        class="c7"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c8"
+          class="c9"
+          id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c5"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -7873,12 +8536,12 @@ exports[`Data view sort 1`] = `
       </div>
     </div>
     <span
-      class="c9"
+      class="c10"
     >
       4 items
     </span>
     <table
-      class="c10 c11"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7887,51 +8550,51 @@ exports[`Data view sort 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
           <th
-            class="c12 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c13"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 ZZ
               </span>
@@ -7942,27 +8605,27 @@ exports[`Data view sort 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 YY
               </span>
@@ -7973,24 +8636,24 @@ exports[`Data view sort 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 cc
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             />
           </td>
         </tr>
@@ -7998,24 +8661,24 @@ exports[`Data view sort 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 dd
               </span>
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c17"
             />
           </td>
         </tr>
