@@ -89,7 +89,6 @@ export const TypedForm = () => {
             htmlFor="size"
             id="size"
             htmlFor="size"
-            id="size"
             aria-label="size"
             name="size"
             component={Select}
