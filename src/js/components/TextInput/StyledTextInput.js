@@ -7,6 +7,7 @@ import {
   parseMetricToNum,
   plainInputStyle,
   textAlignStyle,
+  widthStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -33,6 +34,7 @@ const StyledTextInput = styled.input`
       props.theme.textInput.disabled && props.theme.textInput.disabled.opacity,
     )}
   ${(props) => props.textAlign && textAlignStyle}
+  ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
   ${(props) => props.theme.textInput && props.theme.textInput.extend};
 `;
 

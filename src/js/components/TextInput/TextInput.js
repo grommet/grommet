@@ -96,6 +96,7 @@ const TextInput = forwardRef(
       suggestions,
       textAlign,
       value: valueProp,
+      width: widthProp,
       ...rest
     },
     ref,
@@ -466,6 +467,7 @@ const TextInput = forwardRef(
             focus={focus}
             focusIndicator={focusIndicator}
             textAlign={textAlign}
+            widthProp={widthProp}
             {...rest}
             {...extraProps}
             {...comboboxProps}
