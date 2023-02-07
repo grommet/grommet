@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { widthPropType } from '../../utils/general-prop-types';
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
@@ -38,7 +39,8 @@ if (process.env.NODE_ENV !== 'production') {
       value: PropTypes.any // this is intentional any
     }), PropTypes.string])),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']),
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    width: widthPropType
   };
 }
 export var TextInputPropTypes = PropType;

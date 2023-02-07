@@ -22,6 +22,10 @@ var HideableButton = (0, _styledComponents["default"])(_Button.Button).withConfi
 })(["", ""], function (props) {
   return props.disabled && "\n  opacity: 0;";
 });
+var MaxForm = (0, _styledComponents["default"])(_Form.Form).withConfig({
+  displayName: "DataForm__MaxForm",
+  componentId: "sc-v64e1r-1"
+})(["max-width:100%;"]);
 var hideButtonProps = {
   'aria-hidden': true,
   disabled: true,
@@ -216,7 +220,7 @@ var DataForm = function DataForm(_ref) {
   (0, _react.useEffect)(function () {
     return setFormValue(viewToFormValue(view));
   }, [view]);
-  return /*#__PURE__*/_react["default"].createElement(_Form.Form, _extends({}, rest, {
+  return /*#__PURE__*/_react["default"].createElement(MaxForm, _extends({}, rest, {
     value: formValue,
     onSubmit: updateOn === 'submit' ? onSubmit : undefined,
     onChange: onChange

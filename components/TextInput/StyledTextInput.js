@@ -16,7 +16,7 @@ var getPlainStyle = function getPlainStyle(plain) {
 var StyledTextInput = _styledComponents["default"].input.withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
-})(["", " ", " ", " ", " ", " ", ";"], _utils.inputStyle, function (props) {
+})(["", " ", " ", " ", " ", " ", " ", ";"], _utils.inputStyle, function (props) {
   return getPlainStyle(props.plain);
 }, function (props) {
   return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
@@ -24,6 +24,8 @@ var StyledTextInput = _styledComponents["default"].input.withConfig({
   return props.disabled && (0, _utils.disabledStyle)(props.theme.textInput.disabled && props.theme.textInput.disabled.opacity);
 }, function (props) {
   return props.textAlign && _utils.textAlignStyle;
+}, function (props) {
+  return props.widthProp && (0, _utils.widthStyle)(props.widthProp, props.theme);
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.extend;
 });

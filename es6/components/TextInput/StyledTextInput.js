@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { disabledStyle, getInputPadBySide, inputStyle, parseMetricToNum, plainInputStyle, textAlignStyle } from '../../utils';
+import { disabledStyle, getInputPadBySide, inputStyle, parseMetricToNum, plainInputStyle, textAlignStyle, widthStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 var getPlainStyle = function getPlainStyle(plain) {
   if (plain === 'full') {
@@ -10,7 +10,7 @@ var getPlainStyle = function getPlainStyle(plain) {
 var StyledTextInput = styled.input.withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
-})(["", " ", " ", " ", " ", " ", ";"], inputStyle, function (props) {
+})(["", " ", " ", " ", " ", " ", " ", ";"], inputStyle, function (props) {
   return getPlainStyle(props.plain);
 }, function (props) {
   return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
@@ -18,6 +18,8 @@ var StyledTextInput = styled.input.withConfig({
   return props.disabled && disabledStyle(props.theme.textInput.disabled && props.theme.textInput.disabled.opacity);
 }, function (props) {
   return props.textAlign && textAlignStyle;
+}, function (props) {
+  return props.widthProp && widthStyle(props.widthProp, props.theme);
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.extend;
 });

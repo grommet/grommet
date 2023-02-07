@@ -15,6 +15,10 @@ var HideableButton = styled(Button).withConfig({
 })(["", ""], function (props) {
   return props.disabled && "\n  opacity: 0;";
 });
+var MaxForm = styled(Form).withConfig({
+  displayName: "DataForm__MaxForm",
+  componentId: "sc-v64e1r-1"
+})(["max-width:100%;"]);
 var hideButtonProps = {
   'aria-hidden': true,
   disabled: true,
@@ -202,7 +206,7 @@ export var DataForm = function DataForm(_ref) {
   useEffect(function () {
     return setFormValue(viewToFormValue(view));
   }, [view]);
-  return /*#__PURE__*/React.createElement(Form, _extends({}, rest, {
+  return /*#__PURE__*/React.createElement(MaxForm, _extends({}, rest, {
     value: formValue,
     onSubmit: updateOn === 'submit' ? onSubmit : undefined,
     onChange: onChange
