@@ -77,6 +77,7 @@ export const GroupedBody = forwardRef(
           nextItems.push({
             expanded,
             key: group.key,
+            primaryValue: group.key,
             datum: group.datum,
             context: 'groupHeader',
             isDisabled: isGroupDisabled,
