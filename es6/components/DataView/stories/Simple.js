@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Data, DataTable } from 'grommet';
+import { Box, Data, DataTable, Notification } from 'grommet';
 import { DataView } from '../DataView';
 import { DATA } from '../../DataTable/stories/data';
 export var Simple = function Simple() {
@@ -8,11 +8,14 @@ export var Simple = function Simple() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     React.createElement(Box, {
-      fill: true,
       align: "center",
       justify: "start",
-      pad: "large"
-    }, /*#__PURE__*/React.createElement(Data, {
+      pad: "large",
+      gap: "medium"
+    }, /*#__PURE__*/React.createElement(Notification, {
+      status: "info",
+      message: "Data is in 'beta'. The API surface is subject to change."
+    }), /*#__PURE__*/React.createElement(Data, {
       data: DATA,
       views: [{
         name: 'latest',
@@ -38,5 +41,5 @@ Simple.args = {
   full: true
 };
 export default {
-  title: 'Layout/Data/DataView/Simple'
+  title: 'Data/DataView/Simple'
 };

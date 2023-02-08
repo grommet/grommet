@@ -51,6 +51,6 @@ Views.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Data/Views'
+  title: 'Data/Data/Views'
 };
 exports["default"] = _default;

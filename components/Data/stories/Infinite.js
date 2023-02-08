@@ -258,6 +258,6 @@ Table.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Data/Infinite Scroll'
+  title: 'Data/Data/Infinite Scroll'
 };
 exports["default"] = _default;

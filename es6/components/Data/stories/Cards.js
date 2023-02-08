@@ -41,5 +41,5 @@ Example.args = {
   full: true
 };
 export default {
-  title: 'Layout/Data/Cards'
+  title: 'Data/Data/Cards'
 };

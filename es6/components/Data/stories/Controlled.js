@@ -83,5 +83,5 @@ Controlled.args = {
   full: true
 };
 export default {
-  title: 'Layout/Data/Controlled'
+  title: 'Data/Data/Controlled'
 };

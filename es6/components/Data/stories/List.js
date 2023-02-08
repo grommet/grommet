@@ -35,5 +35,5 @@ Example.args = {
   full: true
 };
 export default {
-  title: 'Layout/Data/List'
+  title: 'Data/Data/List'
 };

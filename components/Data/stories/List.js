@@ -40,6 +40,6 @@ Example.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Data/List'
+  title: 'Data/Data/List'
 };
 exports["default"] = _default;

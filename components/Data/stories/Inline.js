@@ -65,10 +65,15 @@ var Inline = function Inline() {
       },
       data: DATA,
       updateOn: sidebar ? 'change' : undefined
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: {
+        top: 'medium'
+      },
+      align: "center"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
       status: "info",
       message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
       columns: sidebar ? ['auto', ['small', 'large']] : 'auto',
       gap: "large",
       pad: "large",
@@ -89,6 +94,6 @@ Inline.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Data/Inline'
+  title: 'Data/Data/Inline'
 };
 exports["default"] = _default;

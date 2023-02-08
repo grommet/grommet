@@ -59,10 +59,15 @@ export var Inline = function Inline() {
       },
       data: DATA,
       updateOn: sidebar ? 'change' : undefined
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: {
+        top: 'medium'
+      },
+      align: "center"
     }, /*#__PURE__*/React.createElement(Notification, {
       status: "info",
       message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/React.createElement(Grid, {
+    })), /*#__PURE__*/React.createElement(Grid, {
       columns: sidebar ? ['auto', ['small', 'large']] : 'auto',
       gap: "large",
       pad: "large",
@@ -83,5 +88,5 @@ Inline.args = {
   full: true
 };
 export default {
-  title: 'Layout/Data/Inline'
+  title: 'Data/Data/Inline'
 };

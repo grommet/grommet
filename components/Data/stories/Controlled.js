@@ -89,6 +89,6 @@ Controlled.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Data/Controlled'
+  title: 'Data/Data/Controlled'
 };
 exports["default"] = _default;

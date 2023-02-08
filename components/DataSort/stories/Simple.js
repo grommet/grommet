@@ -12,11 +12,15 @@ var Simple = function Simple() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    _react["default"].createElement(_grommet.Grid, {
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      justify: "start",
       pad: "large",
-      columns: ['large'],
-      justifyContent: "center"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
+      gap: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
+      status: "info",
+      message: "Data is in 'beta'. The API surface is subject to change."
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: _data.DATA,
       updateOn: "change"
     }, /*#__PURE__*/_react["default"].createElement(_DataSort.DataSort, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
@@ -30,6 +34,6 @@ Simple.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Data/DataSort/Simple'
+  title: 'Data/DataSort/Simple'
 };
 exports["default"] = _default;

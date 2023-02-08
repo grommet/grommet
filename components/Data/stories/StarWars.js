@@ -122,6 +122,6 @@ StarWars.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Data/StarWars'
+  title: 'Data/Data/StarWars'
 };
 exports["default"] = _default;

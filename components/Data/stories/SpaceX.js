@@ -252,6 +252,6 @@ SpaceX.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Data/SpaceX'
+  title: 'Data/Data/SpaceX'
 };
 exports["default"] = _default;

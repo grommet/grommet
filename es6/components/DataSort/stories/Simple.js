@@ -1,5 +1,5 @@
 import React from 'react';
-import { Data, DataTable, Grid } from 'grommet';
+import { Box, Data, DataTable, Notification } from 'grommet';
 import { DataSort } from '../DataSort';
 import { columns, DATA } from '../../DataTable/stories/data';
 export var Simple = function Simple() {
@@ -7,11 +7,15 @@ export var Simple = function Simple() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    React.createElement(Grid, {
+    React.createElement(Box, {
+      align: "center",
+      justify: "start",
       pad: "large",
-      columns: ['large'],
-      justifyContent: "center"
-    }, /*#__PURE__*/React.createElement(Data, {
+      gap: "medium"
+    }, /*#__PURE__*/React.createElement(Notification, {
+      status: "info",
+      message: "Data is in 'beta'. The API surface is subject to change."
+    }), /*#__PURE__*/React.createElement(Data, {
       data: DATA,
       updateOn: "change"
     }, /*#__PURE__*/React.createElement(DataSort, null), /*#__PURE__*/React.createElement(DataTable, {
@@ -25,5 +29,5 @@ Simple.args = {
   full: true
 };
 export default {
-  title: 'Layout/Data/DataSort/Simple'
+  title: 'Data/DataSort/Simple'
 };

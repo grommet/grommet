@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Data, DataFilter, Notification } from 'grommet';
-import { DataFilters } from '../DataFilters';
-import { DATA } from '../../DataTable/stories/data';
-export var Layer = function Layer() {
+import { Box, Data, DataTable, Notification, Toolbar } from 'grommet';
+import { DataSort } from '../DataSort';
+import { columns, DATA } from '../../DataTable/stories/data';
+export var Drop = function Drop() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -16,19 +16,20 @@ export var Layer = function Layer() {
       status: "info",
       message: "Data is in 'beta'. The API surface is subject to change."
     }), /*#__PURE__*/React.createElement(Data, {
-      data: DATA
-    }, /*#__PURE__*/React.createElement(DataFilters, {
-      layer: true
-    }, /*#__PURE__*/React.createElement(DataFilter, {
-      property: "location"
-    }))))
+      data: DATA,
+      updateOn: "change"
+    }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataSort, {
+      drop: true
+    })), /*#__PURE__*/React.createElement(DataTable, {
+      columns: columns
+    })))
     // </Grommet>
   );
 };
 
-Layer.args = {
+Drop.args = {
   full: true
 };
 export default {
-  title: 'Data/DataFilters/Layer'
+  title: 'Data/DataSort/Drop'
 };

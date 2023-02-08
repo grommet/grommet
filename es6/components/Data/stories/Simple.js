@@ -30,5 +30,5 @@ Simple.args = {
   full: true
 };
 export default {
-  title: 'Layout/Data/Simple'
+  title: 'Data/Data/Simple'
 };

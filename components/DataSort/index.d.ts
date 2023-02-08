@@ -1,14 +1,10 @@
 import * as React from 'react';
-import { BoxProps } from '../Box/index';
 
-export interface DataSortProps {}
+export interface DataSortProps {
+  drop?: boolean;
+}
 
-type divProps = Omit<JSX.IntrinsicElements['div'], 'onClick'>;
-
-export interface DataSortExtendedProps
-  extends BoxProps,
-  DataSortProps,
-    divProps {}
+export interface DataSortExtendedProps extends DataSortProps {}
 
 declare const DataSort: React.FC<DataSortExtendedProps>;
 

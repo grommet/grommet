@@ -13,10 +13,14 @@ var Table = function Table() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Grid, {
-      flex: false,
+      height: {
+        min: 'medium',
+        height: '100%'
+      },
       pad: "large",
       columns: [['small', 'large']],
       justifyContent: "center",
+      alignContent: "start",
       gap: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
       status: "info",
@@ -27,9 +31,12 @@ var Table = function Table() {
       drop: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
       property: "location"
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.DataSort, null))), /*#__PURE__*/_react["default"].createElement(_grommet.DataSummary, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.DataSort, null))), /*#__PURE__*/_react["default"].createElement(_grommet.DataSummary, null), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      flex: true,
+      overflow: "auto"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: _data.columns
-    })))
+    }))))
     // </Grommet>
   );
 };
@@ -39,6 +46,6 @@ Table.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Data/DataTable'
+  title: 'Data/Data/DataTable'
 };
 exports["default"] = _default;

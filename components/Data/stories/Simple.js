@@ -35,6 +35,6 @@ Simple.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Data/Simple'
+  title: 'Data/Data/Simple'
 };
 exports["default"] = _default;

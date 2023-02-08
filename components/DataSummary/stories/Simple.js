@@ -13,11 +13,14 @@ var Simple = function Simple() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Box, {
-      fill: true,
       align: "center",
       justify: "start",
-      pad: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
+      pad: "large",
+      gap: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
+      status: "info",
+      message: "Data is in 'beta'. The API surface is subject to change."
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: _data.DATA
     }, /*#__PURE__*/_react["default"].createElement(_DataSummary.DataSummary, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: _data.columns
@@ -30,6 +33,6 @@ Simple.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Data/DataSummary/Simple'
+  title: 'Data/DataSummary/Simple'
 };
 exports["default"] = _default;

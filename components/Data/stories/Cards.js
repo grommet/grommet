@@ -46,6 +46,6 @@ Example.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Data/Cards'
+  title: 'Data/Data/Cards'
 };
 exports["default"] = _default;

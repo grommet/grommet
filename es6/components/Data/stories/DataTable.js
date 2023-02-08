@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataFilters, DataFilter, DataSearch, DataSort, DataSummary, DataTable, Grid, Notification, Toolbar } from 'grommet';
+import { Box, DataFilters, DataFilter, DataSearch, DataSort, DataSummary, DataTable, Grid, Notification, Toolbar } from 'grommet';
 import { Data } from '../Data';
 import { columns, DATA } from '../../DataTable/stories/data';
 export var Table = function Table() {
@@ -8,10 +8,14 @@ export var Table = function Table() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     React.createElement(Grid, {
-      flex: false,
+      height: {
+        min: 'medium',
+        height: '100%'
+      },
       pad: "large",
       columns: [['small', 'large']],
       justifyContent: "center",
+      alignContent: "start",
       gap: "large"
     }, /*#__PURE__*/React.createElement(Notification, {
       status: "info",
@@ -22,9 +26,12 @@ export var Table = function Table() {
       drop: true
     }, /*#__PURE__*/React.createElement(DataFilter, {
       property: "location"
-    }), /*#__PURE__*/React.createElement(DataSort, null))), /*#__PURE__*/React.createElement(DataSummary, null), /*#__PURE__*/React.createElement(DataTable, {
+    }), /*#__PURE__*/React.createElement(DataSort, null))), /*#__PURE__*/React.createElement(DataSummary, null), /*#__PURE__*/React.createElement(Box, {
+      flex: true,
+      overflow: "auto"
+    }, /*#__PURE__*/React.createElement(DataTable, {
       columns: columns
-    })))
+    }))))
     // </Grommet>
   );
 };
@@ -34,5 +41,5 @@ Table.args = {
   full: true
 };
 export default {
-  title: 'Layout/Data/DataTable'
+  title: 'Data/Data/DataTable'
 };
