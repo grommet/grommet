@@ -1,6 +1,12 @@
 import { css } from 'styled-components';
 
-import { colorIsDark, getRGBA, normalizeColor } from './colors';
+import {
+  colorIsDark,
+  getRGBA,
+  normalizeColor,
+  canExtractRGBArray,
+  getRGBArray,
+} from './colors';
 
 // evalStyle() converts a styled-components item into a string
 const evalStyle = (arg, theme) => {
@@ -159,8 +165,16 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
   } else {
     backgroundColor = normalizeBackgroundColor(background, theme);
     const shade = darkContext(backgroundColor, theme);
+    let transparent;
+
+    if (backgroundColor && canExtractRGBArray(backgroundColor)) {
+      const colorArray = getRGBArray(backgroundColor);
+      if (colorArray[3] < 0.5) transparent = true;
+    }
     if (shade) {
       textColor = normalizeColor(text[shade] || text, theme, shade === 'dark');
+    } else if (transparent && text) {
+      textColor = normalizeColor(text, theme);
     } else {
       // If we can't determine the shade, we assume this isn't a simple color.
       // It could be a gradient. backgroundStyle() will take care of that case.

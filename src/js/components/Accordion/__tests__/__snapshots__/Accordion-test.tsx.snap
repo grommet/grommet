@@ -4259,7 +4259,8 @@ exports[`Accordion custom accordion 1`] = `
 }
 
 .c3:hover {
-  background: #33333310;
+  background-color: #33333310;
+  color: #000000;
 }
 
 .c3:focus {
@@ -4572,7 +4573,8 @@ exports[`Accordion custom accordion 2`] = `
 }
 
 .c3:hover {
-  background: #33333310;
+  background-color: #33333310;
+  color: #000000;
 }
 
 .c3:focus {

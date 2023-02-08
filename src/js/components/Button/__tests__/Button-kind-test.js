@@ -8,7 +8,9 @@ import { axe } from 'jest-axe';
 import { fireEvent, render } from '@testing-library/react';
 import { Add } from 'grommet-icons';
 
-import { Grommet, Button } from '../..';
+import { hpe } from 'grommet-theme-hpe';
+import { deepMerge } from '../../../utils';
+import { Grommet, Button, Box } from '../..';
 import { buttonKindTheme } from './theme/buttonKindTheme';
 
 describe('Button kind', () => {
@@ -725,6 +727,49 @@ describe('Button kind', () => {
         <Button label="Add" />
         <Button icon={<Add />} size="large" />
         <Button label="Add" size="large" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('button with transparent background', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={deepMerge(hpe, {
+          button: {
+            'background-contrast': {
+              background: 'background-contrast',
+              color: 'text-strong',
+            },
+            active: {
+              'background-contrast': {
+                color: 'text-strong',
+              },
+            },
+          },
+        })}
+      >
+        <Box
+          background={{ dark: true, color: 'background' }}
+          pad="large"
+          gap="medium"
+          align="start"
+        >
+          <Button label="Test button" kind="background-contrast" />
+          <Button
+            label="Active Test button"
+            kind="background-contrast"
+            active
+          />
+        </Box>
+        <Box pad="large" gap="medium" align="start">
+          <Button label="Test button" kind="background-contrast" />
+          <Button
+            label="Active Test button"
+            kind="background-contrast"
+            active
+          />
+        </Box>
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();
