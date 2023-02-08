@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  Box,
   DataFilters,
   DataFilter,
   DataSearch,
@@ -19,7 +20,7 @@ export const Table = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Grid
-    flex={false}
+    height={{ min: 'medium', height: '100%' }}
     pad="large"
     columns={[['small', 'large']]}
     justifyContent="center"
@@ -38,7 +39,9 @@ export const Table = () => (
         </DataFilters>
       </Toolbar>
       <DataSummary />
-      <DataTable columns={columns} />
+      <Box flex overflow="auto">
+        <DataTable columns={columns} />
+      </Box>
     </Data>
   </Grid>
   // </Grommet>
@@ -51,5 +54,5 @@ Table.args = {
 };
 
 export default {
-  title: 'Layout/Data/DataTable',
+  title: 'Data/Data/DataTable',
 };

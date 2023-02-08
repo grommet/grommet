@@ -28,5 +28,5 @@ Simple.args = {
 };
 
 export default {
-  title: 'Layout/Data/DataView/Simple',
+  title: 'Data/DataView/Simple',
 };

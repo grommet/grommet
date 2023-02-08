@@ -23,5 +23,5 @@ Drop.args = {
 };
 
 export default {
-  title: 'Layout/Data/DataFilters/Drop',
+  title: 'Data/DataFilters/Drop',
 };

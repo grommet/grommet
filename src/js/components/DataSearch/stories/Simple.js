@@ -26,5 +26,5 @@ Simple.args = {
 };
 
 export default {
-  title: 'Layout/Data/DataSearch/Simple',
+  title: 'Data/DataSearch/Simple',
 };

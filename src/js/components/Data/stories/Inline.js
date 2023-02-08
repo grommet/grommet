@@ -96,5 +96,5 @@ Inline.args = {
 };
 
 export default {
-  title: 'Layout/Data/Inline',
+  title: 'Data/Data/Inline',
 };

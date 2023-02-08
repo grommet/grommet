@@ -22,5 +22,5 @@ Simple.args = {
 };
 
 export default {
-  title: 'Layout/Data/DataSort/Simple',
+  title: 'Data/DataSort/Simple',
 };

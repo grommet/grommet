@@ -23,5 +23,5 @@ Layer.args = {
 };
 
 export default {
-  title: 'Layout/Data/DataFilters/Layer',
+  title: 'Data/DataFilters/Layer',
 };
