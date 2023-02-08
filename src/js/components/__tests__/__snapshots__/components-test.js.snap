@@ -4982,6 +4982,7 @@ exports[`Components loads 1`] = `
       "suggestions": [Function],
       "textAlign": [Function],
       "value": [Function],
+      "width": [Function],
     },
     "render": [Function],
   },
