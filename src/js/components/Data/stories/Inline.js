@@ -64,10 +64,12 @@ export const Inline = () => {
       data={DATA}
       updateOn={sidebar ? 'change' : undefined}
     >
-      <Notification
-        status="info"
-        message="Data is in 'beta'. The API surface is subject to change."
-      />
+      <Box pad={{ top: 'medium' }} align="center">
+        <Notification
+          status="info"
+          message="Data is in 'beta'. The API surface is subject to change."
+        />
+      </Box>
       <Grid
         columns={sidebar ? ['auto', ['small', 'large']] : 'auto'}
         gap="large"

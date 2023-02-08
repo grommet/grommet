@@ -24,6 +24,7 @@ export const Table = () => (
     pad="large"
     columns={[['small', 'large']]}
     justifyContent="center"
+    alignContent="start"
     gap="large"
   >
     <Notification
