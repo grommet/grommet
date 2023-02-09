@@ -677,4 +677,15 @@ describe('TextInput', () => {
     );
     expect(container.children).toMatchSnapshot();
   });
+
+  test('width', () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput value="1234" width="medium" />
+        <TextInput value="1234" width={{ width: 'medium', max: '100%' }} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

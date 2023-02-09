@@ -430,6 +430,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       gap: 'small',
+      // icon: {
+      //   size: {
+      //     small: undefined,
+      //     medium: undefined,
+      //     large: undefined,
+      //   },
+      // },
       size: {
         small: {
           border: {
@@ -439,6 +446,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px
             horizontal: `${baseSpacing - borderWidth * 2}px`, // 20px,
           },
+          // iconOnly: {
+          //   pad: undefined,
+          // },
         },
         medium: {
           border: {
@@ -448,6 +458,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px
             horizontal: `${baseSpacing - borderWidth}px`, // 22px
           },
+          // iconOnly: {
+          //   pad: undefined,
+          // },
         },
         large: {
           border: {
@@ -457,6 +470,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             vertical: `${baseSpacing / 4 + borderWidth}px`, // 8px
             horizontal: `${baseSpacing + borderWidth * 4}px`, // 32px,
           },
+          // iconOnly: {
+          //   pad: undefined,
+          // },
         },
       },
       border: {
@@ -469,7 +485,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   font: {
+      //     size: undefined,
       //     weight: undefined,
       //   },
       //   icon: undefined,
@@ -482,11 +500,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       // primary: {
       //   font: {
+      //     size: undefined,
       //     weight: undefined,
       //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -497,11 +517,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       // secondary: {
       //   font: {
+      //     size: undefined,
       //     weight: undefined,
       //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -514,6 +536,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -1049,6 +1072,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)',
+        // backdropFilter: undefined,
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
       zIndex: '20',

@@ -88,5 +88,5 @@ StarWars.args = {
 };
 
 export default {
-  title: 'Layout/Data/StarWars',
+  title: 'Data/Data/StarWars',
 };
