@@ -61,7 +61,7 @@ var StyledDataTableBody = (0, _styledComponents["default"])(_TableBody.TableBody
   displayName: "StyledDataTable__StyledDataTableBody",
   componentId: "sc-xrlyjm-3"
 })(["", " &:focus{", "}&:focus:not(:focus-visible){", "}"], function (props) {
-  return props.size && "\n    display: block;\n    width: 100%;\n    max-height: " + props.theme.global.size[props.size] + ";\n    overflow: auto;\n  ";
+  return props.size && "\n    display: block;\n    width: 100%;\n    max-height: " + (props.theme.global.size[props.size] || props.size) + ";\n    overflow: auto;\n  ";
 }, (0, _utils.focusStyle)({
   skipSvgChildren: true,
   forceOutline: true
