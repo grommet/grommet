@@ -69,10 +69,10 @@ export const DataFilter = ({
 
   const range = useMemo(() => {
     if (children) return undefined; // caller driving
-    if (rangeProp) return rangeProp; // caller setting
-    // Data properties setting
-    if (properties?.[property]?.range) {
-      const { min, max } = properties[property].range;
+    const anyRange = rangeProp || properties?.[property]?.range;
+    if (anyRange) {
+      // caller setting or Data properties setting
+      const { min, max } = anyRange;
       return [min, max];
     }
     // skip if we have options
