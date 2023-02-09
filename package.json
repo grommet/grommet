@@ -43,6 +43,7 @@
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
     "start": "webpack serve --config ./e2e/webpack.config.js --mode development",
     "test-e2e": "testcafe chrome:headless e2e/tests",
+    "test-e2e-ci": "testcafe chrome:headless tests/**/* -r xunit:/tmp/test-results/testcafe/results.xml",
     "build-storybook": "build-storybook -c storybook -o storybook-static",
     "prettier": "pretty-quick --staged",
     "chromatic": "chromatic -t f1924d8a65df"

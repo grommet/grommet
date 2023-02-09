@@ -82,7 +82,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: End to end test
-          command: npm run test
+          command: yarn test-e2e-ci
       - store_test_results:
           path: /tmp/test-results
   release:
