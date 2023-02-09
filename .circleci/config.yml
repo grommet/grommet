@@ -76,7 +76,9 @@ jobs:
           name: size
           command: yarn test-bundlesize
   test:
-    <<: *defaults
+    working_directory: ~/grommet-ci
+    docker:
+      - image: testcafe/testcafe:latest
     steps:
       - attach_workspace:
           at: ~/grommet-ci
