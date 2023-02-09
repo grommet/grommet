@@ -82,6 +82,8 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/grommet-ci
+      - checkout
+      - node/install-packages
       - run:
           name: End to end test
           command: npm run test-e2e-ci
