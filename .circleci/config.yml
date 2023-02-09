@@ -4,7 +4,8 @@ defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
     - image: cimg/node:18.13.0
-
+orbs:
+  node: cimg/node:18.13.0
 jobs:
   checkout:
     <<: *defaults
