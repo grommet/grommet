@@ -65,12 +65,11 @@ export var DataFilter = function DataFilter(_ref) {
   var range = useMemo(function () {
     var _properties$property3;
     if (children) return undefined; // caller driving
-    if (rangeProp) return rangeProp; // caller setting
-    // Data properties setting
-    if (properties != null && (_properties$property3 = properties[property]) != null && _properties$property3.range) {
-      var _properties$property$ = properties[property].range,
-        _min = _properties$property$.min,
-        _max = _properties$property$.max;
+    var anyRange = rangeProp || (properties == null ? void 0 : (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.range);
+    if (anyRange) {
+      // caller setting or Data properties setting
+      var _min = anyRange.min,
+        _max = anyRange.max;
       return [_min, _max];
     }
     // skip if we have options

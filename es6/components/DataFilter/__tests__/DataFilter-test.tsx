@@ -67,7 +67,21 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('range', () => {
+  test('range prop', () => {
+    const { container } = render(
+      <Grommet>
+        <Data data={data}>
+          <DataFilters>
+            <DataFilter property="rating" range={{ min: 0, max: 5 }} />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('range Data', () => {
     const { container } = render(
       <Grommet>
         <Data
