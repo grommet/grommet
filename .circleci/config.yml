@@ -84,7 +84,7 @@ jobs:
       - browser-tools/install-chromedriver
       - run: 
           name: End to end test
-          command: yarn  && yar test-e2e-ci
+          command: yarn test-e2e-ci
       - store_test_results:
           path: /tmp/test-results
   release:
