@@ -83,6 +83,9 @@ jobs:
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
       - run: 
+          name: Start project
+          command: yarn start
+      - run:
           name: End to end test
           command: yarn test-e2e-ci
       - store_test_results:
