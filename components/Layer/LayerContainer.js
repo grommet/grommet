@@ -256,7 +256,7 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       // restricting scroll could inhibit the user's
       // ability to scroll the page while the layer is open.
       ,
-      restrictScroll: !layerTarget || hitResponsiveBreakpoint ? true : undefined,
+      restrictScroll: !layerTarget && hitResponsiveBreakpoint ? true : undefined,
       trapFocus: true
     }, content);
   }
