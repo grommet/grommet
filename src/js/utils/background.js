@@ -169,6 +169,7 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
 
     if (backgroundColor && canExtractRGBArray(backgroundColor)) {
       const colorArray = getRGBArray(backgroundColor);
+      // check if the alpha value is less than 0.5
       if (colorArray[3] < 0.5) transparent = true;
     }
     if (shade) {
