@@ -5,7 +5,7 @@ defaults: &defaults
   docker:
     - image: cimg/node:18.13.0
 orbs:
-  node: circleci/node@18.13.0
+  node: circleci/node@4.1.0
 jobs:
   checkout:
     <<: *defaults
