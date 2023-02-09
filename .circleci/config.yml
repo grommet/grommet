@@ -80,7 +80,6 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/grommet-ci
-      - node/install-packages
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
       - run: 
