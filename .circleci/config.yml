@@ -76,13 +76,12 @@ jobs:
           name: size
           command: yarn test-bundlesize
   test:
-    docker:
-      - image: cimg/node:lts-browsers
+    <<: *defaults
     steps:
-      - checkout
-      - browser-tools/install-browser-tools
-      - node/install-packages
+      - attach_workspace:
+          at: ~/grommet-ci
       - run:
+          name: End to end test
           command: npm run test
       - store_test_results:
           path: /tmp/test-results
@@ -112,74 +111,75 @@ jobs:
           command: cd dist && npm publish
 workflows:
   build_test:
-    - checkout:
-        filters:
-          tags:
-            only: /.*/
-    - lint:
-        requires:
-          - checkout
-        filters:
-          tags:
-            only: /.*/
-    - jest:
-        requires:
-          - checkout
-        filters:
-          tags:
-            only: /.*/
-    - e2e-test:
-        requires:
-          - checkout
-        filters:
-          tags:
-            only: /.*/
-    - chromatic:
-        requires:
-          - checkout
-        filters:
-          tags:
-            only: /.*/
-          branches:
-            ignore:
-              - master
-    - chromatic-accept:
-        requires:
-          - checkout
-        filters:
-          branches:
-            only:
-              - master
-    - build:
-        requires:
-          - checkout
-        filters:
-          tags:
-            only: /.*/
-    - bundlesize:
-        requires:
-          - build
-        filters:
-          tags:
-            only: /.*/
-    - release:
-        requires:
-          - jest
-          - chromatic
-          - lint
-          - build
-        filters:
-          branches:
-            only:
-              - master
-    - publish:
-        requires:
-          - jest
-          - chromatic
-          - lint
-          - build
-        filters:
-          tags:
-            only: /^v.*/
-          branches:
-            ignore: /.*/
+    jobs:
+      - checkout:
+          filters:
+            tags:
+              only: /.*/
+      - lint:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
+      - jest:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
+      - test:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
+      - chromatic:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore:
+                - master
+      - chromatic-accept:
+          requires:
+            - checkout
+          filters:
+            branches:
+              only:
+                - master
+      - build:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
+      - bundlesize:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /.*/
+      - release:
+          requires:
+            - jest
+            - chromatic
+            - lint
+            - build
+          filters:
+            branches:
+              only:
+                - master
+      - publish:
+          requires:
+            - jest
+            - chromatic
+            - lint
+            - build
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
