@@ -1,11 +1,10 @@
 version: 2.1
-
+orbs:
+  browser-tools: circleci/browser-tools@1.4.1
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: cimg/node:18.13.0
-orbs:
-  node: circleci/node@4.1.0
+    - image: cimg/node:18.13.0-browsers
 jobs:
   checkout:
     <<: *defaults
@@ -77,17 +76,16 @@ jobs:
           name: size
           command: yarn test-bundlesize
   test:
-    working_directory: ~/grommet-ci
-    docker:
-      - image: testcafe/testcafe:latest
+    <<: *defaults
     steps:
       - attach_workspace:
           at: ~/grommet-ci
-      - checkout
       - node/install-packages
-      - run:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - run: 
           name: End to end test
-          command: npm run test-e2e-ci
+          command: yarn  && yar test-e2e-ci
       - store_test_results:
           path: /tmp/test-results
   release:
