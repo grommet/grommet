@@ -66,6 +66,7 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         nextItems.push({
           expanded: expanded,
           key: group.key,
+          primaryValue: group.key,
           datum: group.datum,
           context: 'groupHeader',
           isDisabled: isGroupDisabled,

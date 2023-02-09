@@ -60,6 +60,7 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
         nextItems.push({
           expanded: expanded,
           key: group.key,
+          primaryValue: group.key,
           datum: group.datum,
           context: 'groupHeader',
           isDisabled: isGroupDisabled,
