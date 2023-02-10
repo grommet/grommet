@@ -25,7 +25,8 @@
     "submit": "Apply filters"
   },
   "dataSearch": {
-    "label": "Search data"
+    "label": "Search data",
+    "open": "Open search"
   },
   "dataSort": {
     "ascending": "Ascending",
