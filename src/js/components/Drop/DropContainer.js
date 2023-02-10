@@ -254,7 +254,11 @@ const DropContainer = forwardRef(
           const viewportOffsetBottom =
             containingBlockRect?.bottom ?? windowHeight;
 
-          container.style.left = `${left - viewportOffsetLeft}px`;
+          const containerOffsetLeft = containingBlock?.scrollLeft ?? 0;
+          const containerOffsetTop = containingBlock?.scrollTop ?? 0;
+
+          container.style.left = `${left - viewportOffsetLeft +
+            containerOffsetLeft}px`;
           if (stretch) {
             // offset width by 0.1 to avoid a bug in ie11 that
             // unnecessarily wraps the text if width is the same
@@ -264,10 +268,12 @@ const DropContainer = forwardRef(
           // the (position:absolute + scrollTop)
           // is presenting issues with desktop scroll flickering
           if (top !== '') {
-            container.style.top = `${top - viewportOffsetTop}px`;
+            container.style.top = `${top - viewportOffsetTop +
+              containerOffsetTop}px`;
           }
           if (bottom !== '') {
-            container.style.bottom = `${viewportOffsetBottom - bottom}px`;
+            container.style.bottom = `${viewportOffsetBottom - bottom -
+              containerOffsetTop}px`;
           }
           if (!preserveHeight) {
             if (theme.drop && theme.drop.maxHeight) {
@@ -283,11 +289,16 @@ const DropContainer = forwardRef(
       };
 
       let scrollParents;
+      let scrollParentsHorizontal;
 
       const addScrollListeners = () => {
         scrollParents = findScrollParents(dropTarget);
+        scrollParentsHorizontal = findScrollParents(dropTarget, true);
         scrollParents.forEach((scrollParent) =>
           scrollParent.addEventListener('scroll', place),
+        );
+        scrollParentsHorizontal.forEach((scrollParentHorizontal) =>
+          scrollParentHorizontal.addEventListener('scroll', place),
         );
       };
 
@@ -296,6 +307,10 @@ const DropContainer = forwardRef(
           scrollParent.removeEventListener('scroll', place),
         );
         scrollParents = [];
+        scrollParentsHorizontal.forEach((scrollParentHorizontal) =>
+          scrollParentHorizontal.removeEventListener('scroll', place),
+        );
+        scrollParentsHorizontal = [];
       };
 
       const onClickDocument = (event) => {
