@@ -85,6 +85,7 @@ jobs:
       - run: 
           name: Start project
           command: yarn start
+          background: true
       - run:
           name: End to end test
           command: yarn test-e2e-ci
