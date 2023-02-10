@@ -25,6 +25,39 @@ exports[`DataSummary renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -43,17 +76,17 @@ exports[`DataSummary renders 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  height: 12px;
+  height: 6px;
 }
 
-.c8 {
+.c10 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -63,14 +96,14 @@ exports[`DataSummary renders 1`] = `
   width: 24px;
 }
 
-.c6 {
+.c8 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c7 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -98,75 +131,8 @@ exports[`DataSummary renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c7:hover {
+.c9:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c7:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c7:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c9 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
 }
 
 .c9:focus {
@@ -209,7 +175,74 @@ exports[`DataSummary renders 1`] = `
   border: 0;
 }
 
-.c10 {
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c12 {
   opacity: 0;
 }
 
@@ -217,7 +250,7 @@ exports[`DataSummary renders 1`] = `
   max-width: 100%;
 }
 
-.c4 {
+.c6 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -237,25 +270,25 @@ exports[`DataSummary renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    height: 6px;
+  .c7 {
+    height: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c10 {
     width: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c6 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -273,43 +306,44 @@ exports[`DataSummary renders 1`] = `
       class="c2"
     >
       <div
-        class="c1"
+        class="c3"
       >
-        <header
-          class="c3"
+        <div
+          class="c4"
         >
-          <h2
-            class="c4"
+          <header
+            class="c5"
           >
-            Filters
-          </h2>
-        </header>
-        <div
-          class="c5"
-        />
-        <span
-          class="c6"
-        >
-          2 items
-        </span>
-        <div
-          class="c5"
-        />
+            <h2
+              class="c6"
+            >
+              Filters
+            </h2>
+          </header>
+          <div
+            class="c7"
+          />
+          <span
+            class="c8"
+          >
+            2 items
+          </span>
+        </div>
         <footer
-          class="c3"
+          class="c5"
         >
           <button
-            class="c7"
+            class="c9"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c8"
+            class="c10"
           />
           <button
             aria-hidden="true"
-            class="c9 c10"
+            class="c11 c12"
             disabled=""
             tabindex="-1"
             type="reset"

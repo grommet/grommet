@@ -49,7 +49,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   );
 
   const clearControl = badge && (
-    <Box flex={false}>
+    <Box flex={false} margin={{ start: 'small' }}>
       <Button
         label={format({
           id: 'dataFilters.clear',
@@ -86,7 +86,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   const content = (
     <DataForm
       pad={controlled ? 'medium' : undefined}
-      gap="small"
+      gap="xsmall"
       onDone={() => setShowContent(false)}
       onTouched={
         controlled
@@ -100,7 +100,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
               }))
           : undefined
       }
-      {...(!controlled ? rest : {})}
+      {...(!controlled ? rest : { fill: 'vertical' })}
     >
       {!drop && (
         <Header>
@@ -167,7 +167,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   }
 
   return (
-    <Box flex={false} direction="row" gap="small" {...rest}>
+    <Box flex={false} direction="row" {...rest}>
       {control}
       {clearControl}
       {layer && showContent && (

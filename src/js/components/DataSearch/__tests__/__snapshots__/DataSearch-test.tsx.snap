@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataSearch renders 1`] = `
-.c8 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12,25 +12,25 @@ exports[`DataSearch renders 1`] = `
   stroke: #666666;
 }
 
-.c8 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -59,6 +59,39 @@ exports[`DataSearch renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -77,17 +110,17 @@ exports[`DataSearch renders 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  height: 12px;
+  height: 6px;
 }
 
-.c11 {
+.c13 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -97,7 +130,7 @@ exports[`DataSearch renders 1`] = `
   width: 24px;
 }
 
-.c10 {
+.c12 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -125,75 +158,8 @@ exports[`DataSearch renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c10:hover {
+.c12:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c12 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
 }
 
 .c12:focus {
@@ -236,7 +202,74 @@ exports[`DataSearch renders 1`] = `
   border: 0;
 }
 
-.c9 {
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) > circle,
+.c14:focus:not(:focus-visible) > ellipse,
+.c14:focus:not(:focus-visible) > line,
+.c14:focus:not(:focus-visible) > path,
+.c14:focus:not(:focus-visible) > polygon,
+.c14:focus:not(:focus-visible) > polyline,
+.c14:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -253,58 +286,58 @@ exports[`DataSearch renders 1`] = `
   padding-left: 48px;
 }
 
-.c9:focus {
+.c11:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c11:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c9::-webkit-input-placeholder {
+.c11::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-moz-placeholder {
+.c11::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c9:-ms-input-placeholder {
+.c11:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c11::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c9::-moz-focus-inner {
+.c11::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c9:-moz-placeholder,
-.c9::-moz-placeholder {
+.c11:-moz-placeholder,
+.c11::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c8 {
   position: relative;
   width: 100%;
 }
 
-.c7 {
+.c9 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -322,7 +355,7 @@ exports[`DataSearch renders 1`] = `
   left: 12px;
 }
 
-.c13 {
+.c15 {
   opacity: 0;
 }
 
@@ -330,7 +363,7 @@ exports[`DataSearch renders 1`] = `
   max-width: 100%;
 }
 
-.c4 {
+.c6 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -350,25 +383,25 @@ exports[`DataSearch renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    height: 6px;
+  .c7 {
+    height: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c13 {
     width: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c6 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -386,67 +419,68 @@ exports[`DataSearch renders 1`] = `
       class="c2"
     >
       <div
-        class="c1"
+        class="c3"
       >
-        <header
-          class="c3"
+        <div
+          class="c4"
         >
-          <h2
-            class="c4"
+          <header
+            class="c5"
           >
-            Filters
-          </h2>
-        </header>
-        <div
-          class="c5"
-        />
-        <div
-          class="c6"
-        >
+            <h2
+              class="c6"
+            >
+              Filters
+            </h2>
+          </header>
           <div
             class="c7"
-          >
-            <svg
-              aria-label="Search"
-              class="c8"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
-          <input
-            aria-label="Search data"
-            autocomplete="off"
-            class="c9"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
           />
+          <div
+            class="c8"
+          >
+            <div
+              class="c9"
+            >
+              <svg
+                aria-label="Search"
+                class="c10"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <input
+              aria-label="Search data"
+              autocomplete="off"
+              class="c11"
+              id="data--search"
+              name="_search"
+              type="search"
+              value=""
+            />
+          </div>
         </div>
-        <div
-          class="c5"
-        />
         <footer
-          class="c3"
+          class="c5"
         >
           <button
-            class="c10"
+            class="c12"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c11"
+            class="c13"
           />
           <button
             aria-hidden="true"
-            class="c12 c13"
+            class="c14 c15"
             disabled=""
             tabindex="-1"
             type="reset"

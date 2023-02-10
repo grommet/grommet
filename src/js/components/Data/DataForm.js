@@ -16,6 +16,7 @@ const HideableButton = styled(Button)`
 
 const MaxForm = styled(Form)`
   max-width: 100%;
+  ${(props) => props.fill && 'max-height: 100%;'}
 `;
 
 const hideButtonProps = {
@@ -232,10 +233,12 @@ export const DataForm = ({
       onSubmit={updateOn === 'submit' ? onSubmit : undefined}
       onChange={onChange}
     >
-      <Box flex={false} pad={pad} gap={gap}>
-        {children}
+      <Box fill="vertical">
+        <Box flex overflow="auto" pad={{ horizontal: pad, top: pad }} gap={gap}>
+          {children}
+        </Box>
         {footer !== false && updateOn === 'submit' && (
-          <Footer>
+          <Footer flex={false} pad={pad}>
             <Button
               label={format({
                 id: 'dataForm.submit',
