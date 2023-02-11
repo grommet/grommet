@@ -303,7 +303,7 @@ exports[`DataView preset view 1`] = `
             aria-haspopup="listbox"
             aria-label="Select view ...; Selected: top"
             class="c5 c6"
-            id="data-view"
+            id="data--view"
             type="button"
           >
             <div
@@ -318,7 +318,7 @@ exports[`DataView preset view 1`] = `
                   <input
                     autocomplete="off"
                     class="c10 c11"
-                    id="data-view__input"
+                    id="data--view__input"
                     name="_view"
                     placeholder="Select view ..."
                     readonly=""
@@ -657,7 +657,7 @@ exports[`DataView renders 1`] = `
             aria-haspopup="listbox"
             aria-label="Select view ..."
             class="c5 c6"
-            id="data-view"
+            id="data--view"
             type="button"
           >
             <div
@@ -672,7 +672,7 @@ exports[`DataView renders 1`] = `
                   <input
                     autocomplete="off"
                     class="c10 c11"
-                    id="data-view__input"
+                    id="data--view__input"
                     name="_view"
                     placeholder="Select view ..."
                     readonly=""

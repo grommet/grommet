@@ -5,11 +5,20 @@ import { FormContext } from '../Form/FormContext';
 import { FormField } from '../FormField';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Select } from '../Select';
+import { MessageContext } from '../../contexts/MessageContext';
 import { DataViewPropTypes } from './propTypes';
 
-export const DataView = ({ ...rest }) => {
-  const { id: dataId, view, views, addToolbarKey } = useContext(DataContext);
+export const DataView = ({ id: idProp, ...rest }) => {
+  const {
+    id: dataId,
+    messages,
+    view,
+    views,
+    addToolbarKey,
+  } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
+  const { format } = useContext(MessageContext);
+  const id = idProp || `${dataId}--view`;
 
   useEffect(() => {
     if (noForm) addToolbarKey('_view');
@@ -19,7 +28,6 @@ export const DataView = ({ ...rest }) => {
 
   const names = views.map((v) => v.name);
 
-  const id = `${dataId}-view`;
   let content;
 
   if (!noForm && names.length < 7) {
@@ -47,12 +55,24 @@ export const DataView = ({ ...rest }) => {
   }
 
   if (noForm)
+    // likely in Toolbar
     content = (
       <DataForm footer={false} updateOn="change">
         {content}
       </DataForm>
     );
-  else content = <FormField>{content}</FormField>;
+  else
+    content = (
+      <FormField
+        htmlFor={id}
+        label={format({
+          id: 'dataView.label',
+          messages: messages?.dataView,
+        })}
+      >
+        {content}
+      </FormField>
+    );
 
   return content;
 };
