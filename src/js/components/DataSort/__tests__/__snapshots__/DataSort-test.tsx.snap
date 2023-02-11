@@ -214,8 +214,8 @@ exports[`DataSort drop 3`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .grsgKE {
-    height: 3px;
+  .gcEjSx {
+    margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -224,8 +224,8 @@ exports[`DataSort drop 3`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .iISQcM {
-    width: 12px;
+  .ilMzAg {
+    width: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -243,7 +243,7 @@ exports[`DataSort drop 3`] = `
 `;
 
 exports[`DataSort renders 1`] = `
-.c18 {
+.c17 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -254,25 +254,25 @@ exports[`DataSort renders 1`] = `
   stroke: #7D4CDB;
 }
 
-.c18 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill="none"] {
+.c17 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*="#"],
-.c18 *[STROKE*="#"] {
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*="#"],
-.c18 *[FILL*="#"] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -352,7 +352,7 @@ exports[`DataSort renders 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -370,7 +370,7 @@ exports[`DataSort renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -385,7 +385,7 @@ exports[`DataSort renders 1`] = `
   flex-direction: column;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -407,7 +407,7 @@ exports[`DataSort renders 1`] = `
   justify-content: space-between;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -426,7 +426,7 @@ exports[`DataSort renders 1`] = `
   flex-basis: auto;
 }
 
-.c17 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -445,7 +445,7 @@ exports[`DataSort renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c19 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -461,7 +461,7 @@ exports[`DataSort renders 1`] = `
   padding: 12px;
 }
 
-.c20 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -475,7 +475,7 @@ exports[`DataSort renders 1`] = `
   flex-direction: column;
 }
 
-.c22 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -493,7 +493,7 @@ exports[`DataSort renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c24 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -519,17 +519,33 @@ exports[`DataSort renders 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 6px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
-.c25 {
+.c24 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -546,10 +562,10 @@ exports[`DataSort renders 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  width: 12px;
 }
 
-.c9 {
+.c8 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -558,7 +574,7 @@ exports[`DataSort renders 1`] = `
   line-height: 24px;
 }
 
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -576,23 +592,23 @@ exports[`DataSort renders 1`] = `
   text-align: inherit;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -735,7 +751,7 @@ exports[`DataSort renders 1`] = `
   border: 0;
 }
 
-.c21 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -757,12 +773,12 @@ exports[`DataSort renders 1`] = `
   cursor: pointer;
 }
 
-.c21:hover input:not([disabled]) + div,
-.c21:hover input:not([disabled]) + span {
+.c20:hover input:not([disabled]) + div,
+.c20:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c23 {
+.c22 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -771,7 +787,7 @@ exports[`DataSort renders 1`] = `
   cursor: pointer;
 }
 
-.c15 {
+.c14 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -789,38 +805,38 @@ exports[`DataSort renders 1`] = `
   border: none;
 }
 
-.c15::-webkit-input-placeholder {
+.c14::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c15::-moz-placeholder {
+.c14::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c15:-ms-input-placeholder {
+.c14:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c15::-webkit-search-decoration {
+.c14::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c15::-moz-focus-inner {
+.c14::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c15:-moz-placeholder,
-.c15::-moz-placeholder {
+.c14:-moz-placeholder,
+.c14::-moz-placeholder {
   opacity: 1;
 }
 
-.c14 {
+.c13 {
   position: relative;
   width: 100%;
 }
 
-.c16 {
+.c15 {
   cursor: pointer;
 }
 
@@ -852,63 +868,63 @@ exports[`DataSort renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c16 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c19 {
+  .c18 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c19 {
+  .c18 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c22 {
+  .c21 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c24 {
+  .c23 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    height: 3px;
+  .c25 {
+    margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c25 {
+  .c24 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c27 {
-    width: 12px;
+    width: 6px;
   }
 }
 
@@ -952,40 +968,37 @@ exports[`DataSort renders 1`] = `
             </h2>
           </header>
           <div
-            class="c7"
-          />
-          <div
-            class="c8 "
+            class="c7 "
           >
             <label
-              class="c9"
+              class="c8"
               for="data--sort-property"
             >
               Sort by
             </label>
             <div
-              class="c10 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
             >
               <button
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-label="Open Drop"
-                class="c11 "
+                class="c10 "
                 id="data--sort-property"
                 type="button"
               >
                 <div
-                  class="c12"
+                  class="c11"
                 >
                   <div
-                    class="c13"
+                    class="c12"
                   >
                     <div
-                      class="c14"
+                      class="c13"
                     >
                       <input
                         autocomplete="off"
-                        class="c15 c16"
+                        class="c14 c15"
                         id="data--sort-property__input"
                         name="_sort.property"
                         readonly=""
@@ -996,12 +1009,12 @@ exports[`DataSort renders 1`] = `
                     </div>
                   </div>
                   <div
-                    class="c17"
+                    class="c16"
                     style="min-width: auto;"
                   >
                     <svg
                       aria-label="FormDown"
-                      class="c18"
+                      class="c17"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -1017,37 +1030,37 @@ exports[`DataSort renders 1`] = `
             </div>
           </div>
           <div
-            class="c8 "
+            class="c7 "
           >
             <label
-              class="c9"
+              class="c8"
               for="data--sort-direction"
             >
               Sort direction
             </label>
             <div
-              class="c19 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c18 FormField__FormFieldContentBox-sc-m9hood-1"
             >
               <div
-                class="c20"
+                class="c19"
                 id="data--sort-direction"
                 role="radiogroup"
               >
                 <label
-                  class="c21"
+                  class="c20"
                 >
                   <div
-                    class="c22 "
+                    class="c21 "
                   >
                     <input
-                      class="c23"
+                      class="c22"
                       name="_sort.direction"
                       tabindex="0"
                       type="radio"
                       value="asc"
                     />
                     <div
-                      class="c24 "
+                      class="c23 "
                     />
                   </div>
                   <span
@@ -1057,23 +1070,23 @@ exports[`DataSort renders 1`] = `
                   </span>
                 </label>
                 <div
-                  class="c25"
+                  class="c24"
                 />
                 <label
-                  class="c21"
+                  class="c20"
                 >
                   <div
-                    class="c22 "
+                    class="c21 "
                   >
                     <input
-                      class="c23"
+                      class="c22"
                       name="_sort.direction"
                       tabindex="-1"
                       type="radio"
                       value="desc"
                     />
                     <div
-                      class="c24 "
+                      class="c23 "
                     />
                   </div>
                   <span
@@ -1087,7 +1100,7 @@ exports[`DataSort renders 1`] = `
           </div>
         </div>
         <footer
-          class="c5"
+          class="c25"
         >
           <button
             class="c26"

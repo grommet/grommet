@@ -5,6 +5,7 @@ import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
 import { FormContext } from '../Form/FormContext';
+import { FormField } from '../FormField';
 import { useSkeleton } from '../Skeleton';
 import { TextInput } from '../TextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -45,6 +46,7 @@ const Content = ({ id, ...rest }) => {
         {content}
       </DataForm>
     );
+  else content = <FormField>{content}</FormField>;
 
   return content;
 };

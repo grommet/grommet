@@ -173,7 +173,6 @@ const normalizeValue = (nextValue, prevValue, views) => {
 export const DataForm = ({
   children,
   footer,
-  gap,
   onDone,
   onTouched,
   pad,
@@ -234,11 +233,16 @@ export const DataForm = ({
       onChange={onChange}
     >
       <Box fill="vertical">
-        <Box flex overflow="auto" pad={{ horizontal: pad, top: pad }} gap={gap}>
+        <Box flex overflow="auto" pad={{ horizontal: pad, top: pad }}>
           {children}
         </Box>
         {footer !== false && updateOn === 'submit' && (
-          <Footer flex={false} pad={pad}>
+          <Footer
+            flex={false}
+            margin={{ top: 'small' }}
+            pad={{ horizontal: pad, bottom: pad }}
+            gap="small"
+          >
             <Button
               label={format({
                 id: 'dataForm.submit',

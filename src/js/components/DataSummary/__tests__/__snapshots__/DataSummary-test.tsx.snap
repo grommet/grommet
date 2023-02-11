@@ -76,14 +76,30 @@ exports[`DataSummary renders 1`] = `
   justify-content: space-between;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 6px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c10 {
@@ -93,10 +109,10 @@ exports[`DataSummary renders 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  width: 12px;
 }
 
-.c8 {
+.c7 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
@@ -270,14 +286,14 @@ exports[`DataSummary renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    height: 3px;
+  .c8 {
+    margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c10 {
-    width: 12px;
+    width: 6px;
   }
 }
 
@@ -320,17 +336,14 @@ exports[`DataSummary renders 1`] = `
               Filters
             </h2>
           </header>
-          <div
-            class="c7"
-          />
           <span
-            class="c8"
+            class="c7"
           >
             2 items
           </span>
         </div>
         <footer
-          class="c5"
+          class="c8"
         >
           <button
             class="c9"

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { DataForm } from '../Data/DataForm';
 import { DataContext } from '../../contexts/DataContext';
 import { FormContext } from '../Form/FormContext';
+import { FormField } from '../FormField';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Select } from '../Select';
 import { DataViewPropTypes } from './propTypes';
@@ -51,6 +52,7 @@ export const DataView = ({ ...rest }) => {
         {content}
       </DataForm>
     );
+  else content = <FormField>{content}</FormField>;
 
   return content;
 };

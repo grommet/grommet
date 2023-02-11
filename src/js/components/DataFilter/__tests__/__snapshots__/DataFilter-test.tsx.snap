@@ -76,7 +76,7 @@ exports[`DataFilter children 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -94,7 +94,7 @@ exports[`DataFilter children 1`] = `
   flex: 0 0 auto;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,14 +109,30 @@ exports[`DataFilter children 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 6px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c14 {
@@ -126,10 +142,10 @@ exports[`DataFilter children 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  width: 12px;
 }
 
-.c9 {
+.c8 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -277,7 +293,7 @@ exports[`DataFilter children 1`] = `
   border: 0;
 }
 
-.c12 {
+.c11 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -295,33 +311,33 @@ exports[`DataFilter children 1`] = `
   border: none;
 }
 
-.c12::-webkit-input-placeholder {
+.c11::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c12::-moz-placeholder {
+.c11::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c12:-ms-input-placeholder {
+.c11:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c12::-webkit-search-decoration {
+.c11::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c12::-moz-focus-inner {
+.c11::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c12:-moz-placeholder,
-.c12::-moz-placeholder {
+.c11:-moz-placeholder,
+.c11::-moz-placeholder {
   opacity: 1;
 }
 
-.c11 {
+.c10 {
   position: relative;
   width: 100%;
 }
@@ -354,26 +370,26 @@ exports[`DataFilter children 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    height: 3px;
+  .c12 {
+    margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c14 {
-    width: 12px;
+    width: 6px;
   }
 }
 
@@ -417,26 +433,23 @@ exports[`DataFilter children 1`] = `
             </h2>
           </header>
           <div
-            class="c7"
-          />
-          <div
-            class="c8 "
+            class="c7 "
           >
             <label
-              class="c9"
+              class="c8"
               for="data-name"
             >
               name
             </label>
             <div
-              class="c10 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
             >
               <div
-                class="c11"
+                class="c10"
               >
                 <input
                   autocomplete="off"
-                  class="c12"
+                  class="c11"
                   value=""
                 />
               </div>
@@ -444,7 +457,7 @@ exports[`DataFilter children 1`] = `
           </div>
         </div>
         <footer
-          class="c5"
+          class="c12"
         >
           <button
             class="c13"
@@ -547,7 +560,7 @@ exports[`DataFilter options 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -565,7 +578,7 @@ exports[`DataFilter options 1`] = `
   flex: 0 0 auto;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -581,7 +594,7 @@ exports[`DataFilter options 1`] = `
   padding: 12px;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -595,7 +608,7 @@ exports[`DataFilter options 1`] = `
   flex-direction: column;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -618,7 +631,7 @@ exports[`DataFilter options 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -644,17 +657,33 @@ exports[`DataFilter options 1`] = `
   border-radius: 4px;
 }
 
-.c7 {
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 6px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
-.c17 {
+.c16 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -671,10 +700,10 @@ exports[`DataFilter options 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  width: 12px;
 }
 
-.c9 {
+.c8 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -822,7 +851,7 @@ exports[`DataFilter options 1`] = `
   border: 0;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -844,12 +873,12 @@ exports[`DataFilter options 1`] = `
   cursor: pointer;
 }
 
-.c12:hover input:not([disabled]) + div,
-.c12:hover input:not([disabled]) + span {
+.c11:hover input:not([disabled]) + div,
+.c11:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c15 {
+.c14 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -858,12 +887,12 @@ exports[`DataFilter options 1`] = `
   cursor: pointer;
 }
 
-.c15:checked + span > span {
+.c14:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c14 {
+.c13 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -897,50 +926,50 @@ exports[`DataFilter options 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c9 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c12 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c15 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    height: 3px;
+  .c17 {
+    margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c16 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c19 {
-    width: 12px;
+    width: 6px;
   }
 }
 
@@ -984,38 +1013,35 @@ exports[`DataFilter options 1`] = `
             </h2>
           </header>
           <div
-            class="c7"
-          />
-          <div
-            class="c8 "
+            class="c7 "
           >
             <label
-              class="c9"
+              class="c8"
               for="data-name"
             >
               name
             </label>
             <div
-              class="c10 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
             >
               <div
-                class="c11 StyledCheckBoxGroup-sc-2nhc5d-0"
+                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
                 id="data-name"
                 role="group"
               >
                 <label
-                  class="c12"
+                  class="c11"
                   label="aa"
                 >
                   <div
-                    class="c13 c14"
+                    class="c12 c13"
                   >
                     <input
-                      class="c15"
+                      class="c14"
                       type="checkbox"
                     />
                     <div
-                      class="c16 "
+                      class="c15 "
                     />
                   </div>
                   <span>
@@ -1023,21 +1049,21 @@ exports[`DataFilter options 1`] = `
                   </span>
                 </label>
                 <div
-                  class="c17"
+                  class="c16"
                 />
                 <label
-                  class="c12"
+                  class="c11"
                   label="bb"
                 >
                   <div
-                    class="c13 c14"
+                    class="c12 c13"
                   >
                     <input
-                      class="c15"
+                      class="c14"
                       type="checkbox"
                     />
                     <div
-                      class="c16 "
+                      class="c15 "
                     />
                   </div>
                   <span>
@@ -1045,21 +1071,21 @@ exports[`DataFilter options 1`] = `
                   </span>
                 </label>
                 <div
-                  class="c17"
+                  class="c16"
                 />
                 <label
-                  class="c12"
+                  class="c11"
                   label="cc"
                 >
                   <div
-                    class="c13 c14"
+                    class="c12 c13"
                   >
                     <input
-                      class="c15"
+                      class="c14"
                       type="checkbox"
                     />
                     <div
-                      class="c16 "
+                      class="c15 "
                     />
                   </div>
                   <span>
@@ -1070,38 +1096,35 @@ exports[`DataFilter options 1`] = `
             </div>
           </div>
           <div
-            class="c7"
-          />
-          <div
-            class="c8 "
+            class="c7 "
           >
             <label
-              class="c9"
+              class="c8"
               for="data-enabled"
             >
               Enabled
             </label>
             <div
-              class="c10 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
             >
               <div
-                class="c11 StyledCheckBoxGroup-sc-2nhc5d-0"
+                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
                 id="data-enabled"
                 role="group"
               >
                 <label
-                  class="c12"
+                  class="c11"
                   label="Enabled"
                 >
                   <div
-                    class="c13 c14"
+                    class="c12 c13"
                   >
                     <input
-                      class="c15"
+                      class="c14"
                       type="checkbox"
                     />
                     <div
-                      class="c16 "
+                      class="c15 "
                     />
                   </div>
                   <span>
@@ -1109,21 +1132,21 @@ exports[`DataFilter options 1`] = `
                   </span>
                 </label>
                 <div
-                  class="c17"
+                  class="c16"
                 />
                 <label
-                  class="c12"
+                  class="c11"
                   label="Disabled"
                 >
                   <div
-                    class="c13 c14"
+                    class="c12 c13"
                   >
                     <input
-                      class="c15"
+                      class="c14"
                       type="checkbox"
                     />
                     <div
-                      class="c16 "
+                      class="c15 "
                     />
                   </div>
                   <span>
@@ -1134,38 +1157,35 @@ exports[`DataFilter options 1`] = `
             </div>
           </div>
           <div
-            class="c7"
-          />
-          <div
-            class="c8 "
+            class="c7 "
           >
             <label
-              class="c9"
+              class="c8"
               for="data-type.name"
             >
               Type
             </label>
             <div
-              class="c10 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
             >
               <div
-                class="c11 StyledCheckBoxGroup-sc-2nhc5d-0"
+                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
                 id="data-type.name"
                 role="group"
               >
                 <label
-                  class="c12"
+                  class="c11"
                   label="ZZ"
                 >
                   <div
-                    class="c13 c14"
+                    class="c12 c13"
                   >
                     <input
-                      class="c15"
+                      class="c14"
                       type="checkbox"
                     />
                     <div
-                      class="c16 "
+                      class="c15 "
                     />
                   </div>
                   <span>
@@ -1173,21 +1193,21 @@ exports[`DataFilter options 1`] = `
                   </span>
                 </label>
                 <div
-                  class="c17"
+                  class="c16"
                 />
                 <label
-                  class="c12"
+                  class="c11"
                   label="YY"
                 >
                   <div
-                    class="c13 c14"
+                    class="c12 c13"
                   >
                     <input
-                      class="c15"
+                      class="c14"
                       type="checkbox"
                     />
                     <div
-                      class="c16 "
+                      class="c15 "
                     />
                   </div>
                   <span>
@@ -1199,7 +1219,7 @@ exports[`DataFilter options 1`] = `
           </div>
         </div>
         <footer
-          class="c5"
+          class="c17"
         >
           <button
             class="c18"
@@ -1302,7 +1322,7 @@ exports[`DataFilter range Data 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1320,7 +1340,7 @@ exports[`DataFilter range Data 1`] = `
   flex: 0 0 auto;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1336,7 +1356,7 @@ exports[`DataFilter range Data 1`] = `
   padding: 12px;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1356,7 +1376,7 @@ exports[`DataFilter range Data 1`] = `
   height: 100%;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1377,7 +1397,7 @@ exports[`DataFilter range Data 1`] = `
   cursor: pointer;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1396,7 +1416,7 @@ exports[`DataFilter range Data 1`] = `
   border-radius: 12px;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1422,7 +1442,7 @@ exports[`DataFilter range Data 1`] = `
   overflow: visible;
 }
 
-.c17 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1447,7 +1467,7 @@ exports[`DataFilter range Data 1`] = `
   justify-content: center;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1466,7 +1486,7 @@ exports[`DataFilter range Data 1`] = `
   border-radius: 100%;
 }
 
-.c19 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1487,14 +1507,30 @@ exports[`DataFilter range Data 1`] = `
   border-radius: 12px;
 }
 
-.c7 {
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 6px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c22 {
@@ -1504,10 +1540,10 @@ exports[`DataFilter range Data 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  width: 12px;
 }
 
-.c9 {
+.c8 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1516,7 +1552,7 @@ exports[`DataFilter range Data 1`] = `
   line-height: 24px;
 }
 
-.c12 {
+.c11 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -1524,7 +1560,7 @@ exports[`DataFilter range Data 1`] = `
   text-align: right;
 }
 
-.c20 {
+.c19 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -1670,7 +1706,7 @@ exports[`DataFilter range Data 1`] = `
   border: 0;
 }
 
-.c14 {
+.c13 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1705,44 +1741,44 @@ exports[`DataFilter range Data 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c9 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c19 {
+  .c18 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    height: 3px;
+  .c20 {
+    margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c22 {
-    width: 12px;
+    width: 6px;
   }
 }
 
@@ -1786,40 +1822,37 @@ exports[`DataFilter range Data 1`] = `
             </h2>
           </header>
           <div
-            class="c7"
-          />
-          <div
-            class="c8 "
+            class="c7 "
           >
             <label
-              class="c9"
+              class="c8"
               for="data-rating"
             >
               Rating
             </label>
             <div
-              class="c10 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
             >
               <div
-                class="c11"
+                class="c10"
                 id="data-rating"
               >
                 <span
-                  class="c12"
+                  class="c11"
                   style="width: 0px;"
                 >
                   0
                 </span>
                 <div
-                  class="c13 c14"
+                  class="c12 c13"
                   tabindex="-1"
                 >
                   <div
-                    class="c15"
+                    class="c14"
                     style="flex: 0 0 0px;"
                   />
                   <div
-                    class="c16"
+                    class="c15"
                     style="flex: 0 0 1px;"
                   >
                     <div
@@ -1827,22 +1860,22 @@ exports[`DataFilter range Data 1`] = `
                       aria-valuemax="5"
                       aria-valuemin="0"
                       aria-valuenow="0"
-                      class="c17"
+                      class="c16"
                       role="slider"
                       style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                       tabindex="0"
                     >
                       <div
-                        class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
                       />
                     </div>
                   </div>
                   <div
-                    class="c19"
+                    class="c18"
                     style="flex: 6 0 0px; cursor: ew-resize;"
                   />
                   <div
-                    class="c16"
+                    class="c15"
                     style="flex: 0 0 1px;"
                   >
                     <div
@@ -1850,23 +1883,23 @@ exports[`DataFilter range Data 1`] = `
                       aria-valuemax="5"
                       aria-valuemin="0"
                       aria-valuenow="5"
-                      class="c17"
+                      class="c16"
                       role="slider"
                       style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                       tabindex="0"
                     >
                       <div
-                        class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
                       />
                     </div>
                   </div>
                   <div
-                    class="c15"
+                    class="c14"
                     style="flex: 0 0 0px;"
                   />
                 </div>
                 <span
-                  class="c20"
+                  class="c19"
                   style="width: 0px;"
                 >
                   5
@@ -1876,7 +1909,7 @@ exports[`DataFilter range Data 1`] = `
           </div>
         </div>
         <footer
-          class="c5"
+          class="c20"
         >
           <button
             class="c21"
@@ -1979,7 +2012,7 @@ exports[`DataFilter range prop 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1997,7 +2030,7 @@ exports[`DataFilter range prop 1`] = `
   flex: 0 0 auto;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2013,7 +2046,7 @@ exports[`DataFilter range prop 1`] = `
   padding: 12px;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2033,7 +2066,7 @@ exports[`DataFilter range prop 1`] = `
   height: 100%;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2054,7 +2087,7 @@ exports[`DataFilter range prop 1`] = `
   cursor: pointer;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2073,7 +2106,7 @@ exports[`DataFilter range prop 1`] = `
   border-radius: 12px;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2099,7 +2132,7 @@ exports[`DataFilter range prop 1`] = `
   overflow: visible;
 }
 
-.c17 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2124,7 +2157,7 @@ exports[`DataFilter range prop 1`] = `
   justify-content: center;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2143,7 +2176,7 @@ exports[`DataFilter range prop 1`] = `
   border-radius: 100%;
 }
 
-.c19 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2164,14 +2197,30 @@ exports[`DataFilter range prop 1`] = `
   border-radius: 12px;
 }
 
-.c7 {
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 6px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c22 {
@@ -2181,10 +2230,10 @@ exports[`DataFilter range prop 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  width: 12px;
 }
 
-.c9 {
+.c8 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -2193,7 +2242,7 @@ exports[`DataFilter range prop 1`] = `
   line-height: 24px;
 }
 
-.c12 {
+.c11 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -2201,7 +2250,7 @@ exports[`DataFilter range prop 1`] = `
   text-align: right;
 }
 
-.c20 {
+.c19 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -2347,7 +2396,7 @@ exports[`DataFilter range prop 1`] = `
   border: 0;
 }
 
-.c14 {
+.c13 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2382,44 +2431,44 @@ exports[`DataFilter range prop 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c9 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c19 {
+  .c18 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    height: 3px;
+  .c20 {
+    margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c22 {
-    width: 12px;
+    width: 6px;
   }
 }
 
@@ -2463,40 +2512,37 @@ exports[`DataFilter range prop 1`] = `
             </h2>
           </header>
           <div
-            class="c7"
-          />
-          <div
-            class="c8 "
+            class="c7 "
           >
             <label
-              class="c9"
+              class="c8"
               for="data-rating"
             >
               rating
             </label>
             <div
-              class="c10 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
             >
               <div
-                class="c11"
+                class="c10"
                 id="data-rating"
               >
                 <span
-                  class="c12"
+                  class="c11"
                   style="width: 0px;"
                 >
                   0
                 </span>
                 <div
-                  class="c13 c14"
+                  class="c12 c13"
                   tabindex="-1"
                 >
                   <div
-                    class="c15"
+                    class="c14"
                     style="flex: 0 0 0px;"
                   />
                   <div
-                    class="c16"
+                    class="c15"
                     style="flex: 0 0 1px;"
                   >
                     <div
@@ -2504,22 +2550,22 @@ exports[`DataFilter range prop 1`] = `
                       aria-valuemax="5"
                       aria-valuemin="0"
                       aria-valuenow="0"
-                      class="c17"
+                      class="c16"
                       role="slider"
                       style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                       tabindex="0"
                     >
                       <div
-                        class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
                       />
                     </div>
                   </div>
                   <div
-                    class="c19"
+                    class="c18"
                     style="flex: 6 0 0px; cursor: ew-resize;"
                   />
                   <div
-                    class="c16"
+                    class="c15"
                     style="flex: 0 0 1px;"
                   >
                     <div
@@ -2527,23 +2573,23 @@ exports[`DataFilter range prop 1`] = `
                       aria-valuemax="5"
                       aria-valuemin="0"
                       aria-valuenow="5"
-                      class="c17"
+                      class="c16"
                       role="slider"
                       style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                       tabindex="0"
                     >
                       <div
-                        class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
                       />
                     </div>
                   </div>
                   <div
-                    class="c15"
+                    class="c14"
                     style="flex: 0 0 0px;"
                   />
                 </div>
                 <span
-                  class="c20"
+                  class="c19"
                   style="width: 0px;"
                 >
                   5
@@ -2553,7 +2599,7 @@ exports[`DataFilter range prop 1`] = `
           </div>
         </div>
         <footer
-          class="c5"
+          class="c20"
         >
           <button
             class="c21"
@@ -2656,7 +2702,7 @@ exports[`DataFilter renders 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2674,7 +2720,7 @@ exports[`DataFilter renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2690,7 +2736,7 @@ exports[`DataFilter renders 1`] = `
   padding: 12px;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2704,7 +2750,7 @@ exports[`DataFilter renders 1`] = `
   flex-direction: column;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2727,7 +2773,7 @@ exports[`DataFilter renders 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2753,7 +2799,7 @@ exports[`DataFilter renders 1`] = `
   border-radius: 4px;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2773,7 +2819,7 @@ exports[`DataFilter renders 1`] = `
   height: 100%;
 }
 
-.c20 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2794,7 +2840,7 @@ exports[`DataFilter renders 1`] = `
   cursor: pointer;
 }
 
-.c22 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2813,7 +2859,7 @@ exports[`DataFilter renders 1`] = `
   border-radius: 12px;
 }
 
-.c23 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2839,7 +2885,7 @@ exports[`DataFilter renders 1`] = `
   overflow: visible;
 }
 
-.c24 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2864,7 +2910,7 @@ exports[`DataFilter renders 1`] = `
   justify-content: center;
 }
 
-.c25 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2883,7 +2929,7 @@ exports[`DataFilter renders 1`] = `
   border-radius: 100%;
 }
 
-.c26 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2904,17 +2950,33 @@ exports[`DataFilter renders 1`] = `
   border-radius: 12px;
 }
 
-.c7 {
+.c27 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 6px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
-.c17 {
+.c16 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2931,10 +2993,10 @@ exports[`DataFilter renders 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  width: 12px;
 }
 
-.c9 {
+.c8 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -2943,7 +3005,7 @@ exports[`DataFilter renders 1`] = `
   line-height: 24px;
 }
 
-.c19 {
+.c18 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -2951,7 +3013,7 @@ exports[`DataFilter renders 1`] = `
   text-align: right;
 }
 
-.c27 {
+.c26 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -3097,7 +3159,7 @@ exports[`DataFilter renders 1`] = `
   border: 0;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3119,12 +3181,12 @@ exports[`DataFilter renders 1`] = `
   cursor: pointer;
 }
 
-.c12:hover input:not([disabled]) + div,
-.c12:hover input:not([disabled]) + span {
+.c11:hover input:not([disabled]) + div,
+.c11:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c15 {
+.c14 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -3133,18 +3195,18 @@ exports[`DataFilter renders 1`] = `
   cursor: pointer;
 }
 
-.c15:checked + span > span {
+.c14:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c14 {
+.c13 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c21 {
+.c20 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3179,62 +3241,62 @@ exports[`DataFilter renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c9 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c12 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c15 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c22 {
+  .c21 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c26 {
+  .c25 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    height: 3px;
+  .c27 {
+    margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c16 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c29 {
-    width: 12px;
+    width: 6px;
   }
 }
 
@@ -3278,38 +3340,35 @@ exports[`DataFilter renders 1`] = `
             </h2>
           </header>
           <div
-            class="c7"
-          />
-          <div
-            class="c8 "
+            class="c7 "
           >
             <label
-              class="c9"
+              class="c8"
               for="data-name"
             >
               name
             </label>
             <div
-              class="c10 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
             >
               <div
-                class="c11 StyledCheckBoxGroup-sc-2nhc5d-0"
+                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
                 id="data-name"
                 role="group"
               >
                 <label
-                  class="c12"
+                  class="c11"
                   label="aa"
                 >
                   <div
-                    class="c13 c14"
+                    class="c12 c13"
                   >
                     <input
-                      class="c15"
+                      class="c14"
                       type="checkbox"
                     />
                     <div
-                      class="c16 "
+                      class="c15 "
                     />
                   </div>
                   <span>
@@ -3317,21 +3376,21 @@ exports[`DataFilter renders 1`] = `
                   </span>
                 </label>
                 <div
-                  class="c17"
+                  class="c16"
                 />
                 <label
-                  class="c12"
+                  class="c11"
                   label="bb"
                 >
                   <div
-                    class="c13 c14"
+                    class="c12 c13"
                   >
                     <input
-                      class="c15"
+                      class="c14"
                       type="checkbox"
                     />
                     <div
-                      class="c16 "
+                      class="c15 "
                     />
                   </div>
                   <span>
@@ -3339,21 +3398,21 @@ exports[`DataFilter renders 1`] = `
                   </span>
                 </label>
                 <div
-                  class="c17"
+                  class="c16"
                 />
                 <label
-                  class="c12"
+                  class="c11"
                   label="cc"
                 >
                   <div
-                    class="c13 c14"
+                    class="c12 c13"
                   >
                     <input
-                      class="c15"
+                      class="c14"
                       type="checkbox"
                     />
                     <div
-                      class="c16 "
+                      class="c15 "
                     />
                   </div>
                   <span>
@@ -3364,38 +3423,35 @@ exports[`DataFilter renders 1`] = `
             </div>
           </div>
           <div
-            class="c7"
-          />
-          <div
-            class="c8 "
+            class="c7 "
           >
             <label
-              class="c9"
+              class="c8"
               for="data-enabled"
             >
               enabled
             </label>
             <div
-              class="c10 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
             >
               <div
-                class="c11 StyledCheckBoxGroup-sc-2nhc5d-0"
+                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
                 id="data-enabled"
                 role="group"
               >
                 <label
-                  class="c12"
+                  class="c11"
                   label="true"
                 >
                   <div
-                    class="c13 c14"
+                    class="c12 c13"
                   >
                     <input
-                      class="c15"
+                      class="c14"
                       type="checkbox"
                     />
                     <div
-                      class="c16 "
+                      class="c15 "
                     />
                   </div>
                   <span>
@@ -3403,21 +3459,21 @@ exports[`DataFilter renders 1`] = `
                   </span>
                 </label>
                 <div
-                  class="c17"
+                  class="c16"
                 />
                 <label
-                  class="c12"
+                  class="c11"
                   label="false"
                 >
                   <div
-                    class="c13 c14"
+                    class="c12 c13"
                   >
                     <input
-                      class="c15"
+                      class="c14"
                       type="checkbox"
                     />
                     <div
-                      class="c16 "
+                      class="c15 "
                     />
                   </div>
                   <span>
@@ -3428,40 +3484,37 @@ exports[`DataFilter renders 1`] = `
             </div>
           </div>
           <div
-            class="c7"
-          />
-          <div
-            class="c8 "
+            class="c7 "
           >
             <label
-              class="c9"
+              class="c8"
               for="data-rating"
             >
               rating
             </label>
             <div
-              class="c10 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
             >
               <div
-                class="c18"
+                class="c17"
                 id="data-rating"
               >
                 <span
-                  class="c19"
+                  class="c18"
                   style="width: 0px;"
                 >
                   2.0999999999999996
                 </span>
                 <div
-                  class="c20 c21"
+                  class="c19 c20"
                   tabindex="-1"
                 >
                   <div
-                    class="c22"
+                    class="c21"
                     style="flex: 0 0 0px;"
                   />
                   <div
-                    class="c23"
+                    class="c22"
                     style="flex: 0 0 1px;"
                   >
                     <div
@@ -3469,22 +3522,22 @@ exports[`DataFilter renders 1`] = `
                       aria-valuemax="4.8999999999999995"
                       aria-valuemin="2.0999999999999996"
                       aria-valuenow="2.0999999999999996"
-                      class="c24"
+                      class="c23"
                       role="slider"
                       style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                       tabindex="0"
                     >
                       <div
-                        class="c25 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
                       />
                     </div>
                   </div>
                   <div
-                    class="c26"
+                    class="c25"
                     style="flex: 3.8 0 0px; cursor: ew-resize;"
                   />
                   <div
-                    class="c23"
+                    class="c22"
                     style="flex: 0 0 1px;"
                   >
                     <div
@@ -3492,23 +3545,23 @@ exports[`DataFilter renders 1`] = `
                       aria-valuemax="4.8999999999999995"
                       aria-valuemin="2.0999999999999996"
                       aria-valuenow="4.8999999999999995"
-                      class="c24"
+                      class="c23"
                       role="slider"
                       style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                       tabindex="0"
                     >
                       <div
-                        class="c25 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
                       />
                     </div>
                   </div>
                   <div
-                    class="c22"
+                    class="c21"
                     style="flex: 0 0 0px;"
                   />
                 </div>
                 <span
-                  class="c27"
+                  class="c26"
                   style="width: 0px;"
                 >
                   4.8999999999999995
@@ -3518,7 +3571,7 @@ exports[`DataFilter renders 1`] = `
           </div>
         </div>
         <footer
-          class="c5"
+          class="c27"
         >
           <button
             class="c28"
