@@ -14,6 +14,10 @@ const HideableButton = styled(Button)`
   opacity: 0;`}
 `;
 
+const MaxForm = styled(Form)`
+  max-width: 100%;
+`;
+
 const hideButtonProps = {
   'aria-hidden': true,
   disabled: true,
@@ -222,7 +226,7 @@ export const DataForm = ({
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
 
   return (
-    <Form
+    <MaxForm
       {...rest}
       value={formValue}
       onSubmit={updateOn === 'submit' ? onSubmit : undefined}
@@ -252,6 +256,6 @@ export const DataForm = ({
           </Footer>
         )}
       </Box>
-    </Form>
+    </MaxForm>
   );
 };

@@ -308,7 +308,7 @@ const LayerContainer = forwardRef(
           // restricting scroll could inhibit the user's
           // ability to scroll the page while the layer is open.
           restrictScroll={
-            !layerTarget || hitResponsiveBreakpoint ? true : undefined
+            !layerTarget && hitResponsiveBreakpoint ? true : undefined
           }
           trapFocus
         >

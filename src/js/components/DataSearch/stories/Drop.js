@@ -12,7 +12,7 @@ import {
 import { DataSearch } from '../DataSearch';
 import { columns, DATA } from '../../DataTable/stories/data';
 
-export const Simple = () => (
+export const Drop = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Grid pad="large" columns={['large']} justifyContent="center">
@@ -24,7 +24,7 @@ export const Simple = () => (
       Note: Results are filtered as you type, checking all fields.
     </Paragraph>
     <Data data={DATA} updateOn="change">
-      <DataSearch />
+      <DataSearch drop />
       <DataSummary />
       <DataTable columns={columns} />
     </Data>
@@ -32,10 +32,10 @@ export const Simple = () => (
   // </Grommet>
 );
 
-Simple.args = {
+Drop.args = {
   full: true,
 };
 
 export default {
-  title: 'Data/DataSearch/Simple',
+  title: 'Data/DataSearch/Drop',
 };

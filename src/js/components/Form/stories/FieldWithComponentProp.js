@@ -16,7 +16,7 @@ import {
 export const FieldWithComponentProp = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box fill overflow="auto" align="center" justify="center" pad="large">
+  <Box overflow="auto" align="center" justify="center" pad="large">
     <Box flex={false} width="medium">
       <Form
         onReset={(event) => console.log(event)}

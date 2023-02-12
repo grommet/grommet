@@ -203,5 +203,5 @@ Table.args = {
 };
 
 export default {
-  title: 'Layout/Data/Infinite Scroll',
+  title: 'Data/Data/Infinite Scroll',
 };
