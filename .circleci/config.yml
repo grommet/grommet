@@ -90,7 +90,7 @@ jobs:
           name: End to end test
           command: yarn test-e2e-ci
       - store_test_results:
-          path: test-results
+          path: /tmp/test-results
   release:
     <<: *defaults
     steps:
