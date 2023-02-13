@@ -91,6 +91,9 @@ jobs:
           command: yarn test-e2e-ci
       - store_test_results:
           path: /tmp/test-results
+      - store_artifacts:
+      path: tmp/test-results/artifact
+      destination: artifact-file
   release:
     <<: *defaults
     steps:
