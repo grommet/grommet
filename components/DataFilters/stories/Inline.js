@@ -21,8 +21,23 @@ var Inline = function Inline() {
       status: "info",
       message: "Data is in 'beta'. The API surface is subject to change."
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
-      data: _data.DATA
-    }, /*#__PURE__*/_react["default"].createElement(_DataFilters.DataFilters, null, /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
+      data: _data.DATA,
+      views: [{
+        name: 'latest',
+        sort: {
+          property: 'date',
+          direction: 'desc'
+        }
+      }, {
+        name: 'behind',
+        properties: {
+          percent: {
+            min: 0,
+            max: 30
+          }
+        }
+      }]
+    }, /*#__PURE__*/_react["default"].createElement(_DataFilters.DataFilters, null, /*#__PURE__*/_react["default"].createElement(_grommet.DataView, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
       property: "location"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
       property: "percent"

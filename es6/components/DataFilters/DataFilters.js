@@ -61,7 +61,10 @@ export var DataFilters = function DataFilters(_ref) {
     }).length || undefined;
   }, [controlled, touched]);
   var clearControl = badge && /*#__PURE__*/React.createElement(Box, {
-    flex: false
+    flex: false,
+    margin: {
+      start: 'small'
+    }
   }, /*#__PURE__*/React.createElement(Button, {
     label: format({
       id: 'dataFilters.clear',
@@ -72,7 +75,7 @@ export var DataFilters = function DataFilters(_ref) {
       clearFilters();
     }
   }));
-  var filters;
+  var content = children;
   if (Children.count(children) === 0) {
     var filtersFor;
     if (!properties && data && data.length)
@@ -80,21 +83,20 @@ export var DataFilters = function DataFilters(_ref) {
       filtersFor = Object.keys(data[0]).filter(function (k) {
         return typeof data[0][k] !== 'object';
       });else if (Array.isArray(properties)) filtersFor = properties;else if (typeof properties === 'object') filtersFor = Object.keys(properties);else filtersFor = [];
-    filters = filtersFor.map(function (property) {
+    content = filtersFor.map(function (property) {
       return /*#__PURE__*/React.createElement(DataFilter, {
         key: property,
         property: property
       });
     });
     if (view != null && view.sort) {
-      filters.push( /*#__PURE__*/React.createElement(DataSort, {
+      content.push( /*#__PURE__*/React.createElement(DataSort, {
         key: "_sort"
       }));
     }
   }
-  var content = /*#__PURE__*/React.createElement(DataForm, _extends({
+  content = /*#__PURE__*/React.createElement(DataForm, _extends({
     pad: controlled ? 'medium' : undefined,
-    gap: "small",
     onDone: function onDone() {
       return setShowContent(false);
     },
@@ -108,7 +110,9 @@ export var DataFilters = function DataFilters(_ref) {
         })
       );
     } : undefined
-  }, !controlled ? rest : {}), !drop && /*#__PURE__*/React.createElement(Header, null, /*#__PURE__*/React.createElement(Heading, {
+  }, !controlled ? rest : {
+    fill: 'vertical'
+  }), !drop && /*#__PURE__*/React.createElement(Header, null, /*#__PURE__*/React.createElement(Heading, {
     margin: "none",
     level: 2,
     size: "small"
@@ -121,10 +125,8 @@ export var DataFilters = function DataFilters(_ref) {
     onClick: function onClick() {
       return setShowContent(undefined);
     }
-  })), filters, children);
+  })), content);
   if (!controlled) return content;
-
-  // drop
   var control;
   if (drop) {
     control = /*#__PURE__*/React.createElement(DropButton, {
@@ -165,8 +167,7 @@ export var DataFilters = function DataFilters(_ref) {
   }
   return /*#__PURE__*/React.createElement(Box, _extends({
     flex: false,
-    direction: "row",
-    gap: "small"
+    direction: "row"
   }, rest), control, clearControl, layer && showContent && /*#__PURE__*/React.createElement(Layer, _extends({
     id: dataId + "--filters-layer"
   }, typeof layer === 'object' ? layer : layerProps, {

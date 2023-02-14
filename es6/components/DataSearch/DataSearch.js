@@ -1,5 +1,4 @@
-var _excluded = ["id"],
-  _excluded2 = ["drop", "id", "responsive"];
+var _excluded = ["drop", "id", "responsive"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useContext, useEffect, useState } from 'react';
@@ -9,6 +8,7 @@ import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
 import { FormContext } from '../Form/FormContext';
+import { FormField } from '../FormField';
 import { useSkeleton } from '../Skeleton';
 import { TextInput } from '../TextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -20,8 +20,10 @@ var dropProps = {
     left: 'left'
   }
 };
-var Content = function Content(_ref) {
-  var id = _ref.id,
+export var DataSearch = function DataSearch(_ref) {
+  var drop = _ref.drop,
+    idProp = _ref.id,
+    responsive = _ref.responsive,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = useContext(DataContext),
     dataId = _useContext.id,
@@ -29,53 +31,42 @@ var Content = function Content(_ref) {
     addToolbarKey = _useContext.addToolbarKey;
   var _useContext2 = useContext(FormContext),
     noForm = _useContext2.noForm;
-  var skeleton = useSkeleton();
   var _useContext3 = useContext(MessageContext),
     format = _useContext3.format;
+  var size = useContext(ResponsiveContext);
+  var skeleton = useSkeleton();
+  var _useState = useState(),
+    showContent = _useState[0],
+    setShowContent = _useState[1];
+  var id = idProp || dataId + "--search";
   useEffect(function () {
     if (noForm) addToolbarKey('_search');
   }, [addToolbarKey, noForm]);
   var content = skeleton ? null : /*#__PURE__*/React.createElement(TextInput, _extends({
     "aria-label": format({
       id: 'dataSearch.label',
-      messages: messages == null ? void 0 : messages.DataSearch
+      messages: messages == null ? void 0 : messages.dataSearch
     }),
-    id: id || dataId + "--search",
+    id: id,
     name: "_search",
     icon: /*#__PURE__*/React.createElement(Search, null),
     type: "search"
   }, rest));
-  if (noForm) content = /*#__PURE__*/React.createElement(DataForm, {
-    footer: false,
-    updateOn: "change"
-  }, content);
-  return content;
-};
-export var DataSearch = function DataSearch(_ref2) {
-  var drop = _ref2.drop,
-    id = _ref2.id,
-    responsive = _ref2.responsive,
-    rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-  var _useContext4 = useContext(DataContext),
-    dataId = _useContext4.id,
-    messages = _useContext4.messages;
-  var _useContext5 = useContext(FormContext),
-    noForm = _useContext5.noForm;
-  var _useContext6 = useContext(MessageContext),
-    format = _useContext6.format;
-  var size = useContext(ResponsiveContext);
-  var _useState = useState(),
-    showContent = _useState[0],
-    setShowContent = _useState[1];
-  var content = /*#__PURE__*/React.createElement(Content, {
-    id: drop ? undefined : id
-  });
-  if (noForm) content = /*#__PURE__*/React.createElement(DataForm, {
-    footer: false
+  if (noForm)
+    // likely in Toolbar
+    content = /*#__PURE__*/React.createElement(DataForm, {
+      footer: false,
+      updateOn: "change"
+    }, content);else content = /*#__PURE__*/React.createElement(FormField, {
+    htmlFor: id,
+    label: format({
+      id: 'dataSearch.label',
+      messages: messages == null ? void 0 : messages.dataSearch
+    })
   }, content);
   if (!drop && (!responsive || size !== 'small' && size !== 'xsmall')) return content;
   var control = /*#__PURE__*/React.createElement(DropButton, _extends({
-    id: id || dataId + "--search-control",
+    id: dataId + "--search-control",
     "aria-label": format({
       id: 'dataSearch.open',
       messages: messages == null ? void 0 : messages.dataSort

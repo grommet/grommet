@@ -67,7 +67,10 @@ var DataFilters = function DataFilters(_ref) {
     }).length || undefined;
   }, [controlled, touched]);
   var clearControl = badge && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    flex: false
+    flex: false,
+    margin: {
+      start: 'small'
+    }
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     label: format({
       id: 'dataFilters.clear',
@@ -78,7 +81,7 @@ var DataFilters = function DataFilters(_ref) {
       clearFilters();
     }
   }));
-  var filters;
+  var content = children;
   if (_react.Children.count(children) === 0) {
     var filtersFor;
     if (!properties && data && data.length)
@@ -86,21 +89,20 @@ var DataFilters = function DataFilters(_ref) {
       filtersFor = Object.keys(data[0]).filter(function (k) {
         return typeof data[0][k] !== 'object';
       });else if (Array.isArray(properties)) filtersFor = properties;else if (typeof properties === 'object') filtersFor = Object.keys(properties);else filtersFor = [];
-    filters = filtersFor.map(function (property) {
+    content = filtersFor.map(function (property) {
       return /*#__PURE__*/_react["default"].createElement(_DataFilter.DataFilter, {
         key: property,
         property: property
       });
     });
     if (view != null && view.sort) {
-      filters.push( /*#__PURE__*/_react["default"].createElement(_DataSort.DataSort, {
+      content.push( /*#__PURE__*/_react["default"].createElement(_DataSort.DataSort, {
         key: "_sort"
       }));
     }
   }
-  var content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, _extends({
+  content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, _extends({
     pad: controlled ? 'medium' : undefined,
-    gap: "small",
     onDone: function onDone() {
       return setShowContent(false);
     },
@@ -114,7 +116,9 @@ var DataFilters = function DataFilters(_ref) {
         })
       );
     } : undefined
-  }, !controlled ? rest : {}), !drop && /*#__PURE__*/_react["default"].createElement(_Header.Header, null, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
+  }, !controlled ? rest : {
+    fill: 'vertical'
+  }), !drop && /*#__PURE__*/_react["default"].createElement(_Header.Header, null, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
     margin: "none",
     level: 2,
     size: "small"
@@ -127,10 +131,8 @@ var DataFilters = function DataFilters(_ref) {
     onClick: function onClick() {
       return setShowContent(undefined);
     }
-  })), filters, children);
+  })), content);
   if (!controlled) return content;
-
-  // drop
   var control;
   if (drop) {
     control = /*#__PURE__*/_react["default"].createElement(_DropButton.DropButton, {
@@ -171,8 +173,7 @@ var DataFilters = function DataFilters(_ref) {
   }
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     flex: false,
-    direction: "row",
-    gap: "small"
+    direction: "row"
   }, rest), control, clearControl, layer && showContent && /*#__PURE__*/_react["default"].createElement(_Layer.Layer, _extends({
     id: dataId + "--filters-layer"
   }, typeof layer === 'object' ? layer : layerProps, {

@@ -332,6 +332,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   return /*#__PURE__*/React.createElement(FormFieldBox, _extends({
     ref: formFieldRef,
     className: className,
+    flex: false,
     background: outerBackground,
     margin: abut ? abutMargin : margin || _extends({}, formFieldTheme.margin)
   }, outerProps, {

@@ -1,4 +1,4 @@
-var _excluded = ["children", "footer", "gap", "onDone", "onTouched", "pad", "updateOn"];
+var _excluded = ["children", "footer", "onDone", "onTouched", "pad", "updateOn"];
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 import React, { useCallback, useContext, useEffect, useState } from 'react';
@@ -18,7 +18,9 @@ var HideableButton = styled(Button).withConfig({
 var MaxForm = styled(Form).withConfig({
   displayName: "DataForm__MaxForm",
   componentId: "sc-v64e1r-1"
-})(["max-width:100%;"]);
+})(["max-width:100%;", ""], function (props) {
+  return props.fill && 'max-height: 100%;';
+});
 var hideButtonProps = {
   'aria-hidden': true,
   disabled: true,
@@ -156,7 +158,6 @@ var normalizeValue = function normalizeValue(nextValue, prevValue, views) {
 export var DataForm = function DataForm(_ref) {
   var children = _ref.children,
     footer = _ref.footer,
-    gap = _ref.gap,
     onDone = _ref.onDone,
     onTouched = _ref.onTouched,
     pad = _ref.pad,
@@ -211,10 +212,25 @@ export var DataForm = function DataForm(_ref) {
     onSubmit: updateOn === 'submit' ? onSubmit : undefined,
     onChange: onChange
   }), /*#__PURE__*/React.createElement(Box, {
+    fill: "vertical"
+  }, /*#__PURE__*/React.createElement(Box, {
+    flex: true,
+    overflow: "auto",
+    pad: {
+      horizontal: pad,
+      top: pad
+    }
+  }, children), footer !== false && updateOn === 'submit' && /*#__PURE__*/React.createElement(Footer, {
     flex: false,
-    pad: pad,
-    gap: gap
-  }, children, footer !== false && updateOn === 'submit' && /*#__PURE__*/React.createElement(Footer, null, /*#__PURE__*/React.createElement(Button, {
+    margin: {
+      top: 'small'
+    },
+    pad: {
+      horizontal: pad,
+      bottom: pad
+    },
+    gap: "small"
+  }, /*#__PURE__*/React.createElement(Button, {
     label: format({
       id: 'dataForm.submit',
       messages: messages == null ? void 0 : messages.dataForm

@@ -178,7 +178,7 @@ exports[`DataSort drop 2`] = `
 
 exports[`DataSort drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hftPdQ {
+  .hfctvB {
     margin-bottom: 6px;
   }
 }
@@ -214,13 +214,18 @@ exports[`DataSort drop 3`] = `
   }
 }
 @media only screen and (max-width: 768px) {
+  .gcEjSx {
+    margin-top: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
   .drdMXk {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iISQcM {
-    width: 12px;
+  .ilMzAg {
+    width: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -238,7 +243,7 @@ exports[`DataSort drop 3`] = `
 `;
 
 exports[`DataSort renders 1`] = `
-.c16 {
+.c17 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -249,25 +254,25 @@ exports[`DataSort renders 1`] = `
   stroke: #7D4CDB;
 }
 
-.c16 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c16 *:not([stroke])[fill="none"] {
+.c17 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c16 *[stroke*="#"],
-.c16 *[STROKE*="#"] {
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c16 *[fill-rule],
-.c16 *[FILL-RULE],
-.c16 *[fill*="#"],
-.c16 *[FILL*="#"] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -296,6 +301,39 @@ exports[`DataSort renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -314,7 +352,7 @@ exports[`DataSort renders 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -327,9 +365,12 @@ exports[`DataSort renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -344,7 +385,7 @@ exports[`DataSort renders 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -366,7 +407,7 @@ exports[`DataSort renders 1`] = `
   justify-content: space-between;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -385,7 +426,7 @@ exports[`DataSort renders 1`] = `
   flex-basis: auto;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -404,7 +445,7 @@ exports[`DataSort renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -420,7 +461,7 @@ exports[`DataSort renders 1`] = `
   padding: 12px;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -434,7 +475,7 @@ exports[`DataSort renders 1`] = `
   flex-direction: column;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -452,7 +493,7 @@ exports[`DataSort renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c22 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -478,14 +519,30 @@ exports[`DataSort renders 1`] = `
   border-radius: 100%;
 }
 
-.c5 {
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 12px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c24 {
@@ -495,10 +552,20 @@ exports[`DataSort renders 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  height: 12px;
 }
 
-.c7 {
+.c27 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c8 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -507,7 +574,7 @@ exports[`DataSort renders 1`] = `
   line-height: 24px;
 }
 
-.c9 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -525,27 +592,27 @@ exports[`DataSort renders 1`] = `
   text-align: inherit;
 }
 
-.c9:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c23 {
+.c26 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -573,51 +640,51 @@ exports[`DataSort renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c23:hover {
+.c26:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c23:focus {
+.c26:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c23:focus > circle,
-.c23:focus > ellipse,
-.c23:focus > line,
-.c23:focus > path,
-.c23:focus > polygon,
-.c23:focus > polyline,
-.c23:focus > rect {
+.c26:focus > circle,
+.c26:focus > ellipse,
+.c26:focus > line,
+.c26:focus > path,
+.c26:focus > polygon,
+.c26:focus > polyline,
+.c26:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c23:focus::-moz-focus-inner {
+.c26:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c23:focus:not(:focus-visible) {
+.c26:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c23:focus:not(:focus-visible) > circle,
-.c23:focus:not(:focus-visible) > ellipse,
-.c23:focus:not(:focus-visible) > line,
-.c23:focus:not(:focus-visible) > path,
-.c23:focus:not(:focus-visible) > polygon,
-.c23:focus:not(:focus-visible) > polyline,
-.c23:focus:not(:focus-visible) > rect {
+.c26:focus:not(:focus-visible) > circle,
+.c26:focus:not(:focus-visible) > ellipse,
+.c26:focus:not(:focus-visible) > line,
+.c26:focus:not(:focus-visible) > path,
+.c26:focus:not(:focus-visible) > polygon,
+.c26:focus:not(:focus-visible) > polyline,
+.c26:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c23:focus:not(:focus-visible)::-moz-focus-inner {
+.c26:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c25 {
+.c28 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -644,47 +711,47 @@ exports[`DataSort renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c25:focus {
+.c28:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c25:focus > circle,
-.c25:focus > ellipse,
-.c25:focus > line,
-.c25:focus > path,
-.c25:focus > polygon,
-.c25:focus > polyline,
-.c25:focus > rect {
+.c28:focus > circle,
+.c28:focus > ellipse,
+.c28:focus > line,
+.c28:focus > path,
+.c28:focus > polygon,
+.c28:focus > polyline,
+.c28:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c25:focus::-moz-focus-inner {
+.c28:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c25:focus:not(:focus-visible) {
+.c28:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c25:focus:not(:focus-visible) > circle,
-.c25:focus:not(:focus-visible) > ellipse,
-.c25:focus:not(:focus-visible) > line,
-.c25:focus:not(:focus-visible) > path,
-.c25:focus:not(:focus-visible) > polygon,
-.c25:focus:not(:focus-visible) > polyline,
-.c25:focus:not(:focus-visible) > rect {
+.c28:focus:not(:focus-visible) > circle,
+.c28:focus:not(:focus-visible) > ellipse,
+.c28:focus:not(:focus-visible) > line,
+.c28:focus:not(:focus-visible) > path,
+.c28:focus:not(:focus-visible) > polygon,
+.c28:focus:not(:focus-visible) > polyline,
+.c28:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c25:focus:not(:focus-visible)::-moz-focus-inner {
+.c28:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -706,12 +773,12 @@ exports[`DataSort renders 1`] = `
   cursor: pointer;
 }
 
-.c19:hover input:not([disabled]) + div,
-.c19:hover input:not([disabled]) + span {
+.c20:hover input:not([disabled]) + div,
+.c20:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c21 {
+.c22 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -720,7 +787,7 @@ exports[`DataSort renders 1`] = `
   cursor: pointer;
 }
 
-.c13 {
+.c14 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -738,42 +805,42 @@ exports[`DataSort renders 1`] = `
   border: none;
 }
 
-.c13::-webkit-input-placeholder {
+.c14::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c13::-moz-placeholder {
+.c14::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c13:-ms-input-placeholder {
+.c14:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c13::-webkit-search-decoration {
+.c14::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c13::-moz-focus-inner {
+.c14::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c13:-moz-placeholder,
-.c13::-moz-placeholder {
+.c14:-moz-placeholder,
+.c14::-moz-placeholder {
   opacity: 1;
 }
 
-.c12 {
+.c13 {
   position: relative;
   width: 100%;
 }
 
-.c14 {
+.c15 {
   cursor: pointer;
 }
 
-.c26 {
+.c29 {
   opacity: 0;
 }
 
@@ -781,7 +848,7 @@ exports[`DataSort renders 1`] = `
   max-width: 100%;
 }
 
-.c4 {
+.c6 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -801,68 +868,74 @@ exports[`DataSort renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c16 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c21 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c22 {
+  .c23 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    height: 6px;
+  .c25 {
+    margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c24 {
-    width: 12px;
+    height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c27 {
+    width: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c6 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -880,42 +953,39 @@ exports[`DataSort renders 1`] = `
       class="c2"
     >
       <div
-        class="c1"
+        class="c3"
       >
-        <header
-          class="c3"
-        >
-          <h2
-            class="c4"
-          >
-            Filters
-          </h2>
-        </header>
         <div
-          class="c5"
-        />
-        <div
-          class="c6 "
+          class="c4"
         >
-          <label
-            class="c7"
-            for="data--sort-property"
+          <header
+            class="c5"
           >
-            Sort by
-          </label>
-          <div
-            class="c8 FormField__FormFieldContentBox-sc-m9hood-1"
-          >
-            <button
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              aria-label="Open Drop"
-              class="c9 "
-              id="data--sort-property"
-              type="button"
+            <h2
+              class="c6"
             >
-              <div
-                class="c10"
+              Filters
+            </h2>
+          </header>
+          <div
+            class="c7 "
+          >
+            <label
+              class="c8"
+              for="data--sort-property"
+            >
+              Sort by
+            </label>
+            <div
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-label="Open Drop"
+                class="c10 "
+                id="data--sort-property"
+                type="button"
               >
                 <div
                   class="c11"
@@ -923,126 +993,127 @@ exports[`DataSort renders 1`] = `
                   <div
                     class="c12"
                   >
-                    <input
-                      autocomplete="off"
-                      class="c13 c14"
-                      id="data--sort-property__input"
-                      name="_sort.property"
-                      readonly=""
-                      tabindex="-1"
-                      type="text"
-                      value=""
-                    />
+                    <div
+                      class="c13"
+                    >
+                      <input
+                        autocomplete="off"
+                        class="c14 c15"
+                        id="data--sort-property__input"
+                        name="_sort.property"
+                        readonly=""
+                        tabindex="-1"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="c16"
+                    style="min-width: auto;"
+                  >
+                    <svg
+                      aria-label="FormDown"
+                      class="c17"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="m18 9-6 6-6-6"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="2"
+                      />
+                    </svg>
                   </div>
                 </div>
-                <div
-                  class="c15"
-                  style="min-width: auto;"
-                >
-                  <svg
-                    aria-label="FormDown"
-                    class="c16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="m18 9-6 6-6-6"
-                      fill="none"
-                      stroke="#000"
-                      stroke-width="2"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </button>
+              </button>
+            </div>
           </div>
-        </div>
-        <div
-          class="c6 "
-        >
-          <label
-            class="c7"
-            for="data--sort-direction"
-          >
-            Sort direction
-          </label>
           <div
-            class="c17 FormField__FormFieldContentBox-sc-m9hood-1"
+            class="c7 "
           >
-            <div
-              class="c18"
-              id="data--sort-direction"
-              role="radiogroup"
+            <label
+              class="c8"
+              for="data--sort-direction"
             >
-              <label
-                class="c19"
-              >
-                <div
-                  class="c20 "
-                >
-                  <input
-                    class="c21"
-                    name="_sort.direction"
-                    tabindex="0"
-                    type="radio"
-                    value="asc"
-                  />
-                  <div
-                    class="c22 "
-                  />
-                </div>
-                <span
-                  class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
-                >
-                  Ascending
-                </span>
-              </label>
+              Sort direction
+            </label>
+            <div
+              class="c18 FormField__FormFieldContentBox-sc-m9hood-1"
+            >
               <div
-                class="c5"
-              />
-              <label
                 class="c19"
+                id="data--sort-direction"
+                role="radiogroup"
               >
-                <div
-                  class="c20 "
+                <label
+                  class="c20"
                 >
-                  <input
-                    class="c21"
-                    name="_sort.direction"
-                    tabindex="-1"
-                    type="radio"
-                    value="desc"
-                  />
                   <div
-                    class="c22 "
-                  />
-                </div>
-                <span
-                  class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+                    class="c21 "
+                  >
+                    <input
+                      class="c22"
+                      name="_sort.direction"
+                      tabindex="0"
+                      type="radio"
+                      value="asc"
+                    />
+                    <div
+                      class="c23 "
+                    />
+                  </div>
+                  <span
+                    class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+                  >
+                    Ascending
+                  </span>
+                </label>
+                <div
+                  class="c24"
+                />
+                <label
+                  class="c20"
                 >
-                  Descending
-                </span>
-              </label>
+                  <div
+                    class="c21 "
+                  >
+                    <input
+                      class="c22"
+                      name="_sort.direction"
+                      tabindex="-1"
+                      type="radio"
+                      value="desc"
+                    />
+                    <div
+                      class="c23 "
+                    />
+                  </div>
+                  <span
+                    class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+                  >
+                    Descending
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          class="c5"
-        />
         <footer
-          class="c3"
+          class="c25"
         >
           <button
-            class="c23"
+            class="c26"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c24"
+            class="c27"
           />
           <button
             aria-hidden="true"
-            class="c25 c26"
+            class="c28 c29"
             disabled=""
             tabindex="-1"
             type="reset"

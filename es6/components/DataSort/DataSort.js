@@ -34,13 +34,13 @@ var Content = function Content(_ref) {
   var directionOptions = [{
     label: format({
       id: 'dataSort.ascending',
-      messages: messages == null ? void 0 : messages.DataSort
+      messages: messages == null ? void 0 : messages.dataSort
     }),
     value: 'asc'
   }, {
     label: format({
       id: 'dataSort.descending',
-      messages: messages == null ? void 0 : messages.DataSort
+      messages: messages == null ? void 0 : messages.dataSort
     }),
     value: 'desc'
   }];
@@ -51,7 +51,7 @@ var Content = function Content(_ref) {
     htmlFor: sortPropertyId,
     label: format({
       id: 'dataSort.by',
-      messages: messages == null ? void 0 : messages.DataSort
+      messages: messages == null ? void 0 : messages.dataSort
     })
   }, /*#__PURE__*/React.createElement(Select, {
     id: sortPropertyId,
@@ -62,7 +62,7 @@ var Content = function Content(_ref) {
     htmlFor: sortDirectionId,
     label: format({
       id: 'dataSort.direction',
-      messages: messages == null ? void 0 : messages.DataSort
+      messages: messages == null ? void 0 : messages.dataSort
     })
   }, /*#__PURE__*/React.createElement(RadioButtonGroup, {
     id: sortDirectionId,

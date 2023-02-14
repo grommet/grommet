@@ -20,7 +20,13 @@ export var Layer = function Layer() {
     }, /*#__PURE__*/React.createElement(DataFilters, {
       layer: true
     }, /*#__PURE__*/React.createElement(DataFilter, {
+      property: "name"
+    }), /*#__PURE__*/React.createElement(DataFilter, {
       property: "location"
+    }), /*#__PURE__*/React.createElement(DataFilter, {
+      property: "percent"
+    }), /*#__PURE__*/React.createElement(DataFilter, {
+      property: "paid"
     }))))
     // </Grommet>
   );

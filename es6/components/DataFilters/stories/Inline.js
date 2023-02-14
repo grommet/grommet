@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Data, DataFilter, DataSearch, DataSort, Notification } from 'grommet';
+import { Box, Data, DataFilter, DataSearch, DataSort, DataView, Notification } from 'grommet';
 import { DataFilters } from '../DataFilters';
 import { DATA } from '../../DataTable/stories/data';
 export var Inline = function Inline() {
@@ -16,8 +16,23 @@ export var Inline = function Inline() {
       status: "info",
       message: "Data is in 'beta'. The API surface is subject to change."
     }), /*#__PURE__*/React.createElement(Data, {
-      data: DATA
-    }, /*#__PURE__*/React.createElement(DataFilters, null, /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataFilter, {
+      data: DATA,
+      views: [{
+        name: 'latest',
+        sort: {
+          property: 'date',
+          direction: 'desc'
+        }
+      }, {
+        name: 'behind',
+        properties: {
+          percent: {
+            min: 0,
+            max: 30
+          }
+        }
+      }]
+    }, /*#__PURE__*/React.createElement(DataFilters, null, /*#__PURE__*/React.createElement(DataView, null), /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataFilter, {
       property: "location"
     }), /*#__PURE__*/React.createElement(DataFilter, {
       property: "percent"

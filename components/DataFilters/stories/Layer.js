@@ -25,7 +25,13 @@ var Layer = function Layer() {
     }, /*#__PURE__*/_react["default"].createElement(_DataFilters.DataFilters, {
       layer: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
+      property: "name"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
       property: "location"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
+      property: "percent"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
+      property: "paid"
     }))))
     // </Grommet>
   );
